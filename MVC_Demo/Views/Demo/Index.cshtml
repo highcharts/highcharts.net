@@ -1,0 +1,82 @@
+﻿@using HighSoft.Web.Mvc
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <title>HighSoft Charts for ASP.NET MVC</title>
+    <!-- Use Microsoft's CDN for the jQuery library -->
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-2.1.3.min.js"></script> 
+    <script type="text/javascript" src="@Url.Content("~/Scripts/highcharts.src.js")"></script>
+</head>
+<body>
+    <div>
+        @(Html.HighSoft().HighCharts(
+            new HighCharts
+            {            
+                Chart = new Chart
+                {
+                    Width = 700,
+                    Height = 500,
+                    Type = "bar" // ChartType.Bar
+                },                
+                Title = new Title
+                {
+                    Text = "Monthly Average Temperature",
+                    X = -20
+                },
+                Subtitle = new Subtitle
+                {
+                    Text = "Source: WorldClimate.com",
+                    X = -20
+                },
+                XAxis = new XAxis
+                {
+                    Categories = new string[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
+                },
+                YAxis = new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Temperature (°C)"
+                    }
+                },
+                Tooltip = new Tooltip
+                {
+                    ValueSuffix = "°C"
+                },
+                Legend = new Legend
+                {
+                    Layout = "vertical",
+                    Align = "right",
+                    VerticalAlign = "middle",
+                    BorderWidth = 0
+                },
+                Series = new List<Series>
+                {
+                    new Series
+                    {
+                        Name = "Tokyo",
+                        Data = @ViewData["tokyoData"] as List<SeriesData>
+                    },
+                    new Series
+                    {
+                        Name = "New York",
+                        Data = @ViewData["nyData"] as List<SeriesData>
+                    },
+                    new Series
+                    {
+                        Name = "Vik",   
+                        Data = @ViewData["vikData"] as List<SeriesData>
+                    }
+                }
+            }
+            , "DemoChart")
+         )
+    </div>
+</body>
+</html>

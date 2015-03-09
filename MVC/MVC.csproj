@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA4C2A73-1563-47DA-8F1B-64EF17D48918}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HighCharts</RootNamespace>
+    <AssemblyName>HighCharts</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeGeneration\Chart.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\ChartEvents.cs" />
+    <Compile Include="CodeGeneration\ChartOptions3d.cs" />
+    <Compile Include="CodeGeneration\ChartOptions3dFrame.cs" />
+    <Compile Include="CodeGeneration\ChartOptions3dFrameBack.cs" />
+    <Compile Include="CodeGeneration\ChartOptions3dFrameBottom.cs" />
+    <Compile Include="CodeGeneration\ChartOptions3dFrameSide.cs" />
+    <Compile Include="CodeGeneration\ChartResetZoomButton.cs" />
+    <Compile Include="CodeGeneration\Credits.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\Drilldown.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\DrilldownDrillUpButton.cs" />
+    <Compile Include="CodeGeneration\Exporting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\ExportingButtons.cs" />
+    <Compile Include="CodeGeneration\ExportingButtonsContextButton.cs" />
+    <Compile Include="CodeGeneration\Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\HighCharts.cs" />
+    <Compile Include="CodeGeneration\Labels.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\LabelsItems.cs" />
+    <Compile Include="CodeGeneration\Lang.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\Legend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\LegendNavigation.cs" />
+    <Compile Include="CodeGeneration\LegendTitle.cs" />
+    <Compile Include="CodeGeneration\Loading.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\Navigation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\NavigationButtonOptions.cs" />
+    <Compile Include="CodeGeneration\NoData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\Pane.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\PlotOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\PlotOptionsArea.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaMarkerStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaMarkerStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaMarkerStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsArearange.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsArearangeDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsArearangeEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsArearangePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsArearangePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsArearangeStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsArearangeStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsArearangeStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsArearangeStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsArearangeTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaspline.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplineDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplineEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplineMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplineMarkerStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplineMarkerStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplineMarkerStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinerange.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinerangePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinerangePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplineStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplineStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplineStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplineStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreasplineTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsAreaTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBar.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBarDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBarEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBarPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBarPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBarStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBarStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBarStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBarStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBarTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBoxplot.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBoxplotEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBoxplotPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBoxplotPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBoxplotStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBoxplotStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBoxplotStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBoxplotStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBoxplotTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubble.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubbleDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubbleEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubbleMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubbleMarkerStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubbleMarkerStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubbleMarkerStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubblePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubblePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubbleStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubbleStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubbleStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubbleStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsBubbleTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumn.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnrange.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnrangeDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnrangeEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnrangePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnrangePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnrangeStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnrangeStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnrangeStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnrangeStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnrangeTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsColumnTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsErrorbar.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsErrorbarEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsErrorbarPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsErrorbarPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsErrorbarStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsErrorbarStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsErrorbarStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsErrorbarStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsErrorbarTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsFunnel.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsFunnelDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsFunnelEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsFunnelPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsFunnelPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsFunnelStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsFunnelStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsFunnelStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsFunnelStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsFunnelTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGauge.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGaugeDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGaugeDial.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGaugeEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGaugePivot.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGaugePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGaugePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGaugeStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGaugeStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGaugeStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGaugeStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsGaugeTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLine.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLineDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLineEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLineMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLineMarkerStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLineMarkerStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLineMarkerStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLinePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLinePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLineStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLineStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLineStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLineStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsLineTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPie.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPieDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPieEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPiePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPiePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPieStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPieStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPieStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPieStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPieTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPyramid.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPyramidDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPyramidEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPyramidPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPyramidPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPyramidStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPyramidStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPyramidStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPyramidStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsPyramidTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatter.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterMarkerStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterMarkerStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterMarkerStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsScatterTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeries.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesMarkerStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesMarkerStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesMarkerStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSolidgauge.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSolidgaugeDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSolidgaugeEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSolidgaugePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSolidgaugePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSolidgaugeStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSolidgaugeStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSolidgaugeStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSolidgaugeStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSolidgaugeTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSpline.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplineDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplineEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplineMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplineMarkerStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplineMarkerStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplineMarkerStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplinePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplinePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplineStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplineStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplineStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplineStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSplineTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsWaterfall.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsWaterfallDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsWaterfallEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsWaterfallPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsWaterfallPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsWaterfallStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsWaterfallStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsWaterfallStatesHoverHalo.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsWaterfallStatesHoverMarker.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsWaterfallTooltip.cs" />
+    <Compile Include="CodeGeneration\Series.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\SeriesData.cs" />
+    <Compile Include="CodeGeneration\SeriesDataEvents.cs" />
+    <Compile Include="CodeGeneration\SeriesDataMarker.cs" />
+    <Compile Include="CodeGeneration\SeriesDataMarkerStates.cs" />
+    <Compile Include="CodeGeneration\SeriesDataMarkerStatesHover.cs" />
+    <Compile Include="CodeGeneration\SeriesDataMarkerStatesSelect.cs" />
+    <Compile Include="CodeGeneration\Subtitle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\Title.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\Tooltip.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\XAxis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\XAxisEvents.cs" />
+    <Compile Include="CodeGeneration\XAxisLabels.cs" />
+    <Compile Include="CodeGeneration\XAxisPlotBands.cs" />
+    <Compile Include="CodeGeneration\XAxisPlotBandsLabel.cs" />
+    <Compile Include="CodeGeneration\XAxisPlotLines.cs" />
+    <Compile Include="CodeGeneration\XAxisPlotLinesLabel.cs" />
+    <Compile Include="CodeGeneration\XAxisTitle.cs" />
+    <Compile Include="CodeGeneration\YAxis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\YAxisEvents.cs" />
+    <Compile Include="CodeGeneration\YAxisLabels.cs" />
+    <Compile Include="CodeGeneration\YAxisPlotBands.cs" />
+    <Compile Include="CodeGeneration\YAxisPlotBandsLabel.cs" />
+    <Compile Include="CodeGeneration\YAxisPlotLines.cs" />
+    <Compile Include="CodeGeneration\YAxisPlotLinesLabel.cs" />
+    <Compile Include="CodeGeneration\YAxisStackLabels.cs" />
+    <Compile Include="CodeGeneration\YAxisTitle.cs" />
+    <Compile Include="HighCharts.cs" />
+    <Compile Include="CodeAddOns\Animation.cs" />
+    <Compile Include="CodeAddOns\Background.cs" />
+    <Compile Include="CodeAddOns\Crosshair.cs" />
+    <Compile Include="CodeAddOns\MenuItem.cs" />
+    <Compile Include="CodeAddOns\PointPlacement.cs" />
+    <Compile Include="CodeAddOns\Shadow.cs" />
+    <Compile Include="CodeAddOns\Stop.cs" />
+    <Compile Include="HtmlHelperExtensions.cs" />
+    <Compile Include="Renderer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
