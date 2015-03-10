@@ -21,11 +21,12 @@ public partial class generatoraspx : System.Web.UI.Page
 
     const int PROPERTY_NESTED_LEVELS = 5;
     const string ROOT_CLASS = "HighCharts";
+    //const string ROOT_CLASS = "HighStock";
 
     protected override void OnInit(EventArgs e)
     {
         apiItems = new List<ApiItem>();
-        //log = new StreamWriter(Server.MapPath("~/CodeGeneration/log.txt"));
+        log = new StreamWriter(Server.MapPath("~/log.txt"));
         typeMappings = new Hashtable();
         propertyTypeMappings = new Hashtable();
         defaultValueMappings = new Hashtable();
@@ -50,7 +51,7 @@ public partial class generatoraspx : System.Web.UI.Page
             GenerateClassesForLevel(i);
         }
 
-        //log.Close();
+        log.Close();
     }
 
     private void ParseItems()
@@ -58,6 +59,7 @@ public partial class generatoraspx : System.Web.UI.Page
         JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
 
         string jsonAPI = File.ReadAllText(Server.MapPath("~/api.json"));
+        //string jsonAPI = File.ReadAllText(Server.MapPath("~/highstock.json"));
         object[] jsonObject = jsonSerializer.Deserialize<object[]>(jsonAPI);
 
         foreach (Dictionary<string, object> item in jsonObject)
@@ -67,6 +69,7 @@ public partial class generatoraspx : System.Web.UI.Page
             {
                 parents = item["parent"].ToString().Split('-').OfType<string>().ToList();
             }
+            
             ApiItem apiItem = new ApiItem
             {
                 Title = item["title"].ToString(),
@@ -75,7 +78,7 @@ public partial class generatoraspx : System.Web.UI.Page
                 IsParent = (bool)item["isParent"],
                 ReturnType = item["returnType"] as string,
                 Description = (String.IsNullOrEmpty(item["description"] as string)) ? "" : item["description"] as string,
-                Defaults = item["defaults"] as string, 
+                Defaults = item["defaults"] == null ? null : item["defaults"] as string, 
                 Values = item["values"] == null ? null : item["values"] as string[],
 
                 Parents = parents
@@ -111,7 +114,8 @@ public partial class generatoraspx : System.Web.UI.Page
                 propertyLabel.Text += item.FullName + " : " + item.ReturnType + "<br/>";
             }
         }
-    }
+    }  
+    
 
     private void PrintApiItems(List<ApiItem> theItems)
     {
@@ -147,6 +151,22 @@ public partial class generatoraspx : System.Web.UI.Page
             string formattedProperty = FormatProperty(propertyTemplate, child);
             string formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
             string formattedComparer = FormatPropertyComparer(propertyName, child);
+
+            if (child.ReturnType != null && child.ReturnType.Contains('|'))
+            {
+                log.WriteLine(child.FullName + " " + child.ReturnType);
+                log.WriteLine(" ");
+                log.WriteLine(child.Description
+                                            .Replace("\r", "")
+                                            .Replace("\t", "")
+                                            .Replace("\n", ""));
+            
+               
+                
+                log.WriteLine(" ");
+                log.WriteLine("************************************");
+                log.WriteLine(" ");
+            }
 
             properties += formattedProperty;
             defaultValues += formattedDefaultProperty;
@@ -322,6 +342,7 @@ public partial class generatoraspx : System.Web.UI.Page
     {
         excludedProperties.Add("Series");
         excludedProperties.Add("Spacing");
+        excludedProperties.Add("Date");
     }
 
 

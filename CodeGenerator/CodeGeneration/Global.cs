@@ -14,7 +14,6 @@ namespace HighSoft.Web.Mvc
 	{
 		public Global()
 		{
-			Date = Date_DefaultValue = null;
 			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "http://code.highcharts.com/{version}/gfx/vml-radial-gradient.png";
 			CanvasToolsURL = CanvasToolsURL_DefaultValue = "http://code.highcharts.com/{version}/modules/canvas-tools.js";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
@@ -22,13 +21,6 @@ namespace HighSoft.Web.Mvc
 			
 		}	
 		
-
-		/// <summary>
-		/// A custom <code>Date</code> class for advanced date handling. For example, <a href="https://github.com/tahajahangir/jdate">JDate</a> can be hooked in to handle Jalali dates.
-		/// </summary>
-		public Object Date { get; set; }
-		private Object Date_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Path to the pattern image required by VML browsers in order to draw radial gradients.
@@ -62,7 +54,6 @@ namespace HighSoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Date != Date_DefaultValue) h.Add("date",Date);
 			if (VMLRadialGradientURL != VMLRadialGradientURL_DefaultValue) h.Add("vMLRadialGradientURL",VMLRadialGradientURL);
 			if (CanvasToolsURL != CanvasToolsURL_DefaultValue) h.Add("canvasToolsURL",CanvasToolsURL);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);

@@ -1,18 +1,10 @@
 C:\HighSoft\MVC_Demo\bin\MVC_Demo.dll
 C:\HighSoft\MVC_Demo\bin\MVC_Demo.pdb
-C:\HighSoft\MVC_Demo\bin\Antlr3.Runtime.dll
-C:\HighSoft\MVC_Demo\bin\EntityFramework.dll
 C:\HighSoft\MVC_Demo\bin\Microsoft.Web.Infrastructure.dll
-C:\HighSoft\MVC_Demo\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
-C:\HighSoft\MVC_Demo\bin\Newtonsoft.Json.dll
-C:\HighSoft\MVC_Demo\bin\System.Web.Mvc.dll
-C:\HighSoft\MVC_Demo\bin\System.Web.Optimization.dll
-C:\HighSoft\MVC_Demo\bin\System.Web.Providers.dll
 C:\HighSoft\MVC_Demo\bin\System.Web.Razor.dll
 C:\HighSoft\MVC_Demo\bin\System.Web.WebPages.Deployment.dll
 C:\HighSoft\MVC_Demo\bin\System.Web.WebPages.dll
 C:\HighSoft\MVC_Demo\bin\System.Web.WebPages.Razor.dll
-C:\HighSoft\MVC_Demo\bin\WebGrease.dll
 C:\HighSoft\MVC_Demo\bin\EntityFramework.xml
 C:\HighSoft\MVC_Demo\bin\Newtonsoft.Json.xml
 C:\HighSoft\MVC_Demo\bin\System.Web.Mvc.xml
@@ -25,3 +17,4 @@ C:\HighSoft\MVC_Demo\obj\Debug\MVC_Demo.pdb
 C:\HighSoft\MVC_Demo\bin\HighCharts.dll
 C:\HighSoft\MVC_Demo\bin\HighCharts.pdb
 C:\HighSoft\MVC_Demo\obj\Debug\MVC_Demo.csprojResolveAssemblyReference.cache
+C:\HighSoft\MVC_Demo\bin\Microsoft.Web.Infrastructure.xml
