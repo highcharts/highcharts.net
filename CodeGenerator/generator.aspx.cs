@@ -21,6 +21,7 @@ public partial class generatoraspx : System.Web.UI.Page
 
     const int PROPERTY_NESTED_LEVELS = 5;
     const string ROOT_CLASS = "HighCharts";
+
     //const string ROOT_CLASS = "HighStock";
 
     protected override void OnInit(EventArgs e)
@@ -159,8 +160,7 @@ public partial class generatoraspx : System.Web.UI.Page
                 log.WriteLine(child.Description
                                             .Replace("\r", "")
                                             .Replace("\t", "")
-                                            .Replace("\n", ""));
-            
+                                            .Replace("\n", ""));           
                
                 
                 log.WriteLine(" ");

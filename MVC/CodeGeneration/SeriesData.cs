@@ -29,6 +29,8 @@ namespace HighSoft.Web.Mvc
             Y = Y_DefaultValue = null;
         }		
 
+        
+
 		/// <summary>
 		/// Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
 		/// </summary>
