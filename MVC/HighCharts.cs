@@ -11,7 +11,13 @@ using System.IO;
 namespace HighSoft.Web.Mvc
 {
 	public partial class HighCharts
-	{		
+	{
+        private static Hashtable functions = new Hashtable();
+       
+        internal static void AddFunction(string eventName, string functionName)
+        {
+            functions.Add(eventName, functionName);
+        }
 
 		/// <summary>
 		/// The ID of the chart

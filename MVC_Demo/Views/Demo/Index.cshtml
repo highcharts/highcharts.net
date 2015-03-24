@@ -14,13 +14,27 @@
 </head>
 <body>
     <div>
+        <script type="text/javascript">
+
+            function handleClick() {
+
+                alert("here");
+            }
+
+        </script>
+
         @(Html.HighSoft().HighCharts(
             new HighCharts
             {            
                 Chart = new Chart
                 {
                     Width = 700,
-                    Height = 500
+                    Height = 500,
+                    Type = "area",
+                    Events = new ChartEvents
+                    {
+                         Click = "handleClick"   
+                    }
                 },             
                 Title = new Title
                 {
@@ -35,7 +49,8 @@
                 XAxis = new XAxis
                 {
                     Categories = new string[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
+                                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
+                    
                 },
                 YAxis = new YAxis
                 {
@@ -64,6 +79,7 @@
                     },
                     new Series
                     {
+                        DataURL = "http://www.google.com",
                         Name = "New York",
                         Data = @ViewData["nyData"] as List<SeriesData>
                     },

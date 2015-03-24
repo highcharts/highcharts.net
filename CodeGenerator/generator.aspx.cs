@@ -32,7 +32,6 @@ public partial class generatoraspx : System.Web.UI.Page
         propertyTypeMappings = new Hashtable();
         defaultValueMappings = new Hashtable();
         excludedProperties = new List<string>();
-
         InitTypeMappings();
         InitPropertyMappings();
         InitDefaultValueMappings();
@@ -44,7 +43,6 @@ public partial class generatoraspx : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         ParseItems();
-        PrintRootItems();
 
         GenerateClass(new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS });
         for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)
@@ -70,7 +68,7 @@ public partial class generatoraspx : System.Web.UI.Page
             {
                 parents = item["parent"].ToString().Split('-').OfType<string>().ToList();
             }
-            
+
             ApiItem apiItem = new ApiItem
             {
                 Title = item["title"].ToString(),
@@ -79,52 +77,22 @@ public partial class generatoraspx : System.Web.UI.Page
                 IsParent = (bool)item["isParent"],
                 ReturnType = item["returnType"] as string,
                 Description = (String.IsNullOrEmpty(item["description"] as string)) ? "" : item["description"] as string,
-                Defaults = item["defaults"] == null ? null : item["defaults"] as string, 
+                Defaults = item["defaults"] == null ? null : item["defaults"] as string,
                 Values = item["values"] == null ? null : item["values"] as string[],
 
                 Parents = parents
             };
 
+            if (apiItem.ReturnType != null && apiItem.ReturnType == "Function")
+                apiItem.IsParent = true;
+
             if (apiItem.ReturnType != null && apiItem.ReturnType == "" && apiItem.IsParent == false)
                 continue;
-            
+
             apiItems.Add(apiItem);
         }
     }
-
-    private void PrintItems()
-    {
-        foreach (ApiItem item in apiItems)
-        {
-            string parentsString = "";
-            foreach (string parent in item.Parents)
-            {
-                parentsString += parent + "-";
-            }
-
-            propertyLabel.Text += item.Title + "<br/>";
-        }
-    }
-
-    private void PrintRootItems()
-    {
-        foreach (ApiItem item in apiItems)
-        {
-            if (item.Parents.Count == 0)
-            {
-                propertyLabel.Text += item.FullName + " : " + item.ReturnType + "<br/>";
-            }
-        }
-    }  
-    
-
-    private void PrintApiItems(List<ApiItem> theItems)
-    {
-        foreach (ApiItem item in theItems)
-        {
-            propertyLabel.Text += item.FullName + "<br/>";
-        }
-    }
+        
 
     private void GenerateClass(ApiItem item)
     {
@@ -153,21 +121,6 @@ public partial class generatoraspx : System.Web.UI.Page
             string formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
             string formattedComparer = FormatPropertyComparer(propertyName, child);
 
-            if (child.ReturnType != null && child.ReturnType.Contains('|'))
-            {
-                log.WriteLine(child.FullName + " " + child.ReturnType);
-                log.WriteLine(" ");
-                log.WriteLine(child.Description
-                                            .Replace("\r", "")
-                                            .Replace("\t", "")
-                                            .Replace("\n", ""));           
-               
-                
-                log.WriteLine(" ");
-                log.WriteLine("************************************");
-                log.WriteLine(" ");
-            }
-
             properties += formattedProperty;
             defaultValues += formattedDefaultProperty;
             hashtableComparers += formattedComparer;
@@ -177,7 +130,7 @@ public partial class generatoraspx : System.Web.UI.Page
                         .Replace("{HighTemplate.ConstrutorInitializers}", defaultValues)
                         .Replace("{HighTemplate.Properties}", properties)
                         .Replace("{HighTemplate.HashtableInit}", hashtableComparers)
-                        .Replace("{HighTemplate.ClassName}", GetClassNameFromItem(item));
+                        .Replace("{HighTemplate.ClassName}", GetClassNameFromItem(item));        
 
         string fileName = Server.MapPath("~/CodeGeneration/" + GetClassNameFromItem(item) + ".cs");
 
@@ -234,6 +187,7 @@ public partial class generatoraspx : System.Web.UI.Page
     {
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
+        string functionPropertyFormat = "if ({0} != {1}) { h.Add(\"{2}\",{0}); }      \n\t\t\t";
 
         if (propertyName == "Series" || propertyName == "Data")
             return "";
@@ -270,7 +224,7 @@ public partial class generatoraspx : System.Web.UI.Page
             if (parent == rootItem.FullName)
             {
                 children.Add(item);
-            }
+            }            
         }
 
         return children;
@@ -295,7 +249,7 @@ public partial class generatoraspx : System.Web.UI.Page
         typeMappings.Add("String", "string");
         typeMappings.Add("Number", "double?");
         typeMappings.Add("Boolean", "bool?");
-        typeMappings.Add("Function", "string");
+        typeMappings.Add("Function", "ClientEvent");
         typeMappings.Add("Color", "string");
         typeMappings.Add("CSSObject", "NameValueCollection");
         typeMappings.Add("Array<Color>", "List<string>");
@@ -400,6 +354,8 @@ public partial class generatoraspx : System.Web.UI.Page
                     if (item.Title == "position")
                         result = result.Replace("0", "\"0\"");
 
+                    
+
                     return result;
                 }
                 if (item.ReturnType == "Number" && defaults == "undefined")
@@ -443,5 +399,7 @@ public partial class generatoraspx : System.Web.UI.Page
 
         // auxialiary and no part of the API
         public List<string> Parents { get; set; }
+
+        
     }
 }

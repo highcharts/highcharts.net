@@ -34,6 +34,7 @@ namespace MVC_Demo.Controllers
             ViewData["vikData"] = nyData;
 
             return View();
-        }
+        }      
+
     }
 }

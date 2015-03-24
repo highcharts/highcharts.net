@@ -25,8 +25,7 @@ namespace HighSoft.Web.Mvc
 			Type = Type_DefaultValue = null;
 			XAxis = XAxis_DefaultValue = "0";
 			YAxis = YAxis_DefaultValue = "0";
-			ZIndex = ZIndex_DefaultValue = null;
-			
+			ZIndex = ZIndex_DefaultValue = null;			
 		}	
 		
 
