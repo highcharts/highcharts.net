@@ -27,7 +27,7 @@ namespace HighSoft.Web.Mvc
 			Distance = Distance_DefaultValue = 30;
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{y}";
-			Formatter = Formatter_DefaultValue = null;
+			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
 			Overflow = Overflow_DefaultValue = "justify";
 			Padding = Padding_DefaultValue = 2;

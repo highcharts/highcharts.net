@@ -29,7 +29,7 @@ namespace HighSoft.Web.Mvc
 			ItemStyle = ItemStyle_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "cursor", "pointer"},{ "fontSize", "12px"},{ "fontWeight", "bold" }};
 			ItemWidth = ItemWidth_DefaultValue = null;
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
-			LabelFormatter = LabelFormatter_DefaultValue = null;
+			LabelFormatter = LabelFormatter_DefaultValue = "";
 			Layout = Layout_DefaultValue = "horizontal";
 			LineHeight = LineHeight_DefaultValue = 16;
 			Margin = Margin_DefaultValue = 15;

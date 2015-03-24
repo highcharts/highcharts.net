@@ -14,13 +14,13 @@ namespace HighSoft.Web.Mvc
 	{
 		public ChartEvents()
 		{
-			AddSeries = AddSeries_DefaultValue = null;
-			Click = Click_DefaultValue = null;
+			AddSeries = AddSeries_DefaultValue = "";
+			Click = Click_DefaultValue = "";
 			Drilldown = Drilldown_DefaultValue = "";
 			Drillup = Drillup_DefaultValue = "";
-			Load = Load_DefaultValue = null;
-			Redraw = Redraw_DefaultValue = null;
-			Selection = Selection_DefaultValue = null;
+			Load = Load_DefaultValue = "";
+			Redraw = Redraw_DefaultValue = "";
+			Selection = Selection_DefaultValue = "";
 			
 		}	
 		

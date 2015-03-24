@@ -14,8 +14,8 @@ namespace HighSoft.Web.Mvc
 	{
 		public YAxisEvents()
 		{
-			AfterSetExtremes = AfterSetExtremes_DefaultValue = null;
-			SetExtremes = SetExtremes_DefaultValue = null;
+			AfterSetExtremes = AfterSetExtremes_DefaultValue = "";
+			SetExtremes = SetExtremes_DefaultValue = "";
 			
 		}	
 		

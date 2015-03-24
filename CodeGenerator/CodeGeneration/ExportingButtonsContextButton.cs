@@ -18,7 +18,7 @@ namespace HighSoft.Web.Mvc
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 20;
 			MenuItems = MenuItems_DefaultValue = null;
-			Onclick = Onclick_DefaultValue = null;
+			Onclick = Onclick_DefaultValue = "";
 			Symbol = Symbol_DefaultValue = "menu";
 			SymbolFill = SymbolFill_DefaultValue = "#A8BF77";
 			SymbolSize = SymbolSize_DefaultValue = 14;

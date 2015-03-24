@@ -17,7 +17,7 @@ namespace HighSoft.Web.Mvc
 			Align = Align_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "{total}";
-			Formatter = Formatter_DefaultValue = null;
+			Formatter = Formatter_DefaultValue = "";
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = null;
 			TextAlign = TextAlign_DefaultValue = null;

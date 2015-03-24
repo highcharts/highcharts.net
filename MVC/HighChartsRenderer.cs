@@ -65,7 +65,20 @@ namespace HighSoft.Web.Mvc
             {                
                 options.Add("series", results);
             }
-            s.Append(new JavaScriptSerializer().Serialize(options));
+
+
+            string json = new JavaScriptSerializer().Serialize(options);
+            var functions = HighCharts.functions;
+
+            foreach (string key in functions.Keys)
+            {
+                string value = (string)functions[key];
+                string matchedString = String.Format("\"{0}\":\"{1}\"", key, value);
+                string replacementstring = String.Format("\"{0}\":{1}", key, value);
+                json = json.Replace(matchedString, replacementstring);
+            }
+
+            s.Append(json);
         }        
     }
 }

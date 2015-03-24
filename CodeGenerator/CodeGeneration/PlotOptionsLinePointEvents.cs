@@ -14,13 +14,13 @@ namespace HighSoft.Web.Mvc
 	{
 		public PlotOptionsLinePointEvents()
 		{
-			Click = Click_DefaultValue = null;
-			MouseOut = MouseOut_DefaultValue = null;
-			MouseOver = MouseOver_DefaultValue = null;
-			Remove = Remove_DefaultValue = null;
-			Select = Select_DefaultValue = null;
-			Unselect = Unselect_DefaultValue = null;
-			Update = Update_DefaultValue = null;
+			Click = Click_DefaultValue = "";
+			MouseOut = MouseOut_DefaultValue = "";
+			MouseOver = MouseOver_DefaultValue = "";
+			Remove = Remove_DefaultValue = "";
+			Select = Select_DefaultValue = "";
+			Unselect = Unselect_DefaultValue = "";
+			Update = Update_DefaultValue = "";
 			
 		}	
 		

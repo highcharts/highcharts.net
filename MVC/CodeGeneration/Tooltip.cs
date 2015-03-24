@@ -25,11 +25,11 @@ namespace HighSoft.Web.Mvc
 			FollowPointer = FollowPointer_DefaultValue = false;
 			FollowTouchMove = FollowTouchMove_DefaultValue = false;
 			FooterFormat = FooterFormat_DefaultValue = "false";
-			Formatter = Formatter_DefaultValue = null;
+			Formatter = Formatter_DefaultValue = "";
 			HeaderFormat = HeaderFormat_DefaultValue = "";
 			HideDelay = HideDelay_DefaultValue = 500;
 			PointFormat = PointFormat_DefaultValue = "&lt;span style='color:{series.color}'&gt;\u25CF&lt;/span&gt; {series.name}: &lt;b&gt;{point.y}&lt;/b&gt;&lt;br/&gt;";
-			Positioner = Positioner_DefaultValue = null;
+			Positioner = Positioner_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "callout";
 			Shared = Shared_DefaultValue = false;

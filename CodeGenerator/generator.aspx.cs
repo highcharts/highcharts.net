@@ -83,6 +83,8 @@ public partial class generatoraspx : System.Web.UI.Page
                 Parents = parents
             };
 
+            if (apiItem.ReturnType != null & apiItem.ReturnType == "Function")
+                apiItem.Defaults = "";
             if (apiItem.ReturnType != null && apiItem.ReturnType == "" && apiItem.IsParent == false)
                 continue;
 

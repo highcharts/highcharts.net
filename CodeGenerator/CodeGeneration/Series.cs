@@ -15,7 +15,7 @@ namespace HighSoft.Web.Mvc
 		public Series()
 		{
 			Data = Data_DefaultValue = new List<SeriesData>();
-			DataParser = DataParser_DefaultValue = null;
+			DataParser = DataParser_DefaultValue = "";
 			DataURL = DataURL_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;

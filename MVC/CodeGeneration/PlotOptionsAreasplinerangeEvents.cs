@@ -14,14 +14,14 @@ namespace HighSoft.Web.Mvc
 	{
 		public PlotOptionsAreasplinerangeEvents()
 		{
-			AfterAnimate = AfterAnimate_DefaultValue = null;
-			CheckboxClick = CheckboxClick_DefaultValue = null;
-			Click = Click_DefaultValue = null;
-			Hide = Hide_DefaultValue = null;
-			LegendItemClick = LegendItemClick_DefaultValue = null;
-			MouseOut = MouseOut_DefaultValue = null;
-			MouseOver = MouseOver_DefaultValue = null;
-			Show = Show_DefaultValue = null;
+			AfterAnimate = AfterAnimate_DefaultValue = "";
+			CheckboxClick = CheckboxClick_DefaultValue = "";
+			Click = Click_DefaultValue = "";
+			Hide = Hide_DefaultValue = "";
+			LegendItemClick = LegendItemClick_DefaultValue = "";
+			MouseOut = MouseOut_DefaultValue = "";
+			MouseOver = MouseOver_DefaultValue = "";
+			Show = Show_DefaultValue = "";
 			
 		}	
 		

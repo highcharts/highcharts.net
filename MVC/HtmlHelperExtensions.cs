@@ -22,7 +22,6 @@ namespace HighSoft.Web.Mvc
             chart.Chart.RenderTo = id;
             
             return MvcHtmlString.Create(renderer.RenderHtml());
-            //return MvcHtmlString.Create("");
         }
 
         [EditorBrowsable(EditorBrowsableState.Never)]

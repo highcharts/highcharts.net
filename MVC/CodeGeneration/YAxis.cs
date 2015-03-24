@@ -67,7 +67,7 @@ namespace HighSoft.Web.Mvc
 			TickLength = TickLength_DefaultValue = 10;
 			TickPixelInterval = TickPixelInterval_DefaultValue = null;
 			TickPosition = TickPosition_DefaultValue = "outside";
-			TickPositioner = TickPositioner_DefaultValue = null;
+			TickPositioner = TickPositioner_DefaultValue = "";
 			TickPositions = TickPositions_DefaultValue = null;
 			TickWidth = TickWidth_DefaultValue = 0;
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = "null";

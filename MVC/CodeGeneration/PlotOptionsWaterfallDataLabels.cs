@@ -24,7 +24,7 @@ namespace HighSoft.Web.Mvc
 			Defer = Defer_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "{y}";
-			Formatter = Formatter_DefaultValue = null;
+			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
 			Overflow = Overflow_DefaultValue = "justify";
 			Padding = Padding_DefaultValue = 2;

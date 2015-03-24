@@ -18,7 +18,7 @@ namespace HighSoft.Web.Mvc
 			Distance = Distance_DefaultValue = 15;
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{value}";
-			Formatter = Formatter_DefaultValue = null;
+			Formatter = Formatter_DefaultValue = "";
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			Overflow = Overflow_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
