@@ -12,24 +12,24 @@ namespace HighSoft.Web.Mvc
 {
 	public partial class SeriesData
 	{
-        public SeriesData()
-        {
-            Color = Color_DefaultValue = "undefined";
-            DataLabels = DataLabels_DefaultValue = null;
-            Drilldown = Drilldown_DefaultValue = "";
-            Events = Events_DefaultValue = new SeriesDataEvents();
-            Id = Id_DefaultValue = null;
-            IsIntermediateSum = IsIntermediateSum_DefaultValue = false;
-            IsSum = IsSum_DefaultValue = false;
-            LegendIndex = LegendIndex_DefaultValue = null;
-            Marker = Marker_DefaultValue = new SeriesDataMarker();
-            Name = Name_DefaultValue = null;
-            Sliced = Sliced_DefaultValue = false;
-            X = X_DefaultValue = null;
-            Y = Y_DefaultValue = null;
-        }		
-
-        
+		public SeriesData()
+		{
+			Color = Color_DefaultValue = "undefined";
+			DataLabels = DataLabels_DefaultValue = null;
+			Drilldown = Drilldown_DefaultValue = "";
+			Events = Events_DefaultValue = new SeriesDataEvents();
+			Id = Id_DefaultValue = null;
+			IsIntermediateSum = IsIntermediateSum_DefaultValue = false;
+			IsSum = IsSum_DefaultValue = false;
+			LegendIndex = LegendIndex_DefaultValue = null;
+			Marker = Marker_DefaultValue = new SeriesDataMarker();
+			Name = Name_DefaultValue = null;
+			Sliced = Sliced_DefaultValue = false;
+			X = X_DefaultValue = null;
+			Y = Y_DefaultValue = null;
+			
+		}	
+		
 
 		/// <summary>
 		/// Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -142,7 +142,7 @@ namespace HighSoft.Web.Mvc
 			
 
 			return h;
-		}     
+		}
 
 		internal string ToJSON()
 		{            

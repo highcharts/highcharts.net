@@ -38,8 +38,8 @@ namespace HighSoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) h.Add("afterSetExtremes",AfterSetExtremes);
-			if (SetExtremes != SetExtremes_DefaultValue) h.Add("setExtremes",SetExtremes);
+			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); HighCharts.AddFunction("afterSetExtremes", AfterSetExtremes); }  
+			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); HighCharts.AddFunction("setExtremes", SetExtremes); }  
 			
 
 			return h;

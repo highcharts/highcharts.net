@@ -25,7 +25,8 @@ namespace HighSoft.Web.Mvc
 			Type = Type_DefaultValue = null;
 			XAxis = XAxis_DefaultValue = "0";
 			YAxis = YAxis_DefaultValue = "0";
-			ZIndex = ZIndex_DefaultValue = null;			
+			ZIndex = ZIndex_DefaultValue = null;
+			
 		}	
 		
 
@@ -117,7 +118,7 @@ namespace HighSoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (DataParser != DataParser_DefaultValue) h.Add("dataParser",DataParser);
+			if (DataParser != DataParser_DefaultValue) { h.Add("dataParser",DataParser); HighCharts.AddFunction("dataParser", DataParser); }  
 			if (DataURL != DataURL_DefaultValue) h.Add("dataURL",DataURL);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);

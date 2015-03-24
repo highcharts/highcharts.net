@@ -83,9 +83,6 @@ public partial class generatoraspx : System.Web.UI.Page
                 Parents = parents
             };
 
-            if (apiItem.ReturnType != null && apiItem.ReturnType == "Function")
-                apiItem.IsParent = true;
-
             if (apiItem.ReturnType != null && apiItem.ReturnType == "" && apiItem.IsParent == false)
                 continue;
 
@@ -186,14 +183,16 @@ public partial class generatoraspx : System.Web.UI.Page
     private string FormatPropertyComparer(string propertyName, ApiItem child)
     {
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
-        string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
-        string functionPropertyFormat = "if ({0} != {1}) { h.Add(\"{2}\",{0}); }      \n\t\t\t";
+        string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); HighCharts.AddFunction(\"{1}\", {0}); }}  \n\t\t\t";
+        string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";        
 
         if (propertyName == "Series" || propertyName == "Data")
             return "";
 
         if (child.IsParent)
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+        if (child.ReturnType != null && child.ReturnType == "Function")
+            return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue");
         else
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
     }
@@ -249,7 +248,7 @@ public partial class generatoraspx : System.Web.UI.Page
         typeMappings.Add("String", "string");
         typeMappings.Add("Number", "double?");
         typeMappings.Add("Boolean", "bool?");
-        typeMappings.Add("Function", "ClientEvent");
+        typeMappings.Add("Function", "string");
         typeMappings.Add("Color", "string");
         typeMappings.Add("CSSObject", "NameValueCollection");
         typeMappings.Add("Array<Color>", "List<string>");

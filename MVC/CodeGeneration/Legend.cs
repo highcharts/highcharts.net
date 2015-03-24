@@ -325,7 +325,7 @@ namespace HighSoft.Web.Mvc
 			if (ItemStyle != ItemStyle_DefaultValue) h.Add("itemStyle",ItemStyle);
 			if (ItemWidth != ItemWidth_DefaultValue) h.Add("itemWidth",ItemWidth);
 			if (LabelFormat != LabelFormat_DefaultValue) h.Add("labelFormat",LabelFormat);
-			if (LabelFormatter != LabelFormatter_DefaultValue) h.Add("labelFormatter",LabelFormatter);
+			if (LabelFormatter != LabelFormatter_DefaultValue) { h.Add("labelFormatter",LabelFormatter); HighCharts.AddFunction("labelFormatter", LabelFormatter); }  
 			if (Layout != Layout_DefaultValue) h.Add("layout",Layout);
 			if (LineHeight != LineHeight_DefaultValue) h.Add("lineHeight",LineHeight);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
