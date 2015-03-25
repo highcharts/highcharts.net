@@ -78,16 +78,12 @@ public partial class generatoraspx : System.Web.UI.Page
                 ReturnType = item["returnType"] as string,
                 Description = (String.IsNullOrEmpty(item["description"] as string)) ? "" : item["description"] as string,
                 Defaults = item["defaults"] == null ? null : item["defaults"] as string,
-                Values = item["values"] == null ? null : item["values"] as string,
+                Values = item["values"] == null ? null : new JavaScriptSerializer().Deserialize<List<string>>(item["values"] as string),
 
                 Parents = parents
             };
 
-            if (!String.IsNullOrEmpty(apiItem.Values))
-            {
-                List<string> values = new JavaScriptSerializer().Deserialize<List<string>>(apiItem.Values);
-                int a = 5;
-            }
+           
             if (apiItem.ReturnType != null & apiItem.ReturnType == "Function")
                 apiItem.Defaults = "";
             if (apiItem.ReturnType != null && apiItem.ReturnType == "" && apiItem.IsParent == false)
@@ -401,7 +397,7 @@ public partial class generatoraspx : System.Web.UI.Page
         public string ReturnType { get; set; }
         public string Description { get; set; }
         public string Defaults { get; set; }
-        public string Values { get; set; }
+        public List<string> Values { get; set; }
 
         // auxialiary and no part of the API
         public List<string> Parents { get; set; }
