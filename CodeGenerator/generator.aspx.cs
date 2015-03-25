@@ -58,7 +58,6 @@ public partial class generatoraspx : System.Web.UI.Page
         JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
 
         string jsonAPI = File.ReadAllText(Server.MapPath("~/api.json"));
-        //string jsonAPI = File.ReadAllText(Server.MapPath("~/highstock.json"));
         object[] jsonObject = jsonSerializer.Deserialize<object[]>(jsonAPI);
 
         foreach (Dictionary<string, object> item in jsonObject)
@@ -82,7 +81,6 @@ public partial class generatoraspx : System.Web.UI.Page
 
                 Parents = parents
             };
-
            
             if (apiItem.ReturnType != null & apiItem.ReturnType == "Function")
                 apiItem.Defaults = "";
@@ -98,7 +96,8 @@ public partial class generatoraspx : System.Web.UI.Page
     {
         string className = item.Title;
         string codeTemplate = File.ReadAllText(Server.MapPath("~/CodeTemplates/Class.tpl"));
-        string propertyTemplate = File.ReadAllText(Server.MapPath("~/CodeTemplates/Property.tpl"));        
+        string propertyTemplate = File.ReadAllText(Server.MapPath("~/CodeTemplates/Property.tpl"));
+        
         string properties = "";
         string defaultValues = "";
         string hashtableComparers = "";
@@ -116,6 +115,11 @@ public partial class generatoraspx : System.Web.UI.Page
                 continue;
             if (child == item)
                 continue;
+
+            if (child.Values != null && child.Values.Count > 0)
+            {
+                GenerateEnum(child);
+            }
 
             string formattedProperty = FormatProperty(propertyTemplate, child);
             string formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
@@ -135,6 +139,28 @@ public partial class generatoraspx : System.Web.UI.Page
         string fileName = Server.MapPath("~/CodeGeneration/" + GetClassNameFromItem(item) + ".cs");
 
         File.WriteAllText(fileName, codeTemplate);
+    }
+
+    private void GenerateEnum(ApiItem apiItem)
+    {
+        string enumTemplate = File.ReadAllText(Server.MapPath("~/CodeTemplates/Enum.tpl"));
+        string fileName = Server.MapPath("~/CodeGeneration/Enums/" + GetClassNameFromItem(apiItem) + ".cs");
+
+        string enumList = "";
+        for (int i = 0; i < apiItem.Values.Count; i++)
+        {
+            if (!String.IsNullOrEmpty(apiItem.Values[i]))
+            {
+                enumList += FirstCharToUpper(apiItem.Values[i]);
+                if (i < apiItem.Values.Count - 1)
+                    enumList += ", \n\t";
+            }
+        }
+
+        enumTemplate = enumTemplate.Replace("{HighTemplate.EnumName}", GetClassNameFromItem(apiItem))
+                                   .Replace("{HighTemplate.EnumList}", enumList);
+
+        File.WriteAllText(fileName, enumTemplate);
     }
 
     private string GetClassNameFromItem(ApiItem item)
