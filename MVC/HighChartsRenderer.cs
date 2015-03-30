@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
 
-namespace HighSoft.Web.Mvc
+namespace HighSoft.Web.Mvc.Rendering
 {
-    internal class HighChartsRenderer
+    public class HighChartsRenderer
     {
         private HighCharts _chart;
 

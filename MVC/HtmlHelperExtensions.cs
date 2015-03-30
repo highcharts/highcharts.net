@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Web.Mvc;
+using HighSoft.Web.Mvc.Rendering;
 
 namespace HighSoft.Web.Mvc
 {

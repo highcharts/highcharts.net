@@ -2,3 +2,4 @@ C:\HighSoft\MVC\bin\Debug\HighCharts.dll
 C:\HighSoft\MVC\bin\Debug\HighCharts.pdb
 C:\HighSoft\MVC\obj\Debug\HighCharts.dll
 C:\HighSoft\MVC\obj\Debug\HighCharts.pdb
+C:\HighSoft\MVC\obj\Debug\MVC.csprojResolveAssemblyReference.cache
