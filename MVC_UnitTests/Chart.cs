@@ -26,5 +26,22 @@ namespace HighSoft.Web.Mvc.UnitTests
 
             Assert.IsTrue(json.Contains("\"type\":\"Bar\""));            
         }
+
+        [TestMethod]
+        public void TestPieType()
+        {
+            chart.Chart.Type = "Pie";
+            string json = renderer.RenderHtml();
+
+            Assert.IsTrue(json.Contains("\"type\":\"Pie\""));
+        }
+
+        [TestMethod]
+        public void TestDefaultType() // should be line
+        {
+            string json = renderer.RenderHtml();
+
+            Assert.IsFalse(json.Contains("\"type\":\"line\""));
+        }
     }
 }
