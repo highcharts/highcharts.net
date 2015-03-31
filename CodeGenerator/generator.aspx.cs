@@ -20,7 +20,7 @@ public partial class generatoraspx : System.Web.UI.Page
     List<string> excludedProperties; // properties that do not need to be ported to the server-side wrapper
 
     const int PROPERTY_NESTED_LEVELS = 5;
-    const string ROOT_CLASS = "HighCharts";
+    const string ROOT_CLASS = "Highcharts";
 
     //const string ROOT_CLASS = "HighStock";
 
@@ -153,7 +153,7 @@ public partial class generatoraspx : System.Web.UI.Page
             {
                 enumList += FirstCharToUpper(apiItem.Values[i]);
                 if (i < apiItem.Values.Count - 1)
-                    enumList += ", \n\t";
+                    enumList += ", \n\t\t";
             }
         }
 
@@ -212,7 +212,7 @@ public partial class generatoraspx : System.Web.UI.Page
     private string FormatPropertyComparer(string propertyName, ApiItem child)
     {
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
-        string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); HighCharts.AddFunction(\"{1}\", {0}); }}  \n\t\t\t";
+        string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); Highcharts.AddFunction(\"{1}\", {0}); }}  \n\t\t\t";
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";        
 
         if (propertyName == "Series" || propertyName == "Data")

@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace HighSoft.Web.Mvc
+namespace Highsoft.Web.Mvc
 {
 	public partial class XAxisLabels
 	{
@@ -146,7 +146,7 @@ namespace HighSoft.Web.Mvc
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); HighCharts.AddFunction("formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("formatter", Formatter); }  
 			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);

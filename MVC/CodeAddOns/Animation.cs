@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace HighSoft.Web.Mvc
+namespace Highsoft.Web.Mvc
 {
 	public partial class Animation
 	{        
@@ -34,7 +34,5 @@ namespace HighSoft.Web.Mvc
         //  More easing functions are available with the use of jQuery plug-ins, most notably the jQuery UI suite.
         /// </summary>
         public string Easing { get; set; }
-        
-
 	}
 }

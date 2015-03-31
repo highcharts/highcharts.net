@@ -8,11 +8,11 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace HighSoft.Web.Mvc
+namespace Highsoft.Web.Mvc
 {
-	public partial class HighCharts
+	public partial class Highcharts
 	{
-		public HighCharts()
+		public Highcharts()
 		{
 			Chart = Chart_DefaultValue = new Chart();
 			Colors = Colors_DefaultValue = new List<string>();
@@ -209,22 +209,10 @@ namespace HighSoft.Web.Mvc
 		internal string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
-            if (h.Count > 0)
-            {
-                string json = new JavaScriptSerializer().Serialize(ToHashtable());
-
-                foreach (string key in functions.Keys)
-                {
-                    string value = (string) functions[key];
-                    string matchedString = String.Format("\"{0}\":\"{1}\"", key, value);
-                    string replacementstring = String.Format("\"{0}\":{1}", key, value);
-                    json = json.Replace(matchedString, replacementstring);
-                }
-
-                return json;
-            }
-            else
-                return "";
+			if (h.Count > 0)
+				return new JavaScriptSerializer().Serialize(ToHashtable());
+			else 
+				return "";
 		}       
 
 		// checks if the state of the object is different from the default

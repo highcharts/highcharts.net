@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace HighSoft.Web.Mvc
+namespace Highsoft.Web.Mvc
 {
 	public partial class XAxisEvents
 	{
@@ -38,8 +38,8 @@ namespace HighSoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); HighCharts.AddFunction("afterSetExtremes", AfterSetExtremes); }  
-			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); HighCharts.AddFunction("setExtremes", SetExtremes); }  
+			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); Highcharts.AddFunction("afterSetExtremes", AfterSetExtremes); }  
+			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); Highcharts.AddFunction("setExtremes", SetExtremes); }  
 			
 
 			return h;

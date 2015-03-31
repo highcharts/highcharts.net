@@ -4,20 +4,19 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Web.Mvc;
-using HighSoft.Web.Mvc.Rendering;
 
-namespace HighSoft.Web.Mvc
+namespace Highsoft.Web.Mvc.Rendering
 {
     public static class HtmlHelperExtensions
     {
-        public static HighSoftNamespace HighSoft(this HtmlHelper helper) { return new HighSoftNamespace(); }
+        public static HighsoftNamespace Highsoft(this HtmlHelper helper) { return new HighsoftNamespace(); }
     }
 
-    public class HighSoftNamespace
+    public class HighsoftNamespace
     {
-        public MvcHtmlString HighCharts(HighCharts chart, string id)
-        {
-            var renderer = new HighChartsRenderer(chart);
+        public MvcHtmlString Highcharts(Highcharts chart, string id)
+        {            
+            var renderer = new HighchartsRenderer(chart);
 
             chart.ID = id;
             chart.Chart.RenderTo = id;

@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
+using Highsoft.Web.Mvc;
 
-namespace HighSoft.Web.Mvc.Rendering
+namespace Highsoft.Web.Mvc.Rendering
 {
-    public class HighChartsRenderer
+    public class HighchartsRenderer
     {
-        private HighCharts _chart;
+        private Highcharts _chart;
 
-        public HighChartsRenderer(HighCharts chart)
+        public HighchartsRenderer(Highcharts chart)
         {
             _chart = chart;
         }
@@ -46,7 +47,7 @@ namespace HighSoft.Web.Mvc.Rendering
         private void RenderChartSettings(StringBuilder s)
         {            
             Hashtable options = _chart.ToHashtable();
-            List<Hashtable> results = new List<Hashtable>();
+            List<Hashtable> results = new List<Hashtable>();            
 
             foreach (Series series in _chart.Series)
             {
@@ -68,7 +69,7 @@ namespace HighSoft.Web.Mvc.Rendering
 
 
             string json = new JavaScriptSerializer().Serialize(options);
-            var functions = HighCharts.functions;
+            var functions = Highcharts.functions;
 
             foreach (string key in functions.Keys)
             {

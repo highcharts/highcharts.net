@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace namespace HighSoft.Web.Mvc
+namespace Highsoft.Web.Mvc
 {
     public enum ExportingButtonsContextButtonSymbol
     {
         Circle, 
-	Square, 
-	Diamond, 
-	Triangle, 
-	Triangle-down, 
-	Menu
+		Square, 
+		Diamond, 
+		Triangle, 
+		Triangle-down, 
+		Menu
     }
 }

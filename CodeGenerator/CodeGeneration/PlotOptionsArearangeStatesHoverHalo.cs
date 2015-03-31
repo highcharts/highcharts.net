@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace HighSoft.Web.Mvc
+namespace Highsoft.Web.Mvc
 {
 	public partial class PlotOptionsArearangeStatesHoverHalo
 	{

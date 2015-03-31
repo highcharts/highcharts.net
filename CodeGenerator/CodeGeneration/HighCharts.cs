@@ -8,11 +8,11 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace HighSoft.Web.Mvc
+namespace Highsoft.Web.Mvc
 {
-	public partial class HighCharts
+	public partial class Highcharts
 	{
-		public HighCharts()
+		public Highcharts()
 		{
 			Chart = Chart_DefaultValue = new Chart();
 			Colors = Colors_DefaultValue = new List<string>();

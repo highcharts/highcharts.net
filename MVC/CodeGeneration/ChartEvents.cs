@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace HighSoft.Web.Mvc
+namespace Highsoft.Web.Mvc
 {
 	public partial class ChartEvents
 	{
@@ -78,13 +78,13 @@ namespace HighSoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); HighCharts.AddFunction("addSeries", AddSeries); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); HighCharts.AddFunction("click", Click); }  
-			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); HighCharts.AddFunction("drilldown", Drilldown); }  
-			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); HighCharts.AddFunction("drillup", Drillup); }  
-			if (Load != Load_DefaultValue) { h.Add("load",Load); HighCharts.AddFunction("load", Load); }  
-			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); HighCharts.AddFunction("redraw", Redraw); }  
-			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); HighCharts.AddFunction("selection", Selection); }  
+			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("addSeries", AddSeries); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("click", Click); }  
+			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); Highcharts.AddFunction("drilldown", Drilldown); }  
+			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); Highcharts.AddFunction("drillup", Drillup); }  
+			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("load", Load); }  
+			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("redraw", Redraw); }  
+			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highcharts.AddFunction("selection", Selection); }  
 			
 
 			return h;

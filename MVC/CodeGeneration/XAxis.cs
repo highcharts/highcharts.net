@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace HighSoft.Web.Mvc
+namespace Highsoft.Web.Mvc
 {
 	public partial class XAxis
 	{
@@ -493,7 +493,7 @@ namespace HighSoft.Web.Mvc
 			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
 			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition",TickPosition);
-			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); HighCharts.AddFunction("tickPositioner", TickPositioner); }  
+			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement",TickmarkPlacement);
