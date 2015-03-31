@@ -346,7 +346,7 @@ namespace Highsoft.Web.Mvc
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor.ToString().ToLower());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
@@ -364,7 +364,7 @@ namespace Highsoft.Web.Mvc
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement);
+			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement.ToString().ToLower());
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
@@ -373,7 +373,7 @@ namespace Highsoft.Web.Mvc
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StemColor != StemColor_DefaultValue) h.Add("stemColor",StemColor);
-			if (StemDashStyle != StemDashStyle_DefaultValue) h.Add("stemDashStyle",StemDashStyle);
+			if (StemDashStyle != StemDashStyle_DefaultValue) h.Add("stemDashStyle",StemDashStyle.ToString().ToLower());
 			if (StemWidth != StemWidth_DefaultValue) h.Add("stemWidth",StemWidth);
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());

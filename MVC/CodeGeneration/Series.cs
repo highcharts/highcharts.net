@@ -125,7 +125,7 @@ namespace Highsoft.Web.Mvc
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Type != Type_DefaultValue) h.Add("type",Type.ToString().ToLower());
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

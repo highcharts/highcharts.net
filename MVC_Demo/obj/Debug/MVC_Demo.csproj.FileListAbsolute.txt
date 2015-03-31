@@ -5,9 +5,6 @@ C:\HighSoft\MVC_Demo\bin\System.Web.Razor.dll
 C:\HighSoft\MVC_Demo\bin\System.Web.WebPages.Deployment.dll
 C:\HighSoft\MVC_Demo\bin\System.Web.WebPages.dll
 C:\HighSoft\MVC_Demo\bin\System.Web.WebPages.Razor.dll
-C:\HighSoft\MVC_Demo\bin\EntityFramework.xml
-C:\HighSoft\MVC_Demo\bin\Newtonsoft.Json.xml
-C:\HighSoft\MVC_Demo\bin\System.Web.Mvc.xml
 C:\HighSoft\MVC_Demo\bin\System.Web.Razor.xml
 C:\HighSoft\MVC_Demo\bin\System.Web.WebPages.xml
 C:\HighSoft\MVC_Demo\bin\System.Web.WebPages.Deployment.xml

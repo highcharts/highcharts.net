@@ -143,7 +143,7 @@ namespace Highsoft.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor.ToString().ToLower());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());

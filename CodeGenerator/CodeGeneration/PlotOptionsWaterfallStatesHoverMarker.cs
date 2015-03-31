@@ -92,7 +92,7 @@ namespace Highsoft.Web.Mvc
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
+			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol.ToString().ToLower());
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			
 

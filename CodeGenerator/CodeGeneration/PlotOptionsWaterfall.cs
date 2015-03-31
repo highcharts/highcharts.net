@@ -342,7 +342,7 @@ namespace Highsoft.Web.Mvc
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor.ToString().ToLower());
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
@@ -359,7 +359,7 @@ namespace Highsoft.Web.Mvc
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement);
+			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement.ToString().ToLower());
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);

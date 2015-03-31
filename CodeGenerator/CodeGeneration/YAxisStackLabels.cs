@@ -110,15 +110,15 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align",Align.ToString().ToLower());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("formatter", Formatter); }  
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
+			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign.ToString().ToLower());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign.ToString().ToLower());
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

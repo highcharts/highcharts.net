@@ -267,16 +267,23 @@ public partial class generatoraspx : System.Web.UI.Page
     private string FormatPropertyComparer(string propertyName, ApiItem child)
     {
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
+        string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0}.ToString().ToLower());\n\t\t\t";
         string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); Highcharts.AddFunction(\"{1}\", {0}); }}  \n\t\t\t";
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";        
 
         if (propertyName == "Series" || propertyName == "Data")
             return "";
 
+        // Enum
+        if (child.Values != null && child.Values.Count > 0)
+            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+        // Complex object with nested objects / properties
         if (child.IsParent)
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+        // Event (javascript function)
         if (child.ReturnType != null && child.ReturnType == "Function")
             return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue");
+        // Just a property
         else
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
     }

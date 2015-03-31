@@ -351,7 +351,7 @@ namespace Highsoft.Web.Mvc
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor.ToString().ToLower());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
@@ -367,7 +367,7 @@ namespace Highsoft.Web.Mvc
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement);
+			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement.ToString().ToLower());
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
@@ -375,7 +375,7 @@ namespace Highsoft.Web.Mvc
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking",Stacking);
+			if (Stacking != Stacking_DefaultValue) h.Add("stacking",Stacking.ToString().ToLower());
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);

@@ -78,7 +78,7 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align",Align.ToString().ToLower());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);

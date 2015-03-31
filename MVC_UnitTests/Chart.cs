@@ -1,39 +1,42 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using HighSoft.Web.Mvc;
-using HighSoft.Web.Mvc.Rendering;
+using Highsoft.Web.Mvc;
+using Highsoft.Web.Mvc.Rendering;
 
-namespace HighSoft.Web.Mvc.UnitTests
+namespace Highsoft.Web.Mvc.UnitTests
 {
     [TestClass]
     public class Chart
     {
-        HighCharts chart;
-        HighChartsRenderer renderer;
+        Highcharts chart;
+        HighchartsRenderer renderer;
 
         [TestInitialize]
         public void Init()
         {
-            chart = new HighCharts();
-            renderer = new HighChartsRenderer(chart);
+            chart = new Highcharts();
+            renderer = new HighchartsRenderer(chart);
         }
 
         [TestMethod]
-        public void TestBarType()
+        public void TestAreaType()
         {
-            chart.Chart.Type = "Bar";
+            ///chart.Chart.Type = ChartType;
+            ///
+            chart.Chart.SpacingLeft = 10;
+            chart.Chart.Type = ChartType.Area;
             string json = renderer.RenderHtml();
 
-            Assert.IsTrue(json.Contains("\"type\":\"Bar\""));            
+            Assert.IsTrue(json.Contains("\"type\":\"area\""));            
         }
 
         [TestMethod]
         public void TestPieType()
         {
-            chart.Chart.Type = "Pie";
+            chart.Chart.Type = ChartType.Pie;
             string json = renderer.RenderHtml();
 
-            Assert.IsTrue(json.Contains("\"type\":\"Pie\""));
+            Assert.IsTrue(json.Contains("\"type\":\"pie\""));
         }
 
         [TestMethod]

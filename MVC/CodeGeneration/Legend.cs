@@ -310,7 +310,7 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align",Align.ToString().ToLower());
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -326,7 +326,7 @@ namespace Highsoft.Web.Mvc
 			if (ItemWidth != ItemWidth_DefaultValue) h.Add("itemWidth",ItemWidth);
 			if (LabelFormat != LabelFormat_DefaultValue) h.Add("labelFormat",LabelFormat);
 			if (LabelFormatter != LabelFormatter_DefaultValue) { h.Add("labelFormatter",LabelFormatter); Highcharts.AddFunction("labelFormatter", LabelFormatter); }  
-			if (Layout != Layout_DefaultValue) h.Add("layout",Layout);
+			if (Layout != Layout_DefaultValue) h.Add("layout",Layout.ToString().ToLower());
 			if (LineHeight != LineHeight_DefaultValue) h.Add("lineHeight",LineHeight);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MaxHeight != MaxHeight_DefaultValue) h.Add("maxHeight",MaxHeight);
@@ -342,7 +342,7 @@ namespace Highsoft.Web.Mvc
 			if (SymbolWidth != SymbolWidth_DefaultValue) h.Add("symbolWidth",SymbolWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign.ToString().ToLower());
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

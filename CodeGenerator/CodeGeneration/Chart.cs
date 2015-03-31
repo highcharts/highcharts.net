@@ -357,7 +357,7 @@ namespace Highsoft.Web.Mvc
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (DefaultSeriesType != DefaultSeriesType_DefaultValue) h.Add("defaultSeriesType",DefaultSeriesType);
+			if (DefaultSeriesType != DefaultSeriesType_DefaultValue) h.Add("defaultSeriesType",DefaultSeriesType.ToString().ToLower());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
@@ -370,7 +370,7 @@ namespace Highsoft.Web.Mvc
 			if (Options3d.IsDirty()) h.Add("options3d",Options3d.ToHashtable());
 			if (PanKey != PanKey_DefaultValue) h.Add("panKey",PanKey);
 			if (Panning != Panning_DefaultValue) h.Add("panning",Panning);
-			if (PinchType != PinchType_DefaultValue) h.Add("pinchType",PinchType);
+			if (PinchType != PinchType_DefaultValue) h.Add("pinchType",PinchType.ToString().ToLower());
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
 			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
@@ -388,9 +388,9 @@ namespace Highsoft.Web.Mvc
 			if (SpacingRight != SpacingRight_DefaultValue) h.Add("spacingRight",SpacingRight);
 			if (SpacingTop != SpacingTop_DefaultValue) h.Add("spacingTop",SpacingTop);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Type != Type_DefaultValue) h.Add("type",Type.ToString().ToLower());
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType",ZoomType);
+			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType",ZoomType.ToString().ToLower());
 			
 
 			return h;

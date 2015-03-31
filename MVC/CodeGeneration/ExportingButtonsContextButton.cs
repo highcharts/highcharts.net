@@ -166,12 +166,12 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align",Align.ToString().ToLower());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems",MenuItems);
 			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("onclick", Onclick); }  
-			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
+			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol.ToString().ToLower());
 			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
 			if (SymbolStroke != SymbolStroke_DefaultValue) h.Add("symbolStroke",SymbolStroke);
@@ -180,7 +180,7 @@ namespace Highsoft.Web.Mvc
 			if (SymbolY != SymbolY_DefaultValue) h.Add("symbolY",SymbolY);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Theme != Theme_DefaultValue) h.Add("theme",Theme);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign.ToString().ToLower());
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

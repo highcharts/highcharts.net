@@ -87,7 +87,7 @@ namespace Highsoft.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle.ToString().ToLower());
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());

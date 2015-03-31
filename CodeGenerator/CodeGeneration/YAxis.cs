@@ -503,8 +503,8 @@ namespace Highsoft.Web.Mvc
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
 			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
-			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle",GridLineDashStyle);
-			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation",GridLineInterpolation);
+			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle",GridLineDashStyle.ToString().ToLower());
+			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation",GridLineInterpolation.ToString().ToLower());
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
@@ -522,12 +522,12 @@ namespace Highsoft.Web.Mvc
 			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);
 			if (MinTickInterval != MinTickInterval_DefaultValue) h.Add("minTickInterval",MinTickInterval);
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
-			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle",MinorGridLineDashStyle);
+			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle",MinorGridLineDashStyle.ToString().ToLower());
 			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
-			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition",MinorTickPosition);
+			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition",MinorTickPosition.ToString().ToLower());
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
@@ -546,13 +546,13 @@ namespace Highsoft.Web.Mvc
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
 			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
-			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition",TickPosition);
+			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition",TickPosition.ToString().ToLower());
 			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
-			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement",TickmarkPlacement);
+			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement",TickmarkPlacement.ToString().ToLower());
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Type != Type_DefaultValue) h.Add("type",Type.ToString().ToLower());
 			
 
 			return h;

@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Web.Mvc;
+using Highsoft.Web.Mvc.Rendering;
 
-namespace Highsoft.Web.Mvc.Rendering
+namespace Highsoft.Web.Mvc
 {
     public static class HtmlHelperExtensions
     {
@@ -14,7 +15,7 @@ namespace Highsoft.Web.Mvc.Rendering
 
     public class HighsoftNamespace
     {
-        public MvcHtmlString Highcharts1(Highcharts chart, string id)
+        public MvcHtmlString Highcharts(Highcharts chart, string id)
         {            
             var renderer = new HighchartsRenderer(chart);         
             

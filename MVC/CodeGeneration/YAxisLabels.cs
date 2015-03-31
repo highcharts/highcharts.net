@@ -148,7 +148,7 @@ namespace Highsoft.Web.Mvc
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("formatter", Formatter); }  
 			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow.ToString().ToLower());
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);

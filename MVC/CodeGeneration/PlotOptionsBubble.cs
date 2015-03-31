@@ -282,8 +282,8 @@ namespace Highsoft.Web.Mvc
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor.ToString().ToLower());
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle.ToString().ToLower());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (DisplayNegative != DisplayNegative_DefaultValue) h.Add("displayNegative",DisplayNegative);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
@@ -301,7 +301,7 @@ namespace Highsoft.Web.Mvc
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy",SizeBy);
+			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy",SizeBy.ToString().ToLower());
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);

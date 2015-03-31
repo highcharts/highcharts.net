@@ -1,4 +1,4 @@
-﻿@using HighSoft.Web.Mvc
+﻿@using Highsoft.Web.Mvc
 @{
     Layout = null;
 }
@@ -22,14 +22,14 @@
 
         </script>
 
-        @(Html.HighSoft().HighCharts(
-            new HighCharts
+        @(Html.Highsoft().Highcharts(
+            new Highcharts
             {            
                 Chart = new Chart
                 {
                     Width = 700,
                     Height = 500,
-                    Type = "area",
+                    Type = ChartType.Pie,
                     Events = new ChartEvents
                     {
                          Click = "handleClick"   
@@ -64,9 +64,9 @@
                 },
                 Legend = new Legend
                 {
-                    Layout = "vertical",
-                    Align = "right",
-                    VerticalAlign = "middle",
+                    Layout = LegendLayout.Vertical,
+                    Align = LegendAlign.Left,
+                    VerticalAlign = LegendVerticalAlign.Middle,
                     BorderWidth = 0
                 },
                 Series = new List<Series>

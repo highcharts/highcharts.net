@@ -234,8 +234,8 @@ namespace Highsoft.Web.Mvc
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor.ToString().ToLower());
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle.ToString().ToLower());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());

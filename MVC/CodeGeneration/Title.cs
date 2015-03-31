@@ -94,13 +94,13 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align",Align.ToString().ToLower());
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign.ToString().ToLower());
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

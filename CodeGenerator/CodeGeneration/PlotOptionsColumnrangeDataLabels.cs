@@ -214,7 +214,7 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align",Align.ToString().ToLower());
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -226,13 +226,13 @@ namespace Highsoft.Web.Mvc
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow.ToString().ToLower());
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign.ToString().ToLower());
 			if (XHigh != XHigh_DefaultValue) h.Add("xHigh",XHigh);
 			if (XLow != XLow_DefaultValue) h.Add("xLow",XLow);
 			if (YHigh != YHigh_DefaultValue) h.Add("yHigh",YHigh);
