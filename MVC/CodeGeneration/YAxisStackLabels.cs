@@ -14,15 +14,15 @@ namespace Highsoft.Web.Mvc
 	{
 		public YAxisStackLabels()
 		{
-			Align = Align_DefaultValue = null;
+			Align = Align_DefaultValue = YAxisStackLabelsAlign.Null;
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "{total}";
 			Formatter = Formatter_DefaultValue = "";
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = null;
-			TextAlign = TextAlign_DefaultValue = null;
+			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Null;
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = null;
+			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Defines the horizontal alignment of the stack total label.  Can be one of <code>"left"</code>, <code>"center"</code> or <code>"right"</code>. The default value is calculated at runtime and depends on orientation and whether  the stack is positive or negative.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public YAxisStackLabelsAlign Align { get; set; }
+		private YAxisStackLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -74,8 +74,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The text alignment for the label. While <code>align</code> determines where the texts anchor point is placed with regards to the stack, <code>textAlign</code> determines how the text is aligned against its anchor point. Possible values are <code>"left"</code>, <code>"center"</code> and <code>"right"</code>. The default value is calculated at runtime and depends on orientation and whether the stack is positive or negative.
 		/// </summary>
-		public string TextAlign { get; set; }
-		private string TextAlign_DefaultValue { get; set; }
+		public YAxisStackLabelsTextAlign TextAlign { get; set; }
+		private YAxisStackLabelsTextAlign TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -88,8 +88,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Defines the vertical alignment of the stack total label. Can be one of <code>"top"</code>, <code>"middle"</code> or <code>"bottom"</code>. The default value is calculated at runtime and depends on orientation and whether  the stack is positive or negative.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public YAxisStackLabelsVerticalAlign VerticalAlign { get; set; }
+		private YAxisStackLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>

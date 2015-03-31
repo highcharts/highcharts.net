@@ -90,8 +90,12 @@ public partial class generatoraspx : System.Web.UI.Page
             if (apiItem.ReturnType != null && apiItem.ReturnType == "" && apiItem.IsParent == false)
                 continue;
 
+            // add Defaults to enum of they are not available in the Values list.
+            AddDefaultsToEnum(apiItem);
+
             apiItems.Add(apiItem);
         }
+
     }
         
 
@@ -152,6 +156,10 @@ public partial class generatoraspx : System.Web.UI.Page
         string enumList = "";
         for (int i = 0; i < apiItem.Values.Count; i++)
         {
+            if (apiItem.Values[i] == null)
+                apiItem.Values[i] = "null";
+
+           
             if (!String.IsNullOrEmpty(apiItem.Values[i]))
             {
                 string enumValue = apiItem.Values[i];
@@ -168,6 +176,43 @@ public partial class generatoraspx : System.Web.UI.Page
                                    .Replace("{HighTemplate.EnumList}", enumList);
 
         File.WriteAllText(fileName, enumTemplate);
+    }
+
+    private void AddDefaultsToEnum(ApiItem apiItem)
+    {
+        if (apiItem.Values != null && apiItem.Values.Count > 0)
+        {
+            bool defaultMatched = false;
+            foreach (string value in apiItem.Values)
+            {
+                if ( value == apiItem.Defaults || 
+                    (value == null && apiItem.Defaults == "null"))
+                {
+                    defaultMatched = true;
+                    break;
+                }
+            }
+
+            // TitleVerticalAlign / SubTitleVerticalAlign have defaults set to " " and only Top, Center and Bottom as options
+            string defaults = apiItem.Defaults;
+            if (defaults == " ")
+                apiItem.Defaults = apiItem.Values[0];
+            else if (!defaultMatched)
+                apiItem.Values.Insert(0, defaults);
+        }
+    }
+
+    private string GetDefaultValueForEnum(ApiItem item)
+    {
+        string defaultValue = item.Defaults;
+        if (String.IsNullOrEmpty(defaultValue))
+        {
+            defaultValue = item.Values[0];
+        }
+        if (enumMappings[defaultValue] != null)
+            defaultValue = enumMappings[defaultValue] as string;
+
+        return String.Format("{0}.{1}", GetClassNameFromItem(item), FirstCharToUpper(defaultValue));       
     }
 
     private string GetClassNameFromItem(ApiItem item)
@@ -187,6 +232,9 @@ public partial class generatoraspx : System.Web.UI.Page
     {
         string propertyName = FirstCharToUpper(child.Title);
         string returnType = GetPropertyReturnType(child, propertyName);
+
+        if (child.Values != null && child.Values.Count > 0)
+            returnType = GetClassNameFromItem(child);
 
         return propertyTemplate
          .Replace("{HighTemplate.Name}", propertyName)
@@ -369,6 +417,11 @@ public partial class generatoraspx : System.Web.UI.Page
             defaults = defaultValueMappings[FirstCharToUpper(item.Title)].ToString();
         }
 
+        if (item.Values != null && item.Values.Count > 0)
+        {
+            return GetDefaultValueForEnum(item);
+        }
+
         if (!item.IsParent)
         {
             if (!String.IsNullOrEmpty(item.Defaults))
@@ -442,8 +495,6 @@ public partial class generatoraspx : System.Web.UI.Page
         public List<string> Values { get; set; }
 
         // auxialiary and no part of the API
-        public List<string> Parents { get; set; }
-
-        
+        public List<string> Parents { get; set; }        
     }
 }

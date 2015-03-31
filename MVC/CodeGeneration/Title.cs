@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc
 	{
 		public Title()
 		{
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = TitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
 			Margin = Margin_DefaultValue = 15;
 			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "fontSize", "18px" }};
 			Text = Text_DefaultValue = "Chart title";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = " ";
+			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Top;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The horizontal alignment of the title. Can be one of "left", "center" and "right".
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public TitleAlign Align { get; set; }
+		private TitleAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The vertical alignment of the title. Can be one of "top", "middle" and "bottom". When a value is given, the title behaves as floating.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public TitleVerticalAlign VerticalAlign { get; set; }
+		private TitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc
 	{
 		public Legend()
 		{
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = LegendAlign.Center;
 			BackgroundColor = BackgroundColor_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "#909090";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc
 			ItemWidth = ItemWidth_DefaultValue = null;
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
 			LabelFormatter = LabelFormatter_DefaultValue = "";
-			Layout = Layout_DefaultValue = "horizontal";
+			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
 			LineHeight = LineHeight_DefaultValue = 16;
 			Margin = Margin_DefaultValue = 15;
 			MaxHeight = MaxHeight_DefaultValue = null;
@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc
 			SymbolWidth = SymbolWidth_DefaultValue = 16;
 			Title = Title_DefaultValue = new LegendTitle();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
+			VerticalAlign = VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
 			Width = Width_DefaultValue = null;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
@@ -57,8 +57,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The horizontal alignment of the legend box within the chart area. Valid values are <code>"left"</code>, <code>"center"</code> and <code>"right"</code>.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public LegendAlign Align { get; set; }
+		private LegendAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -169,8 +169,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The layout of the legend items. Can be one of "horizontal" or "vertical".
 		/// </summary>
-		public string Layout { get; set; }
-		private string Layout_DefaultValue { get; set; }
+		public LegendLayout Layout { get; set; }
+		private LegendLayout Layout_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -281,8 +281,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The vertical alignment of the legend box. Can be one of "top", "middle" or  "bottom". Vertical position can be further determined by the <code>y</code> option.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public LegendVerticalAlign VerticalAlign { get; set; }
+		private LegendVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>

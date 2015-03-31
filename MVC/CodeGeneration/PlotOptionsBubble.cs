@@ -18,8 +18,8 @@ namespace Highsoft.Web.Mvc
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Color = Color_DefaultValue = null;
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			Cursor = Cursor_DefaultValue = null;
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			Cursor = Cursor_DefaultValue = PlotOptionsBubbleCursor.Null;
+			DashStyle = DashStyle_DefaultValue = PlotOptionsBubbleDashStyle.Solid;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsBubbleDataLabels();
 			DisplayNegative = DisplayNegative_DefaultValue = true;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SizeBy = SizeBy_DefaultValue = "area";
+			SizeBy = SizeBy_DefaultValue = PlotOptionsBubbleSizeBy.Area;
 			States = States_DefaultValue = new PlotOptionsBubbleStates();
 			StickyTracking = StickyTracking_DefaultValue = false;
 			Threshold = Threshold_DefaultValue = 0;
@@ -81,15 +81,15 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attached to  the series, to signal to the user that the points and lines can be clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public PlotOptionsBubbleCursor Cursor { get; set; }
+		private PlotOptionsBubbleCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A name for the dash style to use for the graph. Applies only to series type having a graph, like <code>line</code>, <code>spline</code>, <code>area</code> and <code>scatter</code> in  case it has a <code>lineWidth</code>. The value for the <code>dashStyle</code> include:    <ul>    <li>Solid</li>    <li>ShortDash</li>    <li>ShortDot</li>    <li>ShortDashDot</li>    <li>ShortDashDotDot</li>    <li>Dot</li>    <li>Dash</li>    <li>LongDash</li>    <li>DashDot</li>    <li>LongDashDot</li>    <li>LongDashDotDot</li>    </ul>
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public PlotOptionsBubbleDashStyle DashStyle { get; set; }
+		private PlotOptionsBubbleDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -214,8 +214,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Whether the bubble's value should be represented by the area or the width of the bubble. The default, <code>area</code>, corresponds best to the human perception of the size of each bubble. 
 		/// </summary>
-		public string SizeBy { get; set; }
-		private string SizeBy_DefaultValue { get; set; }
+		public PlotOptionsBubbleSizeBy SizeBy { get; set; }
+		private PlotOptionsBubbleSizeBy SizeBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>

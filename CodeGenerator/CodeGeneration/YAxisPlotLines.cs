@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc
 		public YAxisPlotLines()
 		{
 			Color = Color_DefaultValue = null;
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			DashStyle = DashStyle_DefaultValue = YAxisPlotLinesDashStyle.Solid;
 			Events = Events_DefaultValue = null;
 			Id = Id_DefaultValue = null;
 			Label = Label_DefaultValue = new YAxisPlotLinesLabel();
@@ -36,8 +36,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The dashing or dot style for the plot line. For possible values see <a href="http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this overview</a>.
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public YAxisPlotLinesDashStyle DashStyle { get; set; }
+		private YAxisPlotLinesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

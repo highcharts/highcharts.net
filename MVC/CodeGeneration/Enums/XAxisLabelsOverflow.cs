@@ -7,6 +7,7 @@ namespace Highsoft.Web.Mvc
 {
     public enum XAxisLabelsOverflow
     {
-        Justify
+        Null, 
+		Justify
     }
 }

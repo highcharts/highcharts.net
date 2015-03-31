@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc
 	{
 		public XAxisLabels()
 		{
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = XAxisLabelsAlign.Center;
 			Distance = Distance_DefaultValue = 15;
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
-			Overflow = Overflow_DefaultValue = null;
+			Overflow = Overflow_DefaultValue = XAxisLabelsOverflow.Null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
@@ -36,8 +36,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// What part of the string the given position is anchored to. Can be one of <code>"left"</code>, <code>"center"</code> or <code>"right"</code>. Defaults to an intelligent guess based on which side of the chart the axis is on and the rotation of the label.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public XAxisLabelsAlign Align { get; set; }
+		private XAxisLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// How to handle overflowing labels on horizontal axis. Can be undefined, <code>false</code> or <code>"justify"</code>. By default it aligns inside the chart area. If "justify", labels will not render outside the plot area. If <code>false</code>, it will not be aligned at all. If there is room to move it, it will be aligned to the edge, else it will be removed.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public XAxisLabelsOverflow Overflow { get; set; }
+		private XAxisLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>

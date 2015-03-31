@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc
 			Events = Events_DefaultValue = new XAxisEvents();
 			Floor = Floor_DefaultValue = null;
 			GridLineColor = GridLineColor_DefaultValue = "#C0C0C0";
-			GridLineDashStyle = GridLineDashStyle_DefaultValue = "Solid";
+			GridLineDashStyle = GridLineDashStyle_DefaultValue = XAxisGridLineDashStyle.Solid;
 			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Id = Id_DefaultValue = null;
@@ -39,12 +39,12 @@ namespace Highsoft.Web.Mvc
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#E0E0E0";
-			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = "Solid";
+			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = XAxisMinorGridLineDashStyle.Solid;
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#A0A0A0";
 			MinorTickInterval = MinorTickInterval_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
-			MinorTickPosition = MinorTickPosition_DefaultValue = "outside";
+			MinorTickPosition = MinorTickPosition_DefaultValue = XAxisMinorTickPosition.Outside;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			Offset = Offset_DefaultValue = 0;
 			Opposite = Opposite_DefaultValue = false;
@@ -60,13 +60,13 @@ namespace Highsoft.Web.Mvc
 			TickInterval = TickInterval_DefaultValue = null;
 			TickLength = TickLength_DefaultValue = 10;
 			TickPixelInterval = TickPixelInterval_DefaultValue = null;
-			TickPosition = TickPosition_DefaultValue = "outside";
+			TickPosition = TickPosition_DefaultValue = XAxisTickPosition.Outside;
 			TickPositioner = TickPositioner_DefaultValue = "";
 			TickPositions = TickPositions_DefaultValue = null;
 			TickWidth = TickWidth_DefaultValue = 1;
-			TickmarkPlacement = TickmarkPlacement_DefaultValue = "null";
+			TickmarkPlacement = TickmarkPlacement_DefaultValue = XAxisTickmarkPlacement.Null;
 			Title = Title_DefaultValue = new XAxisTitle();
-			Type = Type_DefaultValue = "linear";
+			Type = Type_DefaultValue = XAxisType.Linear;
 			
 		}	
 		
@@ -137,8 +137,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The dash or dot style of the grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/1.7.2/highslide-software/highcharts.com/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
 		/// </summary>
-		public string GridLineDashStyle { get; set; }
-		private string GridLineDashStyle_DefaultValue { get; set; }
+		public XAxisGridLineDashStyle GridLineDashStyle { get; set; }
+		private XAxisGridLineDashStyle GridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -249,8 +249,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The dash or dot style of the minor grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
 		/// </summary>
-		public string MinorGridLineDashStyle { get; set; }
-		private string MinorGridLineDashStyle_DefaultValue { get; set; }
+		public XAxisMinorGridLineDashStyle MinorGridLineDashStyle { get; set; }
+		private XAxisMinorGridLineDashStyle MinorGridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -284,8 +284,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The position of the minor tick marks relative to the axis line. Can be one of <code>inside</code> and <code>outside</code>.
 		/// </summary>
-		public string MinorTickPosition { get; set; }
-		private string MinorTickPosition_DefaultValue { get; set; }
+		public XAxisMinorTickPosition MinorTickPosition { get; set; }
+		private XAxisMinorTickPosition MinorTickPosition_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -396,8 +396,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The position of the major tick marks relative to the axis line. Can be one of <code>inside</code> and <code>outside</code>.
 		/// </summary>
-		public string TickPosition { get; set; }
-		private string TickPosition_DefaultValue { get; set; }
+		public XAxisTickPosition TickPosition { get; set; }
+		private XAxisTickPosition TickPosition_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -424,8 +424,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// For categorized axes only. If <code>on</code> the tick mark is placed in the center of  the category, if <code>between</code> the tick mark is placed between categories. The default is <code>between</code> if the <code>tickInterval</code> is 1, else <code>on</code>.
 		/// </summary>
-		public string TickmarkPlacement { get; set; }
-		private string TickmarkPlacement_DefaultValue { get; set; }
+		public XAxisTickmarkPlacement TickmarkPlacement { get; set; }
+		private XAxisTickmarkPlacement TickmarkPlacement_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -438,8 +438,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The type of axis. Can be one of <code>"linear"</code>, <code>"logarithmic"</code>, <code>"datetime"</code> or <code>"category"</code>. In a datetime axis, the numbers are given in milliseconds, and tick marks are placed on appropriate values like full hours or days. In a category axis, the <a href="#series.data">point names</a> of the chart's series are used for categories, if not a <a href="#xAxis.categories">categories</a> array is defined.
 		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
+		public XAxisType Type { get; set; }
+		private XAxisType Type_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsPieStatesHoverMarkerSymbol
     {
-        Circle, 
+        Null, 
+		Circle, 
 		Square, 
 		Diamond, 
 		Triangle, 

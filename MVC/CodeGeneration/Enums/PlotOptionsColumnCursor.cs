@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsColumnCursor
     {
-        Default, 
+        Null, 
+		Default, 
 		None, 
 		Help, 
 		Pointer, 

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum XAxisTickmarkPlacement
     {
-        On, 
+        Null, 
+		On, 
 		Between
     }
 }

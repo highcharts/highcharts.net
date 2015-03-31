@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsAreasplinerangeStep
     {
-        Left, 
+        False, 
+		Left, 
 		Center, 
 		Right
     }

@@ -14,12 +14,12 @@ namespace Highsoft.Web.Mvc
 	{
 		public Subtitle()
 		{
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = SubtitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
 			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#555555" }};
 			Text = Text_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = " ";
+			VerticalAlign = VerticalAlign_DefaultValue = SubtitleVerticalAlign.Top;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue =  null;
 			
@@ -29,8 +29,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The horizontal alignment of the subtitle. Can be one of "left", "center" and "right".
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public SubtitleAlign Align { get; set; }
+		private SubtitleAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -64,8 +64,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The vertical alignment of the title. Can be one of "top", "middle" and "bottom". When a value is given, the title behaves as floating.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public SubtitleVerticalAlign VerticalAlign { get; set; }
+		private SubtitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>

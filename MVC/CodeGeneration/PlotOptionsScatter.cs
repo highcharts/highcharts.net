@@ -18,8 +18,8 @@ namespace Highsoft.Web.Mvc
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Color = Color_DefaultValue = null;
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			Cursor = Cursor_DefaultValue = null;
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			Cursor = Cursor_DefaultValue = PlotOptionsScatterCursor.Null;
+			DashStyle = DashStyle_DefaultValue = PlotOptionsScatterDashStyle.Solid;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsScatterDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsScatterEvents();
@@ -75,15 +75,15 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attached to  the series, to signal to the user that the points and lines can be clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public PlotOptionsScatterCursor Cursor { get; set; }
+		private PlotOptionsScatterCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A name for the dash style to use for the graph. Applies only to series type having a graph, like <code>line</code>, <code>spline</code>, <code>area</code> and <code>scatter</code> in  case it has a <code>lineWidth</code>. The value for the <code>dashStyle</code> include:    <ul>    <li>Solid</li>    <li>ShortDash</li>    <li>ShortDot</li>    <li>ShortDashDot</li>    <li>ShortDashDotDot</li>    <li>Dot</li>    <li>Dash</li>    <li>LongDash</li>    <li>DashDot</li>    <li>LongDashDot</li>    <li>LongDashDotDot</li>    </ul>
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public PlotOptionsScatterDashStyle DashStyle { get; set; }
+		private PlotOptionsScatterDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsArearangePointPlacement
     {
-        On, 
+        Null, 
+		On, 
 		Between
     }
 }

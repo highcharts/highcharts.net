@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsLineMarkerSymbol
     {
-        Circle, 
+        Null, 
+		Circle, 
 		Square, 
 		Diamond, 
 		Triangle, 

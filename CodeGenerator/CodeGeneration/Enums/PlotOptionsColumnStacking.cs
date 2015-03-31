@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsColumnStacking
     {
-        Normal, 
+        Null, 
+		Normal, 
 		Percent
     }
 }

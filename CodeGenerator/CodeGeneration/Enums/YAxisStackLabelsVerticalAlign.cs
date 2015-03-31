@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum YAxisStackLabelsVerticalAlign
     {
-        Top, 
+        Null, 
+		Top, 
 		Middle, 
 		Bottom
     }

@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = null;
 			Stack = Stack_DefaultValue = null;
-			Type = Type_DefaultValue = null;
+			Type = Type_DefaultValue = SeriesType.Null;
 			XAxis = XAxis_DefaultValue = "0";
 			YAxis = YAxis_DefaultValue = "0";
 			ZIndex = ZIndex_DefaultValue = null;
@@ -89,8 +89,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The type of series. Can be one of <code>area</code>, <code>areaspline</code>, <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>, <code>scatter</code> or <code>spline</code>. From version 2.3, <code>arearange</code>, <code>areasplinerange</code> and <code>columnrange</code> are supported with the highcharts-more.js component.
 		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
+		public SeriesType Type { get; set; }
+		private SeriesType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>

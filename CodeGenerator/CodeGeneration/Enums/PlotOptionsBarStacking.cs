@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsBarStacking
     {
-        Normal, 
+        Null, 
+		Normal, 
 		Percent
     }
 }

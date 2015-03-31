@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum ChartZoomType
     {
-        X, 
+        Null, 
+		X, 
 		Y, 
 		Xy
     }

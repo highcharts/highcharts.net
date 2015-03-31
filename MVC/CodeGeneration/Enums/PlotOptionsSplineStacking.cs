@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsSplineStacking
     {
-        Normal, 
+        Null, 
+		Normal, 
 		Percent
     }
 }

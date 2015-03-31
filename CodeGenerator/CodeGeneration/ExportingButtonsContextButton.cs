@@ -14,12 +14,12 @@ namespace Highsoft.Web.Mvc
 	{
 		public ExportingButtonsContextButton()
 		{
-			Align = Align_DefaultValue = "right";
+			Align = Align_DefaultValue = ExportingButtonsContextButtonAlign.Right;
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 20;
 			MenuItems = MenuItems_DefaultValue = null;
 			Onclick = Onclick_DefaultValue = "";
-			Symbol = Symbol_DefaultValue = "menu";
+			Symbol = Symbol_DefaultValue = ExportingButtonsContextButtonSymbol.Menu;
 			SymbolFill = SymbolFill_DefaultValue = "#A8BF77";
 			SymbolSize = SymbolSize_DefaultValue = 14;
 			SymbolStroke = SymbolStroke_DefaultValue = "#666";
@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc
 			SymbolY = SymbolY_DefaultValue = 10.5;
 			Text = Text_DefaultValue = "null";
 			Theme = Theme_DefaultValue = "";
-			VerticalAlign = VerticalAlign_DefaultValue = "top";
+			VerticalAlign = VerticalAlign_DefaultValue = ExportingButtonsContextButtonVerticalAlign.Top;
 			Width = Width_DefaultValue = 24;
 			X = X_DefaultValue = -10;
 			Y = Y_DefaultValue = 0;
@@ -39,8 +39,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Alignment for the buttons.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public ExportingButtonsContextButtonAlign Align { get; set; }
+		private ExportingButtonsContextButtonAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -74,8 +74,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The symbol for the button. Points to a definition function in the  <code>Highcharts.Renderer.symbols</code> collection. The default <code>exportIcon</code> function is part of the exporting module.
 		/// </summary>
-		public string Symbol { get; set; }
-		private string Symbol_DefaultValue { get; set; }
+		public ExportingButtonsContextButtonSymbol Symbol { get; set; }
+		private ExportingButtonsContextButtonSymbol Symbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -137,8 +137,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The vertical alignment of the buttons. Can be one of "top", "middle" or "bottom".
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public ExportingButtonsContextButtonVerticalAlign VerticalAlign { get; set; }
+		private ExportingButtonsContextButtonVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>

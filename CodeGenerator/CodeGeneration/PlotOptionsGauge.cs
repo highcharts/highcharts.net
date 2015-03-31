@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Color = Color_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = PlotOptionsGaugeCursor.Null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
 			Dial = Dial_DefaultValue = new PlotOptionsGaugeDial();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -56,8 +56,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attached to  the series, to signal to the user that the points and lines can be clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public PlotOptionsGaugeCursor Cursor { get; set; }
+		private PlotOptionsGaugeCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>

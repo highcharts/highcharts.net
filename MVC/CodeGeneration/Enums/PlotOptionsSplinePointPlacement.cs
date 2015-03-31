@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsSplinePointPlacement
     {
-        On, 
+        Null, 
+		On, 
 		Between
     }
 }

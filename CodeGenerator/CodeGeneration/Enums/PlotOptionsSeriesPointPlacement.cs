@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsSeriesPointPlacement
     {
-        On, 
+        Null, 
+		On, 
 		Between
     }
 }

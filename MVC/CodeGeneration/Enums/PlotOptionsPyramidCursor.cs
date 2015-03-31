@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsPyramidCursor
     {
-        Default, 
+        Null, 
+		Default, 
 		None, 
 		Help, 
 		Pointer, 

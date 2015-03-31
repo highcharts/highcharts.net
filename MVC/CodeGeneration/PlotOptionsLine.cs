@@ -20,8 +20,8 @@ namespace Highsoft.Web.Mvc
 			ConnectEnds = ConnectEnds_DefaultValue = true;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			Cursor = Cursor_DefaultValue = null;
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			Cursor = Cursor_DefaultValue = PlotOptionsLineCursor.Null;
+			DashStyle = DashStyle_DefaultValue = PlotOptionsLineDashStyle.Solid;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsLineDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsLineEvents();
@@ -31,15 +31,15 @@ namespace Highsoft.Web.Mvc
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			Point = Point_DefaultValue = new PlotOptionsLinePoint();
 			PointInterval = PointInterval_DefaultValue = 1;
-			PointPlacement = PointPlacement_DefaultValue = PointPlacement.Null;
+			PointPlacement = PointPlacement_DefaultValue = PlotOptionsLinePointPlacement.Null;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			Stacking = Stacking_DefaultValue = null;
+			Stacking = Stacking_DefaultValue = PlotOptionsLineStacking.Null;
 			States = States_DefaultValue = new PlotOptionsLineStates();
-			Step = Step_DefaultValue = "false";
+			Step = Step_DefaultValue = PlotOptionsLineStep.False;
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsLineTooltip();
@@ -94,15 +94,15 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attached to  the series, to signal to the user that the points and lines can be clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public PlotOptionsLineCursor Cursor { get; set; }
+		private PlotOptionsLineCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A name for the dash style to use for the graph. Applies only to series type having a graph, like <code>line</code>, <code>spline</code>, <code>area</code> and <code>scatter</code> in  case it has a <code>lineWidth</code>. The value for the <code>dashStyle</code> include:    <ul>    <li>Solid</li>    <li>ShortDash</li>    <li>ShortDot</li>    <li>ShortDashDot</li>    <li>ShortDashDotDot</li>    <li>Dot</li>    <li>Dash</li>    <li>LongDash</li>    <li>DashDot</li>    <li>LongDashDot</li>    <li>LongDashDotDot</li>    </ul>
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public PlotOptionsLineDashStyle DashStyle { get; set; }
+		private PlotOptionsLineDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -171,8 +171,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>Possible values: null, "on", "between".</p><p>In a column chart, when pointPlacement is "on", the point will not create any padding of the X axis. In a polar column chart this means that the first column points directly north. If the pointPlacement is "between", the columns will be laid out between ticks. This is useful for example for visualising an amount between two points in time or in a certain sector of a polar chart.</p><p>Since Highcharts 3.0.2, the point placement can also be numeric, where 0 is on the axis value, -0.5 is between this value and the previous, and 0.5 is between this value and the next. Unlike the textual options, numeric point placement options won't affect axis padding.</p><p>Defaults to <code>null</code> in cartesian charts, <code>"between"</code> in polar charts.
 		/// </summary>
-		public PointPlacement PointPlacement { get; set; }
-		private PointPlacement PointPlacement_DefaultValue { get; set; }
+		public PlotOptionsLinePointPlacement PointPlacement { get; set; }
+		private PlotOptionsLinePointPlacement PointPlacement_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -213,8 +213,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Whether to stack the values of each series on top of each other. Possible values are null to disable, "normal" to stack by value or "percent".
 		/// </summary>
-		public string Stacking { get; set; }
-		private string Stacking_DefaultValue { get; set; }
+		public PlotOptionsLineStacking Stacking { get; set; }
+		private PlotOptionsLineStacking Stacking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -227,8 +227,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Whether to apply steps to the line. Possible values are <code>left</code>, <code>center</code> and <code>right</code>. Prior to 2.3.5, only <code>left</code> was supported.
 		/// </summary>
-		public string Step { get; set; }
-		private string Step_DefaultValue { get; set; }
+		public PlotOptionsLineStep Step { get; set; }
+		private PlotOptionsLineStep Step_DefaultValue { get; set; }
 		 
 
 		/// <summary>

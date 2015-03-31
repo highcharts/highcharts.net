@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum YAxisStackLabelsTextAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

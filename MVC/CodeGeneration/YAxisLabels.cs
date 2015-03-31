@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
-			Overflow = Overflow_DefaultValue = null;
+			Overflow = Overflow_DefaultValue = YAxisLabelsOverflow.Null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// How to handle overflowing labels on horizontal axis. Can be undefined, <code>false</code> or <code>"justify"</code>. By default it aligns inside the chart area. If "justify", labels will not render outside the plot area. If <code>false</code>, it will not be aligned at all. If there is room to move it, it will be aligned to the edge, else it will be removed.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public YAxisLabelsOverflow Overflow { get; set; }
+		private YAxisLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Center = Center_DefaultValue = new string[] { null, null };
 			Colors = Colors_DefaultValue = new List<string>();
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = PlotOptionsPieCursor.Null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsPieDataLabels();
 			Depth = Depth_DefaultValue = 0;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -90,8 +90,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attached to  the series, to signal to the user that the points and lines can be clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public PlotOptionsPieCursor Cursor { get; set; }
+		private PlotOptionsPieCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>

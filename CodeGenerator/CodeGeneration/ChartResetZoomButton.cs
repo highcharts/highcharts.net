@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc
 		public ChartResetZoomButton()
 		{
 			Position = Position_DefaultValue = new NameValueCollection();
-			RelativeTo = RelativeTo_DefaultValue = "plot";
+			RelativeTo = RelativeTo_DefaultValue = ChartResetZoomButtonRelativeTo.Plot;
 			Theme = Theme_DefaultValue = null;
 			
 		}	
@@ -31,8 +31,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// What frame the button should be placed related to. Can be either "plot" or "chart".
 		/// </summary>
-		public string RelativeTo { get; set; }
-		private string RelativeTo_DefaultValue { get; set; }
+		public ChartResetZoomButtonRelativeTo RelativeTo { get; set; }
+		private ChartResetZoomButtonRelativeTo RelativeTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>

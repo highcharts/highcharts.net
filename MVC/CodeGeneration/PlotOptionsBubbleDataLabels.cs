@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc
 	{
 		public PlotOptionsBubbleDataLabels()
 		{
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = PlotOptionsBubbleDataLabelsAlign.Center;
 			BackgroundColor = BackgroundColor_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = null;
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -26,13 +26,13 @@ namespace Highsoft.Web.Mvc
 			Format = Format_DefaultValue = "{y}";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
-			Overflow = Overflow_DefaultValue = "justify";
+			Overflow = Overflow_DefaultValue = PlotOptionsBubbleDataLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = 2;
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Style = Style_DefaultValue = new NameValueCollection{{"color", "#606060"},{ "fontSize", "11px"}};
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = null;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsBubbleDataLabelsVerticalAlign.Null;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -6;
 			ZIndex = ZIndex_DefaultValue = 6;
@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public PlotOptionsBubbleDataLabelsAlign Align { get; set; }
+		private PlotOptionsBubbleDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -127,8 +127,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// How to handle data labels that flow outside the plot area. The default is <code>justify</code>, which aligns them inside the plot area. For columns and bars, this means it will be moved inside the bar. To display data labels outside the plot area, set <code>crop</code> to <code>false</code> and <code>overflow</code> to <code>"none"</code>.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public PlotOptionsBubbleDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsBubbleDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -169,8 +169,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The vertical alignment of a data label. Can be one of <code>top</code>, <code>middle</code> or <code>bottom</code>. The default value depends on the data, for instance in a column chart, the label is above positive values and below negative values.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public PlotOptionsBubbleDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsBubbleDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>

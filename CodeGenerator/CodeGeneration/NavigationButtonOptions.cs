@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc
 	{
 		public NavigationButtonOptions()
 		{
-			Align = Align_DefaultValue = "right";
+			Align = Align_DefaultValue = NavigationButtonOptionsAlign.Right;
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 20;
 			SymbolFill = SymbolFill_DefaultValue = "#E0E0E0";
@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc
 			SymbolY = SymbolY_DefaultValue = 10.5;
 			Text = Text_DefaultValue = "null";
 			Theme = Theme_DefaultValue = "";
-			VerticalAlign = VerticalAlign_DefaultValue = "top";
+			VerticalAlign = VerticalAlign_DefaultValue = NavigationButtonOptionsVerticalAlign.Top;
 			Width = Width_DefaultValue = 24;
 			Y = Y_DefaultValue = 0;
 			
@@ -35,8 +35,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Alignment for the buttons.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public NavigationButtonOptionsAlign Align { get; set; }
+		private NavigationButtonOptionsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -112,8 +112,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The vertical alignment of the buttons. Can be one of "top", "middle" or "bottom".
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public NavigationButtonOptionsVerticalAlign VerticalAlign { get; set; }
+		private NavigationButtonOptionsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>

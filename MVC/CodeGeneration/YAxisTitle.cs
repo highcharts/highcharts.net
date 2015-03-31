@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc
 	{
 		public YAxisTitle()
 		{
-			Align = Align_DefaultValue = "middle";
+			Align = Align_DefaultValue = YAxisTitleAlign.Middle;
 			Enabled = Enabled_DefaultValue = "middle";
 			Margin = Margin_DefaultValue = 40;
 			Offset = Offset_DefaultValue = null;
@@ -28,8 +28,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Alignment of the title relative to the axis values. Possible values are "low", "middle" or "high".
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public YAxisTitleAlign Align { get; set; }
+		private YAxisTitleAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc
 			Color = Color_DefaultValue = null;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = PlotOptionsBoxplotCursor.Null;
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc
 			Point = Point_DefaultValue = new PlotOptionsBoxplotPoint();
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointPadding = PointPadding_DefaultValue = 0.1;
-			PointPlacement = PointPlacement_DefaultValue = PointPlacement.Null;
+			PointPlacement = PointPlacement_DefaultValue = PlotOptionsBoxplotPointPlacement.Null;
 			PointRange = PointRange_DefaultValue = null;
 			PointStart = PointStart_DefaultValue = 0;
 			PointWidth = PointWidth_DefaultValue = null;
@@ -45,7 +45,7 @@ namespace Highsoft.Web.Mvc
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			States = States_DefaultValue = new PlotOptionsBoxplotStates();
 			StemColor = StemColor_DefaultValue = "null";
-			StemDashStyle = StemDashStyle_DefaultValue = "Solid";
+			StemDashStyle = StemDashStyle_DefaultValue = PlotOptionsBoxplotStemDashStyle.Solid;
 			StemWidth = StemWidth_DefaultValue = null;
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsBoxplotTooltip();
@@ -89,8 +89,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attached to  the series, to signal to the user that the points and lines can be clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public PlotOptionsBoxplotCursor Cursor { get; set; }
+		private PlotOptionsBoxplotCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -215,8 +215,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>Possible values: null, "on", "between".</p><p>In a column chart, when pointPlacement is "on", the point will not create any padding of the X axis. In a polar column chart this means that the first column points directly north. If the pointPlacement is "between", the columns will be laid out between ticks. This is useful for example for visualising an amount between two points in time or in a certain sector of a polar chart.</p><p>Since Highcharts 3.0.2, the point placement can also be numeric, where 0 is on the axis value, -0.5 is between this value and the previous, and 0.5 is between this value and the next. Unlike the textual options, numeric point placement options won't affect axis padding.</p><p>Defaults to <code>null</code> in cartesian charts, <code>"between"</code> in polar charts.
 		/// </summary>
-		public PointPlacement PointPlacement { get; set; }
-		private PointPlacement PointPlacement_DefaultValue { get; set; }
+		public PlotOptionsBoxplotPointPlacement PointPlacement { get; set; }
+		private PlotOptionsBoxplotPointPlacement PointPlacement_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -278,8 +278,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The dash style of the stem, the vertical line extending from the box to the whiskers.
 		/// </summary>
-		public string StemDashStyle { get; set; }
-		private string StemDashStyle_DefaultValue { get; set; }
+		public PlotOptionsBoxplotStemDashStyle StemDashStyle { get; set; }
+		private PlotOptionsBoxplotStemDashStyle StemDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc
 			Text = Text_DefaultValue = "";
 			TextAlign = TextAlign_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "top";
+			VerticalAlign = VerticalAlign_DefaultValue = XAxisPlotLinesLabelVerticalAlign.Top;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Vertical alignment of the label relative to the plot band. Can be one of "top", "middle" or "bottom".
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public XAxisPlotLinesLabelVerticalAlign VerticalAlign { get; set; }
+		private XAxisPlotLinesLabelVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc
 	{
 		public PlotOptionsSolidgaugeDataLabels()
 		{
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = PlotOptionsSolidgaugeDataLabelsAlign.Center;
 			BackgroundColor = BackgroundColor_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "silver";
 			BorderRadius = BorderRadius_DefaultValue = 3;
@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc
 			Format = Format_DefaultValue = "{y}";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
-			Overflow = Overflow_DefaultValue = "justify";
+			Overflow = Overflow_DefaultValue = PlotOptionsSolidgaugeDataLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = 2;
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public PlotOptionsSolidgaugeDataLabelsAlign Align { get; set; }
+		private PlotOptionsSolidgaugeDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -127,8 +127,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// How to handle data labels that flow outside the plot area. The default is <code>justify</code>, which aligns them inside the plot area. For columns and bars, this means it will be moved inside the bar. To display data labels outside the plot area, set <code>crop</code> to <code>false</code> and <code>overflow</code> to <code>"none"</code>.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public PlotOptionsSolidgaugeDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsSolidgaugeDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>

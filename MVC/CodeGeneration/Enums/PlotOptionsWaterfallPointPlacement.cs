@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsWaterfallPointPlacement
     {
-        On, 
+        Null, 
+		On, 
 		Between
     }
 }

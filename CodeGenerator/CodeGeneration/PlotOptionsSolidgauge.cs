@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc
 		public PlotOptionsSolidgauge()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = PlotOptionsSolidgaugeCursor.Null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsSolidgaugeDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsSolidgaugeEvents();
@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attached to  the series, to signal to the user that the points and lines can be clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public PlotOptionsSolidgaugeCursor Cursor { get; set; }
+		private PlotOptionsSolidgaugeCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>

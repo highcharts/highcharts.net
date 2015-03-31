@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = null;
-			DefaultSeriesType = DefaultSeriesType_DefaultValue = "line";
+			DefaultSeriesType = DefaultSeriesType_DefaultValue = ChartDefaultSeriesType.Line;
 			Events = Events_DefaultValue = new ChartEvents();
 			Height = Height_DefaultValue = null;
 			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc
 			Options3d = Options3d_DefaultValue = new ChartOptions3d();
 			PanKey = PanKey_DefaultValue = "";
 			Panning = Panning_DefaultValue = false;
-			PinchType = PinchType_DefaultValue = "null";
+			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
 			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = null;
 			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = null;
 			PlotBorderColor = PlotBorderColor_DefaultValue = "#C0C0C0";
@@ -52,9 +52,9 @@ namespace Highsoft.Web.Mvc
 			SpacingRight = SpacingRight_DefaultValue = 10;
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new NameValueCollection{{"fontFamily","\"Lucida Grande\"},{ \"Lucida Sans Unicode\"},{ Verdana},{ Arial},{ Helvetica},{ sans-serif"},{"fontSize","12px"}};
-			Type = Type_DefaultValue = "line";
+			Type = Type_DefaultValue = ChartType.Line;
 			Width = Width_DefaultValue = null;
-			ZoomType = ZoomType_DefaultValue = null;
+			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
 			
 		}	
 		
@@ -111,8 +111,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Alias of <code>type</code>.
 		/// </summary>
-		public string DefaultSeriesType { get; set; }
-		private string DefaultSeriesType_DefaultValue { get; set; }
+		public ChartDefaultSeriesType DefaultSeriesType { get; set; }
+		private ChartDefaultSeriesType DefaultSeriesType_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -202,8 +202,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Equivalent to <a href="#chart.zoomType">zoomType</a>, but for multitouch gestures only. By default, the <code>pinchType</code> is the same as the <code>zoomType</code> setting. However, pinching can be enabled separately in some cases, for example in stock charts where a mouse drag pans the chart, while pinching is enabled.
 		/// </summary>
-		public string PinchType { get; set; }
-		private string PinchType_DefaultValue { get; set; }
+		public ChartPinchType PinchType { get; set; }
+		private ChartPinchType PinchType_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -328,8 +328,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The default series type for the chart. Can be any of the chart types listed under <a href="#plotOptions">plotOptions</a>.
 		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
+		public ChartType Type { get; set; }
+		private ChartType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -342,8 +342,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Decides in what dimensions the user can zoom by dragging the mouse. Can be one of <code>x</code>, <code>y</code> or <code>xy</code>.
 		/// </summary>
-		public string ZoomType { get; set; }
-		private string ZoomType_DefaultValue { get; set; }
+		public ChartZoomType ZoomType { get; set; }
+		private ChartZoomType ZoomType_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()

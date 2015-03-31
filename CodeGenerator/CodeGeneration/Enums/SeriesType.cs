@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum SeriesType
     {
-        Line, 
+        Null, 
+		Line, 
 		Spline, 
 		Column, 
 		Area, 

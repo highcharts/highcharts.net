@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc
 {
     public enum PlotOptionsArearangeStacking
     {
-        Normal, 
+        Null, 
+		Normal, 
 		Percent
     }
 }

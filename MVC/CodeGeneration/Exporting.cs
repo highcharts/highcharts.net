@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc
 			Scale = Scale_DefaultValue = 2;
 			SourceHeight = SourceHeight_DefaultValue = null;
 			SourceWidth = SourceWidth_DefaultValue = null;
-			Type = Type_DefaultValue = "image/png";
+			Type = Type_DefaultValue = ExportingType.Imagepng;
 			Url = Url_DefaultValue = "http://export.highcharts.com";
 			Width = Width_DefaultValue = null;
 			
@@ -88,8 +88,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Default MIME type for exporting if <code>chart.exportChart()</code> is called without specifying a <code>type</code> option. Possible values are <code>image/png</code>, <code>image/jpeg</code>, <code>application/pdf</code> and <code>image/svg+xml</code>.
 		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
+		public ExportingType Type { get; set; }
+		private ExportingType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
