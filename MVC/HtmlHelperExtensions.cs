@@ -14,9 +14,10 @@ namespace Highsoft.Web.Mvc.Rendering
 
     public class HighsoftNamespace
     {
-        public MvcHtmlString Highcharts(Highcharts chart, string id)
+        public MvcHtmlString Highcharts1(Highcharts chart, string id)
         {            
-            var renderer = new HighchartsRenderer(chart);
+            var renderer = new HighchartsRenderer(chart);         
+            
 
             chart.ID = id;
             chart.Chart.RenderTo = id;
