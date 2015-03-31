@@ -7,9 +7,9 @@ namespace Highsoft.Web.Mvc
 {
     public enum ExportingType
     {
-        Image/png, 
-		Image/jpeg, 
-		Application/pdf, 
-		Image/svg+xml
+        Imagepng, 
+		Imagejpeg, 
+		Applicationpdf, 
+		Imagesvgxml
     }
 }

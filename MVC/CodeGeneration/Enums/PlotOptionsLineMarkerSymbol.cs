@@ -11,6 +11,6 @@ namespace Highsoft.Web.Mvc
 		Square, 
 		Diamond, 
 		Triangle, 
-		Triangle-down
+		Triangledown
     }
 }
