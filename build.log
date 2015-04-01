@@ -1,0 +1,545 @@
+
+C:\highsoft>call "C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\vsvars32.bat" x86_amd64 
+
+C:\highsoft>MsTest.exe /testcontainer:MVC_UnitTests\bin\Debug\MVC_UnitTests.dll 
+Microsoft (R) Test Execution Command Line Tool Version 11.0.50727.1
+Copyright (c) Microsoft Corporation. All rights reserved.
+    
+Loading MVC_UnitTests\bin\Debug\MVC_UnitTests.dll...
+Starting execution...
+
+Results               Top Level Tests
+-------               ---------------
+Passed                Highsoft.Web.Mvc.UnitTests.Chart.TestAreaType
+Passed                Highsoft.Web.Mvc.UnitTests.Chart.TestDefaultType
+Passed                Highsoft.Web.Mvc.UnitTests.Chart.TestEnumMappings
+Passed                Highsoft.Web.Mvc.UnitTests.Chart.TestPieType
+Passed                Highsoft.Web.Mvc.UnitTests.Strings.TestForNull
+Passed                Highsoft.Web.Mvc.UnitTests.Strings.TestFrench
+Passed                Highsoft.Web.Mvc.UnitTests.Strings.TestJapanese
+Passed                Highsoft.Web.Mvc.UnitTests.Strings.TestLegendLabelFormat
+Passed                Highsoft.Web.Mvc.UnitTests.Strings.TestNorwegian
+Passed                Highsoft.Web.Mvc.UnitTests.Strings.TestPlotOptionsAreaColor
+Passed                Highsoft.Web.Mvc.UnitTests.Strings.TestTitleText
+11/11 test(s) Passed
+
+Summary
+-------
+Test Run Completed.
+  Passed  11
+  ----------
+  Total   11
+Results file:  C:\highsoft\TestResults\Rumen_RUMEN-THINK 2015-04-01 16_38_45.trx
+Test Settings: Default Test Settings
+
+C:\highsoft>cd MVC 
+
+C:\highsoft\MVC>call "copygeneratedfiles.bat" 
+
+C:\highsoft\MVC>rmdir /s /q CodeAddOns 
+
+C:\highsoft\MVC>rmdir /s /q CodeGeneration\Enums 
+
+C:\highsoft\MVC>rmdir /s /q CodeGeneration 
+
+C:\highsoft\MVC>echo f   | xcopy /f /y ..\CodeGenerator\CodeAddOns CodeAddOns\ 
+C:\highsoft\CodeGenerator\CodeAddOns\Animation.cs -> C:\highsoft\MVC\CodeAddOns\Animation.cs
+C:\highsoft\CodeGenerator\CodeAddOns\Background.cs -> C:\highsoft\MVC\CodeAddOns\Background.cs
+C:\highsoft\CodeGenerator\CodeAddOns\Crosshair.cs -> C:\highsoft\MVC\CodeAddOns\Crosshair.cs
+C:\highsoft\CodeGenerator\CodeAddOns\MenuItem.cs -> C:\highsoft\MVC\CodeAddOns\MenuItem.cs
+C:\highsoft\CodeGenerator\CodeAddOns\PointPlacement.cs -> C:\highsoft\MVC\CodeAddOns\PointPlacement.cs
+C:\highsoft\CodeGenerator\CodeAddOns\Shadow.cs -> C:\highsoft\MVC\CodeAddOns\Shadow.cs
+C:\highsoft\CodeGenerator\CodeAddOns\Stop.cs -> C:\highsoft\MVC\CodeAddOns\Stop.cs
+7 File(s) copied
+
+C:\highsoft\MVC>echo f   | xcopy /f /y ..\CodeGenerator\CodeGeneration CodeGeneration\ 
+C:\highsoft\CodeGenerator\CodeGeneration\Chart.cs -> C:\highsoft\MVC\CodeGeneration\Chart.cs
+C:\highsoft\CodeGenerator\CodeGeneration\ChartEvents.cs -> C:\highsoft\MVC\CodeGeneration\ChartEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\ChartOptions3d.cs -> C:\highsoft\MVC\CodeGeneration\ChartOptions3d.cs
+C:\highsoft\CodeGenerator\CodeGeneration\ChartOptions3dFrame.cs -> C:\highsoft\MVC\CodeGeneration\ChartOptions3dFrame.cs
+C:\highsoft\CodeGenerator\CodeGeneration\ChartOptions3dFrameBack.cs -> C:\highsoft\MVC\CodeGeneration\ChartOptions3dFrameBack.cs
+C:\highsoft\CodeGenerator\CodeGeneration\ChartOptions3dFrameBottom.cs -> C:\highsoft\MVC\CodeGeneration\ChartOptions3dFrameBottom.cs
+C:\highsoft\CodeGenerator\CodeGeneration\ChartOptions3dFrameSide.cs -> C:\highsoft\MVC\CodeGeneration\ChartOptions3dFrameSide.cs
+C:\highsoft\CodeGenerator\CodeGeneration\ChartResetZoomButton.cs -> C:\highsoft\MVC\CodeGeneration\ChartResetZoomButton.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Credits.cs -> C:\highsoft\MVC\CodeGeneration\Credits.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Drilldown.cs -> C:\highsoft\MVC\CodeGeneration\Drilldown.cs
+C:\highsoft\CodeGenerator\CodeGeneration\DrilldownDrillUpButton.cs -> C:\highsoft\MVC\CodeGeneration\DrilldownDrillUpButton.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Exporting.cs -> C:\highsoft\MVC\CodeGeneration\Exporting.cs
+C:\highsoft\CodeGenerator\CodeGeneration\ExportingButtons.cs -> C:\highsoft\MVC\CodeGeneration\ExportingButtons.cs
+C:\highsoft\CodeGenerator\CodeGeneration\ExportingButtonsContextButton.cs -> C:\highsoft\MVC\CodeGeneration\ExportingButtonsContextButton.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Global.cs -> C:\highsoft\MVC\CodeGeneration\Global.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Highcharts.cs -> C:\highsoft\MVC\CodeGeneration\Highcharts.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Labels.cs -> C:\highsoft\MVC\CodeGeneration\Labels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\LabelsItems.cs -> C:\highsoft\MVC\CodeGeneration\LabelsItems.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Lang.cs -> C:\highsoft\MVC\CodeGeneration\Lang.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Legend.cs -> C:\highsoft\MVC\CodeGeneration\Legend.cs
+C:\highsoft\CodeGenerator\CodeGeneration\LegendNavigation.cs -> C:\highsoft\MVC\CodeGeneration\LegendNavigation.cs
+C:\highsoft\CodeGenerator\CodeGeneration\LegendTitle.cs -> C:\highsoft\MVC\CodeGeneration\LegendTitle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Loading.cs -> C:\highsoft\MVC\CodeGeneration\Loading.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Navigation.cs -> C:\highsoft\MVC\CodeGeneration\Navigation.cs
+C:\highsoft\CodeGenerator\CodeGeneration\NavigationButtonOptions.cs -> C:\highsoft\MVC\CodeGeneration\NavigationButtonOptions.cs
+C:\highsoft\CodeGenerator\CodeGeneration\NoData.cs -> C:\highsoft\MVC\CodeGeneration\NoData.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Pane.cs -> C:\highsoft\MVC\CodeGeneration\Pane.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptions.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptions.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsArea.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsArea.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaMarkerStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaMarkerStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaMarkerStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaMarkerStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaMarkerStatesSelect.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaMarkerStatesSelect.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaPoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaPoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaPointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaPointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsArearange.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsArearange.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsArearangeDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsArearangeDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsArearangeEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsArearangeEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsArearangePoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsArearangePoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsArearangePointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsArearangePointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsArearangeStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsArearangeStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsArearangeStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsArearangeStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsArearangeStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsArearangeStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsArearangeStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsArearangeStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsArearangeTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsArearangeTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaspline.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaspline.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplineDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplineDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplineEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplineEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplineMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplineMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplineMarkerStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplineMarkerStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplineMarkerStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplineMarkerStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplineMarkerStatesSelect.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplineMarkerStatesSelect.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinePoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinePoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinePointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinePointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinerange.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinerange.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinerangeDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinerangeDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinerangeEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinerangeEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinerangePoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinerangePoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinerangePointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinerangePointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinerangeStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinerangeStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinerangeStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinerangeStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinerangeStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinerangeStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinerangeStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinerangeStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplinerangeTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplinerangeTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplineStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplineStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplineStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplineStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplineStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplineStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplineStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplineStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreasplineTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreasplineTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsAreaTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsAreaTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBar.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBar.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBarDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBarDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBarEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBarEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBarPoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBarPoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBarPointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBarPointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBarStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBarStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBarStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBarStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBarStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBarStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBarStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBarStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBarTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBarTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBoxplot.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBoxplot.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBoxplotEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBoxplotEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBoxplotPoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBoxplotPoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBoxplotPointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBoxplotPointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBoxplotStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBoxplotStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBoxplotStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBoxplotStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBoxplotStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBoxplotStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBoxplotStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBoxplotStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBoxplotTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBoxplotTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubble.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubble.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubbleDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubbleDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubbleEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubbleEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubbleMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubbleMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubbleMarkerStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubbleMarkerStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubbleMarkerStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubbleMarkerStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubbleMarkerStatesSelect.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubbleMarkerStatesSelect.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubblePoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubblePoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubblePointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubblePointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubbleStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubbleStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubbleStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubbleStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubbleStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubbleStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubbleStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubbleStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsBubbleTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsBubbleTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumn.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumn.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnPoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnPoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnPointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnPointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnrange.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnrange.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnrangeDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnrangeDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnrangeEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnrangeEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnrangePoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnrangePoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnrangePointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnrangePointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnrangeStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnrangeStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnrangeStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnrangeStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnrangeStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnrangeStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnrangeStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnrangeStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnrangeTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnrangeTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsColumnTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsColumnTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsErrorbar.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsErrorbar.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsErrorbarEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsErrorbarEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsErrorbarPoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsErrorbarPoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsErrorbarPointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsErrorbarPointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsErrorbarStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsErrorbarStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsErrorbarStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsErrorbarStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsErrorbarStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsErrorbarStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsErrorbarStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsErrorbarStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsErrorbarTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsErrorbarTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsFunnel.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsFunnel.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsFunnelDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsFunnelDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsFunnelEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsFunnelEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsFunnelPoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsFunnelPoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsFunnelPointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsFunnelPointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsFunnelStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsFunnelStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsFunnelStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsFunnelStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsFunnelStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsFunnelStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsFunnelStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsFunnelStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsFunnelTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsFunnelTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGauge.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGauge.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGaugeDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGaugeDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGaugeDial.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGaugeDial.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGaugeEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGaugeEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGaugePivot.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGaugePivot.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGaugePoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGaugePoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGaugePointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGaugePointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGaugeStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGaugeStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGaugeStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGaugeStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGaugeStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGaugeStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGaugeStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGaugeStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsGaugeTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsGaugeTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLine.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLine.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLineDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLineDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLineEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLineEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLineMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLineMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLineMarkerStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLineMarkerStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLineMarkerStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLineMarkerStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLineMarkerStatesSelect.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLineMarkerStatesSelect.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLinePoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLinePoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLinePointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLinePointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLineStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLineStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLineStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLineStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLineStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLineStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLineStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLineStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsLineTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsLineTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPie.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPie.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPieDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPieDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPieEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPieEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPiePoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPiePoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPiePointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPiePointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPieStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPieStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPieStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPieStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPieStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPieStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPieStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPieStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPieTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPieTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPyramid.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPyramid.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPyramidDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPyramidDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPyramidEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPyramidEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPyramidPoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPyramidPoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPyramidPointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPyramidPointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPyramidStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPyramidStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPyramidStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPyramidStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPyramidStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPyramidStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPyramidStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPyramidStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsPyramidTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsPyramidTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatter.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatter.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterMarkerStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterMarkerStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterMarkerStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterMarkerStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterMarkerStatesSelect.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterMarkerStatesSelect.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterPoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterPoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterPointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterPointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsScatterTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsScatterTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeries.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeries.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesMarkerStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesMarkerStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesMarkerStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesMarkerStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesMarkerStatesSelect.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesMarkerStatesSelect.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesPoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesPoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesPointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesPointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSeriesTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSeriesTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSolidgauge.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSolidgauge.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSolidgaugeDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSolidgaugeDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSolidgaugeEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSolidgaugeEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSolidgaugePoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSolidgaugePoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSolidgaugePointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSolidgaugePointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSolidgaugeStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSolidgaugeStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSolidgaugeStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSolidgaugeStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSolidgaugeStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSolidgaugeStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSolidgaugeStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSolidgaugeStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSolidgaugeTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSolidgaugeTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSpline.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSpline.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplineDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplineDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplineEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplineEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplineMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplineMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplineMarkerStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplineMarkerStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplineMarkerStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplineMarkerStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplineMarkerStatesSelect.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplineMarkerStatesSelect.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplinePoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplinePoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplinePointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplinePointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplineStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplineStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplineStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplineStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplineStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplineStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplineStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplineStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsSplineTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsSplineTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsWaterfall.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsWaterfall.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsWaterfallDataLabels.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsWaterfallDataLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsWaterfallEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsWaterfallEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsWaterfallPoint.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsWaterfallPoint.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsWaterfallPointEvents.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsWaterfallPointEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsWaterfallStates.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsWaterfallStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsWaterfallStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsWaterfallStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsWaterfallStatesHoverHalo.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsWaterfallStatesHoverHalo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsWaterfallStatesHoverMarker.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsWaterfallStatesHoverMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\PlotOptionsWaterfallTooltip.cs -> C:\highsoft\MVC\CodeGeneration\PlotOptionsWaterfallTooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Series.cs -> C:\highsoft\MVC\CodeGeneration\Series.cs
+C:\highsoft\CodeGenerator\CodeGeneration\SeriesData.cs -> C:\highsoft\MVC\CodeGeneration\SeriesData.cs
+C:\highsoft\CodeGenerator\CodeGeneration\SeriesDataEvents.cs -> C:\highsoft\MVC\CodeGeneration\SeriesDataEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\SeriesDataMarker.cs -> C:\highsoft\MVC\CodeGeneration\SeriesDataMarker.cs
+C:\highsoft\CodeGenerator\CodeGeneration\SeriesDataMarkerStates.cs -> C:\highsoft\MVC\CodeGeneration\SeriesDataMarkerStates.cs
+C:\highsoft\CodeGenerator\CodeGeneration\SeriesDataMarkerStatesHover.cs -> C:\highsoft\MVC\CodeGeneration\SeriesDataMarkerStatesHover.cs
+C:\highsoft\CodeGenerator\CodeGeneration\SeriesDataMarkerStatesSelect.cs -> C:\highsoft\MVC\CodeGeneration\SeriesDataMarkerStatesSelect.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Subtitle.cs -> C:\highsoft\MVC\CodeGeneration\Subtitle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Title.cs -> C:\highsoft\MVC\CodeGeneration\Title.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Tooltip.cs -> C:\highsoft\MVC\CodeGeneration\Tooltip.cs
+C:\highsoft\CodeGenerator\CodeGeneration\XAxis.cs -> C:\highsoft\MVC\CodeGeneration\XAxis.cs
+C:\highsoft\CodeGenerator\CodeGeneration\XAxisEvents.cs -> C:\highsoft\MVC\CodeGeneration\XAxisEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\XAxisLabels.cs -> C:\highsoft\MVC\CodeGeneration\XAxisLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\XAxisPlotBands.cs -> C:\highsoft\MVC\CodeGeneration\XAxisPlotBands.cs
+C:\highsoft\CodeGenerator\CodeGeneration\XAxisPlotBandsLabel.cs -> C:\highsoft\MVC\CodeGeneration\XAxisPlotBandsLabel.cs
+C:\highsoft\CodeGenerator\CodeGeneration\XAxisPlotLines.cs -> C:\highsoft\MVC\CodeGeneration\XAxisPlotLines.cs
+C:\highsoft\CodeGenerator\CodeGeneration\XAxisPlotLinesLabel.cs -> C:\highsoft\MVC\CodeGeneration\XAxisPlotLinesLabel.cs
+C:\highsoft\CodeGenerator\CodeGeneration\XAxisTitle.cs -> C:\highsoft\MVC\CodeGeneration\XAxisTitle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\YAxis.cs -> C:\highsoft\MVC\CodeGeneration\YAxis.cs
+C:\highsoft\CodeGenerator\CodeGeneration\YAxisEvents.cs -> C:\highsoft\MVC\CodeGeneration\YAxisEvents.cs
+C:\highsoft\CodeGenerator\CodeGeneration\YAxisLabels.cs -> C:\highsoft\MVC\CodeGeneration\YAxisLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\YAxisPlotBands.cs -> C:\highsoft\MVC\CodeGeneration\YAxisPlotBands.cs
+C:\highsoft\CodeGenerator\CodeGeneration\YAxisPlotBandsLabel.cs -> C:\highsoft\MVC\CodeGeneration\YAxisPlotBandsLabel.cs
+C:\highsoft\CodeGenerator\CodeGeneration\YAxisPlotLines.cs -> C:\highsoft\MVC\CodeGeneration\YAxisPlotLines.cs
+C:\highsoft\CodeGenerator\CodeGeneration\YAxisPlotLinesLabel.cs -> C:\highsoft\MVC\CodeGeneration\YAxisPlotLinesLabel.cs
+C:\highsoft\CodeGenerator\CodeGeneration\YAxisStackLabels.cs -> C:\highsoft\MVC\CodeGeneration\YAxisStackLabels.cs
+C:\highsoft\CodeGenerator\CodeGeneration\YAxisTitle.cs -> C:\highsoft\MVC\CodeGeneration\YAxisTitle.cs
+283 File(s) copied
+
+C:\highsoft\MVC>echo f   | xcopy /f /y ..\CodeGenerator\CodeGeneration\Enums CodeGeneration\Enums\ 
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\ChartDefaultSeriesType.cs -> C:\highsoft\MVC\CodeGeneration\Enums\ChartDefaultSeriesType.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\ChartPinchType.cs -> C:\highsoft\MVC\CodeGeneration\Enums\ChartPinchType.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\ChartResetZoomButtonRelativeTo.cs -> C:\highsoft\MVC\CodeGeneration\Enums\ChartResetZoomButtonRelativeTo.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\ChartType.cs -> C:\highsoft\MVC\CodeGeneration\Enums\ChartType.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\ChartZoomType.cs -> C:\highsoft\MVC\CodeGeneration\Enums\ChartZoomType.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\ExportingButtonsContextButtonAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\ExportingButtonsContextButtonAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\ExportingButtonsContextButtonSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\ExportingButtonsContextButtonSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\ExportingButtonsContextButtonVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\ExportingButtonsContextButtonVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\ExportingType.cs -> C:\highsoft\MVC\CodeGeneration\Enums\ExportingType.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\LegendAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\LegendAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\LegendLayout.cs -> C:\highsoft\MVC\CodeGeneration\Enums\LegendLayout.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\LegendVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\LegendVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\NavigationButtonOptionsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\NavigationButtonOptionsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\NavigationButtonOptionsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\NavigationButtonOptionsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreaCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreaCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreaDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreaDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreaDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreaDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreaDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreaDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreaDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreaDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreaMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreaMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreaPointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreaPointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsArearangeCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsArearangeCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsArearangeDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsArearangeDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsArearangeDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsArearangeDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsArearangeDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsArearangeDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsArearangeDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsArearangeDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsArearangePointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsArearangePointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsArearangeStacking.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsArearangeStacking.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsArearangeStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsArearangeStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsArearangeStep.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsArearangeStep.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplineCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplineCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplineDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplineDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplineDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplineDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplineDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplineDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplineDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplineDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplineMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplineMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplinePointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplinePointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplinerangeCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplinerangeCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplinerangeDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplinerangeDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplinerangeDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplinerangeDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplinerangeDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplinerangeDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplinerangeDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplinerangeDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplinerangePointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplinerangePointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplinerangeStacking.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplinerangeStacking.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplinerangeStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplinerangeStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplinerangeStep.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplinerangeStep.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplineStacking.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplineStacking.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplineStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplineStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreasplineStep.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreasplineStep.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreaStacking.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreaStacking.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreaStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreaStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsAreaStep.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsAreaStep.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBarCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBarCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBarDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBarDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBarDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBarDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBarPointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBarPointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBarStacking.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBarStacking.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBarStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBarStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBoxplotCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBoxplotCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBoxplotPointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBoxplotPointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBoxplotStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBoxplotStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBoxplotStemDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBoxplotStemDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBubbleCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBubbleCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBubbleDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBubbleDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBubbleDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBubbleDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBubbleDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBubbleDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBubbleDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBubbleDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBubbleMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBubbleMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBubbleSizeBy.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBubbleSizeBy.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsBubbleStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsBubbleStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnPointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnPointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnrangeCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnrangeCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnrangeDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnrangeDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnrangeDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnrangeDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnrangeDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnrangeDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnrangePointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnrangePointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnrangeStacking.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnrangeStacking.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnrangeStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnrangeStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnStacking.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnStacking.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsColumnStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsColumnStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsErrorbarCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsErrorbarCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsErrorbarPointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsErrorbarPointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsErrorbarStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsErrorbarStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsErrorbarStemDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsErrorbarStemDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsFunnelCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsFunnelCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsFunnelDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsFunnelDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsFunnelDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsFunnelDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsFunnelStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsFunnelStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsGaugeCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsGaugeCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsGaugeDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsGaugeDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsGaugeDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsGaugeDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsGaugeStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsGaugeStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsLineCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsLineCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsLineDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsLineDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsLineDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsLineDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsLineDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsLineDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsLineDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsLineDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsLineMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsLineMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsLinePointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsLinePointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsLineStacking.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsLineStacking.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsLineStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsLineStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsLineStep.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsLineStep.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsPieCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsPieCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsPieDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsPieDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsPieDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsPieDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsPieStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsPieStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsPyramidCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsPyramidCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsPyramidDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsPyramidDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsPyramidDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsPyramidDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsPyramidStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsPyramidStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsScatterCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsScatterCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsScatterDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsScatterDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsScatterDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsScatterDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsScatterDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsScatterDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsScatterDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsScatterDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsScatterMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsScatterMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsScatterStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsScatterStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSeriesCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSeriesCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSeriesDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSeriesDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSeriesDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSeriesDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSeriesDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSeriesDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSeriesDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSeriesDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSeriesMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSeriesMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSeriesPointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSeriesPointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSeriesStacking.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSeriesStacking.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSeriesStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSeriesStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSolidgaugeCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSolidgaugeCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSolidgaugeDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSolidgaugeDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSolidgaugeDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSolidgaugeDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSolidgaugeStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSolidgaugeStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSplineCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSplineCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSplineDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSplineDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSplineDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSplineDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSplineDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSplineDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSplineDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSplineDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSplineMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSplineMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSplinePointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSplinePointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSplineStacking.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSplineStacking.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsSplineStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsSplineStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsWaterfallCursor.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsWaterfallCursor.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsWaterfallDataLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsWaterfallDataLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsWaterfallDataLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsWaterfallDataLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsWaterfallDataLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsWaterfallDataLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsWaterfallPointPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsWaterfallPointPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\PlotOptionsWaterfallStatesHoverMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\PlotOptionsWaterfallStatesHoverMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\SeriesDataMarkerSymbol.cs -> C:\highsoft\MVC\CodeGeneration\Enums\SeriesDataMarkerSymbol.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\SeriesType.cs -> C:\highsoft\MVC\CodeGeneration\Enums\SeriesType.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\SubtitleAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\SubtitleAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\SubtitleVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\SubtitleVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\TitleAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\TitleAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\TitleVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\TitleVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\XAxisGridLineDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\XAxisGridLineDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\XAxisLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\XAxisLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\XAxisLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\XAxisLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\XAxisMinorGridLineDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\XAxisMinorGridLineDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\XAxisMinorTickPosition.cs -> C:\highsoft\MVC\CodeGeneration\Enums\XAxisMinorTickPosition.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\XAxisPlotLinesDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\XAxisPlotLinesDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\XAxisPlotLinesLabelVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\XAxisPlotLinesLabelVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\XAxisTickmarkPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\XAxisTickmarkPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\XAxisTickPosition.cs -> C:\highsoft\MVC\CodeGeneration\Enums\XAxisTickPosition.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\XAxisTitleAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\XAxisTitleAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\XAxisType.cs -> C:\highsoft\MVC\CodeGeneration\Enums\XAxisType.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisGridLineDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisGridLineDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisGridLineInterpolation.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisGridLineInterpolation.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisLabelsOverflow.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisLabelsOverflow.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisMinorGridLineDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisMinorGridLineDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisMinorTickPosition.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisMinorTickPosition.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisPlotLinesDashStyle.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisPlotLinesDashStyle.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisPlotLinesLabelVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisPlotLinesLabelVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisStackLabelsAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisStackLabelsAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisStackLabelsTextAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisStackLabelsTextAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisStackLabelsVerticalAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisStackLabelsVerticalAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisTickmarkPlacement.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisTickmarkPlacement.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisTickPosition.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisTickPosition.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisTitleAlign.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisTitleAlign.cs
+C:\highsoft\CodeGenerator\CodeGeneration\Enums\YAxisType.cs -> C:\highsoft\MVC\CodeGeneration\Enums\YAxisType.cs
+180 File(s) copied
+
+C:\highsoft\MVC>MsBuild.exe /p:Configuration=Release 
+Microsoft (R) Build Engine version 4.0.30319.34209
+[Microsoft .NET Framework, version 4.0.30319.34209]
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 4/1/2015 4:38:49 PM.
+Project "C:\highsoft\MVC\MVC.csproj" on node 1 (default targets).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  MVC -> C:\highsoft\MVC\bin\Release\HighCharts.dll
+Done Building Project "C:\highsoft\MVC\MVC.csproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.33
+
+C:\highsoft\MVC>cd .. 

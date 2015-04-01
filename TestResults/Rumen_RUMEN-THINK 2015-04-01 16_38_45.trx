@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="dc66fe0b-ccee-4b9a-8bf9-df809aef1a0e" name="Rumen@RUMEN-THINK 2015-04-01 16:38:45" runUser="Rumen-THINK\Rumen" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="75e7ea1f-74cf-49b1-904a-bbb366b8ecfe">
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="Rumen_RUMEN-THINK 2015-04-01 16_38_45" />
+  </TestSettings>
+  <Times creation="2015-04-01T16:38:45.2811653+03:00" queuing="2015-04-01T16:38:45.8761994+03:00" start="2015-04-01T16:38:46.0432089+03:00" finish="2015-04-01T16:38:48.4273453+03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="11" executed="11" passed="11" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestAreaType" storage="mvc_unittests\bin\debug\mvc_unittests.dll" id="0a826f98-a131-e025-bcc6-78b2919f9af4">
+      <Execution id="37070688-e5a7-4b47-a1b8-683af7b1055a" />
+      <TestMethod codeBase="C:/highsoft/MVC_UnitTests/bin/Debug/MVC_UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Highsoft.Web.Mvc.UnitTests.Chart, MVC_UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestAreaType" />
+    </UnitTest>
+    <UnitTest name="TestPlotOptionsAreaColor" storage="mvc_unittests\bin\debug\mvc_unittests.dll" id="34a872fb-0223-1ea8-b575-537140d51509">
+      <Execution id="0232a3f7-c948-41f0-97cd-86923870eace" />
+      <TestMethod codeBase="C:/highsoft/MVC_UnitTests/bin/Debug/MVC_UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Highsoft.Web.Mvc.UnitTests.Strings, MVC_UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestPlotOptionsAreaColor" />
+    </UnitTest>
+    <UnitTest name="TestForNull" storage="mvc_unittests\bin\debug\mvc_unittests.dll" id="07f58fdd-85b2-832d-c74f-14b00dd4d508">
+      <Execution id="dabafc7f-9556-405d-9fcc-264d9ccd4262" />
+      <TestMethod codeBase="C:/highsoft/MVC_UnitTests/bin/Debug/MVC_UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Highsoft.Web.Mvc.UnitTests.Strings, MVC_UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestForNull" />
+    </UnitTest>
+    <UnitTest name="TestNorwegian" storage="mvc_unittests\bin\debug\mvc_unittests.dll" id="a34d2ada-57bd-12e7-da1d-b6d2742bc9ea">
+      <Execution id="a816c2c4-ddc8-4fb6-a9ca-bfb4ffaa6310" />
+      <TestMethod codeBase="C:/highsoft/MVC_UnitTests/bin/Debug/MVC_UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Highsoft.Web.Mvc.UnitTests.Strings, MVC_UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestNorwegian" />
+    </UnitTest>
+    <UnitTest name="TestTitleText" storage="mvc_unittests\bin\debug\mvc_unittests.dll" id="32fb316c-8fc0-2782-d143-9895499b565b">
+      <Execution id="acdd107c-fcc1-4ed5-b834-abfc7330b271" />
+      <TestMethod codeBase="C:/highsoft/MVC_UnitTests/bin/Debug/MVC_UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Highsoft.Web.Mvc.UnitTests.Strings, MVC_UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestTitleText" />
+    </UnitTest>
+    <UnitTest name="TestPieType" storage="mvc_unittests\bin\debug\mvc_unittests.dll" id="e9c7189e-7208-697f-ee5c-c92c9bbe1c0a">
+      <Execution id="a14d7be6-9117-43d6-b47a-284957ce9900" />
+      <TestMethod codeBase="C:/highsoft/MVC_UnitTests/bin/Debug/MVC_UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Highsoft.Web.Mvc.UnitTests.Chart, MVC_UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestPieType" />
+    </UnitTest>
+    <UnitTest name="TestDefaultType" storage="mvc_unittests\bin\debug\mvc_unittests.dll" id="e82fcaa3-cdf4-9155-f702-764ff5de6ace">
+      <Execution id="8c57d7af-b2b7-45c6-9a21-ec0b274df6b5" />
+      <TestMethod codeBase="C:/highsoft/MVC_UnitTests/bin/Debug/MVC_UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Highsoft.Web.Mvc.UnitTests.Chart, MVC_UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestDefaultType" />
+    </UnitTest>
+    <UnitTest name="TestLegendLabelFormat" storage="mvc_unittests\bin\debug\mvc_unittests.dll" id="205a2c8a-b1ee-d1fe-9b81-a8b48e72f8d4">
+      <Execution id="1e9b0f91-b7fc-45c3-b2b9-a4c9ed633b17" />
+      <TestMethod codeBase="C:/highsoft/MVC_UnitTests/bin/Debug/MVC_UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Highsoft.Web.Mvc.UnitTests.Strings, MVC_UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestLegendLabelFormat" />
+    </UnitTest>
+    <UnitTest name="TestFrench" storage="mvc_unittests\bin\debug\mvc_unittests.dll" id="63661c96-a5f3-272b-67ab-f8af2bfa577c">
+      <Execution id="f2dc691f-3bf5-4778-a9b1-128a9dccdcdf" />
+      <TestMethod codeBase="C:/highsoft/MVC_UnitTests/bin/Debug/MVC_UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Highsoft.Web.Mvc.UnitTests.Strings, MVC_UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestFrench" />
+    </UnitTest>
+    <UnitTest name="TestJapanese" storage="mvc_unittests\bin\debug\mvc_unittests.dll" id="fe13259a-ad08-9748-552f-b086b6d75b02">
+      <Execution id="402f2c38-cd1f-47f4-8061-c11833f7b5bf" />
+      <TestMethod codeBase="C:/highsoft/MVC_UnitTests/bin/Debug/MVC_UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Highsoft.Web.Mvc.UnitTests.Strings, MVC_UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestJapanese" />
+    </UnitTest>
+    <UnitTest name="TestEnumMappings" storage="mvc_unittests\bin\debug\mvc_unittests.dll" id="6fc9f2d4-5467-cadf-e9cb-04cfb039e57e">
+      <Execution id="41f4a2d9-e875-496a-b4e3-8cba7b852330" />
+      <TestMethod codeBase="C:/highsoft/MVC_UnitTests/bin/Debug/MVC_UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Highsoft.Web.Mvc.UnitTests.Chart, MVC_UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestEnumMappings" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0a826f98-a131-e025-bcc6-78b2919f9af4" executionId="37070688-e5a7-4b47-a1b8-683af7b1055a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e82fcaa3-cdf4-9155-f702-764ff5de6ace" executionId="8c57d7af-b2b7-45c6-9a21-ec0b274df6b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6fc9f2d4-5467-cadf-e9cb-04cfb039e57e" executionId="41f4a2d9-e875-496a-b4e3-8cba7b852330" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e9c7189e-7208-697f-ee5c-c92c9bbe1c0a" executionId="a14d7be6-9117-43d6-b47a-284957ce9900" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="07f58fdd-85b2-832d-c74f-14b00dd4d508" executionId="dabafc7f-9556-405d-9fcc-264d9ccd4262" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="63661c96-a5f3-272b-67ab-f8af2bfa577c" executionId="f2dc691f-3bf5-4778-a9b1-128a9dccdcdf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fe13259a-ad08-9748-552f-b086b6d75b02" executionId="402f2c38-cd1f-47f4-8061-c11833f7b5bf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="205a2c8a-b1ee-d1fe-9b81-a8b48e72f8d4" executionId="1e9b0f91-b7fc-45c3-b2b9-a4c9ed633b17" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a34d2ada-57bd-12e7-da1d-b6d2742bc9ea" executionId="a816c2c4-ddc8-4fb6-a9ca-bfb4ffaa6310" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="34a872fb-0223-1ea8-b575-537140d51509" executionId="0232a3f7-c948-41f0-97cd-86923870eace" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="32fb316c-8fc0-2782-d143-9895499b565b" executionId="acdd107c-fcc1-4ed5-b834-abfc7330b271" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="37070688-e5a7-4b47-a1b8-683af7b1055a" testId="0a826f98-a131-e025-bcc6-78b2919f9af4" testName="TestAreaType" computerName="RUMEN-THINK" duration="00:00:01.6484882" startTime="2015-04-01T16:38:46.0932118+03:00" endTime="2015-04-01T16:38:48.2333342+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="37070688-e5a7-4b47-a1b8-683af7b1055a">
+    </UnitTestResult>
+    <UnitTestResult executionId="8c57d7af-b2b7-45c6-9a21-ec0b274df6b5" testId="e82fcaa3-cdf4-9155-f702-764ff5de6ace" testName="TestDefaultType" computerName="RUMEN-THINK" duration="00:00:00.0036681" startTime="2015-04-01T16:38:48.2423347+03:00" endTime="2015-04-01T16:38:48.2633359+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8c57d7af-b2b7-45c6-9a21-ec0b274df6b5">
+    </UnitTestResult>
+    <UnitTestResult executionId="41f4a2d9-e875-496a-b4e3-8cba7b852330" testId="6fc9f2d4-5467-cadf-e9cb-04cfb039e57e" testName="TestEnumMappings" computerName="RUMEN-THINK" duration="00:00:00.0017875" startTime="2015-04-01T16:38:48.2713363+03:00" endTime="2015-04-01T16:38:48.2783367+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="41f4a2d9-e875-496a-b4e3-8cba7b852330">
+    </UnitTestResult>
+    <UnitTestResult executionId="a14d7be6-9117-43d6-b47a-284957ce9900" testId="e9c7189e-7208-697f-ee5c-c92c9bbe1c0a" testName="TestPieType" computerName="RUMEN-THINK" duration="00:00:00.0036922" startTime="2015-04-01T16:38:48.2803369+03:00" endTime="2015-04-01T16:38:48.2883373+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a14d7be6-9117-43d6-b47a-284957ce9900">
+    </UnitTestResult>
+    <UnitTestResult executionId="dabafc7f-9556-405d-9fcc-264d9ccd4262" testId="07f58fdd-85b2-832d-c74f-14b00dd4d508" testName="TestForNull" computerName="RUMEN-THINK" duration="00:00:00.0035789" startTime="2015-04-01T16:38:48.2913375+03:00" endTime="2015-04-01T16:38:48.3083385+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dabafc7f-9556-405d-9fcc-264d9ccd4262">
+    </UnitTestResult>
+    <UnitTestResult executionId="f2dc691f-3bf5-4778-a9b1-128a9dccdcdf" testId="63661c96-a5f3-272b-67ab-f8af2bfa577c" testName="TestFrench" computerName="RUMEN-THINK" duration="00:00:00.0016431" startTime="2015-04-01T16:38:48.3113386+03:00" endTime="2015-04-01T16:38:48.3183390+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2dc691f-3bf5-4778-a9b1-128a9dccdcdf">
+    </UnitTestResult>
+    <UnitTestResult executionId="402f2c38-cd1f-47f4-8061-c11833f7b5bf" testId="fe13259a-ad08-9748-552f-b086b6d75b02" testName="TestJapanese" computerName="RUMEN-THINK" duration="00:00:00.0016105" startTime="2015-04-01T16:38:48.3213392+03:00" endTime="2015-04-01T16:38:48.3263395+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="402f2c38-cd1f-47f4-8061-c11833f7b5bf">
+    </UnitTestResult>
+    <UnitTestResult executionId="1e9b0f91-b7fc-45c3-b2b9-a4c9ed633b17" testId="205a2c8a-b1ee-d1fe-9b81-a8b48e72f8d4" testName="TestLegendLabelFormat" computerName="RUMEN-THINK" duration="00:00:00.0016042" startTime="2015-04-01T16:38:48.3283396+03:00" endTime="2015-04-01T16:38:48.3343400+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e9b0f91-b7fc-45c3-b2b9-a4c9ed633b17">
+    </UnitTestResult>
+    <UnitTestResult executionId="a816c2c4-ddc8-4fb6-a9ca-bfb4ffaa6310" testId="a34d2ada-57bd-12e7-da1d-b6d2742bc9ea" testName="TestNorwegian" computerName="RUMEN-THINK" duration="00:00:00.0015900" startTime="2015-04-01T16:38:48.3373401+03:00" endTime="2015-04-01T16:38:48.3433405+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a816c2c4-ddc8-4fb6-a9ca-bfb4ffaa6310">
+    </UnitTestResult>
+    <UnitTestResult executionId="0232a3f7-c948-41f0-97cd-86923870eace" testId="34a872fb-0223-1ea8-b575-537140d51509" testName="TestPlotOptionsAreaColor" computerName="RUMEN-THINK" duration="00:00:00.0021244" startTime="2015-04-01T16:38:48.3453406+03:00" endTime="2015-04-01T16:38:48.3513409+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0232a3f7-c948-41f0-97cd-86923870eace">
+    </UnitTestResult>
+    <UnitTestResult executionId="acdd107c-fcc1-4ed5-b834-abfc7330b271" testId="32fb316c-8fc0-2782-d143-9895499b565b" testName="TestTitleText" computerName="RUMEN-THINK" duration="00:00:00.0016332" startTime="2015-04-01T16:38:48.3543411+03:00" endTime="2015-04-01T16:38:48.3603414+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="acdd107c-fcc1-4ed5-b834-abfc7330b271">
+    </UnitTestResult>
+  </Results>
+</TestRun>
