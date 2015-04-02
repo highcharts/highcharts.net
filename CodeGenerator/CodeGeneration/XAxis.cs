@@ -33,7 +33,6 @@ namespace Highsoft.Web.Mvc
 			LinkedTo = LinkedTo_DefaultValue = null;
 			Max = Max_DefaultValue = null;
 			MaxPadding = MaxPadding_DefaultValue = 0.01;
-			MaxZoom = MaxZoom_DefaultValue = null;
 			Min = Min_DefaultValue = null;
 			MinPadding = MinPadding_DefaultValue = 0.01;
 			MinRange = MinRange_DefaultValue = null;
@@ -202,13 +201,6 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public double? MaxPadding { get; set; }
 		private double? MaxPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Deprecated. Renamed to <code>minRange</code> as of Highcharts 2.2.
-		/// </summary>
-		public double? MaxZoom { get; set; }
-		private double? MaxZoom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -465,7 +457,6 @@ namespace Highsoft.Web.Mvc
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
-			if (MaxZoom != MaxZoom_DefaultValue) h.Add("maxZoom",MaxZoom);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);

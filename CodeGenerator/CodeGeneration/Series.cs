@@ -15,8 +15,6 @@ namespace Highsoft.Web.Mvc
 		public Series()
 		{
 			Data = Data_DefaultValue = new List<SeriesData>();
-			DataParser = DataParser_DefaultValue = "";
-			DataURL = DataURL_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -35,20 +33,6 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public List<SeriesData> Data { get; set; }
 		private List<SeriesData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This method is deprecated as of version 2.0. Instead, use options preprocessing as described in <a href="http://docs.highcharts.com/#preprocessing">the docs</a>.
-		/// </summary>
-		public string DataParser { get; set; }
-		private string DataParser_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This method is deprecated as of version 2.0. Instead, load the data using jQuery.ajax and use options preprocessing as described in <a href="http://docs.highcharts.com/#preprocessing">the docs</a>.
-		/// </summary>
-		public string DataURL { get; set; }
-		private string DataURL_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,8 +102,6 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (DataParser != DataParser_DefaultValue) { h.Add("dataParser",DataParser); Highcharts.AddFunction("dataParser", DataParser); }  
-			if (DataURL != DataURL_DefaultValue) h.Add("dataURL",DataURL);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);

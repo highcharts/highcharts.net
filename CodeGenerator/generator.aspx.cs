@@ -77,6 +77,7 @@ public partial class generatoraspx : System.Web.UI.Page
                 Parent = item["parent"] as string,
                 FullName = item["fullname"].ToString(),
                 IsParent = (bool)item["isParent"],
+                Deprecated = item["deprecated"] == null ? false : (bool)item["deprecated"],
                 ReturnType = item["returnType"] as string,
                 Description = (String.IsNullOrEmpty(item["description"] as string)) ? "" : item["description"] as string,
                 Defaults = item["defaults"] == null ? null : item["defaults"] as string,
@@ -84,7 +85,10 @@ public partial class generatoraspx : System.Web.UI.Page
 
                 Parents = parents
             };
-           
+
+            if (apiItem.Deprecated)
+                continue;
+            
             if (apiItem.ReturnType != null & apiItem.ReturnType == "Function")
                 apiItem.Defaults = "";
             if (apiItem.ReturnType != null && apiItem.ReturnType == "" && apiItem.IsParent == false)
@@ -500,6 +504,7 @@ public partial class generatoraspx : System.Web.UI.Page
         public string Description { get; set; }
         public string Defaults { get; set; }
         public List<string> Values { get; set; }
+        public bool Deprecated { get; set; }
 
         // auxialiary and no part of the API
         public List<string> Parents { get; set; }        

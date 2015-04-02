@@ -35,7 +35,6 @@ namespace Highsoft.Web.Mvc
 			Max = Max_DefaultValue = null;
 			MaxColor = MaxColor_DefaultValue = "#102D4C";
 			MaxPadding = MaxPadding_DefaultValue = 0.05;
-			MaxZoom = MaxZoom_DefaultValue = null;
 			Min = Min_DefaultValue = null;
 			MinColor = MinColor_DefaultValue = "#EFEFFF";
 			MinPadding = MinPadding_DefaultValue = 0.05;
@@ -222,13 +221,6 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public double? MaxPadding { get; set; }
 		private double? MaxPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Deprecated. Renamed to <code>minRange</code> as of Highcharts 2.2.
-		/// </summary>
-		public double? MaxZoom { get; set; }
-		private double? MaxZoom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -515,7 +507,6 @@ namespace Highsoft.Web.Mvc
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
-			if (MaxZoom != MaxZoom_DefaultValue) h.Add("maxZoom",MaxZoom);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
