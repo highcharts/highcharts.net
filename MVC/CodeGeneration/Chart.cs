@@ -21,7 +21,6 @@ namespace Highsoft.Web.Mvc
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = null;
-			DefaultSeriesType = DefaultSeriesType_DefaultValue = ChartDefaultSeriesType.Line;
 			Events = Events_DefaultValue = new ChartEvents();
 			Height = Height_DefaultValue = null;
 			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
@@ -106,13 +105,6 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Alias of <code>type</code>.
-		/// </summary>
-		public ChartDefaultSeriesType DefaultSeriesType { get; set; }
-		private ChartDefaultSeriesType DefaultSeriesType_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -357,7 +349,6 @@ namespace Highsoft.Web.Mvc
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (DefaultSeriesType != DefaultSeriesType_DefaultValue) h.Add("defaultSeriesType",DefaultSeriesType.ToString().ToLower());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);

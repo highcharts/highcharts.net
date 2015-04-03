@@ -39,7 +39,6 @@ namespace Highsoft.Web.Mvc
 			Reversed = Reversed_DefaultValue = false;
 			Rtl = Rtl_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			Style = Style_DefaultValue = null;
 			SymbolHeight = SymbolHeight_DefaultValue = 12;
 			SymbolPadding = SymbolPadding_DefaultValue = 5;
 			SymbolRadius = SymbolRadius_DefaultValue = 2;
@@ -230,13 +229,6 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// CSS styles for the legend area. In the 1.x versions the position of the legend area was determined by CSS. In 2.x, the position is determined by properties like  <code>align</code>, <code>verticalAlign</code>, <code>x</code> and <code>y</code>, but the styles are still parsed for backwards compatibility.
-		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The pixel height of the symbol for series types that use a rectangle in the legend.
 		/// </summary>
 		public double? SymbolHeight { get; set; }
@@ -335,7 +327,6 @@ namespace Highsoft.Web.Mvc
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (SymbolHeight != SymbolHeight_DefaultValue) h.Add("symbolHeight",SymbolHeight);
 			if (SymbolPadding != SymbolPadding_DefaultValue) h.Add("symbolPadding",SymbolPadding);
 			if (SymbolRadius != SymbolRadius_DefaultValue) h.Add("symbolRadius",SymbolRadius);

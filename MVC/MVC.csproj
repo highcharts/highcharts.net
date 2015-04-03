@@ -60,7 +60,6 @@
     <Compile Include="CodeGeneration\Credits.cs" />
     <Compile Include="CodeGeneration\Drilldown.cs" />
     <Compile Include="CodeGeneration\DrilldownDrillUpButton.cs" />
-    <Compile Include="CodeGeneration\Enums\ChartDefaultSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\ChartPinchType.cs" />
     <Compile Include="CodeGeneration\Enums\ChartResetZoomButtonRelativeTo.cs" />
     <Compile Include="CodeGeneration\Enums\ChartType.cs" />

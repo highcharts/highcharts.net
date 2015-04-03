@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc
 		public XAxisTitle()
 		{
 			Align = Align_DefaultValue = XAxisTitleAlign.Middle;
-			Enabled = Enabled_DefaultValue = "middle";
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
@@ -30,13 +29,6 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public XAxisTitleAlign Align { get; set; }
 		private XAxisTitleAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Deprecated. Set the <code>text</code> to <code>null</code> to disable the title.
-		/// </summary>
-		public string Enabled { get; set; }
-		private string Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -79,7 +71,6 @@ namespace Highsoft.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align",Align.ToString().ToLower());
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
