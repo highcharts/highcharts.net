@@ -239,7 +239,7 @@ namespace Highsoft.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Center != Center_DefaultValue) h.Add("center",Center);

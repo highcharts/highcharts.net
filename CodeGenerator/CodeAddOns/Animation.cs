@@ -34,5 +34,31 @@ namespace Highsoft.Web.Mvc
         //  More easing functions are available with the use of jQuery plug-ins, most notably the jQuery UI suite.
         /// </summary>
         public string Easing { get; set; }
+
+        internal Hashtable ToHashtable()
+        {
+            Hashtable h = new Hashtable();
+
+            if (!String.IsNullOrEmpty(Easing)) h.Add("easing", Easing);
+            if (Duration > 0) h.Add("duration", Duration.ToString());
+
+            return h;
+        }
+
+        internal string ToJSON()
+        {
+            Hashtable h = ToHashtable();
+            if (h.Count > 0)
+                return new JavaScriptSerializer().Serialize(ToHashtable());
+            else
+                return Enabled.ToString().ToLower();
+        }
+
+        // checks if the state of the object is different from the default
+        // and therefore needs to be serialized
+        internal bool IsDirty()
+        {
+            return (Enabled != true || ToHashtable().Count > 0);
+        }
 	}
 }

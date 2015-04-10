@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (ActiveColor != ActiveColor_DefaultValue) h.Add("activeColor",ActiveColor);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (ArrowSize != ArrowSize_DefaultValue) h.Add("arrowSize",ArrowSize);
 			if (InactiveColor != InactiveColor_DefaultValue) h.Add("inactiveColor",InactiveColor);
 			if (Style != Style_DefaultValue) h.Add("style",Style);

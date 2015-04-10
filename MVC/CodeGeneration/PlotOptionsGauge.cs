@@ -190,7 +190,7 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor.ToString().ToLower());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());

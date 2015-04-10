@@ -56,7 +56,7 @@ namespace Highsoft.Web.Mvc
 
 			if (ActiveAxisLabelStyle != ActiveAxisLabelStyle_DefaultValue) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle);
 			if (ActiveDataLabelStyle != ActiveDataLabelStyle_DefaultValue) h.Add("activeDataLabelStyle",ActiveDataLabelStyle);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
 			
 

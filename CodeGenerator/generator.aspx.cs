@@ -22,6 +22,7 @@ public partial class generatoraspx : System.Web.UI.Page
     Hashtable _defaultValueMappings; // maps default values from javascript defaults to C# defaults
     Hashtable _enumMappings; // maps enums values that do not complile (e.g. special characters like "-" or "/" to other types
     List<string> _excludedProperties; // properties that do not need to be ported to the server-side wrapper
+    List<string> _customProperties; // properties that need custom JSON mappings (Animation, Shadow, etc). Defined in the CodeAddOns folder.
 
     protected override void OnInit(EventArgs e)
     {
@@ -32,11 +33,13 @@ public partial class generatoraspx : System.Web.UI.Page
         _defaultValueMappings = new Hashtable();
         _enumMappings = new Hashtable();
         _excludedProperties = new List<string>();
+        _customProperties = new List<string>();
         InitTypeMappings();
         InitPropertyMappings();
         InitDefaultValueMappings();
         InitExcludedProperties();
         InitEnumMappings();
+        InitCustomProperties();
 
         Directory.CreateDirectory(Server.MapPath("~/CodeGeneration/Enums/"));
 
@@ -104,7 +107,6 @@ public partial class generatoraspx : System.Web.UI.Page
             _apiItems.Add(apiItem);
         }
     }
-
 
     private void ProcessApiItems()
     {
@@ -291,11 +293,15 @@ public partial class generatoraspx : System.Web.UI.Page
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
         string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0}.ToString().ToLower());\n\t\t\t";
         string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); Highcharts.AddFunction(\"{1}\", {0}); }}  \n\t\t\t";
-        string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";        
+        string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
+        string customPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToJSON());\n\t\t\t";  
 
         if (propertyName == "Series" || propertyName == "Data")
             return "";
 
+        // property that needs custom serialization (Animation, Shadow, etc)
+        if (_customProperties.Contains(propertyName))
+            return String.Format(customPropertyFormat, propertyName, FirstCharToLower(propertyName));
         // Enum
         if (child.Values != null && child.Values.Count > 0)
             return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
@@ -420,6 +426,10 @@ public partial class generatoraspx : System.Web.UI.Page
         _excludedProperties.Add("Date");
     }
 
+    private void InitCustomProperties()
+    {
+        _customProperties.Add("Animation");
+    }
 
     private static string FirstCharToUpper(string input)
     {

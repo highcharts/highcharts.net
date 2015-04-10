@@ -287,7 +287,7 @@ namespace Highsoft.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
