@@ -27,9 +27,20 @@
             {            
                 Chart = new Chart
                 {
+                    Animation = new Animation
+                    {
+                        Duration = 1000,
+                        Easing = "cube"
+                    },
+                    PlotBackgroundColor = "#EEEEEE",
+                    PlotShadow = new Shadow
+                    {
+                        Opacity = 0.5,
+                        Width = 30
+                    },
                     Width = 700,
                     Height = 500,
-                    Type = ChartType.Pie,
+                    Type = ChartType.Line,
                     Events = new ChartEvents
                     {
                          Click = "handleClick"   

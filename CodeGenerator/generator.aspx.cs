@@ -429,6 +429,7 @@ public partial class generatoraspx : System.Web.UI.Page
     private void InitCustomProperties()
     {
         _customProperties.Add("Animation");
+        _customProperties.Add("PlotShadow");
     }
 
     private static string FirstCharToUpper(string input)

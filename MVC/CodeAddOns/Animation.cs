@@ -40,18 +40,19 @@ namespace Highsoft.Web.Mvc
             Hashtable h = new Hashtable();
 
             if (!String.IsNullOrEmpty(Easing)) h.Add("easing", Easing);
-            if (Duration > 0) h.Add("duration", Duration.ToString());
+            if (Duration > 0) h.Add("duration", Duration);
 
             return h;
         }
 
-        internal string ToJSON()
+        internal object ToJSON()
         {
             Hashtable h = ToHashtable();
             if (h.Count > 0)
-                return new JavaScriptSerializer().Serialize(ToHashtable());
+                return h;
+            //return new JavaScriptSerializer().Serialize(ToHashtable());
             else
-                return Enabled.ToString().ToLower();
+                return Enabled;
         }
 
         // checks if the state of the object is different from the default
