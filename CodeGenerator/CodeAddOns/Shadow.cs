@@ -44,14 +44,41 @@ namespace Highsoft.Web.Mvc
         /// <summary>
         /// The opacity of the shadow
         /// </summary>
-        public decimal Opacity { get; set; }
+        public double Opacity { get; set; }
 
         // <summary>
         /// The width of the shadow
         /// </summary>
         public int Width { get; set; }
 
-        
+        internal Hashtable ToHashtable()
+        {
+            Hashtable h = new Hashtable();
+
+            if (!String.IsNullOrEmpty(Color)) h.Add("color", Color);
+            if (OffsetX != 0) h.Add("offsetX", OffsetX);
+            if (OffsetY != 0) h.Add("offsetY", OffsetY);
+            if (Opacity != 0) h.Add("opacity", Opacity);
+            if (Width != 0) h.Add("width", Width);
+
+            return h;
+        }
+
+        internal object ToJSON()
+        {
+            Hashtable h = ToHashtable();
+            if (h.Count > 0)
+                return h;
+            else
+                return Enabled;
+        }
+
+        // checks if the state of the object is different from the default
+        // and therefore needs to be serialized
+        internal bool IsDirty()
+        {
+            return (Enabled != false || ToHashtable().Count > 0);
+        }
 
 	}
 }
