@@ -33,9 +33,6 @@ namespace Highsoft.Web.Mvc
         {
             Hashtable h = new Hashtable();
 
-            if (!String.IsNullOrEmpty(Easing)) h.Add("easing", Easing);
-            if (Duration > 0) h.Add("duration", Duration);
-
             return h;
         }
 
@@ -46,15 +43,11 @@ namespace Highsoft.Web.Mvc
                 return h;
             //return new JavaScriptSerializer().Serialize(ToHashtable());
             else
-                return Enabled;
+                return true;
         }
 
         // checks if the state of the object is different from the default
-        // and therefore needs to be serialized
-        internal bool IsDirty()
-        {
-            return (Enabled != true || ToHashtable().Count > 0);
-        }
+       
     }
 
     public enum PointPlacementOptions

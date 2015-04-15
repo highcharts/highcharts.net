@@ -10,213 +10,213 @@
     <meta name="keywords" content="highcharts, charts, javascript charts, ajax charts, plots, line charts, bar charts, pie charts, javascript plots, ajax plots" />
     <meta name="description" content="Highcharts - Interactive ASP.NET MVC charts for your web pages." />
     <title>Highcharts demos</title>
-    <link rel="stylesheet" href="../joomla/templates/highsoft_bootstrap/assets/bootstrap/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet"  href="@Url.Content("~/Content/bootstrap/bootstrap.min.css") %>" type="text/css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,400italic" type="text/css" />
-    <link rel="stylesheet" href="../../netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css" />
-    <link rel="stylesheet" href="../joomla/templates/highsoft_bootstrap/assets/css/template.css" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/font-awesome.css") %>" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/template.css") %>" type="text/css" />
     <style type="text/css">
-#hs-component {
-	background-color: #34343e;
-	padding: 0;
-}
-#hs-component > .container {
-	width: 100%;
-	padding: 0;
-}
-.img-thumbnail {
-	border: 0;
-}
-#hs-component .container {
-	/*width: 100%;*/
-	padding: 0;
-}
-#header {
-	background-color: #252530;
-	border-bottom: 5px solid #f6f6f6;
-}
-#header .container {
-	background-color: inherit;
-	background-color: #252530;
-}
-#header h1 {
-	text-align: left;
-	margin: 0;
-	color: white;
-	margin: 20px 0;
-	text-transform: none;
-}
-#demos {
-	background-color: #f6f6f6;
-}
-#demos .container {
-	background-color: #34343e;
-}
-#demos .row {
-	border-bottom: 1px solid #252530;
-	background-color: #34343e;
-}
-#demos .row:last-of-type {
-	border-bottom: 0;
-}
-h1 {
-	text-align: center;
-	margin-bottom: 1em;
-	font-weight: lighter;
-}
-.demo {
-	text-align: center;
-	margin: 10px 0;
-}
-.demo a {
-	font-weight: lighter;
-	color: white;
-	text-transform: 
-}
-.image-container {
-	height: 100%;
-	max-height: 250px;
-	background-color: white;
-	font: 0/0 a;
-}
-.dark-unica .image-container {
-	background-color: inherit;
-}
-.sand-signika .image-container {
-	background: url(../samples/graphics/sand.png);
-}
-.image-container::before {
-	content: ' ';
-	display: inline-block;
-	vertical-align: middle;
-	height: 100%;
-}
-.image-container svg,
-.image-container img {
-	display: inline-block;
-	vertical-align: middle;
-	max-width: 100%;
-	max-height: 250px;
-	border-radius: 0;
-	padding: 0;
-	border: 0;
-	background: 0;
-	position: inherit !important;
-}
-.dark-unica .image-container img {
-	border: 1px solid white;
-}
-.demo h3 {
-	text-transform: none;
-}
-.row > .title {
-	background-color: #34343e;
-	color: white;
-	/*padding: 5px;*/
-}
-.row > .title > h2 {
-	margin: 0;
-	margin-top: 20px;
-}
-/*.row:hover .title {
-	background-color: #8085e8;
-}*/
-a.btn.btn-theme {
-	color: #eeeaea;
-	background-color: #34343e;
-	border: 1px solid #34343e;
-	border-bottom: 0;
-	border-radius: 0;
-	font-weight: normal;
-	margin: 0;
-	margin-right: 5px;
-}
-a.btn.btn-theme:hover {
-	color: #90ef7f;
-}
-a.btn.btn-theme.disabled {
-	background-color: #f6f6f6;
-	color: #313131;
-	opacity: 1;
-}
-.select {
-	margin-bottom: 10px;
-	margin-top: 10px;
-}
-.select label {
-	color: white;
-	font-weight: lighter;
-}
-.dropdown.theme > ul {
-	border-radius: 0;
-	border: 0;
-}
-@media (max-width: 400px) {
-	.demo {
-		width: 100%;
-	}
-	.demo-container > div {
-		width: 50%;
-	}
-	.image-container {
-       max-height: 100px;
-	}
-	.demo h3 {
-		text-align: left;
-	}
-}
-@media screen and (min-width: 400px) and (max-width: 768px) {
-	.image-container {
-		max-height: 200px;
-	}
-}
-@media screen and (min-width: 768px) and (max-width: 992px) {
-	.demo-container {
-		/*border: 1px solid silver;*/
-		-webkit-transition-duration: 0.3s;
-		transition-duration: 0.3s;
-		-webkit-transition-property: transform;
-		transition-property: transform;
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);
-		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-	}
-	.demo-container:hover {
-		-webkit-transform: scale(1.05);
-		transform: scale(1.05);
-	}
-}
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-	.demo-container {
-		/*border: 1px solid silver;*/
-		-webkit-transition-duration: 0.3s;
-		transition-duration: 0.3s;
-		-webkit-transition-property: transform;
-		transition-property: transform;
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);
-		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-	}
-	.demo-container:hover {
-		-webkit-transform: scale(1.05);
-		transform: scale(1.05);
-	}
-}
-@media screen and (min-width: 1200px) {
-	.demo-container {
-		/*border: 1px solid silver;*/
-		-webkit-transition-duration: 0.3s;
-		transition-duration: 0.3s;
-		-webkit-transition-property: transform;
-		transition-property: transform;
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);
-		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-	}
-	.demo-container:hover {
-		-webkit-transform: scale(1.05);
-		transform: scale(1.05);
-	}
-}
+        #hs-component {
+	        background-color: #34343e;
+	        padding: 0;
+        }
+        #hs-component > .container {
+	        width: 100%;
+	        padding: 0;
+        }
+        .img-thumbnail {
+	        border: 0;
+        }
+        #hs-component .container {
+	        /*width: 100%;*/
+	        padding: 0;
+        }
+        #header {
+	        background-color: #252530;
+	        border-bottom: 5px solid #f6f6f6;
+        }
+        #header .container {
+	        background-color: inherit;
+	        background-color: #252530;
+        }
+        #header h1 {
+	        text-align: left;
+	        margin: 0;
+	        color: white;
+	        margin: 20px 0;
+	        text-transform: none;
+        }
+        #demos {
+	        background-color: #f6f6f6;
+        }
+        #demos .container {
+	        background-color: #34343e;
+        }
+        #demos .row {
+	        border-bottom: 1px solid #252530;
+	        background-color: #34343e;
+        }
+        #demos .row:last-of-type {
+	        border-bottom: 0;
+        }
+        h1 {
+	        text-align: center;
+	        margin-bottom: 1em;
+	        font-weight: lighter;
+        }
+        .demo {
+	        text-align: center;
+	        margin: 10px 0;
+        }
+        .demo a {
+	        font-weight: lighter;
+	        color: white;
+	        text-transform: 
+        }
+        .image-container {
+	        height: 100%;
+	        max-height: 250px;
+	        background-color: white;
+	        font: 0/0 a;
+        }
+        .dark-unica .image-container {
+	        background-color: inherit;
+        }
+        .sand-signika .image-container {
+	        background: url(../samples/graphics/sand.png);
+        }
+        .image-container::before {
+	        content: ' ';
+	        display: inline-block;
+	        vertical-align: middle;
+	        height: 100%;
+        }
+        .image-container svg,
+        .image-container img {
+	        display: inline-block;
+	        vertical-align: middle;
+	        max-width: 100%;
+	        max-height: 250px;
+	        border-radius: 0;
+	        padding: 0;
+	        border: 0;
+	        background: 0;
+	        position: inherit !important;
+        }
+        .dark-unica .image-container img {
+	        border: 1px solid white;
+        }
+        .demo h3 {
+	        text-transform: none;
+        }
+        .row > .title {
+	        background-color: #34343e;
+	        color: white;
+	        /*padding: 5px;*/
+        }
+        .row > .title > h2 {
+	        margin: 0;
+	        margin-top: 20px;
+        }
+        /*.row:hover .title {
+	        background-color: #8085e8;
+        }*/
+        a.btn.btn-theme {
+	        color: #eeeaea;
+	        background-color: #34343e;
+	        border: 1px solid #34343e;
+	        border-bottom: 0;
+	        border-radius: 0;
+	        font-weight: normal;
+	        margin: 0;
+	        margin-right: 5px;
+        }
+        a.btn.btn-theme:hover {
+	        color: #90ef7f;
+        }
+        a.btn.btn-theme.disabled {
+	        background-color: #f6f6f6;
+	        color: #313131;
+	        opacity: 1;
+        }
+        .select {
+	        margin-bottom: 10px;
+	        margin-top: 10px;
+        }
+        .select label {
+	        color: white;
+	        font-weight: lighter;
+        }
+        .dropdown.theme > ul {
+	        border-radius: 0;
+	        border: 0;
+        }
+        @@media (max-width: 400px) {
+	        .demo {
+		        width: 100%;
+	        }
+	        .demo-container > div {
+		        width: 50%;
+	        }
+	        .image-container {
+               max-height: 100px;
+	        }
+	        .demo h3 {
+		        text-align: left;
+	        }
+        }
+        @@media screen and (min-width: 400px) and (max-width: 768px) {
+	        .image-container {
+		        max-height: 200px;
+	        }
+        }
+        @@media screen and (min-width: 768px) and (max-width: 992px) {
+	        .demo-container {
+		        /*border: 1px solid silver;*/
+		        -webkit-transition-duration: 0.3s;
+		        transition-duration: 0.3s;
+		        -webkit-transition-property: transform;
+		        transition-property: transform;
+		        -webkit-transform: translateZ(0);
+		        transform: translateZ(0);
+		        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	        }
+	        .demo-container:hover {
+		        -webkit-transform: scale(1.05);
+		        transform: scale(1.05);
+	        }
+        }
+        @@media screen and (min-width: 992px) and (max-width: 1200px) {
+	        .demo-container {
+		        /*border: 1px solid silver;*/
+		        -webkit-transition-duration: 0.3s;
+		        transition-duration: 0.3s;
+		        -webkit-transition-property: transform;
+		        transition-property: transform;
+		        -webkit-transform: translateZ(0);
+		        transform: translateZ(0);
+		        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	        }
+	        .demo-container:hover {
+		        -webkit-transform: scale(1.05);
+		        transform: scale(1.05);
+	        }
+        }
+        @@media screen and (min-width: 1200px) {
+	        .demo-container {
+		        /*border: 1px solid silver;*/
+		        -webkit-transition-duration: 0.3s;
+		        transition-duration: 0.3s;
+		        -webkit-transition-property: transform;
+		        transition-property: transform;
+		        -webkit-transform: translateZ(0);
+		        transform: translateZ(0);
+		        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	        }
+	        .demo-container:hover {
+		        -webkit-transform: scale(1.05);
+		        transform: scale(1.05);
+	        }
+        }
   </style>
     <script src="../lib/jquery-1.7.2.js" type="text/javascript"></script>
     <script src="../joomla/templates/highsoft_bootstrap/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -284,7 +284,6 @@ a.btn.btn-theme.disabled {
                 <div class="collapse navbar-collapse">
                     <div id="menu-container">
                         <div id="menu-second" class="hidden-xs">
-
                             <ul class="nav navbar-nav pull-right">
                                 <li class="item-112"><a href="../about.html">About Us</a></li>
                                 <li class="item-113 deeper dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Products <span class="toggle-arrow"></span></a>
