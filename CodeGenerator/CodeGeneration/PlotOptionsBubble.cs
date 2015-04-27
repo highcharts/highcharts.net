@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc
 			DisplayNegative = DisplayNegative_DefaultValue = true;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsBubbleEvents();
+			Keys = Keys_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 0;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsBubbleMarker();
@@ -32,6 +33,7 @@ namespace Highsoft.Web.Mvc
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			Point = Point_DefaultValue = new PlotOptionsBubblePoint();
 			PointInterval = PointInterval_DefaultValue = 1;
+			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsBubblePointIntervalUnit.Null;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -46,6 +48,8 @@ namespace Highsoft.Web.Mvc
 			ZMax = ZMax_DefaultValue = null;
 			ZMin = ZMin_DefaultValue = null;
 			ZThreshold = ZThreshold_DefaultValue = 0;
+			ZoneAxis = ZoneAxis_DefaultValue = "y";
+			Zones = Zones_DefaultValue = new PlotOptionsBubbleZones();
 			
 		}	
 		
@@ -121,6 +125,13 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
+		/// A custom mapping of data point array positions to respective object properties. For example, is the first key is <code>name</code>, the first item in a series.data array is interpreted as point.name.
+		/// </summary>
+		public List<string> Keys { get; set; }
+		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The width of the line connecting the data points.
 		/// </summary>
 		public double? LineWidth { get; set; }
@@ -170,10 +181,17 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values. For example, if a series contains one value every decade starting from year 0, set pointInterval to 10.</p>
+		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values. For example, if a series contains one value every decade starting from year 0, set pointInterval to 10.</p><p>Since Highcharts 4.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// On datetime series, this allows for setting the <a href="plotOptions.series.pointInterval">pointInterval</a> to the two irregular time units, <code>month</code> and <code>year</code>. Combine it with <code>pointInterval</code> to draw quarters, 6 months, 10 years etc.
+		/// </summary>
+		public PlotOptionsBubblePointIntervalUnit PointIntervalUnit { get; set; }
+		private PlotOptionsBubblePointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -272,6 +290,20 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public double? ZThreshold { get; set; }
 		private double? ZThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines the Axis on which the zones are applied.
+		/// </summary>
+		public string ZoneAxis { get; set; }
+		private string ZoneAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array defining zones within a series.
+		/// </summary>
+		public PlotOptionsBubbleZones Zones { get; set; }
+		private PlotOptionsBubbleZones Zones_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()
@@ -288,6 +320,7 @@ namespace Highsoft.Web.Mvc
 			if (DisplayNegative != DisplayNegative_DefaultValue) h.Add("displayNegative",DisplayNegative);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
@@ -296,6 +329,7 @@ namespace Highsoft.Web.Mvc
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
+			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit",PointIntervalUnit.ToString().ToLower());
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
@@ -310,6 +344,8 @@ namespace Highsoft.Web.Mvc
 			if (ZMax != ZMax_DefaultValue) h.Add("zMax",ZMax);
 			if (ZMin != ZMin_DefaultValue) h.Add("zMin",ZMin);
 			if (ZThreshold != ZThreshold_DefaultValue) h.Add("zThreshold",ZThreshold);
+			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
+			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			
 
 			return h;

@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
 			ShortMonths = ShortMonths_DefaultValue = new List<string> { "Jan" , "Feb" , "Mar" , "Apr" , "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct" , "Nov" , "Dec"};
-			ThousandsSep = ThousandsSep_DefaultValue = ",";
+			ThousandsSep = ThousandsSep_DefaultValue = " ";
 			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 			
 		}	
@@ -141,7 +141,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The default thousands separator used in the <code>Highcharts.numberFormat</code> method unless otherwise specified in the function arguments.
+		/// The default thousands separator used in the <code>Highcharts.numberFormat</code> method unless otherwise specified in the function arguments. Since Highcharts 4.1 it defaults to a single space character, which is compatible with ISO and works across Anglo-American and continental European languages.
 		/// </summary>
 		public string ThousandsSep { get; set; }
 		private string ThousandsSep_DefaultValue { get; set; }

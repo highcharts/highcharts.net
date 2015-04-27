@@ -28,6 +28,7 @@ namespace Highsoft.Web.Mvc
 			GroupPadding = GroupPadding_DefaultValue = 0.2;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Grouping = Grouping_DefaultValue = true;
+			Keys = Keys_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MedianColor = MedianColor_DefaultValue = "null";
@@ -35,6 +36,7 @@ namespace Highsoft.Web.Mvc
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			Point = Point_DefaultValue = new PlotOptionsBoxplotPoint();
 			PointInterval = PointInterval_DefaultValue = 1;
+			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsBoxplotPointIntervalUnit.Null;
 			PointPadding = PointPadding_DefaultValue = 0.1;
 			PointPlacement = PointPlacement_DefaultValue = PlotOptionsBoxplotPointPlacement.Null;
 			PointRange = PointRange_DefaultValue = null;
@@ -54,6 +56,8 @@ namespace Highsoft.Web.Mvc
 			WhiskerColor = WhiskerColor_DefaultValue = "null";
 			WhiskerLength = WhiskerLength_DefaultValue = "50%";
 			WhiskerWidth = WhiskerWidth_DefaultValue = 2;
+			ZoneAxis = ZoneAxis_DefaultValue = "y";
+			Zones = Zones_DefaultValue = new PlotOptionsBoxplotZones();
 			
 		}	
 		
@@ -157,6 +161,13 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
+		/// A custom mapping of data point array positions to respective object properties. For example, is the first key is <code>name</code>, the first item in a series.data array is interpreted as point.name.
+		/// </summary>
+		public List<string> Keys { get; set; }
+		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The width of the line surrounding the box. If any of <a href="#plotOptions.boxplot.stemWidth">stemWidth</a>, <a href="#plotOptions.boxplot.medianWidth">medianWidth</a> or <a href="#plotOptions.boxplot.whiskerWidth">whiskerWidth</a> are <code>null</code>, the lineWidth also applies to these lines.
 		/// </summary>
 		public double? LineWidth { get; set; }
@@ -199,10 +210,17 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values. For example, if a series contains one value every decade starting from year 0, set pointInterval to 10.</p>
+		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values. For example, if a series contains one value every decade starting from year 0, set pointInterval to 10.</p><p>Since Highcharts 4.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// On datetime series, this allows for setting the <a href="plotOptions.series.pointInterval">pointInterval</a> to the two irregular time units, <code>month</code> and <code>year</code>. Combine it with <code>pointInterval</code> to draw quarters, 6 months, 10 years etc.
+		/// </summary>
+		public PlotOptionsBoxplotPointIntervalUnit PointIntervalUnit { get; set; }
+		private PlotOptionsBoxplotPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -213,7 +231,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>Possible values: null, "on", "between".</p><p>In a column chart, when pointPlacement is "on", the point will not create any padding of the X axis. In a polar column chart this means that the first column points directly north. If the pointPlacement is "between", the columns will be laid out between ticks. This is useful for example for visualising an amount between two points in time or in a certain sector of a polar chart.</p><p>Since Highcharts 3.0.2, the point placement can also be numeric, where 0 is on the axis value, -0.5 is between this value and the previous, and 0.5 is between this value and the next. Unlike the textual options, numeric point placement options won't affect axis padding.</p><p>Defaults to <code>null</code> in cartesian charts, <code>"between"</code> in polar charts.
+		/// <p>Possible values: <code>null</code>, <code>"on"</code>, <code>"between"</code>.</p><p>In a column chart, when pointPlacement is <code>"on"</code>, the point will not create any padding of the X axis. In a polar column chart this means that the first column points directly north. If the pointPlacement is <code>"between"</code>, the columns will be laid out between ticks. This is useful for example for visualising an amount between two points in time or in a certain sector of a polar chart.</p><p>Since Highcharts 3.0.2, the point placement can also be numeric, where 0 is on the axis value, -0.5 is between this value and the previous, and 0.5 is between this value and the next. Unlike the textual options, numeric point placement options won't affect axis padding.</p><p>Note that pointPlacement needs a <a href="#plotOptions.series.pointRange">pointRange</a> to work. For column series this is computed, but for line-type series it needs to be set.</p><p>Defaults to <code>null</code> in cartesian charts, <code>"between"</code> in polar charts.
 		/// </summary>
 		public PlotOptionsBoxplotPointPlacement PointPlacement { get; set; }
 		private PlotOptionsBoxplotPointPlacement PointPlacement_DefaultValue { get; set; }
@@ -336,6 +354,20 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public double? WhiskerWidth { get; set; }
 		private double? WhiskerWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines the Axis on which the zones are applied.
+		/// </summary>
+		public string ZoneAxis { get; set; }
+		private string ZoneAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array defining zones within a series.
+		/// </summary>
+		public PlotOptionsBoxplotZones Zones { get; set; }
+		private PlotOptionsBoxplotZones Zones_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()
@@ -356,6 +388,7 @@ namespace Highsoft.Web.Mvc
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
+			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MedianColor != MedianColor_DefaultValue) h.Add("medianColor",MedianColor);
@@ -363,6 +396,7 @@ namespace Highsoft.Web.Mvc
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
+			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit",PointIntervalUnit.ToString().ToLower());
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement.ToString().ToLower());
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
@@ -382,6 +416,8 @@ namespace Highsoft.Web.Mvc
 			if (WhiskerColor != WhiskerColor_DefaultValue) h.Add("whiskerColor",WhiskerColor);
 			if (WhiskerLength != WhiskerLength_DefaultValue) h.Add("whiskerLength",WhiskerLength);
 			if (WhiskerWidth != WhiskerWidth_DefaultValue) h.Add("whiskerWidth",WhiskerWidth);
+			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
+			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			
 
 			return h;

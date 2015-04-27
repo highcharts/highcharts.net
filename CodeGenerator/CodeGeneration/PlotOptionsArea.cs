@@ -27,6 +27,7 @@ namespace Highsoft.Web.Mvc
 			Events = Events_DefaultValue = new PlotOptionsAreaEvents();
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = 0.75;
+			Keys = Keys_DefaultValue = "";
 			LineColor = LineColor_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
@@ -35,6 +36,7 @@ namespace Highsoft.Web.Mvc
 			NegativeFillColor = NegativeFillColor_DefaultValue = "";
 			Point = Point_DefaultValue = new PlotOptionsAreaPoint();
 			PointInterval = PointInterval_DefaultValue = 1;
+			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsAreaPointIntervalUnit.Null;
 			PointPlacement = PointPlacement_DefaultValue = PlotOptionsAreaPointPlacement.Null;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
@@ -50,6 +52,8 @@ namespace Highsoft.Web.Mvc
 			TrackByArea = TrackByArea_DefaultValue = false;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
+			ZoneAxis = ZoneAxis_DefaultValue = "y";
+			Zones = Zones_DefaultValue = new PlotOptionsAreaZones();
 			
 		}	
 		
@@ -139,10 +143,17 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Fill opacity for the area.
+		/// Fill opacity for the area. Note that when you set an explicit <code>fillColor</code>, the <code>fillOpacity</code> is not applied. Instead, you should define the opacity in the <code>fillColor</code> with an rgba color definition.
 		/// </summary>
 		public double? FillOpacity { get; set; }
 		private double? FillOpacity_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A custom mapping of data point array positions to respective object properties. For example, is the first key is <code>name</code>, the first item in a series.data array is interpreted as point.name.
+		/// </summary>
+		public List<string> Keys { get; set; }
+		private List<string> Keys_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -195,14 +206,21 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values. For example, if a series contains one value every decade starting from year 0, set pointInterval to 10.</p>
+		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values. For example, if a series contains one value every decade starting from year 0, set pointInterval to 10.</p><p>Since Highcharts 4.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Possible values: null, "on", "between".</p><p>In a column chart, when pointPlacement is "on", the point will not create any padding of the X axis. In a polar column chart this means that the first column points directly north. If the pointPlacement is "between", the columns will be laid out between ticks. This is useful for example for visualising an amount between two points in time or in a certain sector of a polar chart.</p><p>Since Highcharts 3.0.2, the point placement can also be numeric, where 0 is on the axis value, -0.5 is between this value and the previous, and 0.5 is between this value and the next. Unlike the textual options, numeric point placement options won't affect axis padding.</p><p>Defaults to <code>null</code> in cartesian charts, <code>"between"</code> in polar charts.
+		/// On datetime series, this allows for setting the <a href="plotOptions.series.pointInterval">pointInterval</a> to the two irregular time units, <code>month</code> and <code>year</code>. Combine it with <code>pointInterval</code> to draw quarters, 6 months, 10 years etc.
+		/// </summary>
+		public PlotOptionsAreaPointIntervalUnit PointIntervalUnit { get; set; }
+		private PlotOptionsAreaPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Possible values: <code>null</code>, <code>"on"</code>, <code>"between"</code>.</p><p>In a column chart, when pointPlacement is <code>"on"</code>, the point will not create any padding of the X axis. In a polar column chart this means that the first column points directly north. If the pointPlacement is <code>"between"</code>, the columns will be laid out between ticks. This is useful for example for visualising an amount between two points in time or in a certain sector of a polar chart.</p><p>Since Highcharts 3.0.2, the point placement can also be numeric, where 0 is on the axis value, -0.5 is between this value and the previous, and 0.5 is between this value and the next. Unlike the textual options, numeric point placement options won't affect axis padding.</p><p>Note that pointPlacement needs a <a href="#plotOptions.series.pointRange">pointRange</a> to work. For column series this is computed, but for line-type series it needs to be set.</p><p>Defaults to <code>null</code> in cartesian charts, <code>"between"</code> in polar charts.
 		/// </summary>
 		public PlotOptionsAreaPointPlacement PointPlacement { get; set; }
 		private PlotOptionsAreaPointPlacement PointPlacement_DefaultValue { get; set; }
@@ -304,6 +322,20 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines the Axis on which the zones are applied.
+		/// </summary>
+		public string ZoneAxis { get; set; }
+		private string ZoneAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array defining zones within a series.
+		/// </summary>
+		public PlotOptionsAreaZones Zones { get; set; }
+		private PlotOptionsAreaZones Zones_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()
@@ -323,6 +355,7 @@ namespace Highsoft.Web.Mvc
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
+			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
@@ -331,6 +364,7 @@ namespace Highsoft.Web.Mvc
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
+			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit",PointIntervalUnit.ToString().ToLower());
 			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement.ToString().ToLower());
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
@@ -346,6 +380,8 @@ namespace Highsoft.Web.Mvc
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
+			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			
 
 			return h;

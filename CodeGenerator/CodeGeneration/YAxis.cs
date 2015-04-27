@@ -16,13 +16,14 @@ namespace Highsoft.Web.Mvc
 		{
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			AlternateGridColor = AlternateGridColor_DefaultValue = null;
+			Breaks = Breaks_DefaultValue = new YAxisBreaks();
 			Categories = Categories_DefaultValue = null;
 			Ceiling = Ceiling_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			EndOnTick = EndOnTick_DefaultValue = true;
 			Events = Events_DefaultValue = new YAxisEvents();
 			Floor = Floor_DefaultValue = null;
-			GridLineColor = GridLineColor_DefaultValue = "#C0C0C0";
+			GridLineColor = GridLineColor_DefaultValue = "#D8D8D8";
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = YAxisGridLineDashStyle.Solid;
 			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
@@ -61,6 +62,7 @@ namespace Highsoft.Web.Mvc
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			StartOnTick = StartOnTick_DefaultValue = true;
 			Stops = Stops_DefaultValue = null;
+			TickAmount = TickAmount_DefaultValue = null;
 			TickColor = TickColor_DefaultValue = "#C0D0E0";
 			TickInterval = TickInterval_DefaultValue = null;
 			TickLength = TickLength_DefaultValue = 10;
@@ -72,6 +74,7 @@ namespace Highsoft.Web.Mvc
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = YAxisTickmarkPlacement.Null;
 			Title = Title_DefaultValue = new YAxisTitle();
 			Type = Type_DefaultValue = YAxisType.Linear;
+			Units = Units_DefaultValue = "";
 			
 		}	
 		
@@ -91,10 +94,17 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>If categories are present for the xAxis, names are used instead of numbers for that axis. Since Highcharts 3.0, categories can also be extracted by giving each point a <a href="#series.data">name</a> and setting axis <a href="#xAxis.type">type</a> to <code>"category"</code>.</p><p>Example:<pre>categories: ['Apples', 'Bananas', 'Oranges']</pre> Defaults to <code>null</code></p>
+		/// An array defining breaks in the axis, the sections defined will be left out and all the points shifted closer to each other. Requires that the broken-axis.js module is loaded.
 		/// </summary>
-		public Array Categories { get; set; }
-		private Array Categories_DefaultValue { get; set; }
+		public YAxisBreaks Breaks { get; set; }
+		private YAxisBreaks Breaks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>If categories are present for the xAxis, names are used instead of numbers for that axis. Since Highcharts 3.0, categories can also be extracted by giving each point a <a href="#series.data">name</a> and setting axis <a href="#xAxis.type">type</a> to <code>category</code>. However, if you have multiple series, best practice remains defining the <code>categories</code> array.</p><p>Example:<pre>categories: ['Apples', 'Bananas', 'Oranges']</pre> Defaults to <code>null</code></p>
+		/// </summary>
+		public List<string> Categories { get; set; }
+		private List<string> Categories_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -252,7 +262,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The minimum tick interval allowed in axis values. For example on zooming in on an axis with daily data, this can be used to prevent the axis from showing hours.
+		/// The minimum tick interval allowed in axis values. For example on zooming in on an axis with daily data, this can be used to prevent the axis from showing hours. Defaults to the closest distance between two points on the axis.
 		/// </summary>
 		public double? MinTickInterval { get; set; }
 		private double? MinTickInterval_DefaultValue { get; set; }
@@ -287,10 +297,10 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>Tick interval in scale units for the minor ticks. On a linear axis, if <code>"auto"</code>,  the minor tick interval is calculated as a fifth of the tickInterval. If <code>null</code>, minor ticks are not shown.</p> <p>On logarithmic axes, the unit is the power of the value. For example, setting the minorTickInterval to 1 puts one tick on each of 0.1, 1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticks between 1 and 10,  10 and 100 etc. A minorTickInterval of "auto" on a log axis results in a best guess, attempting to enter approximately 5 minor ticks between each major tick.</p><p>On axes using <a href="#xAxis.categories">categories</a>, minor ticks are not supported.</p>
+		/// <p>Tick interval in scale units for the minor ticks. On a linear axis, if <code>"auto"</code>,  the minor tick interval is calculated as a fifth of the tickInterval. If <code>null</code>, minor ticks are not shown.</p> <p>On logarithmic axes, the unit is the power of the value. For example, setting the minorTickInterval to 1 puts one tick on each of 0.1, 1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticks between 1 and 10,  10 and 100 etc. A minorTickInterval of "auto" on a log axis results in a best guess, attempting to enter approximately 5 minor ticks between each major tick.</p><p>If user settings dictate minor ticks to become too dense, they don't make sense, and will be ignored to prevent performance problems.</a><p>On axes using <a href="#xAxis.categories">categories</a>, minor ticks are not supported.</p>
 		/// </summary>
-		public double? MinorTickInterval { get; set; }
-		private double? MinorTickInterval_DefaultValue { get; set; }
+		public string MinorTickInterval { get; set; }
+		private string MinorTickInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -406,6 +416,13 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
+		/// <p>The amount of ticks to draw on the axis. This opens up for aligning the ticks of multiple charts or panes within a chart. This option overrides the <code>tickPixelInterval</code> option.</p><p>This option only has an effect on linear axes. Datetime, logarithmic or category axes are not affected.</p>
+		/// </summary>
+		public double? TickAmount { get; set; }
+		private double? TickAmount_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Color for the main tick marks.
 		/// </summary>
 		public string TickColor { get; set; }
@@ -413,7 +430,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>The interval of the tick marks in axis units. When <code>null</code>, the tick interval is computed to approximately follow the <a href="#xAxis.tickPixelInterval">tickPixelInterval</a> on linear and datetime axes. On categorized axes, a <code>null</code> tickInterval will default to 1, one category.  Note that datetime axes are based on milliseconds, so for  example an interval of one day is expressed as <code>24 * 3600 * 1000</code>.</p> <p>On logarithmic axes, the tickInterval is based on powers, so a tickInterval of 1 means one tick on each of 0.1, 1, 10, 100 etc. A tickInterval of 2 means a tick of 0.1, 10, 1000 etc. A tickInterval of 0.2 puts a tick on 0.1, 0.2, 0.4, 0.6, 0.8, 1, 2, 4, 6, 8, 10, 20, 40 etc.</p>
+		/// <p>The interval of the tick marks in axis units. When <code>null</code>, the tick interval is computed to approximately follow the <a href="#xAxis.tickPixelInterval">tickPixelInterval</a> on linear and datetime axes. On categorized axes, a <code>null</code> tickInterval will default to 1, one category.  Note that datetime axes are based on milliseconds, so for  example an interval of one day is expressed as <code>24 * 3600 * 1000</code>.</p> <p>On logarithmic axes, the tickInterval is based on powers, so a tickInterval of 1 means one tick on each of 0.1, 1, 10, 100 etc. A tickInterval of 2 means a tick of 0.1, 10, 1000 etc. A tickInterval of 0.2 puts a tick on 0.1, 0.2, 0.4, 0.6, 0.8, 1, 2, 4, 6, 8, 10, 20, 40 etc.</p><p>If the tickInterval is too dense for labels to be drawn, Highcharts may remove ticks.</p>
 		/// </summary>
 		public double? TickInterval { get; set; }
 		private double? TickInterval_DefaultValue { get; set; }
@@ -441,7 +458,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// A callback function returning array defining where the ticks are laid out on the axis. This overrides the default behaviour of <a href="#xAxis.tickPixelInterval">tickPixelInterval</a> and <a href="#xAxis.tickInterval">tickInterval</a>.
+		/// A callback function returning array defining where the ticks are laid out on the axis. This overrides the default behaviour of <a href="#xAxis.tickPixelInterval">tickPixelInterval</a> and <a href="#xAxis.tickInterval">tickInterval</a>. The automatic tick positions are accessible through <code>this.tickPositions</code> and can be modified by the callback.
 		/// </summary>
 		public string TickPositioner { get; set; }
 		private string TickPositioner_DefaultValue { get; set; }
@@ -480,6 +497,13 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public YAxisType Type { get; set; }
 		private YAxisType Type_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Datetime axis only. An array determining what time intervals the ticks are allowed to fall on. Each array item is an array where the first value is the time unit and the  second value another array of allowed multiples. Defaults to:<pre>units: [['millisecond', // unit name[1, 2, 5, 10, 20, 25, 50, 100, 200, 500] // allowed multiples], ['second',[1, 2, 5, 10, 15, 30]], ['minute',[1, 2, 5, 10, 15, 30]], ['hour',[1, 2, 3, 4, 6, 8, 12]], ['day',[1]], ['week',[1]], ['month',[1, 3, 6]], ['year',null]]</pre>
+		/// </summary>
+		public Array Units { get; set; }
+		private Array Units_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()
@@ -488,6 +512,7 @@ namespace Highsoft.Web.Mvc
 
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
+			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
 			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
@@ -533,6 +558,7 @@ namespace Highsoft.Web.Mvc
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
 			if (Stops != Stops_DefaultValue) h.Add("stops",Stops);
+			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickColor != TickColor_DefaultValue) h.Add("tickColor",TickColor);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
 			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
@@ -544,6 +570,7 @@ namespace Highsoft.Web.Mvc
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement",TickmarkPlacement.ToString().ToLower());
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Type != Type_DefaultValue) h.Add("type",Type.ToString().ToLower());
+			if (Units != Units_DefaultValue) h.Add("units",Units);
 			
 
 			return h;

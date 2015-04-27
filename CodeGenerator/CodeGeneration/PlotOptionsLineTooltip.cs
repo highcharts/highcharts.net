@@ -16,11 +16,12 @@ namespace Highsoft.Web.Mvc
 		{
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = "";
 			FollowPointer = FollowPointer_DefaultValue = false;
-			FollowTouchMove = FollowTouchMove_DefaultValue = false;
+			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			FooterFormat = FooterFormat_DefaultValue = "false";
 			HeaderFormat = HeaderFormat_DefaultValue = "";
 			HideDelay = HideDelay_DefaultValue = 500;
-			PointFormat = PointFormat_DefaultValue = "&lt;span style='color:{series.color}'&gt;\u25CF&lt;/span&gt; {series.name}: &lt;b&gt;{point.y}&lt;/b&gt;&lt;br/&gt;";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
+			PointFormatter = PointFormatter_DefaultValue = "";
 			Shape = Shape_DefaultValue = "callout";
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = null;
@@ -45,7 +46,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Whether the tooltip should follow the finger as it moves on a touch device. The default value of <code>false</code> causes a touch move to scroll the web page, as is default behaviour on touch devices. Setting it to <code>true</code> may cause the user to be trapped inside the chart and unable to scroll away, so it should be used with care. If <a href="#chart.zoomType">chart.zoomType</a> is set, it will override <code>followTouchMove</code>
+		/// Whether the tooltip should follow the finger as it moves on a touch device. If <a href="#chart.zoomType">chart.zoomType</a> is set, it will override <code>followTouchMove</code>.
 		/// </summary>
 		public bool? FollowTouchMove { get; set; }
 		private bool? FollowTouchMove_DefaultValue { get; set; }
@@ -73,10 +74,17 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>The HTML of the point's line in the tooltip. Variables are enclosed by curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form. Furthermore,  point.y can be extended by the <code>tooltip.yPrefix</code> and <code>tooltip.ySuffix</code> variables. This can also be overridden for each series, which makes it a good hook for displaying units.</p>
+		/// <p>The HTML of the point's line in the tooltip. Variables are enclosed by curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form. Furthermore,  point.y can be extended by the <code>tooltip.valuePrefix</code> and <code>tooltip.valueSuffix</code> variables. This can also be overridden for each series, which makes it a good hook for displaying units.</p>
 		/// </summary>
 		public string PointFormat { get; set; }
 		private string PointFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A callback function for formatting the HTML output for a single point in the tooltip. Like the <code>pointFormat</code> string, but with more flexibility.
+		/// </summary>
+		public string PointFormatter { get; set; }
+		private string PointFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -125,6 +133,7 @@ namespace Highsoft.Web.Mvc
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("pointFormatter", PointFormatter); }  
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);

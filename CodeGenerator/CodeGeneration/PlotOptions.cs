@@ -26,14 +26,16 @@ namespace Highsoft.Web.Mvc
 			Errorbar = Errorbar_DefaultValue = new PlotOptionsErrorbar();
 			Funnel = Funnel_DefaultValue = new PlotOptionsFunnel();
 			Gauge = Gauge_DefaultValue = new PlotOptionsGauge();
-			Heatmap = Heatmap_DefaultValue = "";
+			Heatmap = Heatmap_DefaultValue = new PlotOptionsHeatmap();
 			Line = Line_DefaultValue = new PlotOptionsLine();
 			Pie = Pie_DefaultValue = new PlotOptionsPie();
+			Polygon = Polygon_DefaultValue = new PlotOptionsPolygon();
 			Pyramid = Pyramid_DefaultValue = new PlotOptionsPyramid();
 			Scatter = Scatter_DefaultValue = new PlotOptionsScatter();
 			Series = Series_DefaultValue = new List<Series>();
 			Solidgauge = Solidgauge_DefaultValue = new PlotOptionsSolidgauge();
 			Spline = Spline_DefaultValue = new PlotOptionsSpline();
+			Treemap = Treemap_DefaultValue = new PlotOptionsTreemap();
 			Waterfall = Waterfall_DefaultValue = new PlotOptionsWaterfall();
 			
 		}	
@@ -124,10 +126,10 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The heatmap series type. This series type is available both in Highcharts and Highmaps. See the <a href="http://api.highcharts.com/highmaps#plotOptions.heatmap">Highmaps API</a> for details.
+		/// <p>The heatmap series type. This series type is available both in Highcharts and Highmaps.</p><p>The colors of each heat map point is usually determined by its value and controlled by settings on the <a href="#colorAxis">colorAxis</a>.</p>
 		/// </summary>
-		public Object Heatmap { get; set; }
-		private Object Heatmap_DefaultValue { get; set; }
+		public PlotOptionsHeatmap Heatmap { get; set; }
+		private PlotOptionsHeatmap Heatmap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -142,6 +144,13 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public PlotOptionsPie Pie { get; set; }
 		private PlotOptionsPie Pie_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A polygon series can be used to draw any freeform shape in the cartesian coordinate system. A fill is applied with the <code>color</code> option, and stroke is applied through <code>lineWidth</code> and <code>lineColor</code> options. Requires the <code>highcharts-more.js</code> file.
+		/// </summary>
+		public PlotOptionsPolygon Polygon { get; set; }
+		private PlotOptionsPolygon Polygon_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -180,6 +189,13 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
+		/// The size of the point shape is determined by its value relative to its siblings values.Requires the module <code>heatmap.js</code> as well, if functionality such as the <a href="http://api.highcharts.com/highmaps#colorAxis">colorAxis</a> is to be used.
+		/// </summary>
+		public PlotOptionsTreemap Treemap { get; set; }
+		private PlotOptionsTreemap Treemap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options for the waterfall series type.
 		/// </summary>
 		public PlotOptionsWaterfall Waterfall { get; set; }
@@ -202,13 +218,15 @@ namespace Highsoft.Web.Mvc
 			if (Errorbar.IsDirty()) h.Add("errorbar",Errorbar.ToHashtable());
 			if (Funnel.IsDirty()) h.Add("funnel",Funnel.ToHashtable());
 			if (Gauge.IsDirty()) h.Add("gauge",Gauge.ToHashtable());
-			if (Heatmap != Heatmap_DefaultValue) h.Add("heatmap",Heatmap);
+			if (Heatmap.IsDirty()) h.Add("heatmap",Heatmap.ToHashtable());
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
 			if (Pie.IsDirty()) h.Add("pie",Pie.ToHashtable());
+			if (Polygon.IsDirty()) h.Add("polygon",Polygon.ToHashtable());
 			if (Pyramid.IsDirty()) h.Add("pyramid",Pyramid.ToHashtable());
 			if (Scatter.IsDirty()) h.Add("scatter",Scatter.ToHashtable());
 			if (Solidgauge.IsDirty()) h.Add("solidgauge",Solidgauge.ToHashtable());
 			if (Spline.IsDirty()) h.Add("spline",Spline.ToHashtable());
+			if (Treemap.IsDirty()) h.Add("treemap",Treemap.ToHashtable());
 			if (Waterfall.IsDirty()) h.Add("waterfall",Waterfall.ToHashtable());
 			
 

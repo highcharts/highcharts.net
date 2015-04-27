@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsFunnelEvents();
 			Height = Height_DefaultValue = null;
+			Keys = Keys_DefaultValue = "";
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinSize = MinSize_DefaultValue = 80;
 			NeckHeight = NeckHeight_DefaultValue = "25%";
@@ -40,6 +41,8 @@ namespace Highsoft.Web.Mvc
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsFunnelTooltip();
 			Visible = Visible_DefaultValue = true;
 			Width = Width_DefaultValue = "90%";
+			ZoneAxis = ZoneAxis_DefaultValue = "y";
+			Zones = Zones_DefaultValue = new PlotOptionsFunnelZones();
 			
 		}	
 		
@@ -119,6 +122,13 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public string Height { get; set; }
 		private string Height_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A custom mapping of data point array positions to respective object properties. For example, is the first key is <code>name</code>, the first item in a series.data array is interpreted as point.name.
+		/// </summary>
+		public List<string> Keys { get; set; }
+		private List<string> Keys_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -224,6 +234,20 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public string Width { get; set; }
 		private string Width_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines the Axis on which the zones are applied.
+		/// </summary>
+		public string ZoneAxis { get; set; }
+		private string ZoneAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array defining zones within a series.
+		/// </summary>
+		public PlotOptionsFunnelZones Zones { get; set; }
+		private PlotOptionsFunnelZones Zones_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()
@@ -241,6 +265,7 @@ namespace Highsoft.Web.Mvc
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
 			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
@@ -256,6 +281,8 @@ namespace Highsoft.Web.Mvc
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
+			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			
 
 			return h;

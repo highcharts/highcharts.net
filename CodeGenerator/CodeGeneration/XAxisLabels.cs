@@ -15,12 +15,13 @@ namespace Highsoft.Web.Mvc
 		public XAxisLabels()
 		{
 			Align = Align_DefaultValue = XAxisLabelsAlign.Center;
+			AutoRotation = AutoRotation_DefaultValue = [-45];
+			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
 			Distance = Distance_DefaultValue = 15;
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
-			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
-			Overflow = Overflow_DefaultValue = XAxisLabelsOverflow.Null;
+			Padding = Padding_DefaultValue = 5;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
@@ -38,6 +39,20 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public XAxisLabelsAlign Align { get; set; }
 		private XAxisLabelsAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For horizontal axes, the allowed degrees of label rotation to prevent overlapping labels. If there is enough space, labels are not rotated. As the chart gets narrower, it will start rotating the labels -45 degrees, then remove every second label and try again with rotations 0 and -45 etc. Set it to <code>false</code> to disable rotation, which will cause the labels to word-wrap if possible.
+		/// </summary>
+		public List<double> AutoRotation { get; set; }
+		private List<double> AutoRotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When each category width is more than this many pixels, we don't apply auto rotation. Instead, we lay out the axis label with word wrap. A lower limit makes sense when the label contains multiple short words that don't extend the available horizontal space for each label.
+		/// </summary>
+		public double? AutoRotationLimit { get; set; }
+		private double? AutoRotationLimit_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -69,17 +84,10 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Horizontal axis only. When <code>staggerLines</code> is not set, <code>maxStaggerLines</code> defines how many lines the axis is allowed to add to automatically avoid overlapping X labels. Set to <code>1</code> to disable overlap detection. 
+		/// The pixel padding for axis labels, to ensure white space between them.
 		/// </summary>
-		public double? MaxStaggerLines { get; set; }
-		private double? MaxStaggerLines_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// How to handle overflowing labels on horizontal axis. Can be undefined, <code>false</code> or <code>"justify"</code>. By default it aligns inside the chart area. If "justify", labels will not render outside the plot area. If <code>false</code>, it will not be aligned at all. If there is room to move it, it will be aligned to the edge, else it will be removed.
-		/// </summary>
-		public XAxisLabelsOverflow Overflow { get; set; }
-		private XAxisLabelsOverflow Overflow_DefaultValue { get; set; }
+		public double? Padding { get; set; }
+		private double? Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -104,7 +112,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// CSS styles for the label. Use <code>whiteSpace: 'nowrap'</code> to prevent wrapping of category labels. Defaults to:<pre>style: {color: '#6D869F',fontWeight: 'bold'}</pre>
+		/// CSS styles for the label. Use <code>whiteSpace: 'nowrap'</code> to prevent wrapping of category labels.
 		/// </summary>
 		public NameValueCollection Style { get; set; }
 		private NameValueCollection Style_DefaultValue { get; set; }
@@ -143,12 +151,13 @@ namespace Highsoft.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align",Align.ToString().ToLower());
+			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
+			if (AutoRotationLimit != AutoRotationLimit_DefaultValue) h.Add("autoRotationLimit",AutoRotationLimit);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("formatter", Formatter); }  
-			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow.ToString().ToLower());
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);

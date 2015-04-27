@@ -30,11 +30,12 @@ namespace Highsoft.Web.Mvc
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
 			Overflow = Overflow_DefaultValue = PlotOptionsFunnelDataLabelsOverflow.Justify;
-			Padding = Padding_DefaultValue = 2;
+			Padding = Padding_DefaultValue = 5;
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Shape = Shape_DefaultValue = "square";
 			SoftConnector = SoftConnector_DefaultValue = true;
-			Style = Style_DefaultValue = new NameValueCollection{{"color", "#606060"},{ "fontSize", "11px"}};
+			Style = Style_DefaultValue = new NameValueCollection{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textShadow", "0 0 6px contrast},{ 0 0 3px contrast" }};
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsFunnelDataLabelsVerticalAlign.Null;
 			X = X_DefaultValue = 0;
@@ -164,7 +165,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Text rotation in degrees. Note that due to a more complex structure, backgrounds and borders will be lost on a rotated data label.
+		/// Text rotation in degrees. Note that due to a more complex structure, backgrounds, borders and padding will be lost on a rotated data label.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
@@ -175,6 +176,13 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of a symbol to use for the border around the label. Symbols are predefined functions on the Renderer object.
+		/// </summary>
+		public string Shape { get; set; }
+		private string Shape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -249,6 +257,7 @@ namespace Highsoft.Web.Mvc
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);

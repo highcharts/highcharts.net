@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc
 			Dial = Dial_DefaultValue = new PlotOptionsGaugeDial();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsGaugeEvents();
+			Keys = Keys_DefaultValue = "";
 			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			Overshoot = Overshoot_DefaultValue = 0;
@@ -35,6 +36,8 @@ namespace Highsoft.Web.Mvc
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsGaugeTooltip();
 			Visible = Visible_DefaultValue = true;
 			Wrap = Wrap_DefaultValue = true;
+			ZoneAxis = ZoneAxis_DefaultValue = "y";
+			Zones = Zones_DefaultValue = new PlotOptionsGaugeZones();
 			
 		}	
 		
@@ -86,6 +89,13 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public PlotOptionsGaugeEvents Events { get; set; }
 		private PlotOptionsGaugeEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A custom mapping of data point array positions to respective object properties. For example, is the first key is <code>name</code>, the first item in a series.data array is interpreted as point.name.
+		/// </summary>
+		public List<string> Keys { get; set; }
+		private List<string> Keys_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -184,6 +194,20 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public bool? Wrap { get; set; }
 		private bool? Wrap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines the Axis on which the zones are applied.
+		/// </summary>
+		public string ZoneAxis { get; set; }
+		private string ZoneAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array defining zones within a series.
+		/// </summary>
+		public PlotOptionsGaugeZones Zones { get; set; }
+		private PlotOptionsGaugeZones Zones_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()
@@ -197,6 +221,7 @@ namespace Highsoft.Web.Mvc
 			if (Dial.IsDirty()) h.Add("dial",Dial.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
@@ -211,6 +236,8 @@ namespace Highsoft.Web.Mvc
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Wrap != Wrap_DefaultValue) h.Add("wrap",Wrap);
+			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
+			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			
 
 			return h;

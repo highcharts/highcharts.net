@@ -28,6 +28,7 @@ namespace Highsoft.Web.Mvc
 			Events = Events_DefaultValue = new PlotOptionsPieEvents();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			InnerSize = InnerSize_DefaultValue = "0";
+			Keys = Keys_DefaultValue = "";
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinSize = MinSize_DefaultValue = 80;
 			Point = Point_DefaultValue = new PlotOptionsPiePoint();
@@ -41,6 +42,8 @@ namespace Highsoft.Web.Mvc
 			StickyTracking = StickyTracking_DefaultValue = false;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsPieTooltip();
 			Visible = Visible_DefaultValue = true;
+			ZoneAxis = ZoneAxis_DefaultValue = "y";
+			Zones = Zones_DefaultValue = new PlotOptionsPieZones();
 			
 		}	
 		
@@ -137,10 +140,17 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The size of the inner diameter for the pie. A size greater than 0 renders a donut chart. Can be a percentage or pixel value. Percentages are relative to the size of the plot area. Pixel values are given as integers.
+		/// <p>The size of the inner diameter for the pie. A size greater than 0 renders a donut chart. Can be a percentage or pixel value. Percentages are relative to the pie size. Pixel values are given as integers.</p><p>Note: in Highcharts < 4.1.2, the percentage was relative to the plot area, not the pie size.</p>
 		/// </summary>
 		public string InnerSize { get; set; }
 		private string InnerSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A custom mapping of data point array positions to respective object properties. For example, is the first key is <code>name</code>, the first item in a series.data array is interpreted as point.name.
+		/// </summary>
+		public List<string> Keys { get; set; }
+		private List<string> Keys_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -232,6 +242,20 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines the Axis on which the zones are applied.
+		/// </summary>
+		public string ZoneAxis { get; set; }
+		private string ZoneAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array defining zones within a series.
+		/// </summary>
+		public PlotOptionsPieZones Zones { get; set; }
+		private PlotOptionsPieZones Zones_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()
@@ -252,6 +276,7 @@ namespace Highsoft.Web.Mvc
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
+			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
@@ -265,6 +290,8 @@ namespace Highsoft.Web.Mvc
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
+			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			
 
 			return h;

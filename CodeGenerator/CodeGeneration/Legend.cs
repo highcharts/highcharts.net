@@ -32,14 +32,14 @@ namespace Highsoft.Web.Mvc
 			LabelFormatter = LabelFormatter_DefaultValue = "";
 			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
 			LineHeight = LineHeight_DefaultValue = 16;
-			Margin = Margin_DefaultValue = 15;
+			Margin = Margin_DefaultValue = 12;
 			MaxHeight = MaxHeight_DefaultValue = null;
 			Navigation = Navigation_DefaultValue = new LegendNavigation();
 			Padding = Padding_DefaultValue = 8;
 			Reversed = Reversed_DefaultValue = false;
 			Rtl = Rtl_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			SymbolHeight = SymbolHeight_DefaultValue = 12;
+			SymbolHeight = SymbolHeight_DefaultValue = null;
 			SymbolPadding = SymbolPadding_DefaultValue = 5;
 			SymbolRadius = SymbolRadius_DefaultValue = 2;
 			SymbolWidth = SymbolWidth_DefaultValue = 16;
@@ -229,7 +229,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The pixel height of the symbol for series types that use a rectangle in the legend.
+		/// The pixel height of the symbol for series types that use a rectangle in the legend. Defaults to the font size of legend items.
 		/// </summary>
 		public double? SymbolHeight { get; set; }
 		private double? SymbolHeight_DefaultValue { get; set; }
