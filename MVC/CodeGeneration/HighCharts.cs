@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Global options that don't apply to each chart. These options, like the <code>lang</code>options, must be set using the <code>Highcharts.setOptions</code> method.<pre>Highcharts.setOptions({global: {useUTC: false}});</pre>
 		/// </summary>
-		public Global Global { get; set; }
+	                                                                                                                                                                                       	public Global Global { get; set; }
 		private Global Global_DefaultValue { get; set; }
 		 
 

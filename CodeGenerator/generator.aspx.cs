@@ -65,6 +65,7 @@ public partial class generatoraspx : System.Web.UI.Page
     private void ParseItems()
     {
         JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
+        jsonSerializer.MaxJsonLength = Int32.MaxValue;
 
         string jsonAPI = File.ReadAllText(Server.MapPath("~/api.json"));
         object[] jsonObject = jsonSerializer.Deserialize<object[]>(jsonAPI);
