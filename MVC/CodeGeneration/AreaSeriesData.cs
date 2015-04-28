@@ -23,10 +23,8 @@ namespace Highsoft.Web.Mvc
 			Name = Name_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
-			
-		}	
-		
+			Y = Y_DefaultValue = null;		
+		}		
 
 		/// <summary>
 		/// Individual color for the point. By default the color is pulled from the global <code>colors</code> array.

@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc
 			Colors = Colors_DefaultValue = new List<string>();
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = ColumnRangeSeriesCursor.Null;
-			Data = Data_DefaultValue = new ColumnRangeSeriesData();
+			Data = Data_DefaultValue = new List<SeriesData>();
 			DataLabels = DataLabels_DefaultValue = null;
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
@@ -142,8 +142,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// An array of data points for the series. For the <code>columnrange</code> series type, points can be given in the following ways: <ol> <li><p>An array of arrays with 3 or 2 values. In this case, the values correspond to <code>x,low,high</code>. If the first value is a string, it is applied as the name of the point, and the <code>x</code> value is inferred. The <code>x</code> value can also be omitted, in which case the inner arrays should be of length 2. Then the <code>x</code> value is automatically calculated, either starting at 0 and incremented by 1, or from <code>pointStart</code>  and <code>pointInterval</code> given in the series options.</p><pre>data: [    [0, 4, 2],     [1, 2, 1],     [2, 9, 10]]</pre></li><li><p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href='#series<columnrange>.turboThreshold'>turboThreshold</a>, this option is not available.</p><pre>data: [{    x: 1,    low: 0,    high: 4,    name: "Point2",    color: "#00FF00"}, {    x: 1,    low: 5,    high: 3,    name: "Point1",    color: "#FF00FF"}]</pre></li> </ol>
 		/// </summary>
-		public ColumnRangeSeriesData Data { get; set; }
-		private ColumnRangeSeriesData Data_DefaultValue { get; set; }
+		public List<SeriesData> Data { get; set; }
+		private List<SeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

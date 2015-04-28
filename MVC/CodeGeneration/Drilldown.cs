@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc
 			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = null;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			DrillUpButton = DrillUpButton_DefaultValue = new DrilldownDrillUpButton();
+			Series = Series_DefaultValue = new List<Series>();
 			
 		}	
 		
@@ -48,6 +49,13 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public DrilldownDrillUpButton DrillUpButton { get; set; }
 		private DrilldownDrillUpButton DrillUpButton_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of series configurations for the drill down. Each series configuration uses the same syntax as the <a href="#series">series</a> option set. These drilldown series are hidden by default. The drilldown series is linked to the parent series' point by its <code>id</code>.
+		/// </summary>
+		public List<Series> Series { get; set; }
+		private List<Series> Series_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()

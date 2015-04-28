@@ -74,7 +74,6 @@ namespace Highsoft.Web.Mvc
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = YAxisTickmarkPlacement.Null;
 			Title = Title_DefaultValue = new YAxisTitle();
 			Type = Type_DefaultValue = YAxisType.Linear;
-			Units = Units_DefaultValue = "";
 			
 		}	
 		
@@ -497,13 +496,6 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public YAxisType Type { get; set; }
 		private YAxisType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Datetime axis only. An array determining what time intervals the ticks are allowed to fall on. Each array item is an array where the first value is the time unit and the  second value another array of allowed multiples. Defaults to:<pre>units: [['millisecond', // unit name[1, 2, 5, 10, 20, 25, 50, 100, 200, 500] // allowed multiples], ['second',[1, 2, 5, 10, 15, 30]], ['minute',[1, 2, 5, 10, 15, 30]], ['hour',[1, 2, 3, 4, 6, 8, 12]], ['day',[1]], ['week',[1]], ['month',[1, 3, 6]], ['year',null]]</pre>
-		/// </summary>
-		public Array Units { get; set; }
-		private Array Units_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()
@@ -570,7 +562,6 @@ namespace Highsoft.Web.Mvc
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement",TickmarkPlacement.ToString().ToLower());
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Type != Type_DefaultValue) h.Add("type",Type.ToString().ToLower());
-			if (Units != Units_DefaultValue) h.Add("units",Units);
 			
 
 			return h;

@@ -404,7 +404,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("Stops", "List<Stop>");
         _propertyTypeMappings.Add("RenderTo", "string");
         _propertyTypeMappings.Add("Series", "List<Series>");
-        //_propertyTypeMappings.Add("Data", "List<SeriesData>");
+        _propertyTypeMappings.Add("Data", "List<SeriesData>");
         //propertyTypeMappings.Add("Drilldown.Series", "List<Series>");
     }
 
@@ -416,7 +416,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _defaultValueMappings.Add("PointPlacement", "PointPlacement.Null");
         _defaultValueMappings.Add("Colors", "new List<string>()");
         _defaultValueMappings.Add("Series", "new List<Series>()");
-        //_defaultValueMappings.Add("Data", "new List<SeriesData>()");
+        _defaultValueMappings.Add("Data", "new List<SeriesData>()");
         _defaultValueMappings.Add("Center", "new string[] { null, null }");
         _defaultValueMappings.Add("Position", "new NameValueCollection()");
         _defaultValueMappings.Add("Columns", "new List<List<Object>>()");
@@ -455,9 +455,10 @@ public partial class generatoraspx : System.Web.UI.Page
 
     private void InitExcludedProperties()
     {
-        _excludedProperties.Add("Series");
+        //_excludedProperties.Add("Series");
         _excludedProperties.Add("Spacing");
         _excludedProperties.Add("Date");
+        _excludedProperties.Add("Units");
     }
 
     private void InitCustomProperties()

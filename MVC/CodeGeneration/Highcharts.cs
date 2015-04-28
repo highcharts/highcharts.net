@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc
 			Chart = Chart_DefaultValue = new Chart();
 			Colors = Colors_DefaultValue = new List<string>();
 			Credits = Credits_DefaultValue = new Credits();
-			Data = Data_DefaultValue = new Data();
+			Data = Data_DefaultValue = new List<SeriesData>();
 			Drilldown = Drilldown_DefaultValue = new Drilldown();
 			Exporting = Exporting_DefaultValue = new Exporting();
 			Global = Global_DefaultValue = new Global();
@@ -85,8 +85,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>The Data module provides a simplified interface for adding data to a chart from sources like CVS, HTML tables or grid views. See also the <a href="http://www.highcharts.com/docs/working-with-data/data-module">tutorial article on the Data module</a>.</p><p>It requires the <code>modules/data.js</code> file to be loaded.</p><p>Please note that the default way of adding data in Highcharts, without the need of a module, is through the <a href="#series.data">series.data</a> option.</p>
 		/// </summary>
-		public Data Data { get; set; }
-		private Data Data_DefaultValue { get; set; }
+		public List<SeriesData> Data { get; set; }
+		private List<SeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

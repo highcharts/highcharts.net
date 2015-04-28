@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc
 		public XAxisLabels()
 		{
 			Align = Align_DefaultValue = XAxisLabelsAlign.Center;
-			AutoRotation = AutoRotation_DefaultValue = new List<string> {-45};
+			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
 			Distance = Distance_DefaultValue = 15;
 			Enabled = Enabled_DefaultValue = true;

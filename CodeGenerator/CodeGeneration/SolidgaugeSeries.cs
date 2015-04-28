@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Cursor = Cursor_DefaultValue = SolidgaugeSeriesCursor.Null;
-			Data = Data_DefaultValue = new SolidgaugeSeriesData();
+			Data = Data_DefaultValue = new List<SeriesData>();
 			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new SolidgaugeSeriesEvents();
@@ -62,8 +62,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// An array of data points for the series. For the <code>solidgauge</code> series type, points can be given in the following ways: <ol> <li>An array of numerical values. In this case, the numerical values will  be interpreted as <code>y</code> options.  Example:<pre>data: [0, 5, 3, 5]</pre> </li> <li><p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href='#series<solidgauge>.turboThreshold'>turboThreshold</a>, this option is not available.</p><pre>data: [{    y: 5,    name: "Point2",    color: "#00FF00"}, {    y: 7,    name: "Point1",    color: "#FF00FF"}]</pre></li> </ol><p>The typical gauge only contains a single data value.</p>
 		/// </summary>
-		public SolidgaugeSeriesData Data { get; set; }
-		private SolidgaugeSeriesData Data_DefaultValue { get; set; }
+		public List<SeriesData> Data { get; set; }
+		private List<SeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
