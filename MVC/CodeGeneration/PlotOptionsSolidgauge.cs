@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Cursor = Cursor_DefaultValue = PlotOptionsSolidgaugeCursor.Null;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsSolidgaugeDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsSolidgaugeEvents();
 			Keys = Keys_DefaultValue = new List<string>();

@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc
 			Colors = Colors_DefaultValue = new List<string>();
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = PlotOptionsColumnrangeCursor.Null;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsColumnrangeDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;

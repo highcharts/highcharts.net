@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsArearangeCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsArearangeDashStyle.Solid;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsArearangeDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsArearangeEvents();
 			FillColor = FillColor_DefaultValue = null;

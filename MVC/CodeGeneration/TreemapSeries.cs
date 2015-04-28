@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = TreemapSeriesCursor.Null;
 			Data = Data_DefaultValue = new TreemapSeriesData();
-			DataLabels = DataLabels_DefaultValue = new TreemapSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new TreemapSeriesEvents();
 			Id = Id_DefaultValue = "";

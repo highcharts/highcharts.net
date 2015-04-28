@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			Center = Center_DefaultValue = new string[] { null, null };
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = PlotOptionsPieCursor.Null;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsPieDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			Depth = Depth_DefaultValue = 0;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			EndAngle = EndAngle_DefaultValue = null;

@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = HeatmapSeriesCursor.Null;
 			Data = Data_DefaultValue = new HeatmapSeriesData();
-			DataLabels = DataLabels_DefaultValue = new HeatmapSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new HeatmapSeriesEvents();
 			Id = Id_DefaultValue = "";

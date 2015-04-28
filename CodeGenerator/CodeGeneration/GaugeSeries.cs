@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc
 			Color = Color_DefaultValue = null;
 			Cursor = Cursor_DefaultValue = GaugeSeriesCursor.Null;
 			Data = Data_DefaultValue = new GaugeSeriesData();
-			DataLabels = DataLabels_DefaultValue = new GaugeSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			Dial = Dial_DefaultValue = new GaugeSeriesDial();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new GaugeSeriesEvents();

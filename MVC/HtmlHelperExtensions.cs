@@ -17,9 +17,9 @@ namespace Highsoft.Web.Mvc
     {
         public MvcHtmlString Highcharts(Highcharts chart, string id)
         {            
-            var renderer = new HighchartsRenderer(chart);         
+            var renderer = new HighchartsRenderer(chart);      
             
-
+            
             chart.ID = id;
             chart.Chart.RenderTo = id;
             

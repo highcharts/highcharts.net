@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc
 			Cursor = Cursor_DefaultValue = AreaSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = AreaSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new AreaSeriesData();
-			DataLabels = DataLabels_DefaultValue = new AreaSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new AreaSeriesEvents();
 			FillColor = FillColor_DefaultValue = null;

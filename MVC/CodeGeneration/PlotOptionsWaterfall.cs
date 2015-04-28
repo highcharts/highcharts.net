@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = PlotOptionsWaterfallCursor.Null;
 			DashStyle = DashStyle_DefaultValue = "Dot";
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsWaterfallDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;

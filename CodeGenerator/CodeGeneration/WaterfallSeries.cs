@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc
 			Cursor = Cursor_DefaultValue = WaterfallSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = "Dot";
 			Data = Data_DefaultValue = new WaterfallSeriesData();
-			DataLabels = DataLabels_DefaultValue = new WaterfallSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;

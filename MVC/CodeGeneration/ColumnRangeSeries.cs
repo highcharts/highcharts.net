@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = ColumnRangeSeriesCursor.Null;
 			Data = Data_DefaultValue = new ColumnRangeSeriesData();
-			DataLabels = DataLabels_DefaultValue = new ColumnRangeSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;

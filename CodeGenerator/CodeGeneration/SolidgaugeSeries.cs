@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Cursor = Cursor_DefaultValue = SolidgaugeSeriesCursor.Null;
 			Data = Data_DefaultValue = new SolidgaugeSeriesData();
-			DataLabels = DataLabels_DefaultValue = new SolidgaugeSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new SolidgaugeSeriesEvents();
 			Id = Id_DefaultValue = "";

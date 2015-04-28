@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			Cursor = Cursor_DefaultValue = ScatterSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = ScatterSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new ScatterSeriesData();
-			DataLabels = DataLabels_DefaultValue = new ScatterSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new ScatterSeriesEvents();
 			Id = Id_DefaultValue = "";

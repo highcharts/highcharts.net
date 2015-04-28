@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			Cursor = Cursor_DefaultValue = BubbleSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = BubbleSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new BubbleSeriesData();
-			DataLabels = DataLabels_DefaultValue = new BubbleSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			DisplayNegative = DisplayNegative_DefaultValue = true;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new BubbleSeriesEvents();

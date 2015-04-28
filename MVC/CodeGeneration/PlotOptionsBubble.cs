@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsBubbleCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsBubbleDashStyle.Solid;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsBubbleDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			DisplayNegative = DisplayNegative_DefaultValue = true;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsBubbleEvents();

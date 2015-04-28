@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc
 			BorderDashStyle = BorderDashStyle_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = undefined;
+			DataLabels = DataLabels_DefaultValue = null;
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLevelsLayoutAlgorithm.Null;
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLevelsLayoutStartingDirection.Null;
 			Level = Level_DefaultValue = null;

@@ -678,8 +678,12 @@
     <Compile Include="CodeGeneration\XAxisBreaks.cs" />
     <Compile Include="CodeGeneration\YAxisBreaks.cs" />
     <Compile Include="Highcharts.cs" />
-    <Compile Include="HtmlHelperExtensions.cs" />
-    <Compile Include="HighchartsRenderer.cs" />
+    <Compile Include="HighchartsRenderer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HtmlHelperExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

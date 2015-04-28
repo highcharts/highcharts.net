@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc
 			Cursor = Cursor_DefaultValue = AreasplinerangeSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = AreasplinerangeSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new AreasplinerangeSeriesData();
-			DataLabels = DataLabels_DefaultValue = new AreasplinerangeSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new AreasplinerangeSeriesEvents();
 			FillColor = FillColor_DefaultValue = null;

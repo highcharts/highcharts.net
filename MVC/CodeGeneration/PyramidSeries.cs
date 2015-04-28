@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = PyramidSeriesCursor.Null;
 			Data = Data_DefaultValue = new PyramidSeriesData();
-			DataLabels = DataLabels_DefaultValue = new PyramidSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			Depth = Depth_DefaultValue = 0;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PyramidSeriesEvents();

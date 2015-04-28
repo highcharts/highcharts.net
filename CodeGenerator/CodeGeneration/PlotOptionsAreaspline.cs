@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsAreasplineCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsAreasplineDashStyle.Solid;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsAreasplineDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsAreasplineEvents();
 			FillColor = FillColor_DefaultValue = null;

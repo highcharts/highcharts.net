@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc
 			Cursor = Cursor_DefaultValue = SplineSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = SplineSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new SplineSeriesData();
-			DataLabels = DataLabels_DefaultValue = new SplineSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new SplineSeriesEvents();
 			Id = Id_DefaultValue = "";

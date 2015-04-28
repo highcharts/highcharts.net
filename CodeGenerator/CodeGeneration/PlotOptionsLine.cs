@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsLineCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsLineDashStyle.Solid;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsLineDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsLineEvents();
 			Keys = Keys_DefaultValue = new List<string>();

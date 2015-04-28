@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = PieSeriesCursor.Null;
 			Data = Data_DefaultValue = new PieSeriesData();
-			DataLabels = DataLabels_DefaultValue = new PieSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			Depth = Depth_DefaultValue = 0;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			EndAngle = EndAngle_DefaultValue = null;

@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc
 			Cursor = Cursor_DefaultValue = LineSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = LineSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new LineSeriesData();
-			DataLabels = DataLabels_DefaultValue = new LineSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new LineSeriesEvents();
 			Id = Id_DefaultValue = "";

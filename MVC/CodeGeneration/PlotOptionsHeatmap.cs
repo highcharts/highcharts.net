@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc
 			Colsize = Colsize_DefaultValue = 1;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = PlotOptionsHeatmapCursor.Null;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsHeatmapDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsHeatmapEvents();
 			Keys = Keys_DefaultValue = new List<string>();

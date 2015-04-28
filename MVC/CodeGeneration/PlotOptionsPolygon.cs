@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsPolygonCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsPolygonDashStyle.Solid;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsPolygonDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsPolygonEvents();
 			Keys = Keys_DefaultValue = new List<string>();

@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Color = Color_DefaultValue = null;
 			Cursor = Cursor_DefaultValue = PlotOptionsGaugeCursor.Null;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			Dial = Dial_DefaultValue = new PlotOptionsGaugeDial();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsGaugeEvents();

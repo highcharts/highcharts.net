@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			Cursor = Cursor_DefaultValue = PloygonSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PloygonSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new PloygonSeriesData();
-			DataLabels = DataLabels_DefaultValue = new PloygonSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = null;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PloygonSeriesEvents();
 			Id = Id_DefaultValue = "";
