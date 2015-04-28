@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsPyramidEvents();
 			Height = Height_DefaultValue = null;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinSize = MinSize_DefaultValue = 80;
 			Point = Point_DefaultValue = new PlotOptionsPyramidPoint();

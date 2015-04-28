@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsLineDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsLineEvents();
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsLineMarker();

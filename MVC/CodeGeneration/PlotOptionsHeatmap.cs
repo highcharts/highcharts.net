@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsHeatmapDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsHeatmapEvents();
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Point = Point_DefaultValue = new PlotOptionsHeatmapPoint();
 			Rowsize = Rowsize_DefaultValue = 1;

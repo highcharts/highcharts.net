@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = ":previous";

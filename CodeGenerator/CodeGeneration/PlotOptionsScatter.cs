@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsScatterDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsScatterEvents();
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LineWidth = LineWidth_DefaultValue = 0;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsScatterMarker();

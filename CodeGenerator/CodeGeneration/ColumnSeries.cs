@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc
 			Grouping = Grouping_DefaultValue = true;
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinPointLength = MinPointLength_DefaultValue = 0;

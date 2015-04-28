@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc
 			FillOpacity = FillOpacity_DefaultValue = 0.75;
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 1;

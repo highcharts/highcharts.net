@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc
 			GroupPadding = GroupPadding_DefaultValue = 0.2;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Grouping = Grouping_DefaultValue = true;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LineColor = LineColor_DefaultValue = "#333333";
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinPointLength = MinPointLength_DefaultValue = 0;

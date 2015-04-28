@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc
 			Events = Events_DefaultValue = new ScatterSeriesEvents();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 0;
 			LinkedTo = LinkedTo_DefaultValue = "";

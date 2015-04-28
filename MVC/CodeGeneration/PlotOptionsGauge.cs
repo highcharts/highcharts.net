@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			Dial = Dial_DefaultValue = new PlotOptionsGaugeDial();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsGaugeEvents();
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			Overshoot = Overshoot_DefaultValue = 0;

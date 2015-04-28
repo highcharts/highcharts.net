@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc
 			Events = Events_DefaultValue = new PlotOptionsAreasplineEvents();
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = 0.75;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LineColor = LineColor_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";

@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc
 			Events = Events_DefaultValue = new SolidgaugeSeriesEvents();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = null;
 			Overshoot = Overshoot_DefaultValue = 0;

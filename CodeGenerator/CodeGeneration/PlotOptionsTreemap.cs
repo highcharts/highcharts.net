@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsTreemapEvents();
 			InteractByLeaf = InteractByLeaf_DefaultValue = null;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLayoutAlgorithm.SliceAndDice;
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLayoutStartingDirection.Vertical;
 			LevelIsConstant = LevelIsConstant_DefaultValue = PlotOptionsTreemapLevelIsConstant.True;

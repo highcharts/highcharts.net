@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsErrorbarEvents();
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = ":previous";
 			NegativeColor = NegativeColor_DefaultValue = "null";

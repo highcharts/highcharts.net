@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			Index = Index_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinSize = MinSize_DefaultValue = 80;

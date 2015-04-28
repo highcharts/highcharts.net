@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsSolidgaugeDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsSolidgaugeEvents();
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			Overshoot = Overshoot_DefaultValue = 0;
 			Point = Point_DefaultValue = new PlotOptionsSolidgaugePoint();
 			Selected = Selected_DefaultValue = false;

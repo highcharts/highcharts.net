@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			InteractByLeaf = InteractByLeaf_DefaultValue = null;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = TreemapSeriesLayoutAlgorithm.SliceAndDice;
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = TreemapSeriesLayoutStartingDirection.Vertical;
 			LegendIndex = LegendIndex_DefaultValue = null;

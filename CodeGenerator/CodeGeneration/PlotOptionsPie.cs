@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc
 			Events = Events_DefaultValue = new PlotOptionsPieEvents();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			InnerSize = InnerSize_DefaultValue = "0";
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinSize = MinSize_DefaultValue = 80;
 			Point = Point_DefaultValue = new PlotOptionsPiePoint();

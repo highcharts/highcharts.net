@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc
 			Events = Events_DefaultValue = new GaugeSeriesEvents();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
-			Keys = Keys_DefaultValue = "";
+			Keys = Keys_DefaultValue = new List<string>();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Name = Name_DefaultValue = null;

@@ -411,6 +411,8 @@ public partial class generatoraspx : System.Web.UI.Page
         _defaultValueMappings.Add("Columns", "new List<List<Object>>()");
         _defaultValueMappings.Add("Rows", "new List<List<object>>()");
         _defaultValueMappings.Add("SeriesMapping", "new List<object>()");
+        _defaultValueMappings.Add("Keys", "new List<string>()");
+        _defaultValueMappings.Add("DataLabels", "null");
 
     }
 
