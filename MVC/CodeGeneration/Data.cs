@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc
 	{
 		public Data()
 		{
-			Columns = Columns_DefaultValue = "";
+			Columns = Columns_DefaultValue = new List<List<Object>>();
 			Complete = Complete_DefaultValue = "";
 			Csv = Csv_DefaultValue = "";
 			DateFormat = DateFormat_DefaultValue = null;
@@ -28,8 +28,8 @@ namespace Highsoft.Web.Mvc
 			LineDelimiter = LineDelimiter_DefaultValue = "\n";
 			ParseDate = ParseDate_DefaultValue = "";
 			Parsed = Parsed_DefaultValue = "";
-			Rows = Rows_DefaultValue = "";
-			SeriesMapping = SeriesMapping_DefaultValue = null;
+			Rows = Rows_DefaultValue = new List<List<object>>();
+			SeriesMapping = SeriesMapping_DefaultValue = new List<object>();
 			StartColumn = StartColumn_DefaultValue = 0;
 			StartRow = StartRow_DefaultValue = 0;
 			SwitchRowsAndColumns = SwitchRowsAndColumns_DefaultValue = false;
@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// A two-dimensional array representing the input data on tabular form. This input can be used when the data is already parsed, for example from a grid view component. Each cell can be a string or number. If not switchRowsAndColumns is set, the columns are interpreted as series.
 		/// </summary>
-		public Array<Array<Mixed>> Columns { get; set; }
-		private Array<Array<Mixed>> Columns_DefaultValue { get; set; }
+		public List<List<object>> Columns { get; set; }
+		private List<List<object>> Columns_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -139,15 +139,15 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The same as the columns input option, but defining rows intead of columns.
 		/// </summary>
-		public Array<Array<Mixed>> Rows { get; set; }
-		private Array<Array<Mixed>> Rows_DefaultValue { get; set; }
+		public List<List<object>> Rows { get; set; }
+		private List<List<object>> Rows_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array containing object with Point property names along with what column id the property should be taken from.
 		/// </summary>
-		public Array<Object> SeriesMapping { get; set; }
-		private Array<Object> SeriesMapping_DefaultValue { get; set; }
+		public List<object> SeriesMapping { get; set; }
+		private List<object> SeriesMapping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -174,8 +174,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// A HTML table or the id of such to be parsed as input data. Related options are <code>startRow</code>, <code>endRow</code>, <code>startColumn</code> and <code>endColumn</code> to delimit what part of the table is used.
 		/// </summary>
-		public String|HTMLElement Table { get; set; }
-		private String|HTMLElement Table_DefaultValue { get; set; }
+		public string Table { get; set; }
+		private string Table_DefaultValue { get; set; }
 		  
 
 		internal Hashtable ToHashtable()

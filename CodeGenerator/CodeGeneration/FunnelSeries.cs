@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc
 			Center = Center_DefaultValue = new string[] { null, null };
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = FunnelSeriesCursor.Null;
-			Data = Data_DefaultValue = new List<SeriesData>();
+			Data = Data_DefaultValue = new FunnelSeriesData();
 			DataLabels = DataLabels_DefaultValue = new FunnelSeriesDataLabels();
 			Depth = Depth_DefaultValue = 0;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -99,8 +99,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// An array of data points for the series. For the <code>funnel</code> series type, points can be given in the following ways: <ol> <li>An array of numerical values. In this case, the numerical values will  be interpreted as <code>y</code> options.  Example:<pre>data: [0, 5, 3, 5]</pre> </li> <li><p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href='#series<funnel>.turboThreshold'>turboThreshold</a>, this option is not available.</p><pre>data: [{    y: 3,    name: "Point2",    color: "#00FF00"}, {    y: 1,    name: "Point1",    color: "#FF00FF"}]</pre></li> </ol>
 		/// </summary>
-		public List<SeriesData> Data { get; set; }
-		private List<SeriesData> Data_DefaultValue { get; set; }
+		public FunnelSeriesData Data { get; set; }
+		private FunnelSeriesData Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

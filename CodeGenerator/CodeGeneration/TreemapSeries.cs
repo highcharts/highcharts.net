@@ -18,14 +18,14 @@ namespace Highsoft.Web.Mvc
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			AlternateStartingDirection = AlternateStartingDirection_DefaultValue = TreemapSeriesAlternateStartingDirection.False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			BorderColor = BorderColor_DefaultValue = #E0E0E0;
+			BorderColor = BorderColor_DefaultValue = "#E0E0E0";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Color = Color_DefaultValue = "null";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = TreemapSeriesCursor.Null;
-			Data = Data_DefaultValue = new List<SeriesData>();
+			Data = Data_DefaultValue = new TreemapSeriesData();
 			DataLabels = DataLabels_DefaultValue = new TreemapSeriesDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new TreemapSeriesEvents();
@@ -91,8 +91,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The color of the border surrounding each tree map item.
 		/// </summary>
-		public double? BorderColor { get; set; }
-		private double? BorderColor_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -140,8 +140,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// An array of data points for the series. For the <code>treemap</code> series type, points can be given in the following ways: <ol> <li>An array of numerical values. In this case, the numerical values will  be interpreted as <code>value</code> options.  Example:<pre>data: [0, 5, 3, 5]</pre> </li> <li><p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href='#series<treemap>.turboThreshold'>turboThreshold</a>, this option is not available.</p><pre>data: [{    value: 7,    name: "Point2",    color: "#00FF00"}, {    value: 2,    name: "Point1",    color: "#FF00FF"}]</pre></li> </ol>
 		/// </summary>
-		public List<SeriesData> Data { get; set; }
-		private List<SeriesData> Data_DefaultValue { get; set; }
+		public TreemapSeriesData Data { get; set; }
+		private TreemapSeriesData Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

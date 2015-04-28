@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			AlternateStartingDirection = AlternateStartingDirection_DefaultValue = PlotOptionsTreemapAlternateStartingDirection.False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			BorderColor = BorderColor_DefaultValue = #E0E0E0;
+			BorderColor = BorderColor_DefaultValue = "#E0E0E0";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Color = Color_DefaultValue = "null";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
@@ -82,8 +82,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The color of the border surrounding each tree map item.
 		/// </summary>
-		public double? BorderColor { get; set; }
-		private double? BorderColor_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>

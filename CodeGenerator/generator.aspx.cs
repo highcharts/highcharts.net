@@ -348,6 +348,15 @@ public partial class generatoraspx : System.Web.UI.Page
         }
 
         return children;
+    }    
+
+    private void InitEnumMappings()
+    {
+        _enumMappings.Add("triangle-down", "triangledown");
+        _enumMappings.Add("image/png", "imagepng");
+        _enumMappings.Add("image/jpeg", "imagejpeg");
+        _enumMappings.Add("application/pdf", "applicationpdf");
+        _enumMappings.Add("image/svg+xml", "imagesvgxml");
     }
 
     private void InitTypeMappings()
@@ -358,20 +367,14 @@ public partial class generatoraspx : System.Web.UI.Page
         _typeMappings.Add("Function", "string");
         _typeMappings.Add("Color", "string");
         _typeMappings.Add("CSSObject", "NameValueCollection");
-        _typeMappings.Add("Array<Color>", "List<string>");
         _typeMappings.Add("Number|String", "string");
         _typeMappings.Add("String|Number", "string");
-        _typeMappings.Add("Array<String>", "List<string>"); 
-        _typeMappings.Add("Array<Number>", "List<double>"); 
-    }
-
-    private void InitEnumMappings()
-    {
-        _enumMappings.Add("triangle-down", "triangledown");
-        _enumMappings.Add("image/png", "imagepng");
-        _enumMappings.Add("image/jpeg", "imagejpeg");
-        _enumMappings.Add("application/pdf", "applicationpdf");
-        _enumMappings.Add("image/svg+xml", "imagesvgxml");
+        _typeMappings.Add("String|HTMLElement", "string");
+        _typeMappings.Add("Array<Color>", "List<string>");
+        _typeMappings.Add("Array<String>", "List<string>");
+        _typeMappings.Add("Array<Number>", "List<double>");
+        _typeMappings.Add("Array<Array<Mixed>>", "List<List<object>>");
+        _typeMappings.Add("Array<Object>", "List<object>");
     }
 
     private void InitPropertyMappings()
@@ -390,7 +393,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("Stops", "List<Stop>");
         _propertyTypeMappings.Add("RenderTo", "string");
         _propertyTypeMappings.Add("Series", "List<Series>");
-        _propertyTypeMappings.Add("Data", "List<SeriesData>");
+        //_propertyTypeMappings.Add("Data", "List<SeriesData>");
         //propertyTypeMappings.Add("Drilldown.Series", "List<Series>");
     }
 
@@ -402,9 +405,13 @@ public partial class generatoraspx : System.Web.UI.Page
         _defaultValueMappings.Add("PointPlacement", "PointPlacement.Null");
         _defaultValueMappings.Add("Colors", "new List<string>()");
         _defaultValueMappings.Add("Series", "new List<Series>()");
-        _defaultValueMappings.Add("Data", "new List<SeriesData>()");
+        //_defaultValueMappings.Add("Data", "new List<SeriesData>()");
         _defaultValueMappings.Add("Center", "new string[] { null, null }");
         _defaultValueMappings.Add("Position", "new NameValueCollection()");
+        _defaultValueMappings.Add("Columns", "new List<List<Object>>()");
+        _defaultValueMappings.Add("Rows", "new List<List<object>>()");
+        _defaultValueMappings.Add("SeriesMapping", "new List<object>()");
+
     }
 
     private void InitSeriesMappings()
@@ -585,6 +592,11 @@ public partial class generatoraspx : System.Web.UI.Page
 
                 }
             }
+
+            if (FullName == "plotOptions.treemap.borderColor")
+                ReturnType = "Color";
+            if (FullName == "series<treemap>.borderColor")
+                ReturnType = "Color";
 
         }
 
