@@ -125,7 +125,8 @@ public partial class generatoraspx : System.Web.UI.Page
 
         foreach (ApiItem child in children)
         {           
-            string propertyName = FirstCharToUpper(child.Title);
+            //string propertyName = FirstCharToUpper(child.Title);
+            string propertyName = GetPropertyName(child);
             if (_excludedProperties.Contains(propertyName) && child.IsParent == false)
                 continue;
             if (child == item)
@@ -240,9 +241,19 @@ public partial class generatoraspx : System.Web.UI.Page
         return result;
     }
 
+    private string GetPropertyName(ApiItem item)
+    {       
+       string result = item.Title;
+       if (_seriesMappings[result] != null)  {
+            result = (string) _seriesMappings[result];
+       }
+
+        return FirstCharToUpper(result);
+    }
+
     private string FormatProperty(string propertyTemplate, ApiItem child)
     {
-        string propertyName = FirstCharToUpper(child.Title);
+        string propertyName = GetPropertyName(child);
         string returnType = GetPropertyReturnType(child, propertyName);
 
         if (child.Values != null && child.Values.Count > 0)
@@ -500,6 +511,12 @@ public partial class generatoraspx : System.Web.UI.Page
                 if (item.ReturnType == "Array<String>")
                 {
                     return "new List<string> " + item.Defaults
+                                        .Replace("[", "{")
+                                        .Replace("]", "}");
+                }
+                if (item.ReturnType == "Array<Number>")
+                {
+                    return "new List<double> " + item.Defaults
                                         .Replace("[", "{")
                                         .Replace("]", "}");
                 }
