@@ -221,7 +221,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Demo\Chart1.cshtml" />
+    <Content Include="Views\Demo\LineBasic.cshtml" />
     <Content Include="Views\Demo\Index.cshtml" />
     <Content Include="Views\Index.cshtml" />
   </ItemGroup>
