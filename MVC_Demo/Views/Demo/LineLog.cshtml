@@ -1,0 +1,60 @@
+﻿@using Highsoft.Web.Mvc
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <title>HighSoft Charts for ASP.NET MVC</title>
+    <!-- Use Microsoft's CDN for the jQuery library -->
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-2.1.3.min.js"></script> 
+    <script type="text/javascript" src="@Url.Content("~/Scripts/highcharts.src.js")"></script>
+</head>
+<body>
+    <div>
+                @(Html.Highsoft().Highcharts(
+            new Highcharts
+            {
+                Chart = new Chart
+                {
+                    Width = 700,
+                    Height = 500,
+                    Type = ChartType.Line
+                },
+                Title = new Title
+                {
+                    Text = "Logarithmic axis demo"
+                },
+                XAxis = new XAxis
+                {
+                    TickInterval = 1
+
+                },
+                YAxis = new YAxis
+                {
+                   Type = YAxisType.Logarithmic,
+                   MinorTickInterval = "0.1"
+                },
+                Tooltip = new Tooltip
+                {
+                    HeaderFormat = "<b>{series.name}</b><br />",
+                    PointFormat = "x = {point.x}, y = {point.y}" 
+                },
+                Series = new List<Series>
+                {                    
+                    new LineSeries
+                    {                        
+                        Data = @ViewData["logData"] as List<LineSeriesData>,
+                        PointStart = 1
+                    }                    
+                }
+            }
+            , "DemoChart")
+         )
+
+       
+    </div>
+</body>
+</html>

@@ -13,23 +13,15 @@
     <script type="text/javascript" src="@Url.Content("~/Scripts/highcharts.src.js")"></script>
 </head>
 <body>
-    <div>
-        <script type="text/javascript">
+    <div>        
 
-            function handleClick(e) {
-                console.log(e.yAxis[0].value)
-            }
-
-        </script>
-
-        @(Html.Highsoft().Highcharts(
+         @(Html.Highsoft().Highcharts(
             new Highcharts
             {
                 Chart = new Chart
                 {
                     Width = 700,
-                    Height = 500,
-                    Type = ChartType.Line
+                    Height = 500
                 },
                 Title = new Title
                 {
@@ -53,18 +45,27 @@
                     Title = new YAxisTitle
                     {
                         Text = "Temperature (°C)"
+                    },
+                    PlotLines = new List<YAxisPlotLines>
+                    {
+                         new YAxisPlotLines
+                        {
+                            Value = 0,
+                            Width = 1,
+                            Color = "#808080"
+                        }
                     }
                 },
-                PlotOptions = new PlotOptions
+                Tooltip = new Tooltip
                 {
-                    Line = new PlotOptionsLine
-                    {
-                        DataLabels = new PlotOptionsLineDataLabels
-                        {
-                            Enabled = true
-                        },
-                        EnableMouseTracking = false
-                    }
+                    ValueSuffix = "°C"
+                },
+                Legend = new Legend
+                {
+                    Layout = LegendLayout.Vertical,
+                    Align = LegendAlign.Right,
+                    VerticalAlign = LegendVerticalAlign.Middle,
+                    BorderWidth = 0
                 },
                 Series = new List<Series>
                 {                    
@@ -77,11 +78,23 @@
                     {
                         Name = "NY",
                         Data = @ViewData["nyData"] as List<LineSeriesData>
+                    },
+                    new LineSeries
+                    {
+                        Name = "Berlin",
+                        Data = @ViewData["berlinData"] as List<LineSeriesData>
+                    },
+                    new LineSeries
+                    {
+                        Name = "London",
+                        Data = @ViewData["londonData"] as List<LineSeriesData>
                     }
                 }
             }
             , "DemoChart")
          )
+
+
     </div>
 </body>
 </html>
