@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class {HighTemplate.ClassName}
+	public partial class {HighTemplate.ClassName} {HighTemplate.ExtendsClass}
 	{
 		public {HighTemplate.ClassName}()
 		{

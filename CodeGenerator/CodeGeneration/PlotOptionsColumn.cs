@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsColumn
+	public partial class PlotOptionsColumn 
 	{
 		public PlotOptionsColumn()
 		{
@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc
 			Colors = Colors_DefaultValue = new List<string>();
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = PlotOptionsColumnCursor.Null;
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsColumnDataLabels();
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PieSeriesStates
+	public partial class PieSeriesStates 
 	{
 		public PieSeriesStates()
 		{

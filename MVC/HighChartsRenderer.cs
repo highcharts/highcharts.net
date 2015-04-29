@@ -53,10 +53,16 @@ namespace Highsoft.Web.Mvc.Rendering
             {
                 Hashtable seriesHashtable = series.ToHashtable();
                 List<double?> dataList = new List<double?>();
-                foreach (SeriesData data in series.Data)
+
+                if (series is LineSeries)
                 {
-                   
+                    List<LineSeriesData> seriesData = ((LineSeries) series).Data;
+                    foreach (LineSeriesData data in seriesData)
+                    {
+                        dataList.Add(data.Y);
+                    }
                 }
+
                 seriesHashtable.Add("data", dataList);
 
                 results.Add(seriesHashtable);

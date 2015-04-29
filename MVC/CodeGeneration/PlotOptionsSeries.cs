@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsSeries
+	public partial class PlotOptionsSeries 
 	{
 		public PlotOptionsSeries()
 		{
@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsSeriesDashStyle.Solid;
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsSeriesDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsSeriesEvents();
 			Keys = Keys_DefaultValue = new List<string>();

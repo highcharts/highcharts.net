@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsAreasplineMarker
+	public partial class PlotOptionsAreasplineMarker 
 	{
 		public PlotOptionsAreasplineMarker()
 		{

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsPie
+	public partial class PlotOptionsPie 
 	{
 		public PlotOptionsPie()
 		{
@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			Center = Center_DefaultValue = new string[] { null, null };
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = PlotOptionsPieCursor.Null;
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsPieDataLabels();
 			Depth = Depth_DefaultValue = 0;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			EndAngle = EndAngle_DefaultValue = null;

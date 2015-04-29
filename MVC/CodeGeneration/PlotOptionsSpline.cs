@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsSpline
+	public partial class PlotOptionsSpline 
 	{
 		public PlotOptionsSpline()
 		{
@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsSplineCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsSplineDashStyle.Solid;
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsSplineDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsSplineEvents();
 			Keys = Keys_DefaultValue = new List<string>();

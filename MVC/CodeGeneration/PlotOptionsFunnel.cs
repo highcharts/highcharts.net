@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsFunnel
+	public partial class PlotOptionsFunnel 
 	{
 		public PlotOptionsFunnel()
 		{
@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc
 			Center = Center_DefaultValue = new string[] { null, null };
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = PlotOptionsFunnelCursor.Null;
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsFunnelDataLabels();
 			Depth = Depth_DefaultValue = 0;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsFunnelEvents();

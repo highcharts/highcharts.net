@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class LineSeries
+	public partial class LineSeries : Series
 	{
 		public LineSeries()
 		{
@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc
 			Cursor = Cursor_DefaultValue = LineSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = LineSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new List<LineSeriesData>();
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new LineSeriesDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new LineSeriesEvents();
 			Id = Id_DefaultValue = "";
@@ -122,8 +122,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// An array of data points for the series. For the <code>line</code> series type, points can be given in the following ways: <ol> <li>An array of numerical values. In this case, the numerical values will  be interpreted as <code>y</code> options. The <code>x</code> values will be automatically calculated, either starting at 0 and incremented by 1, or from <code>pointStart</code>  and <code>pointInterval</code> given in the series options. If the axis has categories, these will be used.  Example:<pre>data: [0, 5, 3, 5]</pre> </li> <li><p>An array of arrays with 2 values. In this case, the values correspond to <code>x,y</code>. If the first value is a string, it is applied as the name of the point, and the <code>x</code> value is inferred. <pre>data: [    [0, 1],     [1, 2],     [2, 8]]</pre></li><li><p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href='#series<line>.turboThreshold'>turboThreshold</a>, this option is not available.</p><pre>data: [{    x: 1,    y: 10,    name: "Point2",    color: "#00FF00"}, {    x: 1,    y: 6,    name: "Point1",    color: "#FF00FF"}]</pre></li> </ol>
 		/// </summary>
-		public LineSeriesData Data { get; set; }
-		private LineSeriesData Data_DefaultValue { get; set; }
+		public List<LineSeriesData> Data { get; set; }
+		private List<LineSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

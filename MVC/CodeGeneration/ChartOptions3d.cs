@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ChartOptions3d
+	public partial class ChartOptions3d 
 	{
 		public ChartOptions3d()
 		{

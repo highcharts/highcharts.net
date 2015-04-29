@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsArearange
+	public partial class PlotOptionsArearange 
 	{
 		public PlotOptionsArearange()
 		{
@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsArearangeCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsArearangeDashStyle.Solid;
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsArearangeDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsArearangeEvents();
 			FillColor = FillColor_DefaultValue = null;

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsAreasplinerange
+	public partial class PlotOptionsAreasplinerange 
 	{
 		public PlotOptionsAreasplinerange()
 		{
@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsAreasplinerangeCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsAreasplinerangeDashStyle.Solid;
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsAreasplinerangeDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsAreasplinerangeEvents();
 			FillColor = FillColor_DefaultValue = null;

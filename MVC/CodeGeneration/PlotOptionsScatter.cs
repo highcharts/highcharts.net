@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsScatter
+	public partial class PlotOptionsScatter 
 	{
 		public PlotOptionsScatter()
 		{
@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsScatterCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsScatterDashStyle.Solid;
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsScatterDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsScatterEvents();
 			Keys = Keys_DefaultValue = new List<string>();

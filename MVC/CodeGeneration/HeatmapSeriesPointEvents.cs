@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class HeatmapSeriesPointEvents
+	public partial class HeatmapSeriesPointEvents 
 	{
 		public HeatmapSeriesPointEvents()
 		{

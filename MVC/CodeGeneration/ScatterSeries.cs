@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ScatterSeries
+	public partial class ScatterSeries : Series
 	{
 		public ScatterSeries()
 		{
@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			Cursor = Cursor_DefaultValue = ScatterSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = ScatterSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new List<ScatterSeriesData>();
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new ScatterSeriesDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new ScatterSeriesEvents();
 			Id = Id_DefaultValue = "";
@@ -102,8 +102,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// An array of data points for the series. For the <code>scatter</code> series type, points can be given in the following ways: <ol> <li>An array of numerical values. In this case, the numerical values will  be interpreted as <code>y</code> options. The <code>x</code> values will be automatically calculated, either starting at 0 and incremented by 1, or from <code>pointStart</code>  and <code>pointInterval</code> given in the series options. If the axis has categories, these will be used.  Example:<pre>data: [0, 5, 3, 5]</pre> </li> <li><p>An array of arrays with 2 values. In this case, the values correspond to <code>x,y</code>. If the first value is a string, it is applied as the name of the point, and the <code>x</code> value is inferred. <pre>data: [    [0, 0],     [1, 8],     [2, 9]]</pre></li><li><p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href='#series<scatter>.turboThreshold'>turboThreshold</a>, this option is not available.</p><pre>data: [{    x: 1,    y: 2,    name: "Point2",    color: "#00FF00"}, {    x: 1,    y: 4,    name: "Point1",    color: "#FF00FF"}]</pre></li> </ol>
 		/// </summary>
-		public ScatterSeriesData Data { get; set; }
-		private ScatterSeriesData Data_DefaultValue { get; set; }
+		public List<ScatterSeriesData> Data { get; set; }
+		private List<ScatterSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

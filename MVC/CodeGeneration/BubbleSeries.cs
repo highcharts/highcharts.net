@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class BubbleSeries
+	public partial class BubbleSeries : Series
 	{
 		public BubbleSeries()
 		{
@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			Cursor = Cursor_DefaultValue = BubbleSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = BubbleSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new List<BubbleSeriesData>();
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new BubbleSeriesDataLabels();
 			DisplayNegative = DisplayNegative_DefaultValue = true;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new BubbleSeriesEvents();
@@ -108,8 +108,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// An array of data points for the series. For the <code>bubble</code> series type, points can be given in the following ways: <ol> <li><p>An array of arrays with 3 or 2 values. In this case, the values correspond to <code>x,y,z</code>. If the first value is a string, it is applied as the name of the point, and the <code>x</code> value is inferred. The <code>x</code> value can also be omitted, in which case the inner arrays should be of length 2. Then the <code>x</code> value is automatically calculated, either starting at 0 and incremented by 1, or from <code>pointStart</code>  and <code>pointInterval</code> given in the series options.</p><pre>data: [    [0, 1, 2],     [1, 5, 5],     [2, 0, 2]]</pre></li><li><p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href='#series<bubble>.turboThreshold'>turboThreshold</a>, this option is not available.</p><pre>data: [{    x: 1,    y: 1,    z: 1,    name: "Point2",    color: "#00FF00"}, {    x: 1,    y: 5,    z: 4,    name: "Point1",    color: "#FF00FF"}]</pre></li> </ol>
 		/// </summary>
-		public BubbleSeriesData Data { get; set; }
-		private BubbleSeriesData Data_DefaultValue { get; set; }
+		public List<BubbleSeriesData> Data { get; set; }
+		private List<BubbleSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

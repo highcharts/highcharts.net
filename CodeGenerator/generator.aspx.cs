@@ -146,10 +146,15 @@ public partial class generatoraspx : System.Web.UI.Page
             hashtableComparers += formattedComparer;
         }
 
+        string extendsClass = "";
+        if (_seriesMappings.ContainsKey(item.Title))
+            extendsClass = ": Series";
+
         codeTemplate = codeTemplate
                         .Replace("{HighTemplate.ConstrutorInitializers}", defaultValues)
                         .Replace("{HighTemplate.Properties}", properties)
                         .Replace("{HighTemplate.HashtableInit}", hashtableComparers)
+                        .Replace("{HighTemplate.ExtendsClass}", extendsClass)
                         .Replace("{HighTemplate.ClassName}", GetClassNameFromItem(item));        
 
         string fileName = Server.MapPath("~/CodeGeneration/" + GetClassNameFromItem(item) + ".cs");
@@ -281,7 +286,7 @@ public partial class generatoraspx : System.Web.UI.Page
             }
             else
                 result = FirstCharToUpper(result);
-            return result + "Data";
+            return "List<" + result + "Data" + ">";
         }
         if (_propertyTypeMappings[propertyName] != null)        
             return _propertyTypeMappings[propertyName].ToString();
@@ -434,7 +439,6 @@ public partial class generatoraspx : System.Web.UI.Page
         _defaultValueMappings.Add("Rows", "new List<List<object>>()");
         _defaultValueMappings.Add("SeriesMapping", "new List<object>()");
         _defaultValueMappings.Add("Keys", "new List<string>()");
-        _defaultValueMappings.Add("DataLabels", "null");
 
     }
 
@@ -506,6 +510,8 @@ public partial class generatoraspx : System.Web.UI.Page
             {
                 result = (string)_seriesMappings[result];
             }
+            else
+                result = FirstCharToUpper(result);
             return "new List<" + result + "Data" + ">()";
         }
 
@@ -558,7 +564,7 @@ public partial class generatoraspx : System.Web.UI.Page
 
                     return result;
                 }
-                if (item.ReturnType == "Number" && defaults == "undefined")
+                if (defaults == "undefined")
                     return "null";
             }
             else

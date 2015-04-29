@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsTreemapStatesHoverMarker
+	public partial class PlotOptionsTreemapStatesHoverMarker 
 	{
 		public PlotOptionsTreemapStatesHoverMarker()
 		{

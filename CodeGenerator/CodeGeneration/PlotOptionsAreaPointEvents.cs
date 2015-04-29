@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsAreaPointEvents
+	public partial class PlotOptionsAreaPointEvents 
 	{
 		public PlotOptionsAreaPointEvents()
 		{

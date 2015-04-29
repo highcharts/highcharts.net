@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class GaugeSeries
+	public partial class GaugeSeries : Series
 	{
 		public GaugeSeries()
 		{
@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc
 			Color = Color_DefaultValue = null;
 			Cursor = Cursor_DefaultValue = GaugeSeriesCursor.Null;
 			Data = Data_DefaultValue = new List<GaugeSeriesData>();
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new GaugeSeriesDataLabels();
 			Dial = Dial_DefaultValue = new GaugeSeriesDial();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new GaugeSeriesEvents();
@@ -75,8 +75,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// An array of data points for the series. For the <code>gauge</code> series type, points can be given in the following ways: <ol> <li>An array of numerical values. In this case, the numerical values will  be interpreted as <code>y</code> options.  Example:<pre>data: [0, 5, 3, 5]</pre> </li> <li><p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href='#series<gauge>.turboThreshold'>turboThreshold</a>, this option is not available.</p><pre>data: [{    y: 6,    name: "Point2",    color: "#00FF00"}, {    y: 8,    name: "Point1",    color: "#FF00FF"}]</pre></li> </ol><p>The typical gauge only contains a single data value.</p>
 		/// </summary>
-		public GaugeSeriesData Data { get; set; }
-		private GaugeSeriesData Data_DefaultValue { get; set; }
+		public List<GaugeSeriesData> Data { get; set; }
+		private List<GaugeSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
