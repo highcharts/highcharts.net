@@ -52,7 +52,7 @@ namespace Highsoft.Web.Mvc
 			Offset = Offset_DefaultValue = 0;
 			Opposite = Opposite_DefaultValue = false;
 			PlotBands = PlotBands_DefaultValue = new YAxisPlotBands();
-			PlotLines = PlotLines_DefaultValue = new YAxisPlotLines();
+			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
 			Reversed = Reversed_DefaultValue = false;
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			ShowEmpty = ShowEmpty_DefaultValue = true;
@@ -347,8 +347,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// An array of objects representing plot lines on the X axis
 		/// </summary>
-		public YAxisPlotLines PlotLines { get; set; }
-		private YAxisPlotLines PlotLines_DefaultValue { get; set; }
+		public List<YAxisPlotLines> PlotLines { get; set; }
+		private List<YAxisPlotLines> PlotLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
