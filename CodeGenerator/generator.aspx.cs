@@ -272,7 +272,18 @@ public partial class generatoraspx : System.Web.UI.Page
     {
         string returnType = child.IsParent ? propertyName : child.ReturnType;
 
-        if (_propertyTypeMappings[propertyName] != null)
+        if (propertyName.ToLower() == "data" && child.Parent != null)
+        {
+            string result = child.Parent;
+            if (_seriesMappings[result] != null)
+            {
+                result = (string)_seriesMappings[result];
+            }
+            else
+                result = FirstCharToUpper(result);
+            return result + "Data";
+        }
+        if (_propertyTypeMappings[propertyName] != null)        
             return _propertyTypeMappings[propertyName].ToString();
         if (_typeMappings[returnType] != null)
             return _typeMappings[returnType].ToString();
@@ -404,7 +415,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("Stops", "List<Stop>");
         _propertyTypeMappings.Add("RenderTo", "string");
         _propertyTypeMappings.Add("Series", "List<Series>");
-        _propertyTypeMappings.Add("Data", "List<SeriesData>");
+        //_propertyTypeMappings.Add("Data", "List<SeriesData>");
         //propertyTypeMappings.Add("Drilldown.Series", "List<Series>");
     }
 
@@ -416,7 +427,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _defaultValueMappings.Add("PointPlacement", "PointPlacement.Null");
         _defaultValueMappings.Add("Colors", "new List<string>()");
         _defaultValueMappings.Add("Series", "new List<Series>()");
-        _defaultValueMappings.Add("Data", "new List<SeriesData>()");
+        //_defaultValueMappings.Add("Data", "new List<SeriesData>()");
         _defaultValueMappings.Add("Center", "new string[] { null, null }");
         _defaultValueMappings.Add("Position", "new NameValueCollection()");
         _defaultValueMappings.Add("Columns", "new List<List<Object>>()");
@@ -487,6 +498,17 @@ public partial class generatoraspx : System.Web.UI.Page
     public string MapDefaultValue(ApiItem item)
     {
         string defaults = item.Defaults;
+
+        if (item.Title.ToLower() == "data" && item.Parent != null)
+        {
+            string result = item.Parent;
+            if (_seriesMappings[result] != null)
+            {
+                result = (string)_seriesMappings[result];
+            }
+            return "new List<" + result + "Data" + ">()";
+        }
+
         if (_defaultValueMappings[FirstCharToUpper(item.Title)] != null)
         {
             defaults = _defaultValueMappings[FirstCharToUpper(item.Title)].ToString();

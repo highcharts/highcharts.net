@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Rendering
                 List<double?> dataList = new List<double?>();
                 foreach (SeriesData data in series.Data)
                 {
-                    dataList.Add(data.Y);
+                   
                 }
                 seriesHashtable.Add("data", dataList);
 

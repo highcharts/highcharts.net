@@ -58,7 +58,7 @@
                 },
                 XAxis = new XAxis
                 {
-                    Categories = new string[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
                     
                 },
@@ -82,20 +82,10 @@
                 },
                 Series = new List<Series>
                 {
-                    new Series
+                    new LineSeries
                     {
                         Name = "Tokyo",
-                        Data = @ViewData["tokyoData"] as List<SeriesData>
-                    },
-                    new Series
-                    {
-                        Name = "New York",
-                        Data = @ViewData["nyData"] as List<SeriesData>
-                    },
-                    new Series
-                    {
-                        Name = "Vik",   
-                        Data = @ViewData["vikData"] as List<SeriesData>
+                        Data = @ViewData["tokyoData"] as List<LineSeriesData>
                     }
                 }
             }
