@@ -28,7 +28,8 @@
                 Chart = new Chart
                 {
                     Width = 700,
-                    Height = 500
+                    Height = 500,
+                    Type = ChartType.Line
                 },
                 Title = new Title
                 {
@@ -52,27 +53,18 @@
                     Title = new YAxisTitle
                     {
                         Text = "Temperature (°C)"
-                    },
-                    PlotLines = new List<YAxisPlotLines>
-                    {
-                         new YAxisPlotLines
-                        {
-                            Value = 0,
-                            Width = 1,
-                            Color = "#808080"
-                        }
                     }
                 },
-                Tooltip = new Tooltip
+                PlotOptions = new PlotOptions
                 {
-                    ValueSuffix = "°C"
-                },
-                Legend = new Legend
-                {
-                    Layout = LegendLayout.Vertical,
-                    Align = LegendAlign.Right,
-                    VerticalAlign = LegendVerticalAlign.Middle,
-                    BorderWidth = 0
+                    Line = new PlotOptionsLine
+                    {
+                        DataLabels = new PlotOptionsLineDataLabels
+                        {
+                            Enabled = true
+                        },
+                        EnableMouseTracking = false
+                    }
                 },
                 Series = new List<Series>
                 {                    
@@ -85,16 +77,6 @@
                     {
                         Name = "NY",
                         Data = @ViewData["nyData"] as List<LineSeriesData>
-                    },
-                    new LineSeries
-                    {
-                        Name = "Berlin",
-                        Data = @ViewData["berlinData"] as List<LineSeriesData>
-                    },
-                    new LineSeries
-                    {
-                        Name = "London",
-                        Data = @ViewData["londonData"] as List<LineSeriesData>
                     }
                 }
             }

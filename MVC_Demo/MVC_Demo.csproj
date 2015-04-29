@@ -224,6 +224,7 @@
     <Content Include="Views\Demo\LineBasic.cshtml" />
     <Content Include="Views\Demo\Index.cshtml" />
     <Content Include="Views\Index.cshtml" />
+    <Content Include="Views\Demo\LineLabels.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
