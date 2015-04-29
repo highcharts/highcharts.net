@@ -318,15 +318,15 @@ public partial class generatoraspx : System.Web.UI.Page
         if (propertyName == "Series" || propertyName == "Data")
             return "";
 
+        // fully qualified names that are collections
+        if (_propertyTypeMappings.Contains(child.FullName))
+            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         // property that needs custom serialization (Animation, Shadow, etc)
         if (_customProperties.Contains(propertyName))
             return String.Format(customPropertyFormat, propertyName, FirstCharToLower(propertyName));
         // Enum
         if (child.Values != null && child.Values.Count > 0)
-            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
-        // fully qualified names that are collections
-        if (_typeMappings.Contains(child.FullName))
-            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));        
         // Complex object with nested objects / properties
         if (child.IsParent)
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));

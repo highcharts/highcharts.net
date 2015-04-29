@@ -540,7 +540,7 @@ namespace Highsoft.Web.Mvc
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (PlotBands.IsDirty()) h.Add("plotBands",PlotBands.ToHashtable());
-			if (PlotLines.IsDirty()) h.Add("plotLines",PlotLines.ToHashtable());
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines",PlotLines);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
