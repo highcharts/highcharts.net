@@ -17,8 +17,9 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
             return View();
         }
 
-        public ActionResult Gallery()
+        public ActionResult Gallery(string demo)
         {
+            ViewBag.Demo = demo;
             return View();
         }
 

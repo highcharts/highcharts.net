@@ -1,0 +1,109 @@
+﻿@using Highsoft.Web.Mvc  
+
+ <script type="text/javascript">
+
+     function loadAjaxData() {
+         $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=analytics.csv&callback=?', function (csv) {
+             console.log(csv);
+             chart.series[0].setData(csv);
+             chart.series[1].setData(csv);
+
+             chart.redraw();
+         });
+     }
+        
+
+    </script>  
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                Events = new ChartEvents
+                {
+                    Load = "loadAjaxData"
+                }
+            },
+            Title = new Title
+            {
+                Text = "Daily visits at www.highcharts.com"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Source: Google Analytics"
+            },
+            XAxis = new XAxis
+            {
+                TickInterval = 7 * 24 * 3600 * 1000, // one week
+                TickWidth = 0,
+                GridLineWidth = 1,
+                Labels = new XAxisLabels
+                {
+                    Align = XAxisLabelsAlign.Left,
+                    X = 3,
+                    Y = -3
+                }
+            },
+            YAxis = new YAxis
+            {
+                Title = new YAxisTitle
+                {
+                    Text = null
+                },
+                Labels = new YAxisLabels
+                {
+                    Align = "Left", // TO ADD to JSON
+                    X = 3,
+                    Y = 16,
+                    Format = "{value:.,0f}"
+                },
+                ShowFirstLabel = false
+            },
+            Legend = new Legend
+            {
+                Align = LegendAlign.Left,
+                VerticalAlign = LegendVerticalAlign.Top,
+                Y = 20,
+                Floating = true,
+                BorderWidth = 0
+            },
+            Tooltip = new Tooltip
+            {
+                Shared = true,
+                Crosshairs = new List<Crosshair>
+                {
+                    new Crosshair
+                    {
+                         XAxis = true,
+                         YAxis = true
+                    }
+                }
+            },
+
+            PlotOptions = new PlotOptions
+            {
+                //Series = new  // Series is incorrect and should be fixed
+            },
+
+            Series = new List<Series>
+            {
+                new Series 
+                {
+                    Name = "All Visit"
+                    // LineWidth ??
+                    //Marker  ??
+                },
+                new Series 
+                {
+                    Name = "New Visitors"   
+                }
+                
+            }
+        }
+        , "chart")
+    )
+
+   

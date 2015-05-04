@@ -172,6 +172,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Demo\DemoController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SharedController.cs" />
     <Compile Include="Areas\Highcharts\HighchartsAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -248,13 +249,13 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Areas\Highcharts\Views\Web.config" />
-    <Content Include="Areas\Highcharts\Views\Demo\LineBasic.cshtml" />
-    <Content Include="Areas\Highcharts\Views\Demo\LineLabels.cshtml" />
-    <Content Include="Areas\Highcharts\Views\Demo\LineLog.cshtml" />
     <Content Include="Areas\Highcharts\Views\Demo\Index.cshtml" />
-    <Content Include="Areas\Highcharts\Views\Demo\LineAjax.cshtml" />
     <Content Include="Areas\Highcharts\Views\Demo\Gallery.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\LineBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineLabels.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineLog.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineAjax.cshtml" />
+    <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
     <Content Include="Scripts\highcharts.src.js" />

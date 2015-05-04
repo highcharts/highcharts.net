@@ -399,7 +399,7 @@
                             <h2 id="line-charts">Line charts</h2>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("linebasic", "demo")">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "LineBasic" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content(String.Format("~/Content/chart_types/line-basic-{0}", ViewData["theme"] as string))" alt="Basic line">
@@ -412,7 +412,7 @@
                             </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="line-ajax.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "LineAjax" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-ajax-default.svg")" alt="Ajax loaded data, clickable points">
@@ -425,8 +425,8 @@
                             </a>
                         </div>
                         <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("linelabels", "demo")">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">                            
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "LineLabels" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-labels-default.svg")" alt="With data labels">
@@ -438,12 +438,12 @@
                                 </div>
                             </a>
                         </div>
-@*                        <div class="clearfix visible-lg visible-md"></div>
+                        <div class="clearfix visible-lg visible-md"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="line-time-series.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "LineTimeSeries" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/line-time-series-default.svg" alt="Time series, zoomable">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-time-series-default.svg")" alt="Time series, zoomable">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Time series, zoomable</h3>
@@ -452,8 +452,8 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+                       <div class="clearfix visible-sm visible-xs"></div>
+                       @*<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="spline-inverted.html">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
@@ -506,10 +506,10 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
-                        </div>*@
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("linelog", "demo")">
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>*@
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">                            
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "LineLog" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-log-axis-default.svg")" alt="Logarithmic axis">

@@ -184,7 +184,6 @@ a.btn.btn-theme.disabled {
     <script src="@Url.Content("~/Scripts/script.js")" type="text/javascript"></script>
 
     <script type="text/javascript">
-        jQuery.noConflict();
 
         var example = 'line-basic',
         theme = 'default';
@@ -683,7 +682,7 @@ a.btn.btn-theme.disabled {
 
                         <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
 
-                            @{ Html.RenderPartial("~/Areas/Highcharts/Views/Shared/LineBasic.cshtml");  }
+                            @Html.Action((string)ViewBag.Demo, "Shared")
 
                         </div>
                         <a id="next-example" class="hidden-xs" title="Next (arrow right)"

@@ -1,0 +1,81 @@
+﻿@using Highsoft.Web.Mvc
+
+    <script type="text/javascript">
+
+    function handleClick(e) {
+        console.log(e.yAxis[0].value)
+    }
+
+    </script>
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                ZoomType = ChartZoomType.X
+            },
+            Title = new Title
+            {
+                Text = "USD to EUR exchange rate from 2006 through 2008"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Click and drag in the plot area to zoom in"
+            },
+            XAxis = new XAxis
+            {
+                Type = XAxisType.Datetime,
+                MinRange = 14 * 24 * 3600000 // fourteen days
+            },
+            YAxis = new YAxis
+            {
+                Title = new YAxisTitle
+                {
+                    Text = "Exchange Rate"
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                ValueSuffix = "°C"
+            },
+            Legend = new Legend
+            {
+                Enabled = false
+            },
+            PlotOptions = new PlotOptions
+            {
+                Area = new PlotOptionsArea
+                {
+                    ///FillColor = // TODO - LinerGradients
+                    ///
+                    Marker = new PlotOptionsAreaMarker
+                    {
+                        Radius = 2
+                    },
+                    LineWidth = 1,
+                    States = new PlotOptionsAreaStates
+                    {
+                        Hover = new PlotOptionsAreaStatesHover
+                        {
+                            LineWidth = 1
+                        }
+                    },
+                    Threshold = null
+                }
+            },
+            Series = new List<Series>
+            {                    
+                new LineSeries
+                {
+                    Name = "USD to EUR",
+                    PointInterval =  24 * 3600 * 1000,
+                    PointStart =  @ViewBag.DateUTC,
+                    Data = @ViewBag.TimeData
+                }
+            }
+        }
+        , "DemoChart")
+    )
