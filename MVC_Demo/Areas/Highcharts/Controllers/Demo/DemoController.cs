@@ -5,13 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using Highsoft.Web.Mvc;
 
-namespace MVC_Demo.Controllers
+namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
 {
     public class DemoController : Controller
     {
-        //
-        // GET: /Demo/
-
         public ActionResult Index()
         {
             return View();
@@ -44,11 +41,11 @@ namespace MVC_Demo.Controllers
             {
                 londonData.Add(new LineSeriesData { Y = value });
             }
-           
+
 
             ViewData["tokyoData"] = tokyoData;
             ViewData["nyData"] = nyData;
-            ViewData["berlinData"] = berlinData ;
+            ViewData["berlinData"] = berlinData;
             ViewData["londonData"] = londonData;
 
             return View();
@@ -96,7 +93,7 @@ namespace MVC_Demo.Controllers
             List<double> logValues = new List<double> { 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 };
             List<LineSeriesData> logData = new List<LineSeriesData>();
 
-            logValues.ForEach( p => logData.Add(new LineSeriesData { Y = p }) );
+            logValues.ForEach(p => logData.Add(new LineSeriesData { Y = p }));
 
             ViewData["logData"] = logData;
 

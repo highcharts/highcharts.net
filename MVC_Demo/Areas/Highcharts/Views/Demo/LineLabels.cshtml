@@ -1,0 +1,74 @@
+﻿@using Highsoft.Web.Mvc
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <title>HighSoft Charts for ASP.NET MVC</title>
+    <!-- Use Microsoft's CDN for the jQuery library -->
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-2.1.3.min.js"></script> 
+    <script type="text/javascript" src="@Url.Content("~/Scripts/highcharts.src.js")"></script>
+</head>
+<body>
+    <div>        
+
+         @(Html.Highsoft().Highcharts(
+            new Highcharts
+            {
+                Chart = new Chart
+                {
+                    Width = 700,
+                    Height = 500
+                },
+                Title = new Title
+                {
+                    Text = "Monthly Average Temperature"
+                },
+                XAxis = new XAxis
+                {
+                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
+
+                },
+                YAxis = new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Temperature (°C)"
+                    }
+                }, 
+                PlotOptions = new PlotOptions
+                {
+                    Line = new PlotOptionsLine
+                    {
+                        DataLabels = new PlotOptionsLineDataLabels
+                        {
+                            Enabled = true
+                        },
+                        EnableMouseTracking = false
+                    }   
+                },       
+                Series = new List<Series>
+                {                    
+                    new LineSeries
+                    {
+                        Name = "Tokyo",
+                        Data = @ViewData["tokyoData"] as List<LineSeriesData>
+                    },                   
+                    new LineSeries
+                    {
+                        Name = "London",
+                        Data = @ViewData["londonData"] as List<LineSeriesData>
+                    }
+                }
+            }
+            , "DemoChart")
+         )
+
+
+    </div>
+</body>
+</html>

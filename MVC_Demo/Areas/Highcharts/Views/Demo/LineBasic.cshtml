@@ -13,9 +13,16 @@
     <script type="text/javascript" src="@Url.Content("~/Scripts/highcharts.src.js")"></script>
 </head>
 <body>
-    <div>        
+    <div>
+        <script type="text/javascript">
 
-         @(Html.Highsoft().Highcharts(
+            function handleClick(e) {
+                console.log(e.yAxis[0].value)
+            }
+
+        </script>
+
+        @(Html.Highsoft().Highcharts(
             new Highcharts
             {
                 Chart = new Chart
@@ -93,8 +100,6 @@
             }
             , "DemoChart")
          )
-
-
     </div>
 </body>
 </html>
