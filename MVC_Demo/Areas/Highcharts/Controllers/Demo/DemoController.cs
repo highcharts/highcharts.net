@@ -9,9 +9,22 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
 {
     public class DemoController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string id)
+        {
+            id = String.IsNullOrEmpty(id) ? id = "default.svg" : String.Format("{0}.png", id);
+
+            ViewData["theme"] = id;
+            return View();
+        }
+
+        public ActionResult Gallery()
         {
             return View();
+        }
+
+        public ActionResult DarkUnica()
+        {
+            return RedirectToAction("Index", new { id = "dark-unica" });
         }
 
         public ActionResult LineBasic()

@@ -182,7 +182,15 @@
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\bootstrap\font-awesome.css" />
     <Content Include="Content\bootstrap\template.css" />
+    <Content Include="Content\chart_types\line-ajax-dark-unica.png" />
+    <Content Include="Content\chart_types\line-ajax-default.svg" />
+    <Content Include="Content\chart_types\line-basic-dark-unica.png" />
     <Content Include="Content\chart_types\line-basic-default.svg" />
+    <Content Include="Content\chart_types\line-labels-dark-unica.png" />
+    <Content Include="Content\chart_types\line-labels-default.svg" />
+    <Content Include="Content\chart_types\line-log-axis-dark-unica.png" />
+    <Content Include="Content\chart_types\line-log-axis-default.svg" />
+    <Content Include="Content\highslide.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -243,9 +251,15 @@
     <Content Include="Areas\Highcharts\Views\Demo\LineBasic.cshtml" />
     <Content Include="Areas\Highcharts\Views\Demo\LineLabels.cshtml" />
     <Content Include="Areas\Highcharts\Views\Demo\LineLog.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\Index.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\LineAjax.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\Gallery.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineBasic.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
     <Content Include="Scripts\highcharts.src.js" />
+    <Content Include="Scripts\highslide-full.min.js" />
+    <Content Include="Scripts\highslide.config.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -272,16 +286,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Demo\Highcharts\LineBasic.cshtml" />
-    <Content Include="Views\Demo\Index.cshtml" />
-    <Content Include="Views\Index.cshtml" />
     <Content Include="Views\Demo\Highcharts\LineLabels.cshtml" />
     <Content Include="Views\Demo\Highcharts\LineLog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Highcharts\Models\" />
-    <Folder Include="Areas\Highcharts\Views\Shared\" />
-    <Folder Include="Controllers\Demo\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
