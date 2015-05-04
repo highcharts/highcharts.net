@@ -31,11 +31,8 @@ namespace Highsoft.Web.Mvc.Rendering
             sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.ID, _chart.Chart.Height.ToString(), _chart.Chart.Width.ToString());
             sb.Append("<script type='text/javascript'>");
             sb.Append("jQuery(document).ready(function() {");
-            //sb.AppendFormat("window.{0} = jQuery('#{0}').highcharts(", _chart.ID);
-            //sb.Append(GetStartupOptions());
             sb.AppendFormat("var {0}ChartOptions = {1};", _chart.ID, GetStartupOptions());
             sb.AppendFormat("window.{0} = new Highcharts.Chart({0}ChartOptions);", _chart.ID);
-            //sb.Append(");");
             sb.Append("});");            
             sb.Append("</script>");
             return sb.ToString();            
@@ -59,10 +56,10 @@ namespace Highsoft.Web.Mvc.Rendering
                 List<double?> dataList = new List<double?>();
 
                 if (series is LineSeries)
-                {
-                    List<LineSeriesData> seriesData = ((LineSeries) series).Data;
+                {                    
+                    List<LineSeriesData> seriesData = ((LineSeries) series).Data;                    
                     foreach (LineSeriesData data in seriesData)
-                    {
+                    {                        
                         dataList.Add(data.Y);
                     }
                 }
