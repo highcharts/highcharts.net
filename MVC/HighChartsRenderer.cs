@@ -65,7 +65,6 @@ namespace Highsoft.Web.Mvc.Rendering
                 }
 
                 seriesHashtable.Add("data", dataList);
-
                 results.Add(seriesHashtable);
             }
 
