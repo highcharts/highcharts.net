@@ -229,6 +229,22 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 
         }
 
+        public ActionResult SplineInverted()
+        {
+            List<double> xValues = new List<double> { 0, 10, 20, 30, 40, 50, 60, 70, 80 };
+            List<double> yValues = new List<double> { 15, -50, -56.5, -46.5, -22.1, -2.5, -27.7, -55.7, -76.5 };
+            List<SplineSeriesData> tempData = new List<SplineSeriesData>();
+
+            for (int i = 0; i < xValues.Count; i++)
+            {
+                tempData.Add(new SplineSeriesData { X = xValues[i], Y = yValues[i] });
+            }
+
+            ViewData["tempData"] = tempData;
+
+            return View();
+        } 
+
         public double MilliTimeStamp(DateTime theDate)
         {
             DateTime d1 = new DateTime(1970, 1, 1);
