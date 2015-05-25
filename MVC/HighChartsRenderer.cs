@@ -53,12 +53,11 @@ namespace Highsoft.Web.Mvc.Rendering
             foreach (Series series in _chart.Series)
             {
                 Hashtable seriesHashtable = series.ToHashtable();
+                List<object> dataList = new List<object>();
 
                 if (series is LineSeries)
                 {                    
                     List<LineSeriesData> seriesData = ((LineSeries) series).Data;
-
-                    List<double?> dataList = new List<double?>();
 
                     foreach (LineSeriesData data in seriesData)
                     {                        
@@ -67,10 +66,14 @@ namespace Highsoft.Web.Mvc.Rendering
                 }
                 if (series is SplineSeries)
                 {
-                    List<SplineSeries> seriesData = ((SplineSeries)series).Data;
-                    foreach (SplineSeries data in seriesData)
+                    List<SplineSeriesData> seriesData = ((SplineSeries)series).Data;
+                    var dataPoint = new double?[2];
+
+                    foreach (SplineSeriesData data in seriesData)
                     {
-                        dataList.Add(data.Y);
+                        dataPoint[0] = data.X;
+                        dataPoint[1] = data.Y;
+                        dataList.Add(dataPoint);
                     }
                 }
 

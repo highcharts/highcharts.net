@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Animation.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="Shadow.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
