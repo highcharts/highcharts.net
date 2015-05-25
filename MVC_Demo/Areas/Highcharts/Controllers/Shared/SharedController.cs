@@ -237,7 +237,8 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 
             for (int i = 0; i < xValues.Count; i++)
             {
-                tempData.Add(new SplineSeriesData { X = xValues[i], Y = yValues[i] });
+                SplineSeriesData seriesData = new SplineSeriesData { X = xValues[i], Y = yValues[i] };
+                tempData.Add(seriesData);
             }
 
             ViewData["tempData"] = tempData;

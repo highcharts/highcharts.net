@@ -67,10 +67,10 @@ namespace Highsoft.Web.Mvc.Rendering
                 if (series is SplineSeries)
                 {
                     List<SplineSeriesData> seriesData = ((SplineSeries)series).Data;
-                    var dataPoint = new double?[2];
 
                     foreach (SplineSeriesData data in seriesData)
                     {
+                        var dataPoint = new double?[2];
                         dataPoint[0] = data.X;
                         dataPoint[1] = data.Y;
                         dataList.Add(dataPoint);
