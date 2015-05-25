@@ -249,12 +249,12 @@ namespace Highsoft.Web.Mvc
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("TooltipFormatter.formatter", Formatter); }  
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("pointFormatter", PointFormatter); }  
-			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("positioner", Positioner); }  
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("TooltipPointFormatter.pointFormatter", PointFormatter); }  
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("TooltipPositioner.positioner", Positioner); }  
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);

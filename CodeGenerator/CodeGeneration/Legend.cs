@@ -317,7 +317,7 @@ namespace Highsoft.Web.Mvc
 			if (ItemStyle != ItemStyle_DefaultValue) h.Add("itemStyle",ItemStyle);
 			if (ItemWidth != ItemWidth_DefaultValue) h.Add("itemWidth",ItemWidth);
 			if (LabelFormat != LabelFormat_DefaultValue) h.Add("labelFormat",LabelFormat);
-			if (LabelFormatter != LabelFormatter_DefaultValue) { h.Add("labelFormatter",LabelFormatter); Highcharts.AddFunction("labelFormatter", LabelFormatter); }  
+			if (LabelFormatter != LabelFormatter_DefaultValue) { h.Add("labelFormatter",LabelFormatter); Highcharts.AddFunction("LegendLabelFormatter.labelFormatter", LabelFormatter); }  
 			if (Layout != Layout_DefaultValue) h.Add("layout",Layout.ToString().ToLower());
 			if (LineHeight != LineHeight_DefaultValue) h.Add("lineHeight",LineHeight);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);

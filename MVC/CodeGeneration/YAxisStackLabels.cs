@@ -113,7 +113,7 @@ namespace Highsoft.Web.Mvc
 			if (Align != Align_DefaultValue) h.Add("align",Align.ToString().ToLower());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("YAxisStackLabelsFormatter.formatter", Formatter); }  
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign.ToString().ToLower());

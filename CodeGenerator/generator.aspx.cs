@@ -311,7 +311,7 @@ public partial class generatoraspx : System.Web.UI.Page
     {
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
         string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0}.ToString().ToLower());\n\t\t\t";
-        string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); Highcharts.AddFunction(\"{1}\", {0}); }}  \n\t\t\t";
+        string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); Highcharts.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
         string customPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToJSON());\n\t\t\t";  
 
@@ -332,7 +332,7 @@ public partial class generatoraspx : System.Web.UI.Page
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
         // Event (javascript function)
         if (child.ReturnType != null && child.ReturnType == "Function")
-            return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue");
+            return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName));
         // Just a property
         else
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));

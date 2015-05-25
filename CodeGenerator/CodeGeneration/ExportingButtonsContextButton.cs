@@ -170,7 +170,7 @@ namespace Highsoft.Web.Mvc
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems",MenuItems);
-			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("onclick", Onclick); }  
+			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("ExportingButtonsContextButtonOnclick.onclick", Onclick); }  
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol.ToString().ToLower());
 			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);

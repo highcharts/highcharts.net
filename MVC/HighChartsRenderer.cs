@@ -93,8 +93,9 @@ namespace Highsoft.Web.Mvc.Rendering
             foreach (string key in functions.Keys)
             {
                 string value = (string)functions[key];
-                string matchedString = String.Format("\"{0}\":\"{1}\"", key, value);
-                string replacementstring = String.Format("\"{0}\":{1}", key, value);
+                string realKey = key.Split('.')[1];
+                string matchedString = String.Format("\"{0}\":\"{1}\"", realKey, value);
+                string replacementstring = String.Format("\"{0}\":{1}", realKey, value);
                 json = json.Replace(matchedString, replacementstring);
             }
 

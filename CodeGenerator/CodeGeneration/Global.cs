@@ -64,7 +64,7 @@ namespace Highsoft.Web.Mvc
 
 			if (VMLRadialGradientURL != VMLRadialGradientURL_DefaultValue) h.Add("vMLRadialGradientURL",VMLRadialGradientURL);
 			if (CanvasToolsURL != CanvasToolsURL_DefaultValue) h.Add("canvasToolsURL",CanvasToolsURL);
-			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highcharts.AddFunction("getTimezoneOffset", GetTimezoneOffset); }  
+			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highcharts.AddFunction("GlobalGetTimezoneOffset.getTimezoneOffset", GetTimezoneOffset); }  
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
 			

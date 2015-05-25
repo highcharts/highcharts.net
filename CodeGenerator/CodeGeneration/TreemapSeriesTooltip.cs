@@ -133,7 +133,7 @@ namespace Highsoft.Web.Mvc
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("pointFormatter", PointFormatter); }  
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("TreemapSeriesTooltipPointFormatter.pointFormatter", PointFormatter); }  
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);

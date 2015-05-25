@@ -156,7 +156,7 @@ namespace Highsoft.Web.Mvc
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("XAxisLabelsFormatter.formatter", Formatter); }  
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);

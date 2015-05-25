@@ -54,10 +54,10 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (AfterBreaks != AfterBreaks_DefaultValue) { h.Add("afterBreaks",AfterBreaks); Highcharts.AddFunction("afterBreaks", AfterBreaks); }  
-			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); Highcharts.AddFunction("afterSetExtremes", AfterSetExtremes); }  
-			if (PointBreak != PointBreak_DefaultValue) { h.Add("pointBreak",PointBreak); Highcharts.AddFunction("pointBreak", PointBreak); }  
-			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); Highcharts.AddFunction("setExtremes", SetExtremes); }  
+			if (AfterBreaks != AfterBreaks_DefaultValue) { h.Add("afterBreaks",AfterBreaks); Highcharts.AddFunction("YAxisEventsAfterBreaks.afterBreaks", AfterBreaks); }  
+			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); Highcharts.AddFunction("YAxisEventsAfterSetExtremes.afterSetExtremes", AfterSetExtremes); }  
+			if (PointBreak != PointBreak_DefaultValue) { h.Add("pointBreak",PointBreak); Highcharts.AddFunction("YAxisEventsPointBreak.pointBreak", PointBreak); }  
+			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); Highcharts.AddFunction("YAxisEventsSetExtremes.setExtremes", SetExtremes); }  
 			
 
 			return h;

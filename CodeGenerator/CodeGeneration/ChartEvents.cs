@@ -94,15 +94,15 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("addSeries", AddSeries); }  
-			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highcharts.AddFunction("afterPrint", AfterPrint); }  
-			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highcharts.AddFunction("beforePrint", BeforePrint); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("click", Click); }  
-			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); Highcharts.AddFunction("drilldown", Drilldown); }  
-			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); Highcharts.AddFunction("drillup", Drillup); }  
-			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("load", Load); }  
-			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("redraw", Redraw); }  
-			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highcharts.AddFunction("selection", Selection); }  
+			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("ChartEventsAddSeries.addSeries", AddSeries); }  
+			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highcharts.AddFunction("ChartEventsAfterPrint.afterPrint", AfterPrint); }  
+			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highcharts.AddFunction("ChartEventsBeforePrint.beforePrint", BeforePrint); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("ChartEventsClick.click", Click); }  
+			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); Highcharts.AddFunction("ChartEventsDrilldown.drilldown", Drilldown); }  
+			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); Highcharts.AddFunction("ChartEventsDrillup.drillup", Drillup); }  
+			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("ChartEventsLoad.load", Load); }  
+			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("ChartEventsRedraw.redraw", Redraw); }  
+			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highcharts.AddFunction("ChartEventsSelection.selection", Selection); }  
 			
 
 			return h;
