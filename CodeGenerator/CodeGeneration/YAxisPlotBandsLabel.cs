@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc
 		{
 			Align = Align_DefaultValue = "center";
 			Rotation = Rotation_DefaultValue = 0;
-			Style = Style_DefaultValue = null;
+			Style = Style_DefaultValue = new NameValueCollection();
 			Text = Text_DefaultValue = null;
 			TextAlign = TextAlign_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// CSS styles for the text label.
 		/// </summary>
-		public Object Style { get; set; }
-		private Object Style_DefaultValue { get; set; }
+		public NameValueCollection Style { get; set; }
+		private NameValueCollection Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

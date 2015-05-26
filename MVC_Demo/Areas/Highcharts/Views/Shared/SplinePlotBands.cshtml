@@ -1,4 +1,5 @@
 ﻿@using Highsoft.Web.Mvc
+@using System.Collections.Specialized
 
     <script type="text/javascript">
 
@@ -40,12 +41,28 @@
                 MinorGridLineWidth = 0,
                 GridLineWidth = 0,
                 AlternateGridColor = null,
-                PlotBands = new YAxisPlotBands
-                
+                PlotBands = new List<YAxisPlotBands>
+                {
+                    new YAxisPlotBands
+                    {
+                        From = 0.3,
+                        To = 1.5,
+                        Color = "rgba(68, 170, 213, 0.1)",
+                        Label = new YAxisPlotBandsLabel
+                        {
+                            Text = "Light Air",
+                            Style = new NameValueCollection
+                            {
+                                { "color", "#606060" }
+                            }
+                        }
+                    }
+                }
+
             },
             Tooltip = new Tooltip
             {
-                ValueSuffix = "°C"
+                ValueSuffix = "m/s"
             },
             Legend = new Legend
             {
@@ -56,27 +73,17 @@
             },
             Series = new List<Series>
             {                    
-                new LineSeries
+                new SplineSeries
                 {
-                    Name = "Tokyo",
-                    Data = @ViewData["tokyoData"] as List<LineSeriesData>
+                    Name = "Hestavollane",
+                    Data = @ViewData["hData"] as List<SplineSeriesData>
                 },
-                new LineSeries
+                new SplineSeries
                 {
-                    Name = "NY",
-                    Data = @ViewData["nyData"] as List<LineSeriesData>
-                },
-                new LineSeries
-                {
-                    Name = "Berlin",
-                    Data = @ViewData["berlinData"] as List<LineSeriesData>
-                },
-                new LineSeries
-                {
-                    Name = "London",
-                    Data = @ViewData["londonData"] as List<LineSeriesData>
+                    Name = "Voll",
+                    Data = @ViewData["vData"] as List<SplineSeriesData>
                 }
             }
         }
-        , "DemoChart")
+        , "chart")
     )
