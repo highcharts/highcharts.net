@@ -258,6 +258,8 @@
     <Content Include="Areas\Highcharts\Views\Shared\LineLog.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\LineAjax.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\SplineInverted.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\SplineSymbols.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\SplinePlotBands.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />

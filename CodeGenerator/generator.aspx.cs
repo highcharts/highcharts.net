@@ -421,12 +421,14 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("Position", "NameValueCollection");
         _propertyTypeMappings.Add("Attr", "NameValueCollection");
         _propertyTypeMappings.Add("Stack", "string");
+        _propertyTypeMappings.Add("Symbol", "string");
         _propertyTypeMappings.Add("Background", "List<Background>");
         _propertyTypeMappings.Add("MenuItems", "List<MenuItem>");
         _propertyTypeMappings.Add("Crosshairs", "List<Crosshair>");
         _propertyTypeMappings.Add("Stops", "List<Stop>");
         _propertyTypeMappings.Add("RenderTo", "string");
         _propertyTypeMappings.Add("Series", "List<Series>");
+        _propertyTypeMappings.Add("yAxis.plotBands", "List<YAxisPlotBands>");
         _propertyTypeMappings.Add("yAxis.plotLines", "List<YAxisPlotLines>");
     }
 
@@ -445,6 +447,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("SeriesMapping", "new List<object>()");
         _propertyInitMappings.Add("Keys", "new List<string>()");
         _propertyInitMappings.Add("yAxis.plotLines", "new List<YAxisPlotLines>()");
+        _propertyInitMappings.Add("yAxis.plotBands", "new List<YAxisPlotBands>()");
 
     }
 

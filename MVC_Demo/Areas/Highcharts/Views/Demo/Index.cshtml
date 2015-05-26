@@ -467,7 +467,7 @@
                             </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="spline-symbols.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "SplineSymbols" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/spline-symbols-default.png")" alt="Spline with symbols">
@@ -480,14 +480,14 @@
                             </a>
                         </div>
 
-                         @*
+                        
                         <div class="clearfix visible-lg visible-md"></div>
                         <div class="clearfix visible-sm visible-xs"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="spline-plot-bands.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "SplinePlotBands" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/spline-plot-bands-default.svg" alt="Spline with plot bands">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/spline-plot-bands-default.svg")" alt="Spline with plot bands">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Spline with plot bands</h3>
@@ -496,6 +496,8 @@
                                 </div>
                             </a>
                         </div>
+
+                         @*
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="spline-irregular-time.html">
                                 <div class="demo-container">

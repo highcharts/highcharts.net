@@ -1,0 +1,82 @@
+﻿@using Highsoft.Web.Mvc
+
+    <script type="text/javascript">
+
+    function handleClick(e) {
+        console.log(e.yAxis[0].value)
+    }
+
+    </script>
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                Type = ChartType.Spline
+            },
+            Title = new Title
+            {
+                Text = "Wind speed during two days"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "October 6th and 7th 2009 at two locations in Vik i Sogn, Norway",
+            },
+            XAxis = new XAxis
+            {
+                Type = XAxisType.Datetime
+
+            },
+            YAxis = new YAxis
+            {
+                Title = new YAxisTitle
+                {
+                    Text = "Wind speed (m/s)"
+                },
+                Min = 0,
+                MinorGridLineWidth = 0,
+                GridLineWidth = 0,
+                AlternateGridColor = null,
+                PlotBands = new YAxisPlotBands
+                
+            },
+            Tooltip = new Tooltip
+            {
+                ValueSuffix = "°C"
+            },
+            Legend = new Legend
+            {
+                Layout = LegendLayout.Vertical,
+                Align = LegendAlign.Right,
+                VerticalAlign = LegendVerticalAlign.Middle,
+                BorderWidth = 0
+            },
+            Series = new List<Series>
+            {                    
+                new LineSeries
+                {
+                    Name = "Tokyo",
+                    Data = @ViewData["tokyoData"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "NY",
+                    Data = @ViewData["nyData"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "Berlin",
+                    Data = @ViewData["berlinData"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "London",
+                    Data = @ViewData["londonData"] as List<LineSeriesData>
+                }
+            }
+        }
+        , "DemoChart")
+    )

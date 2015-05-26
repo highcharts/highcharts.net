@@ -51,7 +51,7 @@ namespace Highsoft.Web.Mvc
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			Offset = Offset_DefaultValue = 0;
 			Opposite = Opposite_DefaultValue = false;
-			PlotBands = PlotBands_DefaultValue = new YAxisPlotBands();
+			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
 			Reversed = Reversed_DefaultValue = false;
 			ReversedStacks = ReversedStacks_DefaultValue = true;
@@ -340,8 +340,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// An array of objects defining plot bands on the Y axis.
 		/// </summary>
-		public YAxisPlotBands PlotBands { get; set; }
-		private YAxisPlotBands PlotBands_DefaultValue { get; set; }
+		public List<YAxisPlotBands> PlotBands { get; set; }
+		private List<YAxisPlotBands> PlotBands_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -539,7 +539,7 @@ namespace Highsoft.Web.Mvc
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
-			if (PlotBands.IsDirty()) h.Add("plotBands",PlotBands.ToHashtable());
+			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands",PlotBands);
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines",PlotLines);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
