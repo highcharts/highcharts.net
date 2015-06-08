@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsBoxplotStatesHoverHalo 
+	public partial class PlotOptionsBoxplotStatesHoverHalo  
 	{
 		public PlotOptionsBoxplotStatesHoverHalo()
 		{

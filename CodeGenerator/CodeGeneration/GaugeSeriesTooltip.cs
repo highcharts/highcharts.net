@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class GaugeSeriesTooltip 
+	public partial class GaugeSeriesTooltip  
 	{
 		public GaugeSeriesTooltip()
 		{

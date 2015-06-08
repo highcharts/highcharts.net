@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ChartOptions3dFrameBack 
+	public partial class ChartOptions3dFrameBack  
 	{
 		public ChartOptions3dFrameBack()
 		{

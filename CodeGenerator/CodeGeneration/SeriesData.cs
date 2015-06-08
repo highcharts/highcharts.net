@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class SeriesData 
+	public partial class SeriesData  
 	{
 		public SeriesData()
 		{

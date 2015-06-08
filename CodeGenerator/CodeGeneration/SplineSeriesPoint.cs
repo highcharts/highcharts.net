@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class SplineSeriesPoint 
+	public partial class SplineSeriesPoint  
 	{
 		public SplineSeriesPoint()
 		{

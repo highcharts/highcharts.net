@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class SolidgaugeSeriesDataEvents 
+	public partial class SolidgaugeSeriesDataEvents  
 	{
 		public SolidgaugeSeriesDataEvents()
 		{

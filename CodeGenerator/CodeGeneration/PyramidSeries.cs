@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PyramidSeries : Series
+	public partial class PyramidSeries  : Series
 	{
 		public PyramidSeries()
 		{

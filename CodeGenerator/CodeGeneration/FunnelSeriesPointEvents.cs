@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class FunnelSeriesPointEvents 
+	public partial class FunnelSeriesPointEvents  
 	{
 		public FunnelSeriesPointEvents()
 		{

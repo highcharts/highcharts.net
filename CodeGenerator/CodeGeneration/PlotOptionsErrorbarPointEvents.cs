@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PlotOptionsErrorbarPointEvents 
+	public partial class PlotOptionsErrorbarPointEvents  
 	{
 		public PlotOptionsErrorbarPointEvents()
 		{

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class PyramidSeriesEvents 
+	public partial class PyramidSeriesEvents  
 	{
 		public PyramidSeriesEvents()
 		{

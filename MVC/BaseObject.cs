@@ -10,10 +10,8 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class BaseObject
+	public abstract class BaseObject
 	{
-        public BaseObject();
-
         abstract internal Hashtable ToHashtable();
         abstract internal string ToJSON();
         abstract internal bool IsDirty();
