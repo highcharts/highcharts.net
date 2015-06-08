@@ -1130,6 +1130,7 @@
     <Compile Include="CodeGeneration\YAxisPlotLinesLabel.cs" />
     <Compile Include="CodeGeneration\YAxisStackLabels.cs" />
     <Compile Include="CodeGeneration\YAxisTitle.cs" />
+    <Compile Include="BaseObject.cs" />
     <Compile Include="Highcharts.cs" />
     <Compile Include="HighchartsRenderer.cs">
       <SubType>Code</SubType>
