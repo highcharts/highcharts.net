@@ -450,7 +450,7 @@ namespace Highsoft.Web.Mvc
 		private BarSeriesZones Zones_DefaultValue { get; set; }
 		  
 
-		internal Hashtable ToHashtable()
+		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
@@ -512,7 +512,7 @@ namespace Highsoft.Web.Mvc
 			return h;
 		}
 
-		internal string ToJSON()
+		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
 			if (h.Count > 0)
@@ -523,7 +523,7 @@ namespace Highsoft.Web.Mvc
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal bool IsDirty()
+		internal override bool IsDirty()
 		{
 			return ToHashtable().Count > 0;
 		}

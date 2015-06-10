@@ -149,6 +149,8 @@ public partial class generatoraspx : System.Web.UI.Page
         string extendsClass = "";
         if (_seriesMappings.ContainsKey(item.Title))
             extendsClass = ": Series";
+        else
+            extendsClass = ": BaseObject";
 
         codeTemplate = codeTemplate
                         .Replace("{HighTemplate.ConstrutorInitializers}", defaultValues)
