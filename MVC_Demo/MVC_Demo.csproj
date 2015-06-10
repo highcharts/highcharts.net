@@ -183,6 +183,7 @@
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\bootstrap\font-awesome.css" />
     <Content Include="Content\bootstrap\template.css" />
+    <Content Include="Content\chart_types\area-basic-default.svg" />
     <Content Include="Content\chart_types\line-ajax-dark-unica.png" />
     <Content Include="Content\chart_types\line-ajax-default.svg" />
     <Content Include="Content\chart_types\line-basic-dark-unica.png" />
@@ -264,6 +265,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\SplineSymbols.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\SplinePlotBands.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\SplineIrregularTime.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaBasic.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
