@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CodeAddOns\Animation.cs" />
     <Compile Include="CodeAddOns\Background.cs" />
+    <Compile Include="CodeAddOns\BaseObject.cs" />
     <Compile Include="CodeAddOns\Crosshair.cs" />
     <Compile Include="CodeAddOns\MenuItem.cs" />
     <Compile Include="CodeAddOns\PointPlacement.cs" />
@@ -1130,7 +1131,6 @@
     <Compile Include="CodeGeneration\YAxisPlotLinesLabel.cs" />
     <Compile Include="CodeGeneration\YAxisStackLabels.cs" />
     <Compile Include="CodeGeneration\YAxisTitle.cs" />
-    <Compile Include="BaseObject.cs" />
     <Compile Include="Highcharts.cs" />
     <Compile Include="HighchartsRenderer.cs">
       <SubType>Code</SubType>

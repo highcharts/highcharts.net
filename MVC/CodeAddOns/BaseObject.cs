@@ -16,12 +16,13 @@ namespace Highsoft.Web.Mvc
         abstract internal string ToJSON();
         abstract internal bool IsDirty();
 
-        internal List<Hashtable> HashifyList(List<BaseObject> list)
+        internal List<Hashtable> HashifyList(IEnumerable list)
         {
             List<Hashtable> result = new List<Hashtable>();
 
-            foreach (BaseObject baseObject in list)
-            {                
+            foreach (object o in list)
+            {
+                BaseObject baseObject = o as BaseObject;
                 result.Add(baseObject.ToHashtable());
             }
 

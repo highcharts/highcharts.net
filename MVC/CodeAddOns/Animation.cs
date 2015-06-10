@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc
         /// </summary>
         public string Easing { get; set; }
 
-        internal Hashtable ToHashtable()
+        internal override Hashtable ToHashtable()
         {
             Hashtable h = new Hashtable();
 
@@ -45,19 +45,18 @@ namespace Highsoft.Web.Mvc
             return h;
         }
 
-        internal object ToJSON()
+        internal override string ToJSON()
         {
             Hashtable h = ToHashtable();
             if (h.Count > 0)
-                return h;
-            //return new JavaScriptSerializer().Serialize(ToHashtable());
+                return new JavaScriptSerializer().Serialize(ToHashtable());
             else
-                return Enabled;
+                return Enabled.ToString().ToLower();
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
-        internal bool IsDirty()
+        internal override bool IsDirty()
         {
             return (Enabled != true || ToHashtable().Count > 0);
         }

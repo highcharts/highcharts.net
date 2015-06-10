@@ -48,7 +48,30 @@ namespace Highsoft.Web.Mvc
         /// </summary>
         public string BorderColor { get; set; }
 
-        
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable h = new Hashtable();
+
+            if (!String.IsNullOrEmpty(BackgroundColor)) h.Add("backgroundColor", BackgroundColor);
+            if (!String.IsNullOrEmpty(BorderColor)) h.Add("borderColor", BorderColor);
+            if (InnerWidth != 0) h.Add("innerWidth", InnerWidth);
+            if (OuterWidth != 0) h.Add("outerWidth", OuterWidth);
+            if (BorderWidth != 0) h.Add("borderWidth", BorderWidth);
+
+            return h;
+        }
+
+        internal override string ToJSON()
+        {
+            return new JavaScriptSerializer().Serialize(ToHashtable());       
+        }
+
+        // checks if the state of the object is different from the default
+        // and therefore needs to be serialized
+        internal override bool IsDirty()
+        {
+            return ToHashtable().Count > 0;
+        }       
 
 	}
 }

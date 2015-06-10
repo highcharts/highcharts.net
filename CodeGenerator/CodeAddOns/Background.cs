@@ -61,24 +61,17 @@ namespace Highsoft.Web.Mvc
             return h;
         }
 
-        internal override object ToJSON()
+        internal override string ToJSON()
         {
-            Hashtable h = ToHashtable();
-            if (h.Count > 0)
-                return h;
-            //return new JavaScriptSerializer().Serialize(ToHashtable());
-            else
-                return Enabled;
+            return new JavaScriptSerializer().Serialize(ToHashtable());       
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
         internal override bool IsDirty()
         {
-            return (Enabled != true || ToHashtable().Count > 0);
-        }
-
-        
+            return ToHashtable().Count > 0;
+        }       
 
 	}
 }

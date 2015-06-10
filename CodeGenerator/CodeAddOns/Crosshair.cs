@@ -26,5 +26,27 @@ namespace Highsoft.Web.Mvc
         /// Set to true to show crosshair for the Y Axis
         /// </summary>
         public bool YAxis { get; set; }
+
+        internal override Hashtable ToHashtable()
+        {
+            Hashtable h = new Hashtable();
+
+            if (XAxis) h.Add("xAxis", XAxis);
+            if (YAxis) h.Add("yAxis", YAxis);
+
+            return h;
+        }
+
+        internal override string ToJSON()
+        {
+            return new JavaScriptSerializer().Serialize(ToHashtable());
+        }
+
+        // checks if the state of the object is different from the default
+        // and therefore needs to be serialized
+        internal override bool IsDirty()
+        {
+            return ToHashtable().Count > 0;
+        }  
 	}
 }
