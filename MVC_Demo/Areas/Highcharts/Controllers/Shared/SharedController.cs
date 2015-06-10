@@ -408,6 +408,27 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             return View();
         }
 
+        public ActionResult AreaNegative()
+        {
+            List<double?> johnValues = new List<double?> { 5, 3, 4, 7, 2 };
+            List<double?> janeValues = new List<double?> { 2, -2, -3, 2, 1 };
+            List<double?> joeValues = new List<double?> { 3, 4, 4, -2, 5 };
+
+            List<LineSeriesData> johnData = new List<LineSeriesData>();
+            List<LineSeriesData> janeData = new List<LineSeriesData>();
+            List<LineSeriesData> joeData = new List<LineSeriesData>();
+
+            johnValues.ForEach(p => johnData.Add(new LineSeriesData { Y = p }));
+            janeValues.ForEach(p => janeData.Add(new LineSeriesData { Y = p }));
+            joeValues.ForEach(p => joeData.Add(new LineSeriesData { Y = p }));
+
+            ViewData["johnData"] = johnData;
+            ViewData["janeData"] = janeData;
+            ViewData["joeData"] = joeData;
+
+            return View();
+        }
+
         public double MilliTimeStamp(DateTime theDate)
         {
             DateTime d1 = new DateTime(1970, 1, 1);

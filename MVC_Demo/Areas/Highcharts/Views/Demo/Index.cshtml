@@ -543,10 +543,10 @@
                             </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="area-negative.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "AreaNegative" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/area-negative-default.svg" alt="Area with negative values">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-negative-default.svg")" alt="Area with negative values">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Area with negative values</h3>
