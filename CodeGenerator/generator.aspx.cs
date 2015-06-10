@@ -430,6 +430,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("PointPlacement", "PointPlacement");
         _propertyTypeMappings.Add("Center", "new string[]");
         _propertyTypeMappings.Add("Position", "NameValueCollection");
+        _propertyTypeMappings.Add("DateTimeLabelFormats", "NameValueCollection");
         _propertyTypeMappings.Add("Attr", "NameValueCollection");
         _propertyTypeMappings.Add("Stack", "string");
         _propertyTypeMappings.Add("Symbol", "string");
@@ -444,18 +445,6 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("yAxis.plotBands.label.style", "NameValueCollection");
     }
 
-    private void InitLists()
-    {
-        _lists.Add("Background");
-        _lists.Add("MenuItem");
-        _lists.Add("CrossHairs");
-        _lists.Add("Stops");
-        _lists.Add("yAxis.plotBands");
-        _lists.Add("yAxis.plotLines");
-
-    }
-
-
     private void InitPropertyInitMappings()
     {
         _propertyInitMappings.Add("Shadow", "new Shadow() { Enabled = false }");
@@ -466,6 +455,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("Series", "new List<Series>()");
         _propertyInitMappings.Add("Center", "new string[] { null, null }");
         _propertyInitMappings.Add("Position", "new NameValueCollection()");
+        _propertyInitMappings.Add("DateTimeLabelFormats", "new NameValueCollection()");
         _propertyInitMappings.Add("Columns", "new List<List<Object>>()");
         _propertyInitMappings.Add("Rows", "new List<List<object>>()");
         _propertyInitMappings.Add("SeriesMapping", "new List<object>()");
@@ -473,8 +463,17 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("yAxis.plotLines", "new List<YAxisPlotLines>()");
         _propertyInitMappings.Add("yAxis.plotBands", "new List<YAxisPlotBands>()");
         _propertyInitMappings.Add("yAxis.plotBands.label.style", "new NameValueCollection()");
-
     }
+
+    private void InitLists()
+    {
+        _lists.Add("Background");
+        _lists.Add("MenuItem");
+        _lists.Add("CrossHairs");
+        _lists.Add("Stops");
+        _lists.Add("yAxis.plotBands");
+        _lists.Add("yAxis.plotLines");
+    }   
 
     private void InitSeriesMappings()
     {

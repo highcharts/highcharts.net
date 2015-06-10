@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Crosshairs = Crosshairs_DefaultValue = null;
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = "";
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
 			Enabled = Enabled_DefaultValue = true;
 			FollowPointer = FollowPointer_DefaultValue = false;
 			FollowTouchMove = FollowTouchMove_DefaultValue = true;
@@ -90,8 +90,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p><p>Defaults to:<pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre></p>
 		/// </summary>
-		public Object DateTimeLabelFormats { get; set; }
-		private Object DateTimeLabelFormats_DefaultValue { get; set; }
+		public NameValueCollection DateTimeLabelFormats { get; set; }
+		private NameValueCollection DateTimeLabelFormats_DefaultValue { get; set; }
 		 
 
 		/// <summary>

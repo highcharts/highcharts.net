@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc
 			Breaks = Breaks_DefaultValue = new XAxisBreaks();
 			Categories = Categories_DefaultValue = null;
 			Ceiling = Ceiling_DefaultValue = null;
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Events = Events_DefaultValue = new XAxisEvents();
 			Floor = Floor_DefaultValue = null;
@@ -110,8 +110,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// For a datetime axis, the scale will automatically adjust to the appropriate unit. This member gives the default string representations used for each unit. For an overview of the replacement codes, see dateFormat. Defaults to:<pre>{millisecond: '%H:%M:%S.%L',second: '%H:%M:%S',minute: '%H:%M',hour: '%H:%M',day: '%e. %b',week: '%e. %b',month: '%b \'%y',year: '%Y'}</pre>
 		/// </summary>
-		public Object DateTimeLabelFormats { get; set; }
-		private Object DateTimeLabelFormats_DefaultValue { get; set; }
+		public NameValueCollection DateTimeLabelFormats { get; set; }
+		private NameValueCollection DateTimeLabelFormats_DefaultValue { get; set; }
 		 
 
 		/// <summary>
