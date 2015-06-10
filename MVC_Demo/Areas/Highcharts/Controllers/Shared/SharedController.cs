@@ -301,28 +301,39 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 
         public ActionResult SplineIrregularTime()
         {
-            List<double> hValues = new List<double> { 4.3, 5.1, 4.3, 5.2, 5.4, 4.7, 3.5, 4.1, 5.6, 7.4, 6.9, 7.1,
-                7.9, 7.9, 7.5, 6.7, 7.7, 7.7, 7.4, 7.0, 7.1, 5.8, 5.9, 7.4,
-                8.2, 8.5, 9.4, 8.1, 10.9, 10.4, 10.9, 12.4, 12.1, 9.5, 7.5,
-                7.1, 7.5, 8.1, 6.8, 3.4, 2.1, 1.9, 2.8, 2.9, 1.3, 4.4, 4.2,
-                3.0, 3.0 };
-            List<double> vValues = new List<double> {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.3, 0.0,
-                0.0, 0.4, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                0.0, 0.6, 1.2, 1.7, 0.7, 2.9, 4.1, 2.6, 3.7, 3.9, 1.7, 2.3,
-                3.0, 3.3, 4.8, 5.0, 4.8, 5.0, 3.2, 2.0, 0.9, 0.4, 0.3, 0.5, 0.4 };
+            List<SplineSeriesData> winter1 = new List<SplineSeriesData>();
 
-            List<SplineSeriesData> hData = new List<SplineSeriesData>();
-            List<SplineSeriesData> vData = new List<SplineSeriesData>();
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1970,  10, 27)), Y = 0 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1970, 11, 10)), Y = 0.6 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1970, 11, 18)) , Y = 0.7 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new  DateTime(1970, 12, 2)), Y = 0.8 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1970, 12,  9)) , Y = 0.6 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1970, 12, 16)) , Y = 0.6 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1970, 12, 28)) , Y = 0.67 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  1,  1)) , Y = 0.81 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  1,  8)) , Y = 0.78 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  1, 12)) , Y = 0.98 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  1, 27)), Y = 1.84 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  2, 10)), Y = 1.80 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  2, 18)), Y = 1.80 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  2, 24)), Y = 1.92 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  3,  4)), Y = 2.49 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  3, 11)) , Y = 2.79 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  3, 15)), Y = 2.73 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  3, 25)), Y = 2.61 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  4,  2)), Y = 2.76});
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  4,  6)), Y = 2.82 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  4, 13)), Y = 2.8 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  5,  3)), Y = 2.1 });            
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  5, 26)), Y = 1.1 });            
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  6,  9)), Y = 0.25 });
+            winter1.Add(new SplineSeriesData { X = MilliTimeStamp(new DateTime(1971,  6, 12)), Y = 0 });
 
-            hValues.ForEach(p => hData.Add(new SplineSeriesData { Y = p }));
-            vValues.ForEach(p => vData.Add(new SplineSeriesData { Y = p }));
-
-            ViewBag.DateUTC = MilliTimeStamp(new System.DateTime(2009, 1, 1, 0, 0, 0));
-
-            ViewData["hData"] = hData;
-            ViewData["vData"] = vData;
+            ViewData["winter1"] = winter1;
 
             return View();
+
+            
         }
 
         public double MilliTimeStamp(DateTime theDate)

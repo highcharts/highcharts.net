@@ -29,125 +29,28 @@
             XAxis = new XAxis
             {
                 Type = XAxisType.Datetime,
-                DateTimeLabelFormats = new 
-
+                DateTimeLabelFormats = new NameValueCollection
+                {
+                    { "month" , "%e. %b" },
+                    { "year" , "%b" }
+                },
+                Title = new XAxisTitle
+                {
+                    Text = "Date"
+                }
             },
             YAxis = new YAxis
             {
                 Title = new YAxisTitle
                 {
-                    Text = "Wind speed (m/s)"
+                    Text = "Snow depth (m)"
                 },
-                Min = 0,
-                MinorGridLineWidth = 0,
-                GridLineWidth = 0,
-                AlternateGridColor = null,
-                PlotBands = new List<YAxisPlotBands>
-                {
-                    new YAxisPlotBands
-                    {
-                        From = 0.3,
-                        To = 1.5,
-                        Color = "rgba(68, 170, 213, 0.1)",
-                        Label = new YAxisPlotBandsLabel
-                        {
-                            Text = "Light Air",
-                            Style = new NameValueCollection
-                            {
-                                { "color", "#606060" }
-                            }
-                        }
-                    },
-                    new YAxisPlotBands
-                    {
-                        From = 1.1,
-                        To = 3.3,
-                        Color = "rgba(0, 0, 0, 0)",
-                        Label = new YAxisPlotBandsLabel
-                        {
-                            Text = "Light Breeze",
-                            Style = new NameValueCollection
-                            {
-                                { "color", "#606060" }
-                            }
-                        }
-                    },                    
-                    new YAxisPlotBands
-                    {
-                        From = 3.3,
-                        To = 5.5,
-                        Color = "rgba(68, 170, 213, 0.1)",
-                        Label = new YAxisPlotBandsLabel
-                        {
-                            Text = "Gentle breeze",
-                            Style = new NameValueCollection
-                            {
-                                { "color", "#606060" }
-                            }                            
-                        }
-                    },
-                    new YAxisPlotBands
-                    {
-                        From = 5.5,
-                        To = 8,
-                        Color = "rgba(0, 0, 0, 0)",
-                        Label = new YAxisPlotBandsLabel
-                        {
-                            Text = "Moderate breeze",
-                            Style = new NameValueCollection
-                            {
-                                { "color", "#606060" }
-                            }                            
-                        }
-                    },
-                    new YAxisPlotBands
-                    {
-                        From = 8,
-                        To = 11,
-                        Color = "rgba(68, 170, 213, 0.1)",
-                        Label = new YAxisPlotBandsLabel
-                        {
-                            Text = "Fresh breeze",
-                            Style = new NameValueCollection
-                            {
-                                { "color", "#606060" }
-                            }                            
-                        }
-                    },
-                    new YAxisPlotBands
-                    {
-                        From = 11,
-                        To = 14,
-                        Color = "rgba(0, 0, 0, 0)",
-                        Label = new YAxisPlotBandsLabel
-                        {
-                            Text = "Strong breeze",
-                            Style = new NameValueCollection
-                            {
-                                { "color", "#606060" }
-                            }                            
-                        }
-                    },
-                    new YAxisPlotBands
-                    {
-                        From = 14,
-                        To = 15,
-                        Color = "rgba(68, 170, 213, 0.1)",
-                        Label = new YAxisPlotBandsLabel
-                        {
-                            Text = "High wind",
-                            Style = new NameValueCollection
-                            {
-                                { "color", "#606060" }
-                            }                            
-                        }
-                    }                    
-                }
-
+                Min = 0
             },
             Tooltip = new Tooltip
             {
-                ValueSuffix = "m/s"
+                HeaderFormat = "<b>{series.name}</b><br>",
+                PointFormat = "{point.x:%e. %b}: {point.y:.2f} m"
             },
             Legend = new Legend
             {
@@ -159,35 +62,30 @@
             PlotOptions = new PlotOptions
             {
                 Spline = new PlotOptionsSpline
-                {
-                    LineWidth = 4,
-                    States = new PlotOptionsSplineStates
-                    {
-                        Hover = new PlotOptionsSplineStatesHover
-                        {
-                            LineWidth = 5
-                        }
-                    },
+                {                   
                     Marker = new PlotOptionsSplineMarker
                     {
-                        Enabled = false
-                    },
-                    PointInterval = 3600000,
-                    PointStart = @ViewBag.DateUTC
+                        Enabled = true
+                    }
                 }
             },
             Series = new List<Series>
             {                    
                 new SplineSeries
                 {
-                    Name = "Hestavollane",
-                    Data = @ViewData["hData"] as List<SplineSeriesData>
-                },
-                new SplineSeries
-                {
-                    Name = "Voll",
-                    Data = @ViewData["vData"] as List<SplineSeriesData>
+                    Name = "Winter 2007-2008",
+                    Data = @ViewData["winter1"] as List<SplineSeriesData>
                 }
+                //new SplineSeries
+                //{
+                //    Name = "Winter 2008-2009",
+                //    Data = @ViewData["winter2"] as List<SplineSeriesData>
+                //},
+                //new SplineSeries
+                //{
+                //    Name = "Winter 2009-2010",
+                //    Data = @ViewData["winter3"] as List<SplineSeriesData>
+                //}
             }
         }
         , "chart")
