@@ -56,7 +56,91 @@
                                 { "color", "#606060" }
                             }
                         }
-                    }
+                    },
+                    new YAxisPlotBands
+                    {
+                        From = 1.1,
+                        To = 3.3,
+                        Color = "rgba(0, 0, 0, 0)",
+                        Label = new YAxisPlotBandsLabel
+                        {
+                            Text = "Light Breeze",
+                            Style = new NameValueCollection
+                            {
+                                { "color", "#606060" }
+                            }
+                        }
+                    },                    
+                    new YAxisPlotBands
+                    {
+                        From = 3.3,
+                        To = 5.5,
+                        Color = "rgba(68, 170, 213, 0.1)",
+                        Label = new YAxisPlotBandsLabel
+                        {
+                            Text = "Gentle breeze",
+                            Style = new NameValueCollection
+                            {
+                                { "color", "#606060" }
+                            }                            
+                        }
+                    },
+                    new YAxisPlotBands
+                    {
+                        From = 5.5,
+                        To = 8,
+                        Color = "rgba(0, 0, 0, 0)",
+                        Label = new YAxisPlotBandsLabel
+                        {
+                            Text = "Moderate breeze",
+                            Style = new NameValueCollection
+                            {
+                                { "color", "#606060" }
+                            }                            
+                        }
+                    },
+                    new YAxisPlotBands
+                    {
+                        From = 8,
+                        To = 11,
+                        Color = "rgba(68, 170, 213, 0.1)",
+                        Label = new YAxisPlotBandsLabel
+                        {
+                            Text = "Fresh breeze",
+                            Style = new NameValueCollection
+                            {
+                                { "color", "#606060" }
+                            }                            
+                        }
+                    },
+                    new YAxisPlotBands
+                    {
+                        From = 11,
+                        To = 14,
+                        Color = "rgba(0, 0, 0, 0)",
+                        Label = new YAxisPlotBandsLabel
+                        {
+                            Text = "Strong breeze",
+                            Style = new NameValueCollection
+                            {
+                                { "color", "#606060" }
+                            }                            
+                        }
+                    },
+                    new YAxisPlotBands
+                    {
+                        From = 14,
+                        To = 15,
+                        Color = "rgba(68, 170, 213, 0.1)",
+                        Label = new YAxisPlotBandsLabel
+                        {
+                            Text = "High wind",
+                            Style = new NameValueCollection
+                            {
+                                { "color", "#606060" }
+                            }                            
+                        }
+                    }                    
                 }
 
             },
@@ -70,6 +154,26 @@
                 Align = LegendAlign.Right,
                 VerticalAlign = LegendVerticalAlign.Middle,
                 BorderWidth = 0
+            },
+            PlotOptions = new PlotOptions
+            {
+                Spline = new PlotOptionsSpline
+                {
+                    LineWidth = 4,
+                    States = new PlotOptionsSplineStates
+                    {
+                        Hover = new PlotOptionsSplineStatesHover
+                        {
+                            LineWidth = 5
+                        }
+                    },
+                    Marker = new PlotOptionsSplineMarker
+                    {
+                        Enabled = false
+                    },
+                    PointInterval = 3600000,
+                    PointStart = @ViewBag.DateUTC
+                }
             },
             Series = new List<Series>
             {                    

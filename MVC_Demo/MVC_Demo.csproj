@@ -192,6 +192,9 @@
     <Content Include="Content\chart_types\line-log-axis-dark-unica.png" />
     <Content Include="Content\chart_types\line-log-axis-default.svg" />
     <Content Include="Content\chart_types\line-time-series-default.svg" />
+    <Content Include="Content\chart_types\spline-inverted-default.svg" />
+    <Content Include="Content\chart_types\spline-irregular-time-default.svg" />
+    <Content Include="Content\chart_types\spline-plot-bands-default.svg" />
     <Content Include="Content\chart_types\spline-symbols-default.png" />
     <Content Include="Content\highslide.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />

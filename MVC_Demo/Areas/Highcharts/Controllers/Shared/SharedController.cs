@@ -291,6 +291,8 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             hValues.ForEach(p => hData.Add(new SplineSeriesData { Y = p }));
             vValues.ForEach(p => vData.Add(new SplineSeriesData { Y = p }));
 
+            ViewBag.DateUTC = MilliTimeStamp(new System.DateTime(2009, 1, 1, 0, 0, 0));
+
             ViewData["hData"] = hData;
             ViewData["vData"] = vData;
 
