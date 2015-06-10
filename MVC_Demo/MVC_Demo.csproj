@@ -267,6 +267,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\SplineIrregularTime.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\AreaBasic.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\AreaNegative.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaStacked.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />

@@ -1,0 +1,94 @@
+﻿@using Highsoft.Web.Mvc
+
+    <script type="text/javascript">      
+
+        function formatYAxis() {
+            return this.value / 1000;
+        }
+
+  
+    </script>
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                Type = ChartType.Area
+            },
+            Title = new Title
+            {
+                Text = "Historic and Estimated Worldwide Population Growth by Region"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Source: Wikipedia.org"
+            },
+            XAxis = new XAxis
+            {
+                Categories = new List<string> { "1750", "1800", "1850", "1900", "1950", "1999", "2050" },
+                TickmarkPlacement = XAxisTickmarkPlacement.On
+            },
+            YAxis = new YAxis
+            {
+                Title = new YAxisTitle
+                {
+                    Text = "Billions"
+                },
+                Labels = new YAxisLabels
+                {
+                    Formatter = "formatYAxis"
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                Shared = true,
+                ValueSuffix = " millions"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Area = new PlotOptionsArea
+                {
+                    Stacking = PlotOptionsAreaStacking.Normal,
+                    LineColor = "#666666",
+                    LineWidth = 1,
+                    Marker = new PlotOptionsAreaMarker
+                    {
+                        LineWidth = 1,
+                        LineColor = "#666666"
+                    }
+                }
+            },
+            Series = new List<Series>
+            {                    
+                new LineSeries
+                {
+                    Name = "Asia",
+                    Data = @ViewData["asiaData"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "Africa",
+                    Data = @ViewData["africaData"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "Europe",
+                    Data = @ViewData["europeData"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "America",
+                    Data = @ViewData["americaData"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "Oceania",
+                    Data = @ViewData["oceaniaData"] as List<LineSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )

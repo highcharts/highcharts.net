@@ -429,6 +429,35 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             return View();
         }
 
+        public ActionResult AreaStacked()
+        {
+            List<double?> asiaValues = new List<double?> { 502, 635, 809, 947, 1402, 3634, 5268 };
+            List<double?> africaValues = new List<double?> { 106, 107, 111, 133, 221, 767, 1766 };
+            List<double?> europeValues = new List<double?> { 163, 203, 276, 408, 547, 729, 628 };
+            List<double?> americaValues = new List<double?> { 18, 31, 54, 156, 339, 818, 1201 };
+            List<double?> oceaniaValues = new List<double?> { 2, 2, 2, 6, 13, 30, 46 };
+
+            List<LineSeriesData> asiaData = new List<LineSeriesData>();
+            List<LineSeriesData> africaData = new List<LineSeriesData>();
+            List<LineSeriesData> europeData = new List<LineSeriesData>();
+            List<LineSeriesData> americaData = new List<LineSeriesData>();
+            List<LineSeriesData> oceaniaData = new List<LineSeriesData>();
+
+            asiaValues.ForEach(p => asiaData.Add(new LineSeriesData { Y = p }));
+            africaValues.ForEach(p => africaData.Add(new LineSeriesData { Y = p }));
+            europeValues.ForEach(p => europeData.Add(new LineSeriesData { Y = p }));
+            americaValues.ForEach(p => americaData.Add(new LineSeriesData { Y = p }));
+            oceaniaValues.ForEach(p => oceaniaData.Add(new LineSeriesData { Y = p }));
+
+            ViewData["asiaData"] = asiaData;
+            ViewData["africaData"] = africaData;
+            ViewData["europeData"] = europeData;
+            ViewData["americaData"] = americaData;
+            ViewData["oceaniaData"] = oceaniaData;
+
+            return View();
+        }
+
         public double MilliTimeStamp(DateTime theDate)
         {
             DateTime d1 = new DateTime(1970, 1, 1);
