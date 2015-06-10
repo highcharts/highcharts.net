@@ -52,13 +52,6 @@
                 HeaderFormat = "<b>{series.name}</b><br>",
                 PointFormat = "{point.x:%e. %b}: {point.y:.2f} m"
             },
-            Legend = new Legend
-            {
-                Layout = LegendLayout.Vertical,
-                Align = LegendAlign.Right,
-                VerticalAlign = LegendVerticalAlign.Middle,
-                BorderWidth = 0
-            },
             PlotOptions = new PlotOptions
             {
                 Spline = new PlotOptionsSpline
@@ -75,17 +68,17 @@
                 {
                     Name = "Winter 2007-2008",
                     Data = @ViewData["winter1"] as List<SplineSeriesData>
+                },
+                new SplineSeries
+                {
+                    Name = "Winter 2008-2009",
+                    Data = @ViewData["winter2"] as List<SplineSeriesData>
+                },
+                new SplineSeries
+                {
+                    Name = "Winter 2009-2010",
+                    Data = @ViewData["winter3"] as List<SplineSeriesData>
                 }
-                //new SplineSeries
-                //{
-                //    Name = "Winter 2008-2009",
-                //    Data = @ViewData["winter2"] as List<SplineSeriesData>
-                //},
-                //new SplineSeries
-                //{
-                //    Name = "Winter 2009-2010",
-                //    Data = @ViewData["winter3"] as List<SplineSeriesData>
-                //}
             }
         }
         , "chart")
