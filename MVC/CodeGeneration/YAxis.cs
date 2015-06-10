@@ -539,8 +539,8 @@ namespace Highsoft.Web.Mvc
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
-			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands",PlotBands);
-			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines",PlotLines);
+			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
@@ -549,7 +549,7 @@ namespace Highsoft.Web.Mvc
 			if (StackLabels.IsDirty()) h.Add("stackLabels",StackLabels.ToHashtable());
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
-			if (Stops != Stops_DefaultValue) h.Add("stops",Stops);
+			if (Stops != Stops_DefaultValue) h.Add("stops", HashifyList(Stops));
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickColor != TickColor_DefaultValue) h.Add("tickColor",TickColor);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);

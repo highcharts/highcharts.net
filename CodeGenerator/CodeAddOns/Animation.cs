@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class Animation
+	public partial class Animation : BaseObject
 	{        
 		
         public Animation() {
@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc
         /// </summary>
         public string Easing { get; set; }
 
-        internal Hashtable ToHashtable()
+        internal override Hashtable ToHashtable()
         {
             Hashtable h = new Hashtable();
 
@@ -45,7 +45,7 @@ namespace Highsoft.Web.Mvc
             return h;
         }
 
-        internal object ToJSON()
+        internal override object ToJSON()
         {
             Hashtable h = ToHashtable();
             if (h.Count > 0)
@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
-        internal bool IsDirty()
+        internal override bool IsDirty()
         {
             return (Enabled != true || ToHashtable().Count > 0);
         }

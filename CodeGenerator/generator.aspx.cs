@@ -22,6 +22,7 @@ public partial class generatoraspx : System.Web.UI.Page
     Hashtable _propertyInitMappings; // maps properties that needs special initialization logic
     Hashtable _enumMappings; // maps enums values that do not complile (e.g. special characters like "-" or "/" to other types
     Hashtable _seriesMappings; // maps series names to series classes
+    List<string> _lists; // a list of all List<T> properties - needs this to "Hashify" them, otherwise they will be serialized with capital letters
     List<string> _excludedProperties; // properties that do not need to be ported to the server-side wrapper
     List<string> _customProperties; // properties that need custom JSON mappings (Animation, Shadow, etc). Defined in the CodeAddOns folder.
 
@@ -36,6 +37,8 @@ public partial class generatoraspx : System.Web.UI.Page
         _enumMappings = new Hashtable();
         _excludedProperties = new List<string>();
         _customProperties = new List<string>();
+        _lists = new List<string>();
+        
         InitTypeMappings();
         InitPropertyTypeMappings();
         InitPropertyInitMappings();
@@ -43,6 +46,7 @@ public partial class generatoraspx : System.Web.UI.Page
         InitEnumMappings();
         InitCustomProperties();
         InitSeriesMappings();
+        InitLists();
 
         Directory.CreateDirectory(Server.MapPath("~/CodeGeneration/Enums/"));
 
@@ -312,6 +316,7 @@ public partial class generatoraspx : System.Web.UI.Page
     private string FormatPropertyComparer(string propertyName, ApiItem child)
     {
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
+        string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList({0}));\n\t\t\t";
         string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0}.ToString().ToLower());\n\t\t\t";
         string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); Highcharts.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
@@ -321,6 +326,10 @@ public partial class generatoraspx : System.Web.UI.Page
             return "";
 
         // fully qualified names that are collections
+        if (_lists.Contains(child.FullName))
+            return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+        if (_lists.Contains(propertyName))
+            return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         if (_propertyTypeMappings.Contains(child.FullName))
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         // property that needs custom serialization (Animation, Shadow, etc)
@@ -434,6 +443,18 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("yAxis.plotLines", "List<YAxisPlotLines>");
         _propertyTypeMappings.Add("yAxis.plotBands.label.style", "NameValueCollection");
     }
+
+    private void InitLists()
+    {
+        _lists.Add("Background");
+        _lists.Add("MenuItem");
+        _lists.Add("CrossHairs");
+        _lists.Add("Stops");
+        _lists.Add("yAxis.plotBands");
+        _lists.Add("yAxis.plotLines");
+
+    }
+
 
     private void InitPropertyInitMappings()
     {

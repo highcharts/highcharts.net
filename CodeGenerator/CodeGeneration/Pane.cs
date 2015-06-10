@@ -62,7 +62,7 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Background != Background_DefaultValue) h.Add("background",Background);
+			if (Background != Background_DefaultValue) h.Add("background", HashifyList(Background));
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (Size != Size_DefaultValue) h.Add("size",Size);

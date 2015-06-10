@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class MenuItem
+	public partial class MenuItem : BaseObject
 	{
 		public MenuItem() {
             Text = "";

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class Stop
+	public partial class Stop : BaseObject
 	{
 		public Stop() {
             Position = 0;

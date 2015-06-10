@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class Shadow
+	public partial class Shadow  : BaseObject
 	{
 		public Shadow() {
             Enabled = false;

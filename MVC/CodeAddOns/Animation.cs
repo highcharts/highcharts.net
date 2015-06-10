@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class Animation
+	public partial class Animation : BaseObject
 	{        
 		
         public Animation() {
