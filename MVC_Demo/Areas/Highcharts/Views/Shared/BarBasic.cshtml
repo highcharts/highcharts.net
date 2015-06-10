@@ -1,0 +1,85 @@
+﻿@using Highsoft.Web.Mvc
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                Type = ChartType.Column
+            },
+            Title = new Title
+            {
+                Text = "Historic World Population by Region"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Source: Wikipedia.org"
+            },
+
+            XAxis = new XAxis
+            {
+                Title = new XAxisTitle
+                {
+                    Text = null
+                },
+                Categories = new List<string> { "Africa", "America", "Asia", "Europe", "Oceania" }
+            },
+            YAxis = new YAxis
+            {
+                Min = 0,
+                Title = new YAxisTitle
+                {
+                    Text = "Population (millions)",
+                    Align = YAxisTitleAlign.High
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                ValueSuffix = " millions"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Bar = new PlotOptionsBar
+                {
+                    DataLabels = new PlotOptionsBarDataLabels
+                    {
+                        Enabled = true
+                    }
+                }
+            },
+            Legend = new Legend
+            {
+                Layout = LegendLayout.Vertical,
+                Align = LegendAlign.Right,
+                VerticalAlign = LegendVerticalAlign.Top,
+                X = -40,
+                Y = 100,
+                Floating = true,
+                BorderWidth = 1,
+                Shadow = new Shadow
+                {
+                    Enabled = true
+                }
+            },
+            Credits = new Credits
+            {
+                Enabled = false
+            },
+            Series = new List<Series>
+            {                    
+                new LineSeries
+                {
+                    Name = "USA",
+                    Data = @ViewData["usaData"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "USSR/Russia",
+                    Data = @ViewData["russiaData"] as List<LineSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )
