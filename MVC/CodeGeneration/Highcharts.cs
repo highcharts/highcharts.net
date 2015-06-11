@@ -56,7 +56,7 @@ namespace Highsoft.Web.Mvc
 			Title = Title_DefaultValue = new Title();
 			Tooltip = Tooltip_DefaultValue = new Tooltip();
 			XAxis = XAxis_DefaultValue = new List<XAxis>();
-			YAxis = YAxis_DefaultValue = new YAxis();
+			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			
 		}	
 		
@@ -358,8 +358,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>The Y axis or value axis. Normally this is the vertical axis, though if the chart is inverted this is the horizontal axis. In case of multiple axes, the yAxisnode is an array of configuration objects.</p><p>See <a class="internal" href="#axis.object">the Axis object</a> for programmaticaccess to the axis.</p>
 		/// </summary>
-		public YAxis YAxis { get; set; }
-		private YAxis YAxis_DefaultValue { get; set; }
+		public List<YAxis> YAxis { get; set; }
+		private List<YAxis> YAxis_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -406,8 +406,8 @@ namespace Highsoft.Web.Mvc
 			if (Subtitle.IsDirty()) h.Add("subtitle",Subtitle.ToHashtable());
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis.IsDirty()) h.Add("yAxis",YAxis.ToHashtable());
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
 			
 
 			return h;

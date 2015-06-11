@@ -60,8 +60,11 @@ namespace Highsoft.Web.Mvc.Rendering
                     List<LineSeriesData> seriesData = ((LineSeries) series).Data;
 
                     foreach (LineSeriesData data in seriesData)
-                    {                        
-                        dataList.Add(data.Y);
+                    {
+                        var dataPoint = new double?[2];
+                        dataPoint[0] = data.X;
+                        dataPoint[1] = data.Y;
+                        dataList.Add(dataPoint);
                     }
                 }
                 if (series is SplineSeries)
@@ -69,6 +72,18 @@ namespace Highsoft.Web.Mvc.Rendering
                     List<SplineSeriesData> seriesData = ((SplineSeries)series).Data;
 
                     foreach (SplineSeriesData data in seriesData)
+                    {
+                        var dataPoint = new double?[2];
+                        dataPoint[0] = data.X;
+                        dataPoint[1] = data.Y;
+                        dataList.Add(dataPoint);
+                    }
+                }
+                if (series is BarSeries)
+                {
+                    List<BarSeriesData> seriesData = ((BarSeries)series).Data;
+
+                    foreach (BarSeriesData data in seriesData)
                     {
                         var dataPoint = new double?[2];
                         dataPoint[0] = data.X;

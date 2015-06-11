@@ -502,21 +502,25 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 
         public ActionResult BarNegativeStack()
         {
-            List<double?> johnValues = new List<double?> { 5, 3, 4, 7, 2 };
-            List<double?> janeValues = new List<double?> { 2, -2, -3, 2, 1 };
-            List<double?> joeValues = new List<double?> { 3, 4, 4, -2, 5 };
+            List<double?> maleValues = new List<double?> {
+                    -1746181, -1884428, -2089758, -2222362, -2537431, -2507081, -2443179,
+                    -2664537, -3556505, -3680231, -3143062, -2721122, -2229181, -2227768,
+                    -2176300, -1329968, -836804, -354784, -90569, -28367, -3878
+            };
+            List<double?> femaleValues = new List<double?> {
+                    1656154, 1787564, 1981671, 2108575, 2403438, 2366003, 2301402, 2519874,
+                    3360596, 3493473, 3050775, 2759560, 2304444, 2426504, 2568938, 1785638,
+                    1447162, 1005011, 330870, 130632, 21208 
+            };
 
-            List<LineSeriesData> johnData = new List<LineSeriesData>();
-            List<LineSeriesData> janeData = new List<LineSeriesData>();
-            List<LineSeriesData> joeData = new List<LineSeriesData>();
+            List<BarSeriesData> maleData = new List<BarSeriesData>();
+            List<BarSeriesData> femaleData = new List<BarSeriesData>();
 
-            johnValues.ForEach(p => johnData.Add(new LineSeriesData { Y = p }));
-            janeValues.ForEach(p => janeData.Add(new LineSeriesData { Y = p }));
-            joeValues.ForEach(p => joeData.Add(new LineSeriesData { Y = p }));
+            maleValues.ForEach(p => maleData.Add(new BarSeriesData { Y = p }));
+            femaleValues.ForEach(p => femaleData.Add(new BarSeriesData { Y = p }));
 
-            ViewData["johnData"] = johnData;
-            ViewData["janeData"] = janeData;
-            ViewData["joeData"] = joeData;
+            ViewData["maleData"] = maleData;
+            ViewData["femaleData"] = femaleData;
 
             return View();
         }

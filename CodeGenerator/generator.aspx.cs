@@ -446,6 +446,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("RenderTo", "string");
         _propertyTypeMappings.Add("series", "List<Series>");
         _propertyTypeMappings.Add("xAxis", "List<XAxis>");
+        _propertyTypeMappings.Add("yAxis", "List<YAxis>");
         _propertyTypeMappings.Add("yAxis.plotBands", "List<YAxisPlotBands>");
         _propertyTypeMappings.Add("yAxis.plotLines", "List<YAxisPlotLines>");
         _propertyTypeMappings.Add("yAxis.plotBands.label.style", "NameValueCollection");
@@ -467,6 +468,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("Keys", "new List<string>()");
         _propertyInitMappings.Add("series", "new List<Series>()");
         _propertyInitMappings.Add("xAxis", "new List<XAxis>()");
+        _propertyInitMappings.Add("yAxis", "new List<YAxis>()");
         _propertyInitMappings.Add("yAxis.plotLines", "new List<YAxisPlotLines>()");
         _propertyInitMappings.Add("yAxis.plotBands", "new List<YAxisPlotBands>()");
         _propertyInitMappings.Add("yAxis.plotBands.label.style", "new NameValueCollection()");
@@ -478,6 +480,8 @@ public partial class generatoraspx : System.Web.UI.Page
         _lists.Add("MenuItem");
         _lists.Add("CrossHairs");
         _lists.Add("Stops");
+        _lists.Add("xAxis");
+        _lists.Add("yAxis");
         _lists.Add("yAxis.plotBands");
         _lists.Add("yAxis.plotLines");
     }   
