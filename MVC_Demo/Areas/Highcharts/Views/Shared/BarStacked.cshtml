@@ -13,16 +13,22 @@
             {
                 Text = "Stacked bar chart"
             },
-            XAxis = new XAxis
-            {                
-                Categories = new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
-            },
-            YAxis = new YAxis
+            XAxis = new List<XAxis>
             {
-                Min = 0,
-                Title = new YAxisTitle
+                new XAxis
+                {                
+                    Categories = new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
+                }
+            },
+            YAxis = new List<YAxis>   
+            {         
+                new YAxis
                 {
-                    Text = "Total fruit consumption"                   
+                    Min = 0,
+                    Title = new YAxisTitle
+                    {
+                        Text = "Total fruit consumption"                   
+                    }
                 }
             },
             Legend = new Legend
@@ -38,20 +44,20 @@
             },
             Series = new List<Series>
             {                    
-                new LineSeries
+                new BarSeries
                 {
                     Name = "John",
-                    Data = @ViewData["johnData"] as List<LineSeriesData>
+                    Data = @ViewData["johnData"] as List<BarSeriesData>
                 },
-                new LineSeries
+                new BarSeries
                 {
                     Name = "Jane",
-                    Data = @ViewData["janeData"] as List<LineSeriesData>
+                    Data = @ViewData["janeData"] as List<BarSeriesData>
                 },
-                new LineSeries
+                new BarSeries
                 {
                     Name = "Joe",
-                    Data = @ViewData["joeData"] as List<LineSeriesData>
+                    Data = @ViewData["joeData"] as List<BarSeriesData>
                 }
             }
         }
