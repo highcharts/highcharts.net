@@ -396,11 +396,11 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
                 33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
                 35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
                 21000, 20000, 19000, 18000, 18000, 17000, 16000 };
-            List<LineSeriesData> usaData = new List<LineSeriesData>();
-            List<LineSeriesData> russiaData = new List<LineSeriesData>();
+            List<AreaSeriesData> usaData = new List<AreaSeriesData>();
+            List<AreaSeriesData> russiaData = new List<AreaSeriesData>();
 
-            usaValues.ForEach(p => usaData.Add(new LineSeriesData { Y = p }));
-            russiaValues.ForEach(p => russiaData.Add(new LineSeriesData { Y = p }));
+            usaValues.ForEach(p => usaData.Add(new AreaSeriesData { Y = p }));
+            russiaValues.ForEach(p => russiaData.Add(new AreaSeriesData { Y = p }));
 
             ViewData["usaData"] = usaData;
             ViewData["russiaData"] = russiaData;

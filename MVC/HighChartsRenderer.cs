@@ -67,6 +67,18 @@ namespace Highsoft.Web.Mvc.Rendering
                         dataList.Add(dataPoint);
                     }
                 }
+                if (series is AreaSeries)
+                {
+                    List<AreaSeriesData> seriesData = ((AreaSeries)series).Data;
+
+                    foreach (AreaSeriesData data in seriesData)
+                    {
+                        var dataPoint = new double?[2];
+                        dataPoint[0] = data.X;
+                        dataPoint[1] = data.Y;
+                        dataList.Add(dataPoint);
+                    }
+                }
                 if (series is SplineSeries)
                 {
                     List<SplineSeriesData> seriesData = ((SplineSeries)series).Data;

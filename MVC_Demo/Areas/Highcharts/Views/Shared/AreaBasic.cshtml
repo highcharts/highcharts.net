@@ -31,24 +31,30 @@
                 Text = "Source: <a href='http://thebulletin.metapress.com/content/c4120650912x74k7/fulltext.pdf'>thebulletin.metapress.com</a>"
             },
 
-            XAxis = new XAxis
-            {
-                AllowDecimals = false,
-                Labels = new XAxisLabels
+            XAxis = new List<XAxis>
+            {            
+                new XAxis
                 {
-                    Formatter = "formatXAxis"
-                }
+                    AllowDecimals = false,
+                    Labels = new XAxisLabels
+                    {
+                        Formatter = "formatXAxis"
+                    }
 
+                }
             },
-            YAxis = new YAxis
-            {
-                Title = new YAxisTitle
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
                 {
-                    Text = "Nuclear weapon states"
-                },
-                Labels = new YAxisLabels
-                {
-                    Formatter = "formatYAxis"
+                    Title = new YAxisTitle
+                    {
+                        Text = "Nuclear weapon states"
+                    },
+                    Labels = new YAxisLabels
+                    {
+                        Formatter = "formatYAxis"
+                    }
                 }
             },
             Tooltip = new Tooltip
@@ -77,15 +83,15 @@
             },
             Series = new List<Series>
             {                    
-                new LineSeries
+                new AreaSeries
                 {
                     Name = "USA",
-                    Data = @ViewData["usaData"] as List<LineSeriesData>
+                    Data = @ViewData["usaData"] as List<AreaSeriesData>
                 },
-                new LineSeries
+                new AreaSeries
                 {
                     Name = "USSR/Russia",
-                    Data = @ViewData["russiaData"] as List<LineSeriesData>
+                    Data = @ViewData["russiaData"] as List<AreaSeriesData>
                 }
             }
         }
