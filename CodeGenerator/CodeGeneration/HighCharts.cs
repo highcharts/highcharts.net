@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc
 			Subtitle = Subtitle_DefaultValue = new Subtitle();
 			Title = Title_DefaultValue = new Title();
 			Tooltip = Tooltip_DefaultValue = new Tooltip();
-			XAxis = XAxis_DefaultValue = new XAxis();
+			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			YAxis = YAxis_DefaultValue = new YAxis();
 			
 		}	
@@ -351,8 +351,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>The X axis or category axis. Normally this is the horizontal axis, though if the chart is inverted this is the vertical axis. In case of multiple axes, the xAxisnode is an array of configuration objects.</p><p>See <a class="internal" href="#axis.object">the Axis object</a> for programmaticaccess to the axis.</p>
 		/// </summary>
-		public XAxis XAxis { get; set; }
-		private XAxis XAxis_DefaultValue { get; set; }
+		public List<XAxis> XAxis { get; set; }
+		private List<XAxis> XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -406,7 +406,7 @@ namespace Highsoft.Web.Mvc
 			if (Subtitle.IsDirty()) h.Add("subtitle",Subtitle.ToHashtable());
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (XAxis.IsDirty()) h.Add("xAxis",XAxis.ToHashtable());
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis.IsDirty()) h.Add("yAxis",YAxis.ToHashtable());
 			
 

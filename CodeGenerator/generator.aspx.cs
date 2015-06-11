@@ -445,6 +445,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("Stops", "List<Stop>");
         _propertyTypeMappings.Add("RenderTo", "string");
         _propertyTypeMappings.Add("series", "List<Series>");
+        _propertyTypeMappings.Add("xAxis", "List<XAxis>");
         _propertyTypeMappings.Add("yAxis.plotBands", "List<YAxisPlotBands>");
         _propertyTypeMappings.Add("yAxis.plotLines", "List<YAxisPlotLines>");
         _propertyTypeMappings.Add("yAxis.plotBands.label.style", "NameValueCollection");
@@ -465,6 +466,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("SeriesMapping", "new List<object>()");
         _propertyInitMappings.Add("Keys", "new List<string>()");
         _propertyInitMappings.Add("series", "new List<Series>()");
+        _propertyInitMappings.Add("xAxis", "new List<XAxis>()");
         _propertyInitMappings.Add("yAxis.plotLines", "new List<YAxisPlotLines>()");
         _propertyInitMappings.Add("yAxis.plotBands", "new List<YAxisPlotBands>()");
         _propertyInitMappings.Add("yAxis.plotBands.label.style", "new NameValueCollection()");
