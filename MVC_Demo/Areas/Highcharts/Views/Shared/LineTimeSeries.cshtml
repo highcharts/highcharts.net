@@ -25,16 +25,22 @@
             {
                 Text = "Click and drag in the plot area to zoom in"
             },
-            XAxis = new XAxis
+            XAxis = new List<XAxis>
             {
-                Type = XAxisType.Datetime,
-                MinRange = 14 * 24 * 3600000 // fourteen days
-            },
-            YAxis = new YAxis
-            {
-                Title = new YAxisTitle
+                new XAxis
                 {
-                    Text = "Exchange Rate"
+                    Type = XAxisType.Datetime,
+                    MinRange = 14 * 24 * 3600000 // fourteen days
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Exchange Rate"
+                    }
                 }
             },
             Tooltip = new Tooltip
@@ -50,7 +56,7 @@
                 Area = new PlotOptionsArea
                 {
                     ///FillColor = // TODO - LinerGradients
-                    ///
+                    ///                   
                     Marker = new PlotOptionsAreaMarker
                     {
                         Radius = 2
@@ -73,9 +79,9 @@
                     Name = "USD to EUR",
                     PointInterval =  24 * 3600 * 1000,
                     PointStart =  @ViewBag.DateUTC,
-                    Data = @ViewBag.TimeData
+                    Data = @ViewBag.TimeData as List<LineSeriesData>
                 }
             }
         }
-        , "DemoChart")
+        , "chart")
     )

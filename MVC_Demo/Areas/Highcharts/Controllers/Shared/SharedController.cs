@@ -102,9 +102,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
         }
 
         public ActionResult LineTimeSeries()
-        {
-            
-            
+        {   
             List<double> timeValues = new List<double> {
                 0.8446, 0.8445, 0.8444, 0.8451,    0.8418, 0.8264,    0.8258, 0.8232,    0.8233, 0.8258,
                 0.8283, 0.8278, 0.8256, 0.8292,    0.8239, 0.8239,    0.8245, 0.8265,    0.8261, 0.8269,
@@ -222,8 +220,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             List<LineSeriesData> timeData = new List<LineSeriesData>();
             timeValues.ForEach(p => timeData.Add(new LineSeriesData { Y = p }));
             ViewBag.TimeData = timeData;
-            ViewBag.DateUTC = MilliTimeStamp(new System.DateTime(2006, 1, 1));
-
+            ViewBag.DateUTC = MilliTimeStamp(new System.DateTime(2006, 1, 2));
 
             return View();
 
@@ -592,6 +589,38 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
         }
 
         public ActionResult PieBasic()
+        {
+            List<PieSeriesData> pieData = new List<PieSeriesData>();
+
+            pieData.Add(new PieSeriesData { Name = "FireFox", Y = 45.0 });
+            pieData.Add(new PieSeriesData { Name = "IE", Y = 26.8 });
+            pieData.Add(new PieSeriesData { Name = "Chrome", Y = 12.8, Sliced = true, Selected = true });
+            pieData.Add(new PieSeriesData { Name = "Safari", Y = 8.5 });
+            pieData.Add(new PieSeriesData { Name = "Opera", Y = 6.2 });
+            pieData.Add(new PieSeriesData { Name = "Others", Y = 0.7 });
+
+            ViewData["pieData"] = pieData;
+
+            return View();
+        }
+
+        public ActionResult PieLegend()
+        {
+            List<PieSeriesData> pieData = new List<PieSeriesData>();
+
+            pieData.Add(new PieSeriesData { Name = "FireFox", Y = 45.0 });
+            pieData.Add(new PieSeriesData { Name = "IE", Y = 26.8 });
+            pieData.Add(new PieSeriesData { Name = "Chrome", Y = 12.8, Sliced = true, Selected = true });
+            pieData.Add(new PieSeriesData { Name = "Safari", Y = 8.5 });
+            pieData.Add(new PieSeriesData { Name = "Opera", Y = 6.2 });
+            pieData.Add(new PieSeriesData { Name = "Others", Y = 0.7 });
+
+            ViewData["pieData"] = pieData;
+
+            return View();
+        }
+
+        public ActionResult PieDonut()
         {
             List<PieSeriesData> pieData = new List<PieSeriesData>();
 

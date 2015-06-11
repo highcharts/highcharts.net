@@ -222,7 +222,9 @@ public partial class generatoraspx : System.Web.UI.Page
             else if (!defaultMatched)
                 apiItem.Values.Insert(0, defaults);
         }
-        if (apiItem.FullName == "chart.type")
+
+        // For some reason bar is missing from the chart and series types in the JSON - possibly omission
+        if (apiItem.FullName == "chart.type" || apiItem.FullName == "series.type" || apiItem.FullName == "series<bar>.type")
         {
             apiItem.Values.Add("bar");
         }

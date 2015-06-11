@@ -1,0 +1,73 @@
+﻿@using Highsoft.Web.Mvc
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                PlotBackgroundColor = null,
+                PlotBorderWidth = null,
+                PlotShadow = new Shadow
+                {
+                    Enabled = false
+                },
+                Width = 1087,
+                Height = 400,
+                Type = ChartType.Pie
+            },
+            Title = new Title
+            {
+                Text = "'Browser market shares at a specific website, 2014"
+            },
+            Tooltip = new Tooltip
+            {
+                PointFormat = "{series.name}: <b>{point.percentage:.1f}%</b>"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Pie = new PlotOptionsPie
+                {
+                    AllowPointSelect = true,
+                    Cursor = PlotOptionsPieCursor.Pointer,
+                    DataLabels = new PlotOptionsPieDataLabels
+                    {
+                        Enabled = false
+                    },
+                    ShowInLegend = true
+                }
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Title = new XAxisTitle
+                    {
+                        Text = null
+                    },
+                    Categories = new List<string> { "Africa", "America", "Asia", "Europe", "Oceania" }
+                }
+            },
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
+                {
+                    Min = 0,
+                    Title = new YAxisTitle
+                    {
+                        Text = "Population (millions)",
+                        Align = YAxisTitleAlign.High
+                    }
+                }
+            },           
+            Series = new List<Series>
+            {                    
+                new PieSeries
+                {                    
+                    Name = "Browser Share",
+                    Data = @ViewData["pieData"] as List<PieSeriesData>
+                },
+                
+            }
+        }
+        , "chart")
+    )

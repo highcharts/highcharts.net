@@ -48,82 +48,76 @@ namespace Highsoft.Web.Mvc.Rendering
         private void RenderChartSettings(StringBuilder s)
         {            
             Hashtable options = _chart.ToHashtable();
-            List<Hashtable> results = new List<Hashtable>();            
+            List<Hashtable> results = new List<Hashtable>();    
+        
 
             foreach (Series series in _chart.Series)
-            {
-                Hashtable seriesHashtable = series.ToHashtable();
+            {               
                 List<object> dataList = new List<object>();
+                Hashtable seriesHashtable = new Hashtable();
 
                 if (series is LineSeries)
-                {                    
-                    List<LineSeriesData> seriesData = ((LineSeries) series).Data;
-
-                    foreach (LineSeriesData data in seriesData)
-                    {
-                        var dataPoint = new double?[2];
-                        dataPoint[0] = data.X;
-                        dataPoint[1] = data.Y;
-                        dataList.Add(dataPoint);
-                    }
-                }
-                if (series is AreaSeries)
                 {
-                    List<AreaSeriesData> seriesData = ((AreaSeries)series).Data;
+                    LineSeries lineSeries = series as LineSeries;
 
-                    foreach (AreaSeriesData data in seriesData)
-                    {
-                        var dataPoint = new double?[2];
-                        dataPoint[0] = data.X;
-                        dataPoint[1] = data.Y;
-                        dataList.Add(dataPoint);
-                    }
+                    List<LineSeriesData> seriesData = lineSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    lineSeries.Type = LineSeriesType.Line;
+
+                    seriesHashtable = lineSeries.ToHashtable();
                 }
                 if (series is SplineSeries)
                 {
-                    List<SplineSeriesData> seriesData = ((SplineSeries)series).Data;
+                    SplineSeries splineSeries = series as SplineSeries;
 
-                    foreach (SplineSeriesData data in seriesData)
-                    {
-                        var dataPoint = new double?[2];
-                        dataPoint[0] = data.X;
-                        dataPoint[1] = data.Y;
-                        dataList.Add(dataPoint);
-                    }
+                    List<SplineSeriesData> seriesData = splineSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    splineSeries.Type = SplineSeriesType.Spline;
+
+                    seriesHashtable = splineSeries.ToHashtable();
                 }
+                if (series is AreaSeries)
+                {
+                    AreaSeries areaSeries = series as AreaSeries;
+
+                    List<AreaSeriesData> seriesData = areaSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    areaSeries.Type = AreaSeriesType.Area;
+
+                    seriesHashtable = areaSeries.ToHashtable();
+                }
+               
                 if (series is BarSeries)
                 {
-                    List<BarSeriesData> seriesData = ((BarSeries)series).Data;
+                    BarSeries barSeries = series as BarSeries;
 
-                    foreach (BarSeriesData data in seriesData)
-                    {
-                        var dataPoint = new double?[2];
-                        dataPoint[0] = data.X;
-                        dataPoint[1] = data.Y;
-                        dataList.Add(dataPoint);
-                    }
+                    List<BarSeriesData> seriesData = barSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    barSeries.Type = BarSeriesType.Bar;
+
+                    seriesHashtable = barSeries.ToHashtable();
                 }
                 if (series is ColumnSeries)
-                {                    
-                    List<ColumnSeriesData> seriesData = ((ColumnSeries)series).Data;
+                {
+                    ColumnSeries columnSeries = series as ColumnSeries;
 
-                    foreach (ColumnSeriesData data in seriesData)
-                    {
-                        var dataPoint = new double?[2];
-                        dataPoint[0] = data.X;
-                        dataPoint[1] = data.Y;
-                        dataList.Add(dataPoint);
-                    }
+                    List<ColumnSeriesData> seriesData = columnSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    columnSeries.Type = ColumnSeriesType.Column;
+
+                    seriesHashtable = columnSeries.ToHashtable();
                 }
                 if (series is PieSeries)
                 {
-                    List<PieSeriesData> seriesData = ((PieSeries)series).Data;
-                    foreach (PieSeriesData data in seriesData)
-                    {                       
-                        dataList.Add(data.ToHashtable());
-                    }
-                }
+                    PieSeries pieSeries = series as PieSeries;
 
+                    List<PieSeriesData> seriesData = pieSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    pieSeries.Type = PieSeriesType.Pie;
+
+                    seriesHashtable = pieSeries.ToHashtable();
+                }
+               
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
             }

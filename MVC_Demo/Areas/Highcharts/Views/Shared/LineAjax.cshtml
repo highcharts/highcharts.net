@@ -35,32 +35,38 @@
             {
                 Text = "Source: Google Analytics"
             },
-            XAxis = new XAxis
+            XAxis = new List<XAxis>
             {
-                TickInterval = 7 * 24 * 3600 * 1000, // one week
-                TickWidth = 0,
-                GridLineWidth = 1,
-                Labels = new XAxisLabels
+                new XAxis
                 {
-                    Align = XAxisLabelsAlign.Left,
-                    X = 3,
-                    Y = -3
+                    TickInterval = 7 * 24 * 3600 * 1000, // one week
+                    TickWidth = 0,
+                    GridLineWidth = 1,
+                    Labels = new XAxisLabels
+                    {
+                        Align = XAxisLabelsAlign.Left,
+                        X = 3,
+                        Y = -3
+                    }
                 }
             },
-            YAxis = new YAxis
+            YAxis = new List<YAxis>
             {
-                Title = new YAxisTitle
+                new YAxis
                 {
-                    Text = null
-                },
-                Labels = new YAxisLabels
-                {
-                    Align = "Left", // TO ADD to JSON
-                    X = 3,
-                    Y = 16,
-                    Format = "{value:.,0f}"
-                },
-                ShowFirstLabel = false
+                    Title = new YAxisTitle
+                    {
+                        Text = null
+                    },
+                    Labels = new YAxisLabels
+                    {
+                        Align = "Left", // TO ADD to JSON
+                        X = 3,
+                        Y = 16,
+                        Format = "{value:.,0f}"
+                    },
+                    ShowFirstLabel = false
+                }
             },
             Legend = new Legend
             {
@@ -90,13 +96,13 @@
 
             Series = new List<Series>
             {
-                new Series 
+                new LineSeries 
                 {
                     Name = "All Visit"
                     // LineWidth ??
                     //Marker  ??
                 },
-                new Series 
+                new LineSeries 
                 {
                     Name = "New Visitors"   
                 }

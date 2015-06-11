@@ -19,7 +19,6 @@
             {
                 Width = 700,
                 Height = 400,
-                Type = ChartType.Spline,
                 Inverted = true
             },
             Title = new Title
@@ -30,31 +29,37 @@
             {
                 Text = "According to the Standard Atmosphere Model"
             },
-            XAxis = new XAxis
+            XAxis = new List<XAxis>
             {
-                Reversed = false,
-                Title = new XAxisTitle
+                new XAxis
                 {
-                    Text = "Altitude"
-                },
-                Labels = new XAxisLabels
-                {
-                    Formatter = "formatXLabels"
-                },
-                MaxPadding = 0.05,
-                ShowLastLabel = true
+                    Reversed = false,
+                    Title = new XAxisTitle
+                    {
+                        Text = "Altitude"
+                    },
+                    Labels = new XAxisLabels
+                    {
+                        Formatter = "formatXLabels"
+                    },
+                    MaxPadding = 0.05,
+                    ShowLastLabel = true
+                }
             },
-            YAxis = new YAxis
+            YAxis = new List<YAxis>
             {
-                Title = new YAxisTitle
+                new YAxis
                 {
-                    Text = "Temperature"
-                },
-                Labels = new YAxisLabels
-                {
-                    Formatter = "formatYLabels"
-                },
-                LineWidth = 2
+                    Title = new YAxisTitle
+                    {
+                        Text = "Temperature"
+                    },
+                    Labels = new YAxisLabels
+                    {
+                        Formatter = "formatYLabels"
+                    },
+                    LineWidth = 2
+                }
             },
             Legend = new Legend
             {

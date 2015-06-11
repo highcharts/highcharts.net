@@ -275,6 +275,8 @@
     <Content Include="Areas\Highcharts\Views\Shared\ColumnNegative.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\ColumnStacked.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\PieBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieLegend.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieDonut.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />

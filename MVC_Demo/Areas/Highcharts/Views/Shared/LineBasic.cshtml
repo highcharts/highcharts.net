@@ -26,26 +26,31 @@
                 Text = "Source: WorldClimate.com",
                 X = -20
             },
+            XAxis = new List<XAxis>
+            {            
+                new XAxis
+                {
+                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
 
-            XAxis = new XAxis
-            {
-                Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
-
+                }
             },
-            YAxis = new YAxis
+            YAxis = new List<YAxis>
             {
-                Title = new YAxisTitle
+                new YAxis
                 {
-                    Text = "Temperature (°C)"
-                },
-                PlotLines = new List<YAxisPlotLines>
-                {
-                        new YAxisPlotLines
+                    Title = new YAxisTitle
                     {
-                        Value = 0,
-                        Width = 1,
-                        Color = "#808080"
+                        Text = "Temperature (°C)"
+                    },
+                    PlotLines = new List<YAxisPlotLines>
+                    {
+                            new YAxisPlotLines
+                        {
+                            Value = 0,
+                            Width = 1,
+                            Color = "#808080"
+                        }
                     }
                 }
             },
