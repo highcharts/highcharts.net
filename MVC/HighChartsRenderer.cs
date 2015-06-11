@@ -104,7 +104,7 @@ namespace Highsoft.Web.Mvc.Rendering
                     }
                 }
                 if (series is ColumnSeries)
-                {
+                {                    
                     List<ColumnSeriesData> seriesData = ((ColumnSeries)series).Data;
 
                     foreach (ColumnSeriesData data in seriesData)
@@ -113,6 +113,14 @@ namespace Highsoft.Web.Mvc.Rendering
                         dataPoint[0] = data.X;
                         dataPoint[1] = data.Y;
                         dataList.Add(dataPoint);
+                    }
+                }
+                if (series is PieSeries)
+                {
+                    List<PieSeriesData> seriesData = ((PieSeries)series).Data;
+                    foreach (PieSeriesData data in seriesData)
+                    {                       
+                        dataList.Add(data.ToHashtable());
                     }
                 }
 
