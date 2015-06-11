@@ -741,10 +741,10 @@
                             </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="column-stacked.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "ColumnStacked" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/column-stacked-default.svg" alt="Stacked column">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-stacked-default.svg")" alt="Stacked column">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Stacked column</h3>
