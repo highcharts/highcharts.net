@@ -26,20 +26,26 @@
             {
                 Text = "Source: Wikipedia.org"
             },
-            XAxis = new XAxis
+            XAxis = new List<XAxis>
             {
-                Categories = new List<string> { "1750", "1800", "1850", "1900", "1950", "1999", "2050" },
-                TickmarkPlacement = XAxisTickmarkPlacement.On
+                new XAxis
+                {
+                    Categories = new List<string> { "1750", "1800", "1850", "1900", "1950", "1999", "2050" },
+                    TickmarkPlacement = XAxisTickmarkPlacement.On
+                }
             },
-            YAxis = new YAxis
+            YAxis = new List<YAxis>
             {
-                Title = new YAxisTitle
+            new YAxis
                 {
-                    Text = "Billions"
-                },
-                Labels = new YAxisLabels
-                {
-                    Formatter = "formatYAxis"
+                    Title = new YAxisTitle
+                    {
+                        Text = "Billions"
+                    },
+                    Labels = new YAxisLabels
+                    {
+                        Formatter = "formatYAxis"
+                    }
                 }
             },
             Tooltip = new Tooltip
@@ -63,30 +69,30 @@
             },
             Series = new List<Series>
             {                    
-                new LineSeries
+                new AreaSeries
                 {
                     Name = "Asia",
-                    Data = @ViewData["asiaData"] as List<LineSeriesData>
+                    Data = @ViewData["asiaData"] as List<AreaSeriesData>
                 },
-                new LineSeries
+                new AreaSeries
                 {
                     Name = "Africa",
-                    Data = @ViewData["africaData"] as List<LineSeriesData>
+                    Data = @ViewData["africaData"] as List<AreaSeriesData>
                 },
-                new LineSeries
+                new AreaSeries
                 {
                     Name = "Europe",
-                    Data = @ViewData["europeData"] as List<LineSeriesData>
+                    Data = @ViewData["europeData"] as List<AreaSeriesData>
                 },
-                new LineSeries
+                new AreaSeries
                 {
                     Name = "America",
-                    Data = @ViewData["americaData"] as List<LineSeriesData>
+                    Data = @ViewData["americaData"] as List<AreaSeriesData>
                 },
-                new LineSeries
+                new AreaSeries
                 {
                     Name = "Oceania",
-                    Data = @ViewData["oceaniaData"] as List<LineSeriesData>
+                    Data = @ViewData["oceaniaData"] as List<AreaSeriesData>
                 }
             }
         }

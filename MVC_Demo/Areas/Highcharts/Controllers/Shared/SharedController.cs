@@ -414,13 +414,13 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             List<double?> janeValues = new List<double?> { 2, -2, -3, 2, 1 };
             List<double?> joeValues = new List<double?> { 3, 4, 4, -2, 5 };
 
-            List<LineSeriesData> johnData = new List<LineSeriesData>();
-            List<LineSeriesData> janeData = new List<LineSeriesData>();
-            List<LineSeriesData> joeData = new List<LineSeriesData>();
+            List<AreaSeriesData> johnData = new List<AreaSeriesData>();
+            List<AreaSeriesData> janeData = new List<AreaSeriesData>();
+            List<AreaSeriesData> joeData = new List<AreaSeriesData>();
 
-            johnValues.ForEach(p => johnData.Add(new LineSeriesData { Y = p }));
-            janeValues.ForEach(p => janeData.Add(new LineSeriesData { Y = p }));
-            joeValues.ForEach(p => joeData.Add(new LineSeriesData { Y = p }));
+            johnValues.ForEach(p => johnData.Add(new AreaSeriesData { Y = p }));
+            janeValues.ForEach(p => janeData.Add(new AreaSeriesData { Y = p }));
+            joeValues.ForEach(p => joeData.Add(new AreaSeriesData { Y = p }));
 
             ViewData["johnData"] = johnData;
             ViewData["janeData"] = janeData;
@@ -437,17 +437,17 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             List<double?> americaValues = new List<double?> { 18, 31, 54, 156, 339, 818, 1201 };
             List<double?> oceaniaValues = new List<double?> { 2, 2, 2, 6, 13, 30, 46 };
 
-            List<LineSeriesData> asiaData = new List<LineSeriesData>();
-            List<LineSeriesData> africaData = new List<LineSeriesData>();
-            List<LineSeriesData> europeData = new List<LineSeriesData>();
-            List<LineSeriesData> americaData = new List<LineSeriesData>();
-            List<LineSeriesData> oceaniaData = new List<LineSeriesData>();
+            List<AreaSeriesData> asiaData = new List<AreaSeriesData>();
+            List<AreaSeriesData> africaData = new List<AreaSeriesData>();
+            List<AreaSeriesData> europeData = new List<AreaSeriesData>();
+            List<AreaSeriesData> americaData = new List<AreaSeriesData>();
+            List<AreaSeriesData> oceaniaData = new List<AreaSeriesData>();
 
-            asiaValues.ForEach(p => asiaData.Add(new LineSeriesData { Y = p }));
-            africaValues.ForEach(p => africaData.Add(new LineSeriesData { Y = p }));
-            europeValues.ForEach(p => europeData.Add(new LineSeriesData { Y = p }));
-            americaValues.ForEach(p => americaData.Add(new LineSeriesData { Y = p }));
-            oceaniaValues.ForEach(p => oceaniaData.Add(new LineSeriesData { Y = p }));
+            asiaValues.ForEach(p => asiaData.Add(new AreaSeriesData { Y = p }));
+            africaValues.ForEach(p => africaData.Add(new AreaSeriesData { Y = p }));
+            europeValues.ForEach(p => europeData.Add(new AreaSeriesData { Y = p }));
+            americaValues.ForEach(p => americaData.Add(new AreaSeriesData { Y = p }));
+            oceaniaValues.ForEach(p => oceaniaData.Add(new AreaSeriesData { Y = p }));
 
             ViewData["asiaData"] = asiaData;
             ViewData["africaData"] = africaData;

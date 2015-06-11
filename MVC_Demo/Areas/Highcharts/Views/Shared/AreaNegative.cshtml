@@ -26,9 +26,12 @@
             {
                 Text = "Area chart with negative values"
             },
-            XAxis = new XAxis
+            XAxis = new List<XAxis>
             {
-                Categories =  new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
+                new XAxis
+                {
+                    Categories =  new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
+                }
             },
             Credits = new Credits
             {
@@ -36,20 +39,20 @@
             },
             Series = new List<Series>
             {                    
-                new LineSeries
+                new AreaSeries
                 {
                     Name = "John",
-                    Data = @ViewData["johnData"] as List<LineSeriesData>
+                    Data = @ViewData["johnData"] as List<AreaSeriesData>
                 },
-                new LineSeries
+                new AreaSeries
                 {
                     Name = "Jane",
-                    Data = @ViewData["janeData"] as List<LineSeriesData>
+                    Data = @ViewData["janeData"] as List<AreaSeriesData>
                 },
-                new LineSeries
+                new AreaSeries
                 {
                     Name = "Joe",
-                    Data = @ViewData["joeData"] as List<LineSeriesData>
+                    Data = @ViewData["joeData"] as List<AreaSeriesData>
                 }
             }
         }
