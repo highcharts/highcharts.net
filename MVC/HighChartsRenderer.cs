@@ -91,6 +91,18 @@ namespace Highsoft.Web.Mvc.Rendering
                         dataList.Add(dataPoint);
                     }
                 }
+                if (series is ColumnSeries)
+                {
+                    List<ColumnSeriesData> seriesData = ((ColumnSeries)series).Data;
+
+                    foreach (ColumnSeriesData data in seriesData)
+                    {
+                        var dataPoint = new double?[2];
+                        dataPoint[0] = data.X;
+                        dataPoint[1] = data.Y;
+                        dataList.Add(dataPoint);
+                    }
+                }
 
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
