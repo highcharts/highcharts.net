@@ -327,7 +327,7 @@ public partial class generatoraspx : System.Web.UI.Page
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
         string customPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToJSON());\n\t\t\t";  
 
-        if (propertyName == "Series" || propertyName == "Data")
+        if (child.FullName == "Series" || propertyName == "Data")
             return "";
 
         // fully qualified names that are collections

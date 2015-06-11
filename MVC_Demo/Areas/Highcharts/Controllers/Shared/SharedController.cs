@@ -481,21 +481,42 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 
         public ActionResult BarStacked()
         {
-            List<double?> year1800Values = new List<double?> { 107, 31, 635, 203, 2 };
-            List<double?> year1900Values = new List<double?> { 133, 156, 947, 408, 6 };
-            List<double?> year2008Values = new List<double?> { 973, 914, 4054, 732, 34 };
+            List<double?> johnValues = new List<double?> { 5, 3, 4, 7, 2 };
+            List<double?> janeValues = new List<double?> { 2, -2, -3, 2, 1 };
+            List<double?> joeValues = new List<double?> { 3, 4, 4, -2, 5 };
 
-            List<LineSeriesData> year1800Data = new List<LineSeriesData>();
-            List<LineSeriesData> year1900Data = new List<LineSeriesData>();
-            List<LineSeriesData> year2008Data = new List<LineSeriesData>();
+            List<LineSeriesData> johnData = new List<LineSeriesData>();
+            List<LineSeriesData> janeData = new List<LineSeriesData>();
+            List<LineSeriesData> joeData = new List<LineSeriesData>();
 
-            year1800Values.ForEach(p => year1800Data.Add(new LineSeriesData { Y = p }));
-            year1900Values.ForEach(p => year1900Data.Add(new LineSeriesData { Y = p }));
-            year2008Values.ForEach(p => year2008Data.Add(new LineSeriesData { Y = p }));
+            johnValues.ForEach(p => johnData.Add(new LineSeriesData { Y = p }));
+            janeValues.ForEach(p => janeData.Add(new LineSeriesData { Y = p }));
+            joeValues.ForEach(p => joeData.Add(new LineSeriesData { Y = p }));
 
-            ViewData["year1800Data"] = year1800Data;
-            ViewData["year1900Data"] = year1900Data;
-            ViewData["year2008Data"] = year2008Data;
+            ViewData["johnData"] = johnData;
+            ViewData["janeData"] = janeData;
+            ViewData["joeData"] = joeData;
+
+            return View();
+        }
+
+        public ActionResult BarNegativeStack()
+        {
+            List<double?> johnValues = new List<double?> { 5, 3, 4, 7, 2 };
+            List<double?> janeValues = new List<double?> { 2, -2, -3, 2, 1 };
+            List<double?> joeValues = new List<double?> { 3, 4, 4, -2, 5 };
+
+            List<LineSeriesData> johnData = new List<LineSeriesData>();
+            List<LineSeriesData> janeData = new List<LineSeriesData>();
+            List<LineSeriesData> joeData = new List<LineSeriesData>();
+
+            johnValues.ForEach(p => johnData.Add(new LineSeriesData { Y = p }));
+            janeValues.ForEach(p => janeData.Add(new LineSeriesData { Y = p }));
+            joeValues.ForEach(p => joeData.Add(new LineSeriesData { Y = p }));
+
+            ViewData["johnData"] = johnData;
+            ViewData["janeData"] = janeData;
+            ViewData["joeData"] = joeData;
 
             return View();
         }

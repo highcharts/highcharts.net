@@ -224,6 +224,7 @@ namespace Highsoft.Web.Mvc
 			if (Polygon.IsDirty()) h.Add("polygon",Polygon.ToHashtable());
 			if (Pyramid.IsDirty()) h.Add("pyramid",Pyramid.ToHashtable());
 			if (Scatter.IsDirty()) h.Add("scatter",Scatter.ToHashtable());
+			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
 			if (Solidgauge.IsDirty()) h.Add("solidgauge",Solidgauge.ToHashtable());
 			if (Spline.IsDirty()) h.Add("spline",Spline.ToHashtable());
 			if (Treemap.IsDirty()) h.Add("treemap",Treemap.ToHashtable());

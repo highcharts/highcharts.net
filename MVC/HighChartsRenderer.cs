@@ -82,8 +82,9 @@ namespace Highsoft.Web.Mvc.Rendering
             }
 
             if (results.Count > 0)
-            {                
-                options.Add("series", results);
+            {
+                options["series"] = results;
+                //options.Add("series", results);
             }
 
 

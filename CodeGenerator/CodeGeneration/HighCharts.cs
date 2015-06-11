@@ -380,6 +380,7 @@ namespace Highsoft.Web.Mvc
 			if (NoData.IsDirty()) h.Add("noData",NoData.ToHashtable());
 			if (Pane.IsDirty()) h.Add("pane",Pane.ToHashtable());
 			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
+			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (AreaSeries.IsDirty()) h.Add("areaSeries",AreaSeries.ToHashtable());
 			if (ArearangeSeries.IsDirty()) h.Add("arearangeSeries",ArearangeSeries.ToHashtable());
 			if (AreasplineSeries.IsDirty()) h.Add("areasplineSeries",AreasplineSeries.ToHashtable());
