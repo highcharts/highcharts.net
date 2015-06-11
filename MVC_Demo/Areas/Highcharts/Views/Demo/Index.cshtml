@@ -686,10 +686,10 @@
                             </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="bar-stacked.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "BarStacked" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/bar-stacked-default.svg" alt="Stacked bar">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bar-stacked-default.svg")" alt="Stacked bar">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Stacked bar</h3>

@@ -1,0 +1,56 @@
+﻿@using Highsoft.Web.Mvc
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                Type = ChartType.Bar
+            },
+            Title = new Title
+            {
+                Text = "Stacked bar chart"
+            },
+            XAxis = new XAxis
+            {                
+                Categories = new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
+            },
+            YAxis = new YAxis
+            {
+                Min = 0,
+                Title = new YAxisTitle
+                {
+                    Text = "Total fruit consumption"                   
+                }
+            },
+            Legend = new Legend
+            {
+                Reversed = true
+            },
+            PlotOptions = new PlotOptions
+            {
+                Series = 
+            }
+            Series = new List<Series>
+            {                    
+                new LineSeries
+                {
+                    Name = "Year 1800",
+                    Data = @ViewData["year1800Data"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "Year 1900",
+                    Data = @ViewData["year1900Data"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "Year 2008",
+                    Data = @ViewData["year2008Data"] as List<LineSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )

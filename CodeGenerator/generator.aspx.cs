@@ -444,7 +444,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("Crosshairs", "List<Crosshair>");
         _propertyTypeMappings.Add("Stops", "List<Stop>");
         _propertyTypeMappings.Add("RenderTo", "string");
-        _propertyTypeMappings.Add("Series", "List<Series>");
+        _propertyTypeMappings.Add("series", "List<Series>");
         _propertyTypeMappings.Add("yAxis.plotBands", "List<YAxisPlotBands>");
         _propertyTypeMappings.Add("yAxis.plotLines", "List<YAxisPlotLines>");
         _propertyTypeMappings.Add("yAxis.plotBands.label.style", "NameValueCollection");
@@ -456,8 +456,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("PlotShadow", "new Shadow() { Enabled = false }");
         _propertyInitMappings.Add("Animation", "new Animation() { Enabled = true }");
         _propertyInitMappings.Add("PointPlacement", "PointPlacement.Null");
-        _propertyInitMappings.Add("Colors", "new List<string>()");
-        _propertyInitMappings.Add("Series", "new List<Series>()");
+        _propertyInitMappings.Add("Colors", "new List<string>()");        
         _propertyInitMappings.Add("Center", "new string[] { null, null }");
         _propertyInitMappings.Add("Position", "new NameValueCollection()");
         _propertyInitMappings.Add("DateTimeLabelFormats", "new NameValueCollection()");
@@ -465,6 +464,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("Rows", "new List<List<object>>()");
         _propertyInitMappings.Add("SeriesMapping", "new List<object>()");
         _propertyInitMappings.Add("Keys", "new List<string>()");
+        _propertyInitMappings.Add("series", "new List<Series>()");
         _propertyInitMappings.Add("yAxis.plotLines", "new List<YAxisPlotLines>()");
         _propertyInitMappings.Add("yAxis.plotBands", "new List<YAxisPlotBands>()");
         _propertyInitMappings.Add("yAxis.plotBands.label.style", "new NameValueCollection()");

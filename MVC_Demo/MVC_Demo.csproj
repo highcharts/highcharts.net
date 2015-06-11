@@ -269,6 +269,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\AreaNegative.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\AreaStacked.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\BarBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\BarStacked.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />

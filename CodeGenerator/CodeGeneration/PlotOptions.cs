@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc
 			Polygon = Polygon_DefaultValue = new PlotOptionsPolygon();
 			Pyramid = Pyramid_DefaultValue = new PlotOptionsPyramid();
 			Scatter = Scatter_DefaultValue = new PlotOptionsScatter();
-			Series = Series_DefaultValue = new List<Series>();
+			Series = Series_DefaultValue = new PlotOptionsSeries();
 			Solidgauge = Solidgauge_DefaultValue = new PlotOptionsSolidgauge();
 			Spline = Spline_DefaultValue = new PlotOptionsSpline();
 			Treemap = Treemap_DefaultValue = new PlotOptionsTreemap();
@@ -170,8 +170,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>General options for all series types.</p>
 		/// </summary>
-		public List<Series> Series { get; set; }
-		private List<Series> Series_DefaultValue { get; set; }
+		public PlotOptionsSeries Series { get; set; }
+		private PlotOptionsSeries Series_DefaultValue { get; set; }
 		 
 
 		/// <summary>

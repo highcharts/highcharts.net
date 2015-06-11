@@ -479,6 +479,27 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             return View();
         }
 
+        public ActionResult BarStacked()
+        {
+            List<double?> year1800Values = new List<double?> { 107, 31, 635, 203, 2 };
+            List<double?> year1900Values = new List<double?> { 133, 156, 947, 408, 6 };
+            List<double?> year2008Values = new List<double?> { 973, 914, 4054, 732, 34 };
+
+            List<LineSeriesData> year1800Data = new List<LineSeriesData>();
+            List<LineSeriesData> year1900Data = new List<LineSeriesData>();
+            List<LineSeriesData> year2008Data = new List<LineSeriesData>();
+
+            year1800Values.ForEach(p => year1800Data.Add(new LineSeriesData { Y = p }));
+            year1900Values.ForEach(p => year1900Data.Add(new LineSeriesData { Y = p }));
+            year2008Values.ForEach(p => year2008Data.Add(new LineSeriesData { Y = p }));
+
+            ViewData["year1800Data"] = year1800Data;
+            ViewData["year1900Data"] = year1900Data;
+            ViewData["year2008Data"] = year2008Data;
+
+            return View();
+        }
+
         public double MilliTimeStamp(DateTime theDate)
         {
             DateTime d1 = new DateTime(1970, 1, 1);
