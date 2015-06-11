@@ -7,7 +7,7 @@
             {
                 Width = 1087,
                 Height = 400,
-                Type = ChartType.Column
+                Type = ChartType.Bar
             },
             Title = new Title
             {
@@ -71,13 +71,18 @@
             {                    
                 new LineSeries
                 {
-                    Name = "USA",
-                    Data = @ViewData["usaData"] as List<LineSeriesData>
+                    Name = "Year 1800",
+                    Data = @ViewData["year1800Data"] as List<LineSeriesData>
                 },
                 new LineSeries
                 {
-                    Name = "USSR/Russia",
-                    Data = @ViewData["russiaData"] as List<LineSeriesData>
+                    Name = "Year 1900",
+                    Data = @ViewData["year1900Data"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "Year 2008",
+                    Data = @ViewData["year2008Data"] as List<LineSeriesData>
                 }
             }
         }

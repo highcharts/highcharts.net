@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
             List<Hashtable> result = new List<Hashtable>();
 
             foreach (BaseObject baseObject in list)
-            {                
+            {
                 result.Add(baseObject.ToHashtable());
             }
 

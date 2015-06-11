@@ -89,12 +89,13 @@ public partial class generatoraspx : System.Web.UI.Page
             if (apiItem.ReturnType != null && apiItem.ReturnType == "" && apiItem.IsParent == false)
             {
                 continue;
-            }
-            // Customize some of the API items for functionality that cannot be inferred automatically from the JSON file
-            ProcessApiItems();
+            }          
 
             _apiItems.Add(apiItem);
         }
+
+        // Customize some of the API items for functionality that cannot be inferred automatically from the JSON file
+        ProcessApiItems();
     }
 
     private void ProcessApiItems()
@@ -220,6 +221,10 @@ public partial class generatoraspx : System.Web.UI.Page
                 apiItem.Defaults = apiItem.Values[0];
             else if (!defaultMatched)
                 apiItem.Values.Insert(0, defaults);
+        }
+        if (apiItem.FullName == "chart.type")
+        {
+            apiItem.Values.Add("bar");
         }
     }
 

@@ -460,29 +460,21 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 
         public ActionResult BarBasic()
         {
-            List<double?> asiaValues = new List<double?> { 502, 635, 809, 947, 1402, 3634, 5268 };
-            List<double?> africaValues = new List<double?> { 106, 107, 111, 133, 221, 767, 1766 };
-            List<double?> europeValues = new List<double?> { 163, 203, 276, 408, 547, 729, 628 };
-            List<double?> americaValues = new List<double?> { 18, 31, 54, 156, 339, 818, 1201 };
-            List<double?> oceaniaValues = new List<double?> { 2, 2, 2, 6, 13, 30, 46 };
+            List<double?> year1800Values = new List<double?> { 107, 31, 635, 203, 2 };
+            List<double?> year1900Values = new List<double?> { 133, 156, 947, 408, 6 };
+            List<double?> year2008Values = new List<double?> { 973, 914, 4054, 732, 34 };
 
-            List<LineSeriesData> asiaData = new List<LineSeriesData>();
-            List<LineSeriesData> africaData = new List<LineSeriesData>();
-            List<LineSeriesData> europeData = new List<LineSeriesData>();
-            List<LineSeriesData> americaData = new List<LineSeriesData>();
-            List<LineSeriesData> oceaniaData = new List<LineSeriesData>();
+            List<LineSeriesData> year1800Data = new List<LineSeriesData>();
+            List<LineSeriesData> year1900Data = new List<LineSeriesData>();
+            List<LineSeriesData> year2008Data = new List<LineSeriesData>();
 
-            asiaValues.ForEach(p => asiaData.Add(new LineSeriesData { Y = p }));
-            africaValues.ForEach(p => africaData.Add(new LineSeriesData { Y = p }));
-            europeValues.ForEach(p => europeData.Add(new LineSeriesData { Y = p }));
-            americaValues.ForEach(p => americaData.Add(new LineSeriesData { Y = p }));
-            oceaniaValues.ForEach(p => oceaniaData.Add(new LineSeriesData { Y = p }));
+            year1800Values.ForEach(p => year1800Data.Add(new LineSeriesData { Y = p }));
+            year1900Values.ForEach(p => year1900Data.Add(new LineSeriesData { Y = p }));
+            year2008Values.ForEach(p => year2008Data.Add(new LineSeriesData { Y = p }));
 
-            ViewData["asiaData"] = asiaData;
-            ViewData["africaData"] = africaData;
-            ViewData["europeData"] = europeData;
-            ViewData["americaData"] = americaData;
-            ViewData["oceaniaData"] = oceaniaData;
+            ViewData["year1800Data"] = year1800Data;
+            ViewData["year1900Data"] = year1900Data;
+            ViewData["year2008Data"] = year2008Data;
 
             return View();
         }
