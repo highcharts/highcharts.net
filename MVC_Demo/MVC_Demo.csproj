@@ -172,6 +172,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Demo\DemoController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineTimeSeriesController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineAjaxController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineBasicController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineLabelsController.cs" />
