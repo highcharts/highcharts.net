@@ -172,6 +172,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Demo\DemoController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineAjaxController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineBasicController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineLabelsController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\SharedController.cs" />
     <Compile Include="Areas\Highcharts\HighchartsAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
@@ -197,7 +200,9 @@
     <Content Include="Content\chart_types\spline-irregular-time-default.svg" />
     <Content Include="Content\chart_types\spline-plot-bands-default.svg" />
     <Content Include="Content\chart_types\spline-symbols-default.png" />
+    <Content Include="Content\closeX.png" />
     <Content Include="Content\highslide.css" />
+    <Content Include="Content\logo.svg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

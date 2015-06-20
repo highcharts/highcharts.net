@@ -43,16 +43,16 @@
                     }
                 }
             },
-            Tooltip = new Tooltip
-            {
-                ValueSuffix = "°C"
-            },
             Legend = new Legend
             {
                 Enabled = false
             },
             PlotOptions = new PlotOptions
             {
+                Series = new PlotOptionsSeries
+                {
+                    TurboThreshold = 10000
+                },
                 Area = new PlotOptionsArea
                 {
                     ///FillColor = // TODO - LinerGradients
@@ -74,12 +74,12 @@
             },
             Series = new List<Series>
             {       
-                new LineSeries
+                new AreaSeries
                 {
                     Name = "USD to EUR",
                     PointInterval =  24 * 3600 * 1000,
                     PointStart =  @ViewBag.DateUTC,
-                    Data = @ViewBag.TimeData as List<LineSeriesData>
+                    Data = @ViewBag.TimeData as List<AreaSeriesData>
                 }
             }
         }

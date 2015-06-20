@@ -21,21 +21,27 @@
         {
             Text = "Monthly Average Temperature"
         },
-        XAxis = new XAxis
-        {
-            Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
+        XAxis = new List<XAxis>
+        {        
+            new XAxis
+            {
+                Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
 
+            }
         },
-        YAxis = new YAxis
+        YAxis = new List<YAxis>
         {
-            Title = new YAxisTitle
+            new YAxis
             {
-                Text = "Temperature (°C)"
-            },
-            Labels = new YAxisLabels
-            {
-                Formatter = "formatYAxisLabels"
+                Title = new YAxisTitle
+                {
+                    Text = "Temperature (°C)"
+                },
+                Labels = new YAxisLabels
+                {
+                    Formatter = "formatYAxisLabels"
+                }
             }
         },
         Tooltip = new Tooltip
@@ -69,7 +75,10 @@
                 Name = "Tokyo",
                 Marker = new SplineSeriesMarker
                 {
-                    Symbol = 
+                    //Symbol = SplineSeriesMarkerSymbol
+                    //{
+                        
+                    //}
                 },                
                 Data = @ViewData["tokyoData"] as List<SplineSeriesData>
             },                   

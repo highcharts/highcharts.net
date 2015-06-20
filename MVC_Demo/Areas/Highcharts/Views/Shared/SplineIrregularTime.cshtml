@@ -26,26 +26,32 @@
             {
                 Text = "Irregular time data in Highcharts JS",
             },
-            XAxis = new XAxis
+            XAxis = new List<XAxis>
             {
-                Type = XAxisType.Datetime,
-                DateTimeLabelFormats = new NameValueCollection
+                new XAxis
                 {
-                    { "month" , "%e. %b" },
-                    { "year" , "%b" }
-                },
-                Title = new XAxisTitle
-                {
-                    Text = "Date"
+                    Type = XAxisType.Datetime,
+                    DateTimeLabelFormats = new NameValueCollection
+                    {
+                        { "month" , "%e. %b" },
+                        { "year" , "%b" }
+                    },
+                    Title = new XAxisTitle
+                    {
+                        Text = "Date"
+                    }
                 }
             },
-            YAxis = new YAxis
+            YAxis = new List<YAxis>
             {
-                Title = new YAxisTitle
+                new YAxis
                 {
-                    Text = "Snow depth (m)"
-                },
-                Min = 0
+                    Title = new YAxisTitle
+                    {
+                        Text = "Snow depth (m)"
+                    },
+                    Min = 0
+                }
             },
             Tooltip = new Tooltip
             {

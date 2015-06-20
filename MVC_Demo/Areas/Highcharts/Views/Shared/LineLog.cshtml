@@ -13,15 +13,20 @@
         {
             Text = "Logarithmic axis demo"
         },
-        XAxis = new XAxis
-        {
-            TickInterval = 1
-
+        XAxis = new List<XAxis>
+        { 
+            new XAxis
+            {
+                TickInterval = 1
+            }
         },
-        YAxis = new YAxis
-        {
-            Type = YAxisType.Logarithmic,
-            MinorTickInterval = "0.1"
+        YAxis = new List<YAxis>
+        { 
+            new YAxis
+            {
+                Type = YAxisType.Logarithmic,
+                MinorTickInterval = "0.1"
+            }
         },
         Tooltip = new Tooltip
         {
@@ -37,5 +42,5 @@
             }                    
         }
     }
-    , "DemoChart")
+    , "chart")
  )

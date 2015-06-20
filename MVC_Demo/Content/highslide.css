@@ -380,7 +380,7 @@ html>/**/body .highslide-gallery ul img {
 	display: block;
 	height: 16px;
 	width: 16px;
-	background-image: url(../../../../media/com_demo/graphics/closeX.png);
+	background-image: url(closeX.png);
 }
 .draggable-header .highslide-header .highslide-close a:hover {
 	background-position: 0 16px;
