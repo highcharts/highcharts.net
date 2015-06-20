@@ -971,10 +971,10 @@
                             </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="bubble.html">
+                           <a href="@Url.Action("Gallery", "Demo", new { demo = "Bubble" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/bubble-default.svg" alt="Bubble chart">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bubble-default.svg")" alt="Bubble chart">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Bubble chart</h3>
@@ -985,10 +985,10 @@
                         </div>
                         <div class="clearfix visible-sm visible-xs"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="bubble-3d.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "Bubble3d" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/bubble-3d-default.svg" alt="3D bubbles">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bubble-3d-default.svg")" alt="3D bubbles">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>3D bubbles</h3>

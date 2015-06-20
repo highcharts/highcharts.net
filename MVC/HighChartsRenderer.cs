@@ -127,6 +127,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = scatterSeries.ToHashtable();
                 }
+                if (series is BubbleSeries)
+                {
+                    BubbleSeries bubbleSeries = series as BubbleSeries;
+
+                    List<BubbleSeriesData> seriesData = bubbleSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    bubbleSeries.Type = BubbleSeriesType.Bubble;
+
+                    seriesHashtable = bubbleSeries.ToHashtable();
+                }
                
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
