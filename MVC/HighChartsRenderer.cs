@@ -117,6 +117,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = pieSeries.ToHashtable();
                 }
+                if (series is ScatterSeries)
+                {
+                    ScatterSeries scatterSeries = series as ScatterSeries;
+
+                    List<ScatterSeriesData> seriesData = scatterSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    scatterSeries.Type = ScatterSeriesType.Scatter;
+
+                    seriesHashtable = scatterSeries.ToHashtable();
+                }
                
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
