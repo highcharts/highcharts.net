@@ -172,6 +172,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Demo\DemoController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineLogController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplineIrregularTimeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplinePlotBandsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplineSymbolsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplineInvertedController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineTimeSeriesController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineAjaxController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineBasicController.cs" />
