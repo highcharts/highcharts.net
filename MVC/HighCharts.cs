@@ -13,11 +13,11 @@ namespace Highsoft.Web.Mvc
 	public partial class Highcharts
 	{
         internal static Hashtable functions = new Hashtable();
-       
+
         internal static void AddFunction(string eventName, string functionName)
         {
-            if (functions[eventName] == null)
-                functions.Add(eventName, functionName);
+            //if (functions[eventName] == null)
+            functions[eventName] = functionName;
         }
 
 		/// <summary>

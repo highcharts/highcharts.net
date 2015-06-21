@@ -103,7 +103,7 @@ public partial class generatoraspx : System.Web.UI.Page
         foreach (ApiItem apiItem in _apiItems)
         {
             // All events (javascript functions) should default to empty string
-            if (apiItem.ReturnType != null & apiItem.ReturnType == "Function")
+            if (apiItem.ReturnType != null && apiItem.ReturnType == "Function")
                 apiItem.Defaults = "";
 
             // add Defaults to enum if they are not available in the Values list.
@@ -325,7 +325,7 @@ public partial class generatoraspx : System.Web.UI.Page
     }
 
     private string FormatPropertyComparer(string propertyName, ApiItem child)
-    {
+    {        
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
         string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList({0}));\n\t\t\t";
         string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0}.ToString().ToLower());\n\t\t\t";
@@ -581,10 +581,16 @@ public partial class generatoraspx : System.Web.UI.Page
 
         if (!item.IsParent)
         {
+            if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
+            {
+                return "double.MinValue";
+            }
+            if (item.ReturnType == "Function")
+                return "\"\"";
+
             if (!String.IsNullOrEmpty(item.Defaults))
             {
                 if (item.ReturnType == "String" ||
-                    item.ReturnType == "Function" ||
                     item.ReturnType == "Color" ||
                     item.ReturnType == "String|Number" ||
                     item.ReturnType == "Number|String")
@@ -619,7 +625,9 @@ public partial class generatoraspx : System.Web.UI.Page
                     return result;
                 }
                 if (defaults == "undefined")
+                {                   
                     return "null";
+                }
             }
             else
             {

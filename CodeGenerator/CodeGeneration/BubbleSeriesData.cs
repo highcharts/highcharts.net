@@ -21,8 +21,8 @@ namespace Highsoft.Web.Mvc
 			Id = Id_DefaultValue = null;
 			Name = Name_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
-			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
+			X = X_DefaultValue = double.MinValue;
+			Y = Y_DefaultValue = double.MinValue;
 			Z = Z_DefaultValue = null;
 			
 		}	

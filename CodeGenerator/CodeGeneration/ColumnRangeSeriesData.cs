@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc
 			Low = Low_DefaultValue = null;
 			Name = Name_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
-			X = X_DefaultValue = null;
+			X = X_DefaultValue = double.MinValue;
 			
 		}	
 		

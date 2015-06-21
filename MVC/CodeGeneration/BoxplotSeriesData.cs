@@ -26,8 +26,8 @@ namespace Highsoft.Web.Mvc
 			Q1 = Q1_DefaultValue = null;
 			Q3 = Q3_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
-			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
+			X = X_DefaultValue = double.MinValue;
+			Y = Y_DefaultValue = double.MinValue;
 			
 		}	
 		

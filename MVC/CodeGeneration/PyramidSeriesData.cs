@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
-			Y = Y_DefaultValue = null;
+			Y = Y_DefaultValue = double.MinValue;
 			
 		}	
 		

@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc
 			Name = Name_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Sliced = Sliced_DefaultValue = false;
-			Y = Y_DefaultValue = null;
+			Y = Y_DefaultValue = double.MinValue;
 			
 		}	
 		
