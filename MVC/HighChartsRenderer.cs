@@ -138,6 +138,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = bubbleSeries.ToHashtable();
                 }
+                if (series is GaugeSeries)
+                {
+                    GaugeSeries gaugeSeries = series as GaugeSeries;
+
+                    List<GaugeSeriesData> seriesData = gaugeSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    gaugeSeries.Type = GaugeSeriesType.Gauge;
+
+                    seriesHashtable = gaugeSeries.ToHashtable();
+                }
                
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
