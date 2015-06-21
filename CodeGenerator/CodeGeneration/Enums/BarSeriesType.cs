@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc
 		Gauge, 
 		Scatter, 
 		Waterfall, 
-		Bar
+		Bar, 
+		Heatmap
     }
 }

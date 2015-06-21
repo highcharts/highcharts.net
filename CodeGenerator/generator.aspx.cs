@@ -224,9 +224,13 @@ public partial class generatoraspx : System.Web.UI.Page
         }
 
         // For some reason bar is missing from the chart and series types in the JSON - possibly omission
-        if (apiItem.FullName == "chart.type" || apiItem.FullName == "series.type" || apiItem.FullName == "series<bar>.type")
+        if (apiItem.FullName == "chart.type" || 
+            apiItem.FullName == "series.type" || 
+            apiItem.FullName == "series<bar>.type" ||
+            apiItem.FullName == "series<heatmap>.type")
         {
             apiItem.Values.Add("bar");
+            apiItem.Values.Add("heatmap");
         }
     }
 

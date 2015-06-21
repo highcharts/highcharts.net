@@ -148,6 +148,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = gaugeSeries.ToHashtable();
                 }
+                if (series is HeatmapSeries)
+                {
+                    HeatmapSeries heatMapSeries = series as HeatmapSeries;
+
+                    List<HeatmapSeriesData> seriesData = heatMapSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    heatMapSeries.Type = HeatmapSeriesType.Heatmap;
+
+                    seriesHashtable = heatMapSeries.ToHashtable();
+                }
                
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
