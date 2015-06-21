@@ -30,9 +30,10 @@ namespace Highsoft.Web.Mvc.Rendering
 
             sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.ID, _chart.Chart.Height.ToString(), _chart.Chart.Width.ToString());
             sb.Append("<script type='text/javascript'>");
+            sb.AppendFormat("var {0};", _chart.ID);
             sb.Append("jQuery(document).ready(function() {");
             sb.AppendFormat("var {0}ChartOptions = {1};", _chart.ID, GetStartupOptions());
-            sb.AppendFormat("window.{0} = new Highcharts.Chart({0}ChartOptions);", _chart.ID);
+            sb.AppendFormat("{0} = new Highcharts.Chart({0}ChartOptions);", _chart.ID);
             sb.Append("});");            
             sb.Append("</script>");
             return sb.ToString();            
