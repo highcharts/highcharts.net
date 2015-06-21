@@ -569,7 +569,7 @@
                                 </div>
                             </a>
                         </div>
-@*                        <div class="clearfix visible-lg visible-md"></div>
+                       <div class="clearfix visible-lg visible-md"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="area-stacked-percent.html">
                                 <div class="demo-container">
@@ -667,7 +667,7 @@
                             </a>
                         </div>
                         <div class="clearfix visible-sm visible-xs"></div>
-                    </div>*@
+                    </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
                             <h2 id="column-and-bar-charts">Column and bar charts</h2>
@@ -755,7 +755,7 @@
                         </div>
                         <div class="clearfix visible-lg visible-md"></div>
                         <div class="clearfix visible-sm visible-xs"></div>
-                        @* <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="column-stacked-and-grouped.html">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
@@ -851,7 +851,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div>*@
+                    </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
                             <h2 id="pie-charts">Pie charts</h2>
@@ -883,7 +883,7 @@
                             </a>
                         </div>
                         <div class="clearfix visible-sm visible-xs"></div>
-                        @*<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="pie-donut.html">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
@@ -952,7 +952,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div>*@
+                    </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
                             <h2 id="scatter-and-bubble-charts">Scatter and bubble charts</h2>
@@ -1179,7 +1179,7 @@
                         </div>
                         <div class="clearfix visible-lg visible-md"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                           <a href="@Url.Action("Gallery", "Demo", new { demo = "Pie3D" } )"
+                           <a href="@Url.Action("Gallery", "Demo", new { demo = "Pie3D" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-pie-default.svg")" alt="3D pie">
@@ -1193,10 +1193,10 @@
                         </div>
                         <div class="clearfix visible-sm visible-xs"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="3d-pie-donut.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "Pie3DDonut" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/3d-pie-donut-default.svg" alt="3D donut">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-pie-donut-default.svg")" alt="3D donut">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>3D donut</h3>
