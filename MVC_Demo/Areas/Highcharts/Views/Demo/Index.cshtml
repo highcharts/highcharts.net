@@ -1050,10 +1050,10 @@
                             <h2 id="combinations">Combinations</h2>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="combo.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "Combo" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/combo-default.svg" alt="Column, line and pie">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-default.svg")" alt="Column, line and pie">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Column, line and pie</h3>
@@ -1063,10 +1063,10 @@
                             </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="combo-dual-axes.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "ComboDual" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/combo-dual-axes-default.svg" alt="Dual axes, line and column">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-dual-default.svg")" alt="Dual axes, line and column">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Dual axes, line and column</h3>

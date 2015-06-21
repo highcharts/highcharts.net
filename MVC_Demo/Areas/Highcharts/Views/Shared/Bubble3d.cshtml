@@ -33,7 +33,11 @@
             {                    
                 new BubbleSeries
                 {                    
-                    Data = @ViewData["bubble1"] as List<BubbleSeriesData>
+                    Data = @ViewData["bubble1"] as List<BubbleSeriesData>,
+                    Marker = new BubbleSeriesMarker
+                    {
+                        FillColor = new 
+                    }
                 },
                 new BubbleSeries
                 {                    

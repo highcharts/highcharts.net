@@ -177,6 +177,8 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\AreaStackedController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\BubbleController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\Bubble3dController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboDualController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ScatterController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineLogController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\SplineIrregularTimeController.cs" />
@@ -297,6 +299,8 @@
     <Content Include="Areas\Highcharts\Views\Shared\Scatter.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\Bubble.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\Bubble3d.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Combo.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ComboDual.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
