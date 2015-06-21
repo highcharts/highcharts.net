@@ -1,0 +1,123 @@
+﻿@using Highsoft.Web.Mvc
+@using System.Collections.Specialized
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                ZoomType = ChartZoomType.Xy
+            },
+            Title = new Title
+            {
+                Text = "Average Monthly Temperature and Rainfall in Tokyo"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Source: WorldClimate.com"
+            },
+            XAxis = new List<XAxis>
+            {            
+                new XAxis
+                {
+                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }                    
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Labels = new YAxisLabels
+                    {
+                        Format = "{value}°C",                        
+                    },
+                    Title = new YAxisTitle
+                    {
+                        Text = "Temperature"
+                    }
+                },
+                new YAxis
+                {
+                    Id = "RainAxes",
+                    GridLineWidth = 0,
+                    Title = new YAxisTitle
+                    {
+                        Text = "Rainfall"
+                    },
+                    Labels = new YAxisLabels
+                    {
+                        Format = "{value} mm"
+                    },         
+                },
+                new YAxis
+                {
+                    Id = "SeaLevelAxes",
+                    GridLineWidth = 0,
+                    Title = new YAxisTitle
+                    {
+                        Text = "Sea-Level Pressure"
+                    },
+                    Labels = new YAxisLabels
+                    {
+                        Format = "{value} mb"
+                    },  
+                    Opposite = true
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                Shared = true
+            },
+            Legend = new Legend
+            {
+                Layout = LegendLayout.Vertical,
+                Align = LegendAlign.Left,
+                X = 120,
+                Y = 100,
+                VerticalAlign = LegendVerticalAlign.Top,
+                Floating = true
+            },
+            Series = new List<Series>
+            {                    
+                new ColumnSeries
+                {
+                    Name = "Rainfall",
+                    YAxis = "RainAxes",
+                    Tooltip = new ColumnSeriesTooltip
+                    {
+                        ValueSuffix = " mm"
+                    },
+                    Data = @ViewData["rainData"] as List<ColumnSeriesData>
+                }, 
+                new SplineSeries
+                {
+                    Name = "Sea-Level Pressure",
+                    YAxis = "SeaLevelAxes",
+                    Tooltip = new SplineSeriesTooltip
+                    {
+                        ValueSuffix = " mb"
+                    },
+                    DashStyle = SplineSeriesDashStyle.ShortDot,
+                    Marker = new SplineSeriesMarker
+                    {
+                        Enabled = false
+                    },                    
+                    Data = @ViewData["seaLevelData"] as List<SplineSeriesData>
+                },               
+                new SplineSeries
+                {
+                    Name = "Temerature",
+                    Tooltip = new SplineSeriesTooltip
+                    {
+                        ValueSuffix = "°C"
+                    },
+                    Data = @ViewData["temperatureData"] as List<SplineSeriesData>,                    
+                }
+            }
+        }
+        , "chart"));
+        
+        
+    

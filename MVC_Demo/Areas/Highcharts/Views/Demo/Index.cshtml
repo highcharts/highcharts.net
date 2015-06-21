@@ -1077,10 +1077,10 @@
                         </div>
                         <div class="clearfix visible-sm visible-xs"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="combo-multi-axes.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "ComboMultiAxes" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/combo-multi-axes-default.svg" alt="Multiple axes">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-multi-axes-default.svg")" alt="Multiple axes">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Multiple axes</h3>
