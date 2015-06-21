@@ -187,6 +187,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnStackedController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ComboMultiAxesController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\Column3DInteractiveController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Column3DNullValuesController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieDonutController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieLegendController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieBasicController.cs" />
@@ -314,6 +315,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\ComboDualAxes.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\ComboMultiAxes.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\Column3DInteractive.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Column3DNullValues.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
