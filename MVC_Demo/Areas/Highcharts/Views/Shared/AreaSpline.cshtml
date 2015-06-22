@@ -1,18 +1,5 @@
 ﻿@using Highsoft.Web.Mvc
 
-    <script type="text/javascript">
-       
-        function formatYAxis() {
-            return this.value;
-        }
-
-        function formatTooltip() {
-            return '<b>' + this.series.name + '</b><br/>' +
-                  this.x + ': ' + this.y;
-        }
-  
-    </script>
-
     @(Html.Highsoft().Highcharts(
         new Highcharts
         {

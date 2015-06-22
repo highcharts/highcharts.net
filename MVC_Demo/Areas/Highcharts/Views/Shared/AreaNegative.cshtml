@@ -1,26 +1,12 @@
 ﻿@using Highsoft.Web.Mvc
 
-    <script type="text/javascript">
-
-        function formatXAxis() {
-            return this.value; // clean, unformatted number for year
-        }
-
-        function formatYAxis() {
-            return this.value / 1000 + "k";
-        }
-
-  
-    </script>
-
     @(Html.Highsoft().Highcharts(
         new Highcharts
         {
             Chart = new Chart
             {
                 Width = 1087,
-                Height = 400,
-                Type = ChartType.Area
+                Height = 400
             },
             Title = new Title
             {

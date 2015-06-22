@@ -1,22 +1,13 @@
 ﻿@using Highsoft.Web.Mvc
 @using System.Collections.Specialized
-
-    <script type="text/javascript">
-
-    function handleClick(e) {
-        console.log(e.yAxis[0].value)
-    }
-
-    </script>
-
+   
     @(Html.Highsoft().Highcharts(
         new Highcharts
         {
             Chart = new Chart
             {
                 Width = 1087,
-                Height = 400,
-                Type = ChartType.Spline
+                Height = 400
             },
             Title = new Title
             {
