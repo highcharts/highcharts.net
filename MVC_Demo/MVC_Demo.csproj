@@ -194,6 +194,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\AreaInvertedController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\AreaSplineController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\AreaRangeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaRangeLineController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\HeatMapController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeSpeedometerController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\Pie3DDonutController.cs" />
@@ -336,6 +337,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\AreaInverted.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\AreaSpline.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\AreaRange.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaRangeLine.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
