@@ -1,0 +1,104 @@
+﻿@using Highsoft.Web.Mvc
+
+    <script type="text/javascript">
+       
+        function formatYAxis() {
+            return this.value;
+        }
+
+        function formatTooltip() {
+            return '<b>' + this.series.name + '</b><br/>' +
+                  this.x + ': ' + this.y;
+        }
+  
+    </script>
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "Average fruit consumption during one week"
+            },
+            Legend = new Legend
+            {
+                Layout = LegendLayout.Vertical,
+                Align = LegendAlign.Left,
+                VerticalAlign = LegendVerticalAlign.Top,
+                X = 150,
+                Y = 100,
+                Floating = true,
+                BorderWidth = 1,
+            },
+            XAxis = new List<XAxis>
+            {            
+                new XAxis
+                {
+                    Categories = new List<string> {
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday"
+                    },
+                    PlotBands = new List<XAxisPlotBands>
+                    {
+                        new XAxisPlotBands
+                        {
+                            From = 4.5,
+                            To = 6.5,
+                            Color = "rgba(68, 170, 213, .2)"
+                        }
+                    }
+                }
+            },
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Fruit units"
+                    }                   
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                Shared = true,
+                ValueSuffix = " units"
+            },
+
+            PlotOptions = new PlotOptions
+            {
+                Areaspline = new PlotOptionsAreaspline
+                {
+                    FillOpacity = 0.5
+                }
+            },
+            Credits = new Credits
+            {
+                Enabled = false
+            },
+            Series = new List<Series>
+            {                    
+                new AreasplineSeries
+                {
+                    Name = "John",
+                    Data = @ViewData["johnData"] as List<AreasplineSeriesData>
+                },
+                new AreasplineSeries
+                {
+                    Name = "Jane",
+                    Data = @ViewData["janeData"] as List<AreasplineSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )

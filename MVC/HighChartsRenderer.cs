@@ -87,7 +87,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = areaSeries.ToHashtable();
                 }
-               
+                if (series is AreasplineSeries)
+                {
+                    AreasplineSeries areaSeries = series as AreasplineSeries;
+
+                    List<AreasplineSeriesData> seriesData = areaSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    areaSeries.Type = AreasplineSeriesType.Areaspline;
+
+                    seriesHashtable = areaSeries.ToHashtable();
+                }               
                 if (series is BarSeries)
                 {
                     BarSeries barSeries = series as BarSeries;

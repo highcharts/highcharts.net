@@ -48,8 +48,8 @@ namespace Highsoft.Web.Mvc
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			Offset = Offset_DefaultValue = 0;
 			Opposite = Opposite_DefaultValue = false;
-			PlotBands = PlotBands_DefaultValue = new XAxisPlotBands();
-			PlotLines = PlotLines_DefaultValue = new XAxisPlotLines();
+			PlotBands = PlotBands_DefaultValue = new List<XAxisPlotBands>();
+			PlotLines = PlotLines_DefaultValue = new List<XAxisPlotLines>();
 			Reversed = Reversed_DefaultValue = false;
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
@@ -313,15 +313,15 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>An array of colored bands stretching across the plot area marking an interval on the axis.</p><p>In a gauge, a plot band on the Y axis (value axis) will stretch along the perimeter of the gauge.</p>
 		/// </summary>
-		public XAxisPlotBands PlotBands { get; set; }
-		private XAxisPlotBands PlotBands_DefaultValue { get; set; }
+		public List<XAxisPlotBands> PlotBands { get; set; }
+		private List<XAxisPlotBands> PlotBands_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array of lines stretching across the plot area, marking a specific value on one of the axes.
 		/// </summary>
-		public XAxisPlotLines PlotLines { get; set; }
-		private XAxisPlotLines PlotLines_DefaultValue { get; set; }
+		public List<XAxisPlotLines> PlotLines { get; set; }
+		private List<XAxisPlotLines> PlotLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -488,8 +488,8 @@ namespace Highsoft.Web.Mvc
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
-			if (PlotBands.IsDirty()) h.Add("plotBands",PlotBands.ToHashtable());
-			if (PlotLines.IsDirty()) h.Add("plotLines",PlotLines.ToHashtable());
+			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);

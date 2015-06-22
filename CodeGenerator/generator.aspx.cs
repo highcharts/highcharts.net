@@ -456,6 +456,9 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("yAxis.plotBands", "List<YAxisPlotBands>");
         _propertyTypeMappings.Add("yAxis.plotLines", "List<YAxisPlotLines>");
         _propertyTypeMappings.Add("yAxis.plotBands.label.style", "NameValueCollection");
+        _propertyTypeMappings.Add("xAxis.plotBands", "List<XAxisPlotBands>");
+        _propertyTypeMappings.Add("xAxis.plotLines", "List<XAxisPlotLines>");
+        _propertyTypeMappings.Add("xAxis.plotBands.label.style", "NameValueCollection");
     }
 
     private void InitPropertyInitMappings()
@@ -478,6 +481,9 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("yAxis.plotLines", "new List<YAxisPlotLines>()");
         _propertyInitMappings.Add("yAxis.plotBands", "new List<YAxisPlotBands>()");
         _propertyInitMappings.Add("yAxis.plotBands.label.style", "new NameValueCollection()");
+        _propertyInitMappings.Add("xAxis.plotLines", "new List<XAxisPlotLines>()");
+        _propertyInitMappings.Add("xAxis.plotBands", "new List<XAxisPlotBands>()");
+        _propertyInitMappings.Add("xAxis.plotBands.label.style", "new NameValueCollection()");
     }
 
     private void InitLists()
@@ -490,6 +496,8 @@ public partial class generatoraspx : System.Web.UI.Page
         _lists.Add("yAxis");
         _lists.Add("yAxis.plotBands");
         _lists.Add("yAxis.plotLines");
+        _lists.Add("xAxis.plotBands");
+        _lists.Add("xAxis.plotLines");
     }   
 
     private void InitSeriesMappings()
