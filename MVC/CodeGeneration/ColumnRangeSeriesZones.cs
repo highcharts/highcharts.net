@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ColumnRangeSeriesZones  : BaseObject
+	public partial class ColumnrangeSeriesZones  : BaseObject
 	{
-		public ColumnRangeSeriesZones()
+		public ColumnrangeSeriesZones()
 		{
 			Color = Color_DefaultValue = null;
 			DashStyle = DashStyle_DefaultValue = null;
@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc
 			return h;
 		}
 
-		internal override object ToJSON()
+		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
 			if (h.Count > 0)

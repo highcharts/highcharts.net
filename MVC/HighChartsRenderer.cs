@@ -106,7 +106,17 @@ namespace Highsoft.Web.Mvc.Rendering
                     areaSeries.Type = ArearangeSeriesType.Arearange;
 
                     seriesHashtable = areaSeries.ToHashtable();
-                } 
+                }
+                if (series is ColumnrangeSeries)
+                {
+                    ColumnrangeSeries columnSeries = series as ColumnrangeSeries;
+
+                    List<ColumnrangeSeriesData> seriesData = columnSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    columnSeries.Type = ColumnrangeSeriesType.Columnrange;
+
+                    seriesHashtable = columnSeries.ToHashtable();
+                }
                 if (series is BarSeries)
                 {
                     BarSeries barSeries = series as BarSeries;

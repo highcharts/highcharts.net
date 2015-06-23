@@ -10,14 +10,14 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ColumnRangeSeriesData  : BaseObject
+	public partial class ColumnrangeSeriesData  : BaseObject
 	{
-		public ColumnRangeSeriesData()
+		public ColumnrangeSeriesData()
 		{
 			Color = Color_DefaultValue = "undefined";
 			DataLabels = DataLabels_DefaultValue = null;
 			Drilldown = Drilldown_DefaultValue = "";
-			Events = Events_DefaultValue = new ColumnRangeSeriesDataEvents();
+			Events = Events_DefaultValue = new ColumnrangeSeriesDataEvents();
 			High = High_DefaultValue = null;
 			Id = Id_DefaultValue = null;
 			Low = Low_DefaultValue = null;
@@ -52,8 +52,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Individual point events
 		/// </summary>
-		public ColumnRangeSeriesDataEvents Events { get; set; }
-		private ColumnRangeSeriesDataEvents Events_DefaultValue { get; set; }
+		public ColumnrangeSeriesDataEvents Events { get; set; }
+		private ColumnrangeSeriesDataEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>

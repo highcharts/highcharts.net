@@ -338,7 +338,10 @@ public partial class generatoraspx : System.Web.UI.Page
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
         string customPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToJSON());\n\t\t\t";  
 
-        if (child.FullName == "Series" || propertyName == "Data")
+
+        if (child.FullName == "Series")
+            return "";
+        if (propertyName == "Data" && child.FullName != "data")
             return "";
 
         // fully qualified names that are collections
@@ -515,7 +518,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _seriesMappings.Add("series<boxplot>", "BoxplotSeries");
         _seriesMappings.Add("series<bubble>", "BubbleSeries");
         _seriesMappings.Add("series<column>", "ColumnSeries");
-        _seriesMappings.Add("series<columnrange>", "ColumnRangeSeries");
+        _seriesMappings.Add("series<columnrange>", "ColumnrangeSeries");
         _seriesMappings.Add("series<errorbar>", "ErrorbarSeries");
         _seriesMappings.Add("series<funnel>", "FunnelSeries");
         _seriesMappings.Add("series<gauge>", "GaugeSeries");

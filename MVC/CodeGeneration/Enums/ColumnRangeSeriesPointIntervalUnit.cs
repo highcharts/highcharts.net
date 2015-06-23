@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc
 {
-    public enum ColumnRangeSeriesPointIntervalUnit
+    public enum ColumnrangeSeriesPointIntervalUnit
     {
         Null, 
 		Month, 

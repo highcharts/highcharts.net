@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ColumnRangeSeriesPointPlacement  : BaseObject
+	public partial class ColumnrangeSeriesPointPlacement  : BaseObject
 	{
-		public ColumnRangeSeriesPointPlacement()
+		public ColumnrangeSeriesPointPlacement()
 		{
 			
 		}	

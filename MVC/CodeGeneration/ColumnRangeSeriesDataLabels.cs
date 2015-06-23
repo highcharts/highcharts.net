@@ -10,11 +10,11 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ColumnRangeSeriesDataLabels  : BaseObject
+	public partial class ColumnrangeSeriesDataLabels  : BaseObject
 	{
-		public ColumnRangeSeriesDataLabels()
+		public ColumnrangeSeriesDataLabels()
 		{
-			Align = Align_DefaultValue = ColumnRangeSeriesDataLabelsAlign.Center;
+			Align = Align_DefaultValue = ColumnrangeSeriesDataLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = null;
@@ -27,14 +27,14 @@ namespace Highsoft.Web.Mvc
 			Format = Format_DefaultValue = "{y}";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
-			Overflow = Overflow_DefaultValue = ColumnRangeSeriesDataLabelsOverflow.Justify;
+			Overflow = Overflow_DefaultValue = ColumnrangeSeriesDataLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = 5;
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "square";
 			Style = Style_DefaultValue = new NameValueCollection{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textShadow", "0 0 6px contrast},{ 0 0 3px contrast" }};
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = ColumnRangeSeriesDataLabelsVerticalAlign.Null;
+			VerticalAlign = VerticalAlign_DefaultValue = ColumnrangeSeriesDataLabelsVerticalAlign.Null;
 			XHigh = XHigh_DefaultValue = 0;
 			XLow = XLow_DefaultValue = 0;
 			YHigh = YHigh_DefaultValue = -6;
@@ -47,8 +47,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
 		/// </summary>
-		public ColumnRangeSeriesDataLabelsAlign Align { get; set; }
-		private ColumnRangeSeriesDataLabelsAlign Align_DefaultValue { get; set; }
+		public ColumnrangeSeriesDataLabelsAlign Align { get; set; }
+		private ColumnrangeSeriesDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -138,8 +138,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// How to handle data labels that flow outside the plot area. The default is <code>justify</code>, which aligns them inside the plot area. For columns and bars, this means it will be moved inside the bar. To display data labels outside the plot area, set <code>crop</code> to <code>false</code> and <code>overflow</code> to <code>"none"</code>.
 		/// </summary>
-		public ColumnRangeSeriesDataLabelsOverflow Overflow { get; set; }
-		private ColumnRangeSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
+		public ColumnrangeSeriesDataLabelsOverflow Overflow { get; set; }
+		private ColumnrangeSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -187,8 +187,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The vertical alignment of a data label. Can be one of <code>top</code>, <code>middle</code> or <code>bottom</code>. The default value depends on the data, for instance in a column chart, the label is above positive values and below negative values.
 		/// </summary>
-		public ColumnRangeSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private ColumnRangeSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public ColumnrangeSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private ColumnrangeSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -241,7 +241,7 @@ namespace Highsoft.Web.Mvc
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("ColumnRangeSeriesDataLabelsFormatter.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("ColumnrangeSeriesDataLabelsFormatter.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow.ToString().ToLower());
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
@@ -261,7 +261,7 @@ namespace Highsoft.Web.Mvc
 			return h;
 		}
 
-		internal override object ToJSON()
+		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
 			if (h.Count > 0)

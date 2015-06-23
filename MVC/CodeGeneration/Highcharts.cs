@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc
 			BoxplotSeries = BoxplotSeries_DefaultValue = new BoxplotSeries();
 			BubbleSeries = BubbleSeries_DefaultValue = new BubbleSeries();
 			ColumnSeries = ColumnSeries_DefaultValue = new ColumnSeries();
-			ColumnRangeSeries = ColumnRangeSeries_DefaultValue = new ColumnRangeSeries();
+			ColumnrangeSeries = ColumnrangeSeries_DefaultValue = new ColumnrangeSeries();
 			ErrorbarSeries = ErrorbarSeries_DefaultValue = new ErrorbarSeries();
 			FunnelSeries = FunnelSeries_DefaultValue = new FunnelSeries();
 			GaugeSeries = GaugeSeries_DefaultValue = new GaugeSeries();
@@ -232,8 +232,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>A <code>columnrange</code> series. If the <a href="#series<columnrange>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.columnrange">plotOptions.columnrange</a>.</p>
 		/// </summary>
-		public ColumnRangeSeries ColumnRangeSeries { get; set; }
-		private ColumnRangeSeries ColumnRangeSeries_DefaultValue { get; set; }
+		public ColumnrangeSeries ColumnrangeSeries { get; set; }
+		private ColumnrangeSeries ColumnrangeSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -369,6 +369,7 @@ namespace Highsoft.Web.Mvc
 			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Credits.IsDirty()) h.Add("credits",Credits.ToHashtable());
+			if (Data.IsDirty()) h.Add("data",Data.ToHashtable());
 			if (Drilldown.IsDirty()) h.Add("drilldown",Drilldown.ToHashtable());
 			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
 			if (Global.IsDirty()) h.Add("global",Global.ToHashtable());
@@ -389,7 +390,7 @@ namespace Highsoft.Web.Mvc
 			if (BoxplotSeries.IsDirty()) h.Add("boxplotSeries",BoxplotSeries.ToHashtable());
 			if (BubbleSeries.IsDirty()) h.Add("bubbleSeries",BubbleSeries.ToHashtable());
 			if (ColumnSeries.IsDirty()) h.Add("columnSeries",ColumnSeries.ToHashtable());
-			if (ColumnRangeSeries.IsDirty()) h.Add("columnRangeSeries",ColumnRangeSeries.ToHashtable());
+			if (ColumnrangeSeries.IsDirty()) h.Add("columnrangeSeries",ColumnrangeSeries.ToHashtable());
 			if (ErrorbarSeries.IsDirty()) h.Add("errorbarSeries",ErrorbarSeries.ToHashtable());
 			if (FunnelSeries.IsDirty()) h.Add("funnelSeries",FunnelSeries.ToHashtable());
 			if (GaugeSeries.IsDirty()) h.Add("gaugeSeries",GaugeSeries.ToHashtable());
@@ -413,7 +414,7 @@ namespace Highsoft.Web.Mvc
 			return h;
 		}
 
-		internal override object ToJSON()
+		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
 			if (h.Count > 0)

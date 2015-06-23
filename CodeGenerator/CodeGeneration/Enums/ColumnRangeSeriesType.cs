@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc
 {
-    public enum ColumnRangeSeriesType
+    public enum ColumnrangeSeriesType
     {
         Null, 
 		Line, 

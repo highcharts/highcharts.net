@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc
 {
-    public enum ColumnRangeSeriesCursor
+    public enum ColumnrangeSeriesCursor
     {
         Null, 
 		Default, 

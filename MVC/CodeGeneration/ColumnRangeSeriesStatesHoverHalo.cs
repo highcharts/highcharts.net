@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ColumnRangeSeriesStatesHoverHalo  : BaseObject
+	public partial class ColumnrangeSeriesStatesHoverHalo  : BaseObject
 	{
-		public ColumnRangeSeriesStatesHoverHalo()
+		public ColumnrangeSeriesStatesHoverHalo()
 		{
 			Attributes = Attributes_DefaultValue = "";
 			Opacity = Opacity_DefaultValue = 0.25;
@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc
 			return h;
 		}
 
-		internal override object ToJSON()
+		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
 			if (h.Count > 0)

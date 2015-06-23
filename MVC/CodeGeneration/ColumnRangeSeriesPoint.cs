@@ -10,11 +10,11 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ColumnRangeSeriesPoint  : BaseObject
+	public partial class ColumnrangeSeriesPoint  : BaseObject
 	{
-		public ColumnRangeSeriesPoint()
+		public ColumnrangeSeriesPoint()
 		{
-			Events = Events_DefaultValue = new ColumnRangeSeriesPointEvents();
+			Events = Events_DefaultValue = new ColumnrangeSeriesPointEvents();
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Events for each single point
 		/// </summary>
-		public ColumnRangeSeriesPointEvents Events { get; set; }
-		private ColumnRangeSeriesPointEvents Events_DefaultValue { get; set; }
+		public ColumnrangeSeriesPointEvents Events { get; set; }
+		private ColumnrangeSeriesPointEvents Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc
 			return h;
 		}
 
-		internal override object ToJSON()
+		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
 			if (h.Count > 0)

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ColumnRangeSeriesStatesHoverMarker  : BaseObject
+	public partial class ColumnrangeSeriesStatesHoverMarker  : BaseObject
 	{
-		public ColumnRangeSeriesStatesHoverMarker()
+		public ColumnrangeSeriesStatesHoverMarker()
 		{
 			Enabled = Enabled_DefaultValue = true;
 			FillColor = FillColor_DefaultValue = null;
@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc
 			LineColor = LineColor_DefaultValue = "#FFFFFF";
 			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 4;
-			Symbol = Symbol_DefaultValue = ColumnRangeSeriesStatesHoverMarkerSymbol.Null;
+			Symbol = Symbol_DefaultValue = ColumnrangeSeriesStatesHoverMarkerSymbol.Null;
 			Width = Width_DefaultValue = null;
 			
 		}	
@@ -71,8 +71,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>A predefined shape or symbol for the marker. When null, the symbol is pulled from options.symbols. Other possible values are "circle", "square", "diamond", "triangle" and "triangle-down".</p><p>Additionally, the URL to a graphic can be given on this form:  "url(graphic.png)". Note that for the image to be applied to exported charts, its URL needs to be accessible by the export server.</p><p>Custom callbacks for symbol path generation can also be added to <code>Highcharts.SVGRenderer.prototype.symbols</code>. The callback is then used by its method name, as shown in the demo.</p>
 		/// </summary>
-		public ColumnRangeSeriesStatesHoverMarkerSymbol Symbol { get; set; }
-		private ColumnRangeSeriesStatesHoverMarkerSymbol Symbol_DefaultValue { get; set; }
+		public ColumnrangeSeriesStatesHoverMarkerSymbol Symbol { get; set; }
+		private ColumnrangeSeriesStatesHoverMarkerSymbol Symbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -99,7 +99,7 @@ namespace Highsoft.Web.Mvc
 			return h;
 		}
 
-		internal override object ToJSON()
+		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
 			if (h.Count > 0)

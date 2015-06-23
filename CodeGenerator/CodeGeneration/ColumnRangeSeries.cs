@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ColumnRangeSeries  : Series
+	public partial class ColumnrangeSeries  : Series
 	{
-		public ColumnRangeSeries()
+		public ColumnrangeSeries()
 		{
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
@@ -23,14 +23,14 @@ namespace Highsoft.Web.Mvc
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			CropThreshold = CropThreshold_DefaultValue = 50;
-			Cursor = Cursor_DefaultValue = ColumnRangeSeriesCursor.Null;
-			Data = Data_DefaultValue = new List<ColumnRangeSeriesData>();
-			DataLabels = DataLabels_DefaultValue = new ColumnRangeSeriesDataLabels();
+			Cursor = Cursor_DefaultValue = ColumnrangeSeriesCursor.Null;
+			Data = Data_DefaultValue = new List<ColumnrangeSeriesData>();
+			DataLabels = DataLabels_DefaultValue = new ColumnrangeSeriesDataLabels();
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
-			Events = Events_DefaultValue = new ColumnRangeSeriesEvents();
+			Events = Events_DefaultValue = new ColumnrangeSeriesEvents();
 			GroupPadding = GroupPadding_DefaultValue = 0.2;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Grouping = Grouping_DefaultValue = true;
@@ -41,9 +41,9 @@ namespace Highsoft.Web.Mvc
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			Name = Name_DefaultValue = null;
-			Point = Point_DefaultValue = new ColumnRangeSeriesPoint();
+			Point = Point_DefaultValue = new ColumnrangeSeriesPoint();
 			PointInterval = PointInterval_DefaultValue = 1;
-			PointIntervalUnit = PointIntervalUnit_DefaultValue = ColumnRangeSeriesPointIntervalUnit.Null;
+			PointIntervalUnit = PointIntervalUnit_DefaultValue = ColumnrangeSeriesPointIntervalUnit.Null;
 			PointPadding = PointPadding_DefaultValue = 0.1;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointRange = PointRange_DefaultValue = null;
@@ -53,18 +53,18 @@ namespace Highsoft.Web.Mvc
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			States = States_DefaultValue = new ColumnRangeSeriesStates();
+			States = States_DefaultValue = new ColumnrangeSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
-			Tooltip = Tooltip_DefaultValue = new ColumnRangeSeriesTooltip();
+			Tooltip = Tooltip_DefaultValue = new ColumnrangeSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Type = Type_DefaultValue = ColumnRangeSeriesType.Null;
+			Type = Type_DefaultValue = ColumnrangeSeriesType.Null;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "0";
 			YAxis = YAxis_DefaultValue = "0";
 			ZIndex = ZIndex_DefaultValue = null;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new ColumnRangeSeriesZones();
+			Zones = Zones_DefaultValue = new ColumnrangeSeriesZones();
 			
 		}	
 		
@@ -135,22 +135,22 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attached to  the series, to signal to the user that the points and lines can be clicked.
 		/// </summary>
-		public ColumnRangeSeriesCursor Cursor { get; set; }
-		private ColumnRangeSeriesCursor Cursor_DefaultValue { get; set; }
+		public ColumnrangeSeriesCursor Cursor { get; set; }
+		private ColumnrangeSeriesCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array of data points for the series. For the <code>columnrange</code> series type, points can be given in the following ways: <ol> <li><p>An array of arrays with 3 or 2 values. In this case, the values correspond to <code>x,low,high</code>. If the first value is a string, it is applied as the name of the point, and the <code>x</code> value is inferred. The <code>x</code> value can also be omitted, in which case the inner arrays should be of length 2. Then the <code>x</code> value is automatically calculated, either starting at 0 and incremented by 1, or from <code>pointStart</code>  and <code>pointInterval</code> given in the series options.</p><pre>data: [    [0, 4, 2],     [1, 2, 1],     [2, 9, 10]]</pre></li><li><p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href='#series<columnrange>.turboThreshold'>turboThreshold</a>, this option is not available.</p><pre>data: [{    x: 1,    low: 0,    high: 4,    name: "Point2",    color: "#00FF00"}, {    x: 1,    low: 5,    high: 3,    name: "Point1",    color: "#FF00FF"}]</pre></li> </ol>
 		/// </summary>
-		public List<ColumnRangeSeriesData> Data { get; set; }
-		private List<ColumnRangeSeriesData> Data_DefaultValue { get; set; }
+		public List<ColumnrangeSeriesData> Data { get; set; }
+		private List<ColumnrangeSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Extended data labels for range series types. Range series  data labels have no <code>x</code> and <code>y</code> options. Instead, they have <code>xLow</code>, <code>xHigh</code>, <code>yLow</code> and <code>yHigh</code> options to allow the higher and lower data label sets individually. 
 		/// </summary>
-		public ColumnRangeSeriesDataLabels DataLabels { get; set; }
-		private ColumnRangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		public ColumnrangeSeriesDataLabels DataLabels { get; set; }
+		private ColumnrangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -184,8 +184,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// 
 		/// </summary>
-		public ColumnRangeSeriesEvents Events { get; set; }
-		private ColumnRangeSeriesEvents Events_DefaultValue { get; set; }
+		public ColumnrangeSeriesEvents Events { get; set; }
+		private ColumnrangeSeriesEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -261,8 +261,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Properties for each single point
 		/// </summary>
-		public ColumnRangeSeriesPoint Point { get; set; }
-		private ColumnRangeSeriesPoint Point_DefaultValue { get; set; }
+		public ColumnrangeSeriesPoint Point { get; set; }
+		private ColumnrangeSeriesPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -275,8 +275,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// On datetime series, this allows for setting the <a href="plotOptions.series.pointInterval">pointInterval</a> to the two irregular time units, <code>month</code> and <code>year</code>. Combine it with <code>pointInterval</code> to draw quarters, 6 months, 10 years etc.
 		/// </summary>
-		public ColumnRangeSeriesPointIntervalUnit PointIntervalUnit { get; set; }
-		private ColumnRangeSeriesPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
+		public ColumnrangeSeriesPointIntervalUnit PointIntervalUnit { get; set; }
+		private ColumnrangeSeriesPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -345,8 +345,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public ColumnRangeSeriesStates States { get; set; }
-		private ColumnRangeSeriesStates States_DefaultValue { get; set; }
+		public ColumnrangeSeriesStates States { get; set; }
+		private ColumnrangeSeriesStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -366,8 +366,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
 		/// </summary>
-		public ColumnRangeSeriesTooltip Tooltip { get; set; }
-		private ColumnRangeSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public ColumnrangeSeriesTooltip Tooltip { get; set; }
+		private ColumnrangeSeriesTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -380,8 +380,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The type of series. Can be one of <code>area</code>, <code>areaspline</code>, <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>, <code>scatter</code> or <code>spline</code>. From version 2.3, <code>arearange</code>, <code>areasplinerange</code> and <code>columnrange</code> are supported with the highcharts-more.js component.
 		/// </summary>
-		public ColumnRangeSeriesType Type { get; set; }
-		private ColumnRangeSeriesType Type_DefaultValue { get; set; }
+		public ColumnrangeSeriesType Type { get; set; }
+		private ColumnrangeSeriesType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -422,8 +422,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// An array defining zones within a series.
 		/// </summary>
-		public ColumnRangeSeriesZones Zones { get; set; }
-		private ColumnRangeSeriesZones Zones_DefaultValue { get; set; }
+		public ColumnrangeSeriesZones Zones { get; set; }
+		private ColumnrangeSeriesZones Zones_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ColumnRangeSeriesZones  : BaseObject
+	public partial class ColumnrangeSeriesZones  : BaseObject
 	{
-		public ColumnRangeSeriesZones()
+		public ColumnrangeSeriesZones()
 		{
 			Color = Color_DefaultValue = null;
 			DashStyle = DashStyle_DefaultValue = null;

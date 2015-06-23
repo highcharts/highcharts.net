@@ -10,11 +10,11 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ColumnRangeSeriesStates  : BaseObject
+	public partial class ColumnrangeSeriesStates  : BaseObject
 	{
-		public ColumnRangeSeriesStates()
+		public ColumnrangeSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new ColumnRangeSeriesStatesHover();
+			Hover = Hover_DefaultValue = new ColumnrangeSeriesStatesHover();
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Options for the hovered series
 		/// </summary>
-		public ColumnRangeSeriesStatesHover Hover { get; set; }
-		private ColumnRangeSeriesStatesHover Hover_DefaultValue { get; set; }
+		public ColumnrangeSeriesStatesHover Hover { get; set; }
+		private ColumnrangeSeriesStatesHover Hover_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc
 			return h;
 		}
 
-		internal override object ToJSON()
+		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
 			if (h.Count > 0)

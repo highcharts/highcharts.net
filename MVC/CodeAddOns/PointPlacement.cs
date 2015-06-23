@@ -48,17 +48,17 @@ namespace Highsoft.Web.Mvc
             return h;
         }
 
-        internal override object ToJSON()
+        internal override string ToJSON()
         {
-             if (Value != null)
+            if (Value != null)
             {
-                return Value;
+                return Value.ToString();
             }
             else if (PointPlacementEnum != PointPlacementEnum.Null)
             {
                 return PointPlacementEnum.ToString().ToLower();
             }
-           
+
             return "";
         }
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc
 {
-    public enum ColumnRangeSeriesDataLabelsVerticalAlign
+    public enum ColumnrangeSeriesDataLabelsVerticalAlign
     {
         Null, 
 		Top, 

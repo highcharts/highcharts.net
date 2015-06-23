@@ -10,15 +10,15 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc
 {
-	public partial class ColumnRangeSeriesStatesHover  : BaseObject
+	public partial class ColumnrangeSeriesStatesHover  : BaseObject
 	{
-		public ColumnRangeSeriesStatesHover()
+		public ColumnrangeSeriesStatesHover()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			Halo = Halo_DefaultValue = new ColumnRangeSeriesStatesHoverHalo();
+			Halo = Halo_DefaultValue = new ColumnrangeSeriesStatesHoverHalo();
 			LineWidth = LineWidth_DefaultValue = 2;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
-			Marker = Marker_DefaultValue = new ColumnRangeSeriesStatesHoverMarker();
+			Marker = Marker_DefaultValue = new ColumnrangeSeriesStatesHoverMarker();
 			
 		}	
 		
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
 		/// </summary>
-		public ColumnRangeSeriesStatesHoverHalo Halo { get; set; }
-		private ColumnRangeSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
+		public ColumnrangeSeriesStatesHoverHalo Halo { get; set; }
+		private ColumnrangeSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// 
 		/// </summary>
-		public ColumnRangeSeriesStatesHoverMarker Marker { get; set; }
-		private ColumnRangeSeriesStatesHoverMarker Marker_DefaultValue { get; set; }
+		public ColumnrangeSeriesStatesHoverMarker Marker { get; set; }
+		private ColumnrangeSeriesStatesHoverMarker Marker_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
