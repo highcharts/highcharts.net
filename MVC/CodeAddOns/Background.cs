@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc
             return h;
         }
 
-        internal override string ToJSON()
+        internal override object ToJSON()
         {
             return new JavaScriptSerializer().Serialize(ToHashtable());       
         }

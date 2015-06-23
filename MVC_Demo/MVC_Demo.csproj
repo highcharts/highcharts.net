@@ -197,7 +197,8 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\AreaRangeLineController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnStackedGroupedController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnStackedPercentController.cs" />
-    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnRotatedLabels.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnRotatedLabelsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnPlacementController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\HeatMapController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeSpeedometerController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\Pie3DDonutController.cs" />
@@ -344,6 +345,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\ColumnStackedGrouped.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\ColumnStackedPercent.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\ColumnRotatedLabels.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnPlacement.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />

@@ -105,6 +105,11 @@ public partial class generatoraspx : System.Web.UI.Page
             // All events (javascript functions) should default to empty string
             if (apiItem.ReturnType != null && apiItem.ReturnType == "Function")
                 apiItem.Defaults = "";
+            if (apiItem.Title == "pointPlacement")
+            {
+                apiItem.IsParent = true;
+                apiItem.Values = new List<string>();
+            }
 
             // add Defaults to enum if they are not available in the Values list.
             AddDefaultsToEnum(apiItem);
@@ -466,7 +471,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("Shadow", "new Shadow() { Enabled = false }");
         _propertyInitMappings.Add("PlotShadow", "new Shadow() { Enabled = false }");
         _propertyInitMappings.Add("Animation", "new Animation() { Enabled = true }");
-        _propertyInitMappings.Add("PointPlacement", "PointPlacement.Null");
+        _propertyInitMappings.Add("PointPlacement", "new PointPlacement()");
         _propertyInitMappings.Add("Colors", "new List<string>()");        
         _propertyInitMappings.Add("Center", "new string[] { null, null }");
         _propertyInitMappings.Add("Position", "new NameValueCollection()");
@@ -490,7 +495,7 @@ public partial class generatoraspx : System.Web.UI.Page
     {
         _lists.Add("Background");
         _lists.Add("MenuItem");
-        _lists.Add("CrossHairs");
+        _lists.Add("Crosshair");
         _lists.Add("Stops");
         _lists.Add("xAxis");
         _lists.Add("yAxis");
@@ -538,6 +543,7 @@ public partial class generatoraspx : System.Web.UI.Page
     {
         _customProperties.Add("Animation");
         _customProperties.Add("PlotShadow");
+        _customProperties.Add("PointPlacement");
     }
 
     private static string FirstCharToUpper(string input)

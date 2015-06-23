@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsErrorbarPointIntervalUnit.Null;
 			PointPadding = PointPadding_DefaultValue = 0.1;
-			PointPlacement = PointPlacement_DefaultValue = PlotOptionsErrorbarPointPlacement.Null;
+			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointRange = PointRange_DefaultValue = null;
 			PointStart = PointStart_DefaultValue = 0;
 			PointWidth = PointWidth_DefaultValue = null;
@@ -191,8 +191,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>Possible values: <code>null</code>, <code>"on"</code>, <code>"between"</code>.</p><p>In a column chart, when pointPlacement is <code>"on"</code>, the point will not create any padding of the X axis. In a polar column chart this means that the first column points directly north. If the pointPlacement is <code>"between"</code>, the columns will be laid out between ticks. This is useful for example for visualising an amount between two points in time or in a certain sector of a polar chart.</p><p>Since Highcharts 3.0.2, the point placement can also be numeric, where 0 is on the axis value, -0.5 is between this value and the previous, and 0.5 is between this value and the next. Unlike the textual options, numeric point placement options won't affect axis padding.</p><p>Note that pointPlacement needs a <a href="#plotOptions.series.pointRange">pointRange</a> to work. For column series this is computed, but for line-type series it needs to be set.</p><p>Defaults to <code>null</code> in cartesian charts, <code>"between"</code> in polar charts.
 		/// </summary>
-		public PlotOptionsErrorbarPointPlacement PointPlacement { get; set; }
-		private PlotOptionsErrorbarPointPlacement PointPlacement_DefaultValue { get; set; }
+		public PointPlacement PointPlacement { get; set; }
+		private PointPlacement PointPlacement_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -337,7 +337,7 @@ namespace Highsoft.Web.Mvc
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit",PointIntervalUnit.ToString().ToLower());
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement.ToString().ToLower());
+			if (PointPlacement.IsDirty()) h.Add("pointPlacement",PointPlacement.ToJSON());
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);

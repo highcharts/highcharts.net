@@ -13,7 +13,7 @@ namespace Highsoft.Web.Mvc
 	public abstract class BaseObject
 	{
         abstract internal Hashtable ToHashtable();
-        abstract internal string ToJSON();
+        abstract internal object ToJSON();
         abstract internal bool IsDirty();
 
         internal List<Hashtable> HashifyList(IEnumerable list)

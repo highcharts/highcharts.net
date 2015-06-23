@@ -431,7 +431,7 @@ namespace Highsoft.Web.Mvc
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override object ToJSON()
 		{            
 			Hashtable h = ToHashtable();
 			if (h.Count > 0)
