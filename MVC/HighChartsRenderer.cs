@@ -197,6 +197,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = boxPlotSeries.ToHashtable();
                 }
+                if (series is ErrorbarSeries)
+                {
+                    ErrorbarSeries errorBarSeries = series as ErrorbarSeries;
+
+                    List<ErrorbarSeriesData> seriesData = errorBarSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    errorBarSeries.Type = ErrorbarSeriesType.Errorbar;
+
+                    seriesHashtable = errorBarSeries.ToHashtable();
+                }
                
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
