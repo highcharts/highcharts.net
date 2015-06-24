@@ -1091,10 +1091,10 @@
                         </div>
                         <div class="clearfix visible-lg visible-md"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="combo-regression.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "ComboRegression" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/combo-regression-default.svg" alt="Scatter with regression line">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-regression-default.svg")" alt="Scatter with regression line">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Scatter with regression line</h3>
@@ -1372,10 +1372,10 @@
                             <h2 id="more-chart-types">More chart types</h2>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="polar.html">
+                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Polar" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/polar-default.svg" alt="Polar chart">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/polar-default.svg")" alt="Polar chart">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Polar chart</h3>
