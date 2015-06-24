@@ -207,6 +207,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = errorBarSeries.ToHashtable();
                 }
+                if (series is FunnelSeries)
+                {
+                    FunnelSeries funnelSeries = series as FunnelSeries;
+
+                    List<FunnelSeriesData> seriesData = funnelSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    funnelSeries.Type = FunnelSeriesType.Funnel;
+
+                    seriesHashtable = funnelSeries.ToHashtable();
+                }
                
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
