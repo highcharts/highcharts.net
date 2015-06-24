@@ -187,6 +187,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = heatMapSeries.ToHashtable();
                 }
+                if (series is BoxplotSeries)
+                {
+                    BoxplotSeries boxPlotSeries = series as BoxplotSeries;
+
+                    List<BoxplotSeriesData> seriesData = boxPlotSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    boxPlotSeries.Type = BoxplotSeriesType.Boxplot;
+
+                    seriesHashtable = boxPlotSeries.ToHashtable();
+                }
                
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
