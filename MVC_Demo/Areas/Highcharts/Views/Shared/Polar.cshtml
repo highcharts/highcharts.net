@@ -44,53 +44,70 @@
             {
                 new YAxis
                 {
-                    Title = new YAxisTitle
-                    {
-                        Text = "Temperature (°C)"
-                    },
-                    PlotLines = new List<YAxisPlotLines>
-                    {
-                            new YAxisPlotLines
-                        {
-                            Value = 0,
-                            Width = 1,
-                            Color = "#808080"
-                        }
-                    }
+                    Min = 0
                 }
             },
-            Tooltip = new Tooltip
+            PlotOptions = new PlotOptions
             {
-                ValueSuffix = "°C"
-            },
-            Legend = new Legend
-            {
-                Layout = LegendLayout.Vertical,
-                Align = LegendAlign.Right,
-                VerticalAlign = LegendVerticalAlign.Middle,
-                BorderWidth = 0
+                Series = new PlotOptionsSeries
+                {
+                    PointStart = 0,
+                    PointInterval = 45
+                },
+                Column = new PlotOptionsColumn
+                {
+                    PointPadding = 0,
+                    GroupPadding = 0
+                }
             },
             Series = new List<Series>
             {                    
-                new LineSeries
+                new ColumnSeries
                 {
-                    Name = "Tokyo",
-                    Data = @ViewData["tokyoData"] as List<LineSeriesData>
+                    Name = "Column",
+                    PointPlacement = new PointPlacement
+                    {
+                        PointPlacementEnum = PointPlacementEnum.Between
+                    },
+                    Data = new List<ColumnSeriesData> {
+                        new ColumnSeriesData { Y = 8 },
+                        new ColumnSeriesData { Y = 7 },
+                        new ColumnSeriesData { Y = 6 },
+                        new ColumnSeriesData { Y = 5 },
+                        new ColumnSeriesData { Y = 4 },
+                        new ColumnSeriesData { Y = 3 },
+                        new ColumnSeriesData { Y = 2 },
+                        new ColumnSeriesData { Y = 1 }
+                    }
+                    
                 },
                 new LineSeries
                 {
-                    Name = "NY",
-                    Data = @ViewData["nyData"] as List<LineSeriesData>
+                    Name = "Line",
+                    Data = new List<LineSeriesData> {
+                        new LineSeriesData { Y = 1 },
+                        new LineSeriesData { Y = 2 },
+                        new LineSeriesData { Y = 3 },
+                        new LineSeriesData { Y = 4 },
+                        new LineSeriesData { Y = 5 },
+                        new LineSeriesData { Y = 6 },
+                        new LineSeriesData { Y = 7 },
+                        new LineSeriesData { Y = 8 }
+                    }
                 },
-                new LineSeries
+                new AreaSeries
                 {
-                    Name = "Berlin",
-                    Data = @ViewData["berlinData"] as List<LineSeriesData>
-                },
-                new LineSeries
-                {
-                    Name = "London",
-                    Data = @ViewData["londonData"] as List<LineSeriesData>
+                    Name = "Area",
+                    Data = new List<AreaSeriesData> {
+                        new AreaSeriesData { Y = 1 },
+                        new AreaSeriesData { Y = 8 },
+                        new AreaSeriesData { Y = 2 },
+                        new AreaSeriesData { Y = 7 },
+                        new AreaSeriesData { Y = 3 },
+                        new AreaSeriesData { Y = 6 },
+                        new AreaSeriesData { Y = 4 },
+                        new AreaSeriesData { Y = 5 }
+                    }
                 }
             }
         }

@@ -202,6 +202,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnParsedController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnRangeController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ComboRegressionController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PolarController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\HeatMapController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeSpeedometerController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\Pie3DDonutController.cs" />
@@ -352,6 +353,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\ColumnParsed.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\ColumnRange.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\ComboRegression.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Polar.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
