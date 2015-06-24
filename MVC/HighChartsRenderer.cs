@@ -217,6 +217,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = funnelSeries.ToHashtable();
                 }
+                if (series is PyramidSeries)
+                {
+                    PyramidSeries pyramidSeries = series as PyramidSeries;
+
+                    List<PyramidSeriesData> seriesData = pyramidSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    pyramidSeries.Type = PyramidSeriesType.Pyramid;
+
+                    seriesHashtable = pyramidSeries.ToHashtable();
+                }
                
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);

@@ -23,6 +23,9 @@ namespace Highsoft.Web.Mvc
 		Funnel, 
 		Gauge, 
 		Scatter, 
-		Waterfall
+		Waterfall, 
+		Bar, 
+		Heatmap, 
+		Pyramid
     }
 }

@@ -232,10 +232,12 @@ public partial class generatoraspx : System.Web.UI.Page
         if (apiItem.FullName == "chart.type" || 
             apiItem.FullName == "series.type" || 
             apiItem.FullName == "series<bar>.type" ||
-            apiItem.FullName == "series<heatmap>.type")
+            apiItem.FullName == "series<heatmap>.type" ||
+            apiItem.FullName == "series<pyramid>.type")
         {
             apiItem.Values.Add("bar");
             apiItem.Values.Add("heatmap");
+            apiItem.Values.Add("pyramid");
         }
     }
 
