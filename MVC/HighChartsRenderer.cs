@@ -227,6 +227,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = pyramidSeries.ToHashtable();
                 }
+                if (series is WaterfallSeries)
+                {
+                    WaterfallSeries waterfallSeries = series as WaterfallSeries;
+
+                    List<WaterfallSeriesData> seriesData = waterfallSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    waterfallSeries.Type = WaterfallSeriesType.Waterfall;
+
+                    seriesHashtable = waterfallSeries.ToHashtable();
+                }
                
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
