@@ -1,0 +1,59 @@
+﻿@using Highsoft.Web.Mvc
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 700,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "Height vs Weight"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Polygon series in Highcharts"
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    GridLineWidth = 1,
+                    Title = new XAxisTitle
+                    {
+                        Text = "Height (cm)"
+                    },
+                    StartOnTick = true,
+                    EndOnTick = true,
+                    ShowLastLabel = true
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Title =  new YAxisTitle
+                    {
+                        Text = "Weight (kg)"
+                    }
+               }
+            },
+            Legend = new Legend
+            {
+                Layout = LegendLayout.Vertical,
+                Align = LegendAlign.Right,
+                VerticalAlign = LegendVerticalAlign.Middle
+            },
+            Series = new List<Series>
+            {                    
+                new ScatterSeries
+                {
+                    Name = "Observations",
+                    Data = ViewData["observationData"] as List<ScatterSeriesData>
+                }                             
+            }
+        }
+        , "chart")
+    )
