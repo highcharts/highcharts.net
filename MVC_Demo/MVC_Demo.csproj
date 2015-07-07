@@ -203,6 +203,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnRangeController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ComboRegressionController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\BoxPlotController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\RendererController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PolygonController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\WaterfallController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PyramidController.cs" />
@@ -370,6 +371,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\Pyramid.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\Waterfall.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\Polygon.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Renderer.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
@@ -406,7 +408,7 @@
     <Content Include="Views\Demo\Highcharts\LineLog.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Areas\App_Data\" />
     <Folder Include="Areas\Highcharts\Models\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
