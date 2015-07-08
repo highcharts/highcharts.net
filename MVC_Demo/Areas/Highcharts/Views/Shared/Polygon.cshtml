@@ -45,13 +45,31 @@
                 Layout = LegendLayout.Vertical,
                 Align = LegendAlign.Right,
                 VerticalAlign = LegendVerticalAlign.Middle
-            },
+            },            
             Series = new List<Series>
             {                    
                 new ScatterSeries
                 {
                     Name = "Observations",
                     Data = ViewData["observationData"] as List<ScatterSeriesData>
+                },
+                new PolygonSeries
+                {
+                    Name = "Target",
+                    Color = "rgba(124,181,236,0.5)",
+                    Data = new List<PolygonSeriesData>
+                    {
+                        new PolygonSeriesData { X = 153, Y = 42},
+                        new PolygonSeriesData { X = 149, Y = 46},
+                        new PolygonSeriesData { X = 149, Y = 55},
+                        new PolygonSeriesData { X = 152, Y = 60},
+                        new PolygonSeriesData { X = 159, Y = 70},
+                        new PolygonSeriesData { X = 170, Y = 77},
+                        new PolygonSeriesData { X = 180, Y = 70},
+                        new PolygonSeriesData { X = 180, Y = 60},
+                        new PolygonSeriesData { X = 173, Y = 52},
+                        new PolygonSeriesData { X = 166, Y = 45}                       
+                    }
                 }    
             }
         }

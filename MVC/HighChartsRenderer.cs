@@ -237,6 +237,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = waterfallSeries.ToHashtable();
                 }
+                if (series is PolygonSeries)
+                {
+                    PolygonSeries polygonSeries = series as PolygonSeries;
+
+                    List<PolygonSeriesData> seriesData = polygonSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    polygonSeries.Type = PolygonSeriesType.Polygon;
+
+                    seriesHashtable = polygonSeries.ToHashtable();
+                }
                
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);

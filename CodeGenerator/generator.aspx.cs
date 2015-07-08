@@ -233,11 +233,13 @@ public partial class generatoraspx : System.Web.UI.Page
             apiItem.FullName == "series.type" || 
             apiItem.FullName == "series<bar>.type" ||
             apiItem.FullName == "series<heatmap>.type" ||
+            apiItem.FullName == "series<polygon>.type" ||
             apiItem.FullName == "series<pyramid>.type")
         {
             apiItem.Values.Add("bar");
             apiItem.Values.Add("heatmap");
             apiItem.Values.Add("pyramid");
+            apiItem.Values.Add("polygon");
         }
     }
 

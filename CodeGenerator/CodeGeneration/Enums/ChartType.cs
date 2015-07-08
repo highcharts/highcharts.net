@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc
 		Waterfall, 
 		Bar, 
 		Heatmap, 
-		Pyramid
+		Pyramid, 
+		Polygon
     }
 }
