@@ -527,7 +527,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _seriesMappings.Add("series<heatmap>", "HeatmapSeries");
         _seriesMappings.Add("series<line>", "LineSeries");
         _seriesMappings.Add("series<pie>", "PieSeries");
-        _seriesMappings.Add("series<polygon>", "PloygonSeries");
+        _seriesMappings.Add("series<polygon>", "PolygonSeries");
         _seriesMappings.Add("series<pyramid>", "PyramidSeries");
         _seriesMappings.Add("series<scatter>", "ScatterSeries");
         _seriesMappings.Add("series<solidgauge>", "SolidgaugeSeries");

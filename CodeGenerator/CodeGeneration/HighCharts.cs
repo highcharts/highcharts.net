@@ -45,7 +45,7 @@ namespace Highsoft.Web.Mvc
 			HeatmapSeries = HeatmapSeries_DefaultValue = new HeatmapSeries();
 			LineSeries = LineSeries_DefaultValue = new LineSeries();
 			PieSeries = PieSeries_DefaultValue = new PieSeries();
-			PloygonSeries = PloygonSeries_DefaultValue = new PloygonSeries();
+			PolygonSeries = PolygonSeries_DefaultValue = new PolygonSeries();
 			PyramidSeries = PyramidSeries_DefaultValue = new PyramidSeries();
 			ScatterSeries = ScatterSeries_DefaultValue = new ScatterSeries();
 			SolidgaugeSeries = SolidgaugeSeries_DefaultValue = new SolidgaugeSeries();
@@ -281,8 +281,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>A <code>polygon</code> series. If the <a href="#series<polygon>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.polygon">plotOptions.polygon</a>.</p>
 		/// </summary>
-		public PloygonSeries PloygonSeries { get; set; }
-		private PloygonSeries PloygonSeries_DefaultValue { get; set; }
+		public PolygonSeries PolygonSeries { get; set; }
+		private PolygonSeries PolygonSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -397,7 +397,7 @@ namespace Highsoft.Web.Mvc
 			if (HeatmapSeries.IsDirty()) h.Add("heatmapSeries",HeatmapSeries.ToHashtable());
 			if (LineSeries.IsDirty()) h.Add("lineSeries",LineSeries.ToHashtable());
 			if (PieSeries.IsDirty()) h.Add("pieSeries",PieSeries.ToHashtable());
-			if (PloygonSeries.IsDirty()) h.Add("ploygonSeries",PloygonSeries.ToHashtable());
+			if (PolygonSeries.IsDirty()) h.Add("polygonSeries",PolygonSeries.ToHashtable());
 			if (PyramidSeries.IsDirty()) h.Add("pyramidSeries",PyramidSeries.ToHashtable());
 			if (ScatterSeries.IsDirty()) h.Add("scatterSeries",ScatterSeries.ToHashtable());
 			if (SolidgaugeSeries.IsDirty()) h.Add("solidgaugeSeries",SolidgaugeSeries.ToHashtable());
