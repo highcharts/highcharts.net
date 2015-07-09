@@ -203,6 +203,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnRangeController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ComboRegressionController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\BoxPlotController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\DynamicMasterDetailController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\DynamicClickToAddController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\DynamicUpdateController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\RendererController.cs" />
@@ -376,6 +377,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\Renderer.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\DynamicUpdate.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\DynamicClickToAdd.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\DynamicMasterDetail.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
