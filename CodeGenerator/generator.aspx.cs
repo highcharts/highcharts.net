@@ -120,7 +120,11 @@ public partial class generatoraspx : System.Web.UI.Page
     private void AppendMissingApiItems()
     {
         _apiItems.Add(new ApiItem { FullName = "colorAxis", Title = "colorAxis", IsParent = true });
+        _apiItems.Add(new ApiItem { FullName = "colorAxis.stops", Title = "stops", IsParent = false, ReturnType = "Array<Array>" });
         _apiItems.Add(new ApiItem { FullName = "colorAxis.min", Title = "min", IsParent = false, ReturnType = "Number" });
+        _apiItems.Add(new ApiItem { FullName = "colorAxis.max", Title = "max", IsParent = false, ReturnType = "Number" });
+        _apiItems.Add(new ApiItem { FullName = "colorAxis.startOnTick", Title = "startOnTick", IsParent = false, ReturnType = "Boolean", Defaults = "false" });
+        _apiItems.Add(new ApiItem { FullName = "colorAxis.endOnTick", Title = "endOnTick", IsParent = false, ReturnType = "Boolean", Defaults = "false" });
         _apiItems.Add(new ApiItem { FullName = "colorAxis.minColor", Title = "minColor", IsParent = false, ReturnType = "String" });
         _apiItems.Add(new ApiItem { FullName = "colorAxis.maxColor", Title = "maxColor", IsParent = false, ReturnType = "String" });
     }

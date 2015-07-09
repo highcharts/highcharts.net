@@ -58,7 +58,11 @@ namespace Highsoft.Web.Mvc
 			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ColorAxis = ColorAxis_DefaultValue = new ColorAxis();
+			Stops = Stops_DefaultValue = null;
 			Min = Min_DefaultValue = null;
+			Max = Max_DefaultValue = null;
+			StartOnTick = StartOnTick_DefaultValue = false;
+			EndOnTick = EndOnTick_DefaultValue = false;
 			MinColor = MinColor_DefaultValue = null;
 			MaxColor = MaxColor_DefaultValue = null;
 			
@@ -376,8 +380,36 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// 
 		/// </summary>
+		public List<Stop> Stops { get; set; }
+		private List<Stop> Stops_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public double? Min { get; set; }
 		private double? Min_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Max { get; set; }
+		private double? Max_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? StartOnTick { get; set; }
+		private bool? StartOnTick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? EndOnTick { get; set; }
+		private bool? EndOnTick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -442,7 +474,11 @@ namespace Highsoft.Web.Mvc
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
 			if (ColorAxis.IsDirty()) h.Add("colorAxis",ColorAxis.ToHashtable());
+			if (Stops != Stops_DefaultValue) h.Add("stops", HashifyList(Stops));
 			if (Min != Min_DefaultValue) h.Add("min",Min);
+			if (Max != Max_DefaultValue) h.Add("max",Max);
+			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
+			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
 			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
 			
