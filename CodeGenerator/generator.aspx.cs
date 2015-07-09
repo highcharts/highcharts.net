@@ -127,6 +127,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _apiItems.Add(new ApiItem { FullName = "colorAxis.endOnTick", Title = "endOnTick", IsParent = false, ReturnType = "Boolean", Defaults = "false" });
         _apiItems.Add(new ApiItem { FullName = "colorAxis.minColor", Title = "minColor", IsParent = false, ReturnType = "String" });
         _apiItems.Add(new ApiItem { FullName = "colorAxis.maxColor", Title = "maxColor", IsParent = false, ReturnType = "String" });
+
     }
         
 
@@ -487,7 +488,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("xAxis.plotBands", "List<XAxisPlotBands>");
         _propertyTypeMappings.Add("xAxis.plotLines", "List<XAxisPlotLines>");
         _propertyTypeMappings.Add("xAxis.plotBands.label.style", "NameValueCollection");
-        _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
+        _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");        
     }
 
     private void InitPropertyInitMappings()

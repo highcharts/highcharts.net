@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc
 			BorderDashStyle = BorderDashStyle_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new NameValueCollection();
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = TreemapSeriesLevelsLayoutAlgorithm.Null;
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = TreemapSeriesLevelsLayoutStartingDirection.Null;
 			Level = Level_DefaultValue = null;
@@ -57,8 +57,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Can set the options of dataLabels on each point which lies on the level.<a href="#plotOptions.treemap.dataLabels">plotOptions.treemap.dataLabels</a> for possible values.
 		/// </summary>
-		public Object DataLabels { get; set; }
-		private Object DataLabels_DefaultValue { get; set; }
+		public NameValueCollection DataLabels { get; set; }
+		private NameValueCollection DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
