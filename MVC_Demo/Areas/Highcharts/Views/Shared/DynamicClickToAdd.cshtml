@@ -1,0 +1,110 @@
+﻿@using Highsoft.Web.Mvc
+
+<script type="text/javascript">
+
+    function addPoint(e) {
+        // find the clicked values and the series
+        var x = e.xAxis[0].value,
+            y = e.yAxis[0].value,
+            series = this.series[0];
+
+        // Add it
+        series.addPoint([x, y]);
+    }
+
+    function pointClick() {
+        if (this.series.data.length > 1) {
+            this.remove();
+        }
+    }
+
+</script>
+
+    
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                Events = new ChartEvents
+                {
+                    Click = "addPoint"
+                }
+            },
+            Title = new Title
+            {
+                Text = "User Applied Data"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Click the plot area to add a point. Click a point to remove it."
+            },
+            XAxis = new List<XAxis>
+            {            
+                new XAxis
+                {
+                    GridLineWidth = 1,
+                    MinPadding = 0.2,
+                    MaxPadding = 0.2,
+                    
+                }
+            },
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Value"
+                    },
+                    MinPadding = 0.2,
+                    MaxPadding = 0.2,                    
+                    PlotLines =  new List<YAxisPlotLines>
+                    {
+                        new YAxisPlotLines
+                        {
+                            Value = 0,
+                            Width = 1,
+                            Color = "#808080"
+                        }
+                    }
+                }
+            },
+            Legend = new Legend
+            {
+                Enabled = false
+            },
+            Exporting = new Exporting
+            {
+                Enabled = false
+            },
+            PlotOptions = new PlotOptions
+            {
+                Series = new PlotOptionsSeries
+                {
+                    LineWidth = 1,
+                    Point = new PlotOptionsSeriesPoint
+                    {
+                        Events = new PlotOptionsSeriesPointEvents
+                        {
+                            Click = "pointClick"
+                        }
+                    }
+                }
+            },
+            Series = new List<Series>
+            {                    
+                new ScatterSeries
+                {
+                    Data = new List<ScatterSeriesData> 
+                    {
+                        new ScatterSeriesData { X = 20, Y = 20 },
+                        new ScatterSeriesData { X = 80, Y = 80 }
+                    }
+                }
+            }
+        }
+        , "chart")
+    )
