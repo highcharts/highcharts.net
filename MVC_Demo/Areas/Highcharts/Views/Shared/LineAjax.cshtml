@@ -5,13 +5,52 @@
      function loadAjaxData() {
          $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=analytics.csv&callback=?', function (csv) {
              console.log(csv);
-             chart.series[0].setData(csv);
-             chart.series[1].setData(csv);
 
-             chart.redraw();
+             var visitorData = new Array();
+             var uniquesData = new Array();
+             var index = csv.indexOf("Visitors") + 9;
+             var data = csv.substring(index, csv.length);
+
+             var dataArray = data.split("\n");
+
+             for (var i = 0; i < dataArray.length - 1; i++) {
+                 var value = dataArray[i];
+
+                 var splitArray = value.split(",");
+                 var entry = {
+                     x : new Date(splitArray[0]),
+                     y : parseFloat(splitArray[1])
+                 }
+
+
+                 var uniqueEntry = {
+                     x: new Date(splitArray[0]),
+                     y: parseFloat(splitArray[2])
+                 }
+
+                 visitorData.push(entry);
+                 uniquesData.push(uniqueEntry);
+             }
+
+             chart.series[0].setData(visitorData);
+             chart.series[1].setData(uniquesData);
+
+             window.setTimeout(function () { chart.redraw(); }, 1000);
          });
      }
         
+     function handleClick(e) {
+         hs.htmlExpand(null, {
+             pageOrigin: {
+                 x: e.pageX || e.clientX,
+                 y: e.pageY || e.clientY
+             },
+             headingText: this.series.name,
+             maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) + ':<br/> ' +
+                 this.y + ' visits',
+             width: 200
+         });
+     }
 
     </script>  
 
@@ -25,7 +64,8 @@
                 Events = new ChartEvents
                 {
                     Load = "loadAjaxData"
-                }
+                },
+                Type = ChartType.Line
             },
             Title = new Title
             {
@@ -39,6 +79,7 @@
             {
                 new XAxis
                 {
+                    Type = XAxisType.Datetime,
                     TickInterval = 7 * 24 * 3600 * 1000, // one week
                     TickWidth = 0,
                     GridLineWidth = 1,
@@ -54,13 +95,25 @@
             {
                 new YAxis
                 {
-                    Title = new YAxisTitle
-                    {
-                        Text = null
-                    },
+                    
                     Labels = new YAxisLabels
                     {
-                        Align = "Left", // TO ADD to JSON
+                        Align = "left",
+                        X = 3,
+                        Y = 16,
+                        Format = "{value:.,0f}"
+                    },
+                    ShowFirstLabel = false
+                },
+                new YAxis
+                {
+                    LinkedTo = 0,
+                    GridLineWidth = 0,
+                    Opposite = true,
+                    
+                    Labels = new YAxisLabels
+                    {
+                        Align = "right",
                         X = 3,
                         Y = 16,
                         Format = "{value:.,0f}"
@@ -79,28 +132,41 @@
             Tooltip = new Tooltip
             {
                 Shared = true,
-                Crosshairs = new List<Crosshair>
+                //Crosshairs = new List<Crosshair>
+                //{
+                //    new Crosshair
+                //    {
+                //         XAxis = true,
+                //         YAxis = true
+                //    }
+                //}
+            },
+            PlotOptions = new PlotOptions
+            {
+                Series = new PlotOptionsSeries
                 {
-                    new Crosshair
+                    Cursor = PlotOptionsSeriesCursor.Pointer,
+                    Events = new PlotOptionsSeriesEvents
                     {
-                         XAxis = true,
-                         YAxis = true
+                        Click = "handleClick"
+                    },
+                    Marker = new PlotOptionsSeriesMarker
+                    {
+                        LineWidth = 1
                     }
                 }
             },
-
-            PlotOptions = new PlotOptions
-            {
-                //Series = new  // Series is incorrect and should be fixed
-            },
-
             Series = new List<Series>
             {
                 new LineSeries 
                 {
-                    Name = "All Visit"
-                    // LineWidth ??
-                    //Marker  ??
+                    Color = "black",
+                    Name = "All Visit",
+                    LineWidth = 4,
+                    Marker = new LineSeriesMarker
+                    {
+                        Radius = 4
+                    }
                 },
                 new LineSeries 
                 {
