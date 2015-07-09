@@ -247,6 +247,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = polygonSeries.ToHashtable();
                 }
+                if (series is TreemapSeries)
+                {
+                    TreemapSeries treemapSeries = series as TreemapSeries;
+
+                    List<TreemapSeriesData> seriesData = treemapSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    treemapSeries.Type = TreemapSeriesType.Treemap;
+
+                    seriesHashtable = treemapSeries.ToHashtable();
+                }
                
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);

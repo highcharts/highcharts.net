@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc
 		Bar, 
 		Heatmap, 
 		Pyramid, 
-		Polygon
+		Polygon, 
+		Treemap
     }
 }
