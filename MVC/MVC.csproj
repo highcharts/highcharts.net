@@ -176,6 +176,7 @@
     <Compile Include="CodeGeneration\ChartOptions3dFrameBottom.cs" />
     <Compile Include="CodeGeneration\ChartOptions3dFrameSide.cs" />
     <Compile Include="CodeGeneration\ChartResetZoomButton.cs" />
+    <Compile Include="CodeGeneration\ColorAxis.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeries.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesData.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesDataEvents.cs" />

@@ -37,6 +37,7 @@
                     Categories = new List<string> { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" }                    
                 }
             },
+            
             Legend = new Legend
             {
                 Layout = LegendLayout.Vertical,
@@ -50,6 +51,12 @@
             {
                 Formatter = "formatTooltip"
             },
+            ColorAxis = new ColorAxis
+            {
+                Min = 0,
+                MinColor = "#FFFFFF",
+                MaxColor = "#7cb5ec"  
+            },
             Series = new List<Series>
             {                    
                 new HeatmapSeries
@@ -59,7 +66,8 @@
                     DataLabels = new HeatmapSeriesDataLabels
                     {
                         Enabled = true,
-                        Color = "#000000"
+                        Color = "#000000",
+                        
                     },
                     Data = @ViewData["heatMapData"] as List<HeatmapSeriesData>
                 }

@@ -57,6 +57,10 @@ namespace Highsoft.Web.Mvc
 			Tooltip = Tooltip_DefaultValue = new Tooltip();
 			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
+			ColorAxis = ColorAxis_DefaultValue = new ColorAxis();
+			Min = Min_DefaultValue = null;
+			MinColor = MinColor_DefaultValue = null;
+			MaxColor = MaxColor_DefaultValue = null;
 			
 		}	
 		
@@ -360,6 +364,34 @@ namespace Highsoft.Web.Mvc
 		/// </summary>
 		public List<YAxis> YAxis { get; set; }
 		private List<YAxis> YAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ColorAxis ColorAxis { get; set; }
+		private ColorAxis ColorAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Min { get; set; }
+		private double? Min_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string MinColor { get; set; }
+		private string MinColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string MaxColor { get; set; }
+		private string MaxColor_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -409,6 +441,10 @@ namespace Highsoft.Web.Mvc
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
+			if (ColorAxis.IsDirty()) h.Add("colorAxis",ColorAxis.ToHashtable());
+			if (Min != Min_DefaultValue) h.Add("min",Min);
+			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
+			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
 			
 
 			return h;

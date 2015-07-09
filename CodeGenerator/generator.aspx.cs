@@ -100,6 +100,7 @@ public partial class generatoraspx : System.Web.UI.Page
 
     private void ProcessApiItems()
     {
+        AppendMissingApiItems();
         foreach (ApiItem apiItem in _apiItems)
         {
             // All events (javascript functions) should default to empty string
@@ -114,6 +115,14 @@ public partial class generatoraspx : System.Web.UI.Page
             // add Defaults to enum if they are not available in the Values list.
             AddDefaultsToEnum(apiItem);
         }
+    }
+
+    private void AppendMissingApiItems()
+    {
+        _apiItems.Add(new ApiItem { FullName = "colorAxis", Title = "colorAxis", IsParent = true });
+        _apiItems.Add(new ApiItem { FullName = "colorAxis.min", Title = "min", IsParent = false, ReturnType = "Number" });
+        _apiItems.Add(new ApiItem { FullName = "colorAxis.minColor", Title = "minColor", IsParent = false, ReturnType = "String" });
+        _apiItems.Add(new ApiItem { FullName = "colorAxis.maxColor", Title = "maxColor", IsParent = false, ReturnType = "String" });
     }
         
 
