@@ -1005,10 +1005,10 @@
                             <h2 id="dynamic-charts">Dynamic charts</h2>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="dynamic-update.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "DynamicUpdate" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/dynamic-update-default.svg" alt="Spline updating each second">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/dynamic-update-default.svg")" alt="Spline updating each second">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Spline updating each second</h3>

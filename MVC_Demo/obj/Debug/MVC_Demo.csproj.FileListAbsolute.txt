@@ -43,3 +43,4 @@ C:\HighSoft\MVC_Demo\bin\System.Net.Http.Formatting.xml
 C:\HighSoft\MVC_Demo\bin\System.Web.Http.xml
 C:\HighSoft\MVC_Demo\bin\System.Web.Http.WebHost.xml
 C:\Highsoft\MVC_Demo\bin\System.Web.Mvc.xml
+C:\Highsoft\MVC_Demo\bin\System.Web.Mvc.dll
