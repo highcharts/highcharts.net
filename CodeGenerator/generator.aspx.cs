@@ -352,11 +352,12 @@ public partial class generatoraspx : System.Web.UI.Page
     {        
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
         string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList({0}));\n\t\t\t";
-        string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0}.ToString().ToLower());\n\t\t\t";
+        string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", Highcharts.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
         string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); Highcharts.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
         string customPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToJSON());\n\t\t\t";  
 
+        
 
         if (child.FullName == "Series")
             return "";
@@ -486,6 +487,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("xAxis.plotBands", "List<XAxisPlotBands>");
         _propertyTypeMappings.Add("xAxis.plotLines", "List<XAxisPlotLines>");
         _propertyTypeMappings.Add("xAxis.plotBands.label.style", "NameValueCollection");
+        _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
     }
 
     private void InitPropertyInitMappings()
@@ -511,6 +513,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("xAxis.plotLines", "new List<XAxisPlotLines>()");
         _propertyInitMappings.Add("xAxis.plotBands", "new List<XAxisPlotBands>()");
         _propertyInitMappings.Add("xAxis.plotBands.label.style", "new NameValueCollection()");
+        _propertyInitMappings.Add("series<treemap>.levels", "new List<TreemapSeriesLevels>()");
     }
 
     private void InitLists()
@@ -525,6 +528,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _lists.Add("yAxis.plotLines");
         _lists.Add("xAxis.plotBands");
         _lists.Add("xAxis.plotLines");
+        _lists.Add("series<treemap>.levels");
     }   
 
     private void InitSeriesMappings()

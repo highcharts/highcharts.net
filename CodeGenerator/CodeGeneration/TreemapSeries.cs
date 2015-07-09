@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = TreemapSeriesLayoutStartingDirection.Vertical;
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LevelIsConstant = LevelIsConstant_DefaultValue = TreemapSeriesLevelIsConstant.True;
-			Levels = Levels_DefaultValue = new TreemapSeriesLevels();
+			Levels = Levels_DefaultValue = new List<TreemapSeriesLevels>();
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Name = Name_DefaultValue = null;
 			Point = Point_DefaultValue = new TreemapSeriesPoint();
@@ -224,8 +224,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// Set options on specific levels. Takes precedence over series options, but not point options.
 		/// </summary>
-		public TreemapSeriesLevels Levels { get; set; }
-		private TreemapSeriesLevels Levels_DefaultValue { get; set; }
+		public List<TreemapSeriesLevels> Levels { get; set; }
+		private List<TreemapSeriesLevels> Levels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -358,9 +358,9 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode.ToString().ToLower());
+			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode", Highcharts.FirstCharacterToLower(AllowDrillToNode.ToString()));
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (AlternateStartingDirection != AlternateStartingDirection_DefaultValue) h.Add("alternateStartingDirection",AlternateStartingDirection.ToString().ToLower());
+			if (AlternateStartingDirection != AlternateStartingDirection_DefaultValue) h.Add("alternateStartingDirection", Highcharts.FirstCharacterToLower(AlternateStartingDirection.ToString()));
 			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -368,7 +368,7 @@ namespace Highsoft.Web.Mvc
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor.ToString().ToLower());
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
@@ -376,11 +376,11 @@ namespace Highsoft.Web.Mvc
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (InteractByLeaf != InteractByLeaf_DefaultValue) h.Add("interactByLeaf",InteractByLeaf);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm",LayoutAlgorithm.ToString().ToLower());
-			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection",LayoutStartingDirection.ToString().ToLower());
+			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
+			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
-			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant.ToString().ToLower());
-			if (Levels.IsDirty()) h.Add("levels",Levels.ToHashtable());
+			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant", Highcharts.FirstCharacterToLower(LevelIsConstant.ToString()));
+			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(Levels));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
@@ -392,7 +392,7 @@ namespace Highsoft.Web.Mvc
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (Type != Type_DefaultValue) h.Add("type",Type.ToString().ToLower());
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);

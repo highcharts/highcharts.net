@@ -118,7 +118,7 @@ namespace Highsoft.Web.Mvc
 			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);
 			if (SourceHeight != SourceHeight_DefaultValue) h.Add("sourceHeight",SourceHeight);
 			if (SourceWidth != SourceWidth_DefaultValue) h.Add("sourceWidth",SourceWidth);
-			if (Type != Type_DefaultValue) h.Add("type",Type.ToString().ToLower());
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Url != Url_DefaultValue) h.Add("url",Url);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			
