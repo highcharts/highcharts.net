@@ -1,4 +1,5 @@
 ﻿@using Highsoft.Web.Mvc
+@using System.Collections.Specialized
 
     @(Html.Highsoft().Highcharts(
         new Highcharts
@@ -6,7 +7,7 @@
             Chart = new Chart
             {
                 PlotBackgroundColor = null,
-                PlotBorderWidth = null,
+                PlotBorderWidth = 0,
                 PlotShadow = new Shadow
                 {
                     Enabled = false
@@ -16,7 +17,10 @@
             },
             Title = new Title
             {
-                Text = "'Browser market shares at a specific website, 2014"
+                Text = "Browser<br>shares<br>2015",
+                Align = TitleAlign.Center,
+                VerticalAlign = TitleVerticalAlign.Middle,
+                Y = 40
             },
             Tooltip = new Tooltip
             {
@@ -26,20 +30,28 @@
             {
                 Pie = new PlotOptionsPie
                 {
-                    AllowPointSelect = true,
-                    Cursor = PlotOptionsPieCursor.Pointer,
                     DataLabels = new PlotOptionsPieDataLabels
                     {
                         Enabled = true,
-                        Format = "<b>{point.name}</b>: {point.percentage:.1f} %"
-                    }
+                        Distance = -50,
+                        Style = new NameValueCollection
+                        {
+                            { "fontWeight", "bold" },
+                            { "color", "white" },
+                            { "textShadow", "0px 1px 2px black" }
+                        }
+                    },
+                    StartAngle = -90,
+                    EndAngle = 90,
+                    Center = new string [] { "50%", "75%" }
                 }
-            },        
+            },
             Series = new List<Series>
             {                    
                 new PieSeries
                 {                    
                     Name = "Browser Share",
+                    InnerSize = "50%",
                     Data = @ViewData["pieData"] as List<PieSeriesData>
                 },
                 
