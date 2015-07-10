@@ -49,8 +49,14 @@ namespace Highsoft.Web.Mvc.Rendering
         private void RenderChartSettings(StringBuilder s)
         {            
             Hashtable options = _chart.ToHashtable();
-            List<Hashtable> series = SeriesToHashtables(_chart.Series);
-            List<Hashtable> drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
+
+            List<Hashtable> series = new List<Hashtable>();
+            List<Hashtable> drilldownSeries = new List<Hashtable>();
+
+            if (_chart.Series != null)
+                series = SeriesToHashtables(_chart.Series);
+            if (_chart.Drilldown.Series != null)
+                drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
 
             if (series.Count > 0)
             {
