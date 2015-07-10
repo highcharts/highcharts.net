@@ -885,10 +885,10 @@
                         </div>
                         <div class="clearfix visible-sm visible-xs"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="pie-donut.html">
+                           <a href="@Url.Action("Gallery", "Demo", new { demo = "PieDonut" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/pie-donut-default.svg" alt="Donut chart">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-donut-default.svg")" alt="Donut chart">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Donut chart</h3>
@@ -1106,10 +1106,10 @@
                         </div>
                         <div class="clearfix visible-sm visible-xs"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="combo-meteogram.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "ComboMeteogram" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/combo-meteogram-default.png" alt="Meteogram">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-meteogram-default.png")" alt="Meteogram">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Meteogram</h3>
