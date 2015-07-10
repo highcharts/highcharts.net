@@ -49,11 +49,41 @@ namespace Highsoft.Web.Mvc.Rendering
         private void RenderChartSettings(StringBuilder s)
         {            
             Hashtable options = _chart.ToHashtable();
-            List<Hashtable> results = new List<Hashtable>();    
-        
+            List<Hashtable> series = SeriesToHashtables(_chart.Series);
+            List<Hashtable> drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
 
-            foreach (Series series in _chart.Series)
-            {               
+            if (series.Count > 0)
+            {
+                options["series"] = series;
+            }
+            if (drilldownSeries.Count > 0)
+            {
+                Hashtable drilldown = options["drilldown"] as Hashtable;
+                drilldown["series"] = drilldownSeries;
+            }
+
+            string json = new JavaScriptSerializer().Serialize(options);
+            var functions = Highcharts.functions;
+
+            foreach (string key in functions.Keys)
+            {
+                string value = (string)functions[key];
+                string realKey = key.Split('.')[1];
+                string matchedString = String.Format("\"{0}\":\"{1}\"", realKey, value);
+                string replacementstring = String.Format("\"{0}\":{1}", realKey, value);
+                json = json.Replace(matchedString, replacementstring);
+            }
+
+            s.Append(json);
+        }
+
+        private List<Hashtable> SeriesToHashtables(List<Series>  listOfSeries)
+        {
+            List<Hashtable> results = new List<Hashtable>();
+
+
+            foreach (Series series in listOfSeries)
+            {
                 List<object> dataList = new List<object>();
                 Hashtable seriesHashtable = new Hashtable();
 
@@ -257,31 +287,12 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = treemapSeries.ToHashtable();
                 }
-               
+
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
             }
 
-            if (results.Count > 0)
-            {
-                options["series"] = results;
-                //options.Add("series", results);
-            }
-
-
-            string json = new JavaScriptSerializer().Serialize(options);
-            var functions = Highcharts.functions;
-
-            foreach (string key in functions.Keys)
-            {
-                string value = (string)functions[key];
-                string realKey = key.Split('.')[1];
-                string matchedString = String.Format("\"{0}\":\"{1}\"", realKey, value);
-                string replacementstring = String.Format("\"{0}\":{1}", realKey, value);
-                json = json.Replace(matchedString, replacementstring);
-            }
-
-            s.Append(json);
-        }        
+            return results;
+        }
     }
 }

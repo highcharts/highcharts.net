@@ -357,11 +357,7 @@ public partial class generatoraspx : System.Web.UI.Page
         string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); Highcharts.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
         string customPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToJSON());\n\t\t\t";  
-
         
-
-        if (child.FullName == "Series")
-            return "";
         if (propertyName == "Data" && child.FullName != "data")
             return "";
 
@@ -480,6 +476,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("Stops", "List<Stop>");
         _propertyTypeMappings.Add("RenderTo", "string");
         _propertyTypeMappings.Add("series", "List<Series>");
+        _propertyTypeMappings.Add("drilldown.series", "List<Series>");
         _propertyTypeMappings.Add("xAxis", "List<XAxis>");
         _propertyTypeMappings.Add("yAxis", "List<YAxis>");
         _propertyTypeMappings.Add("yAxis.plotBands", "List<YAxisPlotBands>");
