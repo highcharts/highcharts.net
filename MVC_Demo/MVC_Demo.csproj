@@ -204,6 +204,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\ComboRegressionController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\BoxPlotController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnDrilldownController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieGradientController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieDrilldownController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieSemiCircleController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\SparklineController.cs" />
@@ -394,6 +395,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\ColumnDrilldown.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\PieSemiCircle.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\PieDrilldown.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieGradient.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
