@@ -1,0 +1,242 @@
+﻿@using Highsoft.Web.Mvc
+
+    <script type="text/javascript">
+
+        function loadData() {
+            setInterval(function () {
+                // Speed
+                var chart = $("#chartspeed").highcharts(),
+                    point,
+                    newVal,
+                    inc;
+
+                if (chart) {
+                    point = chart.series[0].points[0];
+                    inc = Math.round((Math.random() - 0.5) * 100);
+                    newVal = point.y + inc;
+
+                    if (newVal < 0 || newVal > 200) {
+                        newVal = point.y - inc;
+                    }
+
+                    point.update(newVal);
+                }
+
+                chart = $('#chartrpm').highcharts();
+                if (chart) {
+                    point = chart.series[0].points[0];
+                    inc = Math.random() - 0.5;
+                    newVal = point.y + inc;
+
+                    if (newVal < 0 || newVal > 5) {
+                        newVal = point.y - inc;
+                    }
+
+                    point.update(newVal);
+                }
+            }, 2000);
+        }
+
+  
+    </script>
+
+<table>
+    <tr>
+        <td>
+            @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 300,
+                Height = 200,
+                Events = new ChartEvents
+                {
+                    Load = "loadData"
+                }
+            },
+            Title = new Title
+            {
+                Text = null
+            },
+            Pane = new Pane
+            {
+                Center = new string[] { "50%", "85%" },
+                Size = "140%",
+                StartAngle = -90,
+                EndAngle = 90,
+                Background = new List<Background>
+                {
+                    new Background
+                    {
+                         BackgroundColor = "#EEE",
+                         InnerRadius = "60%",
+                         OuterRadius = "100%",
+                         Shape = "arc"
+                    }
+                }
+            },
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
+                {
+                    Stops = new List<Stop>
+                    {
+                        new Stop { Position = 0.1, Color = "#55BF3B" },
+                        new Stop { Position = 0.5, Color = "#DDDF0D" },
+                        new Stop { Position = 0.9, Color = "#DF5353" }
+                    },
+                    LineWidth = 1,
+                    MinorTickInterval = null,
+                    TickPixelInterval = 400,
+                    TickWidth = 0,
+                    Labels = new YAxisLabels
+                    {
+                        Y = 16
+                    }                    
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                Enabled = false
+            },
+            PlotOptions = new PlotOptions
+            {
+                Solidgauge = new PlotOptionsSolidgauge
+                {
+                    DataLabels = new PlotOptionsSolidgaugeDataLabels
+                    {
+                        Y = 5,
+                        BorderWidth = 0,
+                        UseHTML = true
+                    }
+                }
+            },
+            Series = new List<Series>
+            {
+                new SolidgaugeSeries
+                {
+                    Name = "Speed",
+                    Data = new List<SolidgaugeSeriesData>
+                    {
+                        new SolidgaugeSeriesData { Y = 80 }   
+                    },
+                    DataLabels = new SolidgaugeSeriesDataLabels
+                    {
+                        Format = "<div style='text-align:center'><span style='font-size:25px;color:black'>{y}</span><br/><span style='font-size:12px;color:silver'>km/h</span></div>"
+                    },
+                    Tooltip = new SolidgaugeSeriesTooltip
+                    {
+                        ValueSuffix = " km/h"
+                    }
+                }
+            }
+        }
+        , "chartspeed")
+    )
+
+        </td>
+        <td>
+            @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 300,
+                Height = 200,
+                Events = new ChartEvents
+                {
+                    Load = "loadData"
+                }
+            },
+            Title = new Title
+            {
+                Text = null
+            },
+            Pane = new Pane
+            {
+                Center = new string[] { "50%", "85%" },
+                Size = "140%",
+                StartAngle = -90,
+                EndAngle = 90,
+                Background = new List<Background>
+                {
+                    new Background
+                    {
+                         BackgroundColor = "#EEE",
+                         InnerRadius = "60%",
+                         OuterRadius = "100%",
+                         Shape = "arc"
+                    }
+                }
+            },
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
+                {
+                    Stops = new List<Stop>
+                    {
+                        new Stop { Position = 0.1, Color = "#55BF3B" },
+                        new Stop { Position = 0.5, Color = "#DDDF0D" },
+                        new Stop { Position = 0.9, Color = "#DF5353" }
+                    },
+                    Min = 0,
+                    Max = 5,
+                    Title = new YAxisTitle
+                    {
+                        Text = "RPM"
+                    },
+                    LineWidth = 1,
+                    MinorTickInterval = null,
+                    TickPixelInterval = 400,
+                    TickWidth = 0,
+                    Labels = new YAxisLabels
+                    {
+                        Y = 16
+                    }                    
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                Enabled = false
+            },
+            PlotOptions = new PlotOptions
+            {
+                Solidgauge = new PlotOptionsSolidgauge
+                {
+                    DataLabels = new PlotOptionsSolidgaugeDataLabels
+                    {
+                        Y = 5,
+                        BorderWidth = 0,
+                        UseHTML = true
+                    }
+                }
+            },
+            Series = new List<Series>
+            {
+                new SolidgaugeSeries
+                {
+                    Name = "RPM",
+                    Data = new List<SolidgaugeSeriesData>
+                    {
+                        new SolidgaugeSeriesData { Y = 1 }   
+                    },
+                    DataLabels = new SolidgaugeSeriesDataLabels
+                    {
+                        Format = "<div style='text-align:center'><span style='font-size:25px;color:black'>{y:.1f}</span><br/><span style='font-size:12px;color:silver'>* 1000 / min</span></div>"
+                    },
+                    Tooltip = new SolidgaugeSeriesTooltip
+                    {
+                        ValueSuffix = " revolutions/min"
+                    }
+                }
+            }
+        }
+        , "chartrpm")
+    )
+        </td>
+    </tr>
+
+</table>
+
+    

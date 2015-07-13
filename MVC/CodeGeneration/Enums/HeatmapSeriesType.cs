@@ -28,6 +28,7 @@ namespace Highsoft.Web.Mvc
 		Heatmap, 
 		Pyramid, 
 		Polygon, 
-		Treemap
+		Treemap, 
+		Solidgauge
     }
 }

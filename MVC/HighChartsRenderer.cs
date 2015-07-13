@@ -213,6 +213,16 @@ namespace Highsoft.Web.Mvc.Rendering
 
                     seriesHashtable = gaugeSeries.ToHashtable();
                 }
+                if (series is SolidgaugeSeries)
+                {
+                    SolidgaugeSeries SolidgaugeSeries = series as SolidgaugeSeries;
+
+                    List<SolidgaugeSeriesData> seriesData = SolidgaugeSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    SolidgaugeSeries.Type = SolidgaugeSeriesType.Solidgauge;
+
+                    seriesHashtable = SolidgaugeSeries.ToHashtable();
+                }
                 if (series is HeatmapSeries)
                 {
                     HeatmapSeries heatMapSeries = series as HeatmapSeries;

@@ -21,12 +21,31 @@ namespace Highsoft.Web.Mvc
             OuterWidth = 0;
             BorderWidth = 0;
             BorderColor = "";
+            InnerRadius = "";
+            OuterRadius = "";
+            Shape = "";
 		}
+
+        /// <summary>
+        /// InnerRadius
+        /// </summary>
+        public string Shape { get; set; }
+
+        /// <summary>
+        /// InnerRadius
+        /// </summary>
+        public string InnerRadius { get; set; }
+
+        /// <summary>
+        /// OuterRadius
+        /// </summary>
+        public string OuterRadius { get; set; }
+
 
         /// <summary>
         /// backgroundColor (can be solid or gradient)
         /// </summary>
-        string BackgroundColor { get; set; }
+        public string BackgroundColor { get; set; }
 
 		/// <summary>
 		/// InnerWidth
@@ -54,6 +73,9 @@ namespace Highsoft.Web.Mvc
 
             if (!String.IsNullOrEmpty(BackgroundColor)) h.Add("backgroundColor", BackgroundColor);
             if (!String.IsNullOrEmpty(BorderColor)) h.Add("borderColor", BorderColor);
+            if (!String.IsNullOrEmpty(Shape)) h.Add("shape", Shape);
+            if (!String.IsNullOrEmpty(InnerRadius)) h.Add("innerRadius", InnerRadius);
+            if (!String.IsNullOrEmpty(OuterRadius)) h.Add("outerRadius", OuterRadius);
             if (InnerWidth != 0) h.Add("innerWidth", InnerWidth);
             if (OuterWidth != 0) h.Add("outerWidth", OuterWidth);
             if (BorderWidth != 0) h.Add("borderWidth", BorderWidth);
