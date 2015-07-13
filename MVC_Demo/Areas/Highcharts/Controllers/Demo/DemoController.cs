@@ -10,9 +10,33 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
 {
     public class DemoController : Controller
     {
-        public ActionResult Index(string id)
+        public ActionResult Index(string id, string theme)
         {
+            string defaultSVG = "default.svg";
+            string defaultPNG = "default.png";
+            string darkUnicaPNG = "dark-unica.png";
+
+            switch (theme)
+            {
+                case "dark-unica": 
+                    ViewBag.DarkUnicaDisabled = "disabled";
+                    ViewBag.ChartImageSVG = darkUnicaPNG;
+                    ViewBag.ChartImagePNG = darkUnicaPNG;
+                    ViewBag.ImageContainer = "dark-unica";                    
+                    break;
+                case "sand-signika": ViewBag.SandSignikaDisabled = "disabled"; break;
+                case "grid-light": ViewBag.GridLightDisabled = "disabled"; break;
+                default: 
+                    ViewBag.DefaultDisabled = "disabled"; 
+                    ViewBag.ChartImageSVG = defaultSVG;
+                    ViewBag.ChartImagePNG = defaultPNG;
+                    ViewBag.ImageContainer = "default";
+                    break;
+            }
+
+
             id = String.IsNullOrEmpty(id) ? id = "default.svg" : String.Format("{0}.png", id);
+
 
             ViewData["theme"] = id;
             return View();

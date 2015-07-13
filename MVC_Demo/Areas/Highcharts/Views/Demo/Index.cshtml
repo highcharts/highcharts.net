@@ -241,6 +241,8 @@
                 threshold: 200
             });
         });
+
+
   </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -376,15 +378,15 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h1>Highcharts Demos</h1>
                         <div class="btn-group theme">
-                            <a class="btn btn-theme disabled" href="#">Default</a>
-                            <a class="btn btn-theme" href="?theme=dark-unica">Dark Unica</a>
-                            <a class="btn btn-theme" href="?theme=sand-signika">Sand Signika</a>
-                            <a class="btn btn-theme" href="?theme=grid-light">Grid Light</a>
+                            <a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">Default</a>
+                            <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="?theme=dark-unica">Dark Unica</a>
+                            <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="?theme=sand-signika">Sand Signika</a>
+                            <a class="btn btn-theme @ViewBag.GridLightDisabled" href="?theme=grid-light">Grid Light</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="demos" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 default">
+            <div id="demos" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 @ViewBag.ImageContainer">
                 <div class="container">
                     <div class="visible-xs row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -403,7 +405,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "LineBasic" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content(String.Format("~/Content/chart_types/line-basic-{0}", ViewData["theme"] as string))" alt="Basic line">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content(String.Format("~/Content/chart_types/line-basic-{0}", ViewBag.ChartImageSVG))" alt="Basic line">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Basic line</h3>
@@ -416,7 +418,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "LineAjax" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-ajax-default.svg")" alt="Ajax loaded data, clickable points">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-ajax-" + ViewBag.ChartImageSVG)" alt="Ajax loaded data, clickable points">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Ajax loaded data, clickable points</h3>
@@ -430,7 +432,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "LineLabels" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-labels-default.svg")" alt="With data labels">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-labels-" + ViewBag.ChartImageSVG)" alt="With data labels">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>With data labels</h3>
@@ -444,7 +446,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "LineTimeSeries" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-time-series-default.svg")" alt="Time series, zoomable">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-time-series-" + ViewBag.ChartImageSVG)" alt="Time series, zoomable">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Time series, zoomable</h3>
@@ -458,7 +460,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "SplineInverted" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/spline-inverted-default.svg")" alt="Spline with inverted axes">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/spline-inverted-" + ViewBag.ChartImageSVG)" alt="Spline with inverted axes">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Spline with inverted axes</h3>
@@ -471,7 +473,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "SplineSymbols" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/spline-symbols-default.png")" alt="Spline with symbols">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/spline-symbols-" + ViewBag.ChartImagePNG)" alt="Spline with symbols">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Spline with symbols</h3>
@@ -488,7 +490,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "SplinePlotBands" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/spline-plot-bands-default.svg")" alt="Spline with plot bands">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/spline-plot-bands-" + ViewBag.ChartImageSVG)" alt="Spline with plot bands">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Spline with plot bands</h3>
@@ -501,7 +503,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "SplineIrregularTime" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/spline-irregular-time-default.svg")" alt="Time data with irregular intervals">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/spline-irregular-time-" + ViewBag.ChartImageSVG)" alt="Time data with irregular intervals">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Time data with irregular intervals</h3>
@@ -515,7 +517,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "LineLog" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-log-axis-default.svg")" alt="Logarithmic axis">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/line-log-axis-" + ViewBag.ChartImageSVG)" alt="Logarithmic axis">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Logarithmic axis</h3>
@@ -534,7 +536,7 @@
                              <a href="@Url.Action("Gallery", "Demo", new { demo = "AreaBasic" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-basic-default.svg")" alt="Basic area">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-basic-" + ViewBag.ChartImageSVG)" alt="Basic area">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Basic area</h3>
@@ -547,7 +549,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "AreaNegative" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-negative-default.svg")" alt="Area with negative values">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-negative-" + ViewBag.ChartImageSVG)" alt="Area with negative values">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Area with negative values</h3>
@@ -561,7 +563,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "AreaStacked" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-stacked-default.svg")" alt="Stacked area">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-stacked-" + ViewBag.ChartImageSVG)" alt="Stacked area">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Stacked area</h3>
@@ -575,7 +577,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "AreaStackedPercent" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-stacked-percent-default.svg")" alt="Percentage area">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-stacked-" + ViewBag.ChartImageSVG)" alt="Percentage area">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Percentage area</h3>
@@ -589,7 +591,7 @@
                            <a href="@Url.Action("Gallery", "Demo", new { demo = "AreaMissing" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-missing-default.svg")" alt="Area with missing points">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-missing-" + ViewBag.ChartImageSVG)" alt="Area with missing points">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Area with missing points</h3>
@@ -602,7 +604,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "AreaInverted" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-inverted-default.svg")" alt="Inverted axes">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/area-inverted-" + ViewBag.ChartImageSVG)" alt="Inverted axes">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Inverted axes</h3>
@@ -617,7 +619,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "AreaSpline" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/areaspline-default.svg")" alt="Area-spline">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/areaspline-" + ViewBag.ChartImageSVG)" alt="Area-spline">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Area-spline</h3>
@@ -630,7 +632,7 @@
                            <a href="@Url.Action("Gallery", "Demo", new { demo = "AreaRange" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/arearange-default.svg")" alt="Area range">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/arearange-" + ViewBag.ChartImageSVG)" alt="Area range">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Area range</h3>
@@ -644,7 +646,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "AreaRangeLine" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/arearange-line-default.svg")" alt="Area range and line">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/arearange-line-" + ViewBag.ChartImageSVG)" alt="Area range and line">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Area range and line</h3>
@@ -658,7 +660,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Sparkline" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/sparkline-default.png")" alt="Sparkline charts">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/sparkline-" + ViewBag.ChartImagePNG)" alt="Sparkline charts">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Sparkline charts</h3>
@@ -677,7 +679,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "BarBasic" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bar-basic-default.svg")" alt="Basic bar">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bar-basic-" + ViewBag.ChartImageSVG)" alt="Basic bar">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Basic bar</h3>
@@ -690,7 +692,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "BarStacked" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bar-stacked-default.svg")" alt="Stacked bar">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bar-stacked-" + ViewBag.ChartImageSVG)" alt="Stacked bar">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Stacked bar</h3>
@@ -704,7 +706,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "BarNegativeStack" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bar-negative-stack-default.svg")" alt="Bar with negative stack">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bar-negative-stack-" + ViewBag.ChartImageSVG)" alt="Bar with negative stack">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Bar with negative stack</h3>
@@ -718,7 +720,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ColumnBasic" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-basic-default.svg")" alt="Basic column">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-basic-" + ViewBag.ChartImageSVG)" alt="Basic column">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Basic column</h3>
@@ -732,7 +734,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ColumnNegative" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-negative-default.svg")" alt="Column with negative values">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-negative-" + ViewBag.ChartImageSVG)" alt="Column with negative values">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Column with negative values</h3>
@@ -745,7 +747,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ColumnStacked" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-stacked-default.svg")" alt="Stacked column">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-stacked-" + ViewBag.ChartImageSVG)" alt="Stacked column">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Stacked column</h3>
@@ -760,7 +762,7 @@
                              <a href="@Url.Action("Gallery", "Demo", new { demo = "ColumnStackedGrouped" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-stacked-and-grouped-default.svg")" alt="Stacked and grouped column">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-stacked-and-grouped-" + ViewBag.ChartImageSVG)" alt="Stacked and grouped column">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Stacked and grouped column</h3>
@@ -773,7 +775,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ColumnStackedPercent" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-stacked-percent-default.svg")" alt="Stacked percentage column">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-stacked-percent-" + ViewBag.ChartImageSVG)" alt="Stacked percentage column">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Stacked percentage column</h3>
@@ -787,7 +789,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ColumnRotatedLabels" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-rotated-labels-default.svg")" alt="Column with rotated labels">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-rotated-labels-" + ViewBag.ChartImageSVG)" alt="Column with rotated labels">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Column with rotated labels</h3>
@@ -801,7 +803,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ColumnDrilldown" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-drilldown-default.svg")" alt="Column with drilldown">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-drilldown-" + ViewBag.ChartImageSVG)" alt="Column with drilldown">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Column with drilldown</h3>
@@ -815,7 +817,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ColumnPlacement" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-placement-default.svg")" alt="Fixed placement columns">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-placement-" + ViewBag.ChartImageSVG)" alt="Fixed placement columns">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Fixed placement columns</h3>
@@ -828,7 +830,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ColumnParsed" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-parsed-default.svg")" alt="Data defined in a HTML table">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/column-parsed-" + ViewBag.ChartImageSVG)" alt="Data defined in a HTML table">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Data defined in a HTML table</h3>
@@ -843,7 +845,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ColumnRange" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/columnrange-default.svg")" alt="Column range">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/columnrange-" + ViewBag.ChartImageSVG)" alt="Column range">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Column range</h3>
@@ -861,7 +863,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "PieBasic" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-basic-default.svg")" alt="Pie chart">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-basic-" + ViewBag.ChartImageSVG)" alt="Pie chart">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Pie chart</h3>
@@ -874,7 +876,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "PieLegend" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-legend-default.svg")" alt="Pie with legend">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-legend-" + ViewBag.ChartImageSVG)" alt="Pie with legend">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Pie with legend</h3>
@@ -888,7 +890,7 @@
                            <a href="@Url.Action("Gallery", "Demo", new { demo = "PieDonut" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-donut-default.svg")" alt="Donut chart">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-donut-" + ViewBag.ChartImageSVG)" alt="Donut chart">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Donut chart</h3>
@@ -902,7 +904,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "PieSemiCircle" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-semi-circle-default.svg")" alt="Semi circle donut">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-semi-circle-" + ViewBag.ChartImageSVG)" alt="Semi circle donut">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Semi circle donut</h3>
@@ -916,7 +918,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "PieDrilldown" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-drilldown-default.svg")" alt="Pie with drilldown">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-drilldown-" + ViewBag.ChartImageSVG)" alt="Pie with drilldown">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Pie with drilldown</h3>
@@ -929,7 +931,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "PieGradient" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-gradient-default.svg")" alt="Pie with gradient fill">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-gradient-" + ViewBag.ChartImageSVG)" alt="Pie with gradient fill">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Pie with gradient fill</h3>
@@ -944,7 +946,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "PieMonochrome" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-monochrome-default.svg")" alt="Pie with monochrome fill">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pie-monochrome-" + ViewBag.ChartImageSVG)" alt="Pie with monochrome fill">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Pie with monochrome fill</h3>
@@ -962,7 +964,7 @@
                              <a href="@Url.Action("Gallery", "Demo", new { demo = "Scatter" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/scatter-default.svg")" alt="Scatter plot">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/scatter-" + ViewBag.ChartImageSVG)" alt="Scatter plot">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Scatter plot</h3>
@@ -975,7 +977,7 @@
                            <a href="@Url.Action("Gallery", "Demo", new { demo = "Bubble" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bubble-default.svg")" alt="Bubble chart">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bubble-" + ViewBag.ChartImageSVG)" alt="Bubble chart">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Bubble chart</h3>
@@ -989,7 +991,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Bubble3d" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bubble-3d-default.svg1")" alt="3D bubbles">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/bubble-3d-" + ViewBag.ChartImageSVG)" alt="3D bubbles">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>3D bubbles</h3>
@@ -1008,7 +1010,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "DynamicUpdate" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/dynamic-update-default.svg")" alt="Spline updating each second">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/dynamic-update-" + ViewBag.ChartImageSVG)" alt="Spline updating each second">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Spline updating each second</h3>
@@ -1021,7 +1023,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "DynamicClickToAdd" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/dynamic-click-to-add-default.svg")" alt="Click to add a point">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/dynamic-click-to-add-" + ViewBag.ChartImageSVG)" alt="Click to add a point">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Click to add a point</h3>
@@ -1035,7 +1037,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "DynamicMasterDetail" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/dynamic-master-detail-default.svg")" alt="Master-detail chart">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/dynamic-master-detail-" + ViewBag.ChartImageSVG)" alt="Master-detail chart">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Master-detail chart</h3>
@@ -1054,7 +1056,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Combo" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-default.svg")" alt="Column, line and pie">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-" + ViewBag.ChartImageSVG)" alt="Column, line and pie">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Column, line and pie</h3>
@@ -1067,7 +1069,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ComboDualAxes" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-dual-axes-default.svg")" alt="Dual axes, line and column">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-dual-axes-" + ViewBag.ChartImageSVG)" alt="Dual axes, line and column">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Dual axes, line and column</h3>
@@ -1081,7 +1083,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ComboMultiAxes" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-multi-axes-default.svg")" alt="Multiple axes">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-multi-axes-" + ViewBag.ChartImageSVG)" alt="Multiple axes">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Multiple axes</h3>
@@ -1095,7 +1097,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ComboRegression" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-regression-default.svg")" alt="Scatter with regression line">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-regression-" + ViewBag.ChartImageSVG)" alt="Scatter with regression line">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Scatter with regression line</h3>
@@ -1109,7 +1111,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ComboMeteogram" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-meteogram-default.png")" alt="Meteogram">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-" + ViewBag.ChartImagePNG)" alt="Meteogram">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Meteogram</h3>
@@ -1122,7 +1124,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ComboTimeline" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-timeline-default.svg")" alt="Advanced timeline">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/combo-timeline-" + ViewBag.ChartImageSVG)" alt="Advanced timeline">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Advanced timeline</h3>
@@ -1142,7 +1144,7 @@
                              <a href="@Url.Action("Gallery", "Demo", new { demo = "Column3DInteractive" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-column-interactive-default.svg")" alt="3D column">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-column-interactive-" + ViewBag.ChartImageSVG)" alt="3D column">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>3D column</h3>
@@ -1155,7 +1157,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Column3DNullValues" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-column-null-values-default.svg")" alt="3D column with null and 0 values">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-column-null-values-" + ViewBag.ChartImageSVG)" alt="3D column with null and 0 values">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>3D column with null and 0 values</h3>
@@ -1169,7 +1171,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Column3DStackingGrouping" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-column-stacking-grouping-default.svg")" alt="3D column with stacking and grouping">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-column-stacking-grouping-" + ViewBag.ChartImageSVG)" alt="3D column with stacking and grouping">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>3D column with stacking and grouping</h3>
@@ -1183,7 +1185,7 @@
                            <a href="@Url.Action("Gallery", "Demo", new { demo = "Pie3D" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-pie-default.svg")" alt="3D pie">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-pie-" + ViewBag.ChartImageSVG)" alt="3D pie">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>3D pie</h3>
@@ -1197,7 +1199,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Pie3DDonut" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-pie-donut-default.svg")" alt="3D donut">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/3d-pie-donut-" + ViewBag.ChartImageSVG)" alt="3D donut">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>3D donut</h3>
@@ -1230,7 +1232,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "GaugeSpeedometer" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/gauge-speedometer-default.svg")" alt="Angular gauge">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/gauge-speedometer-" + ViewBag.ChartImageSVG)" alt="Angular gauge">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Angular gauge</h3>
@@ -1243,7 +1245,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "GaugeSolid" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/gauge-solid-default.png")" alt="Solid gauge">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/gauge-solid-" + ViewBag.ChartImageSVG)" alt="Solid gauge">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Solid gauge</h3>
@@ -1254,10 +1256,10 @@
                         </div>
                         <div class="clearfix visible-sm visible-xs"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="gauge-clock.html">
+                            <a href="@Url.Action("Gallery", "Demo", new { demo = "GaugeClock" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/gauge-clock-default.svg" alt="Clock">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/gauge-clock-" + ViewBag.ChartImageSVG)" alt="Clock">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Clock</h3>
@@ -1303,7 +1305,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "HeatMap" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/heatmap-default.svg")" alt="Heat map">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/heatmap-" + ViewBag.ChartImageSVG)" alt="Heat map">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Heat map</h3>
@@ -1316,7 +1318,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "HeatMapCanvas" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/heatmap-canvas-default.png")" alt="Large heat map">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/heatmap-canvas-" + ViewBag.ChartImageSVG)" alt="Large heat map">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Large heat map</h3>
@@ -1330,7 +1332,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "TreemapColoraxis" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/treemap-coloraxis-default.svg")" alt="Tree map with color axis">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/treemap-coloraxis-" + ViewBag.ChartImageSVG)" alt="Tree map with color axis">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Tree map with color axis</h3>
@@ -1344,7 +1346,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "TreemapWithLevels" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/treemap-with-levels-default.svg")" alt="Tree map with levels">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/treemap-with-levels-" + ViewBag.ChartImageSVG)" alt="Tree map with levels">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Tree map with levels</h3>
@@ -1358,7 +1360,7 @@
                               <a href="@Url.Action("Gallery", "Demo", new { demo = "TreemapLargeDataset" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/treemap-large-dataset-default.svg")" alt="Large tree map">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/treemap-large-dataset-" + ViewBag.ChartImageSVG)" alt="Large tree map">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Large tree map</h3>
@@ -1376,7 +1378,7 @@
                              <a href="@Url.Action("Gallery", "Demo", new { demo = "Polar" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/polar-default.svg")" alt="Polar chart">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/polar-" + ViewBag.ChartImageSVG)" alt="Polar chart">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Polar chart</h3>
@@ -1389,7 +1391,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "PolarSpider" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/polar-spider-default.svg")" alt="Spiderweb">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/polar-spider-" + ViewBag.ChartImageSVG)" alt="Spiderweb">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Spiderweb</h3>
@@ -1403,7 +1405,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "PolarWindRose" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/polar-wind-rose-default.svg")" alt="Wind rose">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/polar-wind-rose-" + ViewBag.ChartImageSVG)" alt="Wind rose">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Wind rose</h3>
@@ -1417,7 +1419,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "BoxPlot" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/box-plot-default.svg")" alt="Box plot">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/box-plot-" + ViewBag.ChartImageSVG)" alt="Box plot">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Box plot</h3>
@@ -1431,7 +1433,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "ErrorBar" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/error-bar-default.svg")" alt="Error bar">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/error-bar-" + ViewBag.ChartImageSVG)" alt="Error bar">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Error bar</h3>
@@ -1444,7 +1446,7 @@
                              <a href="@Url.Action("Gallery", "Demo", new { demo = "Waterfall" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/waterfall-default.svg")" alt="Waterfall">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/waterfall-" + ViewBag.ChartImageSVG)" alt="Waterfall">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Waterfall</h3>
@@ -1459,7 +1461,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Funnel" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/funnel-default.svg")" alt="Funnel chart">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/funnel-" + ViewBag.ChartImageSVG)" alt="Funnel chart">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Funnel chart</h3>
@@ -1472,7 +1474,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Pyramid" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pyramid-default.svg")" alt="Pyramid chart">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/pyramid-" + ViewBag.ChartImageSVG)" alt="Pyramid chart">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Pyramid chart</h3>
@@ -1486,7 +1488,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Polygon" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/polygon-default.svg")" alt="Polygon series">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/polygon-" + ViewBag.ChartImageSVG)" alt="Polygon series">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Polygon series</h3>
@@ -1500,7 +1502,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Renderer" } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/renderer-default.svg")" alt="General drawing">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/renderer-" + ViewBag.ChartImageSVG)" alt="General drawing">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>General drawing</h3>

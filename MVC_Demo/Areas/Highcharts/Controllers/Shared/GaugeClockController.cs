@@ -10,8 +10,9 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult GaugeSolid()
-        {
+        public ActionResult GaugeClock()
+        {           
+
             return View();
         }      
     }
