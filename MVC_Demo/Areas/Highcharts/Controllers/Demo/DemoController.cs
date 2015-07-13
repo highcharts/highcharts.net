@@ -12,24 +12,25 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
     {
         public ActionResult Index(string id, string theme)
         {
-            string defaultSVG = "default.svg";
-            string defaultPNG = "default.png";
-            string darkUnicaPNG = "dark-unica.png";
-
             switch (theme)
             {
                 case "dark-unica": 
                     ViewBag.DarkUnicaDisabled = "disabled";
-                    ViewBag.ChartImageSVG = darkUnicaPNG;
-                    ViewBag.ChartImagePNG = darkUnicaPNG;
+                    ViewBag.ChartImageSVG = "dark-unica.png";
+                    ViewBag.ChartImagePNG = "dark-unica.png";
                     ViewBag.ImageContainer = "dark-unica";                    
                     break;
-                case "sand-signika": ViewBag.SandSignikaDisabled = "disabled"; break;
+                case "sand-signika": 
+                    ViewBag.SandSignikaDisabled = "disabled"; 
+                    ViewBag.ChartImageSVG = "sand-signika.svg";
+                    ViewBag.ChartImagePNG = "sand-signika.png";
+                    ViewBag.ImageContainer = "sand-signika"; 
+                    break;
                 case "grid-light": ViewBag.GridLightDisabled = "disabled"; break;
                 default: 
                     ViewBag.DefaultDisabled = "disabled"; 
-                    ViewBag.ChartImageSVG = defaultSVG;
-                    ViewBag.ChartImagePNG = defaultPNG;
+                    ViewBag.ChartImageSVG = "default.svg";
+                    ViewBag.ChartImagePNG = "default.png";
                     ViewBag.ImageContainer = "default";
                     break;
             }
