@@ -26,7 +26,12 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                     ViewBag.ChartImagePNG = "sand-signika.png";
                     ViewBag.ImageContainer = "sand-signika"; 
                     break;
-                case "grid-light": ViewBag.GridLightDisabled = "disabled"; break;
+                case "grid-light": 
+                    ViewBag.GridLightDisabled = "disabled"; 
+                    ViewBag.ChartImageSVG = "grid-light.png";
+                    ViewBag.ChartImagePNG = "grid-light.png";
+                    ViewBag.ImageContainer = "grid-light"; 
+                    break;
                 default: 
                     ViewBag.DefaultDisabled = "disabled"; 
                     ViewBag.ChartImageSVG = "default.svg";
