@@ -69,10 +69,18 @@
         function fixNavigation() {
             var path = window.location.href.split("=");
             var example = path[1];
-            var link = exampleToHyphens(example);
+            var currentLink = exampleToHyphens(example);
 
             $(".nav-sidebar li a").each(function (index, link) {
-                console.log($(link).attr("href"));
+                var href = $(link).attr("aria-label");
+                var hrefSplitArray = href.split("/");
+                var hrefTag = hrefSplitArray[hrefSplitArray.length - 1];
+
+                console.log(currentLink + " : " + hrefTag);
+
+                if (currentLink == hrefTag) {
+                    $(link).parent().addClass("active");
+                }                
             });
             
         }
@@ -159,7 +167,6 @@
                             <div class="clearfix"></div>
                         </div>
                         <div id="menu-main">
-
                             <ul class="nav navbar-nav pull-right">
                                 <li class="item-101"><a href="/">Home</a></li>
                                 <li class="item-103 active deeper dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Demo <span class="toggle-arrow"></span></a>
@@ -245,32 +252,32 @@
                         <li class="active">
                             <div class="active"><span>Line charts</span><icon class="toggle"></icon></div>
                             <ul style="display: block;">
-                                <li class="active">
-                                    <a aria-label="http://www.highcharts.com/demo/line-basic">Basic line						</a>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/line-basic" href="@Url.Action("Gallery", "Demo", new { demo = "LineBasic" } )">Basic line						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/line-ajax">Ajax loaded data, clickable points						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/line-ajax" href="@Url.Action("Gallery", "Demo", new { demo = "LineAjax", theme = ViewBag.Theme } )">Ajax loaded data, clickable points						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/line-labels">With data labels						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/line-labels" href="@Url.Action("Gallery", "Demo", new { demo = "LineLabels" } )">With data labels						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/line-time-series">Time series, zoomable						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/line-time-series" href="@Url.Action("Gallery", "Demo", new { demo = "LineTimeSeries" } )">Time series, zoomable						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/spline-inverted">Spline with inverted axes						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/spline-inverted" href="@Url.Action("Gallery", "Demo", new { demo = "SplineInverted" } )">Spline with inverted axes						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/spline-symbols">Spline with symbols						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/spline-symbols" href="@Url.Action("Gallery", "Demo", new { demo = "SplineSymbols" } )">Spline with symbols						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/spline-plot-bands">Spline with plot bands						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/spline-plot-bands" href="@Url.Action("Gallery", "Demo", new { demo = "SplinePlotBands" } )">Spline with plot bands						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/spline-irregular-time">Time data with irregular intervals						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/spline-irregular-time" href="@Url.Action("Gallery", "Demo", new { demo = "SplineIrregularTime" } )">Time data with irregular intervals						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/line-log-axis">Logarithmic axis						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/line-log-axis" href="@Url.Action("Gallery", "Demo", new { demo = "LineLogAxis" } )">Logarithmic axis						</a>
                                 </li>
                             </ul>
                         </li>
@@ -278,19 +285,19 @@
                             <div class=""><span>Area charts</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/area-basic">Basic area						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/area-basic" href="@Url.Action("Gallery", "Demo", new { demo = "AreaBasic" } )">Basic area						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/area-negative">Area with negative values						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/area-negative" href="@Url.Action("Gallery", "Demo", new { demo = "AreaNegative" } )">Area with negative values						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/area-stacked">Stacked area						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/area-stacked" href="@Url.Action("Gallery", "Demo", new { demo = "AreaStacked" } )">Stacked area						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/area-stacked-percent">Percentage area						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/area-stacked-percent" href="@Url.Action("Gallery", "Demo", new { demo = "AreaStackedPercent" } )">Percentage area						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/area-missing">Area with missing points						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/area-missing" href="@Url.Action("Gallery", "Demo", new { demo = "AreaMissing" } )">Area with missing points						</a>
                                 </li>
                                 <li class="">
                                     <a aria-label="http://www.highcharts.com/demo/area-inverted">Inverted axes						</a>

@@ -273,6 +273,7 @@
     <Content Include="Content\chart_types\spline-symbols-default.png" />
     <Content Include="Content\closeX.png" />
     <Content Include="Content\gallery.css" />
+    <Content Include="Content\highslide.css" />
     <Content Include="Content\logo.svg" />
     <Content Include="Content\index.css" />
     <Content Include="Content\sand.png" />

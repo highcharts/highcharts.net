@@ -10,8 +10,13 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
 {
     public class DemoController : Controller
     {
-        public ActionResult Index(string id, string theme)
+        public ActionResult Index(string theme)
         {
+            if (String.IsNullOrEmpty(theme))
+                ViewBag.Theme = "default";  
+            else
+                ViewBag.Theme = theme;
+
             switch (theme)
             {
                 case "dark-unica": 
@@ -41,16 +46,13 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
             }
 
 
-            id = String.IsNullOrEmpty(id) ? id = "default.svg" : String.Format("{0}.png", id);
-
-
-            ViewData["theme"] = id;
             return View();
         }
 
-        public ActionResult Gallery(string demo)
+        public ActionResult Gallery(string demo, string theme)
         {
             ViewBag.Demo = demo;
+            ViewBag.Theme = theme;
 
             string text = System.IO.File.ReadAllText(Server.MapPath("~/Areas/Highcharts/Controllers/Shared/" + demo + "Controller.cs"));
             ViewBag.ControllerCode = text;
