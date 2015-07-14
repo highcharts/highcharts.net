@@ -84,6 +84,8 @@
                     $(link).parent().parent().css("display", "block");
                     $(link).parent().parent().parent().addClass("active");
 
+                    $("#demo-name").text("<a href='#'>Highcharts Demos</a> &rsaquo; Basic line");
+
                     if (index < $(".nav-sidebar li a").length - 1) { 
                         var nextHref = $(sideBarLinks.get(index + 1)).attr("href");
                         $(".chart-container").find("#next-example").attr("href", nextHref);
@@ -250,12 +252,12 @@
                 <div id="comp-menu" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden-xs">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-9"></div>
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 cont">
-                        <h2 class="demo-name"><a href="http://www.highcharts.com/demo/">Highcharts Demos</a> &rsaquo; Basic line</h2>
+                        <h2 class="demo-name"></h2>
                         <div class="btn-group theme">
-                            <a class="btn btn-theme @ViewBag.DefaultDisabled" href="#">Default</a>
-                            <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="">Dark Unica</a>
-                            <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="http://www.highcharts.com/demo/line-basic/sand-signika">Sand Signika</a>
-                            <a class="btn btn-theme @ViewBag.GridLightDisabled" href="http://www.highcharts.com/demo/line-basic/grid-light">Grid Light</a>
+                            <a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">Default</a>
+                            <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="?theme=dark-unica">Dark Unica</a>
+                            <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="?theme=sand-signika">Sand Signika</a>
+                            <a class="btn btn-theme @ViewBag.GridLightDisabled" href="?theme=grid-light">Grid Light</a>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -588,7 +590,7 @@
                             @Html.Action((string)ViewBag.Demo, "Shared")
 
                         </div>
-                        <a id="next-example" class="hidden-xs" title="Next (arrow right)"
+                        <a id="next-example" class="чччччhidden-xs" title="Next (arrow right)"
                             href=""><i class="fa fa-angle-right"></i></a>
                     </div>
                     <div id="demo-buttons">

@@ -10,41 +10,45 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
 {
     public class DemoController : Controller
     {
-        public ActionResult Index(string theme)
+        private void SetViewBag(string demo, string theme) 
         {
             if (String.IsNullOrEmpty(theme))
-                ViewBag.Theme = "default";  
+                ViewBag.Theme = "default";
             else
                 ViewBag.Theme = theme;
 
             switch (theme)
             {
-                case "dark-unica": 
+                case "dark-unica":
                     ViewBag.DarkUnicaDisabled = "disabled";
                     ViewBag.ChartImageSVG = "dark-unica.png";
                     ViewBag.ChartImagePNG = "dark-unica.png";
-                    ViewBag.ImageContainer = "dark-unica";                    
+                    ViewBag.ImageContainer = "dark-unica";
                     break;
-                case "sand-signika": 
-                    ViewBag.SandSignikaDisabled = "disabled"; 
+                case "sand-signika":
+                    ViewBag.SandSignikaDisabled = "disabled";
                     ViewBag.ChartImageSVG = "sand-signika.svg";
                     ViewBag.ChartImagePNG = "sand-signika.png";
-                    ViewBag.ImageContainer = "sand-signika"; 
+                    ViewBag.ImageContainer = "sand-signika";
                     break;
-                case "grid-light": 
-                    ViewBag.GridLightDisabled = "disabled"; 
+                case "grid-light":
+                    ViewBag.GridLightDisabled = "disabled";
                     ViewBag.ChartImageSVG = "grid-light.png";
                     ViewBag.ChartImagePNG = "grid-light.png";
-                    ViewBag.ImageContainer = "grid-light"; 
+                    ViewBag.ImageContainer = "grid-light";
                     break;
-                default: 
-                    ViewBag.DefaultDisabled = "disabled"; 
+                default:
+                    ViewBag.DefaultDisabled = "disabled";
                     ViewBag.ChartImageSVG = "default.svg";
                     ViewBag.ChartImagePNG = "default.png";
                     ViewBag.ImageContainer = "default";
                     break;
             }
+        }
 
+        public ActionResult Index(string theme)
+        {
+            SetViewBag(String.Empty, theme);
 
             return View();
         }
@@ -53,6 +57,8 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
         {
             ViewBag.Demo = demo;
             ViewBag.Theme = theme;
+
+            SetViewBag(demo, theme);
 
             string text = System.IO.File.ReadAllText(Server.MapPath("~/Areas/Highcharts/Controllers/Shared/" + demo + "Controller.cs"));
             ViewBag.ControllerCode = text;
