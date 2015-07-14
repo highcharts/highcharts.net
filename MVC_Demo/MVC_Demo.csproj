@@ -272,8 +272,10 @@
     <Content Include="Content\chart_types\spline-plot-bands-default.svg" />
     <Content Include="Content\chart_types\spline-symbols-default.png" />
     <Content Include="Content\closeX.png" />
-    <Content Include="Content\highslide.css" />
+    <Content Include="Content\gallery.css" />
     <Content Include="Content\logo.svg" />
+    <Content Include="Content\index.css" />
+    <Content Include="Content\sand.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -329,7 +331,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Areas\Highcharts\Views\Web.config" />
     <Content Include="Areas\Highcharts\Views\Demo\Index.cshtml" />
     <Content Include="Areas\Highcharts\Views\Demo\Gallery.cshtml" />

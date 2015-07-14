@@ -24,10 +24,15 @@
 
     <script type="text/javascript">
 
+       
+
         var example = 'line-basic',
         theme = 'default';
       
         jQuery(document).ready(function () {
+
+            fixNavigation();
+
             jQuery("#view-menu").click(function (e) {
                 jQuery("#wrap").toggleClass("toggled");
             });
@@ -60,6 +65,35 @@
                 return false;
             });
         });
+
+        function fixNavigation() {
+            var path = window.location.href.split("=");
+            var example = path[1];
+            var link = exampleToHyphens(example);
+
+            $(".nav-sidebar li a").each(function (index, link) {
+                console.log($(link).attr("href"));
+            });
+            
+        }
+
+        function exampleToHyphens(word) {
+            var result = "";
+            for (var i = 0; i < word.length; i++) {
+                if (isUpperCase(word[i]) && i > 0) {
+                    result += "-" + word[i].toLowerCase();
+                }
+                else {
+                    result += word[i].toLowerCase();
+                }
+            }
+
+            return result;
+        }
+
+        function isUpperCase(character) {
+            return (character == character.toUpperCase());
+        }
     </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -212,31 +246,31 @@
                             <div class="active"><span>Line charts</span><icon class="toggle"></icon></div>
                             <ul style="display: block;">
                                 <li class="active">
-                                    <a href="http://www.highcharts.com/demo/line-basic">Basic line						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/line-basic">Basic line						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/line-ajax">Ajax loaded data, clickable points						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/line-ajax">Ajax loaded data, clickable points						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/line-labels">With data labels						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/line-labels">With data labels						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/line-time-series">Time series, zoomable						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/line-time-series">Time series, zoomable						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/spline-inverted">Spline with inverted axes						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/spline-inverted">Spline with inverted axes						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/spline-symbols">Spline with symbols						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/spline-symbols">Spline with symbols						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/spline-plot-bands">Spline with plot bands						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/spline-plot-bands">Spline with plot bands						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/spline-irregular-time">Time data with irregular intervals						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/spline-irregular-time">Time data with irregular intervals						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/line-log-axis">Logarithmic axis						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/line-log-axis">Logarithmic axis						</a>
                                 </li>
                             </ul>
                         </li>
@@ -244,34 +278,34 @@
                             <div class=""><span>Area charts</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/area-basic">Basic area						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/area-basic">Basic area						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/area-negative">Area with negative values						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/area-negative">Area with negative values						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/area-stacked">Stacked area						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/area-stacked">Stacked area						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/area-stacked-percent">Percentage area						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/area-stacked-percent">Percentage area						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/area-missing">Area with missing points						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/area-missing">Area with missing points						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/area-inverted">Inverted axes						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/area-inverted">Inverted axes						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/areaspline">Area-spline						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/areaspline">Area-spline						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/arearange">Area range						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/arearange">Area range						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/arearange-line">Area range and line						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/arearange-line">Area range and line						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/sparkline">Sparkline charts						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/sparkline">Sparkline charts						</a>
                                 </li>
                             </ul>
                         </li>
@@ -279,43 +313,43 @@
                             <div class=""><span>Column and bar charts</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/bar-basic">Basic bar						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/bar-basic">Basic bar						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/bar-stacked">Stacked bar						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/bar-stacked">Stacked bar						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/bar-negative-stack">Bar with negative stack						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/bar-negative-stack">Bar with negative stack						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/column-basic">Basic column						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-basic">Basic column						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/column-negative">Column with negative values						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-negative">Column with negative values						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/column-stacked">Stacked column						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-stacked">Stacked column						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/column-stacked-and-grouped">Stacked and grouped column						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-stacked-and-grouped">Stacked and grouped column						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/column-stacked-percent">Stacked percentage column						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-stacked-percent">Stacked percentage column						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/column-rotated-labels">Column with rotated labels						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-rotated-labels">Column with rotated labels						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/column-drilldown">Column with drilldown						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-drilldown">Column with drilldown						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/column-placement">Fixed placement columns						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-placement">Fixed placement columns						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/column-parsed">Data defined in a HTML table						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-parsed">Data defined in a HTML table						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/columnrange">Column range						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/columnrange">Column range						</a>
                                 </li>
                             </ul>
                         </li>
@@ -323,25 +357,25 @@
                             <div class=""><span>Pie charts</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/pie-basic">Pie chart						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/pie-basic">Pie chart						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/pie-legend">Pie with legend						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/pie-legend">Pie with legend						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/pie-donut">Donut chart						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/pie-donut">Donut chart						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/pie-semi-circle">Semi circle donut						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/pie-semi-circle">Semi circle donut						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/pie-drilldown">Pie with drilldown						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/pie-drilldown">Pie with drilldown						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/pie-gradient">Pie with gradient fill						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/pie-gradient">Pie with gradient fill						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/pie-monochrome">Pie with monochrome fill						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/pie-monochrome">Pie with monochrome fill						</a>
                                 </li>
                             </ul>
                         </li>
@@ -349,13 +383,13 @@
                             <div class=""><span>Scatter and bubble charts</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/scatter">Scatter plot						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/scatter">Scatter plot						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/bubble">Bubble chart						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/bubble">Bubble chart						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/bubble-3d">3D bubbles						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/bubble-3d">3D bubbles						</a>
                                 </li>
                             </ul>
                         </li>
@@ -363,13 +397,13 @@
                             <div class=""><span>Dynamic charts</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/dynamic-update">Spline updating each second						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/dynamic-update">Spline updating each second						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/dynamic-click-to-add">Click to add a point						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/dynamic-click-to-add">Click to add a point						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/dynamic-master-detail">Master-detail chart						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/dynamic-master-detail">Master-detail chart						</a>
                                 </li>
                             </ul>
                         </li>
@@ -377,22 +411,22 @@
                             <div class=""><span>Combinations</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/combo">Column, line and pie						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/combo">Column, line and pie						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/combo-dual-axes">Dual axes, line and column						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/combo-dual-axes">Dual axes, line and column						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/combo-multi-axes">Multiple axes						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/combo-multi-axes">Multiple axes						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/combo-regression">Scatter with regression line						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/combo-regression">Scatter with regression line						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/combo-meteogram">Meteogram						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/combo-meteogram">Meteogram						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/combo-timeline">Advanced timeline						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/combo-timeline">Advanced timeline						</a>
                                 </li>
                             </ul>
                         </li>
@@ -400,22 +434,22 @@
                             <div class=""><span>3D charts</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/3d-column-interactive">3D column						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/3d-column-interactive">3D column						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/3d-column-null-values">3D column with null and 0 values						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/3d-column-null-values">3D column with null and 0 values						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/3d-column-stacking-grouping">3D column with stacking and grouping						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/3d-column-stacking-grouping">3D column with stacking and grouping						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/3d-pie">3D pie						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/3d-pie">3D pie						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/3d-pie-donut">3D donut						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/3d-pie-donut">3D donut						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/3d-scatter-draggable">3D scatter chart						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/3d-scatter-draggable">3D scatter chart						</a>
                                 </li>
                             </ul>
                         </li>
@@ -423,19 +457,19 @@
                             <div class=""><span>Gauges</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/gauge-speedometer">Angular gauge						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/gauge-speedometer">Angular gauge						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/gauge-solid">Solid gauge						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/gauge-solid">Solid gauge						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/gauge-clock">Clock						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/gauge-clock">Clock						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/gauge-dual">Gauge with dual axes						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/gauge-dual">Gauge with dual axes						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/gauge-vu-meter">VU meter						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/gauge-vu-meter">VU meter						</a>
                                 </li>
                             </ul>
                         </li>
@@ -443,19 +477,19 @@
                             <div class=""><span>Heat and tree maps</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/heatmap">Heat map						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/heatmap">Heat map						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/heatmap-canvas">Large heat map						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/heatmap-canvas">Large heat map						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/treemap-coloraxis">Tree map with color axis						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/treemap-coloraxis">Tree map with color axis						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/treemap-with-levels">Tree map with levels						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/treemap-with-levels">Tree map with levels						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/treemap-large-dataset">Large tree map						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/treemap-large-dataset">Large tree map						</a>
                                 </li>
                             </ul>
                         </li>
@@ -463,34 +497,34 @@
                             <div class=""><span>More chart types</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/polar">Polar chart						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/polar">Polar chart						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/polar-spider">Spiderweb						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/polar-spider">Spiderweb						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/polar-wind-rose">Wind rose						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/polar-wind-rose">Wind rose						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/box-plot">Box plot						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/box-plot">Box plot						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/error-bar">Error bar						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/error-bar">Error bar						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/waterfall">Waterfall						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/waterfall">Waterfall						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/funnel">Funnel chart						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/funnel">Funnel chart						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/pyramid">Pyramid chart						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/pyramid">Pyramid chart						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/polygon">Polygon series						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/polygon">Polygon series						</a>
                                 </li>
                                 <li class="">
-                                    <a href="http://www.highcharts.com/demo/renderer">General drawing						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/renderer">General drawing						</a>
                                 </li>
                             </ul>
                         </li>
