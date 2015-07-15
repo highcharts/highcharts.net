@@ -84,7 +84,7 @@
                     $(link).parent().parent().css("display", "block");
                     $(link).parent().parent().parent().addClass("active");
 
-                    $("#demo-name").text("<a href='#'>Highcharts Demos</a> &rsaquo; Basic line");
+                    $(".demo-name").html("<a href='#'>Highcharts Demos</a> &rsaquo; " + $(link).text());
 
                     if (index < $(".nav-sidebar li a").length - 1) { 
                         var nextHref = $(sideBarLinks.get(index + 1)).attr("href");
@@ -557,7 +557,7 @@
                     <a id="sidebar-close" class="btn-default visible-xs">&laquo; Hide Menu</a>
                     <div id="chart-switcher" class="visible-xs">
                         <a id="previous-example"><i class="fa fa-angle-left"></i></a>
-                        <h2 class="demo-name">Basic line</h2>
+                        <h2 class="demo-name"></h2>
                         <a id="next-example" title="Next (arrow right)"
                             href="http://www.highcharts.com/demo/line-ajax"><i class="fa fa-angle-right"></i></a>
                     </div>
