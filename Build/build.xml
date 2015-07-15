@@ -1,0 +1,284 @@
+﻿<?xml version="1.0"?>
+<project name="Hello World" default="run" xmlns="http://nant.sf.net/release/0.85/nant.xsd">		
+	<property name="nant.settings.currentframework" value="net-3.5"/>
+	<property name="version" value="4_6_0_0"/>
+	<property name="debug" value="false"/>
+	<property name="csc.licensed" value="LICENSED"/>
+	<property name="base.dir" value="c:\deliverables\jqsuite"/>
+	<property name="deliverable.name" value="jqSuiteASPNET_${version}.zip"/>
+	<property name="licensed.deliverable.name" value="jqSuiteASPNET_Licensed_${version}.zip"/>
+	<property name="deliverable.mvc.name" value="jqSuiteASPNET_MVC_${version}.zip" />
+	<property name="licensed.deliverable.mvc.name" value="jqSuiteASPNET_MVC_Licensed_${version}.zip"/>
+	<property name="source.name" value="jqSuiteASPNET_Source_${version}.zip"/>
+	<property name="source.name.mvc" value="jqSuiteASPNET_MVC_Source_${version}.zip"/>
+	<property name="assembly.name" value="Trirand.Web.dll"/>
+	<property name="assembly.name.mvc" value="Trirand.Web.Mvc.dll"/>
+	<property name="project.folder" value="c:\work\JQSuiteASPNET"/>
+	<property name="project.folder.mvc" value="C:\work\JQSuiteASPNETMVC"/>
+	<property name="sample.project.folder" value="C:\work\AspNetSampleSite" />
+	<property name="sample.project.mvc.folder" value="C:\work\AspNetMvcSampleSite" />
+  <property name="compiledon.utility.path" value="C:\work\UtilDateReplacer\bin\Release\UtilDateReplacer.exe" />
+  <!-- comment-->
+
+	<target name="clean">
+		<delete dir="${base.dir}" includeemptydirs="true" />		
+		<mkdir dir="${base.dir}" />
+		<mkdir dir="${base.dir}\bin" />
+    <mkdir dir="${base.dir}\bin\trial" />
+    <mkdir dir="${base.dir}\bin\licensed" />
+	</target>
+
+  <target name="generateCompiledOnStamp">
+    <exec program="${compiledon.utility.path}">
+      <arg value="${project.folder}\CompiledOn.cs" />
+      <arg value="Trirand.Web.UI.WebControls" />
+    </exec>
+  </target>
+
+  <target name="generateCompiledOnStampMvc">
+    <exec program="${compiledon.utility.path}">
+      <arg value="${project.folder.mvc}\CompiledOn.cs" />
+      <arg value="Trirand.Web.Mvc" />
+    </exec>
+  </target>
+
+  <target name="generateCompiledOnStampSource">
+    <exec program="${compiledon.utility.path}">
+      <arg value="${project.folder}\CompiledOn.cs" />
+      <arg value="Trirand.Web.UI.WebControls" />
+      <arg value="true" />
+    </exec>
+  </target>
+
+  <target name="generateCompiledOnStampMvcSource">
+    <exec program="${compiledon.utility.path}">
+      <arg value="${project.folder.mvc}\CompiledOn.cs" />
+      <arg value="Trirand.Web.Mvc" />
+      <arg value="true" />
+    </exec>
+  </target>  
+  
+
+	<target name="buildTrial">
+		<csc target="library" output="${base.dir}\bin\trial\${assembly.name}" debug="${debug}" 
+                optimize="true" rebuild="true" keyfile="${project.folder}\JQSuiteASPNET.snk">
+			<references>
+				<include name="System.dll"/>
+				<include name="System.Core.dll"/>
+				<include name="System.Data.dll"/>
+				<include name="System.Data.DataSetExtensions.dll"/>
+				<include name="System.Design.dll"/>
+				<include name="Systen.Drawing.dll"/>
+				<include name="System.Web.dll"/>
+				<include name="System.Web.Extensions.dll"/>
+				<include name="System.Windows.Forms.dll"/>
+				<include name="System.Xml.dll"/>
+				<include name="System.Xml.Linq.dll"/>
+			</references>
+			<sources>
+				<include name="**/*.cs" />
+			</sources>
+		</csc>
+	</target>
+	
+	<target name="buildTrialMvc">
+		<csc target="library" output="${base.dir}\bin\trial\${assembly.name.mvc}" 
+         debug="${debug}" optimize="true" rebuild="true" keyfile="${project.folder.mvc}\JQSuiteASPNETMVC.snk">
+			<references>
+				<include name="System.dll"/>
+				<include name="System.Core.dll"/>
+				<include name="System.Data.dll"/>
+				<include name="System.Data.DataSetExtensions.dll"/>
+				<include name="System.Design.dll"/>
+				<include name="Systen.Drawing.dll"/>
+				<include name="System.Web.dll"/>
+				<include name="System.Web.Extensions.dll"/>				
+        <include name="${project.folder.mvc}\bin\Release\System.Web.Mvc.dll"/>
+        <include name="${project.folder.mvc}\bin\Release\System.Web.Routing.dll"/>                
+        <include name="System.Xml.dll"/>
+				<include name="System.Xml.Linq.dll"/>
+			</references>
+			<sources basedir="${project.folder.mvc}">        
+				<include name="**/*.cs" />
+			</sources>      
+		</csc>
+	</target>
+
+	<target name="buildLicensed">
+		<csc target="library" output="${base.dir}\bin\licensed\${assembly.name}" debug="${debug}" 
+         define="${csc.licensed};" optimize="true" rebuild="true" keyfile="${project.folder}\JQSuiteASPNET.snk">
+			<references>
+				<include name="System.dll"/>
+				<include name="System.Core.dll"/>
+				<include name="System.Data.dll"/>
+				<include name="System.Data.DataSetExtensions.dll"/>
+				<include name="System.Design.dll"/>
+				<include name="Systen.Drawing.dll"/>
+				<include name="System.Web.dll"/>
+				<include name="System.Web.Extensions.dll"/>
+				<include name="System.Windows.Forms.dll"/>
+				<include name="System.Xml.dll"/>
+				<include name="System.Xml.Linq.dll"/>
+			</references>
+			<sources>
+				<include name="**/*.cs" />
+			</sources>			
+		</csc>		
+	</target>
+
+	<target name="buildLicensedMvc">
+		<csc target="library" output="${base.dir}\bin\licensed\${assembly.name.mvc}" debug="${debug}" 
+         define="${csc.licensed};" optimize="true" rebuild="true" keyfile="${project.folder.mvc}\JQSuiteASPNETMVC.snk">
+			<references>
+				<include name="System.dll"/>
+				<include name="System.Core.dll"/>
+				<include name="System.Data.dll"/>
+				<include name="System.Data.DataSetExtensions.dll"/>
+				<include name="System.Design.dll"/>
+				<include name="Systen.Drawing.dll"/>
+				<include name="System.Web.dll"/>
+				<include name="System.Web.Extensions.dll"/>
+        <include name="${project.folder.mvc}\bin\Release\System.Web.Mvc.dll"/>
+        <include name="${project.folder.mvc}\bin\Release\System.Web.Routing.dll"/>        
+        <include name="System.Xml.dll"/>
+				<include name="System.Xml.Linq.dll"/>
+			</references>
+			<sources basedir="${project.folder.mvc}">
+				<include name="**/*.cs" />
+			</sources>
+		</csc>
+	</target>
+
+	<target name="copySampleSite">
+		<copy todir="${base.dir}\trial">
+			<fileset basedir="${sample.project.folder}">
+				<includes name="**/*.*"/>				
+			</fileset>
+		</copy>
+		<copy todir="${base.dir}\licensed">
+			<fileset basedir="${sample.project.folder}">
+				<includes name="**/*.*"/>
+			</fileset>
+		</copy>		
+	</target>
+
+	<target name="copySampleSiteMvc">
+		<copy todir="${base.dir}\trialMvc">
+			<fileset basedir="${sample.project.mvc.folder}">
+				<includes name="**/*.*"/>
+			</fileset>
+		</copy>
+		<copy todir="${base.dir}\licensedMvc">
+			<fileset basedir="${sample.project.mvc.folder}">
+				<includes name="**/*.*"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="updateBinaries">    
+		<copy file="${base.dir}\bin\trial\${assembly.name}" tofile="${base.dir}\trial\bin\${assembly.name}" verbose="true" failonerror="true" />
+		<copy file="${base.dir}\bin\trial\${assembly.name}" tofile="${base.dir}\trial\sample_project\bin\${assembly.name}" verbose="true" />		
+		<copy file="${base.dir}\bin\licensed\${assembly.name}" tofile="${base.dir}\licensed\bin\${assembly.name}" verbose="true" />
+		<copy file="${base.dir}\bin\licensed\${assembly.name}" tofile="${base.dir}\licensed\sample_project\bin\${assembly.name}" verbose="true"/>
+		<copy file="${base.dir}\bin\trial\${assembly.name}" tofile="${sample.project.folder}\bin\${assembly.name}" verbose="true"/>
+		<copy file="${base.dir}\bin\trial\${assembly.name}" tofile="${sample.project.folder}\sample_project\bin\${assembly.name}" verbose="true"/>
+	</target>
+
+	<target name="updateBinariesMvc">
+    <delete file="${sample.project.mvc.folder}\VS2008_MVC2_SampleProject\App_Data\NORTHWND_log.ldf" verbose="true" failonerror="true" />
+    <delete file="${sample.project.mvc.folder}\VS2010_MVC3_Razor_SampleProject\VS2010_MVC3_Razor_SampleProject\App_Data\NORTHWND_log.ldf" verbose="true" failonerror="true" />
+		<copy file="${base.dir}\bin\trial\${assembly.name.mvc}" tofile="${base.dir}\trialMvc\Files\bin\${assembly.name.mvc}" verbose="true"/>
+		<copy file="${base.dir}\bin\trial\${assembly.name.mvc}" tofile="${base.dir}\trialMvc\VS2008_MVC2_SampleProject\bin\${assembly.name.mvc}" verbose="true"/>
+    <copy file="${base.dir}\bin\trial\${assembly.name.mvc}" tofile="${base.dir}\trialMvc\VS2010_MVC3_Razor_SampleProject\VS2010_MVC3_Razor_SampleProject\bin\${assembly.name.mvc}" verbose="true"/>
+		<copy file="${base.dir}\bin\licensed\${assembly.name.mvc}" tofile="${base.dir}\licensedMvc\Files\bin\${assembly.name.mvc}" verbose="true"/>
+		<copy file="${base.dir}\bin\licensed\${assembly.name.mvc}" tofile="${base.dir}\licensedMvc\VS2008_MVC2_SampleProject\bin\${assembly.name.mvc}" verbose="true"/>
+    <copy file="${base.dir}\bin\licensed\${assembly.name.mvc}" tofile="${base.dir}\licensedMvc\VS2010_MVC3_Razor_SampleProject\VS2010_MVC3_Razor_SampleProject\bin\${assembly.name.mvc}" verbose="true"/>
+		<copy file="${base.dir}\bin\trial\${assembly.name.mvc}" tofile="${sample.project.mvc.folder}\Files\bin\${assembly.name.mvc}" verbose="true"/>
+		<copy file="${base.dir}\bin\trial\${assembly.name.mvc}" tofile="${sample.project.mvc.folder}\VS2008_MVC2_SampleProject\bin\${assembly.name.mvc}" verbose="true"/>
+    <copy file="${base.dir}\bin\trial\${assembly.name.mvc}" tofile="${sample.project.mvc.folder}\VS2010_MVC3_Razor_SampleProject\VS2010_MVC3_Razor_SampleProject\bin\${assembly.name.mvc}" verbose="true"/>    
+	</target>
+
+	<target name="prepareSource">
+		<copy todir="${base.dir}\source">
+			<fileset basedir="${project.folder}">
+				<includes name="**/*.*"/>
+			</fileset>
+		</copy>
+		<delete>
+			<fileset basedir="${base.dir}\source">
+				<includes name="**/*.svn"/>
+				<includes name="**/*.tmp"/>
+				<includes name="**/COMMITMESSAGE.*"/>
+				<includes name="**/build.xml"/>
+			</fileset>
+		</delete>
+	</target>
+	
+	<target name="prepareSourceMvc">
+		<copy todir="${base.dir}\mvcsource">
+			<fileset basedir="${project.folder.mvc}">
+				<includes name="**/*.*"/>
+			</fileset>
+		</copy>
+		<delete>
+			<fileset basedir="${base.dir}\mvcsource">
+				<includes name="**/*.svn"/>
+				<includes name="**/*.tmp"/>
+				<includes name="**/COMMITMESSAGE.*"/>
+				<includes name="**/build.xml"/>
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="zipDeliverables">
+		<zip zipfile="${base.dir}\${deliverable.name}">
+			<fileset basedir="${base.dir}\trial">
+				<includes name="**/*.*"/>
+			</fileset>
+		</zip>
+		<zip zipfile="${base.dir}\${licensed.deliverable.name}">
+			<fileset basedir="${base.dir}\licensed">
+				<includes name="**/*.*"/>
+			</fileset>
+		</zip>
+		<zip zipfile="${base.dir}\${source.name}">
+			<fileset basedir="${base.dir}\source">
+				<includes name="**/*.*"/>
+			</fileset>
+		</zip>
+		<zip zipfile="${base.dir}\${deliverable.mvc.name}">
+			<fileset basedir="${base.dir}\trialMvc">
+				<includes name="**/*.*"/>
+			</fileset>
+		</zip>
+		<zip zipfile="${base.dir}\${licensed.deliverable.mvc.name}">
+			<fileset basedir="${base.dir}\licensedMvc">
+				<includes name="**/*.*"/>
+			</fileset>
+		</zip>
+		<zip zipfile="${base.dir}\${source.name.mvc}">
+			<fileset basedir="${base.dir}\mvcsource">
+				<includes name="**/*.*"/>
+			</fileset>
+		</zip>
+	</target>
+
+	<target name="run">
+		<call target="clean"/>
+    <call target="generateCompiledOnStamp"/>
+    <call target="generateCompiledOnStampMvc"/>
+		<call target="buildTrial"/>
+		<call target="buildTrialMvc"/>
+		<call target="buildLicensed"/>
+		<call target="buildLicensedMvc"/>
+		<call target="copySampleSite"/>
+		<call target="copySampleSiteMvc"/>
+		<call target="updateBinaries"/>
+		<call target="updateBinariesMvc"/>
+    <call target="generateCompiledOnStampSource"/>
+    <call target="generateCompiledOnStampMvcSource"/>
+    <call target="prepareSource"/>    
+		<call target="prepareSourceMvc" />
+		<call target="zipDeliverables"/>
+	</target>
+</project>
