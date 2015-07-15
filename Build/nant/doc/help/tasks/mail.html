@@ -20,7 +20,7 @@
           <a href="../tasks/index.html">Task Reference</a>
           <img alt="-&gt;" src="../images/arrow.gif" /> &lt;mail&gt;</td>
         <td class="NavBar-Cell" align="right">
-                        v0.85</td>
+                        v0.92</td>
       </tr>
     </table>
     <h1>&lt;mail&gt;</h1>
@@ -56,9 +56,16 @@
         <tr>
           <td valign="top">format</td>
           <td style="text-align: center;">
-            <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfSystemWebMailMailFormatClassTopic.asp">MailFormat</a>
+            <a href="../enums/NAnt.Core.Tasks.MailTask.MailFormat.html">MailFormat</a>
           </td>
-          <td> Format of the message. The default is <code>Text</code>. </td>
+          <td>
+            <i>Deprecated.</i>  Format of the message. The default is <code>Text</code>. </td>
+          <td style="text-align: center;">False</td>
+        </tr>
+        <tr>
+          <td valign="top">isbodyhtml</td>
+          <td style="text-align: center;">bool</td>
+          <td> Indicates whether or not the body of the email is in html format. The default value is <code>false</code>. </td>
           <td style="text-align: center;">False</td>
         </tr>
         <tr>
@@ -68,9 +75,33 @@
           <td style="text-align: center;">False</td>
         </tr>
         <tr>
+          <td valign="top">mailport</td>
+          <td style="text-align: center;">int</td>
+          <td> The port number used to connect to the mail server. The default is <code>25</code>. </td>
+          <td style="text-align: center;">False</td>
+        </tr>
+        <tr>
           <td valign="top">message</td>
           <td style="text-align: center;">string</td>
           <td> Text to send in body of email message. </td>
+          <td style="text-align: center;">False</td>
+        </tr>
+        <tr>
+          <td valign="top">password</td>
+          <td style="text-align: center;">string</td>
+          <td> The password to use when connecting to the smtp host. </td>
+          <td style="text-align: center;">False</td>
+        </tr>
+        <tr>
+          <td valign="top">replyto</td>
+          <td style="text-align: center;">string</td>
+          <td> Reply to email address. </td>
+          <td style="text-align: center;">False</td>
+        </tr>
+        <tr>
+          <td valign="top">ssl</td>
+          <td style="text-align: center;">bool</td>
+          <td> Indicates whether or not ssl should be used to connect to the smtp host. </td>
           <td style="text-align: center;">False</td>
         </tr>
         <tr>
@@ -83,6 +114,12 @@
           <td valign="top">tolist</td>
           <td style="text-align: center;">string</td>
           <td> Semicolon-separated list of recipient email addresses. </td>
+          <td style="text-align: center;">False</td>
+        </tr>
+        <tr>
+          <td valign="top">user</td>
+          <td style="text-align: center;">string</td>
+          <td> The username to use when connecting to the smtp host. </td>
           <td style="text-align: center;">False</td>
         </tr>
         <tr>
@@ -157,10 +194,34 @@
 &lt;/mail&gt;
     </pre>
       </li>
+      <li>
+        <p> Sends an email from a gmail account to multiple recipients. This example illustrates how to add a recipient's name to an email address. </p>
+        <pre class="code">
+&lt;mail
+    from="+xxxx+@gmail.com"
+    tolist="(Rep A) recipient1@sourceforge.net;(Rep B) recipient2@sourceforge.net"
+    subject="Sample Email"
+    mailhost="smtp.gmail.com"
+    mailport="465"
+    ssl="true"
+    user="+xxxx+@gmail.com"
+    password="p@ssw0rd!"
+    message="Email from NAnt" /&gt;
+    </pre>
+        <p> Email addresses in any of the lists (to, cc, bcc, from) can be in one of the five listed formats below. </p>
+        <ul style="list-style-type: disc;">
+          <li>Full Name &lt;address@abcxyz.com&gt;</li>
+          <li>&lt;address@abcxyz.com&gt; Full Name</li>
+          <li>(Full Name) address@abcxyz.com</li>
+          <li>address@abcxyz.com (Full Name)</li>
+          <li>address@abcxyz.com</li>
+        </ul>
+        <p> Remember to use &amp;gt; and &amp;lt; XML entities for the angle brackets. </p>
+      </li>
     </ul>
     <h3>Requirements</h3>
     <div style="margin-left: 20px;">
-      <b>Assembly:</b> NAnt.Core (0.85.2478.0)
+      <b>Assembly:</b> NAnt.Core (0.92.4543.0)
             </div>
   </body>
 </html>

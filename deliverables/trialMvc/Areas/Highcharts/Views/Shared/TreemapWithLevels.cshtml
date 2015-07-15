@@ -1,0 +1,50 @@
+﻿@using Highsoft.Web.Mvc
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "Fruit Consumption"
+            },            
+            Series = new List<Series>
+            {                    
+                new TreemapSeries
+                {                
+                    LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Stripes,
+                    AlternateStartingDirection = TreemapSeriesAlternateStartingDirection.True,
+                    Levels = new List<TreemapSeriesLevels>
+                    {
+                        new TreemapSeriesLevels
+                        {
+                            Level = 1,
+                            LayoutAlgorithm = TreemapSeriesLevelsLayoutAlgorithm.SliceAndDice
+                        }
+                    },
+                    Data = new List<TreemapSeriesData>
+                    {
+                        new TreemapSeriesData { Id = "A", Name = "Apples", Color = "#EC2500" },
+                        new TreemapSeriesData { Id = "B", Name = "Bananas", Color = "#ECE100" },
+                        new TreemapSeriesData { Id = "O", Name = "Oranges", Color = "#EC9800" },
+                        new TreemapSeriesData { Parent = "A", Name = "Anne", Value = 5 },
+                        new TreemapSeriesData { Parent = "A", Name = "Rick", Value = 3},
+                        new TreemapSeriesData { Parent = "A", Name = "Peter", Value = 4},
+                        new TreemapSeriesData { Parent = "B", Name = "Anne", Value = 4},
+                        new TreemapSeriesData { Parent = "B", Name = "Rick", Value = 10},
+                        new TreemapSeriesData { Parent = "B", Name = "Peter", Value = 1},
+                        new TreemapSeriesData { Parent = "O", Name = "Anne", Value = 1},
+                        new TreemapSeriesData { Parent = "O", Name = "Rick", Value = 3},
+                        new TreemapSeriesData { Parent = "O", Name = "Peter", Value = 3},
+                        new TreemapSeriesData { Parent = "Kiwi", Name = "Susanne", Value = 2, Color = "#9EDE00"}
+                    }
+                    
+                }
+            }
+        }
+        , "chart")
+    )

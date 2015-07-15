@@ -1,0 +1,46 @@
+﻿@using Highsoft.Web.Mvc 
+
+@(Html.Highsoft().Highcharts(
+    new Highcharts
+    {
+        Chart = new Chart
+        {
+            Width = 800,
+            Height = 400,
+            Type = ChartType.Line
+        },
+        Title = new Title
+        {
+            Text = "Logarithmic axis demo"
+        },
+        XAxis = new List<XAxis>
+        { 
+            new XAxis
+            {
+                TickInterval = 1
+            }
+        },
+        YAxis = new List<YAxis>
+        { 
+            new YAxis
+            {
+                Type = YAxisType.Logarithmic,
+                MinorTickInterval = "0.1"
+            }
+        },
+        Tooltip = new Tooltip
+        {
+            HeaderFormat = "<b>{series.name}</b><br />",
+            PointFormat = "x = {point.x}, y = {point.y}" 
+        },
+        Series = new List<Series>
+        {                    
+            new LineSeries
+            {                        
+                Data = @ViewData["logData"] as List<LineSeriesData>,
+                PointStart = 1
+            }                    
+        }
+    }
+    , "chart")
+ )

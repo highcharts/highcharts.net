@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{93028492-0DBD-4003-8859-F35AC7C629EF}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVC_Demo</RootNamespace>
+    <AssemblyName>MVC_Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Demo\DemoController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaNegativeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaBasicController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaStackedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BubbleController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Bubble3dController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboDualAxesController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BarBasicController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BarStackedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BarNegativeStackController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnBasicController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnNegativeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnStackedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboMultiAxesController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Column3DInteractiveController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Column3DNullValuesController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Column3DStackingGroupingController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaStackedPercentController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaMissingController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaInvertedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaSplineController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaRangeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaRangeLineController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnStackedGroupedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnStackedPercentController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnRotatedLabelsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnPlacementController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnParsedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnRangeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboRegressionController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BoxPlotController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnDrilldownController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboMeteogramController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboTimelineController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeClockController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeSolidController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieMonochromeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieGradientController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieDrilldownController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieSemiCircleController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SparklineController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapLargeDatasetController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapWithLevelsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapColoraxisController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\HeatMapCanvasController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\DynamicMasterDetailController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\DynamicClickToAddController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\DynamicUpdateController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\RendererController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PolygonController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\WaterfallController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PyramidController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\FunnelController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ErrorBarController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PolarWindRoseController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PolarSpiderController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PolarController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\HeatMapController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeSpeedometerController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Pie3DDonutController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Pie3DController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieDonutController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieLegendController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieBasicController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ScatterController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineLogController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplineIrregularTimeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplinePlotBandsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplineSymbolsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplineInvertedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineTimeSeriesController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineAjaxController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineBasicController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineLabelsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SharedController.cs" />
+    <Compile Include="Areas\Highcharts\HighchartsAreaRegistration.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\font-awesome.css" />
+    <Content Include="Content\bootstrap\template.css" />
+    <Content Include="Content\chart_types\area-basic-default.svg" />
+    <Content Include="Content\chart_types\line-ajax-dark-unica.png" />
+    <Content Include="Content\chart_types\line-ajax-default.svg" />
+    <Content Include="Content\chart_types\line-basic-dark-unica.png" />
+    <Content Include="Content\chart_types\line-basic-default.svg" />
+    <Content Include="Content\chart_types\line-labels-dark-unica.png" />
+    <Content Include="Content\chart_types\line-labels-default.svg" />
+    <Content Include="Content\chart_types\line-log-axis-dark-unica.png" />
+    <Content Include="Content\chart_types\line-log-axis-default.svg" />
+    <Content Include="Content\chart_types\line-time-series-default.svg" />
+    <Content Include="Content\chart_types\spline-inverted-default.svg" />
+    <Content Include="Content\chart_types\spline-irregular-time-default.svg" />
+    <Content Include="Content\chart_types\spline-plot-bands-default.svg" />
+    <Content Include="Content\chart_types\spline-symbols-default.png" />
+    <Content Include="Content\closeX.png" />
+    <Content Include="Content\gallery.css" />
+    <Content Include="Content\highslide.css" />
+    <Content Include="Content\logo.svg" />
+    <Content Include="Content\index.css" />
+    <Content Include="Content\sand.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\Highcharts\Views\Web.config" />
+    <Content Include="Areas\Highcharts\Views\Demo\Index.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\Gallery.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineLabels.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineLog.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineAjax.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\SplineInverted.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\SplineSymbols.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\SplinePlotBands.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\SplineIrregularTime.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaNegative.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaStacked.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\BarBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\BarStacked.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\BarNegativeStack.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnNegative.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnStacked.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieLegend.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieDonut.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Scatter.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Bubble.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Bubble3d.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Combo.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ComboDualAxes.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ComboMultiAxes.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Column3DInteractive.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Column3DNullValues.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Column3DStackingGrouping.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Pie3D.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Pie3DDonut.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeSpeedometer.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\HeatMap.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaStackedPercent.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaMissing.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaInverted.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaSpline.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaRange.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaRangeLine.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnStackedGrouped.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnStackedPercent.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnRotatedLabels.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnPlacement.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnParsed.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnRange.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ComboRegression.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Polar.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PolarSpider.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PolarWindRose.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\BoxPlot.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ErrorBar.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Funnel.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Pyramid.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Waterfall.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Polygon.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Renderer.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\DynamicUpdate.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\DynamicClickToAdd.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\DynamicMasterDetail.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\HeatMapCanvas.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\TreemapColoraxis.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\TreemapWithLevels.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\TreemapLargeDataset.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Sparkline.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnDrilldown.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieSemiCircle.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieDrilldown.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieGradient.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieMonochrome.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ComboMeteogram.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ComboTimeline.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeSolid.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeClock.cshtml" />
+    <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\highcharts-all.js" />
+    <Content Include="Scripts\highcharts.src.js" />
+    <Content Include="Scripts\highslide-full.min.js" />
+    <Content Include="Scripts\highslide.config.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Controllers\" />
+    <Folder Include="Areas\Highcharts\Models\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVC\MVC.csproj">
+      <Project>{fa4c2a73-1563-47da-8f1b-64ef17d48918}</Project>
+      <Name>MVC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>41589</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:38063/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

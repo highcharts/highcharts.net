@@ -1,0 +1,84 @@
+﻿@using Highsoft.Web.Mvc
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,               
+                Options3d = new ChartOptions3d
+                {
+                    Enabled = true,
+                    Alpha = 15,
+                    Beta = 15,
+                    Depth = 40,
+                    ViewDistance = 25
+                }
+            },
+            Title = new Title
+            {
+                Text = "Total fruit consumption, grouped by gender"
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Categories =  new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    AllowDecimals = false,
+                    Min = 0,
+                    Title = new YAxisTitle
+                    {
+                        Text = "Number of Fruit"
+                    }                    
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                HeaderFormat = "<b>{point.key}</b><br>",
+                PointFormat = "<span style='color:{series.color}'>\u25CF</span> {series.name}: {point.y} / {point.stackTotal}"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Column = new PlotOptionsColumn
+                {
+                    Stacking = PlotOptionsColumnStacking.Normal,
+                    Depth = 40
+                }
+            },
+            Series = new List<Series>
+            {                    
+                new ColumnSeries
+                {
+                    Name = "John",
+                    Data = @ViewData["johnData"] as List<ColumnSeriesData>,
+                    Stack = "male"
+                },
+                new ColumnSeries
+                {
+                    Name = "Jane",
+                    Data = @ViewData["janeData"] as List<ColumnSeriesData>,
+                    Stack = "female"
+                },
+                new ColumnSeries
+                {
+                    Name = "Joe",
+                    Data = @ViewData["joeData"] as List<ColumnSeriesData>,
+                    Stack = "male"
+                },
+                 new ColumnSeries
+                {
+                    Name = "Janet",
+                    Data = @ViewData["janetData"] as List<ColumnSeriesData>,
+                    Stack = "female"
+                }                         
+            }
+        }
+        , "chart")
+    )

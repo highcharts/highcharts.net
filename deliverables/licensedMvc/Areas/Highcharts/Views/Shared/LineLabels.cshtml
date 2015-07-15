@@ -1,0 +1,59 @@
+﻿@using Highsoft.Web.Mvc
+
+@(Html.Highsoft().Highcharts(
+    new Highcharts
+    {
+        Chart = new Chart
+        {
+            Width = 1087,
+            Height = 400
+        },
+        Title = new Title
+        {
+            Text = "Monthly Average Temperature"
+        },
+        XAxis = new List<XAxis>
+        {
+            new XAxis
+            {
+                Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
+            }
+        },
+        YAxis = new List<YAxis>
+        {
+            new YAxis
+            {
+                Title = new YAxisTitle
+                {
+                    Text = "Temperature (°C)"
+                }
+            }
+        }, 
+        PlotOptions = new PlotOptions
+        {
+            Line = new PlotOptionsLine
+            {
+                DataLabels = new PlotOptionsLineDataLabels
+                {
+                    Enabled = true
+                },
+                EnableMouseTracking = false
+            }   
+        },       
+        Series = new List<Series>
+        {                    
+            new LineSeries
+            {
+                Name = "Tokyo",
+                Data = @ViewData["tokyoData"] as List<LineSeriesData>
+            },                   
+            new LineSeries
+            {
+                Name = "London",
+                Data = @ViewData["londonData"] as List<LineSeriesData>
+            }
+        }
+    }
+    , "chart")
+)

@@ -1,0 +1,82 @@
+﻿@using Highsoft.Web.Mvc
+@using System.Collections.Specialized
+   
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "Snow depth at Vikjafjellet, Norway"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Irregular time data in Highcharts JS",
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Type = XAxisType.Datetime,
+                    DateTimeLabelFormats = new NameValueCollection
+                    {
+                        { "month" , "%e. %b" },
+                        { "year" , "%b" }
+                    },
+                    Title = new XAxisTitle
+                    {
+                        Text = "Date"
+                    }
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Snow depth (m)"
+                    },
+                    Min = 0
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                HeaderFormat = "<b>{series.name}</b><br>",
+                PointFormat = "{point.x:%e. %b}: {point.y:.2f} m"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Spline = new PlotOptionsSpline
+                {                   
+                    Marker = new PlotOptionsSplineMarker
+                    {
+                        Enabled = true
+                    }
+                }
+            },
+            Series = new List<Series>
+            {                    
+                new SplineSeries
+                {
+                    Name = "Winter 2007-2008",
+                    Data = @ViewData["winter1"] as List<SplineSeriesData>
+                },
+                new SplineSeries
+                {
+                    Name = "Winter 2008-2009",
+                    Data = @ViewData["winter2"] as List<SplineSeriesData>
+                },
+                new SplineSeries
+                {
+                    Name = "Winter 2009-2010",
+                    Data = @ViewData["winter3"] as List<SplineSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )

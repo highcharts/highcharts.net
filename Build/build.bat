@@ -1,3 +1,3 @@
-cd C:\work\JQSuiteASPNET
-c:\work\nant\bin\nant.exe -buildfile:build.xml
+cd c:\highsoft
+c:\highsoft\build\nant\bin\nant.exe -buildfile:c:\highsoft\build\build.xml
 @pause

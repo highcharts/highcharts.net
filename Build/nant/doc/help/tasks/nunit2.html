@@ -20,11 +20,11 @@
           <a href="../tasks/index.html">Task Reference</a>
           <img alt="-&gt;" src="../images/arrow.gif" /> &lt;nunit2&gt;</td>
         <td class="NavBar-Cell" align="right">
-                        v0.85</td>
+                        v0.92</td>
       </tr>
     </table>
     <h1>&lt;nunit2&gt;</h1>
-    <p> Runs tests using the NUnit V2.2 framework. </p>
+    <p> Runs tests using the NUnit V2.6 framework. </p>
     <p> The <code>haltonfailure</code> attribute is only useful when more than one test suite is used, and you want to continue running other test suites although a test failed. </p>
     <p> Set <code>failonerror</code> to <b>false</b> to ignore any errors and continue the build. </p>
     <p> In order to run a test assembly built with NUnit 2.0 or 2.1 using <a href="../tasks/nunit2.html">&lt;nunit2&gt;</a> task, you must add the following node to your test config file : </p>
@@ -60,6 +60,12 @@
           <td style="text-align: center;">False</td>
         </tr>
         <tr>
+          <td valign="top">labels</td>
+          <td style="text-align: center;">bool</td>
+          <td> Indicate whether or not to label the text output as the tests run. </td>
+          <td style="text-align: center;">False</td>
+        </tr>
+        <tr>
           <td valign="top">failonerror</td>
           <td style="text-align: center;">bool</td>
           <td> Determines if task failure stops the build, or is just reported. The default is <b>true</b>. </td>
@@ -87,34 +93,26 @@
     </div>
     <h3>Nested Elements:</h3>
     <!--Array-->
-    <!--NestedElementArray=T:NAnt.NUnit2.Types.NUnit2Test-->
+    <!--NestedElementArray=T:-->
     <h4>
       <a id="test">
       </a>
                     &lt;test&gt;
                 </h4>
-    <div class="nested-element"> Tests to run. <p> Represents a <code>test</code> element of an <a href="../tasks/nunit2.html">&lt;nunit2&gt;</a> task. </p><h3>Parameters</h3><div class="table"><table><tr><th>Attribute</th><th style="text-align: center;">Type</th><th>Description</th><th style="text-align: center;">Required</th></tr><tr><td valign="top">appconfig</td><td style="text-align: center;">file</td><td> The application configuration file to use for the NUnit test domain. If not specified, NAnt will try to use a configuration name matching the file name of the assembly with extension ".config". </td><td style="text-align: center;">False</td></tr><tr><td valign="top">assemblyname</td><td style="text-align: center;">file</td><td> Name of the assembly to search for tests. </td><td style="text-align: center;">False</td></tr><tr><td valign="top">haltonfailure</td><td style="text-align: center;">bool</td><td> Build fails on failure. The default is <b>true</b>. </td><td style="text-align: center;">False</td></tr><tr><td valign="top">testname</td><td style="text-align: center;">string</td><td> Name of a specific testfixture to run. If not specified then all testfixtures are run. </td><td style="text-align: center;">False</td></tr><tr><td valign="top">transformfile</td><td style="text-align: center;">file</td><td> XSLT transform file to use when using the <code>Plain</code> formatter. </td><td style="text-align: center;">False</td></tr></table></div><h3>Nested Elements:</h3><!--Element--><h4><a id="assemblies"></a>
-                    &lt;<a href="../types/assemblyfileset.html">assemblies</a>&gt;
-                </h4><div class="nested-element"> Assemblies to include in test. <p /></div><h4><a id="assemblies"></a>
-                    &lt;/<a href="../types/assemblyfileset.html">assemblies</a>&gt;
-                </h4><!--Element--><h4><a id="categories"></a>
-                    &lt;<a href="../types/categories.html">categories</a>&gt;
-                </h4><div class="nested-element"> Categories of test cases to include or exclude. <p /></div><h4><a id="categories"></a>
-                    &lt;/<a href="../types/categories.html">categories</a>&gt;
-                </h4></div>
+    <div class="nested-element"> Tests to run. </div>
     <h4>
       <a id="test">
       </a>
                     &lt;/test&gt;
                 </h4>
     <!--Array-->
-    <!--NestedElementArray=T:NAnt.NUnit.Types.FormatterElement-->
+    <!--NestedElementArray=T:-->
     <h4>
       <a id="formatter">
       </a>
                     &lt;formatter&gt;
                 </h4>
-    <div class="nested-element"> Formatters to output results of unit tests. <p> Represents the FormatterElement of the NUnit task. </p><h3>Parameters</h3><div class="table"><table><tr><th>Attribute</th><th style="text-align: center;">Type</th><th>Description</th><th style="text-align: center;">Required</th></tr><tr><td valign="top" class="required">type</td><td style="text-align: center;"><a href="../enums/NAnt.NUnit.Types.FormatterType.html">FormatterType</a></td><td> Type of formatter. </td><td style="text-align: center;">True</td></tr><tr><td valign="top">extension</td><td style="text-align: center;">string</td><td> Extension to append to the output filename. </td><td style="text-align: center;">False</td></tr><tr><td valign="top">outputdir</td><td style="text-align: center;">directory</td><td> Specifies the directory where the output file should be written to, if <code>usefile</code> is <b>true</b>. If not specified, the output file will be written to the directory where the test module is located. </td><td style="text-align: center;">False</td></tr><tr><td valign="top">usefile</td><td style="text-align: center;">bool</td><td> Determines whether output should be persisted to a file. The default is <b>false</b>. </td><td style="text-align: center;">False</td></tr></table></div></div>
+    <div class="nested-element"> Formatters to output results of unit tests. </div>
     <h4>
       <a id="formatter">
       </a>
@@ -143,6 +141,10 @@
         &lt;categories&gt;
             &lt;exclude name="NotWorking" /&gt;
         &lt;/categories&gt;
+        &lt;references basedir="build"&gt;
+            &lt;include name="Cegeka.Income.Services.dll" /&gt;
+            &lt;include name="Cegeka.Util.dll" /&gt;
+        &lt;/references&gt;
     &lt;/test&gt;
 &lt;/nunit2&gt;
     </pre>
@@ -150,7 +152,7 @@
     </ul>
     <h3>Requirements</h3>
     <div style="margin-left: 20px;">
-      <b>Assembly:</b> NAnt.NUnit2Tasks (0.85.2478.0)
+      <b>Assembly:</b> NAnt.NUnit2Tasks (0.92.4543.0)
             </div>
   </body>
 </html>

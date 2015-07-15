@@ -1,0 +1,5 @@
+C:\Highsoft\MVC\bin\Debug\HighCharts.dll
+C:\Highsoft\MVC\bin\Debug\HighCharts.pdb
+C:\Highsoft\MVC\obj\Debug\MVC.csprojResolveAssemblyReference.cache
+C:\Highsoft\MVC\obj\Debug\HighCharts.dll
+C:\Highsoft\MVC\obj\Debug\HighCharts.pdb
