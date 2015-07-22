@@ -1,6 +1,5 @@
 C:\Highsoft\MVC_Demo\bin\MVC_Demo.dll
 C:\Highsoft\MVC_Demo\bin\MVC_Demo.pdb
-C:\Highsoft\MVC_Demo\bin\HighCharts.dll
 C:\Highsoft\MVC_Demo\bin\Microsoft.CSharp.dll
 C:\Highsoft\MVC_Demo\bin\Microsoft.Web.Infrastructure.dll
 C:\Highsoft\MVC_Demo\bin\System.ComponentModel.DataAnnotations.dll
@@ -31,7 +30,6 @@ C:\Highsoft\MVC_Demo\bin\System.Web.WebPages.dll
 C:\Highsoft\MVC_Demo\bin\System.Web.WebPages.Razor.dll
 C:\Highsoft\MVC_Demo\bin\System.Xml.dll
 C:\Highsoft\MVC_Demo\bin\System.Xml.Linq.dll
-C:\Highsoft\MVC_Demo\bin\HighCharts.pdb
 C:\Highsoft\MVC_Demo\bin\Microsoft.Web.Infrastructure.xml
 C:\Highsoft\MVC_Demo\bin\System.Net.Http.Formatting.xml
 C:\Highsoft\MVC_Demo\bin\System.Web.Http.xml
@@ -44,3 +42,6 @@ C:\Highsoft\MVC_Demo\bin\System.Web.WebPages.Razor.xml
 C:\Highsoft\MVC_Demo\obj\Debug\MVC_Demo.csprojResolveAssemblyReference.cache
 C:\Highsoft\MVC_Demo\obj\Debug\MVC_Demo.dll
 C:\Highsoft\MVC_Demo\obj\Debug\MVC_Demo.pdb
+C:\Highsoft\MVC_Demo\bin\Highsoft.Web.Mvc.Highcharts.dll
+C:\Highsoft\MVC_Demo\bin\Highsoft.Web.Mvc.Highcharts.pdb
+C:\Highsoft\MVC_Demo\bin\Highsoft.Web.Mvc.Highcharts.xml

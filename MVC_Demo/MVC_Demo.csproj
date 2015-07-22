@@ -409,7 +409,6 @@
     <Content Include="Areas\Highcharts\Views\Shared\ComboTimeline.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeSolid.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeClock.cshtml" />
-    <Content Include="Areas\Highcharts\Views\Demo\Help.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <Content Include="Content\api\highcharts.json" />
     <Content Include="Content\api\names.txt" />
