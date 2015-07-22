@@ -272,6 +272,7 @@
     <Content Include="Content\chart_types\spline-plot-bands-default.svg" />
     <Content Include="Content\chart_types\spline-symbols-default.png" />
     <Content Include="Content\closeX.png" />
+    <Content Include="Content\ref.css" />
     <Content Include="Content\gallery.css" />
     <Content Include="Content\highslide.css" />
     <Content Include="Content\logo.svg" />
@@ -408,7 +409,10 @@
     <Content Include="Areas\Highcharts\Views\Shared\ComboTimeline.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeSolid.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeClock.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\Help.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
+    <Content Include="Content\api\highcharts.json" />
+    <Content Include="Content\api\names.txt" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
     <Content Include="Scripts\highcharts.src.js" />
@@ -439,7 +443,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Controllers\" />
     <Folder Include="Areas\Highcharts\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
