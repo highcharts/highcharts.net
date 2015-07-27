@@ -53,6 +53,11 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
             return View();
         }
 
+        public ActionResult Help()
+        {
+            return View();
+        }
+
         public ActionResult Gallery(string demo, string theme)
         {
             ViewBag.Demo = demo;
