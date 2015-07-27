@@ -88,16 +88,18 @@
       <fileset basedir="${sample.project.mvc.folder}">
         <includes name="**/*.*"/>
         <excludes name="Help/**" />
-	  <excludes name="obj/**" />
-	<excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
+        <excludes name="obj/**" />
+        <excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
+        <excludes name="**/Highsoft.Web.Mvc.Highcharts.xml" />
       </fileset>
     </copy>
     <copy todir="${base.dir}\licensedMvc">
       <fileset basedir="${sample.project.mvc.folder}">
         <includes name="**/*.*"/>
         <excludes name="Help/**" />
-	  <excludes name="obj/**" />
-         <excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
+        <excludes name="obj/**" />
+        <excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
+        <excludes name="**/Highsoft.Web.Mvc.Highcharts.xml" />
       </fileset>
     </copy>
   </target>
@@ -105,8 +107,8 @@
 
   <target name="updateBinariesMvc">
     <delete file="${sample.project.mvc.folder}\VS2010_MVC3_Razor_SampleProject\VS2010_MVC3_Razor_SampleProject\App_Data\NORTHWND_log.ldf" verbose="true" failonerror="true" />
-    <copy file="${base.dir}\bin\trial\${assembly.name.mvc}" tofile="${base.dir}\trialMvc\Files\bin\${assembly.name.mvc}" verbose="true"/>    
-    <copy file="${base.dir}\bin\licensed\${assembly.name.mvc}" tofile="${base.dir}\licensedMvc\Files\bin\${assembly.name.mvc}" verbose="true"/>    
+    <copy file="${base.dir}\bin\trial\${assembly.name.mvc}" tofile="${base.dir}\trialMvc\Files\bin\${assembly.name.mvc}" verbose="true"/>
+    <copy file="${base.dir}\bin\licensed\${assembly.name.mvc}" tofile="${base.dir}\licensedMvc\Files\bin\${assembly.name.mvc}" verbose="true"/>
   </target>
 
 

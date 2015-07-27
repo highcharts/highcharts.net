@@ -1,6 +1,5 @@
 C:\Highsoft\MVC_Demo\bin\MVC_Demo.dll
 C:\Highsoft\MVC_Demo\bin\MVC_Demo.pdb
-C:\Highsoft\MVC_Demo\bin\Highsoft.Web.Mvc.Highcharts.dll
 C:\Highsoft\MVC_Demo\bin\System.Web.dll
 C:\Highsoft\MVC_Demo\bin\System.Web.Mvc.dll
 C:\Highsoft\MVC_Demo\bin\Highsoft.Web.Mvc.Highcharts.pdb
