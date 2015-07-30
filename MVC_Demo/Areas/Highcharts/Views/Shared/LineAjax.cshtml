@@ -4,8 +4,6 @@
 
      function loadAjaxData() {
          $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=analytics.csv&callback=?', function (csv) {
-             console.log(csv);
-
              var visitorData = new Array();
              var uniquesData = new Array();
              var index = csv.indexOf("Visitors") + 9;
