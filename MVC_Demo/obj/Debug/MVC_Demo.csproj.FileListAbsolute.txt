@@ -2,9 +2,7 @@ C:\Highsoft\MVC_Demo\bin\MVC_Demo.dll
 C:\Highsoft\MVC_Demo\bin\MVC_Demo.pdb
 C:\Highsoft\MVC_Demo\bin\System.Web.dll
 C:\Highsoft\MVC_Demo\bin\System.Web.Mvc.dll
-C:\Highsoft\MVC_Demo\bin\Highsoft.Web.Mvc.Highcharts.pdb
 C:\Highsoft\MVC_Demo\bin\System.Web.Mvc.xml
-C:\Highsoft\MVC_Demo\obj\Debug\MVC_Demo.csprojResolveAssemblyReference.cache
 C:\Highsoft\MVC_Demo\obj\Debug\MVC_Demo.dll
 C:\Highsoft\MVC_Demo\obj\Debug\MVC_Demo.pdb
 C:\Highsoft\MVC_Demo\bin\Microsoft.CSharp.dll
@@ -43,4 +41,3 @@ C:\Highsoft\MVC_Demo\bin\System.Web.Razor.xml
 C:\Highsoft\MVC_Demo\bin\System.Web.WebPages.xml
 C:\Highsoft\MVC_Demo\bin\System.Web.WebPages.Deployment.xml
 C:\Highsoft\MVC_Demo\bin\System.Web.WebPages.Razor.xml
-C:\Highsoft\MVC_Demo\bin\Highsoft.Web.Mvc.Highcharts.dll

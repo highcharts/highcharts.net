@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
 using Highsoft.Web.Mvc;
-
 namespace Highsoft.Web.Mvc.Rendering
 {
     public class HighchartsRenderer

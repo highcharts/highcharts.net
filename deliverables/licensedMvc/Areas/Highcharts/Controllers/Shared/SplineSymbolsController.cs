@@ -23,13 +23,23 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
                 data.Y = value;
                 if (value == 26.5)
                 {
-                    data.Marker.Symbol = SplineSeriesDataMarkerSymbol.Diamond;
+                    data.Marker.Symbol = "url(http://www.highcharts.com/demo/gfx/sun.png)";
                 }
 
                 tokyoData.Add(data);
             }
 
-            londonValues.ForEach(p => londonData.Add(new SplineSeriesData { Y = p }));
+            foreach (double value in londonValues)
+            {
+                SplineSeriesData data = new SplineSeriesData();
+                data.Y = value;
+                if (value == 3.9)
+                {
+                    data.Marker.Symbol = "url(http://www.highcharts.com/demo/gfx/snow.png)";
+                }
+
+                londonData.Add(data);
+            }
 
             ViewData["tokyoData"] = tokyoData;
             ViewData["londonData"] = londonData;

@@ -32,7 +32,7 @@
   <target name="generateCompiledOnStampMvcSource">
     <exec program="${compiledon.utility.path}">
       <arg value="${project.folder.mvc}\CompiledOn.cs" />
-      <arg value="Highcharts.Web.Mvc" />
+      <arg value="Highsoft.Web.Mvc" />
       <arg value="true" />
     </exec>
   </target>
@@ -88,6 +88,7 @@
       <fileset basedir="${sample.project.mvc.folder}">
         <includes name="**/*.*"/>
         <excludes name="Help/**" />
+        <excludes name="downloads/**" />
         <excludes name="obj/**" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.xml" />
@@ -97,6 +98,7 @@
       <fileset basedir="${sample.project.mvc.folder}">
         <includes name="**/*.*"/>
         <excludes name="Help/**" />
+	  <excludes name="downloads/**" />
         <excludes name="obj/**" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.xml" />
