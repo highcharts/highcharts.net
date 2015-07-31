@@ -1,0 +1,5 @@
+C:\Highsoft\MVC_Highstock\obj\Debug\MVC_Highstock.csprojResolveAssemblyReference.cache
+C:\Highsoft\MVC_Highstock\bin\Debug\MVC_Highstock.dll
+C:\Highsoft\MVC_Highstock\bin\Debug\MVC_Highstock.pdb
+C:\Highsoft\MVC_Highstock\obj\Debug\MVC_Highstock.dll
+C:\Highsoft\MVC_Highstock\obj\Debug\MVC_Highstock.pdb

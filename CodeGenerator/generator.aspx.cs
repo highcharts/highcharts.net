@@ -13,7 +13,7 @@ using System.Collections;
 public partial class generatoraspx : System.Web.UI.Page
 {
     const int PROPERTY_NESTED_LEVELS = 10; // currently max levels of nested properties is five
-    const string ROOT_CLASS = "Highcharts"; // the name of the root class
+    const string ROOT_CLASS = "Highstock"; // the name of the root class
 
     List<ApiItem> _apiItems; // json api mappings will be stored here
     StreamWriter _log; // general debug related txt log file
@@ -360,8 +360,8 @@ public partial class generatoraspx : System.Web.UI.Page
     {        
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
         string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList({0}));\n\t\t\t";
-        string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", Highcharts.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
-        string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); Highcharts.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
+        string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", {3}.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
+        string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); {4}.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
         string customPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToJSON());\n\t\t\t";  
         
@@ -380,13 +380,13 @@ public partial class generatoraspx : System.Web.UI.Page
             return String.Format(customPropertyFormat, propertyName, FirstCharToLower(propertyName));
         // Enum
         if (child.Values != null && child.Values.Count > 0)
-            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));        
+            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName), ROOT_CLASS);        
         // Complex object with nested objects / properties
         if (child.IsParent)
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
         // Event (javascript function)
         if (child.ReturnType != null && child.ReturnType == "Function")
-            return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName));
+            return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName), ROOT_CLASS);
         // Just a property
         else
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
