@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class PlotOptionsLineEvents  : BaseObject
 	{
@@ -86,14 +86,14 @@ namespace Highcharts.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (AfterAnimate != AfterAnimate_DefaultValue) { h.Add("afterAnimate",AfterAnimate); Highcharts.AddFunction("PlotOptionsLineEventsAfterAnimate.afterAnimate", AfterAnimate); }  
-			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); Highcharts.AddFunction("PlotOptionsLineEventsCheckboxClick.checkboxClick", CheckboxClick); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("PlotOptionsLineEventsClick.click", Click); }  
-			if (Hide != Hide_DefaultValue) { h.Add("hide",Hide); Highcharts.AddFunction("PlotOptionsLineEventsHide.hide", Hide); }  
-			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("PlotOptionsLineEventsLegendItemClick.legendItemClick", LegendItemClick); }  
-			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highcharts.AddFunction("PlotOptionsLineEventsMouseOut.mouseOut", MouseOut); }  
-			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highcharts.AddFunction("PlotOptionsLineEventsMouseOver.mouseOver", MouseOver); }  
-			if (Show != Show_DefaultValue) { h.Add("show",Show); Highcharts.AddFunction("PlotOptionsLineEventsShow.show", Show); }  
+			if (AfterAnimate != AfterAnimate_DefaultValue) { h.Add("afterAnimate",AfterAnimate); Highstock.AddFunction("PlotOptionsLineEventsAfterAnimate.afterAnimate", AfterAnimate); }  
+			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); Highstock.AddFunction("PlotOptionsLineEventsCheckboxClick.checkboxClick", CheckboxClick); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("PlotOptionsLineEventsClick.click", Click); }  
+			if (Hide != Hide_DefaultValue) { h.Add("hide",Hide); Highstock.AddFunction("PlotOptionsLineEventsHide.hide", Hide); }  
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highstock.AddFunction("PlotOptionsLineEventsLegendItemClick.legendItemClick", LegendItemClick); }  
+			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highstock.AddFunction("PlotOptionsLineEventsMouseOut.mouseOut", MouseOut); }  
+			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highstock.AddFunction("PlotOptionsLineEventsMouseOver.mouseOver", MouseOver); }  
+			if (Show != Show_DefaultValue) { h.Add("show",Show); Highstock.AddFunction("PlotOptionsLineEventsShow.show", Show); }  
 			
 
 			return h;

@@ -8,14 +8,13 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class Global  : BaseObject
 	{
 		public Global()
 		{
-			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "http://code.highcharts.com/{version}/gfx/vml-radial-gradient.png";
-			CanvasToolsURL = CanvasToolsURL_DefaultValue = "http://code.highcharts.com/{version}/modules/canvas-tools.js";
+			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "http://code.highcharts.com/highstock/{version}/gfx/vml-radial-gradient.png";
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
 			UseUTC = UseUTC_DefaultValue = true;
@@ -28,13 +27,6 @@ namespace Highcharts.Web.Mvc
 		/// </summary>
 		public string VMLRadialGradientURL { get; set; }
 		private string VMLRadialGradientURL_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The URL to the additional file to lazy load for Android 2.x devices. These devices don't  support SVG, so we download a helper file that contains <a href="http://code.google.com/p/canvg/">canvg</a>, its dependency rbcolor, and our own CanVG Renderer class. To avoid hotlinking to our site, you can install canvas-tools.js on your own server and change this option accordingly.
-		/// </summary>
-		public string CanvasToolsURL { get; set; }
-		private string CanvasToolsURL_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -63,8 +55,7 @@ namespace Highcharts.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (VMLRadialGradientURL != VMLRadialGradientURL_DefaultValue) h.Add("vMLRadialGradientURL",VMLRadialGradientURL);
-			if (CanvasToolsURL != CanvasToolsURL_DefaultValue) h.Add("canvasToolsURL",CanvasToolsURL);
-			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highcharts.AddFunction("GlobalGetTimezoneOffset.getTimezoneOffset", GetTimezoneOffset); }  
+			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highstock.AddFunction("GlobalGetTimezoneOffset.getTimezoneOffset", GetTimezoneOffset); }  
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
 			

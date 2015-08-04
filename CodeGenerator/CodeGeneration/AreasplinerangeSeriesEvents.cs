@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class AreasplinerangeSeriesEvents  : BaseObject
 	{
@@ -86,14 +86,14 @@ namespace Highcharts.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (AfterAnimate != AfterAnimate_DefaultValue) { h.Add("afterAnimate",AfterAnimate); Highcharts.AddFunction("AreasplinerangeSeriesEventsAfterAnimate.afterAnimate", AfterAnimate); }  
-			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); Highcharts.AddFunction("AreasplinerangeSeriesEventsCheckboxClick.checkboxClick", CheckboxClick); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("AreasplinerangeSeriesEventsClick.click", Click); }  
-			if (Hide != Hide_DefaultValue) { h.Add("hide",Hide); Highcharts.AddFunction("AreasplinerangeSeriesEventsHide.hide", Hide); }  
-			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("AreasplinerangeSeriesEventsLegendItemClick.legendItemClick", LegendItemClick); }  
-			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highcharts.AddFunction("AreasplinerangeSeriesEventsMouseOut.mouseOut", MouseOut); }  
-			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highcharts.AddFunction("AreasplinerangeSeriesEventsMouseOver.mouseOver", MouseOver); }  
-			if (Show != Show_DefaultValue) { h.Add("show",Show); Highcharts.AddFunction("AreasplinerangeSeriesEventsShow.show", Show); }  
+			if (AfterAnimate != AfterAnimate_DefaultValue) { h.Add("afterAnimate",AfterAnimate); Highstock.AddFunction("AreasplinerangeSeriesEventsAfterAnimate.afterAnimate", AfterAnimate); }  
+			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); Highstock.AddFunction("AreasplinerangeSeriesEventsCheckboxClick.checkboxClick", CheckboxClick); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("AreasplinerangeSeriesEventsClick.click", Click); }  
+			if (Hide != Hide_DefaultValue) { h.Add("hide",Hide); Highstock.AddFunction("AreasplinerangeSeriesEventsHide.hide", Hide); }  
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highstock.AddFunction("AreasplinerangeSeriesEventsLegendItemClick.legendItemClick", LegendItemClick); }  
+			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highstock.AddFunction("AreasplinerangeSeriesEventsMouseOut.mouseOut", MouseOut); }  
+			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highstock.AddFunction("AreasplinerangeSeriesEventsMouseOver.mouseOver", MouseOver); }  
+			if (Show != Show_DefaultValue) { h.Add("show",Show); Highstock.AddFunction("AreasplinerangeSeriesEventsShow.show", Show); }  
 			
 
 			return h;

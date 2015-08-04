@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class PlotOptionsLine  : BaseObject
 	{
@@ -16,24 +16,28 @@ namespace Highcharts.Web.Mvc
 		{
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Color = Color_DefaultValue = null;
-			ConnectEnds = ConnectEnds_DefaultValue = true;
+			Color = Color_DefaultValue = "";
+			Compare = Compare_DefaultValue = "undefined";
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsLineCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsLineDashStyle.Solid;
+			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsLineDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsLineDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsLineEvents();
+			GapSize = GapSize_DefaultValue = 0;
 			Keys = Keys_DefaultValue = new List<string>();
+			LegendIndex = LegendIndex_DefaultValue = 0;
 			LineWidth = LineWidth_DefaultValue = 2;
+			Linecap = Linecap_DefaultValue = PlotOptionsLineLinecap.Round;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsLineMarker();
-			NegativeColor = NegativeColor_DefaultValue = "null";
 			Point = Point_DefaultValue = new PlotOptionsLinePoint();
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsLinePointIntervalUnit.Null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
+			PointRange = PointRange_DefaultValue = 0;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -43,7 +47,6 @@ namespace Highcharts.Web.Mvc
 			States = States_DefaultValue = new PlotOptionsLineStates();
 			Step = Step_DefaultValue = PlotOptionsLineStep.False;
 			StickyTracking = StickyTracking_DefaultValue = true;
-			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsLineTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
@@ -54,7 +57,7 @@ namespace Highcharts.Web.Mvc
 		
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the markers, bars or pie slices.
+		/// Allow this series' points to be selected by clicking on the markers or bars.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -68,21 +71,21 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// The main color or the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the  <code>options.colors</code> array.
+		/// The main color of the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the  <code>options.colors</code> array.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line series plot across the extremes.
+		/// Compare the values of the series against the first value in the visible range. The y axis will show percentage or absolute change depending on whether <code>compare</code> is set to <code>"percent"</code> or <code>"value"</code>. When this is applied to multiple series, it allows comparing the development of the series against each other.
 		/// </summary>
-		public bool? ConnectEnds { get; set; }
-		private bool? ConnectEnds_DefaultValue { get; set; }
+		public string Compare { get; set; }
+		private string Compare_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to connect a graph line across null points.
+		/// Whether to draw a line between points on either side of a null point, or render a gap between them.
 		/// </summary>
 		public bool? ConnectNulls { get; set; }
 		private bool? ConnectNulls_DefaultValue { get; set; }
@@ -112,12 +115,19 @@ namespace Highcharts.Web.Mvc
 		/// <summary>
 		/// 
 		/// </summary>
+		public PlotOptionsLineDataGrouping DataGrouping { get; set; }
+		private PlotOptionsLineDataGrouping DataGrouping_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public PlotOptionsLineDataLabels DataLabels { get; set; }
 		private PlotOptionsLineDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
+		/// Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. When using shared tooltips  (default in stock charts), mouse tracking is not required. For large datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
 		private bool? EnableMouseTracking_DefaultValue { get; set; }
@@ -131,10 +141,24 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// A custom mapping of data point array positions to respective object properties. For example, is the first key is <code>name</code>, the first item in a series.data array is interpreted as point.name.
+		/// <p>Defines when to display a gap in the graph. A gap size of 5 means that if the distance between two points is greater than five times that of the two closest points, the  graph will be broken.</p> <p>In practice, this option is most often used to visualize gaps in time series. In a stock chart, intraday data is available for daytime hours, while gaps will appear in nights and weekends.</p>.
+		/// </summary>
+		public double? GapSize { get; set; }
+		private double? GapSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array specifying which option maps to which key in the data point array. This makes it convenient to work with unstructured data arrays from different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The sequential index of the series within the legend.
+		/// </summary>
+		public double? LegendIndex { get; set; }
+		private double? LegendIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -142,6 +166,13 @@ namespace Highcharts.Web.Mvc
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The SVG value used for the <code>stroke-linecap</code> and <code>stroke-linejoin</code> of a line graph. Round means that lines are rounded in the ends and bends.
+		/// </summary>
+		public PlotOptionsLineLinecap Linecap { get; set; }
+		private PlotOptionsLineLinecap Linecap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -159,13 +190,6 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// The color for the parts of the graph or points that are below the <a href="#plotOptions.series.threshold">threshold</a>.
-		/// </summary>
-		public string NegativeColor { get; set; }
-		private string NegativeColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Properties for each single point
 		/// </summary>
 		public PlotOptionsLinePoint Point { get; set; }
@@ -173,7 +197,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values. For example, if a series contains one value every decade starting from year 0, set pointInterval to 10.</p><p>Since Highcharts 4.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
+		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values in milliseconds. For example, if a series contains one value each day, set pointInterval to <code>24 * 3600 * 1000</code>.</p><p>Since Highstock 2.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
@@ -194,21 +218,28 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, pointStart defines on what value to start. For example, if a series contains one yearly value starting from 1945, set pointStart to 1945.
+		/// The width of each point on the x axis. For example in a column chart with one value each day, the pointRange would be 1 day (= 24 * 3600 * 1000 milliseconds). This is normally computed automatically, but this option can be used to override the automatic value.
+		/// </summary>
+		public double? PointRange { get; set; }
+		private double? PointRange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If no x values are given for the points in a series, pointStart defines on what value to start. On a datetime X axis, the number will be given as milliseconds since 1970-01-01, for example <code>Date.UTC(2011, 0, 1)</code>.
 		/// </summary>
 		public double? PointStart { get; set; }
 		private double? PointStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to select the series initially. If <code>showCheckbox</code> is true, the checkbox next to the series name will be checked for a selected series.
+		/// Whether to select the series initially. If <code>showCheckbox</code> is true, the checkbox next to the series name in the legend will be checked for a selected series.
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
+		/// Whether to apply a drop shadow to the graph line. Since 1.1.7 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
@@ -243,24 +274,17 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// Whether to apply steps to the line. Possible values are <code>left</code>, <code>center</code> and <code>right</code>. Prior to 2.3.5, only <code>left</code> was supported.
+		/// Whether to apply steps to the line. Possible values are <code>left</code>, <code>center</code> and <code>right</code>. Prior to 1.2.5, only <code>left</code> was supported.
 		/// </summary>
 		public PlotOptionsLineStep Step { get; set; }
 		private PlotOptionsLineStep Step_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc.
+		/// Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip when not shared. When <code>stickyTracking</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, candlesticks etc.
 		/// </summary>
 		public bool? StickyTracking { get; set; }
 		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The threshold, also called zero level or base level. For line type series this is only used in conjunction with <a href="#plotOptions.series.negativeColor">negativeColor</a>.
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -305,33 +329,36 @@ namespace Highcharts.Web.Mvc
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
+			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
+			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
-			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPlacement.IsDirty()) h.Add("pointPlacement",PointPlacement.ToJSON());
+			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
+			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
+			if (Step != Step_DefaultValue) h.Add("step", Highstock.FirstCharacterToLower(Step.ToString()));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);

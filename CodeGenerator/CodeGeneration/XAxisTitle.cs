@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class XAxisTitle  : BaseObject
 	{
@@ -19,7 +19,9 @@ namespace Highcharts.Web.Mvc
 			Offset = Offset_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#707070"},{ "fontWeight", "bold" }};
-			Text = Text_DefaultValue = null;
+			Text = Text_DefaultValue = "null";
+			X = X_DefaultValue = 0;
+			Y = Y_DefaultValue = null;
 			
 		}	
 		
@@ -34,8 +36,8 @@ namespace Highcharts.Web.Mvc
 		/// <summary>
 		/// The pixel distance between the axis labels or line and the title. Defaults to 0 for horizontal axes, 10 for vertical
 		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
+		public new string[] Margin { get; set; }
+		private new string[] Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -64,18 +66,34 @@ namespace Highcharts.Web.Mvc
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Horizontal pixel offset of the title position.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Vertical pixel offset of the title position.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;

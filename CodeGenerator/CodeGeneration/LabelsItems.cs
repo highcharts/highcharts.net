@@ -8,13 +8,13 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class LabelsItems  : BaseObject
 	{
 		public LabelsItems()
 		{
-			Html = Html_DefaultValue = null;
+			Html = Html_DefaultValue = "''";
 			Style = Style_DefaultValue = new NameValueCollection();
 			
 		}	

@@ -43,7 +43,6 @@ namespace Highstock.Web.Mvc
 			Stacking = Stacking_DefaultValue = PlotOptionsPolygonStacking.Null;
 			States = States_DefaultValue = new PlotOptionsPolygonStates();
 			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = {};
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
@@ -256,13 +255,6 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series. Properties are inherited from <a class="internal">#tooltip</a>. Overridable properties are <code>headerFormat</code>, <code>pointFormat</code>, <code>yDecimals</code>, <code>xDateFormat</code>, <code>yPrefix</code> and <code>ySuffix</code>.  Unlike other series, in a scatter plot the series.name by default shows in the headerFormat  and poin.x and point.y in the pointFormat.
-		/// </summary>
-		public Object Tooltip { get; set; }
-		private Object Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable.
 		/// </summary>
 		public double? TurboThreshold { get; set; }
@@ -323,7 +315,6 @@ namespace Highstock.Web.Mvc
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);

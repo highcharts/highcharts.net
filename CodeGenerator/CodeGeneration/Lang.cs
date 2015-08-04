@@ -8,27 +8,28 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class Lang  : BaseObject
 	{
 		public Lang()
 		{
 			ContextButtonTitle = ContextButtonTitle_DefaultValue = "Chart context menu";
-			DecimalPoint = DecimalPoint_DefaultValue = ".";
-			DownloadJPEG = DownloadJPEG_DefaultValue = "Download JPEG image";
-			DownloadPDF = DownloadPDF_DefaultValue = "Download PDF document";
-			DownloadPNG = DownloadPNG_DefaultValue = "Download PNG image";
-			DownloadSVG = DownloadSVG_DefaultValue = "Download SVG vector image";
-			DrillUpText = DrillUpText_DefaultValue = "Back to {series.name}";
+			DecimalPoint = DecimalPoint_DefaultValue = "'.'";
+			DownloadJPEG = DownloadJPEG_DefaultValue = "'Download JPEG image'";
+			DownloadPDF = DownloadPDF_DefaultValue = "'Download PDF document'";
+			DownloadPNG = DownloadPNG_DefaultValue = "'Download PNG image'";
+			DownloadSVG = DownloadSVG_DefaultValue = "'Download SVG vector image'";
 			Loading = Loading_DefaultValue = "Loading...";
-			Months = Months_DefaultValue = new List<string> { "January" , "February" , "March" , "April" , "May" , "June" , "July" , "August" , "September" , "October" , "November" , "December"};
-			NoData = NoData_DefaultValue = "No data to display";
+			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
 			PrintChart = PrintChart_DefaultValue = "Print chart";
+			RangeSelectorFrom = RangeSelectorFrom_DefaultValue = "From";
+			RangeSelectorTo = RangeSelectorTo_DefaultValue = "To";
+			RangeSelectorZoom = RangeSelectorZoom_DefaultValue = "Zoom";
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
-			ShortMonths = ShortMonths_DefaultValue = new List<string> { "Jan" , "Feb" , "Mar" , "Apr" , "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct" , "Nov" , "Dec"};
+			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
 			ThousandsSep = ThousandsSep_DefaultValue = " ";
 			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 			
@@ -78,13 +79,6 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// The text for the button that appears when drilling down, linking back to the parent series. The parent series' name is inserted for <code>{series.name}</code>.
-		/// </summary>
-		public string DrillUpText { get; set; }
-		private string DrillUpText_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The loading text that appears when the chart is set into the loading state following a call to <code>chart.showLoading</code>.
 		/// </summary>
 		public string Loading { get; set; }
@@ -92,17 +86,10 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// An array containing the months names. Corresponds to the  <code>%B</code> format in <code>Highcharts.dateFormat()</code>.
+		/// An array containing the months names. Defaults to <code>['January', 'February', 'March', 'April', 'May', 'June', 'July',  'August', 'September', 'October', 'November', 'December']</code>.
 		/// </summary>
 		public List<string> Months { get; set; }
 		private List<string> Months_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The text to display when the chart contains no data. Requires the no-data module, see <a href="#noData">noData</a>.
-		/// </summary>
-		public string NoData { get; set; }
-		private string NoData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -117,6 +104,27 @@ namespace Highcharts.Web.Mvc
 		/// </summary>
 		public string PrintChart { get; set; }
 		private string PrintChart_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The text for the label for the "from" input box in the range selector.
+		/// </summary>
+		public string RangeSelectorFrom { get; set; }
+		private string RangeSelectorFrom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The text for the label for the "to" input box in the range selector.
+		/// </summary>
+		public string RangeSelectorTo { get; set; }
+		private string RangeSelectorTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The text for the label for the range selector buttons.
+		/// </summary>
+		public string RangeSelectorZoom { get; set; }
+		private string RangeSelectorZoom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -148,7 +156,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// An array containing the weekday names. 
+		/// An array containing the weekday names. Defaults to <code>['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']</code>.
 		/// </summary>
 		public List<string> Weekdays { get; set; }
 		private List<string> Weekdays_DefaultValue { get; set; }
@@ -164,12 +172,13 @@ namespace Highcharts.Web.Mvc
 			if (DownloadPDF != DownloadPDF_DefaultValue) h.Add("downloadPDF",DownloadPDF);
 			if (DownloadPNG != DownloadPNG_DefaultValue) h.Add("downloadPNG",DownloadPNG);
 			if (DownloadSVG != DownloadSVG_DefaultValue) h.Add("downloadSVG",DownloadSVG);
-			if (DrillUpText != DrillUpText_DefaultValue) h.Add("drillUpText",DrillUpText);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (Months != Months_DefaultValue) h.Add("months",Months);
-			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
 			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);
 			if (PrintChart != PrintChart_DefaultValue) h.Add("printChart",PrintChart);
+			if (RangeSelectorFrom != RangeSelectorFrom_DefaultValue) h.Add("rangeSelectorFrom",RangeSelectorFrom);
+			if (RangeSelectorTo != RangeSelectorTo_DefaultValue) h.Add("rangeSelectorTo",RangeSelectorTo);
+			if (RangeSelectorZoom != RangeSelectorZoom_DefaultValue) h.Add("rangeSelectorZoom",RangeSelectorZoom);
 			if (ResetZoom != ResetZoom_DefaultValue) h.Add("resetZoom",ResetZoom);
 			if (ResetZoomTitle != ResetZoomTitle_DefaultValue) h.Add("resetZoomTitle",ResetZoomTitle);
 			if (ShortMonths != ShortMonths_DefaultValue) h.Add("shortMonths",ShortMonths);

@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class YAxisBreaks  : BaseObject
 	{
@@ -23,7 +23,7 @@ namespace Highcharts.Web.Mvc
 		
 
 		/// <summary>
-		/// A number indicating how much space should be left between the start and the end of the break.
+		/// A number indicating how much space should be left between the start and the end of the break. The break size is given in axis units, so for instance on a <code>datetime</code> axis, a break size of 3600000 would indicate the equivalent of an hour.
 		/// </summary>
 		public double? BreakSize { get; set; }
 		private double? BreakSize_DefaultValue { get; set; }

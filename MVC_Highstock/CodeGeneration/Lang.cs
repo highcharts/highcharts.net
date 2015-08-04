@@ -21,8 +21,7 @@ namespace Highstock.Web.Mvc
 			DownloadPNG = DownloadPNG_DefaultValue = "'Download PNG image'";
 			DownloadSVG = DownloadSVG_DefaultValue = "'Download SVG vector image'";
 			Loading = Loading_DefaultValue = "Loading...";
-			Months = Months_DefaultValue = new List<string> {"January" "February", "March", "April", "May", "June", "July", 
-				"August", "September", "October", "November", "December"},;
+			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
 			PrintChart = PrintChart_DefaultValue = "Print chart";
 			RangeSelectorFrom = RangeSelectorFrom_DefaultValue = "From";
@@ -30,7 +29,7 @@ namespace Highstock.Web.Mvc
 			RangeSelectorZoom = RangeSelectorZoom_DefaultValue = "Zoom";
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
-			ShortMonths = ShortMonths_DefaultValue = "";
+			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
 			ThousandsSep = ThousandsSep_DefaultValue = " ";
 			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 			

@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class ExportingButtonsContextButton  : BaseObject
 	{
@@ -17,7 +17,7 @@ namespace Highcharts.Web.Mvc
 			Align = Align_DefaultValue = ExportingButtonsContextButtonAlign.Right;
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 20;
-			MenuItems = MenuItems_DefaultValue = null;
+			MenuItems = MenuItems_DefaultValue = "";
 			Onclick = Onclick_DefaultValue = "";
 			Symbol = Symbol_DefaultValue = "menu";
 			SymbolFill = SymbolFill_DefaultValue = "#A8BF77";
@@ -166,11 +166,11 @@ namespace Highcharts.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems",MenuItems);
-			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("ExportingButtonsContextButtonOnclick.onclick", Onclick); }  
+			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highstock.AddFunction("ExportingButtonsContextButtonOnclick.onclick", Onclick); }  
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
@@ -180,7 +180,7 @@ namespace Highcharts.Web.Mvc
 			if (SymbolY != SymbolY_DefaultValue) h.Add("symbolY",SymbolY);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Theme != Theme_DefaultValue) h.Add("theme",Theme);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

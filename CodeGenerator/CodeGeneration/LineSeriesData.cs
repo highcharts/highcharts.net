@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class LineSeriesData  : BaseObject
 	{
@@ -16,9 +16,8 @@ namespace Highcharts.Web.Mvc
 		{
 			Color = Color_DefaultValue = "undefined";
 			DataLabels = DataLabels_DefaultValue = null;
-			Drilldown = Drilldown_DefaultValue = "";
 			Events = Events_DefaultValue = new LineSeriesDataEvents();
-			Id = Id_DefaultValue = null;
+			Id = Id_DefaultValue = "null";
 			Marker = Marker_DefaultValue = new LineSeriesDataMarker();
 			Name = Name_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
@@ -29,7 +28,7 @@ namespace Highcharts.Web.Mvc
 		
 
 		/// <summary>
-		/// Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
+		/// Individual color for the point.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
@@ -43,14 +42,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
+		/// 
 		/// </summary>
 		public LineSeriesDataEvents Events { get; set; }
 		private LineSeriesDataEvents Events_DefaultValue { get; set; }
@@ -71,7 +63,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>The name of the point as shown in the legend, tooltip, dataLabel etc.</p><p>If the <a href="#xAxis.type">xAxis.type</a> is set to <code>category</code>, and no <a href="#xAxis.categories">categories</a> option exists, the category will be pulled from the <code>point.name</code> of the last series defined. For multiple series, best practice however is to define <code>xAxis.categories</code>.</p>
+		/// The name of the point as shown in the legend, tooltip, dataLabel etc.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
@@ -104,7 +96,6 @@ namespace Highcharts.Web.Mvc
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());

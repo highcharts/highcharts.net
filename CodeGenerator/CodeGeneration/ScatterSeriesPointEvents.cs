@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class ScatterSeriesPointEvents  : BaseObject
 	{
@@ -78,13 +78,13 @@ namespace Highcharts.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("ScatterSeriesPointEventsClick.click", Click); }  
-			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highcharts.AddFunction("ScatterSeriesPointEventsMouseOut.mouseOut", MouseOut); }  
-			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highcharts.AddFunction("ScatterSeriesPointEventsMouseOver.mouseOver", MouseOver); }  
-			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("ScatterSeriesPointEventsRemove.remove", Remove); }  
-			if (Select != Select_DefaultValue) { h.Add("select",Select); Highcharts.AddFunction("ScatterSeriesPointEventsSelect.select", Select); }  
-			if (Unselect != Unselect_DefaultValue) { h.Add("unselect",Unselect); Highcharts.AddFunction("ScatterSeriesPointEventsUnselect.unselect", Unselect); }  
-			if (Update != Update_DefaultValue) { h.Add("update",Update); Highcharts.AddFunction("ScatterSeriesPointEventsUpdate.update", Update); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("ScatterSeriesPointEventsClick.click", Click); }  
+			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highstock.AddFunction("ScatterSeriesPointEventsMouseOut.mouseOut", MouseOut); }  
+			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highstock.AddFunction("ScatterSeriesPointEventsMouseOver.mouseOver", MouseOver); }  
+			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highstock.AddFunction("ScatterSeriesPointEventsRemove.remove", Remove); }  
+			if (Select != Select_DefaultValue) { h.Add("select",Select); Highstock.AddFunction("ScatterSeriesPointEventsSelect.select", Select); }  
+			if (Unselect != Unselect_DefaultValue) { h.Add("unselect",Unselect); Highstock.AddFunction("ScatterSeriesPointEventsUnselect.unselect", Unselect); }  
+			if (Update != Update_DefaultValue) { h.Add("update",Update); Highstock.AddFunction("ScatterSeriesPointEventsUpdate.update", Update); }  
 			
 
 			return h;

@@ -36,8 +36,8 @@ namespace Highstock.Web.Mvc
 		/// <summary>
 		/// The pixel distance between the axis labels or line and the title. Defaults to 0 for horizontal axes, 10 for vertical
 		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
+		public new string[] Margin { get; set; }
+		private new string[] Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>

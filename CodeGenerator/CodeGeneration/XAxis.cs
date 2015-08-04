@@ -8,16 +8,15 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class XAxis  : BaseObject
 	{
 		public XAxis()
 		{
 			AllowDecimals = AllowDecimals_DefaultValue = true;
-			AlternateGridColor = AlternateGridColor_DefaultValue = null;
+			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
 			Breaks = Breaks_DefaultValue = new XAxisBreaks();
-			Categories = Categories_DefaultValue = null;
 			Ceiling = Ceiling_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
 			EndOnTick = EndOnTick_DefaultValue = false;
@@ -27,15 +26,15 @@ namespace Highcharts.Web.Mvc
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = XAxisGridLineDashStyle.Solid;
 			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			GridZIndex = GridZIndex_DefaultValue = 1;
-			Id = Id_DefaultValue = null;
+			Id = Id_DefaultValue = "null";
 			Labels = Labels_DefaultValue = new XAxisLabels();
-			LineColor = LineColor_DefaultValue = "#C0D0E0";
+			LineColor = LineColor_DefaultValue = "'#C0D0E0'";
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = null;
 			Max = Max_DefaultValue = null;
-			MaxPadding = MaxPadding_DefaultValue = 0.01;
+			MaxPadding = MaxPadding_DefaultValue = 0;
 			Min = Min_DefaultValue = null;
-			MinPadding = MinPadding_DefaultValue = 0.01;
+			MinPadding = MinPadding_DefaultValue = 0;
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#E0E0E0";
@@ -48,8 +47,10 @@ namespace Highcharts.Web.Mvc
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			Offset = Offset_DefaultValue = 0;
 			Opposite = Opposite_DefaultValue = false;
+			Ordinal = Ordinal_DefaultValue = true;
 			PlotBands = PlotBands_DefaultValue = new List<XAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<XAxisPlotLines>();
+			Range = Range_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = false;
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
@@ -65,9 +66,7 @@ namespace Highcharts.Web.Mvc
 			TickPositioner = TickPositioner_DefaultValue = "";
 			TickPositions = TickPositions_DefaultValue = null;
 			TickWidth = TickWidth_DefaultValue = 1;
-			TickmarkPlacement = TickmarkPlacement_DefaultValue = XAxisTickmarkPlacement.Null;
 			Title = Title_DefaultValue = new XAxisTitle();
-			Type = Type_DefaultValue = XAxisType.Linear;
 			
 		}	
 		
@@ -91,13 +90,6 @@ namespace Highcharts.Web.Mvc
 		/// </summary>
 		public XAxisBreaks Breaks { get; set; }
 		private XAxisBreaks Breaks_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>If categories are present for the xAxis, names are used instead of numbers for that axis. Since Highcharts 3.0, categories can also be extracted by giving each point a <a href="#series.data">name</a> and setting axis <a href="#xAxis.type">type</a> to <code>category</code>. However, if you have multiple series, best practice remains defining the <code>categories</code> array.</p><p>Example:<pre>categories: ['Apples', 'Bananas', 'Oranges']</pre> Defaults to <code>null</code></p>
-		/// </summary>
-		public List<string> Categories { get; set; }
-		private List<string> Categories_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -227,7 +219,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>The minimum range to display on this axis. The entire axis will not be allowed to span over a smaller interval than this. For example, for a datetime axis the main unit is milliseconds. If minRange is set to 3600000, you can't zoom in more than to one hour.</p> <p>The default minRange for the x axis is five times the smallest interval between any of the data points.</p> <p>On a logarithmic axis, the unit for the minimum range is the power. So a minRange of 1 means that the axis can be zoomed to 10-100, 100-1000, 1000-10000 etc.</p>
+		/// <p>The minimum range to display. The entire axis will not be allowed to span over a smaller interval than this. For example, for a datetime axis the main unit is milliseconds. If minRange is set to 3600000, you can't zoom in more than to one hour.</p>
 		/// </summary>
 		public double? MinRange { get; set; }
 		private double? MinRange_DefaultValue { get; set; }
@@ -269,7 +261,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>Tick interval in scale units for the minor ticks. On a linear axis, if <code>"auto"</code>,  the minor tick interval is calculated as a fifth of the tickInterval. If <code>null</code>, minor ticks are not shown.</p> <p>On logarithmic axes, the unit is the power of the value. For example, setting the minorTickInterval to 1 puts one tick on each of 0.1, 1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticks between 1 and 10,  10 and 100 etc. A minorTickInterval of "auto" on a log axis results in a best guess, attempting to enter approximately 5 minor ticks between each major tick.</p><p>If user settings dictate minor ticks to become too dense, they don't make sense, and will be ignored to prevent performance problems.</a><p>On axes using <a href="#xAxis.categories">categories</a>, minor ticks are not supported.</p>
+		/// <p>Tick interval in scale units for the minor ticks. On a linear axis, if <code>"auto"</code>,  the minor tick interval is calculated as a fifth of the tickInterval. If <code>null</code>, minor ticks are not shown.</p> <p>On logarithmic axes, the unit is the power of the value. For example, setting the minorTickInterval to 1 puts one tick on each of 0.1, 1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticks between 1 and 10,  10 and 100 etc. A minorTickInterval of "auto" on a log axis results in a best guess, attempting to enter approximately 5 minor ticks between each major tick.</p><p>If user settings dictate minor ticks to become too dense, they don't make sense, and will be ignored to prevent performance problems.</a>
 		/// </summary>
 		public string MinorTickInterval { get; set; }
 		private string MinorTickInterval_DefaultValue { get; set; }
@@ -311,7 +303,14 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>An array of colored bands stretching across the plot area marking an interval on the axis.</p><p>In a gauge, a plot band on the Y axis (value axis) will stretch along the perimeter of the gauge.</p>
+		/// In an ordinal axis, the points are equally spaced in the chart regardless of the actual time or x distance between them. This means that missing data for nights or weekends will not take  up space in the chart.
+		/// </summary>
+		public bool? Ordinal { get; set; }
+		private bool? Ordinal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of colored bands stretching across the plot area marking an interval on the axis.
 		/// </summary>
 		public List<XAxisPlotBands> PlotBands { get; set; }
 		private List<XAxisPlotBands> PlotBands_DefaultValue { get; set; }
@@ -325,7 +324,14 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// Whether to reverse the axis so that the highest number is closest to the origin. If the chart is inverted, the x axis is reversed by default.
+		/// The zoomed range to display when only defining one or none of <code>min</code> or <code>max</code>.  For example, to show the latest month, a range of one month can be set.
+		/// </summary>
+		public double? Range { get; set; }
+		private double? Range_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to reverse the axis so that the highest number is closest to the origin.
 		/// </summary>
 		public bool? Reversed { get; set; }
 		private bool? Reversed_DefaultValue { get; set; }
@@ -360,7 +366,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// Whether to force the axis to start on a tick. Use this option with the <code>maxPadding</code> option to control the axis start.
+		/// Whether to force the axis to start on a tick. Use this option with the <code>minPadding</code> option to control the axis start. In Highstock, startOnTick is allways false when the navigator is enabled, to prevent jumpy scrolling.
 		/// </summary>
 		public bool? StartOnTick { get; set; }
 		private bool? StartOnTick_DefaultValue { get; set; }
@@ -381,7 +387,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>The interval of the tick marks in axis units. When <code>null</code>, the tick interval is computed to approximately follow the <a href="#xAxis.tickPixelInterval">tickPixelInterval</a> on linear and datetime axes. On categorized axes, a <code>null</code> tickInterval will default to 1, one category.  Note that datetime axes are based on milliseconds, so for  example an interval of one day is expressed as <code>24 * 3600 * 1000</code>.</p> <p>On logarithmic axes, the tickInterval is based on powers, so a tickInterval of 1 means one tick on each of 0.1, 1, 10, 100 etc. A tickInterval of 2 means a tick of 0.1, 10, 1000 etc. A tickInterval of 0.2 puts a tick on 0.1, 0.2, 0.4, 0.6, 0.8, 1, 2, 4, 6, 8, 10, 20, 40 etc.</p><p>If the tickInterval is too dense for labels to be drawn, Highcharts may remove ticks.</p>
+		/// <p>The interval of the tick marks in axis units. When <code>null</code>, the tick interval is computed to approximately follow the tickPixelInterval on linear and datetime axes. On categorized axes, a <code>null</code> tickInterval will default to 1, one category.  Note that datetime axes are based on milliseconds, so for  example an interval of one day is expressed as <code>24 * 3600 * 1000</code>.</p><p>If the tickInterval is too dense for labels to be drawn, Highcharts may remove ticks.</p>
 		/// </summary>
 		public double? TickInterval { get; set; }
 		private double? TickInterval_DefaultValue { get; set; }
@@ -409,14 +415,14 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// A callback function returning array defining where the ticks are laid out on the axis. This overrides the default behaviour of <a href="#xAxis.tickPixelInterval">tickPixelInterval</a> and <a href="#xAxis.tickInterval">tickInterval</a>. The automatic tick positions are accessible through <code>this.tickPositions</code> and can be modified by the callback.
+		/// A callback function to compute on what values the ticks should be placed. Returns an array of numbers. The <code>min</code> and <code>max</code> of the axis are passed in as the first and second parameter. Options like <code>tickInterval</code> can be accessed by  <code>this.options.tickInterval</code>. The automatic tick positions are accessible through <code>this.tickPositions</code> and can be modified by the callback.Note that in stock charts, the last label is hidden by  default by the <code>showLastLabel</code> option.
 		/// </summary>
 		public string TickPositioner { get; set; }
 		private string TickPositioner_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array defining where the ticks are laid out on the axis. This overrides the default behaviour of <a href="#xAxis.tickPixelInterval">tickPixelInterval</a> and <a href="#xAxis.tickInterval">tickInterval</a>.
+		/// A collection of hard coded tick value positions. This overrides the auto computed positions based on tickInterval and tickPixelInterval. See also <code>tickPositioner</code>.
 		/// </summary>
 		public List<double> TickPositions { get; set; }
 		private List<double> TickPositions_DefaultValue { get; set; }
@@ -430,24 +436,10 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// For categorized axes only. If <code>on</code> the tick mark is placed in the center of  the category, if <code>between</code> the tick mark is placed between categories. The default is <code>between</code> if the <code>tickInterval</code> is 1, else <code>on</code>.
-		/// </summary>
-		public XAxisTickmarkPlacement TickmarkPlacement { get; set; }
-		private XAxisTickmarkPlacement TickmarkPlacement_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The axis title, showing next to the axis line.
 		/// </summary>
 		public XAxisTitle Title { get; set; }
 		private XAxisTitle Title_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The type of axis. Can be one of <code>"linear"</code>, <code>"logarithmic"</code>, <code>"datetime"</code> or <code>"category"</code>. In a datetime axis, the numbers are given in milliseconds, and tick marks are placed on appropriate values like full hours or days. In a category axis, the <a href="#series.data">point names</a> of the chart's series are used for categories, if not a <a href="#xAxis.categories">categories</a> array is defined.
-		/// </summary>
-		public XAxisType Type { get; set; }
-		private XAxisType Type_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -457,14 +449,13 @@ namespace Highcharts.Web.Mvc
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
 			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
-			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
 			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
-			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle", Highcharts.FirstCharacterToLower(GridLineDashStyle.ToString()));
+			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle", Highstock.FirstCharacterToLower(GridLineDashStyle.ToString()));
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
@@ -479,17 +470,19 @@ namespace Highcharts.Web.Mvc
 			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);
 			if (MinTickInterval != MinTickInterval_DefaultValue) h.Add("minTickInterval",MinTickInterval);
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
-			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle", Highcharts.FirstCharacterToLower(MinorGridLineDashStyle.ToString()));
+			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle", Highstock.FirstCharacterToLower(MinorGridLineDashStyle.ToString()));
 			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
-			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
+			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highstock.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
+			if (Ordinal != Ordinal_DefaultValue) h.Add("ordinal",Ordinal);
 			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
+			if (Range != Range_DefaultValue) h.Add("range",Range);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
@@ -501,13 +494,11 @@ namespace Highcharts.Web.Mvc
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
 			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
-			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highcharts.FirstCharacterToLower(TickPosition.ToString()));
-			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("XAxisTickPositioner.tickPositioner", TickPositioner); }  
+			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highstock.FirstCharacterToLower(TickPosition.ToString()));
+			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highstock.AddFunction("XAxisTickPositioner.tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
-			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			
 
 			return h;

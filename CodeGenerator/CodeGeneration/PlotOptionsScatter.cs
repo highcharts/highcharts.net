@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class PlotOptionsScatter  : BaseObject
 	{
@@ -16,30 +16,33 @@ namespace Highcharts.Web.Mvc
 		{
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Color = Color_DefaultValue = null;
+			Color = Color_DefaultValue = "";
+			Compare = Compare_DefaultValue = "undefined";
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsScatterCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsScatterDashStyle.Solid;
+			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsScatterDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsScatterDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsScatterEvents();
 			Keys = Keys_DefaultValue = new List<string>();
+			LegendIndex = LegendIndex_DefaultValue = 0;
 			LineWidth = LineWidth_DefaultValue = 0;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsScatterMarker();
-			NegativeColor = NegativeColor_DefaultValue = "null";
 			Point = Point_DefaultValue = new PlotOptionsScatterPoint();
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsScatterPointIntervalUnit.Null;
+			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
+			PointRange = PointRange_DefaultValue = 0;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
+			Stacking = Stacking_DefaultValue = PlotOptionsScatterStacking.Null;
 			States = States_DefaultValue = new PlotOptionsScatterStates();
 			StickyTracking = StickyTracking_DefaultValue = false;
-			Threshold = Threshold_DefaultValue = 0;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsScatterTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
@@ -49,7 +52,7 @@ namespace Highcharts.Web.Mvc
 		
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the markers, bars or pie slices.
+		/// Allow this series' points to be selected by clicking on the markers or bars.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -63,10 +66,17 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// The main color or the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the  <code>options.colors</code> array.
+		/// The main color of the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the  <code>options.colors</code> array.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Compare the values of the series against the first value in the visible range. The y axis will show percentage or absolute change depending on whether <code>compare</code> is set to <code>"percent"</code> or <code>"value"</code>. When this is applied to multiple series, it allows comparing the development of the series against each other.
+		/// </summary>
+		public string Compare { get; set; }
+		private string Compare_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -93,12 +103,19 @@ namespace Highcharts.Web.Mvc
 		/// <summary>
 		/// 
 		/// </summary>
+		public PlotOptionsScatterDataGrouping DataGrouping { get; set; }
+		private PlotOptionsScatterDataGrouping DataGrouping_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public PlotOptionsScatterDataLabels DataLabels { get; set; }
 		private PlotOptionsScatterDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
+		/// Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. When using shared tooltips  (default in stock charts), mouse tracking is not required. For large datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
 		private bool? EnableMouseTracking_DefaultValue { get; set; }
@@ -112,10 +129,17 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// A custom mapping of data point array positions to respective object properties. For example, is the first key is <code>name</code>, the first item in a series.data array is interpreted as point.name.
+		/// An array specifying which option maps to which key in the data point array. This makes it convenient to work with unstructured data arrays from different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The sequential index of the series within the legend.
+		/// </summary>
+		public double? LegendIndex { get; set; }
+		private double? LegendIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -140,13 +164,6 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// The color for the parts of the graph or points that are below the <a href="#plotOptions.series.threshold">threshold</a>.
-		/// </summary>
-		public string NegativeColor { get; set; }
-		private string NegativeColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Properties for each single point
 		/// </summary>
 		public PlotOptionsScatterPoint Point { get; set; }
@@ -154,7 +171,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values. For example, if a series contains one value every decade starting from year 0, set pointInterval to 10.</p><p>Since Highcharts 4.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
+		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values in milliseconds. For example, if a series contains one value each day, set pointInterval to <code>24 * 3600 * 1000</code>.</p><p>Since Highstock 2.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
@@ -168,21 +185,35 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, pointStart defines on what value to start. For example, if a series contains one yearly value starting from 1945, set pointStart to 1945.
+		/// <p>Possible values: <code>null</code>, <code>"on"</code>, <code>"between"</code>.</p><p>In a column chart, when pointPlacement is <code>"on"</code>, the point will not create any padding of the X axis. In a polar column chart this means that the first column points directly north. If the pointPlacement is <code>"between"</code>, the columns will be laid out between ticks. This is useful for example for visualising an amount between two points in time or in a certain sector of a polar chart.</p><p>Since Highcharts 3.0.2, the point placement can also be numeric, where 0 is on the axis value, -0.5 is between this value and the previous, and 0.5 is between this value and the next. Unlike the textual options, numeric point placement options won't affect axis padding.</p><p>Note that pointPlacement needs a <a href="#plotOptions.series.pointRange">pointRange</a> to work. For column series this is computed, but for line-type series it needs to be set.</p><p>Defaults to <code>null</code> in cartesian charts, <code>"between"</code> in polar charts.
+		/// </summary>
+		public PointPlacement PointPlacement { get; set; }
+		private PointPlacement PointPlacement_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of each point on the x axis. For example in a column chart with one value each day, the pointRange would be 1 day (= 24 * 3600 * 1000 milliseconds). This is normally computed automatically, but this option can be used to override the automatic value.
+		/// </summary>
+		public double? PointRange { get; set; }
+		private double? PointRange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If no x values are given for the points in a series, pointStart defines on what value to start. On a datetime X axis, the number will be given as milliseconds since 1970-01-01, for example <code>Date.UTC(2011, 0, 1)</code>.
 		/// </summary>
 		public double? PointStart { get; set; }
 		private double? PointStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to select the series initially. If <code>showCheckbox</code> is true, the checkbox next to the series name will be checked for a selected series.
+		/// Whether to select the series initially. If <code>showCheckbox</code> is true, the checkbox next to the series name in the legend will be checked for a selected series.
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
+		/// Whether to apply a drop shadow to the graph line. Since 1.1.7 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
@@ -203,6 +234,13 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
+		/// Whether to stack the values of each series on top of each other. Possible values are null to disable, "normal" to stack by value or "percent".
+		/// </summary>
+		public PlotOptionsScatterStacking Stacking { get; set; }
+		private PlotOptionsScatterStacking Stacking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
 		public PlotOptionsScatterStates States { get; set; }
@@ -214,20 +252,6 @@ namespace Highcharts.Web.Mvc
 		/// </summary>
 		public bool? StickyTracking { get; set; }
 		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The threshold, also called zero level or base level. For line type series this is only used in conjunction with <a href="#plotOptions.series.negativeColor">negativeColor</a>.
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsScatterTooltip Tooltip { get; set; }
-		private PlotOptionsScatterTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -265,29 +289,32 @@ namespace Highcharts.Web.Mvc
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
+			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
-			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointPlacement.IsDirty()) h.Add("pointPlacement",PointPlacement.ToJSON());
+			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
+			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);

@@ -13,8 +13,8 @@ using System.Collections;
 public partial class generatoraspx : System.Web.UI.Page
 {
     const int PROPERTY_NESTED_LEVELS = 10; // currently max levels of nested properties is five
-    const string ROOT_CLASS = "Highcharts"; // the name of the root class
-    //const string ROOT_CLASS = "Highstock"; // the name of the root class
+    //const string ROOT_CLASS = "Highcharts"; // the name of the root class
+    const string ROOT_CLASS = "Highstock"; // the name of the root class
 
     List<ApiItem> _apiItems; // json api mappings will be stored here
     StreamWriter _log; // general debug related txt log file
@@ -139,6 +139,22 @@ public partial class generatoraspx : System.Web.UI.Page
             {
                 apiItem.Defaults = "false";
             }
+            if (apiItem.FullName == "lang.months")
+            {
+                apiItem.Defaults = "['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']";
+            }
+            if (apiItem.FullName == "lang.shortMonths")
+            {
+                apiItem.Defaults = "['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',  'Aug', 'Sep', 'Oct', 'Nov', 'Dec']";
+            }
+            if (apiItem.FullName == "rangeSelector.inputPosition")
+            {
+                apiItem.Defaults = "{ \"align\" : \"right\" }";
+            }
+            if (apiItem.Title == "Colors")
+            {
+                apiItem.IsParent = false;
+            }
 
             // add Defaults to enum if they are not available in the Values list.
             AddDefaultsToEnum(apiItem);
@@ -180,6 +196,8 @@ public partial class generatoraspx : System.Web.UI.Page
             //string propertyName = FirstCharToUpper(child.Title);
             string propertyName = GetPropertyName(child);
             if (_excludedProperties.Contains(propertyName) && child.IsParent == false)
+                continue;
+            if (_excludedProperties.Contains(child.FullName))
                 continue;
             if (child == item)
                 continue;
@@ -504,11 +522,14 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("Animation", "Animation");
         _propertyTypeMappings.Add("PointPlacement", "PointPlacement");
         _propertyTypeMappings.Add("Center", "new string[]");
+        _propertyTypeMappings.Add("Margin", "new string[]");
         _propertyTypeMappings.Add("Position", "NameValueCollection");
         _propertyTypeMappings.Add("DateTimeLabelFormats", "NameValueCollection");
         _propertyTypeMappings.Add("InputPosition", "NameValueCollection");
         _propertyTypeMappings.Add("Attr", "NameValueCollection");
         _propertyTypeMappings.Add("Style", "NameValueCollection");
+        _propertyTypeMappings.Add("InputStyle", "NameValueCollection");
+        _propertyTypeMappings.Add("LabelStyle", "NameValueCollection");
         _propertyTypeMappings.Add("Stack", "string");
         _propertyTypeMappings.Add("Symbol", "string");
         _propertyTypeMappings.Add("TrackBorderColor", "string");
@@ -539,10 +560,13 @@ public partial class generatoraspx : System.Web.UI.Page
         //_propertyInitMappings.Add("Symbol", "new Symbol()");
         _propertyInitMappings.Add("Colors", "new List<string>()");        
         _propertyInitMappings.Add("Center", "new string[] { null, null }");
+        _propertyInitMappings.Add("Margin", "new string[] {}");
         _propertyInitMappings.Add("Position", "new NameValueCollection()");
         _propertyInitMappings.Add("DateTimeLabelFormats", "new NameValueCollection()");
         _propertyInitMappings.Add("InputPosition", "new NameValueCollection()");
         _propertyInitMappings.Add("Style", "new NameValueCollection()");
+        _propertyInitMappings.Add("InputStyle", "new NameValueCollection()");
+        _propertyInitMappings.Add("LabelStyle", "new NameValueCollection()");
         _propertyInitMappings.Add("Columns", "new List<List<Object>>()");
         _propertyInitMappings.Add("Rows", "new List<List<object>>()");
         _propertyInitMappings.Add("SeriesMapping", "new List<object>()");
@@ -613,6 +637,11 @@ public partial class generatoraspx : System.Web.UI.Page
         _excludedProperties.Add("Spacing");
         _excludedProperties.Add("Date");
         _excludedProperties.Add("Units");
+        _excludedProperties.Add("plotOptions.scatter.tooltip");
+        _excludedProperties.Add("plotOptions.polygon.tooltip");
+        _excludedProperties.Add("series<polygon>.tooltip");
+        _excludedProperties.Add("series<scatter>.tooltip");
+
     }
 
     private void InitCustomProperties()

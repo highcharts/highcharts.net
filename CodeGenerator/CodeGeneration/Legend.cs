@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class Legend  : BaseObject
 	{
@@ -19,7 +19,7 @@ namespace Highcharts.Web.Mvc
 			BorderColor = BorderColor_DefaultValue = "#909090";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = false;
 			Floating = Floating_DefaultValue = false;
 			ItemDistance = ItemDistance_DefaultValue = 20;
 			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = null;
@@ -31,17 +31,14 @@ namespace Highcharts.Web.Mvc
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
 			LabelFormatter = LabelFormatter_DefaultValue = "";
 			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
-			LineHeight = LineHeight_DefaultValue = 16;
-			Margin = Margin_DefaultValue = 12;
+			Margin = Margin_DefaultValue = new string[] {};
 			MaxHeight = MaxHeight_DefaultValue = null;
 			Navigation = Navigation_DefaultValue = new LegendNavigation();
 			Padding = Padding_DefaultValue = 8;
 			Reversed = Reversed_DefaultValue = false;
-			Rtl = Rtl_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			SymbolHeight = SymbolHeight_DefaultValue = null;
 			SymbolPadding = SymbolPadding_DefaultValue = 5;
-			SymbolRadius = SymbolRadius_DefaultValue = 2;
 			SymbolWidth = SymbolWidth_DefaultValue = 16;
 			Title = Title_DefaultValue = new LegendTitle();
 			UseHTML = UseHTML_DefaultValue = false;
@@ -173,17 +170,10 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// Line height for the legend items. Deprecated as of 2.1. Instead, the line height for each  item can be set using itemStyle.lineHeight, and the padding between items using itemMarginTop and itemMarginBottom.
-		/// </summary>
-		public double? LineHeight { get; set; }
-		private double? LineHeight_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// If the plot area sized is calculated automatically and the legend is not floating, the legend margin is the  space between the legend and the axis labels or plot area.
 		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
+		public new string[] Margin { get; set; }
+		private new string[] Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -194,7 +184,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// Options for the paging or navigation appearing when the legend is overflown. When <a href="#legend.useHTML">legend.useHTML</a> is enabled, navigation is disabled. 
+		/// Options for the paging or navigation appearing when the legend is overflown.
 		/// </summary>
 		public LegendNavigation Navigation { get; set; }
 		private LegendNavigation Navigation_DefaultValue { get; set; }
@@ -215,14 +205,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// Whether to show the symbol on the right side of the text rather than the left side.  This is common in Arabic and Hebraic.
-		/// </summary>
-		public bool? Rtl { get; set; }
-		private bool? Rtl_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply a drop shadow to the legend. A <code>backgroundColor</code> also needs to be applied for this to take effect. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
+		/// Whether to apply a drop shadow to the legend. A <code>backgroundColor</code> also needs to be applied for this to take effect. Since 1.1.7 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
@@ -243,13 +226,6 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// The border radius of the symbol for series types that use a rectangle in the legend.
-		/// </summary>
-		public double? SymbolRadius { get; set; }
-		private double? SymbolRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The pixel width of the legend item symbol.
 		/// </summary>
 		public double? SymbolWidth { get; set; }
@@ -257,14 +233,14 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// A title to be added on top of the legend.
+		/// A title to be added on top of the legend
 		/// </summary>
 		public LegendTitle Title { get; set; }
 		private LegendTitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a> to render the legend item texts. When using HTML, <a href="#legend.navigation">legend.navigation</a> is disabled.</p>
+		/// <p>Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a> to render the legend item texts. Prior to 2.1.7, when using HTML, <a href="#legend.navigation">legend.navigation</a> was disabled.</p>
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
@@ -285,7 +261,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// The x offset of the legend relative to its horizontal alignment <code>align</code> within chart.spacingLeft and chart.spacingRight. Negative x moves it to the left, positive x moves it to the right. 
+		/// The x offset of the legend relative to its horizontal alignment <code>align</code> within chart.spacingLeft and chart.spacingRight. Negative x moves it to the left, positive x moves it to the right.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
@@ -302,7 +278,7 @@ namespace Highcharts.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -317,23 +293,20 @@ namespace Highcharts.Web.Mvc
 			if (ItemStyle != ItemStyle_DefaultValue) h.Add("itemStyle",ItemStyle);
 			if (ItemWidth != ItemWidth_DefaultValue) h.Add("itemWidth",ItemWidth);
 			if (LabelFormat != LabelFormat_DefaultValue) h.Add("labelFormat",LabelFormat);
-			if (LabelFormatter != LabelFormatter_DefaultValue) { h.Add("labelFormatter",LabelFormatter); Highcharts.AddFunction("LegendLabelFormatter.labelFormatter", LabelFormatter); }  
-			if (Layout != Layout_DefaultValue) h.Add("layout", Highcharts.FirstCharacterToLower(Layout.ToString()));
-			if (LineHeight != LineHeight_DefaultValue) h.Add("lineHeight",LineHeight);
+			if (LabelFormatter != LabelFormatter_DefaultValue) { h.Add("labelFormatter",LabelFormatter); Highstock.AddFunction("LegendLabelFormatter.labelFormatter", LabelFormatter); }  
+			if (Layout != Layout_DefaultValue) h.Add("layout", Highstock.FirstCharacterToLower(Layout.ToString()));
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MaxHeight != MaxHeight_DefaultValue) h.Add("maxHeight",MaxHeight);
 			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
-			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (SymbolHeight != SymbolHeight_DefaultValue) h.Add("symbolHeight",SymbolHeight);
 			if (SymbolPadding != SymbolPadding_DefaultValue) h.Add("symbolPadding",SymbolPadding);
-			if (SymbolRadius != SymbolRadius_DefaultValue) h.Add("symbolRadius",SymbolRadius);
 			if (SymbolWidth != SymbolWidth_DefaultValue) h.Add("symbolWidth",SymbolWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class YAxisPlotBands  : BaseObject
 	{
@@ -16,14 +16,11 @@ namespace Highcharts.Web.Mvc
 		{
 			BorderColor = BorderColor_DefaultValue = "null";
 			BorderWidth = BorderWidth_DefaultValue = 0;
-			Color = Color_DefaultValue = null;
+			Color = Color_DefaultValue = "null";
 			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
-			Id = Id_DefaultValue = null;
-			InnerRadius = InnerRadius_DefaultValue = "null";
+			Id = Id_DefaultValue = "null";
 			Label = Label_DefaultValue = new YAxisPlotBandsLabel();
-			OuterRadius = OuterRadius_DefaultValue = "100%";
-			Thickness = Thickness_DefaultValue = "10";
 			To = To_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
 			
@@ -73,31 +70,10 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// In a gauge chart, this option determines the inner radius of the plot band that stretches along the perimeter. It can be given as a percentage string, like <code>"100%"</code>, or as a pixel number, like <code>100</code>. By default, the inner radius is controlled by the <a href="#yAxis.plotBands.thickness">thickness</a> option.
-		/// </summary>
-		public string InnerRadius { get; set; }
-		private string InnerRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Text labels for the plot bands
 		/// </summary>
 		public YAxisPlotBandsLabel Label { get; set; }
 		private YAxisPlotBandsLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// In a gauge chart, this option determines the outer radius of the plot band that stretches along the perimeter. It can be given as a percentage string, like <code>"100%"</code>, or as a pixel number, like <code>100</code>.
-		/// </summary>
-		public string OuterRadius { get; set; }
-		private string OuterRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// In a gauge chart, this option sets the width of the plot band stretching along the perimeter. It can be given as a percentage string, like <code>"10%"</code>, or as a pixel number, like <code>10</code>. The default value 10 is the same as the default <a href="#yAxis.tickLength">tickLength</a>, thus making the plot band act as a background for the tick markers. 
-		/// </summary>
-		public string Thickness { get; set; }
-		private string Thickness_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -108,7 +84,7 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// The z index of the plot band within the chart.
+		/// The z index of the plot band within the chart, relative to other elements. Using the same z index as another element may give unpredictable results, as the last rendered element will be on top. Values from 0 to 20 make sense.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
@@ -124,10 +100,7 @@ namespace Highcharts.Web.Mvc
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (OuterRadius != OuterRadius_DefaultValue) h.Add("outerRadius",OuterRadius);
-			if (Thickness != Thickness_DefaultValue) h.Add("thickness",Thickness);
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			

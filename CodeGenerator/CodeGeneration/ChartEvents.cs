@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class ChartEvents  : BaseObject
 	{
@@ -18,8 +18,6 @@ namespace Highcharts.Web.Mvc
 			AfterPrint = AfterPrint_DefaultValue = "";
 			BeforePrint = BeforePrint_DefaultValue = "";
 			Click = Click_DefaultValue = "";
-			Drilldown = Drilldown_DefaultValue = "";
-			Drillup = Drillup_DefaultValue = "";
 			Load = Load_DefaultValue = "";
 			Redraw = Redraw_DefaultValue = "";
 			Selection = Selection_DefaultValue = "";
@@ -56,20 +54,6 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>Fires when a drilldown point is clicked, before the new series is added. Event arguments:</p><dl>  <dt><code>category</code></dt>  <dd>If a category label was clicked, which index.</dd>  <dt><code>point</code></dt>  <dd>The originating point.</dd>  <dt><code>points</code></dt>  <dd>If a category label was clicked, this array holds all points corresponing to the category.</dd>  <dt><code>seriesOptions</code></dt>  <dd>Options for the new series</dd></dl><p>This event is also utilized for async drilldown, where the seriesOptions are not added by option, but rather loaded async.</p>
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires when drilling up from a drilldown series.
-		/// </summary>
-		public string Drillup { get; set; }
-		private string Drillup_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// <p>Fires when the chart is finished loading. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.</p><p>From version 2.0.4, there is also a second parameter to <code>Highcharts.Chart</code> where a callback function can be passed to be executed on chart.load.</p>
 		/// </summary>
 		public string Load { get; set; }
@@ -94,15 +78,13 @@ namespace Highcharts.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("ChartEventsAddSeries.addSeries", AddSeries); }  
-			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highcharts.AddFunction("ChartEventsAfterPrint.afterPrint", AfterPrint); }  
-			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highcharts.AddFunction("ChartEventsBeforePrint.beforePrint", BeforePrint); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("ChartEventsClick.click", Click); }  
-			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); Highcharts.AddFunction("ChartEventsDrilldown.drilldown", Drilldown); }  
-			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); Highcharts.AddFunction("ChartEventsDrillup.drillup", Drillup); }  
-			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("ChartEventsLoad.load", Load); }  
-			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("ChartEventsRedraw.redraw", Redraw); }  
-			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highcharts.AddFunction("ChartEventsSelection.selection", Selection); }  
+			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highstock.AddFunction("ChartEventsAddSeries.addSeries", AddSeries); }  
+			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highstock.AddFunction("ChartEventsAfterPrint.afterPrint", AfterPrint); }  
+			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highstock.AddFunction("ChartEventsBeforePrint.beforePrint", BeforePrint); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("ChartEventsClick.click", Click); }  
+			if (Load != Load_DefaultValue) { h.Add("load",Load); Highstock.AddFunction("ChartEventsLoad.load", Load); }  
+			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highstock.AddFunction("ChartEventsRedraw.redraw", Redraw); }  
+			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highstock.AddFunction("ChartEventsSelection.selection", Selection); }  
 			
 
 			return h;

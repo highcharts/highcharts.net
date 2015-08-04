@@ -8,16 +8,16 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class XAxisPlotLines  : BaseObject
 	{
 		public XAxisPlotLines()
 		{
-			Color = Color_DefaultValue = null;
+			Color = Color_DefaultValue = "null";
 			DashStyle = DashStyle_DefaultValue = XAxisPlotLinesDashStyle.Solid;
 			Events = Events_DefaultValue = null;
-			Id = Id_DefaultValue = null;
+			Id = Id_DefaultValue = "null";
 			Label = Label_DefaultValue = new XAxisPlotLinesLabel();
 			Value = Value_DefaultValue = null;
 			Width = Width_DefaultValue = null;
@@ -87,7 +87,7 @@ namespace Highcharts.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());

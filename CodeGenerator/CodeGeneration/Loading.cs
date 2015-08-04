@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class Loading  : BaseObject
 	{
@@ -16,7 +16,7 @@ namespace Highcharts.Web.Mvc
 		{
 			HideDuration = HideDuration_DefaultValue = 100;
 			LabelStyle = LabelStyle_DefaultValue = new NameValueCollection{{ "fontWeight", "bold"},{ "position", "relative"},{ "top", "45%" }};
-			ShowDuration = ShowDuration_DefaultValue = 100;
+			ShowDuration = ShowDuration_DefaultValue = 0;
 			Style = Style_DefaultValue = new NameValueCollection();
 			
 		}	

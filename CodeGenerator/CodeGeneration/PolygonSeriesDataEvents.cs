@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class PolygonSeriesDataEvents  : BaseObject
 	{
@@ -78,13 +78,13 @@ namespace Highcharts.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("PolygonSeriesDataEventsClick.click", Click); }  
-			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highcharts.AddFunction("PolygonSeriesDataEventsMouseOut.mouseOut", MouseOut); }  
-			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highcharts.AddFunction("PolygonSeriesDataEventsMouseOver.mouseOver", MouseOver); }  
-			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("PolygonSeriesDataEventsRemove.remove", Remove); }  
-			if (Select != Select_DefaultValue) { h.Add("select",Select); Highcharts.AddFunction("PolygonSeriesDataEventsSelect.select", Select); }  
-			if (Unselect != Unselect_DefaultValue) { h.Add("unselect",Unselect); Highcharts.AddFunction("PolygonSeriesDataEventsUnselect.unselect", Unselect); }  
-			if (Update != Update_DefaultValue) { h.Add("update",Update); Highcharts.AddFunction("PolygonSeriesDataEventsUpdate.update", Update); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("PolygonSeriesDataEventsClick.click", Click); }  
+			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highstock.AddFunction("PolygonSeriesDataEventsMouseOut.mouseOut", MouseOut); }  
+			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highstock.AddFunction("PolygonSeriesDataEventsMouseOver.mouseOver", MouseOver); }  
+			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highstock.AddFunction("PolygonSeriesDataEventsRemove.remove", Remove); }  
+			if (Select != Select_DefaultValue) { h.Add("select",Select); Highstock.AddFunction("PolygonSeriesDataEventsSelect.select", Select); }  
+			if (Unselect != Unselect_DefaultValue) { h.Add("unselect",Unselect); Highstock.AddFunction("PolygonSeriesDataEventsUnselect.unselect", Unselect); }  
+			if (Update != Update_DefaultValue) { h.Add("update",Update); Highstock.AddFunction("PolygonSeriesDataEventsUpdate.update", Update); }  
 			
 
 			return h;

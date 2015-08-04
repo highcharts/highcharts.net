@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class ColumnSeriesZones  : BaseObject
 	{
@@ -16,7 +16,7 @@ namespace Highcharts.Web.Mvc
 		{
 			Color = Color_DefaultValue = null;
 			DashStyle = DashStyle_DefaultValue = null;
-			FillColor = FillColor_DefaultValue = "";
+			FillColor = FillColor_DefaultValue = null;
 			Value = Value_DefaultValue = null;
 			
 		}	

@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class Title  : BaseObject
 	{
@@ -16,9 +16,9 @@ namespace Highcharts.Web.Mvc
 		{
 			Align = Align_DefaultValue = TitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
-			Margin = Margin_DefaultValue = 15;
-			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "fontSize", "18px" }};
-			Text = Text_DefaultValue = "Chart title";
+			Margin = Margin_DefaultValue = new string[] {};
+			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "fontSize", "16px" }};
+			Text = Text_DefaultValue = "null";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Top;
 			X = X_DefaultValue = 0;
@@ -44,8 +44,8 @@ namespace Highcharts.Web.Mvc
 		/// <summary>
 		/// The margin between the title and the plot area, or if a subtitle is present, the margin between the subtitle and the plot area.
 		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
+		public new string[] Margin { get; set; }
+		private new string[] Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -94,13 +94,13 @@ namespace Highcharts.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
