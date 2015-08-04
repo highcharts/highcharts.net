@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MVC_Highstock</RootNamespace>
-    <AssemblyName>MVC_Highstock</AssemblyName>
+    <AssemblyName>Highsoft.Web.Mvc.Highcharts</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
