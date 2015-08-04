@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Highsoft.Web.Mvc
+namespace {HighTemplate.Namespace}
 {
     public enum {HighTemplate.EnumName}
     {

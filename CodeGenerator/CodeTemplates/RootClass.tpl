@@ -8,9 +8,9 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace {HighTemplate.Namespace}
 {
-	public partial class Highcharts
+	public partial class {HighTemplate.Classname}
 	{
 		public {HighTemplate.ClassName}()
 		{

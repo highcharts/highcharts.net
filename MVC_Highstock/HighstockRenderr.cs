@@ -99,7 +99,7 @@ namespace Highsoft.Web.Mvc.Rendering
             {
                 List<object> dataList = new List<object>();
                 Hashtable seriesHashtable = new Hashtable();
-
+                
                 //if (series is LineSeries)
                 //{
                 //    LineSeries lineSeries = series as LineSeries;

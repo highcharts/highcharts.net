@@ -41,3 +41,6 @@ C:\Highsoft\MVC_Demo\bin\System.Web.Razor.xml
 C:\Highsoft\MVC_Demo\bin\System.Web.WebPages.xml
 C:\Highsoft\MVC_Demo\bin\System.Web.WebPages.Deployment.xml
 C:\Highsoft\MVC_Demo\bin\System.Web.WebPages.Razor.xml
+C:\Highsoft\MVC_Demo\obj\Debug\MVC_Demo.csprojResolveAssemblyReference.cache
+C:\Highsoft\MVC_Demo\bin\Highcharts.Web.Mvc.dll
+C:\Highsoft\MVC_Demo\bin\Highcharts.Web.Mvc.pdb

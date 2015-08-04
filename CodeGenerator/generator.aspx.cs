@@ -13,7 +13,7 @@ using System.Collections;
 public partial class generatoraspx : System.Web.UI.Page
 {
     const int PROPERTY_NESTED_LEVELS = 10; // currently max levels of nested properties is five
-    const string ROOT_CLASS = "Highstock"; // the name of the root class
+    const string ROOT_CLASS = "Highcharts"; // the name of the root class
 
     List<ApiItem> _apiItems; // json api mappings will be stored here
     StreamWriter _log; // general debug related txt log file
@@ -48,6 +48,8 @@ public partial class generatoraspx : System.Web.UI.Page
         InitSeriesMappings();
         InitLists();
 
+        Directory.Delete(Server.MapPath("~/CodeGeneration"), true);
+        Directory.CreateDirectory(Server.MapPath("~/CodeGeneration"));        
         Directory.CreateDirectory(Server.MapPath("~/CodeGeneration/Enums/"));
 
         base.OnInit(e);
@@ -74,7 +76,7 @@ public partial class generatoraspx : System.Web.UI.Page
         JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
         jsonSerializer.MaxJsonLength = Int32.MaxValue;
 
-        string jsonAPI = File.ReadAllText(Server.MapPath("~/api.json"));
+        string jsonAPI = File.ReadAllText(Server.MapPath("~/" + ROOT_CLASS + ".json"));
         object[] jsonObject = jsonSerializer.Deserialize<object[]>(jsonAPI);
 
         foreach (Dictionary<string, object> item in jsonObject)
@@ -182,6 +184,7 @@ public partial class generatoraspx : System.Web.UI.Page
             extendsClass = ": BaseObject";
 
         codeTemplate = codeTemplate
+                        .Replace("{HighTemplate.Namespace}", ROOT_CLASS + ".Web.Mvc")
                         .Replace("{HighTemplate.ConstrutorInitializers}", defaultValues)
                         .Replace("{HighTemplate.Properties}", properties)
                         .Replace("{HighTemplate.HashtableInit}", hashtableComparers)
@@ -217,8 +220,10 @@ public partial class generatoraspx : System.Web.UI.Page
             }
         }
 
-        enumTemplate = enumTemplate.Replace("{HighTemplate.EnumName}", GetClassNameFromItem(apiItem))
-                                   .Replace("{HighTemplate.EnumList}", enumList);
+        enumTemplate = enumTemplate
+                        .Replace("{HighTemplate.Namespace}", ROOT_CLASS + ".Web.Mvc")
+                        .Replace("{HighTemplate.EnumName}", GetClassNameFromItem(apiItem))
+                        .Replace("{HighTemplate.EnumList}", enumList);
 
         File.WriteAllText(fileName, enumTemplate);
     }

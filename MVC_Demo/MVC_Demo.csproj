@@ -39,10 +39,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Highcharts.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Highcharts.Web.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
@@ -252,6 +248,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineLabelsController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\SharedController.cs" />
     <Compile Include="Areas\Highcharts\HighchartsAreaRegistration.cs" />
+    <Compile Include="Areas\Highstock\HighstockAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -417,6 +414,7 @@
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <Content Include="Content\api\highcharts.json" />
     <Content Include="Content\api\names.txt" />
+    <Content Include="Areas\Highstock\Views\Web.config" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
     <Content Include="Scripts\highcharts.src.js" />
@@ -450,15 +448,18 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Highcharts\Models\" />
+    <Folder Include="Areas\Highstock\Controllers\" />
+    <Folder Include="Areas\Highstock\Models\" />
+    <Folder Include="Areas\Highstock\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MVC_Highstock\MVC_Highstock.csproj">
-      <Project>{d05d7902-fdbe-422d-9f47-c84a74a25258}</Project>
-      <Name>MVC_Highstock</Name>
+    <ProjectReference Include="..\MVC_Highcharts\MVC_Highcharts.csproj">
+      <Project>{fa4c2a73-1563-47da-8f1b-64ef17d48918}</Project>
+      <Name>MVC_Highcharts</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
