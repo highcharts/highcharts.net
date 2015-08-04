@@ -15,7 +15,7 @@ namespace Highcharts.Web.Mvc
 		public LabelsItems()
 		{
 			Html = Html_DefaultValue = null;
-			Style = Style_DefaultValue = null;
+			Style = Style_DefaultValue = new NameValueCollection();
 			
 		}	
 		

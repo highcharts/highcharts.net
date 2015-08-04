@@ -18,7 +18,7 @@ namespace Highcharts.Web.Mvc
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			ArrowSize = ArrowSize_DefaultValue = 12;
 			InactiveColor = InactiveColor_DefaultValue = "#CCC";
-			Style = Style_DefaultValue = null;
+			Style = Style_DefaultValue = new NameValueCollection();
 			
 		}	
 		
