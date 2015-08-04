@@ -8,30 +8,37 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class PlotOptionsAreaTooltip  : BaseObject
 	{
 		public PlotOptionsAreaTooltip()
 		{
+			ChangeDecimals = ChangeDecimals_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
 			FollowPointer = FollowPointer_DefaultValue = false;
-			FollowTouchMove = FollowTouchMove_DefaultValue = false;
-			FooterFormat = FooterFormat_DefaultValue = "false";
+			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			HeaderFormat = HeaderFormat_DefaultValue = "";
-			HideDelay = HideDelay_DefaultValue = 500;
-			PointFormat = PointFormat_DefaultValue = "&lt;span style='color:{series.color}'&gt;\u25CF&lt;/span&gt; {series.name}: &lt;b&gt;{point.y}&lt;/b&gt;&lt;br/&gt;";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
+			PointFormatter = PointFormatter_DefaultValue = "";
 			Shape = Shape_DefaultValue = "callout";
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = null;
 			ValueSuffix = ValueSuffix_DefaultValue = null;
-			XDateFormat = XDateFormat_DefaultValue = null;
+			XDateFormat = XDateFormat_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p><p>Defaults to:<pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre></p>
+		/// How many decimals to show for the <code>point.change</code> value when the <code>series.compare</code> option is set. This is overridable in each series' tooltip options object. The default is to preserve all decimals.
+		/// </summary>
+		public double? ChangeDecimals { get; set; }
+		private double? ChangeDecimals_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit.<p><p>Note that when data grouping applies, the date time label formats are pulled from <a href="#plotOptions.series.dataGrouping.dateTimeLabelFormats">dataGrouping.dateTimeLabelFormats</a> instead, because it also allows formatting of time spans.</p><p>For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p><p>Defaults to:<pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre></p>
 		/// </summary>
 		public NameValueCollection DateTimeLabelFormats { get; set; }
 		private NameValueCollection DateTimeLabelFormats_DefaultValue { get; set; }
@@ -45,17 +52,10 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Whether the tooltip should follow the finger as it moves on a touch device. The default value of <code>false</code> causes a touch move to scroll the web page, as is default behaviour on touch devices. Setting it to <code>true</code> may cause the user to be trapped inside the chart and unable to scroll away, so it should be used with care. If <a href="#chart.zoomType">chart.zoomType</a> is set, it will override <code>followTouchMove</code>
+		/// Whether the tooltip should follow the finger as it moves on a touch device. In order to take effect, <a href="#chart.zoomType">chart.zoomType</a> and <a href="#chart.pinchType">chart.pinchType</a> must be disabled.
 		/// </summary>
 		public bool? FollowTouchMove { get; set; }
 		private bool? FollowTouchMove_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A string to append to the tooltip format.
-		/// </summary>
-		public string FooterFormat { get; set; }
-		private string FooterFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -66,21 +66,21 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The number of milliseconds to wait until the tooltip is hidden when mouse out from a point or chart. 
-		/// </summary>
-		public double? HideDelay { get; set; }
-		private double? HideDelay_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>The HTML of the point's line in the tooltip. Variables are enclosed by curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form. Furthermore,  point.y can be extended by the <code>tooltip.yPrefix</code> and <code>tooltip.ySuffix</code> variables. This can also be overridden for each series, which makes it a good hook for displaying units.</p>
+		/// <p>The HTML of the point's line in the tooltip. Variables are enclosed by curly brackets. Available variables are point.x, point.y, point.change, series.name and series.color and other properties on the same form. Furthermore,  point.y can be extended by the tooltip.valuePrefix and tooltip.valueSuffix variables. This can also be overridden for each series, which makes it a good hook for displaying units.</p>
 		/// </summary>
 		public string PointFormat { get; set; }
 		private string PointFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The name of a symbol to use for the border around the tooltip. In Highcharts 3.x and less, the shape was <code>square</code>. 
+		/// A callback function for formatting the HTML output for a single point in the tooltip. Like the <code>pointFormat</code> string, but with more flexibility.
+		/// </summary>
+		public string PointFormatter { get; set; }
+		private string PointFormatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of a symbol to use for the border around the tooltip. In Highstock 1.x, the shape was <code>square</code>. 
 		/// </summary>
 		public string Shape { get; set; }
 		private string Shape_DefaultValue { get; set; }
@@ -108,7 +108,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
+		/// The format for the date in the tooltip header. If data grouping is used, the default is  a smart guess based on how close the closest points are. It is pulled from the #plotOptions.dataGrouping.dateTimeLabelFormats array.
 		/// </summary>
 		public string XDateFormat { get; set; }
 		private string XDateFormat_DefaultValue { get; set; }
@@ -118,13 +118,13 @@ namespace Highsoft.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
+			if (ChangeDecimals != ChangeDecimals_DefaultValue) h.Add("changeDecimals",ChangeDecimals);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
-			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highstock.AddFunction("PlotOptionsAreaTooltipPointFormatter.pointFormatter", PointFormatter); }  
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);

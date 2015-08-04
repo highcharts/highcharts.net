@@ -8,16 +8,16 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class Credits  : BaseObject
 	{
 		public Credits()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			Href = Href_DefaultValue = "http://www.highcharts.com";
+			Href = Href_DefaultValue = "'http://www.highcharts.com'";
 			Position = Position_DefaultValue = new NameValueCollection();
-			Style = Style_DefaultValue = null;
+			Style = Style_DefaultValue = new NameValueCollection();
 			Text = Text_DefaultValue = "Highcharts.com";
 			
 		}	

@@ -8,43 +8,39 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class YAxisLabels  : BaseObject
 	{
 		public YAxisLabels()
 		{
-			Align = Align_DefaultValue = "right";
-			Distance = Distance_DefaultValue = 15;
+			Align = Align_DefaultValue = "'left'";
+			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
-			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
-			Overflow = Overflow_DefaultValue = YAxisLabelsOverflow.Null;
 			Rotation = Rotation_DefaultValue = 0;
-			StaggerLines = StaggerLines_DefaultValue = null;
-			Step = Step_DefaultValue = null;
 			Style = Style_DefaultValue = new NameValueCollection{{"color","#6D869F"},{"fontWeight","bold"}};
 			UseHTML = UseHTML_DefaultValue = false;
-			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = 3;
+			X = X_DefaultValue = 0;
+			Y = Y_DefaultValue = -2;
 			ZIndex = ZIndex_DefaultValue = 7;
 			
 		}	
 		
 
 		/// <summary>
-		/// What part of the string the given position is anchored to. Can be one of <code>"left"</code>, <code>"center"</code> or <code>"right"</code>.
+		/// What part of the string the given position is anchored to.  Can be one of <code>"left"</code>, <code>"center"</code> or <code>"right"</code>.
 		/// </summary>
 		public string Align { get; set; }
 		private string Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Angular gauges and solid gauges only. The label's pixel distance from the perimeter of the plot area.
+		/// For horizontal axes, the allowed degrees of label rotation to prevent overlapping labels. If there is enough space, labels are not rotated. As the chart gets narrower, it will start rotating the labels -45 degrees, then remove every second label and try again with rotations 0 and -45 etc. Set it to <code>false</code> to disable rotation, which will cause the labels to word-wrap if possible.
 		/// </summary>
-		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
+		public List<double> AutoRotation { get; set; }
+		private List<double> AutoRotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -69,20 +65,6 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Horizontal axis only. When <code>staggerLines</code> is not set, <code>maxStaggerLines</code> defines how many lines the axis is allowed to add to automatically avoid overlapping X labels. Set to <code>1</code> to disable overlap detection. 
-		/// </summary>
-		public double? MaxStaggerLines { get; set; }
-		private double? MaxStaggerLines_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// How to handle overflowing labels on horizontal axis. Can be undefined, <code>false</code> or <code>"justify"</code>. By default it aligns inside the chart area. If "justify", labels will not render outside the plot area. If <code>false</code>, it will not be aligned at all. If there is room to move it, it will be aligned to the edge, else it will be removed.
-		/// </summary>
-		public YAxisLabelsOverflow Overflow { get; set; }
-		private YAxisLabelsOverflow Overflow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Rotation of the labels in degrees.
 		/// </summary>
 		public double? Rotation { get; set; }
@@ -90,21 +72,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Horizontal axes only. The number of lines to spread the labels over to make room or tighter labels.  .
-		/// </summary>
-		public double? StaggerLines { get; set; }
-		private double? StaggerLines_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>To show only every <em>n</em>'th label on the axis, set the step to <em>n</em>. Setting the step to 2 shows every other label.</p><p>By default, the step is calculated automatically to avoid overlap. To prevent this, set it to 1. This usually only happens on a category axis, and is often a sign that you have chosen the wrong axis type. Read more at <a href="http://www.highcharts.com/docs/chart-concepts/axes">Axis docs</a> => What axis should I use?</p> 
-		/// </summary>
-		public double? Step { get; set; }
-		private double? Step_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// CSS styles for the label. Use <code>whiteSpace: 'nowrap'</code> to prevent wrapping of category labels. Defaults to:<pre>style: {color: '#6D869F',fontWeight: 'bold'}</pre>
+		/// CSS styles for the label. Use <code>whiteSpace: 'nowrap'</code> to prevent wrapping of category labels. Use <code>textOverflow: 'none'</code> to prevent ellipsis (dots).
 		/// </summary>
 		public NameValueCollection Style { get; set; }
 		private NameValueCollection Style_DefaultValue { get; set; }
@@ -118,7 +86,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The x position offset of the label relative to the tick position on the axis. Defaults to -15 for left axis, 15 for right axis.
+		/// The x position offset of the label relative to the tick position on the axis.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
@@ -143,15 +111,11 @@ namespace Highsoft.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align",Align);
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("YAxisLabelsFormatter.formatter", Formatter); }  
-			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
-			if (Step != Step_DefaultValue) h.Add("step",Step);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (X != X_DefaultValue) h.Add("x",X);

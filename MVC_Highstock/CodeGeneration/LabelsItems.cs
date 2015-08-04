@@ -8,14 +8,14 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class LabelsItems  : BaseObject
 	{
 		public LabelsItems()
 		{
-			Html = Html_DefaultValue = null;
-			Style = Style_DefaultValue = null;
+			Html = Html_DefaultValue = "''";
+			Style = Style_DefaultValue = new NameValueCollection();
 			
 		}	
 		

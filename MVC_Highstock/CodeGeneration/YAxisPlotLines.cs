@@ -8,16 +8,16 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class YAxisPlotLines  : BaseObject
 	{
 		public YAxisPlotLines()
 		{
-			Color = Color_DefaultValue = null;
+			Color = Color_DefaultValue = "null";
 			DashStyle = DashStyle_DefaultValue = YAxisPlotLinesDashStyle.Solid;
 			Events = Events_DefaultValue = null;
-			Id = Id_DefaultValue = null;
+			Id = Id_DefaultValue = "null";
 			Label = Label_DefaultValue = new YAxisPlotLinesLabel();
 			Value = Value_DefaultValue = null;
 			Width = Width_DefaultValue = null;

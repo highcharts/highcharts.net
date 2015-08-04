@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Web.Mvc;
-using Highsoft.Web.Mvc.Rendering;
+using Highstock.Web.Mvc.Rendering;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
     public static class HtmlHelperExtensions
     {

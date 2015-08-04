@@ -12,3 +12,4 @@ C:\Highsoft\UtilDateReplacer\bin\Debug\UtilDateReplacer.exe
 C:\Highsoft\UtilDateReplacer\bin\Debug\UtilDateReplacer.pdb
 C:\Highsoft\UtilDateReplacer\obj\Debug\UtilDateReplacer.exe
 C:\Highsoft\UtilDateReplacer\obj\Debug\UtilDateReplacer.pdb
+C:\Highsoft\UtilDateReplacer\obj\Debug\UtilDateReplacer.csprojResolveAssemblyReference.cache

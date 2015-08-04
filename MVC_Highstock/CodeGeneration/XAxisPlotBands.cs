@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class XAxisPlotBands  : BaseObject
 	{
@@ -16,10 +16,10 @@ namespace Highsoft.Web.Mvc
 		{
 			BorderColor = BorderColor_DefaultValue = "null";
 			BorderWidth = BorderWidth_DefaultValue = 0;
-			Color = Color_DefaultValue = null;
+			Color = Color_DefaultValue = "null";
 			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
-			Id = Id_DefaultValue = null;
+			Id = Id_DefaultValue = "null";
 			Label = Label_DefaultValue = new XAxisPlotBandsLabel();
 			To = To_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
@@ -84,7 +84,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The z index of the plot band within the chart.
+		/// The z index of the plot band within the chart, relative to other elements. Using the same z index as another element may give unpredictable results, as the last rendered element will be on top. Values from 0 to 20 make sense.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }

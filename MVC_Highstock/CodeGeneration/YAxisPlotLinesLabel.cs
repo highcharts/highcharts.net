@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class YAxisPlotLinesLabel  : BaseObject
 	{
@@ -16,9 +16,8 @@ namespace Highsoft.Web.Mvc
 		{
 			Align = Align_DefaultValue = "left";
 			Rotation = Rotation_DefaultValue = null;
-			Style = Style_DefaultValue = null;
-			Text = Text_DefaultValue = "";
-			TextAlign = TextAlign_DefaultValue = null;
+			Style = Style_DefaultValue = new NameValueCollection();
+			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = YAxisPlotLinesLabelVerticalAlign.Top;
 			X = X_DefaultValue = null;
@@ -44,15 +43,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// CSS styles for the text label.
 		/// </summary>
-		public Object Style { get; set; }
-		private Object Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The text itself. A subset of HTML is supported.
-		/// </summary>
-		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
+		public NameValueCollection Style { get; set; }
+		private NameValueCollection Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,7 +62,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Vertical alignment of the label relative to the plot band. Can be one of "top", "middle" or "bottom".
+		/// Vertical alignment of the label relative to the plot line. Can be one of "top", "middle" or "bottom".
 		/// </summary>
 		public YAxisPlotLinesLabelVerticalAlign VerticalAlign { get; set; }
 		private YAxisPlotLinesLabelVerticalAlign VerticalAlign_DefaultValue { get; set; }
@@ -97,7 +89,6 @@ namespace Highsoft.Web.Mvc
 			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));

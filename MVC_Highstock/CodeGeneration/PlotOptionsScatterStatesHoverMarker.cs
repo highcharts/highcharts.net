@@ -8,26 +8,26 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class PlotOptionsScatterStatesHoverMarker  : BaseObject
 	{
 		public PlotOptionsScatterStatesHoverMarker()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = false;
+			FillColor = FillColor_DefaultValue = "null";
 			Height = Height_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "#FFFFFF";
+			LineColor = LineColor_DefaultValue = "'#FFFFFF'";
 			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 4;
-			Symbol = Symbol_DefaultValue = null;
+			Symbol = Symbol_DefaultValue = "null";
 			Width = Width_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// Enable or disable the point marker.
+		/// Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }

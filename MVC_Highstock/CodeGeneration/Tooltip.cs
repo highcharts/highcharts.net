@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class Tooltip  : BaseObject
 	{
@@ -19,27 +19,27 @@ namespace Highsoft.Web.Mvc
 			BorderColor = BorderColor_DefaultValue = "null";
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Crosshairs = Crosshairs_DefaultValue = null;
+			ChangeDecimals = ChangeDecimals_DefaultValue = null;
+			Crosshairs = Crosshairs_DefaultValue = true;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
 			Enabled = Enabled_DefaultValue = true;
 			FollowPointer = FollowPointer_DefaultValue = false;
-			FollowTouchMove = FollowTouchMove_DefaultValue = false;
-			FooterFormat = FooterFormat_DefaultValue = "false";
+			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			Formatter = Formatter_DefaultValue = "";
 			HeaderFormat = HeaderFormat_DefaultValue = "";
-			HideDelay = HideDelay_DefaultValue = 500;
-			PointFormat = PointFormat_DefaultValue = "&lt;span style='color:{series.color}'&gt;\u25CF&lt;/span&gt; {series.name}: &lt;b&gt;{point.y}&lt;/b&gt;&lt;br/&gt;";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
+			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "callout";
-			Shared = Shared_DefaultValue = false;
-			Snap = Snap_DefaultValue = null;
-			Style = Style_DefaultValue = null;
+			Shared = Shared_DefaultValue = true;
+			Snap = Snap_DefaultValue = 10/25;
+			Style = Style_DefaultValue = new NameValueCollection();
 			UseHTML = UseHTML_DefaultValue = false;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = null;
 			ValueSuffix = ValueSuffix_DefaultValue = null;
-			XDateFormat = XDateFormat_DefaultValue = null;
+			XDateFormat = XDateFormat_DefaultValue = "";
 			
 		}	
 		
@@ -80,14 +80,21 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Display crosshairs to connect the points with their corresponding axis values. The crosshairs can be defined as a boolean, an array of booleans or an object. <dl> <dt>Boolean</dt> <dd>If the crosshairs option is true, a single crosshair relating to the x axis will be shown.</dd>  <dt>Array of booleans</dt> <dd>In an array of booleans, the first value turns on the x axis crosshair and the second value to the y axis crosshair. Use <code>[true, true]</code> to show complete crosshairs.</dd>  <dt>Array of objects</dt> <dd>In an array of objects, the first value applies to the x axis crosshair and the second value to the y axis crosshair. For each dimension, a <code>width</code>, <code>color</code>, <code><a href="http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">dashStyle</a></code> and <code>zIndex</code> can be given.</dd></dl> Defaults to <code>null</code>.
+		/// How many decimals to show for the <code>point.change</code> value when the <code>series.compare</code> option is set. This is overridable in each series' tooltip options object. The default is to preserve all decimals.
+		/// </summary>
+		public double? ChangeDecimals { get; set; }
+		private double? ChangeDecimals_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Display crosshairs to connect the points with their corresponding axis values. The crosshairs can be defined as a boolean, an array of booleans or an array of objects. <dl> <dt>Boolean</dt> <dd>If the crosshairs option is true, a single crosshair relating to the x axis will be shown.</dd>  <dt>Array of booleans</dt> <dd>In an array of booleans, the first value turns on the x axis crosshair and the second value to the y axis crosshair. Use <code>[true, true]</code> to show complete crosshairs.</dd>  <dt>Array of objects</dt> <dd>In an array of objects, the first value applies to the x axis crosshair and the second value to the y axis crosshair. For each dimension, a <code>width</code>, <code>color</code> <code><a href="http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">dashStyle</a></code> and <code>zIndex</code> can be given. can be given.</dd></dl> Defaults to <code>true</code>.
 		/// </summary>
 		public List<Crosshair> Crosshairs { get; set; }
 		private List<Crosshair> Crosshairs_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p><p>Defaults to:<pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre></p>
+		/// <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit.<p><p>Note that when data grouping applies, the date time label formats are pulled from <a href="#plotOptions.series.dataGrouping.dateTimeLabelFormats">dataGrouping.dateTimeLabelFormats</a> instead, because it also allows formatting of time spans.</p><p>For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p><p>Defaults to:<pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre></p>
 		/// </summary>
 		public NameValueCollection DateTimeLabelFormats { get; set; }
 		private NameValueCollection DateTimeLabelFormats_DefaultValue { get; set; }
@@ -108,21 +115,14 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Whether the tooltip should follow the finger as it moves on a touch device. The default value of <code>false</code> causes a touch move to scroll the web page, as is default behaviour on touch devices. Setting it to <code>true</code> may cause the user to be trapped inside the chart and unable to scroll away, so it should be used with care. If <a href="#chart.zoomType">chart.zoomType</a> is set, it will override <code>followTouchMove</code>
+		/// Whether the tooltip should follow the finger as it moves on a touch device. In order to take effect, <a href="#chart.zoomType">chart.zoomType</a> and <a href="#chart.pinchType">chart.pinchType</a> must be disabled.
 		/// </summary>
 		public bool? FollowTouchMove { get; set; }
 		private bool? FollowTouchMove_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A string to append to the tooltip format.
-		/// </summary>
-		public string FooterFormat { get; set; }
-		private string FooterFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Callback function to format the text of the tooltip. Return false to disable tooltip for a specific point on series.</p> <p>A subset of HTML is supported. The HTML of the tooltip is parsed and converted to SVG,  therefore this isn't a complete HTML renderer. The following tabs are supported:  <code>&lt;b&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;br/&gt;</code>, <code>&lt;span&gt;</code>. Spans can be styled with a <code>style</code> attribute, but only text-related CSS that is  shared with SVG is handled. </p> <p>Since version 2.1 the tooltip can be shared between multiple series through  the <code>shared</code> option. The available data in the formatter differ a bit depending on whether the tooltip is shared or not. In a shared tooltip, all  properties except <code>x</code>, which is common for all points, are kept in  an array, <code>this.points</code>.</p>  <p>Available data are:</p> <dl> <dt>this.percentage (not shared) / this.points[i].percentage (shared)</dt> <dd>Stacked series and pies only. The point's percentage of the total.</dd>  <dt>this.point (not shared) / this.points[i].point (shared)</dt> <dd>The point object. The point name, if defined, is available  through <code>this.point.name</code>.</dd>  <dt>this.points</dt> <dd>In a shared tooltip, this is an array containing all other properties for each point.</dd>  <dt>this.series (not shared) / this.points[i].series (shared)</dt> <dd>The series object. The series name is available  through <code>this.series.name</code>.</dd>  <dt>this.total (not shared) / this.points[i].total (shared)</dt> <dd>Stacked series only. The total value at this point's x value.</dd>  <dt>this.x</dt> <dd>The x value. This property is the same regardless of the tooltip being shared or not.</dd>  <dt>this.y (not shared) / this.points[i].y (shared)</dt> <dd>The y value.</dd>  </dl>
+		/// <p>Callback function to format the text of the tooltip from scratch. Return false to disable tooltip for a specific point on series.</p> <p>A subset of HTML is supported. The HTML of the tooltip is parsed and converted to SVG,  therefore this isn't a complete HTML renderer. The following tabs are supported:  <code>&lt;b&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;br/&gt;</code>, <code>&lt;span&gt;</code>. Spans can be styled with a <code>style</code> attribute, but only text-related CSS that is  shared with SVG is handled. </p> <p>Since version 2.1 the tooltip can be shared between multiple series through  the <code>shared</code> option. The available data in the formatter differ a bit depending on whether the tooltip is shared or not. In a shared tooltip, all  properties except <code>x</code>, which is common for all points, are kept in  an array, <code>this.points</code>.</p>  <p>Available data are:</p> <dl> <dt>this.percentage (not shared) / this.points[i].percentage (shared)</dt> <dd>Stacked series and pies only. The point's percentage of the total.</dd>  <dt>this.point (not shared) / this.points[i].point (shared)</dt> <dd>The point object. The point name, if defined, is available  through <code>this.point.name</code>.</dd>  <dt>this.points</dt> <dd>In a shared tooltip, this is an array containing all other properties for each point.</dd>  <dt>this.series (not shared) / this.points[i].series (shared)</dt> <dd>The series object. The series name is available  through <code>this.series.name</code>.</dd>  <dt>this.total (not shared) / this.points[i].total (shared)</dt> <dd>Stacked series only. The total value at this point's x value.</dd>  <dt>this.x</dt> <dd>The x value. This property is the same regardless of the tooltip being shared or not.</dd>  <dt>this.y (not shared) / this.points[i].y (shared)</dt> <dd>The y value.</dd>  </dl>
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
@@ -136,17 +136,17 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The number of milliseconds to wait until the tooltip is hidden when mouse out from a point or chart. 
-		/// </summary>
-		public double? HideDelay { get; set; }
-		private double? HideDelay_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>The HTML of the point's line in the tooltip. Variables are enclosed by curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form. Furthermore,  point.y can be extended by the <code>tooltip.yPrefix</code> and <code>tooltip.ySuffix</code> variables. This can also be overridden for each series, which makes it a good hook for displaying units.</p>
+		/// <p>The HTML of the point's line in the tooltip. Variables are enclosed by curly brackets. Available variables are point.x, point.y, point.change, series.name and series.color and other properties on the same form. Furthermore,  point.y can be extended by the tooltip.valuePrefix and tooltip.valueSuffix variables. This can also be overridden for each series, which makes it a good hook for displaying units.</p>
 		/// </summary>
 		public string PointFormat { get; set; }
 		private string PointFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A callback function for formatting the HTML output for a single point in the tooltip. Like the <code>pointFormat</code> string, but with more flexibility.
+		/// </summary>
+		public string PointFormatter { get; set; }
+		private string PointFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -164,7 +164,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The name of a symbol to use for the border around the tooltip. In Highcharts 3.x and less, the shape was <code>square</code>. 
+		/// The name of a symbol to use for the border around the tooltip. In Highstock 1.x, the shape was <code>square</code>. 
 		/// </summary>
 		public string Shape { get; set; }
 		private string Shape_DefaultValue { get; set; }
@@ -178,7 +178,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Proximity snap for graphs or single points. Does not apply to bars, columns and pie slices. It defaults to 10 for mouse-powered devices and 25 for touch  devices.
+		/// Proximity snap for graphs or single points. Does not apply to bars, columns and pie slices. It defaults to 10 for mouse-powered devices and 25 for touch  devices. Note that since Highstock 2.1 the whole plot area by default captures pointer events in order to show the tooltip, so for tooltip.snap to make sense, <a href="#plotOptions.series.stickyTracking">stickyTracking</a> must be <code>false</code>.
 		/// </summary>
 		public double? Snap { get; set; }
 		private double? Snap_DefaultValue { get; set; }
@@ -220,7 +220,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
+		/// The format for the date in the tooltip header. If data grouping is used, the default is  a smart guess based on how close the closest points are. It is pulled from the #plotOptions.dataGrouping.dateTimeLabelFormats array.
 		/// </summary>
 		public string XDateFormat { get; set; }
 		private string XDateFormat_DefaultValue { get; set; }
@@ -235,16 +235,16 @@ namespace Highsoft.Web.Mvc
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (ChangeDecimals != ChangeDecimals_DefaultValue) h.Add("changeDecimals",ChangeDecimals);
 			if (Crosshairs != Crosshairs_DefaultValue) h.Add("crosshairs",Crosshairs);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
-			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("TooltipFormatter.formatter", Formatter); }  
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highstock.AddFunction("TooltipPointFormatter.pointFormatter", PointFormatter); }  
 			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highstock.AddFunction("TooltipPositioner.positioner", Positioner); }  
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);

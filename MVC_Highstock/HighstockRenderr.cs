@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
-using Highsoft.Web.Mvc;
+using Highstock.Web.Mvc;
 
-namespace Highsoft.Web.Mvc.Rendering
+namespace Highstock.Web.Mvc.Rendering
 {
     public class HighstockRenderer
     {
@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Rendering
         public string RenderHtml()
         {            
             #if (LICENSED == false)
-            if (DateTime.Now > Highsoft.Web.Mvc.CompiledOn.CompilationDate.AddDays(45))
+            if (DateTime.Now > CompiledOn.CompilationDate.AddDays(45))
             {
                 return "This is a trial version of Highstock for ASP.NET MVC which has expired.<br> Please, contact sales@Highstock.com for purchasing the product or for trial extension.";
                
@@ -62,9 +62,7 @@ namespace Highsoft.Web.Mvc.Rendering
 
             if (_chart.Series != null)
                 series = SeriesToHashtables(_chart.Series);
-            if (_chart.Drilldown.Series != null)
-                drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
-
+            
             if (series.Count > 0)
             {
                 options["series"] = series;

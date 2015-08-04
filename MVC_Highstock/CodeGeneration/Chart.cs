@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class Chart  : BaseObject
 	{
@@ -20,32 +20,26 @@ namespace Highsoft.Web.Mvc
 			BorderColor = BorderColor_DefaultValue = "#4572A7";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
-			ClassName = ClassName_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = " ";
 			Events = Events_DefaultValue = new ChartEvents();
 			Height = Height_DefaultValue = null;
 			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
-			Inverted = Inverted_DefaultValue = false;
-			Margin = Margin_DefaultValue = null;
+			Margin = Margin_DefaultValue = [null];
 			MarginBottom = MarginBottom_DefaultValue = null;
 			MarginLeft = MarginLeft_DefaultValue = null;
 			MarginRight = MarginRight_DefaultValue = null;
 			MarginTop = MarginTop_DefaultValue = null;
-			Options3d = Options3d_DefaultValue = new ChartOptions3d();
-			PanKey = PanKey_DefaultValue = "";
-			Panning = Panning_DefaultValue = false;
-			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
-			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = null;
-			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = null;
-			PlotBorderColor = PlotBorderColor_DefaultValue = "#C0C0C0";
+			Panning = Panning_DefaultValue = true;
+			PinchType = PinchType_DefaultValue = ChartPinchType.X;
+			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "null";
+			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "null";
+			PlotBorderColor = PlotBorderColor_DefaultValue = "'#C0C0C0'";
 			PlotBorderWidth = PlotBorderWidth_DefaultValue = 0;
 			PlotShadow = PlotShadow_DefaultValue = new Shadow() { Enabled = false };
-			Polar = Polar_DefaultValue = false;
 			Reflow = Reflow_DefaultValue = true;
 			RenderTo = RenderTo_DefaultValue = null;
-			ResetZoomButton = ResetZoomButton_DefaultValue = new ChartResetZoomButton();
-			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(69,114,167,0.25)";
+			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(69114,167,0.25),";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShowAxes = ShowAxes_DefaultValue = false;
 			SpacingBottom = SpacingBottom_DefaultValue = 15;
 			SpacingLeft = SpacingLeft_DefaultValue = 10;
 			SpacingRight = SpacingRight_DefaultValue = 10;
@@ -66,7 +60,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>Set the overall animation for all chart updating. Animation can be disabled throughout the chart by setting it to false here. It can be overridden for each individual API method as a function parameter. The only animation not affected by this option is the  initial series animation, see <a class="internal" href="#plotOptions.series.animation">plotOptions.series.animation</a>.</p>  <p>The animation can either be set as a boolean or a configuration object. If <code>true</code>, it will use the 'swing' jQuery easing and a duration of 500 ms. If used as a configuration object, the following properties are supported:  </p><dl> <dt>duration</dt> <dd>The duration of the animation in milliseconds.</dd>  <dt>easing</dt> <dd>When using jQuery as the general framework, the easing can be set to <code>linear</code> or <code>swing</code>. More easing functions are available with the use of jQuery plug-ins, most notably the jQuery UI suite. See <a href="http://api.jquery.com/animate/">the jQuery docs</a>. When using  MooTools as the general framework, use the property name <code>transition</code> instead  of <code>easing</code>.</dd> </dl>
+		/// <p>Set the overall animation for all chart updating. Animation can be disabled throughout the chart by setting it to false here. It can be overridden for each individual API method as a function parameter. The only animation not affected by this option is the  initial series animation, see <a class="internal" href="#plotOptions.series">plotOptions.series</a> =&gt; animation.</p>  <p>The animation can either be set as a boolean or a configuration object. If <code>true</code>, it will use the 'swing' jQuery easing and a duration of 500 ms. If used as a configuration object, the following properties are supported:  </p><dl> <dt>duration</dt> <dd>The duration of the animation in milliseconds.</dd>  <dt>easing</dt> <dd>When using jQuery as the general framework, the easing can be set to <code>linear</code> or <code>swing</code>. More easing functions are available with the use of jQuery plug-ins, most notably the jQuery UI suite. See <a href="http://api.jquery.com/animate/">the jQuery docs</a>. When using  MooTools as the general framework, use the property name <code>transition</code> instead  of <code>easing</code>.</dd> </dl>
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
@@ -129,13 +123,6 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Whether to invert the axes so that the x axis is vertical and y axis is horizontal. When true, the x axis is reversed by default. If a bar series is present in the chart, it will be inverted automatically.
-		/// </summary>
-		public bool? Inverted { get; set; }
-		private bool? Inverted_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// <p>The margin between the outer edge of the chart and the plot area. The numbers in the array designate top, right, bottom and left respectively. Use the options <code>marginTop</code>, <code>marginRight</code>, <code>marginBottom</code> and <code>marginLeft</code> for shorthand setting of one option.</p> <p>Since version 2.1, the margin is 0 by default. The actual space is dynamically calculated  from the offset of axis labels, axis title, title, subtitle and legend in addition to the <code>spacingTop</code>, <code>spacingRight</code>, <code>spacingBottom</code> and <code>spacingLeft</code> options.</p> Defaults to <code>[null]</code>.
 		/// </summary>
 		public Array Margin { get; set; }
@@ -171,21 +158,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Options to render charts in 3 dimensions. This feature requires <code>highcharts-3d.js</code>, found in the download package or online at <a href="http://code.highcharts.com/highcharts-3d.js">code.highcharts.com/highcharts-3d.js</a>.
-		/// </summary>
-		public ChartOptions3d Options3d { get; set; }
-		private ChartOptions3d Options3d_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Allows setting a key to switch between zooming and panning. 
-		/// </summary>
-		public string PanKey { get; set; }
-		private string PanKey_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Allow panning in a chart. Best used with <a href="#chart.panKey">panKey</a> to combine zooming and panning.
+		/// Allow panning the zoomed area by click and drag on the chart. When the <code>zoomType</code> option is set, panning is disabled.
 		/// </summary>
 		public bool? Panning { get; set; }
 		private bool? Panning_DefaultValue { get; set; }
@@ -227,17 +200,10 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the plot area. Requires that plotBackgroundColor be set. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
+		/// Whether to apply a drop shadow to the plot area. Requires that plotBackgroundColor be set. Since 1.1.7 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
 		/// </summary>
 		public Shadow PlotShadow { get; set; }
 		private Shadow PlotShadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When true, cartesian charts like line, spline, area and column are transformed into the polar coordinate system. Requires <code>highcharts-more.js</code>.
-		/// </summary>
-		public bool? Polar { get; set; }
-		private bool? Polar_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -255,31 +221,17 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The button that appears after a selection zoom, allowing the user to reset zoom.
-		/// </summary>
-		public ChartResetZoomButton ResetZoomButton { get; set; }
-		private ChartResetZoomButton ResetZoomButton_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The background color of the marker square when selecting (zooming in on) an area of the chart.
+		/// The background color of the marker square when selecting (zooming in on) an area of the chart. Defaults to <code>rgba(69,114,167,0.25)</code>.
 		/// </summary>
 		public string SelectionMarkerFill { get; set; }
 		private string SelectionMarkerFill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the outer chart area. Requires that  backgroundColor be set. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
+		/// Whether to apply a drop shadow to the outer chart area. Requires that  backgroundColor be set. Since 1.1.7 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to show the axes initially. This only applies to empty charts where series are added dynamically, as axes are automatically added to cartesian series.
-		/// </summary>
-		public bool? ShowAxes { get; set; }
-		private bool? ShowAxes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -352,14 +304,11 @@ namespace Highsoft.Web.Mvc
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
-			if (Inverted != Inverted_DefaultValue) h.Add("inverted",Inverted);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MarginBottom != MarginBottom_DefaultValue) h.Add("marginBottom",MarginBottom);
 			if (MarginLeft != MarginLeft_DefaultValue) h.Add("marginLeft",MarginLeft);
 			if (MarginRight != MarginRight_DefaultValue) h.Add("marginRight",MarginRight);
 			if (MarginTop != MarginTop_DefaultValue) h.Add("marginTop",MarginTop);
-			if (Options3d.IsDirty()) h.Add("options3d",Options3d.ToHashtable());
-			if (PanKey != PanKey_DefaultValue) h.Add("panKey",PanKey);
 			if (Panning != Panning_DefaultValue) h.Add("panning",Panning);
 			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", Highstock.FirstCharacterToLower(PinchType.ToString()));
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
@@ -367,13 +316,10 @@ namespace Highsoft.Web.Mvc
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
 			if (PlotShadow.IsDirty()) h.Add("plotShadow",PlotShadow.ToJSON());
-			if (Polar != Polar_DefaultValue) h.Add("polar",Polar);
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
-			if (ResetZoomButton.IsDirty()) h.Add("resetZoomButton",ResetZoomButton.ToHashtable());
 			if (SelectionMarkerFill != SelectionMarkerFill_DefaultValue) h.Add("selectionMarkerFill",SelectionMarkerFill);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (ShowAxes != ShowAxes_DefaultValue) h.Add("showAxes",ShowAxes);
 			if (SpacingBottom != SpacingBottom_DefaultValue) h.Add("spacingBottom",SpacingBottom);
 			if (SpacingLeft != SpacingLeft_DefaultValue) h.Add("spacingLeft",SpacingLeft);
 			if (SpacingRight != SpacingRight_DefaultValue) h.Add("spacingRight",SpacingRight);

@@ -8,17 +8,17 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class LegendNavigation  : BaseObject
 	{
 		public LegendNavigation()
 		{
-			ActiveColor = ActiveColor_DefaultValue = "#3E576F";
+			ActiveColor = ActiveColor_DefaultValue = "#274b6d";
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			ArrowSize = ArrowSize_DefaultValue = 12;
 			InactiveColor = InactiveColor_DefaultValue = "#CCC";
-			Style = Style_DefaultValue = null;
+			Style = Style_DefaultValue = new NameValueCollection();
 			
 		}	
 		

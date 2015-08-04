@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class Title  : BaseObject
 	{
@@ -17,8 +17,8 @@ namespace Highsoft.Web.Mvc
 			Align = Align_DefaultValue = TitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
 			Margin = Margin_DefaultValue = 15;
-			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "fontSize", "18px" }};
-			Text = Text_DefaultValue = "Chart title";
+			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "fontSize", "16px" }};
+			Text = Text_DefaultValue = "null";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Top;
 			X = X_DefaultValue = 0;

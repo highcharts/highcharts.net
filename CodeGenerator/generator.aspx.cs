@@ -14,6 +14,7 @@ public partial class generatoraspx : System.Web.UI.Page
 {
     const int PROPERTY_NESTED_LEVELS = 10; // currently max levels of nested properties is five
     const string ROOT_CLASS = "Highcharts"; // the name of the root class
+    //const string ROOT_CLASS = "Highstock"; // the name of the root class
 
     List<ApiItem> _apiItems; // json api mappings will be stored here
     StreamWriter _log; // general debug related txt log file
@@ -106,7 +107,7 @@ public partial class generatoraspx : System.Web.UI.Page
         foreach (ApiItem apiItem in _apiItems)
         {
             // All events (javascript functions) should default to empty string
-            if (apiItem.ReturnType != null && apiItem.ReturnType == "Function")
+            if (apiItem.ReturnType != null && (apiItem.ReturnType == "Function" || apiItem.ReturnType == "String|Function"))
                 apiItem.Defaults = "";
             if (apiItem.Title == "pointPlacement")
             {
@@ -117,6 +118,26 @@ public partial class generatoraspx : System.Web.UI.Page
             {
                 apiItem.IsParent = false;
                 apiItem.Values = new List<string>();
+            }
+            if (apiItem.Title == "trackBorderColor")
+            {
+                apiItem.ReturnType = "String";
+            }
+            if (apiItem.Title == "tickInterval")
+            {
+                apiItem.ReturnType = "Number";
+            }
+            if (apiItem.Title == "tickPosition")
+            {
+                apiItem.Defaults = "outside";
+            }
+            if (apiItem.Title == "trackBorderWidth")
+            {
+                apiItem.ReturnType = "Number";
+            }
+            if (apiItem.Title == "connectNulls")
+            {
+                apiItem.Defaults = "false";
             }
 
             // add Defaults to enum if they are not available in the Values list.
@@ -237,16 +258,19 @@ public partial class generatoraspx : System.Web.UI.Page
             foreach (string value in apiItem.Values)
             {
                 if ( value == apiItem.Defaults || 
+                     "\"" + value + "\"" == apiItem.Defaults ||
                     (value == null && apiItem.Defaults == "null"))
                 {
                     defaultMatched = true;
+                    if (apiItem.Defaults != null)
+                        apiItem.Defaults = apiItem.Defaults.Replace("\"", "");
                     break;
                 }
             }
 
             // TitleVerticalAlign / SubTitleVerticalAlign have defaults set to " " and only Top, Center and Bottom as options
             string defaults = apiItem.Defaults;
-            if (defaults == " ")
+            if (defaults == " " || defaults == "" || defaults == "''")
                 apiItem.Defaults = apiItem.Values[0];
             else if (!defaultMatched)
                 apiItem.Values.Insert(0, defaults);
@@ -390,7 +414,7 @@ public partial class generatoraspx : System.Web.UI.Page
         if (child.IsParent)
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
         // Event (javascript function)
-        if (child.ReturnType != null && child.ReturnType == "Function")
+        if (child.ReturnType != null && (child.ReturnType == "Function" || child.ReturnType == "String|Function"))
             return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName), ROOT_CLASS);
         // Just a property
         else
@@ -455,9 +479,11 @@ public partial class generatoraspx : System.Web.UI.Page
     private void InitTypeMappings()
     {
         _typeMappings.Add("String", "string");
+        _typeMappings.Add("Text", "string");
         _typeMappings.Add("Number", "double?");
         _typeMappings.Add("Boolean", "bool?");
         _typeMappings.Add("Function", "string");
+        _typeMappings.Add("String|Function", "string");
         _typeMappings.Add("Color", "string");
         _typeMappings.Add("CSSObject", "NameValueCollection");
         _typeMappings.Add("Number|String", "string");
@@ -465,6 +491,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _typeMappings.Add("String|HTMLElement", "string");
         _typeMappings.Add("Array<Color>", "List<string>");
         _typeMappings.Add("Array<String>", "List<string>");
+        _typeMappings.Add("Array<String>;", "List<string>");
         _typeMappings.Add("Array<Number>", "List<double>");
         _typeMappings.Add("Array<Array<Mixed>>", "List<List<object>>");
         _typeMappings.Add("Array<Object>", "List<object>");
@@ -479,9 +506,12 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyTypeMappings.Add("Center", "new string[]");
         _propertyTypeMappings.Add("Position", "NameValueCollection");
         _propertyTypeMappings.Add("DateTimeLabelFormats", "NameValueCollection");
+        _propertyTypeMappings.Add("InputPosition", "NameValueCollection");
         _propertyTypeMappings.Add("Attr", "NameValueCollection");
+        _propertyTypeMappings.Add("Style", "NameValueCollection");
         _propertyTypeMappings.Add("Stack", "string");
         _propertyTypeMappings.Add("Symbol", "string");
+        _propertyTypeMappings.Add("TrackBorderColor", "string");
         _propertyTypeMappings.Add("Background", "List<Background>");
         _propertyTypeMappings.Add("MenuItems", "List<MenuItem>");
         _propertyTypeMappings.Add("Crosshairs", "List<Crosshair>");
@@ -511,6 +541,8 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("Center", "new string[] { null, null }");
         _propertyInitMappings.Add("Position", "new NameValueCollection()");
         _propertyInitMappings.Add("DateTimeLabelFormats", "new NameValueCollection()");
+        _propertyInitMappings.Add("InputPosition", "new NameValueCollection()");
+        _propertyInitMappings.Add("Style", "new NameValueCollection()");
         _propertyInitMappings.Add("Columns", "new List<List<Object>>()");
         _propertyInitMappings.Add("Rows", "new List<List<object>>()");
         _propertyInitMappings.Add("SeriesMapping", "new List<object>()");
@@ -566,11 +598,18 @@ public partial class generatoraspx : System.Web.UI.Page
         _seriesMappings.Add("series<spline>", "SplineSeries");
         _seriesMappings.Add("series<treemap>", "TreemapSeries");
         _seriesMappings.Add("series<waterfall>", "WaterfallSeries");
+
+        // Highstock specific
+        _seriesMappings.Add("series<flags>", "FlagsSeries");
+        _seriesMappings.Add("series<candlestick>", "CandleStickSeries");
+        _seriesMappings.Add("series<ohlc>", "OhlcSeries");
+
+
     }
 
     private void InitExcludedProperties()
     {
-        //_excludedProperties.Add("Series");
+        _excludedProperties.Add("BaseSeries");
         _excludedProperties.Add("Spacing");
         _excludedProperties.Add("Date");
         _excludedProperties.Add("Units");
@@ -637,7 +676,7 @@ public partial class generatoraspx : System.Web.UI.Page
             {
                 return "double.MinValue";
             }
-            if (item.ReturnType == "Function")
+            if (item.ReturnType == "Function" || item.ReturnType == "String|Function")
                 return "\"\"";
 
             if (!String.IsNullOrEmpty(item.Defaults))
@@ -649,9 +688,10 @@ public partial class generatoraspx : System.Web.UI.Page
                 {
                     return '"' + defaults.Replace("\"", "'") + '"';
                 }
-                if (item.ReturnType == "Array<String>")
+                if (item.ReturnType.StartsWith("Array<String>")) // thereis Array<String>; ending with ; in Highstock
                 {
                     return "new List<string> " + item.Defaults
+                                        .Replace("'", "\"")
                                         .Replace("[", "{")
                                         .Replace("]", "}");
                 }
@@ -668,6 +708,7 @@ public partial class generatoraspx : System.Web.UI.Page
                 {
                     string result = "new NameValueCollection" + "{" + item.Defaults
                                                         .Replace(",", "},{")
+                                                        .Replace(";", "},{")
                                                         .Replace(":", ",") + "}";
                     if (item.Title == "position")
                         result = result.Replace("0", "\"0\"");

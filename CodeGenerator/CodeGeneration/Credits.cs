@@ -17,7 +17,7 @@ namespace Highcharts.Web.Mvc
 			Enabled = Enabled_DefaultValue = true;
 			Href = Href_DefaultValue = "http://www.highcharts.com";
 			Position = Position_DefaultValue = new NameValueCollection();
-			Style = Style_DefaultValue = null;
+			Style = Style_DefaultValue = new NameValueCollection();
 			Text = Text_DefaultValue = "Highcharts.com";
 			
 		}	

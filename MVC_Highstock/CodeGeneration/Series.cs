@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class Series  : BaseObject
 	{
@@ -18,8 +18,8 @@ namespace Highsoft.Web.Mvc
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
-			Name = Name_DefaultValue = null;
-			Stack = Stack_DefaultValue = null;
+			Name = Name_DefaultValue = "''";
+			Stack = Stack_DefaultValue = "null";
 			Type = Type_DefaultValue = SeriesType.Null;
 			XAxis = XAxis_DefaultValue = "0";
 			YAxis = YAxis_DefaultValue = "0";
@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc
 		
 
 		/// <summary>
-		/// An array of data points for the series. The points can be given in three ways: <ol> <li>An array of numerical values. In this case, the numerical values will  be interpreted as y values, and x values will be automatically calculated, either starting at 0 and incrementing by 1, or from <code>pointStart</code>  and <code>pointInterval</code> given in the plotOptions. If the axis is has categories, these will be used. This option is not available for range series. Example:<pre>data: [0, 5, 3, 5]</pre> </li> <li><p>An array of arrays with two values. In this case, the first value is the x value and the second is the y value. If the first value is a string, it is applied as the name of the point, and the x value is incremented following the above rules.</p><p>For range series, the arrays will be interpreted as <code>[x, low, high]</code>. In this cases, the X value can be skipped altogether to make use of <code>pointStart</code> and <code>pointRange</code>.</p> Example:<pre>data: [[5, 2], [6, 3], [8, 2]]</pre></li><li><p>An array of objects with named values. In this case the objects are point configuration objects as seen below.</p><p>Range series values are given by <code>low</code> and <code>high</code>.</p>Example:<pre>data: [{name: 'Point 1',color: '#00FF00',y: 0}, {name: 'Point 2',color: '#FF00FF',y: 5}]</pre></li> </ol><p>Note that line series and derived types like spline and area, require data to be sorted by X because it interpolates mouse coordinates for the tooltip. Column and scatter series, where each point has its own mouse event, does not require sorting.</p>
+		/// An array of data points for the series. The series object is expecting the points to be ordered from low to high.  The reason for this is to increase performance. While in many cases the data is fetched from a server, it's also more convenient to sort on the server and thereby save on client resources.    The points can be given in three ways:<ol><li>A list of numerical values. In this case, the numerical values will be interpreted as y values, and x values will be automatically calculated, either starting at 0 and incrementing by 1, or from <code>pointStart</code> and <code>pointInterval</code> given in the plotOptions. This option is not available for series types with more than one value per point, like area range or OHLC. Example:<pre>data: [0, 5, 3, 5]</pre> </li> <li><p>A list of arrays with two values. In this case, the first value is the x value and the second is the y value. If the first value is a string, it is applied as the name of the point, and the x value is incremented following the above rules.</p> <p>For series with more than one value per point, like range or OHLC, the arrays will be interpreted as <code>[x, low, high]</code> or <code>[x, open, high, low, close]</code>. In these cases, the X value can be skipped altogether to make use of <code>pointStart</code> and <code>pointRange</code>.</p> Example:<pre>data: [[5, 2], [6, 3], [8, 2]]</pre></li><li><p>A list of object with named values. In this case the objects arepoint configuration objects as seen under <a href="#point">options.point</a>.</p><p>Range series values are given by <code>low</code> and <code>high</code>, while candlestick/OHLC values are given by <code>open</code>, <code>high</code>, <code>low</code>, <code>close</code>.</p> Example:<pre>data: [{name: 'Point 1',color: '#00FF00',y: 0}, {name: 'Point 2',color: '#FF00FF',y: 5}]</pre></li> </ol><p> In turbo mode, when working with series longer than <a class="internal" href="#plotOptions.series.turboThreshold"> turboThreshold</a> (1000 points by default), only one- or two dimensional arrays of numbers are allowed. The first value is tested, and we assume that all the rest are defined the same way.</p><p>Note data must be sorted by X in order for the tooltip positioning and data grouping to work.</p>
 		/// </summary>
 		public List<SeriesData> Data { get; set; }
 		private List<SeriesData> Data_DefaultValue { get; set; }
@@ -71,7 +71,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// The type of series. Can be one of <code>area</code>, <code>areaspline</code>, <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>, <code>scatter</code> or <code>spline</code>. From version 2.3, <code>arearange</code>, <code>areasplinerange</code> and <code>columnrange</code> are supported with the highcharts-more.js component.
+		/// The type of series. Can be one of <code>area</code>, <code>areaspline</code>, <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>, <code>scatter</code>, <code>spline</code>, <code>candlestick</code> or <code>ohlc</code>. From version 1.1.7, <code>arearange</code>, <code>areasplinerange</code> and <code>columnrange</code> are supported with the highcharts-more.js component.
 		/// </summary>
 		public SeriesType Type { get; set; }
 		private SeriesType Type_DefaultValue { get; set; }

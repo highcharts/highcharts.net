@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class PlotOptionsScatterPointEvents  : BaseObject
 	{
@@ -26,49 +26,49 @@ namespace Highsoft.Web.Mvc
 		
 
 		/// <summary>
-		/// <p></p>Fires when a point is clicked. The <code>this</code> keyword refers to the  point object itself. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
+		/// <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
 		/// </summary>
 		public string Click { get; set; }
 		private string Click_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the mouse leaves the area close to the point. The <code>this</code> keyword refers to the  point object itself. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.
+		/// Fires when the mouse leaves the area close to the point. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.
 		/// </summary>
 		public string MouseOut { get; set; }
 		private string MouseOut_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the mouse enters the area close to the point. The <code>this</code> keyword refers to the  point object itself. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.
+		/// Fires when the mouse enters the area close to the point. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.
 		/// </summary>
 		public string MouseOver { get; set; }
 		private string MouseOver_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the point is removed using the <code>.remove()</code> method. The <code>this</code> keyword refers to the  point object itself. One parameter, <code>event</code>, is passed to the function. Returning <code>false</code> cancels the operation.
+		/// Fires when the point is removed using the <code>.remove()</code> method. One parameter, <code>event</code>, is passed to the function. Returning <code>false</code> cancels the operation.
 		/// </summary>
 		public string Remove { get; set; }
 		private string Remove_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the point is selected either programmatically or following a click on the point. The <code>this</code> keyword refers to the  point object itself. One parameter, <code>event</code>, is passed to the function. Returning <code>false</code> cancels the operation.
+		/// Fires when the point is selected either programmatically or following a click on the point. One parameter, <code>event</code>, is passed to the function. Returning <code>false</code> cancels the operation.
 		/// </summary>
 		public string Select { get; set; }
 		private string Select_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the point is unselected either programmatically or following a click on the point. The <code>this</code> keyword refers to the  point object itself. One parameter, <code>event</code>, is passed to the function. Returning <code>false</code> cancels the operation.
+		/// Fires when the point is unselected either programmatically or following a click on the point. One parameter, <code>event</code>, is passed to the function. Returning <code>false</code> cancels the operation.
 		/// </summary>
 		public string Unselect { get; set; }
 		private string Unselect_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the point is updated programmatically through the <code>.update()</code> method. The <code>this</code> keyword refers to the  point object itself. One parameter, <code>event</code>, is passed to the function. The  new point options can be accessed through <code>event.options</code>. Returning <code>false</code> cancels the operation.
+		/// Fires when the point is updated programmatically through the <code>.update()</code> method. One parameter, <code>event</code>, is passed to the function. The  new point options can be accessed through <code>event.options</code>. Returning <code>false</code> cancels the operation.
 		/// </summary>
 		public string Update { get; set; }
 		private string Update_DefaultValue { get; set; }

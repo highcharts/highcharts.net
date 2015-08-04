@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highstock.Web.Mvc
 {
 	public partial class Highstock  : BaseObject
 	{
@@ -17,7 +17,6 @@ namespace Highsoft.Web.Mvc
 			Chart = Chart_DefaultValue = new Chart();
 			Colors = Colors_DefaultValue = new List<string>();
 			Credits = Credits_DefaultValue = new Credits();
-			Drilldown = Drilldown_DefaultValue = new Drilldown();
 			Exporting = Exporting_DefaultValue = new Exporting();
 			Global = Global_DefaultValue = new Global();
 			Labels = Labels_DefaultValue = new Labels();
@@ -25,10 +24,24 @@ namespace Highsoft.Web.Mvc
 			Legend = Legend_DefaultValue = new Legend();
 			Loading = Loading_DefaultValue = new Loading();
 			Navigation = Navigation_DefaultValue = new Navigation();
-			NoData = NoData_DefaultValue = new NoData();
-			Pane = Pane_DefaultValue = new Pane();
+			Navigator = Navigator_DefaultValue = new Navigator();
 			PlotOptions = PlotOptions_DefaultValue = new PlotOptions();
+			RangeSelector = RangeSelector_DefaultValue = new RangeSelector();
+			Scrollbar = Scrollbar_DefaultValue = new Scrollbar();
 			Series = Series_DefaultValue = new List<Series>();
+			AreaSeries = AreaSeries_DefaultValue = new AreaSeries();
+			ArearangeSeries = ArearangeSeries_DefaultValue = new ArearangeSeries();
+			AreasplineSeries = AreasplineSeries_DefaultValue = new AreasplineSeries();
+			AreasplinerangeSeries = AreasplinerangeSeries_DefaultValue = new AreasplinerangeSeries();
+			CandleStickSeries = CandleStickSeries_DefaultValue = new CandleStickSeries();
+			ColumnSeries = ColumnSeries_DefaultValue = new ColumnSeries();
+			ColumnrangeSeries = ColumnrangeSeries_DefaultValue = new ColumnrangeSeries();
+			FlagsSeries = FlagsSeries_DefaultValue = new FlagsSeries();
+			LineSeries = LineSeries_DefaultValue = new LineSeries();
+			OhlcSeries = OhlcSeries_DefaultValue = new OhlcSeries();
+			PolygonSeries = PolygonSeries_DefaultValue = new PolygonSeries();
+			ScatterSeries = ScatterSeries_DefaultValue = new ScatterSeries();
+			SplineSeries = SplineSeries_DefaultValue = new SplineSeries();
 			Subtitle = Subtitle_DefaultValue = new Subtitle();
 			Title = Title_DefaultValue = new Title();
 			Tooltip = Tooltip_DefaultValue = new Tooltip();
@@ -54,10 +67,10 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>An array containing the default colors for the chart's series. When all colors are used, new colors are pulled from the start again. Defaults to:<pre>colors: ['#7cb5ec', '#434348', '#90ed7d', '#f7a35c', '#8085e9',    '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1']</pre>Default colors can also be set on a series or series.type basis, see <a href="#plotOptions.column.colors">column.colors</a>, <a href="#plotOptions.pie.colors">pie.colors</a>.</p><h3>Legacy</h3><p>In Highcharts 3.x, the default colors were:<pre>colors: ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',    '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a']</pre></p><p>In Highcharts 2.x, the default colors were:<pre>colors: ['#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE',    '#DB843D', '#92A8CD', '#A47D7C', '#B5CA92']</pre></p>
+		/// <p>An array containing the default colors for the chart's series. When all colors are used, new colors are pulled from the start again. Defaults to:<pre>colors: ['#7cb5ec', '#434348', '#90ed7d', '#f7a35c', '#8085e9',    '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1']</pre>Default colors can also be set on a series or series.type basis, see <a href="#plotOptions.column.colors">column.colors</a>.</p><h3>Legacy</h3><p>In Highstock 1.3.x, the default colors were:<pre>colors: ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',    '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a']</pre></p><p>Prior to 1.3, the default colors were:<pre>colors: ['#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE',    '#DB843D', '#92A8CD', '#A47D7C', '#B5CA92']</pre></p>
 		/// </summary>
-		public List<string> Colors { get; set; }
-		private List<string> Colors_DefaultValue { get; set; }
+		public Colors Colors { get; set; }
+		private Colors Colors_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -68,14 +81,7 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>Options for drill down, the concept of inspecting increasingly high resolution data through clicking on chart items like columns or pie slices.</p><p>The drilldown feature requires the <code>drilldown.js</code> file to be loaded, found in the <code>modules</code> directory of the download package, or online at <a href="http://code.highcharts.com/modules/drilldown.js">code.highcharts.com/modules/drilldown.js</a>.</p>
-		/// </summary>
-		public Drilldown Drilldown { get; set; }
-		private Drilldown Drilldown_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the exporting module. For an overview on the matter, see <a href="http://docs.highcharts.com/#export-module">the docs</a>.
+		/// Options for the exporting module. For an overview on the matter, see <a href="http://www.highcharts.com/docs/export-module/export-module-overview">the docs</a>.
 		/// </summary>
 		public Exporting Exporting { get; set; }
 		private Exporting Exporting_DefaultValue { get; set; }
@@ -124,17 +130,10 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// Options for displaying a message like "No data to display". This feature requires the file <code>no-data-to-display.js</code> to be loaded in the page. The actual text to display is set in the <a href="#lang.noData">lang.noData</a> option.
+		/// The navigator is a small series below the main series, displaying a view of the entire data set. It provides tools to zoom in and out on parts of thedata as well as panning across the dataset.
 		/// </summary>
-		public NoData NoData { get; set; }
-		private NoData NoData_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Applies only to polar charts and angular gauges. This configuration object holds general options for the combined X and Y axes set. Each xAxis or yAxis can reference the pane by index.
-		/// </summary>
-		public Pane Pane { get; set; }
-		private Pane Pane_DefaultValue { get; set; }
+		public Navigator Navigator { get; set; }
+		private Navigator Navigator_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -145,10 +144,115 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
+		/// The range selector is a tool for selecting ranges to display within the chart. It providesbuttons to select preconfigured ranges in the chart, like 1 day, 1 week, 1 month etc. Italso provides input boxes where min and max dates can be manually input.
+		/// </summary>
+		public RangeSelector RangeSelector { get; set; }
+		private RangeSelector RangeSelector_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The scrollbar is a means of panning over the X axis of a chart.
+		/// </summary>
+		public Scrollbar Scrollbar { get; set; }
+		private Scrollbar Scrollbar_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The actual series to append to the chart. In addition to the members listed below, any member of the <code>plotOptions</code> for that specifictype of plot can be added to a series individually. For example, even though a general<code>lineWidth</code> is specified in <code>plotOptions.series</code>, an individual<code>lineWidth</code> can be specified for each series.
 		/// </summary>
 		public List<Series> Series { get; set; }
 		private List<Series> Series_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>area</code> series. If the <a href="#series<area>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.area">plotOptions.area</a>.</p>
+		/// </summary>
+		public AreaSeries AreaSeries { get; set; }
+		private AreaSeries AreaSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>arearange</code> series. If the <a href="#series<arearange>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.arearange">plotOptions.arearange</a>.</p>
+		/// </summary>
+		public ArearangeSeries ArearangeSeries { get; set; }
+		private ArearangeSeries ArearangeSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>areaspline</code> series. If the <a href="#series<areaspline>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.areaspline">plotOptions.areaspline</a>.</p>
+		/// </summary>
+		public AreasplineSeries AreasplineSeries { get; set; }
+		private AreasplineSeries AreasplineSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>areasplinerange</code> series. If the <a href="#series<areasplinerange>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.areasplinerange">plotOptions.areasplinerange</a>.</p>
+		/// </summary>
+		public AreasplinerangeSeries AreasplinerangeSeries { get; set; }
+		private AreasplinerangeSeries AreasplinerangeSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>candlestick</code> series. If the <a href="#series<candlestick>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.candlestick">plotOptions.candlestick</a>.</p>
+		/// </summary>
+		public CandleStickSeries CandleStickSeries { get; set; }
+		private CandleStickSeries CandleStickSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>column</code> series. If the <a href="#series<column>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.column">plotOptions.column</a>.</p>
+		/// </summary>
+		public ColumnSeries ColumnSeries { get; set; }
+		private ColumnSeries ColumnSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>columnrange</code> series. If the <a href="#series<columnrange>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.columnrange">plotOptions.columnrange</a>.</p>
+		/// </summary>
+		public ColumnrangeSeries ColumnrangeSeries { get; set; }
+		private ColumnrangeSeries ColumnrangeSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>flags</code> series. If the <a href="#series<flags>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.flags">plotOptions.flags</a>.</p>
+		/// </summary>
+		public FlagsSeries FlagsSeries { get; set; }
+		private FlagsSeries FlagsSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>line</code> series. If the <a href="#series<line>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.line">plotOptions.line</a>.</p>
+		/// </summary>
+		public LineSeries LineSeries { get; set; }
+		private LineSeries LineSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>ohlc</code> series. If the <a href="#series<ohlc>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.ohlc">plotOptions.ohlc</a>.</p>
+		/// </summary>
+		public OhlcSeries OhlcSeries { get; set; }
+		private OhlcSeries OhlcSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>polygon</code> series. If the <a href="#series<polygon>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.polygon">plotOptions.polygon</a>.</p>
+		/// </summary>
+		public PolygonSeries PolygonSeries { get; set; }
+		private PolygonSeries PolygonSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>scatter</code> series. If the <a href="#series<scatter>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.scatter">plotOptions.scatter</a>.</p>
+		/// </summary>
+		public ScatterSeries ScatterSeries { get; set; }
+		private ScatterSeries ScatterSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A <code>spline</code> series. If the <a href="#series<spline>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.spline">plotOptions.spline</a>.</p>
+		/// </summary>
+		public SplineSeries SplineSeries { get; set; }
+		private SplineSeries SplineSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -173,14 +277,14 @@ namespace Highsoft.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>The X axis or category axis. Normally this is the horizontal axis, though if the chart is inverted this is the vertical axis. In case of multiple axes, the xAxisnode is an array of configuration objects.</p><p>See <a class="internal" href="#axis.object">the Axis object</a> for programmaticaccess to the axis.</p>
+		/// <p>The X axis or category axis. Normally this is the horizontal axis, though if the chart is inverted this is the vertical axis. In case of multiple axes, the xAxisnode is an array of configuration objects.</p><p>See <a class="internal" href="#Axis">the Axis object</a> for programmaticaccess to the axis.</p>
 		/// </summary>
 		public List<XAxis> XAxis { get; set; }
 		private List<XAxis> XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The Y axis or value axis. Normally this is the vertical axis, though if the chart is inverted this is the horizontal axis. In case of multiple axes, the yAxisnode is an array of configuration objects.</p><p>See <a class="internal" href="#axis.object">the Axis object</a> for programmaticaccess to the axis.</p>
+		/// <p>The Y axis or value axis. In case of multiple axes, the yAxisnode is an array of configuration objects.</p><p>See <a class="internal" href="#axis.object">the Axis object</a> for programmaticaccess to the axis.</p>
 		/// </summary>
 		public List<YAxis> YAxis { get; set; }
 		private List<YAxis> YAxis_DefaultValue { get; set; }
@@ -247,9 +351,8 @@ namespace Highsoft.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
-			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
+			if (Colors.IsDirty()) h.Add("colors",Colors.ToHashtable());
 			if (Credits.IsDirty()) h.Add("credits",Credits.ToHashtable());
-			if (Drilldown.IsDirty()) h.Add("drilldown",Drilldown.ToHashtable());
 			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
 			if (Global.IsDirty()) h.Add("global",Global.ToHashtable());
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
@@ -257,10 +360,24 @@ namespace Highsoft.Web.Mvc
 			if (Legend.IsDirty()) h.Add("legend",Legend.ToHashtable());
 			if (Loading.IsDirty()) h.Add("loading",Loading.ToHashtable());
 			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
-			if (NoData.IsDirty()) h.Add("noData",NoData.ToHashtable());
-			if (Pane.IsDirty()) h.Add("pane",Pane.ToHashtable());
+			if (Navigator.IsDirty()) h.Add("navigator",Navigator.ToHashtable());
 			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
+			if (RangeSelector.IsDirty()) h.Add("rangeSelector",RangeSelector.ToHashtable());
+			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());
 			if (Series != Series_DefaultValue) h.Add("series",Series);
+			if (AreaSeries.IsDirty()) h.Add("areaSeries",AreaSeries.ToHashtable());
+			if (ArearangeSeries.IsDirty()) h.Add("arearangeSeries",ArearangeSeries.ToHashtable());
+			if (AreasplineSeries.IsDirty()) h.Add("areasplineSeries",AreasplineSeries.ToHashtable());
+			if (AreasplinerangeSeries.IsDirty()) h.Add("areasplinerangeSeries",AreasplinerangeSeries.ToHashtable());
+			if (CandleStickSeries.IsDirty()) h.Add("candleStickSeries",CandleStickSeries.ToHashtable());
+			if (ColumnSeries.IsDirty()) h.Add("columnSeries",ColumnSeries.ToHashtable());
+			if (ColumnrangeSeries.IsDirty()) h.Add("columnrangeSeries",ColumnrangeSeries.ToHashtable());
+			if (FlagsSeries.IsDirty()) h.Add("flagsSeries",FlagsSeries.ToHashtable());
+			if (LineSeries.IsDirty()) h.Add("lineSeries",LineSeries.ToHashtable());
+			if (OhlcSeries.IsDirty()) h.Add("ohlcSeries",OhlcSeries.ToHashtable());
+			if (PolygonSeries.IsDirty()) h.Add("polygonSeries",PolygonSeries.ToHashtable());
+			if (ScatterSeries.IsDirty()) h.Add("scatterSeries",ScatterSeries.ToHashtable());
+			if (SplineSeries.IsDirty()) h.Add("splineSeries",SplineSeries.ToHashtable());
 			if (Subtitle.IsDirty()) h.Add("subtitle",Subtitle.ToHashtable());
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());

@@ -4,7 +4,7 @@
             using System.Linq;
             using System.Text;
 
-            namespace Highsoft.Web.Mvc
+            namespace Highstock.Web.Mvc
             {
                 internal static class CompiledOn
                 {
