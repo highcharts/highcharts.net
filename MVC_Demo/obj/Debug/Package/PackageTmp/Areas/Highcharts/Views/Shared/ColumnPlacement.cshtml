@@ -1,0 +1,130 @@
+﻿@using Highsoft.Web.Mvc.Highcharts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "Efficiency Optimization by Branch"
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {                   
+                    Categories = new List<string> { 
+                        "Seattle HQ",
+                        "San Francisco",
+                        "Tokyo"
+                    }
+                }
+            },
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
+                {
+                    Min = 0,
+                    Title = new YAxisTitle
+                    {
+                        Text = "Employees"
+                    }
+                },
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Profit (millions)"                        
+                    },
+                    Opposite = true,
+                    Id = "Profit"
+                }
+            },
+            Legend = new Legend
+            {
+                Shadow = new Shadow
+                {
+                    Enabled = false
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                Shared = true
+            },
+            PlotOptions = new PlotOptions
+            {
+                Column = new PlotOptionsColumn
+                {
+                    Grouping = false,
+                    Shadow = new Shadow
+                    {
+                        Enabled = false
+                    },
+                    BorderWidth = 0
+                }
+            },
+            Series = new List<Series>
+            {                    
+                new ColumnSeries
+                {
+                    Name = "Employees",
+                    Color = "rgba(165,170,217,1)",
+                    PointPadding = 0.3,
+                    PointPlacement = new PointPlacement
+                    {
+                        Value = -0.2
+                    },
+                    Data = @ViewData["employeeData"] as List<ColumnSeriesData>
+                },
+                new ColumnSeries
+                {
+                    Name = "Employees Optimized",
+                    Color = "rgba(126,86,134,.9)",
+                    PointPadding = 0.4,
+                    PointPlacement = new PointPlacement
+                    {
+                        Value = -0.2
+                    },
+                    Data = @ViewData["employeeOptimizedData"] as List<ColumnSeriesData>
+                },
+                new ColumnSeries
+                {
+                    Name = "Profit",
+                    Color = "rgba(248,161,63,1)",
+                    PointPadding = 0.3,
+                    PointPlacement = new PointPlacement
+                    {
+                        Value = 0.2
+                    },
+                    YAxis = "Profit",
+                    Tooltip = new ColumnSeriesTooltip
+                    {
+                        ValuePrefix = "$",
+                        ValueSuffix = " M"
+                    },
+                    Data = @ViewData["profitData"] as List<ColumnSeriesData>
+                },
+                new ColumnSeries
+                {
+                    Name = "Profit Optimized",
+                    Color = "rgba(186,60,61,.9)",
+                    PointPadding = 0.4,
+                    PointPlacement = new PointPlacement
+                    {
+                        Value = 0.2
+                    },
+                    YAxis = "Profit",
+                    Tooltip = new ColumnSeriesTooltip
+                    {
+                        ValuePrefix = "$",
+                        ValueSuffix = " M"
+                    },
+                    Data = @ViewData["profitOptimizedData"] as List<ColumnSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )

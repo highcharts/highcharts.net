@@ -1,0 +1,44 @@
+﻿@using Highsoft.Web.Mvc.Highcharts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                Options3d = new ChartOptions3d
+                {
+                    Enabled = true,
+                    Alpha = 45,
+                    Beta = 0
+                }
+            },
+            Title = new Title
+            {
+                Text = "Contents of Highsoft\'s weekly fruit delivery"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "3D donut in Highcharts"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Pie = new PlotOptionsPie
+                {
+                    InnerSize = "100",
+                    Depth = 45
+                }
+            },           
+            Series = new List<Series>
+            {                    
+                new PieSeries
+                {                    
+                    Name = "Browser Share",
+                    Data = @ViewData["pieData"] as List<PieSeriesData>
+                },
+                
+            }
+        }
+        , "chart")
+    )

@@ -1,0 +1,68 @@
+﻿@using Highsoft.Web.Mvc.Highcharts
+
+<script type="text/javascript">
+
+    // Make monochrome colors and set them as default for all pies
+    Highcharts.getOptions().plotOptions.pie.colors = (function () {
+        var colors = [],
+            base = Highcharts.getOptions().colors[0],
+            i;
+
+        for (i = 0; i < 10; i += 1) {
+            // Start out with a darkened base color (negative brighten), and end
+            // up with a much brighter color
+            colors.push(Highcharts.Color(base).brighten((i - 3) / 7).get());
+        }
+        return colors;
+    }());
+
+</script>
+
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                PlotBackgroundColor = null,
+                PlotBorderWidth = null,
+                PlotShadow = new Shadow
+                {
+                    Enabled = false
+                },
+                Width = 1087,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "'Browser market shares at a specific website, 2014"
+            },
+            Tooltip = new Tooltip
+            {
+                PointFormat = "{series.name}: <b>{point.percentage:.1f}%</b>"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Pie = new PlotOptionsPie
+                {
+                    AllowPointSelect = true,
+                    Cursor = PlotOptionsPieCursor.Pointer,
+                    DataLabels = new PlotOptionsPieDataLabels
+                    {
+                        Enabled = true,
+                        Format = "<b>{point.name}</b>: {point.percentage:.1f} %"
+                    }
+                }
+            },        
+            Series = new List<Series>
+            {                    
+                new PieSeries
+                {                    
+                    Name = "Browser Share",
+                    Data = @ViewData["pieData"] as List<PieSeriesData>
+                },
+                
+            }
+        }
+        , "chart")
+    )

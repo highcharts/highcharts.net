@@ -1,0 +1,70 @@
+﻿@using Highsoft.Web.Mvc.Highcharts
+
+<script type="text/javascript">
+
+    // Radialize the colors
+    Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function (color) {
+        return {
+            radialGradient: {
+                cx: 0.5,
+                cy: 0.3,
+                r: 0.7
+            },
+            stops: [
+                [0, color],
+                [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+            ]
+        };
+    });
+
+
+</script>
+
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                PlotBackgroundColor = null,
+                PlotBorderWidth = null,
+                PlotShadow = new Shadow
+                {
+                    Enabled = false
+                },
+                Width = 1087,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "'Browser market shares at a specific website, 2014"
+            },
+            Tooltip = new Tooltip
+            {
+                PointFormat = "{series.name}: <b>{point.percentage:.1f}%</b>"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Pie = new PlotOptionsPie
+                {
+                    AllowPointSelect = true,
+                    Cursor = PlotOptionsPieCursor.Pointer,
+                    DataLabels = new PlotOptionsPieDataLabels
+                    {
+                        Enabled = true,
+                        Format = "<b>{point.name}</b>: {point.percentage:.1f} %"
+                    }
+                }
+            },        
+            Series = new List<Series>
+            {                    
+                new PieSeries
+                {                    
+                    Name = "Browser Share",
+                    Data = @ViewData["pieData"] as List<PieSeriesData>
+                },
+                
+            }
+        }
+        , "chart")
+    )

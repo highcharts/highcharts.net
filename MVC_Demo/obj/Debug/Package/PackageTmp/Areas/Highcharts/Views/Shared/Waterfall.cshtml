@@ -1,0 +1,60 @@
+﻿@using Highsoft.Web.Mvc.Highcharts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "Highcharts Waterfall"
+            },
+            XAxis = new List<XAxis>
+            {            
+                new XAxis
+                {
+                    Type = XAxisType.Category
+                }
+            },
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "USD"
+                    }
+                }
+            },
+            Legend = new Legend
+            {
+                Enabled = false
+            },
+            Tooltip = new Tooltip
+            {
+                PointFormat = "<b>${point.y:,.2f}</b> USD"
+            },
+            
+            Series = new List<Series>
+            {                
+                new WaterfallSeries
+                {
+                    UpColor = "#90ed7d",
+                    Color = "#f7a35c",
+                    Data = new List<WaterfallSeriesData> {
+                        new WaterfallSeriesData { Name = "Start", Y = 120000 },
+                        new WaterfallSeriesData { Name = "Product Revenue", Y = 569000 },
+                        new WaterfallSeriesData { Name = "Service Revenue", Y = 231000 },
+                        new WaterfallSeriesData { Name = "Positive Balance", Color = "#434348",  IsIntermediateSum = true },
+                        new WaterfallSeriesData { Name = "Fixed Costs", Y = -342000 },
+                        new WaterfallSeriesData { Name = "Variable Costs", Y =  -233000 },
+                        new WaterfallSeriesData { Name = "Balance", Color = "#434348", IsSum = true }
+                    }
+                }
+            }
+        }
+        , "chart")
+    )

@@ -1,0 +1,77 @@
+﻿@using Highsoft.Web.Mvc.Highcharts
+
+<script type="text/javascript">
+
+    function formatTooltip() {
+        return '<b>' + this.series.xAxis.categories[this.point.x] + '</b> sold <br><b>' +
+                   this.point.value + '</b> items on <br><b>' + this.series.yAxis.categories[this.point.y] + '</b>';
+    }
+
+</script>
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                MarginTop = 40,
+                MarginBottom = 80
+            },
+            Title = new Title
+            {
+                Text = "Sales per employee per weekday"
+            },
+            XAxis = new List<XAxis>
+            {            
+                new XAxis
+                {
+                    Categories = new List<string> { "Alexander", "Marie", "Maximilian", "Sophia", "Lukas", "Maria", "Leon", "Anna", "Tim", "Laura" }
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {                   
+                    Categories = new List<string> { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" }                    
+                }
+            },
+            
+            Legend = new Legend
+            {
+                Layout = LegendLayout.Vertical,
+                Align = LegendAlign.Right,
+                Margin = 0,
+                VerticalAlign = LegendVerticalAlign.Top,
+                Y = 25,
+                SymbolHeight = 280
+            },
+            Tooltip = new Tooltip
+            {
+                Formatter = "formatTooltip"
+            },
+            ColorAxis = new ColorAxis
+            {
+                Min = 0,
+                MinColor = "#FFFFFF",
+                MaxColor = "#7cb5ec"  
+            },
+            Series = new List<Series>
+            {                    
+                new HeatmapSeries
+                {
+                    Name = "Sales per employee",
+                    BorderWidth = 1,
+                    DataLabels = new HeatmapSeriesDataLabels
+                    {
+                        Enabled = true,
+                        Color = "#000000",
+                        
+                    },
+                    Data = @ViewData["heatMapData"] as List<HeatmapSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )

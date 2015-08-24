@@ -1,0 +1,50 @@
+﻿@using Highsoft.Web.Mvc.Highcharts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                Options3d = new ChartOptions3d
+                {
+                    Enabled = true,
+                    Alpha = 45,
+                    Beta = 0
+                }
+            },
+            Title = new Title
+            {
+                Text = "'Browser market shares at a specific website, 2014"
+            },
+            Tooltip = new Tooltip
+            {
+                PointFormat = "{series.name}: <b>{point.percentage:.1f}%</b>"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Pie = new PlotOptionsPie
+                {
+                    AllowPointSelect = true,
+                    Cursor = PlotOptionsPieCursor.Pointer,
+                    Depth = 35,
+                    DataLabels = new PlotOptionsPieDataLabels
+                    {
+                        Enabled = true,
+                        Format = "<b>{point.name}</b>"
+                    }
+                }
+            },           
+            Series = new List<Series>
+            {                    
+                new PieSeries
+                {                    
+                    Name = "Browser Share",
+                    Data = @ViewData["pieData"] as List<PieSeriesData>
+                },
+                
+            }
+        }
+        , "chart")
+    )
