@@ -17,7 +17,7 @@ namespace Highstock.Web.Mvc
 			Align = Align_DefaultValue = ExportingButtonsContextButtonAlign.Right;
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 20;
-			MenuItems = MenuItems_DefaultValue = "";
+			MenuItems = MenuItems_DefaultValue = new List<MenuItem>();
 			Onclick = Onclick_DefaultValue = "";
 			Symbol = Symbol_DefaultValue = "menu";
 			SymbolFill = SymbolFill_DefaultValue = "#A8BF77";

@@ -557,6 +557,8 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("PlotShadow", "new Shadow() { Enabled = false }");
         _propertyInitMappings.Add("Animation", "new Animation() { Enabled = true }");
         _propertyInitMappings.Add("PointPlacement", "new PointPlacement()");
+        _propertyInitMappings.Add("Crosshairs", "new List<Crosshair>()");
+        _propertyInitMappings.Add("MenuItems", "new List<MenuItem>()");
         //_propertyInitMappings.Add("Symbol", "new Symbol()");
         _propertyInitMappings.Add("Colors", "new List<string>()");        
         _propertyInitMappings.Add("Center", "new string[] { null, null }");

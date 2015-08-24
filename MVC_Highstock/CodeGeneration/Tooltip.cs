@@ -20,7 +20,7 @@ namespace Highstock.Web.Mvc
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ChangeDecimals = ChangeDecimals_DefaultValue = null;
-			Crosshairs = Crosshairs_DefaultValue = true;
+			Crosshairs = Crosshairs_DefaultValue = new List<Crosshair>();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
 			Enabled = Enabled_DefaultValue = true;
 			FollowPointer = FollowPointer_DefaultValue = false;
