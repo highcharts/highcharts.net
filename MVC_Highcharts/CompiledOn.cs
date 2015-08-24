@@ -4,7 +4,7 @@
             using System.Linq;
             using System.Text;
 
-            namespace Highcharts.Web.Mvc
+            namespace Highsoft.Web.Mvc.Highcharts
             {
                 internal static class CompiledOn
                 {

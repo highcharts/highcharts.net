@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
     public enum ChartPinchType
     {
-        X, 
+        Null, 
+		X, 
 		Y, 
 		Xy
     }

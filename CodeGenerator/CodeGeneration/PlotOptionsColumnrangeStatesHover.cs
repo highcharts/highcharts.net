@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class PlotOptionsColumnrangeStatesHover  : BaseObject
 	{
@@ -24,7 +24,7 @@ namespace Highstock.Web.Mvc
 		
 
 		/// <summary>
-		/// Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend. Enabling it has a performance penalty as it requires that a second layer be drawn as a double buffer. This means twice  as much graphics to draw for each plot, which can make a great difference for charts with a high number of series or points..
+		/// Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend..
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }

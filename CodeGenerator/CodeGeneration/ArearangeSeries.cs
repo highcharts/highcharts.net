@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class ArearangeSeries  : Series
 	{
@@ -16,40 +16,38 @@ namespace Highstock.Web.Mvc
 		{
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Color = Color_DefaultValue = "";
-			Compare = Compare_DefaultValue = "undefined";
+			Color = Color_DefaultValue = null;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = ArearangeSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = ArearangeSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new List<ArearangeSeriesData>();
-			DataGrouping = DataGrouping_DefaultValue = new ArearangeSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new ArearangeSeriesDataLabels();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new ArearangeSeriesEvents();
-			FillColor = FillColor_DefaultValue = "null";
-			FillOpacity = FillOpacity_DefaultValue = .75;
-			GapSize = GapSize_DefaultValue = 0;
+			FillColor = FillColor_DefaultValue = null;
+			FillOpacity = FillOpacity_DefaultValue = 0.75;
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			LegendIndex = LegendIndex_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "null";
+			LineColor = LineColor_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
-			Name = Name_DefaultValue = "''";
+			Name = Name_DefaultValue = null;
+			NegativeColor = NegativeColor_DefaultValue = "null";
+			NegativeFillColor = NegativeFillColor_DefaultValue = "";
 			Point = Point_DefaultValue = new ArearangeSeriesPoint();
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = ArearangeSeriesPointIntervalUnit.Null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
-			PointRange = PointRange_DefaultValue = 0;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			Stacking = Stacking_DefaultValue = ArearangeSeriesStacking.Null;
 			States = States_DefaultValue = new ArearangeSeriesStates();
+			Step = Step_DefaultValue = ArearangeSeriesStep.False;
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new ArearangeSeriesTooltip();
 			TrackByArea = TrackByArea_DefaultValue = true;
@@ -66,7 +64,7 @@ namespace Highstock.Web.Mvc
 		
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the markers or bars.
+		/// Allow this series' points to be selected by clicking on the markers, bars or pie slices.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -80,21 +78,14 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// The main color of the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the  <code>options.colors</code> array.
+		/// The main color or the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the  <code>options.colors</code> array.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Compare the values of the series against the first value in the visible range. The y axis will show percentage or absolute change depending on whether <code>compare</code> is set to <code>"percent"</code> or <code>"value"</code>. When this is applied to multiple series, it allows comparing the development of the series against each other.
-		/// </summary>
-		public string Compare { get; set; }
-		private string Compare_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to draw a line between points on either side of a null point, or render a gap between them.
+		/// Whether to connect a graph line across null points.
 		/// </summary>
 		public bool? ConnectNulls { get; set; }
 		private bool? ConnectNulls_DefaultValue { get; set; }
@@ -122,17 +113,10 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the <code>arearange</code> series type, points can be given in the following ways: <ol> <li><p>An array of arrays with 3 or 2 values. In this case, the values correspond to <code>x,low,high</code>. If the first value is a string, it is applied as the name of the point, and the <code>x</code> value is inferred. The <code>x</code> value can also be omitted, in which case the inner arrays should be of length 2. Then the <code>x</code> value is automatically calculated, either starting at 0 and incremented by 1, or from <code>pointStart</code>  and <code>pointInterval</code> given in the series options.</p><pre>data: [    [0, 4, 3],     [1, 9, 7],     [2, 2, 6]]</pre></li><li><p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href='#series<arearange>.turboThreshold'>turboThreshold</a>, this option is not available.</p><pre>data: [{    x: 1,    low: 7,    high: 2,    name: "Point2",    color: "#00FF00"}, {    x: 1,    low: 8,    high: 10,    name: "Point1",    color: "#FF00FF"}]</pre></li> </ol>
+		/// An array of data points for the series. For the <code>arearange</code> series type, points can be given in the following ways: <ol> <li><p>An array of arrays with 3 or 2 values. In this case, the values correspond to <code>x,low,high</code>. If the first value is a string, it is applied as the name of the point, and the <code>x</code> value is inferred. The <code>x</code> value can also be omitted, in which case the inner arrays should be of length 2. Then the <code>x</code> value is automatically calculated, either starting at 0 and incremented by 1, or from <code>pointStart</code>  and <code>pointInterval</code> given in the series options.</p><pre>data: [    [0, 8, 3],     [1, 1, 1],     [2, 6, 8]]</pre></li><li><p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href='#series<arearange>.turboThreshold'>turboThreshold</a>, this option is not available.</p><pre>data: [{    x: 1,    low: 9,    high: 0,    name: "Point2",    color: "#00FF00"}, {    x: 1,    low: 3,    high: 4,    name: "Point1",    color: "#FF00FF"}]</pre></li> </ol>
 		/// </summary>
 		public List<ArearangeSeriesData> Data { get; set; }
 		private List<ArearangeSeriesData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ArearangeSeriesDataGrouping DataGrouping { get; set; }
-		private ArearangeSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -143,7 +127,7 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. When using shared tooltips  (default in stock charts), mouse tracking is not required. For large datasets it improves performance.
+		/// Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
 		private bool? EnableMouseTracking_DefaultValue { get; set; }
@@ -171,13 +155,6 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>Defines when to display a gap in the graph. A gap size of 5 means that if the distance between two points is greater than five times that of the two closest points, the  graph will be broken.</p> <p>In practice, this option is most often used to visualize gaps in time series. In a stock chart, intraday data is available for daytime hours, while gaps will appear in nights and weekends.</p>.
-		/// </summary>
-		public double? GapSize { get; set; }
-		private double? GapSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An id for the series. This can be used after render time to get a pointer to the series object through <code>chart.get()</code>.
 		/// </summary>
 		public string Id { get; set; }
@@ -192,7 +169,7 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// An array specifying which option maps to which key in the data point array. This makes it convenient to work with unstructured data arrays from different sources.
+		/// A custom mapping of data point array positions to respective object properties. For example, is the first key is <code>name</code>, the first item in a series.data array is interpreted as point.name.
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
@@ -234,6 +211,20 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
+		/// The color for the parts of the graph or points that are below the <a href="#plotOptions.series.threshold">threshold</a>.
+		/// </summary>
+		public string NegativeColor { get; set; }
+		private string NegativeColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A separate color for the negative part of the area.
+		/// </summary>
+		public string NegativeFillColor { get; set; }
+		private string NegativeFillColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Properties for each single point
 		/// </summary>
 		public ArearangeSeriesPoint Point { get; set; }
@@ -241,7 +232,7 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values in milliseconds. For example, if a series contains one value each day, set pointInterval to <code>24 * 3600 * 1000</code>.</p><p>Since Highstock 2.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
+		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values. For example, if a series contains one value every decade starting from year 0, set pointInterval to 10.</p><p>Since Highcharts 4.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
@@ -262,28 +253,21 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// The width of each point on the x axis. For example in a column chart with one value each day, the pointRange would be 1 day (= 24 * 3600 * 1000 milliseconds). This is normally computed automatically, but this option can be used to override the automatic value.
-		/// </summary>
-		public double? PointRange { get; set; }
-		private double? PointRange_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If no x values are given for the points in a series, pointStart defines on what value to start. On a datetime X axis, the number will be given as milliseconds since 1970-01-01, for example <code>Date.UTC(2011, 0, 1)</code>.
+		/// If no x values are given for the points in a series, pointStart defines on what value to start. For example, if a series contains one yearly value starting from 1945, set pointStart to 1945.
 		/// </summary>
 		public double? PointStart { get; set; }
 		private double? PointStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to select the series initially. If <code>showCheckbox</code> is true, the checkbox next to the series name in the legend will be checked for a selected series.
+		/// Whether to select the series initially. If <code>showCheckbox</code> is true, the checkbox next to the series name will be checked for a selected series.
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 1.1.7 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>. 
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
@@ -304,13 +288,6 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// Whether to stack the values of each series on top of each other. Possible values are null to disable, "normal" to stack by value or "percent".
-		/// </summary>
-		public ArearangeSeriesStacking Stacking { get; set; }
-		private ArearangeSeriesStacking Stacking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
 		public ArearangeSeriesStates States { get; set; }
@@ -318,7 +295,14 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip when not shared. When <code>stickyTracking</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, candlesticks etc.
+		/// Whether to apply steps to the line. Possible values are <code>left</code>, <code>center</code> and <code>right</code>. Prior to 2.3.5, only <code>left</code> was supported.
+		/// </summary>
+		public ArearangeSeriesStep Step { get; set; }
+		private ArearangeSeriesStep Step_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc.
 		/// </summary>
 		public bool? StickyTracking { get; set; }
 		private bool? StickyTracking_DefaultValue { get; set; }
@@ -346,7 +330,7 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// The type of series. Can be one of <code>area</code>, <code>areaspline</code>, <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>, <code>scatter</code>, <code>spline</code>, <code>candlestick</code> or <code>ohlc</code>. From version 1.1.7, <code>arearange</code>, <code>areasplinerange</code> and <code>columnrange</code> are supported with the highcharts-more.js component.
+		/// The type of series. Can be one of <code>area</code>, <code>areaspline</code>, <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>, <code>scatter</code> or <code>spline</code>. From version 2.3, <code>arearange</code>, <code>areasplinerange</code> and <code>columnrange</code> are supported with the highcharts-more.js component.
 		/// </summary>
 		public ArearangeSeriesType Type { get; set; }
 		private ArearangeSeriesType Type_DefaultValue { get; set; }
@@ -401,18 +385,15 @@ namespace Highstock.Web.Mvc
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
-			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
-			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
@@ -421,23 +402,24 @@ namespace Highstock.Web.Mvc
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
-			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPlacement.IsDirty()) h.Add("pointPlacement",PointPlacement.ToJSON());
-			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);

@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class PlotOptionsAreasplineZones  : BaseObject
 	{
@@ -16,7 +16,7 @@ namespace Highstock.Web.Mvc
 		{
 			Color = Color_DefaultValue = null;
 			DashStyle = DashStyle_DefaultValue = null;
-			FillColor = FillColor_DefaultValue = null;
+			FillColor = FillColor_DefaultValue = "";
 			Value = Value_DefaultValue = null;
 			
 		}	

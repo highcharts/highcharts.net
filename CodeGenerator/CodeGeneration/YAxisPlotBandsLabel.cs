@@ -8,18 +8,19 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class YAxisPlotBandsLabel  : BaseObject
 	{
 		public YAxisPlotBandsLabel()
 		{
-			Align = Align_DefaultValue = "'center'";
+			Align = Align_DefaultValue = "center";
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = new NameValueCollection();
-			TextAlign = TextAlign_DefaultValue = "";
+			Text = Text_DefaultValue = null;
+			TextAlign = TextAlign_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "'top'";
+			VerticalAlign = VerticalAlign_DefaultValue = "top";
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -45,6 +46,13 @@ namespace Highstock.Web.Mvc
 		/// </summary>
 		public NameValueCollection Style { get; set; }
 		private NameValueCollection Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The string text itself. A subset of HTML is supported.
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -89,6 +97,7 @@ namespace Highstock.Web.Mvc
 			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);

@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class ArearangeSeriesDataLabels  : BaseObject
 	{
@@ -16,7 +16,8 @@ namespace Highstock.Web.Mvc
 		{
 			Align = Align_DefaultValue = ArearangeSeriesDataLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
-			BorderColor = BorderColor_DefaultValue = "undefined";
+			BackgroundColor = BackgroundColor_DefaultValue = null;
+			BorderColor = BorderColor_DefaultValue = null;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			Color = Color_DefaultValue = null;
@@ -55,6 +56,13 @@ namespace Highstock.Web.Mvc
 		/// </summary>
 		public bool? AllowOverlap { get; set; }
 		private bool? AllowOverlap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The background color or gradient for the data label. Defaults to <code>undefined</code>.
+		/// </summary>
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -135,7 +143,7 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// When either the <code>borderWidth</code> or the <code>backgroundColor</code> is set, this is the padding within the box.
+		/// When either the <code>borderWidth</code> or the <code>backgroundColor</code> is set, thisis the padding within the box.
 		/// </summary>
 		public double? Padding { get; set; }
 		private double? Padding_DefaultValue { get; set; }
@@ -149,7 +157,7 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// The shadow of the box. Works best with <code>borderWidth</code> or <code>backgroundColor</code>. Since 1.1.7 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
+		/// The shadow of the box. Works best with <code>borderWidth</code> or <code>backgroundColor</code>. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
@@ -222,8 +230,9 @@ namespace Highstock.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -232,16 +241,16 @@ namespace Highstock.Web.Mvc
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("ArearangeSeriesDataLabelsFormatter.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("ArearangeSeriesDataLabelsFormatter.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (XHigh != XHigh_DefaultValue) h.Add("xHigh",XHigh);
 			if (XLow != XLow_DefaultValue) h.Add("xLow",XLow);
 			if (YHigh != YHigh_DefaultValue) h.Add("yHigh",YHigh);

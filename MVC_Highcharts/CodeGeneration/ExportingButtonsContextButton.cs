@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class ExportingButtonsContextButton  : BaseObject
 	{
@@ -17,7 +17,7 @@ namespace Highcharts.Web.Mvc
 			Align = Align_DefaultValue = ExportingButtonsContextButtonAlign.Right;
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 20;
-			MenuItems = MenuItems_DefaultValue = null;
+			MenuItems = MenuItems_DefaultValue = new List<MenuItem>();
 			Onclick = Onclick_DefaultValue = "";
 			Symbol = Symbol_DefaultValue = "menu";
 			SymbolFill = SymbolFill_DefaultValue = "#A8BF77";

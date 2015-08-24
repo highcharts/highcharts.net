@@ -8,15 +8,15 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class PlotOptionsScatterMarkerStatesHover  : BaseObject
 	{
 		public PlotOptionsScatterMarkerStatesHover()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = "null";
-			LineColor = LineColor_DefaultValue = "'#FFFFFF'";
+			FillColor = FillColor_DefaultValue = "";
+			LineColor = LineColor_DefaultValue = "#FFFFFF";
 			LineWidth = LineWidth_DefaultValue = 0;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
 			Radius = Radius_DefaultValue = null;
@@ -33,7 +33,7 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// The fill color of the point marker. When <code>null</code>, the series' or point's color is used.
+		/// The fill color of the marker in hover state.
 		/// </summary>
 		public string FillColor { get; set; }
 		private string FillColor_DefaultValue { get; set; }

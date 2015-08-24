@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class Title  : BaseObject
 	{
@@ -16,7 +16,7 @@ namespace Highcharts.Web.Mvc
 		{
 			Align = Align_DefaultValue = TitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
-			Margin = Margin_DefaultValue = 15;
+			Margin = Margin_DefaultValue = new string[] {};
 			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "fontSize", "18px" }};
 			Text = Text_DefaultValue = "Chart title";
 			UseHTML = UseHTML_DefaultValue = false;
@@ -44,8 +44,8 @@ namespace Highcharts.Web.Mvc
 		/// <summary>
 		/// The margin between the title and the plot area, or if a subtitle is present, the margin between the subtitle and the plot area.
 		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
+		public new string[] Margin { get; set; }
+		private new string[] Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>

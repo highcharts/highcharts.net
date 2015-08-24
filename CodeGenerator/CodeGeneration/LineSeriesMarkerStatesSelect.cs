@@ -8,15 +8,15 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class LineSeriesMarkerStatesSelect  : BaseObject
 	{
 		public LineSeriesMarkerStatesSelect()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = "null";
-			LineColor = LineColor_DefaultValue = "'#000000'";
+			FillColor = FillColor_DefaultValue = null;
+			LineColor = LineColor_DefaultValue = "#000000";
 			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = null;
 			

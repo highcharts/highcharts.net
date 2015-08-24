@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class Chart  : BaseObject
 	{
@@ -25,7 +25,7 @@ namespace Highcharts.Web.Mvc
 			Height = Height_DefaultValue = null;
 			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
 			Inverted = Inverted_DefaultValue = false;
-			Margin = Margin_DefaultValue = null;
+			Margin = Margin_DefaultValue = new string[] {};
 			MarginBottom = MarginBottom_DefaultValue = null;
 			MarginLeft = MarginLeft_DefaultValue = null;
 			MarginRight = MarginRight_DefaultValue = null;
@@ -138,8 +138,8 @@ namespace Highcharts.Web.Mvc
 		/// <summary>
 		/// <p>The margin between the outer edge of the chart and the plot area. The numbers in the array designate top, right, bottom and left respectively. Use the options <code>marginTop</code>, <code>marginRight</code>, <code>marginBottom</code> and <code>marginLeft</code> for shorthand setting of one option.</p> <p>Since version 2.1, the margin is 0 by default. The actual space is dynamically calculated  from the offset of axis labels, axis title, title, subtitle and legend in addition to the <code>spacingTop</code>, <code>spacingRight</code>, <code>spacingBottom</code> and <code>spacingLeft</code> options.</p> Defaults to <code>[null]</code>.
 		/// </summary>
-		public Array Margin { get; set; }
-		private Array Margin_DefaultValue { get; set; }
+		public new string[] Margin { get; set; }
+		private new string[] Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>

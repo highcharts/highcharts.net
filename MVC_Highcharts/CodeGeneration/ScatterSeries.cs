@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class ScatterSeries  : Series
 	{
@@ -44,7 +44,6 @@ namespace Highcharts.Web.Mvc
 			States = States_DefaultValue = new ScatterSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = false;
 			Threshold = Threshold_DefaultValue = 0;
-			Tooltip = Tooltip_DefaultValue = new ScatterSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Type = Type_DefaultValue = ScatterSeriesType.Null;
 			Visible = Visible_DefaultValue = true;
@@ -268,13 +267,6 @@ namespace Highcharts.Web.Mvc
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
-		/// </summary>
-		public ScatterSeriesTooltip Tooltip { get; set; }
-		private ScatterSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable.
 		/// </summary>
 		public double? TurboThreshold { get; set; }
@@ -363,7 +355,6 @@ namespace Highcharts.Web.Mvc
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);

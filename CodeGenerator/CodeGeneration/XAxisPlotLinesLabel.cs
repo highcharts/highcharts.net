@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class XAxisPlotLinesLabel  : BaseObject
 	{
@@ -17,7 +17,8 @@ namespace Highstock.Web.Mvc
 			Align = Align_DefaultValue = "left";
 			Rotation = Rotation_DefaultValue = null;
 			Style = Style_DefaultValue = new NameValueCollection();
-			TextAlign = TextAlign_DefaultValue = "";
+			Text = Text_DefaultValue = "";
+			TextAlign = TextAlign_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = XAxisPlotLinesLabelVerticalAlign.Top;
 			X = X_DefaultValue = null;
@@ -48,6 +49,13 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
+		/// The text itself. A subset of HTML is supported.
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The text alignment for the label. While <code>align</code> determines where the texts anchor point is placed within the plot band, <code>textAlign</code> determines how the text is aligned against its anchor point. Possible values are "left", "center" and "right". Defaults to the same as the <code>align</code> option.
 		/// </summary>
 		public string TextAlign { get; set; }
@@ -62,7 +70,7 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// Vertical alignment of the label relative to the plot line. Can be one of "top", "middle" or "bottom".
+		/// Vertical alignment of the label relative to the plot band. Can be one of "top", "middle" or "bottom".
 		/// </summary>
 		public XAxisPlotLinesLabelVerticalAlign VerticalAlign { get; set; }
 		private XAxisPlotLinesLabelVerticalAlign VerticalAlign_DefaultValue { get; set; }
@@ -89,9 +97,10 @@ namespace Highstock.Web.Mvc
 			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

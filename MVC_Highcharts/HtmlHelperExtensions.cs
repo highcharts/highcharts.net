@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Web.Mvc;
-using Highcharts.Web.Mvc.Rendering;
-using Highcharts.Web.Mvc;
+using Highsoft.Web.Mvc.Highcharts.Rendering;
+using Highsoft.Web.Mvc.Highcharts;
 
-namespace Highcharts.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
     public static class HtmlHelperExtensions
     {

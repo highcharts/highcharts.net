@@ -8,23 +8,39 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class YAxisEvents  : BaseObject
 	{
 		public YAxisEvents()
 		{
+			AfterBreaks = AfterBreaks_DefaultValue = "";
 			AfterSetExtremes = AfterSetExtremes_DefaultValue = "";
+			PointBreak = PointBreak_DefaultValue = "";
 			SetExtremes = SetExtremes_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
+		/// An event fired after the breaks have rendered.
+		/// </summary>
+		public string AfterBreaks { get; set; }
+		private string AfterBreaks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// As opposed to the <code>setExtremes</code> event, this event fires after the final min and max values are computed and corrected for <code>minRange</code>.
 		/// </summary>
 		public string AfterSetExtremes { get; set; }
 		private string AfterSetExtremes_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An event fired when a break from this axis occurs on a point.
+		/// </summary>
+		public string PointBreak { get; set; }
+		private string PointBreak_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -38,8 +54,10 @@ namespace Highstock.Web.Mvc
 		{
 			Hashtable h = new Hashtable();
 
-			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); Highstock.AddFunction("YAxisEventsAfterSetExtremes.afterSetExtremes", AfterSetExtremes); }  
-			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); Highstock.AddFunction("YAxisEventsSetExtremes.setExtremes", SetExtremes); }  
+			if (AfterBreaks != AfterBreaks_DefaultValue) { h.Add("afterBreaks",AfterBreaks); Highcharts.AddFunction("YAxisEventsAfterBreaks.afterBreaks", AfterBreaks); }  
+			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); Highcharts.AddFunction("YAxisEventsAfterSetExtremes.afterSetExtremes", AfterSetExtremes); }  
+			if (PointBreak != PointBreak_DefaultValue) { h.Add("pointBreak",PointBreak); Highcharts.AddFunction("YAxisEventsPointBreak.pointBreak", PointBreak); }  
+			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); Highcharts.AddFunction("YAxisEventsSetExtremes.setExtremes", SetExtremes); }  
 			
 
 			return h;

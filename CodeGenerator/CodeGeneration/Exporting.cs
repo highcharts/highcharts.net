@@ -8,16 +8,17 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class Exporting  : BaseObject
 	{
 		public Exporting()
 		{
 			Buttons = Buttons_DefaultValue = new ExportingButtons();
+			ChartOptions = ChartOptions_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Filename = Filename_DefaultValue = "chart";
-			FormAttributes = FormAttributes_DefaultValue = null;
+			FormAttributes = FormAttributes_DefaultValue = "";
 			Scale = Scale_DefaultValue = 2;
 			SourceHeight = SourceHeight_DefaultValue = null;
 			SourceWidth = SourceWidth_DefaultValue = null;
@@ -29,10 +30,17 @@ namespace Highstock.Web.Mvc
 		
 
 		/// <summary>
-		/// Options for the export related buttons, print and export.
+		/// Options for the export related buttons, print and export. In addition to the default buttons listed here, custom buttons can be added. See <a href="#navigation.buttonOptions">navigation.buttonOptions</a> for general options.
 		/// </summary>
 		public ExportingButtons Buttons { get; set; }
 		private ExportingButtons Buttons_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Additional chart options to be merged into an exported chart. For example, the exported chart can be given a specific width and height, or a printer-friendly color scheme.
+		/// </summary>
+		public Object ChartOptions { get; set; }
+		private Object ChartOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -92,7 +100,7 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// The pixel width of charts exported to PNG or JPG. As of Highstock 1.3, the default pixel width is a function of the <a href="#chart.width">chart.width</a> or <a href="#exporting.sourceWidth">exporting.sourceWidth</a> and the <a href="#exporting.scale">exporting.scale</a>.
+		/// The pixel width of charts exported to PNG or JPG. As of Highcharts 3.0, the default pixel width is a function of the <a href="#chart.width">chart.width</a> or <a href="#exporting.sourceWidth">exporting.sourceWidth</a> and the <a href="#exporting.scale">exporting.scale</a>.
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
@@ -103,13 +111,14 @@ namespace Highstock.Web.Mvc
 			Hashtable h = new Hashtable();
 
 			if (Buttons.IsDirty()) h.Add("buttons",Buttons.ToHashtable());
+			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filename != Filename_DefaultValue) h.Add("filename",Filename);
 			if (FormAttributes != FormAttributes_DefaultValue) h.Add("formAttributes",FormAttributes);
 			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);
 			if (SourceHeight != SourceHeight_DefaultValue) h.Add("sourceHeight",SourceHeight);
 			if (SourceWidth != SourceWidth_DefaultValue) h.Add("sourceWidth",SourceWidth);
-			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Url != Url_DefaultValue) h.Add("url",Url);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			

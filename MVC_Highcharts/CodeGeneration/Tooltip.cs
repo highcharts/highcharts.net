@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highcharts.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class Tooltip  : BaseObject
 	{
@@ -19,7 +19,7 @@ namespace Highcharts.Web.Mvc
 			BorderColor = BorderColor_DefaultValue = "null";
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Crosshairs = Crosshairs_DefaultValue = null;
+			Crosshairs = Crosshairs_DefaultValue = new List<Crosshair>();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
 			Enabled = Enabled_DefaultValue = true;
 			FollowPointer = FollowPointer_DefaultValue = false;

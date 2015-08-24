@@ -1,14 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Highsoft.Web.Mvc;
-using Highsoft.Web.Mvc.Rendering;
+using Highcharts.Web.Mvc;
+using Highcharts.Web.Mvc.Rendering;
 
 namespace Highsoft.Web.Mvc.UnitTests
 {
     [TestClass]
     public class Animation
     {
-        Highcharts _chart;
+        Highcharts.Web.Mvc.Highcharts _chart;
         HighchartsRenderer _renderer;
 
         [TestInitialize]

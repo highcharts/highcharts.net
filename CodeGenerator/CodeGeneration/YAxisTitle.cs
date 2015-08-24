@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class YAxisTitle  : BaseObject
 	{
@@ -19,9 +19,7 @@ namespace Highstock.Web.Mvc
 			Offset = Offset_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 270;
 			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#707070"},{ "fontWeight", "bold" }};
-			Text = Text_DefaultValue = "null";
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = null;
+			Text = Text_DefaultValue = "Values";
 			
 		}	
 		
@@ -34,7 +32,7 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// The pixel distance between the axis labels or line and the title. Defaults to 0 for horizontal axes, 10 for vertical.
+		/// The pixel distance between the axis labels and the title. Positive values are outside the axis line, negative are inside.
 		/// </summary>
 		public new string[] Margin { get; set; }
 		private new string[] Margin_DefaultValue { get; set; }
@@ -48,7 +46,7 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// The rotation of the text in degrees. 0 is horizontal, 270 is vertical reading from bottom to top.
+		/// The rotation of the text in degrees. 0 is horizontal, 270 is  vertical reading from bottom to top.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
@@ -62,38 +60,22 @@ namespace Highstock.Web.Mvc
 		 
 
 		/// <summary>
-		/// The actual text of the axis title. It can contain basic HTML text markup like &lt;b&gt;, &lt;i&gt; and spans with style.
+		/// The actual text of the axis title. Horizontal texts can contain HTML,  but rotated texts are painted using vector techniques and must be  clean text. The Y axis title is disabled by setting the <code>text</code> option to <code>null</code>.
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Horizontal pixel offset of the title position.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Vertical pixel offset of the title position.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;
