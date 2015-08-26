@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Highsoft.Web.Mvc;
+using Highsoft.Web.Mvc.Highcharts;
 using System.IO;
 
 namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
@@ -50,6 +50,13 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
         {
             SetViewBag(String.Empty, theme);
 
+            //DirectoryInfo di = new DirectoryInfo(Server.MapPath("~/Areas/Highcharts/Controllers/Shared/"));
+
+            //foreach (FileInfo fi in di.GetFiles())
+            //{
+            //    fi.CopyTo(Server.MapPath("~/Content/Areas/Highcharts/Controllers/Shared/") + fi.Name + ".txt");
+            //}
+
             return View();
         }
 
@@ -65,7 +72,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
 
             SetViewBag(demo, theme);
 
-            string text = System.IO.File.ReadAllText(Server.MapPath("~/Areas/Highcharts/Controllers/Shared/" + demo + "Controller.cs"));
+            string text = System.IO.File.ReadAllText(Server.MapPath("~/Content/Areas/Highcharts/Controllers/Shared/" + demo + "Controller.cs.txt"));
             ViewBag.ControllerCode = text;
 
             text = System.IO.File.ReadAllText(Server.MapPath("~/Areas/Highcharts/Views/Shared/" + demo + ".cshtml"));

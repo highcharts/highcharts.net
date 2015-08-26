@@ -31,7 +31,6 @@ C:\Highsoft\MVC_Demo\bin\System.Web.WebPages.dll
 C:\Highsoft\MVC_Demo\bin\System.Web.WebPages.Razor.dll
 C:\Highsoft\MVC_Demo\bin\System.Xml.dll
 C:\Highsoft\MVC_Demo\bin\System.Xml.Linq.dll
-C:\Highsoft\MVC_Demo\bin\Highcharts.Web.Mvc.pdb
 C:\Highsoft\MVC_Demo\bin\System.Net.Http.Formatting.xml
 C:\Highsoft\MVC_Demo\bin\System.Web.Http.xml
 C:\Highsoft\MVC_Demo\bin\System.Web.Http.WebHost.xml

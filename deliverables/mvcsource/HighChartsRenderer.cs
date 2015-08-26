@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
-using Highsoft.Web.Mvc;
-namespace Highsoft.Web.Mvc.Rendering
+using Highsoft.Web.Mvc.Highcharts;
+
+namespace Highsoft.Web.Mvc.Highcharts.Rendering
 {
     public class HighchartsRenderer
     {
@@ -19,7 +20,7 @@ namespace Highsoft.Web.Mvc.Rendering
         public string RenderHtml()
         {            
             #if (LICENSED == false)
-            if (DateTime.Now > Highsoft.Web.Mvc.CompiledOn.CompilationDate.AddDays(45))
+            if (DateTime.Now > CompiledOn.CompilationDate.AddDays(45))
             {
                 return "This is a trial version of Highcharts for ASP.NET MVC which has expired.<br> Please, contact sales@highcharts.com for purchasing the product or for trial extension.";
                

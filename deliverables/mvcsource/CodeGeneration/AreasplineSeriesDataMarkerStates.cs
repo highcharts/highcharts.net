@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class AreasplineSeriesDataMarkerStates  : BaseObject
 	{

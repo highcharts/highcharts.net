@@ -1,0 +1,1 @@
+C:\Highsoft\MVC_Highcharts\obj\Release\MVC_Highcharts.csprojResolveAssemblyReference.cache

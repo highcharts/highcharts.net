@@ -1,4 +1,4 @@
-﻿@using Highsoft.Web.Mvc
+﻿@using Highsoft.Web.Mvc.Highcharts
 @{
     Layout = null;
 }
@@ -78,7 +78,7 @@
                     <a class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
                     </a>
-                    <a class="navbar-brand" href="../index.html" title="Highcharts">
+                    <a class="navbar-brand" href="/highcharts/demo" title="Highcharts">
                         <img src="@Url.Content("~/Content/logo.svg")" alt="Highcharts" />
                     </a>
                 </div>
@@ -104,13 +104,13 @@
                         </div>
                         <div id="menu-main">
                             <ul class="nav navbar-nav pull-right">
-                                <li class="item-101"><a href="http://www.highcharts.com/index.html">Home</a></li>
+                                <li class="item-101"><a href="/highcharts/demo">Home</a></li>
                                 <li class="item-103 active deeper dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Demo <span class="toggle-arrow"></span></a>
                                     <ul class="dropdown-menu" role="menu">
                                         <li class="item-106 current active"><a href="http://www.highcharts.com/demo">Highcharts demos</a></li>
                                         <li class="item-107"><a href="http://www.highcharts.com/stock/demo">Highstock demos</a></li>
                                         <li class="item-205"><a href="http://www.highcharts.com/maps/demo">Highmaps demo</a></li>
-                                        <li class="item-205"><a href="http://www.highcharts.com/maps/demo">Highcharts ASP.NET MVC demo</a></li>
+                                        <li class="item-205"><a href="/highcharts/demo">Highcharts ASP.NET MVC demo</a></li>
                                         <li class="item-107"><a href="/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">Highcharts for ASP.NET MVC 30-day trial</a></li>
                                         <li class="item-205"><a href="/downloads/Highcharts_ASPNET_MVC_Licensed_4_1_7_0.zip">Highcharts for ASP.NET MVC Licensed</a></li>
                                     </ul>
@@ -685,7 +685,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
+                       @* <div class="clearfix visible-sm visible-xs"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                            <a href="@Url.Action("Gallery", "Demo", new { demo = "PieDonut", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
@@ -698,7 +698,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
-                        </div>
+                        </div>*@
                         <div class="clearfix visible-lg visible-md"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "PieSemiCircle", theme = ViewBag.Theme } )">
@@ -786,7 +786,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
+                       @* <div class="clearfix visible-sm visible-xs"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { demo = "Bubble3d", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
@@ -799,7 +799,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
-                        </div>
+                        </div>*@
                         <div class="clearfix visible-lg visible-md"></div>
                     </div>
                     <div class="row">
@@ -1068,12 +1068,12 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="clearfix visible-lg visible-md"></div>
+                        @*<div class="clearfix visible-lg visible-md"></div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="gauge-dual.html">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/gauge-dual-default.svg" alt="Gauge with dual axes">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/gauge-dual-" + ViewBag.ChartImageSVG)" alt="Gauge with dual axes">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Gauge with dual axes</h3>
@@ -1087,7 +1087,7 @@
                             <a href="gauge-vu-meter.html">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/gauge-vu-meter-default.svg" alt="VU meter">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("~/Content/chart_types/gauge-vu-meter-" + ViewBag.ChartImageSVG)" alt="VU meter">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>VU meter</h3>
@@ -1095,7 +1095,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
-                        </div>
+                        </div>*@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">

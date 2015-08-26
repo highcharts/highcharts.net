@@ -8,14 +8,14 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class YAxisTitle  : BaseObject
 	{
 		public YAxisTitle()
 		{
 			Align = Align_DefaultValue = YAxisTitleAlign.Middle;
-			Margin = Margin_DefaultValue = 40;
+			Margin = Margin_DefaultValue = new string[] {};
 			Offset = Offset_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 270;
 			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#707070"},{ "fontWeight", "bold" }};
@@ -34,8 +34,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The pixel distance between the axis labels and the title. Positive values are outside the axis line, negative are inside.
 		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
+		public new string[] Margin { get; set; }
+		private new string[] Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>

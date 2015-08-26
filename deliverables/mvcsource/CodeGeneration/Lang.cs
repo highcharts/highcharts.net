@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc
+namespace Highsoft.Web.Mvc.Highcharts
 {
 	public partial class Lang  : BaseObject
 	{
@@ -22,13 +22,13 @@ namespace Highsoft.Web.Mvc
 			DownloadSVG = DownloadSVG_DefaultValue = "Download SVG vector image";
 			DrillUpText = DrillUpText_DefaultValue = "Back to {series.name}";
 			Loading = Loading_DefaultValue = "Loading...";
-			Months = Months_DefaultValue = new List<string> { "January" , "February" , "March" , "April" , "May" , "June" , "July" , "August" , "September" , "October" , "November" , "December"};
+			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 			NoData = NoData_DefaultValue = "No data to display";
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
 			PrintChart = PrintChart_DefaultValue = "Print chart";
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
-			ShortMonths = ShortMonths_DefaultValue = new List<string> { "Jan" , "Feb" , "Mar" , "Apr" , "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct" , "Nov" , "Dec"};
+			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
 			ThousandsSep = ThousandsSep_DefaultValue = " ";
 			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 			

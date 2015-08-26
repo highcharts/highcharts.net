@@ -9,7 +9,7 @@
   <property name="licensed.deliverable.mvc.name" value="Highcharts_ASPNET_MVC_Licensed_${version}.zip"/>
   <property name="source.name.mvc" value="Highcharts_ASPNET_MVC_Source_${version}.zip"/>
   <property name="assembly.name.mvc" value="Highcharts.Web.Mvc.dll"/>
-  <property name="project.folder.mvc" value="C:\highsoft\mvc"/>
+  <property name="project.folder.mvc" value="C:\highsoft\mvc_highcharts"/>
   <property name="sample.project.mvc.folder" value="C:\highsoft\mvc_demo" />
   <property name="compiledon.utility.path" value="C:\highsoft\utildatereplacer\bin\Release\utildatereplacer.exe" />
   <!-- comment-->
@@ -25,7 +25,7 @@
   <target name="generateCompiledOnStampMvc">
     <exec program="${compiledon.utility.path}">
       <arg value="${project.folder.mvc}\CompiledOn.cs" />
-      <arg value="Highsoft.Web.Mvc" />
+      <arg value="Highsoft.Web.Mvc.Highcharts" />
     </exec>
   </target>
 
