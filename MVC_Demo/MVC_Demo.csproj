@@ -39,7 +39,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Highcharts.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Highcharts.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\deliverables\bin\trial\Highcharts.Web.Mvc.dll</HintPath>
     </Reference>
