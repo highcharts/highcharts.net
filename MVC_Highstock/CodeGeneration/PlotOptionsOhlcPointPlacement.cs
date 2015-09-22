@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highstock
 {
 	public partial class PlotOptionsOhlcPointPlacement  : BaseObject
 	{

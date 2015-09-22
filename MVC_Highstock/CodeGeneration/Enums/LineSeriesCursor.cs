@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highstock
 {
     public enum LineSeriesCursor
     {
