@@ -113,6 +113,16 @@ public class HighstockAspNetMvc
                 apiItem.IsParent = false;
                 apiItem.Values = new List<string>();
             }
+            if (apiItem.Title == "colors")
+            {
+                apiItem.IsParent = false;
+                apiItem.Values = new List<string>();
+            }
+            if (apiItem.Title == "liveRedraw")
+            {
+                apiItem.ReturnType = "Boolean";
+                apiItem.Defaults = "true";
+            }
             if (apiItem.Title == "trackBorderColor")
             {
                 apiItem.ReturnType = "String";
@@ -544,6 +554,7 @@ public class HighstockAspNetMvc
         _propertyTypeMappings.Add("xAxis.plotLines", "List<XAxisPlotLines>");
         _propertyTypeMappings.Add("xAxis.plotBands.label.style", "NameValueCollection");
         _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
+        _propertyTypeMappings.Add("Colors", "List<string>");
     }
 
     private void InitPropertyInitMappings()

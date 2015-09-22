@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Web.Mvc;
-using Highstock.Web.Mvc.Rendering;
+using Highsoft.Web.Mvc.Highstock;
+using Highsoft.Web.Mvc.Highstock.Rendering;
 
-namespace Highstock.Web.Mvc
+namespace Highsoft.Web.Mvc.Highstock
 {
     public static class HtmlHelperExtensions
     {

@@ -150,7 +150,6 @@
     <Compile Include="CodeGeneration\Chart.cs" />
     <Compile Include="CodeGeneration\ChartEvents.cs" />
     <Compile Include="CodeGeneration\ColorAxis.cs" />
-    <Compile Include="CodeGeneration\Colors.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeries.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesData.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesDataEvents.cs" />

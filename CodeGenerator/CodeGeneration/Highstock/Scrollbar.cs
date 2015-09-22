@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Highstock
 			ButtonBorderWidth = ButtonBorderWidth_DefaultValue = 1;
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = null;
-			LiveRedraw = LiveRedraw_DefaultValue = "";
+			LiveRedraw = LiveRedraw_DefaultValue = true;
 			MinWidth = MinWidth_DefaultValue = 6;
 			RifleColor = RifleColor_DefaultValue = "#666";
 			TrackBackgroundColor = TrackBackgroundColor_DefaultValue = "#eeeeee";
