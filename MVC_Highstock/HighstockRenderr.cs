@@ -39,8 +39,10 @@ namespace Highsoft.Web.Mvc.Highstock.Rendering
             sb.Append("<script type='text/javascript'>");
             sb.AppendFormat("var {0};", _chart.ID);
             sb.Append("jQuery(document).ready(function() {");
+            //sb.AppendFormat("var {0}ChartOptions = {1};", _chart.ID, GetStartupOptions());
+            //sb.AppendFormat("{0} = new Highstock.Chart({0}ChartOptions);", _chart.ID);
             sb.AppendFormat("var {0}ChartOptions = {1};", _chart.ID, GetStartupOptions());
-            sb.AppendFormat("{0} = new Highstock.Chart({0}ChartOptions);", _chart.ID);
+            sb.AppendFormat("$('#{0}').highcharts('StockChart', {0}ChartOptions);", _chart.ID);
             sb.Append("});");            
             sb.Append("</script>");
             return sb.ToString();            
@@ -97,217 +99,97 @@ namespace Highsoft.Web.Mvc.Highstock.Rendering
             {
                 List<object> dataList = new List<object>();
                 Hashtable seriesHashtable = new Hashtable();
-                
-                //if (series is LineSeries)
-                //{
-                //    LineSeries lineSeries = series as LineSeries;
 
-                //    List<LineSeriesData> seriesData = lineSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    lineSeries.Type = LineSeriesType.Line;
+                if (series is LineSeries)
+                {
+                    LineSeries lineSeries = series as LineSeries;
 
-                //    seriesHashtable = lineSeries.ToHashtable();
-                //}
-                //if (series is SplineSeries)
-                //{
-                //    SplineSeries splineSeries = series as SplineSeries;
+                    List<LineSeriesData> seriesData = lineSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    lineSeries.Type = LineSeriesType.Line;
 
-                //    List<SplineSeriesData> seriesData = splineSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    splineSeries.Type = SplineSeriesType.Spline;
+                    seriesHashtable = lineSeries.ToHashtable();
+                }
+                if (series is SplineSeries)
+                {
+                    SplineSeries splineSeries = series as SplineSeries;
 
-                //    seriesHashtable = splineSeries.ToHashtable();
-                //}
-                //if (series is AreaSeries)
-                //{
-                //    AreaSeries areaSeries = series as AreaSeries;
+                    List<SplineSeriesData> seriesData = splineSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    splineSeries.Type = SplineSeriesType.Spline;
 
-                //    List<AreaSeriesData> seriesData = areaSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    areaSeries.Type = AreaSeriesType.Area;
+                    seriesHashtable = splineSeries.ToHashtable();
+                }
+                if (series is AreaSeries)
+                {
+                    AreaSeries areaSeries = series as AreaSeries;
 
-                //    seriesHashtable = areaSeries.ToHashtable();
-                //}
-                //if (series is AreasplineSeries)
-                //{
-                //    AreasplineSeries areaSeries = series as AreasplineSeries;
+                    List<AreaSeriesData> seriesData = areaSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    areaSeries.Type = AreaSeriesType.Area;
 
-                //    List<AreasplineSeriesData> seriesData = areaSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    areaSeries.Type = AreasplineSeriesType.Areaspline;
+                    seriesHashtable = areaSeries.ToHashtable();
+                }
+                if (series is AreasplineSeries)
+                {
+                    AreasplineSeries areaSeries = series as AreasplineSeries;
 
-                //    seriesHashtable = areaSeries.ToHashtable();
-                //}
-                //if (series is ArearangeSeries)
-                //{
-                //    ArearangeSeries areaSeries = series as ArearangeSeries;
+                    List<AreasplineSeriesData> seriesData = areaSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    areaSeries.Type = AreasplineSeriesType.Areaspline;
 
-                //    List<ArearangeSeriesData> seriesData = areaSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    areaSeries.Type = ArearangeSeriesType.Arearange;
+                    seriesHashtable = areaSeries.ToHashtable();
+                }
+                if (series is ArearangeSeries)
+                {
+                    ArearangeSeries areaSeries = series as ArearangeSeries;
 
-                //    seriesHashtable = areaSeries.ToHashtable();
-                //}
-                //if (series is ColumnrangeSeries)
-                //{
-                //    ColumnrangeSeries columnSeries = series as ColumnrangeSeries;
+                    List<ArearangeSeriesData> seriesData = areaSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    areaSeries.Type = ArearangeSeriesType.Arearange;
 
-                //    List<ColumnrangeSeriesData> seriesData = columnSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    columnSeries.Type = ColumnrangeSeriesType.Columnrange;
+                    seriesHashtable = areaSeries.ToHashtable();
+                }
+                if (series is ColumnrangeSeries)
+                {
+                    ColumnrangeSeries columnSeries = series as ColumnrangeSeries;
 
-                //    seriesHashtable = columnSeries.ToHashtable();
-                //}
-                //if (series is BarSeries)
-                //{
-                //    BarSeries barSeries = series as BarSeries;
+                    List<ColumnrangeSeriesData> seriesData = columnSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    columnSeries.Type = ColumnrangeSeriesType.Columnrange;
 
-                //    List<BarSeriesData> seriesData = barSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    barSeries.Type = BarSeriesType.Bar;
+                    seriesHashtable = columnSeries.ToHashtable();
+                }
+                if (series is ColumnSeries)
+                {
+                    ColumnSeries columnSeries = series as ColumnSeries;
 
-                //    seriesHashtable = barSeries.ToHashtable();
-                //}
-                //if (series is ColumnSeries)
-                //{
-                //    ColumnSeries columnSeries = series as ColumnSeries;
+                    List<ColumnSeriesData> seriesData = columnSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    columnSeries.Type = ColumnSeriesType.Column;
 
-                //    List<ColumnSeriesData> seriesData = columnSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    columnSeries.Type = ColumnSeriesType.Column;
+                    seriesHashtable = columnSeries.ToHashtable();
+                }
+                if (series is ScatterSeries)
+                {
+                    ScatterSeries scatterSeries = series as ScatterSeries;
 
-                //    seriesHashtable = columnSeries.ToHashtable();
-                //}
-                //if (series is PieSeries)
-                //{
-                //    PieSeries pieSeries = series as PieSeries;
+                    List<ScatterSeriesData> seriesData = scatterSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    scatterSeries.Type = ScatterSeriesType.Scatter;
 
-                //    List<PieSeriesData> seriesData = pieSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    pieSeries.Type = PieSeriesType.Pie;
+                    seriesHashtable = scatterSeries.ToHashtable();
+                }
+                if (series is PolygonSeries)
+                {
+                    PolygonSeries polygonSeries = series as PolygonSeries;
 
-                //    seriesHashtable = pieSeries.ToHashtable();
-                //}
-                //if (series is ScatterSeries)
-                //{
-                //    ScatterSeries scatterSeries = series as ScatterSeries;
+                    List<PolygonSeriesData> seriesData = polygonSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    polygonSeries.Type = PolygonSeriesType.Polygon;
 
-                //    List<ScatterSeriesData> seriesData = scatterSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    scatterSeries.Type = ScatterSeriesType.Scatter;
-
-                //    seriesHashtable = scatterSeries.ToHashtable();
-                //}
-                //if (series is BubbleSeries)
-                //{
-                //    BubbleSeries bubbleSeries = series as BubbleSeries;
-
-                //    List<BubbleSeriesData> seriesData = bubbleSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    bubbleSeries.Type = BubbleSeriesType.Bubble;
-
-                //    seriesHashtable = bubbleSeries.ToHashtable();
-                //}
-                //if (series is GaugeSeries)
-                //{
-                //    GaugeSeries gaugeSeries = series as GaugeSeries;
-
-                //    List<GaugeSeriesData> seriesData = gaugeSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    gaugeSeries.Type = GaugeSeriesType.Gauge;
-
-                //    seriesHashtable = gaugeSeries.ToHashtable();
-                //}
-                //if (series is SolidgaugeSeries)
-                //{
-                //    SolidgaugeSeries SolidgaugeSeries = series as SolidgaugeSeries;
-
-                //    List<SolidgaugeSeriesData> seriesData = SolidgaugeSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    SolidgaugeSeries.Type = SolidgaugeSeriesType.Solidgauge;
-
-                //    seriesHashtable = SolidgaugeSeries.ToHashtable();
-                //}
-                //if (series is HeatmapSeries)
-                //{
-                //    HeatmapSeries heatMapSeries = series as HeatmapSeries;
-
-                //    List<HeatmapSeriesData> seriesData = heatMapSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    heatMapSeries.Type = HeatmapSeriesType.Heatmap;
-
-                //    seriesHashtable = heatMapSeries.ToHashtable();
-                //}
-                //if (series is BoxplotSeries)
-                //{
-                //    BoxplotSeries boxPlotSeries = series as BoxplotSeries;
-
-                //    List<BoxplotSeriesData> seriesData = boxPlotSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    boxPlotSeries.Type = BoxplotSeriesType.Boxplot;
-
-                //    seriesHashtable = boxPlotSeries.ToHashtable();
-                //}
-                //if (series is ErrorbarSeries)
-                //{
-                //    ErrorbarSeries errorBarSeries = series as ErrorbarSeries;
-
-                //    List<ErrorbarSeriesData> seriesData = errorBarSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    errorBarSeries.Type = ErrorbarSeriesType.Errorbar;
-
-                //    seriesHashtable = errorBarSeries.ToHashtable();
-                //}
-                //if (series is FunnelSeries)
-                //{
-                //    FunnelSeries funnelSeries = series as FunnelSeries;
-
-                //    List<FunnelSeriesData> seriesData = funnelSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    funnelSeries.Type = FunnelSeriesType.Funnel;
-
-                //    seriesHashtable = funnelSeries.ToHashtable();
-                //}
-                //if (series is PyramidSeries)
-                //{
-                //    PyramidSeries pyramidSeries = series as PyramidSeries;
-
-                //    List<PyramidSeriesData> seriesData = pyramidSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    pyramidSeries.Type = PyramidSeriesType.Pyramid;
-
-                //    seriesHashtable = pyramidSeries.ToHashtable();
-                //}
-                //if (series is WaterfallSeries)
-                //{
-                //    WaterfallSeries waterfallSeries = series as WaterfallSeries;
-
-                //    List<WaterfallSeriesData> seriesData = waterfallSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    waterfallSeries.Type = WaterfallSeriesType.Waterfall;
-
-                //    seriesHashtable = waterfallSeries.ToHashtable();
-                //}
-                //if (series is PolygonSeries)
-                //{
-                //    PolygonSeries polygonSeries = series as PolygonSeries;
-
-                //    List<PolygonSeriesData> seriesData = polygonSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    polygonSeries.Type = PolygonSeriesType.Polygon;
-
-                //    seriesHashtable = polygonSeries.ToHashtable();
-                //}
-                //if (series is TreemapSeries)
-                //{
-                //    TreemapSeries treemapSeries = series as TreemapSeries;
-
-                //    List<TreemapSeriesData> seriesData = treemapSeries.Data;
-                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                //    treemapSeries.Type = TreemapSeriesType.Treemap;
-
-                //    seriesHashtable = treemapSeries.ToHashtable();
-                //}
+                    seriesHashtable = polygonSeries.ToHashtable();
+                }
 
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
