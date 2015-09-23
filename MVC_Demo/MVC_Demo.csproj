@@ -251,6 +251,7 @@
     <Compile Include="Areas\Highcharts\HighchartsAreaRegistration.cs" />
     <Compile Include="Areas\Highstock\Controllers\Demo\DemoController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\BasicLineController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\CandleStickAndVolumeController.cs" />
     <Compile Include="Areas\Highstock\HighstockAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -849,6 +850,7 @@
     <Content Include="Areas\Highstock\Views\Demo\Gallery.cshtml" />
     <Content Include="Areas\Highstock\Views\Demo\Index.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\BasicLine.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\CandleStickAndVolume.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\highcharts-all.js" />

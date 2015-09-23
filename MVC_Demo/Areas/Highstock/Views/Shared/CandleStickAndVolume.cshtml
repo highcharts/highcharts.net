@@ -12,7 +12,36 @@
             },
             Title = new Title
             {
-                Text = "AAPL Stock Price"
+                Text = "AAPL Historical"
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Labels = new YAxisLabels
+                    {
+                        X = -3,
+                        Align = "right" 
+                    },
+                    Title = new YAxisTitle
+                    {
+                        Text = "OHLC",                        
+                    },
+                    Height = "60%",
+                    LineWidth = 2
+                },
+                new YAxis
+                {
+                    Labels = new YAxisLabels
+                    {
+                        X = -3,
+                        Align = "right" 
+                    },
+                    Title = new YAxisTitle
+                    {
+                        Text = "Volume",                        
+                    },
+                }
             },
             Series = new List<Series>
             {
