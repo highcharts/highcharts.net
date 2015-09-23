@@ -45,3 +45,6 @@ C:\Highsoft\MVC_Demo\obj\Debug\MVC_Demo.pdb
 C:\Highsoft\MVC_Demo\bin\EntityFramework.dll
 C:\Highsoft\MVC_Demo\bin\System.Web.Optimization.dll
 C:\Highsoft\MVC_Demo\bin\EntityFramework.xml
+C:\Highsoft\MVC_Demo\bin\Highstock.Web.Mvc.dll
+C:\Highsoft\MVC_Demo\bin\Highcharts.Web.Mvc.pdb
+C:\Highsoft\MVC_Demo\bin\Highstock.Web.Mvc.pdb

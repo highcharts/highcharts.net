@@ -1,0 +1,47 @@
+﻿@using Highsoft.Web.Mvc.Highstock
+
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+
+    <script type="text/javascript">
+
+        function getData() {
+            alert("here");
+        }
+
+    </script>
+    
+    @(Html.Highsoft().Highstock(
+        new Highstock
+        {
+            Chart = new Chart
+            {
+                Events = new ChartEvents
+                {
+                    Load = "getData"
+                }
+            },
+            RangeSelector = new RangeSelector
+            {
+                Selected = 1
+            },
+            Title = new Title
+            {
+                Text = "AAPL Stock Price"
+            },
+            Series = new List<Series>
+            {
+                new LineSeries
+                {
+                    Data = ViewData["appleData"] as List<LineSeriesData>,
+                    Name = "AAPL",
+                    Tooltip = new LineSeriesTooltip
+                    {
+                        ValueDecimals = 2
+                    }
+                }
+            }
+
+        },
+        "chart"
+    ))

@@ -7,8 +7,8 @@
     <ProjectGuid>{D05D7902-FDBE-422D-9F47-C84A74A25258}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Highcharts.Web.Mvc</RootNamespace>
-    <AssemblyName>Highстоцк.Web.Mvc</AssemblyName>
+    <RootNamespace>Highsoft.Web.Mvc.Highstock</RootNamespace>
+    <AssemblyName>Highstock.Web.Mvc</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
