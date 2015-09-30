@@ -23,7 +23,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
                 data.Y = value;
                 if (value == 26.5)
                 {
-                    //data.Marker.Symbol = SplineSeriesDataMarkerSymbol.    
+                    data.Marker.Symbol = SplineSeriesDataMarkerSymbol.Diamond;
                 }
 
                 tokyoData.Add(data);

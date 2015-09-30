@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc
 			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 4;
 			States = States_DefaultValue = new PlotOptionsSeriesMarkerStates();
-			Symbol = Symbol_DefaultValue = PlotOptionsSeriesMarkerSymbol.Null;
+			Symbol = Symbol_DefaultValue = null;
 			Width = Width_DefaultValue = null;
 			
 		}	
@@ -79,8 +79,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// <p>A predefined shape or symbol for the marker. When null, the symbol is pulled from options.symbols. Other possible values are "circle", "square", "diamond", "triangle" and "triangle-down".</p><p>Additionally, the URL to a graphic can be given on this form:  "url(graphic.png)". Note that for the image to be applied to exported charts, its URL needs to be accessible by the export server.</p><p>Custom callbacks for symbol path generation can also be added to <code>Highcharts.SVGRenderer.prototype.symbols</code>. The callback is then used by its method name, as shown in the demo.</p>
 		/// </summary>
-		public PlotOptionsSeriesMarkerSymbol Symbol { get; set; }
-		private PlotOptionsSeriesMarkerSymbol Symbol_DefaultValue { get; set; }
+		public string Symbol { get; set; }
+		private string Symbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -101,7 +101,7 @@ namespace Highsoft.Web.Mvc
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Symbol != Symbol_DefaultValue) h.Add("symbol", Highcharts.FirstCharacterToLower(Symbol.ToString()));
+			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			
 

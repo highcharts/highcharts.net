@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc
 			Height = Height_DefaultValue = 20;
 			MenuItems = MenuItems_DefaultValue = null;
 			Onclick = Onclick_DefaultValue = "";
-			Symbol = Symbol_DefaultValue = ExportingButtonsContextButtonSymbol.Menu;
+			Symbol = Symbol_DefaultValue = "menu";
 			SymbolFill = SymbolFill_DefaultValue = "#A8BF77";
 			SymbolSize = SymbolSize_DefaultValue = 14;
 			SymbolStroke = SymbolStroke_DefaultValue = "#666";
@@ -74,8 +74,8 @@ namespace Highsoft.Web.Mvc
 		/// <summary>
 		/// The symbol for the button. Points to a definition function in the  <code>Highcharts.Renderer.symbols</code> collection. The default <code>exportIcon</code> function is part of the exporting module.
 		/// </summary>
-		public ExportingButtonsContextButtonSymbol Symbol { get; set; }
-		private ExportingButtonsContextButtonSymbol Symbol_DefaultValue { get; set; }
+		public string Symbol { get; set; }
+		private string Symbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -171,7 +171,7 @@ namespace Highsoft.Web.Mvc
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems",MenuItems);
 			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("ExportingButtonsContextButtonOnclick.onclick", Onclick); }  
-			if (Symbol != Symbol_DefaultValue) h.Add("symbol", Highcharts.FirstCharacterToLower(Symbol.ToString()));
+			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
 			if (SymbolStroke != SymbolStroke_DefaultValue) h.Add("symbolStroke",SymbolStroke);

@@ -95,7 +95,7 @@ a.highslide-full-expand {
     border: 1px solid white;
     background-color: white;
     padding-left: 22px;
-    background-image: url(/media/com_demo/graphics/loader.white.gif);
+    background-image: url(loader.white.gif);
     background-repeat: no-repeat;
     background-position: 3px 1px;
 }
@@ -389,7 +389,7 @@ a.highslide-credits i {
         margin-top: 5px;
         height: 11px;
         width: 11px;
-        background: url(/media/com_demo/graphics/resize.gif) no-repeat;
+        background: url(resize.gif) no-repeat;
     }
 
         .highslide-footer .highslide-resize span {
@@ -447,7 +447,7 @@ a.highslide-credits i {
         display: block;
         height: 16px;
         width: 16px;
-        background-image: url(/media/com_demo/graphics/closeX.png);
+        background-image: url(closeX.png);
     }
 
         .draggable-header .highslide-header .highslide-close a:hover {

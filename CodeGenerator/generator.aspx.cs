@@ -29,7 +29,7 @@ public partial class generatoraspx : System.Web.UI.Page
     protected override void OnInit(EventArgs e)
     {
         _apiItems = new List<ApiItem>();
-        _log = new StreamWriter(Server.MapPath("~/log.txt"));
+        //_log = new StreamWriter(Server.MapPath("~/log.txt"));
         _typeMappings = new Hashtable();
         _propertyTypeMappings = new Hashtable();
         _propertyInitMappings = new Hashtable();
@@ -63,7 +63,7 @@ public partial class generatoraspx : System.Web.UI.Page
             GenerateClassesForLevel(i);
         }
 
-        _log.Close();
+       // _log.Close();
     }
 
     /// <summary>
@@ -109,6 +109,11 @@ public partial class generatoraspx : System.Web.UI.Page
             if (apiItem.Title == "pointPlacement")
             {
                 apiItem.IsParent = true;
+                apiItem.Values = new List<string>();
+            }
+            if (apiItem.Title == "symbol")
+            {
+                apiItem.IsParent = false;
                 apiItem.Values = new List<string>();
             }
 
@@ -496,6 +501,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _propertyInitMappings.Add("PlotShadow", "new Shadow() { Enabled = false }");
         _propertyInitMappings.Add("Animation", "new Animation() { Enabled = true }");
         _propertyInitMappings.Add("PointPlacement", "new PointPlacement()");
+        //_propertyInitMappings.Add("Symbol", "new Symbol()");
         _propertyInitMappings.Add("Colors", "new List<string>()");        
         _propertyInitMappings.Add("Center", "new string[] { null, null }");
         _propertyInitMappings.Add("Position", "new NameValueCollection()");
@@ -570,6 +576,7 @@ public partial class generatoraspx : System.Web.UI.Page
         _customProperties.Add("Animation");
         _customProperties.Add("PlotShadow");
         _customProperties.Add("PointPlacement");
+        //_customProperties.Add("Symbol");
     }
 
     private static string FirstCharToUpper(string input)

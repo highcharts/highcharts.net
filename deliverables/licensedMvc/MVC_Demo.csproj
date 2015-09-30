@@ -276,6 +276,7 @@
     <Content Include="Content\chart_types\spline-plot-bands-default.svg" />
     <Content Include="Content\chart_types\spline-symbols-default.png" />
     <Content Include="Content\closeX.png" />
+    <Content Include="Content\loader.white.gif" />
     <Content Include="Content\ref.css" />
     <Content Include="Content\gallery.css" />
     <Content Include="Content\highslide.css" />
