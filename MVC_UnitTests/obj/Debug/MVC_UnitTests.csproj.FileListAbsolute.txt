@@ -1,7 +1,0 @@
-C:\highsoft\MVC_UnitTests\obj\Debug\MVC_UnitTests.csprojResolveAssemblyReference.cache
-C:\highsoft\MVC_UnitTests\bin\Debug\MVC_UnitTests.dll
-C:\highsoft\MVC_UnitTests\bin\Debug\MVC_UnitTests.pdb
-C:\highsoft\MVC_UnitTests\bin\Debug\HighCharts.dll
-C:\highsoft\MVC_UnitTests\bin\Debug\HighCharts.pdb
-C:\highsoft\MVC_UnitTests\obj\Debug\MVC_UnitTests.dll
-C:\highsoft\MVC_UnitTests\obj\Debug\MVC_UnitTests.pdb

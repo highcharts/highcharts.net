@@ -1,5 +1,0 @@
-C:\Highsoft\MVC_Highcharts\bin\Debug\Highcharts.Web.Mvc.dll
-C:\Highsoft\MVC_Highcharts\bin\Debug\Highcharts.Web.Mvc.pdb
-C:\Highsoft\MVC_Highcharts\obj\Debug\MVC_Highcharts.csprojResolveAssemblyReference.cache
-C:\Highsoft\MVC_Highcharts\obj\Debug\Highcharts.Web.Mvc.dll
-C:\Highsoft\MVC_Highcharts\obj\Debug\Highcharts.Web.Mvc.pdb

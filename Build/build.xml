@@ -25,14 +25,14 @@
   <target name="generateCompiledOnStampMvc">
     <exec program="${compiledon.utility.path}">
       <arg value="${project.folder.mvc}\CompiledOn.cs" />
-      <arg value="Highsoft.Web.Mvc.Highcharts" />
+      <arg value="Highsoft.Web.Mvc.Charts" />
     </exec>
   </target>
 
   <target name="generateCompiledOnStampMvcSource">
     <exec program="${compiledon.utility.path}">
       <arg value="${project.folder.mvc}\CompiledOn.cs" />
-      <arg value="Highsoft.Web.Mvc" />
+      <arg value="Highsoft.Web.Mvc.Charts" />
       <arg value="true" />
     </exec>
   </target>

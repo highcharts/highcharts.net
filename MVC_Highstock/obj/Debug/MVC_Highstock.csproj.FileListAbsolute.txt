@@ -1,5 +1,0 @@
-C:\Highsoft\MVC_Highstock\obj\Debug\MVC_Highstock.csprojResolveAssemblyReference.cache
-C:\Highsoft\MVC_Highstock\bin\Debug\Highstock.Web.Mvc.dll
-C:\Highsoft\MVC_Highstock\bin\Debug\Highstock.Web.Mvc.pdb
-C:\Highsoft\MVC_Highstock\obj\Debug\Highstock.Web.Mvc.dll
-C:\Highsoft\MVC_Highstock\obj\Debug\Highstock.Web.Mvc.pdb

@@ -1,5 +1,0 @@
-C:\work\UtilDateReplacer\bin\Release\UtilDateReplacer.exe
-C:\work\UtilDateReplacer\bin\Release\UtilDateReplacer.pdb
-C:\work\UtilDateReplacer\obj\Release\ResolveAssemblyReference.cache
-C:\work\UtilDateReplacer\obj\Release\UtilDateReplacer.exe
-C:\work\UtilDateReplacer\obj\Release\UtilDateReplacer.pdb

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
-using Highsoft.Web.Mvc.Highcharts;
+using Highsoft.Web.Mvc.Charts;
 
-namespace Highsoft.Web.Mvc.Highcharts.Rendering
+namespace Highsoft.Web.Mvc.Charts.Rendering
 {
     public class HighchartsRenderer
     {

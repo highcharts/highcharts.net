@@ -39,6 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Highcharts.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\deliverables\bin\trial\Highcharts.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Highstock.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\deliverables\bin\trial\Highstock.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
@@ -894,16 +902,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MVC_Highcharts\MVC_Highcharts.csproj">
-      <Project>{fa4c2a73-1563-47da-8f1b-64ef17d48918}</Project>
-      <Name>MVC_Highcharts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MVC_Highstock\MVC_Highstock.csproj">
-      <Project>{d05d7902-fdbe-422d-9f47-c84a74a25258}</Project>
-      <Name>MVC_Highstock</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

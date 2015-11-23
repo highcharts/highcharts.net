@@ -1,5 +1,0 @@
-C:\highsoft\MVC\bin\Release\HighCharts.dll
-C:\highsoft\MVC\bin\Release\HighCharts.pdb
-C:\highsoft\MVC\obj\Release\MVC.csprojResolveAssemblyReference.cache
-C:\highsoft\MVC\obj\Release\HighCharts.dll
-C:\highsoft\MVC\obj\Release\HighCharts.pdb
