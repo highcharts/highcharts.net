@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Highcharts.Web.Mvc;
-using Highcharts.Web.Mvc.Rendering;
+using Highsoft.Web.Mvc.Charts;
+using Highsoft.Web.Mvc.Charts.Rendering;
 
 namespace Highsoft.Web.Mvc.UnitTests
 {

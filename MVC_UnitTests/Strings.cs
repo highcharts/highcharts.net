@@ -1,14 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Highcharts.Web.Mvc;
-using Highcharts.Web.Mvc.Rendering;
+using Highsoft.Web.Mvc.Charts;
+using Highsoft.Web.Mvc.Charts.Rendering;
 
 namespace Highsoft.Web.Mvc.UnitTests
 {
     [TestClass]
     public class Strings
     {
-        Highcharts _chart;
+        Highsoft.Web.Mvc.Charts.Highcharts _chart;
         HighchartsRenderer _renderer;
 
         [TestInitialize]

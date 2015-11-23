@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc.Highcharts
+namespace Highsoft.Web.Mvc.Charts
 {
 	public partial class PlotOptionsColumnStatesHoverHalo  : BaseObject
 	{
