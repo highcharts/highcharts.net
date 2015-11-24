@@ -257,10 +257,6 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineLabelsController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\SharedController.cs" />
     <Compile Include="Areas\Highcharts\HighchartsAreaRegistration.cs" />
-    <Compile Include="Areas\Highstock\Controllers\Demo\DemoController.cs" />
-    <Compile Include="Areas\Highstock\Controllers\Shared\BasicLineController.cs" />
-    <Compile Include="Areas\Highstock\Controllers\Shared\CandleStickAndVolumeController.cs" />
-    <Compile Include="Areas\Highstock\HighstockAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -851,14 +847,9 @@
     <Content Include="Areas\Highcharts\Views\Shared\GaugeSolid.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeClock.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
-    <Content Include="Areas\Highstock\Views\Web.config" />
     <Content Include="downloads\Highcharts_ASPNET_MVC_4_1_7_0.zip" />
     <Content Include="downloads\Highcharts_ASPNET_MVC_Licensed_4_1_7_0.zip" />
     <Content Include="downloads\Highcharts_ASPNET_MVC_Source_4_1_7_0.zip" />
-    <Content Include="Areas\Highstock\Views\Demo\Gallery.cshtml" />
-    <Content Include="Areas\Highstock\Views\Demo\Index.cshtml" />
-    <Content Include="Areas\Highstock\Views\Shared\BasicLine.cshtml" />
-    <Content Include="Areas\Highstock\Views\Shared\CandleStickAndVolume.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\highcharts-all.js" />
@@ -896,7 +887,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Highcharts\Models\" />
-    <Folder Include="Areas\Highstock\Models\" />
     <Folder Include="Files\" />
     <Folder Include="Models\" />
   </ItemGroup>
