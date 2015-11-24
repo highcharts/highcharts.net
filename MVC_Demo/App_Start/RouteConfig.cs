@@ -16,8 +16,9 @@ namespace MVC_Demo
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Demo", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "MVC_Demo.Areas.Highcharts.Controllers.Demo" }
             );
         }
-    }
+    } 
 }
