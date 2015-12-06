@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
+using System.Collections.Generic;
 
 namespace Highsoft.Web.Mvc.UnitTests
 {
@@ -22,7 +23,9 @@ namespace Highsoft.Web.Mvc.UnitTests
         public void FormatterShouldRenderWithoutQuotes()
         {            
             _chart.Chart.Type = ChartType.Area;
-            _chart.XAxis.Labels.Formatter = "formatXLabels";
+            _chart.XAxis = new List<XAxis>();
+            _chart.XAxis.Add(new XAxis());
+            _chart.XAxis[0].Labels.Formatter = "formatXLabels";
 
             string json = _renderer.RenderHtml();
 
@@ -33,8 +36,14 @@ namespace Highsoft.Web.Mvc.UnitTests
         public void FormattersWithSameName()
         {
             _chart.Chart.Type = ChartType.Area;
-            _chart.XAxis.Labels.Formatter = "formatXLabels";
-            _chart.YAxis.Labels.Formatter = "formatYLabels";
+
+            _chart.XAxis = new List<XAxis>();
+            _chart.XAxis.Add(new XAxis());
+            _chart.XAxis[0].Labels.Formatter = "formatXLabels";
+
+            _chart.YAxis = new List<YAxis>();
+            _chart.YAxis.Add(new YAxis());
+            _chart.YAxis[0].Labels.Formatter = "formatYLabels";
 
             string json = _renderer.RenderHtml();
 
