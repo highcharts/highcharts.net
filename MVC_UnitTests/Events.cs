@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc.UnitTests
             _chart.XAxis.Add(new XAxis());
             _chart.XAxis[0].Labels.Formatter = "formatXLabels";
 
-            _chart.YAxis = new List<YAxis>();
-            _chart.YAxis.Add(new YAxis());
+            _chart.YAxis = new List<Highsoft.Web.Mvc.Charts.YAxis>();
+            _chart.YAxis.Add(new Highsoft.Web.Mvc.Charts.YAxis());
             _chart.YAxis[0].Labels.Formatter = "formatYLabels";
 
             string json = _renderer.RenderHtml();
