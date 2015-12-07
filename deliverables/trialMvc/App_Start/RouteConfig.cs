@@ -14,10 +14,10 @@ namespace MVC_Demo
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
+                name: "Default",                
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { area = "Highcharts",  controller = "Demo", action = "Index", id = UrlParameter.Optional }
             );
         }
-    }
+    } 
 }

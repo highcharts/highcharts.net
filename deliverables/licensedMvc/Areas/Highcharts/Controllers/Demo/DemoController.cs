@@ -57,7 +57,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
             //    fi.CopyTo(Server.MapPath("~/Content/Areas/Highcharts/Controllers/Shared/") + fi.Name + ".txt");
             //}
 
-            return View();
+            return View("~/Areas/Highcharts/Views/Demo/Index.cshtml");
         }
 
         public ActionResult Help()
