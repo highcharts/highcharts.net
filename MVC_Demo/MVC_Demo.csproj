@@ -769,6 +769,16 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Docs\index.html" />
+    <Content Include="Docs\images\image00.png" />
+    <Content Include="Docs\images\image01.png" />
+    <Content Include="Docs\images\image02.png" />
+    <Content Include="Docs\images\image03.png" />
+    <Content Include="Docs\images\image04.png" />
+    <Content Include="Docs\images\image05.png" />
+    <Content Include="Docs\images\image06.png" />
+    <Content Include="Docs\images\image07.png" />
+    <Content Include="Docs\images\image08.png" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Highcharts\Views\Web.config" />
     <Content Include="Areas\Highcharts\Views\Demo\Index.cshtml" />
