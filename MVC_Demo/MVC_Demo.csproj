@@ -39,13 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Highcharts.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Highcharts.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\deliverables\bin\trial\Highcharts.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Highstock.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\deliverables\bin\trial\Highstock.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
@@ -779,6 +775,17 @@
     <Content Include="Docs\images\image06.png" />
     <Content Include="Docs\images\image07.png" />
     <Content Include="Docs\images\image08.png" />
+    <Content Include="Files\bin\Highcharts.Web.Mvc.dll" />
+    <Content Include="Files\js\data.js" />
+    <Content Include="Files\js\drilldown.js" />
+    <Content Include="Files\js\exporting.js" />
+    <Content Include="Files\js\funnel.js" />
+    <Content Include="Files\js\heatmap.js" />
+    <Content Include="Files\js\highcharts-3d.js" />
+    <Content Include="Files\js\highcharts-more.js" />
+    <Content Include="Files\js\highcharts.js" />
+    <Content Include="Files\js\solid-gauge.js" />
+    <Content Include="Files\js\treemap.js" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Highcharts\Views\Web.config" />
     <Content Include="Areas\Highcharts\Views\Demo\Index.cshtml" />
@@ -897,7 +904,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Highcharts\Models\" />
-    <Folder Include="Files\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
