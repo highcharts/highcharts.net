@@ -50,6 +50,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Lengend.cs" />
+    <Compile Include="Title.cs" />
+    <Compile Include="YAxis.cs" />
     <Compile Include="XAxis.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Chart.cs" />
