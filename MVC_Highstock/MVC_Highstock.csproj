@@ -7,7 +7,7 @@
     <ProjectGuid>{D05D7902-FDBE-422D-9F47-C84A74A25258}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Highsoft.Web.Mvc.Highstock</RootNamespace>
+    <RootNamespace>Highsoft.Web.Mvc.Stocks</RootNamespace>
     <AssemblyName>Highstock.Web.Mvc</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
-using Highsoft.Web.Mvc.Highstock;
+using Highsoft.Web.Mvc.Stocks;
 
-namespace Highsoft.Web.Mvc.Highstock.Rendering
+namespace Highsoft.Web.Mvc.Stocks.Rendering
 {
     public class HighstockRenderer
     {

@@ -16,6 +16,7 @@ public class HighstockAspNetMvc
 {
     const int PROPERTY_NESTED_LEVELS = 10; // currently max levels of nested properties is five
     const string ROOT_CLASS = "Highstock"; // the name of the root class
+    const string ROOT_NAMESPACE = "Stocks"; // the name of the root class
 
     List<ApiItem> _apiItems; // json api mappings will be stored here
     StreamWriter _log; // general debug related txt log file
@@ -227,7 +228,7 @@ public class HighstockAspNetMvc
             extendsClass = ": BaseObject";
 
         codeTemplate = codeTemplate
-                        .Replace("{HighTemplate.Namespace}", "Highsoft.Web.Mvc." + ROOT_CLASS)
+                        .Replace("{HighTemplate.Namespace}", "Highsoft.Web.Mvc." + ROOT_NAMESPACE)
                         .Replace("{HighTemplate.ConstrutorInitializers}", defaultValues)
                         .Replace("{HighTemplate.Properties}", properties)
                         .Replace("{HighTemplate.HashtableInit}", hashtableComparers)
@@ -264,7 +265,7 @@ public class HighstockAspNetMvc
         }
 
         enumTemplate = enumTemplate
-                        .Replace("{HighTemplate.Namespace}", "Highsoft.Web.Mvc." + ROOT_CLASS)
+                        .Replace("{HighTemplate.Namespace}", "Highsoft.Web.Mvc." + ROOT_NAMESPACE)
                         .Replace("{HighTemplate.EnumName}", GetClassNameFromItem(apiItem))
                         .Replace("{HighTemplate.EnumList}", enumList);
 

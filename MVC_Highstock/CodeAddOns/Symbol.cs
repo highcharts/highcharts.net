@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.IO;
 
-namespace Highsoft.Web.Mvc.Highstock
+namespace Highsoft.Web.Mvc.Stocks
 {
     /// <summary>
     /// If set, the symbol for the point can be one of the following - Circle, Square, Diamond, Triangle, TraingleDown

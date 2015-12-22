@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Highstock", "MVC_Highst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Highcharts", "MVC_Highcharts\MVC_Highcharts.csproj", "{FA4C2A73-1563-47DA-8F1B-64EF17D48918}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Highstock_Demo", "MVC_Highstock_Demo\MVC_Highstock_Demo.csproj", "{5DC1D181-8C7C-420E-B49B-BEAB72787BFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{FA4C2A73-1563-47DA-8F1B-64EF17D48918}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA4C2A73-1563-47DA-8F1B-64EF17D48918}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA4C2A73-1563-47DA-8F1B-64EF17D48918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DC1D181-8C7C-420E-B49B-BEAB72787BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DC1D181-8C7C-420E-B49B-BEAB72787BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DC1D181-8C7C-420E-B49B-BEAB72787BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DC1D181-8C7C-420E-B49B-BEAB72787BFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
