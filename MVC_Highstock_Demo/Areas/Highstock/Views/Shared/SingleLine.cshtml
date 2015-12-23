@@ -1,0 +1,42 @@
+﻿@using Highsoft.Web.Mvc.Stocks
+
+@*  The Highstock client-side javascript library is dependent on jQuery so you need to include 
+    a reference to the jQuery library before referncing the highstock llibrary*@
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+
+    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>  
+    
+    @(Html.Highsoft().Highstock(
+        new Highstock
+        {           
+            RangeSelector = new RangeSelector
+            {
+                Selected = 1
+            },
+            Title = new Title
+            {
+                Text = "AAPL Stock Price"
+            },
+            Series = new List<Series>
+            {
+                new LineSeries
+                {
+                    Data = ViewData["appleData"] as List<LineSeriesData>,
+                    Name = "AAPL",
+                    Tooltip = new LineSeriesTooltip
+                    {
+                        ValueDecimals = 2
+                    }
+                }
+            },
+            PlotOptions = new PlotOptions
+            {
+                Series = new PlotOptionsSeries
+                {
+                    TurboThreshold = 5000
+                }
+            }
+
+        },
+        "chart"
+    ))

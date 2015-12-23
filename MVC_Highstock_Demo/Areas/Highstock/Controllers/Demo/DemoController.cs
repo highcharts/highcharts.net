@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -48,14 +49,14 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Demo
         {
             SetViewBag(String.Empty, theme);
 
-            //
-            // Code to copy the controllers from the code directory to a .txt format - needed for Beanstalk
-            //
-            //DirectoryInfo di = new DirectoryInfo(Server.MapPath("~/Areas/Highstock/Controllers/Shared/"));
-            //foreach (FileInfo fi in di.GetFiles())
-            //{
-            //    fi.CopyTo(Server.MapPath("~/Content/Areas/Highstock/Controllers/Shared/") + fi.Name + ".txt");
-            //}
+            
+            //Code to copy the controllers from the code directory to a .txt format - needed for Beanstalk
+            
+            DirectoryInfo di = new DirectoryInfo(Server.MapPath("~/Areas/Highstock/Controllers/Shared/"));
+            foreach (FileInfo fi in di.GetFiles())
+            {
+                fi.CopyTo(Server.MapPath("~/Content/Areas/Highstock/Controllers/Shared/") + fi.Name + ".txt");
+            }
 
             return View("~/Areas/Highstock/Views/Demo/Index.cshtml");
         }
@@ -72,10 +73,10 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Demo
 
             SetViewBag(demo, theme);
 
-            string text = System.IO.File.ReadAllText(Server.MapPath("~/Content/Areas/Highcharts/Controllers/Shared/" + demo + "Controller.cs.txt"));
+            string text = System.IO.File.ReadAllText(Server.MapPath("~/Content/Areas/Highstock/Controllers/Shared/" + demo + "Controller.cs.txt"));
             ViewBag.ControllerCode = text;
 
-            text = System.IO.File.ReadAllText(Server.MapPath("~/Areas/Highcharts/Views/Shared/" + demo + ".cshtml"));
+            text = System.IO.File.ReadAllText(Server.MapPath("~/Areas/Highstock/Views/Shared/" + demo + ".cshtml"));
             ViewBag.ViewCode = text;
 
             return View();
