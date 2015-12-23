@@ -179,7 +179,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "SingleLine", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content(String.Format("http://www.highcharts.com/media/com_demo/images/highstock/basic-line-{0}", ViewBag.ChartImageSVG))" alt="Single Line Series">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/basic-line-" + ViewBag.ChartImageSVG)" alt="Single Line Series">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Basic line</h3>
@@ -189,10 +189,10 @@
                             </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "LineAjax", theme = ViewBag.Theme } )">
+                            <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "CandleStickVolume", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/line-ajax-" + ViewBag.ChartImageSVG)" alt="Ajax loaded data, clickable points">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/candlestick-and-volume-" + ViewBag.ChartImageSVG)" alt="Ajax loaded data, clickable points">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Ajax loaded data, clickable points</h3>
