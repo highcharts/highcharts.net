@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
 {
-    public class SingleLineController : Controller
+    public partial class SharedController : Controller
     {
         public ActionResult SingleLine()
         {

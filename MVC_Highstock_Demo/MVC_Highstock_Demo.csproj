@@ -615,6 +615,7 @@
     <Content Include="Scripts\highslide-full.min.js" />
     <Content Include="Scripts\highslide.config.js" />
     <Content Include="Areas\Highstock\Views\Shared\SingleLine.cshtml" />
+    <Content Include="Areas\Highstock\Views\Demo\Gallery.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
