@@ -2,6 +2,13 @@
 
 <script src="http://code.highcharts.com/highcharts.js"></script>
 
+
+@*The highchart-more.js file contains definitions for additional chart types not available 
+in the main highcharts.js file such as "arearange". You need to include this file if you
+are using these types of charts*@
+
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+
 @using Highsoft.Web.Mvc.Charts
 
     @(Html.Highsoft().Highcharts(
@@ -55,6 +62,10 @@
                     }
                 }
             },
+            Tooltip = new Tooltip
+            {
+                PointFormat = "Observation: {point.y}"
+            },
             Series = new List<Series>
             {                    
                 new BoxplotSeries
@@ -81,10 +92,6 @@
                         FillColor = "white",
                         LineWidth = 1,
                         LineColor = "#7cb5ec"
-                    },
-                    Tooltip = new ScatterSeriesTooltip
-                    {
-                        PointFormat = "Observation: {point.y}"
                     },
                     Data = new List<ScatterSeriesData>
                     {
