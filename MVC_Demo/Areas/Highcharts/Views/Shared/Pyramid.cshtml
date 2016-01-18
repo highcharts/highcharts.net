@@ -1,4 +1,13 @@
-﻿@using Highsoft.Web.Mvc.Charts
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+
+@* The Pyramid chart is essentially a customized funnel chart. Funnel charts requires the funnel.js add-on *@
+
+<script src="http://code.highcharts.com/modules/funnel.js"></script> 
+
+@using Highsoft.Web.Mvc.Charts
 
     @(Html.Highsoft().Highcharts(
         new Highcharts
