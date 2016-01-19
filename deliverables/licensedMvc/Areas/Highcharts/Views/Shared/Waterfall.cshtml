@@ -1,4 +1,24 @@
-﻿@using Highsoft.Web.Mvc.Charts
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+
+@*The highchart-more.js file contains definitions for additional chart types not available 
+in the main highcharts.js file such as "arearange". You need to include this file if you
+are using these types of charts*@
+
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+
+
+<script type="text/javascript">
+
+    function formatLabels() {
+            return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
+    }
+
+</script>
+
+@using Highsoft.Web.Mvc.Charts
 
     @(Html.Highsoft().Highcharts(
         new Highcharts
@@ -37,7 +57,7 @@
             {
                 PointFormat = "<b>${point.y:,.2f}</b> USD"
             },
-            
+
             Series = new List<Series>
             {                
                 new WaterfallSeries
@@ -52,6 +72,17 @@
                         new WaterfallSeriesData { Name = "Fixed Costs", Y = -342000 },
                         new WaterfallSeriesData { Name = "Variable Costs", Y =  -233000 },
                         new WaterfallSeriesData { Name = "Balance", Color = "#434348", IsSum = true }
+                    }
+                },                
+            },
+            PlotOptions = new PlotOptions
+            {
+                Waterfall = new PlotOptionsWaterfall
+                {
+                    DataLabels = new PlotOptionsWaterfallDataLabels
+                    {
+                        Enabled = true,
+                        Formatter = "formatLabels"
                     }
                 }
             }

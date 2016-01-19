@@ -852,7 +852,6 @@
     <Content Include="Areas\Highcharts\Views\Shared\GaugeSolid.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeClock.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
-    <Content Include="downloads\Highcharts_ASPNET_MVC_4_1_7_0.zip" />
     <Content Include="Help\fti\FTI_100.json" />
     <Content Include="Help\fti\FTI_101.json" />
     <Content Include="Help\fti\FTI_102.json" />
@@ -884,6 +883,7 @@
     <Content Include="Help\SearchHelp.inc.php" />
     <Content Include="Help\SearchHelp.php" />
     <Content Include="Help\Web.Config" />
+    <Content Include="downloads\Highcharts_ASPNET_MVC_4_1_7_0.zip" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Help\html\Methods_T_Highsoft_Web_Mvc_Charts_Animation.htm" />
     <Content Include="Help\html\Methods_T_Highsoft_Web_Mvc_Charts_ArearangeSeries.htm" />

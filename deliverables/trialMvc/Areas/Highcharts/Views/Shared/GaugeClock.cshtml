@@ -2,124 +2,195 @@
 
 <script src="http://code.highcharts.com/highcharts.js"></script>
 
-@*Gauge charts require the "solid-gauge.js" add-on*@
+@* Additional chart types, such as "gauge", are defined in the highcharts-more.js module *@
 
-<script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
 
-@using Highsoft.Web.Mvc.Charts
+<script type-="text/javascript">
 
-    <script type="text/javascript">
+    $(function () {
 
-        function formatXAxis() {
-            return this.value; // clean, unformatted number for year
+        /**
+         * Get the current time
+         */
+        function getNow() {
+            var now = new Date();
+
+            return {
+                hours: now.getHours() + now.getMinutes() / 60,
+                minutes: now.getMinutes() * 12 / 60 + now.getSeconds() * 12 / 3600,
+                seconds: now.getSeconds() * 12 / 60
+            };
         }
 
-        function formatYAxis() {
-            return this.value / 1000 + 'k';
+        /**
+         * Pad numbers
+         */
+        function pad(number, length) {
+            // Create an array of the remaining length + 1 and join it with 0's
+            return new Array((length || 2) + 1 - String(number).length).join(0) + number;
         }
 
-  
-    </script>
+        var now = getNow();
 
-    @(Html.Highsoft().Highcharts(
-        new Highcharts
-        {
-            Chart = new Chart
-            {
-                Width = 200,
-                Height = 200,
-                PlotBackgroundColor = null,
-                PlotBackgroundImage = null,
-                PlotBorderWidth = 0,
-                PlotShadow = new Shadow
-                {
-                    Enabled = false
-                }
-            },
-            Title = new Title
-            {
-                Text = "The Highcharts Clock"
-            },
-            Credits = new Credits
-            {
-                Enabled = false
-            },
-            //Pane = new Pane
-            //{
-            //    //Background = new List<Background>
-            //    //{
-            //    //    new Background
-            //    //    {
-            //    //    },
-            //    //    new Background
-            //    //    {
-                         
-            //    //    }
-            //    //}
-            //},
-            XAxis = new List<XAxis>
-            {            
-                new XAxis
-                {
-                    AllowDecimals = false,
-                    Labels = new XAxisLabels
-                    {
-                        Formatter = "formatXAxis"
-                    }
+        // Create the chart
+        $('#container').highcharts({
 
-                }
+            chart: {
+                type: 'gauge',
+                plotBackgroundColor: null,
+                plotBackgroundImage: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                height: 200
             },
-            YAxis = new List<YAxis>
-            {            
-                new YAxis
-                {
-                    Title = new YAxisTitle
-                    {
-                        Text = "Nuclear weapon states"
-                    },
-                    Labels = new YAxisLabels
-                    {
-                        Formatter = "formatYAxis"
-                    }
-                }
+
+            credits: {
+                enabled: false
             },
-            Tooltip = new Tooltip
-            {
-                PointFormat = "{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}"
+
+            title: {
+                text: 'The Highcharts clock'
             },
-            PlotOptions = new PlotOptions
-            {
-                Area = new PlotOptionsArea
-                {
-                    PointStart = 1940,
-                    Marker = new PlotOptionsAreaMarker
-                    {
-                        Enabled = false,
-                        Symbol = "circle",
-                        Radius = 2,
-                        States = new PlotOptionsAreaMarkerStates
-                        {
-                            Hover = new PlotOptionsAreaMarkerStatesHover
-                            {
-                                Enabled = true
-                            }
-                        }
-                    }
-                }
+
+            pane: {
+                background: [{
+                    // default background
+                }, {
+                    // reflex for supported browsers
+                    backgroundColor: Highcharts.svg ? {
+                        radialGradient: {
+                            cx: 0.5,
+                            cy: -0.4,
+                            r: 1.9
+                        },
+                        stops: [
+                            [0.5, 'rgba(255, 255, 255, 0.2)'],
+                            [0.5, 'rgba(200, 200, 200, 0.2)']
+                        ]
+                    } : null
+                }]
             },
-            Series = new List<Series>
-            {                    
-                new AreaSeries
-                {
-                    Name = "USA",
-                    Data = @ViewData["usaData"] as List<AreaSeriesData>
+
+            yAxis: {
+                labels: {
+                    distance: -20
                 },
-                new AreaSeries
-                {
-                    Name = "USSR/Russia",
-                    Data = @ViewData["russiaData"] as List<AreaSeriesData>
+                min: 0,
+                max: 12,
+                lineWidth: 0,
+                showFirstLabel: false,
+
+                minorTickInterval: 'auto',
+                minorTickWidth: 1,
+                minorTickLength: 5,
+                minorTickPosition: 'inside',
+                minorGridLineWidth: 0,
+                minorTickColor: '#666',
+
+                tickInterval: 1,
+                tickWidth: 2,
+                tickPosition: 'inside',
+                tickLength: 10,
+                tickColor: '#666',
+                title: {
+                    text: 'Powered by<br/>Highcharts',
+                    style: {
+                        color: '#BBB',
+                        fontWeight: 'normal',
+                        fontSize: '8px',
+                        lineHeight: '10px'
+                    },
+                    y: 10
                 }
-            }
+            },
+
+            tooltip: {
+                formatter: function () {
+                    return this.series.chart.tooltipText;
+                }
+            },
+
+            series: [{
+                data: [{
+                    id: 'hour',
+                    y: now.hours,
+                    dial: {
+                        radius: '60%',
+                        baseWidth: 4,
+                        baseLength: '95%',
+                        rearLength: 0
+                    }
+                }, {
+                    id: 'minute',
+                    y: now.minutes,
+                    dial: {
+                        baseLength: '95%',
+                        rearLength: 0
+                    }
+                }, {
+                    id: 'second',
+                    y: now.seconds,
+                    dial: {
+                        radius: '100%',
+                        baseWidth: 1,
+                        rearLength: '20%'
+                    }
+                }],
+                animation: false,
+                dataLabels: {
+                    enabled: false
+                }
+            }]
+        },
+
+            // Move
+            function (chart) {
+                setInterval(function () {
+
+                    now = getNow();
+
+                    var hour = chart.get('hour'),
+                        minute = chart.get('minute'),
+                        second = chart.get('second'),
+                        // run animation unless we're wrapping around from 59 to 0
+                        animation = now.seconds === 0 ?
+                            false :
+                        {
+                            easing: 'easeOutBounce'
+                        };
+
+                    // Cache the tooltip text
+                    chart.tooltipText =
+                        pad(Math.floor(now.hours), 2) + ':' +
+                        pad(Math.floor(now.minutes * 5), 2) + ':' +
+                        pad(now.seconds * 5, 2);
+
+                    hour.update(now.hours, true, animation);
+                    minute.update(now.minutes, true, animation);
+                    second.update(now.seconds, true, animation);
+
+                }, 1000);
+
+            });
+    });
+
+    /**
+     * Easing function from https://github.com/danro/easing-js/blob/master/easing.js
+     */
+    Math.easeOutBounce = function (pos) {
+        if ((pos) < (1 / 2.75)) {
+            return (7.5625 * pos * pos);
         }
-        , "chart")
-    )
+        if (pos < (2 / 2.75)) {
+            return (7.5625 * (pos -= (1.5 / 2.75)) * pos + 0.75);
+        }
+        if (pos < (2.5 / 2.75)) {
+            return (7.5625 * (pos -= (2.25 / 2.75)) * pos + 0.9375);
+        }
+        return (7.5625 * (pos -= (2.625 / 2.75)) * pos + 0.984375);
+    };
+
+</script>
+
+<div id="container"></div>

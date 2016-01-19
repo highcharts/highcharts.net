@@ -1,196 +1,185 @@
-﻿@using Highsoft.Web.Mvc.Charts
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+@* Additional chart types, such as "heatmap", are defined in the heatmap.js module *@
+
+<script src="http://code.highcharts.com/modules/heatmap.js"></script>
+
+@*When loading data from HTML <table> you need to add the data.js module*@
+
+ <script src="http://code.highcharts.com/modules/data.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
 
 <script type="text/javascript">
 
-    (function (H) {
-        var Series = H.Series,
-            each = H.each,
-            wrap = H.wrap,
-            seriesTypes = H.seriesTypes;
+    $(function () {
 
         /**
-         * Create a hidden canvas to draw the graph on. The contents is later copied over 
-         * to an SVG image element.
+         * This plugin extends Highcharts in two ways:
+         * - Use HTML5 canvas instead of SVG for rendering of the heatmap squares. Canvas
+         *   outperforms SVG when it comes to thousands of single shapes.
+         * - Add a K-D-tree to find the nearest point on mouse move. Since we no longer have SVG shapes
+         *   to capture mouseovers, we need another way of detecting hover points for the tooltip.
          */
-        Series.prototype.getContext = function () {
-            if (!this.canvas) {
-                this.canvas = document.createElement('canvas');
-                this.canvas.setAttribute('width', this.chart.chartWidth);
-                this.canvas.setAttribute('height', this.chart.chartHeight);
-                this.image = this.chart.renderer.image('', 0, 0, this.chart.chartWidth, this.chart.chartHeight).add(this.group);
-                this.ctx = this.canvas.getContext('2d');
-            }
-            return this.ctx;
-        };
+        (function (H) {
+            var Series = H.Series,
+                each = H.each;
 
-        /** 
-         * Draw the canvas image inside an SVG image
-         */
-        Series.prototype.canvasToSVG = function () {
-            this.image.attr({ href: this.canvas.toDataURL('image/png') });
-        };
+            /**
+             * Create a hidden canvas to draw the graph on. The contents is later copied over
+             * to an SVG image element.
+             */
+            Series.prototype.getContext = function () {
+                if (!this.canvas) {
+                    this.canvas = document.createElement('canvas');
+                    this.canvas.setAttribute('width', this.chart.chartWidth);
+                    this.canvas.setAttribute('height', this.chart.chartHeight);
+                    this.image = this.chart.renderer.image('', 0, 0, this.chart.chartWidth, this.chart.chartHeight).add(this.group);
+                    this.ctx = this.canvas.getContext('2d');
+                }
+                return this.ctx;
+            };
 
-        /**
-         * Wrap the drawPoints method to draw the points in canvas instead of the slower SVG,
-         * that requires one shape each point.
-         */
-        H.wrap(H.seriesTypes.heatmap.prototype, 'drawPoints', function (proceed) {
+            /**
+             * Draw the canvas image inside an SVG image
+             */
+            Series.prototype.canvasToSVG = function () {
+                this.image.attr({ href: this.canvas.toDataURL('image/png') });
+            };
 
-            var ctx = this.getContext();
+            /**
+             * Wrap the drawPoints method to draw the points in canvas instead of the slower SVG,
+             * that requires one shape each point.
+             */
+            H.wrap(H.seriesTypes.heatmap.prototype, 'drawPoints', function () {
 
-            if (ctx) {
+                var ctx = this.getContext();
 
-                // draw the columns
-                each(this.points, function (point) {
-                    var plotY = point.plotY,
-                        shapeArgs;
+                if (ctx) {
 
-                    if (plotY !== undefined && !isNaN(plotY) && point.y !== null) {
-                        shapeArgs = point.shapeArgs;
+                    // draw the columns
+                    each(this.points, function (point) {
+                        var plotY = point.plotY,
+                            shapeArgs;
 
-                        ctx.fillStyle = point.pointAttr[''].fill;
-                        ctx.fillRect(shapeArgs.x, shapeArgs.y, shapeArgs.width, shapeArgs.height);
-                    }
-                });
+                        if (plotY !== undefined && !isNaN(plotY) && point.y !== null) {
+                            shapeArgs = point.shapeArgs;
 
-                this.canvasToSVG();
+                            ctx.fillStyle = point.pointAttr[''].fill;
+                            ctx.fillRect(shapeArgs.x, shapeArgs.y, shapeArgs.width, shapeArgs.height);
+                        }
+                    });
 
-            } else {
-                this.chart.showLoading("Your browser doesn't support HTML5 canvas, <br>please use a modern browser");
+                    this.canvasToSVG();
 
-                // Uncomment this to provide low-level (slow) support in oldIE. It will cause script errors on
-                // charts with more than a few thousand points.
-                //proceed.call(this);
-            }
+                } else {
+                    this.chart.showLoading('Your browser doesn\'t support HTML5 canvas, <br>please use a modern browser');
+
+                    // Uncomment this to provide low-level (slow) support in oldIE. It will cause script errors on
+                    // charts with more than a few thousand points.
+                    // arguments[0].call(this);
+                }
+            });
+            H.seriesTypes.heatmap.prototype.directTouch = false; // Use k-d-tree
+        }(Highcharts));
+
+
+        var start;
+        $('#container').highcharts({
+
+            data: {
+                csv: document.getElementById('csv').innerHTML,
+                parsed: function () {
+                    start = +new Date();
+                }
+            },
+
+            chart: {
+                type: 'heatmap',
+                margin: [60, 10, 80, 50]
+            },
+
+
+            title: {
+                text: 'Highcharts extended heat map',
+                align: 'left',
+                x: 40
+            },
+
+            subtitle: {
+                text: 'Temperature variation by day and hour through 2013',
+                align: 'left',
+                x: 40
+            },
+
+            xAxis: {
+                type: 'datetime',
+                min: Date.UTC(2013, 0, 1),
+                max: Date.UTC(2014, 0, 1),
+                labels: {
+                    align: 'left',
+                    x: 5,
+                    y: 14,
+                    format: '{value:%B}' // long month
+                },
+                showLastLabel: false,
+                tickLength: 16
+            },
+
+            yAxis: {
+                title: {
+                    text: null
+                },
+                labels: {
+                    format: '{value}:00'
+                },
+                minPadding: 0,
+                maxPadding: 0,
+                startOnTick: false,
+                endOnTick: false,
+                tickPositions: [0, 6, 12, 18, 24],
+                tickWidth: 1,
+                min: 0,
+                max: 23,
+                reversed: true
+            },
+
+            colorAxis: {
+                stops: [
+                    [0, '#3060cf'],
+                    [0.5, '#fffbbc'],
+                    [0.9, '#c4463a'],
+                    [1, '#c4463a']
+                ],
+                min: -15,
+                max: 25,
+                startOnTick: false,
+                endOnTick: false,
+                labels: {
+                    format: '{value}℃'
+                }
+            },
+
+            series: [{
+                borderWidth: 0,
+                nullColor: '#EFEFEF',
+                colsize: 24 * 36e5, // one day
+                tooltip: {
+                    headerFormat: 'Temperature<br/>',
+                    pointFormat: '{point.x:%e %b, %Y} {point.y}:00: <b>{point.value} ℃</b>'
+                },
+                turboThreshold: Number.MAX_VALUE // #3404, remove after 4.0.5 release
+            }]
+
         });
-        H.seriesTypes.heatmap.prototype.directTouch = false; // Use k-d-tree
-    }(Highcharts));
+        console.log('Rendered in ' + (new Date() - start) + ' ms'); // eslint-disable-line no-console
 
-
-    function parseCSV() {
-        start = +new Date();
-    }
-
-    function loadData() {
-        alert("1");
-       
-    }
+    });
 
 </script>
 
-    @(Html.Highsoft().Highcharts(
-        new Highcharts
-        {
-            Chart = new Chart
-            {
-                Width = 1087,
-                Height = 400,
-                Type = ChartType.Heatmap,
-                Events = new ChartEvents
-                {
-                    Load = "loadData"
-                }
-            },
-            Data = new Data
-            {
-                Parsed = "parseCSV"
-            },
-            Title = new Title
-            {
-                Text = "Highcharts extended heat map",
-                Align = TitleAlign.Left,
-                X = 40
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Temperature variation by day and hour through 2013",
-                Align = SubtitleAlign.Left,
-                X = 40
-            },
-            XAxis = new List<XAxis>
-            {            
-                new XAxis
-                {
-                    Type = XAxisType.Datetime,
-                    Min = ViewData["minDate"] as double?,
-                    Max = ViewData["maxDate"] as double?,
-                    Labels = new XAxisLabels
-                    {
-                        Align = XAxisLabelsAlign.Left,
-                        X = 5,
-                        Y = 14,
-                        Format = "{value:%B}"
-                    },
-                    ShowLastLabel = false,
-                    TickLength = 16
-                }
-            },
-            YAxis = new List<YAxis>
-            {
-                new YAxis
-                {
-                    Title = new YAxisTitle
-                    {
-                        Text = ""
-                    },
-                    Labels = new YAxisLabels
-                    {
-                        Format = "{value}:00"
-                    },
-                    MinPadding = 0,
-                    MaxPadding = 0,
-                    StartOnTick = false,
-                    EndOnTick = false,
-                    TickPositions = new List<double>() { 0, 6, 12, 18,24 },
-                    TickWidth = 1,
-                    Min = 0,
-                    Max = 23,
-                    Reversed = true 
-                    
-                }
-            },
-
-            Legend = new Legend
-            {
-                Layout = LegendLayout.Vertical,
-                Align = LegendAlign.Right,
-                Margin = 0,
-                VerticalAlign = LegendVerticalAlign.Top,
-                Y = 25,
-                SymbolHeight = 280
-            },
-            ColorAxis = new ColorAxis
-            {
-                Min = -15,
-                Max = 25,
-                StartOnTick = false,
-                EndOnTick = false,
-                Stops = new List<Stop>
-                {
-                    new Stop { Color = "#3060cf", Position = 0 },
-                    new Stop { Color = "#fffbbc", Position = 0.5 },
-                    new Stop { Color = "#c4463a", Position = 0.9 },
-                    new Stop { Color = "#c4463a", Position = 1 },
-                }
-            },
-            Series = new List<Series>
-            {                    
-                new HeatmapSeries
-                {
-                    BorderWidth = 0,
-                    Colsize = 86400000, // one day
-                    Tooltip = new HeatmapSeriesTooltip
-                    {
-                        HeaderFormat = "Temperature<br/>",
-                        PointFormat = "{point.x:%e %b, %Y} {point.y}:00: <b>{point.value} ℃</b>"
-                    },
-                    TurboThreshold = double.MaxValue,
-                    
-                }
-            }
-        }
-        , "chart")
-    )
 
 <pre id="csv" style="display: none">Date,Time,Temperature
 2013-01-01,0,1.3
