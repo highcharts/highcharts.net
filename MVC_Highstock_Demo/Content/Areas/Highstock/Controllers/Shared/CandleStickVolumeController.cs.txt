@@ -23,9 +23,13 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
             json = json.Substring(json.IndexOf('[') + 1);
             json = json.Substring(json.IndexOf('[') + 1);
 
-            int a = 5;
-            
-
+            while (true)
+            {
+                if (json.IndexOf('[') == -1) break;
+                
+                string entity = json.Substring(0, json.IndexOf(']') - 1);
+                json = json.Substring(json.IndexOf('[') + 1);
+            }
 
             using (var db = new HighstockDataEntities())
             {
