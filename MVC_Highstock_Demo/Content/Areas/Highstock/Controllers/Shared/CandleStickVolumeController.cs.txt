@@ -31,8 +31,25 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
                         break;
                 
                     string entity = json.Substring(0, json.IndexOf(']'));
+                    string[] values = entity.Split(',');
+
+                    db.CandlestickVolumes.Add(
+                        new CandlestickVolume
+                        {
+                             Date = Convert.ToInt32( values[0] ),
+                             Open = Convert.ToInt32(values[1]),
+                             High = Convert.ToInt32(values[2]),
+                             Low = Convert.ToInt32(values[3]),
+                             Close = Convert.ToInt32(values[4])                             
+                        }
+                    );
+
+                    
+
                     json = json.Substring(json.IndexOf('[') + 1);
                 }
+
+                db.SaveChanges();
             }
 
             
