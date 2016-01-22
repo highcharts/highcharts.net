@@ -23,17 +23,32 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
             json = json.Substring(json.IndexOf('[') + 1);
             json = json.Substring(json.IndexOf('[') + 1);
 
-            while (true)
-            {
-                if (json.IndexOf('[') == -1) 
-                    break;
-                
-                string entity = json.Substring(0, json.IndexOf(']'));
-                json = json.Substring(json.IndexOf('[') + 1);
-            }
-
             using (var db = new HighstockDataEntities())
             {
+                while (true)
+                {
+                    if (json.IndexOf('[') == -1) 
+                        break;
+                
+                    string entity = json.Substring(0, json.IndexOf(']'));
+                    string[] values = entity.Split(',');
+
+                    db.CandlestickVolumes.Add(
+                        new CandlestickVolume
+                        {
+                             Date = Convert.ToInt32( values[0] ),
+                             Open = Convert.ToInt32(values[0]),
+                             High = Convert.ToInt32(values[0]),
+                             Low = Convert.ToInt32(values[0]),
+                             Close = Convert.ToInt32(values[0])
+                        }
+                    );
+
+                    json = json.Substring(json.IndexOf('[') + 1);
+                }
+            }
+
+            
                //json.json = json
 
                 //db.CandlestickVolumes.Add(
@@ -41,7 +56,7 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
                 //    {
                 //    }
                 //);
-            }
+            //}
 
             
 
