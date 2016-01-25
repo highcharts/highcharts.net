@@ -175,22 +175,22 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\CandlestickVolume.cs">
-      <DependentUpon>HighstockDataModel.tt</DependentUpon>
+      <DependentUpon>HighstockEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HighstockDataModel.Context.cs">
+    <Compile Include="Models\HighstockEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HighstockDataModel.Context.tt</DependentUpon>
+      <DependentUpon>HighstockEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HighstockDataModel.cs">
+    <Compile Include="Models\HighstockEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HighstockDataModel.tt</DependentUpon>
+      <DependentUpon>HighstockEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HighstockDataModel.Designer.cs">
+    <Compile Include="Models\HighstockEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HighstockDataModel.edmx</DependentUpon>
+      <DependentUpon>HighstockEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -634,15 +634,15 @@
     <Content Include="Global.asax" />
     <Content Include="Areas\Highstock\Views\Web.config" />
     <Content Include="Areas\Highstock\Views\Demo\Index.cshtml" />
-    <Content Include="Models\HighstockDataModel.Context.tt">
+    <Content Include="Models\HighstockEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HighstockDataModel.edmx</DependentUpon>
-      <LastGenOutput>HighstockDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>HighstockEntities.edmx</DependentUpon>
+      <LastGenOutput>HighstockEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\HighstockDataModel.tt">
+    <Content Include="Models\HighstockEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HighstockDataModel.edmx</DependentUpon>
-      <LastGenOutput>HighstockDataModel.cs</LastGenOutput>
+      <DependentUpon>HighstockEntities.edmx</DependentUpon>
+      <LastGenOutput>HighstockEntities.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\highcharts-all.js" />
@@ -652,12 +652,12 @@
     <Content Include="Areas\Highstock\Views\Shared\SingleLine.cshtml" />
     <Content Include="Areas\Highstock\Views\Demo\Gallery.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\CandlestickVolume.cshtml" />
-    <EntityDeploy Include="Models\HighstockDataModel.edmx">
+    <EntityDeploy Include="Models\HighstockEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HighstockDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>HighstockEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\HighstockDataModel.edmx.diagram">
-      <DependentUpon>HighstockDataModel.edmx</DependentUpon>
+    <Content Include="Models\HighstockEntities.edmx.diagram">
+      <DependentUpon>HighstockEntities.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />

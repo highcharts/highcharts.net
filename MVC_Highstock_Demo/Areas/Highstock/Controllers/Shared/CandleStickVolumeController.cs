@@ -23,7 +23,7 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
             json = json.Substring(json.IndexOf('[') + 1);
             json = json.Substring(json.IndexOf('[') + 1);
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new HighstockDataEntities1())
             {
                 while (true)
                 {
@@ -41,6 +41,7 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
                              High = Convert.ToInt32(values[2]),
                              Low = Convert.ToInt32(values[3]),
                              Close = Convert.ToInt32(values[4]),
+                             Volume = Convert.ToInt32(values[5]),
                              
                         }
                     );
