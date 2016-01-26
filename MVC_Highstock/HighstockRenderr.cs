@@ -190,6 +190,16 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
                     seriesHashtable = polygonSeries.ToHashtable();
                 }
+                if (series is CandleStickSeries)
+                {
+                    CandleStickSeries candleStickSeries = series as CandleStickSeries;
+
+                    List<PolygonSeriesData> seriesData = CandleStickSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    polygonSeries.Type = PolygonSeriesType.Polygon;
+
+                    seriesHashtable = polygonSeries.ToHashtable();
+                }
 
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);

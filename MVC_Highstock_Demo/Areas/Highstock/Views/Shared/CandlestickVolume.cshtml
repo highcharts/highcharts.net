@@ -44,7 +44,7 @@
 
             console.log(chart);
 
-            chart.series[0].setData(ohlc);
+            //chart.series[0].setData(ohlc);
             chart.series[1].setData(volume);
 
             window.setTimeout(function () { chart.redraw(); }, 1000);
@@ -109,7 +109,7 @@
             {
                 new CandleStickSeries
                 {
-                    //Data = ViewData["appleData"] as List<CandleStickSeriesData>,
+                    Data = ViewBag.AppleData as List<CandleStickSeriesData>,
                     Name = "AAPL",
                     DataGrouping = new CandleStickSeriesDataGrouping
                     {

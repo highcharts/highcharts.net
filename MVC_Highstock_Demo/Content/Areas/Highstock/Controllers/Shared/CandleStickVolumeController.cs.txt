@@ -36,15 +36,14 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
                     db.CandlestickVolumes.Add(
                         new CandlestickVolume
                         {
-                             Date = Convert.ToInt32( values[0] ),
-                             Open = Convert.ToInt32(values[1]),
-                             High = Convert.ToInt32(values[2]),
-                             Low = Convert.ToInt32(values[3]),
-                             Close = Convert.ToInt32(values[4])                             
+                             Date = Convert.ToDecimal( values[0] ),
+                             Open = Convert.ToDecimal(values[1]),
+                             High = Convert.ToDecimal(values[2]),
+                             Low = Convert.ToDecimal(values[3]),
+                             Close = Convert.ToDecimal(values[4]),
+                             Volume = Convert.ToDecimal(values[5]),                             
                         }
-                    );
-
-                    
+                    );                    
 
                     json = json.Substring(json.IndexOf('[') + 1);
                 }
