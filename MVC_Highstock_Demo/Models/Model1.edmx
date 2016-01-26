@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="HighstockDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="HighstockDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="HighstockDataModelStoreContainer">
           <EntitySet Name="CandlestickVolume" EntityType="HighstockDataModel.Store.CandlestickVolume" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
@@ -13,14 +13,15 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="decimal" Precision="38" />
-          <Property Name="Open" Type="decimal" />
-          <Property Name="High" Type="decimal" />
-          <Property Name="Low" Type="decimal" />
-          <Property Name="Close" Type="decimal" />
-          <Property Name="Volume" Type="decimal" Precision="38" />
+          <Property Name="Date" Type="float" />
+          <Property Name="Open" Type="float" />
+          <Property Name="High" Type="float" />
+          <Property Name="Low" Type="float" />
+          <Property Name="Close" Type="float" />
+          <Property Name="Volume" Type="float" />
         </EntityType>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HighstockDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -31,13 +32,13 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="Open" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="High" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Low" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Close" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Volume" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="Double" />
+          <Property Name="Open" Type="Double" />
+          <Property Name="High" Type="Double" />
+          <Property Name="Low" Type="Double" />
+          <Property Name="Close" Type="Double" />
+          <Property Name="Volume" Type="Double" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

@@ -45,9 +45,9 @@
             console.log(chart);
 
             //chart.series[0].setData(ohlc);
-            chart.series[1].setData(volume);
+            //chart.series[1].setData(volume);
 
-            window.setTimeout(function () { chart.redraw(); }, 1000);
+            //window.setTimeout(function () { chart.redraw(); }, 1000);
         })
      }
 
@@ -58,10 +58,11 @@
         {
             Chart = new Highsoft.Web.Mvc.Stocks.Chart
             {
-                Events = new ChartEvents
-                {
-                     Load = "loadData"
-                }
+                //Events = new ChartEvents
+                //{
+                //     Load = "loadData"
+                //}
+                
             },
             RangeSelector = new RangeSelector
             {
@@ -111,16 +112,14 @@
                 {
                     Data = ViewBag.AppleData as List<CandleStickSeriesData>,
                     Name = "AAPL",
-                    DataGrouping = new CandleStickSeriesDataGrouping
-                    {
-                       // Units?      
-                    },                    
+                    TurboThreshold = 10000               
                 },
                 new ColumnSeries
                 {
                     Name = "Volume",
-                    //Data = ViewData["volumeData"] as List<ColumnSeriesData>,
-                    YAxis = "VolumeAxis"
+                    Data = ViewBag.VolumeData as List<ColumnSeriesData>,
+                    YAxis = "VolumeAxis",
+                    TurboThreshold = 10000
                 }
             },
         },

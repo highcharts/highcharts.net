@@ -28,6 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		Pyramid, 
 		Polygon, 
 		Treemap, 
+		Candlestick, 
 		Solidgauge
     }
 }

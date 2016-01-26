@@ -15,11 +15,11 @@ namespace MVC_Highstock_Demo.Models
     public partial class CandlestickVolume
     {
         public int Id { get; set; }
-        public Nullable<decimal> Date { get; set; }
-        public Nullable<decimal> Open { get; set; }
-        public Nullable<decimal> High { get; set; }
-        public Nullable<decimal> Low { get; set; }
-        public Nullable<decimal> Close { get; set; }
-        public Nullable<decimal> Volume { get; set; }
+        public Nullable<double> Date { get; set; }
+        public Nullable<double> Open { get; set; }
+        public Nullable<double> High { get; set; }
+        public Nullable<double> Low { get; set; }
+        public Nullable<double> Close { get; set; }
+        public Nullable<double> Volume { get; set; }
     }
 }

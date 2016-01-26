@@ -13,6 +13,8 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
     {
         public ActionResult CandleStickVolume()
         {
+            //JsonDataToDatabase();
+            
             List<CandleStickSeriesData> appleData = new List<CandleStickSeriesData>();
             List<ColumnSeriesData> volumeData = new List<ColumnSeriesData>();
 
@@ -29,10 +31,19 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
                                             X = Convert.ToDouble(volume.Date)
                                         }
                                  );
+
+
+                    volumeData.Add(new ColumnSeriesData
+                                        {
+                                            X = Convert.ToDouble(volume.Date),
+                                            Y = Convert.ToDouble(volume.Volume)
+                                        }
+                                );
                 }
             }
 
-            ViewBag.AppleData = appleData;
+            ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
+            ViewBag.VolumeData = volumeData.OrderBy(o => o.X).ToList();
 
             return View(ViewBag);
         }
@@ -62,12 +73,12 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
                     db.CandlestickVolumes.Add(
                         new CandlestickVolume
                         {
-                            Date = Convert.ToDecimal(values[0]),
-                            Open = Convert.ToDecimal(values[1]),
-                            High = Convert.ToDecimal(values[2]),
-                            Low = Convert.ToDecimal(values[3]),
-                            Close = Convert.ToDecimal(values[4]),
-                            Volume = Convert.ToDecimal(values[5]),
+                            Date = Convert.ToDouble(values[0]),
+                            Open = Convert.ToDouble(values[1]),
+                            High = Convert.ToDouble(values[2]),
+                            Low = Convert.ToDouble(values[3]),
+                            Close = Convert.ToDouble(values[4]),
+                            Volume = Convert.ToDouble(values[5]),
                         }
                     );
 

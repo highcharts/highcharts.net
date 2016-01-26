@@ -194,11 +194,11 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 {
                     CandleStickSeries candleStickSeries = series as CandleStickSeries;
 
-                    List<PolygonSeriesData> seriesData = CandleStickSeries.Data;
+                    List<CandleStickSeriesData> seriesData = candleStickSeries.Data;
                     seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                    polygonSeries.Type = PolygonSeriesType.Polygon;
+                    candleStickSeries.Type = CandleStickSeriesType.Candlestick;
 
-                    seriesHashtable = polygonSeries.ToHashtable();
+                    seriesHashtable = candleStickSeries.ToHashtable();
                 }
 
                 seriesHashtable.Add("data", dataList);
