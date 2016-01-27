@@ -165,6 +165,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Highstock\Controllers\Demo\DemoController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\CandleStickVolumeController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\CompareController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\SingleLineController.cs" />
     <Compile Include="Areas\Highstock\HighstockAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -174,6 +175,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AppleData.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CandlestickVolume.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -651,7 +655,8 @@
     <Content Include="Scripts\highslide.config.js" />
     <Content Include="Areas\Highstock\Views\Shared\SingleLine.cshtml" />
     <Content Include="Areas\Highstock\Views\Demo\Gallery.cshtml" />
-    <Content Include="Areas\Highstock\Views\Shared\CandlestickVolume.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Compare.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\CandleStickVolume.cshtml" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>

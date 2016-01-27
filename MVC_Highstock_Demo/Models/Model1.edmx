@@ -6,8 +6,17 @@
     <edmx:StorageModels>
       <Schema Namespace="HighstockDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="HighstockDataModelStoreContainer">
+          <EntitySet Name="AppleData" EntityType="HighstockDataModel.Store.AppleData" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CandlestickVolume" EntityType="HighstockDataModel.Store.CandlestickVolume" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
+        <EntityType Name="AppleData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="float" />
+          <Property Name="Value" Type="float" />
+        </EntityType>
         <EntityType Name="CandlestickVolume">
           <Key>
             <PropertyRef Name="Id" />
@@ -25,9 +34,18 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HighstockDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="HighstockDataEntities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="HighstockDataEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AppleDatas" EntityType="HighstockDataModel.AppleData" />
           <EntitySet Name="CandlestickVolumes" EntityType="HighstockDataModel.CandlestickVolume" />
         </EntityContainer>
+        <EntityType Name="AppleData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="Double" />
+          <Property Name="Value" Type="Double" />
+        </EntityType>
         <EntityType Name="CandlestickVolume">
           <Key>
             <PropertyRef Name="Id" />
@@ -45,7 +63,16 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HighstockDataModelStoreContainer" CdmEntityContainer="HighstockDataEntities">
+        <EntityContainerMapping StorageEntityContainer="HighstockDataModelStoreContainer" CdmEntityContainer="HighstockDataEntities1">
+          <EntitySetMapping Name="AppleDatas">
+            <EntityTypeMapping TypeName="HighstockDataModel.AppleData">
+              <MappingFragment StoreEntitySet="AppleData">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CandlestickVolumes">
             <EntityTypeMapping TypeName="HighstockDataModel.CandlestickVolume">
               <MappingFragment StoreEntitySet="CandlestickVolume">

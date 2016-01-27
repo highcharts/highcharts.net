@@ -1,0 +1,108 @@
+﻿@using Highsoft.Web.Mvc.Stocks
+
+@*  The Highstock client-side javascript library is dependent on jQuery so you need to include 
+    a reference to the jQuery library before referncing the highstock llibrary*@
+    
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+
+<script type="text/javascript">
+
+    function formatYAxis() {
+        return (this.value > 0 ? ' + ' : '') + this.value + '%';
+    }
+
+    function loadData() {
+           var seriesOptions = [],
+           seriesCounter = 0,
+           names = ['MSFT', 'AAPL', 'GOOG'];
+
+           $.each(names, function (i, name) {
+
+               $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?', function (data) {
+
+                   console.log('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?');
+
+                   seriesOptions[i] = {
+                       name: name,
+                       data: data
+                   };
+
+                   // As we're loading the data asynchronously, we don't know what order it will arrive. So
+                   // we keep a counter and create the chart when all the data is loaded.
+                   seriesCounter += 1;
+
+                   if (seriesCounter === names.length) {
+                       
+
+
+                   }
+               });
+           });
+    }
+
+</script>
+    
+    @(Html.Highsoft().Highstock(
+        new Highstock
+        {
+            Chart = new Highsoft.Web.Mvc.Stocks.Chart
+            {
+                Events = new ChartEvents
+                {
+                    Load = "loadData"
+                }
+            },
+            RangeSelector = new RangeSelector
+            {
+                Selected = 4
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Labels = new YAxisLabels
+                    {
+                        Formatter = "formatYAxis",
+                        
+                    },
+                    PlotLines = new List<YAxisPlotLines>
+                    {
+                        new YAxisPlotLines
+                        {
+                            Value = 0,
+                            Width = 2,
+                            Color = "silver"
+                        }
+                    }
+                }                
+            },
+            PlotOptions = new PlotOptions
+            {
+                Series = new PlotOptionsSeries
+                {
+                    Compare = "percent"
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                PointFormat = "<span style='color:{series.color}'>{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>",
+                ValueDecimals = 2
+            },
+            Series = new List<Series>
+            {
+                new LineSeries
+                {
+                    //Data = ViewBag.AppleData as List<CandleStickSeriesData>,
+                    Name = "One",
+                    TurboThreshold = 10000               
+                },
+                new LineSeries
+                {
+                    Name = "Two",
+                    //Data = ViewBag.VolumeData as List<ColumnSeriesData>,
+                    TurboThreshold = 10000
+                }
+            },
+        },
+        "chart"
+    ))

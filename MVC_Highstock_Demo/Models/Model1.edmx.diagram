@@ -4,8 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3f2a489b412b43e2bd732025691ef23e" Name="Diagram1">
-        <EntityTypeShape EntityType="HighstockDataModel.CandlestickVolume" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="ab38a23e95c34d159364bb53d2d1b51e" Name="Diagram1">
+        <EntityTypeShape EntityType="HighstockDataModel.AppleData" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HighstockDataModel.CandlestickVolume" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

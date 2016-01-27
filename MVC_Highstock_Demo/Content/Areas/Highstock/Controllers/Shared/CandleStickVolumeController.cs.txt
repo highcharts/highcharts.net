@@ -13,12 +13,12 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
     {
         public ActionResult CandleStickVolume()
         {
-            JsonDataToDatabase();
+            //JsonDataToDatabase();
             
             List<CandleStickSeriesData> appleData = new List<CandleStickSeriesData>();
             List<ColumnSeriesData> volumeData = new List<ColumnSeriesData>();
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new HighstockDataEntities1())
             {
                 foreach (CandlestickVolume volume in db.CandlestickVolumes)
                 {
@@ -60,7 +60,7 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
             json = json.Substring(json.IndexOf('[') + 1);
             json = json.Substring(json.IndexOf('[') + 1);
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new HighstockDataEntities1())
             {
                 while (true)
                 {
