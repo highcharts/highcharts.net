@@ -11,47 +11,11 @@
         return (this.value > 0 ? ' + ' : '') + this.value + '%';
     }
 
-    function loadData() {
-           var seriesOptions = [],
-           seriesCounter = 0,
-           names = ['MSFT', 'AAPL', 'GOOG'];
-
-           $.each(names, function (i, name) {
-
-               $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?', function (data) {
-
-                   console.log('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?');
-
-                   seriesOptions[i] = {
-                       name: name,
-                       data: data
-                   };
-
-                   // As we're loading the data asynchronously, we don't know what order it will arrive. So
-                   // we keep a counter and create the chart when all the data is loaded.
-                   seriesCounter += 1;
-
-                   if (seriesCounter === names.length) {
-                       
-
-
-                   }
-               });
-           });
-    }
-
 </script>
     
     @(Html.Highsoft().Highstock(
         new Highstock
-        {
-            Chart = new Highsoft.Web.Mvc.Stocks.Chart
-            {
-                Events = new ChartEvents
-                {
-                    Load = "loadData"
-                }
-            },
+        {           
             RangeSelector = new RangeSelector
             {
                 Selected = 4
@@ -92,15 +56,21 @@
             {
                 new LineSeries
                 {
-                    //Data = ViewBag.AppleData as List<CandleStickSeriesData>,
-                    Name = "One",
-                    TurboThreshold = 10000               
+                   Data = ViewBag.AppleData as List<LineSeriesData>,
+                   Name = "Apple",
+                   TurboThreshold = 10000              
                 },
                 new LineSeries
                 {
-                    Name = "Two",
-                    //Data = ViewBag.VolumeData as List<ColumnSeriesData>,
-                    TurboThreshold = 10000
+                    Data = ViewBag.MsftData as List<LineSeriesData>,
+                    Name = "Microsoft",
+                    TurboThreshold = 10000  
+                },
+                new LineSeries
+                {
+                    Data = ViewBag.GoogData as List<LineSeriesData>,
+                    Name = "Google",
+                    TurboThreshold = 10000  
                 }
             },
         },

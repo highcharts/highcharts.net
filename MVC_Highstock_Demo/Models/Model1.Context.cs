@@ -13,10 +13,10 @@ namespace MVC_Highstock_Demo.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HighstockDataEntities1 : DbContext
+    public partial class HighstockDataEntities : DbContext
     {
-        public HighstockDataEntities1()
-            : base("name=HighstockDataEntities1")
+        public HighstockDataEntities()
+            : base("name=HighstockDataEntities")
         {
         }
     
@@ -27,5 +27,7 @@ namespace MVC_Highstock_Demo.Models
     
         public DbSet<AppleData> AppleDatas { get; set; }
         public DbSet<CandlestickVolume> CandlestickVolumes { get; set; }
+        public DbSet<GoogleData> GoogleDatas { get; set; }
+        public DbSet<MicrosoftData> MicrosoftDatas { get; set; }
     }
 }

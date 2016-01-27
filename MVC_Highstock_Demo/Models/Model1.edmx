@@ -8,6 +8,8 @@
         <EntityContainer Name="HighstockDataModelStoreContainer">
           <EntitySet Name="AppleData" EntityType="HighstockDataModel.Store.AppleData" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CandlestickVolume" EntityType="HighstockDataModel.Store.CandlestickVolume" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GoogleData" EntityType="HighstockDataModel.Store.GoogleData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MicrosoftData" EntityType="HighstockDataModel.Store.MicrosoftData" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="AppleData">
           <Key>
@@ -29,14 +31,32 @@
           <Property Name="Close" Type="float" />
           <Property Name="Volume" Type="float" />
         </EntityType>
+        <EntityType Name="GoogleData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="float" />
+          <Property Name="Value" Type="float" />
+        </EntityType>
+        <EntityType Name="MicrosoftData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="float" />
+          <Property Name="Value" Type="float" />
+        </EntityType>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HighstockDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="HighstockDataEntities1" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="HighstockDataEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="AppleDatas" EntityType="HighstockDataModel.AppleData" />
           <EntitySet Name="CandlestickVolumes" EntityType="HighstockDataModel.CandlestickVolume" />
+          <EntitySet Name="GoogleDatas" EntityType="HighstockDataModel.GoogleData" />
+          <EntitySet Name="MicrosoftDatas" EntityType="HighstockDataModel.MicrosoftData" />
         </EntityContainer>
         <EntityType Name="AppleData">
           <Key>
@@ -58,12 +78,28 @@
           <Property Name="Close" Type="Double" />
           <Property Name="Volume" Type="Double" />
         </EntityType>
+        <EntityType Name="GoogleData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="Double" />
+          <Property Name="Value" Type="Double" />
+        </EntityType>
+        <EntityType Name="MicrosoftData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="Double" />
+          <Property Name="Value" Type="Double" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HighstockDataModelStoreContainer" CdmEntityContainer="HighstockDataEntities1">
+        <EntityContainerMapping StorageEntityContainer="HighstockDataModelStoreContainer" CdmEntityContainer="HighstockDataEntities">
           <EntitySetMapping Name="AppleDatas">
             <EntityTypeMapping TypeName="HighstockDataModel.AppleData">
               <MappingFragment StoreEntitySet="AppleData">
@@ -83,6 +119,24 @@
                 <ScalarProperty Name="Low" ColumnName="Low" />
                 <ScalarProperty Name="Close" ColumnName="Close" />
                 <ScalarProperty Name="Volume" ColumnName="Volume" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GoogleDatas">
+            <EntityTypeMapping TypeName="HighstockDataModel.GoogleData">
+              <MappingFragment StoreEntitySet="GoogleData">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MicrosoftDatas">
+            <EntityTypeMapping TypeName="HighstockDataModel.MicrosoftData">
+              <MappingFragment StoreEntitySet="MicrosoftData">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
