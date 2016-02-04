@@ -8,6 +8,7 @@
         <EntityContainer Name="HighstockDataModelStoreContainer">
           <EntitySet Name="AppleData" EntityType="HighstockDataModel.Store.AppleData" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CandlestickVolume" EntityType="HighstockDataModel.Store.CandlestickVolume" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DataGrouping" EntityType="HighstockDataModel.Store.DataGrouping" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="GoogleData" EntityType="HighstockDataModel.Store.GoogleData" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="MicrosoftData" EntityType="HighstockDataModel.Store.MicrosoftData" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
@@ -30,6 +31,13 @@
           <Property Name="Low" Type="float" />
           <Property Name="Close" Type="float" />
           <Property Name="Volume" Type="float" />
+        </EntityType>
+        <EntityType Name="DataGrouping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="float" />
         </EntityType>
         <EntityType Name="GoogleData">
           <Key>
@@ -55,6 +63,7 @@
         <EntityContainer Name="HighstockDataEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="AppleDatas" EntityType="HighstockDataModel.AppleData" />
           <EntitySet Name="CandlestickVolumes" EntityType="HighstockDataModel.CandlestickVolume" />
+          <EntitySet Name="DataGroupings" EntityType="HighstockDataModel.DataGrouping" />
           <EntitySet Name="GoogleDatas" EntityType="HighstockDataModel.GoogleData" />
           <EntitySet Name="MicrosoftDatas" EntityType="HighstockDataModel.MicrosoftData" />
         </EntityContainer>
@@ -77,6 +86,13 @@
           <Property Name="Low" Type="Double" />
           <Property Name="Close" Type="Double" />
           <Property Name="Volume" Type="Double" />
+        </EntityType>
+        <EntityType Name="DataGrouping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="Double" />
         </EntityType>
         <EntityType Name="GoogleData">
           <Key>
@@ -119,6 +135,14 @@
                 <ScalarProperty Name="Low" ColumnName="Low" />
                 <ScalarProperty Name="Close" ColumnName="Close" />
                 <ScalarProperty Name="Volume" ColumnName="Volume" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DataGroupings">
+            <EntityTypeMapping TypeName="HighstockDataModel.DataGrouping">
+              <MappingFragment StoreEntitySet="DataGrouping">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
