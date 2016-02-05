@@ -33,6 +33,8 @@ bin
 obj
 packages
 deliverables
+addons
+addons/
 
 #Tooling
 _ReSharper*/
