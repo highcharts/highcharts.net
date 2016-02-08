@@ -10,6 +10,7 @@
           <EntitySet Name="CandlestickVolume" EntityType="HighstockDataModel.Store.CandlestickVolume" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DataGrouping" EntityType="HighstockDataModel.Store.DataGrouping" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="GoogleData" EntityType="HighstockDataModel.Store.GoogleData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Intraday" EntityType="HighstockDataModel.Store.Intraday" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="MicrosoftData" EntityType="HighstockDataModel.Store.MicrosoftData" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="AppleData">
@@ -47,6 +48,17 @@
           <Property Name="Date" Type="float" />
           <Property Name="Value" Type="float" />
         </EntityType>
+        <EntityType Name="Intraday">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="float" />
+          <Property Name="Open" Type="float" />
+          <Property Name="High" Type="float" />
+          <Property Name="Low" Type="float" />
+          <Property Name="Close" Type="float" />
+        </EntityType>
         <EntityType Name="MicrosoftData">
           <Key>
             <PropertyRef Name="Id" />
@@ -65,6 +77,7 @@
           <EntitySet Name="CandlestickVolumes" EntityType="HighstockDataModel.CandlestickVolume" />
           <EntitySet Name="DataGroupings" EntityType="HighstockDataModel.DataGrouping" />
           <EntitySet Name="GoogleDatas" EntityType="HighstockDataModel.GoogleData" />
+          <EntitySet Name="Intradays" EntityType="HighstockDataModel.Intraday" />
           <EntitySet Name="MicrosoftDatas" EntityType="HighstockDataModel.MicrosoftData" />
         </EntityContainer>
         <EntityType Name="AppleData">
@@ -101,6 +114,17 @@
           <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Date" Type="Double" />
           <Property Name="Value" Type="Double" />
+        </EntityType>
+        <EntityType Name="Intraday">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="Double" />
+          <Property Name="Open" Type="Double" />
+          <Property Name="High" Type="Double" />
+          <Property Name="Low" Type="Double" />
+          <Property Name="Close" Type="Double" />
         </EntityType>
         <EntityType Name="MicrosoftData">
           <Key>
@@ -152,6 +176,18 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Intradays">
+            <EntityTypeMapping TypeName="HighstockDataModel.Intraday">
+              <MappingFragment StoreEntitySet="Intraday">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Open" ColumnName="Open" />
+                <ScalarProperty Name="High" ColumnName="High" />
+                <ScalarProperty Name="Low" ColumnName="Low" />
+                <ScalarProperty Name="Close" ColumnName="Close" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

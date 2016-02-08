@@ -29,6 +29,7 @@ namespace MVC_Highstock_Demo.Models
         public DbSet<CandlestickVolume> CandlestickVolumes { get; set; }
         public DbSet<DataGrouping> DataGroupings { get; set; }
         public DbSet<GoogleData> GoogleDatas { get; set; }
+        public DbSet<Intraday> Intradays { get; set; }
         public DbSet<MicrosoftData> MicrosoftDatas { get; set; }
     }
 }
