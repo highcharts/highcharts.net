@@ -36,6 +36,7 @@
                 {
                     Data = ViewBag.CurrencyData as List<LineSeriesData>,
                     Name = "USD to EUR",
+                    Id = "currency",
                     Tooltip = new LineSeriesTooltip
                     {
                         ValueDecimals = 2
@@ -44,7 +45,7 @@
                 new FlagsSeries
                 {
                     Data = ViewBag.FlagsData as List<FlagsSeriesData>,
-                    OnSeries = "dataseries",
+                    OnSeries = "currency",
                     Shape = FlagsSeriesShape.Circlepin                    
                 }
             },

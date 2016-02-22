@@ -30,6 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		Polygon, 
 		Treemap, 
 		Candlestick, 
+		Flags, 
 		Solidgauge
     }
 }

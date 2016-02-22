@@ -308,6 +308,7 @@ public class HighstockAspNetMvc
             apiItem.FullName == "series<treemap>.type" ||
             apiItem.FullName == "series<solidgauge>.type" ||
             apiItem.FullName == "series<candlestick>.type" ||
+            apiItem.FullName == "series<flags>.type" ||
             apiItem.FullName == "series<pyramid>.type")
         {
             apiItem.Values.Add("bar");
@@ -316,6 +317,7 @@ public class HighstockAspNetMvc
             apiItem.Values.Add("polygon");
             apiItem.Values.Add("treemap");
             apiItem.Values.Add("candlestick");
+            apiItem.Values.Add("flags");
             apiItem.Values.Add("solidgauge");
         }
     }
