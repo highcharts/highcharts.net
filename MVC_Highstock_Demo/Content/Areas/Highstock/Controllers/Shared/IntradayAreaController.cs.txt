@@ -13,8 +13,6 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
     {
         public ActionResult IntradayArea()
         {
-            IntradayArea_JsonDataToDatabase();
-
             List<AreaSeriesData> intradayData = new List<AreaSeriesData>();
 
             using (var db = new HighstockDataEntities())
@@ -22,7 +20,7 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
                 foreach (Intraday data in db.Intradays)
                 {
                         intradayData.Add(new AreaSeriesData
-                            {
+                            {                                
                                 Y = Convert.ToDouble(data.High),
                                 X = Convert.ToDouble(data.Date)
                             }
