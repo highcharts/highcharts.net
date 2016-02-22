@@ -166,6 +166,7 @@
     <Compile Include="Areas\Highstock\Controllers\Demo\DemoController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\CandleStickVolumeController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\CompareController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\IntradayCandlestickController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\IntradayAreaBreaksController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\IntradayAreaController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\LazyLoadingController.cs" />
@@ -684,6 +685,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Highstock\Views\Shared\IntradayAreaBreaks.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\IntradayCandlestick.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
