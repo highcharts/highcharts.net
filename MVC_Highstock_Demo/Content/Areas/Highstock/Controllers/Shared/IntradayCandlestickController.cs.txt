@@ -20,8 +20,11 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
                 foreach (Intraday data in db.Intradays)
                 {
                     intradayData.Add(new CandleStickSeriesData
-                            {                                   
-                                Open = Convert.ToDouble(data.High),
+                            {
+                                Open = Convert.ToDouble(data.Open),
+                                Close = Convert.ToDouble(data.Close),
+                                High = Convert.ToDouble(data.High),
+                                Low = Convert.ToDouble(data.Low),
                                 X = Convert.ToDouble(data.Date)
                             }
                         );

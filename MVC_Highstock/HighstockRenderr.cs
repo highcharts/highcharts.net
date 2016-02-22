@@ -200,6 +200,16 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
                     seriesHashtable = candleStickSeries.ToHashtable();
                 }
+                //if (series is FlagsSeriesData)
+                //{
+                //    CandleStickSeries candleStickSeries = series as CandleStickSeries;
+
+                //    List<CandleStickSeriesData> seriesData = candleStickSeries.Data;
+                //    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                //    candleStickSeries.Type = CandleStickSeriesType.Candlestick;
+
+                //    seriesHashtable = candleStickSeries.ToHashtable();
+                //}
 
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
