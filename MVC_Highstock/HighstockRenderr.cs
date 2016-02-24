@@ -140,6 +140,16 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
                     seriesHashtable = areaSeries.ToHashtable();
                 }
+                if (series is AreasplinerangeSeries)
+                {
+                    AreasplinerangeSeries areaSeries = series as AreasplinerangeSeries;
+
+                    List<AreasplinerangeSeriesData> seriesData = areaSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    areaSeries.Type = AreasplinerangeSeriesType.Areasplinerange;
+
+                    seriesHashtable = areaSeries.ToHashtable();
+                }
                 if (series is ArearangeSeries)
                 {
                     ArearangeSeries areaSeries = series as ArearangeSeries;
