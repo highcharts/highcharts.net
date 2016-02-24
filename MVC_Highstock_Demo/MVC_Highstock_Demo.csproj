@@ -170,6 +170,7 @@
     <Compile Include="Areas\Highstock\Controllers\Shared\AreaSplineController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\AreaRangeController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\AreaSplineRangeController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\CandlestickController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\StepLineController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\SplineController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\LineMarkersController.cs" />
@@ -707,6 +708,7 @@
     <Content Include="Areas\Highstock\Views\Shared\AreaSpline.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\AreaRange.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\AreaSplineRange.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\CandleStick.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
