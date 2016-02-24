@@ -173,7 +173,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                            <h2 id="line-charts">Line charts</h2>
+                            <h2 id="line-charts">General</h2>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "SingleLine", theme = ViewBag.Theme } )">
@@ -300,13 +300,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                            <h2 id="area-charts">Area charts</h2>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                              <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "DynamicUpdate", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
@@ -314,6 +308,25 @@
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Dynamically Updated Data</h3>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix visible-lg visible-md"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+                            <h2 id="area-charts">Area charts</h2>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "LineMarkers", theme = ViewBag.Theme } )">
+                                <div class="demo-container">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/line-markers-" + ViewBag.ChartImageSVG)" alt="Line with markers and shadows">
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <h3>Line with markers and shadows</h3>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
