@@ -40,6 +40,30 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
                             }
             );
 
+            flagsData.Add(new FlagsSeriesData
+                {
+                    X = DateToUTC(new DateTime(2015, 5, 12)),
+                    Title = "d",
+                    Text = "Zimbabwe ditches 'worthless' currency for the US dollar "
+                }
+            );
+
+            flagsData.Add(new FlagsSeriesData
+                {
+                    X = DateToUTC(new DateTime(2015, 5, 19)),
+                    Title = "e",
+                    Text = "US Dollar Declines Over the Week on Rate Timeline"
+                }
+           );
+
+           flagsData.Add(new FlagsSeriesData
+            {
+                X = DateToUTC(new DateTime(2015, 5, 26)),
+                Title = "e",
+                Text = "US Dollar Declines Over the Week on Rate Timeline"
+            }
+          );
+
             ViewBag.FlagsData = flagsData;
 
             return View(ViewBag);
