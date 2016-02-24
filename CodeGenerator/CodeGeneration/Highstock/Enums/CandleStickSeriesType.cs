@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		Gauge, 
 		Scatter, 
 		Waterfall, 
+		Ohlc, 
 		Bar, 
 		Heatmap, 
 		Pyramid, 

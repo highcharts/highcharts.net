@@ -23,6 +23,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		Funnel, 
 		Gauge, 
 		Scatter, 
-		Waterfall
+		Waterfall, 
+		Ohlc, 
+		Bar, 
+		Heatmap, 
+		Pyramid, 
+		Polygon, 
+		Treemap, 
+		Candlestick, 
+		Flags, 
+		Solidgauge
     }
 }

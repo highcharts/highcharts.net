@@ -220,6 +220,16 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
                     seriesHashtable = flagsSeries.ToHashtable();
                 }
+                if (series is OhlcSeries)
+                {
+                    OhlcSeries OhlcSeries = series as OhlcSeries;
+
+                    List<OhlcSeriesData> seriesData = OhlcSeries.Data;
+                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    OhlcSeries.Type = OhlcSeriesType.Ohlc;
+
+                    seriesHashtable = OhlcSeries.ToHashtable();
+                }
 
                 seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);

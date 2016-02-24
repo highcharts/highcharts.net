@@ -309,8 +309,10 @@ public class HighstockAspNetMvc
             apiItem.FullName == "series<solidgauge>.type" ||
             apiItem.FullName == "series<candlestick>.type" ||
             apiItem.FullName == "series<flags>.type" ||
+            apiItem.FullName == "series<ohlc>.type" ||
             apiItem.FullName == "series<pyramid>.type")
         {
+            apiItem.Values.Add("ohlc");
             apiItem.Values.Add("bar");
             apiItem.Values.Add("heatmap");
             apiItem.Values.Add("pyramid");

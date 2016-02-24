@@ -13,16 +13,19 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
     {
         public ActionResult CandleStick()
         {   
-            List<LineSeriesData> appleData = new List<LineSeriesData>();
+            List<CandleStickSeriesData> appleData = new List<CandleStickSeriesData>();
 
             using (var db = new HighstockDataEntities())
             {
-                foreach (AppleData data in db.AppleDatas)
+                foreach (CandlestickVolume data in db.CandlestickVolumes)
                 {
-                    appleData.Add(new LineSeriesData
+                    appleData.Add(new CandleStickSeriesData
                     {
                         X = Convert.ToDouble(data.Date),
-                        Y = Convert.ToDouble(data.Value)
+                        High = Convert.ToDouble(data.High),
+                        Low = Convert.ToDouble(data.Low),
+                        Open = Convert.ToDouble(data.Open),
+                        Close = Convert.ToDouble(data.Close)   
                     });
                 }
             }
