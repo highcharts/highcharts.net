@@ -11,18 +11,19 @@ namespace MVC_Highstock_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult AreaSpline()
-        {
-            List<AreasplineSeriesData> appleData = new List<AreasplineSeriesData>();
+        public ActionResult Arearange()
+        {   
+            List<ArearangeSeriesData> appleData = new List<ArearangeSeriesData>();
 
             using (var db = new HighstockDataEntities())
             {
                 foreach (AppleData data in db.AppleDatas)
                 {
-                    appleData.Add(new AreasplineSeriesData
-                    {                        
-                        X = Convert.ToDouble(data.Date),                         
-                        Y = Convert.ToDouble(data.Value)
+                    appleData.Add(new ArearangeSeriesData
+                    {
+                        X = Convert.ToDouble(data.Date),
+                        High = Convert.ToDouble(data.Value),
+                        Low = Convert.ToDouble(data.Value - new Random().Next(15))
                     });
                 }
             }
