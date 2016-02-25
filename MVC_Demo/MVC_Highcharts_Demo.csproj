@@ -54,6 +54,8 @@
     <Reference Include="System.Drawing">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData">
       <Private>True</Private>
     </Reference>
@@ -237,12 +239,76 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineLabelsController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\SharedController.cs" />
     <Compile Include="Areas\Highcharts\HighchartsAreaRegistration.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Demo\DemoController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\AreaController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\AreaRangeController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\AreaSplineController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\AreaSplineRangeController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\CandlestickController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\CandleStickVolumeController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\ColumnController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\ColumnRangeController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\CompareController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\DataGroupingController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\DynamicUpdateController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\FlagsGeneralController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\IntradayAreaBreaksController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\IntradayAreaController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\IntradayCandlestickController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\LazyLoadingController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\LineMarkersController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\MarkersOnlyController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\OHLCController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\SingleLineController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\SplineController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\StepLineController.cs" />
+    <Compile Include="Areas\Highstock\HighstockAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppleData.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CandlestickVolume.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataGrouping.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Flag.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GoogleData.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Intraday.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MicrosoftData.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\HighstockData.mdf" />
+    <Content Include="App_Data\HighstockData_log.ldf">
+      <DependentUpon>HighstockData.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaBasicController.cs.txt" />
     <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaInvertedController.cs.txt" />
     <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaMissingController.cs.txt" />
@@ -880,6 +946,38 @@
     <Content Include="Help\SearchHelp.php" />
     <Content Include="Help\Web.Config" />
     <Content Include="downloads\Highcharts_ASPNET_MVC_4_1_7_0.zip" />
+    <Content Include="Areas\Highstock\Views\Web.config" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Highstock\Views\Shared\Area.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\AreaRange.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\AreaSpline.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\AreaSplineRange.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\CandleStick.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\CandleStickVolume.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Column.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\ColumnRange.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Compare.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\DataGrouping.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\DynamicUpdate.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FlagsGeneral.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\IntradayArea.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\IntradayAreaBreaks.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\IntradayCandlestick.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\LazyLoading.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\LineMarkers.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\MarkersOnly.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\OHLC.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\SingleLine.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Spline.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\StepLine.cshtml" />
+    <Content Include="Areas\Highstock\Views\Demo\Gallery.cshtml" />
+    <Content Include="Areas\Highstock\Views\Demo\Index.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Help\html\Methods_T_Highsoft_Web_Mvc_Charts_Animation.htm" />
     <Content Include="Help\html\Methods_T_Highsoft_Web_Mvc_Charts_ArearangeSeries.htm" />
@@ -12072,6 +12170,16 @@
     <Content Include="Help\toc\T_Highsoft_Web_Mvc_Charts_YAxisTitle.xml" />
     <Content Include="Help\WebKI.xml" />
     <Content Include="Help\WebTOC.xml" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\highcharts-all.js" />
     <Content Include="Scripts\highcharts.src.js" />
@@ -12106,9 +12214,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Highcharts\Models\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\Highstock\Models\" />
+    <Folder Include="Content\Areas\Highstock\Controllers\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -12118,6 +12226,13 @@
       <Project>{fa4c2a73-1563-47da-8f1b-64ef17d48918}</Project>
       <Name>MVC_Highcharts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MVC_Highstock\MVC_Highstock.csproj">
+      <Project>{d05d7902-fdbe-422d-9f47-c84a74a25258}</Project>
+      <Name>MVC_Highstock</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
