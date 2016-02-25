@@ -488,13 +488,13 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                            <h2 id="column-and-bar-charts">Column and bar charts</h2>
+                            <h2 id="column-and-bar-charts">Various Features</h2>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "BarBasic", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/bar-basic-" + ViewBag.ChartImageSVG)" alt="Basic bar">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("" + ViewBag.ChartImageSVG)" alt="Basic bar">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Basic bar</h3>
@@ -507,7 +507,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "BarStacked", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/bar-stacked-" + ViewBag.ChartImageSVG)" alt="Stacked bar">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("" + ViewBag.ChartImageSVG)" alt="Stacked bar">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Stacked bar</h3>
@@ -521,7 +521,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "BarNegativeStack", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/bar-negative-stack-" + ViewBag.ChartImageSVG)" alt="Bar with negative stack">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("" + ViewBag.ChartImageSVG)" alt="Bar with negative stack">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Bar with negative stack</h3>
@@ -535,7 +535,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ColumnBasic", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/column-basic-" + ViewBag.ChartImageSVG)" alt="Basic column">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("" + ViewBag.ChartImageSVG)" alt="Basic column">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Basic column</h3>
@@ -549,7 +549,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ColumnNegative", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/column-negative-" + ViewBag.ChartImageSVG)" alt="Column with negative values">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("" + ViewBag.ChartImageSVG)" alt="Column with negative values">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Column with negative values</h3>
@@ -562,7 +562,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ColumnStacked", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/column-stacked-" + ViewBag.ChartImageSVG)" alt="Stacked column">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("" + ViewBag.ChartImageSVG)" alt="Stacked column">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Stacked column</h3>
@@ -573,112 +573,16 @@
                         </div>
                         <div class="clearfix visible-lg visible-md"></div>
                         <div class="clearfix visible-sm visible-xs"></div>
-                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ColumnStackedGrouped", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/column-stacked-and-grouped-" + ViewBag.ChartImageSVG)" alt="Stacked and grouped column">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Stacked and grouped column</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ColumnStackedPercent", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/column-stacked-percent-" + ViewBag.ChartImageSVG)" alt="Stacked percentage column">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Stacked percentage column</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ColumnRotatedLabels", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/column-rotated-labels-" + ViewBag.ChartImageSVG)" alt="Column with rotated labels">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Column with rotated labels</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ColumnDrilldown", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/column-drilldown-" + ViewBag.ChartImageSVG)" alt="Column with drilldown">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Column with drilldown</h3>
-                                    </div>
-                                    <div class="clearfix"></div>o
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ColumnPlacement", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/column-placement-" + ViewBag.ChartImageSVG)" alt="Fixed placement columns">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Fixed placement columns</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ColumnParsed", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/column-parsed-" + ViewBag.ChartImageSVG)" alt="Data defined in a HTML table">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Data defined in a HTML table</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ColumnRange", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/columnrange-" + ViewBag.ChartImageSVG)" alt="Column range">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Column range</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                            <h2 id="pie-charts">Pie charts</h2>
+                            <h2 id="pie-charts">Flags</h2>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "PieBasic", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/pie-basic-" + ViewBag.ChartImageSVG)" alt="Pie chart">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("" + ViewBag.ChartImageSVG)" alt="Pie chart">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Pie chart</h3>
@@ -691,7 +595,7 @@
                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "PieLegend", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/pie-legend-" + ViewBag.ChartImageSVG)" alt="Pie with legend">
+                                        <img class="lazy img-thumbnail" data-original="@Url.Content("" + ViewBag.ChartImageSVG)" alt="Pie with legend">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <h3>Pie with legend</h3>
@@ -699,635 +603,9 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
-                        </div>
-                       @* <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                           <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "PieDonut", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/pie-donut-" + ViewBag.ChartImageSVG)" alt="Donut chart">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Donut chart</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>*@
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "PieSemiCircle", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/pie-semi-circle-" + ViewBag.ChartImageSVG)" alt="Semi circle donut">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Semi circle donut</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "PieDrilldown", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/pie-drilldown-" + ViewBag.ChartImageSVG)" alt="Pie with drilldown">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Pie with drilldown</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "PieGradient", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/pie-gradient-" + ViewBag.ChartImageSVG)" alt="Pie with gradient fill">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Pie with gradient fill</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "PieMonochrome", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/pie-monochrome-" + ViewBag.ChartImageSVG)" alt="Pie with monochrome fill">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Pie with monochrome fill</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
+                        </div>                      
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                            <h2 id="scatter-and-bubble-charts">Scatter and bubble charts</h2>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Scatter", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/scatter-" + ViewBag.ChartImageSVG)" alt="Scatter plot">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Scatter plot</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                           <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Bubble", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/bubble-" + ViewBag.ChartImageSVG)" alt="Bubble chart">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Bubble chart</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                       @* <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Bubble3d", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/bubble-3d-" + ViewBag.ChartImageSVG)" alt="3D bubbles">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>3D bubbles</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>*@
-                        <div class="clearfix visible-lg visible-md"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                            <h2 id="dynamic-charts">Dynamic charts</h2>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "DynamicUpdate", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/dynamic-update-" + ViewBag.ChartImageSVG)" alt="Spline updating each second">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Spline updating each second</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "DynamicClickToAdd", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/dynamic-click-to-add-" + ViewBag.ChartImageSVG)" alt="Click to add a point">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Click to add a point</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "DynamicMasterDetail", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/dynamic-master-detail-" + ViewBag.ChartImageSVG)" alt="Master-detail chart">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Master-detail chart</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                            <h2 id="combinations">Combinations</h2>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Combo", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/combo-" + ViewBag.ChartImageSVG)" alt="Column, line and pie">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Column, line and pie</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ComboDualAxes", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/combo-dual-axes-" + ViewBag.ChartImageSVG)" alt="Dual axes, line and column">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Dual axes, line and column</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ComboMultiAxes", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/combo-multi-axes-" + ViewBag.ChartImageSVG)" alt="Multiple axes">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Multiple axes</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ComboRegression", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/combo-regression-" + ViewBag.ChartImageSVG)" alt="Scatter with regression line">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Scatter with regression line</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ComboMeteogram", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/combo-meteogram-" + ViewBag.ChartImagePNG)" alt="Meteogram">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Meteogram</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ComboTimeline", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/combo-timeline-" + ViewBag.ChartImageSVG)" alt="Advanced timeline">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Advanced timeline</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                            <h2 id="3d-charts">3D charts</h2>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Column3DInteractive", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/3d-column-interactive-" + ViewBag.ChartImageSVG)" alt="3D column">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>3D column</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Column3DNullValues", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/3d-column-null-values-" + ViewBag.ChartImageSVG)" alt="3D column with null and 0 values">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>3D column with null and 0 values</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Column3DStackingGrouping", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/3d-column-stacking-grouping-" + ViewBag.ChartImageSVG)" alt="3D column with stacking and grouping">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>3D column with stacking and grouping</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                           <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Pie3D", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/3d-pie-" + ViewBag.ChartImageSVG)" alt="3D pie">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>3D pie</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Pie3DDonut", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/3d-pie-donut-" + ViewBag.ChartImageSVG)" alt="3D donut">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>3D donut</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="3d-scatter-draggable.html">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highcharts/3d-scatter-draggable-default.svg" alt="3D scatter chart">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>3D scatter chart</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                            <h2 id="gauges">Gauges</h2>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "GaugeSpeedometer", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/gauge-speedometer-" + ViewBag.ChartImageSVG)" alt="Angular gauge">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Angular gauge</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "GaugeSolid", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/gauge-solid-" + ViewBag.ChartImagePNG)" alt="Solid gauge">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Solid gauge</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "GaugeClock", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/gauge-clock-" + ViewBag.ChartImageSVG)" alt="Clock">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Clock</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        @*<div class="clearfix visible-lg visible-md"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="gauge-dual.html">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/gauge-dual-" + ViewBag.ChartImageSVG)" alt="Gauge with dual axes">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Gauge with dual axes</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="gauge-vu-meter.html">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/gauge-vu-meter-" + ViewBag.ChartImageSVG)" alt="VU meter">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>VU meter</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>*@
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                            <h2 id="heat-and-tree-maps">Heat and tree maps</h2>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "HeatMap", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/heatmap-" + ViewBag.ChartImageSVG)" alt="Heat map">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Heat map</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "HeatMapCanvas", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/heatmap-canvas-" + ViewBag.ChartImagePNG)" alt="Large heat map">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Large heat map</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "TreemapColoraxis", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/treemap-coloraxis-" + ViewBag.ChartImageSVG)" alt="Tree map with color axis">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Tree map with color axis</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "TreemapWithLevels", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/treemap-with-levels-" + ViewBag.ChartImageSVG)" alt="Tree map with levels">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Tree map with levels</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                              <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "TreemapLargeDataset", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/treemap-large-dataset-" + ViewBag.ChartImageSVG)" alt="Large tree map">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Large tree map</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                            <h2 id="more-chart-types">More chart types</h2>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Polar", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/polar-" + ViewBag.ChartImageSVG)" alt="Polar chart">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Polar chart</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "PolarSpider", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/polar-spider-" + ViewBag.ChartImageSVG)" alt="Spiderweb">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Spiderweb</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "PolarWindRose", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/polar-wind-rose-" + ViewBag.ChartImageSVG)" alt="Wind rose">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Wind rose</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "BoxPlot", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/box-plot-" + ViewBag.ChartImageSVG)" alt="Box plot">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Box plot</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "ErrorBar", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/error-bar-" + ViewBag.ChartImageSVG)" alt="Error bar">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Error bar</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                             <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Waterfall", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/waterfall-" + ViewBag.ChartImageSVG)" alt="Waterfall">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Waterfall</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Funnel", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/funnel-" + ViewBag.ChartImageSVG)" alt="Funnel chart">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Funnel chart</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Pyramid", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/pyramid-" + ViewBag.ChartImageSVG)" alt="Pyramid chart">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Pyramid chart</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Polygon", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/polygon-" + ViewBag.ChartImageSVG)" alt="Polygon series">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>Polygon series</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-lg visible-md"></div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
-                            <a href="@Url.Action("Gallery", "Demo", new { area ="highcharts", demo = "Renderer", theme = ViewBag.Theme } )">
-                                <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
-                                        <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highcharts/renderer-" + ViewBag.ChartImageSVG)" alt="General drawing">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <h3>General drawing</h3>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix visible-sm visible-xs"></div>
-                    </div>
+
                     <script>
                         // Bind event to style change switcher
                         jQuery('#switcher-selector').bind('change', function () {
