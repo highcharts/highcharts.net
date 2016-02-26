@@ -249,6 +249,7 @@
     <Compile Include="Areas\Highstock\Controllers\Shared\ColumnController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\ColumnRangeController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\CompareController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\YAxisPlotlinesController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\DataGroupingController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\DynamicUpdateController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\FlagsGeneralController.cs" />
@@ -1002,6 +1003,7 @@
     <Content Include="Areas\Highstock\Views\Shared\StepLine.cshtml" />
     <Content Include="Areas\Highstock\Views\Demo\Gallery.cshtml" />
     <Content Include="Areas\Highstock\Views\Demo\Index.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\YAxisPlotlines.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Help\html\Methods_T_Highsoft_Web_Mvc_Charts_Animation.htm" />
     <Content Include="Help\html\Methods_T_Highsoft_Web_Mvc_Charts_ArearangeSeries.htm" />
