@@ -11,7 +11,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult YAxisPlotlines()
+        public ActionResult YAxisPlotBands()
         {
             List<LineSeriesData> currencyData = new List<LineSeriesData>();
             double? minRate = 0;
