@@ -384,6 +384,30 @@
     <Content Include="Content\Areas\Highcharts\Controllers\Shared\TreemapLargeDatasetController.cs.txt" />
     <Content Include="Content\Areas\Highcharts\Controllers\Shared\TreemapWithLevelsController.cs.txt" />
     <Content Include="Content\Areas\Highcharts\Controllers\Shared\WaterfallController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreaController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreaRangeController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreaSplineController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreaSplineRangeController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\CandlestickController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\CandleStickVolumeController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ColumnController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ColumnRangeController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\CompareController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\DataGroupingController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\DynamicUpdateController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsGeneralController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayAreaBreaksController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayAreaController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayCandlestickController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\LazyLoadingController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\LineMarkersController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\MarkersOnly.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\MarkersOnlyController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\OHLCController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\SingleLineController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\SplineController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\SplineCotroller.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\StepLineController.cs.txt" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\bootstrap\font-awesome.css" />
     <Content Include="Content\bootstrap\template.css" />
@@ -12216,7 +12240,6 @@
   <ItemGroup>
     <Folder Include="Areas\Highcharts\Models\" />
     <Folder Include="Areas\Highstock\Models\" />
-    <Folder Include="Content\Areas\Highstock\Controllers\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

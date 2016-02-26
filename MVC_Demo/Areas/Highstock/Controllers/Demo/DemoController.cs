@@ -52,11 +52,11 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Demo
             
             //Code to copy the controllers from the code directory to a .txt format - needed for Beanstalk
 
-            DirectoryInfo di = new DirectoryInfo(Server.MapPath("~/Areas/Highstock/Controllers/Shared/"));
-            foreach (FileInfo fi in di.GetFiles())
-            {
-                fi.CopyTo(Server.MapPath("~/Content/Areas/Highstock/Controllers/Shared/") + fi.Name + ".txt", true);
-            }
+            //DirectoryInfo di = new DirectoryInfo(Server.MapPath("~/Areas/Highstock/Controllers/Shared/"));
+            //foreach (FileInfo fi in di.GetFiles())
+            //{
+            //    fi.CopyTo(Server.MapPath("~/Content/Areas/Highstock/Controllers/Shared/") + fi.Name + ".txt", true);
+            //}
 
             return View("~/Areas/Highstock/Views/Demo/Index.cshtml");
         }
