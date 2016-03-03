@@ -50,12 +50,12 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
         {
             SetViewBag(String.Empty, theme);
 
-            //DirectoryInfo di = new DirectoryInfo(Server.MapPath("~/Areas/Highcharts/Controllers/Shared/"));
+            DirectoryInfo di = new DirectoryInfo(Server.MapPath("~/Areas/Highcharts/Controllers/Shared/"));
 
-            //foreach (FileInfo fi in di.GetFiles())
-            //{
-            //    fi.CopyTo(Server.MapPath("~/Content/Areas/Highcharts/Controllers/Shared/") + fi.Name + ".txt");
-            //}
+            foreach (FileInfo fi in di.GetFiles())
+            {
+                fi.CopyTo(Server.MapPath("~/Content/Areas/Highcharts/Controllers/Shared/") + fi.Name + ".txt");
+            }
 
             return View("~/Areas/Highcharts/Views/Demo/Index.cshtml");
         }
