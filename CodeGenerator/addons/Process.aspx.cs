@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.IO;
@@ -13,7 +14,7 @@ using System.Web.UI.WebControls;
 public partial class addons_Process : System.Web.UI.Page
 {
     const int PROPERTY_NESTED_LEVELS = 10; // currently max levels of nested properties is five
-    const string ROOT_CLASS = "Highcharts"; // the name of the root class
+    const string ROOT_CLASS = "ECharts"; // the name of the root class
     const string ROOT_NAMESPACE = "Charts"; // the name of the root class
 
     List<AddOnApiItem> _allItems = new List<AddOnApiItem>();
@@ -26,10 +27,11 @@ public partial class addons_Process : System.Web.UI.Page
     List<string> _lists; // a list of all List<T> properties - needs this to "Hashify" them, otherwise they will be serialized with capital letters
     List<string> _excludedProperties; // properties that do not need to be ported to the server-side wrapper
     List<string> _customProperties; // properties that need custom JSON mappings (Animation, Shadow, etc). Defined in the CodeAddOns folder.
-    HttpServerUtility Server; // the server of the page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        InitAll();
+
         string jsonAPI = File.ReadAllText(Server.MapPath("~/addons/api.txt"));
         var converter = new ExpandoObjectConverter();
         dynamic apiItems = JsonConvert.DeserializeObject<ExpandoObject>(jsonAPI, converter);
@@ -43,8 +45,34 @@ public partial class addons_Process : System.Web.UI.Page
                                             item.ReturnType,
                                             item.FullName);
         }
+
+        GenerateClass(new AddOnApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS });
+        for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)
+        {
+            GenerateClassesForLevel(i);
+        }
     }
 
+    private void InitAll()
+    {
+        _typeMappings = new Hashtable();
+        _propertyTypeMappings = new Hashtable();
+        _propertyInitMappings = new Hashtable();
+        _seriesMappings = new Hashtable();
+        _enumMappings = new Hashtable();
+        _excludedProperties = new List<string>();
+        _customProperties = new List<string>();
+        _lists = new List<string>();        
+
+        InitTypeMappings();
+        InitPropertyTypeMappings();
+        InitPropertyInitMappings();
+        InitExcludedProperties();
+        InitEnumMappings();
+        InitCustomProperties();
+        InitSeriesMappings();
+        InitLists();
+    }
     
 
     private void ProcessItem(ExpandoObject item, string parent)
@@ -62,7 +90,7 @@ public partial class addons_Process : System.Web.UI.Page
        
     }
 
-    private void GenerateClass(ApiItem item)
+    private void GenerateClass(AddOnApiItem item)
     {
         string className = item.Title;
         string codeTemplate = File.ReadAllText(Server.MapPath("~/CodeTemplates/Class.tpl"));
@@ -71,14 +99,14 @@ public partial class addons_Process : System.Web.UI.Page
         string properties = "";
         string defaultValues = "";
         string hashtableComparers = "";
-        List<ApiItem> children;
+        List<AddOnApiItem> children;
 
         if (item.Title == ROOT_CLASS)
             children = FindRootChildren();
         else
             children = FindImmediateChildren(item);
 
-        foreach (ApiItem child in children)
+        foreach (AddOnApiItem child in children)
         {
             //string propertyName = FirstCharToUpper(child.Title);
             string propertyName = GetPropertyName(child);
@@ -122,7 +150,7 @@ public partial class addons_Process : System.Web.UI.Page
         File.WriteAllText(fileName, codeTemplate);
     }
 
-    private void GenerateEnum(ApiItem apiItem)
+    private void GenerateEnum(AddOnApiItem apiItem)
     {
         string enumTemplate = File.ReadAllText(Server.MapPath("~/CodeTemplates/Enum.tpl"));
         string fileName = Server.MapPath("~/CodeGeneration/" + ROOT_CLASS + "/Enums/" + GetClassNameFromItem(apiItem) + ".cs");
@@ -154,7 +182,7 @@ public partial class addons_Process : System.Web.UI.Page
         File.WriteAllText(fileName, enumTemplate);
     }
 
-    private void AddDefaultsToEnum(ApiItem apiItem)
+    private void AddDefaultsToEnum(AddOnApiItem apiItem)
     {
         // only do that for verified enums
         if (apiItem.Values != null && apiItem.Values.Count > 0)
@@ -200,7 +228,7 @@ public partial class addons_Process : System.Web.UI.Page
         }
     }
 
-    private string GetDefaultValueForEnum(ApiItem item)
+    private string GetDefaultValueForEnum(AddOnApiItem item)
     {
         string defaultValue = item.Defaults;
         if (String.IsNullOrEmpty(defaultValue))
@@ -213,7 +241,7 @@ public partial class addons_Process : System.Web.UI.Page
         return String.Format("{0}.{1}", GetClassNameFromItem(item), FirstCharToUpper(defaultValue));
     }
 
-    private string GetClassNameFromItem(ApiItem item)
+    private string GetClassNameFromItem(AddOnApiItem item)
     {
         string[] parts = item.FullName.Split('.');
         string result = "";
@@ -229,7 +257,7 @@ public partial class addons_Process : System.Web.UI.Page
         return result;
     }
 
-    private string GetPropertyName(ApiItem item)
+    private string GetPropertyName(AddOnApiItem item)
     {
         string result = item.Title;
         if (_seriesMappings[result] != null)
@@ -240,7 +268,7 @@ public partial class addons_Process : System.Web.UI.Page
         return FirstCharToUpper(result);
     }
 
-    private string FormatProperty(string propertyTemplate, ApiItem child)
+    private string FormatProperty(string propertyTemplate, AddOnApiItem child)
     {
         string propertyName = GetPropertyName(child);
         string returnType = GetPropertyReturnType(child, propertyName);
@@ -257,7 +285,7 @@ public partial class addons_Process : System.Web.UI.Page
                                              .Replace("\n", ""));
     }
 
-    private string GetPropertyReturnType(ApiItem child, string propertyName)
+    private string GetPropertyReturnType(AddOnApiItem child, string propertyName)
     {
         string returnType = child.IsParent ? propertyName : child.ReturnType;
 
@@ -286,12 +314,12 @@ public partial class addons_Process : System.Web.UI.Page
         return returnType;
     }
 
-    private string FormatDefaultProperty(string propertyName, ApiItem child)
+    private string FormatDefaultProperty(string propertyName, AddOnApiItem child)
     {
         return String.Format("{0} = {1} = {2};\n\t\t\t", propertyName, propertyName + "_DefaultValue", MapDefaultValue(child));
     }
 
-    private string FormatPropertyComparer(string propertyName, ApiItem child)
+    private string FormatPropertyComparer(string propertyName, AddOnApiItem child)
     {
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
         string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList({0}));\n\t\t\t";
@@ -329,20 +357,21 @@ public partial class addons_Process : System.Web.UI.Page
 
     private void GenerateClassesForLevel(int level)
     {
-        foreach (ApiItem item in _apiItems)
+        foreach (AddOnApiItem item in _allItems)
         {
-            if (item.Parents.Count == level && item.IsParent)
+            var count = item.FullName.Count(x => x == '.');
+            if (count == level && item.IsParent)
             {
                 GenerateClass(item);
             }
         }
     }
 
-    private List<ApiItem> FindImmediateChildren(ApiItem rootItem)
+    private List<AddOnApiItem> FindImmediateChildren(AddOnApiItem rootItem)
     {
-        List<ApiItem> children = new List<ApiItem>();
+        List<AddOnApiItem> children = new List<AddOnApiItem>();
 
-        foreach (ApiItem item in _apiItems)
+        foreach (AddOnApiItem item in _allItems)
         {
             int lastIndex = item.FullName.LastIndexOf('.');
             string parent = item.FullName;
@@ -359,10 +388,10 @@ public partial class addons_Process : System.Web.UI.Page
         return children;
     }
 
-    private List<ApiItem> FindRootChildren()
+    private List<AddOnApiItem> FindRootChildren()
     {
-        List<ApiItem> children = new List<ApiItem>();
-        foreach (ApiItem item in _apiItems)
+        List<AddOnApiItem> children = new List<AddOnApiItem>();
+        foreach (AddOnApiItem item in _allItems)
         {
             if (item.Parent == null)
             {
@@ -559,7 +588,7 @@ public partial class addons_Process : System.Web.UI.Page
     }
 
 
-    public string MapDefaultValue(ApiItem item)
+    public string MapDefaultValue(AddOnApiItem item)
     {
         string defaults = item.Defaults;
 
@@ -698,18 +727,26 @@ public partial class addons_Process : System.Web.UI.Page
             : this()
         {
             Title = item.Key;
-            FullName = parent == null ? null : parent + "-" + item.Key;
+            FullName = parent == null ? item.Key : parent + "." + item.Key;
             Parent = parent;
             Deprecated = false;
             IsParent = false;
+            Description = "";
+            Defaults = "";
+            Values = new List<string>();
+            ReturnType = "";
 
 
             foreach (KeyValuePair<string, object> property in (ExpandoObject)item.Value)
             {
                 if (property.Key == "type")
+                {
                     ReturnType = property.Value as string;
+                    if (ReturnType == null)
+                        ReturnType = "string";
+                }
                 if (property.Key == "descriptionEN")
-                    Description = property.Value as string;
+                    Description = property.Value == null ? "" : property.Value as string;
                 if (property.Key == "default")
                     Defaults = property.Value as string;
                 if (property.Key == "applicable")
