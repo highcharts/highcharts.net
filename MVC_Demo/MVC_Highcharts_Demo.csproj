@@ -404,6 +404,10 @@
     <Content Include="Content\Areas\Highstock\Controllers\Shared\DataGroupingController.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\DynamicUpdateController.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsGeneralController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsPlacementController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsShapesColorsController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagssShapesColorsController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagssShapesColorstController.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayAreaBreaksController.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayAreaController.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayCandlestickController.cs.txt" />
@@ -411,11 +415,18 @@
     <Content Include="Content\Areas\Highstock\Controllers\Shared\LineMarkersController.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\MarkersOnly.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\MarkersOnlyController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\NavigatorDisabledController.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\OHLCController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ScrollbarController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ScrollbarDisabledController.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\SingleLineController.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\SplineController.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\SplineCotroller.cs.txt" />
     <Content Include="Content\Areas\Highstock\Controllers\Shared\StepLineController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotbandsController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotbandssController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotlinesController.cs.txt" />
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisReversedController.cs.txt" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\bootstrap\font-awesome.css" />
     <Content Include="Content\bootstrap\template.css" />
@@ -1018,6 +1029,7 @@
     <Content Include="Areas\Highstock\Views\Shared\NavigatorDisabled.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\FlagsPlacement.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\FlagsShapesColors.cshtml" />
+    <Content Include="downloads\Highstock_ASPNET_MVC_4_1_7_0.zip" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Help\html\Methods_T_Highsoft_Web_Mvc_Charts_Animation.htm" />
     <Content Include="Help\html\Methods_T_Highsoft_Web_Mvc_Charts_ArearangeSeries.htm" />

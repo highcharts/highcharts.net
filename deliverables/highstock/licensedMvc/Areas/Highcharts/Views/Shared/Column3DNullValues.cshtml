@@ -1,0 +1,69 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+@*All Highcharts 3D charts requires the highcharts-3rd.js module*@
+
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                Margin = new string [1] { "75" },
+                Options3d = new ChartOptions3d
+                {
+                    Enabled = true,
+                    Alpha = 10,
+                    Beta = 25,
+                    Depth = 70
+                }
+            },
+            Title = new Title
+            {
+                Text = "3D chart with null values"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Notice the difference between a 0 value and a null point"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Column = new PlotOptionsColumn
+                {
+                    Depth = 25
+                }
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = null
+                    }
+                }
+            },
+            Series = new List<Series>
+            {                    
+                new ColumnSeries
+                {
+                    Name = "Sales",
+                    Data = @ViewData["chartData"] as List<ColumnSeriesData>
+                }               
+            }
+        }
+        , "chart")
+    )
