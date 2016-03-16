@@ -4,7 +4,7 @@
   <property name="version" value="4_1_7_0"/>
   <property name="debug" value="false"/>
   <property name="csc.licensed" value="LICENSED"/>
-  <property name="base.dir" value="c:\highsoft\deliverables\highcharts"/>
+  <property name="base.dir" value="c:\deliverables\highsoft\highcharts"/>
   <property name="deliverable.mvc.name" value="Highcharts_ASPNET_MVC_${version}.zip" />
   <property name="licensed.deliverable.mvc.name" value="Highcharts_ASPNET_MVC_Licensed_${version}.zip"/>
   <property name="source.name.mvc" value="Highcharts_ASPNET_MVC_Source_${version}.zip"/>
