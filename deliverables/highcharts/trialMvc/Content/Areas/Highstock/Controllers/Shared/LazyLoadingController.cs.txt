@@ -11,14 +11,13 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        List<double?> data = new List<double?>();
+        List<double?> tempData = new List<double?>();
 
         public ActionResult LazyLoading()
-        {
-            LazyLoading_JsonToArray();
+        {            
             List<LineSeriesData> temperatureData = new List<LineSeriesData>();  
             
-            foreach (double? value in data)
+            foreach (double? value in tempData)
             {
                 temperatureData.Add(new LineSeriesData
                 {                   

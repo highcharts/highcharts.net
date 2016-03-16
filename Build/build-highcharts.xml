@@ -16,6 +16,7 @@
 
   <target name="clean">
     <delete dir="${base.dir}" includeemptydirs="true" />
+    <delete file="${base.dir}" includeemptydirs="true" />
     <mkdir dir="${base.dir}" />
     <mkdir dir="${base.dir}\bin" />
     <mkdir dir="${base.dir}\bin\trial" />
@@ -92,23 +93,24 @@
         <excludes name="obj/**" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.xml" />
+        <excludes name="**/HighstockData_log.*" />
       </fileset>
     </copy>
     <copy todir="${base.dir}\licensedMvc">
       <fileset basedir="${sample.project.mvc.folder}">
         <includes name="**/*.*"/>
         <excludes name="Help/**" />
-	  <excludes name="downloads/**" />
+	      <excludes name="downloads/**" />
         <excludes name="obj/**" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.xml" />
+        <excludes name="**/HighstockData_log.*" />
       </fileset>
     </copy>
   </target>
 
 
   <target name="updateBinariesMvc">
-    <delete file="${sample.project.mvc.folder}\VS2010_MVC3_Razor_SampleProject\VS2010_MVC3_Razor_SampleProject\App_Data\NORTHWND_log.ldf" verbose="true" failonerror="true" />
     <copy file="${base.dir}\bin\trial\${assembly.name.mvc}" tofile="${base.dir}\trialMvc\Files\bin\${assembly.name.mvc}" verbose="true"/>
     <copy file="${base.dir}\bin\licensed\${assembly.name.mvc}" tofile="${base.dir}\licensedMvc\Files\bin\${assembly.name.mvc}" verbose="true"/>
   </target>
@@ -133,7 +135,7 @@
   <target name="zipDeliverables">
     <zip zipfile="${base.dir}\${deliverable.mvc.name}">
       <fileset basedir="${base.dir}\trialMvc">
-        <includes name="**/*.*"/>
+        <includes name="**/*.*"/>    
       </fileset>
     </zip>
     <zip zipfile="${base.dir}\${licensed.deliverable.mvc.name}">

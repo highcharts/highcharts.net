@@ -1,0 +1,82 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400,
+                ZoomType = ChartZoomType.X
+            },
+            Title = new Title
+            {
+                Text = "USD to EUR exchange rate from 2006 through 2008"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Click and drag in the plot area to zoom in"
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Type = XAxisType.Datetime,
+                    MinRange = 14 * 24 * 3600000 // fourteen days
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Exchange Rate"
+                    }
+                }
+            },
+            Legend = new Legend
+            {
+                Enabled = false
+            },
+            PlotOptions = new PlotOptions
+            {
+                Series = new PlotOptionsSeries
+                {
+                    TurboThreshold = 10000
+                },
+                Area = new PlotOptionsArea
+                {
+                    ///FillColor = // TODO - LinerGradients
+                    ///                   
+                    Marker = new PlotOptionsAreaMarker
+                    {
+                        Radius = 2
+                    },
+                    LineWidth = 1,
+                    States = new PlotOptionsAreaStates
+                    {
+                        Hover = new PlotOptionsAreaStatesHover
+                        {
+                            LineWidth = 1
+                        }
+                    },
+                    Threshold = null
+                }
+            },
+            Series = new List<Series>
+            {       
+                new AreaSeries
+                {
+                    Name = "USD to EUR",
+                    PointInterval =  24 * 3600 * 1000,
+                    PointStart =  @ViewBag.DateUTC,
+                    Data = @ViewBag.TimeData as List<AreaSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )
