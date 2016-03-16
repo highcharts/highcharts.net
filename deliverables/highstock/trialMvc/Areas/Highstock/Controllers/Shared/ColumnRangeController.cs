@@ -15,7 +15,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {   
             List<ColumnrangeSeriesData> appleData = new List<ColumnrangeSeriesData>();
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new ChartDataEntities())
             {
                 foreach (AppleData data in db.AppleDatas)
                 {

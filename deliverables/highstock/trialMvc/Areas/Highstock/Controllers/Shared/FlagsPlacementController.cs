@@ -17,7 +17,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             double? lastDate;
             int days = 86400000; // milliseconds in a day
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new ChartDataEntities())
             {
                 foreach (Flag flag in db.Flags)
                 {

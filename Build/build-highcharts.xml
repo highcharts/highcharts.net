@@ -97,9 +97,13 @@
         <excludes name="highcharts.shfbproj" />
         <excludes name="MVC_Demo.csproj" />        
         <excludes name="MVC_Demo.csproj.*" />
-        <excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
-        <excludes name="**/Highsoft.Web.Mvc.Highcharts.xml" />
+        <excludes name="MVC_Highstock_Demo.csproj" />
+        <excludes name="MVC_Highstock_Demo.csproj.*" />
         <excludes name="**/HighstockData_log.*" />
+        <excludes name="**/Highcharts.Web.Mvc.pdb" />
+        <excludes name="**/Highstock.Web.Mvc.pdb" />
+        <excludes name="**/Highcharts.Web.Mvc.xml" />
+        <excludes name="**/Highstock.Web.Mvc.xml" />
       </fileset>
     </copy>
     <copy todir="${base.dir}\licensedMvc">
@@ -114,9 +118,13 @@
         <excludes name="highcharts.shfbproj" />
         <excludes name="MVC_Demo.csproj" />
         <excludes name="MVC_Demo.csproj.*" />
-        <excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
-        <excludes name="**/Highsoft.Web.Mvc.Highcharts.xml" />
+        <excludes name="MVC_Highstock_Demo.csproj" />
+        <excludes name="MVC_Highstock_Demo.csproj.*" />
         <excludes name="**/HighstockData_log.*" />
+        <excludes name="**/Highcharts.Web.Mvc.pdb" />
+        <excludes name="**/Highstock.Web.Mvc.pdb" />
+        <excludes name="**/Highcharts.Web.Mvc.xml" />
+        <excludes name="**/Highstock.Web.Mvc.xml" />
       </fileset>
     </copy>
   </target>

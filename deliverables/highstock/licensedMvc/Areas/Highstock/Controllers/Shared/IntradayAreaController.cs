@@ -15,7 +15,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             List<AreaSeriesData> intradayData = new List<AreaSeriesData>();
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new ChartDataEntities())
             {
                 foreach (Intraday data in db.Intradays)
                 {
@@ -45,7 +45,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             json = json.Substring(json.IndexOf('[') + 1);
             json = json.Substring(json.IndexOf('[') + 1);
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new ChartDataEntities())
             {
                 while (true)
                 {

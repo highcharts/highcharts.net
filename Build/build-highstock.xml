@@ -90,33 +90,52 @@
         <excludes name="Help/**" />
         <excludes name="downloads/**" />
         <excludes name="obj/**" />
+        <excludes name="Areas/Highcharts/**" />
+        <excludes name="Content/Areas/Highcharts/**" />
+        <excludes name="App_Data/HighstockData.mdf" />
+        <excludes name="App_Data/HighstockData_log.ldf" />
+        <excludes name="App_Data/ChartData_log.ldf" />
+        <excludes name="highcharts.shfbproj" />
+        <excludes name="MVC_Demo.csproj" />        
+        <excludes name="MVC_Demo.csproj.*" />
+        <excludes name="Amazon.Web.config" />
+        <excludes name="MVC_Highcharts_Demo.csproj" />
+        <excludes name="MVC_Highcharts_Demo.csproj.*" />
         <excludes name="**/Highcharts.Web.Mvc.pdb" />
         <excludes name="**/Highstock.Web.Mvc.pdb" />
         <excludes name="**/Highcharts.Web.Mvc.xml" />
-        <excludes name="**/Highstocl.Web.Mvc.xml" />
+        <excludes name="**/Highstock.Web.Mvc.xml" />
       </fileset>
     </copy>
     <copy todir="${base.dir}\licensedMvc">
       <fileset basedir="${sample.project.mvc.folder}">
         <includes name="**/*.*"/>
         <excludes name="Help/**" />
-	  <excludes name="downloads/**" />
+        <excludes name="downloads/**" />
         <excludes name="obj/**" />
+        <excludes name="Areas/Highcharts/**" />
+        <excludes name="Content/Areas/Highcharts/**" />
+        <excludes name="App_Data/HighstockData.mdf" />
+        <excludes name="App_Data/HighstockData_log.ldf" />
+        <excludes name="App_Data/ChartData_log.ldf" />
+        <excludes name="highcharts.shfbproj" />
+        <excludes name="MVC_Demo.csproj" />
+        <excludes name="MVC_Demo.csproj.*" />
+        <excludes name="Amazon.Web.config" />
+        <excludes name="MVC_Highcharts_Demo.csproj" />
+        <excludes name="MVC_Highcharts_Demo.csproj.*" />
         <excludes name="**/Highcharts.Web.Mvc.pdb" />
         <excludes name="**/Highstock.Web.Mvc.pdb" />
         <excludes name="**/Highcharts.Web.Mvc.xml" />
-        <excludes name="**/Highstocl.Web.Mvc.xml" />
+        <excludes name="**/Highstock.Web.Mvc.xml" />
       </fileset>
     </copy>
   </target>
-
-
-  <target name="updateBinariesMvc">
-    <delete file="${sample.project.mvc.folder}\VS2010_MVC3_Razor_SampleProject\VS2010_MVC3_Razor_SampleProject\App_Data\NORTHWND_log.ldf" verbose="true" failonerror="true" />
+  
+  <target name="updateBinariesMvc">    
     <copy file="${base.dir}\bin\trial\${assembly.name.mvc}" tofile="${base.dir}\trialMvc\Files\bin\${assembly.name.mvc}" verbose="true"/>
     <copy file="${base.dir}\bin\licensed\${assembly.name.mvc}" tofile="${base.dir}\licensedMvc\Files\bin\${assembly.name.mvc}" verbose="true"/>
   </target>
-
 
   <target name="prepareSourceMvc">
     <copy todir="${base.dir}\mvcsource">

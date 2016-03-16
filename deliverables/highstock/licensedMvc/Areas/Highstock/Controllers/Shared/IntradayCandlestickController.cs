@@ -15,7 +15,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             List<CandleStickSeriesData> intradayData = new List<CandleStickSeriesData>();
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new ChartDataEntities())
             {
                 foreach (Intraday data in db.Intradays)
                 {

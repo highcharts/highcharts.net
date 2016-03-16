@@ -81,7 +81,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HighstockDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="HighstockDataEntities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="ChartDataEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="AppleDatas" EntityType="HighstockDataModel.AppleData" />
           <EntitySet Name="CandlestickVolumes" EntityType="HighstockDataModel.CandlestickVolume" />
           <EntitySet Name="DataGroupings" EntityType="HighstockDataModel.DataGrouping" />
@@ -157,7 +157,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HighstockDataModelStoreContainer" CdmEntityContainer="HighstockDataEntities">
+        <EntityContainerMapping StorageEntityContainer="HighstockDataModelStoreContainer" CdmEntityContainer="ChartDataEntities">
           <EntitySetMapping Name="AppleDatas">
             <EntityTypeMapping TypeName="HighstockDataModel.AppleData">
               <MappingFragment StoreEntitySet="AppleData">

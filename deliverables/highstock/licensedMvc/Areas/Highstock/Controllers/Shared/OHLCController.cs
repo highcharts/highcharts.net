@@ -15,7 +15,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {   
             List<OhlcSeriesData> appleData = new List<OhlcSeriesData>();
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new ChartDataEntities())
             {
                 foreach (CandlestickVolume data in db.CandlestickVolumes)
                 {

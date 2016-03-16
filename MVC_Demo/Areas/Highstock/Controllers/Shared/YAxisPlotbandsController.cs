@@ -17,7 +17,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             double? minRate = 0;
             double? maxRate = 1;
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new ChartDataEntities())
             {
                 foreach (Flag flag in db.Flags)
                 {

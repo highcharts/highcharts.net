@@ -17,7 +17,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             List<LineSeriesData> msftData = new List<LineSeriesData>();
             List<LineSeriesData> googData = new List<LineSeriesData>();
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new ChartDataEntities())
             {
                 foreach (AppleData data in db.AppleDatas)
                 {
@@ -67,7 +67,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             json = json.Substring(json.IndexOf('[') + 1);
             json = json.Substring(json.IndexOf('[') + 1);
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new ChartDataEntities())
             {
                 while (true)
                 {
@@ -106,7 +106,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             json = json.Substring(json.IndexOf('[') + 1);
             json = json.Substring(json.IndexOf('[') + 1);
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new ChartDataEntities())
             {
                 while (true)
                 {
@@ -146,7 +146,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             json = json.Substring(json.IndexOf('[') + 1);
             json = json.Substring(json.IndexOf('[') + 1);
 
-            using (var db = new HighstockDataEntities())
+            using (var db = new ChartDataEntities())
             {
                 while (true)
                 {
