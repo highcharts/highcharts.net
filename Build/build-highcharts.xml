@@ -91,6 +91,12 @@
         <excludes name="Help/**" />
         <excludes name="downloads/**" />
         <excludes name="obj/**" />
+        <excludes name="Areas/Highstock/**" />
+        <excludes name="Content/Areas/Highstock/**" />
+        <excludes name="App_Data/HighstockData.mdf" />
+        <excludes name="highcharts.shfbproj" />
+        <excludes name="MVC_Demo.csproj" />        
+        <excludes name="MVC_Demo.csproj.*" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.xml" />
         <excludes name="**/HighstockData_log.*" />
@@ -102,6 +108,12 @@
         <excludes name="Help/**" />
 	      <excludes name="downloads/**" />
         <excludes name="obj/**" />
+        <excludes name="Areas/Highstock/**" />
+        <excludes name="Content/Areas/Highstock/**" />
+        <excludes name="App_Data/HighstockData.mdf" />
+        <excludes name="highcharts.shfbproj" />
+        <excludes name="MVC_Demo.csproj" />
+        <excludes name="MVC_Demo.csproj.*" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.pdb" />
         <excludes name="**/Highsoft.Web.Mvc.Highcharts.xml" />
         <excludes name="**/HighstockData_log.*" />
