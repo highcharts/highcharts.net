@@ -282,47 +282,47 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AppleData.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CandlestickVolume.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ChartData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChartData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChartData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChartData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChartData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChartData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChartData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\DataGrouping.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Flag.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GoogleData.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Intraday.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MicrosoftData.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\HighstockData.mdf" />
-    <Content Include="App_Data\HighstockData_log.ldf">
-      <DependentUpon>HighstockData.mdf</DependentUpon>
+    <Content Include="App_Data\ChartData.mdf" />
+    <Content Include="App_Data\ChartData_log.ldf">
+      <DependentUpon>ChartData.mdf</DependentUpon>
     </Content>
     <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaBasicController.cs.txt" />
     <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaInvertedController.cs.txt" />
@@ -865,16 +865,26 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Docs\index.html" />
-    <Content Include="Docs\images\image00.png" />
-    <Content Include="Docs\images\image01.png" />
-    <Content Include="Docs\images\image02.png" />
-    <Content Include="Docs\images\image03.png" />
-    <Content Include="Docs\images\image04.png" />
-    <Content Include="Docs\images\image05.png" />
-    <Content Include="Docs\images\image06.png" />
-    <Content Include="Docs\images\image07.png" />
-    <Content Include="Docs\images\image08.png" />
+    <Content Include="Docs\Highcharts\images\image00.png" />
+    <Content Include="Docs\Highcharts\images\image01.png" />
+    <Content Include="Docs\Highcharts\images\image02.png" />
+    <Content Include="Docs\Highcharts\images\image03.png" />
+    <Content Include="Docs\Highcharts\images\image04.png" />
+    <Content Include="Docs\Highcharts\images\image05.png" />
+    <Content Include="Docs\Highcharts\images\image06.png" />
+    <Content Include="Docs\Highcharts\images\image07.png" />
+    <Content Include="Docs\Highcharts\images\image08.png" />
+    <Content Include="Docs\Highcharts\index.html" />
+    <Content Include="Docs\Highstock\index.html" />
+    <Content Include="Docs\Highstock\images\image00.png" />
+    <Content Include="Docs\Highstock\images\image01.png" />
+    <Content Include="Docs\Highstock\images\image02.png" />
+    <Content Include="Docs\Highstock\images\image03.png" />
+    <Content Include="Docs\Highstock\images\image04.png" />
+    <Content Include="Docs\Highstock\images\image05.png" />
+    <Content Include="Docs\Highstock\images\image06.png" />
+    <Content Include="Docs\Highstock\images\image07.png" />
+    <Content Include="Docs\Highstock\images\image08.png" />
     <Content Include="Files\bin\Highcharts.Web.Mvc.dll" />
     <Content Include="Files\js\data.js" />
     <Content Include="Files\js\drilldown.js" />
@@ -995,15 +1005,7 @@
     <Content Include="Help\SearchHelp.inc.php" />
     <Content Include="Help\SearchHelp.php" />
     <Content Include="Help\Web.Config" />
-    <Content Include="downloads\Highcharts_ASPNET_MVC_4_1_7_0.zip" />
     <Content Include="Areas\Highstock\Views\Web.config" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Highstock\Views\Shared\Area.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\AreaRange.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\AreaSpline.cshtml" />
@@ -1036,7 +1038,15 @@
     <Content Include="Areas\Highstock\Views\Shared\NavigatorDisabled.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\FlagsPlacement.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\FlagsShapesColors.cshtml" />
+    <Content Include="downloads\Highcharts_ASPNET_MVC_4_1_7_0.zip" />
     <Content Include="downloads\Highstock_ASPNET_MVC_4_1_7_0.zip" />
+    <EntityDeploy Include="Models\ChartData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ChartData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ChartData.edmx.diagram">
+      <DependentUpon>ChartData.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Help\html\Methods_T_Highsoft_Web_Mvc_Charts_Animation.htm" />
     <Content Include="Help\html\Methods_T_Highsoft_Web_Mvc_Charts_ArearangeSeries.htm" />
@@ -12229,15 +12239,15 @@
     <Content Include="Help\toc\T_Highsoft_Web_Mvc_Charts_YAxisTitle.xml" />
     <Content Include="Help\WebKI.xml" />
     <Content Include="Help\WebTOC.xml" />
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\ChartData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>ChartData.edmx</DependentUpon>
+      <LastGenOutput>ChartData.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\ChartData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>ChartData.edmx</DependentUpon>
+      <LastGenOutput>ChartData.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\highcharts-all.js" />
@@ -12262,15 +12272,24 @@
     <Content Include="Scripts\ref.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Local.Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Local.Web.Debug.config">
+      <DependentUpon>Local.Web.config</DependentUpon>
+    </Content>
+    <Content Include="Local.Web.Release.config">
+      <DependentUpon>Local.Web.config</DependentUpon>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.Debug.config">
+    <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
+    </None>
+    <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Highcharts\Models\" />
