@@ -1,0 +1,107 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+
+@*The highchart-more.js file contains definitions for additional chart types not available 
+in the main highcharts.js file such as "arearange". You need to include this file if you
+are using these types of charts*@
+
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "Highcharts Box Plot Example"
+            },
+            Legend = new Legend
+            {
+                Enabled = false
+            },
+            XAxis = new List<XAxis>
+            {            
+                new XAxis
+                {
+                    Categories = new List<string> { "1", "2", "3", "4", "5" },
+                    Title = new XAxisTitle
+                    {
+                        Text = "Experiment No."
+                    }
+                }
+            },
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Observations"
+                    },
+                    PlotLines = new List<YAxisPlotLines>
+                    {
+                        new YAxisPlotLines
+                        {
+                            Value = 932,
+                            Color = "red",
+                            Width = 1,
+                            Label = new YAxisPlotLinesLabel
+                            {
+                                Text = "Theoretical mean: 932",
+                                Align = "center"
+                            }                           
+                        }
+                    }
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                PointFormat = "Observation: {point.y}"
+            },
+            Series = new List<Series>
+            {                    
+                new BoxplotSeries
+                {
+                    Name = "Outlier",
+                    Tooltip = new BoxplotSeriesTooltip
+                    {
+                        HeaderFormat = "<em>Experiment No {point.key}</em><br/>"                        
+                    },                    
+                    Data = new List<BoxplotSeriesData> {
+                        new BoxplotSeriesData { Low = 760, Q1 = 801, Median = 848, Q3 = 895, High = 965},                            
+                        new BoxplotSeriesData { Low = 733, Q1 = 853, Median = 939, Q3 = 980, High = 1080},
+                        new BoxplotSeriesData { Low = 714, Q1 = 762, Median = 817, Q3 = 870, High = 918},
+                        new BoxplotSeriesData { Low = 724, Q1 = 802, Median = 806, Q3 = 871, High = 950},
+                        new BoxplotSeriesData { Low = 834, Q1 = 836, Median = 864, Q3 = 882, High = 910}                            
+                    }
+                },
+                new ScatterSeries
+                {
+                    Name = "USSR/Russia",
+                    Color = "#7cb5ec",
+                    Marker = new ScatterSeriesMarker
+                    {
+                        FillColor = "white",
+                        LineWidth = 1,
+                        LineColor = "#7cb5ec"
+                    },
+                    Data = new List<ScatterSeriesData>
+                    {
+                        new ScatterSeriesData { X = 0, Y = 644 },
+                        new ScatterSeriesData { X = 4, Y = 718 },
+                        new ScatterSeriesData { X = 4, Y = 951 },
+                        new ScatterSeriesData { X = 4, Y = 969 }
+                    }
+                }
+            }
+        }
+        , "chart")
+    )

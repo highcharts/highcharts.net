@@ -1,0 +1,48 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+@* Additional chart types, such as "heatmap", are defined in the heatmap.js module *@
+
+<script src="http://code.highcharts.com/modules/heatmap.js"></script>
+
+@*  Additional chart types, such as "treemap", are defined in the treemap.js module *@
+
+ <script src="http://code.highcharts.com/modules/treemap.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400
+            },
+            ColorAxis = new ColorAxis
+            {
+                MinColor = "#FFFFFF",
+                MaxColor = "#7cb5ec"  
+            },
+            Series = new List<Series>
+            {                    
+                new TreemapSeries
+                {                
+                    LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Squarified,  
+                    Data = new List<TreemapSeriesData>
+                    {
+                        new TreemapSeriesData { Name = "A", Value = 6, ColorValue = 1 },
+                        new TreemapSeriesData { Name = "B", Value = 6, ColorValue = 2 },
+                        new TreemapSeriesData { Name = "C", Value = 4, ColorValue = 3 },
+                        new TreemapSeriesData { Name = "D", Value = 3, ColorValue = 4 },
+                        new TreemapSeriesData { Name = "Е", Value = 2, ColorValue = 5 },
+                        new TreemapSeriesData { Name = "F", Value = 2, ColorValue = 6 },
+                        new TreemapSeriesData { Name = "G", Value = 1, ColorValue = 7 },
+                    }
+                    
+                }
+            }
+        }
+        , "chart")
+    )

@@ -1,0 +1,17 @@
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\Highcharts.Web.Mvc.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\Highcharts.Web.Mvc.pdb
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\System.Web.Mvc.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\System.Web.Razor.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\System.Web.WebPages.Razor.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\System.Web.WebPages.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\System.Web.WebPages.Deployment.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\System.Web.Mvc.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\System.Web.Razor.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\System.Web.WebPages.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\Microsoft.Web.Infrastructure.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Release\System.Web.WebPages.Deployment.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\obj\Release\MVC_Highcharts.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\obj\Release\Highcharts.Web.Mvc.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\obj\Release\Highcharts.Web.Mvc.pdb

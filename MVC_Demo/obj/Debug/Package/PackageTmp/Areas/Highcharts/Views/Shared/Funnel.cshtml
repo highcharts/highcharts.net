@@ -1,0 +1,57 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+@* Funnel charts requires the funnel.js add-on *@
+
+<script src="http://code.highcharts.com/modules/funnel.js"></script>        
+
+@using Highsoft.Web.Mvc.Charts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 700,
+                Height = 400,
+                MarginRight = 100
+            },
+            Title = new Title
+            {
+                Text = "Sales funnel",
+                X = -50
+            },
+            PlotOptions = new PlotOptions
+            {
+                Series = new PlotOptionsSeries
+                {
+                    DataLabels = new PlotOptionsSeriesDataLabels
+                    {
+                        Enabled = true,
+                        Format = "<b>{point.name}</b> ({point.y:,.0f})",
+                        Color = "black"
+                    }
+                }
+            },
+            Legend = new Legend
+            {
+                Enabled = false
+            },
+            Series = new List<Series>
+            {                    
+                new FunnelSeries
+                {
+                    Name = "Unique users",
+                    Data = new List<FunnelSeriesData> {
+                        new FunnelSeriesData{ Name = "Website visits", Y = 15654 },
+                        new FunnelSeriesData{ Name = "Downloads", Y = 4064 },
+                        new FunnelSeriesData{ Name = "Requested price list", Y = 1987 },
+                        new FunnelSeriesData{ Name = "Invoice Sent", Y = 976 },
+                        new FunnelSeriesData{ Name = "Finalized", Y = 846 }                        
+                    }
+                }               
+            }
+        }
+        , "chart")
+    )

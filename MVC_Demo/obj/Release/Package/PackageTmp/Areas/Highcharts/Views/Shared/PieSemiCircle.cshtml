@@ -1,0 +1,65 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+@using System.Collections.Specialized
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                PlotBackgroundColor = null,
+                PlotBorderWidth = 0,
+                PlotShadow = new Shadow
+                {
+                    Enabled = false
+                },
+                Width = 1087,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "Browser<br>shares<br>2015",
+                Align = TitleAlign.Center,
+                VerticalAlign = TitleVerticalAlign.Middle,
+                Y = 40
+            },
+            Tooltip = new Tooltip
+            {
+                PointFormat = "{series.name}: <b>{point.percentage:.1f}%</b>"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Pie = new PlotOptionsPie
+                {
+                    DataLabels = new PlotOptionsPieDataLabels
+                    {
+                        Enabled = true,
+                        Distance = -50,
+                        Style = new NameValueCollection
+                        {
+                            { "fontWeight", "bold" },
+                            { "color", "white" },
+                            { "textShadow", "0px 1px 2px black" }
+                        }
+                    },
+                    StartAngle = -90,
+                    EndAngle = 90,
+                    Center = new string [] { "50%", "75%" }
+                }
+            },
+            Series = new List<Series>
+            {                    
+                new PieSeries
+                {                    
+                    Name = "Browser Share",
+                    InnerSize = "50%",
+                    Data = @ViewData["pieData"] as List<PieSeriesData>
+                },
+                
+            }
+        }
+        , "chart")
+    )

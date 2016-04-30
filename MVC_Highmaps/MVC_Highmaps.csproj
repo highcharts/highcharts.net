@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{687B771F-4A14-493B-B78C-7D6AA617AF9D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Highsoft.Web.Mvc.Maps</RootNamespace>
+    <AssemblyName>Highmaps.Web.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeAddOns\Animation.cs" />
+    <Compile Include="CodeAddOns\Background.cs" />
+    <Compile Include="CodeAddOns\BaseObject.cs" />
+    <Compile Include="CodeAddOns\Crosshair.cs" />
+    <Compile Include="CodeAddOns\MenuItem.cs" />
+    <Compile Include="CodeAddOns\PointPlacement.cs" />
+    <Compile Include="CodeAddOns\Shadow.cs" />
+    <Compile Include="CodeAddOns\Stop.cs" />
+    <Compile Include="CodeAddOns\Symbol.cs" />
+    <Compile Include="CodeGeneration\Chart.cs" />
+    <Compile Include="CodeGeneration\ChartEvents.cs" />
+    <Compile Include="CodeGeneration\ChartResetZoomButton.cs" />
+    <Compile Include="CodeGeneration\ColorAxis.cs" />
+    <Compile Include="CodeGeneration\ColorAxisDataClasses.cs" />
+    <Compile Include="CodeGeneration\ColorAxisEvents.cs" />
+    <Compile Include="CodeGeneration\ColorAxisLabels.cs" />
+    <Compile Include="CodeGeneration\ColorAxisMarker.cs" />
+    <Compile Include="CodeGeneration\Colors.cs" />
+    <Compile Include="CodeGeneration\Credits.cs" />
+    <Compile Include="CodeGeneration\Drilldown.cs" />
+    <Compile Include="CodeGeneration\DrilldownDrillUpButton.cs" />
+    <Compile Include="CodeGeneration\Enums\ChartResetZoomButtonRelativeTo.cs" />
+    <Compile Include="CodeGeneration\Enums\ChartType.cs" />
+    <Compile Include="CodeGeneration\Enums\ColorAxisDataClassColor.cs" />
+    <Compile Include="CodeGeneration\Enums\ColorAxisGridLineDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\ColorAxisLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\ColorAxisLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\ColorAxisMinorGridLineDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\ColorAxisMinorTickPosition.cs" />
+    <Compile Include="CodeGeneration\Enums\ColorAxisTickPosition.cs" />
+    <Compile Include="CodeGeneration\Enums\ColorAxisType.cs" />
+    <Compile Include="CodeGeneration\Enums\ExportingButtonsContextButtonAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\ExportingButtonsContextButtonVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\ExportingType.cs" />
+    <Compile Include="CodeGeneration\Enums\HeatmapSeriesCursor.cs" />
+    <Compile Include="CodeGeneration\Enums\HeatmapSeriesDataLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\HeatmapSeriesDataLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\HeatmapSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\HeatmapSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\LegendAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\LegendLayout.cs" />
+    <Compile Include="CodeGeneration\Enums\LegendVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapBubbleSeriesCursor.cs" />
+    <Compile Include="CodeGeneration\Enums\MapBubbleSeriesDataLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapBubbleSeriesDataLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\MapBubbleSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapBubbleSeriesSizeBy.cs" />
+    <Compile Include="CodeGeneration\Enums\MapBubbleSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\MapLineSeriesCursor.cs" />
+    <Compile Include="CodeGeneration\Enums\MapLineSeriesDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\MapLineSeriesDataLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapLineSeriesDataLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\MapLineSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapLineSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\MapNavigationButtonOptionsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapNavigationButtonOptionsAlignTo.cs" />
+    <Compile Include="CodeGeneration\Enums\MapNavigationButtonOptionsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapNavigationButtonsZoomInAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapNavigationButtonsZoomInAlignTo.cs" />
+    <Compile Include="CodeGeneration\Enums\MapNavigationButtonsZoomInVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapNavigationButtonsZoomOutAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapNavigationButtonsZoomOutAlignTo.cs" />
+    <Compile Include="CodeGeneration\Enums\MapNavigationButtonsZoomOutVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapPointSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\MapSeriesCursor.cs" />
+    <Compile Include="CodeGeneration\Enums\MapSeriesDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\MapSeriesDataLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapSeriesDataLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\MapSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\MapSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\NavigationButtonOptionsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\NavigationButtonOptionsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsHeatmapCursor.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsHeatmapDataLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsHeatmapDataLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsHeatmapDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMapbubbleCursor.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMapbubbleDataLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMapbubbleDataLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMapbubbleDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMapbubbleSizeBy.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMapCursor.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMapDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMapDataLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMapDataLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMapDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMaplineCursor.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMaplineDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMaplineDataLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMaplineDataLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsMaplineDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesCursor.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesDataLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesDataLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\SeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\SubtitleAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\SubtitleVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\TitleAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\TitleVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\XAxisCrosshairDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\XAxisGridLineDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\XAxisLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\XAxisMinorGridLineDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\XAxisMinorTickPosition.cs" />
+    <Compile Include="CodeGeneration\Enums\XAxisTickPosition.cs" />
+    <Compile Include="CodeGeneration\Enums\XAxisTitleAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\YAxisCrosshairDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\YAxisGridLineDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\YAxisMinorGridLineDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\YAxisMinorTickPosition.cs" />
+    <Compile Include="CodeGeneration\Enums\YAxisTickPosition.cs" />
+    <Compile Include="CodeGeneration\Enums\YAxisTitleAlign.cs" />
+    <Compile Include="CodeGeneration\Exporting.cs" />
+    <Compile Include="CodeGeneration\ExportingButtons.cs" />
+    <Compile Include="CodeGeneration\ExportingButtonsContextButton.cs" />
+    <Compile Include="CodeGeneration\Global.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeries.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeriesData.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeriesDataEvents.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeriesDataLabels.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeriesEvents.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeriesPoint.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeriesPointEvents.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeriesStates.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeriesStatesHover.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeriesStatesNormal.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeriesStatesSelect.cs" />
+    <Compile Include="CodeGeneration\HeatmapSeriesTooltip.cs" />
+    <Compile Include="CodeGeneration\Highmaps.cs" />
+    <Compile Include="CodeGeneration\Labels.cs" />
+    <Compile Include="CodeGeneration\LabelsItems.cs" />
+    <Compile Include="CodeGeneration\Lang.cs" />
+    <Compile Include="CodeGeneration\Legend.cs" />
+    <Compile Include="CodeGeneration\LegendNavigation.cs" />
+    <Compile Include="CodeGeneration\LegendTitle.cs" />
+    <Compile Include="CodeGeneration\Loading.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeries.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeriesData.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeriesDataEvents.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeriesDataLabels.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeriesEvents.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeriesPoint.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeriesPointEvents.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeriesStates.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeriesStatesHover.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeriesStatesNormal.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeriesStatesSelect.cs" />
+    <Compile Include="CodeGeneration\MapBubbleSeriesTooltip.cs" />
+    <Compile Include="CodeGeneration\MapLineSeries.cs" />
+    <Compile Include="CodeGeneration\MapLineSeriesData.cs" />
+    <Compile Include="CodeGeneration\MapLineSeriesDataLabels.cs" />
+    <Compile Include="CodeGeneration\MapLineSeriesEvents.cs" />
+    <Compile Include="CodeGeneration\MapLineSeriesPoint.cs" />
+    <Compile Include="CodeGeneration\MapLineSeriesPointEvents.cs" />
+    <Compile Include="CodeGeneration\MapLineSeriesStates.cs" />
+    <Compile Include="CodeGeneration\MapLineSeriesStatesHover.cs" />
+    <Compile Include="CodeGeneration\MapLineSeriesStatesNormal.cs" />
+    <Compile Include="CodeGeneration\MapLineSeriesStatesSelect.cs" />
+    <Compile Include="CodeGeneration\MapLineSeriesTooltip.cs" />
+    <Compile Include="CodeGeneration\MapNavigation.cs" />
+    <Compile Include="CodeGeneration\MapNavigationButtonOptions.cs" />
+    <Compile Include="CodeGeneration\MapNavigationButtons.cs" />
+    <Compile Include="CodeGeneration\MapNavigationButtonsZoomIn.cs" />
+    <Compile Include="CodeGeneration\MapNavigationButtonsZoomOut.cs" />
+    <Compile Include="CodeGeneration\MapPointSeries.cs" />
+    <Compile Include="CodeGeneration\MapPointSeriesData.cs" />
+    <Compile Include="CodeGeneration\MapPointSeriesDataEvents.cs" />
+    <Compile Include="CodeGeneration\MapSeries.cs" />
+    <Compile Include="CodeGeneration\MapSeriesData.cs" />
+    <Compile Include="CodeGeneration\MapSeriesDataEvents.cs" />
+    <Compile Include="CodeGeneration\MapSeriesDataLabels.cs" />
+    <Compile Include="CodeGeneration\MapSeriesEvents.cs" />
+    <Compile Include="CodeGeneration\MapSeriesPoint.cs" />
+    <Compile Include="CodeGeneration\MapSeriesPointEvents.cs" />
+    <Compile Include="CodeGeneration\MapSeriesStates.cs" />
+    <Compile Include="CodeGeneration\MapSeriesStatesHover.cs" />
+    <Compile Include="CodeGeneration\MapSeriesStatesNormal.cs" />
+    <Compile Include="CodeGeneration\MapSeriesStatesSelect.cs" />
+    <Compile Include="CodeGeneration\MapSeriesTooltip.cs" />
+    <Compile Include="CodeGeneration\Navigation.cs" />
+    <Compile Include="CodeGeneration\NavigationButtonOptions.cs" />
+    <Compile Include="CodeGeneration\PlotOptions.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsHeatmap.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsHeatmapDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsHeatmapEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsHeatmapPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsHeatmapPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsHeatmapStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsHeatmapStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsHeatmapStatesNormal.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsHeatmapStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsHeatmapTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMap.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapbubble.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapbubbleDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapbubbleEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapbubblePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapbubblePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapbubbleStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapbubbleStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapbubbleStatesNormal.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapbubbleStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapbubbleTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapline.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMaplineDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMaplineEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMaplinePoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMaplinePointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMaplineStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMaplineStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMaplineStatesNormal.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMaplineStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMaplineTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMappoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapStatesNormal.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMapTooltip.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeries.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesPoint.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesPointEvents.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesStates.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesStatesHover.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesStatesNormal.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesStatesSelect.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSeriesTooltip.cs" />
+    <Compile Include="CodeGeneration\Series.cs" />
+    <Compile Include="CodeGeneration\SeriesData.cs" />
+    <Compile Include="CodeGeneration\Subtitle.cs" />
+    <Compile Include="CodeGeneration\Title.cs" />
+    <Compile Include="CodeGeneration\Tooltip.cs" />
+    <Compile Include="CodeGeneration\XAxis.cs" />
+    <Compile Include="CodeGeneration\XAxisCrosshair.cs" />
+    <Compile Include="CodeGeneration\XAxisEvents.cs" />
+    <Compile Include="CodeGeneration\XAxisLabels.cs" />
+    <Compile Include="CodeGeneration\XAxisTitle.cs" />
+    <Compile Include="CodeGeneration\YAxis.cs" />
+    <Compile Include="CodeGeneration\YAxisCrosshair.cs" />
+    <Compile Include="CodeGeneration\YAxisEvents.cs" />
+    <Compile Include="CodeGeneration\YAxisLabels.cs" />
+    <Compile Include="CodeGeneration\YAxisTitle.cs" />
+    <Compile Include="CompiledOn.cs" />
+    <Compile Include="Highmaps.cs" />
+    <Compile Include="HighmapsRenderer.cs" />
+    <Compile Include="HtmlHelperExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

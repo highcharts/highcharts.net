@@ -1,0 +1,96 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Width = 1087,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "Monthly Average Rainfall"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Source: WorldClimate.com"
+            },
+
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {                   
+                    Categories = new List<string> { 
+                        "Jan",
+                        "Feb",
+                        "Mar",
+                        "Apr",
+                        "May",
+                        "Jun",
+                        "Jul",
+                        "Aug",
+                        "Sep",
+                        "Oct",
+                        "Nov",
+                        "Dec"
+                    }
+                }
+            },
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
+                {
+                    Min = 0,
+                    Title = new YAxisTitle
+                    {
+                        Text = "Rainfall (mm)"
+                    }
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                HeaderFormat = "<span style='font-size:10px'>{point.key}</span><table>",
+                PointFormat = "<tr><td style='color:{series.color};padding:0'>{series.name}: </td><td style='padding:0'><b>{point.y:.1f} mm</b></td></tr>",
+                FooterFormat = "</table>",
+                Shared = true,
+                UseHTML = true
+            },
+            PlotOptions = new PlotOptions
+            {
+                Column = new PlotOptionsColumn
+                {
+                    PointPadding = 0.2,
+                    BorderWidth = 0
+                }
+            },
+            Series = new List<Series>
+            {                    
+                new ColumnSeries
+                {
+                    Name = "Tokyo",
+                    Data = @ViewData["tokyoData"] as List<ColumnSeriesData>
+                },
+                new ColumnSeries
+                {
+                    Name = "NY",
+                    Data = @ViewData["nyData"] as List<ColumnSeriesData>
+                },
+                new ColumnSeries
+                {
+                    Name = "Berlin",
+                    Data = @ViewData["berlinData"] as List<ColumnSeriesData>
+                },
+                new ColumnSeries
+                {
+                    Name = "London",
+                    Data = @ViewData["londonData"] as List<ColumnSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )

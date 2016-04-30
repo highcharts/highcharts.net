@@ -1,0 +1,17 @@
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\Highstock.Web.Mvc.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\Highstock.Web.Mvc.pdb
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\System.Web.Mvc.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\System.Web.Razor.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\System.Web.WebPages.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\System.Web.Mvc.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\System.Web.Razor.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\System.Web.WebPages.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\obj\Debug\MVC_Highstock.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\obj\Debug\Highstock.Web.Mvc.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\obj\Debug\Highstock.Web.Mvc.pdb
