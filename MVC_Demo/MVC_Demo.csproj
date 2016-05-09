@@ -1069,21 +1069,9 @@
     <Content Include="Local.Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Local.Web.Debug.config">
-      <DependentUpon>Local.Web.config</DependentUpon>
-    </Content>
-    <Content Include="Local.Web.Release.config">
-      <DependentUpon>Local.Web.config</DependentUpon>
-    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Highcharts\Models\" />
