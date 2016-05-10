@@ -893,6 +893,7 @@
     <Content Include="Docs\Highstock\images\image07.png" />
     <Content Include="Docs\Highstock\images\image08.png" />
     <Content Include="Files\bin\Highcharts.Web.Mvc.dll" />
+    <Content Include="Files\bin\Highstock.Web.Mvc.dll" />
     <Content Include="Files\js\data.js" />
     <Content Include="Files\js\drilldown.js" />
     <Content Include="Files\js\exporting.js" />

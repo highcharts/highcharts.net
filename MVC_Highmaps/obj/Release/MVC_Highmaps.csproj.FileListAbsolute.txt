@@ -14,3 +14,4 @@ C:\Users\PC\Documents\highcharts.net\MVC_Highmaps\bin\Release\Microsoft.Web.Infr
 C:\Users\PC\Documents\highcharts.net\MVC_Highmaps\bin\Release\System.Web.WebPages.Deployment.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Highmaps\obj\Release\Highmaps.Web.Mvc.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Highmaps\obj\Release\Highmaps.Web.Mvc.pdb
+C:\Users\PC\Documents\highcharts.net\MVC_Highmaps\obj\Release\MVC_Highmaps.csprojResolveAssemblyReference.cache

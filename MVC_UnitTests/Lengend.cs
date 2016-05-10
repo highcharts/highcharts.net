@@ -32,6 +32,8 @@ namespace Highsoft.Web.Mvc.UnitTests
             _axis.AllowDecimals = false;            
             string json = _renderer.RenderHtml();
 
+
+
             Assert.IsTrue(json.Contains("\"allowDecimals\":false"));
         }
 
