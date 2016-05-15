@@ -1,15 +1,15 @@
 
-            using System;
-            using System.Collections.Generic;
-            using System.Linq;
-            using System.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-            namespace Highsoft.Web.Mvc.Charts
-            {
-                internal static class CompiledOn
-                {
-                    internal static DateTime CompilationDate = new DateTime(2099, 1, 1);
-                    //internal static DateTime CompilationDate = new DateTime(2016, 5, 10);
+namespace Highsoft.Web.Mvc.Charts
+{
+    internal static class CompiledOn
+    {
+        internal static DateTime CompilationDate = new DateTime(2099, 1, 1);
+        //internal static DateTime CompilationDate = new DateTime(2016, 5, 16);
     }
-            }
-        
+}
+
