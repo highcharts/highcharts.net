@@ -285,6 +285,9 @@
     <Compile Include="Areas\Highstock\Controllers\Shared\SplineController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\StepLineController.cs" />
     <Compile Include="Areas\Highstock\HighstockAreaRegistration.cs" />
+    <Content Include="App_Data\ChartData_log.ldf">
+      <DependentUpon>ChartData.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\HeatMapController.cs.txt" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\MapLineController.cs.txt" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\DistributionMapController.cs.txt" />
