@@ -1,0 +1,3 @@
+C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Debug\MVC_Highcharts_Demo.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Debug\MVC_Demo.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Debug\MVC_Demo.pdb

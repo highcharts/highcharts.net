@@ -7,20 +7,18 @@ namespace UtilDateReplacer
 {
     class Program
     {
-        private static string text = @"
-            using System;
-            using System.Collections.Generic;
-            using System.Linq;
-            using System.Text;
+        private static string text = @"using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-            namespace {3}
-            {{
-                internal static class CompiledOn
-                {{
-                    internal static DateTime CompilationDate = new DateTime({0}, {1}, {2});
-                }}
-            }}
-        ";
+namespace {3}
+{{
+    internal static class CompiledOn
+    {{
+        internal static DateTime CompilationDate = new DateTime({0}, {1}, {2});
+    }}
+}}";
 
         static void Main(string[] args)
         {

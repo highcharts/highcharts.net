@@ -50,9 +50,6 @@ C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\System.Web.Razor.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\System.Web.WebPages.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\System.Web.WebPages.Deployment.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\System.Web.WebPages.Razor.xml
-C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Release\MVC_Demo.csprojResolveAssemblyReference.cache
-C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Release\MVC_Demo.dll
-C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Release\MVC_Demo.pdb
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highcharts.Web.Mvc.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highcharts.Web.Mvc.pdb
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\Files\bin\MVC_Demo.dll.config
@@ -109,3 +106,6 @@ C:\Users\PC\Documents\highcharts.net\MVC_Demo\Files\bin\System.Web.Razor.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\Files\bin\System.Web.WebPages.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\Files\bin\System.Web.WebPages.Deployment.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\Files\bin\System.Web.WebPages.Razor.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Release\MVC_Demo.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Release\MVC_Demo.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Release\MVC_Demo.pdb

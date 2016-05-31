@@ -1,0 +1,3 @@
+"c:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild" "c:\Users\PC\Documents\highcharts.net\MVC_Highstock\MVC_Highstock.csproj" /t:Rebuild /p:Configuration=Release
+"c:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild" "c:\Users\PC\Documents\highcharts.net\MVC_Highcharts\MVC_Highcharts.csproj" /t:Rebuild /p:Configuration=Release
+"c:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild" "c:\Users\PC\Documents\highcharts.net\MVC_Demo\MVC_Demo.csproj" /t:Rebuild /p:Configuration=Release

@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,6 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     internal static class CompiledOn
     {
-        internal static DateTime CompilationDate = new DateTime(2099, 1, 1);
-        //internal static DateTime CompilationDate = new DateTime(2016, 5, 24);
+        internal static DateTime CompilationDate = new DateTime(2016, 5, 31);
     }
 }
-

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="ZippedDemoTrials" default="run" xmlns="http://nant.sf.net/release/0.85/nant.xsd" basedir="c:\Users\PC\Documents\highcharts.net">
+
+<property name="version" value="4_1_7_0"/>
+<property name="highcharts_name" value="Highcharts_ASPNET_MVC_${version}.zip"/>
+<property name="highsoft_name" value="Highsoft_ASPNET_MVC_${version}.zip"/>
+
+<target name="TodaysCompiledOn_Highcharts">
+<mkdir dir="${base.dir}\Build\Danielos"/>
+
+</target>
+
+<target name="run">
+<call target="TodaysCompiledOn_Highcharts"/>
+</target>
+
+</project>
