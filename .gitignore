@@ -3,3 +3,6 @@ packages/AWSSDK.2.3.55.0/tools/net35/install.ps1
 packages/AWSSDK.2.3.55.0/tools/account-management.ps1
 packages/AWSSDK.2.3.55.0/AWSSDK.2.3.55.nupkg
 packages/AWSSDK.2.3.55.0/AWSSDK.2.3.55.0.nupkg
+MVC_Demo/obj/
+MVC_Highcharts/obj/
+MVC_Highmaps/obj/

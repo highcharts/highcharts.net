@@ -1,6 +1,6 @@
 ﻿@using Highsoft.Web.Mvc.Charts
 
-    @(Html.Highsoft().Highcharts(
+@(Html.Highsoft().Highcharts(
         new Highcharts
         {
             Chart = new Chart
@@ -30,24 +30,24 @@
                 }
             },
             Series = new List<Series>
-            {                    
+            {
                 new BubbleSeries
-                {                    
+                {
                     Data = @ViewData["bubble1"] as List<BubbleSeriesData>,
                     Marker = new BubbleSeriesMarker
-                    {
-                        FillColor = new 
-                    }
-                },
+                    { 
+                        LineColor = "#ff9933"
+            }
+        },
                 new BubbleSeries
-                {                    
+                {
                     Data = @ViewData["bubble2"] as List<BubbleSeriesData>
-                },
+    },
                 new BubbleSeries
-                {                    
+                {
                     Data = @ViewData["bubble3"] as List<BubbleSeriesData>
-                }                
+                }
             }
         }
         , "chart")
-    )
+)
