@@ -12,6 +12,6 @@ C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Release\System.Web.WebPag
 C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Release\System.Web.WebPages.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Release\Microsoft.Web.Infrastructure.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Highstock\bin\Release\System.Web.WebPages.Deployment.xml
-C:\Users\PC\Documents\highcharts.net\MVC_Highstock\obj\Release\MVC_Highstock.csprojResolveAssemblyReference.cache
 C:\Users\PC\Documents\highcharts.net\MVC_Highstock\obj\Release\Highstock.Web.Mvc.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Highstock\obj\Release\Highstock.Web.Mvc.pdb
+C:\Users\PC\Documents\highcharts.net\MVC_Highstock\obj\Release\MVC_Highstock.csprojResolveAssemblyReference.cache

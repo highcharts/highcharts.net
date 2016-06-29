@@ -15,9 +15,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {   
             List<LineSeriesData> appleData = new List<LineSeriesData>();
 
-            using (var db = new ChartDataEntities())
-            {
-                foreach (AppleData data in db.AppleDatas)
+                foreach (CompanyData data in DataReceiver.GetJSON("Microsoft"))
                 {
                     appleData.Add(new LineSeriesData
                     {
@@ -25,7 +23,6 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                         Y = Convert.ToDouble(data.Value)
                     });
                 }
-            }
 
             ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
 

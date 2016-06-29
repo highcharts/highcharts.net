@@ -17,21 +17,19 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             double? minRate = 0;
             double? maxRate = 1;
 
-            using (var db = new ChartDataEntities())
+            List<FlagData> flags = DataReceiver.GetJSONFlags();
+            foreach (FlagData flag in flags)
             {
-                foreach (Flag flag in db.Flags)
+                currencyData.Add(new LineSeriesData
                 {
-                    currencyData.Add(new LineSeriesData
-                    {
-                        Y = Convert.ToDouble(flag.Value),
-                        X = Convert.ToDouble(flag.Date)
-                    }
-                    );
+                    Y = Convert.ToDouble(flag.Value),
+                    X = Convert.ToDouble(flag.Date)
                 }
-
-                minRate = db.Flags.Min(f => f.Value);
-                maxRate = db.Flags.Max(f => f.Value);
+                );
             }
+
+            minRate = flags.Min(f => f.Value);
+            maxRate = flags.Max(f => f.Value);
 
             ViewBag.Min = minRate;
             ViewBag.Max = maxRate;

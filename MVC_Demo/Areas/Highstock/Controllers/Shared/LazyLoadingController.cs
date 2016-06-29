@@ -13,7 +13,6 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
     {
         public ActionResult LazyLoading()
         {            
-           
             return View();
         }
     }

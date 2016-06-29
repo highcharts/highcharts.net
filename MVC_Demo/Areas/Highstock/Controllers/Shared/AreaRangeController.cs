@@ -12,26 +12,23 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
     public partial class SharedController : Controller
     {
         public ActionResult Arearange()
-        {   
+        {
             List<ArearangeSeriesData> appleData = new List<ArearangeSeriesData>();
 
-            using (var db = new ChartDataEntities())
+            foreach (CompanyData data in DataReceiver.GetJSON("Apple"))
             {
-                foreach (AppleData data in db.AppleDatas)
+                appleData.Add(new ArearangeSeriesData
                 {
-                    appleData.Add(new ArearangeSeriesData
-                    {
-                        X = Convert.ToDouble(data.Date),
-                        High = Convert.ToDouble(data.Value),
-                        Low = Convert.ToDouble(data.Value - new Random().Next(15))
-                    });
-                }
+                    X = Convert.ToDouble(data.Date),
+                    High = Convert.ToDouble(data.Value),
+                    Low = Convert.ToDouble(data.Value - new Random().Next(15))
+                });
             }
 
             ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
 
             return View(ViewBag);
-        }       
+        }
 
     }
 }

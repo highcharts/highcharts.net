@@ -15,9 +15,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             List<AreaSeriesData> intradayData = new List<AreaSeriesData>();
 
-            using (var db = new ChartDataEntities())
-            {
-                foreach (Intraday data in db.Intradays)
+                foreach (Intraday data in GetList_Intradays())
                 {
                         intradayData.Add(new AreaSeriesData
                             {                                
@@ -26,12 +24,11 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                             }
                         );
                 }
-            }
 
             ViewBag.IntradayData = intradayData.OrderBy(o => o.X).ToList();
 
             return View(ViewBag);
-        }      
-
+        }
+        
     }
 }

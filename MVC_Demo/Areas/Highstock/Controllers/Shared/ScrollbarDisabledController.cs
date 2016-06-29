@@ -12,25 +12,23 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
     public partial class SharedController : Controller
     {
         public ActionResult ScrollbarDisabled()
-        {   
+        {
             List<LineSeriesData> appleData = new List<LineSeriesData>();
 
-            using (var db = new ChartDataEntities())
+            foreach (CompanyData data in DataReceiver.GetJSON("Microsoft"))
             {
-                foreach (AppleData data in db.AppleDatas)
+                appleData.Add(new LineSeriesData
                 {
-                    appleData.Add(new LineSeriesData
-                    {
-                        X = Convert.ToDouble(data.Date),
-                        Y = Convert.ToDouble(data.Value)
-                    });
-                }
+                    X = Convert.ToDouble(data.Date),
+                    Y = Convert.ToDouble(data.Value)
+                });
             }
+
 
             ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
 
             return View(ViewBag);
-        }       
+        }
 
     }
 }

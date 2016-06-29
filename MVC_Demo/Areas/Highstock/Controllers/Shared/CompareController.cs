@@ -17,18 +17,16 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             List<LineSeriesData> msftData = new List<LineSeriesData>();
             List<LineSeriesData> googData = new List<LineSeriesData>();
 
-            using (var db = new ChartDataEntities())
+            foreach (CompanyData data in DataReceiver.GetJSON("Apple"))
             {
-                foreach (AppleData data in db.AppleDatas)
+                appleData.Add(new LineSeriesData
                 {
-                    appleData.Add(new LineSeriesData
-                    {
-                        X = Convert.ToDouble(data.Date),
-                        Y = Convert.ToDouble(data.Value)
-                    });                   
-                }
+                    X = Convert.ToDouble(data.Date),
+                    Y = Convert.ToDouble(data.Value)
+                });
+            }
 
-                foreach (MicrosoftData data in db.MicrosoftDatas)
+            foreach (CompanyData data in DataReceiver.GetJSON("Microsoft"))
                 {
                     msftData.Add(new LineSeriesData
                     {
@@ -37,7 +35,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     });
                 }
 
-                foreach (GoogleData data in db.GoogleDatas)
+                foreach (CompanyData data in DataReceiver.GetJSON("Google"))
                 {
                     googData.Add(new LineSeriesData
                     {
@@ -45,13 +43,64 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                         Y = Convert.ToDouble(data.Value)
                     });
                 }
-            }
 
             ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
             ViewBag.MsftData = msftData.OrderBy(o => o.X).ToList();
             ViewBag.GoogData = googData.OrderBy(o => o.X).ToList();
 
             return View(ViewBag);
+        }
+
+        private List<CompanyData> GetList(string company)
+        {
+            string url="";
+            
+            switch(company)
+            {
+                case "Apple":
+                    url = "https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=";
+                    break;
+                case "Microsoft":
+                    url = "https://www.highcharts.com/samples/data/jsonp.php?filename=msft-c.json&callback=";
+                    break;
+                case "Google":
+                    url = "https://www.highcharts.com/samples/data/jsonp.php?filename=goog-c.json&callback=";
+                    break;
+            }
+            
+            string json;
+
+            using (WebClient wc = new WebClient())
+            {
+                json = wc.DownloadString(url);
+            }
+
+            json = json.Substring(json.IndexOf('[') + 1);
+            json = json.Substring(json.IndexOf('[') + 1);
+
+            List<CompanyData> AppleDatas = new List<CompanyData>();
+
+
+                while (true)
+                {
+                    if (json.IndexOf('[') == -1)
+                        break;
+
+                    string entity = json.Substring(0, json.IndexOf(']'));
+                    string[] values = entity.Split(',');
+
+                    AppleDatas.Add(
+                        new CompanyData
+                        {
+                            Date = Convert.ToDouble(values[0]),
+                            Value = Convert.ToDouble(values[1])
+                        }
+                    );
+
+                    json = json.Substring(json.IndexOf('[') + 1);
+                }
+
+            return AppleDatas;
         }
 
         private void CompareJsonDataToDatabase_Apple()

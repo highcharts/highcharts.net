@@ -17,9 +17,9 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             double? minRate = 0;
             double? maxRate = 1;
 
-            using (var db = new ChartDataEntities())
-            {
-                foreach (Flag flag in db.Flags)
+            List<FlagData> flags = DataReceiver.GetJSONFlags();
+            
+                foreach (FlagData flag in flags)
                 {
                     currencyData.Add(new LineSeriesData
                     {
@@ -29,9 +29,9 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     );
                 }
 
-                minRate = db.Flags.Min(f => f.Value);
-                maxRate = db.Flags.Max(f => f.Value);
-            }
+                minRate = flags.Min(f => f.Value);
+                maxRate = flags.Max(f => f.Value);
+            
 
             ViewBag.Min = minRate;
             ViewBag.Max = maxRate;

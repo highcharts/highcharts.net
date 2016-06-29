@@ -15,17 +15,14 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             List<LineSeriesData> currencyData = new List<LineSeriesData>();
 
-            using (var db = new ChartDataEntities())
+            foreach (Flag flag in GetList_FlagsGeneral())
             {
-                foreach (Flag flag in db.Flags)
+                currencyData.Add(new LineSeriesData
                 {
-                    currencyData.Add(new LineSeriesData
-                    {
-                        Y = Convert.ToDouble(flag.Value),
-                        X = Convert.ToDouble(flag.Date)
-                    }
-                    );
+                    Y = Convert.ToDouble(flag.Value),
+                    X = Convert.ToDouble(flag.Date)
                 }
+                );
             }
 
             ViewBag.CurrencyData = currencyData.OrderBy(o => o.X).ToList();
@@ -33,40 +30,94 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             List<FlagsSeriesData> flagsData = new List<FlagsSeriesData>();
 
             flagsData.Add(new FlagsSeriesData
-                            {
-                                X = DateToUTC(new DateTime(2015, 5, 8)),
-                                Title = "c",
-                                Text = "Stocks fall on Greece, rate concerns; US dollar dips"
-                            }
+            {
+                X = DateToUTC(new DateTime(2015, 5, 8)),
+                Title = "c",
+                Text = "Stocks fall on Greece, rate concerns; US dollar dips"
+            }
             );
 
             flagsData.Add(new FlagsSeriesData
-                {
-                    X = DateToUTC(new DateTime(2015, 5, 12)),
-                    Title = "d",
-                    Text = "Zimbabwe ditches 'worthless' currency for the US dollar "
-                }
+            {
+                X = DateToUTC(new DateTime(2015, 5, 12)),
+                Title = "d",
+                Text = "Zimbabwe ditches 'worthless' currency for the US dollar "
+            }
             );
 
             flagsData.Add(new FlagsSeriesData
-                {
-                    X = DateToUTC(new DateTime(2015, 5, 19)),
-                    Title = "e",
-                    Text = "US Dollar Declines Over the Week on Rate Timeline"
-                }
+            {
+                X = DateToUTC(new DateTime(2015, 5, 19)),
+                Title = "e",
+                Text = "US Dollar Declines Over the Week on Rate Timeline"
+            }
            );
 
-           flagsData.Add(new FlagsSeriesData
+            flagsData.Add(new FlagsSeriesData
             {
                 X = DateToUTC(new DateTime(2015, 5, 26)),
                 Title = "e",
                 Text = "US Dollar Declines Over the Week on Rate Timeline"
             }
-          );
+           );
 
             ViewBag.FlagsData = flagsData;
 
             return View(ViewBag);
+        }
+
+        private List<Flag> GetList_FlagsGeneral()
+        {
+            string json;
+
+            using (WebClient wc = new WebClient())
+            {
+                json = wc.DownloadString("http://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?");
+            }
+
+            json = json.Substring(json.IndexOf('[') + 1);
+            json = json.Substring(json.IndexOf('[') + 1);
+
+
+            List<Flag> flags = new List<Flag>();
+            //using (var db = new ChartDataEntities())
+            //{
+            while (true)
+            {
+                if (json.IndexOf('[') == -1)
+                    break;
+
+                string entity = json.Substring(0, json.IndexOf(']'));
+                string[] values = entity.Split(',');
+
+                string year = values[0].Substring(values[0].IndexOf("(") + 1, 4);
+                string month = values[1];
+                string day = values[2].Substring(0, values[2].IndexOf(")"));
+                string value = values[3];
+
+                try
+                {
+
+                    DateTime date = new DateTime(Convert.ToInt16(year), Convert.ToInt16(month), Convert.ToInt16(day));
+
+                    flags.Add(
+                            new Flag
+                            {
+                                Date = DateToUTC(date),
+                                Value = Convert.ToDouble(value)
+                            }
+                        );
+                }
+                catch (Exception)
+                {
+                }
+
+                json = json.Substring(json.IndexOf('[') + 1);
+            }
+
+            //                db.SaveChanges();
+            //            }
+            return flags;
         }
 
         private void FlagsGeneral_JsonDataToDatabase()
@@ -91,7 +142,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     string entity = json.Substring(0, json.IndexOf(']'));
                     string[] values = entity.Split(',');
 
-                    string year = values[0].Substring( values[0].IndexOf("(") + 1 , 4);
+                    string year = values[0].Substring(values[0].IndexOf("(") + 1, 4);
                     string month = values[1];
                     string day = values[2].Substring(0, values[2].IndexOf(")"));
                     string value = values[3];

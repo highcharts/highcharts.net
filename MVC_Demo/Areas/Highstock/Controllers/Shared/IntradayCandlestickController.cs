@@ -15,26 +15,21 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             List<CandleStickSeriesData> intradayData = new List<CandleStickSeriesData>();
 
-            using (var db = new ChartDataEntities())
+            foreach (Intraday data in GetList_Intradays())
             {
-                foreach (Intraday data in db.Intradays)
+                intradayData.Add(new CandleStickSeriesData
                 {
-                    intradayData.Add(new CandleStickSeriesData
-                            {
-                                Open = Convert.ToDouble(data.Open),
-                                Close = Convert.ToDouble(data.Close),
-                                High = Convert.ToDouble(data.High),
-                                Low = Convert.ToDouble(data.Low),
-                                X = Convert.ToDouble(data.Date)
-                            }
-                        );
-                }
+                    Open = Convert.ToDouble(data.Open),
+                    Close = Convert.ToDouble(data.Close),
+                    High = Convert.ToDouble(data.High),
+                    Low = Convert.ToDouble(data.Low),
+                    X = Convert.ToDouble(data.Date)
+                });
             }
 
             ViewBag.IntradayData = intradayData.OrderBy(o => o.X).ToList();
-
             return View(ViewBag);
-        }      
+        }
 
     }
 }

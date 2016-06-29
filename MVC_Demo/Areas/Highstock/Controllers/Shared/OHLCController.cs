@@ -15,9 +15,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {   
             List<OhlcSeriesData> appleData = new List<OhlcSeriesData>();
 
-            using (var db = new ChartDataEntities())
-            {
-                foreach (CandlestickVolume data in db.CandlestickVolumes)
+                foreach (CandlestickVolume data in DataReceiver.GetJSONCandlestickVolumes())
                 {
                     appleData.Add(new OhlcSeriesData
                     {
@@ -28,7 +26,6 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                         Close = Convert.ToDouble(data.Close)   
                     });
                 }
-            }
 
             ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
 

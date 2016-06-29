@@ -17,8 +17,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
     <FileUpgradeFlags>
@@ -46,6 +46,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
@@ -53,9 +61,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Data.Entity">
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Drawing">
@@ -107,9 +112,6 @@
     </Reference>
     <Reference Include="System.EnterpriseServices">
       <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -315,12 +317,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ChartData.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CompanyData.cs" />
     <Compile Include="Models\DataGrouping.cs">
       <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataSource\DataReceiver.cs" />
     <Compile Include="Models\Flag.cs">
       <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FlagData.cs" />
     <Compile Include="Models\GoogleData.cs">
       <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
@@ -330,6 +335,7 @@
     <Compile Include="Models\MicrosoftData.cs">
       <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RangeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

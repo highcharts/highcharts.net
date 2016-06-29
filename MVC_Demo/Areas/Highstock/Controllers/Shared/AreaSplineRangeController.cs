@@ -15,9 +15,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             List<AreasplinerangeSeriesData> appleData = new List<AreasplinerangeSeriesData>();
 
-            using (var db = new ChartDataEntities())
-            {
-                foreach (AppleData data in db.AppleDatas)
+            foreach (CompanyData data in DataReceiver.GetJSON("Apple"))
                 {
                     appleData.Add(new AreasplinerangeSeriesData
                     {                        
@@ -26,8 +24,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                         Low = Convert.ToDouble(data.Value - new Random().Next(15))
                     });
                 }
-            }
-
+            
             ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
 
             return View(ViewBag);

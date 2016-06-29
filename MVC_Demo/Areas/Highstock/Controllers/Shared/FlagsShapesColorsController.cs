@@ -17,10 +17,9 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             double? lastDate;
             int days = 86400000; // milliseconds in a day
 
-            using (var db = new ChartDataEntities())
+            List<FlagData> flags = DataReceiver.GetJSONFlags();
+            foreach (FlagData flag in flags)
             {
-                foreach (Flag flag in db.Flags)
-                {
                     currencyData.Add(new LineSeriesData
                     {
                         Y = Convert.ToDouble(flag.Value),
@@ -29,8 +28,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     );
                 }
 
-                lastDate = db.Flags.ToList().Last().Date;
-            }
+                lastDate = flags.ToList().Last().Date;
 
             ViewBag.CurrencyData = currencyData.OrderBy(o => o.X).ToList();
 
