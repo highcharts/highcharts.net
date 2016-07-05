@@ -20,7 +20,7 @@
 <target name="create.folders">
 	<mkdir dir="${base.dir}\Build\DemoDownloads"/>
 	<mkdir dir="${base.dir}\Build\DemoDownloads\highcharts"/>
-	<mkdir dir="${base.dir}\Build\DemoDownloads\highstock}"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\highstock"/>
 </target>
 
 
@@ -39,12 +39,12 @@
 <target name="make.source.unlimited">
 	<exec program="${UtilDateReplacer}">
       		<arg value="${Highcharts.Folder}\CompiledOn.cs" />
-		<arg value="Highcharts.Web.Mvc.Charts" />
+		<arg value="Highsoft.Web.Mvc.Charts" />
 		<arg value="1"/>
 	</exec>
 	<exec program="${UtilDateReplacer}">
-      		<arg value="${Highsoft.Folder}\CompiledOn.cs" />
-		<arg value="Highsoft.Web.Mvc.Charts" />
+      		<arg value="${Highstock.Folder}\CompiledOn.cs" />
+		<arg value="Highsoft.Web.Mvc.Stocks" />
 		<arg value="1"/>
 	</exec>
 </target>
@@ -74,7 +74,6 @@
         <excludes name="Help/**" />
         <excludes name="downloads/**" />
         <excludes name="obj/**" />
-	<excludes name="bin/**"/>
 	<excludes name="Files/bin/**"/>
         <excludes name="Areas/Highstock/**" />
 	<excludes name="Areas/Highmaps/**" />
@@ -101,7 +100,6 @@
         <excludes name="Help/**" />
 	<excludes name="downloads/**" />
         <excludes name="obj/**" />
-	<excludes name="bin/**"/>
 	<excludes name="Files/bin/**"/>
         <excludes name="Areas/Highcharts/**" />
 	<excludes name="Areas/Highmaps/**" />
@@ -121,20 +119,31 @@
     </copy>
   </target>
 
-<target name="zip.demos">
-	<zip zipfile="${base.dir}\Build\DemoDownloads\highcharts}">
-	      <fileset basedir="${base.dir}\Build\DemoDownloads\${highcharts.zip}">
+<target name="zip.demos.tmp">
+	<zip zipfile="${base.dir}\Build\DemoDownloads\${highcharts.zip}">
+	      <fileset basedir="${base.dir}\Build\DemoDownloads\highcharts">
         	<includes name="**/*.*"/>    
 	      </fileset>
     </zip>
-<zip zipfile="${base.dir}\Build\DemoDownloads\highstock">
-	      <fileset basedir="${base.dir}\Build\DemoDownloads\${highstock.zip}">
+<zip zipfile="${base.dir}\Build\DemoDownloads\${highstock.zip}">
+	      <fileset basedir="${base.dir}\Build\DemoDownloads\highstock">
         	<includes name="**/*.*"/>    
 	      </fileset>
     </zip>
 </target>
 
-
+<target name="zip.demos">
+	<zip zipfile="${Demo.Folder}\downloads\${highcharts.zip}">
+	      <fileset basedir="${base.dir}\Build\DemoDownloads\highcharts">
+        	<includes name="**/*.*"/>    
+	      </fileset>
+    </zip>
+<zip zipfile="${Demo.Folder}\downloads\${highstock.zip}">
+	      <fileset basedir="${base.dir}\Build\DemoDownloads\highstock">
+        	<includes name="**/*.*"/>    
+	      </fileset>
+    </zip>
+</target>
 
 <target name="run">
 	<call target="clean.folders"/>
