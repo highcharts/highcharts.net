@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_point_placement =
+[
+    [ "PlotOptionsWaterfallPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_point_placement.html#a69e4e500953272063b1f7124f851d2a5", null ]
+];

@@ -1087,6 +1087,8 @@
     <Folder Include="Areas\Highcharts\Models\" />
     <Folder Include="Areas\Highstock\Models\" />
     <Folder Include="Help\fti\" />
+    <Folder Include="Help\Highcharts\html\" />
+    <Folder Include="Help\Highstock\html\" />
     <Folder Include="Help\html\" />
     <Folder Include="Help\icons\" />
     <Folder Include="Help\scripts\" />
