@@ -990,6 +990,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\ComboTimeline.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeSolid.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeClock.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\Chart.cshtml" />
     <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <Content Include="Areas\Highstock\Views\Web.config" />
     <Content Include="Areas\Highstock\Views\Shared\Area.cshtml" />
