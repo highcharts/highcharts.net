@@ -248,13 +248,6 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineLabelsController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\SharedController.cs" />
     <Compile Include="Areas\Highcharts\HighchartsAreaRegistration.cs" />
-    <Compile Include="Areas\Highmaps\Controllers\Demo\DemoController.cs" />
-    <Compile Include="Areas\Highmaps\Controllers\Shared\GeoJSONController.cs" />
-    <Compile Include="Areas\Highmaps\Controllers\Shared\HeatMapController.cs" />
-    <Compile Include="Areas\Highmaps\Controllers\Shared\MapBubbleController.cs" />
-    <Compile Include="Areas\Highmaps\Controllers\Shared\DistributionMapController.cs" />
-    <Compile Include="Areas\Highmaps\Controllers\Shared\MapLineController.cs" />
-    <Compile Include="Areas\Highmaps\HighmapsAreaRegistration.cs" />
     <Compile Include="Areas\Highstock\Controllers\Demo\DemoController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\AreaController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\AreaRangeController.cs" />
@@ -6699,14 +6692,6 @@
     <Content Include="Models\ChartData.edmx.diagram">
       <DependentUpon>ChartData.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Highmaps\Views\Web.config" />
-    <Content Include="Areas\Highmaps\Views\Demo\Gallery.cshtml" />
-    <Content Include="Areas\Highmaps\Views\Demo\Index.cshtml" />
-    <Content Include="Areas\Highmaps\Views\Shared\HeatMap.cshtml" />
-    <Content Include="Areas\Highmaps\Views\Shared\GeoJSON.cshtml" />
-    <Content Include="Areas\Highmaps\Views\Shared\MapLine.cshtml" />
-    <Content Include="Areas\Highmaps\Views\Shared\CategorizedAreas.cshtml" />
-    <Content Include="Areas\Highmaps\Views\Shared\DistributionMap.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Models\ChartData.Context.tt">
@@ -6769,10 +6754,6 @@
     <ProjectReference Include="..\MVC_Highcharts\MVC_Highcharts.csproj">
       <Project>{fa4c2a73-1563-47da-8f1b-64ef17d48918}</Project>
       <Name>MVC_Highcharts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MVC_Highmaps\MVC_Highmaps.csproj">
-      <Project>{687b771f-4a14-493b-b78c-7d6aa617af9d}</Project>
-      <Name>MVC_Highmaps</Name>
     </ProjectReference>
     <ProjectReference Include="..\MVC_Highstock\MVC_Highstock.csproj">
       <Project>{d05d7902-fdbe-422d-9f47-c84a74a25258}</Project>
