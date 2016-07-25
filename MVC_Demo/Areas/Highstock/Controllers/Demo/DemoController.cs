@@ -80,6 +80,17 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Demo
             return View();
         }
 
+
+        public ActionResult Chart(string demo, string theme)
+        {
+            ViewBag.Demo = demo;
+            ViewBag.Theme = theme;
+
+            SetViewBag(demo, theme);
+
+            return View();
+        }
+
         public ActionResult DarkUnica()
         {
             return RedirectToAction("Index", new { id = "dark-unica" });
