@@ -8,3 +8,5 @@ MVC_Highcharts/obj/
 MVC_Highmaps/obj/
 /Build/DemoDownloads
 MVC_Highstock/obj/
+MVC_UnitTests/bin/
+MVC_UnitTests/obj/Release/MVC_UnitTests.csproj.FileListAbsolute.txt

@@ -24,8 +24,6 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             ViewData["johnData"] = johnData;
             ViewData["janeData"] = janeData;
 
-            
-
             return View();
         }      
     }
