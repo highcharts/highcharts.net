@@ -91,6 +91,22 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
             return View();
         }
 
+        public ActionResult ViewCode(string demo)
+        {
+            string text = System.IO.File.ReadAllText(Server.MapPath("~/Areas/Highcharts/Views/Shared/" + demo + ".cshtml"));
+            ViewBag.ViewCode = text;
+
+            return View();
+        }
+
+        public ActionResult ControllerCode(string demo)
+        {
+            string text = System.IO.File.ReadAllText(Server.MapPath("~/Content/Areas/Highcharts/Controllers/Shared/" + demo + "Controller.cs.txt"));
+            ViewBag.ControllerCode = text;
+
+            return View();
+        }
+
         public ActionResult DarkUnica()
         {
             return RedirectToAction("Index", new { id = "dark-unica" });
