@@ -1,0 +1,89 @@
+
+<svg version="1.1" style="font-family:&quot;lucida grande&quot;, &quot;lucida sans unicode&quot;, arial, helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 584 400">
+	<desc>Created with Highcharts 4.2.4
+	</desc>
+	<defs>
+		<clipPath id="highcharts-1">
+			<rect x="0" y="0" width="564" height="375">
+			</rect>
+		</clipPath>
+	</defs>
+	<rect x="0" y="0" width="584" height="400" fill="#FFFFFF" class=" highcharts-background" stroke="transparent">
+	</rect>
+	<g class="highcharts-series-group">
+		<g class="highcharts-series highcharts-series-0 highcharts-tracker" transform="translate(10,10) scale(1 1)" style="">
+			<path fill="#7cb5ec" d="M 104.5 271.0 A 177.5 177.5 0 0 1 114.4 212.3 L 198.2 241.6 A 88.7 88.7 0 0 0 193.2 271.0 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="#434348" d="M 114.5 212.2 A 177.5 177.5 0 0 1 381.7 124.1 L 331.8 197.5 A 88.7 88.7 0 0 0 198.2 241.6 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="#90ed7d" d="M 381.9 124.2 A 177.5 177.5 0 0 1 456.2 237.1 L 369.1 254.0 A 88.7 88.7 0 0 0 331.9 197.6 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="#f7a35c" d="M 456.2 237.3 A 177.5 177.5 0 0 1 459.3 264.4 L 370.6 267.7 A 88.7 88.7 0 0 0 369.1 254.1 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="#8085e9" d="M 459.3 264.6 A 177.5 177.5 0 0 1 459.4 269.5 L 370.7 270.2 A 88.7 88.7 0 0 0 370.6 267.8 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="#f15c80" d="M 459.4 269.7 A 177.5 177.5 0 0 1 459.4 270.8 L 370.7 270.9 A 88.7 88.7 0 0 0 370.7 270.3 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+		</g>
+		<g class="highcharts-markers highcharts-series-0" transform="translate(10,10) scale(1 1)">
+		</g>
+	</g>
+	<text x="292" text-anchor="middle" class="highcharts-title" style="color:#333333;font-size:18px;fill:#333333;width:520px;" y="238">
+		<tspan>Browser
+		</tspan>
+		<tspan x="292" dy="21">shares
+		</tspan>
+		<tspan x="292" dy="21">2015
+		</tspan>
+	</text>
+	<g class="highcharts-data-labels highcharts-series-0 highcharts-tracker" visibility="visible" transform="translate(10,10) scale(1 1)" style="">
+		<g style="" transform="translate(132,240)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:white;text-shadow:0px 1px 2px black;fill:white;text-rendering:geometricprecision;" y="16">
+				<tspan>Firefox
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(232,140)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:white;text-shadow:0px 1px 2px black;fill:white;text-rendering:geometricprecision;" y="16">
+				<tspan>IE
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(361,191)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:white;text-shadow:0px 1px 2px black;fill:white;text-rendering:geometricprecision;" y="16">
+				<tspan>Chrome
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(388,247)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:white;text-shadow:0px 1px 2px black;fill:white;text-rendering:geometricprecision;" y="16">
+				<tspan>Safari
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(387,259)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:white;text-shadow:0px 1px 2px black;fill:white;text-rendering:geometricprecision;" y="16">
+				<tspan>Opera
+				</tspan>
+			</text>
+		</g>
+	</g>
+	<g class="highcharts-legend">
+		<g>
+			<g>
+			</g>
+		</g>
+	</g>
+	<g class="highcharts-tooltip" style="cursor:default;padding:0;pointer-events:none;white-space:nowrap;" transform="translate(0,-9999)">
+		<path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"  stroke="black" stroke-opacity="0.0" stroke-width="5" transform="translate(1, 1)">
+		</path>
+		<path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"  stroke="black" stroke-opacity="0.0" stroke-width="3" transform="translate(1, 1)">
+		</path>
+		<path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"  stroke="black" stroke-opacity="0.1" stroke-width="1" transform="translate(1, 1)">
+		</path>
+		<path fill="rgb(249, 249, 249)" fill-opacity=" .85" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5">
+		</path>
+		<text x="8" style="font-size:12px;color:#333333;fill:#333333;" y="20">
+		</text>
+	</g>
+</svg>
