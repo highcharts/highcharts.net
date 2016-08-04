@@ -22,103 +22,6 @@
     <script src="@Url.Content("~/Scripts/modernizr.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/script.js")" type="text/javascript"></script>
 
-    <script type="text/javascript">
-
-
-
-        var example = 'line-basic',
-        theme = 'default';
-
-        jQuery(document).ready(function () {
-
-            fixNavigation();
-
-            jQuery("#view-menu").click(function (e) {
-                jQuery("#wrap").toggleClass("toggled");
-            });
-            jQuery("#sidebar-close").click(function (e) {
-                jQuery("#wrap").removeClass("toggled");
-            });
-            // key listeners for the previous and next arrows
-            jQuery(document).keydown(function (e) {
-                var anchor;
-                if (e.target.tagName != 'INPUT') {
-                    if (e.keyCode == 39) {
-                        anchor = document.getElementById('next-example');
-
-                    } else
-                        if (e.keyCode == 37) {
-                            anchor = document.getElementById('previous-example');
-                        }
-
-                    if (anchor) {
-                        location.href = anchor.href;
-                    }
-                }
-            });
-            // Bind event to style change switcher
-            jQuery('#switcher-selector').bind('change', function () {
-                var url = jQuery(this).val(); // get selected value
-                if (url) { // require a URL
-                    window.location = url; // redirect
-                }
-                return false;
-            });
-        });
-
-        function fixNavigation() {
-            var example = window.location.href.split("=")[1].split("&")[0];
-            var currentLink = exampleToHyphens(example);
-            var sideBar = $(".nav-sidebar");
-            var sideBarLinks = sideBar.find("li a");
-
-            sideBar.find("ul").css("display", "none");
-
-            $(".nav-sidebar li a").each(function (index, link) {
-                var href = $(link).attr("aria-label");
-                var hrefSplitArray = href.split("/");
-                var hrefTag = hrefSplitArray[hrefSplitArray.length - 1];
-
-                if (currentLink == hrefTag) {
-                    $(link).parent().addClass("active");
-                    $(link).parent().parent().css("display", "block");
-                    $(link).parent().parent().parent().addClass("active");
-
-                    $(".demo-name").html("<a href='#'>Highcharts Demos</a> &rsaquo; " + $(link).text());
-
-                    if (index < $(".nav-sidebar li a").length - 1) {
-                        var nextHref = $(sideBarLinks.get(index + 1)).attr("href");
-                        $(".chart-container").find("#next-example").attr("href", nextHref);
-                    }
-
-                    if (index > 0) {
-                        var prevHref = $(sideBarLinks.get(index - 1)).attr("href");
-                        $(".chart-container").find("#previous-example").attr("href", prevHref);
-                    }
-                }
-            });
-
-        }
-
-        function exampleToHyphens(word) {
-            var result = "";
-            for (var i = 0; i < word.length; i++) {
-                if (isUpperCase(word[i]) && i > 0) {
-                    result += "-" + word[i].toLowerCase();
-                }
-                else {
-                    result += word[i].toLowerCase();
-                }
-            }
-
-            return result;
-        }
-
-        function isUpperCase(character) {
-            return (character == character.toUpperCase());
-        }
-    </script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
@@ -148,8 +51,8 @@
         })();
     </script>
 </head>
-<body>
-    <div id="container" style="min-width: 310px; height: 450px; margin: 0 auto; background-color: #ffffff">
+<body style="background-color: #ffffff">
+    <div>
         @Html.Action((string)ViewBag.Demo, "Shared")
     </div>
 </body>
