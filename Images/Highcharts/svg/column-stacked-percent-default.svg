@@ -1,0 +1,157 @@
+
+<svg version="1.1" style="font-family:&quot;lucida grande&quot;, &quot;lucida sans unicode&quot;, arial, helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 584 400">
+	<desc>Created with Highcharts 4.2.4
+	</desc>
+	<defs>
+		<clipPath id="highcharts-1">
+			<rect x="0" y="0" width="504" height="281">
+			</rect>
+		</clipPath>
+	</defs>
+	<rect x="0" y="0" width="584" height="400" fill="#FFFFFF" class=" highcharts-background" stroke="transparent">
+	</rect>
+	<g class="highcharts-grid">
+	</g>
+	<g class="highcharts-grid">
+		<path fill="none" d="M 70 327.5 L 574 327.5" stroke="#D8D8D8" stroke-width="1" opacity="1">
+		</path>
+		<path fill="none" d="M 70 257.5 L 574 257.5" stroke="#D8D8D8" stroke-width="1" opacity="1">
+		</path>
+		<path fill="none" d="M 70 187.5 L 574 187.5" stroke="#D8D8D8" stroke-width="1" opacity="1">
+		</path>
+		<path fill="none" d="M 70 116.5 L 574 116.5" stroke="#D8D8D8" stroke-width="1" opacity="1">
+		</path>
+		<path fill="none" d="M 70 45.5 L 574 45.5" stroke="#D8D8D8" stroke-width="1" opacity="1">
+		</path>
+	</g>
+	<g class="highcharts-axis">
+		<path fill="none" d="M 170.5 327 L 170.5 337" stroke="#C0D0E0" stroke-width="1" opacity="1">
+		</path>
+		<path fill="none" d="M 271.5 327 L 271.5 337" stroke="#C0D0E0" stroke-width="1" opacity="1">
+		</path>
+		<path fill="none" d="M 371.5 327 L 371.5 337" stroke="#C0D0E0" stroke-width="1" opacity="1">
+		</path>
+		<path fill="none" d="M 472.5 327 L 472.5 337" stroke="#C0D0E0" stroke-width="1" opacity="1">
+		</path>
+		<path fill="none" d="M 574.5 327 L 574.5 337" stroke="#C0D0E0" stroke-width="1" opacity="1">
+		</path>
+		<path fill="none" d="M 69.5 327 L 69.5 337" stroke="#C0D0E0" stroke-width="1" opacity="1">
+		</path>
+		<path fill="none" d="M 70 327.5 L 574 327.5" stroke="#C0D0E0" stroke-width="1">
+		</path>
+	</g>
+	<g class="highcharts-axis">
+		<text x="24.1" text-anchor="middle" transform="translate(0,0) rotate(270 24.1 186.5)" class=" highcharts-yaxis-title" style="color:#707070;fill:#707070;" y="186.5">
+			<tspan>Total fruit consumption
+			</tspan>
+		</text>
+	</g>
+	<g class="highcharts-series-group">
+		<g class="highcharts-series highcharts-series-0 highcharts-tracker" transform="translate(70,46) scale(1 1)" style="" clip-path="url(#highcharts-1)">
+			<rect x="25.5" y="-0.5" width="49" height="142" stroke="#FFFFFF" stroke-width="1" fill="#7cb5ec" rx="0" ry="0">
+			</rect>
+			<rect x="126.5" y="-0.5" width="49" height="95" stroke="#FFFFFF" stroke-width="1" fill="#7cb5ec" rx="0" ry="0">
+			</rect>
+			<rect x="227.5" y="-0.5" width="49" height="103" stroke="#FFFFFF" stroke-width="1" fill="#7cb5ec" rx="0" ry="0">
+			</rect>
+			<rect x="328.5" y="-0.5" width="49" height="180" stroke="#FFFFFF" stroke-width="1" fill="#7cb5ec" rx="0" ry="0">
+			</rect>
+			<rect x="428.5" y="-0.5" width="49" height="71" stroke="#FFFFFF" stroke-width="1" fill="#7cb5ec" rx="0" ry="0">
+			</rect>
+		</g>
+		<g class="highcharts-markers highcharts-series-0" transform="translate(70,46) scale(1 1)" clip-path="none">
+		</g>
+		<g class="highcharts-series highcharts-series-1 highcharts-tracker" transform="translate(70,46) scale(1 1)" style="" clip-path="url(#highcharts-1)">
+			<rect x="25.5" y="141.5" width="49" height="56" stroke="#FFFFFF" stroke-width="1" fill="#434348" rx="0" ry="0">
+			</rect>
+			<rect x="126.5" y="94.5" width="49" height="62" stroke="#FFFFFF" stroke-width="1" fill="#434348" rx="0" ry="0">
+			</rect>
+			<rect x="227.5" y="102.5" width="49" height="77" stroke="#FFFFFF" stroke-width="1" fill="#434348" rx="0" ry="0">
+			</rect>
+			<rect x="328.5" y="179.5" width="49" height="51" stroke="#FFFFFF" stroke-width="1" fill="#434348" rx="0" ry="0">
+			</rect>
+			<rect x="428.5" y="70.5" width="49" height="35" stroke="#FFFFFF" stroke-width="1" fill="#434348" rx="0" ry="0">
+			</rect>
+		</g>
+		<g class="highcharts-markers highcharts-series-1" transform="translate(70,46) scale(1 1)" clip-path="none">
+		</g>
+		<g class="highcharts-series highcharts-series-2 highcharts-tracker" transform="translate(70,46) scale(1 1)" style="" clip-path="url(#highcharts-1)">
+			<rect x="25.5" y="197.5" width="49" height="84" stroke="#FFFFFF" stroke-width="1" fill="#90ed7d" rx="0" ry="0">
+			</rect>
+			<rect x="126.5" y="156.5" width="49" height="125" stroke="#FFFFFF" stroke-width="1" fill="#90ed7d" rx="0" ry="0">
+			</rect>
+			<rect x="227.5" y="179.5" width="49" height="102" stroke="#FFFFFF" stroke-width="1" fill="#90ed7d" rx="0" ry="0">
+			</rect>
+			<rect x="328.5" y="230.5" width="49" height="51" stroke="#FFFFFF" stroke-width="1" fill="#90ed7d" rx="0" ry="0">
+			</rect>
+			<rect x="428.5" y="105.5" width="49" height="176" stroke="#FFFFFF" stroke-width="1" fill="#90ed7d" rx="0" ry="0">
+			</rect>
+		</g>
+		<g class="highcharts-markers highcharts-series-2" transform="translate(70,46) scale(1 1)" clip-path="none">
+		</g>
+	</g>
+	<text x="292" text-anchor="middle" class="highcharts-title" style="color:#333333;font-size:18px;fill:#333333;width:520px;" y="24">
+		<tspan>Stacked column chart
+		</tspan>
+	</text>
+	<g class="highcharts-legend" transform="translate(195,360)">
+		<g>
+			<g>
+				<g class="highcharts-legend-item" transform="translate(8,3)">
+					<text x="21" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start" y="15">John
+					</text>
+					<rect x="0" y="4" width="16" height="12" fill="#7cb5ec">
+					</rect>
+				</g>
+				<g class="highcharts-legend-item" transform="translate(77.4,3)">
+					<text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start">Jane
+					</text>
+					<rect x="0" y="4" width="16" height="12" fill="#434348">
+					</rect>
+				</g>
+				<g class="highcharts-legend-item" transform="translate(145.3,3)">
+					<text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start">Joe
+					</text>
+					<rect x="0" y="4" width="16" height="12" fill="#90ed7d">
+					</rect>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g class="highcharts-axis-labels highcharts-xaxis-labels">
+		<text x="120.4" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="346" opacity="1">Apples
+		</text>
+		<text x="221.2" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="346" opacity="1">Oranges
+		</text>
+		<text x="322" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="346" opacity="1">Pears
+		</text>
+		<text x="422.8" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="346" opacity="1">Grapes
+		</text>
+		<text x="523.6" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="346" opacity="1">Bananas
+		</text>
+	</g>
+	<g class="highcharts-axis-labels highcharts-yaxis-labels">
+		<text x="55" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:183px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="332" opacity="1">0
+		</text>
+		<text x="55" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:183px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="261" opacity="1">25
+		</text>
+		<text x="55" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:183px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="191" opacity="1">50
+		</text>
+		<text x="55" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:183px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="121" opacity="1">75
+		</text>
+		<text x="55" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:183px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="51" opacity="1">100
+		</text>
+	</g>
+	<g class="highcharts-tooltip" style="cursor:default;padding:0;pointer-events:none;white-space:nowrap;" transform="translate(0,-9999)">
+		<path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"  stroke="black" stroke-opacity="0.0" stroke-width="5" transform="translate(1, 1)">
+		</path>
+		<path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"  stroke="black" stroke-opacity="0.0" stroke-width="3" transform="translate(1, 1)">
+		</path>
+		<path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"  stroke="black" stroke-opacity="0.1" stroke-width="1" transform="translate(1, 1)">
+		</path>
+		<path fill="rgb(249, 249, 249)" fill-opacity=" .85" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5">
+		</path>
+		<text x="8" style="font-size:12px;color:#333333;fill:#333333;" y="20">
+		</text>
+	</g>
+</svg>

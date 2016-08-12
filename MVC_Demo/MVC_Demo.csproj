@@ -6695,6 +6695,8 @@
       <DependentUpon>ChartData.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Highstock\Views\Demo\Chart.cshtml" />
+    <Content Include="Areas\Highstock\Views\Demo\ViewCode.cshtml" />
+    <Content Include="Areas\Highstock\Views\Demo\ControllerCode.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Models\ChartData.Context.tt">

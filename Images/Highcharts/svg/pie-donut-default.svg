@@ -1,0 +1,343 @@
+
+<svg version="1.1" style="font-family:&quot;lucida grande&quot;, &quot;lucida sans unicode&quot;, arial, helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+	<desc>Created with Highcharts 4.2.4
+	</desc>
+	<defs>
+		<clipPath id="highcharts-1">
+			<rect x="0" y="0" width="580" height="324">
+			</rect>
+		</clipPath>
+	</defs>
+	<rect x="0" y="0" width="600" height="400" fill="#FFFFFF" class=" highcharts-background" stroke="transparent">
+	</rect>
+	<g class="highcharts-series-group">
+		<g class="highcharts-series highcharts-series-0 highcharts-tracker" transform="translate(10,61) scale(1 1)" style="">
+			<path fill="#7cb5ec" d="M 289.9 66.8 A 95.2 95.2 0 1 1 242.6 244.6 L 290 162 A 0 0 0 1 0 290 162 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="#434348" d="M 242.5 244.5 A 95.2 95.2 0 0 1 201.4 196.9 L 290 162 A 0 0 0 0 0 290 162 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="#90ed7d" d="M 201.4 196.8 A 95.2 95.2 0 0 1 254.3 73.7 L 290 162 A 0 0 0 0 0 290 162 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="#f7a35c" d="M 254.4 73.6 A 95.2 95.2 0 0 1 283.0 67.0 L 290 162 A 0 0 0 0 0 290 162 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="#8085e9" d="M 283.1 67.0 A 95.2 95.2 0 0 1 288.6 66.8 L 290 162 A 0 0 0 0 0 290 162 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="#f15c80" d="M 288.7 66.8 A 95.2 95.2 0 0 1 289.8 66.8 L 290 162 A 0 0 0 0 0 290 162 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+		</g>
+		<g class="highcharts-markers highcharts-series-0" transform="translate(10,61) scale(1 1)">
+		</g>
+		<g class="highcharts-series highcharts-series-1 highcharts-tracker" transform="translate(10,61) scale(1 1)" style="">
+			<path fill="rgb(175,232,255)" d="M 289.9 38.4 A 123.6 123.6 0 0 1 298.3 38.6 L 295.0 88.0 A 74.1 74.1 0 0 0 289.9 87.8 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(166,223,255)" d="M 298.4 38.6 A 123.6 123.6 0 0 1 302.4 39.0 L 297.4 88.2 A 74.1 74.1 0 0 0 295.0 88.0 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(158,215,255)" d="M 302.5 39.0 A 123.6 123.6 0 0 1 406.1 119.7 L 359.6 136.6 A 74.1 74.1 0 0 0 297.5 88.2 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(149,206,255)" d="M 406.1 119.8 A 123.6 123.6 0 0 1 411.6 184.0 L 362.9 175.2 A 74.1 74.1 0 0 0 359.7 136.7 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(141,198,253)" d="M 411.6 184.1 A 123.6 123.6 0 0 1 396.8 224.1 L 354.0 199.2 A 74.1 74.1 0 0 0 362.9 175.2 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(132,189,244)" d="M 396.7 224.2 A 123.6 123.6 0 0 1 227.7 268.7 L 252.6 226.0 A 74.1 74.1 0 0 0 354.0 199.3 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(118,118,123)" d="M 227.6 268.6 A 123.6 123.6 0 0 1 225.4 267.4 L 251.2 225.2 A 74.1 74.1 0 0 0 252.5 226.0 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(111,111,116)" d="M 225.3 267.3 A 123.6 123.6 0 0 1 224.4 266.7 L 250.6 224.8 A 74.1 74.1 0 0 0 251.2 225.2 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(105,105,110)" d="M 224.3 266.7 A 123.6 123.6 0 0 1 222.8 265.7 L 249.7 224.2 A 74.1 74.1 0 0 0 250.5 224.8 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(98,98,103)" d="M 222.7 265.7 A 123.6 123.6 0 0 1 214.5 259.9 L 244.7 220.7 A 74.1 74.1 0 0 0 249.6 224.2 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(92,92,97)" d="M 214.4 259.8 A 123.6 123.6 0 0 1 198.2 244.8 L 234.9 211.7 A 74.1 74.1 0 0 0 244.6 220.7 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(86,86,91)" d="M 198.1 244.7 A 123.6 123.6 0 0 1 186.8 230.1 L 228.1 202.8 A 74.1 74.1 0 0 0 234.9 211.6 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(79,79,84)" d="M 186.7 230.0 A 123.6 123.6 0 0 1 177.7 213.8 L 222.6 193.0 A 74.1 74.1 0 0 0 228.0 202.8 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(73,73,78)" d="M 177.7 213.7 A 123.6 123.6 0 0 1 174.6 206.3 L 220.7 188.5 A 74.1 74.1 0 0 0 222.6 193.0 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(195,255,176)" d="M 174.5 206.1 A 123.6 123.6 0 0 1 174.2 205.2 L 220.5 187.9 A 74.1 74.1 0 0 0 220.7 188.5 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(191,255,172)" d="M 174.1 205.1 A 123.6 123.6 0 0 1 171.0 195.7 L 218.6 182.2 A 74.1 74.1 0 0 0 220.5 187.8 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(187,255,168)" d="M 171.0 195.6 A 123.6 123.6 0 0 1 169.9 191.4 L 217.9 179.6 A 74.1 74.1 0 0 0 218.6 182.1 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(184,255,165)" d="M 169.9 191.3 A 123.6 123.6 0 0 1 169.6 190.0 L 217.7 178.8 A 74.1 74.1 0 0 0 217.9 179.5 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(180,255,161)" d="M 169.5 189.8 A 123.6 123.6 0 0 1 169.3 188.8 L 217.6 178.0 A 74.1 74.1 0 0 0 217.7 178.7 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(176,255,157)" d="M 169.3 188.6 A 123.6 123.6 0 0 1 168.0 182.1 L 216.8 174.0 A 74.1 74.1 0 0 0 217.5 178.0 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(173,255,154)" d="M 168.0 182.0 A 123.6 123.6 0 0 1 166.4 161.8 L 215.8 161.8 A 74.1 74.1 0 0 0 216.8 174.0 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(169,255,150)" d="M 166.4 161.7 A 123.6 123.6 0 0 1 166.4 158.7 L 215.8 160.0 A 74.1 74.1 0 0 0 215.8 161.8 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(165,255,146)" d="M 166.4 158.6 A 123.6 123.6 0 0 1 166.6 153.9 L 215.9 157.1 A 74.1 74.1 0 0 0 215.8 159.9 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(162,255,143)" d="M 166.6 153.7 A 123.6 123.6 0 0 1 170.5 130.4 L 218.3 143.0 A 74.1 74.1 0 0 0 216.0 157.0 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(158,251,139)" d="M 170.5 130.2 A 123.6 123.6 0 0 1 186.8 93.9 L 228.1 121.1 A 74.1 74.1 0 0 0 218.3 142.9 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(154,247,135)" d="M 186.9 93.8 A 123.6 123.6 0 0 1 209.8 67.8 L 241.9 105.5 A 74.1 74.1 0 0 0 228.1 121.0 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(151,244,132)" d="M 209.9 67.8 A 123.6 123.6 0 0 1 234.5 51.5 L 256.7 95.7 A 74.1 74.1 0 0 0 241.9 105.4 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(147,240,128)" d="M 234.6 51.4 A 123.6 123.6 0 0 1 245.1 46.8 L 263.0 92.8 A 74.1 74.1 0 0 0 256.7 95.6 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(255,214,143)" d="M 245.2 46.7 A 123.6 123.6 0 0 1 247.4 45.9 L 264.4 92.3 A 74.1 74.1 0 0 0 263.1 92.8 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(255,206,135)" d="M 247.5 45.9 A 123.6 123.6 0 0 1 250.6 44.8 L 266.3 91.7 A 74.1 74.1 0 0 0 264.5 92.3 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(255,199,128)" d="M 250.7 44.8 A 123.6 123.6 0 0 1 252.8 44.1 L 267.7 91.2 A 74.1 74.1 0 0 0 266.4 91.6 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(255,192,121)" d="M 252.9 44.0 A 123.6 123.6 0 0 1 254.1 43.7 L 268.4 91.0 A 74.1 74.1 0 0 0 267.7 91.2 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(255,184,113)" d="M 254.2 43.6 A 123.6 123.6 0 0 1 256.1 43.1 L 269.6 90.6 A 74.1 74.1 0 0 0 268.5 91.0 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(255,177,106)" d="M 256.2 43.0 A 123.6 123.6 0 0 1 262.1 41.5 L 273.2 89.7 A 74.1 74.1 0 0 0 269.7 90.6 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(254,170,99)" d="M 262.2 41.5 A 123.6 123.6 0 0 1 282.5 38.6 L 285.5 87.9 A 74.1 74.1 0 0 0 273.3 89.7 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(179,184,255)" d="M 282.6 38.6 A 123.6 123.6 0 0 1 285.2 38.4 L 287.1 87.8 A 74.1 74.1 0 0 0 285.5 87.9 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(166,171,255)" d="M 285.3 38.4 A 123.6 123.6 0 0 1 286.6 38.4 L 287.9 87.8 A 74.1 74.1 0 0 0 287.2 87.8 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(153,158,255)" d="M 286.7 38.4 A 123.6 123.6 0 0 1 288.5 38.4 L 289.1 87.8 A 74.1 74.1 0 0 0 288.0 87.8 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+			<path fill="rgb(140,145,245)" d="M 288.7 38.4 A 123.6 123.6 0 0 1 289.8 38.4 L 289.8 87.8 A 74.1 74.1 0 0 0 289.2 87.8 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)">
+			</path>
+		</g>
+		<g class="highcharts-markers highcharts-series-1" transform="translate(10,61) scale(1 1)">
+		</g>
+	</g>
+	<text x="300" text-anchor="middle" class="highcharts-title" style="color:#333333;font-size:18px;fill:#333333;width:536px;" y="24">
+		<tspan>Browser market share, January, 2015 to May, 2015
+		</tspan>
+	</text>
+	<text x="300" text-anchor="middle" class="highcharts-subtitle" style="color:#555555;fill:#555555;width:536px;" y="45">
+		<tspan>Source: 
+		</tspan>
+		<tspan onclick="location.href=&quot;http://netmarketshare.com/&quot;" dx="0" style="cursor: pointer;">netmarketshare.com
+		</tspan>
+	</text>
+	<g class="highcharts-data-labels highcharts-series-0 highcharts-tracker" visibility="visible" transform="translate(10,61) scale(1 1)" style="">
+		<g style="" transform="translate(335,169)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#ffffff;text-shadow:0 0 6px #000000, 0 0 3px #000000;fill:#ffffff;text-rendering:geometricprecision;" y="16">
+				<tspan>MSIE
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(216,195)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#ffffff;text-shadow:0 0 6px #000000, 0 0 3px #000000;fill:#ffffff;text-rendering:geometricprecision;" y="16">
+				<tspan>Firefox
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(203,126)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#ffffff;text-shadow:0 0 6px #000000, 0 0 3px #000000;fill:#ffffff;text-rendering:geometricprecision;" y="16">
+				<tspan>Chrome
+				</tspan>
+			</text>
+		</g>
+	</g>
+	<g class="highcharts-data-labels highcharts-series-1 highcharts-tracker" visibility="visible" transform="translate(10,61) scale(1 1)" style="">
+		<path fill="none" d="M 300.3 8.4 C 295.3 8.4 295.0 16.4 294.6 27.4 L 294.2 38.4" stroke="rgb(175,232,255)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 389.4 40.8 C 384.4 40.8 379.5 47.1 372.7 55.8 L 365.9 64.5" stroke="rgb(158,215,255)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 448.0 149.1 C 443.0 149.1 435.0 149.7 424.1 150.6 L 413.1 151.6" stroke="rgb(149,206,255)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 439.0 215.2 C 434.0 215.2 426.5 212.4 416.2 208.6 L 405.9 204.8" stroke="rgb(141,198,253)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 334.0 310.5 C 329.0 310.5 327.0 302.8 324.2 292.1 L 321.4 281.5" stroke="rgb(132,189,244)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 233.1 306.5 C 238.1 306.5 205.8 280.8 212.2 271.8 L 218.5 262.8" stroke="rgb(98,98,103)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 191.2 283.6 C 196.2 283.6 191.0 268.7 198.5 260.7 L 205.9 252.6" stroke="rgb(92,92,97)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 167.3 260.7 C 172.3 260.7 174.7 251.0 183.4 244.2 L 192.1 237.5" stroke="rgb(86,86,91)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 151.3 237.7 C 156.3 237.7 162.7 232.6 172.3 227.3 L 181.9 222.0" stroke="rgb(79,79,84)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 140.7 214.8 C 145.7 214.8 155.8 218.4 165.9 214.2 L 176.0 209.9" stroke="rgb(73,73,78)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 134.3 191.9 C 139.3 191.9 151.5 207.2 162.0 203.7 L 172.5 200.3" stroke="rgb(191,255,172)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 131.5 168.9 C 136.5 168.9 144.8 173.6 155.8 172.7 L 166.7 171.8" stroke="rgb(173,255,154)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 133.4 137.1 C 138.4 137.1 146.3 138.4 157.1 140.2 L 168.0 141.9" stroke="rgb(162,255,143)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 144.4 100.1 C 149.4 100.1 157.1 102.3 167.2 106.8 L 177.2 111.3" stroke="rgb(158,251,139)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 156.9 77.2 C 161.9 77.2 181.0 65.3 189.3 72.6 L 197.5 79.9" stroke="rgb(154,247,135)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 175.5 54.2 C 180.5 54.2 209.6 40.5 215.7 49.7 L 221.7 58.9" stroke="rgb(151,244,132)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 204.2 31.3 C 209.2 31.3 230.9 28.8 235.4 38.9 L 239.8 49.0" stroke="rgb(147,240,128)" stroke-width="1">
+		</path>
+		<path fill="none" d="M 263.1 8.4 C 268.1 8.4 269.2 17.8 270.8 28.7 L 272.4 39.6" stroke="rgb(254,170,99)" stroke-width="1">
+		</path>
+		<g style="" transform="translate(305,-2)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">MSIE 6.0:
+				</tspan>
+				<tspan dx="0"> 1.0%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(394,31)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">MSIE 8.0:
+				</tspan>
+				<tspan dx="0"> 17.2%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(453,139)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">MSIE 9.0:
+				</tspan>
+				<tspan dx="0"> 8.1%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(444,205)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">MSIE 10.0:
+				</tspan>
+				<tspan dx="0"> 5.3%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(339,301)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">MSIE 11.0:
+				</tspan>
+				<tspan dx="0"> 24.1%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(115,297)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Firefox v35:
+				</tspan>
+				<tspan dx="0"> 1.2%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(73,274)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Firefox v36:
+				</tspan>
+				<tspan dx="0"> 2.7%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(49,251)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Firefox v37:
+				</tspan>
+				<tspan dx="0"> 2.3%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(33,228)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Firefox v38:
+				</tspan>
+				<tspan dx="0"> 2.3%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(61,205)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Slice:
+				</tspan>
+				<tspan dx="0"> 1.0%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(1,182)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Chrome v31.0:
+				</tspan>
+				<tspan dx="0"> 1.2%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(-2,159)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Chrome v36.0:
+				</tspan>
+				<tspan dx="0"> 2.5%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(0,127)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Chrome v39.0:
+				</tspan>
+				<tspan dx="0"> 2.9%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(28,90)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Chrome v40.0:
+				</tspan>
+				<tspan dx="0"> 5%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(24,67)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Chrome v41.0:
+				</tspan>
+				<tspan dx="0"> 4.3%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(42,44)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Chrome v42.0:
+				</tspan>
+				<tspan dx="0"> 3.6%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(71,21)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Chrome v43.0:
+				</tspan>
+				<tspan dx="0"> 1.4%
+				</tspan>
+			</text>
+		</g>
+		<g style="" transform="translate(149,-2)">
+			<text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #ffffff, 0 0 3px #ffffff;fill:#000000;text-rendering:geometricprecision;" y="16">
+				<tspan style="font-weight:bold">Safari v8.0:
+				</tspan>
+				<tspan dx="0"> 2.5%
+				</tspan>
+			</text>
+		</g>
+	</g>
+	<g class="highcharts-legend">
+		<g>
+			<g>
+			</g>
+		</g>
+	</g>
+	<g class="highcharts-tooltip" style="cursor:default;padding:0;pointer-events:none;white-space:nowrap;" transform="translate(0,-9999)">
+		<path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"  stroke="black" stroke-opacity="0.0" stroke-width="5" transform="translate(1, 1)">
+		</path>
+		<path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"  stroke="black" stroke-opacity="0.0" stroke-width="3" transform="translate(1, 1)">
+		</path>
+		<path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"  stroke="black" stroke-opacity="0.1" stroke-width="1" transform="translate(1, 1)">
+		</path>
+		<path fill="rgb(249, 249, 249)" fill-opacity=" .85" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5">
+		</path>
+		<text x="8" style="font-size:12px;color:#333333;fill:#333333;" y="20">
+		</text>
+	</g>
+</svg>
