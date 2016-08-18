@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ChartDataEntities-Web.config Connection String" description="ChartDataEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.ChartData.csdl|res://*/Models.ChartData.ssdl|res://*/Models.ChartData.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=highcharts-net.c2fy2izdwrll.us-east-1.rds.amazonaws.com,1433;Initial Catalog=HighstockData;Persist Security Info=True;User ID=master;Password=newpass1&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\PC\\Documents\\highcharts\.net\\MVC_Demo\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ChartDataEntities']/@connectionString" />
+  </parameter>
+</parameters>
