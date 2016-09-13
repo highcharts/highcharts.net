@@ -986,7 +986,7 @@
     <Content Include="Areas\Highcharts\Views\Demo\Chart.cshtml" />
     <Content Include="Areas\Highcharts\Views\Demo\ViewCode.cshtml" />
     <Content Include="Areas\Highcharts\Views\Demo\ControllerCode.cshtml" />
-    <None Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
     <Content Include="Areas\Highstock\Views\Web.config" />
     <Content Include="Areas\Highstock\Views\Shared\Area.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\AreaRange.cshtml" />
