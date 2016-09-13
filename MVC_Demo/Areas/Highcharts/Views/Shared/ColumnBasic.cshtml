@@ -55,8 +55,8 @@
             },
             Tooltip = new Tooltip
             {
-                HeaderFormat = "<span style='font-size:10px'>{point.key}</span><table>",
-                PointFormat = "<tr><td style='color:{series.color};padding:0'>{series.name}: </td><td style='padding:0'><b>{point.y:.1f} mm</b></td></tr>",
+                HeaderFormat = "<span style='font-size:10px'>{point.key}</span><table style='font-size:12px'>",
+                PointFormat = "<tr><td style='color:{series.color};padding:0'>{series.name}: </td><td style='padding:0'><b>{point.y:.1f}&nbsp;mm</b></td></tr>",
                 FooterFormat = "</table>",
                 Shared = true,
                 UseHTML = true
@@ -78,7 +78,7 @@
                 },
                 new ColumnSeries
                 {
-                    Name = "NY",
+                    Name = "New&nbsp;York",
                     Data = @ViewData["nyData"] as List<ColumnSeriesData>
                 },
                 new ColumnSeries
