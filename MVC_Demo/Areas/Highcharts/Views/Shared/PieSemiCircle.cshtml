@@ -39,12 +39,15 @@
                     {
                         Enabled = true,
                         Distance = -50,
-                        Style = new NameValueCollection
+                        Color = "#FFFFFF",
+                        Shadow = new Shadow()
                         {
-                            { "fontWeight", "bold" },
-                            { "color", "white" },
-                            { "textShadow", "0px 1px 2px black" }
-                        }
+                            Enabled = true,
+                            Width = 10,
+                            Color = "#000000",
+                            OffsetX = 0,
+                            OffsetY = 0
+                        },
                     },
                     StartAngle = -90,
                     EndAngle = 90,
@@ -52,14 +55,14 @@
                 }
             },
             Series = new List<Series>
-            {                    
+            {
                 new PieSeries
-                {                    
+                {
                     Name = "Browser Share",
                     InnerSize = "50%",
                     Data = @ViewData["pieData"] as List<PieSeriesData>
                 },
-                
+
             }
         }
         , "chart")
