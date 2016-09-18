@@ -63,10 +63,8 @@
                 Floating = true,
                 BorderColor = "#CCC",
                 BorderWidth = 1,
-                Shadow = new Shadow
-                {
-                    Enabled = false
-                }
+                BackgroundColor = "white"
+
             },
             Tooltip = new Tooltip
             {
@@ -81,11 +79,16 @@
                     {
                         Enabled = true,
                         Color = "white",
-                        Shadow = new Shadow() { Enabled = true},
+
+                        Shadow = new Shadow()
+                        {
+                            Enabled = true,
+                            Color = "black"
+                        }
 
                         //Style = new NameValueCollection
                         //{
-                        //    { "textShadow", "0 0 3px black" }
+                        //    { "textShadow", "0 0 6px black" }
                         //}
 
 
