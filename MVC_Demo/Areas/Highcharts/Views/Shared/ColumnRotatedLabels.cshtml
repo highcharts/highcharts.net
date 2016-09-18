@@ -26,7 +26,7 @@
             XAxis = new List<XAxis>
             {
                 new XAxis
-                {                   
+                {
                     Type = XAxisType.Category,
                     Labels = new XAxisLabels
                     {
@@ -40,7 +40,7 @@
                 }
             },
             YAxis = new List<YAxis>
-            {            
+            {
                 new YAxis
                 {
                     Min = 0,
@@ -55,11 +55,11 @@
                 Enabled = false
             },
             Tooltip = new Tooltip
-            {                
-                PointFormat = "Population in 2008: <b>{point.y:.1f} millions</b>"               
-            },            
+            {
+                PointFormat = "Population in 2008: <b>{point.y:.1f} millions</b>"
+            },
             Series = new List<Series>
-            {                    
+            {
                 new ColumnSeries
                 {
                     Name = "Population",
@@ -71,10 +71,14 @@
                         Align = ColumnSeriesDataLabelsAlign.Right,
                         Format = "{point.y:.1f}",
                         Y = 10,
-                        Style = new NameValueCollection
+
+                        Shadow = new Shadow()
                         {
-                            { "fontSize", "13px"},
-                            { "fontFamily", "Verdana, sans-serif" }
+                            Enabled = true,
+                            Color = "black",
+                            Width = 10,
+                            OffsetX = 0,
+                            OffsetY = 0
                         }
                     },
                     Data = @ViewData["populationData"] as List<ColumnSeriesData>
