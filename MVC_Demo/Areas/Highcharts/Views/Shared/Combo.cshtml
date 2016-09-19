@@ -19,7 +19,7 @@
                 Text = "Combination chart"
             },
             XAxis = new List<XAxis>
-            {            
+            {
                 new XAxis
                 {
                     Categories = new List<string> { "Apples", "Oranges", "Pears", "Bananas", "Plums" },
@@ -33,12 +33,13 @@
                     Style = new NameValueCollection
                     {
                         { "left", "50px" },
-                        { "top", "18px" }                        
+                        { "top", "18px" }
                     }
+
                 }
             },
             Series = new List<Series>
-            {                    
+            {
                 new ColumnSeries
                 {
                     Name = "Jane",
@@ -61,7 +62,9 @@
                     Marker = new SplineSeriesMarker
                     {
                         LineWidth = 2,
-                        FillColor = "white"
+                        FillColor = "white",
+                        LineColor = "#f7a35c"
+
                     }
                 },
                 new PieSeries
