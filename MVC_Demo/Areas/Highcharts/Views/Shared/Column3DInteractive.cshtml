@@ -20,9 +20,9 @@
                 Options3d = new ChartOptions3d
                 {
                     Enabled = true,
-                    Alpha = 8,
-                    Beta = 8,
-                    Depth = 8,
+                    Alpha = 15,
+                    Beta = 15,
+                    Depth = 50,
                     ViewDistance = 25
                 },
                 Events = new ChartEvents
@@ -59,7 +59,8 @@
 <div id="sliders">
 	<table>
 		<tr><td>Alpha Angle</td><td><input id="R0" type="range" min="0" max="45" value="15"/> <span id="R0-value" class="value"></span></td></tr>
-	    <tr><td>Beta Angle</td><td><input id="R1" type="range" min="0" max="45" value="15"/> <span id="R1-value" class="value"></span></td></tr>
+	    <tr><td>Beta Angle</td><td><input id="R1" type="range" min="-45" max="45" value="15"/> <span id="R1-value" class="value"></span></td></tr>
+        <tr><td>Depth Angle</td><td><input id="R2" type="range" min="20" max="100" value="50" /> <span id="R2-value" class="value"></span></td></tr>
 	</table>
 </div>	
 
@@ -70,19 +71,25 @@
     function showValues() {
         $('#R0-value').html(chart.options.chart.options3d.alpha);
         $('#R1-value').html(chart.options.chart.options3d.beta);
+        $('#R2-value').html(chart.options.chart.options3d.depth);
     }
 
     function initSliders() {
         chart = Highcharts.charts[0];
        
         // Activate the sliders
-        $('#R0').on('change', function () {
+        $('#R0').on('input', function () {
             chart.options.chart.options3d.alpha = this.value;
             showValues();
             chart.redraw(false);
         });
-        $('#R1').on('change', function () {
+        $('#R1').on('input', function () {
             chart.options.chart.options3d.beta = this.value;
+            showValues();
+            chart.redraw(false);
+        });
+        $('#R2').on('input', function () {
+            chart.options.chart.options3d.depth = this.value;
             showValues();
             chart.redraw(false);
         });
