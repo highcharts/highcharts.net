@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
         public string RenderHtml()
         {            
             #if (LICENSED == false)
-            if (DateTime.Now > CompiledOn.CompilationDate.AddDays(37))
+            if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
             {
                 return "This is a trial version of Highstock for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
                
