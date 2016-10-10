@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<project name="ZippedDemoTrials" default="run" xmlns="http://nant.sf.net/release/0.85/nant.xsd">
+
+<property name="base.dir" value="c:\Users\PC\Documents\highcharts.net"/>
+
+<property name="UtilDateReplacer" value="${base.dir}\UtilDateReplacer\bin\Release\UtilDateReplacer.exe"/>
+<property name="MSBuild" value="c:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe"/>
+<property name="Highcharts.Folder" value="${base.dir}\MVC_Highcharts"/>
+<property name="Highstock.Folder" value="${base.dir}\MVC_Highstock"/>
+<property name="Highcharts.Release" value="${base.dir}\MVC_Highcharts\bin\Release"/>
+<property name="Highstock.Release" value="${base.dir}\MVC_Highstock\bin\Release"/>
+
+
+<property name="Highcharts.Trial.Target.Source" value="${base.dir}\Build\DemoDownloads\trials\highcharts\source"/>
+<property name="Highcharts.Trial.Target.ZippedPackage" value="${base.dir}\Build\DemoDownloads\trials\highcharts\package"/>
+
+<property name="Highstock.Trial.Target.Source" value="${base.dir}\Build\DemoDownloads\trials\highstock\source"/>
+<property name="Highstock.Trial.Target.ZippedPackage" value="${base.dir}\Build\DemoDownloads\trials\highstock\package"/>
+
+
+<property name="Highcharts.Unlimited.Target.Source" value="${base.dir}\Build\DemoDownloads\unlimited\highcharts\source"/>
+<property name="Highcharts.Unlimited.Target.ZippedPackage" value="${base.dir}\Build\DemoDownloads\unlimited\highcharts\package"/>
+
+<property name="Highstock.Unlimited.Target.Source" value="${base.dir}\Build\DemoDownloads\unlimited\highstock\source"/>
+<property name="Highstock.Unlimited.Target.ZippedPackage" value="${base.dir}\Build\DemoDownloads\unlimited\highstock\package"/>
+
+
+<property name="Demo.Folder" value="${base.dir}\MVC_Demo"/>
+<property name="version" value="4_1_7_0"/>
+<property name="highcharts.zip" value="Highcharts_ASPNET_MVC_${version}.zip"/>
+<property name="highstock.zip" value="Highstock_ASPNET_MVC_${version}.zip"/>
+
+
+<target name="clean.folders">
+	<delete dir="${base.dir}\Build\DemoDownloads" />
+</target>
+
+
+<target name="create.folders">
+	<mkdir dir="${base.dir}\Build\DemoDownloads"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\trials"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\trials\highstock"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\trials\highstock\source"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\trials\highstock\package"/>
+
+	<mkdir dir="${base.dir}\Build\DemoDownloads\trials\highcharts"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\trials\highcharts\source"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\trials\highcharts\package"/>
+
+
+	<mkdir dir="${base.dir}\Build\DemoDownloads\unlimited"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\unlimited\highstock"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\unlimited\highstock\source"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\unlimited\highstock\package"/>
+
+	<mkdir dir="${base.dir}\Build\DemoDownloads\unlimited\highcharts"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\unlimited\highcharts\source"/>
+	<mkdir dir="${base.dir}\Build\DemoDownloads\unlimited\highcharts\package"/>
+</target>
+
+
+
+<target name="make.source.limited">
+	<exec program="${UtilDateReplacer}">
+      		<arg value="${Highcharts.Folder}\CompiledOn.cs" />
+		<arg value="Highsoft.Web.Mvc.Charts" />
+	</exec>
+	<exec program="${UtilDateReplacer}">
+      		<arg value="${Highstock.Folder}\CompiledOn.cs" />
+		<arg value="Highsoft.Web.Mvc.Stocks" />
+	</exec>
+</target>
+
+<target name="make.source.unlimited">
+	<exec program="${UtilDateReplacer}">
+      		<arg value="${Highcharts.Folder}\CompiledOn.cs" />
+		<arg value="Highsoft.Web.Mvc.Charts" />
+		<arg value="1"/>
+	</exec>
+	<exec program="${UtilDateReplacer}">
+      		<arg value="${Highstock.Folder}\CompiledOn.cs" />
+		<arg value="Highsoft.Web.Mvc.Stocks" />
+		<arg value="1"/>
+	</exec>
+</target>
+
+<target name="build.libraries">
+	<exec program="${MSBuild}">
+		<arg value="${base.dir}\MVC_Highstock\MVC_Highstock.csproj"/>
+		<arg value="/t:Rebuild"/>
+		<arg value="/p:Configuration=Release"/>
+	</exec>
+	<exec program="${MSBuild}">
+		<arg value="${base.dir}\MVC_Highcharts\MVC_Highcharts.csproj"/>
+		<arg value="/t:Rebuild"/>
+		<arg value="/p:Configuration=Release"/>
+	</exec>
+	<!--<exec program="${MSBuild}">
+		<arg value="${base.dir}\MVC_Demo\MVC_Demo.csproj"/>
+		<arg value="/t:Rebuild"/>
+		<arg value="/p:Configuration=Release"/>
+	</exec>-->
+</target>
+
+<target name="copy.trial.libraries">
+	<copy todir="${Highcharts.Trial.Target.Source}">
+		<fileset basedir="${Highcharts.Release}">
+			<includes name="Highcharts.Web.Mvc.dll"/>
+		</fileset>
+	</copy>
+	<copy todir="${Highstock.Trial.Target.Source}">
+		<fileset basedir="${Highstock.Release}">
+			<includes name="Highstock.Web.Mvc.dll"/>
+		</fileset>
+	</copy>
+</target>
+
+<target name="copy.unlimited.libraries">
+	<copy todir="${Highcharts.Unlimited.Target.Source}">
+		<fileset basedir="${Highcharts.Release}">
+			<includes name="Highcharts.Web.Mvc.dll"/>
+		</fileset>
+	</copy>
+	<copy todir="${Highstock.Unlimited.Target.Source}">
+		<fileset basedir="${Highstock.Release}">
+			<includes name="Highstock.Web.Mvc.dll"/>
+		</fileset>
+	</copy>
+</target>
+
+<target name="zip.trial.libraries">
+	<zip zipfile="${Highcharts.Trial.Target.ZippedPackage}\${highcharts.zip}">
+		<fileset basedir="${Highcharts.Trial.Target.Source}">
+			<includes name="**/*.*"/>
+		</fileset>
+	</zip>
+	<zip zipfile="${Highstock.Trial.Target.ZippedPackage}\${highstock.zip}">
+		<fileset basedir="${Highstock.Trial.Target.Source}">
+			<includes name="**/*.*"/>
+		</fileset>
+	</zip>
+</target>
+
+<target name="zip.unlimited.libraries">
+	<zip zipfile="${Highcharts.Unlimited.Target.ZippedPackage}\${highcharts.zip}">
+		<fileset basedir="${Highcharts.Unlimited.Target.Source}">
+			<includes name="**/*.*"/>
+		</fileset>
+	</zip>
+	<zip zipfile="${Highstock.Unlimited.Target.ZippedPackage}\${highstock.zip}">
+		<fileset basedir="${Highstock.Unlimited.Target.Source}">
+			<includes name="**/*.*"/>
+		</fileset>
+	</zip>
+</target>
+
+<target name="copy.highcharts.demo">
+    <copy todir="${base.dir}\Build\DemoDownloads\highcharts">
+      <fileset basedir="${Demo.Folder}">
+        <includes name="**/*.*"/>
+        <excludes name="Help/**" />
+        <excludes name="downloads/**" />
+        <excludes name="obj/**" />
+	<excludes name="Files/bin/**"/>
+        <excludes name="Areas/Highstock/**" />
+	<excludes name="Areas/Highmaps/**" />
+        <excludes name="Content/Areas/Highstock/**" />
+	<excludes name="content/Areas/Highmaps/**" />
+        <excludes name="App_Data/HighstockData.mdf" />
+        <excludes name="highcharts.shfbproj" />
+        <excludes name="MVC_Demo.csproj" />        
+        <excludes name="MVC_Demo.csproj.*" />
+        <excludes name="MVC_Highstock_Demo.csproj" />
+        <excludes name="MVC_Highstock_Demo.csproj.*" />
+        <excludes name="**/HighstockData_log.*" />
+        <excludes name="**/Highcharts.Web.Mvc.pdb" />
+        <excludes name="**/Highstock.Web.Mvc.pdb" />
+        <excludes name="**/Highcharts.Web.Mvc.xml" />
+        <excludes name="**/Highstock.Web.Mvc.xml" />
+      </fileset>
+    </copy>
+
+
+<copy todir="${base.dir}\Build\DemoDownloads\highstock">
+      <fileset basedir="${Demo.Folder}">
+        <includes name="**/*.*"/>
+        <excludes name="Help/**" />
+	<excludes name="downloads/**" />
+        <excludes name="obj/**" />
+	<excludes name="Files/bin/**"/>
+        <excludes name="Areas/Highcharts/**" />
+	<excludes name="Areas/Highmaps/**" />
+        <excludes name="Content/Areas/Highcharts/**" />
+       	<excludes name="content/Areas/Highmaps/**" />
+        <excludes name="highcharts.shfbproj" />
+        <excludes name="MVC_Demo.csproj" />        
+        <excludes name="MVC_Demo.csproj.*" />
+        <excludes name="MVC_Highcharts_Demo.csproj" />
+        <excludes name="MVC_Highcharts_Demo.csproj.*" />
+        <excludes name="**/HighstockData_log.*" />
+        <excludes name="**/Highcharts.Web.Mvc.pdb" />
+        <excludes name="**/Highstock.Web.Mvc.pdb" />
+        <excludes name="**/Highcharts.Web.Mvc.xml" />
+        <excludes name="**/Highstock.Web.Mvc.xml" />
+      </fileset>
+    </copy>
+  </target>
+
+<target name="zip.demos.tmp">
+	<zip zipfile="${base.dir}\Build\DemoDownloads\${highcharts.zip}">
+	      <fileset basedir="${base.dir}\Build\DemoDownloads\highcharts">
+        	<includes name="**/*.*"/>    
+	      </fileset>
+    </zip>
+<zip zipfile="${base.dir}\Build\DemoDownloads\${highstock.zip}">
+	      <fileset basedir="${base.dir}\Build\DemoDownloads\highstock">
+        	<includes name="**/*.*"/>    
+	      </fileset>
+    </zip>
+</target>
+
+<target name="zip.demos">
+	<zip zipfile="${Demo.Folder}\downloads\${highcharts.zip}">
+	      <fileset basedir="${base.dir}\Build\DemoDownloads\highcharts">
+        	<includes name="**/*.*"/>    
+	      </fileset>
+    </zip>
+<zip zipfile="${Demo.Folder}\downloads\${highstock.zip}">
+	      <fileset basedir="${base.dir}\Build\DemoDownloads\highstock">
+        	<includes name="**/*.*"/>    
+	      </fileset>
+    </zip>
+</target>
+
+<target name="run">
+	<call target="clean.folders"/>
+	<call target="create.folders"/>
+	<call target="make.source.limited"/>
+	<call target="build.libraries"/>
+	<call target="copy.trial.libraries"/>
+	<call target="zip.trial.libraries"/>
+	<call target="make.source.unlimited"/>
+	<call target="build.libraries"/>
+	<call target="copy.unlimited.libraries"/>
+	<call target="zip.unlimited.libraries"/>
+	<!--<call target="copy.highcharts.demo"/>-->
+	<!--<call target="zip.demos"/>-->
+	
+</target>
+
+</project>
