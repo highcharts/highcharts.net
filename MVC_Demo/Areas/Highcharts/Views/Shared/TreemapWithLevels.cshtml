@@ -12,19 +12,14 @@
     @(Html.Highsoft().Highcharts(
         new Highcharts
         {
-            Chart = new Chart
-            {
-                Width = 800,
-                Height = 400
-            },
             Title = new Title
             {
                 Text = "Fruit Consumption"
-            },            
+            },
             Series = new List<Series>
-            {                    
+            {
                 new TreemapSeries
-                {                
+                {
                     LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Stripes,
                     AlternateStartingDirection = TreemapSeriesAlternateStartingDirection.True,
                     Levels = new List<TreemapSeriesLevels>
@@ -32,9 +27,21 @@
                         new TreemapSeriesLevels
                         {
                             Level = 1,
-                            LayoutAlgorithm = TreemapSeriesLevelsLayoutAlgorithm.SliceAndDice
+                            LayoutAlgorithm = TreemapSeriesLevelsLayoutAlgorithm.SliceAndDice,
+                            DataLabels = new TreemapSeriesDataLabels()
+                            {
+                                Enabled = true,
+                                Align = TreemapSeriesDataLabelsAlign.Left,
+                                VerticalAlign = "top",
+                                //Style = new System.Collections.Specialized.NameValueCollection
+                                //{
+                                //    {"fontSize", "15px" },
+                                //    {"fontWeight", "bold"}
+                                //}
+                            }
                         }
                     },
+
                     Data = new List<TreemapSeriesData>
                     {
                         new TreemapSeriesData { Id = "A", Name = "Apples", Color = "#EC2500" },
@@ -51,7 +58,7 @@
                         new TreemapSeriesData { Parent = "O", Name = "Peter", Value = 3},
                         new TreemapSeriesData { Parent = "Kiwi", Name = "Susanne", Value = 2, Color = "#9EDE00"}
                     }
-                    
+
                 }
             }
         }

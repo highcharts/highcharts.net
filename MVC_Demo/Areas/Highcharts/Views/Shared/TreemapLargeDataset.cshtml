@@ -961,11 +961,9 @@
         {
             Chart = new Chart
             {
-                Width = 800,
-                Height = 400,
                 Events = new ChartEvents
                 {
-                    Load = "loadData"    
+                    Load = "loadData"
                 }
             },
             Title = new Title
@@ -977,14 +975,14 @@
                 Text = "Global Mortality Rate 2012, per 100 000 population"
             },
             Series = new List<Series>
-            {                    
+            {
                 new TreemapSeries
-                {                
-                    LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Squarified,  
+                {
+                    LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Squarified,
                     AllowDrillToNode = TreemapSeriesAllowDrillToNode.True,
                     DataLabels = new TreemapSeriesDataLabels
                     {
-                        Enabled = false
+                        Enabled = true
                     },
                     LevelIsConstant = TreemapSeriesLevelIsConstant.False,
                     Levels = new List<TreemapSeriesLevels>
@@ -997,6 +995,11 @@
                             {
                                 { "enabled", "true" }
                             }
+
+                            //DataLabels = new TreemapSeriesDataLabels
+                            //{
+                            //    Enabled = true
+                            //}
                         }
                     }
                 }

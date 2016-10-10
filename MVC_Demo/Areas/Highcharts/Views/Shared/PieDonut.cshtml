@@ -125,8 +125,6 @@
         {
             Chart = new Chart
             {
-                Width = 800,
-                Height = 400,
                 Events = new ChartEvents
                 {
                     Load = "loadData"
@@ -156,7 +154,11 @@
                 {
                     Shadow = new Shadow
                     {
-                        Enabled = false
+                        Enabled = true,
+                        Color = "#000000",
+                        Width = 10,
+                        OffsetX = 0,
+                        OffsetY = 0
                     },
                     Center = new string[] { "50%", "50%" }
                 }

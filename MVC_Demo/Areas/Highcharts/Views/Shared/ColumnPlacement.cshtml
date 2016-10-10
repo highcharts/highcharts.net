@@ -8,11 +8,6 @@
     @(Html.Highsoft().Highcharts(
         new Highcharts
         {
-            Chart = new Chart
-            {
-                Width = 800,
-                Height = 400
-            },
             Title = new Title
             {
                 Text = "Efficiency Optimization by Branch"
@@ -77,57 +72,13 @@
                 {
                     Name = "Employees",
                     Color = "rgba(165,170,217,1)",
-                    PointPadding = 0.3,
+                    PointPadding = 0.1,
+                    
                     PointPlacement = new PointPlacement
                     {
-                        Value = -0.2
+                        Value = 0.2
                     },
                     Data = @ViewData["employeeData"] as List<ColumnSeriesData>
-                },
-                new ColumnSeries
-                {
-                    Name = "Employees Optimized",
-                    Color = "rgba(126,86,134,.9)",
-                    PointPadding = 0.4,
-                    PointPlacement = new PointPlacement
-                    {
-                        Value = -0.2
-                    },
-                    Data = @ViewData["employeeOptimizedData"] as List<ColumnSeriesData>
-                },
-                new ColumnSeries
-                {
-                    Name = "Profit",
-                    Color = "rgba(248,161,63,1)",
-                    PointPadding = 0.3,
-                    PointPlacement = new PointPlacement
-                    {
-                        Value = 0.2
-                    },
-                    YAxis = "Profit",
-                    Tooltip = new ColumnSeriesTooltip
-                    {
-                        ValuePrefix = "$",
-                        ValueSuffix = " M"
-                    },
-                    Data = @ViewData["profitData"] as List<ColumnSeriesData>
-                },
-                new ColumnSeries
-                {
-                    Name = "Profit Optimized",
-                    Color = "rgba(186,60,61,.9)",
-                    PointPadding = 0.4,
-                    PointPlacement = new PointPlacement
-                    {
-                        Value = 0.2
-                    },
-                    YAxis = "Profit",
-                    Tooltip = new ColumnSeriesTooltip
-                    {
-                        ValuePrefix = "$",
-                        ValueSuffix = " M"
-                    },
-                    Data = @ViewData["profitOptimizedData"] as List<ColumnSeriesData>
                 }
             }
         }

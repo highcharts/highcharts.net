@@ -22,11 +22,6 @@
     @(Html.Highsoft().Highcharts(
         new Highcharts
         {
-            Chart = new Chart
-            {
-                Width = 800,
-                Height = 400
-            },
             Title = new Title
             {
                 Text = "US and USSR nuclear stockpiles"
@@ -37,7 +32,7 @@
             },
 
             XAxis = new List<XAxis>
-            {            
+            {
                 new XAxis
                 {
                     AllowDecimals = false,
@@ -49,7 +44,7 @@
                 }
             },
             YAxis = new List<YAxis>
-            {            
+            {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -87,7 +82,7 @@
                 }
             },
             Series = new List<Series>
-            {                    
+            {
                 new AreaSeries
                 {
                     Name = "USA",
