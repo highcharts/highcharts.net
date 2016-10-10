@@ -1,5 +1,0 @@
-C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Debug\Highcharts.Web.Mvc.XML
-C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Debug\Highcharts.Web.Mvc.dll
-C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\bin\Debug\Highcharts.Web.Mvc.pdb
-C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\obj\Debug\Highcharts.Web.Mvc.dll
-C:\Users\PC\Documents\highcharts.net\MVC_Highcharts\obj\Debug\Highcharts.Web.Mvc.pdb
