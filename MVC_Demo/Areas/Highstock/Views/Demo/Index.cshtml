@@ -35,7 +35,8 @@
             }
             // Lazy load the images
             jQuery("img.lazy").lazyload({
-                threshold: 200
+                threshold: 200,
+                skip_invisible: true
             });
         });
 
@@ -153,10 +154,10 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h1>Highstock Demos</h1>
                         <div class="btn-group theme">
-@*                            <a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">Default</a>
+                            <a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">Default</a>
                             <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="?theme=dark-unica">Dark Unica</a>
                             <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="?theme=sand-signika">Sand Signika</a>
-                            <a class="btn btn-theme @ViewBag.GridLightDisabled" href="?theme=grid-light">Grid Light</a>*@
+                            <a class="btn btn-theme @ViewBag.GridLightDisabled" href="?theme=grid-light">Grid Light</a>
                         </div>
                     </div>
                 </div>
@@ -179,10 +180,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "SingleLine", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/basic-line-" + ViewBag.ChartImageSVG)" alt="Single line series">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Single line series</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -192,10 +193,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "CandleStickVolume", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/candlestick-and-volume-" + ViewBag.ChartImageSVG)" alt="Two panes, candlestick and volume">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Two panes, candlestick and volume</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -206,10 +207,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">                            
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "Compare", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/compare-" + ViewBag.ChartImageSVG)" alt="Compare multiple series">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Compare multiple series</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -220,10 +221,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "DataGrouping", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/data-grouping-" + ViewBag.ChartImageSVG)" alt="52,000 points with data grouping">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>52,000 points with data grouping</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -234,10 +235,10 @@
                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "LazyLoading", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/lazy-loading-" + ViewBag.ChartImageSVG)" alt="1.7 million points with async loading">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>1.7 million points with async loading</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -247,10 +248,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "IntradayArea", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/intraday-area-" + ViewBag.ChartImagePNG)" alt="Intraday Area">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Intraday Area</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -262,10 +263,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "IntradayAreaBreaks", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/intraday-breaks-" + ViewBag.ChartImageSVG)" alt="Intraday with breaks">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Intraday with breaks</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -275,10 +276,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "IntradayCandlestick", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/intraday-candlestick-" + ViewBag.ChartImageSVG)" alt="Intraday Candlestick">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Intraday Candlestick</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -289,10 +290,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">                            
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "FlagsGeneral", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/flags-general-" + ViewBag.ChartImageSVG)" alt="Flags marking events">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Flags marking events</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -302,10 +303,10 @@
                          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                              <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "DynamicUpdate", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/dynamic-update-" + ViewBag.ChartImageSVG)" alt="Dynamically Updated Data">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Dynamically Updated Data</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -321,10 +322,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                              <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "LineMarkers", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/line-markers-" + ViewBag.ChartImageSVG)" alt="Line with markers and shadows">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Line with markers and shadows</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -334,10 +335,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "Spline", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/spline-" + ViewBag.ChartImageSVG)" alt="Spline">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Spline</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -348,10 +349,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "StepLine", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/step-line-" + ViewBag.ChartImageSVG)" alt="Step Line">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Step Line</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -362,10 +363,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "Area", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/area-" + ViewBag.ChartImageSVG)" alt="Area">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Area</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -376,10 +377,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                            <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "AreaSpline", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/areaspline-" + ViewBag.ChartImageSVG)" alt="Area spline">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Area spline</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -389,10 +390,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                            <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "AreaRange", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/arearange-" + ViewBag.ChartImageSVG)" alt="Area Range">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Area Range</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -404,10 +405,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "AreaSplineRange", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/areasplinerange-" + ViewBag.ChartImageSVG)" alt="Area-spline Range">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Area-spline Range</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -417,10 +418,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                            <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "CandleStick", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/candlestick-" + ViewBag.ChartImageSVG)" alt="Candlestick">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Candlestick</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -431,10 +432,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "OHLC", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/ohlc-" + ViewBag.ChartImageSVG)" alt="OHLC">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>OHLC</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -445,10 +446,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "Column", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/column-" + ViewBag.ChartImagePNG)" alt="Column">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Column</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -459,10 +460,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "ColumnRange", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/columnrange-" + ViewBag.ChartImagePNG)" alt="Column Range">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Column Range</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -473,10 +474,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "MarkersOnly", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/markers-only-" + ViewBag.ChartImagePNG)" alt="Markers Only">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Markers Only</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -492,10 +493,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "YAxisPlotlines", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/yaxis-plotlines-" + ViewBag.ChartImageSVG)" alt="Plot Lines on Y Axis">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Plot Lines on Y Axis</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -505,10 +506,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "YAxisPlotBands", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/yaxis-plotbands-" + ViewBag.ChartImageSVG)" alt="Plot Bands on Y Axis">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Plot Bands on Y Axis</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -519,10 +520,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "YAxisReversed", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/yaxis-reversed-" + ViewBag.ChartImageSVG)" alt="Reversed Y Axis">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Reversed Y Axis</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -533,10 +534,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "Scrollbar", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/styled-scrollbar-" + ViewBag.ChartImageSVG)" alt="Styled Scrollbar">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Styled Scrollbar</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -547,10 +548,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "ScrollbarDisabled", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/scrollbar-disabled-" + ViewBag.ChartImageSVG)" alt="Disabled Scrollbar">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Disabled Scrollbar</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -560,10 +561,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "NavigatorDisabled", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/navigator-disabled-" + ViewBag.ChartImageSVG)" alt="Disabled Navigator">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Disabled Navigator</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -580,10 +581,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "FlagsPlacement", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/flags-placement-" + ViewBag.ChartImageSVG)" alt="Flags Placement">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Flags Placement</h3>
                                     </div>
                                     <div class="clearfix"></div>
@@ -593,10 +594,10 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
                             <a href="@Url.Action("Gallery", "Demo", new { area ="Highstock", demo = "FlagsShapesColors", theme = ViewBag.Theme } )">
                                 <div class="demo-container">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+                                    <div style="width:240px; height:200px; float: left; background-color:white;">
                                         <img class="lazy img-thumbnail" data-original="@Url.Content("http://www.highcharts.com/media/com_demo/images/highstock/flags-shapes-" + ViewBag.ChartImageSVG)" alt="Flags Shapes and Colors">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:left">
                                         <h3>Flags shapes and colors</h3>
                                     </div>
                                     <div class="clearfix"></div>
