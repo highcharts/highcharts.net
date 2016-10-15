@@ -490,7 +490,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
-			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
+            //if (Reversed != Reversed_DefaultValue) 
+            h.Add("reversed",Reversed);
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
