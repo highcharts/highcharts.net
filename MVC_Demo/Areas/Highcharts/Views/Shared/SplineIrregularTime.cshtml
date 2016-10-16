@@ -4,6 +4,7 @@
 
 @using Highsoft.Web.Mvc.Charts
 @using System.Collections.Specialized
+@using System.Collections
    
     @(Html.Highsoft().Highcharts(
         new Highcharts
@@ -21,12 +22,12 @@
                 new XAxis
                 {
                     Type = XAxisType.Datetime,
-                    //DateTimeLabelFormats = new NameValueCollection
-                    //{
-                    //    {"week","%e. %b" }
-                    //    //{ "month" , "%e. %b" },
-                    //    //{ "year" , "%b" }
-                    //},
+                    DateTimeLabelFormats = new Hashtable
+                    {
+                        //{"day","%e. %b" }
+                        { "month" , "%e. %b" },
+                        { "year" , "%b" }
+                    },
                     Title = new XAxisTitle
                     {
                         Text = "Date"
