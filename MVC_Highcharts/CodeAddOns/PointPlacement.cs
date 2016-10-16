@@ -50,17 +50,27 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (Value != null)
-            {
-                return Value.ToString();
-            }
-            else if (PointPlacementEnum != PointPlacementEnum.Null)
+            //if (Value != null)
+            //{
+            //    return Convert.ToString(Value);
+            //}
+            //else
+            if (PointPlacementEnum != PointPlacementEnum.Null)
             {
                 return PointPlacementEnum.ToString().ToLower();
             }
 
             return "";
         }
+
+        internal double? ToJSONDouble()
+        {
+            if (Value != null)
+                return Value;
+
+            return 0.0;
+        }
+
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
