@@ -894,8 +894,6 @@
     <Content Include="Docs\Highstock\images\image06.png" />
     <Content Include="Docs\Highstock\images\image07.png" />
     <Content Include="Docs\Highstock\images\image08.png" />
-    <Content Include="Files\bin\Highcharts.Web.Mvc.dll" />
-    <Content Include="Files\bin\Highstock.Web.Mvc.dll" />
     <Content Include="Files\js\data.js" />
     <Content Include="Files\js\drilldown.js" />
     <Content Include="Files\js\exporting.js" />
@@ -6698,6 +6696,7 @@
     <Content Include="Areas\Highstock\Views\Demo\ViewCode.cshtml" />
     <Content Include="Areas\Highstock\Views\Demo\ControllerCode.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
+    <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Models\ChartData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -6742,6 +6741,7 @@
   <ItemGroup>
     <Folder Include="Areas\Highcharts\Models\" />
     <Folder Include="Areas\Highstock\Models\" />
+    <Folder Include="Files\bin\" />
     <Folder Include="Help\fti\" />
     <Folder Include="Help\html\" />
     <Folder Include="Help\icons\" />
