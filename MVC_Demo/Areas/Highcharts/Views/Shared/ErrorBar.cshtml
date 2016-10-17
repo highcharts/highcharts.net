@@ -13,6 +13,7 @@ are using these types of charts*@
 
 @using Highsoft.Web.Mvc.Charts
 @using System.Collections.Specialized
+@using System.Collections
 
     @(Html.Highsoft().Highcharts(
         new Highcharts
@@ -39,7 +40,7 @@ are using these types of charts*@
                     Title = new YAxisTitle
                     {
                         Text = "Temperature",
-                        Style = new NameValueCollection
+                        Style = new Hashtable
                         {
                             { "color", "#434348" }
                         }
@@ -47,7 +48,7 @@ are using these types of charts*@
                     Labels = new YAxisLabels
                     {
                         Format = "{value} °C",
-                        Style = new NameValueCollection
+                        Style = new Hashtable
                         {
                             { "color", "#434348" }
                         }
@@ -56,10 +57,11 @@ are using these types of charts*@
                 new YAxis
                 {
                     Id = "Rainfall",
+                    Opposite = true,
                     Title = new YAxisTitle
                     {
                         Text = "Rainfall",
-                        Style = new NameValueCollection
+                        Style = new Hashtable
                         {
                             { "color", "#7cb5ec" }
                         }
@@ -67,7 +69,7 @@ are using these types of charts*@
                     Labels = new YAxisLabels
                     {
                         Format = "{value} mm",
-                        Style = new NameValueCollection
+                        Style = new Hashtable
                         {
                             { "color", "#7cb5ec" }
                         }
