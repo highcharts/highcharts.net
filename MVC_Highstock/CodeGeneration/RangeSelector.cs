@@ -58,8 +58,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of configuration objects for the buttons. The individual options for each item are:  <dl> <dt><code>type</code></dt> <dd>Defines the timespan, can be one of 'millisecond', 'second', 'minute', 'day', 'week',  'month', 'ytd' (year to date), 'year' and 'all'.</dd> <dt><code>count</code></dt> <dd>Defines how many units of the defined type to use.</dd> <dt><code>dataGrouping</code></dt> <dd>A custom data grouping definition for the button.</dd> <dt><code>text</code></dt> <dd>The text for the button itself</dd> </dl>Defaults to <pre>buttons: [{type: 'month',count: 1,text: '1m'}, {type: 'month',count: 3,text: '3m'}, {type: 'month',count: 6,text: '6m'}, {type: 'ytd',text: 'YTD'}, {type: 'year',count: 1,text: '1y'}, {type: 'all',text: 'All'}]</pre>
 		/// </summary>
-		public Array Buttons { get; set; }
-		private Array Buttons_DefaultValue { get; set; }
+		public List<object> Buttons { get; set; }
+		private List<object> Buttons_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -153,7 +153,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AllButtonsEnabled != AllButtonsEnabled_DefaultValue) h.Add("allButtonsEnabled",AllButtonsEnabled);
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
 			if (ButtonTheme != ButtonTheme_DefaultValue) h.Add("buttonTheme",ButtonTheme);
-			if (Buttons != Buttons_DefaultValue) h.Add("buttons",Buttons);
+            if (Buttons != Buttons_DefaultValue) h.Add("buttons",Buttons);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (InputBoxBorderColor != InputBoxBorderColor_DefaultValue) h.Add("inputBoxBorderColor",InputBoxBorderColor);
 			if (InputBoxHeight != InputBoxHeight_DefaultValue) h.Add("inputBoxHeight",InputBoxHeight);
