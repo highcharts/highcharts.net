@@ -8,7 +8,7 @@
     
     @(Html.Highsoft().Highstock(
         new Highstock
-        {  
+        {
             Title = new Title
             {
                 Text = "AAPL stock price by minute"
@@ -16,7 +16,34 @@
             Subtitle = new Subtitle
             {
                 Text = "Using explicit breaks for nights and weekends"
-            },  
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis()
+                {
+                    Breaks = new XAxisBreaks()
+                    {
+                        From = (long)(new DateTime(2011, 9, 6,16,0,0) - new DateTime(1970, 1, 1)).TotalMilliseconds,
+                        To = (long)(new DateTime(2011, 9, 7, 8,0,0) - new DateTime(1970, 1, 1)).TotalMilliseconds,
+                        Repeat = 24 * 3600 *1000,
+                        BreakSize = 3600 * 1000
+            },
+                    Ordinal = true
+        }
+    },
+            YAxis = new List<YAxis>
+            {
+                new YAxis()
+    {
+        Min = 360
+                }
+            },
+            RangeSelector = new RangeSelector()
+    {
+        Buttons = new List<object>() { new { type = "hour", count = 1, text = "1h" }, new { type = "day", count = 1, text = "1D" }, new { type = "all", count = 1, text = "All" } },
+                InputEnabled = false,
+                Selected = 1
+            },
             Series = new List<Series>
             {
                 new AreaSeries
@@ -28,7 +55,7 @@
                     {
                         ValueDecimals = 2
                     },
-                    TurboThreshold = 10000           
+                    TurboThreshold = 10000
                 }
             }
         },
