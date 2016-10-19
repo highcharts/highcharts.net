@@ -1,4 +1,6 @@
-﻿@using Highsoft.Web.Mvc.Stocks
+﻿@using System.Collections
+@using Highsoft.Web.Mvc.Stocks
+
 
 @*  The Highstock client-side javascript library is dependent on jQuery so you need to include 
     a reference to the jQuery library before referncing the highstock llibrary*@
@@ -31,11 +33,15 @@
                 Events = new ChartEvents
                 {
                     Load = "loadData"
-                }
+                },
+
+
             },
             RangeSelector = new RangeSelector
             {
-                Selected = 5
+                Buttons = new List<object>() { new { type= "day", count= 3, text= "3d" }, new { type= "week", count= 1, text= "1w" }, new { type= "month", count= 1, text= "1m" }, new { type = "month", count = 6, text = "6m" }, new { type= "year", count= 1, text= "1y" }},
+                Selected = 3
+
             },
             YAxis = new List<YAxis>
             {
@@ -45,7 +51,14 @@
                    {
                        Text = "Temperature (°C)"
                    }
-                }                
+                }
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Ordinal = false
+                }
             },
             Title = new Title
             {
@@ -54,7 +67,7 @@
             Series = new List<Series>
             {
                 new LineSeries
-                {                  
+                {
                    Name = "Temperature",
                    TurboThreshold = 100000,
                    PointStart = 1230764400000,
@@ -63,8 +76,8 @@
                    {
                        ValueDecimals = 1,
                        ValueSuffix = "°C"
-                   }              
+                   }
                 }
             },
         },
-        "chart"));
+            "chart"))
