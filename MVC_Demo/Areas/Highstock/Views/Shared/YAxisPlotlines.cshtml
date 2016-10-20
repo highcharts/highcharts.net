@@ -7,7 +7,7 @@
     
     @(Html.Highsoft().Highstock(
         new Highstock
-        {           
+        {
             RangeSelector = new RangeSelector
             {
                 Selected = 4
@@ -34,9 +34,9 @@
                             Width = 2,
                             Label = new YAxisPlotLinesLabel
                             {
-                                 
-                            }
-                        },
+                                 Text = "Last quarter minimum"
+            }
+        },
                          new YAxisPlotLines
                         {
                             Value = ViewBag.Max,
@@ -45,8 +45,8 @@
                             Width = 2,
                             Label = new YAxisPlotLinesLabel
                             {
-                                 
-                            }
+                                 Text = "Last quarter maximum"
+    }
                         }
                     }
                 },
