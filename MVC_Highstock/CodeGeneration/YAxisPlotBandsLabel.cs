@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			VerticalAlign = VerticalAlign_DefaultValue = "'top'";
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
-			
+            Text = Text_DefaultValue = null;
 		}	
 		
 
@@ -80,7 +80,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+
+        /// <summary>
+        /// 
+        /// </summary>
+		public string Text { get; set; }
+        private string Text_DefaultValue { get; set; }
 
 		internal override Hashtable ToHashtable()
 		{
@@ -94,7 +99,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+            if (Text != Text_DefaultValue) h.Add("text", Text);
 
 			return h;
 		}
