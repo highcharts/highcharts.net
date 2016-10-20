@@ -15,7 +15,8 @@ namespace MVC_Demo.Models
             switch (company)
             {
                 case "Apple":
-                    url = "https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=";
+                    url = "https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-v.json&callback=?";
+                    //url = "https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=";
                     break;
                 case "Microsoft":
                     url = "https://www.highcharts.com/samples/data/jsonp.php?filename=msft-c.json&callback=";
