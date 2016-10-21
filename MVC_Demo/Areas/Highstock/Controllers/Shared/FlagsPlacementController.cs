@@ -35,13 +35,13 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             List<FlagsSeriesData> onSeriesData = new List<FlagsSeriesData>();
             onSeriesData.Add(new FlagsSeriesData
                             {
-                                X = lastDate - 5 * days,
+                                X = lastDate - 60 * days,
                                 Title = "On Series 1"                                
                             }
             );
             onSeriesData.Add(new FlagsSeriesData
             {
-                X = lastDate - 10 * days,
+                X = lastDate - 30 * days,
                 Title = "On Series 2"
             }
            );
@@ -49,13 +49,13 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             List<FlagsSeriesData> onAxisData = new List<FlagsSeriesData>();
             onAxisData.Add(new FlagsSeriesData
             {
-                X = lastDate - 5 * days,
+                X = lastDate - 45 * days,
                 Title = "On Axis 1"
             }
             );
             onAxisData.Add(new FlagsSeriesData
             {
-                X = lastDate - 10 * days,
+                X = lastDate - 15 * days,
                 Title = "On Axis 2"
             }
            );
