@@ -1,0 +1,5 @@
+C:\Users\PC\Documents\highcharts.net\UtilDateReplacer\bin\Debug\UtilDateReplacer.exe
+C:\Users\PC\Documents\highcharts.net\UtilDateReplacer\bin\Debug\UtilDateReplacer.pdb
+C:\Users\PC\Documents\highcharts.net\UtilDateReplacer\obj\Debug\UtilDateReplacer.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\highcharts.net\UtilDateReplacer\obj\Debug\UtilDateReplacer.exe
+C:\Users\PC\Documents\highcharts.net\UtilDateReplacer\obj\Debug\UtilDateReplacer.pdb

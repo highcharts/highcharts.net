@@ -1,0 +1,109 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+@using System.Collections.Specialized
+
+    <script type="text/javascript">
+
+        function formatToolTip() {
+            return '<b>' + this.x + '</b><br/>' +
+                   this.series.name + ': ' + this.y + '<br/>' +
+                   'Total: ' + this.point.stackTotal;
+        }
+
+    </script>
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Title = new Title
+            {
+                Text = "Stacked bar chart"
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Categories = new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Min = 0,
+                    Title = new YAxisTitle
+                    {
+                        Text = "Total fruit consumption"
+                    },
+                    StackLabels = new YAxisStackLabels
+                    {
+                        Enabled = true,
+                        Style = new NameValueCollection
+                        {
+                            { "fontWeght", "bold" }
+                        }
+                    }
+                }
+            },
+            Legend = new Legend
+            {
+                Align = LegendAlign.Right,
+                X = -30,
+                VerticalAlign = LegendVerticalAlign.Top,
+                Y = 25,
+                Floating = true,
+                BorderColor = "#CCC",
+                BorderWidth = 1,
+                BackgroundColor = "white"
+
+            },
+            Tooltip = new Tooltip
+            {
+                Formatter = "formatToolTip"
+            },
+            PlotOptions = new PlotOptions
+            {
+                Column = new PlotOptionsColumn
+                {
+                    Stacking = PlotOptionsColumnStacking.Normal,
+                    DataLabels = new PlotOptionsColumnDataLabels
+                    {
+                        Enabled = true,
+                        Color = "#FFFFFF",
+
+                        Shadow = new Shadow()
+                        {
+                            Enabled = true,
+                            Color = "black",
+                            Width = 10,
+                            OffsetX = 0,
+                            OffsetY = 0
+                        }
+                    }
+                }
+            },
+            Series = new List<Series>
+            {
+                new ColumnSeries
+                {
+                    Name = "John",
+                    Data = @ViewData["johnData"] as List<ColumnSeriesData>
+                },
+                new ColumnSeries
+                {
+                    Name = "Jane",
+                    Data = @ViewData["janeData"] as List<ColumnSeriesData>
+                },
+                new ColumnSeries
+                {
+                    Name = "Joe",
+                    Data = @ViewData["joeData"] as List<ColumnSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )

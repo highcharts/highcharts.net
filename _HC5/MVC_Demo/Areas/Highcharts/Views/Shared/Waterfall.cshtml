@@ -1,0 +1,87 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+
+@*The highchart-more.js file contains definitions for additional chart types not available 
+in the main highcharts.js file such as "arearange". You need to include this file if you
+are using these types of charts*@
+
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<script type="text/javascript">
+
+    function formatLabels() {
+            return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
+    }
+
+</script>
+
+@using Highsoft.Web.Mvc.Charts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Title = new Title
+            {
+                Text = "Highcharts Waterfall"
+            },
+            XAxis = new List<XAxis>
+            {            
+                new XAxis
+                {
+                    Type = XAxisType.Category
+                }
+            },
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "USD"
+                    }
+                }
+            },
+            Legend = new Legend
+            {
+                Enabled = false
+            },
+            Tooltip = new Tooltip
+            {
+                PointFormat = "<b>${point.y:,.2f}</b> USD"
+            },
+
+            Series = new List<Series>
+            {                
+                new WaterfallSeries
+                {
+                    UpColor = "#90ed7d",
+                    Color = "#f7a35c",
+                    Data = new List<WaterfallSeriesData> {
+                        new WaterfallSeriesData { Name = "Start", Y = 120000 },
+                        new WaterfallSeriesData { Name = "Product Revenue", Y = 569000 },
+                        new WaterfallSeriesData { Name = "Service Revenue", Y = 231000 },
+                        new WaterfallSeriesData { Name = "Positive Balance", Color = "#434348",  IsIntermediateSum = true },
+                        new WaterfallSeriesData { Name = "Fixed Costs", Y = -342000 },
+                        new WaterfallSeriesData { Name = "Variable Costs", Y =  -233000 },
+                        new WaterfallSeriesData { Name = "Balance", Color = "#434348", IsSum = true }
+                    }
+                },                
+            },
+            PlotOptions = new PlotOptions
+            {
+                Waterfall = new PlotOptionsWaterfall
+                {
+                    DataLabels = new PlotOptionsWaterfallDataLabels
+                    {
+                        Enabled = true,
+                        Formatter = "formatLabels"
+                    }
+                }
+            }
+        }
+        , "chart")
+    )
