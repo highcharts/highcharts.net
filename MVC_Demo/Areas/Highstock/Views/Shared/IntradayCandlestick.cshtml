@@ -8,7 +8,7 @@
     
     @(Html.Highsoft().Highstock(
         new Highstock
-        {  
+        {
             Title = new Title
             {
                 Text = "AAPL stock price by minute"
@@ -16,18 +16,33 @@
             Subtitle = new Subtitle
             {
                 Text = "Using ordinal X axis"
-            },           
+            },
+            //Navigator = new Navigator()
+            //{
+
+            //    Series = new CandleStickSeries()
+            //    {
+            //        Data = ViewBag.IntradayData as List<CandleStickSeriesData>
+            //    }
+            //},
+            RangeSelector = new RangeSelector()
+            {
+                Buttons = new List<object>() { new { type = "hour", count = 1, text = "1h" }, new { type = "day", count = 1, text = "1D" }, new { type = "all", count = 1, text = "All" } },
+                InputEnabled = false,
+                Selected = 1
+            },
             Series = new List<Series>
             {
                 new CandleStickSeries
                 {
                     Data = ViewBag.IntradayData as List<CandleStickSeriesData>,
+
                     Name = "AAPL",
                     Tooltip = new CandleStickSeriesTooltip
                     {
                         ValueDecimals = 2
                     },
-                    TurboThreshold = 10000           
+                    TurboThreshold = 10000
                 }
             }
         },
