@@ -41,11 +41,11 @@
                     Load = "loadData"
                 }
             },
-            RangeSelector = new RangeSelector
+            RangeSelector = new RangeSelector()
             {
-                Selected = 0,
+                Buttons = new List<object>() { new { type = "minute", count = 1, text = "1M" }, new { type = "minute", count = 5, text = "5M" }, new { type = "all", count = 1, text = "All" } },
                 InputEnabled = false,
-
+                Selected = 1
             },
             Title = new Title
             {
