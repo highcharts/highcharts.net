@@ -16,7 +16,7 @@
     
     @(Html.Highsoft().Highstock(
         new Highstock
-        {           
+        {
             RangeSelector = new RangeSelector
             {
                 Selected = 1
@@ -32,16 +32,16 @@
                    Data = ViewBag.AppleData as List<SplineSeriesData>,
                    Name = "Apple Stock Price",
                    TurboThreshold = 10000,
-                   Marker = new SplineSeriesMarker
-                   {
-                       Enabled = true,
-                       Radius = 3
-                   },
-                   Shadow = new Shadow
-                   {
-                       Enabled = true,
-                       
-                   },
+                   //Marker = new SplineSeriesMarker
+                   //{
+                   //    Enabled = true,
+                   //    Radius = 3
+                   //},
+                   //Shadow = new Shadow
+                   //{
+                   //    Enabled = true,
+
+                   //},
                    Tooltip = new SplineSeriesTooltip
                    {
                        ValueDecimals = 2
