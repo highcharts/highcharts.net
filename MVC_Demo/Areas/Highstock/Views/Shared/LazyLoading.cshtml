@@ -34,6 +34,7 @@
             var chart = $('#chart').highcharts();
             chart.showLoading('Loading data from server...');
             chart.series[0].setData(data);
+            chart.series[1].setData(data);
             chart.hideLoading();
         });
     }
@@ -71,6 +72,7 @@
             RangeSelector = new RangeSelector
             {
                 InputEnabled = false,
+                Buttons = new List<object>() { new { type = "hour", count = 1, text = "1h" }, new { type = "day", count = 1, text = "1d" }, new { type = "month", count = 1, text = "1m" }, new { type = "year", count = 1, text = "1y" }, new { type = "all", text = "All" } },
                 Selected = 4
             },
             XAxis = new List<XAxis>
@@ -89,7 +91,7 @@
                 new YAxis
                 {
                     Floor = 0
-                },                
+                },
             },
             Series = new List<Series>
             {
