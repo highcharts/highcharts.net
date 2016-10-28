@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Format = Format_DefaultValue = "{total}";
 			Formatter = Formatter_DefaultValue = "";
 			Rotation = Rotation_DefaultValue = 0;
-			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#000000"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textShadow", "0 0 6px contrast},{ 00 3px contrast" }};
+			Style = Style_DefaultValue = new Hashtable{{ "color", "#000000"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textShadow", "0 0 6px contrast, 0 0 3px contrast" }};
 			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Null;
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
@@ -67,8 +67,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the label.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

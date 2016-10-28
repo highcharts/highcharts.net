@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Breaks = Breaks_DefaultValue = new XAxisBreaks();
 			Categories = Categories_DefaultValue = null;
 			Ceiling = Ceiling_DefaultValue = null;
-			//DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
+			//DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
             DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
             EndOnTick = EndOnTick_DefaultValue = false;
 			Events = Events_DefaultValue = new XAxisEvents();

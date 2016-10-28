@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartResetZoomButton()
 		{
-			Position = Position_DefaultValue = new NameValueCollection();
+			Position = Position_DefaultValue = new Hashtable();
 			RelativeTo = RelativeTo_DefaultValue = ChartResetZoomButtonRelativeTo.Plot;
 			Theme = Theme_DefaultValue = null;
 			
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The position of the button. This is an object that can hold the properties <code>align</code>, <code>verticalAlign</code>, <code>x</code> and <code>y</code>.
 		/// </summary>
-		public NameValueCollection Position { get; set; }
-		private NameValueCollection Position_DefaultValue { get; set; }
+		public Hashtable Position { get; set; }
+		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>

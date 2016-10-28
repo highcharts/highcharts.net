@@ -26,15 +26,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Additional styles to apply to the X axis label for a point that has drilldown data. By default it is underlined and blue to invite to interaction. Defaults to:<pre>activeAxisLabelStyle: {cursor: 'pointer',color: '#0d233a',fontWeight: 'bold',textDecoration: 'underline'}</pre>
 		/// </summary>
-		public NameValueCollection ActiveAxisLabelStyle { get; set; }
-		private NameValueCollection ActiveAxisLabelStyle_DefaultValue { get; set; }
+		public Hashtable ActiveAxisLabelStyle { get; set; }
+		private Hashtable ActiveAxisLabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Additional styles to apply to the data label of a point that has drilldown data. By default it is underlined and blue to invite to interaction. Defaults to:<pre>activeAxisLabelStyle: {cursor: 'pointer',color: '#0d233a',fontWeight: 'bold',textDecoration: 'underline'}</pre>
 		/// </summary>
-		public NameValueCollection ActiveDataLabelStyle { get; set; }
-		private NameValueCollection ActiveDataLabelStyle_DefaultValue { get; set; }
+		public Hashtable ActiveDataLabelStyle { get; set; }
+		private Hashtable ActiveDataLabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

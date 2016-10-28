@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Align = Align_DefaultValue = "left";
 			Rotation = Rotation_DefaultValue = null;
-			Style = Style_DefaultValue = new NameValueCollection();
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
 			TextAlign = TextAlign_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the text label.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

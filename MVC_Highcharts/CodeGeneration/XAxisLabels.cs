@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
-			Style = Style_DefaultValue = new NameValueCollection{{"color","#6D869F"},{"fontWeight","bold"}};
+			Style = Style_DefaultValue = new Hashtable{{"color","#6D869F"},{"fontWeight","bold"}};
 			UseHTML = UseHTML_DefaultValue = false;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
@@ -114,8 +114,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the label. Use <code>whiteSpace: 'nowrap'</code> to prevent wrapping of category labels.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -32,22 +32,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the hover state of the individual items within the popup menu appearing by  default when the export icon is clicked. The menu items are rendered in HTML. Defaults to <pre>menuItemHoverStyle: {background: '#4572A5',color: '#FFFFFF'}</pre>
 		/// </summary>
-		public NameValueCollection MenuItemHoverStyle { get; set; }
-		private NameValueCollection MenuItemHoverStyle_DefaultValue { get; set; }
+		public Hashtable MenuItemHoverStyle { get; set; }
+		private Hashtable MenuItemHoverStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the individual items within the popup menu appearing by  default when the export icon is clicked. The menu items are rendered in HTML. Defaults to <pre>menuItemStyle: {padding: '0 5px',background: NONE,color: '#303030'}</pre>
 		/// </summary>
-		public NameValueCollection MenuItemStyle { get; set; }
-		private NameValueCollection MenuItemStyle_DefaultValue { get; set; }
+		public Hashtable MenuItemStyle { get; set; }
+		private Hashtable MenuItemStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the popup menu appearing by default when the export icon is clicked. This menu is rendered in HTML. Defaults to <pre>menuStyle: {border: '1px solid #A0A0A0',background: '#FFFFFF'}</pre>
 		/// </summary>
-		public NameValueCollection MenuStyle { get; set; }
-		private NameValueCollection MenuStyle_DefaultValue { get; set; }
+		public Hashtable MenuStyle { get; set; }
+		private Hashtable MenuStyle_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

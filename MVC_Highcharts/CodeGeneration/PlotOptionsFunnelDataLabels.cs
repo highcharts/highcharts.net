@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "square";
 			SoftConnector = SoftConnector_DefaultValue = true;
-			Style = Style_DefaultValue = new NameValueCollection{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textShadow", "0 0 6px contrast},{ 0 0 3px contrast" }};
+			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textShadow", "0 0 6px contrast, 0 0 3px contrast" }};
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsFunnelDataLabelsVerticalAlign.Null;
 			X = X_DefaultValue = 0;
@@ -195,8 +195,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Styles for the label.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

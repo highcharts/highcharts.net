@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ItemHoverStyle = ItemHoverStyle_DefaultValue = null;
 			ItemMarginBottom = ItemMarginBottom_DefaultValue = 0;
 			ItemMarginTop = ItemMarginTop_DefaultValue = 0;
-			ItemStyle = ItemStyle_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "cursor", "pointer"},{ "fontSize", "12px"},{ "fontWeight", "bold" }};
+			ItemStyle = ItemStyle_DefaultValue = new Hashtable{{ "color", "#333333"},{ "cursor", "pointer"},{ "fontSize", "12px"},{ "fontWeight", "bold" }};
 			ItemWidth = ItemWidth_DefaultValue = null;
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
 			LabelFormatter = LabelFormatter_DefaultValue = "";
@@ -112,15 +112,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for each legend item when the corresponding series or point is hidden. Only a subset of CSS is supported, notably those options related to text. Properties are inherited from <code>style</code> unless overridden here. Defaults to:<pre>itemHiddenStyle: {color: '#CCC'}</pre>
 		/// </summary>
-		public NameValueCollection ItemHiddenStyle { get; set; }
-		private NameValueCollection ItemHiddenStyle_DefaultValue { get; set; }
+		public Hashtable ItemHiddenStyle { get; set; }
+		private Hashtable ItemHiddenStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for each legend item in hover mode. Only a subset of CSS is supported, notably those options related to text. Properties are inherited from <code>style</code> unless overridden here. Defaults to:<pre>itemHoverStyle: {color: '#000'}</pre>
 		/// </summary>
-		public NameValueCollection ItemHoverStyle { get; set; }
-		private NameValueCollection ItemHoverStyle_DefaultValue { get; set; }
+		public Hashtable ItemHoverStyle { get; set; }
+		private Hashtable ItemHoverStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -140,8 +140,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for each legend item. Only a subset of CSS is supported, notably those options related to text.
 		/// </summary>
-		public NameValueCollection ItemStyle { get; set; }
-		private NameValueCollection ItemStyle_DefaultValue { get; set; }
+		public Hashtable ItemStyle { get; set; }
+		private Hashtable ItemStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
