@@ -18,15 +18,21 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
         }
 
         public string RenderHtml()
-        {            
-            #if (LICENSED == false)
-            if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
-            {
-                return "This is a trial version of Highstock for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
-               
-            }
-            #endif
-            return GetStartupJavascript();
+        {
+            int licenseType = LicenseVerifier.Check();
+            string message = "";
+
+            if (licenseType == 0)
+                message = "<div style=\"background:yellow\">Incorrect serial key. I'm working in trial mode now.</div>";
+
+            if (licenseType == -1 || licenseType == 0) //trial
+                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
+                {
+                    message += "This is a trial version of Highstock for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
+                    return message;
+                }
+
+            return message + GetStartupJavascript();
         }
 
         public string GetStartupJavascript()
