@@ -26,9 +26,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			InputDateParser = InputDateParser_DefaultValue = "";
 			InputEditDateFormat = InputEditDateFormat_DefaultValue = "%Y-%m-%d";
 			InputEnabled = InputEnabled_DefaultValue = null;
-			InputPosition = InputPosition_DefaultValue = new NameValueCollection{{ "align" , "right" }};
-			InputStyle = InputStyle_DefaultValue = new NameValueCollection();
-			LabelStyle = LabelStyle_DefaultValue = new NameValueCollection();
+			InputPosition = InputPosition_DefaultValue = new Hashtable{{ "align" , "right" }};
+			InputStyle = InputStyle_DefaultValue = new Hashtable();
+			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
 			Selected = Selected_DefaultValue = null;
 			
 		}	
@@ -121,22 +121,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Positioning for the input boxes. Allowed properties are <code>align</code>, <code>verticalAlign</code>, <code>x</code> and <code>y</code>.
 		/// </summary>
-		public NameValueCollection InputPosition { get; set; }
-		private NameValueCollection InputPosition_DefaultValue { get; set; }
+		public Hashtable InputPosition { get; set; }
+		private Hashtable InputPosition_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS for the HTML inputs in the range selector.
 		/// </summary>
-		public NameValueCollection InputStyle { get; set; }
-		private NameValueCollection InputStyle_DefaultValue { get; set; }
+		public Hashtable InputStyle { get; set; }
+		private Hashtable InputStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the labels - the Zoom, From and To texts.
 		/// </summary>
-		public NameValueCollection LabelStyle { get; set; }
-		private NameValueCollection LabelStyle_DefaultValue { get; set; }
+		public Hashtable LabelStyle { get; set; }
+		private Hashtable LabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

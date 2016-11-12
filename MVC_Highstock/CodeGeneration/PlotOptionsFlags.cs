@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			StackDistance = StackDistance_DefaultValue = 12;
 			States = States_DefaultValue = new PlotOptionsFlagsStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
-			Style = Style_DefaultValue = new NameValueCollection();
+			Style = Style_DefaultValue = new Hashtable();
 			Title = Title_DefaultValue = "A";
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsFlagsTooltip();
 			UseHTML = UseHTML_DefaultValue = false;
@@ -221,8 +221,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The text styles of the flag. Defaults to:<pre>style: {fontSize: '11px',fontWeight: 'bold',textAlign: 'center'}</pre>
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

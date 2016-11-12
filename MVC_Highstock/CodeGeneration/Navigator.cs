@@ -96,8 +96,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Options for the navigator series. Available options are the same as any series, documented at <a class="internal" href="#plotOptions.series">plotOptions</a> and <a class="internal" href="#series">series</a>.</p><p>Unless data is explicitly defined on navigator.series, the data is borrowed from the first series in the chart.</p><p>Default series options for the navigator series are:</p><pre>series: {type: 'areaspline',color: '#4572A7',fillOpacity: 0.05,dataGrouping: {smoothed: true},lineWidth: 1,marker: {enabled: false}}</pre>
 		/// </summary>
-		public Object Series { get; set; }
-		private Object Series_DefaultValue { get; set; }
+		public Series Series { get; set; }
+		private Series Series_DefaultValue { get; set; }
 		 
 
 		/// <summary>

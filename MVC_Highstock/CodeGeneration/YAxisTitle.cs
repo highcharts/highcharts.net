@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Margin = Margin_DefaultValue = new string[] {};
 			Offset = Offset_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 270;
-			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#707070"},{ "fontWeight", "bold" }};
+			Style = Style_DefaultValue = new Hashtable{{ "color", "#707070"},{ "fontWeight", "bold" }};
 			Text = Text_DefaultValue = "null";
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
@@ -57,8 +57,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the title. When titles are rotated they are rendered using vector graphic techniques and not all styles are applicable.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

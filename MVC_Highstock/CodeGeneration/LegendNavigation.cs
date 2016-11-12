@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			ArrowSize = ArrowSize_DefaultValue = 12;
 			InactiveColor = InactiveColor_DefaultValue = "#CCC";
-			Style = Style_DefaultValue = new NameValueCollection();
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Text styles for the legend page navigation.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

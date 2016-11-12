@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Loading()
 		{
 			HideDuration = HideDuration_DefaultValue = 100;
-			LabelStyle = LabelStyle_DefaultValue = new NameValueCollection{{ "fontWeight", "bold"},{ "position", "relative"},{ "top", "45%" }};
+			LabelStyle = LabelStyle_DefaultValue = new Hashtable{{ "fontWeight", "bold"},{ "position", "relative"},{ "top", "45%" }};
 			ShowDuration = ShowDuration_DefaultValue = 0;
-			Style = Style_DefaultValue = new NameValueCollection();
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the loading label <code>span</code>.
 		/// </summary>
-		public NameValueCollection LabelStyle { get; set; }
-		private NameValueCollection LabelStyle_DefaultValue { get; set; }
+		public Hashtable LabelStyle { get; set; }
+		private Hashtable LabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the loading screen that covers the plot area. Defaults to:<pre>style: {position: 'absolute',backgroundColor: 'white',opacity: 0.5,textAlign: 'center'}</pre>
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
