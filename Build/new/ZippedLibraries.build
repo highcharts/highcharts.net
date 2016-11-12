@@ -29,6 +29,7 @@
 <property name="version" value="4_1_7_0"/>
 <property name="highcharts.zip" value="Highcharts_ASPNET_MVC_${version}.zip"/>
 <property name="highstock.zip" value="Highstock_ASPNET_MVC_${version}.zip"/>
+<property name="website.downloads" value="${Demo.Folder}\downloads"/>
 
 
 <target name="clean.folders">
@@ -127,6 +128,20 @@
 		</fileset>
 	</copy>
 </target>
+
+<target name="copy.trials.to.website">
+	<copy todir="${website.downloads}">
+		<fileset basedir="${Highcharts.Trial.Target.ZippedPackage}">
+			<includes name="*.*"/>
+		</fileset>
+	</copy>
+	<copy todir="${website.downloads}">
+		<fileset basedir="${Highstock.Trial.Target.ZippedPackage}">
+			<includes name="*.*"/>
+		</fileset>
+	</copy>
+</target>
+
 
 <target name="zip.trial.libraries">
 	<zip zipfile="${Highcharts.Trial.Target.ZippedPackage}\${highcharts.zip}">
@@ -243,6 +258,7 @@
 	<call target="build.libraries"/>
 	<call target="copy.unlimited.libraries"/>
 	<call target="zip.unlimited.libraries"/>
+	<call target="copy.trials.to.website"/>
 	<!--<call target="copy.highcharts.demo"/>-->
 	<!--<call target="zip.demos"/>-->
 	
