@@ -60,6 +60,13 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
             return View("~/Areas/Highcharts/Views/Demo/Index.cshtml");
         }
 
+        public ActionResult Index2(string theme)
+        {
+            SetViewBag(String.Empty, theme);
+
+            return View("~/Areas/Highcharts/Views/Demo/Index2.cshtml");
+        }
+
         public ActionResult Help()
         {
             return View();

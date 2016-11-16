@@ -27,6 +27,9 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 
             ViewBag.IntradayData = intradayData.OrderBy(o => o.X).ToList();
 
+            ViewBag.From = DateToUTC(new DateTime(2011, 9, 6, 16, 0, 0));
+            ViewBag.To = DateToUTC(new DateTime(2011, 9, 7, 8, 0, 0));
+
             return View(ViewBag);
         }
         

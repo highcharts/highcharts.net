@@ -813,6 +813,9 @@
     <Content Include="Content\chart_types\waterfall-grid-light.png" />
     <Content Include="Content\chart_types\waterfall-sand-signika.svg" />
     <Content Include="Content\closeX.png" />
+    <Content Include="Content\HC.png" />
+    <Content Include="Content\HC2.png" />
+    <Content Include="Content\HS.png" />
     <Content Include="Content\loader.white.gif" />
     <Content Include="Content\gallery.css" />
     <Content Include="Content\highslide.css" />
@@ -874,6 +877,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\wrapper_logo.png" />
+    <Content Include="Content\wrapper_logo2.png" />
     <Content Include="Docs\Highcharts\images\image00.png" />
     <Content Include="Docs\Highcharts\images\image01.png" />
     <Content Include="Docs\Highcharts\images\image02.png" />
@@ -6689,12 +6694,14 @@
     <Content Include="Help\Highstock\html\_y_axis_plot_lines_8cs.html" />
     <Content Include="Help\Highstock\html\_y_axis_plot_lines_label_8cs.html" />
     <Content Include="Help\Highstock\html\_y_axis_title_8cs.html" />
+    <Content Include="HighchartsSerial.txt" />
     <Content Include="Models\ChartData.edmx.diagram">
       <DependentUpon>ChartData.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Highstock\Views\Demo\Chart.cshtml" />
     <Content Include="Areas\Highstock\Views\Demo\ViewCode.cshtml" />
     <Content Include="Areas\Highstock\Views\Demo\ControllerCode.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\Index2.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />

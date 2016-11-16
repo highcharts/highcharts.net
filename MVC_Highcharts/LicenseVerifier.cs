@@ -76,7 +76,6 @@ namespace Highsoft.Web.Mvc.Charts
             if (values.Length == 0)
                 return null;
 
-
             return values[0];
         }
     }

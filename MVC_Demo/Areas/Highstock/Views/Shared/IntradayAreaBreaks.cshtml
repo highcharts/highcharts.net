@@ -25,22 +25,23 @@
                     {
                         From = (long)(new DateTime(2011, 9, 6,16,0,0) - new DateTime(1970, 1, 1)).TotalMilliseconds,
                         To = (long)(new DateTime(2011, 9, 7, 8,0,0) - new DateTime(1970, 1, 1)).TotalMilliseconds,
-                        Repeat = 24 * 3600 *1000,
-                        BreakSize = 3600 * 1000
+                        
+                        Repeat = 24 * 3600 *1000
+                        //BreakSize = 3600 *1000
             },
-                    Ordinal = true
+                    //Ordinal = true
         }
     },
-            YAxis = new List<YAxis>
-            {
-                new YAxis()
-    {
-        Min = 360
-                }
-            },
+            //        YAxis = new List<YAxis>
+            //        {
+            //            new YAxis()
+            //{
+            //    Min = 360
+            //            }
+            //        },
             RangeSelector = new RangeSelector()
-    {
-        Buttons = new List<object>() { new { type = "hour", count = 1, text = "1h" }, new { type = "day", count = 1, text = "1D" }, new { type = "all", count = 1, text = "All" } },
+            {
+                Buttons = new List<object>() { new { type = "hour", count = 1, text = "1h" }, new { type = "day", count = 1, text = "1D" }, new { type = "all", count = 1, text = "All" } },
                 InputEnabled = false,
                 Selected = 1
             },
