@@ -1,0 +1,5 @@
+C:\Users\PC\Documents\highcharts.net\ApiGenerator\obj\Release\ApiGenerator.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\highcharts.net\ApiGenerator\bin\Release\ApiGenerator.exe
+C:\Users\PC\Documents\highcharts.net\ApiGenerator\bin\Release\ApiGenerator.pdb
+C:\Users\PC\Documents\highcharts.net\ApiGenerator\obj\Release\ApiGenerator.exe
+C:\Users\PC\Documents\highcharts.net\ApiGenerator\obj\Release\ApiGenerator.pdb
