@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Highsoft.Web.Mvc.Stocks</RootNamespace>
     <AssemblyName>Highstock.Web.Mvc</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Highstock.Web.Mvc.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -38,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -60,6 +62,8 @@
     <Compile Include="CodeAddOns\Shadow.cs" />
     <Compile Include="CodeAddOns\Stop.cs" />
     <Compile Include="CodeAddOns\Symbol.cs" />
+    <Compile Include="CodeGeneration\Accessibility.cs" />
+    <Compile Include="CodeGeneration\AccessibilityKeyboardNavigation.cs" />
     <Compile Include="CodeGeneration\ArearangeSeries.cs" />
     <Compile Include="CodeGeneration\ArearangeSeriesData.cs" />
     <Compile Include="CodeGeneration\ArearangeSeriesDataEvents.cs" />
@@ -72,7 +76,6 @@
     <Compile Include="CodeGeneration\ArearangeSeriesStates.cs" />
     <Compile Include="CodeGeneration\ArearangeSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\ArearangeSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\ArearangeSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\ArearangeSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\ArearangeSeriesZones.cs" />
     <Compile Include="CodeGeneration\AreaSeries.cs" />
@@ -95,7 +98,6 @@
     <Compile Include="CodeGeneration\AreaSeriesStates.cs" />
     <Compile Include="CodeGeneration\AreaSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\AreaSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\AreaSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\AreaSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\AreaSeriesZones.cs" />
     <Compile Include="CodeGeneration\AreasplinerangeSeries.cs" />
@@ -110,7 +112,6 @@
     <Compile Include="CodeGeneration\AreasplinerangeSeriesStates.cs" />
     <Compile Include="CodeGeneration\AreasplinerangeSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\AreasplinerangeSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\AreasplinerangeSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\AreasplinerangeSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\AreasplinerangeSeriesZones.cs" />
     <Compile Include="CodeGeneration\AreasplineSeries.cs" />
@@ -133,7 +134,6 @@
     <Compile Include="CodeGeneration\AreasplineSeriesStates.cs" />
     <Compile Include="CodeGeneration\AreasplineSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\AreasplineSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\AreasplineSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\AreasplineSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\AreasplineSeriesZones.cs" />
     <Compile Include="CodeGeneration\CandleStickSeries.cs" />
@@ -142,21 +142,18 @@
     <Compile Include="CodeGeneration\CandleStickSeriesDataGrouping.cs" />
     <Compile Include="CodeGeneration\CandleStickSeriesDataLabels.cs" />
     <Compile Include="CodeGeneration\CandleStickSeriesEvents.cs" />
-    <Compile Include="CodeGeneration\CandleStickSeriesMarker.cs" />
-    <Compile Include="CodeGeneration\CandleStickSeriesMarkerStates.cs" />
-    <Compile Include="CodeGeneration\CandleStickSeriesMarkerStatesHover.cs" />
-    <Compile Include="CodeGeneration\CandleStickSeriesMarkerStatesSelect.cs" />
     <Compile Include="CodeGeneration\CandleStickSeriesPoint.cs" />
     <Compile Include="CodeGeneration\CandleStickSeriesPointEvents.cs" />
     <Compile Include="CodeGeneration\CandleStickSeriesPointPlacement.cs" />
     <Compile Include="CodeGeneration\CandleStickSeriesStates.cs" />
     <Compile Include="CodeGeneration\CandleStickSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\CandleStickSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\CandleStickSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\CandleStickSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\CandleStickSeriesZones.cs" />
     <Compile Include="CodeGeneration\Chart.cs" />
     <Compile Include="CodeGeneration\ChartEvents.cs" />
+    <Compile Include="CodeGeneration\ChartResetZoomButton.cs" />
+    <Compile Include="CodeGeneration\ChartResetZoomButtonPosition.cs" />
     <Compile Include="CodeGeneration\ColorAxis.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeries.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesData.cs" />
@@ -164,17 +161,12 @@
     <Compile Include="CodeGeneration\ColumnrangeSeriesDataGrouping.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesDataLabels.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesEvents.cs" />
-    <Compile Include="CodeGeneration\ColumnrangeSeriesMarker.cs" />
-    <Compile Include="CodeGeneration\ColumnrangeSeriesMarkerStates.cs" />
-    <Compile Include="CodeGeneration\ColumnrangeSeriesMarkerStatesHover.cs" />
-    <Compile Include="CodeGeneration\ColumnrangeSeriesMarkerStatesSelect.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesPoint.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesPointEvents.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesPointPlacement.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesStates.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\ColumnrangeSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesZones.cs" />
     <Compile Include="CodeGeneration\ColumnSeries.cs" />
@@ -183,41 +175,42 @@
     <Compile Include="CodeGeneration\ColumnSeriesDataGrouping.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesDataLabels.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesEvents.cs" />
-    <Compile Include="CodeGeneration\ColumnSeriesMarker.cs" />
-    <Compile Include="CodeGeneration\ColumnSeriesMarkerStates.cs" />
-    <Compile Include="CodeGeneration\ColumnSeriesMarkerStatesHover.cs" />
-    <Compile Include="CodeGeneration\ColumnSeriesMarkerStatesSelect.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesPoint.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesPointEvents.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesPointPlacement.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesStates.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\ColumnSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesZones.cs" />
     <Compile Include="CodeGeneration\Credits.cs" />
+    <Compile Include="CodeGeneration\CreditsPosition.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\ArearangeSeriesLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesStacking.cs" />
+    <Compile Include="CodeGeneration\Enums\ArearangeSeriesStep.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\AreaSeriesLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesStacking.cs" />
+    <Compile Include="CodeGeneration\Enums\AreaSeriesStep.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesType.cs" />
@@ -226,6 +219,7 @@
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\AreasplineSeriesLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesType.cs" />
@@ -236,6 +230,9 @@
     <Compile Include="CodeGeneration\Enums\CandleStickSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\CandleStickSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\ChartPinchType.cs" />
+    <Compile Include="CodeGeneration\Enums\ChartResetZoomButtonPositionAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\ChartResetZoomButtonPositionVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\ChartResetZoomButtonRelativeTo.cs" />
     <Compile Include="CodeGeneration\Enums\ChartType.cs" />
     <Compile Include="CodeGeneration\Enums\ChartZoomType.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesCursor.cs" />
@@ -243,7 +240,6 @@
     <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesPointIntervalUnit.cs" />
-    <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnSeriesDataLabelsAlign.cs" />
@@ -252,6 +248,8 @@
     <Compile Include="CodeGeneration\Enums\ColumnSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\CreditsPositionAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\CreditsPositionVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ExportingButtonsContextButtonAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ExportingButtonsContextButtonVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ExportingType.cs" />
@@ -259,8 +257,10 @@
     <Compile Include="CodeGeneration\Enums\FlagsSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\FlagsSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\FlagsSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\FlagsSeriesOnKey.cs" />
     <Compile Include="CodeGeneration\Enums\FlagsSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\FlagsSeriesShape.cs" />
+    <Compile Include="CodeGeneration\Enums\FlagsSeriesTextAlign.cs" />
     <Compile Include="CodeGeneration\Enums\FlagsSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\LegendAlign.cs" />
     <Compile Include="CodeGeneration\Enums\LegendLayout.cs" />
@@ -277,6 +277,8 @@
     <Compile Include="CodeGeneration\Enums\LineSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\NavigationButtonOptionsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\NavigationButtonOptionsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\NoDataPositionAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\NoDataPositionVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesDataLabelsOverflow.cs" />
@@ -288,29 +290,35 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsAreaLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangePointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeStacking.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeStep.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinePointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangeCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangeDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangeDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangeDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangeDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangeLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangePointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangeStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaStacking.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsAreaStep.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickDataLabelsOverflow.cs" />
@@ -326,14 +334,15 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnrangeDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnrangeDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnrangePointIntervalUnit.cs" />
-    <Compile Include="CodeGeneration\Enums\PlotOptionsColumnrangeStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsOnKey.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsShape.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsTextAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsLineCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsLineDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsLineDataLabelsAlign.cs" />
@@ -367,13 +376,16 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesStacking.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesStep.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplineCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplineDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplineDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplineDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplineDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsSplineLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplinePointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplineStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PolygonSeriesCursor.cs" />
@@ -384,6 +396,7 @@
     <Compile Include="CodeGeneration\Enums\PolygonSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PolygonSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PolygonSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\RangeSelectorButtonsType.cs" />
     <Compile Include="CodeGeneration\Enums\ScatterSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\ScatterSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\ScatterSeriesDataLabelsAlign.cs" />
@@ -398,6 +411,7 @@
     <Compile Include="CodeGeneration\Enums\SplineSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\SplineSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\SplineSeriesDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\SplineSeriesLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\SplineSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\SplineSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\SplineSeriesType.cs" />
@@ -405,6 +419,7 @@
     <Compile Include="CodeGeneration\Enums\SubtitleVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\TitleAlign.cs" />
     <Compile Include="CodeGeneration\Enums\TitleVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\XAxisCrosshairDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\XAxisGridLineDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\XAxisLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\XAxisMinorGridLineDashStyle.cs" />
@@ -413,7 +428,9 @@
     <Compile Include="CodeGeneration\Enums\XAxisPlotLinesLabelVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\XAxisTickPosition.cs" />
     <Compile Include="CodeGeneration\Enums\XAxisTitleAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\YAxisCrosshairDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\YAxisGridLineDashStyle.cs" />
+    <Compile Include="CodeGeneration\Enums\YAxisLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\YAxisMinorGridLineDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\YAxisMinorTickPosition.cs" />
     <Compile Include="CodeGeneration\Enums\YAxisPlotLinesDashStyle.cs" />
@@ -433,7 +450,6 @@
     <Compile Include="CodeGeneration\FlagsSeriesStates.cs" />
     <Compile Include="CodeGeneration\FlagsSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\FlagsSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\FlagsSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\FlagsSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\FlagsSeriesZones.cs" />
     <Compile Include="CodeGeneration\Global.cs" />
@@ -464,30 +480,27 @@
     <Compile Include="CodeGeneration\LineSeriesStates.cs" />
     <Compile Include="CodeGeneration\LineSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\LineSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\LineSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\LineSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\LineSeriesZones.cs" />
     <Compile Include="CodeGeneration\Loading.cs" />
     <Compile Include="CodeGeneration\Navigation.cs" />
     <Compile Include="CodeGeneration\NavigationButtonOptions.cs" />
     <Compile Include="CodeGeneration\Navigator.cs" />
+    <Compile Include="CodeGeneration\NavigatorHandles.cs" />
+    <Compile Include="CodeGeneration\NoData.cs" />
+    <Compile Include="CodeGeneration\NoDataPosition.cs" />
     <Compile Include="CodeGeneration\OhlcSeries.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesData.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesDataEvents.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesDataGrouping.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesDataLabels.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesEvents.cs" />
-    <Compile Include="CodeGeneration\OhlcSeriesMarker.cs" />
-    <Compile Include="CodeGeneration\OhlcSeriesMarkerStates.cs" />
-    <Compile Include="CodeGeneration\OhlcSeriesMarkerStatesHover.cs" />
-    <Compile Include="CodeGeneration\OhlcSeriesMarkerStatesSelect.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesPoint.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesPointEvents.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesPointPlacement.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesStates.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\OhlcSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\OhlcSeriesZones.cs" />
     <Compile Include="CodeGeneration\PlotOptions.cs" />
@@ -512,7 +525,6 @@
     <Compile Include="CodeGeneration\PlotOptionsArearangeStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsArearangeStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsArearangeStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsArearangeStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsArearangeTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsArearangeZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreaspline.cs" />
@@ -536,46 +548,34 @@
     <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreasplinerangeZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreasplineStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreasplineStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreasplineStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsAreasplineStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreasplineTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreasplineZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreaStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreaStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreaStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsAreaStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreaTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsAreaZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestick.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestickDataGrouping.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestickDataLabels.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestickEvents.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsCandlestickMarker.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsCandlestickMarkerStates.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsCandlestickMarkerStatesHover.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsCandlestickMarkerStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestickPoint.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestickPointEvents.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestickPointPlacement.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestickStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestickStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestickStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsCandlestickStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestickTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsCandlestickZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumn.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnDataGrouping.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnDataLabels.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnEvents.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnMarker.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnMarkerStates.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnMarkerStatesHover.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnMarkerStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnPoint.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnPointEvents.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnPointPlacement.cs" />
@@ -583,23 +583,17 @@
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeDataGrouping.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeDataLabels.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeEvents.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnrangeMarker.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnrangeMarkerStates.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnrangeMarkerStatesHover.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnrangeMarkerStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangePoint.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangePointEvents.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangePointPlacement.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnrangeStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFlags.cs" />
@@ -610,7 +604,6 @@
     <Compile Include="CodeGeneration\PlotOptionsFlagsStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFlagsStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFlagsStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsFlagsStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFlagsTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFlagsZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsLine.cs" />
@@ -627,24 +620,18 @@
     <Compile Include="CodeGeneration\PlotOptionsLineStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsLineStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsLineStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsLineStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsLineTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsLineZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlc.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlcDataGrouping.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlcDataLabels.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlcEvents.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsOhlcMarker.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsOhlcMarkerStates.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsOhlcMarkerStatesHover.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsOhlcMarkerStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlcPoint.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlcPointEvents.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlcPointPlacement.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlcStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlcStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlcStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsOhlcStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlcTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsOhlcZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsPolygon.cs" />
@@ -661,7 +648,6 @@
     <Compile Include="CodeGeneration\PlotOptionsPolygonStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsPolygonStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsPolygonStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsPolygonStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsPolygonZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsScatter.cs" />
     <Compile Include="CodeGeneration\PlotOptionsScatterDataGrouping.cs" />
@@ -677,7 +663,6 @@
     <Compile Include="CodeGeneration\PlotOptionsScatterStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsScatterStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsScatterStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsScatterStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsScatterZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSeries.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSeriesDataGrouping.cs" />
@@ -693,7 +678,6 @@
     <Compile Include="CodeGeneration\PlotOptionsSeriesStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSeriesZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSpline.cs" />
@@ -710,7 +694,6 @@
     <Compile Include="CodeGeneration\PlotOptionsSplineStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSplineStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSplineStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsSplineStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSplineTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSplineZones.cs" />
     <Compile Include="CodeGeneration\PolygonSeries.cs" />
@@ -733,9 +716,12 @@
     <Compile Include="CodeGeneration\PolygonSeriesStates.cs" />
     <Compile Include="CodeGeneration\PolygonSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\PolygonSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PolygonSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PolygonSeriesZones.cs" />
     <Compile Include="CodeGeneration\RangeSelector.cs" />
+    <Compile Include="CodeGeneration\RangeSelectorButtons.cs" />
+    <Compile Include="CodeGeneration\Responsive.cs" />
+    <Compile Include="CodeGeneration\ResponsiveRules.cs" />
+    <Compile Include="CodeGeneration\ResponsiveRulesCondition.cs" />
     <Compile Include="CodeGeneration\ScatterSeries.cs" />
     <Compile Include="CodeGeneration\ScatterSeriesData.cs" />
     <Compile Include="CodeGeneration\ScatterSeriesDataEvents.cs" />
@@ -756,7 +742,6 @@
     <Compile Include="CodeGeneration\ScatterSeriesStates.cs" />
     <Compile Include="CodeGeneration\ScatterSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\ScatterSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\ScatterSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\ScatterSeriesZones.cs" />
     <Compile Include="CodeGeneration\Scrollbar.cs" />
     <Compile Include="CodeGeneration\Series.cs" />
@@ -781,7 +766,6 @@
     <Compile Include="CodeGeneration\SplineSeriesStates.cs" />
     <Compile Include="CodeGeneration\SplineSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\SplineSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\SplineSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\SplineSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\SplineSeriesZones.cs" />
     <Compile Include="CodeGeneration\Subtitle.cs" />
@@ -789,6 +773,8 @@
     <Compile Include="CodeGeneration\Tooltip.cs" />
     <Compile Include="CodeGeneration\XAxis.cs" />
     <Compile Include="CodeGeneration\XAxisBreaks.cs" />
+    <Compile Include="CodeGeneration\XAxisCrosshair.cs" />
+    <Compile Include="CodeGeneration\XAxisCrosshairLabel.cs" />
     <Compile Include="CodeGeneration\XAxisEvents.cs" />
     <Compile Include="CodeGeneration\XAxisLabels.cs" />
     <Compile Include="CodeGeneration\XAxisPlotBands.cs" />
@@ -798,22 +784,27 @@
     <Compile Include="CodeGeneration\XAxisTitle.cs" />
     <Compile Include="CodeGeneration\YAxis.cs" />
     <Compile Include="CodeGeneration\YAxisBreaks.cs" />
+    <Compile Include="CodeGeneration\YAxisCrosshair.cs" />
+    <Compile Include="CodeGeneration\YAxisCrosshairLabel.cs" />
     <Compile Include="CodeGeneration\YAxisEvents.cs" />
     <Compile Include="CodeGeneration\YAxisLabels.cs" />
     <Compile Include="CodeGeneration\YAxisPlotBands.cs" />
     <Compile Include="CodeGeneration\YAxisPlotBandsLabel.cs" />
     <Compile Include="CodeGeneration\YAxisPlotLines.cs" />
     <Compile Include="CodeGeneration\YAxisPlotLinesLabel.cs" />
+    <Compile Include="CodeGeneration\YAxisScrollbar.cs" />
     <Compile Include="CodeGeneration\YAxisTitle.cs" />
     <Compile Include="CompiledOn.cs" />
     <Compile Include="Highstock.cs" />
     <Compile Include="HighstockRenderr.cs" />
     <Compile Include="HtmlHelperExtensions.cs" />
+    <Compile Include="LicenseVerifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="highcharts.snk" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

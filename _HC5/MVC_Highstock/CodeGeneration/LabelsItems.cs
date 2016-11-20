@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LabelsItems()
 		{
-			Html = Html_DefaultValue = "''";
-			Style = Style_DefaultValue = new NameValueCollection();
+			Html = Html_DefaultValue = null;
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for each label. To position the label, use left and top like this:<pre>style: {left: '100px',top: '100px'}</pre>
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

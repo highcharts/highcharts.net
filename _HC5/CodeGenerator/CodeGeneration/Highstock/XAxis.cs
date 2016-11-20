@@ -18,17 +18,20 @@ namespace Highsoft.Web.Mvc.Stocks
 			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
 			Breaks = Breaks_DefaultValue = new XAxisBreaks();
 			Ceiling = Ceiling_DefaultValue = null;
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
+			ClassName = ClassName_DefaultValue = "";
+			Crosshair = Crosshair_DefaultValue = new XAxisCrosshair();
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
+			Description = Description_DefaultValue = "undefined";
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Events = Events_DefaultValue = new XAxisEvents();
 			Floor = Floor_DefaultValue = null;
-			GridLineColor = GridLineColor_DefaultValue = "#D8D8D8";
+			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = XAxisGridLineDashStyle.Solid;
 			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Id = Id_DefaultValue = "null";
 			Labels = Labels_DefaultValue = new XAxisLabels();
-			LineColor = LineColor_DefaultValue = "'#C0D0E0'";
+			LineColor = LineColor_DefaultValue = "#ccd6eb";
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = null;
 			Max = Max_DefaultValue = null;
@@ -37,10 +40,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinPadding = MinPadding_DefaultValue = 0;
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
-			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#E0E0E0";
+			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = XAxisMinorGridLineDashStyle.Solid;
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
-			MinorTickColor = MinorTickColor_DefaultValue = "#A0A0A0";
+			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
 			MinorTickInterval = MinorTickInterval_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = XAxisMinorTickPosition.Outside;
@@ -55,10 +58,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
+			SoftMin = SoftMin_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			StartOnTick = StartOnTick_DefaultValue = false;
 			TickAmount = TickAmount_DefaultValue = null;
-			TickColor = TickColor_DefaultValue = "#C0D0E0";
+			TickColor = TickColor_DefaultValue = "#ccd6eb";
 			TickInterval = TickInterval_DefaultValue = null;
 			TickLength = TickLength_DefaultValue = 10;
 			TickPixelInterval = TickPixelInterval_DefaultValue = null;
@@ -67,12 +71,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickPositions = TickPositions_DefaultValue = null;
 			TickWidth = TickWidth_DefaultValue = 1;
 			Title = Title_DefaultValue = new XAxisTitle();
+			Visible = Visible_DefaultValue = true;
 			
 		}	
 		
 
 		/// <summary>
-		/// Whether to allow decimals in this axis' ticks. When counting integers, like persons or hits on a web page, decimals must be avoided in the axis tick labels.
+		/// Whether to allow decimals in this axis' ticks. When counting integers, like persons or hits on a web page, decimals should be avoided in the labels.
 		/// </summary>
 		public bool? AllowDecimals { get; set; }
 		private bool? AllowDecimals_DefaultValue { get; set; }
@@ -100,10 +105,31 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// For a datetime axis, the scale will automatically adjust to the appropriate unit. This member gives the default string representations used for each unit. For an overview of the replacement codes, see dateFormat. Defaults to:<pre>{millisecond: '%H:%M:%S.%L',second: '%H:%M:%S',minute: '%H:%M',hour: '%H:%M',day: '%e. %b',week: '%e. %b',month: '%b \'%y',year: '%Y'}</pre>
+		/// A class name that opens for styling the axis by CSS, especially in Highcharts <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>. The class name is applied to group elements for the grid, axis elements and labels.
 		/// </summary>
-		public NameValueCollection DateTimeLabelFormats { get; set; }
-		private NameValueCollection DateTimeLabelFormats_DefaultValue { get; set; }
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Configure a crosshair that follows either the mouse pointer or the hovered point. By default, the crosshair is enabled on the X axis and disabled on Y axis.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the crosshairs are styled in the <code>.highcharts-crosshair</code>, <code>.highcharts-crosshair-thin</code> or <code>.highcharts-xaxis-category</code> classes.</p>
+		/// </summary>
+		public XAxisCrosshair Crosshair { get; set; }
+		private XAxisCrosshair Crosshair_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For a datetime axis, the scale will automatically adjust to the appropriate unit.  This member gives the default string representations used for each unit. For intermediate values, different units may be used, for example the <code>day</code> unit can be used on midnight and <code>hour</code> unit be used for intermediate values on the same axis. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.Defaults to:<pre>{millisecond: '%H:%M:%S.%L',second: '%H:%M:%S',minute: '%H:%M',hour: '%H:%M',day: '%e. %b',week: '%e. %b',month: '%b \'%y',year: '%Y'}</pre>
+		/// </summary>
+		public Hashtable DateTimeLabelFormats { get; set; }
+		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p><i>Requires Accessibility module</i></p><p>Description of the axis to screen reader users.</p>
+		/// </summary>
+		public string Description { get; set; }
+		private string Description_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -128,21 +154,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Color of the grid lines extending the ticks across the plot area.
+		/// <p>Color of the grid lines extending the ticks across the plot area.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the stroke is given in the <code>.highcharts-grid-line</code> class.</p>
 		/// </summary>
 		public string GridLineColor { get; set; }
 		private string GridLineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The dash or dot style of the grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/1.7.2/highslide-software/highcharts.com/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
+		/// The dash or dot style of the grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
 		/// </summary>
 		public XAxisGridLineDashStyle GridLineDashStyle { get; set; }
 		private XAxisGridLineDashStyle GridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the grid lines extending the ticks across the plot area.
+		/// <p>The width of the grid lines extending the ticks across the plot area.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the stroke width is given in the <code>.highcharts-grid-line</code> class.</p>
 		/// </summary>
 		public double? GridLineWidth { get; set; }
 		private double? GridLineWidth_DefaultValue { get; set; }
@@ -170,14 +196,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The color of the line marking the axis itself.
+		/// <p>The color of the line marking the axis itself.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the line stroke is given in the <code>.highcharts-axis-line</code> or <code>.highcharts-xaxis-line</code> class.</p>
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the line marking the axis itself.
+		/// <p>The width of the line marking the axis itself.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the stroke width is given in the <code>.highcharts-axis-line</code> or <code>.highcharts-xaxis-line</code> class.</p>
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -191,7 +217,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The maximum value of the axis. If <code>null</code>, the max value is automatically calculated. If the <code>endOnTick</code> option is true, the <code>max</code> value might be rounded up. The actual maximum value is also influenced by  <a class="internal" href="#chart">chart.alignTicks</a>.
+		/// <p>The maximum value of the axis. If <code>null</code>, the max value is automatically calculated. If the <code>endOnTick</code> option is true, the <code>max</code> value might be rounded up.</p><p>If a <a href="#yAxis.tickAmount">tickAmount</a> is set, the axis may be extended beyond the set max in order to reach the given number of ticks. The same may happen in a chart with multiple axes, determined by  <a class="internal" href="#chart">chart.alignTicks</a>, where a <code>tickAmount</code> is applied internally.</p>
 		/// </summary>
 		public double? Max { get; set; }
 		private double? Max_DefaultValue { get; set; }
@@ -219,7 +245,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>The minimum range to display. The entire axis will not be allowed to span over a smaller interval than this. For example, for a datetime axis the main unit is milliseconds. If minRange is set to 3600000, you can't zoom in more than to one hour.</p>
+		/// <p>The minimum range to display on this axis. The entire axis will not be allowed to span over a smaller interval than this. For example, for a datetime axis the main unit is milliseconds. If minRange is set to 3600000, you can't zoom in more than to one hour.</p> <p>The default minRange for the x axis is five times the smallest interval between any of the data points.</p> <p>On a logarithmic axis, the unit for the minimum range is the power. So a minRange of 1 means that the axis can be zoomed to 10-100, 100-1000, 1000-10000 etc.</p><p>Note that the <code>minPadding</code>, <code>maxPadding</code>, <code>startOnTick</code> and <code>endOnTick</code> settings also affect how the extremes of the axis are computed.</p>
 		/// </summary>
 		public double? MinRange { get; set; }
 		private double? MinRange_DefaultValue { get; set; }
@@ -233,21 +259,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Color of the minor, secondary grid lines.
+		/// <p>Color of the minor, secondary grid lines.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the stroke width is given in the <code>.highcharts-minor-grid-line</code> class.</p>
 		/// </summary>
 		public string MinorGridLineColor { get; set; }
 		private string MinorGridLineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The dash or dot style of the minor grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
+		/// The dash or dot style of the minor grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
 		/// </summary>
 		public XAxisMinorGridLineDashStyle MinorGridLineDashStyle { get; set; }
 		private XAxisMinorGridLineDashStyle MinorGridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Width of the minor, secondary grid lines.
+		/// <p>Width of the minor, secondary grid lines.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the stroke width is given in the <code>.highcharts-grid-line</code> class.</p>
 		/// </summary>
 		public double? MinorGridLineWidth { get; set; }
 		private double? MinorGridLineWidth_DefaultValue { get; set; }
@@ -289,7 +315,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The distance in pixels from the plot area to the axis line. A positive offset moves the axis with it's line, labels and ticks away from the plot area. This is typically used when two or more axes are displayed on the same side of the plot.
+		/// The distance in pixels from the plot area to the axis line. A positive offset moves the axis with it's line, labels and ticks away from the plot area. This is typically used when two or more axes are displayed on the same side of the plot. With multiple axes the offset is dynamically adjusted to avoid collision, this can be overridden by setting offset explicitly.
 		/// </summary>
 		public double? Offset { get; set; }
 		private double? Offset_DefaultValue { get; set; }
@@ -310,14 +336,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array of colored bands stretching across the plot area marking an interval on the axis.
+		/// <p>An array of colored bands stretching across the plot area marking an interval on the axis.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the plot bands are styled by the <code>.highcharts-plot-band</code> class in addition to the <code>className</code> option.</p>
 		/// </summary>
 		public List<XAxisPlotBands> PlotBands { get; set; }
 		private List<XAxisPlotBands> PlotBands_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of lines stretching across the plot area, marking a specific value on one of the axes.
+		/// <p>An array of lines stretching across the plot area, marking a specific value on one of the axes.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the plot lines are styled by the <code>.highcharts-plot-line</code> class in addition to the <code>className</code> option.</p>
 		/// </summary>
 		public List<XAxisPlotLines> PlotLines { get; set; }
 		private List<XAxisPlotLines> PlotLines_DefaultValue { get; set; }
@@ -359,6 +385,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A soft minimum for the axis. If the series data minimum is greater than this, the axis will stay at this minimum, but if the series data minimum is lower, the axis will flex to show all data.
+		/// </summary>
+		public double? SoftMin { get; set; }
+		private double? SoftMin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// For datetime axes, this decides where to put the tick between weeks. 0 = Sunday, 1 = Monday.
 		/// </summary>
 		public double? StartOfWeek { get; set; }
@@ -380,14 +413,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Color for the main tick marks.
+		/// <p>Color for the main tick marks.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the stroke is given in the <code>.highcharts-tick</code> class.</p>
 		/// </summary>
 		public string TickColor { get; set; }
 		private string TickColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The interval of the tick marks in axis units. When <code>null</code>, the tick interval is computed to approximately follow the tickPixelInterval on linear and datetime axes. On categorized axes, a <code>null</code> tickInterval will default to 1, one category.  Note that datetime axes are based on milliseconds, so for  example an interval of one day is expressed as <code>24 * 3600 * 1000</code>.</p><p>If the tickInterval is too dense for labels to be drawn, Highcharts may remove ticks.</p>
+		/// <p>The interval of the tick marks in axis units. When <code>null</code>, the tick interval is computed to approximately follow the tickPixelInterval on linear and datetime axes. On categorized axes, a <code>null</code> tickInterval will default to 1, one category.  Note that datetime axes are based on milliseconds, so for  example an interval of one day is expressed as <code>24 * 3600 * 1000</code>.</p><p>If the tickInterval is too dense for labels to be drawn, Highcharts may remove ticks.</p><p>If the chart has multiple axes, the <a href="#chart.alignTicks">alignTicks</a> option may interfere with the <code>tickInterval</code> setting.</p>
 		/// </summary>
 		public double? TickInterval { get; set; }
 		private double? TickInterval_DefaultValue { get; set; }
@@ -429,7 +462,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The pixel width of the major tick marks.
+		/// <p>The pixel width of the major tick marks.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the stroke width is given in the <code>.highcharts-tick</code> class.</p>
 		/// </summary>
 		public double? TickWidth { get; set; }
 		private double? TickWidth_DefaultValue { get; set; }
@@ -440,6 +473,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public XAxisTitle Title { get; set; }
 		private XAxisTitle Title_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether axis, including axis title, line, ticks and labels, should be visible.
+		/// </summary>
+		public bool? Visible { get; set; }
+		private bool? Visible_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -450,7 +490,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
 			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Crosshair != Crosshair_DefaultValue) h.Add("crosshair", HashifyList(Crosshair));
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
+			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
@@ -487,6 +530,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
+			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
@@ -499,6 +543,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
+			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			
 
 			return h;

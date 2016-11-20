@@ -15,20 +15,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		public RangeSelector()
 		{
 			AllButtonsEnabled = AllButtonsEnabled_DefaultValue = false;
+			ButtonPosition = ButtonPosition_DefaultValue = "";
 			ButtonSpacing = ButtonSpacing_DefaultValue = 0;
-			ButtonTheme = ButtonTheme_DefaultValue = "";
-			Buttons = Buttons_DefaultValue = null;
+			ButtonTheme = ButtonTheme_DefaultValue = null;
+			Buttons = Buttons_DefaultValue = new RangeSelectorButtons();
 			Enabled = Enabled_DefaultValue = true;
-			InputBoxBorderColor = InputBoxBorderColor_DefaultValue = "silver";
+			Height = Height_DefaultValue = 35;
+			InputBoxBorderColor = InputBoxBorderColor_DefaultValue = "#cccccc";
 			InputBoxHeight = InputBoxHeight_DefaultValue = 17;
 			InputBoxWidth = InputBoxWidth_DefaultValue = 90;
 			InputDateFormat = InputDateFormat_DefaultValue = "%b %e %Y,";
 			InputDateParser = InputDateParser_DefaultValue = "";
 			InputEditDateFormat = InputEditDateFormat_DefaultValue = "%Y-%m-%d";
 			InputEnabled = InputEnabled_DefaultValue = null;
-			InputPosition = InputPosition_DefaultValue = new NameValueCollection{{ "align" , "right" }};
-			InputStyle = InputStyle_DefaultValue = new NameValueCollection();
-			LabelStyle = LabelStyle_DefaultValue = new NameValueCollection();
+			InputPosition = InputPosition_DefaultValue = new Hashtable{{ "align" , "right" }};
+			InputStyle = InputStyle_DefaultValue = new Hashtable();
+			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
 			Selected = Selected_DefaultValue = null;
 			
 		}	
@@ -42,6 +44,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A fixed pixel position for the buttons. Supports two properties, <code>x</code> and <code>y<code>.
+		/// </summary>
+		public Object ButtonPosition { get; set; }
+		private Object ButtonPosition_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The space in pixels between the buttons in the range selector.
 		/// </summary>
 		public double? ButtonSpacing { get; set; }
@@ -49,17 +58,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A collection of attributes for the buttons. The object takes SVG attributes like <code>fill</code>, <code>stroke</code>, <code>stroke-width</code>, as well as <code>style</code>, a collection of CSS properties for the text.
+		/// <p>A collection of attributes for the buttons. The object takes SVG attributes like <code>fill</code>, <code>stroke</code>, <code>stroke-width</code>, as well as <code>style</code>, a collection of CSS properties for the text.</p><p>The object can also be extended with states, so you can set presentational options for <code>hover</code>, <code>select</code> or <code>disabled</code> button states.</p><p>CSS styles for the text label.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the buttons are styled by the <code>.highcharts-range-selector-buttons .highcharts-button</code> rule with its different states.</p>
 		/// </summary>
 		public Object ButtonTheme { get; set; }
 		private Object ButtonTheme_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of configuration objects for the buttons. The individual options for each item are:  <dl> <dt><code>type</code></dt> <dd>Defines the timespan, can be one of 'millisecond', 'second', 'minute', 'day', 'week',  'month', 'ytd' (year to date), 'year' and 'all'.</dd> <dt><code>count</code></dt> <dd>Defines how many units of the defined type to use.</dd> <dt><code>dataGrouping</code></dt> <dd>A custom data grouping definition for the button.</dd> <dt><code>text</code></dt> <dd>The text for the button itself</dd> </dl>Defaults to <pre>buttons: [{type: 'month',count: 1,text: '1m'}, {type: 'month',count: 3,text: '3m'}, {type: 'month',count: 6,text: '6m'}, {type: 'ytd',text: 'YTD'}, {type: 'year',count: 1,text: '1y'}, {type: 'all',text: 'All'}]</pre>
+		/// <p>An array of configuration objects for the buttons.</p>Defaults to <pre>buttons: [{type: 'month',count: 1,text: '1m'}, {type: 'month',count: 3,text: '3m'}, {type: 'month',count: 6,text: '6m'}, {type: 'ytd',text: 'YTD'}, {type: 'year',count: 1,text: '1y'}, {type: 'all',text: 'All'}]</pre>
 		/// </summary>
-		public Array Buttons { get; set; }
-		private Array Buttons_DefaultValue { get; set; }
+		public RangeSelectorButtons Buttons { get; set; }
+		private RangeSelectorButtons Buttons_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -67,6 +76,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The height of the range selector, used to reserve space for buttons and input.
+		/// </summary>
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -121,22 +137,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Positioning for the input boxes. Allowed properties are <code>align</code>, <code>verticalAlign</code>, <code>x</code> and <code>y</code>.
 		/// </summary>
-		public NameValueCollection InputPosition { get; set; }
-		private NameValueCollection InputPosition_DefaultValue { get; set; }
+		public Hashtable InputPosition { get; set; }
+		private Hashtable InputPosition_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// CSS for the HTML inputs in the range selector.
+		/// <p>CSS for the HTML inputs in the range selector.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the inputs are styled by the <code>.highcharts-range-input text</code> rule in SVG mode, and <code>input.highcharts-range-selector</code> when active.</p>
 		/// </summary>
-		public NameValueCollection InputStyle { get; set; }
-		private NameValueCollection InputStyle_DefaultValue { get; set; }
+		public Hashtable InputStyle { get; set; }
+		private Hashtable InputStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// CSS styles for the labels - the Zoom, From and To texts.
+		/// <p>CSS styles for the labels - the Zoom, From and To texts.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the labels are styled by the <code>.highcharts-range-label</code> class.</p>
 		/// </summary>
-		public NameValueCollection LabelStyle { get; set; }
-		private NameValueCollection LabelStyle_DefaultValue { get; set; }
+		public Hashtable LabelStyle { get; set; }
+		private Hashtable LabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -151,10 +167,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (AllButtonsEnabled != AllButtonsEnabled_DefaultValue) h.Add("allButtonsEnabled",AllButtonsEnabled);
+			if (ButtonPosition != ButtonPosition_DefaultValue) h.Add("buttonPosition",ButtonPosition);
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
 			if (ButtonTheme != ButtonTheme_DefaultValue) h.Add("buttonTheme",ButtonTheme);
-			if (Buttons != Buttons_DefaultValue) h.Add("buttons",Buttons);
+			if (Buttons.IsDirty()) h.Add("buttons",Buttons.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (InputBoxBorderColor != InputBoxBorderColor_DefaultValue) h.Add("inputBoxBorderColor",InputBoxBorderColor);
 			if (InputBoxHeight != InputBoxHeight_DefaultValue) h.Add("inputBoxHeight",InputBoxHeight);
 			if (InputBoxWidth != InputBoxWidth_DefaultValue) h.Add("inputBoxWidth",InputBoxWidth);

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Enabled = Enabled_DefaultValue = true;
 			FillColor = FillColor_DefaultValue = "null";
-			LineColor = LineColor_DefaultValue = "'#FFFFFF'";
+			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
 			Radius = Radius_DefaultValue = null;

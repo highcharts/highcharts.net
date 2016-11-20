@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Labels()
 		{
 			Items = Items_DefaultValue = new LabelsItems();
-			Style = Style_DefaultValue = new NameValueCollection();
+			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333" }};
 			
 		}	
 		
@@ -28,10 +28,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Shared CSS styles for all labels. Defaults to:<pre>style: {color: '#3E576F'}</pre>
+		/// Shared CSS styles for all labels.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

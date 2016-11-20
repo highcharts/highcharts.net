@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FallbackToExportServer = FallbackToExportServer_DefaultValue = true;
 			Filename = Filename_DefaultValue = "chart";
 			FormAttributes = FormAttributes_DefaultValue = "";
-			LibURL = LibURL_DefaultValue = "http://code.highcharts.com/{version}/lib";
+			LibURL = LibURL_DefaultValue = "https://code.highcharts.com/{version}/lib";
 			PrintMaxWidth = PrintMaxWidth_DefaultValue = 780;
 			Scale = Scale_DefaultValue = 2;
 			SourceHeight = SourceHeight_DefaultValue = null;
@@ -91,7 +91,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Path where Highcharts will look for export module dependencies to load on demand if they don't already exist on <code>window</code>.Should currently point to location of <a href="https://github.com/canvg/canvg">CanVG</a> library and <a href="https://github.com/canvg/canvg">RGBColor.js</a>, required for client side export in certain browsers.
+		/// Path where Highcharts will look for export module dependencies to load on demand if they don't already exist on <code>window</code>.Should currently point to location of <a href="https://github.com/canvg/canvg">CanVG</a> library, <a href="https://github.com/canvg/canvg">RGBColor.js</a>, <a href="https://github.com/yWorks/jsPDF">jsPDF</a> and <a href="https://github.com/yWorks/svg2pdf.js">svg2pdf.js</a>, required for client side export in certain browsers.
 		/// </summary>
 		public string LibURL { get; set; }
 		private string LibURL_DefaultValue { get; set; }

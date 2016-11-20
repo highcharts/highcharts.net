@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = false;
 			FillColor = FillColor_DefaultValue = "null";
 			Height = Height_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "'#FFFFFF'";
+			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 4;
 			States = States_DefaultValue = new PlotOptionsAreaMarkerStates();

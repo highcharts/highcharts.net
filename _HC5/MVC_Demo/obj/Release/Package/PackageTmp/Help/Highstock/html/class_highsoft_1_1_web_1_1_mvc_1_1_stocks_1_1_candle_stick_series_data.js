@@ -1,0 +1,26 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data =
+[
+    [ "CandleStickSeriesData", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a5f39518ae49d8e2e910d6f7807dd9e86", null ],
+    [ "Close", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a401316003eb202741e7762621f1fb69a", null ],
+    [ "Close_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#aacc11661ff8f76ce1bb563695b5ed0d8", null ],
+    [ "Color", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#ae1404a586e41ca7dc6eae0769306feb2", null ],
+    [ "Color_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a532429ce58908a8085d860319d9af891", null ],
+    [ "DataLabels", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a80186ec2e468191345750a56e4eb516a", null ],
+    [ "DataLabels_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#aeb8f1c930ad40255f2914b303aee6e77", null ],
+    [ "Events", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a29e08451ee4bf0503d127f9ae2c0abc7", null ],
+    [ "Events_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a07bc22d206f7c0f29f6f5499d2250c24", null ],
+    [ "High", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a5c5a8bc8eed0ccc8769891a8224ed9cb", null ],
+    [ "High_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#aada3bdeee65db429745b6f263526b970", null ],
+    [ "Id", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a8c2b01cc5d998319ca970221c91f944d", null ],
+    [ "Id_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a6f9ecb40d3fac58aebfabfaff37e0cac", null ],
+    [ "Low", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#af089ae12af4816758e14ca4fbec28370", null ],
+    [ "Low_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#adf461f10ff625584dd22dee50317b2bd", null ],
+    [ "Name", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a54a18baa190f9144d4a40cceaf73b7d5", null ],
+    [ "Name_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#ab0d94f623fd1c74028ff5277a251749a", null ],
+    [ "Open", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#aa2ed8702e38165f02843c5bb3146315e", null ],
+    [ "Open_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#ac98dbf6baf243f423219778181ac7be6", null ],
+    [ "Selected", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a94b99b063e4479ea895fec40b118abc8", null ],
+    [ "Selected_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#abe6529d46b3f7f290ccc6e35bb451fb3", null ],
+    [ "X", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a84f009a047737ebdd043278c13625767", null ],
+    [ "X_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_data.html#a95de6ac05e3b8f451a254aa06464ebea", null ]
+];

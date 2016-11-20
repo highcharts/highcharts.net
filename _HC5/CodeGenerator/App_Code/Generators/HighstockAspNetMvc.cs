@@ -515,7 +515,7 @@ public class HighstockAspNetMvc
         _typeMappings.Add("Function", "string");
         _typeMappings.Add("String|Function", "string");
         _typeMappings.Add("Color", "string");
-        _typeMappings.Add("CSSObject", "NameValueCollection");
+        _typeMappings.Add("CSSObject", "Hashtable");
         _typeMappings.Add("Number|String", "string");
         _typeMappings.Add("String|Number", "string");
         _typeMappings.Add("String|HTMLElement", "string");
@@ -535,13 +535,13 @@ public class HighstockAspNetMvc
         _propertyTypeMappings.Add("PointPlacement", "PointPlacement");
         _propertyTypeMappings.Add("Center", "new string[]");
         _propertyTypeMappings.Add("Margin", "new string[]");
-        _propertyTypeMappings.Add("Position", "NameValueCollection");
-        _propertyTypeMappings.Add("DateTimeLabelFormats", "NameValueCollection");
-        _propertyTypeMappings.Add("InputPosition", "NameValueCollection");
-        _propertyTypeMappings.Add("Attr", "NameValueCollection");
-        _propertyTypeMappings.Add("Style", "NameValueCollection");
-        _propertyTypeMappings.Add("InputStyle", "NameValueCollection");
-        _propertyTypeMappings.Add("LabelStyle", "NameValueCollection");
+        _propertyTypeMappings.Add("Position", "Hashtable");
+        _propertyTypeMappings.Add("DateTimeLabelFormats", "Hashtable");
+        _propertyTypeMappings.Add("InputPosition", "Hashtable");
+        _propertyTypeMappings.Add("Attr", "Hashtable");
+        _propertyTypeMappings.Add("Style", "Hashtable");
+        _propertyTypeMappings.Add("InputStyle", "Hashtable");
+        _propertyTypeMappings.Add("LabelStyle", "Hashtable");
         _propertyTypeMappings.Add("Stack", "string");
         _propertyTypeMappings.Add("Symbol", "string");
         _propertyTypeMappings.Add("TrackBorderColor", "string");
@@ -556,10 +556,10 @@ public class HighstockAspNetMvc
         _propertyTypeMappings.Add("yAxis", "List<YAxis>");
         _propertyTypeMappings.Add("yAxis.plotBands", "List<YAxisPlotBands>");
         _propertyTypeMappings.Add("yAxis.plotLines", "List<YAxisPlotLines>");
-        _propertyTypeMappings.Add("yAxis.plotBands.label.style", "NameValueCollection");
+        _propertyTypeMappings.Add("yAxis.plotBands.label.style", "Hashtable");
         _propertyTypeMappings.Add("xAxis.plotBands", "List<XAxisPlotBands>");
         _propertyTypeMappings.Add("xAxis.plotLines", "List<XAxisPlotLines>");
-        _propertyTypeMappings.Add("xAxis.plotBands.label.style", "NameValueCollection");
+        _propertyTypeMappings.Add("xAxis.plotBands.label.style", "Hashtable");
         _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
         _propertyTypeMappings.Add("Colors", "List<string>");
     }
@@ -576,12 +576,12 @@ public class HighstockAspNetMvc
         _propertyInitMappings.Add("Colors", "new List<string>()");
         _propertyInitMappings.Add("Center", "new string[] { null, null }");
         _propertyInitMappings.Add("Margin", "new string[] {}");
-        _propertyInitMappings.Add("Position", "new NameValueCollection()");
-        _propertyInitMappings.Add("DateTimeLabelFormats", "new NameValueCollection()");
-        _propertyInitMappings.Add("InputPosition", "new NameValueCollection()");
-        _propertyInitMappings.Add("Style", "new NameValueCollection()");
-        _propertyInitMappings.Add("InputStyle", "new NameValueCollection()");
-        _propertyInitMappings.Add("LabelStyle", "new NameValueCollection()");
+        _propertyInitMappings.Add("Position", "new Hashtable()");
+        _propertyInitMappings.Add("DateTimeLabelFormats", "new Hashtable()");
+        _propertyInitMappings.Add("InputPosition", "new Hashtable()");
+        _propertyInitMappings.Add("Style", "new Hashtable()");
+        _propertyInitMappings.Add("InputStyle", "new Hashtable()");
+        _propertyInitMappings.Add("LabelStyle", "new Hashtable()");
         _propertyInitMappings.Add("Columns", "new List<List<Object>>()");
         _propertyInitMappings.Add("Rows", "new List<List<object>>()");
         _propertyInitMappings.Add("SeriesMapping", "new List<object>()");
@@ -591,10 +591,10 @@ public class HighstockAspNetMvc
         _propertyInitMappings.Add("yAxis", "new List<YAxis>()");
         _propertyInitMappings.Add("yAxis.plotLines", "new List<YAxisPlotLines>()");
         _propertyInitMappings.Add("yAxis.plotBands", "new List<YAxisPlotBands>()");
-        _propertyInitMappings.Add("yAxis.plotBands.label.style", "new NameValueCollection()");
+        _propertyInitMappings.Add("yAxis.plotBands.label.style", "new Hashtable()");
         _propertyInitMappings.Add("xAxis.plotLines", "new List<XAxisPlotLines>()");
         _propertyInitMappings.Add("xAxis.plotBands", "new List<XAxisPlotBands>()");
-        _propertyInitMappings.Add("xAxis.plotBands.label.style", "new NameValueCollection()");
+        _propertyInitMappings.Add("xAxis.plotBands.label.style", "new Hashtable()");
         _propertyInitMappings.Add("series<treemap>.levels", "new List<TreemapSeriesLevels>()");
     }
 
@@ -746,11 +746,11 @@ public class HighstockAspNetMvc
                                         .Replace("]", "}");
                 }
                 if ((_propertyTypeMappings[FirstCharToUpper(item.Title)] != null &&
-                    _propertyTypeMappings[FirstCharToUpper(item.Title)].ToString() == "NameValueCollection") ||
+                    _propertyTypeMappings[FirstCharToUpper(item.Title)].ToString() == "Hashtable") ||
                     (_typeMappings[(item.ReturnType)] != null &&
-                    _typeMappings[(item.ReturnType)].ToString() == "NameValueCollection"))
+                    _typeMappings[(item.ReturnType)].ToString() == "Hashtable"))
                 {
-                    string result = "new NameValueCollection" + "{" + item.Defaults
+                    string result = "new Hashtable" + "{" + item.Defaults
                                                         .Replace(",", "},{")
                                                         .Replace(";", "},{")
                                                         .Replace(":", ",") + "}";

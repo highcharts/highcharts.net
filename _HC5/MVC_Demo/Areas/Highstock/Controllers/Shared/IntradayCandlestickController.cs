@@ -27,7 +27,13 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                 });
             }
 
+            List<LineSeriesData> navigatorData = new List<LineSeriesData>();
+
+            foreach (var item in intradayData)
+                navigatorData.Add(new LineSeriesData() { Y = item.Open, X = item.X });
+
             ViewBag.IntradayData = intradayData.OrderBy(o => o.X).ToList();
+            ViewBag.NavigatorData = navigatorData.OrderBy(o => o.X).ToList();
             return View(ViewBag);
         }
 

@@ -20,9 +20,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			MenuItems = MenuItems_DefaultValue = new List<MenuItem>();
 			Onclick = Onclick_DefaultValue = "";
 			Symbol = Symbol_DefaultValue = "menu";
-			SymbolFill = SymbolFill_DefaultValue = "#A8BF77";
+			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			SymbolSize = SymbolSize_DefaultValue = 14;
-			SymbolStroke = SymbolStroke_DefaultValue = "#666";
+			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
 			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 1;
 			SymbolX = SymbolX_DefaultValue = 12.5;
 			SymbolY = SymbolY_DefaultValue = 10.5;

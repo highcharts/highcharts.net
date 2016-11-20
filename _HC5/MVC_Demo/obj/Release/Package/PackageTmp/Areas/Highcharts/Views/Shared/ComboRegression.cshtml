@@ -1,0 +1,69 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Title = new Title
+            {
+                Text = "Scatter plot with regression line",
+                X = -20
+            },
+           
+            XAxis = new List<XAxis>
+            {            
+                new XAxis
+                {
+                    Min = -0.5,
+                    Max = 5.5                    
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Min = 0
+                }
+            },
+            Series = new List<Series>
+            {                    
+                new LineSeries
+                {
+                    Name = "Regression Line",
+                    Marker = new LineSeriesMarker
+                    {
+                        Enabled = false
+                    },
+                    States = new LineSeriesStates
+                    {
+                        Hover = new LineSeriesStatesHover
+                        {
+                            LineWidth = 0
+                        }
+                    },
+                    EnableMouseTracking = false,
+                    Data = new List<LineSeriesData> {
+                        new LineSeriesData { X = 0, Y = 1.11 },
+                        new LineSeriesData { X = 5, Y = 4.51 }
+                    }
+                },
+                new ScatterSeries
+                {
+                    Name = "Observations",
+                    Data = new List<ScatterSeriesData> {
+                        new ScatterSeriesData { Y = 1 },
+                        new ScatterSeriesData { Y = 1.5 },
+                        new ScatterSeriesData { Y = 2.8 },
+                        new ScatterSeriesData { Y = 3.5 },
+                        new ScatterSeriesData { Y = 3.9 },
+                        new ScatterSeriesData { Y = 4.2 },
+                    }
+                }
+            }
+        }
+        , "chart")
+    )

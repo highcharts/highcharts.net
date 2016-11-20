@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public Labels()
 		{
 			Items = Items_DefaultValue = new LabelsItems();
-			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#333333" }};
+			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333" }};
 			
 		}	
 		
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Shared CSS styles for all labels.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

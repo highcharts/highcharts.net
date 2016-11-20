@@ -8,6 +8,7 @@ namespace Highsoft.Web.Mvc.Stocks
     public enum PlotOptionsAreasplinerangePointIntervalUnit
     {
         Null, 
+		Day, 
 		Month, 
 		Year
     }

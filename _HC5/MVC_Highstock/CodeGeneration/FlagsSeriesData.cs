@@ -15,8 +15,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		public FlagsSeriesData()
 		{
 			Color = Color_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = new FlagsSeriesDataEvents();
 			Id = Id_DefaultValue = "null";
+			Labelrank = Labelrank_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Text = Text_DefaultValue = null;
 			Title = Title_DefaultValue = null;
@@ -33,6 +35,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// <p><i>Requires Accessibility module</i></p><p>A description of the point to add to the screen reader information about the point.</p>
+		/// </summary>
+		public string Description { get; set; }
+		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public FlagsSeriesDataEvents Events { get; set; }
@@ -44,6 +53,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The rank for this point's data label in case of collision. If two data labels are about to overlap, only the one with the highest <code>labelrank</code> will be drawn.
+		/// </summary>
+		public double? Labelrank { get; set; }
+		private double? Labelrank_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -79,8 +95,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Title != Title_DefaultValue) h.Add("title",Title);

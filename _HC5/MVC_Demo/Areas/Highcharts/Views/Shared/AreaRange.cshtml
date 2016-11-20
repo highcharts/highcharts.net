@@ -9,6 +9,7 @@ are using these types of charts*@
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+@using System.Collections
 @using Highsoft.Web.Mvc.Charts
 
     <script type="text/javascript">
@@ -33,31 +34,36 @@ are using these types of charts*@
                 Events = new ChartEvents
                 {
                     Load = "loadData"
-                }
+                },
+                RenderTo = "someDivId"
+                
+
             },
             Title = new Title
             {
-                Text = "Temperature variation by day"
+                Text = "Temperature variation by day",
+                Style = new Hashtable { { "fontSize", "20px" }, { "fontWeight", "bold" }, { "color", "#3f3f3f" }, { "textShadow", "0 0 6px contrast, 0 0 3px contrast" } }//"0 0 3px #ff0000" } }
+
             },
             Legend = new Legend
             {
                 Enabled = false
             },
             XAxis = new List<XAxis>
-            {            
+            {
                 new XAxis
                 {
                     Type = XAxisType.Datetime
-                }
+    }
             },
             YAxis = new List<YAxis>
-            {            
+            {
                 new YAxis
                 {
                     Title = new YAxisTitle
                     {
                         Text = null
-                    }                   
+                    }
                 }
             },
             Tooltip = new Tooltip
@@ -73,7 +79,7 @@ are using these types of charts*@
                 }
             },
             Series = new List<Series>
-            {                    
+            {
                 new ArearangeSeries
                 {
                     Name = "Temperatures"

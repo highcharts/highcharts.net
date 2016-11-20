@@ -14,15 +14,15 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public YAxisPlotBandsLabel()
 		{
-			Align = Align_DefaultValue = "'center'";
+			Align = Align_DefaultValue = "center";
 			Rotation = Rotation_DefaultValue = 0;
-			Style = Style_DefaultValue = new NameValueCollection();
+			Style = Style_DefaultValue = new Hashtable();
 			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "'top'";
+			VerticalAlign = VerticalAlign_DefaultValue = "top";
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
-            Text = Text_DefaultValue = null;
+			
 		}	
 		
 
@@ -41,10 +41,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS styles for the text label.
+		/// <p>CSS styles for the text label.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the labels are styled by the <code>.highcharts-plot-band-label</code> class.</p>
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -80,12 +80,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-		public string Text { get; set; }
-        private string Text_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
@@ -99,7 +94,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-            if (Text != Text_DefaultValue) h.Add("text", Text);
+			
 
 			return h;
 		}

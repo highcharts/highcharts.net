@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LegendTitle()
 		{
-			Style = Style_DefaultValue = new NameValueCollection{{"fontWeight","bold"}};
+			Style = Style_DefaultValue = new Hashtable{{"fontWeight","bold"}};
 			Text = Text_DefaultValue = "null";
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Generic CSS styles for the legend title.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

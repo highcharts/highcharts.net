@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Format = Format_DefaultValue = "{total}";
 			Formatter = Formatter_DefaultValue = "";
 			Rotation = Rotation_DefaultValue = 0;
-			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#000000"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textShadow", "1px 1px contrast},{ -1px -1px contrast},{ -1px 1px contrast},{ 1px -1px contrast" }};
+			Style = Style_DefaultValue = new Hashtable{{ "color", "#000000"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textShadow", "1px 1px contrast},{ -1px -1px contrast},{ -1px 1px contrast},{ 1px -1px contrast" }};
 			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Null;
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
@@ -67,8 +67,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>CSS styles for the label.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the styles are set in the <code>.highcharts-stack-label</code> class.</p>
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -15,13 +15,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Lang()
 		{
 			ContextButtonTitle = ContextButtonTitle_DefaultValue = "Chart context menu";
-			DecimalPoint = DecimalPoint_DefaultValue = "'.'";
-			DownloadJPEG = DownloadJPEG_DefaultValue = "'Download JPEG image'";
-			DownloadPDF = DownloadPDF_DefaultValue = "'Download PDF document'";
-			DownloadPNG = DownloadPNG_DefaultValue = "'Download PNG image'";
-			DownloadSVG = DownloadSVG_DefaultValue = "'Download SVG vector image'";
+			DecimalPoint = DecimalPoint_DefaultValue = ".";
+			DownloadJPEG = DownloadJPEG_DefaultValue = "Download JPEG image";
+			DownloadPDF = DownloadPDF_DefaultValue = "Download PDF document";
+			DownloadPNG = DownloadPNG_DefaultValue = "Download PNG image";
+			DownloadSVG = DownloadSVG_DefaultValue = "Download SVG vector image";
+			InvalidDate = InvalidDate_DefaultValue = null;
 			Loading = Loading_DefaultValue = "Loading...";
 			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
 			PrintChart = PrintChart_DefaultValue = "Print chart";
 			RangeSelectorFrom = RangeSelectorFrom_DefaultValue = "From";
@@ -30,6 +32,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
 			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
+			ShortWeekdays = ShortWeekdays_DefaultValue = null;
 			ThousandsSep = ThousandsSep_DefaultValue = " ";
 			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 			
@@ -79,6 +82,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// What to show in a date field, specifically in the range selector inputs, for invalid dates. Defaults to an empty string.
+		/// </summary>
+		public string InvalidDate { get; set; }
+		private string InvalidDate_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The loading text that appears when the chart is set into the loading state following a call to <code>chart.showLoading</code>.
 		/// </summary>
 		public string Loading { get; set; }
@@ -86,10 +96,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array containing the months names. Defaults to <code>['January', 'February', 'March', 'April', 'May', 'June', 'July',  'August', 'September', 'October', 'November', 'December']</code>.
+		/// An array containing the months names. Corresponds to the  <code>%B</code> format in <code>Highcharts.dateFormat()</code>.
 		/// </summary>
 		public List<string> Months { get; set; }
 		private List<string> Months_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The magnitude of <a href="#lang.numericSymbol">numericSymbols</a> replacements. Use 10000 for Japanese, Korean and various Chinese locales, which use symbols for 10^4, 10^8 and 10^12.
+		/// </summary>
+		public double? NumericSymbolMagnitude { get; set; }
+		private double? NumericSymbolMagnitude_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -149,7 +166,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The default thousands separator used in the <code>Highcharts.numberFormat</code> method unless otherwise specified in the function arguments. Since Highcharts 4.1 it defaults to a single space character, which is compatible with ISO and works across Anglo-American and continental European languages.
+		/// Short week days, starting Sunday. If not specified, Highcharts uses the first three letters of the <code>lang.weekdays</code> option.
+		/// </summary>
+		public List<string> ShortWeekdays { get; set; }
+		private List<string> ShortWeekdays_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The default thousands separator used in the <code>Highcharts.numberFormat</code> method unless otherwise specified in the function arguments. Since Highcharts 4.1 it defaults to a single space character, which is compatible with ISO and works across Anglo-American and continental European languages.</p><p>The default is a single space.</p>
 		/// </summary>
 		public string ThousandsSep { get; set; }
 		private string ThousandsSep_DefaultValue { get; set; }
@@ -172,8 +196,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DownloadPDF != DownloadPDF_DefaultValue) h.Add("downloadPDF",DownloadPDF);
 			if (DownloadPNG != DownloadPNG_DefaultValue) h.Add("downloadPNG",DownloadPNG);
 			if (DownloadSVG != DownloadSVG_DefaultValue) h.Add("downloadSVG",DownloadSVG);
+			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (Months != Months_DefaultValue) h.Add("months",Months);
+			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
 			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);
 			if (PrintChart != PrintChart_DefaultValue) h.Add("printChart",PrintChart);
 			if (RangeSelectorFrom != RangeSelectorFrom_DefaultValue) h.Add("rangeSelectorFrom",RangeSelectorFrom);
@@ -182,6 +208,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ResetZoom != ResetZoom_DefaultValue) h.Add("resetZoom",ResetZoom);
 			if (ResetZoomTitle != ResetZoomTitle_DefaultValue) h.Add("resetZoomTitle",ResetZoomTitle);
 			if (ShortMonths != ShortMonths_DefaultValue) h.Add("shortMonths",ShortMonths);
+			if (ShortWeekdays != ShortWeekdays_DefaultValue) h.Add("shortWeekdays",ShortWeekdays);
 			if (ThousandsSep != ThousandsSep_DefaultValue) h.Add("thousandsSep",ThousandsSep);
 			if (Weekdays != Weekdays_DefaultValue) h.Add("weekdays",Weekdays);
 			

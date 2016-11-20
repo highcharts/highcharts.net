@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public DrilldownDrillUpButton()
 		{
-			Position = Position_DefaultValue = new NameValueCollection();
+			Position = Position_DefaultValue = new Hashtable();
 			RelativeTo = RelativeTo_DefaultValue = "plotBox";
 			Theme = Theme_DefaultValue = null;
 			
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Positioning options for the button within the <code>relativeTo</code> box. Available properties are <code>x</code>, <code>y</code>, <code>align</code> and <code>verticalAlign</code>.
 		/// </summary>
-		public NameValueCollection Position { get; set; }
-		private NameValueCollection Position_DefaultValue { get; set; }
+		public Hashtable Position { get; set; }
+		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -17,9 +17,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Align = Align_DefaultValue = NavigationButtonOptionsAlign.Right;
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 20;
-			SymbolFill = SymbolFill_DefaultValue = "#E0E0E0";
+			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			SymbolSize = SymbolSize_DefaultValue = 14;
-			SymbolStroke = SymbolStroke_DefaultValue = "#666";
+			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
 			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 1;
 			SymbolX = SymbolX_DefaultValue = 12.5;
 			SymbolY = SymbolY_DefaultValue = 10.5;

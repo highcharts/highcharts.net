@@ -14,9 +14,11 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Highstock()
 		{
+			Accessibility = Accessibility_DefaultValue = new Accessibility();
 			Chart = Chart_DefaultValue = new Chart();
 			Colors = Colors_DefaultValue = new List<string>();
 			Credits = Credits_DefaultValue = new Credits();
+			Defs = Defs_DefaultValue = null;
 			Exporting = Exporting_DefaultValue = new Exporting();
 			Global = Global_DefaultValue = new Global();
 			Labels = Labels_DefaultValue = new Labels();
@@ -25,8 +27,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			Loading = Loading_DefaultValue = new Loading();
 			Navigation = Navigation_DefaultValue = new Navigation();
 			Navigator = Navigator_DefaultValue = new Navigator();
+			NoData = NoData_DefaultValue = new NoData();
 			PlotOptions = PlotOptions_DefaultValue = new PlotOptions();
 			RangeSelector = RangeSelector_DefaultValue = new RangeSelector();
+			Responsive = Responsive_DefaultValue = new Responsive();
 			Scrollbar = Scrollbar_DefaultValue = new Scrollbar();
 			Series = Series_DefaultValue = new List<Series>();
 			AreaSeries = AreaSeries_DefaultValue = new AreaSeries();
@@ -60,6 +64,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public Accessibility Accessibility { get; set; }
+		private Accessibility Accessibility_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options regarding the chart area and plot area as well as general chart options.
 		/// </summary>
 		public Chart Chart { get; set; }
@@ -67,7 +78,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>An array containing the default colors for the chart's series. When all colors are used, new colors are pulled from the start again. Defaults to:<pre>colors: ['#7cb5ec', '#434348', '#90ed7d', '#f7a35c', '#8085e9',    '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1']</pre>Default colors can also be set on a series or series.type basis, see <a href="#plotOptions.column.colors">column.colors</a>.</p><h3>Legacy</h3><p>In Highstock 1.3.x, the default colors were:<pre>colors: ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',    '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a']</pre></p><p>Prior to 1.3, the default colors were:<pre>colors: ['#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE',    '#DB843D', '#92A8CD', '#A47D7C', '#B5CA92']</pre></p>
+		/// <p>An array containing the default colors for the chart's series. When all colors are used, new colors are pulled from the start again. Defaults to:<pre>colors: ['#7cb5ec', '#434348', '#90ed7d', '#f7a35c', '#8085e9',    '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1']</pre>Default colors can also be set on a series or series.type basis, see <a href="#plotOptions.column.colors">column.colors</a>.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the colors option doesn't exist. Instead, colors are defined in CSS and applied either through series or point class names, or through the <a href="#chart.colorCount">chart.colorCount</a> option.</p><h3>Legacy</h3><p>In Highstock 1.3.x, the default colors were:<pre>colors: ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',    '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a']</pre></p><p>Prior to 1.3, the default colors were:<pre>colors: ['#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE',    '#DB843D', '#92A8CD', '#A47D7C', '#B5CA92']</pre></p>
 		/// </summary>
 		public List<string> Colors { get; set; }
 		private List<string> Colors_DefaultValue { get; set; }
@@ -78,6 +89,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Credits Credits { get; set; }
 		private Credits Credits_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. Configuration object for adding SVG definitions for reusable elements. See <a href="http://www.highcharts.com/docs/chart-design-and-style/gradients-shadows-and-patterns">gradients, shadows and patterns</a> for more information and code examples.
+		/// </summary>
+		public Object Defs { get; set; }
+		private Object Defs_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -102,7 +120,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Language object. The language object is global and it can'tbe set on each chart initiation. Instead, use <code>Highcharts.setOptions</code> toset it before any chart is initiated. <pre>Highcharts.setOptions({lang: {months: ['Janvier', 'F�vrier', 'Mars', 'Avril', 'Mai', 'Juin',  'Juillet', 'Ao�t', 'Septembre', 'Octobre', 'Novembre', 'D�cembre'],weekdays: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']}});</pre>
+		/// Language object. The language object is global and it can'tbe set on each chart initiation. Instead, use <code>Highcharts.setOptions</code> toset it before any chart is initiated. <pre>Highcharts.setOptions({lang: {months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',  'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],weekdays: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']}});</pre>
 		/// </summary>
 		public Lang Lang { get; set; }
 		private Lang Lang_DefaultValue { get; set; }
@@ -137,6 +155,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Options for displaying a message like "No data to display". This feature requires the file <code>no-data-to-display.js</code> to be loaded in the page. The actual text to display is set in the <a href="#lang.noData">lang.noData</a> option.
+		/// </summary>
+		public NoData NoData { get; set; }
+		private NoData NoData_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// <p>The plotOptions is a wrapper object for config objects for each series type.The config objects for each series can also be overridden for each series item as given in the series array.</p><p>Configuration options for the series are given in three levels. Optionsfor all series in a chart are given in the <a class="internal" href="#plotOptions.series">plotOptions.series</a> object. Then options for all seriesof a specific type are given in the plotOptions of that type, for example plotOptions.line.Next, options for one single series are given in <a class="internal" href="#series">the series array</a>.</p>
 		/// </summary>
 		public PlotOptions PlotOptions { get; set; }
@@ -151,7 +176,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The scrollbar is a means of panning over the X axis of a chart.
+		/// Allows setting a set of rules to apply for different screen or chart sizes. Each rule specifies additional chart options.
+		/// </summary>
+		public Responsive Responsive { get; set; }
+		private Responsive Responsive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The scrollbar is a means of panning over the X axis of a chart.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, all the presentational options for the scrollbar are replaced by the classes <code>.highcharts-scrollbar-thumb</code>, <code>.highcharts-scrollbar-arrow</code>, <code>.highcharts-scrollbar-button</code>, <code>.highcharts-scrollbar-rifles</code> and <code>.highcharts-scrollbar-track</code>.</p>
 		/// </summary>
 		public Scrollbar Scrollbar { get; set; }
 		private Scrollbar Scrollbar_DefaultValue { get; set; }
@@ -350,9 +382,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Credits.IsDirty()) h.Add("credits",Credits.ToHashtable());
+			if (Defs != Defs_DefaultValue) h.Add("defs",Defs);
 			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
 			if (Global.IsDirty()) h.Add("global",Global.ToHashtable());
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
@@ -361,8 +395,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Loading.IsDirty()) h.Add("loading",Loading.ToHashtable());
 			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
 			if (Navigator.IsDirty()) h.Add("navigator",Navigator.ToHashtable());
+			if (NoData.IsDirty()) h.Add("noData",NoData.ToHashtable());
 			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
 			if (RangeSelector.IsDirty()) h.Add("rangeSelector",RangeSelector.ToHashtable());
+			if (Responsive.IsDirty()) h.Add("responsive",Responsive.ToHashtable());
 			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (AreaSeries.IsDirty()) h.Add("areaSeries",AreaSeries.ToHashtable());

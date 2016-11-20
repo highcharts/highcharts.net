@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
-			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#666666" }};
+			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
 			Text = Text_DefaultValue = null;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
@@ -57,8 +57,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>CSS styles for the title. When titles are rotated they are rendered using vector graphic techniques and not all styles are applicable.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the stroke width is given in the <code>.highcharts-axis-title</code> class.</p>
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

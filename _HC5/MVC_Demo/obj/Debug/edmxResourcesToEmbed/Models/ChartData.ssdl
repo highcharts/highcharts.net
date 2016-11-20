@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChartDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ChartDataModelStoreContainer">
+    <EntitySet Name="AppleData" EntityType="ChartDataModel.Store.AppleData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CandlestickVolume" EntityType="ChartDataModel.Store.CandlestickVolume" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DataGrouping" EntityType="ChartDataModel.Store.DataGrouping" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Flags" EntityType="ChartDataModel.Store.Flags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GoogleData" EntityType="ChartDataModel.Store.GoogleData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Intraday" EntityType="ChartDataModel.Store.Intraday" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MicrosoftData" EntityType="ChartDataModel.Store.MicrosoftData" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="AppleData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="float" />
+    <Property Name="Value" Type="float" />
+  </EntityType>
+  <EntityType Name="CandlestickVolume">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="float" />
+    <Property Name="Open" Type="float" />
+    <Property Name="High" Type="float" />
+    <Property Name="Low" Type="float" />
+    <Property Name="Close" Type="float" />
+    <Property Name="Volume" Type="float" />
+  </EntityType>
+  <EntityType Name="DataGrouping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="float" />
+  </EntityType>
+  <EntityType Name="Flags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="float" />
+    <Property Name="Value" Type="float" />
+  </EntityType>
+  <EntityType Name="GoogleData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="float" />
+    <Property Name="Value" Type="float" />
+  </EntityType>
+  <EntityType Name="Intraday">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="float" />
+    <Property Name="Open" Type="float" />
+    <Property Name="High" Type="float" />
+    <Property Name="Low" Type="float" />
+    <Property Name="Close" Type="float" />
+  </EntityType>
+  <EntityType Name="MicrosoftData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="float" />
+    <Property Name="Value" Type="float" />
+  </EntityType>
+</Schema>

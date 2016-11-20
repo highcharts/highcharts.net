@@ -3,8 +3,6 @@ C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\MVC_Demo.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\MVC_Demo.pdb
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\EntityFramework.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\EntityFramework.SqlServer.dll
-C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highcharts.Web.Mvc.dll
-C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highstock.Web.Mvc.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Microsoft.CSharp.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\System.ComponentModel.DataAnnotations.dll
@@ -39,9 +37,6 @@ C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\System.Xml.Linq.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\WebGrease.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Newtonsoft.Json.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Antlr3.Runtime.dll
-C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highcharts.Web.Mvc.pdb
-C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highcharts.Web.Mvc.xml
-C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highstock.Web.Mvc.pdb
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\EntityFramework.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\EntityFramework.SqlServer.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\System.Net.Http.Formatting.xml
@@ -55,3 +50,8 @@ C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\System.Web.WebPages.Razor.xml
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Release\MVC_Demo.csprojResolveAssemblyReference.cache
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Release\MVC_Demo.dll
 C:\Users\PC\Documents\highcharts.net\MVC_Demo\obj\Release\MVC_Demo.pdb
+C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highcharts.Web.Mvc.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highstock.Web.Mvc.dll
+C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highcharts.Web.Mvc.pdb
+C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highcharts.Web.Mvc.xml
+C:\Users\PC\Documents\highcharts.net\MVC_Demo\bin\Highstock.Web.Mvc.pdb

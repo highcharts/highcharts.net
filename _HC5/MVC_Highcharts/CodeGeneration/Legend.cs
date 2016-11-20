@@ -22,11 +22,11 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = true;
 			Floating = Floating_DefaultValue = false;
 			ItemDistance = ItemDistance_DefaultValue = 20;
-			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new NameValueCollection{{ "color", "#cccccc" }};
-			ItemHoverStyle = ItemHoverStyle_DefaultValue = new NameValueCollection{{ "color", "#000000" }};
+			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new Hashtable{{ "color", "#cccccc" }};
+			ItemHoverStyle = ItemHoverStyle_DefaultValue = new Hashtable{{ "color", "#000000" }};
 			ItemMarginBottom = ItemMarginBottom_DefaultValue = 0;
 			ItemMarginTop = ItemMarginTop_DefaultValue = 0;
-			ItemStyle = ItemStyle_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "cursor", "pointer"},{ "fontSize", "12px"},{ "fontWeight", "bold" }};
+			ItemStyle = ItemStyle_DefaultValue = new Hashtable{{ "color", "#333333"},{ "cursor", "pointer"},{ "fontSize", "12px"},{ "fontWeight", "bold" }};
 			ItemWidth = ItemWidth_DefaultValue = null;
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
 			LabelFormatter = LabelFormatter_DefaultValue = "";
@@ -39,10 +39,11 @@ namespace Highsoft.Web.Mvc.Charts
 			Reversed = Reversed_DefaultValue = false;
 			Rtl = Rtl_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			SquareSymbol = SquareSymbol_DefaultValue = true;
 			SymbolHeight = SymbolHeight_DefaultValue = null;
 			SymbolPadding = SymbolPadding_DefaultValue = 5;
-			SymbolRadius = SymbolRadius_DefaultValue = 0;
-			SymbolWidth = SymbolWidth_DefaultValue = 16;
+			SymbolRadius = SymbolRadius_DefaultValue = null;
+			SymbolWidth = SymbolWidth_DefaultValue = null;
 			Title = Title_DefaultValue = new LegendTitle();
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
@@ -112,15 +113,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for each legend item when the corresponding series or point is hidden. Only a subset of CSS is supported, notably those options related to text. Properties are inherited from <code>style</code> unless overridden here.
 		/// </summary>
-		public NameValueCollection ItemHiddenStyle { get; set; }
-		private NameValueCollection ItemHiddenStyle_DefaultValue { get; set; }
+		public Hashtable ItemHiddenStyle { get; set; }
+		private Hashtable ItemHiddenStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for each legend item in hover mode. Only a subset of CSS is supported, notably those options related to text. Properties are inherited from <code>style</code> unless overridden here.
 		/// </summary>
-		public NameValueCollection ItemHoverStyle { get; set; }
-		private NameValueCollection ItemHoverStyle_DefaultValue { get; set; }
+		public Hashtable ItemHoverStyle { get; set; }
+		private Hashtable ItemHoverStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -140,8 +141,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for each legend item. Only a subset of CSS is supported, notably those options related to text.
 		/// </summary>
-		public NameValueCollection ItemStyle { get; set; }
-		private NameValueCollection ItemStyle_DefaultValue { get; set; }
+		public Hashtable ItemStyle { get; set; }
+		private Hashtable ItemStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -194,7 +195,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the paging or navigation appearing when the legend is overflown. Navigation works well on screen, but not in static exported images. One way of working around that is to <a href="http://jsfiddle.net/gh/get/jquery/1.7.2/highslide-software/highcharts.com/tree/master/samples/highcharts/legend/navigation-enabled-false/">increase the chart height in export</a>.
+		/// Options for the paging or navigation appearing when the legend is overflown. Navigation works well on screen, but not in static exported images. One way of working around that is to <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/legend/navigation-enabled-false/">increase the chart height in export</a>.
 		/// </summary>
 		public LegendNavigation Navigation { get; set; }
 		private LegendNavigation Navigation_DefaultValue { get; set; }
@@ -229,6 +230,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When this is true, the legend symbol width will be the same as the symbol height, which in turn defaults to the font size of the legend items.
+		/// </summary>
+		public bool? SquareSymbol { get; set; }
+		private bool? SquareSymbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The pixel height of the symbol for series types that use a rectangle in the legend. Defaults to the font size of legend items.
 		/// </summary>
 		public double? SymbolHeight { get; set; }
@@ -243,14 +251,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border radius of the symbol for series types that use a rectangle in the legend.
+		/// The border radius of the symbol for series types that use a rectangle in the legend. Defaults to half the <code>symbolHeight</code>.
 		/// </summary>
 		public double? SymbolRadius { get; set; }
 		private double? SymbolRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The pixel width of the legend item symbol.
+		/// The pixel width of the legend item symbol. When the <code>squareSymbol</code> option is set, this defaults to the <code>symbolHeight</code>, otherwise 16.
 		/// </summary>
 		public double? SymbolWidth { get; set; }
 		private double? SymbolWidth_DefaultValue { get; set; }
@@ -327,6 +335,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (SquareSymbol != SquareSymbol_DefaultValue) h.Add("squareSymbol",SquareSymbol);
 			if (SymbolHeight != SymbolHeight_DefaultValue) h.Add("symbolHeight",SymbolHeight);
 			if (SymbolPadding != SymbolPadding_DefaultValue) h.Add("symbolPadding",SymbolPadding);
 			if (SymbolRadius != SymbolRadius_DefaultValue) h.Add("symbolRadius",SymbolRadius);

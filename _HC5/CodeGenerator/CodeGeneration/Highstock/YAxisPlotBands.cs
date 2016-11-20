@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			BorderColor = BorderColor_DefaultValue = "null";
 			BorderWidth = BorderWidth_DefaultValue = 0;
+			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "null";
 			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
@@ -39,6 +40,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A custom class name, in addition to the default <code>highcharts-plot-band</code>, to apply to each individual band.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -96,6 +104,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (From != From_DefaultValue) h.Add("from",From);

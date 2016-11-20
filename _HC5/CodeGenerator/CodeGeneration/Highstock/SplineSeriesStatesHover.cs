@@ -18,7 +18,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Halo = Halo_DefaultValue = new SplineSeriesStatesHoverHalo();
 			LineWidth = LineWidth_DefaultValue = 2;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
-			Marker = Marker_DefaultValue = new SplineSeriesStatesHoverMarker();
 			
 		}	
 		
@@ -31,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
+		/// <p>Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the halo is styled with the <code>.highcharts-halo</code> class, with colors inherited from <code>.highcharts-color-{n}</code>.</p>
 		/// </summary>
 		public SplineSeriesStatesHoverHalo Halo { get; set; }
 		private SplineSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
@@ -49,13 +48,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? LineWidthPlus { get; set; }
 		private double? LineWidthPlus_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public SplineSeriesStatesHoverMarker Marker { get; set; }
-		private SplineSeriesStatesHoverMarker Marker_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -66,7 +58,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			
 
 			return h;

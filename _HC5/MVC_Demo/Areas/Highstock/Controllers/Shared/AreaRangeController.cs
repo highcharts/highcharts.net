@@ -15,13 +15,13 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             List<ArearangeSeriesData> appleData = new List<ArearangeSeriesData>();
 
-            foreach (CompanyData data in DataReceiver.GetJSON("Apple"))
+            foreach (RangeData data in DataReceiver.GetJSONRange())//("Apple"))
             {
                 appleData.Add(new ArearangeSeriesData
                 {
-                    X = Convert.ToDouble(data.Date),
-                    High = Convert.ToDouble(data.Value),
-                    Low = Convert.ToDouble(data.Value - new Random().Next(15))
+                    X = Convert.ToDouble(data.X),
+                    High = Convert.ToDouble(data.High),
+                    Low = Convert.ToDouble(data.Low)
                 });
             }
 

@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "null";
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			FollowPointer = FollowPointer_DefaultValue = false;
 			FollowTouchMove = FollowTouchMove_DefaultValue = true;
@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Shared = Shared_DefaultValue = false;
 			Snap = Snap_DefaultValue = null;
 			Split = Split_DefaultValue = false;
-			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "cursor", "default"},{ "fontSize", "12px"},{ "pointerEvents", "none"},{ "whiteSpace", "nowrap" }};
+			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333"},{ "cursor", "default"},{ "fontSize", "12px"},{ "pointerEvents", "none"},{ "whiteSpace", "nowrap" }};
 			UseHTML = UseHTML_DefaultValue = false;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = null;
@@ -84,8 +84,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p><p>Defaults to:<pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre></p>
 		/// </summary>
-		public NameValueCollection DateTimeLabelFormats { get; set; }
-		private NameValueCollection DateTimeLabelFormats_DefaultValue { get; set; }
+		public Hashtable DateTimeLabelFormats { get; set; }
+		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -187,7 +187,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Proximity snap for graphs or single points. Does not apply to bars, columns and pie slices. It defaults to 10 for mouse-powered devices and 25 for touch  devices. Note that since Highcharts 4.1 the whole plot area by default captures pointer events in order to show the tooltip, so for tooltip.snap to make sense, <a href="#plotOptions.series.stickyTracking">stickyTracking</a> must be <code>false</code>.
+		/// <p>Proximity snap for graphs or single points. It defaults to 10 for mouse-powered devices and 25 for touch devices.</p><p>Note that in most cases the whole plot area captures the mouse movement, and in these cases <code>tooltip.snap</code> doesn't make sense. This applies when <a href="#plotOptions.series.stickyTracking">stickyTracking</a> is <code>true</code> (default) and when the tooltip is <a href="#tooltip.shared">shared</a> or <a href="#tooltip.split">split</a>.</p>
 		/// </summary>
 		public double? Snap { get; set; }
 		private double? Snap_DefaultValue { get; set; }
@@ -203,8 +203,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the tooltip. The tooltip can also be styled through the CSS class <code>.highcharts-tooltip</code>.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Enabled = Enabled_DefaultValue = true;
 			Href = Href_DefaultValue = "http://www.highcharts.com";
-			Position = Position_DefaultValue = new NameValueCollection();
-			Style = Style_DefaultValue = new NameValueCollection{{ "cursor", "pointer"},{ "color", "#999999"},{ "fontSize", "10px" }};
+			Position = Position_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#999999"},{ "fontSize", "10px" }};
 			Text = Text_DefaultValue = "Highcharts.com";
 			
 		}	
@@ -38,17 +38,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Position configuration for the credits label. Supported properties are  <code>align</code>, <code>verticalAlign</code>, <code>x</code> and <code>y</code>. Defaults to <pre>position: {align: 'right',x: -10,verticalAlign: 'bottom',y: -5}</pre>
+		/// Position configuration for the credits label.
 		/// </summary>
-		public NameValueCollection Position { get; set; }
-		private NameValueCollection Position_DefaultValue { get; set; }
+		public Hashtable Position { get; set; }
+		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the credits label.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -64,7 +64,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Href != Href_DefaultValue) h.Add("href",Href);
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position.IsDirty()) h.Add("position",Position.ToHashtable());
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			

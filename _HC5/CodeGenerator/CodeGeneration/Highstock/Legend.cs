@@ -16,17 +16,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Align = Align_DefaultValue = LegendAlign.Center;
 			BackgroundColor = BackgroundColor_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = "#909090";
+			BorderColor = BorderColor_DefaultValue = "#999999";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			Enabled = Enabled_DefaultValue = false;
 			Floating = Floating_DefaultValue = false;
 			ItemDistance = ItemDistance_DefaultValue = 20;
-			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = null;
-			ItemHoverStyle = ItemHoverStyle_DefaultValue = null;
+			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new Hashtable{{ "color", "#cccccc" }};
+			ItemHoverStyle = ItemHoverStyle_DefaultValue = new Hashtable{{ "color", "#000000" }};
 			ItemMarginBottom = ItemMarginBottom_DefaultValue = 0;
 			ItemMarginTop = ItemMarginTop_DefaultValue = 0;
-			ItemStyle = ItemStyle_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "cursor", "pointer"},{ "fontSize", "12px"},{ "fontWeight", "bold" }};
+			ItemStyle = ItemStyle_DefaultValue = new Hashtable{{ "color", "#333333"},{ "cursor", "pointer"},{ "fontSize", "12px"},{ "fontWeight", "bold" }};
 			ItemWidth = ItemWidth_DefaultValue = null;
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
 			LabelFormatter = LabelFormatter_DefaultValue = "";
@@ -37,9 +37,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			Padding = Padding_DefaultValue = 8;
 			Reversed = Reversed_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			SquareSymbol = SquareSymbol_DefaultValue = true;
 			SymbolHeight = SymbolHeight_DefaultValue = null;
 			SymbolPadding = SymbolPadding_DefaultValue = 5;
-			SymbolWidth = SymbolWidth_DefaultValue = 16;
+			SymbolRadius = SymbolRadius_DefaultValue = null;
+			SymbolWidth = SymbolWidth_DefaultValue = null;
 			Title = Title_DefaultValue = new LegendTitle();
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
@@ -51,7 +53,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The horizontal alignment of the legend box within the chart area. Valid values are <code>"left"</code>, <code>"center"</code> and <code>"right"</code>.
+		/// <p>The horizontal alignment of the legend box within the chart area. Valid values are <code>left</code>, <code>center</code> and <code>right</code>.</p><p>In the case that the legend is aligned in a corner position, the <code>layout</code> option will determine whether to place it above/below or on the side of the plot area.</p>
 		/// </summary>
 		public LegendAlign Align { get; set; }
 		private LegendAlign Align_DefaultValue { get; set; }
@@ -107,17 +109,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS styles for each legend item when the corresponding series or point is hidden. Only a subset of CSS is supported, notably those options related to text. Properties are inherited from <code>style</code> unless overridden here. Defaults to:<pre>itemHiddenStyle: {color: '#CCC'}</pre>
+		/// CSS styles for each legend item when the corresponding series or point is hidden. Only a subset of CSS is supported, notably those options related to text. Properties are inherited from <code>style</code> unless overridden here.
 		/// </summary>
-		public NameValueCollection ItemHiddenStyle { get; set; }
-		private NameValueCollection ItemHiddenStyle_DefaultValue { get; set; }
+		public Hashtable ItemHiddenStyle { get; set; }
+		private Hashtable ItemHiddenStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// CSS styles for each legend item in hover mode. Only a subset of CSS is supported, notably those options related to text. Properties are inherited from <code>style</code> unless overridden here. Defaults to:<pre>itemHoverStyle: {color: '#000'}</pre>
+		/// CSS styles for each legend item in hover mode. Only a subset of CSS is supported, notably those options related to text. Properties are inherited from <code>style</code> unless overridden here.
 		/// </summary>
-		public NameValueCollection ItemHoverStyle { get; set; }
-		private NameValueCollection ItemHoverStyle_DefaultValue { get; set; }
+		public Hashtable ItemHoverStyle { get; set; }
+		private Hashtable ItemHoverStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -137,8 +139,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for each legend item. Only a subset of CSS is supported, notably those options related to text.
 		/// </summary>
-		public NameValueCollection ItemStyle { get; set; }
-		private NameValueCollection ItemStyle_DefaultValue { get; set; }
+		public Hashtable ItemStyle { get; set; }
+		private Hashtable ItemStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -212,6 +214,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When this is true, the legend symbol width will be the same as the symbol height, which in turn defaults to the font size of the legend items.
+		/// </summary>
+		public bool? SquareSymbol { get; set; }
+		private bool? SquareSymbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The pixel height of the symbol for series types that use a rectangle in the legend. Defaults to the font size of legend items.
 		/// </summary>
 		public double? SymbolHeight { get; set; }
@@ -226,7 +235,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The pixel width of the legend item symbol.
+		/// The border radius of the symbol for series types that use a rectangle in the legend. Defaults to half the <code>symbolHeight</code>.
+		/// </summary>
+		public double? SymbolRadius { get; set; }
+		private double? SymbolRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel width of the legend item symbol. When the <code>squareSymbol</code> option is set, this defaults to the <code>symbolHeight</code>, otherwise 16.
 		/// </summary>
 		public double? SymbolWidth { get; set; }
 		private double? SymbolWidth_DefaultValue { get; set; }
@@ -247,7 +263,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The vertical alignment of the legend box. Can be one of "top", "middle" or  "bottom". Vertical position can be further determined by the <code>y</code> option.
+		/// <p>The vertical alignment of the legend box. Can be one of <code>top</code>, <code>middle</code> or  <code>bottom</code>. Vertical position can be further determined by the <code>y</code> option.</p><p>In the case that the legend is aligned in a corner position, the <code>layout</code> option will determine whether to place it above/below or on the side of the plot area.</p>
 		/// </summary>
 		public LegendVerticalAlign VerticalAlign { get; set; }
 		private LegendVerticalAlign VerticalAlign_DefaultValue { get; set; }
@@ -301,8 +317,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (SquareSymbol != SquareSymbol_DefaultValue) h.Add("squareSymbol",SquareSymbol);
 			if (SymbolHeight != SymbolHeight_DefaultValue) h.Add("symbolHeight",SymbolHeight);
 			if (SymbolPadding != SymbolPadding_DefaultValue) h.Add("symbolPadding",SymbolPadding);
+			if (SymbolRadius != SymbolRadius_DefaultValue) h.Add("symbolRadius",SymbolRadius);
 			if (SymbolWidth != SymbolWidth_DefaultValue) h.Add("symbolWidth",SymbolWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);

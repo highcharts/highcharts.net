@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Align = Align_DefaultValue = TitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
 			Margin = Margin_DefaultValue = new string[] {};
-			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "fontSize", "18px" }};
+			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333"},{ "fontSize", "18px" }};
 			Text = Text_DefaultValue = "Chart title";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Null;
@@ -52,8 +52,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>CSS styles for the title. Use this for font styling, but use <code>align</code>, <code>x</code> and <code>y</code> for text alignment.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the title style is given in the <code>.highcharts-title</code> class.</p>
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

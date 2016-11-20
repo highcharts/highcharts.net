@@ -16,10 +16,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Align = Align_DefaultValue = SubtitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
-			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#555555" }};
+			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
 			Text = Text_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = SubtitleVerticalAlign.Top;
+			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue =  null;
 			
@@ -41,10 +42,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS styles for the title. Exact positioning of the title can be achieved by changing the margin property, or by adding <code>position: "absolute"</code> and  left and top properties.
+		/// <p>CSS styles for the title.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the subtitle style is given in the <code>.highcharts-subtitle</code> class.</p>
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -66,6 +67,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public SubtitleVerticalAlign VerticalAlign { get; set; }
 		private SubtitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Adjustment made to the subtitle width, normally to reserve space for the exporting burger menu.
+		/// </summary>
+		public double? WidthAdjust { get; set; }
+		private double? WidthAdjust_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -92,6 +100,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (WidthAdjust != WidthAdjust_DefaultValue) h.Add("widthAdjust",WidthAdjust);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

@@ -8,6 +8,7 @@ namespace Highsoft.Web.Mvc.Stocks
     public enum PlotOptionsFlagsPointIntervalUnit
     {
         Null, 
+		Day, 
 		Month, 
 		Year
     }

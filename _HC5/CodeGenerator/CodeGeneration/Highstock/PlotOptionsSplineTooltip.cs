@@ -15,13 +15,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsSplineTooltip()
 		{
 			ChangeDecimals = ChangeDecimals_DefaultValue = null;
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			FollowPointer = FollowPointer_DefaultValue = false;
 			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			HeaderFormat = HeaderFormat_DefaultValue = "";
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
+			Padding = Padding_DefaultValue = 8;
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Shape = Shape_DefaultValue = "callout";
+			Split = Split_DefaultValue = false;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = null;
 			ValueSuffix = ValueSuffix_DefaultValue = null;
@@ -38,10 +40,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit.<p><p>Note that when data grouping applies, the date time label formats are pulled from <a href="#plotOptions.series.dataGrouping.dateTimeLabelFormats">dataGrouping.dateTimeLabelFormats</a> instead, because it also allows formatting of time spans.</p><p>For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p><p>Defaults to:<pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre></p>
+		/// <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p><p>Defaults to:<pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre></p>
 		/// </summary>
-		public NameValueCollection DateTimeLabelFormats { get; set; }
-		private NameValueCollection DateTimeLabelFormats_DefaultValue { get; set; }
+		public Hashtable DateTimeLabelFormats { get; set; }
+		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -66,7 +68,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>The HTML of the point's line in the tooltip. Variables are enclosed by curly brackets. Available variables are point.x, point.y, point.change, series.name and series.color and other properties on the same form. Furthermore,  point.y can be extended by the tooltip.valuePrefix and tooltip.valueSuffix variables. This can also be overridden for each series, which makes it a good hook for displaying units.</p>
+		/// Padding inside the tooltip, in pixels.
+		/// </summary>
+		public double? Padding { get; set; }
+		private double? Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The HTML of the point's line in the tooltip. Variables are enclosed by curly brackets. Available variables are point.x, point.y, point.change, series.name and series.color and other properties on the same form. Furthermore,  point.y can be extended by the tooltip.valuePrefix and tooltip.valueSuffix variables. This can also be overridden for each series, which makes it a good hook for displaying units.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the dot is colored by a class name rather than the point color.</p>
 		/// </summary>
 		public string PointFormat { get; set; }
 		private string PointFormat_DefaultValue { get; set; }
@@ -84,6 +93,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Shape { get; set; }
 		private string Shape_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Split the tooltip into one label per series, with the header close to the axis. This is recommended over <a href="#tooltip.shared">shared</a> tooltips for charts with multiple line series, generally making them easier to read.
+		/// </summary>
+		public bool? Split { get; set; }
+		private bool? Split_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -123,9 +139,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highstock.AddFunction("PlotOptionsSplineTooltipPointFormatter.pointFormatter", PointFormatter); }  
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (Split != Split_DefaultValue) h.Add("split",Split);
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);
 			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);

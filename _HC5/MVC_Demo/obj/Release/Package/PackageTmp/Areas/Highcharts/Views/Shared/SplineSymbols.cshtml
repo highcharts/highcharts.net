@@ -1,0 +1,84 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+<script type="text/javascript">
+
+    function formatYAxisLabels() {
+        return this.value + '°';
+    }
+
+</script>
+
+@(Html.Highsoft().Highcharts(
+    new Highcharts
+    {
+        Title = new Title
+        {
+            Text = "Monthly Average Temperature"
+        },
+        XAxis = new List<XAxis>
+        {        
+            new XAxis
+            {
+                Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
+
+            }
+        },
+        YAxis = new List<YAxis>
+        {
+            new YAxis
+            {
+                Title = new YAxisTitle
+                {
+                    Text = "Temperature (°C)"
+                },
+                Labels = new YAxisLabels
+                {
+                    Formatter = "formatYAxisLabels"
+                }
+            }
+        },
+        Tooltip = new Tooltip
+        {
+            Crosshairs = new List<Crosshair>
+            {
+                new Crosshair
+                {
+                    XAxis = true,
+                    YAxis = true
+                }
+            },
+            Shared = true
+        },
+        PlotOptions = new PlotOptions
+        {
+            Spline = new PlotOptionsSpline
+            {
+                Marker = new PlotOptionsSplineMarker
+                {
+                    Radius = 4,
+                    LineColor = "#666666",
+                    LineWidth = 1
+                }
+            }
+        },
+        Series = new List<Series>
+        {                    
+            new SplineSeries
+            {
+                Name = "Tokyo",                          
+                Data = @ViewData["tokyoData"] as List<SplineSeriesData>
+            },                   
+            new SplineSeries
+            {
+                Name = "London",
+                Data = @ViewData["londonData"] as List<SplineSeriesData>
+            }
+        }
+    }
+    , "chart")
+)

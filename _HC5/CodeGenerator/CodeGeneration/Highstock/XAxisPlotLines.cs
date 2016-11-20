@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public XAxisPlotLines()
 		{
+			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "null";
 			DashStyle = DashStyle_DefaultValue = XAxisPlotLinesDashStyle.Solid;
 			Events = Events_DefaultValue = null;
@@ -27,6 +28,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
+		/// A custom class name, in addition to the default <code>highcharts-plot-line</code>, to apply to each individual line.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color of the line.
 		/// </summary>
 		public string Color { get; set; }
@@ -34,7 +42,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The dashing or dot style for the plot line. For possible values see <a href="http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this overview</a>.
+		/// The dashing or dot style for the plot line. For possible values see <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this overview</a>.
 		/// </summary>
 		public XAxisPlotLinesDashStyle DashStyle { get; set; }
 		private XAxisPlotLinesDashStyle DashStyle_DefaultValue { get; set; }
@@ -86,6 +94,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Events != Events_DefaultValue) h.Add("events",Events);

@@ -17,10 +17,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			Align = Align_DefaultValue = TitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
 			Margin = Margin_DefaultValue = new string[] {};
-			Style = Style_DefaultValue = new NameValueCollection{{ "color", "#333333"},{ "fontSize", "16px" }};
+			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333"},{ "fontSize", "16px" }};
 			Text = Text_DefaultValue = "null";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Top;
+			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Null;
+			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
@@ -49,10 +50,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS styles for the title. Use this for font styling, but use <code>align</code>, <code>x</code> and <code>y</code> for text alignment.
+		/// <p>CSS styles for the title. Use this for font styling, but use <code>align</code>, <code>x</code> and <code>y</code> for text alignment.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the title style is given in the <code>.highcharts-title</code> class.</p>
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,10 +71,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The vertical alignment of the title. Can be one of "top", "middle" and "bottom". When a value is given, the title behaves as floating.
+		/// The vertical alignment of the title. Can be one of <code>"top"</code>, <code>"middle"</code> and <code>"bottom"</code>. When a value is given, the title behaves as if <a href="#title.floating">floating</a> were <code>true</code>.
 		/// </summary>
 		public TitleVerticalAlign VerticalAlign { get; set; }
 		private TitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Adjustment made to the title width, normally to reserve space for the exporting burger menu.
+		/// </summary>
+		public double? WidthAdjust { get; set; }
+		private double? WidthAdjust_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -101,6 +109,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (WidthAdjust != WidthAdjust_DefaultValue) h.Add("widthAdjust",WidthAdjust);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

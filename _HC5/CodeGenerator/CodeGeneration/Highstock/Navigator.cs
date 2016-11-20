@@ -16,12 +16,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = true;
-			Handles = Handles_DefaultValue = null;
+			Handles = Handles_DefaultValue = new NavigatorHandles();
 			Height = Height_DefaultValue = 40;
 			Margin = Margin_DefaultValue = new string[] {};
-			MaskFill = MaskFill_DefaultValue = "rgba(128,179,236,0.3)";
+			MaskFill = MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
 			MaskInside = MaskInside_DefaultValue = true;
-			OutlineColor = OutlineColor_DefaultValue = "#b2b1b6";
+			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
 			OutlineWidth = OutlineWidth_DefaultValue = 2;
 			Series = Series_DefaultValue = null;
 			XAxis = XAxis_DefaultValue = null;
@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Whether the navigator and scrollbar should adapt to updated data in the base X axis. This should be false when loading data asynchronously, to prevent circular loading.
+		/// Whether the navigator and scrollbar should adapt to updated data in the base X axis. When loading data async, as in the demo below, this should be <code>false</code>. Otherwise new data will trigger navigator redraw, which will cause unwanted looping. In the demo below, the data in the navigator is set only once. On navigating, only the main chart content is updated.
 		/// </summary>
 		public bool? AdaptToUpdatedData { get; set; }
 		private bool? AdaptToUpdatedData_DefaultValue { get; set; }
@@ -45,10 +45,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the handles for dragging the zoomed area. Available options are <code>backgroundColor</code> (defaults to <code>#ebe7e8</code>) and <code>borderColor</code> (defaults to <code>#b2b1b6</code>).
+		/// <p>Options for the handles for dragging the zoomed area.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the navigator handles are styled with the <code>.highcharts-navigator-handle</code>, <code>.highcharts-navigator-handle-left</code> and <code>.highcharts-navigator-handle-right</code> classes.</p>
 		/// </summary>
-		public Object Handles { get; set; }
-		private Object Handles_DefaultValue { get; set; }
+		public NavigatorHandles Handles { get; set; }
+		private NavigatorHandles Handles_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -120,7 +120,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (AdaptToUpdatedData != AdaptToUpdatedData_DefaultValue) h.Add("adaptToUpdatedData",AdaptToUpdatedData);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Handles != Handles_DefaultValue) h.Add("handles",Handles);
+			if (Handles.IsDirty()) h.Add("handles",Handles.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MaskFill != MaskFill_DefaultValue) h.Add("maskFill",MaskFill);

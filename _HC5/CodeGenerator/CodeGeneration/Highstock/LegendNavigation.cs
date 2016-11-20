@@ -14,11 +14,12 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LegendNavigation()
 		{
-			ActiveColor = ActiveColor_DefaultValue = "#274b6d";
+			ActiveColor = ActiveColor_DefaultValue = "#003399";
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			ArrowSize = ArrowSize_DefaultValue = 12;
-			InactiveColor = InactiveColor_DefaultValue = "#CCC";
-			Style = Style_DefaultValue = new NameValueCollection();
+			Enabled = Enabled_DefaultValue = true;
+			InactiveColor = InactiveColor_DefaultValue = "#cccccc";
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -45,6 +46,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to enable the legend navigation. In most cases, disabling the navigation results in an unwanted overflow.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color of the inactive up or down arrow in the legend page navigation.  .
 		/// </summary>
 		public string InactiveColor { get; set; }
@@ -54,8 +62,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Text styles for the legend page navigation.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -65,6 +73,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ActiveColor != ActiveColor_DefaultValue) h.Add("activeColor",ActiveColor);
 			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (ArrowSize != ArrowSize_DefaultValue) h.Add("arrowSize",ArrowSize);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (InactiveColor != InactiveColor_DefaultValue) h.Add("inactiveColor",InactiveColor);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			

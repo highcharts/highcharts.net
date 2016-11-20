@@ -151,7 +151,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// <p>The legend is a box containing a symbol and name for each series item or point item in the chart. Each series (or points in case of pie charts) is represented by a symbol and its name in the legend.</p><p>It is also possible to override the symbol creator function and create <a href="http://jsfiddle.net/gh/get/jquery/1.7.2/highcharts/highcharts/tree/master/samples/highcharts/studies/legend-custom-symbol/">custom legend symbols</a>.</p>
+		/// <p>The legend is a box containing a symbol and name for each series item or point item in the chart. Each series (or points in case of pie charts) is represented by a symbol and its name in the legend.</p><p>It is also possible to override the symbol creator function and create <a href="http://jsfiddle.net/gh/get/jquery/3.1.1/highcharts/highcharts/tree/master/samples/highcharts/studies/legend-custom-symbol/">custom legend symbols</a>.</p>
 		/// </summary>
 		public Legend Legend { get; set; }
 		private Legend Legend_DefaultValue { get; set; }
@@ -382,21 +382,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// <p>The X axis or category axis. Normally this is the horizontal axis, though if the chart is inverted this is the vertical axis. In case of multiple axes, the xAxisnode is an array of configuration objects.</p><p>See <a class="internal" href="#axis.object">the Axis object</a> for programmaticaccess to the axis.</p>
+		/// <p>The X axis or category axis. Normally this is the horizontal axis, though if the chart is inverted this is the vertical axis. In case of multiple axes, the xAxisnode is an array of configuration objects.</p><p>See <a class="internal" href="#Axis">the Axis object</a> for programmaticaccess to the axis.</p>
 		/// </summary>
 		public List<XAxis> XAxis { get; set; }
 		private List<XAxis> XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The Y axis or value axis. Normally this is the vertical axis, though if the chart is inverted this is the horizontal axis. In case of multiple axes, the yAxisnode is an array of configuration objects.</p><p>See <a class="internal" href="#axis.object">the Axis object</a> for programmaticaccess to the axis.</p>
+		/// <p>The Y axis or value axis. Normally this is the vertical axis, though if the chart is inverted this is the horizontal axis. In case of multiple axes, the yAxisnode is an array of configuration objects.</p><p>See <a class="internal" href="#Axis">the Axis object</a> for programmaticaccess to the axis.</p>
 		/// </summary>
 		public List<YAxis> YAxis { get; set; }
 		private List<YAxis> YAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The Z axis or depth axis for 3D plots.</p><p>See <a class="internal" href="#axis.object">the Axis object</a> for programmaticaccess to the axis.</p>
+		/// <p>The Z axis or depth axis for 3D plots.</p><p>See <a class="internal" href="#Axis">the Axis object</a> for programmaticaccess to the axis.</p>
 		/// </summary>
 		public ZAxis ZAxis { get; set; }
 		private ZAxis ZAxis_DefaultValue { get; set; }

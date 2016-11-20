@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public NoData()
 		{
 			Attr = Attr_DefaultValue = null;
-			Position = Position_DefaultValue = new NameValueCollection{{ "x", "0"},{ "y", "0"},{ "align", "center"},{ "verticalAlign", "middle" }};
-			Style = Style_DefaultValue = new NameValueCollection{{ "fontSize", "12px"},{ "fontWeight", "bold"},{ "color", "#666666" }};
+			Position = Position_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new Hashtable{{ "fontSize", "12px"},{ "fontWeight", "bold"},{ "color", "#666666" }};
 			UseHTML = UseHTML_DefaultValue = false;
 			
 		}	
@@ -25,22 +25,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An object of additional SVG attributes for the no-data label.
 		/// </summary>
-		public NameValueCollection Attr { get; set; }
-		private NameValueCollection Attr_DefaultValue { get; set; }
+		public Hashtable Attr { get; set; }
+		private Hashtable Attr_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The position of the no-data label, relative to the plot area. 
 		/// </summary>
-		public NameValueCollection Position { get; set; }
-		private NameValueCollection Position_DefaultValue { get; set; }
+		public Hashtable Position { get; set; }
+		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the no-data label. 
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Attr != Attr_DefaultValue) h.Add("attr",Attr);
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position.IsDirty()) h.Add("position",Position.ToHashtable());
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			

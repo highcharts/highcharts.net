@@ -17,10 +17,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			AlignTicks = AlignTicks_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			BackgroundColor = BackgroundColor_DefaultValue = "#FFFFFF";
-			BorderColor = BorderColor_DefaultValue = "#4572A7";
+			BorderColor = BorderColor_DefaultValue = "#335cad";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = " ";
+			ColorCount = ColorCount_DefaultValue = 10;
+			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = new ChartEvents();
 			Height = Height_DefaultValue = null;
 			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
@@ -33,19 +35,21 @@ namespace Highsoft.Web.Mvc.Stocks
 			PinchType = PinchType_DefaultValue = ChartPinchType.X;
 			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "null";
 			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "null";
-			PlotBorderColor = PlotBorderColor_DefaultValue = "'#C0C0C0'";
+			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
 			PlotBorderWidth = PlotBorderWidth_DefaultValue = 0;
 			PlotShadow = PlotShadow_DefaultValue = new Shadow() { Enabled = false };
 			Reflow = Reflow_DefaultValue = true;
 			RenderTo = RenderTo_DefaultValue = null;
-			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(69114,167,0.25),";
+			ResetZoomButton = ResetZoomButton_DefaultValue = new ChartResetZoomButton();
+			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(51,92,173,0.25)";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			SpacingBottom = SpacingBottom_DefaultValue = 15;
 			SpacingLeft = SpacingLeft_DefaultValue = 10;
 			SpacingRight = SpacingRight_DefaultValue = 10;
 			SpacingTop = SpacingTop_DefaultValue = 10;
-			Style = Style_DefaultValue = new NameValueCollection{{"fontFamily","\"Lucida Grande\"},{ \"Lucida Sans Unicode\"},{ Verdana},{ Arial},{ Helvetica},{ sans-serif"},{"fontSize","12px"}};
+			Style = Style_DefaultValue = new Hashtable{{"fontFamily","\"Lucida Grande\"},{ \"Lucida Sans Unicode\"},{ Verdana},{ Arial},{ Helvetica},{ sans-serif"},{"fontSize","12px"}};
 			Type = Type_DefaultValue = ChartType.Line;
+			TypeDescription = TypeDescription_DefaultValue = "undefined";
 			Width = Width_DefaultValue = null;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
 			
@@ -53,14 +57,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// When using multiple axis, the ticks of two or more opposite axes will  automatically be aligned by adding ticks to the axis or axes with the least ticks. This can be prevented by setting <code>alignTicks</code> to false. If the grid lines look messy, it's a good idea to hide them for the secondary axis by setting <code>gridLineWidth</code> to 0.
+		/// <p>When using multiple axis, the ticks of two or more opposite axes will  automatically be aligned by adding ticks to the axis or axes with the least ticks, as if <code>tickAmount</code> were specified.</p><p>This can be prevented by setting <code>alignTicks</code> to false. If the grid lines look messy, it's a good idea to hide them for the secondary axis by setting <code>gridLineWidth</code> to 0.</p>
 		/// </summary>
 		public bool? AlignTicks { get; set; }
 		private bool? AlignTicks_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Set the overall animation for all chart updating. Animation can be disabled throughout the chart by setting it to false here. It can be overridden for each individual API method as a function parameter. The only animation not affected by this option is the  initial series animation, see <a class="internal" href="#plotOptions.series">plotOptions.series</a> =&gt; animation.</p>  <p>The animation can either be set as a boolean or a configuration object. If <code>true</code>, it will use the 'swing' jQuery easing and a duration of 500 ms. If used as a configuration object, the following properties are supported:  </p><dl> <dt>duration</dt> <dd>The duration of the animation in milliseconds.</dd>  <dt>easing</dt> <dd>When using jQuery as the general framework, the easing can be set to <code>linear</code> or <code>swing</code>. More easing functions are available with the use of jQuery plug-ins, most notably the jQuery UI suite. See <a href="http://api.jquery.com/animate/">the jQuery docs</a>. When using  MooTools as the general framework, use the property name <code>transition</code> instead  of <code>easing</code>.</dd> </dl>
+		/// <p>Set the overall animation for all chart updating. Animation can be disabled throughout the chart by setting it to false here. It can be overridden for each individual API method as a function parameter. The only animation not affected by this option is the  initial series animation, see <a class="internal" href="#plotOptions.series">plotOptions.series</a> =&gt; animation.</p>  <p>The animation can either be set as a boolean or a configuration object. If <code>true</code>, it will use the 'swing' jQuery easing and a duration of 500 ms. If used as a configuration object, the following properties are supported:  </p><dl> <dt>duration</dt> <dd>The duration of the animation in milliseconds.</dd>  <dt>easing</dt> <dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/jquery/3.1.1/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd> </dl>
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
@@ -102,6 +106,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, this sets how many colors the class names should rotate between. With ten colors, series (or points) are given class names like <code>highcharts-color-0</code>, <code>highcharts-color-0</code> [...] <code>highcharts-color-9</code>. The equivalent in non-styled mode is to set colors using the <a href="#colors">colors</a> setting.
+		/// </summary>
+		public double? ColorCount { get; set; }
+		private double? ColorCount_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A text description of the chart.</p><p>If the Accessibility module is loaded, this is included by default as a long description of the chart and its contents in the hidden screen reader information region.</p>
+		/// </summary>
+		public string Description { get; set; }
+		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Event listeners for the chart.
 		/// </summary>
 		public ChartEvents Events { get; set; }
@@ -109,7 +127,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An explicit height for the chart. By default the height is calculated from the offset height of the containing element, or 400 pixels if the containing element's height is 0.
+		/// An explicit height for the chart. By default (when <code>null</code>) the height is calculated from the offset height of the containing element, or 400 pixels if the containing element's height is 0.
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
@@ -165,7 +183,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Equivalent to <a href="#chart.zoomType">zoomType</a>, but for multitouch gestures only. By default, the <code>pinchType</code> is the same as the <code>zoomType</code> setting. However, pinching can be enabled separately in some cases, for example in stock charts where a mouse drag pans the chart, while pinching is enabled.
+		/// Equivalent to <a href="#chart.zoomType">zoomType</a>, but for multitouch gestures only. By default, the <code>pinchType</code> is the same as the <code>zoomType</code> setting. However, pinching can be enabled separately in some cases, for example in stock charts where a mouse drag pans the chart, while pinching is enabled. When <a href="#tooltip.followTouchMove">tooltip.followTouchMove</a> is true, pinchType only applies to two-finger touches.
 		/// </summary>
 		public ChartPinchType PinchType { get; set; }
 		private ChartPinchType PinchType_DefaultValue { get; set; }
@@ -214,14 +232,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The HTML element where the chart will be rendered. If it is a string, the element by that id is used. The HTML element can also be passed by direct reference.
+		/// <p>The HTML element where the chart will be rendered. If it is a string, the element by that id is used. The HTML element can also be passed by direct reference.</p><p>When using the <a href="#Highcharts.stockChart">Highcharts.stockChart</a> constructor, the <code>renderTo</code> is given as a parameter, and can be skipped in the options set.</p>
 		/// </summary>
 		public string RenderTo { get; set; }
 		private string RenderTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The background color of the marker square when selecting (zooming in on) an area of the chart. Defaults to <code>rgba(69,114,167,0.25)</code>.
+		/// The button that appears after a selection zoom, allowing the user to reset zoom.
+		/// </summary>
+		public ChartResetZoomButton ResetZoomButton { get; set; }
+		private ChartResetZoomButton ResetZoomButton_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The background color of the marker square when selecting (zooming in on) an area of the chart.
 		/// </summary>
 		public string SelectionMarkerFill { get; set; }
 		private string SelectionMarkerFill_DefaultValue { get; set; }
@@ -263,10 +288,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Additional CSS styles to apply inline to the container <code>div</code>. Note that since the default font styles are applied in the renderer, it is ignorant of the individual chart  options and must be set globally. Defaults to:<pre>style: {fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default fontfontSize: '12px'}</pre>
+		/// Additional CSS styles to apply inline to the container <code>div</code>. Note that since the default font styles are applied in the renderer, it is ignorant of the individual chart  options and must be set globally.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -277,7 +302,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An explicit width for the chart. By default the width is calculated from the offset width of the containing element.
+		/// <p>A text description of the chart type.</p> <p>If the Accessibility module is loaded, this will be included in the description of the chart in the screen reader information region.</p><p>Highcharts will by default attempt to guess the chart type, but for more complex charts it is recommended to specify this property for clarity.</p>
+		/// </summary>
+		public string TypeDescription { get; set; }
+		private string TypeDescription_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An explicit width for the chart. By default (when <code>null</code>) the width is calculated from the offset width of the containing element.
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
@@ -301,6 +333,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (ColorCount != ColorCount_DefaultValue) h.Add("colorCount",ColorCount);
+			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
@@ -318,6 +352,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PlotShadow.IsDirty()) h.Add("plotShadow",PlotShadow.ToJSON());
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
+			if (ResetZoomButton.IsDirty()) h.Add("resetZoomButton",ResetZoomButton.ToHashtable());
 			if (SelectionMarkerFill != SelectionMarkerFill_DefaultValue) h.Add("selectionMarkerFill",SelectionMarkerFill);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (SpacingBottom != SpacingBottom_DefaultValue) h.Add("spacingBottom",SpacingBottom);
@@ -326,6 +361,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SpacingTop != SpacingTop_DefaultValue) h.Add("spacingTop",SpacingTop);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", Highstock.FirstCharacterToLower(ZoomType.ToString()));
 			

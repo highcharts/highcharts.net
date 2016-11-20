@@ -8,6 +8,7 @@ namespace Highsoft.Web.Mvc.Stocks
     public enum FlagsSeriesPointIntervalUnit
     {
         Null, 
+		Day, 
 		Month, 
 		Year
     }

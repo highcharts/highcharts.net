@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ArrowSize = ArrowSize_DefaultValue = 12;
 			Enabled = Enabled_DefaultValue = true;
 			InactiveColor = InactiveColor_DefaultValue = "#cccccc";
-			Style = Style_DefaultValue = new NameValueCollection();
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -62,8 +62,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Text styles for the legend page navigation.
 		/// </summary>
-		public NameValueCollection Style { get; set; }
-		private NameValueCollection Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

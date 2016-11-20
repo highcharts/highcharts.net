@@ -16,8 +16,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Color = Color_DefaultValue = "undefined";
 			DataLabels = DataLabels_DefaultValue = null;
+			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = new ScatterSeriesDataEvents();
 			Id = Id_DefaultValue = "null";
+			Labelrank = Labelrank_DefaultValue = null;
 			Marker = Marker_DefaultValue = new ScatterSeriesDataMarker();
 			Name = Name_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
@@ -42,6 +44,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// <p><i>Requires Accessibility module</i></p><p>A description of the point to add to the screen reader information about the point.</p>
+		/// </summary>
+		public string Description { get; set; }
+		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public ScatterSeriesDataEvents Events { get; set; }
@@ -53,6 +62,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The rank for this point's data label in case of collision. If two data labels are about to overlap, only the one with the highest <code>labelrank</code> will be drawn.
+		/// </summary>
+		public double? Labelrank { get; set; }
+		private double? Labelrank_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -96,8 +112,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);

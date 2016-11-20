@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public Navigation()
 		{
 			ButtonOptions = ButtonOptions_DefaultValue = new NavigationButtonOptions();
-			MenuItemHoverStyle = MenuItemHoverStyle_DefaultValue = new NameValueCollection{{ "background", "#335cad"},{ "color", "#ffffff" }};
-			MenuItemStyle = MenuItemStyle_DefaultValue = new NameValueCollection{{ "padding", "0.5em 1em"},{ "color", "#333333"},{ "background", "none" }};
-			MenuStyle = MenuStyle_DefaultValue = new NameValueCollection{{ "border", "1px solid #999999"},{ "background", "#ffffff"},{ "padding", "5px 0" }};
+			MenuItemHoverStyle = MenuItemHoverStyle_DefaultValue = new Hashtable{{ "background", "#335cad"},{ "color", "#ffffff" }};
+			MenuItemStyle = MenuItemStyle_DefaultValue = new Hashtable{{ "padding", "0.5em 1em"},{ "color", "#333333"},{ "background", "none" }};
+			MenuStyle = MenuStyle_DefaultValue = new Hashtable{{ "border", "1px solid #999999"},{ "background", "#ffffff"},{ "padding", "5px 0" }};
 			
 		}	
 		
@@ -32,22 +32,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the hover state of the individual items within the popup menu appearing by  default when the export icon is clicked. The menu items are rendered in HTML.
 		/// </summary>
-		public NameValueCollection MenuItemHoverStyle { get; set; }
-		private NameValueCollection MenuItemHoverStyle_DefaultValue { get; set; }
+		public Hashtable MenuItemHoverStyle { get; set; }
+		private Hashtable MenuItemHoverStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the individual items within the popup menu appearing by  default when the export icon is clicked. The menu items are rendered in HTML.
 		/// </summary>
-		public NameValueCollection MenuItemStyle { get; set; }
-		private NameValueCollection MenuItemStyle_DefaultValue { get; set; }
+		public Hashtable MenuItemStyle { get; set; }
+		private Hashtable MenuItemStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the popup menu appearing by default when the export icon is clicked. This menu is rendered in HTML.
 		/// </summary>
-		public NameValueCollection MenuStyle { get; set; }
-		private NameValueCollection MenuStyle_DefaultValue { get; set; }
+		public Hashtable MenuStyle { get; set; }
+		private Hashtable MenuStyle_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

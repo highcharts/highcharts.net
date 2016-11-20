@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsAreaZones()
 		{
+			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = null;
 			DashStyle = DashStyle_DefaultValue = null;
 			FillColor = FillColor_DefaultValue = null;
@@ -21,6 +22,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Defines the color of the series.
@@ -54,6 +62,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);

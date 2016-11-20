@@ -14,22 +14,23 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Scrollbar()
 		{
-			BarBackgroundColor = BarBackgroundColor_DefaultValue = "#bfc8d1";
-			BarBorderColor = BarBorderColor_DefaultValue = "#bfc8d1";
+			BarBackgroundColor = BarBackgroundColor_DefaultValue = "#cccccc";
+			BarBorderColor = BarBorderColor_DefaultValue = "#cccccc";
 			BarBorderRadius = BarBorderRadius_DefaultValue = 0;
 			BarBorderWidth = BarBorderWidth_DefaultValue = 1;
-			ButtonArrowColor = ButtonArrowColor_DefaultValue = "#666";
-			ButtonBackgroundColor = ButtonBackgroundColor_DefaultValue = "#ebe7e8";
-			ButtonBorderColor = ButtonBorderColor_DefaultValue = "#bbbbbb";
+			ButtonArrowColor = ButtonArrowColor_DefaultValue = "#333333";
+			ButtonBackgroundColor = ButtonBackgroundColor_DefaultValue = "#e6e6e6";
+			ButtonBorderColor = ButtonBorderColor_DefaultValue = "#cccccc";
 			ButtonBorderRadius = ButtonBorderRadius_DefaultValue = 0;
 			ButtonBorderWidth = ButtonBorderWidth_DefaultValue = 1;
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = null;
 			LiveRedraw = LiveRedraw_DefaultValue = true;
 			MinWidth = MinWidth_DefaultValue = 6;
-			RifleColor = RifleColor_DefaultValue = "#666";
-			TrackBackgroundColor = TrackBackgroundColor_DefaultValue = "#eeeeee";
-			TrackBorderColor = TrackBorderColor_DefaultValue = "#eeeeee";
+			RifleColor = RifleColor_DefaultValue = "#333333";
+			ShowFull = ShowFull_DefaultValue = true;
+			TrackBackgroundColor = TrackBackgroundColor_DefaultValue = "#f2f2f2";
+			TrackBorderColor = TrackBorderColor_DefaultValue = "#f2f2f2";
 			TrackBorderRadius = TrackBorderRadius_DefaultValue = 0;
 			TrackBorderWidth = TrackBorderWidth_DefaultValue = 1;
 			
@@ -135,6 +136,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to show or hide the scrollbar when the scrolled content is zoomed out to it full extent.
+		/// </summary>
+		public bool? ShowFull { get; set; }
+		private bool? ShowFull_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color of the track background.
 		/// </summary>
 		public string TrackBackgroundColor { get; set; }
@@ -180,6 +188,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
 			if (MinWidth != MinWidth_DefaultValue) h.Add("minWidth",MinWidth);
 			if (RifleColor != RifleColor_DefaultValue) h.Add("rifleColor",RifleColor);
+			if (ShowFull != ShowFull_DefaultValue) h.Add("showFull",ShowFull);
 			if (TrackBackgroundColor != TrackBackgroundColor_DefaultValue) h.Add("trackBackgroundColor",TrackBackgroundColor);
 			if (TrackBorderColor != TrackBorderColor_DefaultValue) h.Add("trackBorderColor",TrackBorderColor);
 			if (TrackBorderRadius != TrackBorderRadius_DefaultValue) h.Add("trackBorderRadius",TrackBorderRadius);

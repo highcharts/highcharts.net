@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new ZAxisCrosshair();
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NameValueCollection();
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Description = Description_DefaultValue = "undefined";
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Events = Events_DefaultValue = new ZAxisEvents();
@@ -57,6 +57,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
+			SoftMax = SoftMax_DefaultValue = null;
+			SoftMin = SoftMin_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			StartOnTick = StartOnTick_DefaultValue = false;
 			TickAmount = TickAmount_DefaultValue = null;
@@ -121,8 +123,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// For a datetime axis, the scale will automatically adjust to the appropriate unit.  This member gives the default string representations used for each unit. For intermediate values, different units may be used, for example the <code>day</code> unit can be used on midnight and <code>hour</code> unit be used for intermediate values on the same axis. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.Defaults to:<pre>{millisecond: '%H:%M:%S.%L',second: '%H:%M:%S',minute: '%H:%M',hour: '%H:%M',day: '%e. %b',week: '%e. %b',month: '%b \'%y',year: '%Y'}</pre>
 		/// </summary>
-		public NameValueCollection DateTimeLabelFormats { get; set; }
-		private NameValueCollection DateTimeLabelFormats_DefaultValue { get; set; }
+		public Hashtable DateTimeLabelFormats { get; set; }
+		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -161,7 +163,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The dash or dot style of the grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/1.7.2/highslide-software/highcharts.com/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
+		/// The dash or dot style of the grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
 		/// </summary>
 		public ZAxisGridLineDashStyle GridLineDashStyle { get; set; }
 		private ZAxisGridLineDashStyle GridLineDashStyle_DefaultValue { get; set; }
@@ -266,7 +268,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The dash or dot style of the minor grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
+		/// The dash or dot style of the minor grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
 		/// </summary>
 		public ZAxisMinorGridLineDashStyle MinorGridLineDashStyle { get; set; }
 		private ZAxisMinorGridLineDashStyle MinorGridLineDashStyle_DefaultValue { get; set; }
@@ -375,6 +377,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? ShowLastLabel { get; set; }
 		private bool? ShowLastLabel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A soft maximum for the axis. If the series data maximum is greater than this, the axis will stay at this maximum, but if the series data maximum is higher, the axis will flex to show all data.
+		/// </summary>
+		public double? SoftMax { get; set; }
+		private double? SoftMax_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A soft minimum for the axis. If the series data minimum is greater than this, the axis will stay at this minimum, but if the series data minimum is lower, the axis will flex to show all data.
+		/// </summary>
+		public double? SoftMin { get; set; }
+		private double? SoftMin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -529,6 +545,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
+			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
+			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);

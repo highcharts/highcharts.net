@@ -28,12 +28,6 @@ namespace Highsoft.Web.Mvc.Charts
 		Scatter, 
 		Solidgauge, 
 		Treemap, 
-		Waterfall, 
-		Bar, 
-		Heatmap, 
-		Pyramid, 
-		Polygon, 
-		Treemap, 
-		Solidgauge
+		Waterfall
     }
 }

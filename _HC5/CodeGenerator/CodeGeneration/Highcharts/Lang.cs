@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Loading = Loading_DefaultValue = "Loading...";
 			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 			NoData = NoData_DefaultValue = "No data to display";
+			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
 			PrintChart = PrintChart_DefaultValue = "Print chart";
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
@@ -115,6 +116,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The magnitude of <a href="#lang.numericSymbol">numericSymbols</a> replacements. Use 10000 for Japanese, Korean and various Chinese locales, which use symbols for 10^4, 10^8 and 10^12.
+		/// </summary>
+		public double? NumericSymbolMagnitude { get; set; }
+		private double? NumericSymbolMagnitude_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// <a href="http://en.wikipedia.org/wiki/Metric_prefix">Metric prefixes</a> used to shorten high numbers in axis labels. Replacing any of the positions with <code>null</code> causes the full number to be written. Setting <code>numericSymbols</code> to <code>null</code> disables shortening altogether.
 		/// </summary>
 		public List<string> NumericSymbols { get; set; }
@@ -157,7 +165,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The default thousands separator used in the <code>Highcharts.numberFormat</code> method unless otherwise specified in the function arguments. Since Highcharts 4.1 it defaults to a single space character, which is compatible with ISO and works across Anglo-American and continental European languages.
+		/// <p>The default thousands separator used in the <code>Highcharts.numberFormat</code> method unless otherwise specified in the function arguments. Since Highcharts 4.1 it defaults to a single space character, which is compatible with ISO and works across Anglo-American and continental European languages.</p><p>The default is a single space.</p>
 		/// </summary>
 		public string ThousandsSep { get; set; }
 		private string ThousandsSep_DefaultValue { get; set; }
@@ -185,6 +193,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (Months != Months_DefaultValue) h.Add("months",Months);
 			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
+			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
 			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);
 			if (PrintChart != PrintChart_DefaultValue) h.Add("printChart",PrintChart);
 			if (ResetZoom != ResetZoom_DefaultValue) h.Add("resetZoom",ResetZoom);
