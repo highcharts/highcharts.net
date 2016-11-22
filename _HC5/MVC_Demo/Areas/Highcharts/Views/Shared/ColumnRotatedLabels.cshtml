@@ -3,8 +3,9 @@
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+@using System.Collections
 @using Highsoft.Web.Mvc.Charts
-@using System.Collections.Specialized
+
 
     @(Html.Highsoft().Highcharts(
         new Highcharts
@@ -26,7 +27,7 @@
                     Labels = new XAxisLabels
                     {
                         Rotation = -45,
-                        Style = new NameValueCollection
+                        Style = new Hashtable
                         {
                             { "fontSize", "13px"},
                             { "fontFamily", "Verdana, sans-serif" }
