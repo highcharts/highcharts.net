@@ -3,8 +3,9 @@
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+@using System.Collections
 @using Highsoft.Web.Mvc.Charts
-@using System.Collections.Specialized
+
 
     <script type="text/javascript">
 
@@ -42,7 +43,7 @@
                     StackLabels = new YAxisStackLabels
                     {
                         Enabled = true,
-                        Style = new NameValueCollection
+                        Style = new Hashtable
                         {
                             { "fontWeght", "bold" }
                         }
