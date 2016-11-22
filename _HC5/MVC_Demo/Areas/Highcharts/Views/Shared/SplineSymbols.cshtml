@@ -20,12 +20,15 @@
             Text = "Monthly Average Temperature"
         },
         XAxis = new List<XAxis>
-        {        
+        {
             new XAxis
             {
                 Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
                             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
-
+                Crosshair = new XAxisCrosshair
+                {
+                    Width = 1
+                }
             }
         },
         YAxis = new List<YAxis>
@@ -39,19 +42,15 @@
                 Labels = new YAxisLabels
                 {
                     Formatter = "formatYAxisLabels"
+                },
+                Crosshair = new YAxisCrosshair
+                {
+                    Width = 1
                 }
             }
         },
         Tooltip = new Tooltip
         {
-            Crosshairs = new List<Crosshair>
-            {
-                new Crosshair
-                {
-                    XAxis = true,
-                    YAxis = true
-                }
-            },
             Shared = true
         },
         PlotOptions = new PlotOptions
@@ -67,12 +66,12 @@
             }
         },
         Series = new List<Series>
-        {                    
+        {
             new SplineSeries
             {
-                Name = "Tokyo",                          
+                Name = "Tokyo",
                 Data = @ViewData["tokyoData"] as List<SplineSeriesData>
-            },                   
+            },
             new SplineSeries
             {
                 Name = "London",
