@@ -90,6 +90,10 @@
                         Align = XAxisLabelsAlign.Left,
                         X = 3,
                         Y = -3
+                    },
+                    Crosshair = new XAxisCrosshair
+                    {
+                        DashStyle = XAxisCrosshairDashStyle.Dash
                     }
                 }
             },
@@ -97,10 +101,10 @@
             {
                 new YAxis
                 {
-                    
+
                     Labels = new YAxisLabels
                     {
-                        Align = "left",
+                        Align = YAxisLabelsAlign.Left,
                         X = 3,
                         Y = 16,
                         Format = "{value:.,0f}"
@@ -112,10 +116,10 @@
                     LinkedTo = 0,
                     GridLineWidth = 0,
                     Opposite = true,
-                    
+
                     Labels = new YAxisLabels
                     {
-                        Align = "right",
+                        Align = YAxisLabelsAlign.Right,
                         X = 3,
                         Y = 16,
                         Format = "{value:.,0f}"
@@ -133,15 +137,7 @@
             },
             Tooltip = new Tooltip
             {
-                Shared = true,
-                Crosshairs = new List<Crosshair>
-                {
-                    new Crosshair
-                    {
-                         XAxis = true,
-                         YAxis = true
-                    }
-                }
+                Shared = true
             },
             PlotOptions = new PlotOptions
             {
@@ -160,7 +156,7 @@
             },
             Series = new List<Series>
             {
-                new LineSeries 
+                new LineSeries
                 {
                     Color = "black",
                     Name = "All Visit",
@@ -170,11 +166,11 @@
                         Radius = 4
                     }
                 },
-                new LineSeries 
+                new LineSeries
                 {
-                    Name = "New Visitors"   
+                    Name = "New Visitors"
                 }
-                
+
             }
         }
         , "chart")
