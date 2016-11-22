@@ -15,7 +15,11 @@ are using these types of charts*@
    
     @(Html.Highsoft().Highstock(
         new Highstock
-        {           
+        {
+            Chart = new Chart()
+            {
+                Type = ChartType.Arearange
+            },
             RangeSelector = new RangeSelector
             {
                 Selected = 2
@@ -30,7 +34,7 @@ are using these types of charts*@
                 {
                    Data = ViewBag.AppleData as List<ArearangeSeriesData>,
                    Name = "Apple Stock Price",
-                   TurboThreshold = 10000,
+                   //TurboThreshold = 10000,
                    Tooltip = new ArearangeSeriesTooltip
                    {
                        ValueDecimals = 2

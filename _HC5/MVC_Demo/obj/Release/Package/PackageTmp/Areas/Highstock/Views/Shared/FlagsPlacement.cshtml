@@ -7,7 +7,12 @@
     
     @(Html.Highsoft().Highstock(
         new Highstock
-        {           
+        {
+            //Chart = new Chart
+            //{
+            //    RenderTo = "chart"
+            //},
+
             RangeSelector = new RangeSelector
             {
                 Selected = 1
@@ -44,17 +49,17 @@
                     }
                 },
                 new FlagsSeries
-                {                    
+                {
                     Data = ViewBag.OnSeriesData as List<FlagsSeriesData>,
-                    Name = "Flags on Series",                 
+                    Name = "Flags on Series",
                     OnSeries = "currency",
-                    Shape = FlagsSeriesShape.Squarepin                    
+                    Shape = FlagsSeriesShape.Squarepin
                 },
                  new FlagsSeries
-                {                    
+                {
                     Data = ViewBag.OnAxisData as List<FlagsSeriesData>,
                     Name = "Flags on Axis",
-                    Shape = FlagsSeriesShape.Squarepin                    
+                    Shape = FlagsSeriesShape.Squarepin
                 }
             },
             PlotOptions = new PlotOptions

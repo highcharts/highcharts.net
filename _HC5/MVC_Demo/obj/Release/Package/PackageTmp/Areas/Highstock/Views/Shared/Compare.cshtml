@@ -16,11 +16,20 @@
     
     @(Html.Highsoft().Highstock(
         new Highstock
-        {           
+        {
             RangeSelector = new RangeSelector
             {
                 Selected = 4
             },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Ordinal = true
+                    
+                }
+            },
+
             YAxis = new List<YAxis>
             {
                 new YAxis
@@ -28,7 +37,7 @@
                     Labels = new YAxisLabels
                     {
                         Formatter = "formatYAxis",
-                        
+
                     },
                     PlotLines = new List<YAxisPlotLines>
                     {
@@ -39,7 +48,7 @@
                             Color = "silver"
                         }
                     }
-                }                
+                }
             },
             PlotOptions = new PlotOptions
             {
@@ -50,7 +59,7 @@
             },
             Tooltip = new Tooltip
             {
-                PointFormat = "<span style='color:{series.color}'>{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>",
+                PointFormat = @"<span style='color:{series.color}'>{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>",
                 ValueDecimals = 2
             },
             Series = new List<Series>
@@ -59,19 +68,19 @@
                 {
                    Data = ViewBag.AppleData as List<LineSeriesData>,
                    Name = "Apple",
-                   TurboThreshold = 10000              
+                   TurboThreshold = 10000
                 },
                 new LineSeries
                 {
                     Data = ViewBag.MsftData as List<LineSeriesData>,
                     Name = "Microsoft",
-                    TurboThreshold = 10000  
+                    TurboThreshold = 10000
                 },
                 new LineSeries
                 {
                     Data = ViewBag.GoogData as List<LineSeriesData>,
                     Name = "Google",
-                    TurboThreshold = 10000  
+                    TurboThreshold = 10000
                 }
             },
         },

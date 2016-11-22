@@ -63,7 +63,7 @@
                 //{
                 //     Load = "loadData"
                 //}
-                
+
             },
             RangeSelector = new RangeSelector
             {
@@ -98,14 +98,14 @@
                     },
                     Title = new YAxisTitle
                     {
-                        Text = "Volune"
+                        Text = "Volume"
                     },
                     Top = "65%",
                     Height = "35%",
                     Offset = -1,
                     LineWidth = 2,
                     Id = "VolumeAxis"
-                    
+
                 }
             },
             Series = new List<Series>
@@ -114,12 +114,13 @@
                 {
                     Data = ViewBag.AppleData as List<CandleStickSeriesData>,
                     Name = "AAPL",
-                    TurboThreshold = 10000               
+                    TurboThreshold = 10000
                 },
                 new ColumnSeries
                 {
                     Name = "Volume",
                     Data = ViewBag.VolumeData as List<ColumnSeriesData>,
+                    DataGrouping = new ColumnSeriesDataGrouping() {Enabled = true, Forced = true },
                     YAxis = "VolumeAxis",
                     TurboThreshold = 10000
                 }

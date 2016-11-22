@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <setParameter name="IIS Web Application Name" value="Default Web Site/" />
-  <setParameter name="ChartDataEntities-Web.config Connection String" value="metadata=res://*/Models.ChartData.csdl|res://*/Models.ChartData.ssdl|res://*/Models.ChartData.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=highcharts-net.c2fy2izdwrll.us-east-1.rds.amazonaws.com,1433;Initial Catalog=HighstockData;Persist Security Info=True;User ID=master;Password=newpass1&quot;" />
-</parameters>
