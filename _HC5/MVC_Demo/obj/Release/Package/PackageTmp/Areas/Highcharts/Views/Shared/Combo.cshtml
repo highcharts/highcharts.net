@@ -3,8 +3,9 @@
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+@using System.Collections
 @using Highsoft.Web.Mvc.Charts
-@using System.Collections.Specialized
+
 
     @(Html.Highsoft().Highcharts(
         new Highcharts
@@ -25,7 +26,7 @@
                 Items = new LabelsItems
                 {
                     Html = "Total fruit consumption",
-                    Style = new NameValueCollection
+                    Style = new Hashtable
                     {
                         { "left", "50px" },
                         { "top", "18px" }

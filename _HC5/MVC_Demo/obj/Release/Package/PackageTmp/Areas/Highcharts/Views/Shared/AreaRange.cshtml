@@ -36,7 +36,7 @@ are using these types of charts*@
                     Load = "loadData"
                 },
                 RenderTo = "someDivId"
-                
+
 
             },
             Title = new Title
@@ -53,8 +53,12 @@ are using these types of charts*@
             {
                 new XAxis
                 {
-                    Type = XAxisType.Datetime
-    }
+                    Type = XAxisType.Datetime,
+                    Crosshair = new XAxisCrosshair
+                    {
+                        Width = 1
+                    }
+                }
             },
             YAxis = new List<YAxis>
             {
@@ -63,20 +67,16 @@ are using these types of charts*@
                     Title = new YAxisTitle
                     {
                         Text = null
+                    },
+                    Crosshair = new YAxisCrosshair
+                    {
+                        Width = 1
                     }
                 }
             },
             Tooltip = new Tooltip
             {
-                Shared = true,
-                Crosshairs = new List<Crosshair>
-                {
-                    new Crosshair
-                    {
-                        XAxis = true,
-                        YAxis = true
-                    }
-                }
+                Shared = true
             },
             Series = new List<Series>
             {
