@@ -3,7 +3,7 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
-@using System.Collections.Specialized
+@using System.Collections
 
     
     @(Html.Highsoft().Highcharts(
@@ -47,7 +47,7 @@
                             Label = new YAxisPlotBandsLabel
                             {
                                 Text = "Light Air",
-                                Style = new NameValueCollection
+                                Style = new System.Collections.Hashtable
                                 {
                                     { "color", "#606060" }
                                 }
@@ -61,7 +61,7 @@
                             Label = new YAxisPlotBandsLabel
                             {
                                 Text = "Light Breeze",
-                                Style = new NameValueCollection
+                                Style = new Hashtable
                                 {
                                     { "color", "#606060" }
                                 }
@@ -75,7 +75,7 @@
                             Label = new YAxisPlotBandsLabel
                             {
                                 Text = "Gentle breeze",
-                                Style = new NameValueCollection
+                                Style = new Hashtable
                                 {
                                     { "color", "#606060" }
                                 }                            
@@ -89,7 +89,7 @@
                             Label = new YAxisPlotBandsLabel
                             {
                                 Text = "Moderate breeze",
-                                Style = new NameValueCollection
+                                Style = new Hashtable
                                 {
                                     { "color", "#606060" }
                                 }                            
@@ -103,7 +103,7 @@
                             Label = new YAxisPlotBandsLabel
                             {
                                 Text = "Fresh breeze",
-                                Style = new NameValueCollection
+                                Style = new Hashtable
                                 {
                                     { "color", "#606060" }
                                 }                            
@@ -117,7 +117,7 @@
                             Label = new YAxisPlotBandsLabel
                             {
                                 Text = "Strong breeze",
-                                Style = new NameValueCollection
+                                Style = new Hashtable
                                 {
                                     { "color", "#606060" }
                                 }                            
@@ -131,7 +131,7 @@
                             Label = new YAxisPlotBandsLabel
                             {
                                 Text = "High wind",
-                                Style = new NameValueCollection
+                                Style = new Hashtable
                                 {
                                     { "color", "#606060" }
                                 }                            
