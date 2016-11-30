@@ -33,7 +33,7 @@
             },
             RangeSelector = new RangeSelector()
             {
-                Buttons = new List<object>() {new {type= "hour",count= 1,text= "1h"},new  {type= "day",count= 1,text= "1D"},new {type= "all",count= 1,text= "All"}},
+                Buttons = new List<RangeSelectorButton>() {new RangeSelectorButton { Type= RangeSelectorButtonsType.Minute, Count= 60, Text= "1h"}, new RangeSelectorButton { Type= RangeSelectorButtonsType.Day, Count= 1, Text= "1d"}, new RangeSelectorButton { Type= RangeSelectorButtonsType.All, Count= 1, Text= "All"}},
                 InputEnabled = false,
                 Selected = 1
             },
@@ -51,7 +51,7 @@
                     TurboThreshold = 10000
                 }
             }
-            
+
         },
         "chart"
     ))
