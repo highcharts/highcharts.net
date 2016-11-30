@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class RangeSelectorButtons  : BaseObject
+	public partial class RangeSelectorButton  : BaseObject
 	{
-		public RangeSelectorButtons()
+		public RangeSelectorButton()
 		{
 			Count = Count_DefaultValue = 1;
 			DataGrouping = DataGrouping_DefaultValue = null;

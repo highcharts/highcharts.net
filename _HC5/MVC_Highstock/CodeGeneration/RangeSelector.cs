@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ButtonPosition = ButtonPosition_DefaultValue = "";
 			ButtonSpacing = ButtonSpacing_DefaultValue = 0;
 			ButtonTheme = ButtonTheme_DefaultValue = null;
-			Buttons = Buttons_DefaultValue = new RangeSelectorButtons();
+			Buttons = Buttons_DefaultValue = new List<RangeSelectorButton>();
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 35;
 			InputBoxBorderColor = InputBoxBorderColor_DefaultValue = "#cccccc";
@@ -67,8 +67,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>An array of configuration objects for the buttons.</p>Defaults to <pre>buttons: [{type: 'month',count: 1,text: '1m'}, {type: 'month',count: 3,text: '3m'}, {type: 'month',count: 6,text: '6m'}, {type: 'ytd',text: 'YTD'}, {type: 'year',count: 1,text: '1y'}, {type: 'all',text: 'All'}]</pre>
 		/// </summary>
-		public RangeSelectorButtons Buttons { get; set; }
-		private RangeSelectorButtons Buttons_DefaultValue { get; set; }
+		public List<RangeSelectorButton> Buttons { get; set; }
+		private List<RangeSelectorButton> Buttons_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -170,7 +170,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ButtonPosition != ButtonPosition_DefaultValue) h.Add("buttonPosition",ButtonPosition);
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
 			if (ButtonTheme != ButtonTheme_DefaultValue) h.Add("buttonTheme",ButtonTheme);
-			if (Buttons.IsDirty()) h.Add("buttons",Buttons.ToHashtable());
+            if (Buttons.Any())
+            {
+                List<Hashtable> buttons = new List<Hashtable>();
+                foreach (var item in Buttons)
+                   buttons.Add(item.ToHashtable());
+
+                h.Add("buttons", buttons);
+            }
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (InputBoxBorderColor != InputBoxBorderColor_DefaultValue) h.Add("inputBoxBorderColor",InputBoxBorderColor);

@@ -718,7 +718,7 @@
     <Compile Include="CodeGeneration\PolygonSeriesStatesHoverHalo.cs" />
     <Compile Include="CodeGeneration\PolygonSeriesZones.cs" />
     <Compile Include="CodeGeneration\RangeSelector.cs" />
-    <Compile Include="CodeGeneration\RangeSelectorButtons.cs" />
+    <Compile Include="CodeGeneration\RangeSelectorButton.cs" />
     <Compile Include="CodeGeneration\Responsive.cs" />
     <Compile Include="CodeGeneration\ResponsiveRules.cs" />
     <Compile Include="CodeGeneration\ResponsiveRulesCondition.cs" />
