@@ -86,12 +86,18 @@ namespace MVC_Demo.Models
                 string entity = json.Substring(0, json.IndexOf(']'));
                 string[] values = entity.Split(',');
 
+                //double? tmp_X;
+                //double? tmp_Low;
+                //double? tmp_High;
+
+                //double.TryParse(values[0], out tmp_X);
+
                 companyDatas.Add(
                     new RangeData
                     {
-                        X = Convert.ToDouble(values[0]),
-                        Low = Convert.ToDouble(values[1]),
-                        High = Convert.ToDouble(values[2])
+                        X = Convert.ToDouble(values[0].Trim() == "null" ? null : values[0].Trim()),
+                        Low = Convert.ToDouble(values[1].Trim() == "null" ? null: values[1].Trim()),
+                        High = Convert.ToDouble(values[2].Trim() == "null" ? null: values[2].Trim())
                     }
                 );
 
