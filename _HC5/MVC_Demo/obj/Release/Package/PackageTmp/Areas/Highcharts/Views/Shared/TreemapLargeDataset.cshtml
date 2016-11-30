@@ -991,15 +991,15 @@
                         {
                             Level = 1,
                             BorderWidth = 3,
-                            DataLabels = new System.Collections.Specialized.NameValueCollection
-                            {
-                                { "enabled", "true" }
-                            }
-
-                            //DataLabels = new TreemapSeriesDataLabels
+                            //DataLabels = new System.Collections.Specialized.NameValueCollection
                             //{
-                            //    Enabled = true
+                            //    { "enabled", "true" }
                             //}
+
+                            DataLabels = new TreemapSeriesDataLabels
+                            {
+                                Enabled = true
+                            }
                         }
                     }
                 }

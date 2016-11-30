@@ -72,8 +72,9 @@
             RangeSelector = new RangeSelector
             {
                 InputEnabled = false,
-                Buttons = new List<object>() { new { type = "hour", count = 1, text = "1h" }, new { type = "day", count = 1, text = "1d" }, new { type = "month", count = 1, text = "1m" }, new { type = "year", count = 1, text = "1y" }, new { type = "all", text = "All" } },
-                Selected = 4
+                Buttons = new List<RangeSelectorButton>() { new RangeSelectorButton() { Type = RangeSelectorButtonsType.Minute, Count = 60, Text = "1h" }, new RangeSelectorButton() { Type = RangeSelectorButtonsType.Month, Count = 1, Text = "1m" }, new RangeSelectorButton() { Type = RangeSelectorButtonsType.Month, Count = 12, Text = "1y" }, new RangeSelectorButton() { Type = RangeSelectorButtonsType.All, Text = "all" } },
+                
+                Selected = 2
             },
             XAxis = new List<XAxis>
             {
