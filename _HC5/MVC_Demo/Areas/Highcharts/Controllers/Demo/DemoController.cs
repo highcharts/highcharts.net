@@ -88,6 +88,13 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
             return View();
         }
 
+        public ActionResult Docs(string section)
+        {
+            ViewBag.Section = section;
+
+            return View();
+        }
+
         public ActionResult Chart(string demo, string theme)
         {
             ViewBag.Demo = demo;
@@ -97,6 +104,8 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
 
             return View();
         }
+
+        
 
         public ActionResult ViewCode(string demo)
         {
