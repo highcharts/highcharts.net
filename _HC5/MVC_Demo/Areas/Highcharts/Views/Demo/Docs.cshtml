@@ -69,39 +69,39 @@
             });
         });
 
-        function fixNavigation() {
-            var example = window.location.href.split("=")[1].split("&")[0];
-            var currentLink = exampleToHyphens(example);
-            var sideBar = $(".nav-sidebar");
-            var sideBarLinks = sideBar.find("li a");
+        //function fixNavigation() {
+        //    var example = window.location.href.split("=")[1].split("&")[0];
+        //    var currentLink = exampleToHyphens(example);
+        //    var sideBar = $(".nav-sidebar");
+        //    var sideBarLinks = sideBar.find("li a");
 
-            sideBar.find("ul").css("display", "none");
+        //    sideBar.find("ul").css("display", "none");
 
-            $(".nav-sidebar li a").each(function (index, link) {
-                var href = $(link).attr("aria-label");
-                var hrefSplitArray = href.split("/");
-                var hrefTag = hrefSplitArray[hrefSplitArray.length - 1];
+        //    $(".nav-sidebar li a").each(function (index, link) {
+        //        var href = $(link).attr("aria-label");
+        //        var hrefSplitArray = href.split("/");
+        //        var hrefTag = hrefSplitArray[hrefSplitArray.length - 1];
 
-                if (currentLink == hrefTag) {
-                    $(link).parent().addClass("active");
-                    $(link).parent().parent().css("display", "block");
-                    $(link).parent().parent().parent().addClass("active");
+        //        if (currentLink == hrefTag) {
+        //            $(link).parent().addClass("active");
+        //            $(link).parent().parent().css("display", "block");
+        //            $(link).parent().parent().parent().addClass("active");
 
-                    $(".demo-name").html("<a href='#'>Highcharts Demos</a> &rsaquo; " + $(link).text());
+        //            $(".demo-name").html("<a href='#'>Highcharts Demos</a> &rsaquo; " + $(link).text());
 
-                    if (index < $(".nav-sidebar li a").length - 1) {
-                        var nextHref = $(sideBarLinks.get(index + 1)).attr("href");
-                        $(".chart-container").find("#next-example").attr("href", nextHref);
-                    }
+        //            if (index < $(".nav-sidebar li a").length - 1) {
+        //                var nextHref = $(sideBarLinks.get(index + 1)).attr("href");
+        //                $(".chart-container").find("#next-example").attr("href", nextHref);
+        //            }
 
-                    if (index > 0 ) {
-                        var prevHref = $(sideBarLinks.get(index - 1)).attr("href");
-                        $(".chart-container").find("#previous-example").attr("href", prevHref);
-                    }
-                }
-            });
+        //            if (index > 0 ) {
+        //                var prevHref = $(sideBarLinks.get(index - 1)).attr("href");
+        //                $(".chart-container").find("#previous-example").attr("href", prevHref);
+        //            }
+        //        }
+        //    });
 
-        }
+        //}
 
         function exampleToHyphens(word) {
             var result = "";
