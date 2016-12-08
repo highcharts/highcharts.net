@@ -344,13 +344,12 @@
                                 @*<ul class="nav navbar-nav">*@
                                 <table>
                                     <tbody>
-                                        @*<li><a id="navh1" href="~/Highcharts/Demo" style="padding-left:0px; color:#eeeaea;">Highcharts.NET</a></li>*@
-                                        <tr><td style="padding:unset; border:none"><span style="color:#eeeaea; font-size:x-large;">Highcharts.NET</span></tdstyle="padding:unset;></tr>
+                                        <tr><td style="padding-left:unset; padding-bottom:15px; border:none"><span style="color:#eeeaea; font-size:x-large;">Highcharts.NET</span></td></tr>
                                         <tr>
                                             <td style="padding:unset; border:none">
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary" style="border-color:#eeeaea; color:#eeeaea;"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Apple</button>
-                                                    <button type="button" class="btn btn-primary" style="border-color:#eeeaea; color:#eeeaea;"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Sony</button>
+                                                    <a href="~/Highcharts/Demo" class="btn btn-primary" style="border-color:#eeeaea; color:#3A3A4F; background-color:#eeeaea; text-transform:none;"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Highcharts</a>
+                                                    <a href="~/Highstock/Demo" class="btn btn-primary" style="border-color:#eeeaea; color:#898DA0; background-color:#3A3A4F; text-transform:none;"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Highstock</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -363,7 +362,7 @@
                             </td>
                             <td style="padding:unset; border:none">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:right;">
-                                    <img src="~/Content/images/dotnet_logo.png" style="width:200px;"/>
+                                    <img src="~/Content/images/dotnet_logo.png" width="200" style="padding-top:30px;"/>
 
 
                                     @*<h1>Highcharts Demos</h1>*@
@@ -393,13 +392,13 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:unset;">
 
                                     <div class="btn-group theme">
-                                        <a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">DEMO</a>
-                                        <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="~/Help/Highcharts/html/index.html">API</a>
+                                        <a class="btn btn-theme @ViewBag.DefaultDisabled" href="~/Highcharts/Demo" style="margin:1px;">DEMO</a>
+                                        <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="~/Help/Highcharts/html/index.html" style="margin:1px;">API</a>
                                         @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Docs/Highcharts/index.html">DOCS</a>*@
-                                        <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">DOCS</a>
+                                        <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements" style="margin:1px;">DOCS</a>
                                         @*<a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>*@
                                         @*<div class="container">*@
-                                        <button type="button" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:2px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap;" href="ggg.jpg"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></button>
+                                        <a href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:3px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap; margin:3px;"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
                                         @*</div>*@
                                     </div>
                                 </div>
