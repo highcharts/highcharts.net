@@ -24,13 +24,18 @@
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/modernizr.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/script.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/fix.navigation.js")" type="text/javascript"></script>
+
+
+    <script src="https://use.fontawesome.com/1053745c2c.js"></script>
+
 
     <script type="text/javascript">
 
 
 
-        var example = 'line-basic',
-        theme = 'default';
+        //var example = 'line-basic',
+        //theme = 'default';
 
         jQuery(document).ready(function () {
 
@@ -43,22 +48,22 @@
                 jQuery("#wrap").removeClass("toggled");
             });
             // key listeners for the previous and next arrows
-            jQuery(document).keydown(function (e) {
-                var anchor;
-                if (e.target.tagName != 'INPUT') {
-                    if (e.keyCode == 39) {
-                        anchor = document.getElementById('next-example');
+            //jQuery(document).keydown(function (e) {
+            //    var anchor;
+            //    if (e.target.tagName != 'INPUT') {
+            //        if (e.keyCode == 39) {
+            //            anchor = document.getElementById('next-example');
 
-                    } else
-                        if (e.keyCode == 37) {
-                            anchor = document.getElementById('previous-example');
-                        }
+            //        } else
+            //            if (e.keyCode == 37) {
+            //                anchor = document.getElementById('previous-example');
+            //            }
 
-                    if (anchor) {
-                        location.href = anchor.href;
-                    }
-                }
-            });
+            //        if (anchor) {
+            //            location.href = anchor.href;
+            //        }
+            //    }
+            //});
             // Bind event to style change switcher
             jQuery('#switcher-selector').bind('change', function () {
                 var url = jQuery(this).val(); // get selected value
@@ -68,6 +73,43 @@
                 return false;
             });
         });
+
+        //function fixNavigation() {
+        //    var example = window.location.href.split("=")[1].split("&")[0];
+        //    var currentLink = exampleToHyphens(example);
+        //    var sideBar = $(".nav-sidebar");
+        //    var sideBarLinks = sideBar.find("li a");
+
+        //    sideBar.find("ul").css("display", "none");
+
+        //    $(".nav-sidebar li a").each(function (index, link) {
+        //        var href = $(link).attr("aria-label");
+
+        //        if (href) {
+        //            var hrefSplitArray = href.split("/");
+        //            var hrefTag = hrefSplitArray[hrefSplitArray.length - 1];
+
+        //            if (currentLink == hrefTag) {
+        //                $(link).parent().addClass("active");
+        //                $(link).parent().parent().css("display", "block");
+        //                $(link).parent().parent().parent().addClass("active");
+
+        //                $(".demo-name").html("<a href='#'>Highcharts Demos</a> &rsaquo; " + $(link).text());
+
+        //                if (index < $(".nav-sidebar li a").length - 1) {
+        //                    var nextHref = $(sideBarLinks.get(index + 1)).attr("href");
+        //                    $(".chart-container").find("#next-example").attr("href", nextHref);
+        //                }
+
+        //                if (index > 0) {
+        //                    var prevHref = $(sideBarLinks.get(index - 1)).attr("href");
+        //                    $(".chart-container").find("#previous-example").attr("href", prevHref);
+        //                }
+        //            }
+        //        }
+        //    });
+
+        //}
 
         //function fixNavigation() {
         //    var example = window.location.href.split("=")[1].split("&")[0];
@@ -152,6 +194,74 @@
     </script>
 </head>
 <body>
+    <div id="menu">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <a class="navbar-brand" href="http://www.highcharts.com/" title="Highcharts">
+                        <img src="~/Content/images/logo.svg" alt="Highcharts">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <div id="menu-container">
+                        <div id="menu-second" class="hidden-xs">
+
+                            <ul class="nav navbar-nav">
+                                <li class="item-112 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-260"><a href="http://www.highcharts.com/about">About Us</a></li><li class="item-276"><a href="http://www.highcharts.com/component/content/category/2-news/">News</a></li><li class="item-218"><a href="http://www.highcharts.com/blog">Blog</a></li><li class="item-114"><a href="http://www.highcharts.com/contact-email">Contact</a></li></ul>
+                                </li>
+                                <li class="item-261"><a href="http://www.highcharts.com/plugin-registry">Plugins</a></li>
+                                <li class="item-262"><a href="http://shop.highsoft.com/">Shop</a></li>
+                            </ul>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="menu-main">
+
+                            <ul class="nav navbar-nav">
+                                @*<li class="item-101 current active"><a href="/">Home</a></li>*@
+                                <li class="item-103 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demo <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-106"><a href="http://www.highcharts.com/demo">Highcharts demos</a></li><li class="item-107"><a href="http://www.highcharts.com/stock/demo">Highstock demos</a></li><li class="item-205"><a href="http://www.highcharts.com/maps/demo">Highmaps demo</a></li><li class="item-267"><a href="http://www.highcharts.com/use-cases">Customer showcase</a></li></ul>
+                                </li>
+                                <li class="item-108 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-128"><a href="http://www.highcharts.com/docs">General Documentation</a></li><li class="item-124"><a href="http://api.highcharts.com/highcharts">Highcharts API Reference</a></li><li class="item-125"><a href="http://api.highcharts.com/highstock">Highstock API Reference</a></li><li class="item-211"><a href="http://api.highcharts.com/highmaps">Highmaps API Reference</a></li><li class="item-126"><a href="http://www.highcharts.com/documentation/compatibility">Compatibility</a></li><li class="item-127"><a href="http://www.highcharts.com/documentation/changelog">Changelog</a></li></ul>
+                                </li>
+                                <li class="item-109 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-110"><a href="http://www.highcharts.com/support">Support</a></li><li class="item-129"><a href="http://www.highcharts.com/support/roadmap">Roadmap</a></li><li class="item-201"><a href="http://www.highcharts.com/download">Download</a></li><li class="item-208"><a href="http://forum.highcharts.com/">Forum</a></li></ul>
+                                </li>
+                                <li class="item-254 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-255"><a href="http://www.highcharts.com/products/highcharts">Highcharts</a></li><li class="item-256"><a href="http://www.highcharts.com/products/highstock">Highstock</a></li><li class="item-257"><a href="http://www.highcharts.com/products/highmaps">Highmaps</a></li><li class="item-258"><a href="http://cloud.highcharts.com">Highcharts Cloud</a></li><li class="item-273"><a href="http://www.highcharts.com/products/highcharts-editor">Highcharts Editor</a></li></ul>
+                                </li>
+                            </ul>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="mobile-second" class="visible-xs">
+
+                            <ul class="nav navbar-nav">
+                                <li class="item-112 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-260"><a href="/about">About Us</a></li><li class="item-276"><a href="/component/content/category/2-news/">News</a></li><li class="item-218"><a href="/blog">Blog</a></li><li class="item-114"><a href="/contact-email">Contact</a></li></ul>
+                                </li>
+                                <li class="item-261"><a href="http://www.highcharts.com/products/plugin-registry">Plugins</a></li>
+                                <li class="item-262"><a href="http://shop.highsoft.com/">Shop</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
     @*<div id="menu">
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container">
@@ -226,40 +336,71 @@
         <div class="container">
 
             <div class="table-responsive">
-                <table class="table" style="margin:unset">
-                    <tbody>
+                <table class="table" style="margin:unset; background:#3A3A4F;">
+                    <tbody >
                         <tr>
-                            <td style="width:25%; padding:unset; border:none;">
-                                <div style="position:relative; left:15px; top:6.5px; ">
-                                    <img src="~/Content/wrapper_logo2.png" />
-                                </div>
+                            <td width="25%" style="padding:unset; border:none"></td>
+                            <td style="padding-left:unset; padding-top:15px; padding-bottom:15px; border:none">
+                                @*<ul class="nav navbar-nav">*@
+                                <table>
+                                    <tbody>
+                                        @*<li><a id="navh1" href="~/Highcharts/Demo" style="padding-left:0px; color:#eeeaea;">Highcharts.NET</a></li>*@
+                                        <tr><td style="padding:unset; border:none"><span style="color:#eeeaea; font-size:x-large;">Highcharts.NET</span></tdstyle="padding:unset;></tr>
+                                        <tr>
+                                            <td style="padding:unset; border:none">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary" style="border-color:#eeeaea; color:#eeeaea;"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Apple</button>
+                                                    <button type="button" class="btn btn-primary" style="border-color:#eeeaea; color:#eeeaea;"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Sony</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @*</ul>*@
+                                        @*<div style="position:relative; left:15px; top:6.5px; ">
+                <img src="~/Content/wrapper_logo2.png" />
+            </div>*@
+                                    </tbody>
+                                </table>
                             </td>
                             <td style="padding:unset; border:none">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <nav class="navbar navbar-inverse" style="border:unset">
-                                        <div class="container-fluid" style="background:#3A3A4F; padding:unset">
-                                            <ul class="nav navbar-nav">
-                                                <li><a id="navh1" href="~/Highcharts/Demo" style="padding-left:0px;"><img src="~/Content/HC2.png" />Highcharts for .NET</a></li>
-                                                <li><a id="navh2" href="~/Highstock/Demo" style="padding-left:0px;"><img src="~/Content/HS.png" />Highstock for .NET</a></li>
-                                            </ul>
-                                        </div>
-                                    </nav>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:right;">
+                                    <img src="~/Content/images/dotnet_logo.png" style="width:200px;"/>
 
 
                                     @*<h1>Highcharts Demos</h1>*@
 
 
-                                    <div class="btn-group theme">
-                                        @*<a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">Default</a>
+                                    @*<div class="btn-group theme">
+                                        <a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">Default</a>
                                             <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="?theme=dark-unica">Dark Unica</a>
                                             <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="?theme=sand-signika">Sand Signika</a>
                                             <a class="btn btn-theme @ViewBag.GridLightDisabled" href="?theme=grid-light">Grid Light</a>*@
 
+                                        @*<a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">DEMO</a>*@
+                                        @*<a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="~/Help/Highcharts/html/index.html">API</a>*@
+                                        @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Docs/Highcharts/index.html">DOCS</a>*@
+                                        @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">DOCS</a>*@
+                                        @*<a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>*@
+                                        @*<div class="container">*@
+                                            @*<button type="button" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:2px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap;" href="ggg.jpg"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></button>*@
+                                        @*</div>*@
+                                    @*</div>*@
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%" style="padding:unset; border:none"></td>
+                            <td style="padding:unset; border:none; margin:unset">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:unset;">
+
+                                    <div class="btn-group theme">
                                         <a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">DEMO</a>
                                         <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="~/Help/Highcharts/html/index.html">API</a>
                                         @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Docs/Highcharts/index.html">DOCS</a>*@
                                         <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">DOCS</a>
-                                        <a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>
+                                        @*<a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>*@
+                                        @*<div class="container">*@
+                                        <button type="button" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:2px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap;" href="ggg.jpg"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></button>
+                                        @*</div>*@
                                     </div>
                                 </div>
                             </td>
@@ -288,10 +429,10 @@
                             <div class="active"><span>System Requirements</span><icon class="toggle"></icon></div>
                             <ul style="display: block;">
                                 <li class="">
-                                    <a href="@Url.Action("Docs", "Demo", new { section = "ServerSideRequirements" } )">Server-Side System Requirements</a>
+                                    <a aria-label="http://dotnet.highcharts.com/Highcharts/Demo/Docs/server-side-requirements" href="@Url.Action("Docs", "Demo", new { section = "ServerSideRequirements" } )">Server-Side System Requirements</a>
                                 </li>
                                 <li class="">
-                                    <a href="@Url.Action("Docs", "Demo", new { section = "ClientSideRequirements" } )">Client-Side System Requirements</a>
+                                    <a aria-label="http://dotnet.highcharts.com/Highcharts/Demo/Docs/client-side-requirements" href="@Url.Action("Docs", "Demo", new { section = "ClientSideRequirements" } )">Client-Side System Requirements</a>
                                 </li>
                             </ul>
                         </li>
@@ -299,13 +440,13 @@
                             <div class=""><span>Adding Highcharts for ASP.NET MVC to your project</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="@Url.Action("Docs", "Demo", new { section = "VS"} )">Visual Studio .NET</a>
+                                    <a aria-label="http://dotnet.highcharts.com/Highcharts/Demo/Docs/v-s" href="@Url.Action("Docs", "Demo", new { section = "VS"} )">Visual Studio .NET</a>
                                 </li>
                                 <li class="">
-                                    <a href="@Url.Action("Docs", "Demo", new { section = "IDE"} )">Other IDEs / Web Projects</a>
+                                    <a aria-label="http://dotnet.highcharts.com/Highcharts/Demo/Docs/i-d-e" href="@Url.Action("Docs", "Demo", new { section = "IDE"} )">Other IDEs / Web Projects</a>
                                 </li>
                                 <li class="">
-                                    <a href="@Url.Action("Docs", "Demo", new { section = "License"} )">Trial and Licensed Versions</a>
+                                    <a aria-label="http://dotnet.highcharts.com/Highcharts/Demo/Docs/license" href="@Url.Action("Docs", "Demo", new { section = "License"} )">Trial and Licensed Versions</a>
                                 </li>
                             </ul>
                         </li>
@@ -313,22 +454,22 @@
                             <div class=""><span>Your first chart</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a href="@Url.Action("Docs", "Demo", new { section = "FirstChart1"} )">Adding Reference to the Chart in your View</a>
+                                    <a aria-label="http://dotnet.highcharts.com/Highcharts/Demo/Docs/first-chart-1" href="@Url.Action("Docs", "Demo", new { section = "FirstChart1"} )">Adding Reference to the Chart in your View</a>
                                 </li>
                                 <li class="">
-                                    <a href="@Url.Action("Docs", "Demo", new { section = "FirstChart2"} )">Including the required Javascript files</a>
+                                    <a aria-label="http://dotnet.highcharts.com/Highcharts/Demo/Docs/first-chart-2" href="@Url.Action("Docs", "Demo", new { section = "FirstChart2"} )">Including the required Javascript files</a>
                                 </li>
                                 <li class="">
-                                    <a href="@Url.Action("Docs", "Demo", new { section = "FirstChart3"} )">Defining the Chart in your View</a>
+                                    <a aria-label="http://dotnet.highcharts.com/Highcharts/Demo/Docs/first-chart-3" href="@Url.Action("Docs", "Demo", new { section = "FirstChart3"} )">Defining the Chart in your View</a>
                                 </li>
                                 <li class="">
-                                    <a href="@Url.Action("Docs", "Demo", new { section = "FirstChart4"} )">Getting Data for your Chart</a>
+                                    <a aria-label="http://dotnet.highcharts.com/Highcharts/Demo/Docs/first-chart-4" href="@Url.Action("Docs", "Demo", new { section = "FirstChart4"} )">Getting Data for your Chart</a>
                                 </li>
                                 <li class="">
-                                    <a href="@Url.Action("Docs", "Demo", new { section = "FirstChart5"} )">Passing Data From the Controller to the Chart in the View</a>
+                                    <a aria-label="http://dotnet.highcharts.com/Highcharts/Demo/Docs/first-chart-5" href="@Url.Action("Docs", "Demo", new { section = "FirstChart5"} )">Passing Data From the Controller to the Chart in the View</a>
                                 </li>
                                 <li class="">
-                                    <a href="@Url.Action("Docs", "Demo", new { section = "FirstChart6"} )">Using Fixed Data In The View</a>
+                                    <a aria-label="http://dotnet.highcharts.com/Highcharts/Demo/Docs/first-chart-6" href="@Url.Action("Docs", "Demo", new { section = "FirstChart6"} )">Using Fixed Data In The View</a>
                                 </li>
                             </ul>
                         </li>

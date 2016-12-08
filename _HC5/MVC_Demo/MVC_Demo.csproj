@@ -455,6 +455,7 @@
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\bootstrap\font-awesome.css" />
     <Content Include="Content\bootstrap\template.css" />
+    <Content Include="Content\bootstrap\template2.css" />
     <Content Include="Content\chart_types\3d-column-interactive-dark-unica.png" />
     <Content Include="Content\chart_types\3d-column-interactive-default.svg" />
     <Content Include="Content\chart_types\3d-column-interactive-grid-light.png" />
@@ -825,6 +826,7 @@
     <Content Include="Content\HC.png" />
     <Content Include="Content\HC2.png" />
     <Content Include="Content\HS.png" />
+    <Content Include="Content\images\dotnet_logo.png" />
     <Content Include="Content\images\image00.png" />
     <Content Include="Content\images\image01.png" />
     <Content Include="Content\images\image02.png" />
@@ -834,6 +836,7 @@
     <Content Include="Content\images\image06.png" />
     <Content Include="Content\images\image07.png" />
     <Content Include="Content\images\image08.png" />
+    <Content Include="Content\images\logo.svg" />
     <Content Include="Content\loader.white.gif" />
     <Content Include="Content\gallery.css" />
     <Content Include="Content\highslide.css" />
@@ -6748,6 +6751,7 @@
       <LastGenOutput>ChartData.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\fix.navigation.js" />
     <Content Include="Scripts\highcharts-all.js" />
     <Content Include="Scripts\highcharts.src.js" />
     <Content Include="Scripts\highslide-full.min.js" />
