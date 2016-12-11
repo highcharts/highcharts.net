@@ -11,7 +11,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult Scrollbar()
+        public ActionResult StyledScrollbar()
         {   
             List<LineSeriesData> appleData = new List<LineSeriesData>();
 

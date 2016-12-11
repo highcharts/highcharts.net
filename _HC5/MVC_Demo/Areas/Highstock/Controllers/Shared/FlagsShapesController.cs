@@ -11,7 +11,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult FlagsShapesColors()
+        public ActionResult FlagsShapes()
         {
             List<LineSeriesData> currencyData = new List<LineSeriesData>();
             double? lastDate;

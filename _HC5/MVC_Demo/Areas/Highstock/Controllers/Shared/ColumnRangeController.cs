@@ -11,7 +11,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult ColumnRange()
+        public ActionResult Columnrange()
         {   
             List<ColumnrangeSeriesData> appleData = new List<ColumnrangeSeriesData>();
 

@@ -10,7 +10,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult ColumnStackedGrouped()
+        public ActionResult ColumnStackedAndGrouped()
         {
             List<double?> johnValues = new List<double?> { 5, 3, 4, 7, 2 };
             List<double?> janeValues = new List<double?> { 2, 5, 6, 2, 1 };

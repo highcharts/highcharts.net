@@ -10,7 +10,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult AreaRangeLine()
+        public ActionResult ArearangeLine()
         {
             List<ArearangeSeriesData> ranges = new List<ArearangeSeriesData>();
             List<LineSeriesData> temperatures = new List<LineSeriesData>();

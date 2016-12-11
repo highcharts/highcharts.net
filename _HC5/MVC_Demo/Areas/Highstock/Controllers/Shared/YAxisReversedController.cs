@@ -11,7 +11,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult YAxisReversed()
+        public ActionResult YaxisReversed()
         {   
             List<AreaSeriesData> appleData = new List<AreaSeriesData>();
 

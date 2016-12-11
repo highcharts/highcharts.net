@@ -9,7 +9,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult SingleLine()
+        public ActionResult BasicLine()
         {
             List<LineSeriesData> appleData = new List<LineSeriesData>();
 

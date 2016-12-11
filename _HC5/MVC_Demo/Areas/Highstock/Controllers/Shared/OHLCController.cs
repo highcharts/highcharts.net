@@ -11,7 +11,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult OHLC()
+        public ActionResult Ohlc()
         {   
             List<OhlcSeriesData> appleData = new List<OhlcSeriesData>();
 

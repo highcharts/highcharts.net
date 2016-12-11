@@ -11,7 +11,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult AreaSpline()
+        public ActionResult Areaspline()
         {
             List<AreasplineSeriesData> appleData = new List<AreasplineSeriesData>();
 

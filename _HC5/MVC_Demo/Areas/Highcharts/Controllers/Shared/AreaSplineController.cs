@@ -10,7 +10,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult AreaSpline()
+        public ActionResult Areaspline()
         {
             List<double?> johnValues = new List<double?> { 3, 4, 3, 5, 4, 10, 12 };
             List<double?> janeValues = new List<double?> { 1, 3, 4, 3, 3, 5, 4 };

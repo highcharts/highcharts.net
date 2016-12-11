@@ -11,13 +11,11 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult IntradayAreaBreaks()
+        public ActionResult IntradayBreaks()
         {
             List<AreaSeriesData> intradayData = new List<AreaSeriesData>();
 
-            using (var db = new HighstockDataEntities())
-            {
-                foreach (Intraday data in db.Intradays)
+                foreach (Intraday data in GetList_Intradays())
                 {
                         intradayData.Add(new AreaSeriesData
                             {                                
@@ -26,12 +24,14 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                             }
                         );
                 }
-            }
 
             ViewBag.IntradayData = intradayData.OrderBy(o => o.X).ToList();
 
-            return View(ViewBag);
-        }      
+            ViewBag.From = DateToUTC(new DateTime(2011, 9, 6, 16, 0, 0));
+            ViewBag.To = DateToUTC(new DateTime(2011, 9, 7, 8, 0, 0));
 
+            return View(ViewBag);
+        }
+        
     }
 }

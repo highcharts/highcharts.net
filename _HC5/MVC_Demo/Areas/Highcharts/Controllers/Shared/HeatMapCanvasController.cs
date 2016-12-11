@@ -19,7 +19,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             return ts.TotalMilliseconds;
         }
 
-        public ActionResult HeatMapCanvas()
+        public ActionResult HeatmapCanvas()
         {
             ViewData["minDate"] = DateUTC(new DateTime(2013, 1, 1));
             ViewData["maxDate"] = DateUTC(new DateTime(2014, 1, 1));

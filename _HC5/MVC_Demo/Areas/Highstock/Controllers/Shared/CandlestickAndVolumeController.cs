@@ -11,7 +11,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult CandleStickVolume()
+        public ActionResult CandlestickAndVolume()
         {
             List<CandleStickSeriesData> appleData = new List<CandleStickSeriesData>();
             List<ColumnSeriesData> volumeData = new List<ColumnSeriesData>();

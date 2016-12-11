@@ -10,7 +10,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult HeatMap()
+        public ActionResult Heatmap()
         {
             List<HeatmapSeriesData> data = new List<HeatmapSeriesData>();
             data.Add(new HeatmapSeriesData { X = 0, Y = 0, Value = 10 });
