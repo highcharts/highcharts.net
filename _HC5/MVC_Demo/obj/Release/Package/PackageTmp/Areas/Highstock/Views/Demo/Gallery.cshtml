@@ -1,24 +1,23 @@
-﻿@{
-    ViewBag.Title = "Gallery";
-}
-
-<html>
+﻿<html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="highcharts, charts, javascript charts, ajax charts, plots, line charts, bar charts, pie charts, javascript plots, ajax plots" />
     <meta name="description" content="Highcharts - Interactive ASP.NET MVC charts for your web pages." />
-    <title>Basic line</title>
+    <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="@Url.Content("~/Content/highslide.css")" type="text/css" />
     <link rel="stylesheet"  href="@Url.Content("~/Content/bootstrap/bootstrap.min.css")" type="text/css" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,400italic" type="text/css" />
+    @*<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,400italic" type="text/css" />*@
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet" type="text/css">
+
     <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/font-awesome.css")" type="text/css" />
     <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/template.css")" type="text/css" />
     <link rel="stylesheet" href="@Url.Content("~/Content/gallery.css")" type="text/css" />
     <link rel="stylesheet" href="@Url.Content("~/Content/index.css")" type="text/css" />
        
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="@Url.Content("~/Scripts/highslide-full.min.js")"" type="text/javascript"></script>
-    <script src=" @Url.Content("~/Scripts/highslide.config.js")"" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/highslide-full.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/highslide.config.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/modernizr.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/script.js")" type="text/javascript"></script>
@@ -266,7 +265,7 @@
                     <tbody>
                         <tr>
                             <td width="25%" style="padding:unset; border:none"></td>
-                            <td style="padding-left:unset; padding-top:15px; padding-bottom:15px; border:none">
+                            <td style="padding-left:unset; padding-top:15px; padding-bottom:25px; border:none">
                                 @*<ul class="nav navbar-nav">*@
                                 <table>
                                     <tbody>
@@ -318,13 +317,13 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:unset;">
 
                                     <div class="btn-group theme">
-                                        <a class="btn btn-theme @ViewBag.DefaultDisabled" href="~/Higstock/Demo" style="margin:1px;">DEMO</a>
-                                        <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="~/Help/Highstock/html/index.html" style="margin:1px;">API</a>
+                                        <a class="btn btn-theme disabled" href="~/Higstock/Demo" style="margin-right:2px; background:#f6f6f6">DEMO</a>
+                                        <a class="btn btn-theme enabled" href="~/Help/Highstock/html/index.html" style="margin-right:2px;">API</a>
                                         @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Docs/Highcharts/index.html">DOCS</a>*@
-                                        <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements" style="margin:1px;">DOCS</a>
+                                        <a class="btn btn-theme enabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements" style="margin-right:2px;">DOCS</a>
                                         @*<a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>*@
                                         @*<div class="container">*@
-                                        <a href="~/downloads/Highstock_ASPNET_MVC_4_1_7_0.zip" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:3px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap; margin:3px;"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+                                        <a href="~/downloads/Highstock_ASPNET_MVC_4_1_7_0.zip" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:3px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap; margin-left:2px; margin-top:5px;"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
                                         @*</div>*@
                                     </div>
                                 </div>

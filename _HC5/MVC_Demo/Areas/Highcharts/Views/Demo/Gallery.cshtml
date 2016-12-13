@@ -297,7 +297,7 @@
                     <tbody>
                         <tr>
                             <td width="25%" style="padding:unset; border:none"></td>
-                            <td style="padding-left:unset; padding-top:15px; padding-bottom:15px; border:none">
+                            <td style="padding-left:unset; padding-top:15px; padding-bottom:25px; border:none">
                                 @*<ul class="nav navbar-nav">*@
                                 <table>
                                     <tbody>
@@ -349,13 +349,13 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:unset;">
 
                                     <div class="btn-group theme">
-                                        <a class="btn btn-theme disabled" href="~/Highcharts/Demo" style="margin-right:1px;">DEMO</a>
-                                        <a class="btn btn-theme enabled" href="~/Help/Highcharts/html/index.html" style="margin-left:1px; margin-right:1px">API</a>
+                                        <a class="btn btn-theme disabled" href="~/Highcharts/Demo" style="margin-right:2px; background:#f6f6f6">DEMO</a>
+                                        <a class="btn btn-theme enabled" href="~/Help/Highcharts/html/index.html" style="margin-right:2px;">API</a>
                                         @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Docs/Highcharts/index.html">DOCS</a>*@
-                                        <a class="btn btn-theme enabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements" style="margin-left:1px; margin-right:1px;">DOCS</a>
+                                        <a class="btn btn-theme enabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements" style="margin-right:2px;">DOCS</a>
                                         @*<a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>*@
                                         @*<div class="container">*@
-                                        <a href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:3px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap; margin:3px;"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+                                        <a href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:3px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap; margin-left:2px; margin-top:5px;"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
                                         @*</div>*@
                                     </div>
                                 </div>
@@ -588,23 +588,23 @@
                             <div class=""><span>3D charts</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/3d-column-interactive" href="@Url.Action("Gallery", "Demo", new { demo = "Column3DInteractive", theme = ViewBag.Theme } )">3D column						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-3-d-interactive" href="@Url.Action("Gallery", "Demo", new { demo = "Column3DInteractive", theme = ViewBag.Theme } )">3D column						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/3d-column-null-values" href="@Url.Action("Gallery", "Demo", new { demo = "Column3DNullValues", theme = ViewBag.Theme } )">3D column with null and 0 values						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-3-d-null-values" href="@Url.Action("Gallery", "Demo", new { demo = "Column3DNullValues", theme = ViewBag.Theme } )">3D column with null and 0 values						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/3d-column-stacking-grouping" href="@Url.Action("Gallery", "Demo", new { demo = "Column3DStackingGrouping", theme = ViewBag.Theme } )">3D column with stacking and grouping						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/column-3-d-stacking-grouping" href="@Url.Action("Gallery", "Demo", new { demo = "Column3DStackingGrouping", theme = ViewBag.Theme } )">3D column with stacking and grouping						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/3d-pie" href="@Url.Action("Gallery", "Demo", new { demo = "Pie3D", theme = ViewBag.Theme } )">3D pie						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/pie-3-d" href="@Url.Action("Gallery", "Demo", new { demo = "Pie3D", theme = ViewBag.Theme } )">3D pie						</a>
                                 </li>
                                 <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/3d-pie-donut" href="@Url.Action("Gallery", "Demo", new { demo = "Pie3DDonut", theme = ViewBag.Theme } )">3D donut						</a>
+                                    <a aria-label="http://www.highcharts.com/demo/pie-3-d-donut" href="@Url.Action("Gallery", "Demo", new { demo = "Pie3DDonut", theme = ViewBag.Theme } )">3D donut						</a>
                                 </li>
-                                <li class="">
+                                @*<li class="">
                                     <a aria-label="http://www.highcharts.com/demo/3d-scatter-draggable" href="@Url.Action("Gallery", "Demo", new { demo = "Scatter", theme = ViewBag.Theme } )">3D scatter chart						</a>
-                                </li>
+                                </li>*@
                             </ul>
                         </li>
                         <li class="">

@@ -1498,7 +1498,7 @@ table.category .cat-list-row1 {
 	top: 7px;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 10px solid #eee;
+    border-right: 10px solid #f6f6f6;   /*#eee;*/
     z-index: 1;
 }
 .sidebar-container .sidebar-wrapper .nav-sidebar > li.active > ul > li.active::after {

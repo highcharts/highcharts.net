@@ -19,6 +19,7 @@ namespace MVC_Demo
                 defaults: new { area = "Highcharts", controller = "Demo", action = "Index", id = UrlParameter.Optional },
                 namespaces: new string [] { "MVC_Demo.Areas.Highcharts.Controllers.Demo" }
             );
+
         }
     } 
 }

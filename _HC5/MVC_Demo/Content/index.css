@@ -38,18 +38,20 @@
     }
 
 #demos {
-    background-color: #eee;
-    /*#f6f6f6;*/
+    background-color: #f6f6f6;
+    /*#eee;*/
 }
 
     #demos .container {
-        background-color: #eee;
+        background-color: #f6f6f6;
+        /*#eee;*/
         /*#34343e;*/
     }
 
     #demos .row {
         border-bottom: 1px solid #252530;
-        background-color: #eee;
+        background-color: #f6f6f6;
+        /*#eee;*/
         /*#34343e;*/
     }
 
