@@ -419,7 +419,7 @@
         <div class="container">
         </div>
     </div>
-    <div id="hs-component">
+    <div id="hs-component" style="padding:40px; background:#f6f6f6;">
         <div class="container">
             <div id="wrap" class="sidebar-wrapper">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 sidebar">
@@ -475,7 +475,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-9 sidebar-fill"></div>
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq demo">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq demo" style="padding:unset; margin:unset; background:white;">
                     <a id="sidebar-close" class="btn-default visible-xs">&laquo; Hide Menu</a>
                     <div id="chart-switcher" class="visible-xs">
                         <a id="previous-example"><i class="fa fa-angle-left"></i></a>
@@ -493,13 +493,16 @@
                         </select>
                         <div class="clearfix"></div>
                     </div>
+                    
+                    
                     <div class="chart-container" style="padding:0px;">
+                        
                         <div id="container" style="width: 100%; height: auto; margin: 0 auto">
                             @Html.Action((string)ViewBag.Section, "Shared")
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq-fill"></div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq-fill" style="background:white;"></div>
                 <div class="clearfix"></div>
             </div>
 
