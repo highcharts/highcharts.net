@@ -7,6 +7,42 @@
 <script src="http://code.highcharts.com/highcharts-3d.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+<script type="text/javascript">
+
+    var chart;
+
+    function showValues() {
+        $('#R0-value').html(chart.options.chart.options3d.alpha);
+        $('#R1-value').html(chart.options.chart.options3d.beta);
+        $('#R2-value').html(chart.options.chart.options3d.depth);
+    }
+
+    function initSliders() {
+        chart = Highcharts.charts[0];
+
+        // Activate the sliders
+        $('#R0').on('input', function () {
+            chart.options.chart.options3d.alpha = this.value;
+            showValues();
+            chart.redraw(false);
+        });
+        $('#R1').on('input', function () {
+            chart.options.chart.options3d.beta = this.value;
+            showValues();
+            chart.redraw(false);
+        });
+        $('#R2').on('input', function () {
+            chart.options.chart.options3d.depth = this.value;
+            showValues();
+            chart.redraw(false);
+        });
+
+
+        showValues();
+    }
+
+</script>
+
 @using Highsoft.Web.Mvc.Charts
 
     @(Html.Highsoft().Highcharts(
@@ -62,38 +98,3 @@
 	</table>
 </div>	
 
-<script type="text/javascript">
-
-    var chart;
-
-    function showValues() {
-        $('#R0-value').html(chart.options.chart.options3d.alpha);
-        $('#R1-value').html(chart.options.chart.options3d.beta);
-        $('#R2-value').html(chart.options.chart.options3d.depth);
-    }
-
-    function initSliders() {
-        chart = Highcharts.charts[0];
-       
-        // Activate the sliders
-        $('#R0').on('input', function () {
-            chart.options.chart.options3d.alpha = this.value;
-            showValues();
-            chart.redraw(false);
-        });
-        $('#R1').on('input', function () {
-            chart.options.chart.options3d.beta = this.value;
-            showValues();
-            chart.redraw(false);
-        });
-        $('#R2').on('input', function () {
-            chart.options.chart.options3d.depth = this.value;
-            showValues();
-            chart.redraw(false);
-        });
-
-
-        showValues();
-    }
-
-</script>

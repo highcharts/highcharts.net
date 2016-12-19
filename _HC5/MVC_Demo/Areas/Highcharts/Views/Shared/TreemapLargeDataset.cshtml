@@ -964,11 +964,12 @@
                 Events = new ChartEvents
                 {
                     Load = "loadData"
-                }
+                },
+                Type = ChartType.Treemap
             },
             Title = new Title
             {
-                Text = "Click points to drill down. Source: <a href='http://apps.who.int/gho/data/node.main.12?lang=en'>WHO</a>."
+                Text = "Click points to drill down. Source: WHO."
             },
             Subtitle = new Subtitle
             {
@@ -980,9 +981,10 @@
                 {
                     LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Squarified,
                     AllowDrillToNode = TreemapSeriesAllowDrillToNode.True,
+                    AnimationLimit = 1000,
                     DataLabels = new TreemapSeriesDataLabels
                     {
-                        Enabled = true
+                        Enabled = false
                     },
                     LevelIsConstant = TreemapSeriesLevelIsConstant.False,
                     Levels = new List<TreemapSeriesLevels>
@@ -991,15 +993,10 @@
                         {
                             Level = 1,
                             BorderWidth = 3,
-                            //DataLabels = new System.Collections.Specialized.NameValueCollection
-                            //{
-                            //    { "enabled", "true" }
-                            //}
-
                             DataLabels = new TreemapSeriesDataLabels
                             {
                                 Enabled = true
-                            }
+                            },
                         }
                     }
                 }

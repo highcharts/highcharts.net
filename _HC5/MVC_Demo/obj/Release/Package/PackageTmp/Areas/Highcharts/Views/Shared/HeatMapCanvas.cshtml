@@ -68,7 +68,7 @@
                         if (plotY !== undefined && !isNaN(plotY) && point.y !== null) {
                             shapeArgs = point.shapeArgs;
 
-                            ctx.fillStyle = point.pointAttr[''].fill;
+                            ctx.fillStyle = point.color;//.pointAttr[''].fill;
                             ctx.fillRect(shapeArgs.x, shapeArgs.y, shapeArgs.width, shapeArgs.height);
                         }
                     });

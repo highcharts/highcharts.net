@@ -4,7 +4,7 @@
 
 @*When loading data from HTML <table> you need to add the data.js module*@
 
- <script src="http://code.highcharts.com/modules/data.js"></script>
+<script src="http://code.highcharts.com/modules/data.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
@@ -16,10 +16,48 @@
                     this.point.y + ' ' + this.point.name.toLowerCase();
     }
 
+
+
 </script>
 
+<table id="datatable">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Jane</th>
+            <th>John</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Apples</th>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <th>Pears</th>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>Plums</th>
+            <td>5</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <th>Bananas</th>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>Oranges</th>
+            <td>2</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+</table>
 
-    @(Html.Highsoft().Highcharts(
+@(Html.Highsoft().Highcharts(
         new Highcharts
         {
             Chart = new Chart
@@ -47,41 +85,7 @@
             }
         }
         , "chart")
-    )
+)
 
-<table id="datatable">
-	<thead>
-		<tr>
-			<th></th>
-			<th>Jane</th>
-			<th>John</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th>Apples</th>
-			<td>3</td>
-			<td>4</td>
-		</tr>
-		<tr>
-			<th>Pears</th>
-			<td>2</td>
-			<td>0</td>
-		</tr>
-		<tr>
-			<th>Plums</th>
-			<td>5</td>
-			<td>11</td>
-		</tr>
-		<tr>
-			<th>Bananas</th>
-			<td>1</td>
-			<td>1</td>
-		</tr>
-		<tr>
-			<th>Oranges</th>
-			<td>2</td>
-			<td>4</td>
-		</tr>
-	</tbody>
-</table>
+
+
