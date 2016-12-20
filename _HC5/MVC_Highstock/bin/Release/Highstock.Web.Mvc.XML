@@ -19294,22 +19294,22 @@
             The index of the button to appear pre-selected.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Stocks.RangeSelectorButtons.Count">
+        <member name="P:Highsoft.Web.Mvc.Stocks.RangeSelectorButton.Count">
             <summary>
             How many units of the defined type the button should span. If <code>type</code> is "month" and <code>count</code> is 3, the button spans three months.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Stocks.RangeSelectorButtons.DataGrouping">
+        <member name="P:Highsoft.Web.Mvc.Stocks.RangeSelectorButton.DataGrouping">
             <summary>
             A custom data grouping object for each button.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Stocks.RangeSelectorButtons.Text">
+        <member name="P:Highsoft.Web.Mvc.Stocks.RangeSelectorButton.Text">
             <summary>
             The text for the button itself.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Stocks.RangeSelectorButtons.Type">
+        <member name="P:Highsoft.Web.Mvc.Stocks.RangeSelectorButton.Type">
             <summary>
             Defined the time span for the button. Can be one of <code>"millisecond", "second", "minute", "hour", "day", "week", "month", "ytd", "all"</code>.
             </summary>
