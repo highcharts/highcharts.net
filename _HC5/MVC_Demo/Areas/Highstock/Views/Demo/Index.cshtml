@@ -154,14 +154,14 @@
                             <li><a href="~/Highstock/Demo">Demo</a></li>
                             <li><a href="~/Help/Highstock/html/index.html">API</a></li>
                             <li><a href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">Docs</a></li>
-                            <li><a href="~/downloads/Highstock_ASPNET_MVC_4_1_7_0.zip">Download&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a></li>
+                            <li><a href="~/downloads/Highstock_ASPNET_MVC_4_1_7_0.zip" onclick="ga('send', 'event', 'Downloads', 'Highcharts-Dotnet');">Download&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                     <ul id="shop-product-list">
                         <li><a href="~/Highstock/Demo">Demo</a></li>
                         <li><a href="~/Help/Highstock/html/index.html">API</a></li>
                         <li><a href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">Docs</a></li>
-                        <li><a href="~/downloads/Highstock_ASPNET_MVC_4_1_7_0.zip">Downloads&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a></li>
+                        <li><a href="~/downloads/Highstock_ASPNET_MVC_4_1_7_0.zip" onclick="ga('send', 'event', 'Downloads', 'Highcharts-Dotnet');">Downloads&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -318,10 +318,14 @@
                 <div class="container">
                     <div class="visible-xs row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="select">
+                            @*<div class="select">
                                 <label>Select Theme: </label>
                                 <select id="switcher-selector">
                                 </select>
+                            </div>*@
+                            <div class="btn-group" style="padding-top:5px; padding-bottom:5px;">
+                                <a href="~/Highcharts/Demo" class="btn btn-primary" style="border-color:#eeeaea; color:#3A3A4F; background-color:#eeeaea; text-transform:none;"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Highcharts</a>
+                                <a href="~/Highstock/Demo" class="btn btn-primary" style="border-color:#eeeaea; color:#898DA0; background-color:#3A3A4F; text-transform:none;"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Highstock</a>
                             </div>
                         </div>
                     </div>

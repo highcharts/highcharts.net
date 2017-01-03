@@ -196,14 +196,14 @@
                             <li><a href="~/Highstock/Demo">Demo</a></li>
                             <li><a href="~/Help/Highstock/html/index.html">API</a></li>
                             <li><a href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">Docs</a></li>
-                            <li><a href="~/downloads/Highstock_ASPNET_MVC_4_1_7_0.zip">Download&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a></li>
+                            <li><a href="~/downloads/Highstock_ASPNET_MVC_4_1_7_0.zip" onclick="ga('send', 'event', 'Downloads', 'Highstock-Dotnet');">Download&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                     <ul id="shop-product-list">
                         <li><a href="~/Highstock/Demo">Demo</a></li>
                         <li><a href="~/Help/Highstock/html/index.html">API</a></li>
                         <li><a href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">Docs</a></li>
-                        <li><a href="~/downloads/Highstock_ASPNET_MVC_4_1_7_0.zip">Downloads&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a></li>
+                        <li><a href="~/downloads/Highstock_ASPNET_MVC_4_1_7_0.zip" onclick="ga('send', 'event', 'Downloads', 'Highstock-Dotnet');">Downloads&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -366,6 +366,14 @@
     </div>
     <div id="hs-component">
         <div class="container">
+            <div class="visible-xs row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:#f6f6f6;">
+                    <div class="btn-group" style="padding-top:5px; padding-bottom:5px; padding-left:5px;">
+                        <a href="~/Highcharts/Demo" class="btn btn-primary" style="border-color:#eeeaea; color:#3A3A4F; background-color:#eeeaea; text-transform:none;"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Highcharts</a>
+                        <a href="~/Highstock/Demo" class="btn btn-primary" style="border-color:#eeeaea; color:#898DA0; background-color:#3A3A4F; text-transform:none;"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Highstock</a>
+                    </div>
+                </div>
+            </div>
             <div id="wrap" class="sidebar-wrapper">
                 @*<div id="comp-menu" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden-xs">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-9"></div>
@@ -499,7 +507,7 @@
                 </nav>
                     
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-9 sidebar-fill"></div>
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq demo">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq demo" style="margin-top:unset;">
                     <a id="sidebar-close" class="btn-default visible-xs">&laquo; Hide Menu</a>
                     <div id="chart-switcher" class="visible-xs">
                         <a id="previous-example"><i class="fa fa-angle-left"></i></a>
@@ -546,14 +554,14 @@
                         <a class="button" href="javascript:"
                             onclick="hs.htmlExpand(this, { width: 800,
 					                headingText: 'Demo Controller Code', 
-					                wrapperClassName: 'draggable-header' })">Controller Code &raquo;</a>
+					                wrapperClassName: 'draggable-header' })">Controller Code&nbsp;<i class="fa fa-chevron-right"></i></a>
                         <div class="highslide-maincontent" style="display:none">
                            <pre>@ViewBag.ControllerCode</pre>
                         </div>
                         <a class="button" href="javascript:"
                             onclick="hs.htmlExpand(this, { width: 800,
 					                headingText: 'Dempo View Code', 
-					                wrapperClassName: 'draggable-header' })">View Code &raquo;</a>
+					                wrapperClassName: 'draggable-header' })">View Code&nbsp;<i class="fa fa-chevron-right"></i></a>
                         <div class="highslide-maincontent" style="display:none">
                             <pre>@ViewBag.ViewCode</pre>
                         </div>
