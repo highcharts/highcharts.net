@@ -116,13 +116,21 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
                 if (series is LineSeries)
                 {
-                    LineSeries lineSeries = series as LineSeries;
+                    if (series.ToHashtable().ContainsKey("data"))
+                    {
+                        seriesHashtable = series.ToHashtable();
+                        results.Add(seriesHashtable);
+                        continue;
+                    }
+                    
+                        LineSeries lineSeries = series as LineSeries;
 
-                    List<LineSeriesData> seriesData = lineSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                    lineSeries.Type = LineSeriesType.Line;
+                        List<LineSeriesData> seriesData = lineSeries.Data;
+                        seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                        lineSeries.Type = LineSeriesType.Line;
 
-                    seriesHashtable = lineSeries.ToHashtable();
+                        seriesHashtable = lineSeries.ToHashtable();
+                    
                 }
                 if (series is SplineSeries)
                 {
