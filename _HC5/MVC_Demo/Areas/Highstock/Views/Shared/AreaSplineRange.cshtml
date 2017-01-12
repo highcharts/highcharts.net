@@ -15,7 +15,7 @@ are using these types of charts*@
    
     @(Html.Highsoft().Highstock(
         new Highstock
-        {           
+        {
             RangeSelector = new RangeSelector
             {
                 Selected = 2
@@ -37,6 +37,13 @@ are using these types of charts*@
                    }
                 }
             },
+            Navigator = new Navigator()
+            {
+                Series = new LineSeries()
+                {
+                    Data = ViewBag.NavigatorData as List<LineSeriesData>
+                }
+            }
         },
         "chart"
     ))

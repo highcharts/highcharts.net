@@ -16,7 +16,7 @@
     
     @(Html.Highsoft().Highstock(
         new Highstock
-        {           
+        {
             RangeSelector = new RangeSelector
             {
                 Selected = 1
@@ -35,7 +35,7 @@
                    Shadow = new Shadow
                    {
                        Enabled = true,
-                       
+
                    },
                    Tooltip = new OhlcSeriesTooltip
                    {
@@ -43,6 +43,13 @@
                    }
                 }
             },
+            Navigator = new Navigator()
+            {
+                Series = new LineSeries()
+                {
+                    Data = ViewBag.NavigatorData as List<LineSeriesData>
+                }
+            }
         },
         "chart"
     ))

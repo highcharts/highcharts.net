@@ -17,7 +17,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         public ActionResult Candlestick()
         {
             List<CandleStickSeriesData> appleData = new List<CandleStickSeriesData>();
-            List<AreasplineSeriesData> navigatorData = new List<AreasplineSeriesData>();
+            List<LineSeriesData> navigatorData = new List<LineSeriesData>();
 
             foreach (CandlestickVolume data in DataReceiver.GetJSONCandlestickVolumes())
             {
@@ -30,10 +30,10 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     Close = Convert.ToDouble(data.Close)
                 });
 
-                navigatorData.Add(new AreasplineSeriesData
+                navigatorData.Add(new LineSeriesData
                 {
                     X = Convert.ToDouble(data.Date),
-                    Y = Convert.ToDouble(data.Open)
+                    Y = Convert.ToDouble(data.Close)
                 });
             }
 

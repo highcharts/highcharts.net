@@ -43,13 +43,13 @@
                    }
                 }
         },
-            //Navigator = new Navigator()
-            //{
-            //    //Series = new AreasplineSeries
-            //    //{
-            //    //    Data = ViewBag.NavigatorData as List<AreasplineSeriesData>
-            //    //}
-            //}
+            Navigator = new Navigator()
+            {
+                Series = new LineSeries
+                {
+                    Data = ViewBag.NavigatorData as List<LineSeriesData>
+                }
+            }
         },
         "chart"
     ))

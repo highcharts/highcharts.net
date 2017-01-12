@@ -14,6 +14,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         public ActionResult IntradayCandlestick()
         {
             List<CandleStickSeriesData> intradayData = new List<CandleStickSeriesData>();
+            List<LineSeriesData> navigatorData = new List<LineSeriesData>();
 
             foreach (Intraday data in GetList_Intradays())
             {
@@ -26,11 +27,9 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     X = Convert.ToDouble(data.Date)
                 });
             }
-
-            List<LineSeriesData> navigatorData = new List<LineSeriesData>();
-
+            
             foreach (var item in intradayData)
-                navigatorData.Add(new LineSeriesData() { Y = item.Open, X = item.X });
+                navigatorData.Add(new LineSeriesData() { Y = item.Close, X = item.X });
 
             ViewBag.IntradayData = intradayData.OrderBy(o => o.X).ToList();
             ViewBag.NavigatorData = navigatorData.OrderBy(o => o.X).ToList();

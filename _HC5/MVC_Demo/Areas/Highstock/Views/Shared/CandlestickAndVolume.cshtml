@@ -125,6 +125,13 @@
                     TurboThreshold = 10000
                 }
             },
+            Navigator = new Navigator()
+            {
+                Series = new LineSeries
+                    {
+                        Data = ViewBag.NavigatorData as List<LineSeriesData>
+                    }
+            }
         },
         "chart"
     ))

@@ -1,19 +1,19 @@
 ﻿@using Highsoft.Web.Mvc.Stocks
 
-@*  The Highstock client-side javascript library is dependent on jQuery so you need to include 
+@*  The Highstock client-side javascript library is dependent on jQuery so you need to include
     a reference to the jQuery library before referncing the highstock llibrary*@
-    
+
 <script src="http://code.highcharts.com/stock/highstock.js"></script>
 
-@*The highchart-more.js file contains definitions for additional chart types not available 
-in the main highcharts.js file such as "arearange". You need to include this file if you
-are using these types of charts*@
+@*The highchart-more.js file contains definitions for additional chart types not available
+    in the main highcharts.js file such as "arearange". You need to include this file if you
+    are using these types of charts*@
 
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-   
-    @(Html.Highsoft().Highstock(
+
+@(Html.Highsoft().Highstock(
         new Highstock
         {
             Chart = new Chart()
@@ -26,7 +26,7 @@ are using these types of charts*@
             },
             Title = new Title
             {
-                Text =  "Apple Stock Price"
+                Text = "Apple Stock Price"
             },
             Series = new List<Series>
             {
@@ -41,6 +41,13 @@ are using these types of charts*@
                    }
                 }
             },
+            Navigator = new Navigator()
+            {
+                Series = new LineSeries()
+                {
+                    Data = ViewBag.NavigatorData as List<LineSeriesData>
+                }
+            }
         },
         "chart"
     ))

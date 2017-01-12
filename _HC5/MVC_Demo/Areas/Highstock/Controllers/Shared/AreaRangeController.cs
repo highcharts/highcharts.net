@@ -14,6 +14,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         public ActionResult Arearange()
         {
             List<ArearangeSeriesData> appleData = new List<ArearangeSeriesData>();
+            List<LineSeriesData> navigatorData = new List<LineSeriesData>();
 
             foreach (RangeData data in DataReceiver.GetJSONRange())//("Apple"))
             {
@@ -23,9 +24,16 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     High = Convert.ToDouble(data.High),
                     Low = Convert.ToDouble(data.Low)
                 });
+
+                navigatorData.Add(new LineSeriesData
+                {
+                    X = Convert.ToDouble(data.X),
+                    Y = Convert.ToDouble(data.High)
+                });
             }
 
             ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
+            ViewBag.NavigatorData = navigatorData.OrderBy(o => o.X).ToList();
 
             return View(ViewBag);
         }

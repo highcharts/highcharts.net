@@ -15,6 +15,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             List<CandleStickSeriesData> appleData = new List<CandleStickSeriesData>();
             List<ColumnSeriesData> volumeData = new List<ColumnSeriesData>();
+            List<LineSeriesData> navigatorData = new List<LineSeriesData>();
 
             foreach (CandlestickVolume volume in DataReceiver.GetJSONCandlestickVolumes())
             {
@@ -32,10 +33,18 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     X = Convert.ToDouble(volume.Date),
                     Y = Convert.ToDouble(volume.Volume)
                 });
+
+                navigatorData.Add(new LineSeriesData
+                {
+                    X = Convert.ToDouble(volume.Date),
+                    Y = Convert.ToDouble(volume.Close)
+                });
             }
+
 
             ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
             ViewBag.VolumeData = volumeData.OrderBy(o => o.X).ToList();
+            ViewBag.NavigatorData = navigatorData.OrderBy(o => o.X).ToList();
 
             return View(ViewBag);
         }
