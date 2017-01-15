@@ -1,8 +1,8 @@
 ﻿@using Highsoft.Web.Mvc.Stocks
 
-@*  The Highstock client-side javascript library is dependent on jQuery so you need to include 
+@*  The Highstock client-side javascript library is dependent on jQuery so you need to include
     a reference to the jQuery library before referncing the highstock llibrary*@
-    
+
 <script src="http://code.highcharts.com/stock/highstock.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
@@ -13,17 +13,17 @@
     }
 
 </script>
-    
-    @(Html.Highsoft().Highstock(
+
+@(Html.Highsoft().Highstock(
         new Highstock
-        {           
+        {
             RangeSelector = new RangeSelector
             {
                 Selected = 1
             },
             Title = new Title
             {
-                Text =  "Apple Stock Price"
+                Text = "Apple Stock Price"
             },
             Series = new List<Series>
             {
@@ -35,9 +35,11 @@
                    Tooltip = new AreaSeriesTooltip
                    {
                        ValueDecimals = 2
-                   }
-                }
-            },
+                   },
+                   FillColor = @ViewBag.fillColor
+            }
+    }
+
         },
         "chart"
     ))

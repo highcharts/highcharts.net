@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_point_placement =
-[
-    [ "PlotOptionsAreasplinerangePointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_point_placement.html#a24b65532c2287ab67a3abf64af9cb32a", null ]
-];
