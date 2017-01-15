@@ -26,6 +26,14 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 
             ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
 
+            object fillColor = new
+            {
+                linearGradient = new { x1 = 0, y1 = 0, x2 = 0, y2 = 1 },
+                stops = new List<object> { new List<object> { "0", "#7cb5ec" }, new List<object> { "1", "rgba(124,181,236,0)" } }
+            };
+
+            ViewBag.fillColor = fillColor;
+
             return View(ViewBag);
         }       
 

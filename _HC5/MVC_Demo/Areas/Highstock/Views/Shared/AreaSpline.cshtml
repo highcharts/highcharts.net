@@ -16,14 +16,14 @@
     
     @(Html.Highsoft().Highstock(
         new Highstock
-        {           
+        {
             RangeSelector = new RangeSelector
             {
                 Selected = 1
             },
             Title = new Title
             {
-                Text =  "Apple Stock Price"
+                Text = "Apple Stock Price"
             },
             Series = new List<Series>
             {
@@ -35,9 +35,10 @@
                    Tooltip = new AreasplineSeriesTooltip
                    {
                        ValueDecimals = 2
-                   }
-                }
-            },
+                   },
+                   FillColor = @ViewBag.fillColor
+            }
+        }
         },
         "chart"
     ))
