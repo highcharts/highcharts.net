@@ -34,8 +34,8 @@
                  uniquesData.push(uniqueEntry);
              }
 
-             chart.series[0].setData(visitorData);
-             chart.series[1].setData(uniquesData);
+             Highcharts.charts[0].series[0].setData(visitorData);
+             Highcharts.charts[0].series[1].setData(uniquesData);
 
              window.setTimeout(function () { chart.redraw(); }, 1000);
          });
