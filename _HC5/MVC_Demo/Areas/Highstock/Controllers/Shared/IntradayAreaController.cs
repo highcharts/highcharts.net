@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Globalization;
 
 namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
@@ -62,11 +63,11 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     Intradays.Add(
                         new Intraday
                         {
-                            Date = Convert.ToDouble(values[0]),
-                            Open = Convert.ToDouble(values[1]),
-                            High = Convert.ToDouble(values[2]),
-                            Low = Convert.ToDouble(values[3]),
-                            Close = Convert.ToDouble(values[4])
+                            Date = Convert.ToDouble(values[0], CultureInfo.InvariantCulture),
+                            Open = Convert.ToDouble(values[1], CultureInfo.InvariantCulture),
+                            High = Convert.ToDouble(values[2], CultureInfo.InvariantCulture),
+                            Low = Convert.ToDouble(values[3], CultureInfo.InvariantCulture),
+                            Close = Convert.ToDouble(values[4], CultureInfo.InvariantCulture)
                         }
                     );
 

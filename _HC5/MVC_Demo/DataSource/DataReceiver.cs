@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 
@@ -52,8 +53,8 @@ namespace MVC_Demo.Models
                 companyDatas.Add(
                     new CompanyData
                     {
-                        Date = Convert.ToDouble(values[0]),
-                        Value = Convert.ToDouble(values[1])
+                        Date = Convert.ToDouble(values[0], CultureInfo.InvariantCulture),
+                        Value = Convert.ToDouble(values[1], CultureInfo.InvariantCulture)
                     }
                 );
 
@@ -95,9 +96,9 @@ namespace MVC_Demo.Models
                 companyDatas.Add(
                     new RangeData
                     {
-                        X = Convert.ToDouble(values[0].Trim() == "null" ? null : values[0].Trim()),
-                        Low = Convert.ToDouble(values[1].Trim() == "null" ? null: values[1].Trim()),
-                        High = Convert.ToDouble(values[2].Trim() == "null" ? null: values[2].Trim())
+                        X = Convert.ToDouble(values[0].Trim() == "null" ? null : values[0].Trim(),CultureInfo.InvariantCulture),
+                        Low = Convert.ToDouble(values[1].Trim() == "null" ? null: values[1].Trim(), CultureInfo.InvariantCulture),
+                        High = Convert.ToDouble(values[2].Trim() == "null" ? null: values[2].Trim(), CultureInfo.InvariantCulture)
                     }
                 );
 
@@ -133,12 +134,12 @@ namespace MVC_Demo.Models
                 CandlestickVolumes.Add(
                     new CandlestickVolume
                     {
-                        Date = Convert.ToDouble(values[0]),
-                        Open = Convert.ToDouble(values[1]),
-                        High = Convert.ToDouble(values[2]),
-                        Low = Convert.ToDouble(values[3]),
-                        Close = Convert.ToDouble(values[4]),
-                        Volume = Convert.ToDouble(values[5]),
+                        Date = Convert.ToDouble(values[0], CultureInfo.InvariantCulture),
+                        Open = Convert.ToDouble(values[1], CultureInfo.InvariantCulture),
+                        High = Convert.ToDouble(values[2], CultureInfo.InvariantCulture),
+                        Low = Convert.ToDouble(values[3], CultureInfo.InvariantCulture),
+                        Close = Convert.ToDouble(values[4], CultureInfo.InvariantCulture),
+                        Volume = Convert.ToDouble(values[5], CultureInfo.InvariantCulture),
                     }
                 );
 
@@ -183,7 +184,7 @@ namespace MVC_Demo.Models
                             new FlagData
                             {
                                 Date = DateToUTC(date),
-                                Value = Convert.ToDouble(value)
+                                Value = Convert.ToDouble(value, CultureInfo.InvariantCulture)
                             }
                         );
                 }

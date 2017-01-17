@@ -6709,7 +6709,6 @@
     <Content Include="Help\Highstock\html\_y_axis_plot_lines_8cs.html" />
     <Content Include="Help\Highstock\html\_y_axis_plot_lines_label_8cs.html" />
     <Content Include="Help\Highstock\html\_y_axis_title_8cs.html" />
-    <Content Include="HighchartsSerial.txt" />
     <Content Include="Models\ChartData.edmx.diagram">
       <DependentUpon>ChartData.edmx</DependentUpon>
     </Content>
@@ -6753,6 +6752,7 @@
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />
+    <None Include="Properties\PublishProfiles\Testing_HC5.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Models\ChartData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

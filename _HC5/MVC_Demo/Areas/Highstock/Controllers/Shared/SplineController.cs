@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Globalization;
 
 namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
@@ -57,8 +58,8 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                 AppleDatas.Add(
                     new CompanyData
                     {
-                        Date = Convert.ToDouble(values[0]),
-                        Value = Convert.ToDouble(values[1])
+                        Date = Convert.ToDouble(values[0], CultureInfo.InvariantCulture),
+                        Value = Convert.ToDouble(values[1], CultureInfo.InvariantCulture)
                     }
                 );
 

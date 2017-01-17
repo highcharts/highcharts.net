@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Globalization;
 
 namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 {
@@ -104,7 +105,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                             new Flag
                             {
                                 Date = DateToUTC(date),
-                                Value = Convert.ToDouble(value)
+                                Value = Convert.ToDouble(value, CultureInfo.InvariantCulture)
                             }
                         );
                 }
@@ -156,7 +157,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                                 new Flag
                                 {
                                     Date = DateToUTC(date),
-                                    Value = Convert.ToDouble(value)
+                                    Value = Convert.ToDouble(value, CultureInfo.InvariantCulture)
                                 }
                             );
                     }
