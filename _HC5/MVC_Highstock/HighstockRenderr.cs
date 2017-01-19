@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             return message + GetStartupJavascript();
         }
 
-        public string GetStartupJavascript()
+        private string GetStartupJavascript()
         {
             StringBuilder sb = new StringBuilder();
 

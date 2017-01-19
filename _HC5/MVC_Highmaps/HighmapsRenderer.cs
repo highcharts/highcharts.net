@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Maps.Rendering
             return GetStartupJavascript();
         }
 
-        public string GetStartupJavascript()
+        private string GetStartupJavascript()
         {
             StringBuilder sb = new StringBuilder();
 
