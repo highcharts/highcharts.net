@@ -20,16 +20,18 @@ function fixNavigation() {
             $(link).parent().parent().css("display", "block");
             $(link).parent().parent().parent().addClass("active").children('div').addClass('active');
 
-            $(".demo-name").html("<a href='#'>Highcharts Demos</a> &rsaquo; " + $(link).text());
+            $(".demo-name").html($(link).text());
 
             if (index < $(".nav-sidebar li a").length - 1) {
                 var nextHref = $(sideBarLinks.get(index + 1)).attr("href");
                 $(".chart-container").find("#next-example").attr("href", nextHref);
+                $("#chart-switcher").find("#next-example").attr("href", nextHref);
             }
 
             if (index > 0) {
                 var prevHref = $(sideBarLinks.get(index - 1)).attr("href");
                 $(".chart-container").find("#previous-example").attr("href", prevHref);
+                $("#chart-switcher").find("#previous-example").attr("href", prevHref);
             }
         }
     });

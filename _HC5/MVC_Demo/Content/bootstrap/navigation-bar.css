@@ -388,7 +388,7 @@
     }
     #menu .dropdown span.toggle-arrow:after {
         font-family: "FontAwesome";
-        content: '\f105';
+        content: '\f107';
     }
     #menu .dropdown.open span.toggle-arrow:after {
         font-family: "FontAwesome";
