@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Highsoft.Highcharts</id>
+    <version>5.0.3.14380</version>
+    <title>Highsoft.Highcharts</title>
+    <authors>Highsoft</authors>
+    <owners>Highsoft</owners>
+    <licenseUrl>https://shop.highsoft.com/media/highsoft/Standard-License-Agreement-7.0.pdf</licenseUrl>
+    <projectUrl>http://dotnet.highcharts.com/</projectUrl>
+    <iconUrl>http://dotnet.highcharts.com/Content/images/highcharts_logo.svg</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Highcharts .NET allows developers to make interactive cross-platform, mobile-friendly charts using the extensive Highcharts API (which includes both Highcharts as well as Highstock for financial charts) with the Microsoft .NET Framework (ASP.NET MVC 4+). After 30 days trial period serial key is required. see also: Highsoft.Highstock</description>
+    <summary>Official Highsoft's library. Examples, API and documentation are available on project home page.</summary>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>chart charts charting graph graphs plot plots diagram diagrams highcharts highstock</tags>
+  </metadata>
+</package>

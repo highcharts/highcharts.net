@@ -125,70 +125,71 @@ a.btn.btn-theme {
     background-color: #f6f6f6;
 }
 
-@@media screen and (max-width: 400px) {
-    .sidebar-wrapper .sidebar-eq;
+/*@media screen and (max-width: 400px) {
+    .sidebar-wrapper .sidebar-eq {
+        padding: 0;
+    }
 
-{
-    padding: 0;
+    #chart-switcher {
+        padding: 0;
+    }
+
+    #small-switcher {
+        text-align: center;
+    }
+
+    .demo .chart-container {
+        padding: 0;
+    }
+
+    .demo #chart-switcher #previous-example,
+    .demo #chart-switcher #next-example {
+        font-size: 20px;
+    }
+
+    #sidebar-close {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #252530;
+        color: white;
+        border-radius: 0;
+        z-index: 100;
+        cursor: pointer;
+        padding: 10px;
+        visibility: hidden;
+    }
+
+    .toggled #sidebar-close {
+        visibility: visible;
+    }
 }
 
-#chart-switcher {
-    padding: 0;
+@media screen and (min-width: 400px) and (max-width: 768px) {
+    .demo {
+        padding: 15px;
+    }
+
+    #sidebar-close {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #252530;
+        color: white;
+        border-radius: 0;
+        z-index: 100;
+        cursor: pointer;
+        padding: 10px;
+        visibility: hidden;
+    }
+
+    .toggled #sidebar-close {
+        visibility: visible;
+    }
+}*/
+
+@media (max-width: 400px) {
+    #view-menu {
+        margin-left: 0px !important;
+    }
 }
-
-#small-switcher {
-    text-align: center;
-}
-
-.demo .chart-container {
-    padding: 0;
-}
-
-.demo #chart-switcher #previous-example,
-.demo #chart-switcher #next-example {
-    font-size: 20px;
-}
-
-#sidebar-close {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #252530;
-    color: white;
-    border-radius: 0;
-    z-index: 100;
-    cursor: pointer;
-    padding: 10px;
-    visibility: hidden;
-}
-
-.toggled #sidebar-close {
-    visibility: visible;
-}
-
-}
-
-@@media screen and (min-width: 400px) and (max-width: 768px) {
-    .demo;
-
-{
-    padding: 15px;
-}
-
-#sidebar-close {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #252530;
-    color: white;
-    border-radius: 0;
-    z-index: 100;
-    cursor: pointer;
-    padding: 10px;
-    visibility: hidden;
-}
-
-.toggled #sidebar-close {
-    visibility: visible;
-}
-
