@@ -1633,13 +1633,13 @@ table.category .cat-list-row1 {
 		-webkit-transform: translate3d(75%, 0, 0);
 		transform: translate3d(75%, 0, 0);
 	}
-	.sidebar-wrapper.toggled .sidebar-eq:after {
+	/*.sidebar-wrapper.toggled .sidebar-eq:after {
 		width: 100%;
 		height: 100%;
-		opacity: 1;
+		opacity: 0;
 		-webkit-transition: opacity 0.5s;
 		transition: opacity 0.5s;
-	}
+	}*/
 	.sidebar-wrapper .sidebar-eq:after {
 		position: absolute;
 		top: 0;

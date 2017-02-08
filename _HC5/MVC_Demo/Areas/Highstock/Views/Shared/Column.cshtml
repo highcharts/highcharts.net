@@ -25,6 +25,19 @@
             {
                 Text =  "Apple Stock Price"
             },
+            PlotOptions = new PlotOptions()
+            {
+                Series = new PlotOptionsSeries
+                {
+                    Zones = new PlotOptionsSeriesZones()
+                    {
+                        ClassName = "zone-negative",
+                        Value = 0,
+                        FillColor = "#FF0000 ",
+                        Color = "#FF0000 "
+                    }
+                }
+            },
             Series = new List<Series>
             {
                 new ColumnSeries
