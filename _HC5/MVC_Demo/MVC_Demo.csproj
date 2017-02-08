@@ -830,6 +830,7 @@
     <Content Include="Content\images\image07.png" />
     <Content Include="Content\images\image08.png" />
     <Content Include="Content\images\logo.svg" />
+    <Content Include="Content\images\logo_png.png" />
     <Content Include="Content\loader.white.gif" />
     <Content Include="Content\gallery.css" />
     <Content Include="Content\highslide.css" />
