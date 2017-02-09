@@ -40,12 +40,10 @@
             jQuery("#view-menu").click(function (e) {
                 if (menu == 0) {
                     jQuery("#wrap").toggleClass("toggled");
-                    document.getElementById("view-menu").style.marginLeft = "-55px";
                     menu = 1;
                 }
                 else {
                     jQuery("#wrap").removeClass("toggled");
-                    document.getElementById("view-menu").style.marginLeft = "-50px";
                     menu = 0;
                 }
             });
@@ -739,7 +737,7 @@
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq demo" style="margin-top:unset; padding-top:unset;">
                     @*<a id="sidebar-close" class="btn-default visible-xs">&laquo; Hide Menu</a>*@
                     <div id="chart-switcher" class="visible-xs" style="padding:unset;">
-                        <a class="button" id="view-menu" onclick="" style="float:left; background-color:#3A3A4F; height:50px; width:45px; vertical-align:central; padding-left:10px; margin-left:-50px; border-radius:unset; z-index:999"><i class="material-icons" style="color:white;">list</i></a>
+                        <a class="button" id="view-menu" onclick="" style="float:left; background-color:#3A3A4F; height:50px; width:40px; vertical-align:middle; padding-left:6px; margin-left:-50px; margin-top:2px; border-radius:unset; z-index:999"><i class="material-icons" style="color:white;">list</i></a>
                         <a id="previous-example"><i class="fa fa-angle-left"></i></a>
                         <h2 class="demo-name"></h2>
                         <a id="next-example" title="Next (arrow right)"
@@ -777,7 +775,7 @@
                             @Html.Action((string)ViewBag.Demo, "Shared")
 
                         </div>
-                        <a id="next-example" class="чччччhidden-xs" title="Next (arrow right)"
+                        <a id="next-example" class="hidden-xs" title="Next (arrow right)"
                            href=""><i class="fa fa-angle-right"></i></a>
                     </div>
                     <div id="demo-buttons">
