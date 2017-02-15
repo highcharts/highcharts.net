@@ -73,6 +73,9 @@ namespace Highsoft.Web.Mvc.Charts
         {
             string[] values = ConfigurationManager.AppSettings.GetValues(KEY_NAME);
 
+            if (values == null)
+                return null;
+
             if (values.Length == 0)
                 return null;
 

@@ -73,6 +73,9 @@ namespace Highsoft.Web.Mvc.Stocks
         {
             string[] values = ConfigurationManager.AppSettings.GetValues(KEY_NAME);
 
+            if (values == null)
+                return null;
+
             if (values.Length == 0)
                 return null;
 
