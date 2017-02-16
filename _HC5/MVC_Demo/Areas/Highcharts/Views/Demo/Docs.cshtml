@@ -177,16 +177,17 @@
         <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">*@
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-2995052-3']);
-        _gaq.push(['_trackPageview']);
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        ga('create', 'UA-2995052-3', 'auto');
+        ga('send', 'pageview');
+
     </script>
 </head>
 <body>
@@ -262,7 +263,7 @@
                 <div id="shop-list-wrapper">
 
                     <div id="shop-product-tab" class="dropdown">
-                        
+
                         <ul class="dropdown-menu">
                             <li><a href="~/Highcharts/Demo">Demo</a></li>
                             <li><a href="~/Help/Highcharts/html/index.html">API</a></li>
@@ -356,7 +357,7 @@
 
             <div class="table-responsive">
                 <table class="table" style="margin:unset; background:#3A3A4F;">
-                    <tbody >
+                    <tbody>
                         <tr>
                             @*<td width="25%" style="padding:unset; border:none"></td>*@
                             <td style="padding-left:10px; padding-top:15px; padding-bottom:25px; border:none">
@@ -374,14 +375,14 @@
                                         </tr>
                                         @*</ul>*@
                                         @*<div style="position:relative; left:15px; top:6.5px; ">
-                <img src="~/Content/wrapper_logo2.png" />
-            </div>*@
+                                                <img src="~/Content/wrapper_logo2.png" />
+                                            </div>*@
                                     </tbody>
                                 </table>
                             </td>
                             <td style="padding:unset; border:none">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:right;">
-                                    <img src="~/Content/images/dotnet_logo.png" width="200" style="padding-top:30px;"/>
+                                    <img src="~/Content/images/dotnet_logo.png" width="200" style="padding-top:30px;" />
 
 
                                     @*<h1>Highcharts Demos</h1>*@
@@ -393,36 +394,36 @@
                                             <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="?theme=sand-signika">Sand Signika</a>
                                             <a class="btn btn-theme @ViewBag.GridLightDisabled" href="?theme=grid-light">Grid Light</a>*@
 
-                                        @*<a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">DEMO</a>*@
-                                        @*<a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="~/Help/Highcharts/html/index.html">API</a>*@
-                                        @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Docs/Highcharts/index.html">DOCS</a>*@
-                                        @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">DOCS</a>*@
-                                        @*<a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>*@
-                                        @*<div class="container">*@
-                                            @*<button type="button" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:2px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap;" href="ggg.jpg"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></button>*@
-                                        @*</div>*@
+                                    @*<a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">DEMO</a>*@
+                                    @*<a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="~/Help/Highcharts/html/index.html">API</a>*@
+                                    @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Docs/Highcharts/index.html">DOCS</a>*@
+                                    @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">DOCS</a>*@
+                                    @*<a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>*@
+                                    @*<div class="container">*@
+                                    @*<button type="button" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:2px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap;" href="ggg.jpg"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></button>*@
+                                    @*</div>*@
                                     @*</div>*@
                                 </div>
                             </td>
                         </tr>
                         @*<tr>
-                            <td width="25%" style="padding:unset; border:none"></td>
-                            <td style="padding:unset; border:none; margin:unset">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:unset;">
+                                <td width="25%" style="padding:unset; border:none"></td>
+                                <td style="padding:unset; border:none; margin:unset">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:unset;">
 
-                                    <div class="btn-group theme">
-                                        <a class="btn btn-theme enabled" href="~/Highcharts/Demo" style="margin-right:2px;">DEMO</a>
-                                        <a class="btn btn-theme enabled" href="~/Help/Highcharts/html/index.html" style="margin-right:2px;">API</a>
-                                        <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Docs/Highcharts/index.html">DOCS</a>
-                                        <a class="btn btn-theme disabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements" style="margin-right:2px; background:#f6f6f6;">DOCS</a>
-                                        <a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>
-                                        <div class="container">
-                                        <a href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:3px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap; margin-left:2px; margin-top:5px;"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+                                        <div class="btn-group theme">
+                                            <a class="btn btn-theme enabled" href="~/Highcharts/Demo" style="margin-right:2px;">DEMO</a>
+                                            <a class="btn btn-theme enabled" href="~/Help/Highcharts/html/index.html" style="margin-right:2px;">API</a>
+                                            <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Docs/Highcharts/index.html">DOCS</a>
+                                            <a class="btn btn-theme disabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements" style="margin-right:2px; background:#f6f6f6;">DOCS</a>
+                                            <a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>
+                                            <div class="container">
+                                            <a href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:3px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap; margin-left:2px; margin-top:5px;"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </td>
-                        </tr>*@
+                                </td>
+                            </tr>*@
                     </tbody>
                 </table>
             </div>
@@ -512,10 +513,10 @@
                         </select>
                         <div class="clearfix"></div>
                     </div>
-                    
-                    
+
+
                     <div class="chart-container" style="padding:0px;">
-                        
+
                         <div id="container" style="width: 100%; height: auto; margin: 0 auto">
                             @Html.Action((string)ViewBag.Section, "Shared")
                         </div>
@@ -557,4 +558,3 @@
     </div>
 </body>
 </html>
-
