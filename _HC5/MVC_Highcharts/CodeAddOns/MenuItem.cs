@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
         /// <summary>
         /// The text of the menu item
         /// </summary>
-        string Text { get; set; }
+        public string Text { get; set; }
 
         /// <summary>
         /// OnClick javascript event to fire
