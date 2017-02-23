@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Diagnostics;
+using System.Threading;
 
 namespace DailyScheduler
 {
@@ -17,6 +18,8 @@ namespace DailyScheduler
         private const string SERVER_FILE_PATH = @"c:\highcharts.net\Build\new\demo_builder.bat";
         private const string SERVER_HC_WRAPPER_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highcharts\bin\Debug\Highcharts.Web.Mvc.dll";
         private const string SERVER_HS_WRAPPER_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highstock\bin\Debug\Highstock.Web.Mvc.dll";
+        private const string SERVER_HC_NUSPEC_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highcharts\MVC_Highcharts.nuspec";
+        private const string SERVER_HS_NUSPEC_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highstock\MVC_Highstock.nuspec";
         private const string SERVER_HC_NUGET_PACK_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highcharts\nuget_pack_highcharts.bat";
         private const string SERVER_HS_NUGET_PACK_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highstock\nuget_pack_highstock.bat";
         private const string SERVER_HC_NUGET_PUSH_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highcharts\nuget_push_highcharts.bat";
@@ -34,7 +37,7 @@ namespace DailyScheduler
 
         private static void StartTimer()
         {
-            Timer timer = new Timer(86400000);
+            System.Timers.Timer timer = new System.Timers.Timer(86400000);
             timer.Elapsed += HandleWrapperBuilder;
             timer.Elapsed += HandleNuget;
             timer.Start();
@@ -43,7 +46,7 @@ namespace DailyScheduler
 
         private static void HandleWrapperBuilder(object sender, ElapsedEventArgs e)
         {
-            Console.WriteLine(DateTime.Now);
+            Console.WriteLine("Wrapper: "+DateTime.Now);
             try
             {
                 System.Diagnostics.Process.Start(SERVER_FILE_PATH);
@@ -62,13 +65,15 @@ namespace DailyScheduler
 
         static void HandleNuget(object sender, ElapsedEventArgs args)
         {
-            Console.WriteLine(DateTime.Now);
+            Thread.Sleep(1200000);
+
+            Console.WriteLine("NuGet: "+DateTime.Now);
             try
             {
                 NugetPublisher publisher = new NugetPublisher();
 
-                publisher.UpdateNuspecFile(SERVER_HC_WRAPPER_FILE_PATH);
-                publisher.UpdateNuspecFile(SERVER_HS_WRAPPER_FILE_PATH);
+                publisher.UpdateFiles(SERVER_HC_WRAPPER_FILE_PATH, SERVER_HC_NUSPEC_FILE_PATH, SERVER_HC_NUGET_PUSH_FILE_PATH, "Highcharts");
+                publisher.UpdateFiles(SERVER_HS_WRAPPER_FILE_PATH, SERVER_HS_NUSPEC_FILE_PATH, SERVER_HS_NUGET_PUSH_FILE_PATH, "Highstock");
 
                 Process p1 = Process.Start(SERVER_HC_NUGET_PACK_FILE_PATH);
                 p1.WaitForExit();

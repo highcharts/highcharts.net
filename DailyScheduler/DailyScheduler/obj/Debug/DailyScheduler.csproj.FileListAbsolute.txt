@@ -7,3 +7,5 @@ C:\PROJECTS_TESTING\DailyScheduler\DailyScheduler\obj\Debug\DailyScheduler.cspro
 C:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\bin\Debug\DailyScheduler.exe.config
 C:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\obj\Debug\DailyScheduler.exe
 C:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\obj\Debug\DailyScheduler.pdb
+C:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\bin\Debug\DailyScheduler.exe
+C:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\bin\Debug\DailyScheduler.pdb
