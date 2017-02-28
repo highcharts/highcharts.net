@@ -19,7 +19,11 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
         public string RenderHtml()
         {
-            int licenseType = LicenseVerifier.Check();
+            return GetResponse(LicenseVerifier.Check());
+        }
+
+        private string GetResponse(int licenseType)
+        {
             string message = "";
 
             if (licenseType == 0)
@@ -33,6 +37,25 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 }
 
             return message + GetStartupJavascript();
+        }
+
+        private string GetJsonResponse(int licenseType)
+        {
+            string message = "";
+
+            if (licenseType == -1 || licenseType == 0) //trial
+                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
+                {
+                    message += "Message:\"This is a trial version of Highstock for ASP.NET MVC which has expired. Please contact sales@highsoft.com with any questions.\"";
+                    return "{" + message + "}";
+                }
+
+            return GetStartupOptions();
+        }
+
+        public string GetJsonOptions()
+        {
+            return GetJsonResponse(LicenseVerifier.Check());
         }
 
         private string GetStartupJavascript()

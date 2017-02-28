@@ -20,7 +20,11 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
         public string RenderHtml()
         {
-            int licenseType = LicenseVerifier.Check();
+            return GetResponse(LicenseVerifier.Check());
+        }
+
+        private string GetResponse(int licenseType)
+        {
             string message = "";
 
             if (licenseType == 0)
@@ -29,11 +33,25 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
             if (licenseType == -1 || licenseType == 0) //trial
                 if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
                 {
-                    message +=  "This is a trial version of Highcharts for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
+                    message += "This is a trial version of Highcharts for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
                     return message;
                 }
 
             return message + GetStartupJavascript();
+        }
+
+        private string GetJsonResponse(int licenseType)
+        {
+            string message = "";
+
+            if (licenseType == -1 || licenseType == 0) //trial
+                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
+                {
+                    message += "Message:\"This is a trial version of Highcharts for ASP.NET MVC which has expired. Please contact sales@highsoft.com with any questions.\"";
+                    return "{"+message+"}";
+                }
+
+            return GetStartupOptions();
         }
 
         private string GetStartupJavascript()
@@ -61,6 +79,11 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
             sb.Append("</script>");
             return sb.ToString();            
+        }
+
+        public string GetJsonOptions()
+        {
+            return GetJsonResponse(LicenseVerifier.Check());
         }
 
         private string GetStartupOptions()
