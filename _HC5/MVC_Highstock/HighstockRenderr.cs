@@ -112,7 +112,9 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 drilldown["series"] = drilldownSeries;
             }
 
-            string json = new JavaScriptSerializer().Serialize(options);
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+            string json = serializer.Serialize(options);
             var functions = Highstock.functions;
 
             foreach (string key in functions.Keys)
