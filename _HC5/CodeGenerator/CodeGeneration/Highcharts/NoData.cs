@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Attr != Attr_DefaultValue) h.Add("attr",Attr);
-			if (Position.IsDirty()) h.Add("position",Position.ToHashtable());
+			if (Position.Count > 0) h.Add("position",Position);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			

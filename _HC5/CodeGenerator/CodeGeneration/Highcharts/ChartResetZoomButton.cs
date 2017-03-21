@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Position.IsDirty()) h.Add("position",Position.ToHashtable());
+			if (Position.Count > 0) h.Add("position",Position);
 			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo", Highcharts.FirstCharacterToLower(RelativeTo.ToString()));
 			if (Theme != Theme_DefaultValue) h.Add("theme",Theme);
 			

@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ResponsiveRules()
 		{
-			ChartOptions = ChartOptions_DefaultValue = "";
+			ChartOptions = ChartOptions_DefaultValue = null;
 			Condition = Condition_DefaultValue = new ResponsiveRulesCondition();
 			
 		}	
 		
 
 		/// <summary>
-		/// A full set of chart options to apply as overrides to the general chart options. The chart options are applied when the given rule is active.
+		/// <p>A full set of chart options to apply as overrides to the general chart options. The chart options are applied when the given rule is active.</p><p>A special case is configuration objects that take arrays, for example <a href="#xAxis">xAxis</a>, <a href="#yAxis">yAxis</a> or <a href="#series">series</a>. For these collections, an <code>id</code> option is used to map the new option set to an existing object. If an existing object of the same id is not found, the item of the same indexupdated. So for example, setting <code>chartOptions</code> with two series items without an <code>id</code>, will cause the existing chart's two series to be updated with respective options.</p>
 		/// </summary>
 		public Object ChartOptions { get; set; }
 		private Object ChartOptions_DefaultValue { get; set; }

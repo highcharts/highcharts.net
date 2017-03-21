@@ -21,8 +21,8 @@ public partial class generatoraspx : System.Web.UI.Page
 
     private void Clean()
     {
-        Directory.Delete(Server.MapPath("~/CodeGeneration/Highcharts"), true);
+        //Directory.Delete(Server.MapPath("~/CodeGeneration/Highcharts"));
         Directory.CreateDirectory(Server.MapPath("~/CodeGeneration/Highcharts"));
-        Directory.CreateDirectory(Server.MapPath("~/CodeGeneration/Highcharts/Enums/"));
+        Directory.CreateDirectory(Server.MapPath("~/CodeGeneration/Highcharts/Enums"));
     }
 }

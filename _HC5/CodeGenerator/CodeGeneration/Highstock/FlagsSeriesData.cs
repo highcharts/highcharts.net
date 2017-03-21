@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "undefined";
 			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = new FlagsSeriesDataEvents();
+			FillColor = FillColor_DefaultValue = "";
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
@@ -46,6 +47,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public FlagsSeriesDataEvents Events { get; set; }
 		private FlagsSeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The fill color of an individual flag. By default it inherits from the series color.
+		/// </summary>
+		public string FillColor { get; set; }
+		private string FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -97,6 +105,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
