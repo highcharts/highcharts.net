@@ -237,6 +237,8 @@ public class HighchartsAspNetMvc
         string enumTemplate = File.ReadAllText(Server.MapPath("~/CodeTemplates/Enum.tpl"));
         string fileName = Server.MapPath("~/CodeGeneration/" + ROOT_CLASS + "/Enums/" + GetClassNameFromItem(apiItem) + ".cs");
 
+        List<string> enumValues = new List<string>();
+
         string enumList = "";
         for (int i = 0; i < apiItem.Values.Count; i++)
         {
@@ -250,10 +252,20 @@ public class HighchartsAspNetMvc
                 if (_enumMappings[enumValue] != null)
                     enumValue = _enumMappings[enumValue] as string;
 
-                enumList += FirstCharToUpper(enumValue);
-                if (i < apiItem.Values.Count - 1)
-                    enumList += ", \n\t\t";
+                if (enumValues.Contains(enumValue))
+                    continue;
+
+                enumValues.Add(enumValue);
+
+                
             }
+        }
+
+        for(int i = 0; i < enumValues.Count; i++)
+        {
+            enumList += FirstCharToUpper(enumValues[i]);
+            if (i < enumValues.Count - 1)
+                enumList += ", \n\t\t";
         }
 
         enumTemplate = enumTemplate
