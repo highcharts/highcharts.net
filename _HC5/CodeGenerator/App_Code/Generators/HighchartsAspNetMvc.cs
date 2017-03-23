@@ -376,7 +376,7 @@ public class HighchartsAspNetMvc
             child.Description = "<p>When a series contains more points than this, we no longer expose information about individual points to screen readers.</p><p>Set to <code>null</code> to disable.</p>";
         }
 
-        if (propertyName == "Data")
+        if (propertyName == "Data" && child.Parent.ToLower() == "highcharts")
             returnType = "Data";
 
         return propertyTemplate
@@ -452,7 +452,6 @@ public class HighchartsAspNetMvc
         // Complex object with nested objects / properties
         if (child.IsParent)
         {
-            
             if ((child.Parent == "chart.resetZoomButton" || child.Parent == "credits" || child.Parent == "noData") && propertyName == "Position")
                 return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
 
@@ -465,10 +464,8 @@ public class HighchartsAspNetMvc
         else
         {
             if (propertyName == "PointDescriptionThreshold")
-            {
                 return "if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)\n\t\t\t{\n\t\t\t\tif (PointDescriptionThreshold != null)\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", PointDescriptionThreshold);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", false);\n\t\t\t}\n\t\t\t";
-            }
-
+            
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
     }
@@ -711,16 +708,22 @@ public class HighchartsAspNetMvc
 
         if (item.Title.ToLower() == "data" && item.Parent != null)
         {
-            //string result = item.Parent;
-            //if (_seriesMappings[result] != null)
-            //{
-            //    result = (string)_seriesMappings[result];
-            //}
-            //else
-            //    result = FirstCharToUpper(result);
-            //return "new List<" + result + "Data" + ">()";
-            return "new Data()";
+            if (item.Parent.ToLower() == "highcharts")
+                return "new Data()";
+
+            string result = item.Parent;
+            if (_seriesMappings[result] != null)
+            {
+                result = (string)_seriesMappings[result];
+            }
+            else
+                result = FirstCharToUpper(result);
+            return "new List<" + result + "Data" + ">()";
+            
         }
+
+        if (item.Title.ToLower() == "background" && item.Parent != null)
+            return "new List<Background>()";
 
         if (_propertyInitMappings[item.FullName] != null)
         {
