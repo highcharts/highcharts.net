@@ -376,6 +376,9 @@ public class HighchartsAspNetMvc
             child.Description = "<p>When a series contains more points than this, we no longer expose information about individual points to screen readers.</p><p>Set to <code>null</code> to disable.</p>";
         }
 
+        if (propertyName == "Data")
+            returnType = "Data";
+
         return propertyTemplate
          .Replace("{HighTemplate.Name}", propertyName)
          .Replace("{HighTemplate.Type}", returnType)
@@ -708,14 +711,15 @@ public class HighchartsAspNetMvc
 
         if (item.Title.ToLower() == "data" && item.Parent != null)
         {
-            string result = item.Parent;
-            if (_seriesMappings[result] != null)
-            {
-                result = (string)_seriesMappings[result];
-            }
-            else
-                result = FirstCharToUpper(result);
-            return "new List<" + result + "Data" + ">()";
+            //string result = item.Parent;
+            //if (_seriesMappings[result] != null)
+            //{
+            //    result = (string)_seriesMappings[result];
+            //}
+            //else
+            //    result = FirstCharToUpper(result);
+            //return "new List<" + result + "Data" + ">()";
+            return "new Data()";
         }
 
         if (_propertyInitMappings[item.FullName] != null)
