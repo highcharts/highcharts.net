@@ -620,7 +620,7 @@ public class HighchartsAspNetMvc
     {
         _lists.Add("Background");
         _lists.Add("MenuItem");
-        _lists.Add("Crosshair");
+        //_lists.Add("Crosshair");
         _lists.Add("Stops");
         _lists.Add("xAxis");
         _lists.Add("yAxis");
