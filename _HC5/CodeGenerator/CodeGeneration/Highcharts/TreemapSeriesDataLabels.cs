@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = null;
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = false;
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = null;
 			Format = Format_DefaultValue = "{y}";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = true;

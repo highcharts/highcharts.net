@@ -722,8 +722,11 @@ public class HighchartsAspNetMvc
             
         }
 
-        if (item.Title.ToLower() == "background" && item.Parent != null)
+        if (item.Title.ToLower() == "background" && item.Parent.ToLower() == "pane")
             return "new List<Background>()";
+
+        if (item.Title.ToLower() == "enabled" && item.Parent.ToLower() == "series<treemap>.datalabels")
+            return "null";
 
         if (_propertyInitMappings[item.FullName] != null)
         {
