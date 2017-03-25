@@ -372,6 +372,18 @@ public class HighstockAspNetMvc
         if (child.Values != null && child.Values.Count > 0)
             returnType = GetClassNameFromItem(child);
 
+        if (propertyName == "PointDescriptionThreshold")
+        {
+            returnType = "long?";
+            child.Description = "<p>When a series contains more points than this, we no longer expose information about individual points to screen readers.</p><p>Set to <code>null</code> to disable.</p>";
+        }
+
+        if (propertyName == "FillColor")
+            returnType = "object";
+
+        if (propertyName == "Data" && child.Parent.ToLower() == "highcharts")
+            returnType = "Data";
+
         return propertyTemplate
          .Replace("{HighTemplate.Name}", propertyName)
          .Replace("{HighTemplate.Type}", returnType)
@@ -442,13 +454,24 @@ public class HighstockAspNetMvc
             return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName), ROOT_CLASS);
         // Complex object with nested objects / properties
         if (child.IsParent)
+        {
+            if(child.Parent != null)
+            if ((child.Parent.ToLower().Contains("resetzoombutton") || child.Parent == "credits" || child.Parent == "noData") && propertyName == "Position")
+                return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
+
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+        }
         // Event (javascript function)
         if (child.ReturnType != null && (child.ReturnType == "Function" || child.ReturnType == "String|Function"))
             return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName), ROOT_CLASS);
         // Just a property
         else
+        {
+            if (propertyName == "PointDescriptionThreshold")
+                return "if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)\n\t\t\t{\n\t\t\t\tif (PointDescriptionThreshold != null)\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", PointDescriptionThreshold);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", false);\n\t\t\t}\n\t\t\t";
+
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+        }
     }
 
     private void GenerateClassesForLevel(int level)
@@ -699,6 +722,9 @@ public class HighstockAspNetMvc
                 result = FirstCharToUpper(result);
             return "new List<" + result + "Data" + ">()";
         }
+
+        if (item.Title.ToLower() == "fillcolor")
+            return "null";
 
         if (_propertyInitMappings[item.FullName] != null)
         {
