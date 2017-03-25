@@ -376,6 +376,9 @@ public class HighchartsAspNetMvc
             child.Description = "<p>When a series contains more points than this, we no longer expose information about individual points to screen readers.</p><p>Set to <code>null</code> to disable.</p>";
         }
 
+        if (propertyName == "FillColor")
+            returnType = "object";
+
         if (propertyName == "Data" && child.Parent.ToLower() == "highcharts")
             returnType = "Data";
 
@@ -726,6 +729,9 @@ public class HighchartsAspNetMvc
             return "new List<Background>()";
 
         if (item.Title.ToLower() == "enabled" && item.Parent.ToLower() == "series<treemap>.datalabels")
+            return "null";
+
+        if (item.Title.ToLower() == "fillcolor")
             return "null";
 
         if (_propertyInitMappings[item.FullName] != null)
