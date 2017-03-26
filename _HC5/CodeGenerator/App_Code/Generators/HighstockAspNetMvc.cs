@@ -464,9 +464,15 @@ public class HighstockAspNetMvc
         // Complex object with nested objects / properties
         if (child.IsParent)
         {
-            if(child.Parent != null)
-            if ((child.Parent.ToLower().Contains("resetzoombutton") || child.Parent == "credits" || child.Parent == "noData") && propertyName == "Position")
-                return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
+            if (child.Parent != null)
+            {
+                if ((child.Parent.ToLower().Contains("resetzoombutton") || child.Parent == "credits" || child.Parent == "noData") && propertyName == "Position")
+                    return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
+
+                //if (propertyName.ToLower().Contains("buttons"))
+                    if (propertyName == "Buttons" && child.Parent == "rangeSelector")
+                        return "if (Buttons != Buttons_DefaultValue)\n\t\t\t{\n\t\t\t\tList<Hashtable> buttons = new List<Hashtable>();\n\t\t\t\tforeach (var item in Buttons)\n\t\t\t\t\tbuttons.Add(item.ToHashtable());\n\n\t\t\t\th.Add(\"buttons\", buttons);\n\t\t\t}\n\t\t\t";
+            }
 
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
         }
@@ -482,9 +488,7 @@ public class HighstockAspNetMvc
             if (propertyName == "Series" && child.Parent == "navigator")
                 return "if (Series != Series_DefaultValue) h.Add(\"series\",Series.ToHashtable());\n\t\t\t";
 
-            if (propertyName == "buttons")
-            if (propertyName == "Buttons" && child.Parent == "RangeSelector")
-                return "if (Buttons != Buttons_DefaultValue)\n\t\t\t{\n\t\t\t\tList<Hashtable> buttons = new List<Hashtable>();\n\t\t\t\tforeach (var item in Buttons)\n\t\t\t\t\tbuttons.Add(item.ToHashtable());\n\t\t\t\t\th.Add(\"buttons\", buttons);\n\t\t\t}";
+            
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
@@ -641,7 +645,7 @@ public class HighstockAspNetMvc
     {
         _lists.Add("Background");
         _lists.Add("MenuItem");
-        _lists.Add("Crosshair");
+        //_lists.Add("Crosshair");
         _lists.Add("Data");
         _lists.Add("Stops");
         _lists.Add("xAxis");
