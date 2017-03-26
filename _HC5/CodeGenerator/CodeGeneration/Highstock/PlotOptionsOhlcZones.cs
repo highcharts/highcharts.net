@@ -47,8 +47,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Defines the fill color for the series (in area type series)
 		/// </summary>
-		public string FillColor { get; set; }
-		private string FillColor_DefaultValue { get; set; }
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>

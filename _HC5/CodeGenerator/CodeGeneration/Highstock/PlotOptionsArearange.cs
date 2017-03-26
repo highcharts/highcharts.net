@@ -20,7 +20,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = null;
 			Compare = Compare_DefaultValue = "undefined";
-			CompareBase = CompareBase_DefaultValue = PlotOptionsArearangeCompareBase.0;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsArearangeCursor.Null;
@@ -30,7 +29,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsArearangeEvents();
-			FillColor = FillColor_DefaultValue = "null";
+			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = .75;
 			GapSize = GapSize_DefaultValue = 0;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
@@ -75,7 +74,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>Enable or disable the initial animation when a series is displayed. The animation can also be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods.The following properties are supported:</p><dl>  <dt>duration</dt>  <dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd></dl><p>Due to poor performance, animation is disabled in old IE browsers for column charts and polar charts.</p>
+		/// <p>Enable or disable the initial animation when a series is displayed. The animation can also be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods.The following properties are supported:</p><dl>  <dt>duration</dt>  <dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/jquery/3.1.1/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd></dl><p>Due to poor performance, animation is disabled in old IE browsers for column charts and polar charts.</p>
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
@@ -107,13 +106,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Compare { get; set; }
 		private string Compare_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When <a href="#plotOptions.series.compare">compare</a> is <code>percent</code>, this option dictates whether to use 0 or 100 as the base of comparison.
-		/// </summary>
-		public PlotOptionsArearangeCompareBase CompareBase { get; set; }
-		private PlotOptionsArearangeCompareBase CompareBase_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -182,8 +174,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Fill color or gradient for the area. When <code>null</code>, the series' <code>color</code>  is  used with the series' <code>fillOpacity</code>.
 		/// </summary>
-		public string FillColor { get; set; }
-		private string FillColor_DefaultValue { get; set; }
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -341,7 +333,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to stack the values of each series on top of each other. Possible values are null to disable, "normal" to stack by value or "percent". When stacking is enabled, data must be sorted in ascending X order.
+		/// Whether to stack the values of each series on top of each other. Possible values are null to disable, "normal" to stack by value or "percent".
 		/// </summary>
 		public PlotOptionsArearangeStacking Stacking { get; set; }
 		private PlotOptionsArearangeStacking Stacking_DefaultValue { get; set; }
@@ -404,7 +396,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>An array defining zones within a series. Zones can be applied to the X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code> option.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">view live demo</a>).</p>
+		/// <p>An array defining zones within a series. Zones can be applied to the X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code> option.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/jquery/3.1.1/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">view live demo</a>).</p>
 		/// </summary>
 		public PlotOptionsArearangeZones Zones { get; set; }
 		private PlotOptionsArearangeZones Zones_DefaultValue { get; set; }
@@ -420,7 +412,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
-			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));

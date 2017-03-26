@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsSeriesMarkerStatesSelect()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = "null";
+			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#000000";
 			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = null;
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The fill color of the point marker.
 		/// </summary>
-		public string FillColor { get; set; }
-		private string FillColor_DefaultValue { get; set; }
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>

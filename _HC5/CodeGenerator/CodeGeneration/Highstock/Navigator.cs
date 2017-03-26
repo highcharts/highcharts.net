@@ -21,7 +21,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Margin = Margin_DefaultValue = new string[] {};
 			MaskFill = MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
 			MaskInside = MaskInside_DefaultValue = true;
-			Opposite = Opposite_DefaultValue = false;
 			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
 			OutlineWidth = OutlineWidth_DefaultValue = 2;
 			Series = Series_DefaultValue = null;
@@ -81,13 +80,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// When the chart is inverted, whether to draw the navigator on the opposite side.
-		/// </summary>
-		public bool? Opposite { get; set; }
-		private bool? Opposite_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the line marking the currently zoomed area in the navigator.
 		/// </summary>
 		public string OutlineColor { get; set; }
@@ -104,8 +96,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Options for the navigator series. Available options are the same as any series, documented at <a class="internal" href="#plotOptions.series">plotOptions</a> and <a class="internal" href="#series">series</a>.</p><p>Unless data is explicitly defined on navigator.series, the data is borrowed from the first series in the chart.</p><p>Default series options for the navigator series are:</p><pre>series: {type: 'areaspline',color: '#4572A7',fillOpacity: 0.05,dataGrouping: {smoothed: true},lineWidth: 1,marker: {enabled: false}}</pre>
 		/// </summary>
-		public Object Series { get; set; }
-		private Object Series_DefaultValue { get; set; }
+		public Series Series { get; set; }
+		private Series Series_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -133,10 +125,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MaskFill != MaskFill_DefaultValue) h.Add("maskFill",MaskFill);
 			if (MaskInside != MaskInside_DefaultValue) h.Add("maskInside",MaskInside);
-			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (OutlineColor != OutlineColor_DefaultValue) h.Add("outlineColor",OutlineColor);
 			if (OutlineWidth != OutlineWidth_DefaultValue) h.Add("outlineWidth",OutlineWidth);
-			if (Series != Series_DefaultValue) h.Add("series",Series);
+			if (Series != Series_DefaultValue) h.Add("series",Series.ToHashtable());
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

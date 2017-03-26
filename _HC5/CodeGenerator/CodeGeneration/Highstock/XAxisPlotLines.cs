@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The dashing or dot style for the plot line. For possible values see <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this overview</a>.
+		/// The dashing or dot style for the plot line. For possible values see <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this overview</a>.
 		/// </summary>
 		public XAxisPlotLinesDashStyle DashStyle { get; set; }
 		private XAxisPlotLinesDashStyle DashStyle_DefaultValue { get; set; }

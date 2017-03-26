@@ -161,7 +161,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The dash or dot style of the grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
+		/// The dash or dot style of the grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
 		/// </summary>
 		public XAxisGridLineDashStyle GridLineDashStyle { get; set; }
 		private XAxisGridLineDashStyle GridLineDashStyle_DefaultValue { get; set; }
@@ -266,7 +266,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The dash or dot style of the minor grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
+		/// The dash or dot style of the minor grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
 		/// </summary>
 		public XAxisMinorGridLineDashStyle MinorGridLineDashStyle { get; set; }
 		private XAxisMinorGridLineDashStyle MinorGridLineDashStyle_DefaultValue { get; set; }
@@ -434,7 +434,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>If tickInterval is <code>null</code> this option sets the approximate pixel interval of the tick marks.</p><p>The tick interval is also influenced by the <a href="#xAxis.minTickInterval">minTickInterval</a> option, that, by default prevents ticks from being denser than the data points.</p><p>Defaults to <code>72</code>  for the Y axis and <code>100</code> for the X axis.</p>
+		/// If tickInterval is <code>null</code> this option sets the approximate pixel interval of the tick marks. Not applicable to categorized axis. Defaults to <code>72</code>  for the Y axis and <code>100</code> forthe X axis.
 		/// </summary>
 		public double? TickPixelInterval { get; set; }
 		private double? TickPixelInterval_DefaultValue { get; set; }
@@ -491,7 +491,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Crosshair != Crosshair_DefaultValue) h.Add("crosshair", HashifyList(Crosshair));
+			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);

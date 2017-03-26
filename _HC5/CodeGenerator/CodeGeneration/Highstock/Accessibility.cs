@@ -78,10 +78,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>When a series contains more points than this, we no longer expose information about individual points to screen readers.</p><p>Set to <code>false</code> to disable.</p>
+		/// <p>When a series contains more points than this, we no longer expose information about individual points to screen readers.</p><p>Set to <code>null</code> to disable.</p>
 		/// </summary>
-		public Number|Boolean PointDescriptionThreshold { get; set; }
-		private Number|Boolean PointDescriptionThreshold_DefaultValue { get; set; }
+		public long? PointDescriptionThreshold { get; set; }
+		private long? PointDescriptionThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -109,7 +109,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointDateFormat != PointDateFormat_DefaultValue) h.Add("pointDateFormat",PointDateFormat);
 			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highstock.AddFunction("AccessibilityPointDateFormatter.pointDateFormatter", PointDateFormatter); }  
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("AccessibilityPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
-			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue) h.Add("pointDescriptionThreshold",PointDescriptionThreshold);
+			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)
+			{
+				if (PointDescriptionThreshold != null)
+					h.Add("pointDescriptionThreshold", PointDescriptionThreshold);
+				else
+					h.Add("pointDescriptionThreshold", false);
+			}
 			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highstock.AddFunction("AccessibilityScreenReaderSectionFormatter.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
 			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highstock.AddFunction("AccessibilitySeriesDescriptionFormatter.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
 			

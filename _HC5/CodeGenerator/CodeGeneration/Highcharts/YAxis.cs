@@ -565,7 +565,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Crosshair != Crosshair_DefaultValue) h.Add("crosshair", HashifyList(Crosshair));
+			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);

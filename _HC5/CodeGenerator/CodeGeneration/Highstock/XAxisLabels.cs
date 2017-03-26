@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public XAxisLabels()
 		{
-			Align = Align_DefaultValue = XAxisLabelsAlign.Null;
+			Align = Align_DefaultValue = XAxisLabelsAlign.Center;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{value}";
@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// What part of the string the given position is anchored to. If <code>left</code>, the left side of the string is at the axis position. Can be one of <code>"left"</code>, <code>"center"</code> or <code>"right"</code>. Defaults to an intelligent guess based on which side of the chart the axis is on and the rotation of the label.
+		/// What part of the string the given position is anchored to. Can be one of <code>"left"</code>, <code>"center"</code> or <code>"right"</code>. Defaults to an intelligent guess based on which side of the chart the axis is on and the rotation of the label.
 		/// </summary>
 		public XAxisLabelsAlign Align { get; set; }
 		private XAxisLabelsAlign Align_DefaultValue { get; set; }
@@ -60,7 +60,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>Callback JavaScript function to format the label. The value is given by <code>this.value</code>. Additional properties for <code>this</code> are <code>axis</code>, <code>chart</code>, <code>isFirst</code> and <code>isLast</code>. The value of the default label formatter can be retrieved by calling <code>this.axis.defaultLabelFormatter.call(this)</code> within the function.</p><p>Defaults to: <pre>function() {return this.value;}</pre></p>
+		/// Callback JavaScript function to format the label. The value is  given by <code>this.value</code>. Additional properties for <code>this</code> are <code>axis</code>, <code>chart</code>, <code>isFirst</code> and <code>isLast</code>. Defaults to: <pre>function() {return this.value;}</pre>
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }

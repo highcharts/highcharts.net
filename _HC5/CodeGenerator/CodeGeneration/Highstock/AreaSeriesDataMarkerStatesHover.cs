@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AreaSeriesDataMarkerStatesHover()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = "null";
+			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
@@ -35,8 +35,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The fill color of the point marker. When <code>null</code>, the series' or point's color is used.
 		/// </summary>
-		public string FillColor { get; set; }
-		private string FillColor_DefaultValue { get; set; }
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
