@@ -18,7 +18,7 @@ public partial class MvcHighstock : System.Web.UI.Page
 
     private void Clean()
     {
-        Directory.Delete(Server.MapPath("~/CodeGeneration/Highstock"), true);
+        //Directory.Delete(Server.MapPath("~/CodeGeneration/Highstock"), true);
         Directory.CreateDirectory(Server.MapPath("~/CodeGeneration/Highstock"));
         Directory.CreateDirectory(Server.MapPath("~/CodeGeneration/Highstock/Enums/"));
     }

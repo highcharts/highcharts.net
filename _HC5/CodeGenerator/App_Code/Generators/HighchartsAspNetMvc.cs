@@ -436,8 +436,8 @@ public class HighchartsAspNetMvc
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
         string customPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToJSON());\n\t\t\t";
 
-        if (propertyName == "Data" && child.FullName != "data")
-            return "";
+        //if (propertyName == "Data" && child.FullName != "data")
+        //    return "";
 
         // fully qualified names that are collections
         if (_lists.Contains(child.FullName))
@@ -624,6 +624,7 @@ public class HighchartsAspNetMvc
         _lists.Add("Background");
         _lists.Add("MenuItem");
         //_lists.Add("Crosshair");
+        _lists.Add("Data");
         _lists.Add("Stops");
         _lists.Add("xAxis");
         _lists.Add("yAxis");
@@ -721,9 +722,11 @@ public class HighchartsAspNetMvc
             }
             else
                 result = FirstCharToUpper(result);
-            return "new List<" + result + "Data" + ">()";
-            
+            return "null";// new List<" + result + "Data" + ">()";
         }
+
+        if (item.Title.ToLower() == "fillcolor")
+            return "null";
 
         if (item.Title.ToLower() == "background" && item.Parent.ToLower() == "pane")
             return "new List<Background>()";
