@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
-			ShowLastLabel = ShowLastLabel_DefaultValue = true;
+			ShowLastLabel = ShowLastLabel_DefaultValue = null;
 			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
 			StackLabels = StackLabels_DefaultValue = new YAxisStackLabels();
@@ -184,7 +184,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The dash or dot style of the grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
+		/// The dash or dot style of the grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
 		/// </summary>
 		public YAxisGridLineDashStyle GridLineDashStyle { get; set; }
 		private YAxisGridLineDashStyle GridLineDashStyle_DefaultValue { get; set; }
@@ -268,7 +268,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// <p>The minimum value of the axis. If <code>null</code> the min value is automatically calculated.</p><p>If the <code>startOnTick</code> option is true, the <code>min</code> value might be rounded down.</p><p>The automatically calculated minimum value is also affected by <a href="#yAxis.floor">floor</a>, <a href="#yAxis.softMin">softMin</a>, <a href="#yAxis.minPadding">minPadding</a>, <a href="#yAxis.minRange">minRange</a> as well as <a href="#plotOptions.series.threshold">series.threshold</a> and <a href="#plotOptions.series.softThreshold">series.softThreshold</a>.</p>
+		/// <p>The minimum value of the axis. If <code>null</code> the min value is automatically calculated.</p><p>If the <code>startOnTick</code> option is true (default), the <code>min</code> value might be rounded down.</p><p>The automatically calculated minimum value is also affected by <a href="#yAxis.floor">floor</a>, <a href="#yAxis.softMin">softMin</a>, <a href="#yAxis.minPadding">minPadding</a>, <a href="#yAxis.minRange">minRange</a> as well as <a href="#plotOptions.series.threshold">series.threshold</a> and <a href="#plotOptions.series.softThreshold">series.softThreshold</a>.</p>
 		/// </summary>
 		public double? Min { get; set; }
 		private double? Min_DefaultValue { get; set; }
@@ -310,7 +310,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The dash or dot style of the minor grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
+		/// The dash or dot style of the minor grid lines. For possible values, see <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this demonstration</a>.
 		/// </summary>
 		public YAxisMinorGridLineDashStyle MinorGridLineDashStyle { get; set; }
 		private YAxisMinorGridLineDashStyle MinorGridLineDashStyle_DefaultValue { get; set; }
@@ -415,14 +415,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to show the last tick label.
+		/// Whether to show the last tick label. Defaults to <code>true</code> on cartesian charts, and <code>false</code> on polar charts.
 		/// </summary>
 		public bool? ShowLastLabel { get; set; }
 		private bool? ShowLastLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A soft maximum for the axis. If the series data maximum is greater than this, the axis will stay at this maximum, but if the series data maximum is higher, the axis will flex to show all data.
+		/// A soft maximum for the axis. If the series data maximum is less than this, the axis will stay at this maximum, but if the series data maximum is higher, the axis will flex to show all data.
 		/// </summary>
 		public double? SoftMax { get; set; }
 		private double? SoftMax_DefaultValue { get; set; }
@@ -492,7 +492,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If tickInterval is <code>null</code> this option sets the approximate pixel interval of the tick marks. Not applicable to categorized axis. Defaults to <code>72</code>  for the Y axis and <code>100</code> forthe X axis.
+		/// <p>If tickInterval is <code>null</code> this option sets the approximate pixel interval of the tick marks. Not applicable to categorized axis.</p><p>The tick interval is also influenced by the <a href="#xAxis.minTickInterval">minTickInterval</a> option, that, by default prevents ticks from being denser than the data points.</p><p>Defaults to <code>72</code>  for the Y axis and <code>100</code> for the X axis.</p>
 		/// </summary>
 		public double? TickPixelInterval { get; set; }
 		private double? TickPixelInterval_DefaultValue { get; set; }

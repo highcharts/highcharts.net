@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Height = Height_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
-			Radius = Radius_DefaultValue = 4;
 			States = States_DefaultValue = new PlotOptionsBubbleMarkerStates();
 			Symbol = Symbol_DefaultValue = null;
 			Width = Width_DefaultValue = null;
@@ -63,13 +62,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The radius of the point marker.
-		/// </summary>
-		public double? Radius { get; set; }
-		private double? Radius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsBubbleMarkerStates States { get; set; }
@@ -99,7 +91,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);

@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to enable the legend navigation. In most cases, disabling the navigation results in an unwanted overflow.
+		/// <p>Whether to enable the legend navigation. In most cases, disabling the navigation results in an unwanted overflow.</p><p>See also the <a href="http://www.highcharts.com/plugin-registry/single/8/Adapt-Chart-To-Legend">adapt chart to legend</a> plugin for a solution to extend the chart height to make room for the legend, optionally in exported charts only.</p>
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }

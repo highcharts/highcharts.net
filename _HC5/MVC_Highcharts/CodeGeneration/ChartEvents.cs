@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Drillupall = Drillupall_DefaultValue = "";
 			Load = Load_DefaultValue = "";
 			Redraw = Redraw_DefaultValue = "";
+			Render = Render_DefaultValue = "";
 			Selection = Selection_DefaultValue = "";
 			
 		}	
@@ -92,6 +93,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Fires after initial load of the chart (directly after the <code>load</code> event), and after each redraw (directly after the <code>redraw</code> event).
+		/// </summary>
+		public string Render { get; set; }
+		private string Render_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// <p>Fires when an area of the chart has been selected. Selection is enabled by setting the chart's zoomType. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts. The default action for the  selection event is to zoom the  chart to the selected area. It can be prevented by calling  <code>event.preventDefault()</code>.</p> <p>Information on the selected area can be found through <code>event.xAxis</code> and  <code>event.yAxis</code>, which are arrays containing the axes of each dimension and each axis' min and max values. The primary axes are <code>event.xAxis[0]</code> and <code>event.yAxis[0]</code>. Remember the unit of a datetime axis is milliseconds since 1970-01-01 00:00:00.</p> <pre>selection: function(event) {// log the min and max of the primary, datetime x-axisconsole.log(Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', event.xAxis[0].min),Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', event.xAxis[0].max));// log the min and max of the y axisconsole.log(event.yAxis[0].min, event.yAxis[0].max);}</pre>
 		/// </summary>
 		public string Selection { get; set; }
@@ -111,6 +119,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Drillupall != Drillupall_DefaultValue) { h.Add("drillupall",Drillupall); Highcharts.AddFunction("ChartEventsDrillupall.drillupall", Drillupall); }  
 			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("ChartEventsLoad.load", Load); }  
 			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("ChartEventsRedraw.redraw", Redraw); }  
+			if (Render != Render_DefaultValue) { h.Add("render",Render); Highcharts.AddFunction("ChartEventsRender.render", Render); }  
 			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highcharts.AddFunction("ChartEventsSelection.selection", Selection); }  
 			
 

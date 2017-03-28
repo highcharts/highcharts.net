@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreasplinerangeSeriesStatesHover()
 		{
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Enabled = Enabled_DefaultValue = true;
 			Halo = Halo_DefaultValue = new AreasplinerangeSeriesStatesHoverHalo();
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -21,6 +22,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// Animation setting for hovering the graph in line-type series.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend..
@@ -54,6 +62,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

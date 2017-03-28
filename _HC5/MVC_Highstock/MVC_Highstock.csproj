@@ -185,6 +185,7 @@
     <Compile Include="CodeGeneration\ColumnSeriesZones.cs" />
     <Compile Include="CodeGeneration\Credits.cs" />
     <Compile Include="CodeGeneration\CreditsPosition.cs" />
+    <Compile Include="CodeGeneration\Enums\ArearangeSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesDataLabelsAlign.cs" />
@@ -195,6 +196,7 @@
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesStep.cs" />
     <Compile Include="CodeGeneration\Enums\ArearangeSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\AreaSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesDataLabelsAlign.cs" />
@@ -205,6 +207,7 @@
     <Compile Include="CodeGeneration\Enums\AreaSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesStep.cs" />
     <Compile Include="CodeGeneration\Enums\AreaSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesDataLabelsAlign.cs" />
@@ -214,6 +217,7 @@
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplinerangeSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\AreasplineSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesDataLabelsAlign.cs" />
@@ -223,6 +227,7 @@
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\AreasplineSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\CandleStickSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\CandleStickSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\CandleStickSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\CandleStickSeriesDataLabelsOverflow.cs" />
@@ -235,12 +240,14 @@
     <Compile Include="CodeGeneration\Enums\ChartResetZoomButtonRelativeTo.cs" />
     <Compile Include="CodeGeneration\Enums\ChartType.cs" />
     <Compile Include="CodeGeneration\Enums\ChartZoomType.cs" />
+    <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnrangeSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\ColumnSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ColumnSeriesDataLabelsOverflow.cs" />
@@ -253,6 +260,7 @@
     <Compile Include="CodeGeneration\Enums\ExportingButtonsContextButtonAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ExportingButtonsContextButtonVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ExportingType.cs" />
+    <Compile Include="CodeGeneration\Enums\FlagsSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\FlagsSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\FlagsSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\FlagsSeriesDataLabelsOverflow.cs" />
@@ -265,6 +273,7 @@
     <Compile Include="CodeGeneration\Enums\LegendAlign.cs" />
     <Compile Include="CodeGeneration\Enums\LegendLayout.cs" />
     <Compile Include="CodeGeneration\Enums\LegendVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\LineSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\LineSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\LineSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\LineSeriesDataLabelsAlign.cs" />
@@ -279,12 +288,14 @@
     <Compile Include="CodeGeneration\Enums\NavigationButtonOptionsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\NoDataPositionAlign.cs" />
     <Compile Include="CodeGeneration\Enums\NoDataPositionVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\OhlcSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsAreaCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaDataLabelsAlign.cs" />
@@ -292,6 +303,7 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaPointIntervalUnit.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeDataLabelsAlign.cs" />
@@ -301,6 +313,7 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangePointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsArearangeStep.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineDataLabelsAlign.cs" />
@@ -308,6 +321,7 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinePointIntervalUnit.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangeCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangeCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangeDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplinerangeDataLabelsAlign.cs" />
@@ -319,22 +333,26 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreasplineStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsAreaStep.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickPointIntervalUnit.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsColumnCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnPointIntervalUnit.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsColumnrangeCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnrangeCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnrangeDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnrangeDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnrangeDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnrangePointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnStacking.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsDataLabelsOverflow.cs" />
@@ -343,6 +361,7 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsShape.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFlagsTextAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsLineCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsLineCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsLineDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsLineDataLabelsAlign.cs" />
@@ -352,11 +371,13 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsLinePointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsLineStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsLineStep.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsOhlcCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsOhlcCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsOhlcDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsOhlcDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsOhlcDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsOhlcPointIntervalUnit.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsPolygonCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPolygonCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPolygonDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPolygonDataLabelsAlign.cs" />
@@ -364,6 +385,7 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsPolygonDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPolygonPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPolygonStacking.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsScatterCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsScatterCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsScatterDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsScatterDataLabelsAlign.cs" />
@@ -371,6 +393,7 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsScatterDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsScatterPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsScatterStacking.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesDataLabelsAlign.cs" />
@@ -380,6 +403,7 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSeriesStep.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsSplineCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplineCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplineDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplineDataLabelsAlign.cs" />
@@ -388,6 +412,7 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplineLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplinePointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSplineStacking.cs" />
+    <Compile Include="CodeGeneration\Enums\PolygonSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\PolygonSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PolygonSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PolygonSeriesDataLabelsAlign.cs" />
@@ -397,6 +422,7 @@
     <Compile Include="CodeGeneration\Enums\PolygonSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PolygonSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\RangeSelectorButtonsType.cs" />
+    <Compile Include="CodeGeneration\Enums\ScatterSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\ScatterSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\ScatterSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\ScatterSeriesDataLabelsAlign.cs" />
@@ -406,6 +432,7 @@
     <Compile Include="CodeGeneration\Enums\ScatterSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\ScatterSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\SeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\SplineSeriesCompareBase.cs" />
     <Compile Include="CodeGeneration\Enums\SplineSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\SplineSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\SplineSeriesDataLabelsAlign.cs" />

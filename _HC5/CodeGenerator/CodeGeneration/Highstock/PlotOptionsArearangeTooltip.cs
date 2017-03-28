@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether the tooltip should follow the finger as it moves on a touch device. In order to take effect, <a href="#chart.zoomType">chart.zoomType</a> and <a href="#chart.pinchType">chart.pinchType</a> must be disabled.
+		/// Whether the tooltip should follow the finger as it moves on a touch device. If this is <code>true</code> and <a href="#chart.panning">chart.panning</a> is set,<code>followTouchMove</code> will take over one-finger touches, so the user needs to use two fingers for zooming and panning.
 		/// </summary>
 		public bool? FollowTouchMove { get; set; }
 		private bool? FollowTouchMove_DefaultValue { get; set; }

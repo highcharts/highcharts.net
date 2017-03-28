@@ -14,13 +14,43 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesStatesHover()
 		{
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			BorderColor = BorderColor_DefaultValue = "";
+			Brightness = Brightness_DefaultValue = 0.1;
+			Color = Color_DefaultValue = "undefined";
 			Enabled = Enabled_DefaultValue = true;
-			Halo = Halo_DefaultValue = new TreemapSeriesStatesHoverHalo();
-			LineWidth = LineWidth_DefaultValue = 2;
-			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
+			Opacity = Opacity_DefaultValue = 0.75;
 			
 		}	
 		
+
+		/// <summary>
+		/// Animation setting for hovering the graph in line-type series.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A specific border color for the hovered point. Defaults to inherit the normal state border color.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the hover brightening is by default replaced with a fill-opacity set in the <code>.highcharts-point:hover</code> rule.</p>
+		/// </summary>
+		public double? Brightness { get; set; }
+		private double? Brightness_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A specific color for the hovered point.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend..
@@ -30,34 +60,22 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// <p>Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the halo is styled with the <code>.highcharts-halo</code> class, with colors inherited from <code>.highcharts-color-{n}</code>.</p>
+		/// The opacity of a point in treemap. When a point has children, the visibility of the children is determined by the opacity. 
 		/// </summary>
-		public TreemapSeriesStatesHoverHalo Halo { get; set; }
-		private TreemapSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel with of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The additional line width for the graph of a hovered series.
-		/// </summary>
-		public double? LineWidthPlus { get; set; }
-		private double? LineWidthPlus_DefaultValue { get; set; }
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
+			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			
 
 			return h;

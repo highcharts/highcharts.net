@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ColorCount = ColorCount_DefaultValue = 10;
 			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = new ChartEvents();
-			Height = Height_DefaultValue = null;
+			Height = Height_DefaultValue = "null";
 			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
 			Inverted = Inverted_DefaultValue = false;
 			Margin = Margin_DefaultValue = new string[] {};
@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MarginRight = MarginRight_DefaultValue = null;
 			MarginTop = MarginTop_DefaultValue = null;
 			Options3d = Options3d_DefaultValue = new ChartOptions3d();
-			PanKey = PanKey_DefaultValue = "";
+			PanKey = PanKey_DefaultValue = ChartPanKey.Null;
 			Panning = Panning_DefaultValue = false;
 			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
 			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = null;
@@ -69,7 +69,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// <p>Set the overall animation for all chart updating. Animation can be disabled throughout the chart by setting it to false here. It can be overridden for each individual API method as a function parameter. The only animation not affected by this option is the  initial series animation, see <a class="internal" href="#plotOptions.series.animation">plotOptions.series.animation</a>.</p>  <p>The animation can either be set as a boolean or a configuration object. If <code>true</code>, it will use the 'swing' jQuery easing and a duration of 500 ms. If used as a configuration object, the following properties are supported:  </p><dl> <dt>duration</dt> <dd>The duration of the animation in milliseconds.</dd>  <dt>easing</dt> <dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/jquery/3.1.1/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd> </dl>
+		/// <p>Set the overall animation for all chart updating. Animation can be disabled throughout the chart by setting it to false here. It can be overridden for each individual API method as a function parameter. The only animation not affected by this option is the  initial series animation, see <a class="internal" href="#plotOptions.series.animation">plotOptions.series.animation</a>.</p>  <p>The animation can either be set as a boolean or a configuration object. If <code>true</code>, it will use the 'swing' jQuery easing and a duration of 500 ms. If used as a configuration object, the following properties are supported:  </p><dl> <dt>duration</dt> <dd>The duration of the animation in milliseconds.</dd>  <dt>easing</dt> <dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd> </dl>
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
@@ -132,10 +132,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An explicit height for the chart. By default (when <code>null</code>) the height is calculated from the offset height of the containing element, or 400 pixels if the containing element's height is 0.
+		/// <p>An explicit height for the chart. If a <em>number</em>, the height is given in pixels. If given a <em>percentage string</em> (for example <code>'56%'</code>), the height is given as the percentage of the actual chart width. This allows for preserving the aspect ratio across responsive sizes.</p><p>By default (when <code>null</code>) the height is calculated from the offset height of the containing element, or 400 pixels if the containing element's height is 0.</p>
 		/// </summary>
-		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
+		public string Height { get; set; }
+		private string Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -195,14 +195,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allows setting a key to switch between zooming and panning. 
+		/// Allows setting a key to switch between zooming and panning. Can be one of <code>alt</code>, <code>ctrl</code>, <code>meta</code> (the command key on Mac and Windows key on Windows) or <code>shift</code>. The keys are mapped directly to the key properties of the click event argument (<code>event.altKey</code>, <code>event.ctrlKey</code>, <code>event.metaKey</code> and <code>event.shiftKey</code>).
 		/// </summary>
-		public string PanKey { get; set; }
-		private string PanKey_DefaultValue { get; set; }
+		public ChartPanKey PanKey { get; set; }
+		private ChartPanKey PanKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Allow panning in a chart. Best used with <a href="#chart.panKey">panKey</a> to combine zooming and panning.
+		/// <p>Allow panning in a chart. Best used with <a href="#chart.panKey">panKey</a> to combine zooming and panning.</p><p>On touch devices, when the <a href="#tooltip.followTouchMove">tooltip.followTouchMove</a> option is <code>true</code> (default), panning requires two fingers. To allow panning with one finger, set <code>followTouchMove</code> to <code>false</code>.</p>
 		/// </summary>
 		public bool? Panning { get; set; }
 		private bool? Panning_DefaultValue { get; set; }
@@ -385,7 +385,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MarginRight != MarginRight_DefaultValue) h.Add("marginRight",MarginRight);
 			if (MarginTop != MarginTop_DefaultValue) h.Add("marginTop",MarginTop);
 			if (Options3d.IsDirty()) h.Add("options3d",Options3d.ToHashtable());
-			if (PanKey != PanKey_DefaultValue) h.Add("panKey",PanKey);
+			if (PanKey != PanKey_DefaultValue) h.Add("panKey", Highcharts.FirstCharacterToLower(PanKey.ToString()));
 			if (Panning != Panning_DefaultValue) h.Add("panning",Panning);
 			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", Highcharts.FirstCharacterToLower(PinchType.ToString()));
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);

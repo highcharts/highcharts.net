@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
+			ColorIndex = ColorIndex_DefaultValue = null;
 			Cursor = Cursor_DefaultValue = PlotOptionsSolidgaugeCursor.Null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsSolidgaugeDataLabels();
 			Description = Description_DefaultValue = "undefined";
@@ -27,6 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Linecap = Linecap_DefaultValue = PlotOptionsSolidgaugeLinecap.Round;
 			Overshoot = Overshoot_DefaultValue = 0;
 			Point = Point_DefaultValue = new PlotOptionsSolidgaugePoint();
+			Rounded = Rounded_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
@@ -40,7 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Enable or disable the initial animation when a series is displayed. The animation can also be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods.The following properties are supported:</p><dl>  <dt>duration</dt>  <dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/jquery/3.1.1/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd></dl><p>Due to poor performance, animation is disabled in old IE browsers for column charts and polar charts.</p>
+		/// <p>Enable or disable the initial animation when a series is displayed. The animation can also be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods.The following properties are supported:</p><dl>  <dt>duration</dt>  <dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd></dl><p>Due to poor performance, animation is disabled in old IE browsers for column charts and polar charts.</p>
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
@@ -58,6 +60,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A specific color index to use for the series, so its graphic representations are given the class name <code>highcharts-color-{n}</code>.
+		/// </summary>
+		public double? ColorIndex { get; set; }
+		private double? ColorIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -131,6 +140,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Wether to draw rounded edges on the gauge.
+		/// </summary>
+		public bool? Rounded { get; set; }
+		private bool? Rounded_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to select the series initially. If <code>showCheckbox</code> is true, the checkbox next to the series name will be checked for a selected series.
 		/// </summary>
 		public bool? Selected { get; set; }
@@ -193,6 +209,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -203,6 +220,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (Rounded != Rounded_DefaultValue) h.Add("rounded",Rounded);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);

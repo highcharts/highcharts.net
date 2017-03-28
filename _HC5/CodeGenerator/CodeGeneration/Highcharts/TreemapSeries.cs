@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "null";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
+			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = TreemapSeriesCursor.Null;
@@ -34,6 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new TreemapSeriesEvents();
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Id = Id_DefaultValue = "";
+			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			Index = Index_DefaultValue = null;
 			InteractByLeaf = InteractByLeaf_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
@@ -45,6 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			Name = Name_DefaultValue = null;
+			Opacity = Opacity_DefaultValue = 0.15;
 			Point = Point_DefaultValue = new TreemapSeriesPoint();
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -88,7 +91,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// <p>Enable or disable the initial animation when a series is displayed. The animation can also be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods.The following properties are supported:</p><dl>  <dt>duration</dt>  <dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/jquery/3.1.1/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd></dl><p>Due to poor performance, animation is disabled in old IE browsers for column charts and polar charts.</p>
+		/// <p>Enable or disable the initial animation when a series is displayed. The animation can also be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods.The following properties are supported:</p><dl>  <dt>duration</dt>  <dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd></dl><p>Due to poor performance, animation is disabled in old IE browsers for column charts and polar charts.</p>
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
@@ -134,6 +137,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? ColorByPoint { get; set; }
 		private bool? ColorByPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A specific color index to use for the series, so its graphic representations are given the class name <code>highcharts-color-{n}</code>.
+		/// </summary>
+		public double? ColorIndex { get; set; }
+		private double? ColorIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -207,6 +217,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to ignore hidden points when the layout algorithm runs. If <code>false</code>, hidden points will leave open spaces.
+		/// </summary>
+		public bool? IgnoreHiddenPoint { get; set; }
+		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The index of the series in the chart, affecting the internal index in the <code>chart.series</code> array, the visible Z index as well as the order in the legend.
 		/// </summary>
 		public double? Index { get; set; }
@@ -242,7 +259,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The sequential index of the series in the legend.  <div class="demo">Try it:  <a href="http://jsfiddle.net/gh/get/jquery/2/highcharts/highcharts/tree/master/samples/highcharts/series/legendindex/" target="_blank">Legend in opposite order</a> </div>.
+		/// The sequential index of the series in the legend.  <div class="demo">Try it:  <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/series/legendindex/" target="_blank">Legend in opposite order</a> </div>.
 		/// </summary>
 		public double? LegendIndex { get; set; }
 		private double? LegendIndex_DefaultValue { get; set; }
@@ -281,6 +298,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The opacity of a point in treemap. When a point has children, the visibility of the children is determined by the opacity. 
+		/// </summary>
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -396,7 +420,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// <p>An array defining zones within a series. Zones can be applied to the X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code> option.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/jquery/3.1.1/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">view live demo</a>).</p>
+		/// <p>An array defining zones within a series. Zones can be applied to the X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code> option.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">view live demo</a>).</p>
 		/// </summary>
 		public TreemapSeriesZones Zones { get; set; }
 		private TreemapSeriesZones Zones_DefaultValue { get; set; }
@@ -416,6 +440,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
+			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
@@ -426,6 +451,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (InteractByLeaf != InteractByLeaf_DefaultValue) h.Add("interactByLeaf",InteractByLeaf);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
@@ -437,6 +463,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);

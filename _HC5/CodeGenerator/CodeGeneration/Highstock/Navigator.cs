@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Margin = Margin_DefaultValue = new string[] {};
 			MaskFill = MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
 			MaskInside = MaskInside_DefaultValue = true;
+			Opposite = Opposite_DefaultValue = false;
 			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
 			OutlineWidth = OutlineWidth_DefaultValue = 2;
 			Series = Series_DefaultValue = null;
@@ -80,6 +81,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When the chart is inverted, whether to draw the navigator on the opposite side.
+		/// </summary>
+		public bool? Opposite { get; set; }
+		private bool? Opposite_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color of the line marking the currently zoomed area in the navigator.
 		/// </summary>
 		public string OutlineColor { get; set; }
@@ -125,6 +133,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MaskFill != MaskFill_DefaultValue) h.Add("maskFill",MaskFill);
 			if (MaskInside != MaskInside_DefaultValue) h.Add("maskInside",MaskInside);
+			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (OutlineColor != OutlineColor_DefaultValue) h.Add("outlineColor",OutlineColor);
 			if (OutlineWidth != OutlineWidth_DefaultValue) h.Add("outlineWidth",OutlineWidth);
 			if (Series != Series_DefaultValue) h.Add("series",Series.ToHashtable());

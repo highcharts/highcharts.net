@@ -184,6 +184,7 @@
     <Compile Include="CodeGeneration\ChartOptions3dFrameBack.cs" />
     <Compile Include="CodeGeneration\ChartOptions3dFrameBottom.cs" />
     <Compile Include="CodeGeneration\ChartOptions3dFrameSide.cs" />
+    <Compile Include="CodeGeneration\ChartPanKey.cs" />
     <Compile Include="CodeGeneration\ChartResetZoomButton.cs" />
     <Compile Include="CodeGeneration\ChartResetZoomButtonPosition.cs" />
     <Compile Include="CodeGeneration\ColorAxis.cs" />
@@ -909,7 +910,6 @@
     <Compile Include="CodeGeneration\PlotOptionsTreemapPointEvents.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapStatesHover.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsTreemapStatesHoverHalo.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapZones.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWaterfall.cs" />
@@ -1022,7 +1022,6 @@
     <Compile Include="CodeGeneration\TreemapSeriesPointEvents.cs" />
     <Compile Include="CodeGeneration\TreemapSeriesStates.cs" />
     <Compile Include="CodeGeneration\TreemapSeriesStatesHover.cs" />
-    <Compile Include="CodeGeneration\TreemapSeriesStatesHoverHalo.cs" />
     <Compile Include="CodeGeneration\TreemapSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\TreemapSeriesZones.cs" />
     <Compile Include="CodeGeneration\WaterfallSeries.cs" />

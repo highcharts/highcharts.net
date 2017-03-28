@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "http://code.highcharts.com/{version}/gfx/vml-radial-gradient.png";
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
+			Timezone = Timezone_DefaultValue = "undefined";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
 			UseUTC = UseUTC_DefaultValue = true;
 			
@@ -34,6 +35,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string GetTimezoneOffset { get; set; }
 		private string GetTimezoneOffset_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Requires <a href="http://momentjs.com/">moment.js</a>. If the timezone option is specified, it creates a default <a href="#global.getTimezoneOffset">getTimezoneOffset</a> function that looks up the specified timezone in moment.js. If moment.js is not included, this throws a Highcharts error in the console, but does not crash the chart.
+		/// </summary>
+		public string Timezone { get; set; }
+		private string Timezone_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -56,6 +64,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (VMLRadialGradientURL != VMLRadialGradientURL_DefaultValue) h.Add("vMLRadialGradientURL",VMLRadialGradientURL);
 			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highcharts.AddFunction("GlobalGetTimezoneOffset.getTimezoneOffset", GetTimezoneOffset); }  
+			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
 			
