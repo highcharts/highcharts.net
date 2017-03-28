@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = null;
 			DashStyle = DashStyle_DefaultValue = null;
-			FillColor = FillColor_DefaultValue = "";
+			FillColor = FillColor_DefaultValue = null;
 			Value = Value_DefaultValue = null;
 			
 		}	
@@ -47,8 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Defines the fill color for the series (in area type series)
 		/// </summary>
-		public string FillColor { get; set; }
-		private string FillColor_DefaultValue { get; set; }
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -75,8 +75,11 @@ namespace Highsoft.Web.Mvc.Charts
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

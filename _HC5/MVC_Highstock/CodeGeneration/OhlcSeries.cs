@@ -496,6 +496,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
+			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -551,8 +552,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

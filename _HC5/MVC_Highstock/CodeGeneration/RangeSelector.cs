@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ButtonPosition = ButtonPosition_DefaultValue = "";
 			ButtonSpacing = ButtonSpacing_DefaultValue = 0;
 			ButtonTheme = ButtonTheme_DefaultValue = null;
-			Buttons = Buttons_DefaultValue = new List<RangeSelectorButton>();
+			Buttons = Buttons_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 35;
 			InputBoxBorderColor = InputBoxBorderColor_DefaultValue = "#cccccc";
@@ -170,14 +170,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ButtonPosition != ButtonPosition_DefaultValue) h.Add("buttonPosition",ButtonPosition);
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
 			if (ButtonTheme != ButtonTheme_DefaultValue) h.Add("buttonTheme",ButtonTheme);
-            if (Buttons.Any())
-            {
-                List<Hashtable> buttons = new List<Hashtable>();
-                foreach (var item in Buttons)
-                   buttons.Add(item.ToHashtable());
+			if (Buttons != Buttons_DefaultValue)
+			{
+				List<Hashtable> buttons = new List<Hashtable>();
+				foreach (var item in Buttons)
+					buttons.Add(item.ToHashtable());
 
-                h.Add("buttons", buttons);
-            }
+				h.Add("buttons", buttons);
+			}
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (InputBoxBorderColor != InputBoxBorderColor_DefaultValue) h.Add("inputBoxBorderColor",InputBoxBorderColor);
@@ -199,8 +199,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

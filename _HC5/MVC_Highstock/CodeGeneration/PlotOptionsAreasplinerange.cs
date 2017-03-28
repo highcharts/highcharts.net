@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsAreasplinerangeEvents();
-			FillColor = FillColor_DefaultValue = "null";
+			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = .75;
 			GapSize = GapSize_DefaultValue = 0;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
@@ -173,8 +173,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Fill color or gradient for the area. When <code>null</code>, the series' <code>color</code>  is  used with the series' <code>fillOpacity</code>.
 		/// </summary>
-		public string FillColor { get; set; }
-		private string FillColor_DefaultValue { get; set; }
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -453,8 +453,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

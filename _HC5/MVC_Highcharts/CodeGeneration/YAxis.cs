@@ -565,7 +565,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Crosshair != Crosshair_DefaultValue) h.Add("crosshair", Crosshair);
+			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
@@ -633,8 +633,11 @@ namespace Highsoft.Web.Mvc.Charts
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

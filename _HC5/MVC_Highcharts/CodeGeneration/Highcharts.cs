@@ -466,7 +466,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Credits.IsDirty()) h.Add("credits",Credits.ToHashtable());
-			if (Data.IsDirty()) h.Add("data",Data.ToHashtable());
+			if (Data.IsDirty()) h.Add("Data_DefaultValue",Data.ToHashtable());
 			if (Defs != Defs_DefaultValue) h.Add("defs",Defs);
 			if (Drilldown.IsDirty()) h.Add("drilldown",Drilldown.ToHashtable());
 			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
@@ -525,8 +525,11 @@ namespace Highsoft.Web.Mvc.Charts
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

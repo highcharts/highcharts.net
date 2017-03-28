@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsAreaMarkerStatesHover()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = "";
+			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
@@ -35,8 +35,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The fill color of the marker in hover state.
 		/// </summary>
-		public string FillColor { get; set; }
-		private string FillColor_DefaultValue { get; set; }
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -93,8 +93,11 @@ namespace Highsoft.Web.Mvc.Charts
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Colors = Colors_DefaultValue = new List<string>();
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = CandleStickSeriesCursor.Null;
-			Data = Data_DefaultValue = null;
+			Data = Data_DefaultValue = new List<CandleStickSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new CandleStickSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new CandleStickSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
@@ -494,7 +494,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
-			if (Data != Data_DefaultValue) h.Add("data", HashifyList(Data));
+			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -552,8 +552,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

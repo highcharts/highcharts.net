@@ -108,14 +108,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highcharts.AddFunction("AccessibilityOnTableAnchorClick.onTableAnchorClick", OnTableAnchorClick); }  
 			if (PointDateFormat != PointDateFormat_DefaultValue) h.Add("pointDateFormat",PointDateFormat);
 			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highcharts.AddFunction("AccessibilityPointDateFormatter.pointDateFormatter", PointDateFormatter); }  
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("AccessibilityPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }
-            if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)
-            {
-                if (PointDescriptionThreshold != null)
-                    h.Add("pointDescriptionThreshold", PointDescriptionThreshold);
-                else
-                    h.Add("pointDescriptionThreshold", false);
-            }
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("AccessibilityPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)
+			{
+				if (PointDescriptionThreshold != null)
+					h.Add("pointDescriptionThreshold", PointDescriptionThreshold);
+				else
+					h.Add("pointDescriptionThreshold", false);
+			}
 			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highcharts.AddFunction("AccessibilityScreenReaderSectionFormatter.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
 			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highcharts.AddFunction("AccessibilitySeriesDescriptionFormatter.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
 			
@@ -126,8 +126,11 @@ namespace Highsoft.Web.Mvc.Charts
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

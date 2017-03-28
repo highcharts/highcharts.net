@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new AreasplinerangeSeriesEvents();
-			FillColor = FillColor_DefaultValue = "null";
+			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = .75;
 			GapSize = GapSize_DefaultValue = 0;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
@@ -188,8 +188,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Fill color or gradient for the area. When <code>null</code>, the series' <code>color</code>  is  used with the series' <code>fillOpacity</code>.
 		/// </summary>
-		public string FillColor { get; set; }
-		private string FillColor_DefaultValue { get; set; }
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -472,6 +472,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
+			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -524,8 +525,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

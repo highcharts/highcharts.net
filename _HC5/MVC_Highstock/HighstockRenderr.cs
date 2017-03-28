@@ -278,7 +278,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                     seriesHashtable = OhlcSeries.ToHashtable();
                 }
 
-                seriesHashtable.Add("data", dataList);
+                //seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
             }
 

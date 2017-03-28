@@ -353,7 +353,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                     seriesHashtable = treemapSeries.ToHashtable();
                 }
 
-                seriesHashtable.Add("data", dataList);
+                //seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
             }
 

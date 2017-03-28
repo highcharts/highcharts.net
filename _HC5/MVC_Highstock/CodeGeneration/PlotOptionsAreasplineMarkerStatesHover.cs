@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsAreasplineMarkerStatesHover()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = "null";
+			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
@@ -35,8 +35,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The fill color of the point marker. When <code>null</code>, the series' or point's color is used.
 		/// </summary>
-		public string FillColor { get; set; }
-		private string FillColor_DefaultValue { get; set; }
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -93,8 +93,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

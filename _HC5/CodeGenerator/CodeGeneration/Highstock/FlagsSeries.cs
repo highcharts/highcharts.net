@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Colors = Colors_DefaultValue = new List<string>();
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = FlagsSeriesCursor.Null;
-			Data = Data_DefaultValue = null;
+			Data = Data_DefaultValue = new List<FlagsSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new FlagsSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -453,7 +453,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
-			if (Data != Data_DefaultValue) h.Add("data", HashifyList(Data));
+			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
@@ -507,8 +507,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

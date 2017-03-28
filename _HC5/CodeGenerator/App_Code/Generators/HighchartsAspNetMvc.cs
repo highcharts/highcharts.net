@@ -441,9 +441,25 @@ public class HighchartsAspNetMvc
 
         // fully qualified names that are collections
         if (_lists.Contains(child.FullName))
+        {
+            if (child.FullName == "Data" && child.Parent.ToLower().Contains("highcharts"))
+                return String.Format(complexPropertyFormat, child.FullName, child.FullName + "_DefaultValue", FirstCharToLower(child.FullName));
+
+            if (child.FullName == "Data")
+                return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
+
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+        }
         if (_lists.Contains(propertyName))
+        {
+            if (propertyName == "Data" && child.Parent.ToLower().Contains("highcharts"))
+                return String.Format(complexPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+
+            if (propertyName == "Data")
+                return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
+
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+        }
         if (_propertyTypeMappings.Contains(child.FullName))
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         // property that needs custom serialization (Animation, Shadow, etc)
@@ -722,7 +738,7 @@ public class HighchartsAspNetMvc
             }
             else
                 result = FirstCharToUpper(result);
-            return "null";// new List<" + result + "Data" + ">()";
+            return "new List<" + result + "Data" + ">()";//null;
         }
 
         if (item.Title.ToLower() == "fillcolor")

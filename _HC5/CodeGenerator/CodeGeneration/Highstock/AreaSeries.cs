@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = AreaSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = AreaSeriesDashStyle.Solid;
-			Data = Data_DefaultValue = null;
+			Data = Data_DefaultValue = new List<AreaSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new AreaSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new AreaSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
@@ -512,7 +512,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
-			if (Data != Data_DefaultValue) h.Add("data", HashifyList(Data));
+			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -570,8 +570,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       

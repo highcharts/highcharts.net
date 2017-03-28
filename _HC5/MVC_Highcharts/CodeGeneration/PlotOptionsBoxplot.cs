@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsBoxplotEvents();
-			FillColor = FillColor_DefaultValue = "#ffffff";
+			FillColor = FillColor_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			GroupPadding = GroupPadding_DefaultValue = 0.2;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
@@ -161,8 +161,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The fill color of the box.
 		/// </summary>
-		public string FillColor { get; set; }
-		private string FillColor_DefaultValue { get; set; }
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -471,8 +471,11 @@ namespace Highsoft.Web.Mvc.Charts
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
 			if (h.Count > 0)
-				return new JavaScriptSerializer().Serialize(ToHashtable());
+				return serializer.Serialize(ToHashtable());
 			else 
 				return "";
 		}       
