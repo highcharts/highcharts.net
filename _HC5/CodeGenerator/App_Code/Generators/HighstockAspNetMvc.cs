@@ -251,6 +251,11 @@ public class HighstockAspNetMvc
             if (apiItem.Values[i] == null)
                 apiItem.Values[i] = "null";
 
+            if (apiItem.Values[i] == "0")
+                apiItem.Values[i] = "Min = 0";
+            else
+            if (apiItem.Values[i] == "100")
+                apiItem.Values[i] = "Max = 100";
 
             if (!String.IsNullOrEmpty(apiItem.Values[i]))
             {
@@ -333,6 +338,9 @@ public class HighstockAspNetMvc
         }
         if (_enumMappings[defaultValue] != null)
             defaultValue = _enumMappings[defaultValue] as string;
+
+        if (defaultValue == "0")
+            defaultValue = "Min";
 
         return String.Format("{0}.{1}", GetClassNameFromItem(item), FirstCharToUpper(defaultValue));
     }

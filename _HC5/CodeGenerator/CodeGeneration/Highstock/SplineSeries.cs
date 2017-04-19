@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Compare = Compare_DefaultValue = "undefined";
-			CompareBase = CompareBase_DefaultValue = SplineSeriesCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = SplineSeriesCompareBase.Min;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = SplineSeriesCursor.Null;

@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
 			Compare = Compare_DefaultValue = "undefined";
-			CompareBase = CompareBase_DefaultValue = PlotOptionsOhlcCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = PlotOptionsOhlcCompareBase.Min;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = PlotOptionsOhlcCursor.Null;
 			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsOhlcDataGrouping();

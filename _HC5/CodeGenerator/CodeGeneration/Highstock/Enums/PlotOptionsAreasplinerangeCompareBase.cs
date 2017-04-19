@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsAreasplinerangeCompareBase
     {
-        0, 
-		100
+        Min = 0, 
+		Max = 100
     }
 }

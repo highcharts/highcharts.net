@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
-			CompareBase = CompareBase_DefaultValue = PlotOptionsFlagsCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = PlotOptionsFlagsCompareBase.Min;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = PlotOptionsFlagsCursor.Null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsFlagsDataLabels();

@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
 			Compare = Compare_DefaultValue = "undefined";
-			CompareBase = CompareBase_DefaultValue = OhlcSeriesCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = OhlcSeriesCompareBase.Min;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = OhlcSeriesCursor.Null;
 			Data = Data_DefaultValue = new List<OhlcSeriesData>();

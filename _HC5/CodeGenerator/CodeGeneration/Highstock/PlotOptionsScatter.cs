@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Compare = Compare_DefaultValue = "undefined";
-			CompareBase = CompareBase_DefaultValue = PlotOptionsScatterCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = PlotOptionsScatterCompareBase.Min;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsScatterCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsScatterDashStyle.Solid;

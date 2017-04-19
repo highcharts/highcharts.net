@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
-			CompareBase = CompareBase_DefaultValue = CandleStickSeriesCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = CandleStickSeriesCompareBase.Min;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = CandleStickSeriesCursor.Null;
 			Data = Data_DefaultValue = new List<CandleStickSeriesData>();

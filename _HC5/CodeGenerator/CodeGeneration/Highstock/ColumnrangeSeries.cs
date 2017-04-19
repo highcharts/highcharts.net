@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
 			Compare = Compare_DefaultValue = "undefined";
-			CompareBase = CompareBase_DefaultValue = ColumnrangeSeriesCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = ColumnrangeSeriesCompareBase.Min;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = ColumnrangeSeriesCursor.Null;
 			Data = Data_DefaultValue = new List<ColumnrangeSeriesData>();
