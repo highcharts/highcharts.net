@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,16 @@ namespace Highsoft.Web.Mvc.Stocks
             chart.Chart.RenderTo = id;
             
             return MvcHtmlString.Create(renderer.RenderHtml());
+        }
+
+        public HtmlString GetHighstock(Highstock chart, string id)
+        {
+            var renderer = new HighstockRenderer(chart);
+
+            chart.ID = id;
+            chart.Chart.RenderTo = id;
+
+            return new HtmlString(renderer.RenderHtml());
         }
 
         [EditorBrowsable(EditorBrowsableState.Never)]

@@ -184,7 +184,6 @@
     <Compile Include="CodeGeneration\ChartOptions3dFrameBack.cs" />
     <Compile Include="CodeGeneration\ChartOptions3dFrameBottom.cs" />
     <Compile Include="CodeGeneration\ChartOptions3dFrameSide.cs" />
-    <Compile Include="CodeGeneration\ChartPanKey.cs" />
     <Compile Include="CodeGeneration\ChartResetZoomButton.cs" />
     <Compile Include="CodeGeneration\ChartResetZoomButtonPosition.cs" />
     <Compile Include="CodeGeneration\ColorAxis.cs" />
@@ -273,6 +272,7 @@
     <Compile Include="CodeGeneration\Enums\BubbleSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\BubbleSeriesSizeBy.cs" />
     <Compile Include="CodeGeneration\Enums\BubbleSeriesType.cs" />
+    <Compile Include="CodeGeneration\Enums\ChartPanKey.cs" />
     <Compile Include="CodeGeneration\Enums\ChartPinchType.cs" />
     <Compile Include="CodeGeneration\Enums\ChartResetZoomButtonPositionVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ChartResetZoomButtonRelativeTo.cs" />
