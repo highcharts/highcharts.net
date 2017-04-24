@@ -363,6 +363,9 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                 case "FirstChart6":
                     ViewBag.Title = "Using Fixed Data In The View";
                     break;
+                case "WFFirstChart1":
+                    ViewBag.Title = "Adding Reference to the Project";
+                    break;
             }
 
             ViewBag.Title += " | Highcharts.NET";

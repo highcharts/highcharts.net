@@ -68,6 +68,26 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
         {
             return View();
         }
+
+        public ActionResult WFFirstChart1()
+        {
+            return View();
+        }
+
+        public ActionResult WFFirstChart2()
+        {
+            return View();
+        }
+
+        public ActionResult WFFirstChart3()
+        {
+            return View();
+        }
+
+        public ActionResult WFFirstChart4()
+        {
+            return View();
+        }
     }
 }
 
