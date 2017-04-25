@@ -88,6 +88,11 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
         {
             return View();
         }
+
+        public ActionResult WFFirstChart5()
+        {
+            return View();
+        }
     }
 }
 

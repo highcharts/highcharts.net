@@ -366,6 +366,18 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                 case "WFFirstChart1":
                     ViewBag.Title = "Adding Reference to the Project";
                     break;
+                case "WFFirstChart2":
+                    ViewBag.Title = "Add user control";
+                    break;
+                case "WFFirstChart3":
+                    ViewBag.Title = "Create and render Chart";
+                    break;
+                case "WFFirstChart4":
+                    ViewBag.Title = "Add control to web page";
+                    break;
+                case "WFFirstChart5":
+                    ViewBag.Title = "Sample project";
+                    break;
             }
 
             ViewBag.Title += " | Highcharts.NET";

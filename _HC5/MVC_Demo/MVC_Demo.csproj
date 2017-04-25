@@ -6758,6 +6758,8 @@
     <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart1.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart2.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart3.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart4.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart5.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />
