@@ -204,6 +204,67 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Demo
             return View();
         }
 
+        public ActionResult Docs(string section)
+        {
+            ViewBag.Section = section;
+
+            switch (section)
+            {
+                case "ServerSideRequirements":
+                    ViewBag.Title = "Server-Side System Requirements";
+                    break;
+                case "ClientSideRequirements":
+                    ViewBag.Title = "Client-Side System Requirements";
+                    break;
+                case "VS":
+                    ViewBag.Title = "Visual Studio .NET";
+                    break;
+                case "IDE":
+                    ViewBag.Title = "Other IDEs / Web Projects";
+                    break;
+                case "License":
+                    ViewBag.Title = "Trial and Licensed Versions";
+                    break;
+                case "FirstChart1":
+                    ViewBag.Title = "Adding Reference to the Chart in your View";
+                    break;
+                case "FirstChart2":
+                    ViewBag.Title = "Including the required Javascript files";
+                    break;
+                case "FirstChart3":
+                    ViewBag.Title = "Defining the Chart in your View";
+                    break;
+                case "FirstChart4":
+                    ViewBag.Title = "Getting Data for your Chart";
+                    break;
+                case "FirstChart5":
+                    ViewBag.Title = "Passing Data From the Controller to the Chart in the View";
+                    break;
+                case "FirstChart6":
+                    ViewBag.Title = "Using Fixed Data In The View";
+                    break;
+                case "WFFirstChart1":
+                    ViewBag.Title = "Adding Reference to the Project";
+                    break;
+                case "WFFirstChart2":
+                    ViewBag.Title = "Add user control";
+                    break;
+                case "WFFirstChart3":
+                    ViewBag.Title = "Create and render Chart";
+                    break;
+                case "WFFirstChart4":
+                    ViewBag.Title = "Add control to web page";
+                    break;
+                case "WFFirstChart5":
+                    ViewBag.Title = "Sample project";
+                    break;
+            }
+
+            ViewBag.Title += " | Highstock.NET";
+
+            return View();
+        }
+
         public ActionResult DarkUnica()
         {
             return RedirectToAction("Index", new { id = "dark-unica" });

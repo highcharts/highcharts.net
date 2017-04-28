@@ -259,6 +259,7 @@
     <Compile Include="Areas\Highstock\Controllers\Shared\ColumnController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\ColumnrangeController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\CompareController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\Docs.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\FlagsShapesController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\FlagsPlacementController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\NavigatorDisabledController.cs" />
@@ -1044,8 +1045,8 @@
     <Content Include="Areas\Highstock\Views\Shared\NavigatorDisabled.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\FlagsPlacement.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\FlagsShapes.cshtml" />
-    <Content Include="downloads\Highcharts_ASPNET_MVC_4_1_7_0.zip" />
-    <Content Include="downloads\Highstock_ASPNET_MVC_4_1_7_0.zip" />
+    <Content Include="downloads\Highcharts_ASPNET_MVC.zip" />
+    <Content Include="downloads\Highstock_ASPNET_MVC.zip" />
     <EntityDeploy Include="Models\ChartData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ChartData.Designer.cs</LastGenOutput>
@@ -6761,6 +6762,23 @@
     <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart4.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart5.cshtml" />
     <Content Include="downloads\web_forms\SampleWebFormsApp.zip" />
+    <Content Include="Areas\Highstock\Views\Demo\Docs.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\ClientSideRequirements.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\IDE.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\License.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart1.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart2.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart3.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart4.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart5.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart1.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart2.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart3.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart4.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart5.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart6.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\ServerSideRequirements.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\VS.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />
