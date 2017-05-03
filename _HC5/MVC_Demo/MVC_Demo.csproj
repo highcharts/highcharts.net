@@ -822,6 +822,8 @@
     <Content Include="Content\HS.png" />
     <Content Include="Content\images\add_user_control1.png" />
     <Content Include="Content\images\add_user_control2.png" />
+    <Content Include="Content\images\ascx_cs.png" />
+    <Content Include="Content\images\aspx.png" />
     <Content Include="Content\images\dotnet_logo.png" />
     <Content Include="Content\images\image00.png" />
     <Content Include="Content\images\image01.png" />
