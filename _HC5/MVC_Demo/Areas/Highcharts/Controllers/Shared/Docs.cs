@@ -33,7 +33,10 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
         {
             return View();
         }
-
+        public ActionResult FirstChart0()
+        {
+            return View();
+        }
         public ActionResult FirstChart1()
         {
             return View();

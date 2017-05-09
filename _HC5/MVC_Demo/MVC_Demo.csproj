@@ -6781,6 +6781,7 @@
     <Content Include="Areas\Highstock\Views\Shared\FirstChart6.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\ServerSideRequirements.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\VS.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\FirstChart0.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />

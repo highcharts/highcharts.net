@@ -346,16 +346,16 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                     ViewBag.Title = "Trial and Licensed Versions";
                     break;
                 case "FirstChart1":
-                    ViewBag.Title = "Adding Reference to the Chart in your View";
+                    ViewBag.Title = "Add reference to the View";
                     break;
                 case "FirstChart2":
-                    ViewBag.Title = "Including the required Javascript files";
+                    ViewBag.Title = "Include JavaScript files";
                     break;
                 case "FirstChart3":
-                    ViewBag.Title = "Defining the Chart in your View";
+                    ViewBag.Title = "Define the chart in the View";
                     break;
                 case "FirstChart4":
-                    ViewBag.Title = "Getting Data for your Chart";
+                    ViewBag.Title = "Add data";
                     break;
                 case "FirstChart5":
                     ViewBag.Title = "Passing Data From the Controller to the Chart in the View";
