@@ -331,46 +331,52 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
             switch(section)
             {
                 case "ServerSideRequirements":
-                    ViewBag.Title = "Server-Side System Requirements";
+                    ViewBag.Title = "Server-side system requirements";
                     break;
                 case "ClientSideRequirements":
-                    ViewBag.Title = "Client-Side System Requirements";
+                    ViewBag.Title = "Client-side system requirements";
                     break;
                 case "VS":
                     ViewBag.Title = "Visual Studio .NET";
                     break;
                 case "IDE":
-                    ViewBag.Title = "Other IDEs / Web Projects";
+                    ViewBag.Title = "Other IDEs / Web projects";
                     break;
                 case "License":
-                    ViewBag.Title = "Trial and Licensed Versions";
+                    ViewBag.Title = "Trial and licensed versions";
+                    break;
+                case "FirstChart0":
+                    ViewBag.Title = "Introduction";
                     break;
                 case "FirstChart1":
-                    ViewBag.Title = "Add reference to the View";
+                    ViewBag.Title = "Add reference to the view";
                     break;
                 case "FirstChart2":
                     ViewBag.Title = "Include JavaScript files";
                     break;
                 case "FirstChart3":
-                    ViewBag.Title = "Define the chart in the View";
+                    ViewBag.Title = "Define the chart in the view";
                     break;
                 case "FirstChart4":
                     ViewBag.Title = "Add data";
                     break;
                 case "FirstChart5":
-                    ViewBag.Title = "Passing Data From the Controller to the Chart in the View";
+                    ViewBag.Title = "Passing data from the controller to the chart in the view";
                     break;
                 case "FirstChart6":
-                    ViewBag.Title = "Using Fixed Data In The View";
+                    ViewBag.Title = "Using fixed data in the view";
+                    break;
+                case "WFFirstChart0":
+                    ViewBag.Title = "Introduction";
                     break;
                 case "WFFirstChart1":
-                    ViewBag.Title = "Adding Reference to the Project";
+                    ViewBag.Title = "Add reference to the project";
                     break;
                 case "WFFirstChart2":
                     ViewBag.Title = "Add user control";
                     break;
                 case "WFFirstChart3":
-                    ViewBag.Title = "Create and render Chart";
+                    ViewBag.Title = "Create and render chart";
                     break;
                 case "WFFirstChart4":
                     ViewBag.Title = "Add control to web page";
