@@ -822,6 +822,7 @@
     <Content Include="Content\HS.png" />
     <Content Include="Content\images\add_user_control1.png" />
     <Content Include="Content\images\add_user_control2.png" />
+    <Content Include="Content\images\areachart1.png" />
     <Content Include="Content\images\ascx_cs.png" />
     <Content Include="Content\images\aspx.png" />
     <Content Include="Content\images\dotnet_logo.png" />
@@ -837,6 +838,8 @@
     <Content Include="Content\images\logo.svg" />
     <Content Include="Content\images\logo_png.png" />
     <Content Include="Content\images\nuget2.png" />
+    <Content Include="Content\images\script1.png" />
+    <Content Include="Content\images\script2.png" />
     <Content Include="Content\images\system_web_mvc.png" />
     <Content Include="Content\loader.white.gif" />
     <Content Include="Content\gallery.css" />

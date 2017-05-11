@@ -1,5 +1,6 @@
 ﻿<div style="text-align:left; margin:10px; padding-left:20px; padding-right:20px; padding-top:10px; padding-bottom:10px">
-    <p class="c4"><span>Open your *.ascx.cs file.</span></p>
+    <h2 style="font-weight:500;">3. Create and render chart.</h2>
+    <p class="c4"><span>Open <strong>HighchartsControl.ascx.cs</strong> file.</span></p>
     <p><span>1. Add <code>using Highsoft.Web.Mvc.Charts;</code>.</span></br>
     <span>2. Create <code>Highcharts</code> object in <code>Page_Load</code> method.</span></br>
     <span>3. Render object to html with using <code>HighsoftNamespace</code>.</span></br>
@@ -108,7 +109,7 @@ namespace WebApplication11.Control
             HighsoftNamespace Highsoft = new HighsoftNamespace();
 
             //string result = Highsoft.Highcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6326 or older
-            7string result = Highsoft.GetHighcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6327 or newer
+            string result = Highsoft.GetHighcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6327 or newer
 
             Response.Write(result);
         }
