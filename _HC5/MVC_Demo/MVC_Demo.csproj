@@ -820,6 +820,8 @@
     <Content Include="Content\HC.png" />
     <Content Include="Content\HC2.png" />
     <Content Include="Content\HS.png" />
+    <Content Include="Content\images\adddata1.png" />
+    <Content Include="Content\images\adddata2.png" />
     <Content Include="Content\images\add_user_control1.png" />
     <Content Include="Content\images\add_user_control2.png" />
     <Content Include="Content\images\areachart1.png" />
