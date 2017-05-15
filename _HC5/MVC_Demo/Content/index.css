@@ -83,7 +83,11 @@ h1 {
     .demo a {
         font-weight: bolder;
         color: #313131;
-        text-transform:;
+    }
+
+    .doc a {
+        font-weight: normal;
+        color: #8085e8;
     }
 
 .image-container {
