@@ -395,6 +395,9 @@ public class HighstockAspNetMvc
         if (propertyName == "Data" && child.Parent.ToLower() == "highcharts")
             returnType = "Data";
 
+        if (propertyName == "Height" && child.Parent.ToLower() == "chart")
+            returnType = "double?";
+
         if (propertyName == "Series" && child.Parent == "navigator")
             returnType = "Series";
 
@@ -763,6 +766,9 @@ public class HighstockAspNetMvc
         }
 
         if (item.Title.ToLower() == "fillcolor")
+            return "null";
+
+        if (item.Title.ToLower() == "height" && item.Parent.ToLower() == "chart")
             return "null";
 
         if (item.Title.ToLower() == "buttons" && item.Parent == "rangeSelector")

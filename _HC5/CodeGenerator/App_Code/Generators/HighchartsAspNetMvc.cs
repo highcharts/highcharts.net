@@ -204,6 +204,7 @@ public class HighchartsAspNetMvc
                 GenerateEnum(child);
             }
 
+
             string formattedProperty = FormatProperty(propertyTemplate, child);
             string formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
             string formattedComparer = FormatPropertyComparer(propertyName, child);
@@ -381,6 +382,9 @@ public class HighchartsAspNetMvc
 
         if (propertyName == "Data" && child.Parent.ToLower() == "highcharts")
             returnType = "Data";
+
+        if (propertyName == "Height" && child.Parent.ToLower() == "chart")
+            returnType = "double?";
 
         return propertyTemplate
          .Replace("{HighTemplate.Name}", propertyName)
@@ -751,6 +755,9 @@ public class HighchartsAspNetMvc
             return "null";
 
         if (item.Title.ToLower() == "fillcolor")
+            return "null";
+
+        if (item.Title.ToLower() == "height" && item.Parent.ToLower() == "chart")
             return "null";
 
         if (_propertyInitMappings[item.FullName] != null)

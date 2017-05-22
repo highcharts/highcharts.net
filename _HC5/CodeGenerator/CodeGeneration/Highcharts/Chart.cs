@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ColorCount = ColorCount_DefaultValue = 10;
 			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = new ChartEvents();
-			Height = Height_DefaultValue = "null";
+			Height = Height_DefaultValue = null;
 			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
 			Inverted = Inverted_DefaultValue = false;
 			Margin = Margin_DefaultValue = new string[] {};
@@ -134,8 +134,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An explicit height for the chart. If a <em>number</em>, the height is given in pixels. If given a <em>percentage string</em> (for example <code>'56%'</code>), the height is given as the percentage of the actual chart width. This allows for preserving the aspect ratio across responsive sizes.</p><p>By default (when <code>null</code>) the height is calculated from the offset height of the containing element, or 400 pixels if the containing element's height is 0.</p>
 		/// </summary>
-		public string Height { get; set; }
-		private string Height_DefaultValue { get; set; }
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
