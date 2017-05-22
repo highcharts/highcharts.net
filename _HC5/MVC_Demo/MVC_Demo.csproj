@@ -843,6 +843,7 @@
     <Content Include="Content\images\script1.png" />
     <Content Include="Content\images\script2.png" />
     <Content Include="Content\images\system_web_mvc.png" />
+    <Content Include="Content\images\System_web_mvc2.png" />
     <Content Include="Content\loader.white.gif" />
     <Content Include="Content\gallery.css" />
     <Content Include="Content\highslide.css" />

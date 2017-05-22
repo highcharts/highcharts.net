@@ -1,6 +1,8 @@
 ﻿<div class="doc" style="text-align:left; margin:10px; padding-left:20px; padding-right:20px; padding-top:10px; padding-bottom:10px">
-    <h2 style="font-weight:500;">3. Create and render chart.</h2>
-    <p class="c4"><span>Open <strong>HighchartsControl.ascx.cs</strong> file.</span></p>
+    <h2 style="font-weight:500;">Create and render chart.</h2>
+    <p class="c4"><span>Open <strong>HighchartsControl.ascx.cs</strong> file, and follow the instructions below:</span></p>
+    <p class="c4"><img alt="" src="~/Content/images/ascx_cs.png" style="width: 1018.00px; height: 533.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></p>
+    <br />
     <ol>
         <li>Add <code>using Highsoft.Web.Mvc.Charts;</code>.<br/>
         <pre>using Highsoft.Web.Mvc.Charts;</pre></li>
@@ -89,6 +91,7 @@ public partial class HighchartsControl : System.Web.UI.UserControl
     }
 }</pre></li>
         <li>Render object to html with using <code>HighsoftNamespace</code>.<br />
+        <p class="c1">The chart&lsquo;s HTML code needs to be received, that is why you need to add a <strong>HighsoftNamespace</strong>. To do so, scroll down to the end of the method, then add <strong>HighsoftNamespace</strong>.</p>
         <pre>HighsoftNamespace Highsoft = new HighsoftNamespace();
 //string result = Highsoft.Highcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6326 or older
 string result = Highsoft.GetHighcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6327 or newer</pre></li>
@@ -208,6 +211,6 @@ namespace WebApplication11.Control
 }
         </pre>
     </p>
-    <p class="c4"><img alt="" src="~/Content/images/ascx_cs.png" style="width: 1018.00px; height: 533.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></p>
+    
 </div>
 
