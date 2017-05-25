@@ -1,9 +1,104 @@
-﻿<div style="text-align:left; margin:10px; padding-left:20px; padding-right:20px; padding-top:10px; padding-bottom:10px">
-    <p class="c4"><span>Open your *.ascx.cs file.</span></p>
-    <p><span>1. Add <code>using Highsoft.Web.Mvc.Charts;</code>.</span></br>
-    <span>2. Create <code>Highcharts</code> object in <code>Page_Load</code> method.</span></br>
-    <span>3. Render object to html with using <code>HighsoftNamespace</code>.</span></br>
-    <span>4. Send it to the view.</span></p>
+﻿<div class="doc" style="text-align:left; margin:10px; padding-left:20px; padding-right:20px; padding-top:10px; padding-bottom:10px">
+    <h2 style="font-weight:500;">Create and render chart.</h2>
+    <p class="c4"><span>Open <strong>HighchartsControl.ascx.cs</strong> file, and follow the instructions below:</span></p>
+    <p class="c4"><img alt="" src="~/Content/images/ascx_cs.png" style="width: 1018.00px; height: 533.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></p>
+    <br />
+    <ol>
+        <li>Add <code>using Highsoft.Web.Mvc.Charts;</code>.<br/>
+        <pre>using Highsoft.Web.Mvc.Charts;</pre></li>
+        <li>Create <code>Highcharts</code> object in <code>Page_Load</code> method.<br />
+            <pre>
+public partial class HighchartsControl : System.Web.UI.UserControl
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        &hellip;
+        Highcharts higcharts = new Highcharts
+        {
+            Title = new Title
+            {
+                Text = "Monthly Average Temperature",
+                X = -20
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Source: WorldClimate.com",
+                X = -20
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Temperature (°C)"
+                    },
+                    PlotLines = new List<YAxisPlotLines>
+                    {
+                        new YAxisPlotLines
+                        {
+                            Value = 0,
+                            Width = 1,
+                            Color = "#808080"
+                        }
+                    }
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                ValueSuffix = "°C"
+            },
+            Legend = new Legend
+            {
+                Layout = LegendLayout.Vertical,
+                Align = LegendAlign.Right,
+                VerticalAlign = LegendVerticalAlign.Middle,
+                BorderWidth = 0
+            },
+            Series = new List<Series>
+            {
+                new LineSeries
+                {
+                    Name = "Tokyo",
+                    Data = tokyoData as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "NY",
+                    Data = nyData as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "Berlin",
+                    Data = berlinData as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "London",
+                    Data = londonData as List<LineSeriesData>
+                }
+            }
+        };
+        &hellip;
+    }
+}</pre></li>
+        <li>Render object to html with using <code>HighsoftNamespace</code>.<br />
+        <p class="c1">The chart&lsquo;s HTML code needs to be received, that is why you need to add a <strong>HighsoftNamespace</strong>. To do so, scroll down to the end of the method, then add <strong>HighsoftNamespace</strong>.</p>
+        <pre>HighsoftNamespace Highsoft = new HighsoftNamespace();
+//string result = Highsoft.Highcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6326 or older
+string result = Highsoft.GetHighcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6327 or newer</pre></li>
+        <li>Send it to the view.<br />
+        <pre>Response.Write(result);</pre></li>
+        
+    </ol>
     <p><span>Sample code below:</span></p>
         <pre style="padding-bottom:unset">
 using System;
@@ -107,8 +202,8 @@ namespace WebApplication11.Control
 
             HighsoftNamespace Highsoft = new HighsoftNamespace();
 
-            //string result = Highsoft.Highcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6323 or older
-            string result = Highsoft.GetHighcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6324 or newer
+            //string result = Highsoft.Highcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6326 or older
+            string result = Highsoft.GetHighcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6327 or newer
 
             Response.Write(result);
         }
@@ -116,5 +211,6 @@ namespace WebApplication11.Control
 }
         </pre>
     </p>
+    
 </div>
 

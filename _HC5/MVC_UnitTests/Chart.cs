@@ -74,7 +74,7 @@ namespace Highsoft.Web.Mvc.UnitTests
         [TestMethod]
         public void TestHeight()
         {
-            _chart.Chart.Height = "225";
+            _chart.Chart.Height = 225;
             string json = _renderer.RenderHtml();
 
             Assert.IsTrue(json.Contains("\"height\":225"));

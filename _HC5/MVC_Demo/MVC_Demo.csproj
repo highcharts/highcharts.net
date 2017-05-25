@@ -6769,7 +6769,6 @@
     <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart3.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart4.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart5.cshtml" />
-    <Content Include="downloads\web_forms\SampleWebFormsApp.zip" />
     <Content Include="Areas\Highstock\Views\Demo\Docs.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\ClientSideRequirements.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\IDE.cshtml" />
@@ -6789,6 +6788,10 @@
     <Content Include="Areas\Highstock\Views\Shared\VS.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\FirstChart0.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart0.cshtml" />
+    <Content Include="downloads\MVC\MVCSamples.zip" />
+    <Content Include="downloads\WebForms\WebFormsSamples.zip" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart0.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart0.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />

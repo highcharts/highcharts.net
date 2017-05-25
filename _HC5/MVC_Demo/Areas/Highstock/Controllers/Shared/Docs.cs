@@ -33,7 +33,10 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             return View();
         }
-
+        public ActionResult FirstChart0()
+        {
+            return View();
+        }
         public ActionResult FirstChart1()
         {
             return View();
@@ -68,7 +71,10 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             return View();
         }
-
+        public ActionResult WFFirstChart0()
+        {
+            return View();
+        }
         public ActionResult WFFirstChart1()
         {
             return View();
