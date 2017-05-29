@@ -827,7 +827,10 @@
     <Content Include="Content\images\areachart1.png" />
     <Content Include="Content\images\ascx_cs.png" />
     <Content Include="Content\images\aspx.png" />
+    <Content Include="Content\images\Controller.png" />
     <Content Include="Content\images\dotnet_logo.png" />
+    <Content Include="Content\images\Highcharts.png" />
+    <Content Include="Content\images\Highsoft_Web_Mvc_Charts.png" />
     <Content Include="Content\images\image00.png" />
     <Content Include="Content\images\image01.png" />
     <Content Include="Content\images\image02.png" />
@@ -837,6 +840,7 @@
     <Content Include="Content\images\image06.png" />
     <Content Include="Content\images\image07.png" />
     <Content Include="Content\images\image08.png" />
+    <Content Include="Content\images\JSreferences.png" />
     <Content Include="Content\images\logo.svg" />
     <Content Include="Content\images\logo_png.png" />
     <Content Include="Content\images\nuget2.png" />
