@@ -844,10 +844,12 @@
     <Content Include="Content\images\logo.svg" />
     <Content Include="Content\images\logo_png.png" />
     <Content Include="Content\images\nuget2.png" />
+    <Content Include="Content\images\reference.png" />
     <Content Include="Content\images\script1.png" />
     <Content Include="Content\images\script2.png" />
     <Content Include="Content\images\system_web_mvc.png" />
     <Content Include="Content\images\System_web_mvc2.png" />
+    <Content Include="Content\images\View2.png" />
     <Content Include="Content\loader.white.gif" />
     <Content Include="Content\gallery.css" />
     <Content Include="Content\highslide.css" />
@@ -6796,6 +6798,10 @@
     <Content Include="downloads\WebForms\WebFormsSamples.zip" />
     <Content Include="Areas\Highstock\Views\Shared\FirstChart0.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\WFFirstChart0.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Demo2.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Demo1.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Demo1.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Demo2.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />

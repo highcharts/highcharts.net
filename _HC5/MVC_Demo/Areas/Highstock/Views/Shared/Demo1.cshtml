@@ -3,7 +3,7 @@
 
 @using Highsoft.Web.Mvc.Charts
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
         function formatXAxis() {
             return this.value; // clean, unformatted number for year
@@ -13,11 +13,11 @@
             return this.value / 1000 + 'k';
         }
 
-  
-    </script>   
-   
 
-    @(Html.Highsoft().Highcharts(
+</script>
+
+
+@(Html.Highsoft().Highcharts(
         new Highcharts
         {
             Title = new Title
@@ -93,5 +93,5 @@
                 }
             }
         }
-        , "chart")
-    )
+        , "chart1")
+)
