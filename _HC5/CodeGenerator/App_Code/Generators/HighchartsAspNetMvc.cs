@@ -447,7 +447,7 @@ public class HighchartsAspNetMvc
         if (_lists.Contains(child.FullName))
         {
             if (child.FullName == "Data" && child.Parent.ToLower().Contains("highcharts"))
-                return String.Format(complexPropertyFormat, child.FullName, child.FullName + "_DefaultValue", FirstCharToLower(child.FullName));
+                return String.Format(complexPropertyFormat, child.FullName, FirstCharToLower(child.FullName));
 
             if (child.FullName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
@@ -457,7 +457,7 @@ public class HighchartsAspNetMvc
         if (_lists.Contains(propertyName))
         {
             if (propertyName == "Data" && child.Parent.ToLower().Contains("highcharts"))
-                return String.Format(complexPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             if (propertyName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
