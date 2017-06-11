@@ -468,7 +468,12 @@ public class HighchartsAspNetMvc
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         // property that needs custom serialization (Animation, Shadow, etc)
         if (_customProperties.Contains(propertyName))
+        {
+            if (propertyName.ToLower().Contains("pointplacement"))
+                return "if (PointPlacement.IsDirty())\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToJSON());\n\t\t\t";
+
             return String.Format(customPropertyFormat, propertyName, FirstCharToLower(propertyName));
+        }
         // Enum
         if (child.Values != null && child.Values.Count > 0)
             return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName), ROOT_CLASS);

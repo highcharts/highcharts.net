@@ -25,52 +25,59 @@ namespace Highsoft.Web.Mvc.Charts
     {
         public PointPlacement()
         {
-            Value = null;
-            PointPlacementEnum = PointPlacementEnum.Null;
+            _Value = null;
+            _PointPlacementEnum = PointPlacementEnum.Null;
         }
 
-        public double? Value { get; set; }
-        public PointPlacementEnum PointPlacementEnum { get; set; }
+        private double? _Value;
+        private PointPlacementEnum _PointPlacementEnum;
+
+        public double? Value
+        {
+            get
+            {
+                return _Value;
+            }
+            set
+            {
+                _Value = value;
+                _PointPlacementEnum = PointPlacementEnum.Null;
+            }
+        }
+        public PointPlacementEnum PointPlacementEnum
+        {
+            get
+            {
+                return _PointPlacementEnum;
+            }
+            set
+            {
+                _PointPlacementEnum = value;
+                _Value = null;
+            }
+        }
 
         internal override Hashtable ToHashtable()
         {
             Hashtable h = new Hashtable();
 
-            if (Value != null)
-            {
+            if (Value.HasValue)
                 h.Add("pointPlacement", Value);
-            }
             else if (PointPlacementEnum != PointPlacementEnum.Null)
-            {
                 h.Add("pointPlacement", PointPlacementEnum.ToString().ToLower());
-            }
 
             return h;
         }
 
         internal override string ToJSON()
         {
-            //if (Value != null)
-            //{
-            //    return Convert.ToString(Value);
-            //}
-            //else
             if (PointPlacementEnum != PointPlacementEnum.Null)
             {
                 return PointPlacementEnum.ToString().ToLower();
             }
 
-            return "";
+            return null;
         }
-
-        internal double? ToJSONDouble()
-        {
-            if (Value != null)
-                return Value;
-
-            return 0.0;
-        }
-
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
