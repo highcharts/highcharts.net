@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public RangeSelectorButton()
 		{
-			Count = Count_DefaultValue = 1;
+			Count = Count_DefaultValue = 0;
 			DataGrouping = DataGrouping_DefaultValue = null;
 			Text = Text_DefaultValue = "";
 			Type = Type_DefaultValue = RangeSelectorButtonsType.Null;

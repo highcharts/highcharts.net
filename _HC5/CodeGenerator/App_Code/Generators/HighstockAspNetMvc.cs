@@ -774,6 +774,9 @@ public class HighstockAspNetMvc
         if (item.Title.ToLower() == "buttons" && item.Parent == "rangeSelector")
             return "null";
 
+        if (item.Title.ToLower() == "count" && item.Parent == "rangeSelector-buttons")
+            return "0";
+
         if (_propertyInitMappings[item.FullName] != null)
         {
             defaults = _propertyInitMappings[item.FullName].ToString();
