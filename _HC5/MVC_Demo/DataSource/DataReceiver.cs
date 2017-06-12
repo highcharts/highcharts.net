@@ -96,9 +96,9 @@ namespace MVC_Demo.Models
                 companyDatas.Add(
                     new RangeData
                     {
-                        X = Convert.ToDouble(values[0].Trim() == "null" ? null : values[0].Trim(),CultureInfo.InvariantCulture),
-                        Low = Convert.ToDouble(values[1].Trim() == "null" ? null: values[1].Trim(), CultureInfo.InvariantCulture),
-                        High = Convert.ToDouble(values[2].Trim() == "null" ? null: values[2].Trim(), CultureInfo.InvariantCulture)
+                        X = values[0].Trim() == "null" ? (double?)null : Convert.ToDouble(values[0].Trim(),CultureInfo.InvariantCulture),
+                        Low = values[1].Trim() == "null" ? (double?)null: Convert.ToDouble(values[1].Trim(), CultureInfo.InvariantCulture),
+                        High = values[2].Trim() == "null" ? (double?)null: Convert.ToDouble(values[2].Trim(), CultureInfo.InvariantCulture)
                     }
                 );
 

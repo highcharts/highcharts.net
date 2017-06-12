@@ -16,19 +16,19 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             List<AreasplinerangeSeriesData> appleData = new List<AreasplinerangeSeriesData>();
             List<LineSeriesData> navigatorData = new List<LineSeriesData>();
 
-            foreach (CompanyData data in DataReceiver.GetJSON("Apple"))
+            foreach (RangeData data in DataReceiver.GetJSONRange())
             {
                 appleData.Add(new AreasplinerangeSeriesData
                 {
-                    X = Convert.ToDouble(data.Date),
-                    High = Convert.ToDouble(data.Value),
-                    Low = Convert.ToDouble(data.Value - new Random().Next(15))
+                    X = data.X,
+                    High = data.High,
+                    Low = data.Low
                 });
 
                 navigatorData.Add(new LineSeriesData
                 {
-                    X = Convert.ToDouble(data.Date),
-                    Y = Convert.ToDouble(data.Value)
+                    X = data.X,
+                    Y = data.Low
                 });
             }
 

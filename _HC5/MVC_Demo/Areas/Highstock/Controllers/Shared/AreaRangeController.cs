@@ -20,15 +20,15 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             {
                 appleData.Add(new ArearangeSeriesData
                 {
-                    X = Convert.ToDouble(data.X),
-                    High = Convert.ToDouble(data.High),
-                    Low = Convert.ToDouble(data.Low)
+                    X = data.X,
+                    High = data.High,
+                    Low = data.Low
                 });
 
                 navigatorData.Add(new LineSeriesData
                 {
-                    X = Convert.ToDouble(data.X),
-                    Y = Convert.ToDouble(data.High)
+                    X = data.X,
+                    Y = data.High
                 });
             }
 

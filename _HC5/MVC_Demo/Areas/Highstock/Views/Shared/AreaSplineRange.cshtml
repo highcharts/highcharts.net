@@ -16,24 +16,28 @@ are using these types of charts*@
     @(Html.Highsoft().Highstock(
         new Highstock
         {
+            Chart = new Chart
+            {
+                Type = ChartType.Areasplinerange
+            },
             RangeSelector = new RangeSelector
             {
                 Selected = 2
             },
             Title = new Title
             {
-                Text =  "Apple Stock Price"
+                Text =  "Temperature variation by day"
             },
             Series = new List<Series>
             {
                 new AreasplinerangeSeries
                 {
                    Data = ViewBag.AppleData as List<AreasplinerangeSeriesData>,
-                   Name = "Apple Stock Price",
+                   Name = "Temperatures",
                    TurboThreshold = 10000,
                    Tooltip = new AreasplinerangeSeriesTooltip
                    {
-                       ValueDecimals = 2
+                       ValueSuffix = "°C"
                    }
                 }
             },
