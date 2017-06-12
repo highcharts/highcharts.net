@@ -8,6 +8,7 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using System.Collections
 
     @(Html.Highsoft().Highcharts(
         new Highcharts
@@ -33,11 +34,11 @@
                                 Enabled = true,
                                 Align = TreemapSeriesDataLabelsAlign.Left,
                                 VerticalAlign = "top",
-                                //Style = new System.Collections.Specialized.NameValueCollection
-                                //{
-                                //    {"fontSize", "15px" },
-                                //    {"fontWeight", "bold"}
-                                //}
+                                Style = new Hashtable
+                                {
+                                    {"fontSize", "15px" },
+                                    {"fontWeight", "bold"}
+                                }
                             }
                         }
                     },
