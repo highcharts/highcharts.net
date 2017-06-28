@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = null;
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new GaugeSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = new GaugeSeriesDataEvents();
 			Id = Id_DefaultValue = null;
@@ -53,8 +53,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
 		/// </summary>
-		public Object DataLabels { get; set; }
-		private Object DataLabels_DefaultValue { get; set; }
+		public GaugeSeriesDataLabels DataLabels { get; set; }
+		private GaugeSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -113,7 +113,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
