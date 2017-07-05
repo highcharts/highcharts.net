@@ -516,6 +516,14 @@ public class HighchartsAspNetMvc
     {
         foreach (ApiItem item in _apiItems)
         {
+            if (item.FullName.ToLower().Contains("boxplot") || item.Title.ToLower().Contains("boxplot"))
+            {
+                if (item.FullName.ToLower().Contains("datalabels") || item.Title.ToLower().Contains("datalabels"))
+                {
+                    item.IsParent = true;
+                }
+            }
+
             if (item.Parents.Count == level && item.IsParent)
             {
                 GenerateClass(item);
