@@ -4288,6 +4288,11 @@
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.BoxplotSeries.Data" -->
+        <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeries.DataLabels">
+            <summary>
+            Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
+            </summary>
+        </member>
         <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeries.Depth">
             <summary>
             Depth of the columns in a 3D column chart. Requires <code>highcharts-3d.js</code>.

@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = BoxplotSeriesCursor.Null;
 			Data = Data_DefaultValue = new List<BoxplotSeriesData>();
+			DataLabels = DataLabels_DefaultValue = new BoxplotSeriesDataLabels();
 			Depth = Depth_DefaultValue = 25;
 			Description = Description_DefaultValue = "undefined";
 			EdgeColor = EdgeColor_DefaultValue = "";
@@ -138,6 +139,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<BoxplotSeriesData> Data { get; set; }
 		private List<BoxplotSeriesData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
+		/// </summary>
+		public BoxplotSeriesDataLabels DataLabels { get; set; }
+		private BoxplotSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -503,6 +511,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);

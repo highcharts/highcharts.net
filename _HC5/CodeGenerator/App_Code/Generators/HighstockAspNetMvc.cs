@@ -212,9 +212,22 @@ public class HighstockAspNetMvc
                 GenerateEnum(child);
             }
 
+            if (propertyName.ToLower().EndsWith("datalabels") &&
+                child.Parent.StartsWith("series") && child.Parent.EndsWith(">") && child.IsParent)
+                continue;
+
+            if (propertyName.ToLower().EndsWith("datalabels") && (child.Parent.ToLower().EndsWith("data") || child.Parent.ToLower().EndsWith("levels")))
+                child.IsParent = true;
+
             string formattedProperty = FormatProperty(propertyTemplate, child);
             string formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
             string formattedComparer = FormatPropertyComparer(propertyName, child);
+
+            if (propertyName.ToLower().EndsWith("datalabels") && (child.Parent.ToLower().EndsWith("data") || child.Parent.ToLower().EndsWith("levels")))
+                child.IsParent = false;
+
+            //if (formattedDefaultProperty.ToLower().Contains("datalabels") && formattedDefaultProperty.Contains("null"))
+            //    continue;
 
             properties += formattedProperty;
             defaultValues += formattedDefaultProperty;
@@ -438,6 +451,12 @@ public class HighstockAspNetMvc
 
         if (child.IsParent)
             returnType = GetClassNameFromItem(child);
+
+        if (returnType.EndsWith("DataDataLabels"))
+            returnType = returnType.Replace("DataData", "Data");
+
+        if (returnType.EndsWith("LevelsDataLabels"))
+            returnType = returnType.Replace("LevelsData", "Data");
 
         return returnType;
     }
@@ -871,6 +890,13 @@ public class HighstockAspNetMvc
             {
                 return _propertyInitMappings[FirstCharToUpper(item.Title)].ToString();
             }
+
+            if (item.FullName.ToLower().Contains("data.datalabels"))
+                item.FullName = item.FullName.Replace("data.", "");
+
+            if (item.FullName.ToLower().Contains("levels.datalabels"))
+                item.FullName = item.FullName.Replace("levels.", "");
+
             return String.Format("new {0}()", GetClassNameFromItem(item));
 
         }

@@ -162,7 +162,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
 		/// </summary>
 		public ScatterSeriesDataLabels DataLabels { get; set; }
 		private ScatterSeriesDataLabels DataLabels_DefaultValue { get; set; }

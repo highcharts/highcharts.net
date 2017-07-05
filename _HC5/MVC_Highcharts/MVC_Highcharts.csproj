@@ -152,6 +152,7 @@
     <Compile Include="CodeGeneration\BoxplotSeries.cs" />
     <Compile Include="CodeGeneration\BoxplotSeriesData.cs" />
     <Compile Include="CodeGeneration\BoxplotSeriesDataEvents.cs" />
+    <Compile Include="CodeGeneration\BoxplotSeriesDataLabels.cs" />
     <Compile Include="CodeGeneration\BoxplotSeriesEvents.cs" />
     <Compile Include="CodeGeneration\BoxplotSeriesPoint.cs" />
     <Compile Include="CodeGeneration\BoxplotSeriesPointEvents.cs" />

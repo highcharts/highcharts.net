@@ -24,7 +24,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			Cursor = Cursor_DefaultValue = FlagsSeriesCursor.Null;
 			Data = Data_DefaultValue = new List<FlagsSeriesData>();
-			DataLabels = DataLabels_DefaultValue = new FlagsSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new FlagsSeriesEvents();
@@ -141,13 +140,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<FlagsSeriesData> Data { get; set; }
 		private List<FlagsSeriesData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Options for the series data labels, appearing next to each data point.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the data labels can be styled wtih the <code>.highcharts-data-label-box</code> and <code>.highcharts-data-label</code> class names (<a href=#http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels/">see example</a>).</p>
-		/// </summary>
-		public FlagsSeriesDataLabels DataLabels { get; set; }
-		private FlagsSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -472,7 +464,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(Data));
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
