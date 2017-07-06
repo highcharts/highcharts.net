@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public YAxisTitle()
 		{
 			Align = Align_DefaultValue = YAxisTitleAlign.Middle;
-			Margin = Margin_DefaultValue = new string[] {};
+			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 270;
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
@@ -36,8 +36,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The pixel distance between the axis labels or line and the title. Defaults to 0 for horizontal axes, 10 for vertical.
 		/// </summary>
-		public new string[] Margin { get; set; }
-		private new string[] Margin_DefaultValue { get; set; }
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>

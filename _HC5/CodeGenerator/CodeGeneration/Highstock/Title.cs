@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Align = Align_DefaultValue = TitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
-			Margin = Margin_DefaultValue = new string[] {};
+			Margin = Margin_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333"},{ "fontSize", "16px" }};
 			Text = Text_DefaultValue = "null";
 			UseHTML = UseHTML_DefaultValue = false;
@@ -45,8 +45,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The margin between the title and the plot area, or if a subtitle is present, the margin between the subtitle and the plot area.
 		/// </summary>
-		public new string[] Margin { get; set; }
-		private new string[] Margin_DefaultValue { get; set; }
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>

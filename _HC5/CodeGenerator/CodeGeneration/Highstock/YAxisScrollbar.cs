@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ButtonBorderWidth = ButtonBorderWidth_DefaultValue = 1;
 			Enabled = Enabled_DefaultValue = false;
 			LiveRedraw = LiveRedraw_DefaultValue = true;
-			Margin = Margin_DefaultValue = new string[] {};
+			Margin = Margin_DefaultValue = null;
 			MinWidth = MinWidth_DefaultValue = 6;
 			RifleColor = RifleColor_DefaultValue = "#333333";
 			ShowFull = ShowFull_DefaultValue = true;
@@ -119,8 +119,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Pixel margin between the scrollbar and the axis elements.
 		/// </summary>
-		public new string[] Margin { get; set; }
-		private new string[] Margin_DefaultValue { get; set; }
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>

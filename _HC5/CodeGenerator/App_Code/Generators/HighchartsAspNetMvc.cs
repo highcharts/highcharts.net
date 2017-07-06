@@ -394,6 +394,12 @@ public class HighchartsAspNetMvc
         if (propertyName == "Height" && child.Parent.ToLower() == "chart")
             returnType = "double?";
 
+        if (propertyName == "Margin" && child.Parent.ToLower() != "chart")
+            returnType = "double?";
+
+        if (propertyName == "Margin" && child.Parent.ToLower() == "chart")
+            returnType = "double[]";
+
         return propertyTemplate
          .Replace("{HighTemplate.Name}", propertyName)
          .Replace("{HighTemplate.Type}", returnType)
@@ -787,10 +793,16 @@ public class HighchartsAspNetMvc
         if (item.Title.ToLower() == "height" && item.Parent.ToLower() == "chart")
             return "null";
 
+        if (item.Title.ToLower() == "margin" && item.Parent.ToLower() != "chart")
+            return "null";
+
+        if (item.Title.ToLower() == "margin" && item.Parent.ToLower() == "chart")
+            return "new double[]{}";
+
         //if (item.Title.ToLower().Contains("datalabels") && item.Parent.ToLower().EndsWith("data"))
         //    item.IsParent = true;
 
-            if (_propertyInitMappings[item.FullName] != null)
+        if (_propertyInitMappings[item.FullName] != null)
         {
             defaults = _propertyInitMappings[item.FullName].ToString();
         }

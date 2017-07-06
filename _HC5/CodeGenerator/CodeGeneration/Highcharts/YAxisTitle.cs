@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public YAxisTitle()
 		{
 			Align = Align_DefaultValue = YAxisTitleAlign.Middle;
-			Margin = Margin_DefaultValue = new string[] {};
+			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 270;
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
@@ -36,8 +36,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The pixel distance between the axis labels and the title. Positive values are outside the axis line, negative are inside.
 		/// </summary>
-		public new string[] Margin { get; set; }
-		private new string[] Margin_DefaultValue { get; set; }
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>

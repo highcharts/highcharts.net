@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
 			LabelFormatter = LabelFormatter_DefaultValue = "";
 			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
-			Margin = Margin_DefaultValue = new string[] {};
+			Margin = Margin_DefaultValue = null;
 			MaxHeight = MaxHeight_DefaultValue = null;
 			Navigation = Navigation_DefaultValue = new LegendNavigation();
 			Padding = Padding_DefaultValue = 8;
@@ -174,8 +174,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// If the plot area sized is calculated automatically and the legend is not floating, the legend margin is the  space between the legend and the axis labels or plot area.
 		/// </summary>
-		public new string[] Margin { get; set; }
-		private new string[] Margin_DefaultValue { get; set; }
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>

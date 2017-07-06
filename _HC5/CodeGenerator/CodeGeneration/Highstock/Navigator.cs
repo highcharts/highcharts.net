@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = true;
 			Handles = Handles_DefaultValue = new NavigatorHandles();
 			Height = Height_DefaultValue = 40;
-			Margin = Margin_DefaultValue = new string[] {};
+			Margin = Margin_DefaultValue = null;
 			MaskFill = MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
 			MaskInside = MaskInside_DefaultValue = true;
 			Opposite = Opposite_DefaultValue = false;
@@ -62,8 +62,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The distance from the nearest element, the X axis or X axis labels.
 		/// </summary>
-		public new string[] Margin { get; set; }
-		private new string[] Margin_DefaultValue { get; set; }
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>

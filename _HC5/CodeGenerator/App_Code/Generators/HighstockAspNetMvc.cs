@@ -417,6 +417,12 @@ public class HighstockAspNetMvc
         if (propertyName == "Buttons" && child.Parent == "rangeSelector")
             returnType = "List<RangeSelectorButton>";
 
+        if (propertyName == "Margin" && child.Parent.ToLower() != "chart")
+            returnType = "double?";
+
+        if (propertyName == "Margin" && child.Parent.ToLower() == "chart")
+            returnType = "double[]";
+
         return propertyTemplate
          .Replace("{HighTemplate.Name}", propertyName)
          .Replace("{HighTemplate.Type}", returnType)
@@ -800,6 +806,12 @@ public class HighstockAspNetMvc
 
         if (item.Title.ToLower() == "count" && item.Parent == "rangeSelector-buttons")
             return "0";
+
+        if (item.Title.ToLower() == "margin" && item.Parent.ToLower() != "chart")
+            return "null";
+
+        if (item.Title.ToLower() == "margin" && item.Parent.ToLower() == "chart")
+            return "new double[]{}";
 
         if (_propertyInitMappings[item.FullName] != null)
         {
