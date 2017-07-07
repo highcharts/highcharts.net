@@ -10569,28 +10569,6 @@
             The actual series to append to the chart. In addition to the members listed below, any member of the <code>plotOptions</code> for that specifictype of plot can be added to a series individually. For example, even though a general<code>lineWidth</code> is specified in <code>plotOptions.series</code>, an individual<code>lineWidth</code> can be specified for each series.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.AreaSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.ArearangeSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.AreasplineSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.AreasplinerangeSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.BarSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.BoxplotSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.BubbleSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.ColumnSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.ColumnrangeSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.ErrorbarSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.FunnelSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.GaugeSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.HeatmapSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.LineSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.PieSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.PolygonSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.PyramidSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.ScatterSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.SolidgaugeSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.SplineSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.TreemapSeries" -->
-        <!-- Badly formed XML comment ignored for member "P:Highsoft.Web.Mvc.Charts.Highcharts.WaterfallSeries" -->
         <member name="P:Highsoft.Web.Mvc.Charts.Highcharts.Subtitle">
             <summary>
             The chart's subtitle

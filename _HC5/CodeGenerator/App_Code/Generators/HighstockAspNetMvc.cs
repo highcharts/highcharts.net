@@ -212,6 +212,13 @@ public class HighstockAspNetMvc
                 GenerateEnum(child);
             }
 
+            //if (child.Parent != null)
+            //    if(child.Parent.ToLower().Contains("high"))
+            //    continue;
+
+            //if (child.Parent != null && child.Parent.ToLower().Contains("highstock") && propertyName.ToLower().Contains("series") && propertyName.Length > 6)
+            //    continue;
+
             if (propertyName.ToLower().EndsWith("datalabels") &&
                 child.Parent.StartsWith("series") && child.Parent.EndsWith(">") && child.IsParent)
                 continue;

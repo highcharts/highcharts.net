@@ -204,6 +204,9 @@ public class HighchartsAspNetMvc
                 GenerateEnum(child);
             }
 
+            if (child.Parent.ToLower().Contains("highcharts") && propertyName.ToLower().Contains("series") && propertyName.Length > 6)
+                continue;
+
             if (propertyName.ToLower().EndsWith("datalabels") && (child.Parent.ToLower().EndsWith("data") || child.Parent.ToLower().EndsWith("levels")))
                 child.IsParent = true;
 
