@@ -33,19 +33,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Responsive = Responsive_DefaultValue = new Responsive();
 			Scrollbar = Scrollbar_DefaultValue = new Scrollbar();
 			Series = Series_DefaultValue = new List<Series>();
-			AreaSeries = AreaSeries_DefaultValue = new AreaSeries();
-			ArearangeSeries = ArearangeSeries_DefaultValue = new ArearangeSeries();
-			AreasplineSeries = AreasplineSeries_DefaultValue = new AreasplineSeries();
-			AreasplinerangeSeries = AreasplinerangeSeries_DefaultValue = new AreasplinerangeSeries();
-			CandleStickSeries = CandleStickSeries_DefaultValue = new CandleStickSeries();
-			ColumnSeries = ColumnSeries_DefaultValue = new ColumnSeries();
-			ColumnrangeSeries = ColumnrangeSeries_DefaultValue = new ColumnrangeSeries();
-			FlagsSeries = FlagsSeries_DefaultValue = new FlagsSeries();
-			LineSeries = LineSeries_DefaultValue = new LineSeries();
-			OhlcSeries = OhlcSeries_DefaultValue = new OhlcSeries();
-			PolygonSeries = PolygonSeries_DefaultValue = new PolygonSeries();
-			ScatterSeries = ScatterSeries_DefaultValue = new ScatterSeries();
-			SplineSeries = SplineSeries_DefaultValue = new SplineSeries();
 			Subtitle = Subtitle_DefaultValue = new Subtitle();
 			Title = Title_DefaultValue = new Title();
 			Tooltip = Tooltip_DefaultValue = new Tooltip();
@@ -197,97 +184,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>A <code>area</code> series. If the <a href="#series<area>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.area">plotOptions.area</a>.</p>
-		/// </summary>
-		public AreaSeries AreaSeries { get; set; }
-		private AreaSeries AreaSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>arearange</code> series. If the <a href="#series<arearange>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.arearange">plotOptions.arearange</a>.</p>
-		/// </summary>
-		public ArearangeSeries ArearangeSeries { get; set; }
-		private ArearangeSeries ArearangeSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>areaspline</code> series. If the <a href="#series<areaspline>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.areaspline">plotOptions.areaspline</a>.</p>
-		/// </summary>
-		public AreasplineSeries AreasplineSeries { get; set; }
-		private AreasplineSeries AreasplineSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>areasplinerange</code> series. If the <a href="#series<areasplinerange>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.areasplinerange">plotOptions.areasplinerange</a>.</p>
-		/// </summary>
-		public AreasplinerangeSeries AreasplinerangeSeries { get; set; }
-		private AreasplinerangeSeries AreasplinerangeSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>candlestick</code> series. If the <a href="#series<candlestick>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.candlestick">plotOptions.candlestick</a>.</p>
-		/// </summary>
-		public CandleStickSeries CandleStickSeries { get; set; }
-		private CandleStickSeries CandleStickSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>column</code> series. If the <a href="#series<column>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.column">plotOptions.column</a>.</p>
-		/// </summary>
-		public ColumnSeries ColumnSeries { get; set; }
-		private ColumnSeries ColumnSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>columnrange</code> series. If the <a href="#series<columnrange>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.columnrange">plotOptions.columnrange</a>.</p>
-		/// </summary>
-		public ColumnrangeSeries ColumnrangeSeries { get; set; }
-		private ColumnrangeSeries ColumnrangeSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>flags</code> series. If the <a href="#series<flags>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.flags">plotOptions.flags</a>.</p>
-		/// </summary>
-		public FlagsSeries FlagsSeries { get; set; }
-		private FlagsSeries FlagsSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>line</code> series. If the <a href="#series<line>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.line">plotOptions.line</a>.</p>
-		/// </summary>
-		public LineSeries LineSeries { get; set; }
-		private LineSeries LineSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>ohlc</code> series. If the <a href="#series<ohlc>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.ohlc">plotOptions.ohlc</a>.</p>
-		/// </summary>
-		public OhlcSeries OhlcSeries { get; set; }
-		private OhlcSeries OhlcSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>polygon</code> series. If the <a href="#series<polygon>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.polygon">plotOptions.polygon</a>.</p>
-		/// </summary>
-		public PolygonSeries PolygonSeries { get; set; }
-		private PolygonSeries PolygonSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>scatter</code> series. If the <a href="#series<scatter>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.scatter">plotOptions.scatter</a>.</p>
-		/// </summary>
-		public ScatterSeries ScatterSeries { get; set; }
-		private ScatterSeries ScatterSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A <code>spline</code> series. If the <a href="#series<spline>.type">type</a> option is not specified, it is inherited from <a href="#chart.type">chart.type</a>.</p><p>For options that apply to multiple series, it is recommended to add them to the <a href="#pointOptions.series">pointOptions.series</a> options structure. To apply to all series of this specific type, apply it to <a href="#plotOptions.spline">plotOptions.spline</a>.</p>
-		/// </summary>
-		public SplineSeries SplineSeries { get; set; }
-		private SplineSeries SplineSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The chart's subtitle
 		/// </summary>
 		public Subtitle Subtitle { get; set; }
@@ -401,19 +297,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Responsive.IsDirty()) h.Add("responsive",Responsive.ToHashtable());
 			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());
 			if (Series != Series_DefaultValue) h.Add("series",Series);
-			if (AreaSeries.IsDirty()) h.Add("areaSeries",AreaSeries.ToHashtable());
-			if (ArearangeSeries.IsDirty()) h.Add("arearangeSeries",ArearangeSeries.ToHashtable());
-			if (AreasplineSeries.IsDirty()) h.Add("areasplineSeries",AreasplineSeries.ToHashtable());
-			if (AreasplinerangeSeries.IsDirty()) h.Add("areasplinerangeSeries",AreasplinerangeSeries.ToHashtable());
-			if (CandleStickSeries.IsDirty()) h.Add("candleStickSeries",CandleStickSeries.ToHashtable());
-			if (ColumnSeries.IsDirty()) h.Add("columnSeries",ColumnSeries.ToHashtable());
-			if (ColumnrangeSeries.IsDirty()) h.Add("columnrangeSeries",ColumnrangeSeries.ToHashtable());
-			if (FlagsSeries.IsDirty()) h.Add("flagsSeries",FlagsSeries.ToHashtable());
-			if (LineSeries.IsDirty()) h.Add("lineSeries",LineSeries.ToHashtable());
-			if (OhlcSeries.IsDirty()) h.Add("ohlcSeries",OhlcSeries.ToHashtable());
-			if (PolygonSeries.IsDirty()) h.Add("polygonSeries",PolygonSeries.ToHashtable());
-			if (ScatterSeries.IsDirty()) h.Add("scatterSeries",ScatterSeries.ToHashtable());
-			if (SplineSeries.IsDirty()) h.Add("splineSeries",SplineSeries.ToHashtable());
 			if (Subtitle.IsDirty()) h.Add("subtitle",Subtitle.ToHashtable());
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
