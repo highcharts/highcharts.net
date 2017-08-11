@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
 			OutlineWidth = OutlineWidth_DefaultValue = 2;
 			Series = Series_DefaultValue = null;
-			XAxis = XAxis_DefaultValue = null;
-			YAxis = YAxis_DefaultValue = "";
+			XAxis = XAxis_DefaultValue = new XAxis();
+			YAxis = YAxis_DefaultValue = new YAxis();
 			
 		}	
 		
@@ -111,15 +111,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Options for the navigator X axis. Available options are the same as any X axis, documented at <a class="internal" href="#xAxis">xAxis</a>. Default series options for the navigator xAxis are:<pre>xAxis: {    tickWidth: 0,    lineWidth: 0,    gridLineWidth: 1,    tickPixelInterval: 200,    labels: {        align: 'left',        style: {            color: '#888'        },        x: 3,        y: -4    }}</pre>
 		/// </summary>
-		public Object XAxis { get; set; }
-		private Object XAxis_DefaultValue { get; set; }
+		public XAxis XAxis { get; set; }
+		private XAxis XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the navigator Y axis. Available options are the same as any y axis, documented at <a class="internal" href="#yAxis">yAxis</a>. Default series options for the navigator yAxis are:<pre>yAxis: {gridLineWidth: 0,startOnTick: false,endOnTick: false,minPadding: 0.1,maxPadding: 0.1,labels: {enabled: false},title: {text: null},tickWidth: 0}</pre>
 		/// </summary>
-		public Object YAxis { get; set; }
-		private Object YAxis_DefaultValue { get; set; }
+		public YAxis YAxis { get; set; }
+		private YAxis YAxis_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -137,8 +137,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (OutlineColor != OutlineColor_DefaultValue) h.Add("outlineColor",OutlineColor);
 			if (OutlineWidth != OutlineWidth_DefaultValue) h.Add("outlineWidth",OutlineWidth);
 			if (Series != Series_DefaultValue) h.Add("series",Series.ToHashtable());
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (XAxis.IsDirty()) h.Add("xAxis",XAxis.ToHashtable());
+			if (YAxis.IsDirty()) h.Add("yAxis",YAxis.ToHashtable());
 			
 
 			return h;

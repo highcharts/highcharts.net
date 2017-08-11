@@ -427,6 +427,12 @@ public class HighstockAspNetMvc
         if (propertyName == "Margin" && child.Parent.ToLower() == "chart")
             returnType = "double[]";
 
+        if (propertyName == "XAxis" && child.Parent == "navigator")
+            returnType = "XAxis";
+
+        if (propertyName == "YAxis" && child.Parent == "navigator")
+            returnType = "YAxis";
+
         return propertyTemplate
          .Replace("{HighTemplate.Name}", propertyName)
          .Replace("{HighTemplate.Type}", returnType)
@@ -543,7 +549,11 @@ public class HighstockAspNetMvc
             if (propertyName == "Series" && child.Parent == "navigator")
                 return "if (Series != Series_DefaultValue) h.Add(\"series\",Series.ToHashtable());\n\t\t\t";
 
-            
+            if (propertyName == "XAxis" && child.Parent == "navigator")
+                return "if (XAxis.IsDirty()) h.Add(\"xAxis\",XAxis.ToHashtable());\n\t\t\t";
+
+            if (propertyName == "YAxis" && child.Parent == "navigator")
+                return "if (YAxis.IsDirty()) h.Add(\"yAxis\",YAxis.ToHashtable());\n\t\t\t";
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
@@ -816,6 +826,12 @@ public class HighstockAspNetMvc
 
         if (item.Title.ToLower() == "margin" && item.Parent.ToLower() == "chart")
             return "new double[]{}";
+
+        if (item.Title.ToLower() == "xaxis" && item.Parent == "navigator")
+            return "new XAxis()";
+
+        if (item.Title.ToLower() == "yaxis" && item.Parent == "navigator")
+            return "new YAxis()";
 
         if (_propertyInitMappings[item.FullName] != null)
         {
