@@ -869,27 +869,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ArearangeSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.ArearangeSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ArearangeSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.ArearangeSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ArearangeSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.ArearangeSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ArearangeSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.ArearangeSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ArearangeSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.ArearangeSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -1826,27 +1826,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreaSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreaSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreaSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreaSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreaSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreaSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreaSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreaSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreaSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreaSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -2528,27 +2528,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreasplinerangeSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -3480,27 +3480,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreasplineSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreasplineSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreasplineSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreasplineSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreasplineSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreasplineSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreasplineSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreasplineSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.AreasplineSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.AreasplineSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -4222,27 +4222,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BarSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.BarSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BarSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.BarSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BarSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.BarSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BarSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.BarSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BarSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.BarSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -4859,27 +4859,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.BoxplotSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -5675,27 +5675,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BubbleSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.BubbleSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BubbleSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.BubbleSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BubbleSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.BubbleSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BubbleSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.BubbleSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.BubbleSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.BubbleSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -6827,27 +6827,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ColumnrangeSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.ColumnrangeSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ColumnrangeSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.ColumnrangeSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ColumnrangeSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.ColumnrangeSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ColumnrangeSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.ColumnrangeSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ColumnrangeSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.ColumnrangeSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -7569,27 +7569,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ColumnSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.ColumnSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ColumnSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.ColumnSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ColumnSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.ColumnSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ColumnSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.ColumnSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ColumnSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.ColumnSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -8326,27 +8326,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ErrorbarSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.ErrorbarSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ErrorbarSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.ErrorbarSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ErrorbarSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.ErrorbarSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ErrorbarSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.ErrorbarSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ErrorbarSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.ErrorbarSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -9162,27 +9162,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.FunnelSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.FunnelSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.FunnelSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.FunnelSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.FunnelSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.FunnelSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.FunnelSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.FunnelSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.FunnelSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.FunnelSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -10449,27 +10449,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.HeatmapSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.HeatmapSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.HeatmapSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.HeatmapSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.HeatmapSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.HeatmapSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.HeatmapSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.HeatmapSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.HeatmapSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.HeatmapSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -11891,27 +11891,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.LineSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.LineSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.LineSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.LineSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.LineSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.LineSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.LineSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.LineSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.LineSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.LineSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -12768,27 +12768,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PieSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PieSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PieSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PieSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PieSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PieSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PieSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PieSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PieSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PieSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -13995,27 +13995,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsArearangeZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsArearangeZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsArearangeZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsArearangeZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsArearangeZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsArearangeZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsArearangeZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsArearangeZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsArearangeZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsArearangeZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -15097,27 +15097,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplinerangeZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplinerangeZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplinerangeZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplinerangeZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplinerangeZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplinerangeZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplinerangeZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplinerangeZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplinerangeZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplinerangeZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -15237,27 +15237,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplineZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplineZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplineZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplineZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplineZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplineZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplineZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplineZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplineZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreasplineZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -15377,27 +15377,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreaZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreaZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreaZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreaZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreaZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreaZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreaZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreaZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreaZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsAreaZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -15973,27 +15973,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBarZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBarZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBarZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBarZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBarZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBarZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBarZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBarZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBarZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBarZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -16439,27 +16439,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBoxplotZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBoxplotZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBoxplotZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBoxplotZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBoxplotZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBoxplotZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBoxplotZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBoxplotZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBoxplotZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBoxplotZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -17109,27 +17109,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBubbleZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBubbleZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBubbleZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBubbleZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBubbleZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBubbleZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBubbleZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBubbleZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBubbleZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsBubbleZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -18151,27 +18151,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnrangeZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -18291,27 +18291,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsColumnZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -18722,27 +18722,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsErrorbarZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -19252,27 +19252,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsFunnelZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsFunnelZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsFunnelZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsFunnelZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsFunnelZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsFunnelZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsFunnelZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsFunnelZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsFunnelZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsFunnelZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -20237,27 +20237,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsHeatmapZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -20903,27 +20903,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsLineZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsLineZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsLineZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsLineZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsLineZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsLineZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsLineZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsLineZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsLineZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsLineZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -21434,27 +21434,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPieZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPieZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPieZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPieZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPieZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPieZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPieZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPieZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPieZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPieZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -22059,27 +22059,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPolygonZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPolygonZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPolygonZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPolygonZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPolygonZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPolygonZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPolygonZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPolygonZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPolygonZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPolygonZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -22579,27 +22579,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPyramidZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPyramidZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPyramidZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPyramidZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPyramidZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPyramidZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPyramidZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPyramidZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPyramidZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsPyramidZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -23214,27 +23214,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsScatterZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsScatterZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsScatterZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsScatterZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsScatterZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsScatterZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsScatterZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsScatterZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsScatterZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsScatterZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -23880,27 +23880,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -24931,27 +24931,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSplineZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSplineZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSplineZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSplineZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSplineZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSplineZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSplineZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSplineZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSplineZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsSplineZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -25512,27 +25512,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsTreemapZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsTreemapZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsTreemapZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsTreemapZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsTreemapZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsTreemapZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsTreemapZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsTreemapZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsTreemapZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsTreemapZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -26108,27 +26108,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsWaterfallZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsWaterfallZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsWaterfallZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsWaterfallZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsWaterfallZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsWaterfallZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsWaterfallZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsWaterfallZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsWaterfallZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PlotOptionsWaterfallZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -26994,27 +26994,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PolygonSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PolygonSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PolygonSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PolygonSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PolygonSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PolygonSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PolygonSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PolygonSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PolygonSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PolygonSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -27645,27 +27645,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PyramidSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.PyramidSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PyramidSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.PyramidSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PyramidSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.PyramidSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PyramidSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.PyramidSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.PyramidSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.PyramidSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -28581,27 +28581,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ScatterSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.ScatterSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ScatterSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.ScatterSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ScatterSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.ScatterSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ScatterSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.ScatterSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.ScatterSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.ScatterSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -30089,27 +30089,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.SplineSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.SplineSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.SplineSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.SplineSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.SplineSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.SplineSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.SplineSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.SplineSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.SplineSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.SplineSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -31051,27 +31051,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.TreemapSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.TreemapSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.TreemapSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.TreemapSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.TreemapSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.TreemapSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.TreemapSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.TreemapSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.TreemapSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.TreemapSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>
@@ -31803,27 +31803,27 @@
             The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.WaterfallSeriesZones.ClassName">
+        <member name="P:Highsoft.Web.Mvc.Charts.WaterfallSeriesZone.ClassName">
             <summary>
             <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A custom class name for the zone.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.WaterfallSeriesZones.Color">
+        <member name="P:Highsoft.Web.Mvc.Charts.WaterfallSeriesZone.Color">
             <summary>
             Defines the color of the series.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.WaterfallSeriesZones.DashStyle">
+        <member name="P:Highsoft.Web.Mvc.Charts.WaterfallSeriesZone.DashStyle">
             <summary>
             A name for the dash style to use for the graph.
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.WaterfallSeriesZones.FillColor">
+        <member name="P:Highsoft.Web.Mvc.Charts.WaterfallSeriesZone.FillColor">
             <summary>
             Defines the fill color for the series (in area type series)
             </summary>
         </member>
-        <member name="P:Highsoft.Web.Mvc.Charts.WaterfallSeriesZones.Value">
+        <member name="P:Highsoft.Web.Mvc.Charts.WaterfallSeriesZone.Value">
             <summary>
             The value up to where the zone extends, if undefined the zones stretches to the last value in the series.
             </summary>

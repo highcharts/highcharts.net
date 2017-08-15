@@ -52,7 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Width = Width_DefaultValue = "90%";
 			ZIndex = ZIndex_DefaultValue = null;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new PyramidSeriesZones();
+			Zones = Zones_DefaultValue = new List<PyramidSeriesZone>();
 			
 		}	
 		
@@ -326,8 +326,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An array defining zones within a series. Zones can be applied to the X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code> option.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">view live demo</a>).</p>
 		/// </summary>
-		public PyramidSeriesZones Zones { get; set; }
-		private PyramidSeriesZones Zones_DefaultValue { get; set; }
+		public List<PyramidSeriesZone> Zones { get; set; }
+		private List<PyramidSeriesZone> Zones_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -372,7 +372,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			
 
 			return h;
