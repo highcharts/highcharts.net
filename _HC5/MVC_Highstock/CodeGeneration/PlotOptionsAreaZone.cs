@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class ScatterSeriesZones  : BaseObject
+	public partial class PlotOptionsAreaZone  : BaseObject
 	{
-		public ScatterSeriesZones()
+		public PlotOptionsAreaZone()
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = null;

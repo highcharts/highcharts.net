@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class FlagsSeriesZones  : BaseObject
+	public partial class AreasplinerangeSeriesZone  : BaseObject
 	{
-		public FlagsSeriesZones()
+		public AreasplinerangeSeriesZone()
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = null;

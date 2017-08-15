@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class PlotOptionsPolygonZones  : BaseObject
+	public partial class ColumnrangeSeriesZone  : BaseObject
 	{
-		public PlotOptionsPolygonZones()
+		public ColumnrangeSeriesZone()
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = null;

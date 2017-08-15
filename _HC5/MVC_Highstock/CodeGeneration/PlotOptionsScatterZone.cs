@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class PlotOptionsCandlestickZones  : BaseObject
+	public partial class PlotOptionsScatterZone  : BaseObject
 	{
-		public PlotOptionsCandlestickZones()
+		public PlotOptionsScatterZone()
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = null;
