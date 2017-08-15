@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Width = Width_DefaultValue = "90%";
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new PlotOptionsFunnelZones();
+			Zones = Zones_DefaultValue = new List<PlotOptionsFunnelZone>();
 			
 		}	
 		
@@ -286,8 +286,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An array defining zones within a series. Zones can be applied to the X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code> option.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">view live demo</a>).</p>
 		/// </summary>
-		public PlotOptionsFunnelZones Zones { get; set; }
-		private PlotOptionsFunnelZones Zones_DefaultValue { get; set; }
+		public List<PlotOptionsFunnelZone> Zones { get; set; }
+		private List<PlotOptionsFunnelZone> Zones_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -327,7 +327,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			
 
 			return h;

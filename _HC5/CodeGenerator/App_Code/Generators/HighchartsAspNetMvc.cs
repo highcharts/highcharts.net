@@ -186,6 +186,9 @@ public class HighchartsAspNetMvc
         else
             children = FindImmediateChildren(item);
 
+        if (item.FullName.ToLower().EndsWith("zones"))
+            item.FullName = item.FullName.Remove(item.FullName.Length - 5) + "Zone";
+
         foreach (ApiItem child in children)
         {
             //string propertyName = FirstCharToUpper(child.Title);
@@ -437,6 +440,9 @@ public class HighchartsAspNetMvc
         if (_typeMappings[returnType] != null)
             return _typeMappings[returnType].ToString();
 
+        if (child.ReturnType == "Array" && child.FullName.ToLower().EndsWith("zones"))
+            returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones","Zone"));
+        else
         if (child.IsParent)
             returnType = GetClassNameFromItem(child);
 
@@ -505,6 +511,9 @@ public class HighchartsAspNetMvc
         {
             if ((child.Parent == "chart.resetZoomButton" || child.Parent == "credits" || child.Parent == "noData") && propertyName == "Position")
                 return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
+
+            if (child.ReturnType == "Array" && child.FullName.ToLower().EndsWith("zones"))
+                return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
         }
@@ -896,6 +905,9 @@ public class HighchartsAspNetMvc
 
             //if (item.Title.ToLower().Contains("datalabels") && item.Parent.ToLower().EndsWith("data"))
             //    item.IsParent = false;
+
+            if (item.ReturnType == "Array" && item.FullName.ToLower().EndsWith("zones"))
+                return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
 
             if (item.FullName.ToLower().Contains("data.datalabels"))
                 item.FullName = item.FullName.Replace("data.", "");

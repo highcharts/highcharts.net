@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			WhiskerLength = WhiskerLength_DefaultValue = "50%";
 			WhiskerWidth = WhiskerWidth_DefaultValue = 2;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new PlotOptionsBoxplotZones();
+			Zones = Zones_DefaultValue = new List<PlotOptionsBoxplotZone>();
 			
 		}	
 		
@@ -414,8 +414,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An array defining zones within a series. Zones can be applied to the X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code> option.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">view live demo</a>).</p>
 		/// </summary>
-		public PlotOptionsBoxplotZones Zones { get; set; }
-		private PlotOptionsBoxplotZones Zones_DefaultValue { get; set; }
+		public List<PlotOptionsBoxplotZone> Zones { get; set; }
+		private List<PlotOptionsBoxplotZone> Zones_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -475,7 +475,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (WhiskerLength != WhiskerLength_DefaultValue) h.Add("whiskerLength",WhiskerLength);
 			if (WhiskerWidth != WhiskerWidth_DefaultValue) h.Add("whiskerWidth",WhiskerWidth);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			
 
 			return h;

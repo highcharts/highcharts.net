@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new PlotOptionsAreasplinerangeZones();
+			Zones = Zones_DefaultValue = new List<PlotOptionsAreasplinerangeZone>();
 			
 		}	
 		
@@ -342,8 +342,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An array defining zones within a series. Zones can be applied to the X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code> option.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">view live demo</a>).</p>
 		/// </summary>
-		public PlotOptionsAreasplinerangeZones Zones { get; set; }
-		private PlotOptionsAreasplinerangeZones Zones_DefaultValue { get; set; }
+		public List<PlotOptionsAreasplinerangeZone> Zones { get; set; }
+		private List<PlotOptionsAreasplinerangeZone> Zones_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -394,7 +394,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			
 
 			return h;
