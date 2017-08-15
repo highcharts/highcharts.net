@@ -30,8 +30,8 @@ public class HighstockAspNetMvc
     List<string> _customProperties; // properties that need custom JSON mappings (Animation, Shadow, etc). Defined in the CodeAddOns folder.
     HttpServerUtility Server; // the server of the page
 
-	public HighstockAspNetMvc(HttpServerUtility server)
-	{
+    public HighstockAspNetMvc(HttpServerUtility server)
+    {
         _apiItems = new List<ApiItem>();
         _typeMappings = new Hashtable();
         _propertyTypeMappings = new Hashtable();
@@ -51,7 +51,7 @@ public class HighstockAspNetMvc
         InitCustomProperties();
         InitSeriesMappings();
         InitLists();
-	}
+    }
 
     public void GenerateCode()
     {
@@ -195,6 +195,9 @@ public class HighstockAspNetMvc
             children = FindRootChildren();
         else
             children = FindImmediateChildren(item);
+
+        if (item.FullName.ToLower().EndsWith("zones"))
+            item.FullName = item.FullName.Remove(item.FullName.Length - 5) + "Zone";
 
         foreach (ApiItem child in children)
         {
@@ -465,6 +468,9 @@ public class HighstockAspNetMvc
         if (_typeMappings[returnType] != null)
             return _typeMappings[returnType].ToString();
 
+        if (child.ReturnType == "Array" && child.FullName.ToLower().EndsWith("zones"))
+            returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones", "Zone"));
+        else
         if (child.IsParent)
             returnType = GetClassNameFromItem(child);
 
@@ -531,8 +537,11 @@ public class HighstockAspNetMvc
                     return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
 
                 //if (propertyName.ToLower().Contains("buttons"))
-                    if (propertyName == "Buttons" && child.Parent == "rangeSelector")
-                        return "if (Buttons != Buttons_DefaultValue)\n\t\t\t{\n\t\t\t\tList<Hashtable> buttons = new List<Hashtable>();\n\t\t\t\tforeach (var item in Buttons)\n\t\t\t\t\tbuttons.Add(item.ToHashtable());\n\n\t\t\t\th.Add(\"buttons\", buttons);\n\t\t\t}\n\t\t\t";
+                if (propertyName == "Buttons" && child.Parent == "rangeSelector")
+                    return "if (Buttons != Buttons_DefaultValue)\n\t\t\t{\n\t\t\t\tList<Hashtable> buttons = new List<Hashtable>();\n\t\t\t\tforeach (var item in Buttons)\n\t\t\t\t\tbuttons.Add(item.ToHashtable());\n\n\t\t\t\th.Add(\"buttons\", buttons);\n\t\t\t}\n\t\t\t";
+
+                if (child.ReturnType == "Array" && child.FullName.ToLower().EndsWith("zones"))
+                    return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
             }
 
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
@@ -922,6 +931,9 @@ public class HighstockAspNetMvc
             {
                 return _propertyInitMappings[FirstCharToUpper(item.Title)].ToString();
             }
+
+            if (item.ReturnType == "Array" && item.FullName.ToLower().EndsWith("zones"))
+                return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
 
             if (item.FullName.ToLower().Contains("data.datalabels"))
                 item.FullName = item.FullName.Replace("data.", "");

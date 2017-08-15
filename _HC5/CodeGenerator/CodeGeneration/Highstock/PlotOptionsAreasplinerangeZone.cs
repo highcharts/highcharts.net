@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class ArearangeSeriesZones  : BaseObject
+	public partial class PlotOptionsAreasplinerangeZone  : BaseObject
 	{
-		public ArearangeSeriesZones()
+		public PlotOptionsAreasplinerangeZone()
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = null;

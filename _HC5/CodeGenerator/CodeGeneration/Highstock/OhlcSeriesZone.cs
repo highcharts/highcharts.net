@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class AreaSeriesZones  : BaseObject
+	public partial class OhlcSeriesZone  : BaseObject
 	{
-		public AreaSeriesZones()
+		public OhlcSeriesZone()
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = null;
