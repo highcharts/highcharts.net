@@ -40,7 +40,7 @@ namespace Highsoft.Web.Mvc.Charts
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ZAxis = ZAxis_DefaultValue = new ZAxis();
 			ColorAxis = ColorAxis_DefaultValue = new ColorAxis();
-			Stops = Stops_DefaultValue = null;
+			Stops = Stops_DefaultValue = new List<Stop>();
 			Min = Min_DefaultValue = null;
 			Max = Max_DefaultValue = null;
 			StartOnTick = StartOnTick_DefaultValue = false;
@@ -312,7 +312,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
 			if (ZAxis.IsDirty()) h.Add("zAxis",ZAxis.ToHashtable());
 			if (ColorAxis.IsDirty()) h.Add("colorAxis",ColorAxis.ToHashtable());
-			if (Stops != Stops_DefaultValue) h.Add("stops", HashifyList(Stops));
+			if (Stops.Any()) h.Add("stops", GetLists(Stops));
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);

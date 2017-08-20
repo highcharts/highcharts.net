@@ -27,5 +27,17 @@ namespace Highsoft.Web.Mvc.Charts
 
             return result;
         }
+
+        internal List<List<object>> GetLists(IEnumerable list)
+        {
+            List<List<object>> result = new List<List<object>>();
+
+            foreach (IObjectList baseObject in list)
+            {
+                result.Add(baseObject.ToList());
+            }
+
+            return result;
+        }
 	}
 }

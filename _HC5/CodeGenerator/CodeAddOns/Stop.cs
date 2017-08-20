@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Stop : BaseObject
+	public partial class Stop : BaseObject, IObjectList
 	{
 		public Stop() {
             Position = 0;
@@ -40,6 +40,14 @@ namespace Highsoft.Web.Mvc.Charts
         internal override string ToJSON()
         {
             return new JavaScriptSerializer().Serialize(ToHashtable());
+        }
+
+        public List<object> ToList()
+        {
+            if (!string.IsNullOrWhiteSpace(Color))
+                return new List<object> { Position, Color };
+
+            return new List<object>();
         }
 
         // checks if the state of the object is different from the default

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColorAxis()
 		{
-			Stops = Stops_DefaultValue = null;
+			Stops = Stops_DefaultValue = new List<Stop>();
 			Min = Min_DefaultValue = null;
 			Max = Max_DefaultValue = null;
 			StartOnTick = StartOnTick_DefaultValue = false;
@@ -78,7 +78,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Stops != Stops_DefaultValue) h.Add("stops", HashifyList(Stops));
+			if (Stops.Any()) h.Add("stops", GetLists(Stops));
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);

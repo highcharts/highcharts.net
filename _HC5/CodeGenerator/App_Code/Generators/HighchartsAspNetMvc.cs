@@ -491,6 +491,9 @@ public class HighchartsAspNetMvc
             if (propertyName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
 
+            if (propertyName == "Stops")
+                return "if (Stops.Any()) h.Add(\"stops\", GetLists(Stops));\n\t\t\t";
+
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
         if (_propertyTypeMappings.Contains(child.FullName))
@@ -810,6 +813,9 @@ public class HighchartsAspNetMvc
 
         if (item.Title.ToLower() == "margin" && item.Parent.ToLower() == "chart")
             return "new double[]{}";
+
+        if (item.Title.ToLower() == "stops")
+            return "new List<Stop>()";
 
         //if (item.Title.ToLower().Contains("datalabels") && item.Parent.ToLower().EndsWith("data"))
         //    item.IsParent = true;

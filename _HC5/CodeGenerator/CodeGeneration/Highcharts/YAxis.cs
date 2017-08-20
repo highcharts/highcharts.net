@@ -67,7 +67,7 @@ namespace Highsoft.Web.Mvc.Charts
 			StackLabels = StackLabels_DefaultValue = new YAxisStackLabels();
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			StartOnTick = StartOnTick_DefaultValue = true;
-			Stops = Stops_DefaultValue = null;
+			Stops = Stops_DefaultValue = new List<Stop>();
 			TickAmount = TickAmount_DefaultValue = null;
 			TickColor = TickColor_DefaultValue = "#ccd6eb";
 			TickInterval = TickInterval_DefaultValue = null;
@@ -611,7 +611,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StackLabels.IsDirty()) h.Add("stackLabels",StackLabels.ToHashtable());
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
-			if (Stops != Stops_DefaultValue) h.Add("stops", HashifyList(Stops));
+			if (Stops.Any()) h.Add("stops", GetLists(Stops));
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickColor != TickColor_DefaultValue) h.Add("tickColor",TickColor);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);

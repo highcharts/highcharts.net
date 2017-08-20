@@ -91,7 +91,7 @@
                 }
             },
             YAxis = new List<YAxis>
-            {            
+            {
                 new YAxis
                 {
                     Stops = new List<Stop>
@@ -107,7 +107,7 @@
                     Labels = new YAxisLabels
                     {
                         Y = 16
-                    }                    
+                    }
                 }
             },
             Tooltip = new Tooltip
@@ -126,23 +126,24 @@
                     }
                 }
             },
-            SolidgaugeSeries = new SolidgaugeSeries
+            Series = new List<Series>()
+            { new SolidgaugeSeries()
                 {
-                    Name = "Speed",
-                    Data = new List<SolidgaugeSeriesData>
+                Name = "Speed",
+                Data = new List<SolidgaugeSeriesData>
                     {
-                        new SolidgaugeSeriesData { Y = 80 }   
+                        new SolidgaugeSeriesData { Y = 80 }
                     },
-                    DataLabels = new SolidgaugeSeriesDataLabels
-                    {
-                        Format = "<div style='text-align:center'><span style='font-size:25px;color:black'>{y}</span><br/><span style='font-size:12px;color:silver'>km/h</span></div>"
-                    },
-                    Tooltip = new SolidgaugeSeriesTooltip
-                    {
-                        ValueSuffix = " km/h"
-                    }
+                DataLabels = new SolidgaugeSeriesDataLabels
+                {
+                    Format = "<div style='text-align:center'><span style='font-size:25px;color:black'>{y}</span><br/><span style='font-size:12px;color:silver'>km/h</span></div>"
+                },
+                Tooltip = new SolidgaugeSeriesTooltip
+                {
+                    ValueSuffix = " km/h"
                 }
-            
+            }
+        }
         }
         , "chartspeed")
     )
