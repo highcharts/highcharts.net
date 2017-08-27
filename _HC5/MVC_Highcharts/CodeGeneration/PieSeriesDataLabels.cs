@@ -265,7 +265,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
 			if (Style != Style_DefaultValue) h.Add("style",Style);

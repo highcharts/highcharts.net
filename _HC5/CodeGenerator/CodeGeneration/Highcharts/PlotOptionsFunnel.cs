@@ -318,7 +318,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());

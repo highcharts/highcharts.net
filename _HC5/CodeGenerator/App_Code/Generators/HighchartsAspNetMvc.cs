@@ -528,7 +528,10 @@ public class HighchartsAspNetMvc
         {
             if (propertyName == "PointDescriptionThreshold")
                 return "if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)\n\t\t\t{\n\t\t\t\tif (PointDescriptionThreshold != null)\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", PointDescriptionThreshold);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", false);\n\t\t\t}\n\t\t\t";
-            
+
+            if (propertyName == "Shadow")
+                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
     }
