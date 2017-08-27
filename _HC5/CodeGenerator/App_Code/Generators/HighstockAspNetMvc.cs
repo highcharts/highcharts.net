@@ -564,6 +564,9 @@ public class HighstockAspNetMvc
             if (propertyName == "YAxis" && child.Parent == "navigator")
                 return "if (YAxis.IsDirty()) h.Add(\"yAxis\",YAxis.ToHashtable());\n\t\t\t";
 
+            if (propertyName == "Shadow")
+                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
     }
