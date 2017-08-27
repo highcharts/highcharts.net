@@ -272,7 +272,7 @@ are using these types of charts*@
             {
                 new XAxis
                 {
-                    TickmarkPlacement = XAxisTickmarkPlacement.On
+                    TickmarkPlacement = XAxisTickmarkPlacement.On,
                 }
             },
             YAxis = new List<YAxis>
@@ -302,15 +302,10 @@ are using these types of charts*@
                 Series = new PlotOptionsSeries
                 {
                     Stacking = PlotOptionsSeriesStacking.Normal,
-                    Shadow = new Shadow
-                    {
-                        Enabled = true
-                    },
                     PointPlacement = new PointPlacement
                     {
                         PointPlacementEnum = PointPlacementEnum.On
                     }
-
                 }
             }
         }
