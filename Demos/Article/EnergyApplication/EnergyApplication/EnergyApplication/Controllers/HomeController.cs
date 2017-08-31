@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using EnergyApplication.Services;
 using System.Web.Mvc;
 
 namespace EnergyApplication.Controllers
@@ -15,8 +12,8 @@ namespace EnergyApplication.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+            var dataSource = DataService.Get(Server.MapPath("~/App_Data/fuels.csv"));
+            ViewData["fuels"] = dataSource;
             return View();
         }
 
@@ -26,5 +23,7 @@ namespace EnergyApplication.Controllers
 
             return View();
         }
+
+        
     }
 }

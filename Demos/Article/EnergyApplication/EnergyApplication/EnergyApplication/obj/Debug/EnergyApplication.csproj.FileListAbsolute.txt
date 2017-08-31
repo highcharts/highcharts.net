@@ -67,3 +67,5 @@ C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyAppli
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\obj\Debug\EnergyApplication.csprojResolveAssemblyReference.cache
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\obj\Debug\EnergyApplication.dll
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\obj\Debug\EnergyApplication.pdb
+C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Highcharts.Web.Mvc.dll
+C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Highcharts.Web.Mvc.xml
