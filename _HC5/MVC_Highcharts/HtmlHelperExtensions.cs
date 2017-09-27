@@ -14,12 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
     {
         public static HighsoftNamespace Highsoft(this HtmlHelper helper) { return new HighsoftNamespace(); }
 
-        public static MvcHtmlString Highcharts(Highcharts chart, string id)
+        public static MvcHtmlString Highcharts(Highcharts chart, string containerId)
         {
             var renderer = new HighchartsRenderer(chart);
 
-            chart.ID = id;
-            chart.Chart.RenderTo = id;
+            if (!string.IsNullOrWhiteSpace(containerId))
+            {
+                chart.ID = containerId;
+            }
 
             return MvcHtmlString.Create(renderer.RenderHtml());
         }
@@ -27,24 +29,39 @@ namespace Highsoft.Web.Mvc.Charts
 
     public class HighsoftNamespace
     {
-        public MvcHtmlString Highcharts(Highcharts chart, string id)
+        public MvcHtmlString Highcharts(Highcharts chart, string containerId)
         {            
-            var renderer = new HighchartsRenderer(chart);  
-            
-            chart.ID = id;
-            chart.Chart.RenderTo = id;
-            
+            var renderer = new HighchartsRenderer(chart);
+            AssignContainerId(chart, containerId);
+
             return MvcHtmlString.Create(renderer.RenderHtml());
         }
 
-        public HtmlString GetHighcharts(Highcharts chart, string id)
+        public HtmlString GetHighcharts(Highcharts chart, string containerId, string functionName = null)
         {
-            var renderer = new HighchartsRenderer(chart);
+            if (functionName != null)
+                return GetHighchartsFunction(chart, containerId, functionName);
 
-            chart.ID = id;
-            chart.Chart.RenderTo = id;
+            var renderer = new HighchartsRenderer(chart);
+            AssignContainerId(chart, containerId);
 
             return new HtmlString(renderer.RenderHtml());
+        }
+
+        private HtmlString GetHighchartsFunction(Highcharts chart, string containerId, string functionName)
+        {
+            var renderer = new HighchartsRenderer(chart);
+            AssignContainerId(chart, containerId);
+
+            return new HtmlString(renderer.GetJavascriptFunction(functionName));
+        }
+
+        private void AssignContainerId(Highcharts chart, string containerId)
+        {
+            if (string.IsNullOrWhiteSpace(containerId))
+                return;
+
+            chart.ID = containerId;
         }
 
         [EditorBrowsable(EditorBrowsableState.Never)]
