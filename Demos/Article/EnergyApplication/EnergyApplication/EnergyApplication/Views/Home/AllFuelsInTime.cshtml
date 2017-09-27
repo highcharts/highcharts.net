@@ -1,0 +1,32 @@
+﻿@using Highsoft.Web.Mvc.Charts
+@Html.Highsoft().GetHighcharts(new Highcharts()
+{
+    YAxis = new List<YAxis>
+                {
+                    new YAxis { Title = new YAxisTitle { Text = "In megawatthours" } }
+                },
+    PlotOptions = new PlotOptions
+    {
+        Series = new PlotOptionsSeries
+        {
+            Marker = new PlotOptionsSeriesMarker { Enabled = false }
+        }
+    },
+    Title = new Title() { Text = "All fuels" },
+    Subtitle = new Subtitle() { Text = "All fuels in megawatthours" },
+    Series = new List<Series>
+    {
+        new SplineSeries
+        {
+            Name = "All fuels",
+            Data = ViewData["fuels"] as List<SplineSeriesData>,
+        }
+    },
+    XAxis = new List<XAxis>
+    {
+        new XAxis
+        {
+            Type = XAxisType.Datetime
+        }
+    }
+}, "chart1", (string)ViewData["functionName"])

@@ -16,6 +16,7 @@ C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyAppli
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Antlr3.Runtime.dll
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\EntityFramework.dll
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\EntityFramework.SqlServer.dll
+C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Highcharts.Web.Mvc.dll
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Microsoft.AspNet.Identity.Core.dll
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Microsoft.AspNet.Identity.Owin.dll
@@ -40,6 +41,7 @@ C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyAppli
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\System.Web.WebPages.dll
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\System.Web.WebPages.Razor.dll
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\WebGrease.dll
+C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Highcharts.Web.Mvc.xml
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\System.Web.Helpers.xml
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\System.Web.Mvc.xml
@@ -64,8 +66,7 @@ C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyAppli
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\obj\Debug\EnergyApplication.csprojResolveAssemblyReference.cache
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\obj\Debug\EnergyApplication.dll
 C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\obj\Debug\EnergyApplication.pdb
-C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Highcharts.Web.Mvc.dll
-C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Highcharts.Web.Mvc.xml
+C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\bin\Highcharts.Web.Mvc.pdb
+C:\Users\PC\Documents\highcharts.net\Demos\Article\EnergyApplication\EnergyApplication\EnergyApplication\obj\Debug\EnergyApplication.csprojResolveAssemblyReference.cache

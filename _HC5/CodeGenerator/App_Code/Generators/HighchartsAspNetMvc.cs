@@ -99,8 +99,19 @@ public class HighchartsAspNetMvc
     private void ProcessApiItems()
     {
         AppendMissingApiItems();
+
+        string multitypeslist = "";
+
         foreach (ApiItem apiItem in _apiItems)
         {
+            //if (apiItem.ReturnType != null && apiItem.ReturnType.Contains("|"))
+            //    multitypeslist += System.Environment.NewLine+apiItem.FullName+" : "+apiItem.ReturnType;
+
+            //if (apiItem.FullName.ToLower().Contains("chart") && apiItem.FullName.ToLower().Contains("width"))
+            //if(apiItem.FullName.ToLower().Contains("pointplacement"))
+            if(apiItem.Values != null && apiItem.Values.Count > 1)
+                multitypeslist += System.Environment.NewLine + apiItem.FullName + " : " + apiItem.ReturnType;
+
             // All events (javascript functions) should default to empty string
             if (apiItem.ReturnType != null && (apiItem.ReturnType == "Function" || apiItem.ReturnType == "String|Function"))
                 apiItem.Defaults = "";

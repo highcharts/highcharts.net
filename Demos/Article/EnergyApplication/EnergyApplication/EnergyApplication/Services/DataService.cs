@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace EnergyApplication.Services
 {
     public class DataService
     {
-        public static List<SplineSeriesData> Get(string path)
+        public static async Task<List<SplineSeriesData>> GetAsync(string path, int minValue, int maxValue)
         {
             var results = new List<SplineSeriesData>();
             try
@@ -16,10 +17,15 @@ namespace EnergyApplication.Services
                 using (StreamReader sr = new StreamReader(path))
                 {
                     string line;
-                    while ((line = sr.ReadLine()) != null)
+                    while ((line = await sr.ReadLineAsync()) != null)
                     {
                         var pair = line.Split(',');
-                        results.Add(new SplineSeriesData { X = MilliTimeStamp(DateTime.ParseExact(pair[0],"dd/MM/yyyy",null)), Y = Convert.ToDouble(pair[1]) });
+                        var date = DateTime.ParseExact(pair[0], "dd/MM/yyyy", null);
+
+                        if (!IsValueInsideRange(date.Year, minValue, maxValue))
+                            continue;
+
+                        results.Add(new SplineSeriesData { X = MilliTimeStamp(date), Y = Convert.ToDouble(pair[1]) });
                     }
                 }
 
@@ -38,6 +44,11 @@ namespace EnergyApplication.Services
             TimeSpan ts = new TimeSpan(d2.Ticks - d1.Ticks);
 
             return ts.TotalMilliseconds;
+        }
+
+        private static bool IsValueInsideRange(int Value, int minValue, int maxValue)
+        {
+            return Value >= minValue && Value <= maxValue ? true : false;
         }
     }
 }
