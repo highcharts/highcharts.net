@@ -17,24 +17,39 @@ namespace Highsoft.Web.Mvc.Stocks
 
     public class HighsoftNamespace
     {
-        public MvcHtmlString Highstock(Highstock chart, string id)
+        public MvcHtmlString Highstock(Highstock chart, string containerId)
         {            
-            var renderer = new HighstockRenderer(chart);  
-            
-            chart.ID = id;
-            chart.Chart.RenderTo = id;
-            
+            var renderer = new HighstockRenderer(chart);
+            AssignContainerId(chart, containerId);
+
             return MvcHtmlString.Create(renderer.RenderHtml());
         }
 
-        public HtmlString GetHighstock(Highstock chart, string id)
+        public HtmlString GetHighstock(Highstock chart, string containerId, string functionName = null)
         {
-            var renderer = new HighstockRenderer(chart);
+            if (functionName != null)
+                return GetHighstockFunction(chart, containerId, functionName);
 
-            chart.ID = id;
-            chart.Chart.RenderTo = id;
+            var renderer = new HighstockRenderer(chart);
+            AssignContainerId(chart, containerId);
 
             return new HtmlString(renderer.RenderHtml());
+        }
+
+        private HtmlString GetHighstockFunction(Highstock chart, string containerId, string functionName)
+        {
+            var renderer = new HighstockRenderer(chart);
+            AssignContainerId(chart, containerId);
+
+            return new HtmlString(renderer.GetJavascriptFunction(functionName));
+        }
+        
+        private void AssignContainerId(Highstock chart, string containerId)
+        {
+            if (string.IsNullOrWhiteSpace(containerId))
+                return;
+
+            chart.ID = containerId;
         }
 
         [EditorBrowsable(EditorBrowsableState.Never)]

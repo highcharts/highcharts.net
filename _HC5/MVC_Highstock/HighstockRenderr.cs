@@ -22,6 +22,25 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             return GetResponse(LicenseVerifier.Check());
         }
 
+        public string GetJavascriptFunction(string functionName)
+        {
+            var licenseType = LicenseVerifier.Check();
+
+            string message = "";
+
+            if (licenseType == 0)
+                message = "<div style=\"background:yellow\">Incorrect serial key. I'm working in trial mode now.</div>";
+
+            if (licenseType == -1 || licenseType == 0) //trial
+                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
+                {
+                    message += "This is a trial version of Highstock for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
+                    return message;
+                }
+
+            return GetStartupJavascriptFunction(functionName);
+        }
+
         private string GetResponse(int licenseType)
         {
             string message = "";
@@ -58,17 +77,36 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             return GetJsonResponse(LicenseVerifier.Check());
         }
 
+        private string GetStartupJavascriptFunction(string functionName)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            if (!string.IsNullOrWhiteSpace(_chart.ID))
+                _chart.Chart.RenderTo = _chart.ID;
+
+            sb.Append("<script type='text/javascript'>");
+
+            sb.Append($"function {functionName}() {{");
+            sb.Append($"var ChartOptions = {GetStartupOptions()};");
+            sb.Append($"new Highcharts.StockChart(\"{_chart.Chart.RenderTo}\",ChartOptions);");
+            sb.Append("}");
+
+            sb.Append("</script>");
+            return sb.ToString();
+        }
+
         private string GetStartupJavascript()
         {
             StringBuilder sb = new StringBuilder();
 
-            _chart.Chart.RenderTo = _chart.ID;
+            if (!string.IsNullOrWhiteSpace(_chart.ID))
+                _chart.Chart.RenderTo = _chart.ID;
 
-            sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.ID, _chart.Chart.Height.ToString(), _chart.Chart.Width.ToString());
+            sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.Chart.RenderTo, _chart.Chart.Height.ToString(), _chart.Chart.Width.ToString());
             sb.Append("<script type='text/javascript'>");
 
             //sb.Append("jQuery(document).ready(function() {");//jQuery
-            sb.Append($"if (document.addEventListener) {{document.addEventListener(\"DOMContentLoaded\", function() {{createChart{_chart.ID}();}});}} else if (document.attachEvent) {{document.attachEvent(\"onreadystatechange\", function(){{if (document.readyState === \"complete\"){{document.detachEvent(\"onreadystatechange\", arguments.callee);createChart{_chart.ID}();}}}});}}");
+            sb.Append($"if (document.addEventListener) {{document.addEventListener(\"DOMContentLoaded\", function() {{createChart{_chart.Chart.RenderTo}();}});}} else if (document.attachEvent) {{document.attachEvent(\"onreadystatechange\", function(){{if (document.readyState === \"complete\"){{document.detachEvent(\"onreadystatechange\", arguments.callee);createChart{_chart.ID}();}}}});}}");
             //sb.Append($"function createChart{_chart.ID}() {{");//s2
             //sb.AppendFormat("var {0};", _chart.ID);//s2
             //sb.AppendFormat("var {0}ChartOptions = {1};", _chart.ID, GetStartupOptions());//s2
@@ -76,9 +114,9 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             //sb.Append("}");//s2
             //sb.Append("});"); //jQuery           
 
-            sb.Append($"function createChart{_chart.ID}() {{");//s3
+            sb.Append($"function createChart{_chart.Chart.RenderTo}() {{");//s3
             sb.Append($"var ChartOptions = {GetStartupOptions()};");//s3
-            sb.Append($"new Highcharts.StockChart(\"{_chart.ID}\",ChartOptions);");//s3
+            sb.Append($"new Highcharts.StockChart(\"{_chart.Chart.RenderTo}\",ChartOptions);");//s3
             sb.Append("}");//s3
 
             sb.Append("</script>");
