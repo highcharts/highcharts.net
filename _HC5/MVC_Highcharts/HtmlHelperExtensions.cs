@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
     {
         public static HighsoftNamespace Highsoft(this HtmlHelper helper) { return new HighsoftNamespace(); }
 
+        [Obsolete("Use HighsoftNamespace.GetHighcharts or HighsoftNamespace.Highcharts instead.")]
         public static MvcHtmlString Highcharts(Highcharts chart, string containerId)
         {
             var renderer = new HighchartsRenderer(chart);
