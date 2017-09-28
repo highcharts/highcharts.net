@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
             return MvcHtmlString.Create(renderer.RenderHtml());
         }
 
-        public HtmlString GetHighcharts(Highcharts chart, string containerId, string functionName = null)
+        public HtmlString GetHighcharts(Highcharts chart, string containerId, bool addContainer = true, string functionName = null)
         {
             if (functionName != null)
                 return GetHighchartsFunction(chart, containerId, functionName);
@@ -45,7 +45,18 @@ namespace Highsoft.Web.Mvc.Charts
             var renderer = new HighchartsRenderer(chart);
             AssignContainerId(chart, containerId);
 
-            return new HtmlString(renderer.RenderHtml());
+            if(addContainer)
+                return new HtmlString(renderer.RenderHtml());
+
+            return new HtmlString(renderer.RenderHtml(addContainer));
+        }
+
+        public HtmlString GetHighchartsJS(Highcharts chart, string containerId)
+        {
+            var renderer = new HighchartsRenderer(chart);
+            AssignContainerId(chart, containerId);
+
+            return new HtmlString(renderer.GetJavascript());
         }
 
         private HtmlString GetHighchartsFunction(Highcharts chart, string containerId, string functionName)
