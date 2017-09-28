@@ -17,9 +17,28 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             _chart = chart;
         }
 
-        public string RenderHtml()
+        public string RenderHtml(bool addContainer = true)
         {
-            return GetResponse(LicenseVerifier.Check());
+            return GetResponse(LicenseVerifier.Check(), addContainer);
+        }
+
+        public string GetJavascript()
+        {
+            var licenseType = LicenseVerifier.Check();
+
+            string message = "";
+
+            if (licenseType == 0)
+                message = "<div style=\"background:yellow\">Incorrect serial key. I'm working in trial mode now.</div>";
+
+            if (licenseType == -1 || licenseType == 0) //trial
+                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
+                {
+                    message += "This is a trial version of Highstock for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
+                    return message;
+                }
+
+            return GetCreateChartJavascript();
         }
 
         public string GetJavascriptFunction(string functionName)
@@ -41,7 +60,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             return GetStartupJavascriptFunction(functionName);
         }
 
-        private string GetResponse(int licenseType)
+        private string GetResponse(int licenseType, bool addContainer)
         {
             string message = "";
 
@@ -55,7 +74,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                     return message;
                 }
 
-            return message + GetStartupJavascript();
+            return message + GetStartupJavascript(addContainer);
         }
 
         private string GetJsonResponse(int licenseType)
@@ -70,6 +89,21 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 }
 
             return GetStartupOptions();
+        }
+
+        private string GetCreateChartJavascript()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            if (!string.IsNullOrWhiteSpace(_chart.ID))
+                _chart.Chart.RenderTo = _chart.ID;
+
+            sb.Append("<script type='text/javascript'>");
+            sb.Append($"var ChartOptions = {GetStartupOptions()};");
+            sb.Append($"new Highcharts.chart(\"{_chart.Chart.RenderTo}\",ChartOptions);");
+
+            sb.Append("</script>");
+            return sb.ToString();
         }
 
         public string GetJsonOptions()
@@ -95,25 +129,20 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             return sb.ToString();
         }
 
-        private string GetStartupJavascript()
+        private string GetStartupJavascript(bool addContainer)
         {
             StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrWhiteSpace(_chart.ID))
                 _chart.Chart.RenderTo = _chart.ID;
 
-            sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.Chart.RenderTo, _chart.Chart.Height.ToString(), _chart.Chart.Width.ToString());
+            if(addContainer)
+                sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.Chart.RenderTo, _chart.Chart.Height.ToString(), _chart.Chart.Width.ToString());
+
             sb.Append("<script type='text/javascript'>");
 
-            //sb.Append("jQuery(document).ready(function() {");//jQuery
             sb.Append($"if (document.addEventListener) {{document.addEventListener(\"DOMContentLoaded\", function() {{createChart{_chart.Chart.RenderTo}();}});}} else if (document.attachEvent) {{document.attachEvent(\"onreadystatechange\", function(){{if (document.readyState === \"complete\"){{document.detachEvent(\"onreadystatechange\", arguments.callee);createChart{_chart.ID}();}}}});}}");
-            //sb.Append($"function createChart{_chart.ID}() {{");//s2
-            //sb.AppendFormat("var {0};", _chart.ID);//s2
-            //sb.AppendFormat("var {0}ChartOptions = {1};", _chart.ID, GetStartupOptions());//s2
-            //sb.AppendFormat("{0} = new Highcharts.Chart({0}ChartOptions);", _chart.ID);//s2
-            //sb.Append("}");//s2
-            //sb.Append("});"); //jQuery           
-
+            
             sb.Append($"function createChart{_chart.Chart.RenderTo}() {{");//s3
             sb.Append($"var ChartOptions = {GetStartupOptions()};");//s3
             sb.Append($"new Highcharts.StockChart(\"{_chart.Chart.RenderTo}\",ChartOptions);");//s3

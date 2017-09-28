@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
             return MvcHtmlString.Create(renderer.RenderHtml());
         }
 
-        public HtmlString GetHighstock(Highstock chart, string containerId, string functionName = null)
+        public HtmlString GetHighstock(Highstock chart, string containerId, bool addContainer = true, string functionName = null)
         {
             if (functionName != null)
                 return GetHighstockFunction(chart, containerId, functionName);
@@ -33,7 +33,18 @@ namespace Highsoft.Web.Mvc.Stocks
             var renderer = new HighstockRenderer(chart);
             AssignContainerId(chart, containerId);
 
-            return new HtmlString(renderer.RenderHtml());
+            if (addContainer)
+                return new HtmlString(renderer.RenderHtml());
+
+            return new HtmlString(renderer.RenderHtml(addContainer));
+        }
+
+        public HtmlString GetHigstockJS(Highstock chart, string containerId)
+        {
+            var renderer = new HighstockRenderer(chart);
+            AssignContainerId(chart, containerId);
+
+            return new HtmlString(renderer.GetJavascript());
         }
 
         private HtmlString GetHighstockFunction(Highstock chart, string containerId, string functionName)

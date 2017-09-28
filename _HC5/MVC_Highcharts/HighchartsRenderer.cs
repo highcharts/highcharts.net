@@ -129,7 +129,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
         {
             StringBuilder sb = new StringBuilder();
 
-            if(!string.IsNullOrWhiteSpace(_chart.ID))
+            if (!string.IsNullOrWhiteSpace(_chart.ID))
                 _chart.Chart.RenderTo = _chart.ID;
 
             if(addContainer)
