@@ -1,0 +1,28 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip =
+[
+    [ "PlotOptionsSplineTooltip", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#aaf0076f4bdf7663271c4aee9bae49c5b", null ],
+    [ "ChangeDecimals", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a9acd8bc1decc77b3c353ee4be57d873f", null ],
+    [ "ChangeDecimals_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a26a59bee6239e22c428793f54b0e6c43", null ],
+    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#ac1a0d0ad7f3566e39b477365c500d109", null ],
+    [ "DateTimeLabelFormats_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#aa38cf76b95a0db6adf7de225b5a04779", null ],
+    [ "FollowPointer", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#aec2a52677340e56bac2f2fa454e974e3", null ],
+    [ "FollowPointer_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#af5d8c10a82187962c4f3845f056b7a53", null ],
+    [ "FollowTouchMove", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#af71b0cac4b62af1ae59448681aef1632", null ],
+    [ "FollowTouchMove_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a2d20c4286e7cc693c04fa3559539f558", null ],
+    [ "HeaderFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a88ff58b6da3aad4edb13e490ba59a7f0", null ],
+    [ "HeaderFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a3fa54d76ab4713446b73a39a2f8052cb", null ],
+    [ "PointFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a744cc4c6aa20a6b3e09bd165066d2e93", null ],
+    [ "PointFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#abb436f51acee60bc78ba6f0f7a001457", null ],
+    [ "PointFormatter", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#af961aaf7fbca4ad42065f59148b76947", null ],
+    [ "PointFormatter_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#ab09a952f302c9eb120c1cfa9c2e5c44f", null ],
+    [ "Shape", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a3fd7f46bba747d18d34f1b7d500636fe", null ],
+    [ "Shape_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a7c848c2dab12199a661e68f51313be13", null ],
+    [ "ValueDecimals", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#af07be9db2fce4347c9d7df9e488ec922", null ],
+    [ "ValueDecimals_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a911296de6ad7f7b439707929801089d6", null ],
+    [ "ValuePrefix", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#ab0a363c7e9712913e683d664191454fa", null ],
+    [ "ValuePrefix_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a753defae98d228c0813c8520b47d19de", null ],
+    [ "ValueSuffix", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a24b06f916a0f215b1c12bfa13f9fb95e", null ],
+    [ "ValueSuffix_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a0f9d709018de8793a656c68ddbf74ac0", null ],
+    [ "XDateFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a07bc95f42b314790041b268982c4e0aa", null ],
+    [ "XDateFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_tooltip.html#a432bcee5ca6a14fbef79b2116675af0b", null ]
+];

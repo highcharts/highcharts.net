@@ -1,0 +1,1 @@
+nuget push Highsoft.Highcharts.5.0.3.14380.nupkg 12d00314-bf92-441d-a2ae-0e2dc3eb0173 -Source https://www.nuget.org/api/v2/package

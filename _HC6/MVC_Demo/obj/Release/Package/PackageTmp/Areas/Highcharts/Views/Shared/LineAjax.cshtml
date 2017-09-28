@@ -1,0 +1,179 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts  
+
+ <script type="text/javascript">
+
+     function loadAjaxData() {
+         $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=analytics.csv&callback=?', function (csv) {
+             var visitorData = new Array();
+             var uniquesData = new Array();
+             var index = csv.indexOf("Visitors") + 9;
+             var data = csv.substring(index, csv.length);
+
+             var dataArray = data.split("\n");
+
+             for (var i = 0; i < dataArray.length - 1; i++) {
+                 var value = dataArray[i];
+
+                 var splitArray = value.split(",");
+                 var entry = {
+                     x : new Date(splitArray[0]),
+                     y : parseFloat(splitArray[1])
+                 }
+
+
+                 var uniqueEntry = {
+                     x: new Date(splitArray[0]),
+                     y: parseFloat(splitArray[2])
+                 }
+
+                 visitorData.push(entry);
+                 uniquesData.push(uniqueEntry);
+             }
+
+             chart.series[0].setData(visitorData);
+             chart.series[1].setData(uniquesData);
+
+             window.setTimeout(function () { chart.redraw(); }, 1000);
+         });
+     }
+        
+     function handleClick(e) {
+         console.log(e.point);
+         
+         hs.htmlExpand(null, {
+             pageOrigin: {
+                 x: e.pageX || e.clientX,
+                 y: e.pageY || e.clientY
+             },
+             headingText: this.name,
+             maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', e.point.x) + ':<br/> ' +
+                 e.point.y + ' visits',
+             width: 200
+         });
+     }
+
+    </script>  
+
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Events = new ChartEvents
+                {
+                    Load = "loadAjaxData"
+                },
+                Type = ChartType.Line
+            },
+            Title = new Title
+            {
+                Text = "Daily visits at www.highcharts.com"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Source: Google Analytics"
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Type = XAxisType.Datetime,
+                    TickInterval = 7 * 24 * 3600 * 1000, // one week
+                    TickWidth = 0,
+                    GridLineWidth = 1,
+                    Labels = new XAxisLabels
+                    {
+                        Align = XAxisLabelsAlign.Left,
+                        X = 3,
+                        Y = -3
+                    },
+                    Crosshair = new XAxisCrosshair
+                    {
+                        Width = 1
+                    }
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+
+                    Labels = new YAxisLabels
+                    {
+                        Align = YAxisLabelsAlign.Left,
+                        X = 3,
+                        Y = 16,
+                        Format = "{value:.,0f}"
+                    },
+                    ShowFirstLabel = false
+                },
+                new YAxis
+                {
+                    LinkedTo = 0,
+                    GridLineWidth = 0,
+                    Opposite = true,
+
+                    Labels = new YAxisLabels
+                    {
+                        Align = YAxisLabelsAlign.Right,
+                        X = 3,
+                        Y = 16,
+                        Format = "{value:.,0f}"
+                    },
+                    ShowFirstLabel = false
+                }
+            },
+            Legend = new Legend
+            {
+                Align = LegendAlign.Left,
+                VerticalAlign = LegendVerticalAlign.Top,
+                Y = 20,
+                Floating = true,
+                BorderWidth = 0
+            },
+            Tooltip = new Tooltip
+            {
+                Shared = true
+            },
+            PlotOptions = new PlotOptions
+            {
+                Series = new PlotOptionsSeries
+                {
+                    Cursor = PlotOptionsSeriesCursor.Pointer,
+                    Events = new PlotOptionsSeriesEvents
+                    {
+                        Click = "handleClick"
+                    },
+                    Marker = new PlotOptionsSeriesMarker
+                    {
+                        LineWidth = 1
+                    }
+                }
+            },
+            Series = new List<Series>
+            {
+                new LineSeries
+                {
+                    Color = "black",
+                    Name = "All Visit",
+                    LineWidth = 4,
+                    Marker = new LineSeriesMarker
+                    {
+                        Radius = 4
+                    }
+                },
+                new LineSeries
+                {
+                    Name = "New Visitors"
+                }
+
+            }
+        }
+        , "chart")
+    )
+
+   

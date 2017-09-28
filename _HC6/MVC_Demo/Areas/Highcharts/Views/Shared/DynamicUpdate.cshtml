@@ -1,0 +1,120 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+<script type="text/javascript">
+
+    function initChart() {
+
+        var data = generateInitialData();
+
+        // set up the updating of the chart each second
+        var series = this.series[0];
+
+        series.setData(data);
+
+        setInterval(function () {
+            var x = (new Date()).getTime(), // current time
+                y = Math.random();
+            series.addPoint([x, y], true, true);
+        }, 1000);
+    }
+
+    function formatTooltip() {
+        return '<b>' + this.series.name + '</b><br/>' +
+                        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+                        Highcharts.numberFormat(this.y, 2);
+    }
+
+    function generateInitialData() {
+        
+            // generate an array of random data
+            var data = [],
+                time = (new Date()).getTime(),
+                i;
+
+            for (i = -19; i <= 0; i += 1) {
+                data.push({
+                    x: time + i * 1000,
+                    y: Math.random()
+                });
+            }
+            return data;
+        
+    }
+
+</script>
+
+    
+    @(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Chart
+            {
+                Type = ChartType.Spline,
+                Animation = new Animation
+                {
+                    Enabled = true
+                },
+                MarginRight = 10,
+                Events = new ChartEvents
+                {
+                    Load = "initChart"
+                }
+            },
+            Title = new Title
+            {
+                Text = "Live Random Data"
+            },
+            XAxis = new List<XAxis>
+            {            
+                new XAxis
+                {
+                    Type = XAxisType.Datetime,
+                    TickPixelInterval = 150
+                }
+            },
+            YAxis = new List<YAxis>
+            {            
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Value"
+                    },
+                    PlotLines =  new List<YAxisPlotLines>
+                    {
+                        new YAxisPlotLines
+                        {
+                            Value = 0,
+                            Width = 1,
+                            Color = "#808080"
+                        }
+                    }
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                Formatter = "formatTooltip"
+            },
+            Legend = new Legend
+            {
+                Enabled = false
+            },
+            Exporting = new Exporting
+            {
+                Enabled = false
+            },            
+            Series = new List<Series>
+            {                    
+                new SplineSeries
+                {
+                    Name = "Random Data"
+                }
+            }
+        }
+        , "chart")
+    )
