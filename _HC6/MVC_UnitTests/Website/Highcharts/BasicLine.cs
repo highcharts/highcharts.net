@@ -1,8 +1,6 @@
 ﻿using Highsoft.Web.Mvc.Charts;
-using Highsoft.Web.Mvc.Charts.Rendering;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using System.Web;
 
 namespace MVC_UnitTests.Website
 {
