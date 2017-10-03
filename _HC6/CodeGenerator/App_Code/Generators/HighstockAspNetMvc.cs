@@ -89,7 +89,19 @@ public class HighstockAspNetMvc
                 continue;
             }
 
-            _apiItems.Add(apiItem);
+            if (apiItem.FullName != null && apiItem.FullName.ToLower().Contains("series<"))
+            {
+                string[] tab = apiItem.FullName.Split('>');
+                string[] seriesDetails = tab[0].Split('<');
+                string value = FirstCharToUpper(seriesDetails[1]) + FirstCharToUpper(seriesDetails[0]);
+                string key = tab[0] + '>';
+
+                if (!_seriesMappings.Contains(key))
+                    _seriesMappings[key] = value;
+            }
+
+            if (apiItem.Products != null && apiItem.Products.Any(p => p == "highstock"))
+                _apiItems.Add(apiItem);
         }
 
         // Customize some of the API items for functionality that cannot be inferred automatically from the JSON file
@@ -203,6 +215,10 @@ public class HighstockAspNetMvc
         {
             //string propertyName = FirstCharToUpper(child.Title);
             string propertyName = GetPropertyName(child);
+
+            if (string.IsNullOrEmpty(propertyName))
+                continue;
+
             if (_excludedProperties.Contains(propertyName) && child.IsParent == false)
                 continue;
             if (_excludedProperties.Contains(child.FullName))
@@ -255,7 +271,15 @@ public class HighstockAspNetMvc
                         .Replace("{HighTemplate.ExtendsClass}", extendsClass)
                         .Replace("{HighTemplate.ClassName}", GetClassNameFromItem(item));
 
-        string fileName = Server.MapPath("~/CodeGeneration/" + ROOT_CLASS + "/" + GetClassNameFromItem(item) + ".cs");
+        string fileName = GetClassNameFromItem(item);
+        try
+        {
+            fileName = Server.MapPath("~/CodeGeneration/" + ROOT_CLASS + "/" + GetClassNameFromItem(item) + ".cs");
+        }
+        catch(Exception ex)
+        {
+            throw;
+        }
 
         File.WriteAllText(fileName, codeTemplate);
     }
@@ -391,6 +415,9 @@ public class HighstockAspNetMvc
         {
             result = (string)_seriesMappings[result];
         }
+
+        if (string.IsNullOrEmpty(result))
+            return null;
 
         return FirstCharToUpper(result);
     }

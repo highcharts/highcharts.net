@@ -54,6 +54,20 @@ public class ApiItem
             }
         }
 
+        if (item.TryGetValue("products", out outValue))
+        {
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            try
+            {
+                var tmp = item["products"] as object[];
+                Products = tmp.Cast<string>().ToList();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
         if (FullName == "plotOptions.treemap.borderColor")
             ReturnType = "Color";
         if (FullName == "series<treemap>.borderColor")
@@ -70,7 +84,9 @@ public class ApiItem
     public string Defaults { get; set; }
     public List<string> Values { get; set; }
     public bool Deprecated { get; set; }
+    public List<string> Products { get; set; }
 
     // auxialiary and no part of the API
     public List<string> Parents { get; set; }
+    
 }

@@ -89,7 +89,19 @@ public class HighchartsAspNetMvc
                 continue;
             }
 
-            _apiItems.Add(apiItem);
+            if (apiItem.FullName != null && apiItem.FullName.ToLower().Contains("series<"))
+            {
+                string[] tab = apiItem.FullName.Split('>');
+                string[] seriesDetails = tab[0].Split('<');
+                string value = FirstCharToUpper(seriesDetails[1]) + FirstCharToUpper(seriesDetails[0]);
+                string key = tab[0] + '>';
+
+                if(!_seriesMappings.Contains(key))
+                    _seriesMappings[key] = value;
+            }
+
+            if (apiItem.Products != null && apiItem.Products.Any(p => p == "highcharts"))
+                _apiItems.Add(apiItem);
         }
 
         // Customize some of the API items for functionality that cannot be inferred automatically from the JSON file
@@ -204,6 +216,10 @@ public class HighchartsAspNetMvc
         {
             //string propertyName = FirstCharToUpper(child.Title);
             string propertyName = GetPropertyName(child);
+
+            if (string.IsNullOrEmpty(propertyName))
+                continue;
+
             if (_excludedProperties.Contains(propertyName) && child.IsParent == false)
                 continue;
             if (_excludedProperties.Contains(child.FullName))
@@ -253,7 +269,15 @@ public class HighchartsAspNetMvc
                         .Replace("{HighTemplate.ExtendsClass}", extendsClass)
                         .Replace("{HighTemplate.ClassName}", GetClassNameFromItem(item));
 
-        string fileName = Server.MapPath("~/CodeGeneration/" + ROOT_CLASS + "/" + GetClassNameFromItem(item) + ".cs");
+        string fileName = GetClassNameFromItem(item);
+        try
+        {
+            fileName = Server.MapPath("~/CodeGeneration/" + ROOT_CLASS + "/" + GetClassNameFromItem(item) + ".cs");
+        }
+        catch(Exception ex)
+        {
+            throw;
+        }
 
         File.WriteAllText(fileName, codeTemplate);
     }
@@ -385,6 +409,11 @@ public class HighchartsAspNetMvc
             result = (string)_seriesMappings[result];
         }
 
+        if (string.IsNullOrEmpty(result))
+            return null;
+        //if (string.IsNullOrWhiteSpace(result))
+        //    throw new Exception("empty series mapping result");
+        
         return FirstCharToUpper(result);
     }
 
@@ -623,12 +652,12 @@ public class HighchartsAspNetMvc
         _typeMappings.Add("Number|String", "string");
         _typeMappings.Add("String|Number", "string");
         _typeMappings.Add("String|HTMLElement", "string");
-        _typeMappings.Add("Array<Color>", "List<string>");
-        _typeMappings.Add("Array<String>", "List<string>");
-        _typeMappings.Add("Array<String>;", "List<string>");
-        _typeMappings.Add("Array<Number>", "List<double>");
-        _typeMappings.Add("Array<Array<Mixed>>", "List<List<object>>");
-        _typeMappings.Add("Array<Object>", "List<object>");
+        _typeMappings.Add("Array.<Color>", "List<string>");
+        _typeMappings.Add("Array.<String>", "List<string>");
+        _typeMappings.Add("Array.<String>;", "List<string>");
+        _typeMappings.Add("Array.<Number>", "List<double>");
+        _typeMappings.Add("Array.<Array.<Mixed>>", "List<List<object>>");
+        _typeMappings.Add("Array.<Object>", "List<object>");
     }
 
     private void InitPropertyTypeMappings()
@@ -719,6 +748,7 @@ public class HighchartsAspNetMvc
 
     private void InitSeriesMappings()
     {
+        _seriesMappings.Add("series<ad>", "AdSeries");
         _seriesMappings.Add("series<area>", "AreaSeries");
         _seriesMappings.Add("series<arearange>", "ArearangeSeries");
         _seriesMappings.Add("series<areaspline>", "AreasplineSeries");
