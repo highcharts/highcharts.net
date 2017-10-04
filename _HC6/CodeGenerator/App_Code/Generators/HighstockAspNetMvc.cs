@@ -301,6 +301,15 @@ public class HighstockAspNetMvc
             if (apiItem.Values[i] == "100")
                 apiItem.Values[i] = "Max = 100";
 
+            if (apiItem.Values[i].Contains('-'))
+            {
+                var tab = apiItem.Values[i].Split('-');
+                apiItem.Values[i] = "";
+
+                foreach (var item in tab)
+                    apiItem.Values[i] += FirstCharToUpper(item);
+            }
+
             if (!String.IsNullOrEmpty(apiItem.Values[i]))
             {
                 string enumValue = apiItem.Values[i];

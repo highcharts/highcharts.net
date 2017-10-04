@@ -125,7 +125,7 @@ public class HighchartsAspNetMvc
                 multitypeslist += System.Environment.NewLine + apiItem.FullName + " : " + apiItem.ReturnType;
 
             // All events (javascript functions) should default to empty string
-            if (apiItem.ReturnType != null && (apiItem.ReturnType == "Function" || apiItem.ReturnType == "String|Function"))
+            if (apiItem.ReturnType != null && (apiItem.ReturnType.ToLower() == "function" || apiItem.ReturnType.ToLower() == "string|function"))
                 apiItem.Defaults = "";
             if (apiItem.Title == "pointPlacement")
             {
@@ -295,6 +295,14 @@ public class HighchartsAspNetMvc
             if (apiItem.Values[i] == null)
                 apiItem.Values[i] = "null";
 
+            if (apiItem.Values[i].Contains('-'))
+            {
+                var tab = apiItem.Values[i].Split('-');
+                apiItem.Values[i] = "";
+
+                foreach (var item in tab)
+                    apiItem.Values[i] += FirstCharToUpper(item);
+            }
 
             if (!String.IsNullOrEmpty(apiItem.Values[i]))
             {
@@ -561,7 +569,7 @@ public class HighchartsAspNetMvc
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
         }
         // Event (javascript function)
-        if (child.ReturnType != null && (child.ReturnType == "Function" || child.ReturnType == "String|Function"))
+        if (child.ReturnType != null && (child.ReturnType.ToLower() == "function" || child.ReturnType.ToLower() == "string|function"))
             return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName), ROOT_CLASS);
         // Just a property
         else
@@ -884,7 +892,7 @@ public class HighchartsAspNetMvc
             {
                 return "double.MinValue";
             }
-            if (item.ReturnType == "Function" || item.ReturnType == "String|Function")
+            if (item.ReturnType.ToLower() == "function" || item.ReturnType.ToLower() == "string|function")
                 return "\"\"";
 
             if (!String.IsNullOrEmpty(item.Defaults))
@@ -896,14 +904,14 @@ public class HighchartsAspNetMvc
                 {
                     return '"' + defaults.Replace("\"", "'") + '"';
                 }
-                if (item.ReturnType.StartsWith("Array<String>")) // thereis Array<String>; ending with ; in Highstock
+                if (item.ReturnType.StartsWith("Array.<String>")) // thereis Array<String>; ending with ; in Highstock
                 {
                     return "new List<string> " + item.Defaults
                                         .Replace("'", "\"")
                                         .Replace("[", "{")
                                         .Replace("]", "}");
                 }
-                if (item.ReturnType == "Array<Number>")
+                if (item.ReturnType == "Array.<Number>")
                 {
                     return "new List<double> " + item.Defaults
                                         .Replace("[", "{")
