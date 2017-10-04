@@ -110,7 +110,7 @@ public class HighstockAspNetMvc
 
     private void ProcessApiItems()
     {
-        AppendMissingApiItems();
+        //AppendMissingApiItems();
         foreach (ApiItem apiItem in _apiItems)
         {
             // All events (javascript functions) should default to empty string
@@ -668,12 +668,15 @@ public class HighstockAspNetMvc
         _typeMappings.Add("Text", "string");
         _typeMappings.Add("Number", "double?");
         _typeMappings.Add("Boolean", "bool?");
-        _typeMappings.Add("Function", "string");
+        _typeMappings.Add("function", "string");
+        _typeMappings.Add("function|null", "string");
         _typeMappings.Add("String|Function", "string");
         _typeMappings.Add("Color", "string");
         _typeMappings.Add("CSSObject", "Hashtable");
         _typeMappings.Add("Number|String", "string");
         _typeMappings.Add("String|Number", "string");
+        _typeMappings.Add("String|undefined", "string");
+        _typeMappings.Add("String|null", "string");
         _typeMappings.Add("String|HTMLElement", "string");
         _typeMappings.Add("Array<Color>", "List<string>");
         _typeMappings.Add("Array<String>", "List<string>");
@@ -844,6 +847,9 @@ public class HighstockAspNetMvc
     public string MapDefaultValue(ApiItem item)
     {
         string defaults = item.Defaults;
+
+        if (item.Defaults == "\n")
+            return "null";
 
         if (item.Title.ToLower() == "data" && item.Parent != null)
         {

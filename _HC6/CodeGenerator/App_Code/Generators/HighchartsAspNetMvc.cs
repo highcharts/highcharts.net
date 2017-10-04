@@ -57,6 +57,8 @@ public class HighchartsAspNetMvc
     {
         ParseItems();
 
+        var items = _apiItems.Where(p => p.FullName.ToLower().Contains("coloraxis"));
+
         GenerateClass(new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS });
         for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)
         {
@@ -101,7 +103,9 @@ public class HighchartsAspNetMvc
             }
 
             if (apiItem.Products != null && apiItem.Products.Any(p => p == "highcharts"))
+            {
                 _apiItems.Add(apiItem);
+            }
         }
 
         // Customize some of the API items for functionality that cannot be inferred automatically from the JSON file
@@ -110,7 +114,7 @@ public class HighchartsAspNetMvc
 
     private void ProcessApiItems()
     {
-        AppendMissingApiItems();
+        //AppendMissingApiItems();
 
         string multitypeslist = "";
 
@@ -653,12 +657,15 @@ public class HighchartsAspNetMvc
         _typeMappings.Add("Text", "string");
         _typeMappings.Add("Number", "double?");
         _typeMappings.Add("Boolean", "bool?");
-        _typeMappings.Add("Function", "string");
+        _typeMappings.Add("function", "string");
+        _typeMappings.Add("function|null", "string");
         _typeMappings.Add("String|Function", "string");
         _typeMappings.Add("Color", "string");
         _typeMappings.Add("CSSObject", "Hashtable");
         _typeMappings.Add("Number|String", "string");
         _typeMappings.Add("String|Number", "string");
+        _typeMappings.Add("String|undefined", "string");
+        _typeMappings.Add("String|null", "string");
         _typeMappings.Add("String|HTMLElement", "string");
         _typeMappings.Add("Array.<Color>", "List<string>");
         _typeMappings.Add("Array.<String>", "List<string>");
@@ -829,6 +836,9 @@ public class HighchartsAspNetMvc
     public string MapDefaultValue(ApiItem item)
     {
         string defaults = item.Defaults;
+
+        if (item.Defaults == "\n")
+            return "null";
 
         if (item.Title.ToLower() == "data" && item.Parent != null)
         {
