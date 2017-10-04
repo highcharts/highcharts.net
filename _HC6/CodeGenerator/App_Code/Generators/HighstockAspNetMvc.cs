@@ -276,7 +276,7 @@ public class HighstockAspNetMvc
         {
             fileName = Server.MapPath("~/CodeGeneration/" + ROOT_CLASS + "/" + GetClassNameFromItem(item) + ".cs");
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             throw;
         }
@@ -493,7 +493,18 @@ public class HighstockAspNetMvc
                 result = (string)_seriesMappings[result];
             }
             else
-                result = FirstCharToUpper(result);
+            {
+                if (result.Contains('.'))
+                {
+                    var tab = result.Split('.');
+                    result = "";
+
+                    foreach (var item in tab)
+                        result += FirstCharToUpper(item);
+                }
+                else
+                    result = FirstCharToUpper(result);
+            }
             return "List<" + result + "Data" + ">";
         }
 

@@ -57,7 +57,7 @@ public class HighchartsAspNetMvc
     {
         ParseItems();
 
-        var items = _apiItems.Where(p => p.FullName.ToLower().Contains("coloraxis"));
+        var items = _apiItems.Where(p => p.FullName.ToLower().Contains("plotoptions.tilemap.data"));
 
         GenerateClass(new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS });
         for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)
@@ -183,18 +183,18 @@ public class HighchartsAspNetMvc
         }
     }
 
-    private void AppendMissingApiItems()
-    {
-        _apiItems.Add(new ApiItem { FullName = "colorAxis", Title = "colorAxis", IsParent = true });
-        _apiItems.Add(new ApiItem { FullName = "colorAxis.stops", Title = "stops", IsParent = false, ReturnType = "Array<Array>" });
-        _apiItems.Add(new ApiItem { FullName = "colorAxis.min", Title = "min", IsParent = false, ReturnType = "Number" });
-        _apiItems.Add(new ApiItem { FullName = "colorAxis.max", Title = "max", IsParent = false, ReturnType = "Number" });
-        _apiItems.Add(new ApiItem { FullName = "colorAxis.startOnTick", Title = "startOnTick", IsParent = false, ReturnType = "Boolean", Defaults = "false" });
-        _apiItems.Add(new ApiItem { FullName = "colorAxis.endOnTick", Title = "endOnTick", IsParent = false, ReturnType = "Boolean", Defaults = "false" });
-        _apiItems.Add(new ApiItem { FullName = "colorAxis.minColor", Title = "minColor", IsParent = false, ReturnType = "String" });
-        _apiItems.Add(new ApiItem { FullName = "colorAxis.maxColor", Title = "maxColor", IsParent = false, ReturnType = "String" });
+    //private void AppendMissingApiItems()
+    //{
+    //    _apiItems.Add(new ApiItem { FullName = "colorAxis", Title = "colorAxis", IsParent = true });
+    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.stops", Title = "stops", IsParent = false, ReturnType = "Array<Array>" });
+    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.min", Title = "min", IsParent = false, ReturnType = "Number" });
+    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.max", Title = "max", IsParent = false, ReturnType = "Number" });
+    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.startOnTick", Title = "startOnTick", IsParent = false, ReturnType = "Boolean", Defaults = "false" });
+    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.endOnTick", Title = "endOnTick", IsParent = false, ReturnType = "Boolean", Defaults = "false" });
+    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.minColor", Title = "minColor", IsParent = false, ReturnType = "String" });
+    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.maxColor", Title = "maxColor", IsParent = false, ReturnType = "String" });
 
-    }
+    //}
 
 
     private void GenerateClass(ApiItem item)
@@ -479,7 +479,18 @@ public class HighchartsAspNetMvc
                 result = (string)_seriesMappings[result];
             }
             else
-                result = FirstCharToUpper(result);
+            {
+                if (result.Contains('.'))
+                {
+                    var tab = result.Split('.');
+                    result = "";
+
+                    foreach (var item in tab)
+                        result += FirstCharToUpper(item);
+                }
+                else
+                    result = FirstCharToUpper(result);
+            }
             return "List<" + result + "Data" + ">";
         }
 
@@ -592,16 +603,36 @@ public class HighchartsAspNetMvc
     {
         foreach (ApiItem item in _apiItems)
         {
-            if (item.FullName.ToLower().Contains("boxplot") || item.Title.ToLower().Contains("boxplot"))
+            //if (item.FullName.ToLower().Contains("boxplot") || item.Title.ToLower().Contains("boxplot"))
+            //{
+            //    if (item.FullName.ToLower().Contains("datalabels") || item.Title.ToLower().Contains("datalabels"))
+            //    {
+            //        item.IsParent = true;
+            //    }
+            //}
+            if (item.FullName.ToLower().Contains("series<wordcloud>.data.datalabels"))
             {
-                if (item.FullName.ToLower().Contains("datalabels") || item.Title.ToLower().Contains("datalabels"))
-                {
-                    item.IsParent = true;
-                }
+                var c = 1;
+            }
+
+            
+                if (item.FullName.ToLower().Contains("series<area>.data.datalabels"))
+            {
+                var c = 1;
             }
 
             if (item.Parents.Count == level && item.IsParent)
             {
+                if (item.FullName.ToLower().Contains("series<wordcloud>.data.datalabels"))
+                {
+                    var c = 1;
+                }
+
+                if (item.FullName.ToLower().Contains("series<area>.data.datalabels"))
+                {
+                    var c = 1;
+                }
+
                 GenerateClass(item);
             }
         }
