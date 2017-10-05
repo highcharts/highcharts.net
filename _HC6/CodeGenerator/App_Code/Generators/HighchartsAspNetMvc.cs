@@ -698,7 +698,7 @@ public class HighchartsAspNetMvc
         _propertyTypeMappings.Add("dateTimeLabelFormats", "Hashtable");
         _propertyTypeMappings.Add("inputPosition", "Hashtable");
         _propertyTypeMappings.Add("attr", "Hashtable");
-        _propertyTypeMappings.Add("style", "Hashtable");
+        //_propertyTypeMappings.Add("style", "Hashtable");
         _propertyTypeMappings.Add("inputStyle", "Hashtable");
         _propertyTypeMappings.Add("labelStyle", "Hashtable");
         _propertyTypeMappings.Add("stack", "string");
@@ -724,26 +724,26 @@ public class HighchartsAspNetMvc
 
     private void InitPropertyInitMappings()
     {
-        _propertyInitMappings.Add("Shadow", "new Shadow() { Enabled = false }");
-        _propertyInitMappings.Add("PlotShadow", "new Shadow() { Enabled = false }");
-        _propertyInitMappings.Add("Animation", "new Animation() { Enabled = true }");
-        _propertyInitMappings.Add("PointPlacement", "new PointPlacement()");
-        _propertyInitMappings.Add("Crosshairs", "new List<Crosshair>()");
-        _propertyInitMappings.Add("MenuItems", "new List<MenuItem>()");
+        _propertyInitMappings.Add("shadow", "new Shadow() { Enabled = false }");
+        _propertyInitMappings.Add("plotShadow", "new Shadow() { Enabled = false }");
+        _propertyInitMappings.Add("animation", "new Animation() { Enabled = true }");
+        _propertyInitMappings.Add("pointPlacement", "new PointPlacement()");
+        _propertyInitMappings.Add("crosshairs", "new List<Crosshair>()");
+        _propertyInitMappings.Add("menuItems", "new List<MenuItem>()");
         //_propertyInitMappings.Add("Symbol", "new Symbol()");
-        _propertyInitMappings.Add("Colors", "new List<string>()");
-        _propertyInitMappings.Add("Center", "new string[] { null, null }");
-        _propertyInitMappings.Add("Margin", "new string[] {}");
-        _propertyInitMappings.Add("Position", "new Hashtable()");
-        _propertyInitMappings.Add("DateTimeLabelFormats", "new Hashtable()");
-        _propertyInitMappings.Add("InputPosition", "new Hashtable()");
-        _propertyInitMappings.Add("Style", "new Hashtable()");
-        _propertyInitMappings.Add("InputStyle", "new Hashtable()");
-        _propertyInitMappings.Add("LabelStyle", "new Hashtable()");
-        _propertyInitMappings.Add("Columns", "new List<List<Object>>()");
-        _propertyInitMappings.Add("Rows", "new List<List<object>>()");
-        _propertyInitMappings.Add("SeriesMapping", "new List<object>()");
-        _propertyInitMappings.Add("Keys", "new List<string>()");
+        _propertyInitMappings.Add("colors", "new List<string>()");
+        _propertyInitMappings.Add("center", "new string[] { null, null }");
+        _propertyInitMappings.Add("margin", "new string[] {}");
+        _propertyInitMappings.Add("position", "new Hashtable()");
+        _propertyInitMappings.Add("dateTimeLabelFormats", "new Hashtable()");
+        _propertyInitMappings.Add("inputPosition", "new Hashtable()");
+        //_propertyInitMappings.Add("style", "new Hashtable()");
+        _propertyInitMappings.Add("inputStyle", "new Hashtable()");
+        _propertyInitMappings.Add("labelStyle", "new Hashtable()");
+        _propertyInitMappings.Add("columns", "new List<List<Object>>()");
+        _propertyInitMappings.Add("rows", "new List<List<object>>()");
+        _propertyInitMappings.Add("seriesMapping", "new List<object>()");
+        _propertyInitMappings.Add("keys", "new List<string>()");
         _propertyInitMappings.Add("series", "new List<Series>()");
         _propertyInitMappings.Add("xAxis", "new List<XAxis>()");
         _propertyInitMappings.Add("yAxis", "new List<YAxis>()");
