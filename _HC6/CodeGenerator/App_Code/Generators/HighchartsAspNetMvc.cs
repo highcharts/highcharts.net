@@ -57,7 +57,7 @@ public class HighchartsAspNetMvc
     {
         ParseItems();
 
-        var items = _apiItems.Where(p => p.FullName.ToLower().Contains("plotoptions.tilemap.data"));
+        //var items = _apiItems.Where(p => p.FullName.ToLower().Contains("plotoptions.tilemap.data"));
 
         GenerateClass(new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS });
         for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)
@@ -559,7 +559,7 @@ public class HighchartsAspNetMvc
 
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
-        if (_propertyTypeMappings.Contains(child.FullName))
+        if (_propertyTypeMappings.Contains(child.Title) || _propertyTypeMappings.Contains(child.FullName))
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         // property that needs custom serialization (Animation, Shadow, etc)
         if (_customProperties.Contains(propertyName))
@@ -610,29 +610,9 @@ public class HighchartsAspNetMvc
             //        item.IsParent = true;
             //    }
             //}
-            if (item.FullName.ToLower().Contains("series<wordcloud>.data.datalabels"))
-            {
-                var c = 1;
-            }
-
-            
-                if (item.FullName.ToLower().Contains("series<area>.data.datalabels"))
-            {
-                var c = 1;
-            }
 
             if (item.Parents.Count == level && item.IsParent)
             {
-                if (item.FullName.ToLower().Contains("series<wordcloud>.data.datalabels"))
-                {
-                    var c = 1;
-                }
-
-                if (item.FullName.ToLower().Contains("series<area>.data.datalabels"))
-                {
-                    var c = 1;
-                }
-
                 GenerateClass(item);
             }
         }
@@ -708,27 +688,27 @@ public class HighchartsAspNetMvc
 
     private void InitPropertyTypeMappings()
     {
-        _propertyTypeMappings.Add("Shadow", "Shadow");
-        _propertyTypeMappings.Add("PlotShadow", "Shadow");
-        _propertyTypeMappings.Add("Animation", "Animation");
-        _propertyTypeMappings.Add("PointPlacement", "PointPlacement");
-        _propertyTypeMappings.Add("Center", "new string[]");
-        _propertyTypeMappings.Add("Margin", "new string[]");
-        _propertyTypeMappings.Add("Position", "Hashtable");
-        _propertyTypeMappings.Add("DateTimeLabelFormats", "Hashtable");
-        _propertyTypeMappings.Add("InputPosition", "Hashtable");
-        _propertyTypeMappings.Add("Attr", "Hashtable");
-        _propertyTypeMappings.Add("Style", "Hashtable");
-        _propertyTypeMappings.Add("InputStyle", "Hashtable");
-        _propertyTypeMappings.Add("LabelStyle", "Hashtable");
-        _propertyTypeMappings.Add("Stack", "string");
-        _propertyTypeMappings.Add("Symbol", "string");
-        _propertyTypeMappings.Add("TrackBorderColor", "string");
-        _propertyTypeMappings.Add("Background", "List<Background>");
-        _propertyTypeMappings.Add("MenuItems", "List<MenuItem>");
-        _propertyTypeMappings.Add("Crosshairs", "List<Crosshair>");
-        _propertyTypeMappings.Add("Stops", "List<Stop>");
-        _propertyTypeMappings.Add("RenderTo", "string");
+        _propertyTypeMappings.Add("shadow", "Shadow");
+        _propertyTypeMappings.Add("plotShadow", "Shadow");
+        _propertyTypeMappings.Add("animation", "Animation");
+        _propertyTypeMappings.Add("pointPlacement", "PointPlacement");
+        _propertyTypeMappings.Add("center", "new string[]");
+        _propertyTypeMappings.Add("margin", "new string[]");
+        _propertyTypeMappings.Add("position", "Hashtable");
+        _propertyTypeMappings.Add("dateTimeLabelFormats", "Hashtable");
+        _propertyTypeMappings.Add("inputPosition", "Hashtable");
+        _propertyTypeMappings.Add("attr", "Hashtable");
+        _propertyTypeMappings.Add("style", "Hashtable");
+        _propertyTypeMappings.Add("inputStyle", "Hashtable");
+        _propertyTypeMappings.Add("labelStyle", "Hashtable");
+        _propertyTypeMappings.Add("stack", "string");
+        _propertyTypeMappings.Add("symbol", "string");
+        _propertyTypeMappings.Add("trackBorderColor", "string");
+        _propertyTypeMappings.Add("background", "List<Background>");
+        _propertyTypeMappings.Add("menuItems", "List<MenuItem>");
+        _propertyTypeMappings.Add("crosshairs", "List<Crosshair>");
+        _propertyTypeMappings.Add("stops", "List<Stop>");
+        _propertyTypeMappings.Add("renderTo", "string");
         _propertyTypeMappings.Add("series", "List<Series>");
         _propertyTypeMappings.Add("drilldown.series", "List<Series>");
         _propertyTypeMappings.Add("xAxis", "List<XAxis>");
