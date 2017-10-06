@@ -260,7 +260,7 @@ public class HighchartsAspNetMvc
         }
 
         string extendsClass = "";
-        if (_seriesMappings.ContainsKey(item.Title))
+        if (_seriesMappings.ContainsKey(item.FullName))
             extendsClass = ": Series";
         else
             extendsClass = ": BaseObject";
@@ -394,6 +394,15 @@ public class HighchartsAspNetMvc
         if (_enumMappings[defaultValue] != null)
             defaultValue = _enumMappings[defaultValue] as string;
 
+        if (defaultValue.Contains('-'))
+        {
+            var tab = defaultValue.Split('-');
+            defaultValue = "";
+
+            foreach (var t in tab)
+                defaultValue += FirstCharToUpper(t);
+        }
+
         return String.Format("{0}.{1}", GetClassNameFromItem(item), FirstCharToUpper(defaultValue));
     }
 
@@ -494,6 +503,8 @@ public class HighchartsAspNetMvc
             return "List<" + result + "Data" + ">";
         }
 
+        if (_propertyTypeMappings[child.Title] != null)
+            return _propertyTypeMappings[child.Title].ToString();
         if (_propertyTypeMappings[child.FullName] != null)
             return _propertyTypeMappings[child.FullName].ToString();
         if (_propertyTypeMappings[propertyName] != null)
@@ -508,12 +519,19 @@ public class HighchartsAspNetMvc
         else
         if (child.IsParent)
             returnType = GetClassNameFromItem(child);
+        else
+        {
+            if (returnType == "Boolean|Object")
+                returnType = "object";
+        }
 
         if (returnType.EndsWith("DataDataLabels"))
             returnType = returnType.Replace("DataData", "Data");
 
         if (returnType.EndsWith("LevelsDataLabels"))
             returnType = returnType.Replace("LevelsData", "Data");
+
+        
 
         return returnType;
     }
@@ -668,9 +686,11 @@ public class HighchartsAspNetMvc
         _typeMappings.Add("Text", "string");
         _typeMappings.Add("Number", "double?");
         _typeMappings.Add("Boolean", "bool?");
+        //_typeMappings.Add("Boolean|Object", "object");
         _typeMappings.Add("function", "string");
         _typeMappings.Add("function|null", "string");
         _typeMappings.Add("String|Function", "string");
+        _typeMappings.Add("String|Object", "string");
         _typeMappings.Add("Color", "string");
         _typeMappings.Add("CSSObject", "Hashtable");
         _typeMappings.Add("Number|String", "string");
@@ -692,8 +712,8 @@ public class HighchartsAspNetMvc
         _propertyTypeMappings.Add("plotShadow", "Shadow");
         _propertyTypeMappings.Add("animation", "Animation");
         _propertyTypeMappings.Add("pointPlacement", "PointPlacement");
-        _propertyTypeMappings.Add("center", "new string[]");
-        _propertyTypeMappings.Add("margin", "new string[]");
+        _propertyTypeMappings.Add("center", "string[]");
+        _propertyTypeMappings.Add("margin", "string[]");
         _propertyTypeMappings.Add("position", "Hashtable");
         _propertyTypeMappings.Add("dateTimeLabelFormats", "Hashtable");
         _propertyTypeMappings.Add("inputPosition", "Hashtable");
@@ -704,7 +724,7 @@ public class HighchartsAspNetMvc
         _propertyTypeMappings.Add("stack", "string");
         _propertyTypeMappings.Add("symbol", "string");
         _propertyTypeMappings.Add("trackBorderColor", "string");
-        _propertyTypeMappings.Add("background", "List<Background>");
+        //_propertyTypeMappings.Add("background", "List<Background>");
         _propertyTypeMappings.Add("menuItems", "List<MenuItem>");
         _propertyTypeMappings.Add("crosshairs", "List<Crosshair>");
         _propertyTypeMappings.Add("stops", "List<Stop>");
@@ -720,6 +740,7 @@ public class HighchartsAspNetMvc
         _propertyTypeMappings.Add("xAxis.plotLines", "List<XAxisPlotLines>");
         _propertyTypeMappings.Add("xAxis.plotBands.label.style", "Hashtable");
         _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
+        _propertyTypeMappings.Add("pane.background", "List<PaneBackground>");
     }
 
     private void InitPropertyInitMappings()
@@ -732,7 +753,7 @@ public class HighchartsAspNetMvc
         _propertyInitMappings.Add("menuItems", "new List<MenuItem>()");
         //_propertyInitMappings.Add("Symbol", "new Symbol()");
         _propertyInitMappings.Add("colors", "new List<string>()");
-        _propertyInitMappings.Add("center", "new string[] { null, null }");
+        _propertyInitMappings.Add("center", "new string[] { \"50%\", \"50%\" }");
         _propertyInitMappings.Add("margin", "new string[] {}");
         _propertyInitMappings.Add("position", "new Hashtable()");
         _propertyInitMappings.Add("dateTimeLabelFormats", "new Hashtable()");
@@ -754,11 +775,12 @@ public class HighchartsAspNetMvc
         _propertyInitMappings.Add("xAxis.plotBands", "new List<XAxisPlotBands>()");
         _propertyInitMappings.Add("xAxis.plotBands.label.style", "new Hashtable()");
         _propertyInitMappings.Add("series<treemap>.levels", "new List<TreemapSeriesLevels>()");
+        _propertyInitMappings.Add("pane.background", "new List<PaneBackground>()");
     }
 
     private void InitLists()
     {
-        _lists.Add("Background");
+        _lists.Add("pane.background");
         _lists.Add("MenuItem");
         //_lists.Add("Crosshair");
         _lists.Add("Data");
@@ -862,15 +884,28 @@ public class HighchartsAspNetMvc
                 result = (string)_seriesMappings[result];
             }
             else
-                result = FirstCharToUpper(result);
+            {
+                if (result.Contains('.'))
+                {
+                    var tab = result.Split('.');
+                    result = "";
+
+                    foreach (var t in tab)
+                        result += FirstCharToUpper(t);
+                }
+                else
+                {
+                    result = FirstCharToUpper(result);
+                }
+            }
             return "new List<" + result + "Data" + ">()";//null;
         }
 
         if (item.Title.ToLower() == "fillcolor")
             return "null";
 
-        if (item.Title.ToLower() == "background" && item.Parent.ToLower() == "pane")
-            return "new List<Background>()";
+        //if (item.Title.ToLower() == "background" && item.Parent.ToLower() == "pane")
+        //    return "new List<Background>()";
 
         if (item.Title.ToLower() == "enabled" && item.Parent.ToLower() == "series<treemap>.datalabels")
             return "null";
@@ -897,9 +932,9 @@ public class HighchartsAspNetMvc
         {
             defaults = _propertyInitMappings[item.FullName].ToString();
         }
-        else if (_propertyInitMappings[FirstCharToUpper(item.Title)] != null)
+        else if (_propertyInitMappings[item.Title] != null)
         {
-            defaults = _propertyInitMappings[FirstCharToUpper(item.Title)].ToString();
+            defaults = _propertyInitMappings[item.Title].ToString();
         }
 
         if (item.Values != null && item.Values.Count > 0)
@@ -909,6 +944,9 @@ public class HighchartsAspNetMvc
 
         if (!item.IsParent)
         {
+            if (item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis" || item.Title.ToLower() == "position")
+                return defaults;
+
             if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
             {
                 return "double.MinValue";
@@ -938,8 +976,8 @@ public class HighchartsAspNetMvc
                                         .Replace("[", "{")
                                         .Replace("]", "}");
                 }
-                if ((_propertyTypeMappings[FirstCharToUpper(item.Title)] != null &&
-                    _propertyTypeMappings[FirstCharToUpper(item.Title)].ToString() == "Hashtable") ||
+                if ((_propertyTypeMappings[item.Title] != null &&
+                    _propertyTypeMappings[item.Title].ToString() == "Hashtable") ||
                     (_typeMappings[(item.ReturnType)] != null &&
                     _typeMappings[(item.ReturnType)].ToString() == "Hashtable"))
                 {
@@ -977,9 +1015,9 @@ public class HighchartsAspNetMvc
             {
                 return _propertyInitMappings[item.FullName].ToString();
             }
-            if (_propertyInitMappings[FirstCharToUpper(item.Title)] != null)
+            if (_propertyInitMappings[item.Title] != null)
             {
-                return _propertyInitMappings[FirstCharToUpper(item.Title)].ToString();
+                return _propertyInitMappings[item.Title].ToString();
             }
 
             //if (item.Title.ToLower().Contains("datalabels") && item.Parent.ToLower().EndsWith("data"))
