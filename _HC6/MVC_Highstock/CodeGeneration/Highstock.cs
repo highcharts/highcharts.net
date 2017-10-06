@@ -42,14 +42,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Responsive = Responsive_DefaultValue = new Responsive();
 			Scrollbar = Scrollbar_DefaultValue = new Scrollbar();
 			Pane = Pane_DefaultValue = new Pane();
-			ColorAxis = ColorAxis_DefaultValue = new ColorAxis();
-			Stops = Stops_DefaultValue = null;
-			Min = Min_DefaultValue = null;
-			Max = Max_DefaultValue = null;
-			StartOnTick = StartOnTick_DefaultValue = false;
-			EndOnTick = EndOnTick_DefaultValue = false;
-			MinColor = MinColor_DefaultValue = null;
-			MaxColor = MaxColor_DefaultValue = null;
 			
 		}	
 		
@@ -248,62 +240,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Pane Pane { get; set; }
 		private Pane Pane_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ColorAxis ColorAxis { get; set; }
-		private ColorAxis ColorAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public List<Stop> Stops { get; set; }
-		private List<Stop> Stops_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Min { get; set; }
-		private double? Min_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Max { get; set; }
-		private double? Max_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? StartOnTick { get; set; }
-		private bool? StartOnTick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? EndOnTick { get; set; }
-		private bool? EndOnTick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string MinColor { get; set; }
-		private string MinColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string MaxColor { get; set; }
-		private string MaxColor_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -338,14 +274,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Responsive.IsDirty()) h.Add("responsive",Responsive.ToHashtable());
 			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());
 			if (Pane.IsDirty()) h.Add("pane",Pane.ToHashtable());
-			if (ColorAxis.IsDirty()) h.Add("colorAxis",ColorAxis.ToHashtable());
-			if (Stops != Stops_DefaultValue) h.Add("stops", HashifyList(Stops));
-			if (Min != Min_DefaultValue) h.Add("min",Min);
-			if (Max != Max_DefaultValue) h.Add("max",Max);
-			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
-			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
-			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
-			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
 			
 
 			return h;

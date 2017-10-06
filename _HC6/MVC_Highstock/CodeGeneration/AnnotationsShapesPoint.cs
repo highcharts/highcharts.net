@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
-			XAxis = XAxis_DefaultValue = null;
-			YAxis = YAxis_DefaultValue = null;
+			XAxis = XAxis_DefaultValue = new List<XAxis>();
+			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			
 		}	
 		
@@ -39,15 +39,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>This number defines which xAxis the point is connected to. It refersto either the axis id or the index of the axis in the xAxis array.If the option is not configured or the axis is not found the point&#39;sx coordinate refers to the chart pixels.</p>
 		/// </summary>
-		public string XAxis { get; set; }
-		private string XAxis_DefaultValue { get; set; }
+		public List<XAxis> XAxis { get; set; }
+		private List<XAxis> XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>This number defines which yAxis the point is connected to. It refersto either the axis id or the index of the axis in the yAxis array.If the option is not configured or the axis is not found the point&#39;sy coordinate refers to the chart pixels.</p>
 		/// </summary>
-		public string YAxis { get; set; }
-		private string YAxis_DefaultValue { get; set; }
+		public List<YAxis> YAxis { get; set; }
+		private List<YAxis> YAxis_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

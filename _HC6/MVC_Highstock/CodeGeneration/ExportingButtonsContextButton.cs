@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Symbol = Symbol_DefaultValue = "menu";
 			_titleKey = _titleKey_DefaultValue = "contextButtonTitle";
 			MenuItems = MenuItems_DefaultValue = new List<MenuItem>();
-			Onclick = Onclick_DefaultValue = null;
+			Onclick = Onclick_DefaultValue = "";
 			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			X = X_DefaultValue = -10;
 			SymbolSize = SymbolSize_DefaultValue = 14;
@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>A click handler callback to use on the button directly instead ofthe popup menu.</p>
 		/// </summary>
-		public function Onclick { get; set; }
-		private function Onclick_DefaultValue { get; set; }
+		public string Onclick { get; set; }
+		private string Onclick_DefaultValue { get; set; }
 		 
 
 		/// <summary>

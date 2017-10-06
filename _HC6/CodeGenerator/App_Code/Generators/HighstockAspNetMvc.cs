@@ -510,6 +510,8 @@ public class HighstockAspNetMvc
 
         if (_propertyTypeMappings[child.FullName] != null)
             return _propertyTypeMappings[child.FullName].ToString();
+        if (_propertyTypeMappings[child.Title] != null)
+            return _propertyTypeMappings[child.Title].ToString();
         if (_propertyTypeMappings[propertyName] != null)
             return _propertyTypeMappings[propertyName].ToString();
         if (_typeMappings[returnType] != null)
@@ -689,37 +691,37 @@ public class HighstockAspNetMvc
         _typeMappings.Add("String|undefined", "string");
         _typeMappings.Add("String|null", "string");
         _typeMappings.Add("String|HTMLElement", "string");
-        _typeMappings.Add("Array<Color>", "List<string>");
-        _typeMappings.Add("Array<String>", "List<string>");
-        _typeMappings.Add("Array<String>;", "List<string>");
-        _typeMappings.Add("Array<Number>", "List<double>");
-        _typeMappings.Add("Array<Array<Mixed>>", "List<List<object>>");
-        _typeMappings.Add("Array<Object>", "List<object>");
+        _typeMappings.Add("Array.<Color>", "List<string>");
+        _typeMappings.Add("Array.<String>", "List<string>");
+        _typeMappings.Add("Array.<Number>", "List<double>");
+        _typeMappings.Add("Array.<Array<Mixed>>", "List<List<object>>");
+        _typeMappings.Add("Array.<Object>", "List<object>");
+        _typeMappings.Add("Array.<(String|Number)>", "List<string>");
     }
 
     private void InitPropertyTypeMappings()
     {
-        _propertyTypeMappings.Add("Shadow", "Shadow");
-        _propertyTypeMappings.Add("PlotShadow", "Shadow");
-        _propertyTypeMappings.Add("Animation", "Animation");
-        _propertyTypeMappings.Add("PointPlacement", "PointPlacement");
-        _propertyTypeMappings.Add("Center", "new string[]");
-        _propertyTypeMappings.Add("Margin", "new string[]");
-        _propertyTypeMappings.Add("Position", "Hashtable");
-        _propertyTypeMappings.Add("DateTimeLabelFormats", "Hashtable");
-        _propertyTypeMappings.Add("InputPosition", "Hashtable");
-        _propertyTypeMappings.Add("Attr", "Hashtable");
-        _propertyTypeMappings.Add("Style", "Hashtable");
-        _propertyTypeMappings.Add("InputStyle", "Hashtable");
-        _propertyTypeMappings.Add("LabelStyle", "Hashtable");
-        _propertyTypeMappings.Add("Stack", "string");
-        _propertyTypeMappings.Add("Symbol", "string");
-        _propertyTypeMappings.Add("TrackBorderColor", "string");
-        _propertyTypeMappings.Add("Background", "List<Background>");
-        _propertyTypeMappings.Add("MenuItems", "List<MenuItem>");
-        _propertyTypeMappings.Add("Crosshairs", "List<Crosshair>");
-        _propertyTypeMappings.Add("Stops", "List<Stop>");
-        _propertyTypeMappings.Add("RenderTo", "string");
+        _propertyTypeMappings.Add("shadow", "Shadow");
+        _propertyTypeMappings.Add("plotShadow", "Shadow");
+        _propertyTypeMappings.Add("animation", "Animation");
+        _propertyTypeMappings.Add("pointPlacement", "PointPlacement");
+        _propertyTypeMappings.Add("center", "new string[]");
+        _propertyTypeMappings.Add("margin", "new string[]");
+        _propertyTypeMappings.Add("position", "Hashtable");
+        _propertyTypeMappings.Add("dateTimeLabelFormats", "Hashtable");
+        _propertyTypeMappings.Add("inputPosition", "Hashtable");
+        _propertyTypeMappings.Add("attr", "Hashtable");
+        _propertyTypeMappings.Add("style", "Hashtable");
+        _propertyTypeMappings.Add("inputStyle", "Hashtable");
+        _propertyTypeMappings.Add("labelStyle", "Hashtable");
+        _propertyTypeMappings.Add("stack", "string");
+        _propertyTypeMappings.Add("symbol", "string");
+        _propertyTypeMappings.Add("trackBorderColor", "string");
+        _propertyTypeMappings.Add("background", "List<Background>");
+        _propertyTypeMappings.Add("menuItems", "List<MenuItem>");
+        _propertyTypeMappings.Add("crosshairs", "List<Crosshair>");
+        _propertyTypeMappings.Add("stops", "List<Stop>");
+        _propertyTypeMappings.Add("renderTo", "string");
         _propertyTypeMappings.Add("series", "List<Series>");
         _propertyTypeMappings.Add("drilldown.series", "List<Series>");
         _propertyTypeMappings.Add("xAxis", "List<XAxis>");
@@ -731,31 +733,31 @@ public class HighstockAspNetMvc
         _propertyTypeMappings.Add("xAxis.plotLines", "List<XAxisPlotLines>");
         _propertyTypeMappings.Add("xAxis.plotBands.label.style", "Hashtable");
         _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
-        _propertyTypeMappings.Add("Colors", "List<string>");
+        _propertyTypeMappings.Add("colors", "List<string>");
     }
 
     private void InitPropertyInitMappings()
     {
-        _propertyInitMappings.Add("Shadow", "new Shadow() { Enabled = false }");
-        _propertyInitMappings.Add("PlotShadow", "new Shadow() { Enabled = false }");
-        _propertyInitMappings.Add("Animation", "new Animation() { Enabled = true }");
-        _propertyInitMappings.Add("PointPlacement", "new PointPlacement()");
-        _propertyInitMappings.Add("Crosshairs", "new List<Crosshair>()");
-        _propertyInitMappings.Add("MenuItems", "new List<MenuItem>()");
+        _propertyInitMappings.Add("shadow", "new Shadow() { Enabled = false }");
+        _propertyInitMappings.Add("plotShadow", "new Shadow() { Enabled = false }");
+        _propertyInitMappings.Add("animation", "new Animation() { Enabled = true }");
+        _propertyInitMappings.Add("pointPlacement", "new PointPlacement()");
+        _propertyInitMappings.Add("crosshairs", "new List<Crosshair>()");
+        _propertyInitMappings.Add("menuItems", "new List<MenuItem>()");
         //_propertyInitMappings.Add("Symbol", "new Symbol()");
-        _propertyInitMappings.Add("Colors", "new List<string>()");
-        _propertyInitMappings.Add("Center", "new string[] { null, null }");
-        _propertyInitMappings.Add("Margin", "new string[] {}");
-        _propertyInitMappings.Add("Position", "new Hashtable()");
-        _propertyInitMappings.Add("DateTimeLabelFormats", "new Hashtable()");
-        _propertyInitMappings.Add("InputPosition", "new Hashtable()");
-        _propertyInitMappings.Add("Style", "new Hashtable()");
-        _propertyInitMappings.Add("InputStyle", "new Hashtable()");
-        _propertyInitMappings.Add("LabelStyle", "new Hashtable()");
-        _propertyInitMappings.Add("Columns", "new List<List<Object>>()");
-        _propertyInitMappings.Add("Rows", "new List<List<object>>()");
-        _propertyInitMappings.Add("SeriesMapping", "new List<object>()");
-        _propertyInitMappings.Add("Keys", "new List<string>()");
+        _propertyInitMappings.Add("colors", "new List<string>()");
+        _propertyInitMappings.Add("center", "new string[] { null, null }");
+        _propertyInitMappings.Add("margin", "new string[] {}");
+        _propertyInitMappings.Add("position", "new Hashtable()");
+        _propertyInitMappings.Add("dateTimeLabelFormats", "new Hashtable()");
+        _propertyInitMappings.Add("inputPosition", "new Hashtable()");
+        _propertyInitMappings.Add("style", "new Hashtable()");
+        _propertyInitMappings.Add("inputStyle", "new Hashtable()");
+        _propertyInitMappings.Add("labelStyle", "new Hashtable()");
+        _propertyInitMappings.Add("columns", "new List<List<Object>>()");
+        _propertyInitMappings.Add("rows", "new List<List<object>>()");
+        _propertyInitMappings.Add("seriesMapping", "new List<object>()");
+        _propertyInitMappings.Add("keys", "new List<string>()");
         _propertyInitMappings.Add("series", "new List<Series>()");
         _propertyInitMappings.Add("xAxis", "new List<XAxis>()");
         _propertyInitMappings.Add("yAxis", "new List<YAxis>()");
@@ -902,9 +904,9 @@ public class HighstockAspNetMvc
         {
             defaults = _propertyInitMappings[item.FullName].ToString();
         }
-        else if (_propertyInitMappings[FirstCharToUpper(item.Title)] != null)
+        else if (_propertyInitMappings[item.Title] != null)
         {
-            defaults = _propertyInitMappings[FirstCharToUpper(item.Title)].ToString();
+            defaults = _propertyInitMappings[item.Title].ToString();
         }
 
         if (item.Values != null && item.Values.Count > 0)
@@ -918,7 +920,7 @@ public class HighstockAspNetMvc
             {
                 return "double.MinValue";
             }
-            if (item.ReturnType == "Function" || item.ReturnType == "String|Function")
+            if (item.ReturnType == "function" || item.ReturnType == "String|function")
                 return "\"\"";
 
             if (!String.IsNullOrEmpty(item.Defaults))
@@ -930,22 +932,22 @@ public class HighstockAspNetMvc
                 {
                     return '"' + defaults.Replace("\"", "'") + '"';
                 }
-                if (item.ReturnType.StartsWith("Array<String>")) // thereis Array<String>; ending with ; in Highstock
+                if (item.ReturnType.StartsWith("Array.<String>")) // thereis Array<String>; ending with ; in Highstock
                 {
                     return "new List<string> " + item.Defaults
                                         .Replace("'", "\"")
                                         .Replace("[", "{")
                                         .Replace("]", "}");
                 }
-                if (item.ReturnType == "Array<Number>")
+                if (item.ReturnType == "Array.<Number>")
                 {
                     return "new List<double> " + item.Defaults
                                         .Replace("[", "{")
                                         .Replace("]", "}");
                 }
 
-                if ((_propertyTypeMappings[FirstCharToUpper(item.Title)] != null &&
-                    _propertyTypeMappings[FirstCharToUpper(item.Title)].ToString() == "Hashtable") ||
+                if ((_propertyTypeMappings[item.Title] != null &&
+                    _propertyTypeMappings[item.Title].ToString() == "Hashtable") ||
                     (_typeMappings[(item.ReturnType)] != null &&
                     _typeMappings[(item.ReturnType)].ToString() == "Hashtable"))
                 {
@@ -983,12 +985,12 @@ public class HighstockAspNetMvc
             {
                 return _propertyInitMappings[item.FullName].ToString();
             }
-            if (_propertyInitMappings[FirstCharToUpper(item.Title)] != null)
+            if (_propertyInitMappings[item.Title] != null)
             {
-                return _propertyInitMappings[FirstCharToUpper(item.Title)].ToString();
+                return _propertyInitMappings[item.Title].ToString();
             }
 
-            if (item.ReturnType == "Array" && item.FullName.ToLower().EndsWith("zones"))
+            if (item.ReturnType == "Array." && item.FullName.ToLower().EndsWith("zones"))
                 return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
 
             if (item.FullName.ToLower().Contains("data.datalabels"))

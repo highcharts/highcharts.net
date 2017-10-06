@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ResponsiveRulesCondition()
 		{
-			Callback = Callback_DefaultValue = null;
+			Callback = Callback_DefaultValue = "";
 			MaxHeight = MaxHeight_DefaultValue = null;
 			MaxWidth = MaxWidth_DefaultValue = null;
 			MinHeight = MinHeight_DefaultValue = 0;
@@ -26,8 +26,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>A callback function to gain complete control on when the responsiverule applies. Return <code>true</code> if it applies. This opens for checkingagainst other metrics than the chart size, or example the documentsize or other elements.</p>
 		/// </summary>
-		public function Callback { get; set; }
-		private function Callback_DefaultValue { get; set; }
+		public string Callback { get; set; }
+		private string Callback_DefaultValue { get; set; }
 		 
 
 		/// <summary>

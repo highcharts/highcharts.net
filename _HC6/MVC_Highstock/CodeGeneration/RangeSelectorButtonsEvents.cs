@@ -14,16 +14,16 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public RangeSelectorButtonsEvents()
 		{
-			Click = Click_DefaultValue = null;
+			Click = Click_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Fires when clicking on the rangeSelector button. One parameter, event, is passed to the function, containing common event information.</p><pre>click: function(e) {  console.log(this);}</pre><p>Return false to stop default button&#39;s click action.</p>
+		/// <p>Fires when clicking on the rangeSelector button. One parameter, event,is passed to the function, containing common event information.</p><pre>click: function(e) {  console.log(this);}</pre><p>Return false to stop default button&#39;s click action.</p>
 		/// </summary>
-		public function Click { get; set; }
-		private function Click_DefaultValue { get; set; }
+		public string Click { get; set; }
+		private string Click_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

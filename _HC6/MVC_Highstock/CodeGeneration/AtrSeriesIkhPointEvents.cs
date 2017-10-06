@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AtrSeriesIkhPointEvents()
 		{
-			Click = Click_DefaultValue = null;
-			MouseOut = MouseOut_DefaultValue = null;
-			MouseOver = MouseOver_DefaultValue = null;
-			Remove = Remove_DefaultValue = null;
-			Select = Select_DefaultValue = null;
-			Unselect = Unselect_DefaultValue = null;
-			Update = Update_DefaultValue = null;
+			Click = Click_DefaultValue = "";
+			MouseOut = MouseOut_DefaultValue = "";
+			MouseOver = MouseOver_DefaultValue = "";
+			Remove = Remove_DefaultValue = "";
+			Select = Select_DefaultValue = "";
+			Unselect = Unselect_DefaultValue = "";
+			Update = Update_DefaultValue = "";
 			
 		}	
 		
@@ -28,50 +28,50 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Fires when a point is clicked. One parameter, <code>event</code>, is passedto the function, containing common event information.</p><p>If the <code>series.allowPointSelect</code> option is true, the default actionfor the point&#39;s click event is to toggle the point&#39;s select state. Returning <code>false</code> cancels this action.</p>
 		/// </summary>
-		public function Click { get; set; }
-		private function Click_DefaultValue { get; set; }
+		public string Click { get; set; }
+		private string Click_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires when the mouse leaves the area close to the point. One parameter,<code>event</code>, is passed to the function, containing common event information.</p>
 		/// </summary>
-		public function MouseOut { get; set; }
-		private function MouseOut_DefaultValue { get; set; }
+		public string MouseOut { get; set; }
+		private string MouseOut_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires when the mouse enters the area close to the point. One parameter,<code>event</code>, is passed to the function, containing common event information.</p>
 		/// </summary>
-		public function MouseOver { get; set; }
-		private function MouseOver_DefaultValue { get; set; }
+		public string MouseOver { get; set; }
+		private string MouseOver_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires when the point is removed using the <code>.remove()</code> method. Oneparameter, <code>event</code>, is passed to the function. Returning <code>false</code>cancels the operation.</p>
 		/// </summary>
-		public function Remove { get; set; }
-		private function Remove_DefaultValue { get; set; }
+		public string Remove { get; set; }
+		private string Remove_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires when the point is selected either programmatically or followinga click on the point. One parameter, <code>event</code>, is passed to the function. Returning <code>false</code> cancels the operation.</p>
 		/// </summary>
-		public function Select { get; set; }
-		private function Select_DefaultValue { get; set; }
+		public string Select { get; set; }
+		private string Select_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires when the point is unselected either programmatically or followinga click on the point. One parameter, <code>event</code>, is passed to the function. Returning <code>false</code> cancels the operation.</p>
 		/// </summary>
-		public function Unselect { get; set; }
-		private function Unselect_DefaultValue { get; set; }
+		public string Unselect { get; set; }
+		private string Unselect_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires when the point is updated programmatically through the <code>.update()</code>method. One parameter, <code>event</code>, is passed to the function. The newpoint options can be accessed through <code>event.options</code>. Returning<code>false</code> cancels the operation.</p>
 		/// </summary>
-		public function Update { get; set; }
-		private function Update_DefaultValue { get; set; }
+		public string Update { get; set; }
+		private string Update_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

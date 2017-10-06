@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
 			FollowPointer = FollowPointer_DefaultValue = null;
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
-			PointFormatter = PointFormatter_DefaultValue = null;
+			PointFormatter = PointFormatter_DefaultValue = "";
 			Split = Split_DefaultValue = null;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = null;
@@ -76,8 +76,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>A callback function for formatting the HTML output for a single pointin the tooltip. Like the <code>pointFormat</code> string, but with more flexibility.</p>
 		/// </summary>
-		public function PointFormatter { get; set; }
-		private function PointFormatter_DefaultValue { get; set; }
+		public string PointFormatter { get; set; }
+		private string PointFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>

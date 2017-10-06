@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Vwap = Vwap_DefaultValue = new PlotOptionsVwap();
 			Wma = Wma_DefaultValue = new PlotOptionsWma();
 			Zigzag = Zigzag_DefaultValue = new PlotOptionsZigzag();
-			Series = Series_DefaultValue = new PlotOptionsSeries();
+			Series = Series_DefaultValue = new List<Series>();
 			Streamgraph = Streamgraph_DefaultValue = new PlotOptionsStreamgraph();
 			Vector = Vector_DefaultValue = new PlotOptionsVector();
 			Windbarb = Windbarb_DefaultValue = new PlotOptionsWindbarb();
@@ -208,8 +208,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>General options for all series types.</p>
 		/// </summary>
-		public PlotOptionsSeries Series { get; set; }
-		private PlotOptionsSeries Series_DefaultValue { get; set; }
+		public List<Series> Series { get; set; }
+		private List<Series> Series_DefaultValue { get; set; }
 		 
 
 		/// <summary>

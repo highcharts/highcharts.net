@@ -64,7 +64,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			SoftMin = SoftMin_DefaultValue = null;
 			TickAmount = TickAmount_DefaultValue = null;
 			TickInterval = TickInterval_DefaultValue = null;
-			TickPositioner = TickPositioner_DefaultValue = null;
+			TickPositioner = TickPositioner_DefaultValue = "";
 			TickPositions = TickPositions_DefaultValue = null;
 			TickWidth = TickWidth_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
@@ -353,7 +353,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>Enable or disable minor ticks. Unless<a href="#xAxis.minorTickInterval">minorTickInterval</a> is set, the tick interval iscalculated as a fifth of the <code>tickInterval</code>. </p><p>On a logarithmic axis, minor ticks are laid out based on a best guess,attempting to enter approximately 5 minor ticks between each major tick.</p><p>Prior to v6.0.0, ticks were unabled in auto layout by setting<code>minorTickInterval</code> to <code>&quot;auto&quot;</code>.</p>
+		/// <p>Enable or disable minor ticks. Unless<a href="#xAxis.minorTickInterval">minorTickInterval</a> is set, the tick interval iscalculated as a fifth of the <code>tickInterval</code>.</p><p>On a logarithmic axis, minor ticks are laid out based on a best guess,attempting to enter approximately 5 minor ticks between each major tick.</p><p>Prior to v6.0.0, ticks were unabled in auto layout by setting<code>minorTickInterval</code> to <code>&quot;auto&quot;</code>.</p>
 		/// </summary>
 		public bool? MinorTicks { get; set; }
 		private bool? MinorTicks_DefaultValue { get; set; }
@@ -432,15 +432,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>A callback function returning array defining where the ticks arelaid out on the axis. This overrides the default behaviour of <a href="#xAxis.tickPixelInterval">tickPixelInterval</a> and <a href="#xAxis.tickInterval">tickInterval</a>. The automatictick positions are accessible through <code>this.tickPositions</code> and canbe modified by the callback.</p>
 		/// </summary>
-		public function TickPositioner { get; set; }
-		private function TickPositioner_DefaultValue { get; set; }
+		public string TickPositioner { get; set; }
+		private string TickPositioner_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>An array defining where the ticks are laid out on the axis. Thisoverrides the default behaviour of <a href="#xAxis.tickPixelInterval">tickPixelInterval</a>and <a href="#xAxis.tickInterval">tickInterval</a>.</p>
 		/// </summary>
-		public Array.<Number> TickPositions { get; set; }
-		private Array.<Number> TickPositions_DefaultValue { get; set; }
+		public List<double> TickPositions { get; set; }
+		private List<double> TickPositions_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = null;
 			UseUTC = UseUTC_DefaultValue = true;
-			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = null;
+			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "undefined";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
 			
@@ -40,8 +40,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>A callback to return the time zone offset for a given datetime. Ittakes the timestamp in terms of milliseconds since January 1 1970,and returns the timezone offset in minutes. This provides a hookfor drawing time based charts in specific time zones using theirlocal DST crossover dates, with the help of external libraries.</p>
 		/// </summary>
-		public function GetTimezoneOffset { get; set; }
-		private function GetTimezoneOffset_DefaultValue { get; set; }
+		public string GetTimezoneOffset { get; set; }
+		private string GetTimezoneOffset_DefaultValue { get; set; }
 		 
 
 		/// <summary>

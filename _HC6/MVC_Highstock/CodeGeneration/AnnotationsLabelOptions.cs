@@ -21,9 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderRadius = BorderRadius_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Crop = Crop_DefaultValue = null;
-			Formatter = Formatter_DefaultValue = function () {
-	return defined(this.y) ? this.y : 'Annotation label';
-};
+			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = AnnotationsLabelOptionsOverflow.Justify;
 			Padding = Padding_DefaultValue = null;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -92,8 +90,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Callback JavaScript function to format the annotation&#39;s label. Note thatif a <code>format</code> or <code>text</code> are defined, the format or text take precedenceand the formatter is ignored. <code>This</code> refers to a point object.</p>
 		/// </summary>
-		public function Formatter { get; set; }
-		private function Formatter_DefaultValue { get; set; }
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>

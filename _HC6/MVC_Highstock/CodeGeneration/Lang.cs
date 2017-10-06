@@ -24,12 +24,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			DownloadSVG = DownloadSVG_DefaultValue = "Download SVG vector image";
 			ContextButtonTitle = ContextButtonTitle_DefaultValue = "Chart context menu";
 			Loading = Loading_DefaultValue = "Loading...";
-			Months = Months_DefaultValue = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-			ShortMonths = ShortMonths_DefaultValue = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',  'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-			Weekdays = Weekdays_DefaultValue = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
-         "Friday", "Saturday"];
+			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
+			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",         "Friday", "Saturday"};
 			DecimalPoint = DecimalPoint_DefaultValue = ".";
-			NumericSymbols = NumericSymbols_DefaultValue = [ "k" , "M" , "G" , "T" , "P" , "E"];
+			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
 			ThousandsSep = ThousandsSep_DefaultValue = " ";
@@ -116,22 +115,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>An array containing the months names. Corresponds to the <code>%B</code> formatin <code>Highcharts.dateFormat()</code>.</p>
 		/// </summary>
-		public Array.<String> Months { get; set; }
-		private Array.<String> Months_DefaultValue { get; set; }
+		public List<string> Months { get; set; }
+		private List<string> Months_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>An array containing the months names in abbreviated form. Correspondsto the <code>%b</code> format in <code>Highcharts.dateFormat()</code>.</p>
 		/// </summary>
-		public Array.<String> ShortMonths { get; set; }
-		private Array.<String> ShortMonths_DefaultValue { get; set; }
+		public List<string> ShortMonths { get; set; }
+		private List<string> ShortMonths_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>An array containing the weekday names.</p>
 		/// </summary>
-		public Array.<String> Weekdays { get; set; }
-		private Array.<String> Weekdays_DefaultValue { get; set; }
+		public List<string> Weekdays { get; set; }
+		private List<string> Weekdays_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -144,8 +143,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p><a href="http://en.wikipedia.org/wiki/Metric_prefix">Metric prefixes</a> usedto shorten high numbers in axis labels. Replacing any of the positionswith <code>null</code> causes the full number to be written. Setting <code>numericSymbols</code>to <code>null</code> disables shortening altogether.</p>
 		/// </summary>
-		public Array.<String> NumericSymbols { get; set; }
-		private Array.<String> NumericSymbols_DefaultValue { get; set; }
+		public List<string> NumericSymbols { get; set; }
+		private List<string> NumericSymbols_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -172,8 +171,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Short week days, starting Sunday. If not specified, Highcharts usesthe first three letters of the <code>lang.weekdays</code> option.</p>
 		/// </summary>
-		public Array.<String> ShortWeekdays { get; set; }
-		private Array.<String> ShortWeekdays_DefaultValue { get; set; }
+		public List<string> ShortWeekdays { get; set; }
+		private List<string> ShortWeekdays_DefaultValue { get; set; }
 		 
 
 		/// <summary>

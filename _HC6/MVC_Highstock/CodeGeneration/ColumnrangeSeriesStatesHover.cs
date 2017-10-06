@@ -14,23 +14,16 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ColumnrangeSeriesStatesHover()
 		{
-			Halo = Halo_DefaultValue = new ColumnrangeSeriesStatesHoverHalo();
 			Brightness = Brightness_DefaultValue = 0.1;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Enabled = Enabled_DefaultValue = true;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
 			Marker = Marker_DefaultValue = new ColumnrangeSeriesStatesHoverMarker();
+			Halo = Halo_DefaultValue = new ColumnrangeSeriesStatesHoverHalo();
 			LineWidth = LineWidth_DefaultValue = null;
 			
 		}	
 		
-
-		/// <summary>
-		/// <p>Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts.By default the halo is filled by the current point or seriescolor with an opacity of 0.25. The halo can be disabled by settingthe <code>halo</code> option to <code>false</code>.</p><p>In styled mode, the halo is styled with the <code>.highcharts-halo</code> class, with colors inherited from <code>.highcharts-color-{n}</code>.</p>
-		/// </summary>
-		public ColumnrangeSeriesStatesHoverHalo Halo { get; set; }
-		private ColumnrangeSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// <p>How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.</p><p>In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the <code>.highcharts-point:hover</code> rule.</p>
@@ -68,6 +61,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// <p>Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts.By default the halo is filled by the current point or seriescolor with an opacity of 0.25. The halo can be disabled by settingthe <code>halo</code> option to <code>false</code>.</p><p>In styled mode, the halo is styled with the <code>.highcharts-halo</code> class, with colors inherited from <code>.highcharts-color-{n}</code>.</p>
+		/// </summary>
+		public ColumnrangeSeriesStatesHoverHalo Halo { get; set; }
+		private ColumnrangeSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// <p>Pixel with of the graph line. By default this property isundefined, and the <code>lineWidthPlus</code> property dictates how muchto increase the linewidth from normal state.</p>
 		/// </summary>
 		public double? LineWidth { get; set; }
@@ -78,12 +78,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			
 

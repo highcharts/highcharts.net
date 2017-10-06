@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			InputBoxHeight = InputBoxHeight_DefaultValue = 17;
 			InputBoxWidth = InputBoxWidth_DefaultValue = 90;
 			InputDateFormat = InputDateFormat_DefaultValue = "%b %e %Y,";
-			InputDateParser = InputDateParser_DefaultValue = null;
+			InputDateParser = InputDateParser_DefaultValue = "";
 			InputEditDateFormat = InputEditDateFormat_DefaultValue = "%Y-%m-%d";
 			InputEnabled = InputEnabled_DefaultValue = null;
 			InputStyle = InputStyle_DefaultValue = new Hashtable();
@@ -155,8 +155,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>A custom callback function to parse values entered in the input boxesand return a valid JavaScript time as milliseconds since 1970.</p>
 		/// </summary>
-		public function InputDateParser { get; set; }
-		private function InputDateParser_DefaultValue { get; set; }
+		public string InputDateParser { get; set; }
+		private string InputDateParser_DefaultValue { get; set; }
 		 
 
 		/// <summary>

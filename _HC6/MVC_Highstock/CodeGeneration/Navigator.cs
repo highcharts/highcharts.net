@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MaskFill = MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
 			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
 			OutlineWidth = OutlineWidth_DefaultValue = 2;
-			Series = Series_DefaultValue = new NavigatorSeries();
+			Series = Series_DefaultValue = new List<Series>();
 			XAxis = XAxis_DefaultValue = new XAxis();
 			YAxis = YAxis_DefaultValue = new YAxis();
 			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;

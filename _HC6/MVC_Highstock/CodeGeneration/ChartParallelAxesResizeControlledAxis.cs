@@ -23,15 +23,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Array of axes that should move out of the way of resizingbeing done for the current axis. If not set, the next axiswill be used.</p><p>This feature requires the <code>drag-panes.js</code> module.</p>
 		/// </summary>
-		public Array.<(String|Number)> Next { get; set; }
-		private Array.<(String|Number)> Next_DefaultValue { get; set; }
+		public List<string> Next { get; set; }
+		private List<string> Next_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Array of axes that should move with the current axiswhile resizing.</p><p>This feature requires the <code>drag-panes.js</code> module.</p>
 		/// </summary>
-		public Array.<(String|Number)> Prev { get; set; }
-		private Array.<(String|Number)> Prev_DefaultValue { get; set; }
+		public List<string> Prev { get; set; }
+		private List<string> Prev_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

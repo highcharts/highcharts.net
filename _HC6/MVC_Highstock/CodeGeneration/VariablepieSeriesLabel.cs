@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>An array of boxes to avoid when laying out the labels. Each item has a <code>left</code>, <code>right</code>, <code>top</code> and <code>bottom</code> property.</p>
 		/// </summary>
-		public Array.<Object> BoxesToAvoid { get; set; }
-		private Array.<Object> BoxesToAvoid_DefaultValue { get; set; }
+		public List<object> BoxesToAvoid { get; set; }
+		private List<object> BoxesToAvoid_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

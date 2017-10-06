@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			AllowHTML = AllowHTML_DefaultValue = false;
 			ChartOptions = ChartOptions_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
-			Error = Error_DefaultValue = null;
+			Error = Error_DefaultValue = "";
 			FallbackToExportServer = FallbackToExportServer_DefaultValue = true;
 			Filename = Filename_DefaultValue = "chart";
 			FormAttributes = FormAttributes_DefaultValue = null;
@@ -117,8 +117,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Function to call if the offline-exporting module fails to exporta chart on the client side, and <a href="#exporting.fallbackToExportServer">fallbackToExportServer</a> is disabled. If left undefined, an exceptionis thrown instead.</p>
 		/// </summary>
-		public function Error { get; set; }
-		private function Error_DefaultValue { get; set; }
+		public string Error { get; set; }
+		private string Error_DefaultValue { get; set; }
 		 
 
 		/// <summary>

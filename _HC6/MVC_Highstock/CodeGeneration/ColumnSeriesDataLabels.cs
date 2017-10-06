@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Align = Align_DefaultValue = ColumnSeriesDataLabelsAlign.Null;
 			VerticalAlign = VerticalAlign_DefaultValue = ColumnSeriesDataLabelsVerticalAlign.Null;
 			Y = Y_DefaultValue = null;
-			Formatter = Formatter_DefaultValue = null;
+			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable();
 			X = X_DefaultValue = 0;
 			Padding = Padding_DefaultValue = null;
@@ -66,8 +66,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Callback JavaScript function to format the data label. Note thatif a <code>format</code> is defined, the format takes precedence and the formatteris ignored. Available data are:</p><table><tbody><tr><td><code>this.percentage</code></td><td>Stacked series and pies only. The point&#39;s percentage of thetotal.</td></tr><tr><td><code>this.point</code></td><td>The point object. The point name, if defined, is availablethrough <code>this.point.name</code>.</td></tr><tr><td><code>this.series</code>:</td><td>The series object. The series name is available through <code>this.series.name</code>.</td></tr><tr><td><code>this.total</code></td><td>Stacked series only. The total value at this point&#39;s x value.</td></tr><tr><td><code>this.x</code>:</td><td>The x value.</td></tr><tr><td><code>this.y</code>:</td><td>The y value.</td></tr></tbody></table>
 		/// </summary>
-		public function Formatter { get; set; }
-		private function Formatter_DefaultValue { get; set; }
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>

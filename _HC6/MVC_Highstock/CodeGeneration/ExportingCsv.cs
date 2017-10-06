@@ -17,8 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColumnHeaderFormatter = ColumnHeaderFormatter_DefaultValue = null;
 			DateFormat = DateFormat_DefaultValue = "%Y-%m-%d %H:%M:%S";
 			ItemDelimiter = ItemDelimiter_DefaultValue = ",";
-			LineDelimiter = LineDelimiter_DefaultValue = "
-";
+			LineDelimiter = LineDelimiter_DefaultValue = null;
 			
 		}	
 		
@@ -26,8 +25,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Formatter callback for the column headers. Parameters are:</p><ul><li><code>item</code> - The series or axis object)</li><li><code>key</code> -  The point key, for example y or z</li><li><code>keyLength</code> - The amount of value keys for this item, forexample a range series has the keys <code>low</code> and <code>high</code> so thekey length is 2.</li></ul><p>By default it returns the series name, followed by the key ifthere is more than one key. For the axis it returns the axistitle or &quot;Category&quot; or &quot;DateTime&quot; by default.</p><p>Return <code>false</code> to use Highcharts&#39; proposed header.</p>
 		/// </summary>
-		public function|null ColumnHeaderFormatter { get; set; }
-		private function|null ColumnHeaderFormatter_DefaultValue { get; set; }
+		public string ColumnHeaderFormatter { get; set; }
+		private string ColumnHeaderFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>

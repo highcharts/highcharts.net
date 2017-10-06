@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Keys = Keys_DefaultValue = new List<string>();
 			LinkedTo = LinkedTo_DefaultValue = null;
 			NegativeColor = NegativeColor_DefaultValue = "null";
-			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = null;
+			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsArearangePointIntervalUnit.Null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
@@ -148,7 +148,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>Set the point threshold for when a series should enter boost mode.</p><p>Setting it to e.g. 2000 will cause the series to enter boost modewhen there are 2000 or more points in the series.</p><p>Requires <code>modules/boost.js</code>.</p>
+		/// <p>Set the point threshold for when a series should enter boost mode.</p><p>Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.</p><p>To disable boosting on the series, set the <code>boostThreshold</code> to 0. Setting itto 1 will force boosting.</p><p>Requires <code>modules/boost.js</code>.</p>
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
@@ -360,8 +360,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.</p>
 		/// </summary>
-		public Array.<String> Keys { get; set; }
-		private Array.<String> Keys_DefaultValue { get; set; }
+		public List<string> Keys { get; set; }
+		private List<string> Keys_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -381,8 +381,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Same as <a href="#accessibility.pointDescriptionFormatter">accessibility.pointDescriptionFormatter</a>, but for an individual series. Overridesthe chart wide configuration.</p>
 		/// </summary>
-		public function PointDescriptionFormatter { get; set; }
-		private function PointDescriptionFormatter_DefaultValue { get; set; }
+		public string PointDescriptionFormatter { get; set; }
+		private string PointDescriptionFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = null;
 			Align = Align_DefaultValue = LegendAlign.Center;
 			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
-			LabelFormatter = LabelFormatter_DefaultValue = null;
+			LabelFormatter = LabelFormatter_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#999999";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			Navigation = Navigation_DefaultValue = new LegendNavigation();
@@ -85,8 +85,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Callback function to format each of the series&#39; labels. The <code>this</code>keyword refers to the series object, or the point object in caseof pie charts. By default the series or point name is printed.</p>
 		/// </summary>
-		public function LabelFormatter { get; set; }
-		private function LabelFormatter_DefaultValue { get; set; }
+		public string LabelFormatter { get; set; }
+		private string LabelFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>

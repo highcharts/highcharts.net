@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			Format = Format_DefaultValue = null;
-			Formatter = Formatter_DefaultValue = null;
+			Formatter = Formatter_DefaultValue = "";
 			Padding = Padding_DefaultValue = 8;
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new Hashtable{{ "color", "white"},{ "fontWeight", "normal"},{ "fontSize", "11px"},{ "textAlign", "center" }};
@@ -73,8 +73,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Formatter function for the label text.</p>
 		/// </summary>
-		public function Formatter { get; set; }
-		private function Formatter_DefaultValue { get; set; }
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>

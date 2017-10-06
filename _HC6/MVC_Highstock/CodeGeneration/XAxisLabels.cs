@@ -18,9 +18,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Style = Style_DefaultValue = new Hashtable();
 			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = XAxisLabelsAlign.Null;
-			AutoRotation = AutoRotation_DefaultValue = [-45];
+			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			Format = Format_DefaultValue = "{value}";
-			Formatter = Formatter_DefaultValue = null;
+			Formatter = Formatter_DefaultValue = "";
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
@@ -62,8 +62,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>For horizontal axes, the allowed degrees of label rotation to preventoverlapping labels. If there is enough space, labels are not rotated.As the chart gets narrower, it will start rotating the labels -45degrees, then remove every second label and try again with rotations0 and -45 etc. Set it to <code>false</code> to disable rotation, which willcause the labels to word-wrap if possible.</p>
 		/// </summary>
-		public Array.<Number> AutoRotation { get; set; }
-		private Array.<Number> AutoRotation_DefaultValue { get; set; }
+		public List<double> AutoRotation { get; set; }
+		private List<double> AutoRotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -76,8 +76,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Callback JavaScript function to format the label. The value is givenby <code>this.value</code>. Additional properties for <code>this</code> are <code>axis</code>, <code>chart</code>,<code>isFirst</code> and <code>isLast</code>. The value of the default label formattercan be retrieved by calling <code>this.axis.defaultLabelFormatter.call(this)</code>within the function.</p><p>Defaults to:</p><pre>function() {    return this.value;}</pre>
 		/// </summary>
-		public function Formatter { get; set; }
-		private function Formatter_DefaultValue { get; set; }
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			VerticalAlign = VerticalAlign_DefaultValue = XrangeSeriesDataLabelsVerticalAlign.Middle;
 			Inside = Inside_DefaultValue = null;
-			Formatter = Formatter_DefaultValue = null;
+			Formatter = Formatter_DefaultValue = "";
 			Align = Align_DefaultValue = XrangeSeriesDataLabelsAlign.Null;
 			Y = Y_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
@@ -59,8 +59,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>The default formatter for X-range data labels displays the percentageof the partial fill amount.</p>
 		/// </summary>
-		public function Formatter { get; set; }
-		private function Formatter_DefaultValue { get; set; }
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ChartEvents()
 		{
-			AfterPrint = AfterPrint_DefaultValue = null;
-			BeforePrint = BeforePrint_DefaultValue = null;
-			AddSeries = AddSeries_DefaultValue = null;
-			Click = Click_DefaultValue = null;
-			Load = Load_DefaultValue = null;
-			Redraw = Redraw_DefaultValue = null;
-			Render = Render_DefaultValue = null;
-			Selection = Selection_DefaultValue = null;
+			AfterPrint = AfterPrint_DefaultValue = "";
+			BeforePrint = BeforePrint_DefaultValue = "";
+			AddSeries = AddSeries_DefaultValue = "";
+			Click = Click_DefaultValue = "";
+			Load = Load_DefaultValue = "";
+			Redraw = Redraw_DefaultValue = "";
+			Render = Render_DefaultValue = "";
+			Selection = Selection_DefaultValue = "";
 			
 		}	
 		
@@ -29,57 +29,57 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Fires after a chart is printed through the context menu item or the<code>Chart.print</code> method. Requires the exporting module.</p>
 		/// </summary>
-		public function AfterPrint { get; set; }
-		private function AfterPrint_DefaultValue { get; set; }
+		public string AfterPrint { get; set; }
+		private string AfterPrint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires before a chart is printed through the context menu item orthe <code>Chart.print</code> method. Requires the exporting module.</p>
 		/// </summary>
-		public function BeforePrint { get; set; }
-		private function BeforePrint_DefaultValue { get; set; }
+		public string BeforePrint { get; set; }
+		private string BeforePrint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires when a series is added to the chart after load time, usingthe <code>addSeries</code> method. One parameter, <code>event</code>, is passed to thefunction, containing common event information.Through <code>event.options</code> you can access the series options that waspassed to the <code>addSeries</code> method. Returning false prevents the seriesfrom being added.</p>
 		/// </summary>
-		public function AddSeries { get; set; }
-		private function AddSeries_DefaultValue { get; set; }
+		public string AddSeries { get; set; }
+		private string AddSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires when clicking on the plot background. One parameter, <code>event</code>,is passed to the function, containing common event information.</p><p>Information on the clicked spot can be found through <code>event.xAxis</code>and <code>event.yAxis</code>, which are arrays containing the axes of each dimensionand each axis&#39; value at the clicked spot. The primary axes are <code>event.xAxis[0]</code> and <code>event.yAxis[0]</code>. Remember the unit of a datetime axisis milliseconds since 1970-01-01 00:00:00.</p><pre>click: function(e) {    console.log(        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', e.xAxis[0].value),        e.yAxis[0].value    )}</pre>
 		/// </summary>
-		public function Click { get; set; }
-		private function Click_DefaultValue { get; set; }
+		public string Click { get; set; }
+		private string Click_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires when the chart is finished loading. Since v4.2.2, it also waitsfor images to be loaded, for example from point markers. One parameter,<code>event</code>, is passed to the function, containing common event information.</p><p>There is also a second parameter to the chart constructor where acallback function can be passed to be executed on chart.load.</p>
 		/// </summary>
-		public function Load { get; set; }
-		private function Load_DefaultValue { get; set; }
+		public string Load { get; set; }
+		private string Load_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires when the chart is redrawn, either after a call to chart.redraw()or after an axis, series or point is modified with the <code>redraw</code> optionset to true. One parameter, <code>event</code>, is passed to the function, containing common event information.</p>
 		/// </summary>
-		public function Redraw { get; set; }
-		private function Redraw_DefaultValue { get; set; }
+		public string Redraw { get; set; }
+		private string Redraw_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires after initial load of the chart (directly after the <code>load</code>event), and after each redraw (directly after the <code>redraw</code> event).</p>
 		/// </summary>
-		public function Render { get; set; }
-		private function Render_DefaultValue { get; set; }
+		public string Render { get; set; }
+		private string Render_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Fires when an area of the chart has been selected. Selection is enabledby setting the chart&#39;s zoomType. One parameter, <code>event</code>, is passedto the function, containing common event information. The default action for the selection event is tozoom the chart to the selected area. It can be prevented by calling<code>event.preventDefault()</code>.</p><p>Information on the selected area can be found through <code>event.xAxis</code>and <code>event.yAxis</code>, which are arrays containing the axes of each dimensionand each axis&#39; min and max values. The primary axes are <code>event.xAxis[0]</code>and <code>event.yAxis[0]</code>. Remember the unit of a datetime axis is millisecondssince 1970-01-01 00:00:00.</p><pre>selection: function(event) {    // log the min and max of the primary, datetime x-axis    console.log(        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', event.xAxis[0].min),        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', event.xAxis[0].max)    );    // log the min and max of the y axis    console.log(event.yAxis[0].min, event.yAxis[0].max);}</pre>
 		/// </summary>
-		public function Selection { get; set; }
-		private function Selection_DefaultValue { get; set; }
+		public string Selection { get; set; }
+		private string Selection_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

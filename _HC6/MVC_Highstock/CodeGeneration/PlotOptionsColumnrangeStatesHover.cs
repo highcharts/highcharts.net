@@ -14,20 +14,12 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsColumnrangeStatesHover()
 		{
-			Halo = Halo_DefaultValue = null;
 			Brightness = Brightness_DefaultValue = 0.1;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Enabled = Enabled_DefaultValue = true;
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Halo { get; set; }
-		private bool? Halo_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// <p>How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.</p><p>In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the <code>.highcharts-point:hover</code> rule.</p>
@@ -54,7 +46,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);

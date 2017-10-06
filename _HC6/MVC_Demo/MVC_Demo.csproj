@@ -54,6 +54,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Highstock.Web.Mvc, Version=5.0.6480.27592, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_HC5\MVC_Highstock\bin\Debug\Highstock.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
@@ -6869,10 +6873,6 @@
     <ProjectReference Include="..\MVC_Highcharts\MVC_Highcharts.csproj">
       <Project>{fa4c2a73-1563-47da-8f1b-64ef17d48918}</Project>
       <Name>MVC_Highcharts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MVC_Highstock\MVC_Highstock.csproj">
-      <Project>{d05d7902-fdbe-422d-9f47-c84a74a25258}</Project>
-      <Name>MVC_Highstock</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

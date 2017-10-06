@@ -29,9 +29,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderColor = BorderColor_DefaultValue = "null";
 			FollowPointer = FollowPointer_DefaultValue = null;
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
-			Formatter = Formatter_DefaultValue = null;
-			PointFormatter = PointFormatter_DefaultValue = null;
-			Positioner = Positioner_DefaultValue = null;
+			Formatter = Formatter_DefaultValue = "";
+			PointFormatter = PointFormatter_DefaultValue = "";
+			Positioner = Positioner_DefaultValue = "";
 			Shape = Shape_DefaultValue = TooltipShape.Callout;
 			Shared = Shared_DefaultValue = false;
 			Split = Split_DefaultValue = null;
@@ -153,22 +153,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Callback function to format the text of the tooltip from scratch. Return<code>false</code> to disable tooltip for a specific point on series.</p><p>A subset of HTML is supported. Unless <code>useHTML</code> is true, the HTML of thetooltip is parsed and converted to SVG, therefore this isn&#39;t a complete HTMLrenderer. The following tags are supported: <code>&lt;b&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;em&gt;</code>,<code>&lt;br/&gt;</code>, <code>&lt;span&gt;</code>. Spans can be styled with a <code>style</code> attribute,but only text-related CSS that is shared with SVG is handled.</p><p>Since version 2.1 the tooltip can be shared between multiple seriesthrough the <code>shared</code> option. The available data in the formatterdiffer a bit depending on whether the tooltip is shared or not. Ina shared tooltip, all properties except <code>x</code>, which is common forall points, are kept in an array, <code>this.points</code>.</p><p>Available data are:</p><dl><dt>this.percentage (not shared) / this.points[i].percentage (shared)</dt><dd>Stacked series and pies only. The point&#39;s percentage of the total.</dd><dt>this.point (not shared) / this.points[i].point (shared)</dt><dd>The point object. The point name, if defined, is available through<code>this.point.name</code>.</dd><dt>this.points</dt><dd>In a shared tooltip, this is an array containing all other propertiesfor each point.</dd><dt>this.series (not shared) / this.points[i].series (shared)</dt><dd>The series object. The series name is available through<code>this.series.name</code>.</dd><dt>this.total (not shared) / this.points[i].total (shared)</dt><dd>Stacked series only. The total value at this point&#39;s x value.</dd><dt>this.x</dt><dd>The x value. This property is the same regardless of the tooltipbeing shared or not.</dd><dt>this.y (not shared) / this.points[i].y (shared)</dt><dd>The y value.</dd></dl>
 		/// </summary>
-		public function Formatter { get; set; }
-		private function Formatter_DefaultValue { get; set; }
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>A callback function for formatting the HTML output for a single pointin the tooltip. Like the <code>pointFormat</code> string, but with more flexibility.</p>
 		/// </summary>
-		public function PointFormatter { get; set; }
-		private function PointFormatter_DefaultValue { get; set; }
+		public string PointFormatter { get; set; }
+		private string PointFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>A callback function to place the tooltip in a default position. Thecallback receives three parameters: <code>labelWidth</code>, <code>labelHeight</code> and<code>point</code>, where point contains values for <code>plotX</code> and <code>plotY</code> tellingwhere the reference point is in the plot area. Add <code>chart.plotLeft</code>and <code>chart.plotTop</code> to get the full coordinates.</p><p>The return should be an object containing x and y values, for example<code>{ x: 100, y: 100 }</code>.</p>
 		/// </summary>
-		public function Positioner { get; set; }
-		private function Positioner_DefaultValue { get; set; }
+		public string Positioner { get; set; }
+		private string Positioner_DefaultValue { get; set; }
 		 
 
 		/// <summary>

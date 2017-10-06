@@ -18,12 +18,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = 30;
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
-			OnTableAnchorClick = OnTableAnchorClick_DefaultValue = null;
+			OnTableAnchorClick = OnTableAnchorClick_DefaultValue = "";
 			PointDateFormat = PointDateFormat_DefaultValue = null;
-			PointDateFormatter = PointDateFormatter_DefaultValue = null;
-			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = null;
-			ScreenReaderSectionFormatter = ScreenReaderSectionFormatter_DefaultValue = null;
-			SeriesDescriptionFormatter = SeriesDescriptionFormatter_DefaultValue = null;
+			PointDateFormatter = PointDateFormatter_DefaultValue = "";
+			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
+			ScreenReaderSectionFormatter = ScreenReaderSectionFormatter_DefaultValue = "";
+			SeriesDescriptionFormatter = SeriesDescriptionFormatter_DefaultValue = "";
 			
 		}	
 		
@@ -59,8 +59,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Function to run upon clicking the &quot;View as Data Table&quot; link in thescreen reader region.</p><p>By default Highcharts will insert and set focus to a data tablerepresentation of the chart.</p>
 		/// </summary>
-		public function OnTableAnchorClick { get; set; }
-		private function OnTableAnchorClick_DefaultValue { get; set; }
+		public string OnTableAnchorClick { get; set; }
+		private string OnTableAnchorClick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -73,29 +73,29 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Formatter function to determine the date/time format used withpoints on datetime axes when describing them to screen reader users.Receives one argument, <code>point</code>, referring to the point to describe.Should return a date format string compatible with<a href="#Highcharts.dateFormat">dateFormat</a>.</p>
 		/// </summary>
-		public function PointDateFormatter { get; set; }
-		private function PointDateFormatter_DefaultValue { get; set; }
+		public string PointDateFormatter { get; set; }
+		private string PointDateFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Formatter function to use instead of the default for pointdescriptions.Receives one argument, <code>point</code>, referring to the point to describe.Should return a String with the description of the point for a screenreader user.</p>
 		/// </summary>
-		public function PointDescriptionFormatter { get; set; }
-		private function PointDescriptionFormatter_DefaultValue { get; set; }
+		public string PointDescriptionFormatter { get; set; }
+		private string PointDescriptionFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>A formatter function to create the HTML contents of the hidden screenreader information region. Receives one argument, <code>chart</code>, referringto the chart object. Should return a String with the HTML contentof the region.</p><p>The link to view the chart as a data table will be addedautomatically after the custom HTML content.</p>
 		/// </summary>
-		public function ScreenReaderSectionFormatter { get; set; }
-		private function ScreenReaderSectionFormatter_DefaultValue { get; set; }
+		public string ScreenReaderSectionFormatter { get; set; }
+		private string ScreenReaderSectionFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Formatter function to use instead of the default for seriesdescriptions. Receives one argument, <code>series</code>, referring to theseries to describe. Should return a String with the description ofthe series for a screen reader user.</p>
 		/// </summary>
-		public function SeriesDescriptionFormatter { get; set; }
-		private function SeriesDescriptionFormatter_DefaultValue { get; set; }
+		public string SeriesDescriptionFormatter { get; set; }
+		private string SeriesDescriptionFormatter_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
