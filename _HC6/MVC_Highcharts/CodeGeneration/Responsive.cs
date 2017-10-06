@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// A set of rules for responsive settings. The rules are executed from the top down.
+		/// <p>A set of rules for responsive settings. The rules are executed fromthe top down.</p>
 		/// </summary>
 		public ResponsiveRules Rules { get; set; }
 		private ResponsiveRules Rules_DefaultValue { get; set; }

@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ArearangeSeriesStep
     {
-        False, 
+        Null, 
 		Left, 
 		Center, 
 		Right

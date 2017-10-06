@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Enable keyboard navigation for the chart.
+		/// <p>Enable keyboard navigation for the chart.</p>
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Skip null points when navigating through points with the keyboard.
+		/// <p>Skip null points when navigating through points with thekeyboard.</p>
 		/// </summary>
 		public bool? SkipNullPoints { get; set; }
 		private bool? SkipNullPoints_DefaultValue { get; set; }

@@ -17,9 +17,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Align = Align_DefaultValue = "left";
 			Rotation = Rotation_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
-			TextAlign = TextAlign_DefaultValue = "";
+			TextAlign = TextAlign_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = YAxisPlotLinesLabelVerticalAlign.Top;
+			VerticalAlign = VerticalAlign_DefaultValue = YAxisPlotLinesLabelVerticalAlign.Null;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -27,56 +27,56 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Horizontal alignment of the label. Can be one of "left", "center" or "right".
+		/// <p>Horizontal alignment of the label. Can be one of &quot;left&quot;, &quot;center&quot;or &quot;right&quot;.</p>
 		/// </summary>
 		public string Align { get; set; }
 		private string Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Rotation of the text label in degrees. Defaults to 0 for horizontal plot lines and 90 for vertical lines.
+		/// <p>Rotation of the text label in degrees. Defaults to 0 for horizontalplot lines and 90 for vertical lines.</p>
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the text label.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the labels are styled by the <code>.highcharts-plot-line-label</code> class.</p>
+		/// <p>CSS styles for the text label.</p><p>In styled mode, the labels are styled by the<code>.highcharts-plot-line-label</code> class.</p>
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The text alignment for the label. While <code>align</code> determines where the texts anchor point is placed within the plot band, <code>textAlign</code> determines how the text is aligned against its anchor point. Possible values are "left", "center" and "right". Defaults to the same as the <code>align</code> option.
+		/// <p>The text alignment for the label. While <code>align</code> determines wherethe texts anchor point is placed within the plot band, <code>textAlign</code>determines how the text is aligned against its anchor point. Possiblevalues are &quot;left&quot;, &quot;center&quot; and &quot;right&quot;. Defaults to the same asthe <code>align</code> option.</p>
 		/// </summary>
 		public string TextAlign { get; set; }
 		private string TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a> to render the labels.
+		/// <p>Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a> to render the labels.</p>
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Vertical alignment of the label relative to the plot line. Can be one of "top", "middle" or "bottom".
+		/// <p>Vertical alignment of the label relative to the plot line. Can beone of &quot;top&quot;, &quot;middle&quot; or &quot;bottom&quot;.</p>
 		/// </summary>
 		public YAxisPlotLinesLabelVerticalAlign VerticalAlign { get; set; }
 		private YAxisPlotLinesLabelVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Horizontal position relative the alignment. Default varies by orientation.
+		/// <p>Horizontal position relative the alignment. Default varies by orientation.</p>
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Vertical position of the text baseline relative to the alignment. Default varies by orientation.
+		/// <p>Vertical position of the text baseline relative to the alignment. Default varies by orientation.</p>
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

@@ -23,28 +23,28 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// A number indicating how much space should be left between the start and the end of the break. The break size is given in axis units, so for instance on a <code>datetime</code> axis, a break size of 3600000 would indicate the equivalent of an hour.
+		/// <p>A number indicating how much space should be left between the startand the end of the break. The break size is given in axis units,so for instance on a <code>datetime</code> axis, a break size of 3600000 wouldindicate the equivalent of an hour.</p>
 		/// </summary>
 		public double? BreakSize { get; set; }
 		private double? BreakSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The point where the break starts.
+		/// <p>The point where the break starts.</p>
 		/// </summary>
 		public double? From { get; set; }
 		private double? From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Defines an interval after which the break appears again. By default the breaks do not repeat.
+		/// <p>Defines an interval after which the break appears again. By defaultthe breaks do not repeat.</p>
 		/// </summary>
 		public double? Repeat { get; set; }
 		private double? Repeat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The point where the break ends.
+		/// <p>The point where the break ends.</p>
 		/// </summary>
 		public double? To { get; set; }
 		private double? To_DefaultValue { get; set; }

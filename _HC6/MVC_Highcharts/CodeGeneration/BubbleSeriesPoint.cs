@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Events for each single point
+		/// <p>Events for each single point.</p>
 		/// </summary>
 		public BubbleSeriesPointEvents Events { get; set; }
 		private BubbleSeriesPointEvents Events_DefaultValue { get; set; }

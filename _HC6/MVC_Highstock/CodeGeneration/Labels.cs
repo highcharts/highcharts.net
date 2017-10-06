@@ -14,32 +14,32 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Labels()
 		{
+			Style = Style_DefaultValue = new Hashtable();
 			Items = Items_DefaultValue = new LabelsItems();
-			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333" }};
 			
 		}	
 		
 
 		/// <summary>
-		/// A HTML label that can be positioned anywhere in the chart area.
-		/// </summary>
-		public LabelsItems Items { get; set; }
-		private LabelsItems Items_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Shared CSS styles for all labels.
+		/// <p>Shared CSS styles for all labels.</p>
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A HTML label that can be positioned anywhere in the chart area.</p>
+		/// </summary>
+		public LabelsItems Items { get; set; }
+		private LabelsItems Items_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Items.IsDirty()) h.Add("items",Items.ToHashtable());
-			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 
 			return h;

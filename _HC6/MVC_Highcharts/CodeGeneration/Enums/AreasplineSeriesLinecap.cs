@@ -8,6 +8,7 @@ namespace Highsoft.Web.Mvc.Charts
     public enum AreasplineSeriesLinecap
     {
         Round, 
+		Butt, 
 		Square
     }
 }

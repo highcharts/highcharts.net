@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// <p>A full set of chart options to apply as overrides to the general chart options. The chart options are applied when the given rule is active.</p><p>A special case is configuration objects that take arrays, for example <a href="#xAxis">xAxis</a>, <a href="#yAxis">yAxis</a> or <a href="#series">series</a>. For these collections, an <code>id</code> option is used to map the new option set to an existing object. If an existing object of the same id is not found, the item of the same indexupdated. So for example, setting <code>chartOptions</code> with two series items without an <code>id</code>, will cause the existing chart's two series to be updated with respective options.</p>
+		/// <p>A full set of chart options to apply as overrides to the generalchart options. The chart options are applied when the given ruleis active.</p><p>A special case is configuration objects that take arrays, for example<a href="#xAxis">xAxis</a>, <a href="#yAxis">yAxis</a> or <a href="#series">series</a>. For thesecollections, an <code>id</code> option is used to map the new option set toan existing object. If an existing object of the same id is not found,the item of the same indexupdated. So for example, setting <code>chartOptions</code>with two series items without an <code>id</code>, will cause the existing chart&#39;stwo series to be updated with respective options.</p>
 		/// </summary>
 		public Object ChartOptions { get; set; }
 		private Object ChartOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Under which conditions the rule applies.
+		/// <p>Under which conditions the rule applies.</p>
 		/// </summary>
 		public ResponsiveRulesCondition Condition { get; set; }
 		private ResponsiveRulesCondition Condition_DefaultValue { get; set; }

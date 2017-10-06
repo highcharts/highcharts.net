@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsLineStep
     {
-        False, 
+        Null, 
 		Left, 
 		Center, 
 		Right

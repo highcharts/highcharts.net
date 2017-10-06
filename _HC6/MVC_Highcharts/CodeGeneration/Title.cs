@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Title()
 		{
-			Align = Align_DefaultValue = TitleAlign.Center;
-			Floating = Floating_DefaultValue = false;
-			Margin = Margin_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333"},{ "fontSize", "18px" }};
 			Text = Text_DefaultValue = "Chart title";
+			Align = Align_DefaultValue = TitleAlign.Center;
+			Margin = Margin_DefaultValue = null;
+			WidthAdjust = WidthAdjust_DefaultValue = -44;
+			Floating = Floating_DefaultValue = false;
+			Style = Style_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Null;
-			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
@@ -29,70 +29,70 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The horizontal alignment of the title. Can be one of "left", "center" and "right".
-		/// </summary>
-		public TitleAlign Align { get; set; }
-		private TitleAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the title is floating, the plot area will not move to make space for it.
-		/// </summary>
-		public bool? Floating { get; set; }
-		private bool? Floating_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The margin between the title and the plot area, or if a subtitle is present, the margin between the subtitle and the plot area.
-		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>CSS styles for the title. Use this for font styling, but use <code>align</code>, <code>x</code> and <code>y</code> for text alignment.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the title style is given in the <code>.highcharts-title</code> class.</p>
-		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The title of the chart. To disable the title, set the <code>text</code> to <code>null</code>.
+		/// <p>The title of the chart. To disable the title, set the <code>text</code> to<code>null</code>.</p>
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a> to render the text.
+		/// <p>The horizontal alignment of the title. Can be one of &quot;left&quot;, &quot;center&quot;and &quot;right&quot;.</p>
 		/// </summary>
-		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
+		public TitleAlign Align { get; set; }
+		private TitleAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The vertical alignment of the title. Can be one of <code>"top"</code>, <code>"middle"</code> and <code>"bottom"</code>. When a value is given, the title behaves as if <a href="#title.floating">floating</a> were <code>true</code>.
+		/// <p>The margin between the title and the plot area, or if a subtitleis present, the margin between the subtitle and the plot area.</p>
 		/// </summary>
-		public TitleVerticalAlign VerticalAlign { get; set; }
-		private TitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Adjustment made to the title width, normally to reserve space for the exporting burger menu.
+		/// <p>Adjustment made to the title width, normally to reserve space forthe exporting burger menu.</p>
 		/// </summary>
 		public double? WidthAdjust { get; set; }
 		private double? WidthAdjust_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The x position of the title relative to the alignment within chart.spacingLeft and chart.spacingRight.
+		/// <p>When the title is floating, the plot area will not move to make spacefor it.</p>
+		/// </summary>
+		public bool? Floating { get; set; }
+		private bool? Floating_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>CSS styles for the title. Use this for font styling, but use <code>align</code>,<code>x</code> and <code>y</code> for text alignment.</p><p>In styled mode, the title style is given in the <code>.highcharts-title</code> class.</p>
+		/// </summary>
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a> to render the text.</p>
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The vertical alignment of the title. Can be one of <code>&quot;top&quot;</code>, <code>&quot;middle&quot;</code>and <code>&quot;bottom&quot;</code>. When a value is given, the title behaves as if <a href="#title.floating">floating</a> were <code>true</code>.</p>
+		/// </summary>
+		public TitleVerticalAlign VerticalAlign { get; set; }
+		private TitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The x position of the title relative to the alignment within chart.spacingLeft and chart.spacingRight.</p>
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The y position of the title relative to the alignment within <a href="#chart.spacingTop">chart.spacingTop</a> and <a href="#chart.spacingBottom">chart.spacingBottom</a>. By default it depends on the font size.
+		/// <p>The y position of the title relative to the alignment within <a href="#chart.spacingTop">chart.spacingTop</a> and <a href="#chart.spacingBottom">chart.spacingBottom</a>. By default it depends on the font size.</p>
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
@@ -102,14 +102,14 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
+			if (WidthAdjust != WidthAdjust_DefaultValue) h.Add("widthAdjust",WidthAdjust);
+			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (WidthAdjust != WidthAdjust_DefaultValue) h.Add("widthAdjust",WidthAdjust);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

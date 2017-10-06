@@ -14,53 +14,53 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public XAxisCrosshair()
 		{
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = null;
+			Color = Color_DefaultValue = "#cccccc";
 			DashStyle = DashStyle_DefaultValue = XAxisCrosshairDashStyle.Solid;
 			Snap = Snap_DefaultValue = true;
-			Width = Width_DefaultValue = null;
+			Width = Width_DefaultValue = 1;
 			ZIndex = ZIndex_DefaultValue = 2;
 			
 		}	
 		
 
 		/// <summary>
-		/// A class name for the crosshair, especially as a hook for styling.
+		/// <p>A class name for the crosshair, especially as a hook for styling.</p>
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The color of the crosshair. Defaults to <code>#cccccc</code> for numeric and datetime axes, and <code>rgba(204,214,235,0.25)</code> for category axes, where the crosshair by default highlights the whole category.
+		/// <p>The color of the crosshair. Defaults to <code>#cccccc</code> for numeric anddatetime axes, and <code>rgba(204,214,235,0.25)</code> for category axes, wherethe crosshair by default highlights the whole category.</p>
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The dash style for the crosshair. See <a href="#plotOptions.series.dashStyle">series.dashStyle</a> for possible values.
+		/// <p>The dash style for the crosshair. See <a href="#plotOptions.series.dashStyle">series.dashStyle</a> for possible values.</p>
 		/// </summary>
 		public XAxisCrosshairDashStyle DashStyle { get; set; }
 		private XAxisCrosshairDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether the crosshair should snap to the point or follow the pointer independent of points.
+		/// <p>Whether the crosshair should snap to the point or follow the pointerindependent of points.</p>
 		/// </summary>
 		public bool? Snap { get; set; }
 		private bool? Snap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The pixel width of the crosshair. Defaults to 1 for numeric or datetime axes, and for one category width for category axes.
+		/// <p>The pixel width of the crosshair. Defaults to 1 for numeric or datetimeaxes, and for one category width for category axes.</p>
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The Z index of the crosshair. Higher Z indices allow drawing the crosshair on top of the series or behind the grid lines.
+		/// <p>The Z index of the crosshair. Higher Z indices allow drawing thecrosshair on top of the series or behind the grid lines.</p>
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }

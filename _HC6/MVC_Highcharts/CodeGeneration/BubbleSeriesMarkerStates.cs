@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// <p>The hover state for a single point marker.</p>
 		/// </summary>
 		public BubbleSeriesMarkerStatesHover Hover { get; set; }
 		private BubbleSeriesMarkerStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The appearance of the point marker when selected. In order to allow a point to be selected, set the <code>series.allowPointSelect</code> option to true.
+		/// <p>The appearance of the point marker when selected. In order toallow a point to be selected, set the <code>series.allowPointSelect</code>option to true.</p>
 		/// </summary>
 		public BubbleSeriesMarkerStatesSelect Select { get; set; }
 		private BubbleSeriesMarkerStatesSelect Select_DefaultValue { get; set; }

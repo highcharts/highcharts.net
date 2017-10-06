@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsBubbleDataLabelsVerticalAlign
     {
-        Null, 
-		Top, 
+        Top, 
 		Middle, 
 		Bottom
     }

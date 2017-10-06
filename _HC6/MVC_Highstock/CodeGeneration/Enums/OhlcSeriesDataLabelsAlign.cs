@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum OhlcSeriesDataLabelsAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

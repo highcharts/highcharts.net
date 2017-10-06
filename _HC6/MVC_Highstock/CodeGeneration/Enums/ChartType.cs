@@ -7,9 +7,11 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum ChartType
     {
-        Line, 
+        Null, 
+		Line, 
 		Spline, 
 		Column, 
+		Bar, 
 		Area, 
 		Areaspline, 
 		Pie, 
@@ -21,7 +23,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		Errorbar, 
 		Funnel, 
 		Gauge, 
+		Heatmap, 
+		Polygon, 
+		Pyramid, 
 		Scatter, 
+		Solidgauge, 
+		Treemap, 
 		Waterfall, 
 		Ohlc, 
 		Bar, 

@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum LineSeriesDataLabelsVerticalAlign
     {
-        Null, 
-		Top, 
+        Top, 
 		Middle, 
 		Bottom
     }

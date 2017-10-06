@@ -15,111 +15,111 @@ namespace Highsoft.Web.Mvc.Stocks
 		public OhlcSeriesData()
 		{
 			Close = Close_DefaultValue = null;
+			Open = Open_DefaultValue = null;
+			High = High_DefaultValue = null;
+			Low = Low_DefaultValue = null;
 			Color = Color_DefaultValue = "undefined";
 			DataLabels = DataLabels_DefaultValue = new OhlcSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
-			Events = Events_DefaultValue = new OhlcSeriesDataEvents();
-			High = High_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
-			Low = Low_DefaultValue = null;
 			Name = Name_DefaultValue = null;
-			Open = Open_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
+			Events = Events_DefaultValue = new OhlcSeriesDataEvents();
 			
 		}	
 		
 
 		/// <summary>
-		/// The closing value of each data point.
+		/// <p>The closing value of each data point.</p>
 		/// </summary>
 		public double? Close { get; set; }
 		private double? Close_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Individual color for the point.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
-		/// </summary>
-		public OhlcSeriesDataLabels DataLabels { get; set; }
-		private OhlcSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p><i>Requires Accessibility module</i></p><p>A description of the point to add to the screen reader information about the point.</p>
-		/// </summary>
-		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public OhlcSeriesDataEvents Events { get; set; }
-		private OhlcSeriesDataEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The high or maximum value for each data point.
-		/// </summary>
-		public double? High { get; set; }
-		private double? High_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An id for the point. This can be used after render time to get a pointer to the point object through <code>chart.get()</code>.
-		/// </summary>
-		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The rank for this point's data label in case of collision. If two data labels are about to overlap, only the one with the highest <code>labelrank</code> will be drawn.
-		/// </summary>
-		public double? Labelrank { get; set; }
-		private double? Labelrank_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The low or minimum value for each data point.
-		/// </summary>
-		public double? Low { get; set; }
-		private double? Low_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The name of the point as shown in the legend, tooltip, dataLabel etc.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The opening value of each data point.
+		/// <p>The opening value of each data point.</p>
 		/// </summary>
 		public double? Open { get; set; }
 		private double? Open_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether the data point is selected initially.
+		/// <p>The high or maximum value for each data point.</p>
+		/// </summary>
+		public double? High { get; set; }
+		private double? High_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The low or minimum value for each data point.</p>
+		/// </summary>
+		public double? Low { get; set; }
+		private double? Low_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Individual color for the point. By default the color is pulled fromthe global <code>colors</code> array.</p>
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Individual data label for each point. The options are the same asthe ones for <a href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a></p>
+		/// </summary>
+		public OhlcSeriesDataLabels DataLabels { get; set; }
+		private OhlcSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A description of the point to add to the screen reader informationabout the point. Requires the Accessibility module.</p>
+		/// </summary>
+		public string Description { get; set; }
+		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>An id for the point. This can be used after render time to get apointer to the point object through <code>chart.get()</code>.</p>
+		/// </summary>
+		public string Id { get; set; }
+		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The rank for this point&#39;s data label in case of collision. If twodata labels are about to overlap, only the one with the highest <code>labelrank</code>will be drawn.</p>
+		/// </summary>
+		public double? Labelrank { get; set; }
+		private double? Labelrank_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The name of the point as shown in the legend, tooltip, dataLabeletc.</p>
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether the data point is selected initially.</p>
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The x value of the point. For datetime axes, the X value is the timestamp in milliseconds since 1970.
+		/// <p>The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.</p>
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Individual point events</p>
+		/// </summary>
+		public OhlcSeriesDataEvents Events { get; set; }
+		private OhlcSeriesDataEvents Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -127,18 +127,18 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Close != Close_DefaultValue) h.Add("close",Close);
+			if (Open != Open_DefaultValue) h.Add("open",Open);
+			if (High != High_DefaultValue) h.Add("high",High);
+			if (Low != Low_DefaultValue) h.Add("low",Low);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (High != High_DefaultValue) h.Add("high",High);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
-			if (Low != Low_DefaultValue) h.Add("low",Low);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Open != Open_DefaultValue) h.Add("open",Open);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

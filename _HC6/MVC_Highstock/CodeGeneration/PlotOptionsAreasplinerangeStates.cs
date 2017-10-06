@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Options for the hovered series
+		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
 		/// </summary>
 		public PlotOptionsAreasplinerangeStatesHover Hover { get; set; }
 		private PlotOptionsAreasplinerangeStatesHover Hover_DefaultValue { get; set; }

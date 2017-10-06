@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The color of the panel.
+		/// <p>The color of the panel.</p>
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The thickness of the panel.
+		/// <p>The thickness of the panel.</p>
 		/// </summary>
 		public double? Size { get; set; }
 		private double? Size_DefaultValue { get; set; }

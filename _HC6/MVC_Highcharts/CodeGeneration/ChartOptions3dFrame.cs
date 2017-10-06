@@ -14,29 +14,77 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartOptions3dFrame()
 		{
-			Back = Back_DefaultValue = new ChartOptions3dFrameBack();
+			Visible = Visible_DefaultValue = "default";
+			Size = Size_DefaultValue = null;
 			Bottom = Bottom_DefaultValue = new ChartOptions3dFrameBottom();
+			Top = Top_DefaultValue = new ChartOptions3dFrameTop();
+			Left = Left_DefaultValue = new ChartOptions3dFrameLeft();
+			Right = Right_DefaultValue = new ChartOptions3dFrameRight();
+			Back = Back_DefaultValue = new ChartOptions3dFrameBack();
+			Front = Front_DefaultValue = new ChartOptions3dFrameFront();
 			Side = Side_DefaultValue = new ChartOptions3dFrameSide();
 			
 		}	
 		
 
 		/// <summary>
-		/// Defines the back panel of the frame around 3D charts.
+		/// <p>Whether the frames are visible.</p>
 		/// </summary>
-		public ChartOptions3dFrameBack Back { get; set; }
-		private ChartOptions3dFrameBack Back_DefaultValue { get; set; }
+		public string Visible { get; set; }
+		private string Visible_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The bottom of the frame around a 3D chart.
+		/// <p>General pixel thickness for the frame faces.</p>
+		/// </summary>
+		public double? Size { get; set; }
+		private double? Size_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The bottom of the frame around a 3D chart.</p>
 		/// </summary>
 		public ChartOptions3dFrameBottom Bottom { get; set; }
 		private ChartOptions3dFrameBottom Bottom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The side for the frame around a 3D chart.
+		/// <p>The top of the frame around a 3D chart.</p>
+		/// </summary>
+		public ChartOptions3dFrameTop Top { get; set; }
+		private ChartOptions3dFrameTop Top_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The left side of the frame around a 3D chart.</p>
+		/// </summary>
+		public ChartOptions3dFrameLeft Left { get; set; }
+		private ChartOptions3dFrameLeft Left_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The right of the frame around a 3D chart.</p>
+		/// </summary>
+		public ChartOptions3dFrameRight Right { get; set; }
+		private ChartOptions3dFrameRight Right_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The back side of the frame around a 3D chart.</p>
+		/// </summary>
+		public ChartOptions3dFrameBack Back { get; set; }
+		private ChartOptions3dFrameBack Back_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The front of the frame around a 3D chart.</p>
+		/// </summary>
+		public ChartOptions3dFrameFront Front { get; set; }
+		private ChartOptions3dFrameFront Front_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Note: As of v5.0.12, <code>frame.left</code> or <code>frame.right</code> should be usedinstead.</p><p>The side for the frame around a 3D chart.</p>
 		/// </summary>
 		public ChartOptions3dFrameSide Side { get; set; }
 		private ChartOptions3dFrameSide Side_DefaultValue { get; set; }
@@ -46,8 +94,14 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Back.IsDirty()) h.Add("back",Back.ToHashtable());
+			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (Bottom.IsDirty()) h.Add("bottom",Bottom.ToHashtable());
+			if (Top.IsDirty()) h.Add("top",Top.ToHashtable());
+			if (Left.IsDirty()) h.Add("left",Left.ToHashtable());
+			if (Right.IsDirty()) h.Add("right",Right.ToHashtable());
+			if (Back.IsDirty()) h.Add("back",Back.ToHashtable());
+			if (Front.IsDirty()) h.Add("front",Front.ToHashtable());
 			if (Side.IsDirty()) h.Add("side",Side.ToHashtable());
 			
 

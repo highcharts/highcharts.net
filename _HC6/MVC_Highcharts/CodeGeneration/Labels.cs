@@ -14,32 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Labels()
 		{
+			Style = Style_DefaultValue = new LabelsStyle();
 			Items = Items_DefaultValue = new LabelsItems();
-			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333" }};
 			
 		}	
 		
 
 		/// <summary>
-		/// A HTML label that can be positioned anywhere in the chart area.
+		/// <p>Shared CSS styles for all labels.</p>
 		/// </summary>
-		public LabelsItems Items { get; set; }
-		private LabelsItems Items_DefaultValue { get; set; }
+		public LabelsStyle Style { get; set; }
+		private LabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Shared CSS styles for all labels.
+		/// <p>A HTML label that can be positioned anywhere in the chart area.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public LabelsItems Items { get; set; }
+		private LabelsItems Items_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Items.IsDirty()) h.Add("items",Items.ToHashtable());
-			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 
 			return h;

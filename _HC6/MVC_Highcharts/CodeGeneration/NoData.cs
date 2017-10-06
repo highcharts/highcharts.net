@@ -14,50 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public NoData()
 		{
-			Attr = Attr_DefaultValue = null;
 			Position = Position_DefaultValue = new Hashtable();
-			Style = Style_DefaultValue = new Hashtable{{ "fontSize", "12px"},{ "fontWeight", "bold"},{ "color", "#666666" }};
+			Attr = Attr_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
+			Style = Style_DefaultValue = new NoDataStyle();
 			
 		}	
 		
 
 		/// <summary>
-		/// An object of additional SVG attributes for the no-data label.
-		/// </summary>
-		public Hashtable Attr { get; set; }
-		private Hashtable Attr_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The position of the no-data label, relative to the plot area. 
+		/// <p>The position of the no-data label, relative to the plot area.</p>
 		/// </summary>
 		public Hashtable Position { get; set; }
 		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// CSS styles for the no-data label. 
+		/// <p>An object of additional SVG attributes for the no-data label.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public Hashtable Attr { get; set; }
+		private Hashtable Attr_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to insert the label as HTML, or as pseudo-HTML rendered with SVG.
+		/// <p>Whether to insert the label as HTML, or as pseudo-HTML rendered withSVG.</p>
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>CSS styles for the no-data label.</p>
+		/// </summary>
+		public NoDataStyle Style { get; set; }
+		private NoDataStyle Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Attr != Attr_DefaultValue) h.Add("attr",Attr);
-			if (Position.Count > 0) h.Add("position",Position);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			
 
 			return h;

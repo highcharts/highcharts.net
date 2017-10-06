@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum AreaSeriesStep
     {
-        False, 
+        Null, 
 		Left, 
 		Center, 
 		Right

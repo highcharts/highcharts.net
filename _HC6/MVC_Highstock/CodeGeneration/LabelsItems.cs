@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Inner HTML or text for the label.
+		/// <p>Inner HTML or text for the label.</p>
 		/// </summary>
 		public string Html { get; set; }
 		private string Html_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// CSS styles for each label. To position the label, use left and top like this:<pre>style: {left: '100px',top: '100px'}</pre>
+		/// <p>CSS styles for each label. To position the label, use left and toplike this:</p><pre>style: {    left: '100px',    top: '100px'}</pre>
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }

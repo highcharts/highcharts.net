@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Events for each single point
+		/// <p>Events for each single point.</p>
 		/// </summary>
 		public ArearangeSeriesPointEvents Events { get; set; }
 		private ArearangeSeriesPointEvents Events_DefaultValue { get; set; }

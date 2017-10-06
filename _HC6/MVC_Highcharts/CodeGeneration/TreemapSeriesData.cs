@@ -14,140 +14,149 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesData()
 		{
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
-			ColorIndex = ColorIndex_DefaultValue = null;
+			Parent = Parent_DefaultValue = "undefined";
+			Value = Value_DefaultValue = null;
 			ColorValue = ColorValue_DefaultValue = null;
+			Color = Color_DefaultValue = "undefined";
+			PointPadding = PointPadding_DefaultValue = null;
+			Drilldown = Drilldown_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = null;
+			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new TreemapSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
-			Drilldown = Drilldown_DefaultValue = "";
-			Events = Events_DefaultValue = new TreemapSeriesDataEvents();
-			Id = Id_DefaultValue = null;
+			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = null;
-			Parent = Parent_DefaultValue = "undefined";
 			Selected = Selected_DefaultValue = false;
-			Value = Value_DefaultValue = null;
+			Events = Events_DefaultValue = new TreemapSeriesDataEvents();
 			
 		}	
 		
 
 		/// <summary>
-		/// An additional, individual class name for the data point's graphic representation.
-		/// </summary>
-		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the point. In heat maps the point color is rarely set explicitly, as we use the color to denote the <code>value</code>. Options for this are set in the <a href="#colorAxis">colorAxis</a> configuration.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A specific color index to use for the point, so its graphic representations are given the class name <code>highcharts-color-{n}</code>.
-		/// </summary>
-		public double? ColorIndex { get; set; }
-		private double? ColorIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Serves a purpose only if a colorAxis object is defined in the chart options. This value will decide which color the point gets from the scale of the colorAxis.
-		/// </summary>
-		public double? ColorValue { get; set; }
-		private double? ColorValue_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
-		/// </summary>
-		public TreemapSeriesDataLabels DataLabels { get; set; }
-		private TreemapSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p><i>Requires Accessibility module</i></p><p>A description of the point to add to the screen reader information about the point.</p>
-		/// </summary>
-		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public TreemapSeriesDataEvents Events { get; set; }
-		private TreemapSeriesDataEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An id for the point. This can be used after render time to get a pointer to the point object through <code>chart.get()</code>.
-		/// </summary>
-		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The rank for this point's data label in case of collision. If two data labels are about to overlap, only the one with the highest <code>labelrank</code> will be drawn.
-		/// </summary>
-		public double? Labelrank { get; set; }
-		private double? Labelrank_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>The name of the point as shown in the legend, tooltip, dataLabel etc.</p><p>If the <a href="#xAxis.type">xAxis.type</a> is set to <code>category</code>, and no <a href="#xAxis.categories">categories</a> option exists, the category will be pulled from the <code>point.name</code> of the last series defined. For multiple series, best practice however is to define <code>xAxis.categories</code>.</p>
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Only for treemap. Use this option to build a tree structure. The value should be the id of the point which is the parent. If no points has a matching id, or this option is undefined, then the parent will be set to the root.
+		/// <p>Only for treemap. Use this option to build a tree structure. Thevalue should be the id of the point which is the parent. If no pointshas a matching id, or this option is undefined, then the parent willbe set to the root.</p>
 		/// </summary>
 		public string Parent { get; set; }
 		private string Parent_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether the data point is selected initially.
+		/// <p>The value of the point, resulting in a relative area of the pointin the treemap.</p>
+		/// </summary>
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Serves a purpose only if a <code>colorAxis</code> object is defined in the chartoptions. This value will decide which color the point gets from thescale of the colorAxis.</p>
+		/// </summary>
+		public double? ColorValue { get; set; }
+		private double? ColorValue_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The color of the point. In heat maps the point color is rarely setexplicitly, as we use the color to denote the <code>value</code>. Options forthis are set in the <a href="#colorAxis">colorAxis</a> configuration.</p>
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Point padding for a single point.</p>
+		/// </summary>
+		public double? PointPadding { get; set; }
+		private double? PointPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a>array to use for a drilldown for this point.</p>
+		/// </summary>
+		public string Drilldown { get; set; }
+		private string Drilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>An additional, individual class name for the data point&#39;s graphicrepresentation.</p>
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Styled mode only. A specific color index to use for the point, so itsgraphic representations are given the class name <code>highcharts-color-{n}</code>.</p>
+		/// </summary>
+		public double? ColorIndex { get; set; }
+		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Individual data label for each point. The options are the same asthe ones for <a href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a></p>
+		/// </summary>
+		public TreemapSeriesDataLabels DataLabels { get; set; }
+		private TreemapSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A description of the point to add to the screen reader informationabout the point. Requires the Accessibility module.</p>
+		/// </summary>
+		public string Description { get; set; }
+		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>An id for the point. This can be used after render time to get apointer to the point object through <code>chart.get()</code>.</p>
+		/// </summary>
+		public string Id { get; set; }
+		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The rank for this point&#39;s data label in case of collision. If twodata labels are about to overlap, only the one with the highest <code>labelrank</code>will be drawn.</p>
+		/// </summary>
+		public double? Labelrank { get; set; }
+		private double? Labelrank_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The name of the point as shown in the legend, tooltip, dataLabeletc.</p>
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether the data point is selected initially.</p>
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The value of the point, resulting in a relative area of the point in the treemap.
+		/// <p>Individual point events</p>
 		/// </summary>
-		public double? Value { get; set; }
-		private double? Value_DefaultValue { get; set; }
+		public TreemapSeriesDataEvents Events { get; set; }
+		private TreemapSeriesDataEvents Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
+			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
+			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Value != Value_DefaultValue) h.Add("value",Value);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

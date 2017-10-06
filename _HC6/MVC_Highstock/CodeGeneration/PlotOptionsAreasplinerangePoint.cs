@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Events for each single point
+		/// <p>Events for each single point.</p>
 		/// </summary>
 		public PlotOptionsAreasplinerangePointEvents Events { get; set; }
 		private PlotOptionsAreasplinerangePointEvents Events_DefaultValue { get; set; }

@@ -14,50 +14,50 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ChartResetZoomButtonPosition()
 		{
-			Align = Align_DefaultValue = ChartResetZoomButtonPositionAlign.Right;
+			Align = Align_DefaultValue = "right";
+			X = X_DefaultValue = null;
+			Y = Y_DefaultValue = null;
 			VerticalAlign = VerticalAlign_DefaultValue = ChartResetZoomButtonPositionVerticalAlign.Top;
-			X = X_DefaultValue = -10;
-			Y = Y_DefaultValue = 10;
 			
 		}	
 		
 
 		/// <summary>
-		/// The horizontal alignment.
+		/// <p>The horizontal alignment of the button.</p>
 		/// </summary>
-		public ChartResetZoomButtonPositionAlign Align { get; set; }
-		private ChartResetZoomButtonPositionAlign Align_DefaultValue { get; set; }
+		public string Align { get; set; }
+		private string Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The vertical alignment of the button.
-		/// </summary>
-		public ChartResetZoomButtonPositionVerticalAlign VerticalAlign { get; set; }
-		private ChartResetZoomButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The horizontal offset of the button
+		/// <p>The horizontal offset of the button.</p>
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The vertical offset of the button.
+		/// <p>The vertical offset of the button.</p>
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The vertical alignment of the button.</p>
+		/// </summary>
+		public ChartResetZoomButtonPositionVerticalAlign VerticalAlign { get; set; }
+		private ChartResetZoomButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			
 
 			return h;

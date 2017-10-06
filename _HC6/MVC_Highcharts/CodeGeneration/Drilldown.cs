@@ -14,53 +14,53 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Drilldown()
 		{
-			ActiveAxisLabelStyle = ActiveAxisLabelStyle_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#003399"},{ "fontWeight", "bold"},{ "textDecoration", "underline" }};
-			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#003399"},{ "fontWeight", "bold"},{ "textDecoration", "underline" }};
-			AllowPointDrilldown = AllowPointDrilldown_DefaultValue = true;
+			ActiveAxisLabelStyle = ActiveAxisLabelStyle_DefaultValue = new DrilldownActiveAxisLabelStyle();
+			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new DrilldownActiveDataLabelStyle();
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			DrillUpButton = DrillUpButton_DefaultValue = new DrilldownDrillUpButton();
-			Series = Series_DefaultValue = null;
+			AllowPointDrilldown = AllowPointDrilldown_DefaultValue = true;
+			Series = Series_DefaultValue = new List<Series>();
 			
 		}	
 		
 
 		/// <summary>
-		/// Additional styles to apply to the X axis label for a point that has drilldown data. By default it is underlined and blue to invite to interaction.
+		/// <p>Additional styles to apply to the X axis label for a point thathas drilldown data. By default it is underlined and blue to inviteto interaction.</p>
 		/// </summary>
-		public Hashtable ActiveAxisLabelStyle { get; set; }
-		private Hashtable ActiveAxisLabelStyle_DefaultValue { get; set; }
+		public DrilldownActiveAxisLabelStyle ActiveAxisLabelStyle { get; set; }
+		private DrilldownActiveAxisLabelStyle ActiveAxisLabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Additional styles to apply to the data label of a point that has drilldown data. By default it is underlined and blue to invite to interaction.
+		/// <p>Additional styles to apply to the data label of a point that hasdrilldown data. By default it is underlined and blue to invite tointeraction.</p>
 		/// </summary>
-		public Hashtable ActiveDataLabelStyle { get; set; }
-		private Hashtable ActiveDataLabelStyle_DefaultValue { get; set; }
+		public DrilldownActiveDataLabelStyle ActiveDataLabelStyle { get; set; }
+		private DrilldownActiveDataLabelStyle ActiveDataLabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When this option is false, clicking a single point will drill down all points in the same category, equivalent to clicking the X axis label.
-		/// </summary>
-		public bool? AllowPointDrilldown { get; set; }
-		private bool? AllowPointDrilldown_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Set the animation for all drilldown animations. Animation of a drilldown occurs when drilling between a column point and a column series, or a pie slice and a full pie series. Drilldown can still be used between series and points of different types, but animation will not occur.</p>  <p>The animation can either be set as a boolean or a configuration object. If <code>true</code>, it will use the 'swing' jQuery easing and a duration of 500 ms. If used as a configuration object, the following properties are supported:  </p><dl> <dt>duration</dt> <dd>The duration of the animation in milliseconds.</dd>  <dt>easing</dt> <dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd> </dl>
+		/// <p>Set the animation for all drilldown animations. Animation of a drilldownoccurs when drilling between a column point and a column series,or a pie slice and a full pie series. Drilldown can still be usedbetween series and points of different types, but animation willnot occur.</p><p>The animation can either be set as a boolean or a configurationobject. If <code>true</code>, it will use the &#39;swing&#39; jQuery easing and a durationof 500 ms. If used as a configuration object, the following propertiesare supported:</p><dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the <code>Math</code> object.See <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd></dl>
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the drill up button that appears when drilling down on a series. The text for the button is defined in <a href="#lang.drillUpText">lang.drillUpText</a>.
+		/// <p>Options for the drill up button that appears when drilling downon a series. The text for the button is defined in <a href="#lang.drillUpText">lang.drillUpText</a>.</p>
 		/// </summary>
 		public DrilldownDrillUpButton DrillUpButton { get; set; }
 		private DrilldownDrillUpButton DrillUpButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of series configurations for the drill down. Each series configuration uses the same syntax as the <a href="#series">series</a> option set. These drilldown series are hidden by default. The drilldown series is linked to the parent series' point by its <code>id</code>.
+		/// <p>When this option is false, clicking a single point will drill downall points in the same category, equivalent to clicking the X axislabel.</p>
+		/// </summary>
+		public bool? AllowPointDrilldown { get; set; }
+		private bool? AllowPointDrilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>An array of series configurations for the drill down. Each seriesconfiguration uses the same syntax as the <a href="#series">series</a> optionset. These drilldown series are hidden by default. The drilldownseries is linked to the parent series&#39; point by its <code>id</code>.</p>
 		/// </summary>
 		public List<Series> Series { get; set; }
 		private List<Series> Series_DefaultValue { get; set; }
@@ -70,11 +70,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (ActiveAxisLabelStyle != ActiveAxisLabelStyle_DefaultValue) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle);
-			if (ActiveDataLabelStyle != ActiveDataLabelStyle_DefaultValue) h.Add("activeDataLabelStyle",ActiveDataLabelStyle);
-			if (AllowPointDrilldown != AllowPointDrilldown_DefaultValue) h.Add("allowPointDrilldown",AllowPointDrilldown);
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (ActiveAxisLabelStyle.IsDirty()) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle.ToHashtable());
+			if (ActiveDataLabelStyle.IsDirty()) h.Add("activeDataLabelStyle",ActiveDataLabelStyle.ToHashtable());
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
+			if (AllowPointDrilldown != AllowPointDrilldown_DefaultValue) h.Add("allowPointDrilldown",AllowPointDrilldown);
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			
 

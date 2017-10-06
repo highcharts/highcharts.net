@@ -8,6 +8,7 @@ namespace Highsoft.Web.Mvc.Charts
     public enum LineSeriesLinecap
     {
         Round, 
+		Butt, 
 		Square
     }
 }

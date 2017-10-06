@@ -14,21 +14,21 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LegendTitle()
 		{
-			Style = Style_DefaultValue = new Hashtable{{"fontWeight","bold"}};
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "null";
 			
 		}	
 		
 
 		/// <summary>
-		/// Generic CSS styles for the legend title.
+		/// <p>Generic CSS styles for the legend title.</p>
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A text or HTML string for the title. 
+		/// <p>A text or HTML string for the title.</p>
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			
 

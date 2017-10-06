@@ -14,133 +14,157 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Exporting()
 		{
-			AllowHTML = AllowHTML_DefaultValue = false;
+			Csv = Csv_DefaultValue = new ExportingCsv();
+			ShowTable = ShowTable_DefaultValue = null;
+			Type = Type_DefaultValue = ExportingType.Imagepng;
+			Url = Url_DefaultValue = "https://export.highcharts.com/";
+			PrintMaxWidth = PrintMaxWidth_DefaultValue = 780;
+			Scale = Scale_DefaultValue = null;
 			Buttons = Buttons_DefaultValue = new ExportingButtons();
+			MenuItemDefinitions = MenuItemDefinitions_DefaultValue = null;
+			AllowHTML = AllowHTML_DefaultValue = false;
 			ChartOptions = ChartOptions_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
-			Error = Error_DefaultValue = "";
+			Error = Error_DefaultValue = null;
 			FallbackToExportServer = FallbackToExportServer_DefaultValue = true;
 			Filename = Filename_DefaultValue = "chart";
 			FormAttributes = FormAttributes_DefaultValue = null;
-			LibURL = LibURL_DefaultValue = "https://code.highcharts.com/{version}/lib";
-			PrintMaxWidth = PrintMaxWidth_DefaultValue = 780;
-			Scale = Scale_DefaultValue = 2;
+			LibURL = LibURL_DefaultValue = null;
 			SourceHeight = SourceHeight_DefaultValue = null;
 			SourceWidth = SourceWidth_DefaultValue = null;
-			Type = Type_DefaultValue = ExportingType.Imagepng;
-			Url = Url_DefaultValue = "https://export.highcharts.com";
 			Width = Width_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Experimental setting to allow HTML inside the chart (added through the <code>useHTML</code> options), directly in the exported image. This allows you to preserve complicated HTML structures like tables or bi-directional text in exported charts.</p><p>Disclaimer: The HTML is rendered in a <code>foreignObject</code> tag in the generated SVG. The official export server is based on PhantomJS, which supports this, but other SVG clients, like Batik, does not support it. This also applies to downloaded SVG that you want to open in a desktop client.</p>
+		/// <p>Options for exporting data to CSV or ExCel, or displaying the datain a HTML table or a JavaScript structure. Requires the<code>export-data.js</code> module. This module adds data export options to theexport menu and provides functions like <code>Chart.getCSV</code>,<code>Chart.getTable</code>, <code>Chart.getDataRows</code> and <code>Chart.viewData</code>.</p>
 		/// </summary>
-		public bool? AllowHTML { get; set; }
-		private bool? AllowHTML_DefaultValue { get; set; }
+		public ExportingCsv Csv { get; set; }
+		private ExportingCsv Csv_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the export related buttons, print and export.
+		/// <p>Export-data module required. Show a HTML table below the chart with the chart&#39;s current data.</p>
 		/// </summary>
-		public ExportingButtons Buttons { get; set; }
-		private ExportingButtons Buttons_DefaultValue { get; set; }
+		public bool? ShowTable { get; set; }
+		private bool? ShowTable_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Additional chart options to be merged into an exported chart. For example, a common use case is to add data labels to improve readaility of the exported chart, or to add a printer-friendly color scheme.
-		/// </summary>
-		public Object ChartOptions { get; set; }
-		private Object ChartOptions_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to enable the exporting module. Disabling the module will hide the context button, but API methods will still be available.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Function to call if the offline-exporting module fails to export a chart on the client side, and <a href="#exporting.fallbackToExportServer">fallbackToExportServer</a> is disabled. If left undefined, an exception is thrown instead.
-		/// </summary>
-		public string Error { get; set; }
-		private string Error_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether or not to fall back to the export server if the offline-exporting module is unable to export the chart on the client side.
-		/// </summary>
-		public bool? FallbackToExportServer { get; set; }
-		private bool? FallbackToExportServer_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The filename, without extension, to use for the exported chart.
-		/// </summary>
-		public string Filename { get; set; }
-		private string Filename_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An object containing additional attributes for the POST form that sends the SVG to the export server. For example, a <code>target</code> can be set to make sure the generated image is received in another frame, or a custom <code>enctype</code> or <code>encoding</code> can be set.
-		/// </summary>
-		public Object FormAttributes { get; set; }
-		private Object FormAttributes_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Path where Highcharts will look for export module dependencies to load on demand if they don't already exist on <code>window</code>.Should currently point to location of <a href="https://github.com/canvg/canvg">CanVG</a> library, <a href="https://github.com/canvg/canvg">RGBColor.js</a>, <a href="https://github.com/yWorks/jsPDF">jsPDF</a> and <a href="https://github.com/yWorks/svg2pdf.js">svg2pdf.js</a>, required for client side export in certain browsers.
-		/// </summary>
-		public string LibURL { get; set; }
-		private string LibURL_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When printing the chart from the menu item in the burger menu, if the on-screen chart exceeds this width, it is resized. After printing or cancelled, it is restored. The default width makes the chart fit into typical paper format. Note that this does not affect the chart when printing the web page as a whole.
-		/// </summary>
-		public double? PrintMaxWidth { get; set; }
-		private double? PrintMaxWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines the scale or zoom factor for the exported image compared to the on-screen display. While for instance a 600px wide chart may look good on a website, it will look bad in print. The default scale of 2 makes this chart export to a 1200px PNG or JPG. 
-		/// </summary>
-		public double? Scale { get; set; }
-		private double? Scale_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Analogous to <a href="#exporting.sourceWidth">sourceWidth</a>
-		/// </summary>
-		public double? SourceHeight { get; set; }
-		private double? SourceHeight_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the original chart when exported, unless an explicit <a href="#chart.width">chart.width</a> is set. The width exported raster image is then multiplied by <a href="#exporting.scale">scale</a>.
-		/// </summary>
-		public double? SourceWidth { get; set; }
-		private double? SourceWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Default MIME type for exporting if <code>chart.exportChart()</code> is called without specifying a <code>type</code> option. Possible values are <code>image/png</code>, <code>image/jpeg</code>, <code>application/pdf</code> and <code>image/svg+xml</code>.
+		/// <p>Default MIME type for exporting if <code>chart.exportChart()</code> is calledwithout specifying a <code>type</code> option. Possible values are <code>image/png</code>, <code>image/jpeg</code>, <code>application/pdf</code> and <code>image/svg+xml</code>.</p>
 		/// </summary>
 		public ExportingType Type { get; set; }
 		private ExportingType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The URL for the server module converting the SVG string to an image format. By default this points to Highchart's free web service.
+		/// <p>The URL for the server module converting the SVG string to an imageformat. By default this points to Highchart&#39;s free web service.</p>
 		/// </summary>
 		public string Url { get; set; }
 		private string Url_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The pixel width of charts exported to PNG or JPG. As of Highstock 1.3, the default pixel width is a function of the <a href="#chart.width">chart.width</a> or <a href="#exporting.sourceWidth">exporting.sourceWidth</a> and the <a href="#exporting.scale">exporting.scale</a>.
+		/// <p>When printing the chart from the menu item in the burger menu, ifthe on-screen chart exceeds this width, it is resized. After printingor cancelled, it is restored. The default width makes the chartfit into typical paper format. Note that this does not affect thechart when printing the web page as a whole.</p>
+		/// </summary>
+		public double? PrintMaxWidth { get; set; }
+		private double? PrintMaxWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Defines the scale or zoom factor for the exported image comparedto the on-screen display. While for instance a 600px wide chartmay look good on a website, it will look bad in print. The defaultscale of 2 makes this chart export to a 1200px PNG or JPG.</p>
+		/// </summary>
+		public double? Scale { get; set; }
+		private double? Scale_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Options for the export related buttons, print and export. In additionto the default buttons listed here, custom buttons can be added.See <a href="#navigation.buttonOptions">navigation.buttonOptions</a> for generaloptions.</p>
+		/// </summary>
+		public ExportingButtons Buttons { get; set; }
+		private ExportingButtons Buttons_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a <code>key</code> that is referenced in the<a href="#exporting.buttons.contextButton.menuItems">menuItems</a> setting,and a <code>value</code>, which is an object with the following properties:</p><dl><dt>onclick</dt><dd>The click handler for the menu item</dd><dt>text</dt><dd>The text for the menu item</dd><dt>textKey</dt><dd>If internationalization is required, the key to a language string</dd></dl>
+		/// </summary>
+		public Object MenuItemDefinitions { get; set; }
+		private Object MenuItemDefinitions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Experimental setting to allow HTML inside the chart (added throughthe <code>useHTML</code> options), directly in the exported image. This allowsyou to preserve complicated HTML structures like tables or bi-directionaltext in exported charts.</p><p>Disclaimer: The HTML is rendered in a <code>foreignObject</code> tag in thegenerated SVG. The official export server is based on PhantomJS,which supports this, but other SVG clients, like Batik, does notsupport it. This also applies to downloaded SVG that you want toopen in a desktop client.</p>
+		/// </summary>
+		public bool? AllowHTML { get; set; }
+		private bool? AllowHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Additional chart options to be merged into an exported chart. Forexample, a common use case is to add data labels to improve readabilityof the exported chart, or to add a printer-friendly color scheme.</p>
+		/// </summary>
+		public Object ChartOptions { get; set; }
+		private Object ChartOptions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to enable the exporting module. Disabling the module willhide the context button, but API methods will still be available.</p>
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Function to call if the offline-exporting module fails to exporta chart on the client side, and <a href="#exporting.fallbackToExportServer">fallbackToExportServer</a> is disabled. If left undefined, an exceptionis thrown instead.</p>
+		/// </summary>
+		public function Error { get; set; }
+		private function Error_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether or not to fall back to the export server if the offline-exportingmodule is unable to export the chart on the client side.</p>
+		/// </summary>
+		public bool? FallbackToExportServer { get; set; }
+		private bool? FallbackToExportServer_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The filename, without extension, to use for the exported chart.</p>
+		/// </summary>
+		public string Filename { get; set; }
+		private string Filename_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>An object containing additional attributes for the POST form thatsends the SVG to the export server. For example, a <code>target</code> can beset to make sure the generated image is received in another frame, or a custom <code>enctype</code> or <code>encoding</code> can be set.</p>
+		/// </summary>
+		public Object FormAttributes { get; set; }
+		private Object FormAttributes_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Path where Highcharts will look for export module dependencies toload on demand if they don&#39;t already exist on <code>window</code>. Should currentlypoint to location of <a href="https://github.com/canvg/canvg">CanVG</a> library,<a href="https://github.com/canvg/canvg">RGBColor.js</a>, <a href="https://github.com/yWorks/jsPDF">jsPDF</a> and <a href="https://github.com/yWorks/svg2pdf.js">svg2pdf.js</a>, required for client side export in certain browsers.</p>
+		/// </summary>
+		public string LibURL { get; set; }
+		private string LibURL_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Analogous to <a href="#exporting.sourceWidth">sourceWidth</a>.</p>
+		/// </summary>
+		public double? SourceHeight { get; set; }
+		private double? SourceHeight_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The width of the original chart when exported, unless an explicit<a href="#chart.width">chart.width</a> is set. The width exported raster imageis then multiplied by <a href="#exporting.scale">scale</a>.</p>
+		/// </summary>
+		public double? SourceWidth { get; set; }
+		private double? SourceWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The pixel width of charts exported to PNG or JPG. As of Highcharts3.0, the default pixel width is a function of the <a href="#chart.width">chart.width</a> or <a href="#exporting.sourceWidth">exporting.sourceWidth</a> and the<a href="#exporting.scale">exporting.scale</a>.</p>
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
@@ -150,21 +174,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
+			if (Csv.IsDirty()) h.Add("csv",Csv.ToHashtable());
+			if (ShowTable != ShowTable_DefaultValue) h.Add("showTable",ShowTable);
+			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (Url != Url_DefaultValue) h.Add("url",Url);
+			if (PrintMaxWidth != PrintMaxWidth_DefaultValue) h.Add("printMaxWidth",PrintMaxWidth);
+			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);
 			if (Buttons.IsDirty()) h.Add("buttons",Buttons.ToHashtable());
+			if (MenuItemDefinitions != MenuItemDefinitions_DefaultValue) h.Add("menuItemDefinitions",MenuItemDefinitions);
+			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Error != Error_DefaultValue) { h.Add("error",Error); Highstock.AddFunction("ExportingError.error", Error); }  
+			if (Error != Error_DefaultValue) h.Add("error",Error);
 			if (FallbackToExportServer != FallbackToExportServer_DefaultValue) h.Add("fallbackToExportServer",FallbackToExportServer);
 			if (Filename != Filename_DefaultValue) h.Add("filename",Filename);
 			if (FormAttributes != FormAttributes_DefaultValue) h.Add("formAttributes",FormAttributes);
 			if (LibURL != LibURL_DefaultValue) h.Add("libURL",LibURL);
-			if (PrintMaxWidth != PrintMaxWidth_DefaultValue) h.Add("printMaxWidth",PrintMaxWidth);
-			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);
 			if (SourceHeight != SourceHeight_DefaultValue) h.Add("sourceHeight",SourceHeight);
 			if (SourceWidth != SourceWidth_DefaultValue) h.Add("sourceWidth",SourceWidth);
-			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
-			if (Url != Url_DefaultValue) h.Add("url",Url);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			
 

@@ -55,3 +55,6 @@ C:\Users\PC\Documents\highcharts.net\_HC5\MVC_Demo\obj\Debug\MVC_Demo.csprojReso
 C:\Users\PC\Documents\highcharts.net\_HC5\MVC_Demo\obj\Debug\MVC_Demo.dll
 C:\Users\PC\Documents\highcharts.net\_HC5\MVC_Demo\obj\Debug\MVC_Demo.pdb
 C:\Users\PC\Documents\highcharts.net\_HC5\MVC_Demo\bin\Highcharts.Web.Mvc.pdb
+c:\Users\PC\Documents\highcharts.net\_HC6\MVC_Demo\obj\Debug\MVC_Demo.csprojResolveAssemblyReference.cache
+c:\Users\PC\Documents\highcharts.net\_HC6\MVC_Demo\obj\Debug\MVC_Demo.dll
+c:\Users\PC\Documents\highcharts.net\_HC6\MVC_Demo\obj\Debug\MVC_Demo.pdb

@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Options for the hovered series
+		/// <p>Options for the hovered series</p>
 		/// </summary>
 		public TreemapSeriesStatesHover Hover { get; set; }
 		private TreemapSeriesStatesHover Hover_DefaultValue { get; set; }

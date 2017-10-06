@@ -15,28 +15,28 @@ namespace Highsoft.Web.Mvc.Charts
 		public DrilldownDrillUpButton()
 		{
 			Position = Position_DefaultValue = new Hashtable();
-			RelativeTo = RelativeTo_DefaultValue = "plotBox";
+			RelativeTo = RelativeTo_DefaultValue = DrilldownDrillUpButtonRelativeTo.PlotBox;
 			Theme = Theme_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// Positioning options for the button within the <code>relativeTo</code> box. Available properties are <code>x</code>, <code>y</code>, <code>align</code> and <code>verticalAlign</code>.
+		/// <p>Positioning options for the button within the <code>relativeTo</code> box.Available properties are <code>x</code>, <code>y</code>, <code>align</code> and <code>verticalAlign</code>.</p>
 		/// </summary>
 		public Hashtable Position { get; set; }
 		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// What box to align the button to. Can be either "plotBox" or "spacingBox".
+		/// <p>What box to align the button to. Can be either <code>plotBox</code> or`spacingBox.</p>
 		/// </summary>
-		public string RelativeTo { get; set; }
-		private string RelativeTo_DefaultValue { get; set; }
+		public DrilldownDrillUpButtonRelativeTo RelativeTo { get; set; }
+		private DrilldownDrillUpButtonRelativeTo RelativeTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A collection of attributes for the button. The object takes SVG attributes like  <code>fill</code>, <code>stroke</code>, <code>stroke-width</code> or <code>r</code>, the border radius. The theme also supports <code>style</code>, a collection of CSS properties for the text. Equivalent attributes for the hover state are given in <code>theme.states.hover</code>.
+		/// <p>A collection of attributes for the button. The object takes SVG attributeslike <code>fill</code>, <code>stroke</code>, <code>stroke-width</code> or <code>r</code>, the border radius.The theme also supports <code>style</code>, a collection of CSS properties forthe text. Equivalent attributes for the hover state are given in<code>theme.states.hover</code>.</p>
 		/// </summary>
 		public Object Theme { get; set; }
 		private Object Theme_DefaultValue { get; set; }
@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Position != Position_DefaultValue) h.Add("position",Position);
-			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
+			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo", Highcharts.FirstCharacterToLower(RelativeTo.ToString()));
 			if (Theme != Theme_DefaultValue) h.Add("theme",Theme);
 			
 

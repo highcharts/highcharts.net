@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Events for each single point
+		/// <p>Events for each single point.</p>
 		/// </summary>
 		public CandleStickSeriesPointEvents Events { get; set; }
 		private CandleStickSeriesPointEvents Events_DefaultValue { get; set; }

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum ColumnSeriesDataLabelsAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

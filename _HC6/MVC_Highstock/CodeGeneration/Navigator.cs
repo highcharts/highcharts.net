@@ -14,131 +14,131 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Navigator()
 		{
-			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = true;
-			Handles = Handles_DefaultValue = new NavigatorHandles();
 			Height = Height_DefaultValue = 40;
 			Margin = Margin_DefaultValue = null;
-			MaskFill = MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
 			MaskInside = MaskInside_DefaultValue = true;
-			Opposite = Opposite_DefaultValue = false;
+			Handles = Handles_DefaultValue = new NavigatorHandles();
+			MaskFill = MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
 			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
 			OutlineWidth = OutlineWidth_DefaultValue = 2;
-			Series = Series_DefaultValue = null;
+			Series = Series_DefaultValue = new NavigatorSeries();
 			XAxis = XAxis_DefaultValue = new XAxis();
 			YAxis = YAxis_DefaultValue = new YAxis();
+			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = true;
+			Opposite = Opposite_DefaultValue = false;
 			
 		}	
 		
 
 		/// <summary>
-		/// Whether the navigator and scrollbar should adapt to updated data in the base X axis. When loading data async, as in the demo below, this should be <code>false</code>. Otherwise new data will trigger navigator redraw, which will cause unwanted looping. In the demo below, the data in the navigator is set only once. On navigating, only the main chart content is updated.
-		/// </summary>
-		public bool? AdaptToUpdatedData { get; set; }
-		private bool? AdaptToUpdatedData_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the navigator.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Options for the handles for dragging the zoomed area.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the navigator handles are styled with the <code>.highcharts-navigator-handle</code>, <code>.highcharts-navigator-handle-left</code> and <code>.highcharts-navigator-handle-right</code> classes.</p>
-		/// </summary>
-		public NavigatorHandles Handles { get; set; }
-		private NavigatorHandles Handles_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The height of the navigator.
+		/// <p>The height of the navigator.</p>
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The distance from the nearest element, the X axis or X axis labels.
+		/// <p>The distance from the nearest element, the X axis or X axis labels.</p>
 		/// </summary>
 		public double? Margin { get; set; }
 		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The color of the mask covering the areas of the navigator series that are currently not visible in the main series. The default color is bluish with an opacity of 0.3 to see the series below.
-		/// </summary>
-		public string MaskFill { get; set; }
-		private string MaskFill_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the mask should be inside the range marking the zoomed range, or outside. In Highstock 1.x it was always <code>false</code>.
+		/// <p>Whether the mask should be inside the range marking the zoomedrange, or outside. In Highstock 1.x it was always <code>false</code>.</p>
 		/// </summary>
 		public bool? MaskInside { get; set; }
 		private bool? MaskInside_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When the chart is inverted, whether to draw the navigator on the opposite side.
+		/// <p>Options for the handles for dragging the zoomed area.</p>
 		/// </summary>
-		public bool? Opposite { get; set; }
-		private bool? Opposite_DefaultValue { get; set; }
+		public NavigatorHandles Handles { get; set; }
+		private NavigatorHandles Handles_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The color of the line marking the currently zoomed area in the navigator.
+		/// <p>The color of the mask covering the areas of the navigator seriesthat are currently not visible in the main series. The defaultcolor is bluish with an opacity of 0.3 to see the series below.</p>
+		/// </summary>
+		public string MaskFill { get; set; }
+		private string MaskFill_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The color of the line marking the currently zoomed area in thenavigator.</p>
 		/// </summary>
 		public string OutlineColor { get; set; }
 		private string OutlineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the line marking the currently zoomed area in the navigator.
+		/// <p>The width of the line marking the currently zoomed area in thenavigator.</p>
 		/// </summary>
 		public double? OutlineWidth { get; set; }
 		private double? OutlineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Options for the navigator series. Available options are the same as any series, documented at <a class="internal" href="#plotOptions.series">plotOptions</a> and <a class="internal" href="#series">series</a>.</p><p>Unless data is explicitly defined on navigator.series, the data is borrowed from the first series in the chart.</p><p>Default series options for the navigator series are:</p><pre>series: {type: 'areaspline',color: '#4572A7',fillOpacity: 0.05,dataGrouping: {smoothed: true},lineWidth: 1,marker: {enabled: false}}</pre>
+		/// <p>Options for the navigator series. Available options are the sameas any series, documented at <a href="#plotOptions.series">plotOptions</a>and <a href="#series">series</a>.</p><p>Unless data is explicitly defined on navigator.series, the datais borrowed from the first series in the chart.</p><p>Default series options for the navigator series are:</p><pre>series: {    type: 'areaspline',    fillOpacity: 0.05,    dataGrouping: {        smoothed: true    },    lineWidth: 1,    marker: {        enabled: false    }}</pre>
 		/// </summary>
 		public Series Series { get; set; }
 		private Series Series_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the navigator X axis. Available options are the same as any X axis, documented at <a class="internal" href="#xAxis">xAxis</a>. Default series options for the navigator xAxis are:<pre>xAxis: {    tickWidth: 0,    lineWidth: 0,    gridLineWidth: 1,    tickPixelInterval: 200,    labels: {        align: 'left',        style: {            color: '#888'        },        x: 3,        y: -4    }}</pre>
+		/// <p>Options for the navigator X axis. Default series optionsfor the navigator xAxis are:</p><pre>xAxis: {    tickWidth: 0,    lineWidth: 0,    gridLineWidth: 1,    tickPixelInterval: 200,    labels: {           align: 'left',        style: {            color: '#888'        },        x: 3,        y: -4    }}</pre>
 		/// </summary>
 		public XAxis XAxis { get; set; }
 		private XAxis XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the navigator Y axis. Available options are the same as any y axis, documented at <a class="internal" href="#yAxis">yAxis</a>. Default series options for the navigator yAxis are:<pre>yAxis: {gridLineWidth: 0,startOnTick: false,endOnTick: false,minPadding: 0.1,maxPadding: 0.1,labels: {enabled: false},title: {text: null},tickWidth: 0}</pre>
+		/// <p>Options for the navigator Y axis. Default series optionsfor the navigator yAxis are:</p><pre>yAxis: {    gridLineWidth: 0,    startOnTick: false,    endOnTick: false,    minPadding: 0.1,    maxPadding: 0.1,    labels: {        enabled: false    },    title: {        text: null    },    tickWidth: 0}</pre>
 		/// </summary>
 		public YAxis YAxis { get; set; }
 		private YAxis YAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether the navigator and scrollbar should adapt to updated datain the base X axis. When loading data async, as in the demo below,this should be <code>false</code>. Otherwise new data will trigger navigatorredraw, which will cause unwanted looping. In the demo below, thedata in the navigator is set only once. On navigating, only the mainchart content is updated.</p>
+		/// </summary>
+		public bool? AdaptToUpdatedData { get; set; }
+		private bool? AdaptToUpdatedData_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Enable or disable the navigator.</p>
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>When the chart is inverted, whether to draw the navigator on theopposite side.</p>
+		/// </summary>
+		public bool? Opposite { get; set; }
+		private bool? Opposite_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (AdaptToUpdatedData != AdaptToUpdatedData_DefaultValue) h.Add("adaptToUpdatedData",AdaptToUpdatedData);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Handles.IsDirty()) h.Add("handles",Handles.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (MaskFill != MaskFill_DefaultValue) h.Add("maskFill",MaskFill);
 			if (MaskInside != MaskInside_DefaultValue) h.Add("maskInside",MaskInside);
-			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
+			if (Handles.IsDirty()) h.Add("handles",Handles.ToHashtable());
+			if (MaskFill != MaskFill_DefaultValue) h.Add("maskFill",MaskFill);
 			if (OutlineColor != OutlineColor_DefaultValue) h.Add("outlineColor",OutlineColor);
 			if (OutlineWidth != OutlineWidth_DefaultValue) h.Add("outlineWidth",OutlineWidth);
-			if (Series != Series_DefaultValue) h.Add("series",Series.ToHashtable());
+			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
 			if (XAxis.IsDirty()) h.Add("xAxis",XAxis.ToHashtable());
 			if (YAxis.IsDirty()) h.Add("yAxis",YAxis.ToHashtable());
+			if (AdaptToUpdatedData != AdaptToUpdatedData_DefaultValue) h.Add("adaptToUpdatedData",AdaptToUpdatedData);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			
 
 			return h;

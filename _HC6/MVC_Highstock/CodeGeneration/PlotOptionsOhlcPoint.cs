@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Events for each single point
+		/// <p>Events for each single point.</p>
 		/// </summary>
 		public PlotOptionsOhlcPointEvents Events { get; set; }
 		private PlotOptionsOhlcPointEvents Events_DefaultValue { get; set; }

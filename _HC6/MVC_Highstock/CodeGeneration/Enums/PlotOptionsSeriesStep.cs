@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsSeriesStep
     {
-        False, 
+        Null, 
 		Left, 
 		Center, 
 		Right

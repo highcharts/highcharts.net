@@ -16,22 +16,30 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Color = Color_DefaultValue = "transparent";
 			Size = Size_DefaultValue = 1;
+			Visible = Visible_DefaultValue = ChartOptions3dFrameBottomVisible.Default;
 			
 		}	
 		
 
 		/// <summary>
-		/// The color of the panel.
+		/// <p>The color of the panel.</p>
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The thickness of the panel.
+		/// <p>The thickness of the panel.</p>
 		/// </summary>
 		public double? Size { get; set; }
 		private double? Size_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to display the frame. Possible values are <code>true</code>, <code>false</code>,<code>&quot;auto&quot;</code> to display only the frames behind the data, and <code>&quot;default&quot;</code>to display faces behind the data based on the axis layout, ignoringthe point of view.</p>
+		/// </summary>
+		public ChartOptions3dFrameBottomVisible Visible { get; set; }
+		private ChartOptions3dFrameBottomVisible Visible_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -40,6 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (Visible != Visible_DefaultValue) h.Add("visible", Highcharts.FirstCharacterToLower(Visible.ToString()));
 			
 
 			return h;

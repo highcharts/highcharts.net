@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum LineSeriesStep
     {
-        False, 
+        Null, 
 		Left, 
 		Center, 
 		Right

@@ -15,52 +15,52 @@ namespace Highsoft.Web.Mvc.Charts
 		public LegendNavigation()
 		{
 			ActiveColor = ActiveColor_DefaultValue = "#003399";
+			InactiveColor = InactiveColor_DefaultValue = "#cccccc";
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			ArrowSize = ArrowSize_DefaultValue = 12;
 			Enabled = Enabled_DefaultValue = true;
-			InactiveColor = InactiveColor_DefaultValue = "#cccccc";
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// The color for the active up or down arrow in the legend page navigation.
+		/// <p>The color for the active up or down arrow in the legend page navigation.</p>
 		/// </summary>
 		public string ActiveColor { get; set; }
 		private string ActiveColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// How to animate the pages when navigating up or down. A value of <code>true</code> applies the default navigation given in  the chart.animation option. Additional options can be given as an object containing values for easing and duration.  .
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel size of the up and down arrows in the legend paging navigation.  .
-		/// </summary>
-		public double? ArrowSize { get; set; }
-		private double? ArrowSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Whether to enable the legend navigation. In most cases, disabling the navigation results in an unwanted overflow.</p><p>See also the <a href="http://www.highcharts.com/plugin-registry/single/8/Adapt-Chart-To-Legend">adapt chart to legend</a> plugin for a solution to extend the chart height to make room for the legend, optionally in exported charts only.</p>
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the inactive up or down arrow in the legend page navigation.  .
+		/// <p>The color of the inactive up or down arrow in the legend pagenavigation. .</p>
 		/// </summary>
 		public string InactiveColor { get; set; }
 		private string InactiveColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Text styles for the legend page navigation.
+		/// <p>How to animate the pages when navigating up or down. A value of <code>true</code>applies the default navigation given in the chart.animation option.Additional options can be given as an object containing values foreasing and duration.</p>
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The pixel size of the up and down arrows in the legend pagingnavigation.</p>
+		/// </summary>
+		public double? ArrowSize { get; set; }
+		private double? ArrowSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to enable the legend navigation. In most cases, disablingthe navigation results in an unwanted overflow.</p><p>See also the <a href="http://www.highcharts.com/plugin-registry/single/8/Adapt-Chart-To-Legend">adapt chart to legend</a> plugin for a solution toextend the chart height to make room for the legend, optionally inexported charts only.</p>
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Text styles for the legend page navigation.</p>
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
@@ -71,10 +71,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (ActiveColor != ActiveColor_DefaultValue) h.Add("activeColor",ActiveColor);
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (InactiveColor != InactiveColor_DefaultValue) h.Add("inactiveColor",InactiveColor);
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (ArrowSize != ArrowSize_DefaultValue) h.Add("arrowSize",ArrowSize);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (InactiveColor != InactiveColor_DefaultValue) h.Add("inactiveColor",InactiveColor);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 

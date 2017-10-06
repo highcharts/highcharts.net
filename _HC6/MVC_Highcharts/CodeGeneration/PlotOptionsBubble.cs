@@ -14,401 +14,518 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBubble()
 		{
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsBubbleDataLabels();
+			Marker = Marker_DefaultValue = new PlotOptionsBubbleMarker();
+			MinSize = MinSize_DefaultValue = "8";
+			MaxSize = MaxSize_DefaultValue = "20%";
+			SoftThreshold = SoftThreshold_DefaultValue = false;
+			States = States_DefaultValue = new PlotOptionsBubbleStates();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsBubbleTooltip();
+			TurboThreshold = TurboThreshold_DefaultValue = null;
+			ZThreshold = ZThreshold_DefaultValue = 0;
+			ZoneAxis = ZoneAxis_DefaultValue = "z";
+			DisplayNegative = DisplayNegative_DefaultValue = true;
+			NegativeColor = NegativeColor_DefaultValue = "null";
+			SizeBy = SizeBy_DefaultValue = PlotOptionsBubbleSizeBy.Area;
+			SizeByAbsoluteValue = SizeByAbsoluteValue_DefaultValue = false;
+			ZMax = ZMax_DefaultValue = null;
+			ZMin = ZMin_DefaultValue = null;
+			LineWidth = LineWidth_DefaultValue = 0;
+			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsBubbleFindNearestPointBy.Xy;
+			StickyTracking = StickyTracking_DefaultValue = false;
+			Linecap = Linecap_DefaultValue = PlotOptionsBubbleLinecap.Round;
+			BoostThreshold = BoostThreshold_DefaultValue = 5000;
+			Label = Label_DefaultValue = new PlotOptionsBubbleLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			Events = Events_DefaultValue = new PlotOptionsBubbleEvents();
+			Point = Point_DefaultValue = new PlotOptionsBubblePoint();
+			CropThreshold = CropThreshold_DefaultValue = 300;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = "";
+			ClassName = ClassName_DefaultValue = null;
 			Color = Color_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
-			CropThreshold = CropThreshold_DefaultValue = 300;
+			ConnectNulls = ConnectNulls_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsBubbleCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsBubbleDashStyle.Solid;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsBubbleDataLabels();
 			Description = Description_DefaultValue = "undefined";
-			DisplayNegative = DisplayNegative_DefaultValue = true;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
-			Events = Events_DefaultValue = new PlotOptionsBubbleEvents();
+			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Keys = Keys_DefaultValue = new List<string>();
-			LineWidth = LineWidth_DefaultValue = 0;
-			LinkedTo = LinkedTo_DefaultValue = "";
-			Marker = Marker_DefaultValue = new PlotOptionsBubbleMarker();
-			MaxSize = MaxSize_DefaultValue = "20%";
-			MinSize = MinSize_DefaultValue = "8";
-			NegativeColor = NegativeColor_DefaultValue = "null";
-			Point = Point_DefaultValue = new PlotOptionsBubblePoint();
+			LinkedTo = LinkedTo_DefaultValue = null;
+			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsBubblePointIntervalUnit.Null;
+			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SizeBy = SizeBy_DefaultValue = PlotOptionsBubbleSizeBy.Area;
-			SizeByAbsoluteValue = SizeByAbsoluteValue_DefaultValue = false;
-			SoftThreshold = SoftThreshold_DefaultValue = false;
-			States = States_DefaultValue = new PlotOptionsBubbleStates();
-			StickyTracking = StickyTracking_DefaultValue = false;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			Stacking = Stacking_DefaultValue = PlotOptionsBubbleStacking.Null;
+			Step = Step_DefaultValue = PlotOptionsBubbleStep.Null;
 			Threshold = Threshold_DefaultValue = 0;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsBubbleTooltip();
 			Visible = Visible_DefaultValue = true;
-			ZMax = ZMax_DefaultValue = null;
-			ZMin = ZMin_DefaultValue = null;
-			ZThreshold = ZThreshold_DefaultValue = 0;
-			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new List<PlotOptionsBubbleZone>();
+			Zones = Zones_DefaultValue = new PlotOptionsBubbleZone();
+			ConnectEnds = ConnectEnds_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the markers, bars or pie slices.
-		/// </summary>
-		public bool? AllowPointSelect { get; set; }
-		private bool? AllowPointSelect_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Enable or disable the initial animation when a series is displayed. The animation can also be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods.The following properties are supported:</p><dl>  <dt>duration</dt>  <dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd></dl><p>Due to poor performance, animation is disabled in old IE browsers for column charts and polar charts.</p>
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For some series, there is a limit that shuts down initial animation by default when the total number of points in the chart is too high. For example, for a column chart and its derivatives, animation doesn't run if there is more than 250 points totally. To disable this cap, set <code>animationLimit</code> to <code>Infinity</code>.
-		/// </summary>
-		public double? AnimationLimit { get; set; }
-		private double? AnimationLimit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A class name to apply to the series' graphical elements.
-		/// </summary>
-		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>The main color or the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the  <code>options.colors</code> array.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the color can be defined by the <a href="#plotOptions.series.colorIndex">colorIndex</a> option. Also, the series color can be set with the <code>.highcharts-series</code>, <code>.highcharts-color-{n}</code>, <code>.highcharts-{type}-series</code> or <code>.highcharts-series-{n}</code> class, or individual classes given by the <code>className</code> option.</p>
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">Styled mode</a> only. A specific color index to use for the series, so its graphic representations are given the class name <code>highcharts-color-{n}</code>.
-		/// </summary>
-		public double? ColorIndex { get; set; }
-		private double? ColorIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, all points are drawn,  even if the points fall outside the visible plot area at the current zoom. The advantage of drawing all points (including markers and columns), is that animation is performed on updates. On the other hand, when the series contains more points than the crop threshold, the series data is cropped to only contain points that fall within the plot area. The advantage of cropping away invisible points is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// You can set the cursor to "pointer" if you have click events attached to  the series, to signal to the user that the points and lines can be clicked.
-		/// </summary>
-		public PlotOptionsBubbleCursor Cursor { get; set; }
-		private PlotOptionsBubbleCursor Cursor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A name for the dash style to use for the graph. Applies only to series type having a graph, like <code>line</code>, <code>spline</code>, <code>area</code> and <code>scatter</code> in  case it has a <code>lineWidth</code>. The value for the <code>dashStyle</code> include:    <ul>    <li>Solid</li>    <li>ShortDash</li>    <li>ShortDot</li>    <li>ShortDashDot</li>    <li>ShortDashDotDot</li>    <li>Dot</li>    <li>Dash</li>    <li>LongDash</li>    <li>DashDot</li>    <li>LongDashDot</li>    <li>LongDashDotDot</li>    </ul>
-		/// </summary>
-		public PlotOptionsBubbleDashStyle DashStyle { get; set; }
-		private PlotOptionsBubbleDashStyle DashStyle_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Options for the series data labels, appearing next to each data point.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the data labels can be styled wtih the <code>.highcharts-data-label-box</code> and <code>.highcharts-data-label</code> class names (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels">see example</a>).</p>
+		/// <p>Options for the series data labels, appearing next to each datapoint.</p><p>In styled mode, the data labels can be styled wtih the <code>.highcharts-data-label-box</code> and <code>.highcharts-data-label</code> class names (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels">see example</a>).</p>
 		/// </summary>
 		public PlotOptionsBubbleDataLabels DataLabels { get; set; }
 		private PlotOptionsBubbleDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p><i>Requires Accessibility module</i></p><p>A description of the series to add to the screen reader information about the series.</p>
-		/// </summary>
-		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display negative sized bubbles. The threshold is given by the <a href="#plotOptions.bubble.zThreshold">zThreshold</a> option, and negative bubbles can be visualized by setting <a href="#plotOptions.bubble.negativeColor">negativeColor</a>.
-		/// </summary>
-		public bool? DisplayNegative { get; set; }
-		private bool? DisplayNegative_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
-		/// </summary>
-		public bool? EnableMouseTracking { get; set; }
-		private bool? EnableMouseTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBubbleEvents Events { get; set; }
-		private PlotOptionsBubbleEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to use the Y extremes of the total chart width or only the zoomed area when zooming in on parts of the X axis. By default, the Y axis adjusts to the min and max of the visible data. Cartesian series only.
-		/// </summary>
-		public bool? GetExtremesFromAll { get; set; }
-		private bool? GetExtremesFromAll_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array specifying which option maps to which key in the data point array. This makes it convenient to work with unstructured data arrays from different sources.
-		/// </summary>
-		public List<string> Keys { get; set; }
-		private List<string> Keys_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the line connecting the data points.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The <a href="#series.id">id</a> of another series to link to. Additionally, the value can be ":previous" to link to the previous series. When two series are linked, only the first one appears in the legend. Toggling the visibility of this also toggles the linked series.
-		/// </summary>
-		public string LinkedTo { get; set; }
-		private string LinkedTo_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Options for the point markers of line-like series. Properties like <code>fillColor</code>, <code>lineColor</code> and <code>lineWidth</code> define the visual appearance of the markers. Other series types, like column series, don't have markers, but have visual options on the series level instead.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the markers can be styled with the <code>.highcharts-point</code>, <code>.highcharts-point-hover</code> and <code>.highcharts-point-select</code> class names.</p>
+		/// <p>Options for the point markers of line-like series. Properties like<code>fillColor</code>, <code>lineColor</code> and <code>lineWidth</code> define the visual appearanceof the markers. Other series types, like column series, don&#39;t havemarkers, but have visual options on the series level instead.</p><p>In styled mode, the markers can be styled with the <code>.highcharts-point</code>, <code>.highcharts-point-hover</code> and <code>.highcharts-point-select</code>class names.</p>
 		/// </summary>
 		public PlotOptionsBubbleMarker Marker { get; set; }
 		private PlotOptionsBubbleMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Maximum bubble size. Bubbles will automatically size between the <code>minSize</code> and <code>maxSize</code> to reflect the <code>z</code> value of each bubble. Can be either pixels (when no unit is given), or a percentage of the smallest one of the plot width and height. 
-		/// </summary>
-		public string MaxSize { get; set; }
-		private string MaxSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Minimum bubble size. Bubbles will automatically size between the <code>minSize</code> and <code>maxSize</code> to reflect the <code>z</code> value of each bubble. Can be either pixels (when no unit is given), or a percentage of the smallest one of the plot width and height. 
+		/// <p>Minimum bubble size. Bubbles will automatically size between the<code>minSize</code> and <code>maxSize</code> to reflect the <code>z</code> value of each bubble.Can be either pixels (when no unit is given), or a percentage ofthe smallest one of the plot width and height.</p>
 		/// </summary>
 		public string MinSize { get; set; }
 		private string MinSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When a point's Z value is below the <a href="#plotOptions.bubble.zThreshold">zThreshold</a> setting, this color is used.
+		/// <p>Maximum bubble size. Bubbles will automatically size between the<code>minSize</code> and <code>maxSize</code> to reflect the <code>z</code> value of each bubble.Can be either pixels (when no unit is given), or a percentage ofthe smallest one of the plot width and height.</p>
 		/// </summary>
-		public string NegativeColor { get; set; }
-		private string NegativeColor_DefaultValue { get; set; }
+		public string MaxSize { get; set; }
+		private string MaxSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Properties for each single point
-		/// </summary>
-		public PlotOptionsBubblePoint Point { get; set; }
-		private PlotOptionsBubblePoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>If no x values are given for the points in a series, pointInterval defines the interval of the x values. For example, if a series contains one value every decade starting from year 0, set pointInterval to 10.</p><p>Since Highcharts 4.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
-		/// </summary>
-		public double? PointInterval { get; set; }
-		private double? PointInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// On datetime series, this allows for setting the <a href="#plotOptions.series.pointInterval">pointInterval</a> to irregular time units, <code>day</code>, <code>month</code> and <code>year</code>. A day is usually the same as 24 hours, but pointIntervalUnit also takes the DST crossover into consideration when dealing with local time. Combine this option with <code>pointInterval</code> to draw weeks, quarters, 6 months, 10 years etc.
-		/// </summary>
-		public PlotOptionsBubblePointIntervalUnit PointIntervalUnit { get; set; }
-		private PlotOptionsBubblePointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If no x values are given for the points in a series, pointStart defines on what value to start. For example, if a series contains one yearly value starting from 1945, set pointStart to 1945.
-		/// </summary>
-		public double? PointStart { get; set; }
-		private double? PointStart_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to select the series initially. If <code>showCheckbox</code> is true, the checkbox next to the series name will be checked for a selected series.
-		/// </summary>
-		public bool? Selected { get; set; }
-		private bool? Selected_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If true, a checkbox is displayed next to the legend item to allow selecting the series. The state of the checkbox is determined by the <code>selected</code> option.
-		/// </summary>
-		public bool? ShowCheckbox { get; set; }
-		private bool? ShowCheckbox_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display this particular series or series type in the legend. The default value is <code>true</code> for standalone series, <code>false</code> for linked series.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the bubble's value should be represented by the area or the width of the bubble. The default, <code>area</code>, corresponds best to the human perception of the size of each bubble. 
-		/// </summary>
-		public PlotOptionsBubbleSizeBy SizeBy { get; set; }
-		private PlotOptionsBubbleSizeBy SizeBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this is true, the absolute value of z determines the size of the bubble. This means that with the default <code>zThreshold</code> of 0, a bubble of value -1 will have the same size as a bubble of value 1, while a bubble of value 0 will have a smaller size according to <code>minSize</code>.
-		/// </summary>
-		public bool? SizeByAbsoluteValue { get; set; }
-		private bool? SizeByAbsoluteValue_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>When this is true, the series will not cause the Y axis to cross the zero plane (or <a href="#plotOptions.series.threshold">threshold</a> option) unless the data actually crosses the plane.</p><p>For example, if <code>softThreshold</code> is <code>false</code>, a series of 0, 1, 2, 3 will make the Y axis show negative values according to the <code>minPadding</code> option. If <code>softThreshold</code> is <code>true</code>, the Y axis starts at 0.</p>
+		/// <p>When this is true, the series will not cause the Y axis to crossthe zero plane (or <a href="#plotOptions.series.threshold">threshold</a> option)unless the data actually crosses the plane.</p><p>For example, if <code>softThreshold</code> is <code>false</code>, a series of 0, 1, 2,3 will make the Y axis show negative values according to the <code>minPadding</code>option. If <code>softThreshold</code> is <code>true</code>, the Y axis starts at 0.</p>
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A wrapper object for all the series options in specific states.
+		/// <p>A wrapper object for all the series options in specific states.</p>
 		/// </summary>
 		public PlotOptionsBubbleStates States { get; set; }
 		private PlotOptionsBubbleStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The threshold, also called zero level or base level. For line type series this is only used in conjunction with <a href="#plotOptions.series.negativeColor">negativeColor</a>.
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
+		/// <p>A configuration object for the tooltip rendering of each singleseries. Properties are inherited from <a class="internal">#tooltip</a>.Overridable properties are <code>headerFormat</code>, <code>pointFormat</code>, <code>yDecimals</code>,<code>xDateFormat</code>, <code>yPrefix</code> and <code>ySuffix</code>. Unlike other series, ina scatter plot the series.name by default shows in the headerFormatand point.x and point.y in the pointFormat.</p>
 		/// </summary>
 		public PlotOptionsBubbleTooltip Tooltip { get; set; }
 		private PlotOptionsBubbleTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Set the initial visibility of the series.
+		/// <p>When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to <code>0</code> disable.</p>
 		/// </summary>
-		public bool? Visible { get; set; }
-		private bool? Visible_DefaultValue { get; set; }
+		public double? TurboThreshold { get; set; }
+		private double? TurboThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The minimum for the Z value range. Defaults to the highest Z value in the data.
-		/// </summary>
-		public double? ZMax { get; set; }
-		private double? ZMax_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The minimum for the Z value range. Defaults to the lowest Z value in the data.
-		/// </summary>
-		public double? ZMin { get; set; }
-		private double? ZMin_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When <a href="#plotOptions.bubble.displayNegative">displayNegative</a> is <code>false</code>, bubbles with lower Z values are skipped. When <code>displayNegative</code> is <code>true</code> and a <a href="#plotOptions.bubble.negativeColor">negativeColor</a> is given, points with lower Z is colored.
+		/// <p>When <a href="#plotOptions.bubble.displayNegative">displayNegative</a> is <code>false</code>,bubbles with lower Z values are skipped. When <code>displayNegative</code>is <code>true</code> and a <a href="#plotOptions.bubble.negativeColor">negativeColor</a>is given, points with lower Z is colored.</p>
 		/// </summary>
 		public double? ZThreshold { get; set; }
 		private double? ZThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Defines the Axis on which the zones are applied.
+		/// <p>Defines the Axis on which the zones are applied.</p>
 		/// </summary>
 		public string ZoneAxis { get; set; }
 		private string ZoneAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An array defining zones within a series. Zones can be applied to the X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code> option.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">view live demo</a>).</p>
+		/// <p>Whether to display negative sized bubbles. The threshold is givenby the <a href="#plotOptions.bubble.zThreshold">zThreshold</a> option, and negativebubbles can be visualized by setting <a href="#plotOptions.bubble.negativeColor">negativeColor</a>.</p>
 		/// </summary>
-		public List<PlotOptionsBubbleZone> Zones { get; set; }
-		private List<PlotOptionsBubbleZone> Zones_DefaultValue { get; set; }
+		public bool? DisplayNegative { get; set; }
+		private bool? DisplayNegative_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>When a point&#39;s Z value is below the <a href="#plotOptions.bubble.zThreshold">zThreshold</a> setting, this color is used.</p>
+		/// </summary>
+		public string NegativeColor { get; set; }
+		private string NegativeColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether the bubble&#39;s value should be represented by the area or thewidth of the bubble. The default, <code>area</code>, corresponds best to thehuman perception of the size of each bubble.</p>
+		/// </summary>
+		public PlotOptionsBubbleSizeBy SizeBy { get; set; }
+		private PlotOptionsBubbleSizeBy SizeBy_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>When this is true, the absolute value of z determines the size ofthe bubble. This means that with the default <code>zThreshold</code> of 0, abubble of value -1 will have the same size as a bubble of value 1,while a bubble of value 0 will have a smaller size according to<code>minSize</code>.</p>
+		/// </summary>
+		public bool? SizeByAbsoluteValue { get; set; }
+		private bool? SizeByAbsoluteValue_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The minimum for the Z value range. Defaults to the highest Z valuein the data.</p>
+		/// </summary>
+		public double? ZMax { get; set; }
+		private double? ZMax_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The minimum for the Z value range. Defaults to the lowest Z valuein the data.</p>
+		/// </summary>
+		public double? ZMin { get; set; }
+		private double? ZMin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The width of the line connecting the data points.</p>
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to <code>&#39;xy&#39;</code> for scatter series and <code>&#39;x&#39;</code> for most otherseries. If the data has duplicate x-values, it is recommended toset this to <code>&#39;xy&#39;</code> to allow hovering over all points.</p><p>Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.</p>
+		/// </summary>
+		public PlotOptionsBubbleFindNearestPointBy FindNearestPointBy { get; set; }
+		private PlotOptionsBubbleFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Sticky tracking of mouse events. When true, the <code>mouseOut</code> eventon a series isn&#39;t triggered until the mouse moves over another series,or out of the plot area. When false, the <code>mouseOut</code> event on a seriesis triggered when the mouse leaves the area around the series&#39; graphor markers. This also implies the tooltip. When <code>stickyTracking</code>is false and <code>tooltip.shared</code> is false, the tooltip will be hiddenwhen moving the mouse between series.</p>
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The SVG value used for the <code>stroke-linecap</code> and <code>stroke-linejoin</code>of a line graph. Round means that lines are rounded in the ends andbends.</p>
+		/// </summary>
+		public PlotOptionsBubbleLinecap Linecap { get; set; }
+		private PlotOptionsBubbleLinecap Linecap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Set the point threshold for when a series should enter boost mode.</p><p>Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.</p><p>To disable boosting on the series, set the <code>boostThreshold</code> to 0. Setting itto 1 will force boosting.</p><p>Requires <code>modules/boost.js</code>.</p>
+		/// </summary>
+		public double? BoostThreshold { get; set; }
+		private double? BoostThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.</p><p>The series labels currently work with series types having a<code>graph</code> or an <code>area</code>.</p><p>Requires the <code>series-label.js</code> module.</p>
+		/// </summary>
+		public PlotOptionsBubbleLabel Label { get; set; }
+		private PlotOptionsBubbleLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Allow this series&#39; points to be selected by clicking on the graphic (columns, point markers, pie slices, map areas etc).</p>
+		/// </summary>
+		public bool? AllowPointSelect { get; set; }
+		private bool? AllowPointSelect_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe <code>selected</code> option.</p>
+		/// </summary>
+		public bool? ShowCheckbox { get; set; }
+		private bool? ShowCheckbox_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods. Thefollowing properties are supported:</p><dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the <code>Math</code> object.See the <em>Custom easing function</em> demo below.</dd></dl><p>Due to poor performance, animation is disabled in old IE browsersfor several chart types.</p>
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the <code>Highcharts.addEvent</code>function.</p>
+		/// </summary>
+		public PlotOptionsBubbleEvents Events { get; set; }
+		private PlotOptionsBubbleEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Properties for each single point.</p>
+		/// </summary>
+		public PlotOptionsBubblePoint Point { get; set; }
+		private PlotOptionsBubblePoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.</p>
+		/// </summary>
+		public double? CropThreshold { get; set; }
+		private double? CropThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesn&#39;trun if there is more than 250 points totally. To disable this cap, set<code>animationLimit</code> to <code>Infinity</code>.</p>
+		/// </summary>
+		public double? AnimationLimit { get; set; }
+		private double? AnimationLimit_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A class name to apply to the series&#39; graphical elements.</p>
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the <code>options.colors</code> array.</p><p>In styled mode, the color can be defined by the<a href="#plotOptions.series.colorIndex">colorIndex</a> option. Also, the seriescolor can be set with the <code>.highcharts-series</code>, <code>.highcharts-color-{n}</code>,<code>.highcharts-{type}-series</code> or <code>.highcharts-series-{n}</code> class, orindividual classes given by the <code>className</code> option.</p>
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name <code>highcharts-color-{n}</code>.</p>
+		/// </summary>
+		public double? ColorIndex { get; set; }
+		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.</p>
+		/// </summary>
+		public bool? ConnectNulls { get; set; }
+		private bool? ConnectNulls_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>You can set the cursor to &quot;pointer&quot; if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.</p>
+		/// </summary>
+		public PlotOptionsBubbleCursor Cursor { get; set; }
+		private PlotOptionsBubbleCursor Cursor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>A name for the dash style to use for the graph, or for some series typesthe outline of each shape. The value for the <code>dashStyle</code> include:</p><ul><li>Solid</li><li>ShortDash</li><li>ShortDot</li><li>ShortDashDot</li><li>ShortDashDotDot</li><li>Dot</li><li>Dash</li><li>LongDash</li><li>DashDot</li><li>LongDashDot</li><li>LongDashDotDot</li></ul>
+		/// </summary>
+		public PlotOptionsBubbleDashStyle DashStyle { get; set; }
+		private PlotOptionsBubbleDashStyle DashStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Requires the Accessibility module.</p><p>A description of the series to add to the screen reader informationabout the series.</p>
+		/// </summary>
+		public string Description { get; set; }
+		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.</p>
+		/// </summary>
+		public bool? EnableMouseTracking { get; set; }
+		private bool? EnableMouseTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.</p><p>Requires the Accessibility module.</p>
+		/// </summary>
+		public bool? ExposeElementToA11y { get; set; }
+		private bool? ExposeElementToA11y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to use the Y extremes of the total chart width or only thezoomed area when zooming in on parts of the X axis. By default, theY axis adjusts to the min and max of the visible data. Cartesianseries only.</p>
+		/// </summary>
+		public bool? GetExtremesFromAll { get; set; }
+		private bool? GetExtremesFromAll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.</p>
+		/// </summary>
+		public List<string> Keys { get; set; }
+		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The <a href="#series.id">id</a> of another series to link to. Additionally,the value can be &quot;:previous&quot; to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.</p>
+		/// </summary>
+		public string LinkedTo { get; set; }
+		private string LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Same as <a href="#accessibility.pointDescriptionFormatter">accessibility.pointDescriptionFormatter</a>, but for an individual series. Overridesthe chart wide configuration.</p>
+		/// </summary>
+		public string PointDescriptionFormatter { get; set; }
+		private string PointDescriptionFormatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>If no x values are given for the points in a series, <code>pointInterval</code>defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set <code>pointInterval</code> to<code>10</code>. In true <code>datetime</code> axes, the <code>pointInterval</code> is set inmilliseconds.</p><p>It can be also be combined with <code>pointIntervalUnit</code> to draw irregulartime intervals.</p>
+		/// </summary>
+		public double? PointInterval { get; set; }
+		private double? PointInterval_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>On datetime series, this allows for setting the<a href="#plotOptions.series.pointInterval">pointInterval</a> to irregular time units, <code>day</code>, <code>month</code> and <code>year</code>. A day is usually the same as 24 hours,but <code>pointIntervalUnit</code> also takes the DST crossover into considerationwhen dealing with local time. Combine this option with <code>pointInterval</code>to draw weeks, quarters, 6 months, 10 years etc.</p>
+		/// </summary>
+		public PlotOptionsBubblePointIntervalUnit PointIntervalUnit { get; set; }
+		private PlotOptionsBubblePointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Possible values: <code>null</code>, <code>&quot;on&quot;</code>, <code>&quot;between&quot;</code>.</p><p>In a column chart, when pointPlacement is <code>&quot;on&quot;</code>, the point willnot create any padding of the X axis. In a polar column chart thismeans that the first column points directly north. If the pointPlacementis <code>&quot;between&quot;</code>, the columns will be laid out between ticks. Thisis useful for example for visualising an amount between two pointsin time or in a certain sector of a polar chart.</p><p>Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won&#39;t affect axispadding.</p><p>Note that pointPlacement needs a <a href="#plotOptions.series.pointRange">pointRange</a> to work. For column series this is computed, but forline-type series it needs to be set.</p><p>Defaults to <code>null</code> in cartesian charts, <code>&quot;between&quot;</code> in polar charts.</p>
+		/// </summary>
+		public PointPlacement PointPlacement { get; set; }
+		private PointPlacement PointPlacement_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>If no x values are given for the points in a series, pointStart defineson what value to start. For example, if a series contains one yearlyvalue starting from 1945, set pointStart to 1945.</p>
+		/// </summary>
+		public double? PointStart { get; set; }
+		private double? PointStart_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to select the series initially. If <code>showCheckbox</code> is true,the checkbox next to the series name in the legend will be checked for aselected series.</p>
+		/// </summary>
+		public bool? Selected { get; set; }
+		private bool? Selected_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.</p>
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to display this particular series or series type in the legend.The default value is <code>true</code> for standalone series, <code>false</code> for linkedseries.</p>
+		/// </summary>
+		public bool? ShowInLegend { get; set; }
+		private bool? ShowInLegend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>If set to <code>True</code>, the accessibility module will skip past the pointsin this series for keyboard navigation.</p>
+		/// </summary>
+		public bool? SkipKeyboardNavigation { get; set; }
+		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to stack the values of each series on top of each other.Possible values are <code>null</code> to disable, <code>&quot;normal&quot;</code> to stack by value or<code>&quot;percent&quot;</code>. When stacking is enabled, data must be sorted in ascendingX order. A special stacking option is with the streamgraph series type,where the stacking option is set to <code>&quot;stream&quot;</code>.</p>
+		/// </summary>
+		public PlotOptionsBubbleStacking Stacking { get; set; }
+		private PlotOptionsBubbleStacking Stacking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to apply steps to the line. Possible values are <code>left</code>, <code>center</code>and <code>right</code>.</p>
+		/// </summary>
+		public PlotOptionsBubbleStep Step { get; set; }
+		private PlotOptionsBubbleStep Step_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with<a href="#plotOptions.series.negativeColor">negativeColor</a>.</p>
+		/// </summary>
+		public double? Threshold { get; set; }
+		private double? Threshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Set the initial visibility of the series.</p>
+		/// </summary>
+		public bool? Visible { get; set; }
+		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code>option.</p><p>In styled mode, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">viewlive demo</a>).</p>
+		/// </summary>
+		public PlotOptionsBubbleZone Zones { get; set; }
+		private PlotOptionsBubbleZone Zones_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Polar charts only. Whether to connect the ends of a line series plotacross the extremes.</p>
+		/// </summary>
+		public bool? ConnectEnds { get; set; }
+		private bool? ConnectEnds_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
+			if (MaxSize != MaxSize_DefaultValue) h.Add("maxSize",MaxSize);
+			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
+			if (ZThreshold != ZThreshold_DefaultValue) h.Add("zThreshold",ZThreshold);
+			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
+			if (DisplayNegative != DisplayNegative_DefaultValue) h.Add("displayNegative",DisplayNegative);
+			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy", Highcharts.FirstCharacterToLower(SizeBy.ToString()));
+			if (SizeByAbsoluteValue != SizeByAbsoluteValue_DefaultValue) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
+			if (ZMax != ZMax_DefaultValue) h.Add("zMax",ZMax);
+			if (ZMin != ZMin_DefaultValue) h.Add("zMin",ZMin);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
+			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
+			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DisplayNegative != DisplayNegative_DefaultValue) h.Add("displayNegative",DisplayNegative);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (MaxSize != MaxSize_DefaultValue) h.Add("maxSize",MaxSize);
-			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
-			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsBubblePointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
-			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy", Highcharts.FirstCharacterToLower(SizeBy.ToString()));
-			if (SizeByAbsoluteValue != SizeByAbsoluteValue_DefaultValue) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
+			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
+			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (ZMax != ZMax_DefaultValue) h.Add("zMax",ZMax);
-			if (ZMin != ZMin_DefaultValue) h.Add("zMin",ZMin);
-			if (ZThreshold != ZThreshold_DefaultValue) h.Add("zThreshold",ZThreshold);
-			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
+			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			
 
 			return h;

@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// 
+		/// <p>The hover state for a single point marker.</p>
 		/// </summary>
 		public AreaSeriesDataMarkerStatesHover Hover { get; set; }
 		private AreaSeriesDataMarkerStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The appearance of the point marker when selected. In order to allow a point to be selected, set the <code>series.allowPointSelect</code> option to true.
+		/// <p>The appearance of the point marker when selected. In order toallow a point to be selected, set the <code>series.allowPointSelect</code>option to true.</p>
 		/// </summary>
 		public AreaSeriesDataMarkerStatesSelect Select { get; set; }
 		private AreaSeriesDataMarkerStatesSelect Select_DefaultValue { get; set; }

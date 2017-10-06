@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Events for each single point
+		/// <p>Events for each single point.</p>
 		/// </summary>
 		public PlotOptionsBarPointEvents Events { get; set; }
 		private PlotOptionsBarPointEvents Events_DefaultValue { get; set; }

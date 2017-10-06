@@ -14,50 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsGaugePivot()
 		{
-			BackgroundColor = BackgroundColor_DefaultValue = "#000000";
-			BorderColor = BorderColor_DefaultValue = "#cccccc";
-			BorderWidth = BorderWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 5;
+			BorderWidth = BorderWidth_DefaultValue = 0;
+			BorderColor = BorderColor_DefaultValue = "#cccccc";
+			BackgroundColor = BackgroundColor_DefaultValue = "#000000";
 			
 		}	
 		
 
 		/// <summary>
-		/// The background color or fill of the pivot.
+		/// <p>The pixel radius of the pivot.</p>
 		/// </summary>
-		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
+		public double? Radius { get; set; }
+		private double? Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border or stroke color of the pivot. In able to change this, the borderWidth must also be set to something other than the default 0.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border or stroke width of the pivot.
+		/// <p>The border or stroke width of the pivot.</p>
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The pixel radius of the pivot.
+		/// <p>The border or stroke color of the pivot. In able to change this,the borderWidth must also be set to something other than the default0.</p>
 		/// </summary>
-		public double? Radius { get; set; }
-		private double? Radius_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The background color or fill of the pivot.</p>
+		/// </summary>
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			
 
 			return h;

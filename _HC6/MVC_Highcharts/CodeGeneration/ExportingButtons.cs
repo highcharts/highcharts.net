@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Options for the export button.</p><p>In <a href="http://www.highcharts.com/docs/chart-design-and-style/style-by-css">styled mode</a>, export button styles can be applied with the <code>.highcharts-contextbutton</code> class.</p>
+		/// <p>Options for the export button.</p><p>In styled mode, export button styles can be applied with the<code>.highcharts-contextbutton</code> class.</p>
 		/// </summary>
 		public ExportingButtonsContextButton ContextButton { get; set; }
 		private ExportingButtonsContextButton ContextButton_DefaultValue { get; set; }

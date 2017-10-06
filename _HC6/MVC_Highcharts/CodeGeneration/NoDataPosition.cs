@@ -14,50 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public NoDataPosition()
 		{
-			Align = Align_DefaultValue = NoDataPositionAlign.Center;
-			VerticalAlign = VerticalAlign_DefaultValue = NoDataPositionVerticalAlign.Middle;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
+			Align = Align_DefaultValue = NoDataPositionAlign.Center;
+			VerticalAlign = VerticalAlign_DefaultValue = NoDataPositionVerticalAlign.Middle;
 			
 		}	
 		
 
 		/// <summary>
-		/// Horizontal alignment of the label.
-		/// </summary>
-		public NoDataPositionAlign Align { get; set; }
-		private NoDataPositionAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Vertical alignment of the label.
-		/// </summary>
-		public NoDataPositionVerticalAlign VerticalAlign { get; set; }
-		private NoDataPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Horizontal offset of the label, in pixels.
+		/// <p>Horizontal offset of the label, in pixels.</p>
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Vertical offset of the label, in pixels.
+		/// <p>Vertical offset of the label, in pixels.</p>
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Horizontal alignment of the label.</p>
+		/// </summary>
+		public NoDataPositionAlign Align { get; set; }
+		private NoDataPositionAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Vertical alignment of the label.</p>
+		/// </summary>
+		public NoDataPositionVerticalAlign VerticalAlign { get; set; }
+		private NoDataPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			
 
 			return h;

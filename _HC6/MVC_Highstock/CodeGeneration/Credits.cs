@@ -15,44 +15,44 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Credits()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			Href = Href_DefaultValue = "'http://www.highcharts.com'";
+			Href = Href_DefaultValue = "http://www.highcharts.com";
 			Position = Position_DefaultValue = new Hashtable();
-			Style = Style_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#999999"},{ "fontSize", "10px" }};
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "Highcharts.com";
 			
 		}	
 		
 
 		/// <summary>
-		/// Whether to show the credits text.
+		/// <p>Whether to show the credits text.</p>
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The URL for the credits label.
+		/// <p>The URL for the credits label.</p>
 		/// </summary>
 		public string Href { get; set; }
 		private string Href_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Position configuration for the credits label.
+		/// <p>Position configuration for the credits label.</p>
 		/// </summary>
 		public Hashtable Position { get; set; }
 		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// CSS styles for the credits label.
+		/// <p>CSS styles for the credits label.</p>
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The text for the credits label.
+		/// <p>The text for the credits label.</p>
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
@@ -65,7 +65,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Href != Href_DefaultValue) h.Add("href",Href);
 			if (Position.Count > 0) h.Add("position",Position);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			
 

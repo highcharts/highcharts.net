@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Options for the export button.
+		/// <p>Options for the export button.</p><p>In styled mode, export button styles can be applied with the<code>.highcharts-contextbutton</code> class.</p>
 		/// </summary>
 		public ExportingButtonsContextButton ContextButton { get; set; }
 		private ExportingButtonsContextButton ContextButton_DefaultValue { get; set; }
