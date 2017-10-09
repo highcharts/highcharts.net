@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Pane()
 		{
-			Background = Background_DefaultValue = new PaneBackground();
+			Background = Background_DefaultValue = new List<PaneBackground>;
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>An array of background items for the pane.</p>
 		/// </summary>
-		public PaneBackground Background { get; set; }
-		private PaneBackground Background_DefaultValue { get; set; }
+		public List<PaneBackground> Background { get; set; }
+		private List<PaneBackground> Background_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

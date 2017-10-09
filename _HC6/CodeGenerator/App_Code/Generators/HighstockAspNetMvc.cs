@@ -745,6 +745,7 @@ public class HighstockAspNetMvc
         _propertyTypeMappings.Add("xAxis.plotBands.label.style", "Hashtable");
         _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
         _propertyTypeMappings.Add("colors", "List<string>");
+        _propertyTypeMappings.Add("pane.background", "List<PaneBackground>");
     }
 
     private void InitPropertyInitMappings()
@@ -785,6 +786,7 @@ public class HighstockAspNetMvc
         _propertyInitMappings.Add("navigator.yAxis.resize.controlledAxis.prev", "new List<string>()");
         _propertyInitMappings.Add("chart.parallelAxes.resize.controlledAxis.next", "new List<string>()");
         _propertyInitMappings.Add("chart.parallelAxes.resize.controlledAxis.prev", "new List<string>()");
+        _propertyInitMappings.Add("pane.background", "new List<PaneBackground>");
     }
 
     private void InitLists()
