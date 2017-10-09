@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Padding = Padding_DefaultValue = null;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new AnnotationsLabelsStyle();
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = null;
@@ -133,8 +133,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Styles for the annotation&#39;s label.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public AnnotationsLabelsStyle Style { get; set; }
+		private AnnotationsLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

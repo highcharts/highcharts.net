@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public StochasticSeriesParams()
 		{
-			Periods = Periods_DefaultValue = [14, 3];
+			Periods = Periods_DefaultValue = new List<double> {14, 3};
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Periods for Stochastic oscillator: [%K, %D].</p>
 		/// </summary>
-		public Array Periods { get; set; }
-		private Array Periods_DefaultValue { get; set; }
+		public List<double> Periods { get; set; }
+		private List<double> Periods_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

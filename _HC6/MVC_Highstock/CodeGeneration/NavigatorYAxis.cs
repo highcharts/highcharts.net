@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Opposite = Opposite_DefaultValue = true;
 			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new NavigatorYAxisDateTimeLabelFormats();
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = NavigatorYAxisMinorTickPosition.Outside;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
@@ -257,8 +257,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the <code>day</code> unit can be usedon midnight and <code>hour</code> unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see<a href="#Highcharts.dateFormat">dateFormat</a>. Defaults to:</p><pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
 		/// </summary>
-		public Hashtable DateTimeLabelFormats { get; set; }
-		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
+		public NavigatorYAxisDateTimeLabelFormats DateTimeLabelFormats { get; set; }
+		private NavigatorYAxisDateTimeLabelFormats DateTimeLabelFormats_DefaultValue { get; set; }
 		 
 
 		/// <summary>

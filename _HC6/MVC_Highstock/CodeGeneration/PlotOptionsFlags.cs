@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			FillColor = FillColor_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 1;
 			States = States_DefaultValue = new PlotOptionsFlagsStates();
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new PlotOptionsFlagsStyle();
 			OnSeries = OnSeries_DefaultValue = "undefined";
 			OnKey = OnKey_DefaultValue = PlotOptionsFlagsOnKey.Y;
 			Title = Title_DefaultValue = "'A'";
@@ -146,8 +146,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>The text styles of the flag.</p><p>In styled mode, the styles are set in the <code>.highcharts-flag-series .highcharts-point</code> rule.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public PlotOptionsFlagsStyle Style { get; set; }
+		private PlotOptionsFlagsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -567,11 +567,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) h.Add("pointDescriptionFormatter",PointDescriptionFormatter);
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
-			if (PointPlacement.IsDirty())
-				if (PointPlacement.Value.HasValue)
-					h.Add("pointPlacement", PointPlacement.Value);
-				else
-					h.Add("pointPlacement", PointPlacement.ToJSON());
+			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());

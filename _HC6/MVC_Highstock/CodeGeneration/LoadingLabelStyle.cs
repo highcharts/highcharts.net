@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public LoadingLabelStyle()
 		{
 			FontWeight = FontWeight_DefaultValue = "bold";
-			Position = Position_DefaultValue = "new Hashtable()";
+			Position = Position_DefaultValue = new Hashtable();
 			Top = Top_DefaultValue = "45%";
 			
 		}	

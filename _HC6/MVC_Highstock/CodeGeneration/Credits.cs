@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = true;
 			Href = Href_DefaultValue = "http://www.highcharts.com";
 			Position = Position_DefaultValue = new Hashtable();
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new CreditsStyle();
 			Text = Text_DefaultValue = "Highcharts.com";
 			
 		}	
@@ -47,8 +47,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>CSS styles for the credits label.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public CreditsStyle Style { get; set; }
+		private CreditsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -64,7 +64,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Href != Href_DefaultValue) h.Add("href",Href);
-			if (Position.Count > 0) h.Add("position",Position);
+			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			

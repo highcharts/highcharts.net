@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LegendItemCheckboxStyle()
 		{
-			Position = Position_DefaultValue = "new Hashtable()";
+			Position = Position_DefaultValue = new Hashtable();
 			Width = Width_DefaultValue = "13px";
 			Height = Height_DefaultValue = "13px";
 			

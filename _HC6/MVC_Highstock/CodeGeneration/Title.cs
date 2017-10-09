@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Margin = Margin_DefaultValue = null;
 			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			Floating = Floating_DefaultValue = false;
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Null;
 			X = X_DefaultValue = 0;

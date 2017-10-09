@@ -347,7 +347,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MarginBottom != MarginBottom_DefaultValue) h.Add("marginBottom",MarginBottom);
@@ -361,7 +361,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
 			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
-			if (PlotShadow.IsDirty()) h.Add("plotShadow",PlotShadow.ToJSON());
+			if (PlotShadow != PlotShadow_DefaultValue) h.Add("plotShadow",PlotShadow);
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
 			if (SelectionMarkerFill != SelectionMarkerFill_DefaultValue) h.Add("selectionMarkerFill",SelectionMarkerFill);

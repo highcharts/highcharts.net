@@ -554,7 +554,7 @@ public class HighchartsAspNetMvc
         //    return "";
 
         // fully qualified names that are collections
-        if (_lists.Contains(child.FullName))
+        if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
         {
             if (child.FullName == "Data" && child.Parent.ToLower().Contains("highcharts"))
                 return String.Format(complexPropertyFormat, child.FullName, FirstCharToLower(child.FullName));

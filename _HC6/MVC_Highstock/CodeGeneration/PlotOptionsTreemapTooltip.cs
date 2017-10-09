@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			HeaderFormat = HeaderFormat_DefaultValue = "";
 			PointFormat = PointFormat_DefaultValue = "<b>{point.name}</b>: {point.value}<br/>";
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new PlotOptionsTreemapTooltipDateTimeLabelFormats();
 			Padding = Padding_DefaultValue = 8;
 			FollowPointer = FollowPointer_DefaultValue = null;
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
@@ -48,8 +48,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>For series on a datetime axes, the date format in the tooltip&#39;sheader will by default be guessed based on the closest data points.This member gives the default string representations used foreach unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p><p>Defaults to:</p><pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre>
 		/// </summary>
-		public Hashtable DateTimeLabelFormats { get; set; }
-		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
+		public PlotOptionsTreemapTooltipDateTimeLabelFormats DateTimeLabelFormats { get; set; }
+		private PlotOptionsTreemapTooltipDateTimeLabelFormats DateTimeLabelFormats_DefaultValue { get; set; }
 		 
 
 		/// <summary>

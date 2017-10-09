@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 10;
 			Approximation = Approximation_DefaultValue = WaterfallSeriesDataGroupingApproximation.Null;
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;
 			Smoothed = Smoothed_DefaultValue = false;
@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Datetime formats for the header of the tooltip in a stock chart.The format can vary within a chart depending on the currently selectedtime range and the current data grouping.</p><p>The default formats are:</p><pre>{    millisecond: ['%A, %b %e, %H:%M:%S.%L', '%A, %b %e, %H:%M:%S.%L', '-%H:%M:%S.%L'],    second: ['%A, %b %e, %H:%M:%S', '%A, %b %e, %H:%M:%S', '-%H:%M:%S'],    minute: ['%A, %b %e, %H:%M', '%A, %b %e, %H:%M', '-%H:%M'],    hour: ['%A, %b %e, %H:%M', '%A, %b %e, %H:%M', '-%H:%M'],    day: ['%A, %b %e, %Y', '%A, %b %e', '-%A, %b %e, %Y'],    week: ['Week from %A, %b %e, %Y', '%A, %b %e', '-%A, %b %e, %Y'],    month: ['%B %Y', '%B', '-%B %Y'],    year: ['%Y', '%Y', '-%Y']}</pre><p>For each of these array definitions, the first item is the formatused when the active time span is one unit. For instance, if thecurrent data applies to one week, the first item of the week arrayis used. The second and third items are used when the active timespan is more than two units. For instance, if the current data appliesto two weeks, the second and third item of the week array are used, and applied to the start and end date of the time span.</p>
 		/// </summary>
-		public Hashtable DateTimeLabelFormats { get; set; }
-		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
+		public Object DateTimeLabelFormats { get; set; }
+		private Object DateTimeLabelFormats_DefaultValue { get; set; }
 		 
 
 		/// <summary>

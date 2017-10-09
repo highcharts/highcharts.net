@@ -363,7 +363,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Vwap.IsDirty()) h.Add("vwap",Vwap.ToHashtable());
 			if (Wma.IsDirty()) h.Add("wma",Wma.ToHashtable());
 			if (Zigzag.IsDirty()) h.Add("zigzag",Zigzag.ToHashtable());
-			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
+			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (Streamgraph.IsDirty()) h.Add("streamgraph",Streamgraph.ToHashtable());
 			if (Vector.IsDirty()) h.Add("vector",Vector.ToHashtable());
 			if (Windbarb.IsDirty()) h.Add("windbarb",Windbarb.ToHashtable());

@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public XAxisTitle()
 		{
 			Align = Align_DefaultValue = XAxisTitleAlign.Middle;
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new XAxisTitleStyle();
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			ReserveSpace = ReserveSpace_DefaultValue = true;
@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting <code>textOverflow: &#39;ellipsis&#39;</code>, by setting a specific <code>width</code> or by setting <code>wordSpace: &#39;nowrap&#39;</code>.</p><p>In styled mode, the stroke width is given in the<code>.highcharts-axis-title</code> class.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public XAxisTitleStyle Style { get; set; }
+		private XAxisTitleStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

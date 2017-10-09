@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Loading()
 		{
 			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new LoadingStyle();
 			HideDuration = HideDuration_DefaultValue = 100;
 			ShowDuration = ShowDuration_DefaultValue = 100;
 			
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>CSS styles for the loading screen that covers the plot area.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public LoadingStyle Style { get; set; }
+		private LoadingStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (LabelStyle.IsDirty()) h.Add("labelStyle",LabelStyle.ToHashtable());
+			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (HideDuration != HideDuration_DefaultValue) h.Add("hideDuration",HideDuration);
 			if (ShowDuration != ShowDuration_DefaultValue) h.Add("showDuration",ShowDuration);

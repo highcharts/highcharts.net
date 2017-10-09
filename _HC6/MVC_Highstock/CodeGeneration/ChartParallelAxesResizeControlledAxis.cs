@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ChartParallelAxesResizeControlledAxis()
 		{
-			Next = Next_DefaultValue = [];
-			Prev = Prev_DefaultValue = [];
+			Next = Next_DefaultValue = new List<string>();
+			Prev = Prev_DefaultValue = new List<string>();
 			
 		}	
 		

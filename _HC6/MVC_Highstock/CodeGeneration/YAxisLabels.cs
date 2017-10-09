@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Align = Align_DefaultValue = YAxisLabelsAlign.Null;
 			Y = Y_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new YAxisLabelsStyle();
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
@@ -64,8 +64,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>CSS styles for the label. Use <code>whiteSpace: &#39;nowrap&#39;</code> to preventwrapping of category labels. Use <code>textOverflow: &#39;none&#39;</code> toprevent ellipsis (dots).</p><p>In styled mode, the labels are styled with the<code>.highcharts-axis-labels</code> class.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public YAxisLabelsStyle Style { get; set; }
+		private YAxisLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

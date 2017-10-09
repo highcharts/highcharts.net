@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			ArrowSize = ArrowSize_DefaultValue = 12;
 			Enabled = Enabled_DefaultValue = true;
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = null;
 			
 		}	
 		
@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (ActiveColor != ActiveColor_DefaultValue) h.Add("activeColor",ActiveColor);
 			if (InactiveColor != InactiveColor_DefaultValue) h.Add("inactiveColor",InactiveColor);
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (ArrowSize != ArrowSize_DefaultValue) h.Add("arrowSize",ArrowSize);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Style != Style_DefaultValue) h.Add("style",Style);

@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinFontSize = MinFontSize_DefaultValue = null;
 			MaxFontSize = MaxFontSize_DefaultValue = null;
 			OnArea = OnArea_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new PlotOptionsGaugeLabelStyle();
 			BoxesToAvoid = BoxesToAvoid_DefaultValue = null;
 			
 		}	
@@ -71,8 +71,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Styles for the series label. The color defaults to the seriescolor, or a contrast color if <code>onArea</code>.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public PlotOptionsGaugeLabelStyle Style { get; set; }
+		private PlotOptionsGaugeLabelStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

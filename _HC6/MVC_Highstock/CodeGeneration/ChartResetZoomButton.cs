@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());
-			if (Position.Count > 0) h.Add("position",Position);
+			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo", Highstock.FirstCharacterToLower(RelativeTo.ToString()));
 			
 

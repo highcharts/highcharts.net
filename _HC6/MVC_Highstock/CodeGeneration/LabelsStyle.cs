@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LabelsStyle()
 		{
-			Position = Position_DefaultValue = "new Hashtable()";
+			Position = Position_DefaultValue = new Hashtable();
 			Color = Color_DefaultValue = "#333333";
 			
 		}	

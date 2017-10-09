@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class FlagsSeries  : BaseObject
+	public partial class FlagsSeries  : Series
 	{
 		public FlagsSeries()
 		{
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Name = Name_DefaultValue = null;
 			Stack = Stack_DefaultValue = "null";
 			Type = Type_DefaultValue = FlagsSeriesType.Null;
-			XAxis = XAxis_DefaultValue = "new List<XAxis>()";
-			YAxis = YAxis_DefaultValue = "new List<YAxis>()";
+			XAxis = XAxis_DefaultValue = new List<XAxis>();
+			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ZIndex = ZIndex_DefaultValue = null;
 			PointRange = PointRange_DefaultValue = "undefined";
 			Shape = Shape_DefaultValue = FlagsSeriesShape.Flag;
@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			FillColor = FillColor_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 1;
 			States = States_DefaultValue = new FlagsSeriesStates();
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new FlagsSeriesStyle();
 			OnSeries = OnSeries_DefaultValue = "undefined";
 			OnKey = OnKey_DefaultValue = FlagsSeriesOnKey.Y;
 			Title = Title_DefaultValue = "'A'";
@@ -243,8 +243,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>The text styles of the flag.</p><p>In styled mode, the styles are set in the <code>.highcharts-flag-series .highcharts-point</code> rule.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public FlagsSeriesStyle Style { get; set; }
+		private FlagsSeriesStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -686,8 +686,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (Shape != Shape_DefaultValue) h.Add("shape", Highstock.FirstCharacterToLower(Shape.ToString()));
@@ -737,11 +737,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) h.Add("pointDescriptionFormatter",PointDescriptionFormatter);
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
-			if (PointPlacement.IsDirty())
-				if (PointPlacement.Value.HasValue)
-					h.Add("pointPlacement", PointPlacement.Value);
-				else
-					h.Add("pointPlacement", PointPlacement.ToJSON());
+			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
@@ -757,7 +753,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);

@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public NavigatorXAxisLabels()
 		{
 			Align = Align_DefaultValue = NavigatorXAxisLabelsAlign.Left;
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new NavigatorXAxisLabelsStyle();
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = null;
@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>CSS styles for the label. Use <code>whiteSpace: &#39;nowrap&#39;</code> to preventwrapping of category labels. Use <code>textOverflow: &#39;none&#39;</code> toprevent ellipsis (dots).</p><p>In styled mode, the labels are styled with the<code>.highcharts-axis-labels</code> class.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public NavigatorXAxisLabelsStyle Style { get; set; }
+		private NavigatorXAxisLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LoadingStyle()
 		{
-			Position = Position_DefaultValue = "new Hashtable()";
+			Position = Position_DefaultValue = new Hashtable();
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
 			Opacity = Opacity_DefaultValue = null;
 			TextAlign = TextAlign_DefaultValue = "center";

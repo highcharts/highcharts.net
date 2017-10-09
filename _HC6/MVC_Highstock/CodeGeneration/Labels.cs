@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Labels()
 		{
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new LabelsStyle();
 			Items = Items_DefaultValue = new LabelsItems();
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Shared CSS styles for all labels.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public LabelsStyle Style { get; set; }
+		private LabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Align = Align_DefaultValue = "left";
 			Rotation = Rotation_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = null;
 			TextAlign = TextAlign_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = NavigatorYAxisPlotLinesLabelVerticalAlign.Null;
@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>CSS styles for the text label.</p><p>In styled mode, the labels are styled by the<code>.highcharts-plot-line-label</code> class.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public Object Style { get; set; }
+		private Object Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

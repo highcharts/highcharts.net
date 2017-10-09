@@ -79,6 +79,9 @@ public class HighstockAspNetMvc
         {
             ApiItem apiItem = new ApiItem(item);
 
+            if (apiItem.ReturnType == "umber")
+                apiItem.ReturnType = "Number";
+
             // do not add deprecated properties / objects to the API items collection
             if (apiItem.Deprecated)
                 continue;
@@ -258,7 +261,7 @@ public class HighstockAspNetMvc
         }
 
         string extendsClass = "";
-        if (_seriesMappings.ContainsKey(item.Title))
+        if (_seriesMappings.ContainsKey(item.FullName))
             extendsClass = ": Series";
         else
             extendsClass = ": BaseObject";
@@ -358,7 +361,8 @@ public class HighstockAspNetMvc
         }
 
         // For some reason bar is missing from the chart and series types in the JSON - possibly omission
-        if (apiItem.FullName == "chart.type" ||
+        if (
+            //apiItem.FullName == "chart.type" ||
             apiItem.FullName == "series.type" ||
             apiItem.FullName == "series<bar>.type" ||
             apiItem.FullName == "series<heatmap>.type" ||
@@ -472,6 +476,9 @@ public class HighstockAspNetMvc
         if (propertyName == "YAxis" && child.Parent == "navigator")
             returnType = "YAxis";
 
+        if (propertyName == "Symbols" && child.Parent == "navigator-handles")
+            returnType = "List<string>";
+
         return propertyTemplate
          .Replace("{HighTemplate.Name}", propertyName)
          .Replace("{HighTemplate.Type}", returnType)
@@ -550,7 +557,7 @@ public class HighstockAspNetMvc
         //    return "";
 
         // fully qualified names that are collections
-        if (_lists.Contains(child.FullName))
+        if ((_lists.Contains(child.Title) || _lists.Contains(child.FullName)) && child.Parent != "navigator")
         {
             if (child.FullName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
@@ -564,8 +571,23 @@ public class HighstockAspNetMvc
 
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
-        if (_propertyTypeMappings.Contains(child.FullName))
+        if (_propertyTypeMappings.Contains(child.Title) || _propertyTypeMappings.Contains(child.FullName))
+        {
+            if (propertyName == "Series" && child.Parent == "navigator")
+                return "if (Series != Series_DefaultValue) h.Add(\"series\",Series.ToHashtable());\n\t\t\t";
+
+            if (propertyName == "XAxis" && child.Parent == "navigator")
+                return "if (XAxis.IsDirty()) h.Add(\"xAxis\",XAxis.ToHashtable());\n\t\t\t";
+
+            if (propertyName == "YAxis" && child.Parent == "navigator")
+                return "if (YAxis.IsDirty()) h.Add(\"yAxis\",YAxis.ToHashtable());\n\t\t\t";
+
+            if (propertyName == "Shadow")
+                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+
+
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+        }
         // property that needs custom serialization (Animation, Shadow, etc)
         if (_customProperties.Contains(propertyName))
         {
@@ -603,18 +625,6 @@ public class HighstockAspNetMvc
         {
             if (propertyName == "PointDescriptionThreshold")
                 return "if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)\n\t\t\t{\n\t\t\t\tif (PointDescriptionThreshold != null)\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", PointDescriptionThreshold);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", false);\n\t\t\t}\n\t\t\t";
-
-            if (propertyName == "Series" && child.Parent == "navigator")
-                return "if (Series != Series_DefaultValue) h.Add(\"series\",Series.ToHashtable());\n\t\t\t";
-
-            if (propertyName == "XAxis" && child.Parent == "navigator")
-                return "if (XAxis.IsDirty()) h.Add(\"xAxis\",XAxis.ToHashtable());\n\t\t\t";
-
-            if (propertyName == "YAxis" && child.Parent == "navigator")
-                return "if (YAxis.IsDirty()) h.Add(\"yAxis\",YAxis.ToHashtable());\n\t\t\t";
-
-            if (propertyName == "Shadow")
-                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
@@ -697,6 +707,7 @@ public class HighstockAspNetMvc
         _typeMappings.Add("Array.<Array<Mixed>>", "List<List<object>>");
         _typeMappings.Add("Array.<Object>", "List<object>");
         _typeMappings.Add("Array.<(String|Number)>", "List<string>");
+        _typeMappings.Add("Array", "List<double>");
     }
 
     private void InitPropertyTypeMappings()
@@ -708,16 +719,16 @@ public class HighstockAspNetMvc
         _propertyTypeMappings.Add("center", "new string[]");
         _propertyTypeMappings.Add("margin", "new string[]");
         _propertyTypeMappings.Add("position", "Hashtable");
-        _propertyTypeMappings.Add("dateTimeLabelFormats", "Hashtable");
+        //_propertyTypeMappings.Add("dateTimeLabelFormats", "Hashtable");
         _propertyTypeMappings.Add("inputPosition", "Hashtable");
         _propertyTypeMappings.Add("attr", "Hashtable");
-        _propertyTypeMappings.Add("style", "Hashtable");
+        //_propertyTypeMappings.Add("style", "Hashtable");
         _propertyTypeMappings.Add("inputStyle", "Hashtable");
         _propertyTypeMappings.Add("labelStyle", "Hashtable");
         _propertyTypeMappings.Add("stack", "string");
         _propertyTypeMappings.Add("symbol", "string");
         _propertyTypeMappings.Add("trackBorderColor", "string");
-        _propertyTypeMappings.Add("background", "List<Background>");
+        //_propertyTypeMappings.Add("background", "List<Background>");
         _propertyTypeMappings.Add("menuItems", "List<MenuItem>");
         _propertyTypeMappings.Add("crosshairs", "List<Crosshair>");
         _propertyTypeMappings.Add("stops", "List<Stop>");
@@ -749,9 +760,9 @@ public class HighstockAspNetMvc
         _propertyInitMappings.Add("center", "new string[] { null, null }");
         _propertyInitMappings.Add("margin", "new string[] {}");
         _propertyInitMappings.Add("position", "new Hashtable()");
-        _propertyInitMappings.Add("dateTimeLabelFormats", "new Hashtable()");
+        //_propertyInitMappings.Add("dateTimeLabelFormats", "new Hashtable()");
         _propertyInitMappings.Add("inputPosition", "new Hashtable()");
-        _propertyInitMappings.Add("style", "new Hashtable()");
+        //_propertyInitMappings.Add("style", "new Hashtable()");
         _propertyInitMappings.Add("inputStyle", "new Hashtable()");
         _propertyInitMappings.Add("labelStyle", "new Hashtable()");
         _propertyInitMappings.Add("columns", "new List<List<Object>>()");
@@ -768,6 +779,12 @@ public class HighstockAspNetMvc
         _propertyInitMappings.Add("xAxis.plotBands", "new List<XAxisPlotBands>()");
         _propertyInitMappings.Add("xAxis.plotBands.label.style", "new Hashtable()");
         _propertyInitMappings.Add("series<treemap>.levels", "new List<TreemapSeriesLevels>()");
+        _propertyInitMappings.Add("yAxis.resize.controlledAxis.next", "new List<string>()");
+        _propertyInitMappings.Add("yAxis.resize.controlledAxis.prev", "new List<string>()");
+        _propertyInitMappings.Add("navigator.yAxis.resize.controlledAxis.next", "new List<string>()");
+        _propertyInitMappings.Add("navigator.yAxis.resize.controlledAxis.prev", "new List<string>()");
+        _propertyInitMappings.Add("chart.parallelAxes.resize.controlledAxis.next", "new List<string>()");
+        _propertyInitMappings.Add("chart.parallelAxes.resize.controlledAxis.prev", "new List<string>()");
     }
 
     private void InitLists()
@@ -784,6 +801,7 @@ public class HighstockAspNetMvc
         _lists.Add("xAxis.plotBands");
         _lists.Add("xAxis.plotLines");
         _lists.Add("series<treemap>.levels");
+        _lists.Add("navigator.handles.symbols");
     }
 
     private void InitSeriesMappings()
@@ -859,9 +877,12 @@ public class HighstockAspNetMvc
 
     public string MapDefaultValue(ApiItem item)
     {
-        string defaults = item.Defaults;
+        if (item.Defaults != null)
+            item.Defaults = item.Defaults.Replace("\r\t\t", string.Empty);
 
-        if (item.Defaults == "\n")
+        string defaults = item.Defaults;
+        
+        if (defaults == "\n")
             return "null";
 
         if (item.Title.ToLower() == "data" && item.Parent != null)
@@ -900,6 +921,12 @@ public class HighstockAspNetMvc
         if (item.Title.ToLower() == "yaxis" && item.Parent == "navigator")
             return "new YAxis()";
 
+        if (item.Title.ToLower() == "series" && item.Parent == "navigator")
+            return "new Series()";
+
+        if (item.Title.ToLower() == "symbols" && item.Parent == "navigator-handles")
+            return "new List<string>()";
+
         if (_propertyInitMappings[item.FullName] != null)
         {
             defaults = _propertyInitMappings[item.FullName].ToString();
@@ -916,6 +943,9 @@ public class HighstockAspNetMvc
 
         if (!item.IsParent)
         {
+            if (item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis" || item.Title.ToLower() == "position")
+                return defaults;
+
             if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
             {
                 return "double.MinValue";
@@ -939,7 +969,7 @@ public class HighstockAspNetMvc
                                         .Replace("[", "{")
                                         .Replace("]", "}");
                 }
-                if (item.ReturnType == "Array.<Number>")
+                if (item.ReturnType == "Array.<Number>" || item.ReturnType == "Array")
                 {
                     return "new List<double> " + item.Defaults
                                         .Replace("[", "{")
@@ -977,6 +1007,8 @@ public class HighstockAspNetMvc
                 return "\"\"";
             if (defaults == null)
                 return "null";
+            if (defaults == "[]")
+                return "{}";
         }
         else
         {
@@ -990,7 +1022,7 @@ public class HighstockAspNetMvc
                 return _propertyInitMappings[item.Title].ToString();
             }
 
-            if (item.ReturnType == "Array." && item.FullName.ToLower().EndsWith("zones"))
+            if (item.ReturnType == "Array" && item.FullName.ToLower().EndsWith("zones"))
                 return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
 
             if (item.FullName.ToLower().Contains("data.datalabels"))

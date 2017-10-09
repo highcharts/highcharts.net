@@ -29,15 +29,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		Scatter, 
 		Solidgauge, 
 		Treemap, 
-		Waterfall, 
-		Ohlc, 
-		Bar, 
-		Heatmap, 
-		Pyramid, 
-		Polygon, 
-		Treemap, 
-		Candlestick, 
-		Flags, 
-		Solidgauge
+		Waterfall
     }
 }

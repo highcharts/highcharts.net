@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public LabelsItems()
 		{
 			Html = Html_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = null;
 			
 		}	
 		

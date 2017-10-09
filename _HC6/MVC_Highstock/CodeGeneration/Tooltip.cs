@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			BorderRadius = BorderRadius_DefaultValue = 3;
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new TooltipDateTimeLabelFormats();
 			Padding = Padding_DefaultValue = 8;
 			Snap = Snap_DefaultValue = 10/25;
 			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(247,247,247,0.85)";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new TooltipStyle();
 			BorderColor = BorderColor_DefaultValue = "null";
 			FollowPointer = FollowPointer_DefaultValue = null;
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
@@ -69,8 +69,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>For series on a datetime axes, the date format in the tooltip&#39;sheader will by default be guessed based on the closest data points.This member gives the default string representations used foreach unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p><p>Defaults to:</p><pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre>
 		/// </summary>
-		public Hashtable DateTimeLabelFormats { get; set; }
-		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
+		public TooltipDateTimeLabelFormats DateTimeLabelFormats { get; set; }
+		private TooltipDateTimeLabelFormats DateTimeLabelFormats_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -125,8 +125,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>CSS styles for the tooltip. The tooltip can also be styled throughthe CSS class <code>.highcharts-tooltip</code>.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public TooltipStyle Style { get; set; }
+		private TooltipStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -239,7 +239,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (DateTimeLabelFormats.IsDirty()) h.Add("dateTimeLabelFormats",DateTimeLabelFormats.ToHashtable());
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);

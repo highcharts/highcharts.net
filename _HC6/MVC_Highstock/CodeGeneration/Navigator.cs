@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MaskFill = MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
 			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
 			OutlineWidth = OutlineWidth_DefaultValue = 2;
-			Series = Series_DefaultValue = new List<Series>();
+			Series = Series_DefaultValue = new Series();
 			XAxis = XAxis_DefaultValue = new XAxis();
 			YAxis = YAxis_DefaultValue = new YAxis();
 			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
@@ -133,7 +133,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MaskFill != MaskFill_DefaultValue) h.Add("maskFill",MaskFill);
 			if (OutlineColor != OutlineColor_DefaultValue) h.Add("outlineColor",OutlineColor);
 			if (OutlineWidth != OutlineWidth_DefaultValue) h.Add("outlineWidth",OutlineWidth);
-			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
+			if (Series != Series_DefaultValue) h.Add("series",Series.ToHashtable());
 			if (XAxis.IsDirty()) h.Add("xAxis",XAxis.ToHashtable());
 			if (YAxis.IsDirty()) h.Add("yAxis",YAxis.ToHashtable());
 			if (AdaptToUpdatedData != AdaptToUpdatedData_DefaultValue) h.Add("adaptToUpdatedData",AdaptToUpdatedData);

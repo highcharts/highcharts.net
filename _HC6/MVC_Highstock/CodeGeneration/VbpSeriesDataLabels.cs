@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			VerticalAlign = VerticalAlign_DefaultValue = VbpSeriesDataLabelsVerticalAlign.Top;
 			Format = Format_DefaultValue = "P: {point.volumePos:.2f} | N: {point.volumeNeg:.2f}";
 			Padding = Padding_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new VbpSeriesDataLabelsStyle();
 			Align = Align_DefaultValue = VbpSeriesDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
 			X = X_DefaultValue = 0;
@@ -80,8 +80,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Styles for the label. The default <code>color</code> setting is <code>&quot;contrast&quot;</code>,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.</p><p>The <code>textOutline</code> is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn&#39;t work well, in which cases it canbe disabled by setting it to <code>&quot;none&quot;</code>. When <code>useHTML</code> is true, the<code>textOutline</code> will not be picked up. In this, case, the same effectcan be acheived through the <code>text-shadow</code> CSS property.</p>
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public VbpSeriesDataLabelsStyle Style { get; set; }
+		private VbpSeriesDataLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

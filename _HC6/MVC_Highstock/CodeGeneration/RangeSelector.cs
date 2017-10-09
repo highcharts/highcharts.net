@@ -204,9 +204,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (InputPosition.IsDirty()) h.Add("inputPosition",InputPosition.ToHashtable());
+			if (InputPosition != InputPosition_DefaultValue) h.Add("inputPosition",InputPosition);
 			if (ButtonPosition.IsDirty()) h.Add("buttonPosition",ButtonPosition.ToHashtable());
-			if (LabelStyle.IsDirty()) h.Add("labelStyle",LabelStyle.ToHashtable());
+			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
 			if (AllButtonsEnabled != AllButtonsEnabled_DefaultValue) h.Add("allButtonsEnabled",AllButtonsEnabled);
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
