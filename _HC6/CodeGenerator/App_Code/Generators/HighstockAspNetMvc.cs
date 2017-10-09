@@ -443,6 +443,9 @@ public class HighstockAspNetMvc
         if (child.Values != null && child.Values.Count > 0)
             returnType = GetClassNameFromItem(child);
 
+        if (propertyName == "VolumeSeriesID")
+            returnType = "string";
+
         if (propertyName == "PointDescriptionThreshold")
         {
             returnType = "long?";
@@ -746,6 +749,7 @@ public class HighstockAspNetMvc
         _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
         _propertyTypeMappings.Add("colors", "List<string>");
         _propertyTypeMappings.Add("pane.background", "List<PaneBackground>");
+        _propertyTypeMappings.Add("plotOptions.ikh.senkouSpan.styles.fill", "string");
     }
 
     private void InitPropertyInitMappings()
@@ -786,7 +790,9 @@ public class HighstockAspNetMvc
         _propertyInitMappings.Add("navigator.yAxis.resize.controlledAxis.prev", "new List<string>()");
         _propertyInitMappings.Add("chart.parallelAxes.resize.controlledAxis.next", "new List<string>()");
         _propertyInitMappings.Add("chart.parallelAxes.resize.controlledAxis.prev", "new List<string>()");
-        _propertyInitMappings.Add("pane.background", "new List<PaneBackground>");
+        _propertyInitMappings.Add("pane.background", "new List<PaneBackground>()");
+        _propertyInitMappings.Add("plotOptions.ikh.senkouSpan.styles.fill", "\"rgba(255, 0, 0, 0.5)\"");
+        _propertyInitMappings.Add("volumeSeriesID", "\"volume\"");
     }
 
     private void InitLists()

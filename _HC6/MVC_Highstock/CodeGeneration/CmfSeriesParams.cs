@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public CmfSeriesParams()
 		{
 			Period = Period_DefaultValue = null;
-			VolumeSeriesID = VolumeSeriesID_DefaultValue = "volume";
+			VolumeSeriesID = VolumeSeriesID_DefaultValue = "'volume'";
 			Index = Index_DefaultValue = null;
 			
 		}	

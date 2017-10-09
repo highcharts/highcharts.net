@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Pane()
 		{
-			Background = Background_DefaultValue = new List<PaneBackground>;
+			Background = Background_DefaultValue = new List<PaneBackground>();
 			
 		}	
 		

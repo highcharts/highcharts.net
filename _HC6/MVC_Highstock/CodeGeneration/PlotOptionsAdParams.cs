@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsAdParams()
 		{
-			VolumeSeriesID = VolumeSeriesID_DefaultValue = volume;
+			VolumeSeriesID = VolumeSeriesID_DefaultValue = "volume";
 			Index = Index_DefaultValue = null;
 			Period = Period_DefaultValue = null;
 			
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>The id of volume series which is mandatory.For example using OHLC data, volumeSeriesID=&#39;volume&#39; means the indicator will be calculated using OHLC and volume values.</p>
 		/// </summary>
-		public double? VolumeSeriesID { get; set; }
-		private double? VolumeSeriesID_DefaultValue { get; set; }
+		public string VolumeSeriesID { get; set; }
+		private string VolumeSeriesID_DefaultValue { get; set; }
 		 
 
 		/// <summary>

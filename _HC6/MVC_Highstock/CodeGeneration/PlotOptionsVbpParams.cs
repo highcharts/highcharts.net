@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsVbpParams()
 		{
 			Ranges = Ranges_DefaultValue = null;
-			VolumeSeriesID = VolumeSeriesID_DefaultValue = "volume";
+			VolumeSeriesID = VolumeSeriesID_DefaultValue = "'volume'";
 			
 		}	
 		
