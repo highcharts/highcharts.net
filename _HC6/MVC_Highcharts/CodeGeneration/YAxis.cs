@@ -36,6 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TickWidth = TickWidth_DefaultValue = 0;
 			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
+			Opposite = Opposite_DefaultValue = true;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
@@ -238,6 +239,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<YAxisPlotLines> PlotLines { get; set; }
 		private List<YAxisPlotLines> PlotLines_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>Whether to display the axis on the opposite side of the normal. Thenormal is on the left side for vertical axes and bottom for horizontal,so the opposite sides will be right and top respectively. In Highstock1.x, the Y axis was placed on the left side by default.</p>
+		/// </summary>
+		public bool? Opposite { get; set; }
+		private bool? Opposite_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -588,6 +596,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
+			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));

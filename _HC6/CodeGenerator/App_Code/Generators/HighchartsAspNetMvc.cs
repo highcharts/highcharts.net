@@ -57,7 +57,7 @@ public class HighchartsAspNetMvc
     {
         ParseItems();
 
-        //var items = _apiItems.Where(p => p.FullName.ToLower().Contains("plotoptions.tilemap.data"));
+        //var items = _apiItems.Where(p => p.FullName.ToLower().Contains("yaxis.opposite"));
 
         GenerateClass(new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS });
         for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)

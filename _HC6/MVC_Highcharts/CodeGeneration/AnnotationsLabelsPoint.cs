@@ -56,8 +56,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
 			
 
 			return h;

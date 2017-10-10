@@ -389,8 +389,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
