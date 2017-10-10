@@ -247,7 +247,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
-			if (Series != Series_DefaultValue) h.Add("series",Series);
+			if (Series != Series_DefaultValue) h.Add("series", HashifyList(Series));
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
 			if (Legend.IsDirty()) h.Add("legend",Legend.ToHashtable());

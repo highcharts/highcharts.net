@@ -503,6 +503,9 @@ public class HighchartsAspNetMvc
             return "List<" + result + "Data" + ">";
         }
 
+        if (child.Parent != ROOT_CLASS && (child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis"))
+            return "string";
+
         if (_propertyTypeMappings[child.FullName] != null)
             return _propertyTypeMappings[child.FullName].ToString();
         if (_propertyTypeMappings[child.Title] != null)
@@ -562,6 +565,9 @@ public class HighchartsAspNetMvc
             if (child.FullName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
 
+            if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && child.Parent != "Highcharts")
+                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
         if (_lists.Contains(propertyName))
@@ -581,6 +587,9 @@ public class HighchartsAspNetMvc
         {
             if(child.FullName == "plotOptions.series")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+
+            if (child.Title.ToLower() == "series" && child.Parent == "Highcharts")
+                return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
@@ -951,7 +960,10 @@ public class HighchartsAspNetMvc
 
         if (!item.IsParent)
         {
-            if (item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis" || item.Title.ToLower() == "position")
+            if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.Parent == null)
+                return defaults;
+
+            if (item.Title.ToLower() == "position")
                 return defaults;
 
             if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
@@ -960,6 +972,9 @@ public class HighchartsAspNetMvc
             }
             if (item.ReturnType.ToLower() == "function" || item.ReturnType.ToLower() == "string|function")
                 return "\"\"";
+
+            if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.Parent != null)
+                defaults = "";
 
             if (!String.IsNullOrEmpty(item.Defaults))
             {

@@ -20,8 +20,8 @@ namespace Highsoft.Web.Mvc.Charts
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = null;
 			Type = Type_DefaultValue = HeatmapSeriesType.Null;
-			XAxis = XAxis_DefaultValue = new List<XAxis>();
-			YAxis = YAxis_DefaultValue = new List<YAxis>();
+			XAxis = XAxis_DefaultValue = "";
+			YAxis = YAxis_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = null;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
@@ -124,15 +124,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the <a href="#xAxis.id">axisid</a> or the index of the axis in the xAxis array, with0 being the first.</p>
 		/// </summary>
-		public List<XAxis> XAxis { get; set; }
-		private List<XAxis> XAxis_DefaultValue { get; set; }
+		public string XAxis { get; set; }
+		private string XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the <a href="#yAxis.id">axisid</a> or the index of the axis in the yAxis array, with0 being the first.</p>
 		/// </summary>
-		public List<YAxis> YAxis { get; set; }
-		private List<YAxis> YAxis_DefaultValue { get; set; }
+		public string YAxis { get; set; }
+		private string YAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -516,8 +516,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (NullColor != NullColor_DefaultValue) h.Add("nullColor",NullColor);
