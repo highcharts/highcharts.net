@@ -503,10 +503,10 @@ public class HighchartsAspNetMvc
             return "List<" + result + "Data" + ">";
         }
 
-        if (_propertyTypeMappings[child.Title] != null)
-            return _propertyTypeMappings[child.Title].ToString();
         if (_propertyTypeMappings[child.FullName] != null)
             return _propertyTypeMappings[child.FullName].ToString();
+        if (_propertyTypeMappings[child.Title] != null)
+            return _propertyTypeMappings[child.Title].ToString();
         if (_propertyTypeMappings[propertyName] != null)
             return _propertyTypeMappings[propertyName].ToString();
 
@@ -578,7 +578,12 @@ public class HighchartsAspNetMvc
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
         if (_propertyTypeMappings.Contains(child.Title) || _propertyTypeMappings.Contains(child.FullName))
+        {
+            if(child.FullName == "plotOptions.series")
+                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+        }
         // property that needs custom serialization (Animation, Shadow, etc)
         if (_customProperties.Contains(propertyName))
         {
@@ -741,6 +746,7 @@ public class HighchartsAspNetMvc
         _propertyTypeMappings.Add("xAxis.plotBands.label.style", "Hashtable");
         _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
         _propertyTypeMappings.Add("pane.background", "List<PaneBackground>");
+        _propertyTypeMappings.Add("plotOptions.series", "PlotOptionsSeries");
     }
 
     private void InitPropertyInitMappings()
@@ -776,6 +782,7 @@ public class HighchartsAspNetMvc
         _propertyInitMappings.Add("xAxis.plotBands.label.style", "new Hashtable()");
         _propertyInitMappings.Add("series<treemap>.levels", "new List<TreemapSeriesLevels>()");
         _propertyInitMappings.Add("pane.background", "new List<PaneBackground>()");
+        _propertyInitMappings.Add("plotOptions.series", "new PlotOptionsSeries()");
     }
 
     private void InitLists()

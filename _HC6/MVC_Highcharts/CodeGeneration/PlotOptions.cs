@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptions()
 		{
 			Bellcurve = Bellcurve_DefaultValue = new PlotOptionsBellcurve();
-			Series = Series_DefaultValue = new List<Series>();
+			Series = Series_DefaultValue = new PlotOptionsSeries();
 			Bullet = Bullet_DefaultValue = new PlotOptionsBullet();
 			Funnel = Funnel_DefaultValue = new PlotOptionsFunnel();
 			Pyramid = Pyramid_DefaultValue = new PlotOptionsPyramid();
@@ -66,8 +66,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>General options for all series types.</p>
 		/// </summary>
-		public List<Series> Series { get; set; }
-		private List<Series> Series_DefaultValue { get; set; }
+		public PlotOptionsSeries Series { get; set; }
+		private PlotOptionsSeries Series_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -327,7 +327,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Bellcurve.IsDirty()) h.Add("bellcurve",Bellcurve.ToHashtable());
-			if (Series != Series_DefaultValue) h.Add("series",Series);
+			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
 			if (Bullet.IsDirty()) h.Add("bullet",Bullet.ToHashtable());
 			if (Funnel.IsDirty()) h.Add("funnel",Funnel.ToHashtable());
 			if (Pyramid.IsDirty()) h.Add("pyramid",Pyramid.ToHashtable());
