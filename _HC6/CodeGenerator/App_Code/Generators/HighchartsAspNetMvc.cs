@@ -591,13 +591,15 @@ public class HighchartsAspNetMvc
             if (child.Title.ToLower() == "series" && child.Parent == "Highcharts")
                 return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
+            if (propertyName.ToLower().Contains("pointplacement"))
+                return "if (PointPlacement.IsDirty())\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToJSON());\n\t\t\t";
+
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
         // property that needs custom serialization (Animation, Shadow, etc)
         if (_customProperties.Contains(propertyName))
         {
-            if (propertyName.ToLower().Contains("pointplacement"))
-                return "if (PointPlacement.IsDirty())\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToJSON());\n\t\t\t";
+            
 
             return String.Format(customPropertyFormat, propertyName, FirstCharToLower(propertyName));
         }

@@ -452,7 +452,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsBellcurvePointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
-			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement);
+			if (PointPlacement.IsDirty())
+				if (PointPlacement.Value.HasValue)
+					h.Add("pointPlacement", PointPlacement.Value);
+				else
+					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);

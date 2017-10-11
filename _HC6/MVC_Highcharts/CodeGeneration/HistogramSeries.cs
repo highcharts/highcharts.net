@@ -644,7 +644,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
-			if (PointPlacement != PointPlacement_DefaultValue) h.Add("pointPlacement",PointPlacement);
+			if (PointPlacement.IsDirty())
+				if (PointPlacement.Value.HasValue)
+					h.Add("pointPlacement", PointPlacement.Value);
+				else
+					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
