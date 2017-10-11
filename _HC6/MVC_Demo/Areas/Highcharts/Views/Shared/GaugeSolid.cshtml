@@ -14,45 +14,45 @@
 
 @using Highsoft.Web.Mvc.Charts
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        function loadData() {
-            setInterval(function () {
-                // Speed
-                var chart = $("#chartspeed").highcharts(),
-                    point,
-                    newVal,
-                    inc;
+    function loadData() {
+        setInterval(function () {
+            // Speed
+            var chart = $("#chartspeed").highcharts(),
+                point,
+                newVal,
+                inc;
 
-                if (chart) {
-                    point = chart.series[0].points[0];
-                    inc = Math.round((Math.random() - 0.5) * 100);
-                    newVal = point.y + inc;
+            if (chart) {
+                point = chart.series[0].points[0];
+                inc = Math.round((Math.random() - 0.5) * 100);
+                newVal = point.y + inc;
 
-                    if (newVal < 0 || newVal > 200) {
-                        newVal = point.y - inc;
-                    }
-
-                    point.update(newVal);
+                if (newVal < 0 || newVal > 200) {
+                    newVal = point.y - inc;
                 }
 
-                chart = $('#chartrpm').highcharts();
-                if (chart) {
-                    point = chart.series[0].points[0];
-                    inc = Math.random() - 0.5;
-                    newVal = point.y + inc;
+                point.update(newVal);
+            }
 
-                    if (newVal < 0 || newVal > 5) {
-                        newVal = point.y - inc;
-                    }
+            chart = $('#chartrpm').highcharts();
+            if (chart) {
+                point = chart.series[0].points[0];
+                inc = Math.random() - 0.5;
+                newVal = point.y + inc;
 
-                    point.update(newVal);
+                if (newVal < 0 || newVal > 5) {
+                    newVal = point.y - inc;
                 }
-            }, 2000);
-        }
 
-  
-    </script>
+                point.update(newVal);
+            }
+        }, 2000);
+    }
+
+
+</script>
 
 <table>
     <tr>
@@ -129,8 +129,9 @@
                     DataLabels = new PlotOptionsSolidgaugeDataLabels
                     {
                         Y = 5,
-                        BorderWidth = 0,
-                        UseHTML = true
+                        BorderWidth = 0
+                        //,
+                        //UseHTML = true
                     }
                 }
             },
@@ -154,45 +155,55 @@
         }
         }
         , "chartspeed")
-    )
+            )
 
         </td>
         <td>
             @(Html.Highsoft().Highcharts(
-        new Highcharts
+new Highcharts
+{
+    Chart = new Chart
+    {
+        Width = 300,
+        Height = 200,
+        Events = new ChartEvents
         {
-            Chart = new Chart
-            {
-                Width = 300,
-                Height = 200,
-                Events = new ChartEvents
-                {
-                    Load = "loadData"
-                }
-            },
-            Title = new Title
-            {
-                Text = null
-            },
-            Pane = new Pane
-            {
-                Center = new string[] { "50%", "85%" },
-                Size = "140%",
-                StartAngle = -90,
-                EndAngle = 90,
-                Background = new List<Background>
-                {
-                    new Background
+            Load = "loadData"
+        }
+    },
+    Title = new Title
+    {
+        Text = null
+    },
+    Pane = new Pane
+    {
+        Center = new string[] { "50%", "85%" },
+        Size = "140%",
+        StartAngle = -90,
+        EndAngle = 90,
+        Background = new List<PaneBackground>
+        {
+                    new PaneBackground
                     {
-                         BackgroundColor = "#EEE",
+                         BackgroundColor = new PaneBackgroundBackgroundColor()
+                         {
+                             Stops = new List<Stop>()
+                             {
+                                 new Stop()
+                                 {
+                                     Position = 0,
+                                     Color = "#EEE"
+                                 }
+                            }
+                         },
                          InnerRadius = "60%",
                          OuterRadius = "100%",
-                         Shape = "arc"
+                         Shape = PaneBackgroundShape.Arc
                     }
                 }
-            },
-            YAxis = new List<YAxis>
-            {            
+    },
+    YAxis = new List<YAxis>
+            {
                 new YAxis
                 {
                     Stops = new List<Stop>
@@ -214,33 +225,33 @@
                     Labels = new YAxisLabels
                     {
                         Y = 16
-                    }                    
-                }
-            },
-            Tooltip = new Tooltip
-            {
-                Enabled = false
-            },
-            PlotOptions = new PlotOptions
-            {
-                Solidgauge = new PlotOptionsSolidgauge
-                {
-                    DataLabels = new PlotOptionsSolidgaugeDataLabels
-                    {
-                        Y = 5,
-                        BorderWidth = 0,
-                        UseHTML = true
                     }
                 }
             },
-            Series = new List<Series>
+    Tooltip = new Tooltip
+    {
+        Enabled = false
+    },
+    PlotOptions = new PlotOptions
+    {
+        Solidgauge = new PlotOptionsSolidgauge
+        {
+            DataLabels = new PlotOptionsSolidgaugeDataLabels
+            {
+                Y = 5,
+                BorderWidth = 0,
+                //UseHTML = true
+            }
+        }
+    },
+    Series = new List<Series>
             {
                 new SolidgaugeSeries
                 {
                     Name = "RPM",
                     Data = new List<SolidgaugeSeriesData>
                     {
-                        new SolidgaugeSeriesData { Y = 1 }   
+                        new SolidgaugeSeriesData { Y = 1 }
                     },
                     DataLabels = new SolidgaugeSeriesDataLabels
                     {
@@ -252,12 +263,11 @@
                     }
                 }
             }
-        }
+}
         , "chartrpm")
-    )
+            )
         </td>
     </tr>
 
 </table>
 
-    
