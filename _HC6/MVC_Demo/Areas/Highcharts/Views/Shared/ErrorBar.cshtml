@@ -27,30 +27,30 @@ are using these types of charts*@
                 Text = "Temperature vs Rainfall"
             },
             XAxis = new List<XAxis>
-            {            
+            {
                 new XAxis
                 {
-                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }                                       
+                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
                 }
             },
             YAxis = new List<YAxis>
-            {            
+            {
                 new YAxis
                 {
                     Title = new YAxisTitle
                     {
                         Text = "Temperature",
-                        Style = new Hashtable
+                        Style = new YAxisTitleStyle()
                         {
-                            { "color", "#434348" }
+                            Color = "#434348"
                         }
                     },
                     Labels = new YAxisLabels
                     {
                         Format = "{value} °C",
-                        Style = new Hashtable
+                        Style = new YAxisLabelsStyle
                         {
-                            { "color", "#434348" }
+                            Color = "#434348"
                         }
                     }
                 },
@@ -61,17 +61,17 @@ are using these types of charts*@
                     Title = new YAxisTitle
                     {
                         Text = "Rainfall",
-                        Style = new Hashtable
+                        Style = new YAxisTitleStyle()
                         {
-                            { "color", "#7cb5ec" }
+                            Color = "#7cb5ec"
                         }
                     },
                     Labels = new YAxisLabels
                     {
                         Format = "{value} mm",
-                        Style = new Hashtable
+                        Style = new YAxisLabelsStyle()
                         {
-                            { "color", "#7cb5ec" }
+                            Color = "#7cb5ec"
                         }
                     }
                 }
@@ -81,12 +81,12 @@ are using these types of charts*@
                 Shared = true
             },
             Series = new List<Series>
-            {  
+            {
                 new ColumnSeries
                 {
                     Name = "Rainfall",
                     YAxis = "Rainfall",
-                    Tooltip = new ColumnSeriesTooltip 
+                    Tooltip = new ColumnSeriesTooltip
                     {
                         PointFormat = "<span style='font-weight: bold; color: {series.color}'>{series.name}</span>: <b>{point.y:.1f} mm</b> "
                     },
