@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			YAxis = YAxis_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = null;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			BorderWidth = BorderWidth_DefaultValue = null;
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
 			DataLabels = DataLabels_DefaultValue = new HeatmapSeriesDataLabels();
 			Tooltip = Tooltip_DefaultValue = new HeatmapSeriesTooltip();
@@ -147,6 +148,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The border width for each heat map item.</p>
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -520,6 +528,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (NullColor != NullColor_DefaultValue) h.Add("nullColor",NullColor);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());

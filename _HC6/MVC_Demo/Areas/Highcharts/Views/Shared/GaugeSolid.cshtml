@@ -79,14 +79,22 @@
                 Size = "140%",
                 StartAngle = -90,
                 EndAngle = 90,
-                Background = new List<Background>
+                Background = new List<PaneBackground>
                 {
-                    new Background
+                    new PaneBackground
                     {
-                         BackgroundColor = "#EEE",
+                         BackgroundColor = new PaneBackgroundBackgroundColor()
+                         {
+                             LinearGradient = new PaneBackgroundBackgroundColorLinearGradient() { X1 = 0, Y1 = 0, X2 = 0, Y2 = 1 },
+                             Stops = new List<Stop>()
+                             {
+                                 new Stop { Position = 0, Color = "#FFF" },
+                                 new Stop { Position = 1, Color = "#333" }
+                             }
+                         },
                          InnerRadius = "60%",
                          OuterRadius = "100%",
-                         Shape = "arc"
+                         Shape = PaneBackgroundShape.Arc
                     }
                 }
             },

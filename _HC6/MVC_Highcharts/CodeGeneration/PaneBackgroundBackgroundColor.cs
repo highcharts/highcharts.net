@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PaneBackgroundBackgroundColor()
 		{
 			LinearGradient = LinearGradient_DefaultValue = new PaneBackgroundBackgroundColorLinearGradient();
+			Stops = Stops_DefaultValue = new List<Stop>();
 			
 		}	
 		
@@ -24,6 +25,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PaneBackgroundBackgroundColorLinearGradient LinearGradient { get; set; }
 		private PaneBackgroundBackgroundColorLinearGradient LinearGradient_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public List<Stop> Stops { get; set; }
+		private List<Stop> Stops_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (LinearGradient.IsDirty()) h.Add("linearGradient",LinearGradient.ToHashtable());
+			if (Stops.Any()) h.Add("stops", GetLists(Stops));
 			
 
 			return h;
