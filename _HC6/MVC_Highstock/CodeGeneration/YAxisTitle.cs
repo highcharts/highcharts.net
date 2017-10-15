@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public YAxisTitle()
 		{
 			Rotation = Rotation_DefaultValue = 270;
+			Text = Text_DefaultValue = "Values";
 			Margin = Margin_DefaultValue = null;
 			Align = Align_DefaultValue = YAxisTitleAlign.Middle;
 			Style = Style_DefaultValue = new YAxisTitleStyle();
@@ -32,6 +33,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// <p>The actual text of the axis title. Horizontal texts can containHTML, but rotated texts are painted using vector techniques andmust be clean text. The Y axis title is disabled by setting the<code>text</code> option to <code>null</code>.</p>
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -95,6 +103,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
+			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());

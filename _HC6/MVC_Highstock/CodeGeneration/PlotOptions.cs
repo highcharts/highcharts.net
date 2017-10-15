@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Vwap = Vwap_DefaultValue = new PlotOptionsVwap();
 			Wma = Wma_DefaultValue = new PlotOptionsWma();
 			Zigzag = Zigzag_DefaultValue = new PlotOptionsZigzag();
-			Series = Series_DefaultValue = new List<Series>();
+			Series = Series_DefaultValue = new PlotOptionsSeries();
 			Streamgraph = Streamgraph_DefaultValue = new PlotOptionsStreamgraph();
 			Vector = Vector_DefaultValue = new PlotOptionsVector();
 			Windbarb = Windbarb_DefaultValue = new PlotOptionsWindbarb();
@@ -208,8 +208,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>General options for all series types.</p>
 		/// </summary>
-		public List<Series> Series { get; set; }
-		private List<Series> Series_DefaultValue { get; set; }
+		public PlotOptionsSeries Series { get; set; }
+		private PlotOptionsSeries Series_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -363,7 +363,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Vwap.IsDirty()) h.Add("vwap",Vwap.ToHashtable());
 			if (Wma.IsDirty()) h.Add("wma",Wma.ToHashtable());
 			if (Zigzag.IsDirty()) h.Add("zigzag",Zigzag.ToHashtable());
-			if (Series != Series_DefaultValue) h.Add("series",Series);
+			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
 			if (Streamgraph.IsDirty()) h.Add("streamgraph",Streamgraph.ToHashtable());
 			if (Vector.IsDirty()) h.Add("vector",Vector.ToHashtable());
 			if (Windbarb.IsDirty()) h.Add("windbarb",Windbarb.ToHashtable());

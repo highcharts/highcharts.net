@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
 			OutlineWidth = OutlineWidth_DefaultValue = 2;
 			Series = Series_DefaultValue = new Series();
-			XAxis = XAxis_DefaultValue = new XAxis();
-			YAxis = YAxis_DefaultValue = new YAxis();
+			XAxis = XAxis_DefaultValue = new NavigatorXAxis();
+			YAxis = YAxis_DefaultValue = new NavigatorYAxis();
 			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = true;
 			Opposite = Opposite_DefaultValue = false;
@@ -90,15 +90,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>Options for the navigator X axis. Default series optionsfor the navigator xAxis are:</p><pre>xAxis: {    tickWidth: 0,    lineWidth: 0,    gridLineWidth: 1,    tickPixelInterval: 200,    labels: {           align: 'left',        style: {            color: '#888'        },        x: 3,        y: -4    }}</pre>
 		/// </summary>
-		public XAxis XAxis { get; set; }
-		private XAxis XAxis_DefaultValue { get; set; }
+		public NavigatorXAxis XAxis { get; set; }
+		private NavigatorXAxis XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>Options for the navigator Y axis. Default series optionsfor the navigator yAxis are:</p><pre>yAxis: {    gridLineWidth: 0,    startOnTick: false,    endOnTick: false,    minPadding: 0.1,    maxPadding: 0.1,    labels: {        enabled: false    },    title: {        text: null    },    tickWidth: 0}</pre>
 		/// </summary>
-		public YAxis YAxis { get; set; }
-		private YAxis YAxis_DefaultValue { get; set; }
+		public NavigatorYAxis YAxis { get; set; }
+		private NavigatorYAxis YAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>

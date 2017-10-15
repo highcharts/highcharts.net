@@ -473,12 +473,6 @@ public class HighstockAspNetMvc
         if (propertyName == "Margin" && child.Parent.ToLower() == "chart")
             returnType = "double[]";
 
-        if (propertyName == "XAxis" && child.Parent == "navigator")
-            returnType = "XAxis";
-
-        if (propertyName == "YAxis" && child.Parent == "navigator")
-            returnType = "YAxis";
-
         if (propertyName == "Symbols" && child.Parent == "navigator-handles")
             returnType = "List<string>";
 
@@ -517,6 +511,9 @@ public class HighstockAspNetMvc
             }
             return "List<" + result + "Data" + ">";
         }
+
+        if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && (child.Parent != null && child.Parent != "navigator"))
+            return "string";
 
         if (_propertyTypeMappings[child.FullName] != null)
             return _propertyTypeMappings[child.FullName].ToString();
@@ -565,6 +562,9 @@ public class HighstockAspNetMvc
             if (child.FullName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
 
+            if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && (child.Parent != null && child.Parent != "navigator"))
+                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
         if (_lists.Contains(propertyName))
@@ -576,6 +576,9 @@ public class HighstockAspNetMvc
         }
         if (_propertyTypeMappings.Contains(child.Title) || _propertyTypeMappings.Contains(child.FullName))
         {
+            if (child.FullName == "plotOptions.series")
+                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+
             if (propertyName == "Series" && child.Parent == "navigator")
                 return "if (Series != Series_DefaultValue) h.Add(\"series\",Series.ToHashtable());\n\t\t\t";
 
@@ -587,7 +590,6 @@ public class HighstockAspNetMvc
 
             if (propertyName == "Shadow")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
-
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
@@ -738,6 +740,8 @@ public class HighstockAspNetMvc
         _propertyTypeMappings.Add("renderTo", "string");
         _propertyTypeMappings.Add("series", "List<Series>");
         _propertyTypeMappings.Add("drilldown.series", "List<Series>");
+        _propertyTypeMappings.Add("navigator.xAxis", "NavigatorXAxis");
+        _propertyTypeMappings.Add("navigator.yAxis", "NavigatorYAxis");
         _propertyTypeMappings.Add("xAxis", "List<XAxis>");
         _propertyTypeMappings.Add("yAxis", "List<YAxis>");
         _propertyTypeMappings.Add("yAxis.plotBands", "List<YAxisPlotBands>");
@@ -750,6 +754,7 @@ public class HighstockAspNetMvc
         _propertyTypeMappings.Add("colors", "List<string>");
         _propertyTypeMappings.Add("pane.background", "List<PaneBackground>");
         _propertyTypeMappings.Add("plotOptions.ikh.senkouSpan.styles.fill", "string");
+        _propertyTypeMappings.Add("plotOptions.series", "PlotOptionsSeries");
     }
 
     private void InitPropertyInitMappings()
@@ -775,6 +780,8 @@ public class HighstockAspNetMvc
         _propertyInitMappings.Add("seriesMapping", "new List<object>()");
         _propertyInitMappings.Add("keys", "new List<string>()");
         _propertyInitMappings.Add("series", "new List<Series>()");
+        _propertyInitMappings.Add("navigator.xAxis", "new NavigatorXAxis()");
+        _propertyInitMappings.Add("navigator.yAxis", "new NavigatorYAxis()");
         _propertyInitMappings.Add("xAxis", "new List<XAxis>()");
         _propertyInitMappings.Add("yAxis", "new List<YAxis>()");
         _propertyInitMappings.Add("yAxis.plotLines", "new List<YAxisPlotLines>()");
@@ -793,6 +800,7 @@ public class HighstockAspNetMvc
         _propertyInitMappings.Add("pane.background", "new List<PaneBackground>()");
         _propertyInitMappings.Add("plotOptions.ikh.senkouSpan.styles.fill", "\"rgba(255, 0, 0, 0.5)\"");
         _propertyInitMappings.Add("volumeSeriesID", "\"volume\"");
+        _propertyInitMappings.Add("plotOptions.series", "new PlotOptionsSeries()");
     }
 
     private void InitLists()
@@ -889,7 +897,7 @@ public class HighstockAspNetMvc
             item.Defaults = item.Defaults.Replace("\r\t\t", string.Empty);
 
         string defaults = item.Defaults;
-        
+
         if (defaults == "\n")
             return "null";
 
@@ -923,12 +931,6 @@ public class HighstockAspNetMvc
         if (item.Title.ToLower() == "margin" && item.Parent.ToLower() == "chart")
             return "new double[]{}";
 
-        if (item.Title.ToLower() == "xaxis" && item.Parent == "navigator")
-            return "new XAxis()";
-
-        if (item.Title.ToLower() == "yaxis" && item.Parent == "navigator")
-            return "new YAxis()";
-
         if (item.Title.ToLower() == "series" && item.Parent == "navigator")
             return "new Series()";
 
@@ -951,7 +953,13 @@ public class HighstockAspNetMvc
 
         if (!item.IsParent)
         {
-            if (item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis" || item.Title.ToLower() == "position")
+            if (item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis")
+                if (item.Parent == null && item.Parent == "navigator")
+                    return defaults;
+                else
+                    return "\"\"";
+
+            if (item.Title.ToLower() == "position")
                 return defaults;
 
             if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
