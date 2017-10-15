@@ -82,7 +82,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Stacking = Stacking_DefaultValue = FlagsSeriesStacking.Null;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new FlagsSeriesZone();
+			Zones = Zones_DefaultValue = new List<FlagsSeriesZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = null;
 			CompareBase = CompareBase_DefaultValue = FlagsSeriesCompareBase.Min;
@@ -579,8 +579,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code>option.</p><p>In styled mode, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">viewlive demo</a>).</p>
 		/// </summary>
-		public FlagsSeriesZone Zones { get; set; }
-		private FlagsSeriesZone Zones_DefaultValue { get; set; }
+		public List<FlagsSeriesZone> Zones { get; set; }
+		private List<FlagsSeriesZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -746,7 +746,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));

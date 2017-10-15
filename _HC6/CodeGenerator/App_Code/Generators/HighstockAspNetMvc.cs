@@ -524,7 +524,7 @@ public class HighstockAspNetMvc
         if (_typeMappings[returnType] != null)
             return _typeMappings[returnType].ToString();
 
-        if (child.ReturnType == "Array" && child.FullName.ToLower().EndsWith("zones"))
+        if (child.ReturnType == "Array" && child.Title == "zones")
             returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones", "Zone"));
         else
         if (child.IsParent)
@@ -616,7 +616,7 @@ public class HighstockAspNetMvc
                 if (propertyName == "Buttons" && child.Parent == "rangeSelector")
                     return "if (Buttons != Buttons_DefaultValue)\n\t\t\t{\n\t\t\t\tList<Hashtable> buttons = new List<Hashtable>();\n\t\t\t\tforeach (var item in Buttons)\n\t\t\t\t\tbuttons.Add(item.ToHashtable());\n\n\t\t\t\th.Add(\"buttons\", buttons);\n\t\t\t}\n\t\t\t";
 
-                if (child.ReturnType == "Array" && child.FullName.ToLower().EndsWith("zones"))
+                if (child.ReturnType == "Array" && child.Title == "zones")
                     return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
             }
 
@@ -755,6 +755,7 @@ public class HighstockAspNetMvc
         _propertyTypeMappings.Add("pane.background", "List<PaneBackground>");
         _propertyTypeMappings.Add("plotOptions.ikh.senkouSpan.styles.fill", "string");
         _propertyTypeMappings.Add("plotOptions.series", "PlotOptionsSeries");
+        //_propertyTypeMappings.Add("plotOptions.series.zones", "List<PlotOptionsSeriesZone>");
     }
 
     private void InitPropertyInitMappings()
@@ -801,6 +802,7 @@ public class HighstockAspNetMvc
         _propertyInitMappings.Add("plotOptions.ikh.senkouSpan.styles.fill", "\"rgba(255, 0, 0, 0.5)\"");
         _propertyInitMappings.Add("volumeSeriesID", "\"volume\"");
         _propertyInitMappings.Add("plotOptions.series", "new PlotOptionsSeries()");
+        //_propertyInitMappings.Add("plotOptions.series.zones", "new List<PlotOptionsSeriesZone>()");
     }
 
     private void InitLists()
@@ -818,6 +820,7 @@ public class HighstockAspNetMvc
         _lists.Add("xAxis.plotLines");
         _lists.Add("series<treemap>.levels");
         _lists.Add("navigator.handles.symbols");
+        //_lists.Add("plotOptions.series.zones");
     }
 
     private void InitSeriesMappings()
@@ -1038,7 +1041,7 @@ public class HighstockAspNetMvc
                 return _propertyInitMappings[item.Title].ToString();
             }
 
-            if (item.ReturnType == "Array" && item.FullName.ToLower().EndsWith("zones"))
+            if (item.ReturnType == "Array" && item.Title == "zones")
                 return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
 
             if (item.FullName.ToLower().Contains("data.datalabels"))

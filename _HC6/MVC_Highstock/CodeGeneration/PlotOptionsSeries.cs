@@ -66,7 +66,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsSeriesTooltip();
-			Zones = Zones_DefaultValue = new PlotOptionsSeriesZone();
+			Zones = Zones_DefaultValue = new List<PlotOptionsSeriesZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = null;
 			CompareBase = CompareBase_DefaultValue = PlotOptionsSeriesCompareBase.Min;
@@ -441,8 +441,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// <p>An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code>option.</p><p>In styled mode, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">viewlive demo</a>).</p>
 		/// </summary>
-		public PlotOptionsSeriesZone Zones { get; set; }
-		private PlotOptionsSeriesZone Zones_DefaultValue { get; set; }
+		public List<PlotOptionsSeriesZone> Zones { get; set; }
+		private List<PlotOptionsSeriesZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -522,7 +522,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));

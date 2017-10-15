@@ -29,12 +29,12 @@
             {
                 Series = new PlotOptionsSeries
                 {
-                    Zones = new PlotOptionsSeriesZones()
+                    Zones = new List<PlotOptionsSeriesZone>()
                     {
-                        ClassName = "zone-negative",
-                        Value = 0,
-                        FillColor = "#FF0000 ",
-                        Color = "#FF0000 "
+                        new PlotOptionsSeriesZone()
+                        {
+                            ClassName = "zone-negative",
+                        }
                     }
                 }
             },
@@ -45,11 +45,6 @@
                    Data = ViewBag.AppleData as List<ColumnSeriesData>,
                    Name = "Apple Stock Price",
                    TurboThreshold = 10000,
-                   //Marker = new ColumnSeriesMarker
-                   //{
-                   //    Enabled = true,
-                   //    Radius = 3
-                   //},
                    Tooltip = new ColumnSeriesTooltip
                    {
                        ValueDecimals = 2
