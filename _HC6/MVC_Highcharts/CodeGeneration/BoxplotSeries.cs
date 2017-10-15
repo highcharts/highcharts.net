@@ -90,7 +90,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Stacking = Stacking_DefaultValue = BoxplotSeriesStacking.Null;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new BoxplotSeriesZone();
+			Zones = Zones_DefaultValue = new List<BoxplotSeriesZone>();
 			Marker = Marker_DefaultValue = new BoxplotSeriesMarker();
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			DashStyle = DashStyle_DefaultValue = BoxplotSeriesDashStyle.Solid;
@@ -636,8 +636,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code>option.</p><p>In styled mode, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">viewlive demo</a>).</p>
 		/// </summary>
-		public BoxplotSeriesZone Zones { get; set; }
-		private BoxplotSeriesZone Zones_DefaultValue { get; set; }
+		public List<BoxplotSeriesZone> Zones { get; set; }
+		private List<BoxplotSeriesZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -766,7 +766,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));

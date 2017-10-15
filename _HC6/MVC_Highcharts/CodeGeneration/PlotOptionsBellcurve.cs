@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsBellcurveTooltip();
-			Zones = Zones_DefaultValue = new PlotOptionsBellcurveZone();
+			Zones = Zones_DefaultValue = new List<PlotOptionsBellcurveZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
 			
 		}	
@@ -399,8 +399,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code>option.</p><p>In styled mode, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">viewlive demo</a>).</p>
 		/// </summary>
-		public PlotOptionsBellcurveZone Zones { get; set; }
-		private PlotOptionsBellcurveZone Zones_DefaultValue { get; set; }
+		public List<PlotOptionsBellcurveZone> Zones { get; set; }
+		private List<PlotOptionsBellcurveZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -465,7 +465,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			
 

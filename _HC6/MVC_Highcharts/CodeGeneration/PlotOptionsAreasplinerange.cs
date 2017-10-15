@@ -64,7 +64,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Stacking = Stacking_DefaultValue = PlotOptionsAreasplinerangeStacking.Null;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new PlotOptionsAreasplinerangeZone();
+			Zones = Zones_DefaultValue = new List<PlotOptionsAreasplinerangeZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
 			
 		}	
@@ -423,8 +423,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code>option.</p><p>In styled mode, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">viewlive demo</a>).</p>
 		/// </summary>
-		public PlotOptionsAreasplinerangeZone Zones { get; set; }
-		private PlotOptionsAreasplinerangeZone Zones_DefaultValue { get; set; }
+		public List<PlotOptionsAreasplinerangeZone> Zones { get; set; }
+		private List<PlotOptionsAreasplinerangeZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -492,7 +492,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			
 

@@ -73,7 +73,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Stacking = Stacking_DefaultValue = SolidgaugeSeriesStacking.Null;
 			Step = Step_DefaultValue = SolidgaugeSeriesStep.Null;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new SolidgaugeSeriesZone();
+			Zones = Zones_DefaultValue = new List<SolidgaugeSeriesZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
 			
 		}	
@@ -495,8 +495,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code>option.</p><p>In styled mode, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">viewlive demo</a>).</p>
 		/// </summary>
-		public SolidgaugeSeriesZone Zones { get; set; }
-		private SolidgaugeSeriesZone Zones_DefaultValue { get; set; }
+		public List<SolidgaugeSeriesZone> Zones { get; set; }
+		private List<SolidgaugeSeriesZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -573,7 +573,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
 			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			
 

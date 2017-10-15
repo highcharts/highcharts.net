@@ -74,7 +74,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Step = Step_DefaultValue = ArearangeSeriesStep.Null;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new ArearangeSeriesZone();
+			Zones = Zones_DefaultValue = new List<ArearangeSeriesZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
 			
 		}	
@@ -503,8 +503,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code>option.</p><p>In styled mode, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">viewlive demo</a>).</p>
 		/// </summary>
-		public ArearangeSeriesZone Zones { get; set; }
-		private ArearangeSeriesZone Zones_DefaultValue { get; set; }
+		public List<ArearangeSeriesZone> Zones { get; set; }
+		private List<ArearangeSeriesZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -582,7 +582,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			
 
