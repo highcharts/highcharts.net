@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsPyramidDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsPyramidDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PlotOptionsPyramidDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

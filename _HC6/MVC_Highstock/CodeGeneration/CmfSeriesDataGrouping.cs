@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public CmfSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = CmfSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = CmfSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

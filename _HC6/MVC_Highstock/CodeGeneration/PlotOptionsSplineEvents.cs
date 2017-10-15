@@ -86,14 +86,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (AfterAnimate != AfterAnimate_DefaultValue) h.Add("afterAnimate",AfterAnimate);
-			if (CheckboxClick != CheckboxClick_DefaultValue) h.Add("checkboxClick",CheckboxClick);
-			if (Click != Click_DefaultValue) h.Add("click",Click);
-			if (Hide != Hide_DefaultValue) h.Add("hide",Hide);
-			if (LegendItemClick != LegendItemClick_DefaultValue) h.Add("legendItemClick",LegendItemClick);
-			if (MouseOut != MouseOut_DefaultValue) h.Add("mouseOut",MouseOut);
-			if (MouseOver != MouseOver_DefaultValue) h.Add("mouseOver",MouseOver);
-			if (Show != Show_DefaultValue) h.Add("show",Show);
+			if (AfterAnimate != AfterAnimate_DefaultValue) { h.Add("afterAnimate",AfterAnimate); Highstock.AddFunction("PlotOptionsSplineEventsAfterAnimate.afterAnimate", AfterAnimate); }  
+			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); Highstock.AddFunction("PlotOptionsSplineEventsCheckboxClick.checkboxClick", CheckboxClick); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("PlotOptionsSplineEventsClick.click", Click); }  
+			if (Hide != Hide_DefaultValue) { h.Add("hide",Hide); Highstock.AddFunction("PlotOptionsSplineEventsHide.hide", Hide); }  
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highstock.AddFunction("PlotOptionsSplineEventsLegendItemClick.legendItemClick", LegendItemClick); }  
+			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highstock.AddFunction("PlotOptionsSplineEventsMouseOut.mouseOut", MouseOut); }  
+			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highstock.AddFunction("PlotOptionsSplineEventsMouseOver.mouseOver", MouseOver); }  
+			if (Show != Show_DefaultValue) { h.Add("show",Show); Highstock.AddFunction("PlotOptionsSplineEventsShow.show", Show); }  
 			
 
 			return h;

@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public WaterfallSeriesDataGrouping()
 		{
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 10;
-			Approximation = Approximation_DefaultValue = WaterfallSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = WaterfallSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

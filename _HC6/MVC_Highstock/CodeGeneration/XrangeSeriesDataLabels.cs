@@ -216,7 +216,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("XrangeSeriesDataLabelsFormatter.formatter", Formatter); }  
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());

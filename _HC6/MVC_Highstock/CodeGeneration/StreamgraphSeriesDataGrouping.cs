@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public StreamgraphSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = StreamgraphSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = StreamgraphSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

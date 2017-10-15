@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum MfiSeriesIkhDataGroupingApproximation
     {
-        Null, 
-		Average, 
+        Average, 
 		Averages, 
 		Open, 
 		High, 

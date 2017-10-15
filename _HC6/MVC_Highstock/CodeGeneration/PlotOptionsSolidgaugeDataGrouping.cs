@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsSolidgaugeDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsSolidgaugeDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PlotOptionsSolidgaugeDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

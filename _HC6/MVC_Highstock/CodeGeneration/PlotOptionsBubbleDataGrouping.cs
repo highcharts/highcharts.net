@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsBubbleDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsBubbleDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PlotOptionsBubbleDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

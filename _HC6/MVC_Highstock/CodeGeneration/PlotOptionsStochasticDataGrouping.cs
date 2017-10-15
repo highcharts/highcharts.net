@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsStochasticDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsStochasticDataGroupingApproximation.Averages;
+			Approximation = Approximation_DefaultValue = PlotOptionsStochasticDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

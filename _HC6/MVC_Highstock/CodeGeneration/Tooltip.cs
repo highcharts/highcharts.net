@@ -253,9 +253,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
-			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
-			if (PointFormatter != PointFormatter_DefaultValue) h.Add("pointFormatter",PointFormatter);
-			if (Positioner != Positioner_DefaultValue) h.Add("positioner",Positioner);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("TooltipFormatter.formatter", Formatter); }  
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highstock.AddFunction("TooltipPointFormatter.pointFormatter", PointFormatter); }  
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highstock.AddFunction("TooltipPositioner.positioner", Positioner); }  
 			if (Shape != Shape_DefaultValue) h.Add("shape", Highstock.FirstCharacterToLower(Shape.ToString()));
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);
 			if (Split != Split_DefaultValue) h.Add("split",Split);

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PyramidSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PyramidSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PyramidSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

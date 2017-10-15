@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public GaugeSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = GaugeSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = GaugeSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

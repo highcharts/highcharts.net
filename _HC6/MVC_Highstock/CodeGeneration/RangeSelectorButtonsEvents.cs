@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Click != Click_DefaultValue) h.Add("click",Click);
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("RangeSelectorButtonsEventsClick.click", Click); }  
 			
 
 			return h;

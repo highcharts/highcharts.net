@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ZigzagSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = ZigzagSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = ZigzagSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

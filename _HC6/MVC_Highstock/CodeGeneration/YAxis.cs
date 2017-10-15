@@ -653,7 +653,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
-			if (TickPositioner != TickPositioner_DefaultValue) h.Add("tickPositioner",TickPositioner);
+			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highstock.AddFunction("YAxisTickPositioner.tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());

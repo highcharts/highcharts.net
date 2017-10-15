@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public MaplineSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = MaplineSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = MaplineSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

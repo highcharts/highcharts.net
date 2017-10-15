@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public VariablepieSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = VariablepieSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = VariablepieSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

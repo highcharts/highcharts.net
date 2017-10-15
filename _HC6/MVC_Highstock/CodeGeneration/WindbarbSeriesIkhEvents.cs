@@ -86,14 +86,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (AfterAnimate != AfterAnimate_DefaultValue) h.Add("afterAnimate",AfterAnimate);
-			if (CheckboxClick != CheckboxClick_DefaultValue) h.Add("checkboxClick",CheckboxClick);
-			if (Click != Click_DefaultValue) h.Add("click",Click);
-			if (Hide != Hide_DefaultValue) h.Add("hide",Hide);
-			if (LegendItemClick != LegendItemClick_DefaultValue) h.Add("legendItemClick",LegendItemClick);
-			if (MouseOut != MouseOut_DefaultValue) h.Add("mouseOut",MouseOut);
-			if (MouseOver != MouseOver_DefaultValue) h.Add("mouseOver",MouseOver);
-			if (Show != Show_DefaultValue) h.Add("show",Show);
+			if (AfterAnimate != AfterAnimate_DefaultValue) { h.Add("afterAnimate",AfterAnimate); Highstock.AddFunction("WindbarbSeriesIkhEventsAfterAnimate.afterAnimate", AfterAnimate); }  
+			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); Highstock.AddFunction("WindbarbSeriesIkhEventsCheckboxClick.checkboxClick", CheckboxClick); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("WindbarbSeriesIkhEventsClick.click", Click); }  
+			if (Hide != Hide_DefaultValue) { h.Add("hide",Hide); Highstock.AddFunction("WindbarbSeriesIkhEventsHide.hide", Hide); }  
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highstock.AddFunction("WindbarbSeriesIkhEventsLegendItemClick.legendItemClick", LegendItemClick); }  
+			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highstock.AddFunction("WindbarbSeriesIkhEventsMouseOut.mouseOut", MouseOut); }  
+			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highstock.AddFunction("WindbarbSeriesIkhEventsMouseOver.mouseOver", MouseOver); }  
+			if (Show != Show_DefaultValue) { h.Add("show",Show); Highstock.AddFunction("WindbarbSeriesIkhEventsShow.show", Show); }  
 			
 
 			return h;

@@ -314,7 +314,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (Layout != Layout_DefaultValue) h.Add("layout", Highstock.FirstCharacterToLower(Layout.ToString()));
-			if (LabelFormatter != LabelFormatter_DefaultValue) h.Add("labelFormatter",LabelFormatter);
+			if (LabelFormatter != LabelFormatter_DefaultValue) { h.Add("labelFormatter",LabelFormatter); Highstock.AddFunction("LegendLabelFormatter.labelFormatter", LabelFormatter); }  
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public VectorSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = VectorSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = VectorSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

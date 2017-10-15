@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public VariwideSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = VariwideSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = VariwideSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

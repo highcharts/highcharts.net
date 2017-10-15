@@ -27,22 +27,22 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             }
 
             foreach (CompanyData data in DataReceiver.GetJSON("Microsoft"))
+            {
+                msftData.Add(new LineSeriesData
                 {
-                    msftData.Add(new LineSeriesData
-                    {
-                        X = Convert.ToDouble(data.Date),
-                        Y = Convert.ToDouble(data.Value)
-                    });
-                }
+                    X = Convert.ToDouble(data.Date),
+                    Y = Convert.ToDouble(data.Value)
+                });
+            }
 
-                foreach (CompanyData data in DataReceiver.GetJSON("Google"))
+            foreach (CompanyData data in DataReceiver.GetJSON("Google"))
+            {
+                googData.Add(new LineSeriesData
                 {
-                    googData.Add(new LineSeriesData
-                    {
-                        X = Convert.ToDouble(data.Date),
-                        Y = Convert.ToDouble(data.Value)
-                    });
-                }
+                    X = Convert.ToDouble(data.Date),
+                    Y = Convert.ToDouble(data.Value)
+                });
+            }
 
             ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
             ViewBag.MsftData = msftData.OrderBy(o => o.X).ToList();

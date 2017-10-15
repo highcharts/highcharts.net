@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsTreemapDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsTreemapDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PlotOptionsTreemapDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

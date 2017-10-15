@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public BoxplotSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = BoxplotSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = BoxplotSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

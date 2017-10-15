@@ -214,7 +214,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (InputBoxHeight != InputBoxHeight_DefaultValue) h.Add("inputBoxHeight",InputBoxHeight);
 			if (InputBoxWidth != InputBoxWidth_DefaultValue) h.Add("inputBoxWidth",InputBoxWidth);
 			if (InputDateFormat != InputDateFormat_DefaultValue) h.Add("inputDateFormat",InputDateFormat);
-			if (InputDateParser != InputDateParser_DefaultValue) h.Add("inputDateParser",InputDateParser);
+			if (InputDateParser != InputDateParser_DefaultValue) { h.Add("inputDateParser",InputDateParser); Highstock.AddFunction("RangeSelectorInputDateParser.inputDateParser", InputDateParser); }  
 			if (InputEditDateFormat != InputEditDateFormat_DefaultValue) h.Add("inputEditDateFormat",InputEditDateFormat);
 			if (InputEnabled != InputEnabled_DefaultValue) h.Add("inputEnabled",InputEnabled);
 			if (InputStyle != InputStyle_DefaultValue) h.Add("inputStyle",InputStyle);

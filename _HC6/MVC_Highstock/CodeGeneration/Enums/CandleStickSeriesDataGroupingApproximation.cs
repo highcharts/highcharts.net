@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum CandleStickSeriesDataGroupingApproximation
     {
-        Ohlc, 
-		Average, 
+        Average, 
 		Averages, 
 		Open, 
 		High, 

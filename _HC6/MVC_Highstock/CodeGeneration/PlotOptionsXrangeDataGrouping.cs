@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsXrangeDataGrouping()
 		{
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 10;
-			Approximation = Approximation_DefaultValue = PlotOptionsXrangeDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PlotOptionsXrangeDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

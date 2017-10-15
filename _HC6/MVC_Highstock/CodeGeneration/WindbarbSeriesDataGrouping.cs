@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public WindbarbSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = WindbarbSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = WindbarbSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

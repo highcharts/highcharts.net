@@ -26,7 +26,7 @@
                 new XAxis
                 {
                     Ordinal = true
-                    
+
                 }
             },
 
@@ -59,7 +59,7 @@
             },
             Tooltip = new Tooltip
             {
-                PointFormat = "<span style=\"color:{series.color}\">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>",
+                PointFormat = @"<span style='color:{series.color}'>{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>",
                 ValueDecimals = 2
             },
             Series = new List<Series>

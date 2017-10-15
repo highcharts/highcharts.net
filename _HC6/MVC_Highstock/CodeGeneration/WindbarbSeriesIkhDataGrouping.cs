@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public WindbarbSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = WindbarbSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = WindbarbSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

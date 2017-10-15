@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public BbSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = BbSeriesDataGroupingApproximation.Averages;
+			Approximation = Approximation_DefaultValue = BbSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

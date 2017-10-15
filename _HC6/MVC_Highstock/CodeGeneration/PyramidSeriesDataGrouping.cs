@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PyramidSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PyramidSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PyramidSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public MomentumSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = MomentumSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = MomentumSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

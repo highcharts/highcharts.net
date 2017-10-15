@@ -203,7 +203,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (_titleKey != _titleKey_DefaultValue) h.Add("_titleKey",_titleKey);
 			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems",MenuItems);
-			if (Onclick != Onclick_DefaultValue) h.Add("onclick",Onclick);
+			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highstock.AddFunction("ExportingButtonsContextButtonOnclick.onclick", Onclick); }  
 			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);

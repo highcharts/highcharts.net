@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public WordcloudSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = WordcloudSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = WordcloudSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

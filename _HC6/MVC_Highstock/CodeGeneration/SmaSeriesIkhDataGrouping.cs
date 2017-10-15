@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public SmaSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = SmaSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = SmaSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AreaSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = AreaSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = AreaSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

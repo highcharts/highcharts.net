@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public XrangeSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = XrangeSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = XrangeSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public WaterfallSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = WaterfallSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = WaterfallSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

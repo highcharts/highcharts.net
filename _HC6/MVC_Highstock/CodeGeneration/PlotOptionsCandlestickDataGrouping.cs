@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsCandlestickDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsCandlestickDataGroupingApproximation.Ohlc;
+			Approximation = Approximation_DefaultValue = PlotOptionsCandlestickDataGroupingApproximation.Average;
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 5;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;

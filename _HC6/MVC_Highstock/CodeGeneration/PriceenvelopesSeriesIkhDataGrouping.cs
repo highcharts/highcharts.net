@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PriceenvelopesSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PriceenvelopesSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PriceenvelopesSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

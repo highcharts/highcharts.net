@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ErrorbarSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = ErrorbarSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = ErrorbarSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

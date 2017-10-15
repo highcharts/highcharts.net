@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public HistogramSeriesDataGrouping()
 		{
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 10;
-			Approximation = Approximation_DefaultValue = HistogramSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = HistogramSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

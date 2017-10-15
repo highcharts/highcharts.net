@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsPieDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsPieDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PlotOptionsPieDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

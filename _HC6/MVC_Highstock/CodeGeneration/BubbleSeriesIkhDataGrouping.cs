@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public BubbleSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = BubbleSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = BubbleSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

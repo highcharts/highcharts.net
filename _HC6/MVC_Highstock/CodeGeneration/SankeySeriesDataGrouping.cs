@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public SankeySeriesDataGrouping()
 		{
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 10;
-			Approximation = Approximation_DefaultValue = SankeySeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = SankeySeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

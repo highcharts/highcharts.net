@@ -117,7 +117,7 @@ public class HighstockAspNetMvc
         foreach (ApiItem apiItem in _apiItems)
         {
             // All events (javascript functions) should default to empty string
-            if (apiItem.ReturnType != null && (apiItem.ReturnType == "Function" || apiItem.ReturnType == "String|Function"))
+            if (apiItem.ReturnType != null && (apiItem.ReturnType == "function" || apiItem.ReturnType == "String|function"))
                 apiItem.Defaults = "";
             if (apiItem.Title == "pointPlacement")
             {
@@ -623,7 +623,7 @@ public class HighstockAspNetMvc
             return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
         }
         // Event (javascript function)
-        if (child.ReturnType != null && (child.ReturnType == "Function" || child.ReturnType == "String|Function"))
+        if (child.ReturnType != null && (child.ReturnType == "function" || child.ReturnType == "String|function"))
             return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName), ROOT_CLASS);
         // Just a property
         else
@@ -698,7 +698,7 @@ public class HighstockAspNetMvc
         _typeMappings.Add("Boolean", "bool?");
         _typeMappings.Add("function", "string");
         _typeMappings.Add("function|null", "string");
-        _typeMappings.Add("String|Function", "string");
+        _typeMappings.Add("String|function", "string");
         _typeMappings.Add("Color", "string");
         _typeMappings.Add("CSSObject", "Hashtable");
         _typeMappings.Add("Number|String", "string");

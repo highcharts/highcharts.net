@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ParetoSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = ParetoSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = ParetoSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

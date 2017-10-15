@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public HeatmapSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = HeatmapSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = HeatmapSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

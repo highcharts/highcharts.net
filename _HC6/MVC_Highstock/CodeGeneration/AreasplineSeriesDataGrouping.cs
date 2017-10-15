@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AreasplineSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = AreasplineSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = AreasplineSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

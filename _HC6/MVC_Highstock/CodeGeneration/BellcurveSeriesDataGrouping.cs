@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public BellcurveSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = BellcurveSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = BellcurveSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

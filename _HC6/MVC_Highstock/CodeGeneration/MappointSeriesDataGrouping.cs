@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public MappointSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = MappointSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = MappointSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

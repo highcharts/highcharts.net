@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public SolidgaugeSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = SolidgaugeSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = SolidgaugeSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

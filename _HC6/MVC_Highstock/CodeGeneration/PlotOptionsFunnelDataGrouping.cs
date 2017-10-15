@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsFunnelDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsFunnelDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PlotOptionsFunnelDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

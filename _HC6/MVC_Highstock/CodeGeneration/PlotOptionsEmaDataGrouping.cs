@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsEmaDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsEmaDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PlotOptionsEmaDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

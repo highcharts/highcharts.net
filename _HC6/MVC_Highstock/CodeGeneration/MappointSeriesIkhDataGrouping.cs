@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public MappointSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = MappointSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = MappointSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

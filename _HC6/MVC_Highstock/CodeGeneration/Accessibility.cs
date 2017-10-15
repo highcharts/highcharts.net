@@ -112,12 +112,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			}
 			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
-			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) h.Add("onTableAnchorClick",OnTableAnchorClick);
+			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highstock.AddFunction("AccessibilityOnTableAnchorClick.onTableAnchorClick", OnTableAnchorClick); }  
 			if (PointDateFormat != PointDateFormat_DefaultValue) h.Add("pointDateFormat",PointDateFormat);
-			if (PointDateFormatter != PointDateFormatter_DefaultValue) h.Add("pointDateFormatter",PointDateFormatter);
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) h.Add("pointDescriptionFormatter",PointDescriptionFormatter);
-			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter);
-			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter);
+			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highstock.AddFunction("AccessibilityPointDateFormatter.pointDateFormatter", PointDateFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("AccessibilityPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highstock.AddFunction("AccessibilityScreenReaderSectionFormatter.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
+			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highstock.AddFunction("AccessibilitySeriesDescriptionFormatter.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
 			
 
 			return h;

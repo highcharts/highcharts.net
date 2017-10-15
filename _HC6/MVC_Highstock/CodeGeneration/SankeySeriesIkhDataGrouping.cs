@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public SankeySeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = SankeySeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = SankeySeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

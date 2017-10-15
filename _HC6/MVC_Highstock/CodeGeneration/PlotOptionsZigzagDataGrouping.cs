@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsZigzagDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsZigzagDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PlotOptionsZigzagDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

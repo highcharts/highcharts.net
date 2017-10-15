@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public RocSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = RocSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = RocSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

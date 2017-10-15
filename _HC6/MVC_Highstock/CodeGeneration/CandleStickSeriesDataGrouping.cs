@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public CandleStickSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = CandleStickSeriesDataGroupingApproximation.Ohlc;
+			Approximation = Approximation_DefaultValue = CandleStickSeriesDataGroupingApproximation.Average;
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 5;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsRocDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsRocDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PlotOptionsRocDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

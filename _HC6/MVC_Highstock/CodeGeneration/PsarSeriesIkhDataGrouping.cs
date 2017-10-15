@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PsarSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PsarSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = PsarSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

@@ -236,7 +236,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (XHigh != XHigh_DefaultValue) h.Add("xHigh",XHigh);
 			if (YLow != YLow_DefaultValue) h.Add("yLow",YLow);
 			if (YHigh != YHigh_DefaultValue) h.Add("yHigh",YHigh);
-			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("PlotOptionsAreasplinerangeDataLabelsFormatter.formatter", Formatter); }  
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);

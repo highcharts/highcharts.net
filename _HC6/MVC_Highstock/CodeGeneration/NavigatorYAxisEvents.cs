@@ -46,9 +46,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) h.Add("afterSetExtremes",AfterSetExtremes);
-			if (PointInBreak != PointInBreak_DefaultValue) h.Add("pointInBreak",PointInBreak);
-			if (SetExtremes != SetExtremes_DefaultValue) h.Add("setExtremes",SetExtremes);
+			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); Highstock.AddFunction("NavigatorYAxisEventsAfterSetExtremes.afterSetExtremes", AfterSetExtremes); }  
+			if (PointInBreak != PointInBreak_DefaultValue) { h.Add("pointInBreak",PointInBreak); Highstock.AddFunction("NavigatorYAxisEventsPointInBreak.pointInBreak", PointInBreak); }  
+			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); Highstock.AddFunction("NavigatorYAxisEventsSetExtremes.setExtremes", SetExtremes); }  
 			
 
 			return h;

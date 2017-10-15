@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public TilemapSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = TilemapSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = TilemapSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public SunburstSeriesIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = SunburstSeriesIkhDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = SunburstSeriesIkhDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

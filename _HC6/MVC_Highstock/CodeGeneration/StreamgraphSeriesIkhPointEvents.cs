@@ -78,13 +78,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Click != Click_DefaultValue) h.Add("click",Click);
-			if (MouseOut != MouseOut_DefaultValue) h.Add("mouseOut",MouseOut);
-			if (MouseOver != MouseOver_DefaultValue) h.Add("mouseOver",MouseOver);
-			if (Remove != Remove_DefaultValue) h.Add("remove",Remove);
-			if (Select != Select_DefaultValue) h.Add("select",Select);
-			if (Unselect != Unselect_DefaultValue) h.Add("unselect",Unselect);
-			if (Update != Update_DefaultValue) h.Add("update",Update);
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("StreamgraphSeriesIkhPointEventsClick.click", Click); }  
+			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highstock.AddFunction("StreamgraphSeriesIkhPointEventsMouseOut.mouseOut", MouseOut); }  
+			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highstock.AddFunction("StreamgraphSeriesIkhPointEventsMouseOver.mouseOver", MouseOver); }  
+			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highstock.AddFunction("StreamgraphSeriesIkhPointEventsRemove.remove", Remove); }  
+			if (Select != Select_DefaultValue) { h.Add("select",Select); Highstock.AddFunction("StreamgraphSeriesIkhPointEventsSelect.select", Select); }  
+			if (Unselect != Unselect_DefaultValue) { h.Add("unselect",Unselect); Highstock.AddFunction("StreamgraphSeriesIkhPointEventsUnselect.unselect", Unselect); }  
+			if (Update != Update_DefaultValue) { h.Add("update",Update); Highstock.AddFunction("StreamgraphSeriesIkhPointEventsUpdate.update", Update); }  
 			
 
 			return h;

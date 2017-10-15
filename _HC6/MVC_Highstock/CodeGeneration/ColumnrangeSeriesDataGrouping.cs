@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public ColumnrangeSeriesDataGrouping()
 		{
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 10;
-			Approximation = Approximation_DefaultValue = ColumnrangeSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = ColumnrangeSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

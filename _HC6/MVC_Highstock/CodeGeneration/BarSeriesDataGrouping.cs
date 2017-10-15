@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public BarSeriesDataGrouping()
 		{
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 10;
-			Approximation = Approximation_DefaultValue = BarSeriesDataGroupingApproximation.Null;
+			Approximation = Approximation_DefaultValue = BarSeriesDataGroupingApproximation.Average;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;
