@@ -263,10 +263,10 @@ namespace Highsoft.Web.Mvc.UnitTests
         [TestMethod]
         public void TestMinorTickInterval()
         {
-            _axis.MinorTickInterval = "100";
+            _axis.MinorTickInterval = 100;
             string json = _renderer.RenderHtml();
 
-            Assert.IsTrue(json.Contains("\"minorTickInterval\":\"100\""));
+            Assert.IsTrue(json.Contains("\"minorTickInterval\":100"));
         }
 
         [TestMethod]
@@ -362,10 +362,10 @@ namespace Highsoft.Web.Mvc.UnitTests
         [TestMethod]
         public void TestShowLastLabel()
         {
-            _axis.ShowLastLabel = false;
+            _axis.ShowLastLabel = true;
             string json = _renderer.RenderHtml();
 
-            Assert.IsTrue(json.Contains("\"showLastLabel\":false"));
+            Assert.IsTrue(json.Contains("\"showLastLabel\":true"));
         }
 
         [TestMethod]
