@@ -213,8 +213,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     LineSeries lineSeries = series as LineSeries;
 
-                    List<LineSeriesData> seriesData = lineSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<LineSeriesData> seriesData = lineSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     lineSeries.Type = LineSeriesType.Line;
 
                     seriesHashtable = lineSeries.ToHashtable();
@@ -223,8 +223,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     SplineSeries splineSeries = series as SplineSeries;
 
-                    List<SplineSeriesData> seriesData = splineSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<SplineSeriesData> seriesData = splineSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     splineSeries.Type = SplineSeriesType.Spline;
 
                     seriesHashtable = splineSeries.ToHashtable();
@@ -233,8 +233,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     AreaSeries areaSeries = series as AreaSeries;
 
-                    List<AreaSeriesData> seriesData = areaSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<AreaSeriesData> seriesData = areaSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     areaSeries.Type = AreaSeriesType.Area;
 
                     seriesHashtable = areaSeries.ToHashtable();
@@ -243,8 +243,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     AreasplineSeries areaSeries = series as AreasplineSeries;
 
-                    List<AreasplineSeriesData> seriesData = areaSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<AreasplineSeriesData> seriesData = areaSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     areaSeries.Type = AreasplineSeriesType.Areaspline;
 
                     seriesHashtable = areaSeries.ToHashtable();
@@ -253,8 +253,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     ArearangeSeries areaSeries = series as ArearangeSeries;
 
-                    List<ArearangeSeriesData> seriesData = areaSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<ArearangeSeriesData> seriesData = areaSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     areaSeries.Type = ArearangeSeriesType.Arearange;
 
                     seriesHashtable = areaSeries.ToHashtable();
@@ -263,8 +263,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     ColumnrangeSeries columnSeries = series as ColumnrangeSeries;
 
-                    List<ColumnrangeSeriesData> seriesData = columnSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<ColumnrangeSeriesData> seriesData = columnSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     columnSeries.Type = ColumnrangeSeriesType.Columnrange;
 
                     seriesHashtable = columnSeries.ToHashtable();
@@ -273,8 +273,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     BarSeries barSeries = series as BarSeries;
 
-                    List<BarSeriesData> seriesData = barSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<BarSeriesData> seriesData = barSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     barSeries.Type = BarSeriesType.Bar;
 
                     seriesHashtable = barSeries.ToHashtable();
@@ -283,8 +283,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     ColumnSeries columnSeries = series as ColumnSeries;
 
-                    List<ColumnSeriesData> seriesData = columnSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<ColumnSeriesData> seriesData = columnSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     columnSeries.Type = ColumnSeriesType.Column;
 
                     seriesHashtable = columnSeries.ToHashtable();
@@ -293,8 +293,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     PieSeries pieSeries = series as PieSeries;
 
-                    List<PieSeriesData> seriesData = pieSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<PieSeriesData> seriesData = pieSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     pieSeries.Type = PieSeriesType.Pie;
 
                     seriesHashtable = pieSeries.ToHashtable();
@@ -303,8 +303,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     ScatterSeries scatterSeries = series as ScatterSeries;
 
-                    List<ScatterSeriesData> seriesData = scatterSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<ScatterSeriesData> seriesData = scatterSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     scatterSeries.Type = ScatterSeriesType.Scatter;
 
                     seriesHashtable = scatterSeries.ToHashtable();
@@ -313,8 +313,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     BubbleSeries bubbleSeries = series as BubbleSeries;
 
-                    List<BubbleSeriesData> seriesData = bubbleSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<BubbleSeriesData> seriesData = bubbleSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     bubbleSeries.Type = BubbleSeriesType.Bubble;
 
                     seriesHashtable = bubbleSeries.ToHashtable();
@@ -323,8 +323,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     GaugeSeries gaugeSeries = series as GaugeSeries;
 
-                    List<GaugeSeriesData> seriesData = gaugeSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<GaugeSeriesData> seriesData = gaugeSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     gaugeSeries.Type = GaugeSeriesType.Gauge;
 
                     seriesHashtable = gaugeSeries.ToHashtable();
@@ -333,8 +333,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     SolidgaugeSeries SolidgaugeSeries = series as SolidgaugeSeries;
 
-                    List<SolidgaugeSeriesData> seriesData = SolidgaugeSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<SolidgaugeSeriesData> seriesData = SolidgaugeSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     SolidgaugeSeries.Type = SolidgaugeSeriesType.Solidgauge;
 
                     seriesHashtable = SolidgaugeSeries.ToHashtable();
@@ -343,8 +343,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     HeatmapSeries heatMapSeries = series as HeatmapSeries;
 
-                    List<HeatmapSeriesData> seriesData = heatMapSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<HeatmapSeriesData> seriesData = heatMapSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     heatMapSeries.Type = HeatmapSeriesType.Heatmap;
 
                     seriesHashtable = heatMapSeries.ToHashtable();
@@ -353,8 +353,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     BoxplotSeries boxPlotSeries = series as BoxplotSeries;
 
-                    List<BoxplotSeriesData> seriesData = boxPlotSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<BoxplotSeriesData> seriesData = boxPlotSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     boxPlotSeries.Type = BoxplotSeriesType.Boxplot;
 
                     seriesHashtable = boxPlotSeries.ToHashtable();
@@ -363,8 +363,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     ErrorbarSeries errorBarSeries = series as ErrorbarSeries;
 
-                    List<ErrorbarSeriesData> seriesData = errorBarSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<ErrorbarSeriesData> seriesData = errorBarSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     errorBarSeries.Type = ErrorbarSeriesType.Errorbar;
 
                     seriesHashtable = errorBarSeries.ToHashtable();
@@ -373,8 +373,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     FunnelSeries funnelSeries = series as FunnelSeries;
 
-                    List<FunnelSeriesData> seriesData = funnelSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<FunnelSeriesData> seriesData = funnelSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     funnelSeries.Type = FunnelSeriesType.Funnel;
 
                     seriesHashtable = funnelSeries.ToHashtable();
@@ -383,8 +383,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     PyramidSeries pyramidSeries = series as PyramidSeries;
 
-                    List<PyramidSeriesData> seriesData = pyramidSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<PyramidSeriesData> seriesData = pyramidSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     pyramidSeries.Type = PyramidSeriesType.Pyramid;
 
                     seriesHashtable = pyramidSeries.ToHashtable();
@@ -393,8 +393,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     WaterfallSeries waterfallSeries = series as WaterfallSeries;
 
-                    List<WaterfallSeriesData> seriesData = waterfallSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<WaterfallSeriesData> seriesData = waterfallSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     waterfallSeries.Type = WaterfallSeriesType.Waterfall;
 
                     seriesHashtable = waterfallSeries.ToHashtable();
@@ -403,8 +403,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     PolygonSeries polygonSeries = series as PolygonSeries;
 
-                    List<PolygonSeriesData> seriesData = polygonSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<PolygonSeriesData> seriesData = polygonSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     polygonSeries.Type = PolygonSeriesType.Polygon;
 
                     seriesHashtable = polygonSeries.ToHashtable();
@@ -413,13 +413,124 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 {
                     TreemapSeries treemapSeries = series as TreemapSeries;
 
-                    List<TreemapSeriesData> seriesData = treemapSeries.Data;
-                    seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
+                    //List<TreemapSeriesData> seriesData = treemapSeries.Data;
+                    //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
                     treemapSeries.Type = TreemapSeriesType.Treemap;
 
                     seriesHashtable = treemapSeries.ToHashtable();
                 }
+                //since 6.0
+                if (series is AreasplinerangeSeries)
+                {
+                    AreasplinerangeSeries areasplinerangeSeries = series as AreasplinerangeSeries;
+                    areasplinerangeSeries.Type = AreasplinerangeSeriesType.Areasplinerange;
+                    seriesHashtable = areasplinerangeSeries.ToHashtable();
+                }
 
+                if (series is BellcurveSeries)
+                {
+                    BellcurveSeries bellcurveSeries = series as BellcurveSeries;
+                    bellcurveSeries.Type = BellcurveSeriesType.Bellcurve;
+                    seriesHashtable = bellcurveSeries.ToHashtable();
+                }
+
+                if (series is BulletSeries)
+                {
+                    BulletSeries bulletSeries = series as BulletSeries;
+                    bulletSeries.Type = BulletSeriesType.Bullet;
+                    seriesHashtable = bulletSeries.ToHashtable();
+                }
+
+                if (series is HistogramSeries)
+                {
+                    HistogramSeries histogramSeries = series as HistogramSeries;
+                    histogramSeries.Type = HistogramSeriesType.Histogram;
+                    seriesHashtable = histogramSeries.ToHashtable();
+                }
+
+                if (series is ParetoSeries)
+                {
+                    ParetoSeries paretoSeries = series as ParetoSeries;
+                    paretoSeries.Type = ParetoSeriesType.Pareto;
+                    seriesHashtable = paretoSeries.ToHashtable();
+                }
+
+                if (series is SankeySeries)
+                {
+                    SankeySeries sankeySeries = series as SankeySeries;
+                    sankeySeries.Type = SankeySeriesType.Sankey;
+                    seriesHashtable = sankeySeries.ToHashtable();
+                }
+
+                if (series is Scatter3dSeries)
+                {
+                    Scatter3dSeries scatter3dSeries = series as Scatter3dSeries;
+                    scatter3dSeries.Type = Scatter3dSeriesType.Scatter3d;
+                    seriesHashtable = scatter3dSeries.ToHashtable();
+                }
+
+                if (series is StreamgraphSeries)
+                {
+                    StreamgraphSeries streamgraphSeries = series as StreamgraphSeries;
+                    streamgraphSeries.Type = StreamgraphSeriesType.Streamgraph;
+                    seriesHashtable = streamgraphSeries.ToHashtable();
+                }
+
+                if (series is SunburstSeries)
+                {
+                    SunburstSeries sunburstSeries = series as SunburstSeries;
+                    sunburstSeries.Type = SunburstSeriesType.Sunburst;
+                    seriesHashtable = sunburstSeries.ToHashtable();
+                }
+
+                if (series is TilemapSeries)
+                {
+                    TilemapSeries tilemapSeries = series as TilemapSeries;
+                    tilemapSeries.Type = TilemapSeriesType.Tilemap;
+                    seriesHashtable = tilemapSeries.ToHashtable();
+                }
+
+                if (series is VariablepieSeries)
+                {
+                    VariablepieSeries variablepieSeries = series as VariablepieSeries;
+                    variablepieSeries.Type = VariablepieSeriesType.Variablepie;
+                    seriesHashtable = variablepieSeries.ToHashtable();
+                }
+
+                if (series is VariwideSeries)
+                {
+                    VariwideSeries variwideSeries = series as VariwideSeries;
+                    variwideSeries.Type = VariwideSeriesType.Variwide;
+                    seriesHashtable = variwideSeries.ToHashtable();
+                }
+
+                if (series is VectorSeries)
+                {
+                    VectorSeries vectorSeries = series as VectorSeries;
+                    vectorSeries.Type = VectorSeriesType.Vector;
+                    seriesHashtable = vectorSeries.ToHashtable();
+                }
+
+                if (series is WindbarbSeries)
+                {
+                    WindbarbSeries windbarbSeries = series as WindbarbSeries;
+                    windbarbSeries.Type = WindbarbSeriesType.Windbarb;
+                    seriesHashtable = windbarbSeries.ToHashtable();
+                }
+
+                if (series is WordcloudSeries)
+                {
+                    WordcloudSeries wordcloudSeries = series as WordcloudSeries;
+                    wordcloudSeries.Type = WordcloudSeriesType.Wordcloud;
+                    seriesHashtable = wordcloudSeries.ToHashtable();
+                }
+
+                if (series is XrangeSeries)
+                {
+                    XrangeSeries xrangeSeries = series as XrangeSeries;
+                    xrangeSeries.Type = XrangeSeriesType.Xrange;
+                    seriesHashtable = xrangeSeries.ToHashtable();
+                }
                 //seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
             }
