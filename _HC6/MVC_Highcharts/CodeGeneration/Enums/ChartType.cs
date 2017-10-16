@@ -29,6 +29,21 @@ namespace Highsoft.Web.Mvc.Charts
 		Scatter, 
 		Solidgauge, 
 		Treemap, 
-		Waterfall
+		Waterfall, 
+		Bellcurve, 
+		Bullet, 
+		Histogram, 
+		Pareto, 
+		Sankey, 
+		Scatter3d, 
+		Streamgraph, 
+		Sunburst, 
+		Tilemap, 
+		Variablepie, 
+		Variwide, 
+		Vector, 
+		Windbarb, 
+		Wordcloud, 
+		Xrange
     }
 }

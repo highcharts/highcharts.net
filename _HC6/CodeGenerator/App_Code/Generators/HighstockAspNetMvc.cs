@@ -384,6 +384,26 @@ public class HighstockAspNetMvc
             apiItem.Values.Add("flags");
             apiItem.Values.Add("solidgauge");
         }
+
+        if (apiItem.FullName.StartsWith("series<") && apiItem.FullName.EndsWith(">.type"))
+        {
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+            apiItem.Values.Add("");
+        }
     }
 
     private string GetDefaultValueForEnum(ApiItem item)

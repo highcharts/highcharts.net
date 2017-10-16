@@ -365,15 +365,7 @@ public class HighchartsAspNetMvc
                 apiItem.Values.Insert(0, defaults);
         }
 
-        // For some reason bar is missing from the chart and series types in the JSON - possibly omission
-        if (apiItem.FullName == "chart.type" ||
-            apiItem.FullName == "series.type" ||
-            apiItem.FullName == "series<bar>.type" ||
-            apiItem.FullName == "series<heatmap>.type" ||
-            apiItem.FullName == "series<polygon>.type" ||
-            apiItem.FullName == "series<treemap>.type" ||
-            apiItem.FullName == "series<solidgauge>.type" ||
-            apiItem.FullName == "series<pyramid>.type")
+        if (apiItem.FullName == "chart.type" || (apiItem.FullName.StartsWith("series<") && apiItem.FullName.EndsWith(">.type")))
         {
             apiItem.Values.Add("bar");
             apiItem.Values.Add("heatmap");
@@ -381,6 +373,22 @@ public class HighchartsAspNetMvc
             apiItem.Values.Add("polygon");
             apiItem.Values.Add("treemap");
             apiItem.Values.Add("solidgauge");
+
+            apiItem.Values.Add("Bellcurve");
+            apiItem.Values.Add("Bullet");
+            apiItem.Values.Add("Histogram");
+            apiItem.Values.Add("Pareto");
+            apiItem.Values.Add("Sankey");
+            apiItem.Values.Add("Scatter3d");
+            apiItem.Values.Add("Streamgraph");
+            apiItem.Values.Add("Sunburst");
+            apiItem.Values.Add("Tilemap");
+            apiItem.Values.Add("Variablepie");
+            apiItem.Values.Add("Variwide");
+            apiItem.Values.Add("Vector");
+            apiItem.Values.Add("Windbarb");
+            apiItem.Values.Add("Wordcloud");
+            apiItem.Values.Add("Xrange");
         }
     }
 

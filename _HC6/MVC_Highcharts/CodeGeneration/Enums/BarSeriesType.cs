@@ -29,6 +29,21 @@ namespace Highsoft.Web.Mvc.Charts
 		Pyramid, 
 		Polygon, 
 		Treemap, 
-		Solidgauge
+		Solidgauge, 
+		Bellcurve, 
+		Bullet, 
+		Histogram, 
+		Pareto, 
+		Sankey, 
+		Scatter3d, 
+		Streamgraph, 
+		Sunburst, 
+		Tilemap, 
+		Variablepie, 
+		Variwide, 
+		Vector, 
+		Windbarb, 
+		Wordcloud, 
+		Xrange
     }
 }
