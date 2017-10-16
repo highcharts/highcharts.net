@@ -387,22 +387,30 @@ public class HighstockAspNetMvc
 
         if (apiItem.FullName.StartsWith("series<") && apiItem.FullName.EndsWith(">.type"))
         {
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
-            apiItem.Values.Add("");
+            apiItem.Values.Add("Ad");
+            apiItem.Values.Add("Atr");
+            apiItem.Values.Add("Bb");
+            apiItem.Values.Add("Cci");
+            apiItem.Values.Add("Cmf");
+            apiItem.Values.Add("Ema");
+            apiItem.Values.Add("Macd");
+            apiItem.Values.Add("Mfi");
+            apiItem.Values.Add("Momentum");
+            apiItem.Values.Add("Pivotpoints");
+            apiItem.Values.Add("Priceenvelopes");
+            apiItem.Values.Add("Psar");
+            apiItem.Values.Add("Roc");
+            apiItem.Values.Add("Rsi");
+            apiItem.Values.Add("Sma");
+            apiItem.Values.Add("Stochastic");
+            apiItem.Values.Add("Streamgraph");
+            apiItem.Values.Add("Vbp");
+            apiItem.Values.Add("Vector");
+            apiItem.Values.Add("Vwap");
+            apiItem.Values.Add("Windbarb");
+            apiItem.Values.Add("Wma");
+            apiItem.Values.Add("Xrange");
+            apiItem.Values.Add("Zigzag");
         }
     }
 

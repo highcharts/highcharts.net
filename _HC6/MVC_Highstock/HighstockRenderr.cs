@@ -510,7 +510,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 if (series is ZigzagSeries)
                 {
                     ZigzagSeries zigzagSeries = series as ZigzagSeries;
-                    zigzagSeries.Type = ZigzagSeriesType.Ohlc;
+                    zigzagSeries.Type = ZigzagSeriesType.Zigzag;
                     seriesHashtable = zigzagSeries.ToHashtable();
                 }
 
