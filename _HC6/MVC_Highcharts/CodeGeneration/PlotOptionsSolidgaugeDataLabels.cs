@@ -37,6 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Inside = Inside_DefaultValue = null;
 			Overflow = Overflow_DefaultValue = PlotOptionsSolidgaugeDataLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
+			UseHTML = UseHTML_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
 			
 		}	
@@ -204,6 +205,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// <p>Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a> to render the labels.</p>
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// <p>The name of a symbol to use for the border around the label. Symbolsare predefined functions on the Renderer object.</p>
 		/// </summary>
 		public string Shape { get; set; }
@@ -237,6 +245,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
+			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			
 
