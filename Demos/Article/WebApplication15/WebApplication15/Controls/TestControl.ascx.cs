@@ -132,8 +132,7 @@ namespace WebApplication15.Controls
             };
 
             HighsoftNamespace Highsoft = new HighsoftNamespace();
-            //string result = Highsoft.Highcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6326 or older
-            string result = Highsoft.GetHighcharts(higcharts, "chart1", false, functionName).ToHtmlString(); //For version 5.0.6327 or newer
+            string result = Highsoft.GetHighcharts(higcharts, "chart1", false, functionName).ToHtmlString();
 
             return result;
         }
@@ -233,8 +232,7 @@ namespace WebApplication15.Controls
             };
 
             HighsoftNamespace Highsoft = new HighsoftNamespace();
-            //string result = Highsoft.Highcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6326 or older
-            string result = Highsoft.GetHighchartsJS(higcharts, "chart1").ToHtmlString(); //For version 5.0.6327 or newer
+            string result = Highsoft.GetHighchartsJS(higcharts, "chart1").ToHtmlString();
 
             return result;
         }

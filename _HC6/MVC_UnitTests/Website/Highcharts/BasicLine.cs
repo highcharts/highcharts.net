@@ -174,5 +174,16 @@ namespace MVC_UnitTests.Website
 
             Assert.AreEqual(script, result);
         }
+
+        [TestMethod]
+        public void Test_IfBasicLineChartRendersJson_Correct()
+        {
+            string renderTo = "chart";
+            string json = "{\"tooltip\":{\"valueSuffix\":\"°C\"},\"series\":[{\"data\":[{\"y\":7},{\"y\":6.9},{\"y\":9.5},{\"y\":14.5},{\"y\":18.2},{\"y\":21.5},{\"y\":25.2},{\"y\":26.5},{\"y\":23.3},{\"y\":18.3},{\"y\":13.9},{\"y\":9.6}],\"type\":\"line\",\"name\":\"Tokyo\"},{\"data\":[{\"y\":-0.2},{\"y\":0.8},{\"y\":5.7},{\"y\":11.3},{\"y\":17},{\"y\":22},{\"y\":24.8},{\"y\":24.1},{\"y\":20.1},{\"y\":14.1},{\"y\":8.6},{\"y\":2.5}],\"type\":\"line\",\"name\":\"NY\"},{\"data\":[{\"y\":-0.9},{\"y\":0.6},{\"y\":3.5},{\"y\":8.4},{\"y\":13.5},{\"y\":17},{\"y\":18.6},{\"y\":17.9},{\"y\":14.3},{\"y\":9},{\"y\":3.9},{\"y\":1}],\"type\":\"line\",\"name\":\"Berlin\"},{\"data\":[{\"y\":3.9},{\"y\":4.2},{\"y\":5.7},{\"y\":8.5},{\"y\":11.9},{\"y\":15.2},{\"y\":17},{\"y\":16.6},{\"y\":14.2},{\"y\":10.3},{\"y\":6.6},{\"y\":4.8}],\"type\":\"line\",\"name\":\"London\"}],\"yAxis\":[{\"plotLines\":[{\"value\":0,\"color\":\"#808080\",\"width\":1}],\"title\":{\"text\":\"Temperature (°C)\"}}],\"subtitle\":{\"text\":\"Source: WorldClimate.com\",\"x\":-20},\"title\":{\"text\":\"Monthly Average Temperature\",\"x\":-20},\"xAxis\":[{\"categories\":[\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\"]}],\"legend\":{\"verticalAlign\":\"middle\",\"layout\":\"vertical\",\"align\":\"right\"}}";
+
+            var result = _highsoft.GetJsonOptions(_highcharts).ToHtmlString();
+
+            Assert.AreEqual(json,result);
+        }
     }
 }

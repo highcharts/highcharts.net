@@ -5,7 +5,7 @@
     <script src="http://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     
-    <select name='minValue' id="yearfrom">
+    <%--<select name='minValue' id="yearfrom">
         <option value='2001' selected="selected">2001</option>
         <option value='2002'>2002</option>
         <option value='2003'>2003</option>
@@ -21,7 +21,7 @@
         <option value='2013'>2013</option>
         <option value='2014'>2014</option>
         <option value='2015'>2015</option>
-    </select>
+    </select>--%>
 
     <tc:Chart runat="server"></tc:Chart>
 </asp:Content>

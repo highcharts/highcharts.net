@@ -60,6 +60,12 @@ namespace Highsoft.Web.Mvc.Charts
             return new HtmlString(renderer.GetJavascript());
         }
 
+        public HtmlString GetJsonOptions(Highcharts chart)
+        {
+            var renderer = new HighchartsRenderer(chart);
+            return new HtmlString(renderer.GetJsonOptions());
+        }
+
         private HtmlString GetHighchartsFunction(Highcharts chart, string containerId, string functionName)
         {
             var renderer = new HighchartsRenderer(chart);

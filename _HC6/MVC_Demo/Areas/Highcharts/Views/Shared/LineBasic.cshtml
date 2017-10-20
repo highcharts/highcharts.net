@@ -2,9 +2,10 @@
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-@using Highsoft.Web.Mvc.Charts    
+@using Highsoft.Web.Mvc.Charts
 
-    @(Html.Highsoft().Highcharts(
+@Html.Highsoft().GetJsonOptions(new Highcharts() { ... })
+@(Html.Highsoft().Highcharts(
         new Highcharts
         {
             Title = new Title
@@ -18,7 +19,7 @@
                 X = -20
             },
             XAxis = new List<XAxis>
-            {            
+            {
                 new XAxis
                 {
                     Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -57,7 +58,7 @@
                 BorderWidth = 0
             },
             Series = new List<Series>
-            {                    
+            {
                 new LineSeries
                 {
                     Name = "Tokyo",
@@ -81,4 +82,4 @@
             }
         }
         , "chart")
-    )
+)

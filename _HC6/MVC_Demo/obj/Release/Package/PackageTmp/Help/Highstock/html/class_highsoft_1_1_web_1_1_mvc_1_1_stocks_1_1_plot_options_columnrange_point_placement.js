@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_columnrange_point_placement =
-[
-    [ "PlotOptionsColumnrangePointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_columnrange_point_placement.html#a24255b26500a9fb0eac62f5b41ccf2b5", null ]
-];

@@ -47,6 +47,12 @@ namespace Highsoft.Web.Mvc.Stocks
             return new HtmlString(renderer.GetJavascript());
         }
 
+        public HtmlString GetJsonOptions(Highstock chart)
+        {
+            var renderer = new HighstockRenderer(chart);
+            return new HtmlString(renderer.GetJsonOptions());
+        }
+
         private HtmlString GetHighstockFunction(Highstock chart, string containerId, string functionName)
         {
             var renderer = new HighstockRenderer(chart);

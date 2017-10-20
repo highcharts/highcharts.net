@@ -2,7 +2,7 @@
 <%--<asp:ScriptManager EnablePartialRendering="true" ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
 <asp:UpdatePanel ID="updatePanelId" runat="server" UpdateMode="Conditional">
     <ContentTemplate>
-      <select name='minValue' id="yearfrom">
+      <%--<select name='minValue' id="yearfrom">
         <option value='2001' selected="selected">2001</option>
         <option value='2002'>2002</option>
         <option value='2003'>2003</option>
@@ -18,7 +18,7 @@
         <option value='2013'>2013</option>
         <option value='2014'>2014</option>
         <option value='2015'>2015</option>
-    </select>
+    </select>--%>
         
         <asp:Button ID="ButtonId" runat="server" Text="Update"/>
         <div id="chart1"></div>
