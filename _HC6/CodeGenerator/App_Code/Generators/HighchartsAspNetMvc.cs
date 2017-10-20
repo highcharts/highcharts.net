@@ -180,7 +180,48 @@ public class HighchartsAspNetMvc
 
             // add Defaults to enum if they are not available in the Values list.
             AddDefaultsToEnum(apiItem);
+
+            UpdateDefaultsForHighcharts(apiItem);
         }
+    }
+
+    //update defaults because of differences between HS i HC
+    private void UpdateDefaultsForHighcharts(ApiItem apiItem)
+    {
+        if (apiItem.FullName == "subtitle.text")
+            return;
+
+        if (apiItem.FullName == "chart.panning")
+            apiItem.Defaults = "false";
+
+        if (apiItem.FullName == "chart.pinchType")
+            apiItem.Defaults = "null";
+
+        if (apiItem.FullName.EndsWith("title.text"))
+        {
+            if (apiItem.FullName.StartsWith("legend") || apiItem.FullName.StartsWith("xAxis") || apiItem.FullName.StartsWith("zAxis"))
+            {
+                apiItem.Defaults = "null";
+                return;
+            }
+
+            if (apiItem.FullName.StartsWith("yAxis"))
+            {
+                apiItem.Defaults = "Values";
+                return;
+            }
+
+            apiItem.Defaults = "Chart title";
+        }
+
+        if (apiItem.FullName.StartsWith("yAxis.opposite"))
+            apiItem.Defaults = "false";
+
+        if (apiItem.FullName.StartsWith("xAxis.minPadding"))
+            apiItem.Defaults = "0.01";
+
+        if (apiItem.FullName.StartsWith("xAxis.maxPadding"))
+            apiItem.Defaults = "0.01";
     }
 
     //private void AppendMissingApiItems()

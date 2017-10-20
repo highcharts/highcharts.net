@@ -178,7 +178,34 @@ public class HighstockAspNetMvc
 
             // add Defaults to enum if they are not available in the Values list.
             AddDefaultsToEnum(apiItem);
+
+            UpdateDefaultsForHighstock(apiItem);
         }
+    }
+
+    //update defaults because of differences between HS i HC
+    private void UpdateDefaultsForHighstock(ApiItem apiItem)
+    {
+        if (apiItem.FullName == "subtitle.text")
+            return;
+
+        if (apiItem.FullName == "chart.panning")
+            apiItem.Defaults = "true";
+
+        if (apiItem.FullName == "chart.pinchType")
+            apiItem.Defaults = "x";
+
+        if (apiItem.FullName.Contains("title.text"))
+            apiItem.Defaults = "null";
+
+        if (apiItem.FullName.StartsWith("yAxis.opposite"))
+            apiItem.Defaults = "true";
+
+        if (apiItem.FullName.StartsWith("xAxis.minPadding"))
+            apiItem.Defaults = "0";
+
+        if (apiItem.FullName.StartsWith("xAxis.maxPadding"))
+            apiItem.Defaults = "0";
     }
 
     private void AppendMissingApiItems()
