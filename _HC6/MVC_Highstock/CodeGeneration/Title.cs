@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Title()
 		{
-			Text = Text_DefaultValue = "Chart title";
+			Text = Text_DefaultValue = "null";
 			Align = Align_DefaultValue = TitleAlign.Center;
 			Margin = Margin_DefaultValue = null;
 			WidthAdjust = WidthAdjust_DefaultValue = -44;

@@ -17,8 +17,8 @@ namespace Highsoft.Web.Mvc.Charts
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Labels = Labels_DefaultValue = new XAxisLabels();
-			MinPadding = MinPadding_DefaultValue = null;
-			MaxPadding = MaxPadding_DefaultValue = null;
+			MinPadding = MinPadding_DefaultValue = 0.01;
+			MaxPadding = MaxPadding_DefaultValue = 0.01;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = XAxisMinorTickPosition.Outside;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;

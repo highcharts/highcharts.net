@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TickWidth = TickWidth_DefaultValue = 0;
 			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
-			Opposite = Opposite_DefaultValue = true;
+			Opposite = Opposite_DefaultValue = false;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;

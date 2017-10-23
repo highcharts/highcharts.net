@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public YAxisTitle()
 		{
 			Rotation = Rotation_DefaultValue = 270;
-			Text = Text_DefaultValue = "Values";
+			Text = Text_DefaultValue = "null";
 			Margin = Margin_DefaultValue = null;
 			Align = Align_DefaultValue = YAxisTitleAlign.Middle;
 			Style = Style_DefaultValue = new YAxisTitleStyle();

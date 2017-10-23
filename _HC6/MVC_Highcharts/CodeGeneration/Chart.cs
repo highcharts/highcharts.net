@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MarginRight = MarginRight_DefaultValue = null;
 			MarginTop = MarginTop_DefaultValue = null;
 			PanKey = PanKey_DefaultValue = ChartPanKey.Null;
-			Panning = Panning_DefaultValue = null;
+			Panning = Panning_DefaultValue = false;
 			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
 			Inverted = Inverted_DefaultValue = false;
 			BorderWidth = BorderWidth_DefaultValue = 0;

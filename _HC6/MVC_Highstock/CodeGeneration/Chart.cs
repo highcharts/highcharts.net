@@ -34,8 +34,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			MarginLeft = MarginLeft_DefaultValue = null;
 			MarginRight = MarginRight_DefaultValue = null;
 			MarginTop = MarginTop_DefaultValue = null;
-			Panning = Panning_DefaultValue = null;
-			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
+			Panning = Panning_DefaultValue = true;
+			PinchType = PinchType_DefaultValue = ChartPinchType.X;
 			Inverted = Inverted_DefaultValue = false;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "null";

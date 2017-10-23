@@ -27,8 +27,8 @@ namespace DailyScheduler
 
         static void Main()
         {
-            //HandleWrapperBuilder(null, null);
-            HandleNuget(null, null);
+            HandleWrapperBuilder(null, null);
+            //HandleNuget(null, null);
             StartTimer();
             
             Console.Write("Press any key to exit... ");
@@ -49,9 +49,7 @@ namespace DailyScheduler
             Console.WriteLine("Wrapper: "+DateTime.Now);
             try
             {
-                Process p1 = System.Diagnostics.Process.Start(SERVER_FILE_PATH);
-                p1.WaitForExit();
-                
+                System.Diagnostics.Process.Start(SERVER_FILE_PATH);
             }
             catch (FileNotFoundException)
             {

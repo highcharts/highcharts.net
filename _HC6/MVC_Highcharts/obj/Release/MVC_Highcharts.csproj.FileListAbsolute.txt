@@ -49,3 +49,4 @@ C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highcharts\bin\Release\Microsoft.W
 C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highcharts\bin\Release\System.Web.WebPages.Deployment.xml
 C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highcharts\obj\Release\Highcharts.Web.Mvc.dll
 C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highcharts\obj\Release\Highcharts.Web.Mvc.pdb
+C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highcharts\obj\Release\MVC_Highcharts.csprojResolveAssemblyReference.cache
