@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover =
 [
     [ "SplineSeriesMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#a1c202b4f684770e7e3b7b25624e4fd3f", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#a6b7bb076c46e034f431fd7b3baca3ef9", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#a42ca5a3c409f335fb644d8b76ed6e83b", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#a60e61cb815203013c4f3bf05f9790bdb", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#a4cf684c01f419508c0dfbe93282a3fdb", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#a8c0afe758c69ae13829d7bd56b2a9aa3", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#ac5bd55d0648fc265fa032be927bf8570", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#a2179fe01a9d6dc90a697c689bff0f936", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#a092ed00736e58a23918011d1ecebd2d6", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#a8e0cc8a1eecc1485a625fad51eaa6cfe", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#aaa040a41625970f82863c7b4a129ba30", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_marker_states_hover.html#af7d0c8b313f05f6eff16290408ac5467", null ],

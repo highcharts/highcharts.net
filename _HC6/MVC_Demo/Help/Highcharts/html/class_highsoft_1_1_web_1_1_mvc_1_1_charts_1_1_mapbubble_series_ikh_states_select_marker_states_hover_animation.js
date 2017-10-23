@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapbubble_series_ikh_states_select_marker_states_hover_animation =
+[
+    [ "MapbubbleSeriesIkhStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapbubble_series_ikh_states_select_marker_states_hover_animation.html#a897dd9e6cb387217ef774584804ec278", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapbubble_series_ikh_states_select_marker_states_hover_animation.html#ae389abcaa9d36ab51d764d9e52aef3de", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapbubble_series_ikh_states_select_marker_states_hover_animation.html#ad72a27bb358b0469f34359e3f260c3dc", null ]
+];

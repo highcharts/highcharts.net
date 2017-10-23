@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover =
 [
     [ "PlotOptionsLineMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#a13511679d9c7b8ee7099f09dec2d884a", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#a8767c9a0aca51026bd97165cf9079a5d", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#a141704bd1306f971ed17406d20d56de7", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#aaf19e2aec0704495473d72f994355daa", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#aee10ab6d9d647151f93a9be0ee070913", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#a1711475593acb3ae3907330c68420be3", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#ad3e81c835cc17847fd57e096961f1116", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#a7712e5e15993a0197613f700c0495359", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#a1fcd127460623bea37ca033348989610", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#a0720d6cf1bf9aa361fe5f7382cfc107d", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#a14f151c965038c716cd863f31eae3a54", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_line_marker_states_hover.html#a0fabc383468a729ee1241f3f27cfb794", null ],

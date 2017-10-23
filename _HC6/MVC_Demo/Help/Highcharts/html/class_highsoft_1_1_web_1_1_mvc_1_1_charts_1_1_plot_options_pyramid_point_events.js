@@ -3,6 +3,8 @@ var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid_point_eve
     [ "PlotOptionsPyramidPointEvents", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid_point_events.html#a0a427605f126df678dea679684bdb4a4", null ],
     [ "Click", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid_point_events.html#a32f61d082209ea1f712ebe52428fa06b", null ],
     [ "Click_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid_point_events.html#a5ab0ea076a2df32e2bdcaa13c71bb4ff", null ],
+    [ "LegendItemClick", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid_point_events.html#abb5d8f2fd77b0cb1864b82c444fd26a4", null ],
+    [ "LegendItemClick_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid_point_events.html#a682483d8a446fc4be190cb69425d740c", null ],
     [ "MouseOut", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid_point_events.html#a607da6122d63e03e16d0dec630b9edb5", null ],
     [ "MouseOut_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid_point_events.html#a70421e3204b63f5b93a4fce831879a3a", null ],
     [ "MouseOver", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid_point_events.html#a00ab8ddd8e9561150e91242e4ab030a3", null ],

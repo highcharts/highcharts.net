@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wma_series_ikh_states_hover_marker_states_hover_animation =
+[
+    [ "WmaSeriesIkhStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wma_series_ikh_states_hover_marker_states_hover_animation.html#a806fb627f17f46f17d7cb7d6ad2f4a0d", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wma_series_ikh_states_hover_marker_states_hover_animation.html#a2a73b0f4aabf88c43205bcadd012df72", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wma_series_ikh_states_hover_marker_states_hover_animation.html#a3f7ec1e36184b6f539ca9f8dfe9aac3a", null ]
+];

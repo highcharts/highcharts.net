@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_states_hover_marker_states_hover_animation =
+[
+    [ "SplineSeriesStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_states_hover_marker_states_hover_animation.html#a864b0451965c2181d3c33e0a3ae37430", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_states_hover_marker_states_hover_animation.html#a264fb443b031f090dc183e7438a31c8e", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_states_hover_marker_states_hover_animation.html#a55d492426d7de4dcfc76d38e1fc2889a", null ]
+];

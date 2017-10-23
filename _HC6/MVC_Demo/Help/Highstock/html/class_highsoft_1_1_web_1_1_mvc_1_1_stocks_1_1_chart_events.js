@@ -13,6 +13,8 @@ var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_chart_events =
     [ "Load_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_chart_events.html#ad73c86229a9d0569ebae7681ada882dd", null ],
     [ "Redraw", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_chart_events.html#afc5f984e84e48c6ff3c1932e358e349b", null ],
     [ "Redraw_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_chart_events.html#ab3f75fed2b1008ba6ac235cb9d61a21b", null ],
+    [ "Render", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_chart_events.html#a02073b32cdd4ce747ff447bb02d378f7", null ],
+    [ "Render_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_chart_events.html#aeba437738dfa1968a53bd547fd54f282", null ],
     [ "Selection", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_chart_events.html#a684b5b21c5e46ea0a1ef55f761088065", null ],
     [ "Selection_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_chart_events.html#a7b20a359fe373491ff401f7bcf8a3e5e", null ]
 ];

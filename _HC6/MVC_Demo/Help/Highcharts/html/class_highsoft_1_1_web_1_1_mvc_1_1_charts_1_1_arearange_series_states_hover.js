@@ -1,6 +1,8 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_arearange_series_states_hover =
 [
     [ "ArearangeSeriesStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_arearange_series_states_hover.html#a13702c410985f7d80551e17eb0d0254c", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_arearange_series_states_hover.html#a58023134d7501725b96e49a215124638", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_arearange_series_states_hover.html#ad6a9303fa47a01218a3fe95a28ddd016", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_arearange_series_states_hover.html#a59e1c8696cfc112155f6536b3d36e509", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_arearange_series_states_hover.html#a0204235f12f8c21607cdcdc34900be65", null ],
     [ "Halo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_arearange_series_states_hover.html#ad06fd56b6a637d1a2c274db0152e99de", null ],

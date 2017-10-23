@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pivotpoints_marker_states_hover_animation =
+[
+    [ "PlotOptionsPivotpointsMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pivotpoints_marker_states_hover_animation.html#a2cf15894b9494c1c51f47fb3dede1786", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pivotpoints_marker_states_hover_animation.html#a781d741f12baaab6504eb848b3532978", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pivotpoints_marker_states_hover_animation.html#a2aa40e09567c7f50d4bf35c1628bca80", null ]
+];

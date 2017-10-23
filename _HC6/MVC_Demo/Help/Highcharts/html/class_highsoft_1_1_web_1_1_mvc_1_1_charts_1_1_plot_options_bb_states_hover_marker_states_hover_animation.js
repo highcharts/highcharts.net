@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bb_states_hover_marker_states_hover_animation =
+[
+    [ "PlotOptionsBbStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bb_states_hover_marker_states_hover_animation.html#a2b2ff24550e3adc9e99917eac6d51c29", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bb_states_hover_marker_states_hover_animation.html#aa4e7b01cacec5c7da1fdff2dafb573cf", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bb_states_hover_marker_states_hover_animation.html#acf36cea3968d53cc44e010b9d1e02353", null ]
+];

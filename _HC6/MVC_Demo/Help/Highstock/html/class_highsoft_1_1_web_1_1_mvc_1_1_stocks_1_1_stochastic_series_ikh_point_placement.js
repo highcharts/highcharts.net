@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stochastic_series_ikh_point_placement =
+[
+    [ "StochasticSeriesIkhPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stochastic_series_ikh_point_placement.html#a93f2f88b5bca9b44f953fabfc270cb2b", null ]
+];

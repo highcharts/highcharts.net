@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_tilemap_states_select_marker_states_hover_animation =
+[
+    [ "PlotOptionsTilemapStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_tilemap_states_select_marker_states_hover_animation.html#a84d23b17cc6465be09cd469447f06d68", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_tilemap_states_select_marker_states_hover_animation.html#aa3078d1c5b051b79237a29b8ed4bb220", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_tilemap_states_select_marker_states_hover_animation.html#a3cb48634fc1f0e5df7f2e0d07408208e", null ]
+];

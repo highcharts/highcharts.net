@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover =
 [
     [ "AreasplineSeriesDataMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#aa3e3ddc8f9a8d28295d64f33d018edea", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#a936c6049f73841b0ce16cc9e0e8ec321", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#a8f3af894b6bac54165a1ac177af8f065", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#ad9d509ab4c694d963152a7bc33cd018c", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#ad1feac2b8caeb439b5d04f4d34de6a18", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#a495286aba60851d206cb72358d0af3a6", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#a918bd4d3e382747cc8e8b78495562164", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#a40177cbf2fc552cbf097dc67fc26d4c4", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#a869f67e27cd6c32eb63c7910ca59e6a9", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#a033d0a5f93d32172190d9f55145077fd", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#a48ac3b9a6c9b8a172266abddb7d8190d", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_data_marker_states_hover.html#a820716290e72b0680462a603c6dbb107", null ],

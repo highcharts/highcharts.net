@@ -1,6 +1,8 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_states_hover =
 [
     [ "PlotOptionsAreasplineStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_states_hover.html#a0ed8b9996bf43567991855f4ea559cb8", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_states_hover.html#a12c12ea767e56d818db653e05d23c905", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_states_hover.html#ac2e76fd5894afcbdef1613738713ff5a", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_states_hover.html#a6aa03f3679ad5cb854fcbacb7cfef756", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_states_hover.html#abe2205feed315ad83a9c243e198cdab6", null ],
     [ "Halo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_states_hover.html#afa71a1cbcdc6fd27165803fe2f326c92", null ],

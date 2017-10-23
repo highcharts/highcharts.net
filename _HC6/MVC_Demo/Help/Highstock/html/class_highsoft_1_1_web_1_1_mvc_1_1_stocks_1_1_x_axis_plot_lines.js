@@ -1,6 +1,8 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_plot_lines =
 [
     [ "XAxisPlotLines", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_plot_lines.html#a9bad82384e95ceeb9d5f9636ff20dc66", null ],
+    [ "ClassName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_plot_lines.html#aebf2a43a47f3a08eb78f89e2a2319533", null ],
+    [ "ClassName_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_plot_lines.html#a77bfe2cc3931e29c03e9faf117b88a8c", null ],
     [ "Color", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_plot_lines.html#a291ef10f4c2237370261d75d5f1de3d8", null ],
     [ "Color_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_plot_lines.html#a51ca346c2ff223260074dcc9ab9449cd", null ],
     [ "DashStyle", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_plot_lines.html#aefa100e3e1463880869fad9273831a9d", null ],

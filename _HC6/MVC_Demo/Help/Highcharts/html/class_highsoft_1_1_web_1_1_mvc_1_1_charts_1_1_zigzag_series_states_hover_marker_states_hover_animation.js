@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_zigzag_series_states_hover_marker_states_hover_animation =
+[
+    [ "ZigzagSeriesStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_zigzag_series_states_hover_marker_states_hover_animation.html#a8f9403448db2be2cab7af70ccd9516bb", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_zigzag_series_states_hover_marker_states_hover_animation.html#a87dc7f4add45b339099ffe02da6162c0", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_zigzag_series_states_hover_marker_states_hover_animation.html#a9289bc5e2b99656c94b9c7491d71b6aa", null ]
+];

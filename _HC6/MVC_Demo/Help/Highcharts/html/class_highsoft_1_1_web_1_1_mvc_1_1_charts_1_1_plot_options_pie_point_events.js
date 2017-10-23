@@ -3,6 +3,8 @@ var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_point_events 
     [ "PlotOptionsPiePointEvents", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_point_events.html#a4e01ace1c9363046da73d3267574873d", null ],
     [ "Click", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_point_events.html#a2348720336c4f3ad9867464a562b63a9", null ],
     [ "Click_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_point_events.html#aed597b27e19d7a471e357d311dde97af", null ],
+    [ "LegendItemClick", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_point_events.html#a2b1869cc2a2549e15ba607d726d303da", null ],
+    [ "LegendItemClick_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_point_events.html#a4f07360cc766890d9c887ad8fee5c03f", null ],
     [ "MouseOut", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_point_events.html#aba31666169468c7f2ca2fe26cca0c1c1", null ],
     [ "MouseOut_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_point_events.html#a7e3474b4d5f5e8221b3aee5a01f9c22b", null ],
     [ "MouseOver", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_point_events.html#abeb6667a383316f87934f052828a9825", null ],

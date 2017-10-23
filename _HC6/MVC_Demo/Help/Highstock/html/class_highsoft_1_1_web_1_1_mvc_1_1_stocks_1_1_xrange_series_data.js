@@ -1,0 +1,26 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data =
+[
+    [ "XrangeSeriesData", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a077e38e3dbc91907c57cffc4c58ccbf3", null ],
+    [ "Color", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#af2e95e8a17a00ac5044d911470db7233", null ],
+    [ "Color_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#ad03ec41f6180194d8fa6ff3711e22fe9", null ],
+    [ "DataLabels", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#ad064f6e41122a8b64add3a3b81a5ab09", null ],
+    [ "DataLabels_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#afec37d204985fba18eec88e1e3668742", null ],
+    [ "Description", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#ae2ce32189e0ec518e45f6e840b151139", null ],
+    [ "Description_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a032c0db06f79c60aa51d731e3ed301c4", null ],
+    [ "Events", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#ab5854d795ee8cc7bd44e830c06bb48bd", null ],
+    [ "Events_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a0bc47e5fe9449a904431869bfdfcd298", null ],
+    [ "Id", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a3fa8920b2373375520452e23ca0c8331", null ],
+    [ "Id_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a391a67887404b11b1ab8a8e31871f6f0", null ],
+    [ "Labelrank", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a3e191f790afbe71c75b4d761efbcdb8a", null ],
+    [ "Labelrank_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a2ce60fb60c18ee299ed41fff5b315654", null ],
+    [ "Marker", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a318299ffa0bac7d7b110dfcf60fdbdd7", null ],
+    [ "Marker_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a35c68371afdab6222ae4681204b92dad", null ],
+    [ "Name", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a4a808f2d89af97153863b82e4a4f8b9f", null ],
+    [ "Name_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a517434af37774efacb64211b3823bb70", null ],
+    [ "Selected", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a32ef38666bc0e618f39a7e29516ddc4c", null ],
+    [ "Selected_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a2daa9baf7fcc634cf93f742595abac08", null ],
+    [ "X", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a44d5672ef8a416ab6d7f3753f6a16025", null ],
+    [ "X_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#af3df5e21cde1d042ff39d37e33e74a3b", null ],
+    [ "Y", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a382664b367d73e80aa49f29508fd0900", null ],
+    [ "Y_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_xrange_series_data.html#a5c480daddf448b1f8aae6852d5e6ad77", null ]
+];

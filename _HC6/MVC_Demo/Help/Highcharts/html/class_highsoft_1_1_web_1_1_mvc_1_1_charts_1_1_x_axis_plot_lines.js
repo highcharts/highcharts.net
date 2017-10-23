@@ -1,6 +1,8 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_plot_lines =
 [
     [ "XAxisPlotLines", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_plot_lines.html#a42e398f61041c5e2ede1f32e9c907a76", null ],
+    [ "ClassName", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_plot_lines.html#adf7918dab06cd349ec30f480048371ca", null ],
+    [ "ClassName_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_plot_lines.html#a733e883e742544a4a24f99e7dc99c947", null ],
     [ "Color", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_plot_lines.html#ab816301052985bddc8c22f6d09ef1bdf", null ],
     [ "Color_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_plot_lines.html#aa20d6e51000d1b202a14e2473de715d2", null ],
     [ "DashStyle", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_plot_lines.html#a620e1a1732d7cd08747f875968c94f4d", null ],

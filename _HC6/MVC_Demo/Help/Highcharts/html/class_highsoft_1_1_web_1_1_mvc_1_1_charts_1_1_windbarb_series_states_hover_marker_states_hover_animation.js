@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_states_hover_marker_states_hover_animation =
+[
+    [ "WindbarbSeriesStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_states_hover_marker_states_hover_animation.html#a3efa9ad3bbeb4b4bcffb03b67d7a837d", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_states_hover_marker_states_hover_animation.html#abb17d25de5d041e2a5aaf1bf3963ed35", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_states_hover_marker_states_hover_animation.html#ab4d2d0b217cf7f105b15ece7a09a7022", null ]
+];

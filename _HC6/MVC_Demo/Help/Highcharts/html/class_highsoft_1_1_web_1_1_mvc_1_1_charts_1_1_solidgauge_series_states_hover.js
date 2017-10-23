@@ -1,6 +1,8 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_solidgauge_series_states_hover =
 [
     [ "SolidgaugeSeriesStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_solidgauge_series_states_hover.html#a847db3dfd0c64281493b21ac605a0471", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_solidgauge_series_states_hover.html#a3b0bf92b2650c15cfbbdcb38af42d565", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_solidgauge_series_states_hover.html#af192cdf47441c92786b80facd3290478", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_solidgauge_series_states_hover.html#a45e04276d728fcd2fc4b8ef80650e887", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_solidgauge_series_states_hover.html#a396557d21c744cc79bce0ecb59e08f3c", null ],
     [ "Halo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_solidgauge_series_states_hover.html#a87665cf4b0df70f0b9b74680432336c6", null ],

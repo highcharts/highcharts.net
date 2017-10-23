@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover =
 [
     [ "PlotOptionsSeriesMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#a2b348476f59fdc7020d812c3f707913f", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#a0e5f2535bb7c74d46ab0817ab2b1045c", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#a0577153b6efc306af1a8c69d6dc52880", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#a1c66eb1803e95c30ee6dbe16a6a6838c", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#a626dce3ec55c5a240f024ca63427ba21", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#a6b3a692b378a8bfdb2072c1043358e94", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#a536eff3aab9ab7c76bfddf6a13f3d57b", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#a05ba4bf5839f11f6d8098fd6f4806a2f", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#ae84a065a5d22d23551f8447f6f2a7a2d", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#ae8a865f220060c8972daabb41af7c9e2", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#ac5129d29a4a398dcadc9996f28b9c624", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_marker_states_hover.html#a93377bfd0640da057e1e6d2df055da66", null ],

@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover =
 [
     [ "OhlcSeriesMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#a76c77a44ef7d0f3ca1f7e234a640b047", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#a6caca06eac4ec5679849a1a3c73956cd", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#a4f2109c2106933c52944d126d2e1fcb7", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#a866de4a20cc0e76a9ee979ba4f91e0e9", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#a0ee1d5335b2ee09783af4bc5d711be27", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#ae45c1be46076a32760dee017a5228523", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#a9c47017b9be3066f4265eee2743eab65", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#aa91594a81dc5dee0df775023c0cd9df4", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#af59167a5de2e09df5e376fb7a44d1a39", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#ad8522a48a4729e9d9e88bd502ff92386", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#a3e54552bf52f786dbcabcf2a9ab434a1", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_ohlc_series_marker_states_hover.html#ae96910e4e9f544551bfe3ef2e1cacfca", null ],

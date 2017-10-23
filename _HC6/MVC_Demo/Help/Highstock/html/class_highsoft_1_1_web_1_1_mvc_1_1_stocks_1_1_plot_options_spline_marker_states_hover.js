@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover =
 [
     [ "PlotOptionsSplineMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#a6fcf80ff49e97a5b94b1950522c0ccce", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#a2f0a5ce59c6258139a1fa6cc07d19d73", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#a7c62ede8dae692e8eaf9426c6df1e221", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#af37edd592b22e85ce6be994d6f3ec3b9", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#a723c266d30f14fe790d03523ce15571a", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#af4c4a074917c1718b6e125984b9a762d", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#af85c2657ea11820fb9b0632b85bf1f34", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#a2e3a48d7f90931c2f402fc7cc16cdb88", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#a03446babec8b44cfb81b0174541e690f", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#a1f0c02bb97f0a45792d68477307cb5af", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#a69f6da738a08e0dd7c41134e0aef3a90", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_spline_marker_states_hover.html#a7a47ab71bc5dab1d2b9e50333c41a93c", null ],

@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover =
 [
     [ "CandleStickSeriesMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#a8b35493c04b48a44a698beca70309040", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#a9fcf7149d2f70561afe47aadcc24cc8f", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#a25aea1833defdcc56631828fda1dd4be", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#afe0bb23efa704be298ac44bdb8c6d140", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#a1fdf7e9d573e0614746605c2d2c0a3a2", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#ab5ef150363bda6a8da1658212d12f4b5", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#aa232307a59f2ec66c1724174c5e415c4", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#a5bf634288b8cb4bb49a73c0dcab8023f", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#a7be6f728c8ed3dded39701cd2009f495", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#a7c3d708aed74ff43314e54eef1803ef2", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#a6af4ee1cc7e29a75e9bdf69c83dbea13", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_marker_states_hover.html#a1fd3b168a48388b7e65b58119949f2f6", null ],

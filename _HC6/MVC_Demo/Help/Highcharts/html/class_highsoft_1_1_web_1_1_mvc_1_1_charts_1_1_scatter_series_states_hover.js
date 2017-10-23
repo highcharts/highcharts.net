@@ -1,6 +1,8 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter_series_states_hover =
 [
     [ "ScatterSeriesStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter_series_states_hover.html#a625ee68b7da2ddfb37a9e49c5a70de47", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter_series_states_hover.html#a52d54f87868689267e7dc13bfd8c7d86", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter_series_states_hover.html#a96601691d40e2aee35ca84b8906d8c8c", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter_series_states_hover.html#a2c16f974fcc22cf6dc2cb740c84ac7e1", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter_series_states_hover.html#ae66bb9614fc67771991cd14e716b373a", null ],
     [ "Halo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter_series_states_hover.html#a01e8a8b70a2123aaf87d235257cd1eb8", null ],

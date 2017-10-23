@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_ikh_states_select_marker_states_hover_animation =
+[
+    [ "BellcurveSeriesIkhStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_ikh_states_select_marker_states_hover_animation.html#a35182be1aa105bf5d62f267564cc6bc0", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_ikh_states_select_marker_states_hover_animation.html#a881ec3f9f2ecd0e7a15581d53bc0ad0d", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_ikh_states_select_marker_states_hover_animation.html#a348f9d86db17c449103b52158a7dd503", null ]
+];

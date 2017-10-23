@@ -3,6 +3,8 @@ var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_point_even
     [ "PlotOptionsFunnelPointEvents", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_point_events.html#a975d139d462de2e8a1cf06d59c40840a", null ],
     [ "Click", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_point_events.html#aa510f7a3daa6f236d9fadd5bf944c174", null ],
     [ "Click_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_point_events.html#a65108bc681647df71a03f953b6b7889d", null ],
+    [ "LegendItemClick", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_point_events.html#a9c2a5399b418d2ac537386b31f0ff568", null ],
+    [ "LegendItemClick_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_point_events.html#af0eef400fd0bc922d5ed1de12ed2339f", null ],
     [ "MouseOut", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_point_events.html#add5992a4f89e1cf9a6d387584d5c3d5d", null ],
     [ "MouseOut_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_point_events.html#a54c59915cd960e6556889ba7fedb7e0b", null ],
     [ "MouseOver", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_point_events.html#a3b12405b15250cf325cfd74c8fe7a044", null ],

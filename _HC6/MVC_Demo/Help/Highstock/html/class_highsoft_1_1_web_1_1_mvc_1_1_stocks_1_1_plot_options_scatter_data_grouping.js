@@ -1,10 +1,10 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping =
 [
     [ "PlotOptionsScatterDataGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#a78473f1c18cb773af75aa6ac1d84ba13", null ],
-    [ "Approximation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#a873f0e6a793b046a7dd3480a0c651ca1", null ],
-    [ "Approximation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#acdee67429a53c7fdad2a750fc347cd54", null ],
-    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#a5b0a6af645d67ecfc186ebbe1c7b26ed", null ],
-    [ "DateTimeLabelFormats_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#a65958a806baad99a9cd472f41d404187", null ],
+    [ "Approximation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#a05dacefd247a5b49f8f91538bf1c1aed", null ],
+    [ "Approximation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#a20606f28a793d2ac342707253f7f3197", null ],
+    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#a2d0c4e29c2cde25ac61732337916659d", null ],
+    [ "DateTimeLabelFormats_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#a6e681c3ba276fd0f1b34ca7d9dd20c91", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#aba866211d71ce79a91cdc9d8f85666e5", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#a50be67fd8b25bae6f0feb7c39f4216b0", null ],
     [ "Forced", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html#a30900c4e43d93229c0341fc0c2c82c64", null ],

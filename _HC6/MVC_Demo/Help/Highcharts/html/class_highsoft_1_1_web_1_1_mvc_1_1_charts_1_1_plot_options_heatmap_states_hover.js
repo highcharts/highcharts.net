@@ -1,6 +1,8 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_heatmap_states_hover =
 [
     [ "PlotOptionsHeatmapStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_heatmap_states_hover.html#a402ffa57f222201f8210e056f26e49d3", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_heatmap_states_hover.html#a05fd42aa1c363c3291e12878dbaef7fc", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_heatmap_states_hover.html#a93d94c1b72b9086a97e6574647d29e26", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_heatmap_states_hover.html#ade0e85222d5384c36c639bda8cfc26dc", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_heatmap_states_hover.html#a8a142b59a67cf0464596b54230cd3e06", null ],
     [ "Halo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_heatmap_states_hover.html#a7c3a06ef9c29d714dcda1bbb8ec389f2", null ],

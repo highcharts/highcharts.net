@@ -7,8 +7,10 @@ var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation =
     [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation.html#a92516d15c2dd93d5b933330b48fa5641", null ],
     [ "ArrowSize", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation.html#a5ddf4d6a749cc909d233fc6c6d0b88e8", null ],
     [ "ArrowSize_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation.html#a3be3fdc4c4f86d9da64c9ce838363b64", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation.html#a70e3e4a088be76b1b4de96b6e80dbab4", null ],
+    [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation.html#a5fa1a5f83a361f6d4c40bdb5568ffb8c", null ],
     [ "InactiveColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation.html#aa030a1cc31f6014a09f7180a7dc910b8", null ],
     [ "InactiveColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation.html#abe81df300368da51906e5ccd5fe7a32b", null ],
-    [ "Style", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation.html#ab10c4580e408738216bcedc92e12169d", null ],
-    [ "Style_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation.html#ab4e3a24e18bca734400afd9f58ec1e7e", null ]
+    [ "Style", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation.html#a5c55dce2da7f61ec95340e3cd72b9e99", null ],
+    [ "Style_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_legend_navigation.html#aa751874da767e2b6102b3fcb30d9f903", null ]
 ];

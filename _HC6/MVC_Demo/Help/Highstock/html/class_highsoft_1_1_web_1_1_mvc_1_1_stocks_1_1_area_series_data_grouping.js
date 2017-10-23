@@ -1,10 +1,10 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping =
 [
     [ "AreaSeriesDataGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#a7c8f30338cc60b3e5cd8e737716150f0", null ],
-    [ "Approximation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#aa501c2e3995f3c9cbec8f3fd8b8a5129", null ],
-    [ "Approximation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#a2e9e7fc50508ac436d4a061295cf7ed5", null ],
-    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#a58b0ca5a5954ae338308f552ba63998c", null ],
-    [ "DateTimeLabelFormats_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#ab3cfdd90e71ade01328225ab3cfca3ac", null ],
+    [ "Approximation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#afa2f1ff052aa7315ce8447b9ceda6eee", null ],
+    [ "Approximation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#a8ea8aac082db7713d86f5faf4b013d4e", null ],
+    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#aeadc1633494e5f084b8c0309cd6d978d", null ],
+    [ "DateTimeLabelFormats_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#a27f2bf966d2571ae2bd7dbb18e62206d", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#a157de269cdd3d118eadd88221db45440", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#a80435fa1bd82ce6fdaff42ce394d3c68", null ],
     [ "Forced", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_area_series_data_grouping.html#a6fba9141bcfc55b9a428b36e90bb611b", null ],

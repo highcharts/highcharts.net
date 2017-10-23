@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover =
 [
     [ "PlotOptionsPolygonMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#a727d210cbd39c54fe431ab0d893eff5d", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#abd78bd7031cced90fd4a6e608616d2d2", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#a70295e6cf4f4f8b22943f39a6e7b0a44", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#a34382faca6472914930deb118ac885d2", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#a14359b0be49a38587e1aac2b44f93553", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#aee5f4f482fc020c34b3eaf5cfbd8a46a", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#a957d50eb4f25c233d20317617b0fc1f9", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#a8766efceac7d02c86be5aa60ccb38cf4", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#ad08ae4321630f321ccafc83075422e7e", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#a51be00be2a41140d2d8848290eca09d2", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#a750182edd5aab0b9e0854c01882aad4e", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_marker_states_hover.html#a53d9489c5308d359ff21ade761e33da9", null ],

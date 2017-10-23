@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover =
 [
     [ "PlotOptionsScatterMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#a7eef4db8a81770a0e9da5b90f41ea0e3", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#a9b812f09cfab61f946d69c443fa3fe04", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#aa2c0a55840ddf933407cae0cb3d5ba5a", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#a6f3d3285b95fe907dbcf9223365bbdcc", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#aaf6c5e42982ec6ff369b4fb2ac63cbc4", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#a4443bbf531238cf6bfb50179398727b9", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#a82c3a191b19241f164eb935bf58c2686", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#a170ffeb8174219d669b3ee81d6e0b0f3", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#a29fa619b064863f0621f67aa4861f20e", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#a7735c8dcd2293a45bd0bef14c4645231", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#a690c2faef860b3813429757b1af50aff", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter_marker_states_hover.html#a223d675e246b381b92a7f7f50b8102de", null ],

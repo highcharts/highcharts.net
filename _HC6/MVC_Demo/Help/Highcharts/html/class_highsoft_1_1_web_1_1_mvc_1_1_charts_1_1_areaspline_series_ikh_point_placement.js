@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_ikh_point_placement =
+[
+    [ "AreasplineSeriesIkhPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areaspline_series_ikh_point_placement.html#a8ad4b1efdf9c1c7b7d6ed552af25ab35", null ]
+];

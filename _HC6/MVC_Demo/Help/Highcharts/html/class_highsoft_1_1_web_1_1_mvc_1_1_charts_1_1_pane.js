@@ -1,10 +1,10 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane =
 [
     [ "Pane", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#a889bfdcd68af8494d720546f2eb31207", null ],
-    [ "Background", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#ae263fb7876a4ff69d946845de193e9e2", null ],
-    [ "Background_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#a9c0c69e0367cc3e77c571bcc956e1df3", null ],
-    [ "Center", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#a1cbbda662f25bbd6360e2b62cbd57937", null ],
-    [ "Center_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#a7f357a217c64deca4aafddc7debfb4a0", null ],
+    [ "Background", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#a00b37b53bc8fd93721ca20dac7d05184", null ],
+    [ "Background_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#aab388334b0f499bb7baa3a002d4afb8e", null ],
+    [ "Center", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#ac6a7bffbb7b2d179f1e873decb2cd0be", null ],
+    [ "Center_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#a883b8295fc5e369ae34f27d88fe5a6d4", null ],
     [ "EndAngle", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#a8c5bd3cd9ba4e2c01239de4c28c7500b", null ],
     [ "EndAngle_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#ab069bb30e84b61700004f616074d05e0", null ],
     [ "Size", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pane.html#a4ab2d528c4ffd46c72f93d8182f36dba", null ],

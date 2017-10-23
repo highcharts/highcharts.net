@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover =
 [
     [ "ScatterSeriesDataMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#a84ed1225713235e2ea7af8f67351e85f", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#a530e707e82be108a758ea7c6f486205a", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#a230df296d25acbd7dc155b71862fed43", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#a84338858342298eab6ef8cc7a8bf9132", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#a5a044c0066e01e9426d4a736513a85ba", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#a556c6e688dc203f08399864c589a29a4", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#a8b91e8569921f0f3b892597b68a70031", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#a6c73234b70b23aec68f7a04f7b85bab3", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#a32c3d567c5a4d7986423fa3c940196ff", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#a12ea368f88a7c9d551250d7c8d26bbfc", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#aa2ba79d723547302d212ec4a9ad277ae", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data_marker_states_hover.html#af041bfb9f2bb985a8e7fab5cf7babc85", null ],

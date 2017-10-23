@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover =
 [
     [ "PlotOptionsSeriesMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#aee714ba84b859d2fd5279e8cfa722925", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#aa4f3ca5028c9e4a4365bcd96f3a1a748", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#a2207b6426e039ea529704f93996911a3", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#a5fa0c1004b61da0a78dde7aa77b15bbc", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#a3022e6b7b599150f8cd6acc38fcef9ea", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#af74a910210dde937e0b4306ea22c487b", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#a2ba12ccc2bd1e5daa4b073edf5fb0f00", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#af45ba07f2b59aaed9f9b87498f3c07bf", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#a6d7b427564df296f08166185a7e5583b", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#a60b68df8b4aad443519e431f5f5741af", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#aba962e33acfe90ad288534bb8a08f1e1", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_series_marker_states_hover.html#a392eedddfae0e35bde7e26b406eb9514", null ],

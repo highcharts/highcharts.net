@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover =
 [
     [ "PlotOptionsAreasplineMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#a66a8b912564a31faeb37c4c5b607e7be", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#ab3ed02d77420e87b96d06289458cc68b", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#af5b9d2a6afd6ab9523de1e664b8707ee", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#a1165c20cfb543a50570bb611e01d59a2", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#ae59b9b1ef90e6c5772832ccab6a603a4", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#afaf394d18e41ed0acd0e92c11284382f", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#afb2ab9eb543ff2a48d67fbf87c30e989", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#a8f3be27c0baccc6a2bf394a71a0bbfb5", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#a91542cdaf0c4e82e32289d858d4e4e92", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#a5581c8bffe5258dd4e9f35a987144dd1", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#af8a6fe1f2073225966e4ca9796fa168e", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_marker_states_hover.html#ab95c9ebd0600963a563227d7cb546c62", null ],

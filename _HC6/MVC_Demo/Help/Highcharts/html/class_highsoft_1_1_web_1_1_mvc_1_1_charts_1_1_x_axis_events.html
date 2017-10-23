@@ -32,6 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Highcharts
+   &#160;<span id="projectnumber">6.0.1</span>
    </div>
   </td>
  </tr>
@@ -124,14 +125,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a4fa93a9d01e086fbf1fdd3e0716e27ed"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_events.html#a4fa93a9d01e086fbf1fdd3e0716e27ed">AfterBreaks</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4fa93a9d01e086fbf1fdd3e0716e27ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">An event fired after the breaks have rendered.  <a href="#a4fa93a9d01e086fbf1fdd3e0716e27ed">More...</a><br /></td></tr>
 <tr class="separator:a4fa93a9d01e086fbf1fdd3e0716e27ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a120bc76164638d4a76a7ee20280d54ff"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_events.html#a120bc76164638d4a76a7ee20280d54ff">AfterSetExtremes</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a120bc76164638d4a76a7ee20280d54ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">As opposed to the  <a href="#a120bc76164638d4a76a7ee20280d54ff">More...</a><br /></td></tr>
 <tr class="separator:a120bc76164638d4a76a7ee20280d54ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ca5e2f32e09f7e2bae31f6a3f74cddb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_events.html#a2ca5e2f32e09f7e2bae31f6a3f74cddb">PointBreak</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a2ca5e2f32e09f7e2bae31f6a3f74cddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">An event fired when a break from this axis occurs on a point.  <a href="#a2ca5e2f32e09f7e2bae31f6a3f74cddb">More...</a><br /></td></tr>
 <tr class="separator:a2ca5e2f32e09f7e2bae31f6a3f74cddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9453df7596a59d017d71a0c96d21b6d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_events.html#ab9453df7596a59d017d71a0c96d21b6d">PointInBreak</a><code> [get, set]</code></td></tr>
+<tr class="separator:ab9453df7596a59d017d71a0c96d21b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8efb1a8237bc71a0268e5ee7e522096"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_x_axis_events.html#aa8efb1a8237bc71a0268e5ee7e522096">SetExtremes</a><code> [get, set]</code></td></tr>
 <tr class="separator:aa8efb1a8237bc71a0268e5ee7e522096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -170,7 +170,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>An event fired after the breaks have rendered. </p>
+<p></p>
+<p>An event fired after the breaks have rendered.</p>
 
 </div>
 </div>
@@ -192,8 +193,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>As opposed to the </p>
-<p><code>setExtremes</code> event, this event fires after the final min and max values are computed and corrected for <code>minRange</code>. </p>
+<p></p>
+<p>As opposed to the <code>setExtremes</code> event, this event fires after thefinal min and max values are computed and corrected for <code>minRange</code>.</p>
+<p>Fires when the minimum and maximum is set for the axis, either bycalling the <code>.setExtremes()</code> method or by selecting an area in thechart. One parameter, <code>event</code>, is passed to the function, containing common event information.</p>
+<p>The new user set minimum and maximum values can be found by <code>event.min</code> and <code>event.max</code>. These reflect the axis minimum and maximumin axis values. The actual data extremes are found in <code>event.dataMin</code>and <code>event.dataMax</code>.</p>
 
 </div>
 </div>
@@ -215,7 +218,31 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>An event fired when a break from this axis occurs on a point. </p>
+<p></p>
+<p>An event fired when a break from this axis occurs on a point.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9453df7596a59d017d71a0c96d21b6d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Highsoft.Web.Mvc.Charts.XAxisEvents.PointInBreak</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>An event fired when a point falls inside a break from this axis.</p>
 
 </div>
 </div>
@@ -238,13 +265,13 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-<p>Fires when the minimum and maximum is set for the axis, either by calling the <code>.setExtremes()</code> method or by selecting an area in the chart. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on which library is used as the base for <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_highcharts.html">Highcharts</a>.</p>
-<p>The new user set minimum and maximum values can be found by <code>event.min</code> and <code>event.max</code>. When an axis is zoomed all the way out from the "Reset zoom" button, <code>event.min</code> and <code>event.max</code> are null, and the new extremes are set based on <code>this.dataMin</code> and <code>this.dataMax</code>.</p>
+<p>Fires when the minimum and maximum is set for the axis, either bycalling the <code>.setExtremes()</code> method or by selecting an area in thechart. One parameter, <code>event</code>, is passed to the function, containing common event information.</p>
+<p>The new user set minimum and maximum values can be found by <code>event.min</code> and <code>event.max</code>. These reflect the axis minimum and maximumin data values. When an axis is zoomed all the way out from the &quot;Resetzoom&quot; button, <code>event.min</code> and <code>event.max</code> are null, and the new extremesare set based on <code>this.dataMin</code> and <code>this.dataMax</code>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/PC/Documents/highcharts.net/MVC_Highcharts/CodeGeneration/<a class="el" href="_x_axis_events_8cs.html">XAxisEvents.cs</a></li>
+<li>C:/Users/PC/Documents/highcharts.net/_HC6/MVC_Highcharts/CodeGeneration/<a class="el" href="_x_axis_events_8cs.html">XAxisEvents.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

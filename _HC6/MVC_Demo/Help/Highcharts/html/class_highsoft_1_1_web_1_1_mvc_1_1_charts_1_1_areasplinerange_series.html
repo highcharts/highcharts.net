@@ -32,6 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Highcharts
+   &#160;<span id="projectnumber">6.0.1</span>
    </div>
   </td>
  </tr>
@@ -126,168 +127,130 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a8da57209fa2f8a26bc37d184021f64f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a8da57209fa2f8a26bc37d184021f64f8">AllowPointSelect</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a8da57209fa2f8a26bc37d184021f64f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow this series' points to be selected by clicking on the markers, bars or pie slices.  <a href="#a8da57209fa2f8a26bc37d184021f64f8">More...</a><br /></td></tr>
-<tr class="separator:a8da57209fa2f8a26bc37d184021f64f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25b422cd7e4ba1f53d5a11d3938cdb47"><td class="memItemLeft" align="right" valign="top">Animation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a25b422cd7e4ba1f53d5a11d3938cdb47">Animation</a><code> [get, set]</code></td></tr>
-<tr class="separator:a25b422cd7e4ba1f53d5a11d3938cdb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a214fbad3a669ae9d7c2831a7e8f010fc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a214fbad3a669ae9d7c2831a7e8f010fc">Color</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a214fbad3a669ae9d7c2831a7e8f010fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main color or the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the  <a href="#a214fbad3a669ae9d7c2831a7e8f010fc">More...</a><br /></td></tr>
-<tr class="separator:a214fbad3a669ae9d7c2831a7e8f010fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13a4d4f37e5f6fac81a7b963e2714de2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a13a4d4f37e5f6fac81a7b963e2714de2">ConnectNulls</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a13a4d4f37e5f6fac81a7b963e2714de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to connect a graph line across null points.  <a href="#a13a4d4f37e5f6fac81a7b963e2714de2">More...</a><br /></td></tr>
-<tr class="separator:a13a4d4f37e5f6fac81a7b963e2714de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a607d6ba88f90bb2139e29219e1cf05c0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a607d6ba88f90bb2139e29219e1cf05c0">CropThreshold</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a607d6ba88f90bb2139e29219e1cf05c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the series contains less points than the crop threshold, all points are drawn, event if the points fall outside the visible plot area at the current zoom. The advantage of drawing all points (including markers and columns), is that animation is performed on updates. On the other hand, when the series contains more points than the crop threshold, the series data is cropped to only contain points that fall within the plot area. The advantage of cropping away invisible points is to increase performance on large series. .  <a href="#a607d6ba88f90bb2139e29219e1cf05c0">More...</a><br /></td></tr>
-<tr class="separator:a607d6ba88f90bb2139e29219e1cf05c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5e25c35611418ce48836d6bc4be5deb"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesCursor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ac5e25c35611418ce48836d6bc4be5deb">Cursor</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac5e25c35611418ce48836d6bc4be5deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can set the cursor to "pointer" if you have click events attached to the series, to signal to the user that the points and lines can be clicked.  <a href="#ac5e25c35611418ce48836d6bc4be5deb">More...</a><br /></td></tr>
-<tr class="separator:ac5e25c35611418ce48836d6bc4be5deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb3119dcb710d29d1c96d4111f6e9d76"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesDashStyle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#adb3119dcb710d29d1c96d4111f6e9d76">DashStyle</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:adb3119dcb710d29d1c96d4111f6e9d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">A name for the dash style to use for the graph. Applies only to series type having a graph, like  <a href="#adb3119dcb710d29d1c96d4111f6e9d76">More...</a><br /></td></tr>
-<tr class="separator:adb3119dcb710d29d1c96d4111f6e9d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10f9cf048b1c373283a4fb2978efa6ed"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_data.html">AreasplinerangeSeriesData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a10f9cf048b1c373283a4fb2978efa6ed">Data</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a10f9cf048b1c373283a4fb2978efa6ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">An array of data points for the series. For the  <a href="#a10f9cf048b1c373283a4fb2978efa6ed">More...</a><br /></td></tr>
 <tr class="separator:a10f9cf048b1c373283a4fb2978efa6ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af00b3ea26537a87c3cea4f3a91eb66f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_data_labels.html">AreasplinerangeSeriesDataLabels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#af00b3ea26537a87c3cea4f3a91eb66f6">DataLabels</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af00b3ea26537a87c3cea4f3a91eb66f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extended data labels for range series types. Range series data labels have no  <a href="#af00b3ea26537a87c3cea4f3a91eb66f6">More...</a><br /></td></tr>
-<tr class="separator:af00b3ea26537a87c3cea4f3a91eb66f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30ab9c8c8d6eeca6f655225771be9263"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a30ab9c8c8d6eeca6f655225771be9263">EnableMouseTracking</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a30ab9c8c8d6eeca6f655225771be9263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.  <a href="#a30ab9c8c8d6eeca6f655225771be9263">More...</a><br /></td></tr>
-<tr class="separator:a30ab9c8c8d6eeca6f655225771be9263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35e2de95fda423e2082f155c99e1a417"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_events.html">AreasplinerangeSeriesEvents</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a35e2de95fda423e2082f155c99e1a417">Events</a><code> [get, set]</code></td></tr>
-<tr class="separator:a35e2de95fda423e2082f155c99e1a417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a227d86aa645bf7e6d3f0e8814264e8ab"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a227d86aa645bf7e6d3f0e8814264e8ab">FillColor</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a227d86aa645bf7e6d3f0e8814264e8ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill color or gradient for the area. When  <a href="#a227d86aa645bf7e6d3f0e8814264e8ab">More...</a><br /></td></tr>
-<tr class="separator:a227d86aa645bf7e6d3f0e8814264e8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d187776c077f6f02c2ad91ec02622bf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a6d187776c077f6f02c2ad91ec02622bf">FillOpacity</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6d187776c077f6f02c2ad91ec02622bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill opacity for the area. Note that when you set an explicit  <a href="#a6d187776c077f6f02c2ad91ec02622bf">More...</a><br /></td></tr>
-<tr class="separator:a6d187776c077f6f02c2ad91ec02622bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bc1ad4b84a6bfe587400f308f4c9c78"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a6bc1ad4b84a6bfe587400f308f4c9c78">Id</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6bc1ad4b84a6bfe587400f308f4c9c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">An id for the series. This can be used after render time to get a pointer to the series object through  <a href="#a6bc1ad4b84a6bfe587400f308f4c9c78">More...</a><br /></td></tr>
 <tr class="separator:a6bc1ad4b84a6bfe587400f308f4c9c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97e653b81f09e73afdf3ab4015cd41ea"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a97e653b81f09e73afdf3ab4015cd41ea">Index</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a97e653b81f09e73afdf3ab4015cd41ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of the series in the chart, affecting the internal index in the  <a href="#a97e653b81f09e73afdf3ab4015cd41ea">More...</a><br /></td></tr>
 <tr class="separator:a97e653b81f09e73afdf3ab4015cd41ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c9a7638327ae14b95959d12cd7782b9"><td class="memItemLeft" align="right" valign="top">List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a7c9a7638327ae14b95959d12cd7782b9">Keys</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7c9a7638327ae14b95959d12cd7782b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A custom mapping of data point array positions to respective object properties. For example, is the first key is  <a href="#a7c9a7638327ae14b95959d12cd7782b9">More...</a><br /></td></tr>
-<tr class="separator:a7c9a7638327ae14b95959d12cd7782b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3715d28177bab3659fd2b3ee82fecb8d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a3715d28177bab3659fd2b3ee82fecb8d">LegendIndex</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3715d28177bab3659fd2b3ee82fecb8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sequential index of the series in the legend. </p><div class="demo">Try it: <a href="http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/series/legendindex/" target="_blank">Legend in opposite order</a> </div><p>.  <a href="#a3715d28177bab3659fd2b3ee82fecb8d">More...</a><br /></td></tr>
 <tr class="separator:a3715d28177bab3659fd2b3ee82fecb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b8eac86255646c3def1a5fe8b0b969d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a3b8eac86255646c3def1a5fe8b0b969d">LineColor</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3b8eac86255646c3def1a5fe8b0b969d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A separate color for the graph line. By default the line takes the  <a href="#a3b8eac86255646c3def1a5fe8b0b969d">More...</a><br /></td></tr>
-<tr class="separator:a3b8eac86255646c3def1a5fe8b0b969d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9411a97e0711e4a2ed6c8be1511c4001"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a9411a97e0711e4a2ed6c8be1511c4001">LineWidth</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a9411a97e0711e4a2ed6c8be1511c4001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pixel width of the arearange graph line.  <a href="#a9411a97e0711e4a2ed6c8be1511c4001">More...</a><br /></td></tr>
-<tr class="separator:a9411a97e0711e4a2ed6c8be1511c4001"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebff8e4799669d69ff90529af9b01f94"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#aebff8e4799669d69ff90529af9b01f94">LinkedTo</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aebff8e4799669d69ff90529af9b01f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a href="#series.id">id</a> of another series to link to. Additionally, the value can be ":previous" to link to the previous series. When two series are linked, only the first one appears in the legend. Toggling the visibility of this also toggles the linked series.  <a href="#aebff8e4799669d69ff90529af9b01f94">More...</a><br /></td></tr>
-<tr class="separator:aebff8e4799669d69ff90529af9b01f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d550f31cb4abf0e2dbcf6f375bc4ed4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a4d550f31cb4abf0e2dbcf6f375bc4ed4">Name</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4d550f31cb4abf0e2dbcf6f375bc4ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the series as shown in the legend, tooltip etc.  <a href="#a4d550f31cb4abf0e2dbcf6f375bc4ed4">More...</a><br /></td></tr>
 <tr class="separator:a4d550f31cb4abf0e2dbcf6f375bc4ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fff8c5021a26ee5b0cf321ca7359bd8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a8fff8c5021a26ee5b0cf321ca7359bd8">NegativeColor</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a8fff8c5021a26ee5b0cf321ca7359bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The color for the parts of the graph or points that are below the <a href="#plotOptions.series.threshold">threshold</a>.  <a href="#a8fff8c5021a26ee5b0cf321ca7359bd8">More...</a><br /></td></tr>
-<tr class="separator:a8fff8c5021a26ee5b0cf321ca7359bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac82deab5caab01131b73547390d7b384"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ac82deab5caab01131b73547390d7b384">Type</a><code> [get, set]</code></td></tr>
+<tr class="separator:ac82deab5caab01131b73547390d7b384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39cdc339d311f4a127dc81068dbd877"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#aa39cdc339d311f4a127dc81068dbd877">XAxis</a><code> [get, set]</code></td></tr>
+<tr class="separator:aa39cdc339d311f4a127dc81068dbd877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42327b34c47647626dc37976d18e208e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a42327b34c47647626dc37976d18e208e">YAxis</a><code> [get, set]</code></td></tr>
+<tr class="separator:a42327b34c47647626dc37976d18e208e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00dd2a6c554914af35962f953ab9bde6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a00dd2a6c554914af35962f953ab9bde6">ZIndex</a><code> [get, set]</code></td></tr>
+<tr class="separator:a00dd2a6c554914af35962f953ab9bde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9411a97e0711e4a2ed6c8be1511c4001"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a9411a97e0711e4a2ed6c8be1511c4001">LineWidth</a><code> [get, set]</code></td></tr>
+<tr class="separator:a9411a97e0711e4a2ed6c8be1511c4001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700b234d56cd36365441f7662dbe7ff8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a700b234d56cd36365441f7662dbe7ff8">Threshold</a><code> [get, set]</code></td></tr>
+<tr class="separator:a700b234d56cd36365441f7662dbe7ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a276b967c1c092014256e3294679c69cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_tooltip.html">AreasplinerangeSeriesTooltip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a276b967c1c092014256e3294679c69cf">Tooltip</a><code> [get, set]</code></td></tr>
+<tr class="separator:a276b967c1c092014256e3294679c69cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2de853ee41b024a223a04e6bbe8d976b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a2de853ee41b024a223a04e6bbe8d976b">TrackByArea</a><code> [get, set]</code></td></tr>
+<tr class="separator:a2de853ee41b024a223a04e6bbe8d976b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00b3ea26537a87c3cea4f3a91eb66f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_data_labels.html">AreasplinerangeSeriesDataLabels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#af00b3ea26537a87c3cea4f3a91eb66f6">DataLabels</a><code> [get, set]</code></td></tr>
+<tr class="separator:af00b3ea26537a87c3cea4f3a91eb66f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed77942a331ca4728847621059952e4"><td class="memItemLeft" align="right" valign="top">Shadow&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#abed77942a331ca4728847621059952e4">Shadow</a><code> [get, set]</code></td></tr>
+<tr class="separator:abed77942a331ca4728847621059952e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cd77ba5569f72753c6d998d331c12bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a9cd77ba5569f72753c6d998d331c12bd">SoftThreshold</a><code> [get, set]</code></td></tr>
+<tr class="separator:a9cd77ba5569f72753c6d998d331c12bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae4155f2730c4392a3dcf778ece07964"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#aae4155f2730c4392a3dcf778ece07964">FillColor</a><code> [get, set]</code></td></tr>
+<tr class="separator:aae4155f2730c4392a3dcf778ece07964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d187776c077f6f02c2ad91ec02622bf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a6d187776c077f6f02c2ad91ec02622bf">FillOpacity</a><code> [get, set]</code></td></tr>
+<tr class="separator:a6d187776c077f6f02c2ad91ec02622bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b8eac86255646c3def1a5fe8b0b969d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a3b8eac86255646c3def1a5fe8b0b969d">LineColor</a><code> [get, set]</code></td></tr>
+<tr class="separator:a3b8eac86255646c3def1a5fe8b0b969d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7fe407cb5f40b9f040eb7116896334b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ae7fe407cb5f40b9f040eb7116896334b">NegativeFillColor</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae7fe407cb5f40b9f040eb7116896334b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A separate color for the negative part of the area.  <a href="#ae7fe407cb5f40b9f040eb7116896334b">More...</a><br /></td></tr>
 <tr class="separator:ae7fe407cb5f40b9f040eb7116896334b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b1bfca0504c28ff20e969b72f16a03f"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesLinecap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a6b1bfca0504c28ff20e969b72f16a03f">Linecap</a><code> [get, set]</code></td></tr>
+<tr class="separator:a6b1bfca0504c28ff20e969b72f16a03f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf6008adb1978d32ec4672fe788a34e3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#abf6008adb1978d32ec4672fe788a34e3">BoostThreshold</a><code> [get, set]</code></td></tr>
+<tr class="separator:abf6008adb1978d32ec4672fe788a34e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a005489c50e6633cc19af2d3fb8fa855a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_label.html">AreasplinerangeSeriesLabel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a005489c50e6633cc19af2d3fb8fa855a">Label</a><code> [get, set]</code></td></tr>
+<tr class="separator:a005489c50e6633cc19af2d3fb8fa855a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8da57209fa2f8a26bc37d184021f64f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a8da57209fa2f8a26bc37d184021f64f8">AllowPointSelect</a><code> [get, set]</code></td></tr>
+<tr class="separator:a8da57209fa2f8a26bc37d184021f64f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc452c29cf0a23541d4333744e4b8bcd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#afc452c29cf0a23541d4333744e4b8bcd">ShowCheckbox</a><code> [get, set]</code></td></tr>
+<tr class="separator:afc452c29cf0a23541d4333744e4b8bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25b422cd7e4ba1f53d5a11d3938cdb47"><td class="memItemLeft" align="right" valign="top">Animation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a25b422cd7e4ba1f53d5a11d3938cdb47">Animation</a><code> [get, set]</code></td></tr>
+<tr class="separator:a25b422cd7e4ba1f53d5a11d3938cdb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35e2de95fda423e2082f155c99e1a417"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_events.html">AreasplinerangeSeriesEvents</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a35e2de95fda423e2082f155c99e1a417">Events</a><code> [get, set]</code></td></tr>
+<tr class="separator:a35e2de95fda423e2082f155c99e1a417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c3d524c9458ade344ba1a29a51b9e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_marker.html">AreasplinerangeSeriesMarker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ad0c3d524c9458ade344ba1a29a51b9e2">Marker</a><code> [get, set]</code></td></tr>
+<tr class="separator:ad0c3d524c9458ade344ba1a29a51b9e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4d91405b6ef43b0eee669b0bf648530"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_point.html">AreasplinerangeSeriesPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#af4d91405b6ef43b0eee669b0bf648530">Point</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af4d91405b6ef43b0eee669b0bf648530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Properties for each single point  <a href="#af4d91405b6ef43b0eee669b0bf648530">More...</a><br /></td></tr>
 <tr class="separator:af4d91405b6ef43b0eee669b0bf648530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a607d6ba88f90bb2139e29219e1cf05c0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a607d6ba88f90bb2139e29219e1cf05c0">CropThreshold</a><code> [get, set]</code></td></tr>
+<tr class="separator:a607d6ba88f90bb2139e29219e1cf05c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab65a541e9a6bb8a5ae254060308f9f2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_states.html">AreasplinerangeSeriesStates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ab65a541e9a6bb8a5ae254060308f9f2e">States</a><code> [get, set]</code></td></tr>
+<tr class="separator:ab65a541e9a6bb8a5ae254060308f9f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb64e0caa84eb0f984b61f7a63216144"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#afb64e0caa84eb0f984b61f7a63216144">StickyTracking</a><code> [get, set]</code></td></tr>
+<tr class="separator:afb64e0caa84eb0f984b61f7a63216144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ca46ea1fb33e06e9f2c1b6194a27f2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a98ca46ea1fb33e06e9f2c1b6194a27f2">TurboThreshold</a><code> [get, set]</code></td></tr>
+<tr class="separator:a98ca46ea1fb33e06e9f2c1b6194a27f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0586da7f765bac996be736cb3eff37ca"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesFindNearestPointBy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a0586da7f765bac996be736cb3eff37ca">FindNearestPointBy</a><code> [get, set]</code></td></tr>
+<tr class="separator:a0586da7f765bac996be736cb3eff37ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca4e2c74b111ab072e5a756c77ecae6a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#aca4e2c74b111ab072e5a756c77ecae6a">AnimationLimit</a><code> [get, set]</code></td></tr>
+<tr class="separator:aca4e2c74b111ab072e5a756c77ecae6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8918e2a03bb22ff2710fcfb4459b561c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a8918e2a03bb22ff2710fcfb4459b561c">ClassName</a><code> [get, set]</code></td></tr>
+<tr class="separator:a8918e2a03bb22ff2710fcfb4459b561c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a214fbad3a669ae9d7c2831a7e8f010fc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a214fbad3a669ae9d7c2831a7e8f010fc">Color</a><code> [get, set]</code></td></tr>
+<tr class="separator:a214fbad3a669ae9d7c2831a7e8f010fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac04a40a4f54c8cc45e7b3db2c832d53c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ac04a40a4f54c8cc45e7b3db2c832d53c">ColorIndex</a><code> [get, set]</code></td></tr>
+<tr class="separator:ac04a40a4f54c8cc45e7b3db2c832d53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a4d4f37e5f6fac81a7b963e2714de2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a13a4d4f37e5f6fac81a7b963e2714de2">ConnectNulls</a><code> [get, set]</code></td></tr>
+<tr class="separator:a13a4d4f37e5f6fac81a7b963e2714de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e25c35611418ce48836d6bc4be5deb"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesCursor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ac5e25c35611418ce48836d6bc4be5deb">Cursor</a><code> [get, set]</code></td></tr>
+<tr class="separator:ac5e25c35611418ce48836d6bc4be5deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb3119dcb710d29d1c96d4111f6e9d76"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesDashStyle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#adb3119dcb710d29d1c96d4111f6e9d76">DashStyle</a><code> [get, set]</code></td></tr>
+<tr class="separator:adb3119dcb710d29d1c96d4111f6e9d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22eed252f708dbad3f8155ca8df0a706"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a22eed252f708dbad3f8155ca8df0a706">Description</a><code> [get, set]</code></td></tr>
+<tr class="separator:a22eed252f708dbad3f8155ca8df0a706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30ab9c8c8d6eeca6f655225771be9263"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a30ab9c8c8d6eeca6f655225771be9263">EnableMouseTracking</a><code> [get, set]</code></td></tr>
+<tr class="separator:a30ab9c8c8d6eeca6f655225771be9263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e60696426812f29c6fea42e8b97c603"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a0e60696426812f29c6fea42e8b97c603">ExposeElementToA11y</a><code> [get, set]</code></td></tr>
+<tr class="separator:a0e60696426812f29c6fea42e8b97c603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35336cac7a725e67aee287aa3c34e75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ad35336cac7a725e67aee287aa3c34e75">GetExtremesFromAll</a><code> [get, set]</code></td></tr>
+<tr class="separator:ad35336cac7a725e67aee287aa3c34e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c9a7638327ae14b95959d12cd7782b9"><td class="memItemLeft" align="right" valign="top">List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a7c9a7638327ae14b95959d12cd7782b9">Keys</a><code> [get, set]</code></td></tr>
+<tr class="separator:a7c9a7638327ae14b95959d12cd7782b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebff8e4799669d69ff90529af9b01f94"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#aebff8e4799669d69ff90529af9b01f94">LinkedTo</a><code> [get, set]</code></td></tr>
+<tr class="separator:aebff8e4799669d69ff90529af9b01f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fff8c5021a26ee5b0cf321ca7359bd8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a8fff8c5021a26ee5b0cf321ca7359bd8">NegativeColor</a><code> [get, set]</code></td></tr>
+<tr class="separator:a8fff8c5021a26ee5b0cf321ca7359bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b1f28cb2e2e10746298f98db5716c79"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a2b1f28cb2e2e10746298f98db5716c79">PointDescriptionFormatter</a><code> [get, set]</code></td></tr>
+<tr class="separator:a2b1f28cb2e2e10746298f98db5716c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f04c35ace0cee97f385d900bb6b2378"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a7f04c35ace0cee97f385d900bb6b2378">PointInterval</a><code> [get, set]</code></td></tr>
 <tr class="separator:a7f04c35ace0cee97f385d900bb6b2378"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac68189482c7bea2d608448ea60e6b509"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesPointIntervalUnit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ac68189482c7bea2d608448ea60e6b509">PointIntervalUnit</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac68189482c7bea2d608448ea60e6b509"><td class="mdescLeft">&#160;</td><td class="mdescRight">On datetime series, this allows for setting the <a href="plotOptions.series.pointInterval">pointInterval</a> to the two irregular time units,  <a href="#ac68189482c7bea2d608448ea60e6b509">More...</a><br /></td></tr>
 <tr class="separator:ac68189482c7bea2d608448ea60e6b509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbc1fb59d6de62b699f2d08afa64d587"><td class="memItemLeft" align="right" valign="top">PointPlacement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#abbc1fb59d6de62b699f2d08afa64d587">PointPlacement</a><code> [get, set]</code></td></tr>
 <tr class="separator:abbc1fb59d6de62b699f2d08afa64d587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8b317fbc9d3fece6d44e418e9f5b191"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ac8b317fbc9d3fece6d44e418e9f5b191">PointStart</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac8b317fbc9d3fece6d44e418e9f5b191"><td class="mdescLeft">&#160;</td><td class="mdescRight">If no x values are given for the points in a series, pointStart defines on what value to start. For example, if a series contains one yearly value starting from 1945, set pointStart to 1945.  <a href="#ac8b317fbc9d3fece6d44e418e9f5b191">More...</a><br /></td></tr>
 <tr class="separator:ac8b317fbc9d3fece6d44e418e9f5b191"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5a191dbfccda7d17e73c96a285e35cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ae5a191dbfccda7d17e73c96a285e35cf">Selected</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae5a191dbfccda7d17e73c96a285e35cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to select the series initially. If  <a href="#ae5a191dbfccda7d17e73c96a285e35cf">More...</a><br /></td></tr>
 <tr class="separator:ae5a191dbfccda7d17e73c96a285e35cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abed77942a331ca4728847621059952e4"><td class="memItemLeft" align="right" valign="top">Shadow&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#abed77942a331ca4728847621059952e4">Shadow</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:abed77942a331ca4728847621059952e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to apply a drop shadow to the graph line. Since 2.3 the shadow can be an object configuration containing  <a href="#abed77942a331ca4728847621059952e4">More...</a><br /></td></tr>
-<tr class="separator:abed77942a331ca4728847621059952e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc452c29cf0a23541d4333744e4b8bcd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#afc452c29cf0a23541d4333744e4b8bcd">ShowCheckbox</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afc452c29cf0a23541d4333744e4b8bcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, a checkbox is displayed next to the legend item to allow selecting the series. The state of the checkbox is determined by the  <a href="#afc452c29cf0a23541d4333744e4b8bcd">More...</a><br /></td></tr>
-<tr class="separator:afc452c29cf0a23541d4333744e4b8bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a965916dd3465b2f7e616e859602185e0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a965916dd3465b2f7e616e859602185e0">ShowInLegend</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a965916dd3465b2f7e616e859602185e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to display this particular series or series type in the legend. The default value is  <a href="#a965916dd3465b2f7e616e859602185e0">More...</a><br /></td></tr>
 <tr class="separator:a965916dd3465b2f7e616e859602185e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab65a541e9a6bb8a5ae254060308f9f2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_states.html">AreasplinerangeSeriesStates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ab65a541e9a6bb8a5ae254060308f9f2e">States</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ab65a541e9a6bb8a5ae254060308f9f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper object for all the series options in specific states.  <a href="#ab65a541e9a6bb8a5ae254060308f9f2e">More...</a><br /></td></tr>
-<tr class="separator:ab65a541e9a6bb8a5ae254060308f9f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abba292bc98ec7712c6c7c05f781e34e2"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesStep&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#abba292bc98ec7712c6c7c05f781e34e2">Step</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:abba292bc98ec7712c6c7c05f781e34e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to apply steps to the line. Possible values are  <a href="#abba292bc98ec7712c6c7c05f781e34e2">More...</a><br /></td></tr>
-<tr class="separator:abba292bc98ec7712c6c7c05f781e34e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb64e0caa84eb0f984b61f7a63216144"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#afb64e0caa84eb0f984b61f7a63216144">StickyTracking</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afb64e0caa84eb0f984b61f7a63216144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sticky tracking of mouse events. When true, the  <a href="#afb64e0caa84eb0f984b61f7a63216144">More...</a><br /></td></tr>
-<tr class="separator:afb64e0caa84eb0f984b61f7a63216144"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a276b967c1c092014256e3294679c69cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_tooltip.html">AreasplinerangeSeriesTooltip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a276b967c1c092014256e3294679c69cf">Tooltip</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a276b967c1c092014256e3294679c69cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.  <a href="#a276b967c1c092014256e3294679c69cf">More...</a><br /></td></tr>
-<tr class="separator:a276b967c1c092014256e3294679c69cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2de853ee41b024a223a04e6bbe8d976b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a2de853ee41b024a223a04e6bbe8d976b">TrackByArea</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a2de853ee41b024a223a04e6bbe8d976b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the whole area or just the line should respond to mouseover tooltips and other mouse or touch events.  <a href="#a2de853ee41b024a223a04e6bbe8d976b">More...</a><br /></td></tr>
-<tr class="separator:a2de853ee41b024a223a04e6bbe8d976b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98ca46ea1fb33e06e9f2c1b6194a27f2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a98ca46ea1fb33e06e9f2c1b6194a27f2">TurboThreshold</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a98ca46ea1fb33e06e9f2c1b6194a27f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to  <a href="#a98ca46ea1fb33e06e9f2c1b6194a27f2">More...</a><br /></td></tr>
-<tr class="separator:a98ca46ea1fb33e06e9f2c1b6194a27f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac82deab5caab01131b73547390d7b384"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ac82deab5caab01131b73547390d7b384">Type</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac82deab5caab01131b73547390d7b384"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of series. Can be one of  <a href="#ac82deab5caab01131b73547390d7b384">More...</a><br /></td></tr>
-<tr class="separator:ac82deab5caab01131b73547390d7b384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee484904cca585a21850765817c8f708"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#aee484904cca585a21850765817c8f708">SkipKeyboardNavigation</a><code> [get, set]</code></td></tr>
+<tr class="separator:aee484904cca585a21850765817c8f708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0155bb38abeb08fda9e618de4c89b64"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesStacking&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ac0155bb38abeb08fda9e618de4c89b64">Stacking</a><code> [get, set]</code></td></tr>
+<tr class="separator:ac0155bb38abeb08fda9e618de4c89b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae5f97ba0a5fcdb3b1e9ae73b944fc9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#aae5f97ba0a5fcdb3b1e9ae73b944fc9a">Visible</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aae5f97ba0a5fcdb3b1e9ae73b944fc9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the initial visibility of the series.  <a href="#aae5f97ba0a5fcdb3b1e9ae73b944fc9a">More...</a><br /></td></tr>
 <tr class="separator:aae5f97ba0a5fcdb3b1e9ae73b944fc9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa39cdc339d311f4a127dc81068dbd877"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#aa39cdc339d311f4a127dc81068dbd877">XAxis</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa39cdc339d311f4a127dc81068dbd877"><td class="mdescLeft">&#160;</td><td class="mdescRight">When using dual or multiple x axes, this number defines which xAxis the particular series is connected to. It refers to either the <a href="#xAxis.id">axis id</a> or the index of the axis in the xAxis array, with 0 being the first.  <a href="#aa39cdc339d311f4a127dc81068dbd877">More...</a><br /></td></tr>
-<tr class="separator:aa39cdc339d311f4a127dc81068dbd877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42327b34c47647626dc37976d18e208e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a42327b34c47647626dc37976d18e208e">YAxis</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a42327b34c47647626dc37976d18e208e"><td class="mdescLeft">&#160;</td><td class="mdescRight">When using dual or multiple y axes, this number defines which yAxis the particular series is connected to. It refers to either the <a href="#yAxis.id">axis id</a> or the index of the axis in the yAxis array, with 0 being the first.  <a href="#a42327b34c47647626dc37976d18e208e">More...</a><br /></td></tr>
-<tr class="separator:a42327b34c47647626dc37976d18e208e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00dd2a6c554914af35962f953ab9bde6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a00dd2a6c554914af35962f953ab9bde6">ZIndex</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a00dd2a6c554914af35962f953ab9bde6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the visual z index of the series.  <a href="#a00dd2a6c554914af35962f953ab9bde6">More...</a><br /></td></tr>
-<tr class="separator:a00dd2a6c554914af35962f953ab9bde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35203fbc6a567f23bb8f89ddb0e3e95a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a35203fbc6a567f23bb8f89ddb0e3e95a">ZoneAxis</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a35203fbc6a567f23bb8f89ddb0e3e95a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the Axis on which the zones are applied.  <a href="#a35203fbc6a567f23bb8f89ddb0e3e95a">More...</a><br /></td></tr>
 <tr class="separator:a35203fbc6a567f23bb8f89ddb0e3e95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4ffcc4621154c9e4a74fda483eba5fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_zones.html">AreasplinerangeSeriesZones</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#ab4ffcc4621154c9e4a74fda483eba5fe">Zones</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ab4ffcc4621154c9e4a74fda483eba5fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">An array defining zones within a series.  <a href="#ab4ffcc4621154c9e4a74fda483eba5fe">More...</a><br /></td></tr>
-<tr class="separator:ab4ffcc4621154c9e4a74fda483eba5fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td colspan="2" onclick="javascript:toggleInherit('properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html">Highsoft.Web.Mvc.Charts.Series</a></td></tr>
-<tr class="memitem:afcee20a249ba1c969ba656002a4e8be5 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series_data.html">SeriesData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html#afcee20a249ba1c969ba656002a4e8be5">Data</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afcee20a249ba1c969ba656002a4e8be5 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="mdescLeft">&#160;</td><td class="mdescRight">An array of data points for the series. The points can be given in three ways:  <a href="#afcee20a249ba1c969ba656002a4e8be5">More...</a><br /></td></tr>
-<tr class="separator:afcee20a249ba1c969ba656002a4e8be5 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9be6c3ea4093b3f4588e1cf7171bfb2 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html#af9be6c3ea4093b3f4588e1cf7171bfb2">Id</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af9be6c3ea4093b3f4588e1cf7171bfb2 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="mdescLeft">&#160;</td><td class="mdescRight">An id for the series. This can be used after render time to get a pointer to the series object through  <a href="#af9be6c3ea4093b3f4588e1cf7171bfb2">More...</a><br /></td></tr>
-<tr class="separator:af9be6c3ea4093b3f4588e1cf7171bfb2 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef5d0bac7fda9f2914a23703397baa53 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html#aef5d0bac7fda9f2914a23703397baa53">Index</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aef5d0bac7fda9f2914a23703397baa53 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of the series in the chart, affecting the internal index in the  <a href="#aef5d0bac7fda9f2914a23703397baa53">More...</a><br /></td></tr>
-<tr class="separator:aef5d0bac7fda9f2914a23703397baa53 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b9456bd57330e00c28679f64e8acc48 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html#a1b9456bd57330e00c28679f64e8acc48">LegendIndex</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a1b9456bd57330e00c28679f64e8acc48 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sequential index of the series in the legend. </p><div class="demo">Try it: <a href="http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/series/legendindex/" target="_blank">Legend in opposite order</a> </div><p>.  <a href="#a1b9456bd57330e00c28679f64e8acc48">More...</a><br /></td></tr>
-<tr class="separator:a1b9456bd57330e00c28679f64e8acc48 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace13a2a20a97ed1acec71423202919e9 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html#ace13a2a20a97ed1acec71423202919e9">Name</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ace13a2a20a97ed1acec71423202919e9 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the series as shown in the legend, tooltip etc.  <a href="#ace13a2a20a97ed1acec71423202919e9">More...</a><br /></td></tr>
-<tr class="separator:ace13a2a20a97ed1acec71423202919e9 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7227fc11f8f36cbfa5f46543a5609029 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html#a7227fc11f8f36cbfa5f46543a5609029">Stack</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7227fc11f8f36cbfa5f46543a5609029 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="mdescLeft">&#160;</td><td class="mdescRight">This option allows grouping series in a stacked chart. The stack option can be a string or a number or anything else, as long as the grouped series' stack options match each other.  <a href="#a7227fc11f8f36cbfa5f46543a5609029">More...</a><br /></td></tr>
-<tr class="separator:a7227fc11f8f36cbfa5f46543a5609029 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3eb8432fee53ef00f8065abc11c78ff8 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memItemLeft" align="right" valign="top">SeriesType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html#a3eb8432fee53ef00f8065abc11c78ff8">Type</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3eb8432fee53ef00f8065abc11c78ff8 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of series. Can be one of  <a href="#a3eb8432fee53ef00f8065abc11c78ff8">More...</a><br /></td></tr>
-<tr class="separator:a3eb8432fee53ef00f8065abc11c78ff8 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa491b2a089af0331dfa711b525c587af inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html#aa491b2a089af0331dfa711b525c587af">XAxis</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa491b2a089af0331dfa711b525c587af inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="mdescLeft">&#160;</td><td class="mdescRight">When using dual or multiple x axes, this number defines which xAxis the particular series is connected to. It refers to either the <a href="#xAxis.id">axis id</a> or the index of the axis in the xAxis array, with 0 being the first.  <a href="#aa491b2a089af0331dfa711b525c587af">More...</a><br /></td></tr>
-<tr class="separator:aa491b2a089af0331dfa711b525c587af inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a123098ab6ef4d84fc319f5b0d8cbc545 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html#a123098ab6ef4d84fc319f5b0d8cbc545">YAxis</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a123098ab6ef4d84fc319f5b0d8cbc545 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="mdescLeft">&#160;</td><td class="mdescRight">When using dual or multiple y axes, this number defines which yAxis the particular series is connected to. It refers to either the <a href="#yAxis.id">axis id</a> or the index of the axis in the yAxis array, with 0 being the first.  <a href="#a123098ab6ef4d84fc319f5b0d8cbc545">More...</a><br /></td></tr>
-<tr class="separator:a123098ab6ef4d84fc319f5b0d8cbc545 inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addd0cd7293a76cae23114b1d39cfd42b inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html#addd0cd7293a76cae23114b1d39cfd42b">ZIndex</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:addd0cd7293a76cae23114b1d39cfd42b inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the visual z index of the series.  <a href="#addd0cd7293a76cae23114b1d39cfd42b">More...</a><br /></td></tr>
-<tr class="separator:addd0cd7293a76cae23114b1d39cfd42b inherit properties_class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a74bd7ca629019b21a0c33f8f43052a"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_zone.html">AreasplinerangeSeriesZone</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a4a74bd7ca629019b21a0c33f8f43052a">Zones</a><code> [get, set]</code></td></tr>
+<tr class="separator:a4a74bd7ca629019b21a0c33f8f43052a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a252f7df609ee50355b722bf000cbcfc3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#a252f7df609ee50355b722bf000cbcfc3">ConnectEnds</a><code> [get, set]</code></td></tr>
+<tr class="separator:a252f7df609ee50355b722bf000cbcfc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abba292bc98ec7712c6c7c05f781e34e2"><td class="memItemLeft" align="right" valign="top">AreasplinerangeSeriesStep&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series.html#abba292bc98ec7712c6c7c05f781e34e2">Step</a><code> [get, set]</code></td></tr>
+<tr class="separator:abba292bc98ec7712c6c7c05f781e34e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa0902b5c48ee880365aa68db06e886f0"></a>
@@ -324,7 +287,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Allow this series' points to be selected by clicking on the markers, bars or pie slices. </p>
+<p></p>
+<p>Allow this series&amp;#39; points to be selected by clicking on the graphic (columns, point markers, pie slices, map areas etc).</p>
 
 </div>
 </div>
@@ -347,14 +311,86 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-<p>Enable or disable the initial animation when a series is displayed. The animation can also be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods.The following properties are supported:</p>
+<p>Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods. Thefollowing properties are supported:</p>
 <dl>
-<dt>duration </dt>
+<dt>duration</dt>
 <dd>The duration of the animation in milliseconds.</dd>
 <dt>easing</dt>
-<dd>When using jQuery as the general framework, the easing can be set to <code>linear</code> or<code>swing</code>. More easing functions are available with the use of jQuery plug-ins, most notablythe jQuery UI suite. See <a href="http://api.jquery.com/animate/">the jQuery docs</a>. When using MooTools as the general framework, use the property name <code>transition</code> instead of <code>easing</code>.</dd>
+<dd>A string reference to an easing function set on the <code>Math</code> object.See the <em>Custom easing function</em> demo below.</dd>
 </dl>
-<p>Due to poor performance, animation is disabled in old IE browsers for column charts and polar charts.</p>
+<p>Due to poor performance, animation is disabled in old IE browsersfor several chart types.</p>
+
+</div>
+</div>
+<a class="anchor" id="aca4e2c74b111ab072e5a756c77ecae6a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.AnimationLimit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesn&amp;#39;trun if there is more than 250 points totally. To disable this cap, set<code>animationLimit</code> to <code>Infinity</code>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf6008adb1978d32ec4672fe788a34e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.BoostThreshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Set the point threshold for when a series should enter boost mode.</p>
+<p>Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.</p>
+<p>To disable boosting on the series, set the <code>boostThreshold</code> to 0. Setting itto 1 will force boosting.</p>
+<p>Requires <code>modules/boost.js</code>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8918e2a03bb22ff2710fcfb4459b561c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.ClassName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>A class name to apply to the series&amp;#39; graphical elements.</p>
 
 </div>
 </div>
@@ -376,8 +412,55 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The main color or the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the </p>
-<p><code>options.colors</code> array. </p>
+<p></p>
+<p>The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the <code>options.colors</code> array.</p>
+<p>In styled mode, the color can be defined by the<a href="#plotOptions.series.colorIndex">colorIndex</a> option. Also, the seriescolor can be set with the <code>.highcharts-series</code>, <code>.highcharts-color-{n}</code>,<code>.highcharts-{type}-series</code> or <code>.highcharts-series-{n}</code> class, orindividual classes given by the <code>className</code> option.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac04a40a4f54c8cc45e7b3db2c832d53c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.ColorIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name <code>highcharts-color-{n}</code>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a252f7df609ee50355b722bf000cbcfc3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.ConnectEnds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Polar charts only. Whether to connect the ends of a line series plotacross the extremes.</p>
 
 </div>
 </div>
@@ -399,7 +482,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Whether to connect a graph line across null points. </p>
+<p></p>
+<p>Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.</p>
 
 </div>
 </div>
@@ -421,7 +505,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>When the series contains less points than the crop threshold, all points are drawn, event if the points fall outside the visible plot area at the current zoom. The advantage of drawing all points (including markers and columns), is that animation is performed on updates. On the other hand, when the series contains more points than the crop threshold, the series data is cropped to only contain points that fall within the plot area. The advantage of cropping away invisible points is to increase performance on large series. . </p>
+<p></p>
+<p>When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.</p>
 
 </div>
 </div>
@@ -443,7 +528,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>You can set the cursor to "pointer" if you have click events attached to the series, to signal to the user that the points and lines can be clicked. </p>
+<p></p>
+<p>You can set the cursor to &quot;pointer&quot; if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.</p>
 
 </div>
 </div>
@@ -465,30 +551,31 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A name for the dash style to use for the graph. Applies only to series type having a graph, like </p>
-<p><code>line</code>, <code>spline</code>, <code>area</code> and <code>scatter</code> in case it has a <code>lineWidth</code>. The value for the <code>dashStyle</code> include: </p><ul>
+<p></p>
+<p>A name for the dash style to use for the graph, or for some series typesthe outline of each shape. The value for the <code>dashStyle</code> include:</p>
+<ul>
 <li>
-Solid </li>
+Solid</li>
 <li>
-ShortDash </li>
+ShortDash</li>
 <li>
-ShortDot </li>
+ShortDot</li>
 <li>
-ShortDashDot </li>
+ShortDashDot</li>
 <li>
-ShortDashDotDot </li>
+ShortDashDotDot</li>
 <li>
-Dot </li>
+Dot</li>
 <li>
-Dash </li>
+Dash</li>
 <li>
-LongDash </li>
+LongDash</li>
 <li>
-DashDot </li>
+DashDot</li>
 <li>
-LongDashDot </li>
+LongDashDot</li>
 <li>
-LongDashDotDot </li>
+LongDashDotDot</li>
 </ul>
 
 </div>
@@ -511,16 +598,17 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>An array of data points for the series. For the </p>
-<p><code>areasplinerange</code> series type, points can be given in the following ways: </p><ol>
+<p></p>
+<p>An array of data points for the series. For the <code>areasplinerange</code>series type, points can be given in the following ways:</p>
+<ol>
 <li>
 <p class="startli"></p>
-<p>An array of arrays with 3 or 2 values. In this case, the values correspond to <code>x,low,high</code>. If the first value is a string, it is applied as the name of the point, and the <code>x</code> value is inferred. The <code>x</code> value can also be omitted, in which case the inner arrays should be of length 2. Then the <code>x</code> value is automatically calculated, either starting at 0 and incremented by 1, or from <code>pointStart</code> and <code>pointInterval</code> given in the series options.</p>
-<pre>data: [    [0, 0, 5],     [1, 9, 1],     [2, 5, 2]]</pre></li>
+<p>An array of arrays with 3 or 2 values. In this case, the valuescorrespond to <code>x,low,high</code>. If the first value is a string, it isapplied as the name of the point, and the <code>x</code> value is inferred.The <code>x</code> value can also be omitted, in which case the inner arraysshould be of length 2. Then the <code>x</code> value is automatically calculated,either starting at 0 and incremented by 1, or from <code>pointStart</code>and <code>pointInterval</code> given in the series options.</p>
+<pre><code class="lang-js">data: [    [0, 0, 5],    [1, 9, 1],    [2, 5, 2]]</code></pre></li>
 <li>
 <p class="startli"></p>
-<p>An array of objects with named values. The objects are point configuration objects as seen below. If the total number of data points exceeds the series' <a href="#series&lt;areasplinerange&gt;.turboThreshold">turboThreshold</a>, this option is not available.</p>
-<pre>data: [{    x: 1,    low: 5,    high: 0,    name: "Point2",    color: "#00FF00"}, {    x: 1,    low: 4,    high: 1,    name: "Point1",    color: "#FF00FF"}]</pre> </li>
+<p>An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series&amp;#39; <a href="#series.areasplinerange.turboThreshold">turboThreshold</a>, this option is not available.</p>
+<pre><code class="lang-js">data: [{    x: 1,    low: 5,    high: 0,    name: &quot;Point2&quot;,    color: &quot;#00FF00&quot;}, {    x: 1,    low: 4,    high: 1,    name: &quot;Point1&quot;,    color: &quot;#FF00FF&quot;}]</code></pre></li>
 </ol>
 
 </div>
@@ -543,8 +631,32 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Extended data labels for range series types. Range series data labels have no </p>
-<p><code>x</code> and <code>y</code> options. Instead, they have <code>xLow</code>, <code>xHigh</code>, <code>yLow</code> and <code>yHigh</code> options to allow the higher and lower data label sets individually. </p>
+<p></p>
+<p>Extended data labels for range series types. Range series data labelshave no <code>x</code> and <code>y</code> options. Instead, they have <code>xLow</code>, <code>xHigh</code>,<code>yLow</code> and <code>yHigh</code> options to allow the higher and lower data labelsets individually.</p>
+
+</div>
+</div>
+<a class="anchor" id="a22eed252f708dbad3f8155ca8df0a706"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.Description</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Requires the <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_accessibility.html">Accessibility</a> module.</p>
+<p>A description of the series to add to the screen reader informationabout the series.</p>
 
 </div>
 </div>
@@ -566,7 +678,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance. </p>
+<p></p>
+<p>Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.</p>
 
 </div>
 </div>
@@ -589,10 +702,11 @@ LongDashDotDot </li>
 </div><div class="memdoc">
 
 <p></p>
+<p>General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the <code>Highcharts.addEvent</code>function.</p>
 
 </div>
 </div>
-<a class="anchor" id="a227d86aa645bf7e6d3f0e8814264e8ab"></a>
+<a class="anchor" id="a0e60696426812f29c6fea42e8b97c603"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -600,7 +714,7 @@ LongDashDotDot </li>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.FillColor</td>
+          <td class="memname">bool Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.ExposeElementToA11y</td>
         </tr>
       </table>
   </td>
@@ -610,8 +724,32 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Fill color or gradient for the area. When </p>
-<p><code>null</code>, the series' <code>color</code> is used with the series' <code>fillOpacity</code>. </p>
+<p></p>
+<p>By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.</p>
+<p>Requires the <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_accessibility.html">Accessibility</a> module.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae4155f2730c4392a3dcf778ece07964"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">object Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.FillColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Fill color or gradient for the area. When <code>null</code>, the series&amp;#39; <code>color</code>is used with the series&amp;#39; <code>fillOpacity</code>.</p>
 
 </div>
 </div>
@@ -633,8 +771,55 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Fill opacity for the area. Note that when you set an explicit </p>
-<p><code>fillColor</code>, the <code>fillOpacity</code> is not applied. Instead, you should define the opacity in the <code>fillColor</code> with an rgba color definition. </p>
+<p></p>
+<p>Fill opacity for the area. When you set an explicit <code>fillColor</code>,the <code>fillOpacity</code> is not applied. Instead, you should define theopacity in the <code>fillColor</code> with an rgba color definition. The <code>fillOpacity</code>setting, also the default setting, overrides the alpha componentof the <code>color</code> setting.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0586da7f765bac996be736cb3eff37ca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AreasplinerangeSeriesFindNearestPointBy Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.FindNearestPointBy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to <code>&amp;#39;xy&amp;#39;</code> for scatter series and <code>&amp;#39;x&amp;#39;</code> for most otherseries. If the data has duplicate x-values, it is recommended toset this to <code>&amp;#39;xy&amp;#39;</code> to allow hovering over all points.</p>
+<p>Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad35336cac7a725e67aee287aa3c34e75"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.GetExtremesFromAll</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Whether to use the Y extremes of the total chart width or only thezoomed area when zooming in on parts of the X axis. By default, theY axis adjusts to the min and max of the visible data. Cartesianseries only.</p>
 
 </div>
 </div>
@@ -656,8 +841,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>An id for the series. This can be used after render time to get a pointer to the series object through </p>
-<p><code>chart.get()</code>. </p>
+<p></p>
+<p>An id for the series. This can be used after render time to get apointer to the series object through <code>chart.get()</code>.</p>
 
 </div>
 </div>
@@ -679,8 +864,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>The index of the series in the chart, affecting the internal index in the </p>
-<p><code>chart.series</code> array, the visible Z index as well as the order in the legend. </p>
+<p></p>
+<p>The index of the series in the chart, affecting the internal indexin the <code>chart.series</code> array, the visible Z index as well as the orderin the legend.</p>
 
 </div>
 </div>
@@ -702,8 +887,33 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>A custom mapping of data point array positions to respective object properties. For example, is the first key is </p>
-<p><code>name</code>, the first item in a series.data array is interpreted as point.name. </p>
+<p></p>
+<p>An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.</p>
+
+</div>
+</div>
+<a class="anchor" id="a005489c50e6633cc19af2d3fb8fa855a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_label.html">AreasplinerangeSeriesLabel</a> Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.Label</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_series.html">Series</a> labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.</p>
+<p>The series labels currently work with series types having a<code>graph</code> or an <code>area</code>.</p>
+<p>Requires the <code>series-label.js</code> module.</p>
 
 </div>
 </div>
@@ -725,7 +935,31 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>The sequential index of the series in the legend. </p><div class="demo">Try it: <a href="http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/series/legendindex/" target="_blank">Legend in opposite order</a> </div><p>. </p>
+<p></p>
+<p>The sequential index of the series in the legend.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b1bfca0504c28ff20e969b72f16a03f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AreasplinerangeSeriesLinecap Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.Linecap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>The SVG value used for the <code>stroke-linecap</code> and <code>stroke-linejoin</code>of a line graph. Round means that lines are rounded in the ends andbends.</p>
 
 </div>
 </div>
@@ -747,8 +981,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>A separate color for the graph line. By default the line takes the </p>
-<p><code>color</code> of the series, but the lineColor setting allows setting a separate color for the line without altering the <code>fillColor</code>. </p>
+<p></p>
+<p>A separate color for the graph line. By default the line takes the<code>color</code> of the series, but the lineColor setting allows setting aseparate color for the line without altering the <code>fillColor</code>.</p>
 
 </div>
 </div>
@@ -770,7 +1004,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Pixel width of the arearange graph line. </p>
+<p></p>
+<p>Pixel width of the arearange graph line.</p>
 
 </div>
 </div>
@@ -792,7 +1027,32 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>The <a href="#series.id">id</a> of another series to link to. Additionally, the value can be ":previous" to link to the previous series. When two series are linked, only the first one appears in the legend. Toggling the visibility of this also toggles the linked series. </p>
+<p></p>
+<p>The <a href="#series.id">id</a> of another series to link to. Additionally,the value can be &quot;:previous&quot; to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0c3d524c9458ade344ba1a29a51b9e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_marker.html">AreasplinerangeSeriesMarker</a> Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.Marker</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Options for the point markers of line-like series. Properties like<code>fillColor</code>, <code>lineColor</code> and <code>lineWidth</code> define the visual appearanceof the markers. Other series types, like column series, don&amp;#39;t havemarkers, but have visual options on the series level instead.</p>
+<p>In styled mode, the markers can be styled with the <code>.highcharts-point</code>,<code>.highcharts-point-hover</code> and <code>.highcharts-point-select</code>class names.</p>
 
 </div>
 </div>
@@ -814,7 +1074,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>The name of the series as shown in the legend, tooltip etc. </p>
+<p></p>
+<p>The name of the series as shown in the legend, tooltip etc.</p>
 
 </div>
 </div>
@@ -836,7 +1097,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>The color for the parts of the graph or points that are below the <a href="#plotOptions.series.threshold">threshold</a>. </p>
+<p></p>
+<p>The color for the parts of the graph or points that are below the<a href="#plotOptions.series.threshold">threshold</a>.</p>
 
 </div>
 </div>
@@ -858,7 +1120,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>A separate color for the negative part of the area. </p>
+<p></p>
+<p>A separate color for the negative part of the area.</p>
 
 </div>
 </div>
@@ -880,7 +1143,31 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Properties for each single point </p>
+<p></p>
+<p>Properties for each single point.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b1f28cb2e2e10746298f98db5716c79"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.PointDescriptionFormatter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Same as <a href="#accessibility.pointDescriptionFormatter">accessibility.pointDescriptionFormatter</a>, but for an individual series. Overridesthe chart wide configuration.</p>
 
 </div>
 </div>
@@ -903,8 +1190,8 @@ LongDashDotDot </li>
 </div><div class="memdoc">
 
 <p></p>
-<p>If no x values are given for the points in a series, pointInterval defines the interval of the x values. For example, if a series contains one value every decade starting from year 0, set pointInterval to 10.</p>
-<p>Since <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_highcharts.html">Highcharts</a> 4.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
+<p>If no x values are given for the points in a series, <code>pointInterval</code>defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set <code>pointInterval</code> to<code>10</code>. In true <code>datetime</code> axes, the <code>pointInterval</code> is set inmilliseconds.</p>
+<p>It can be also be combined with <code>pointIntervalUnit</code> to draw irregulartime intervals.</p>
 
 </div>
 </div>
@@ -926,8 +1213,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>On datetime series, this allows for setting the <a href="plotOptions.series.pointInterval">pointInterval</a> to the two irregular time units, </p>
-<p><code>month</code> and <code>year</code>. Combine it with <code>pointInterval</code> to draw quarters, 6 months, 10 years etc. </p>
+<p></p>
+<p>On datetime series, this allows for setting the<a href="#plotOptions.series.pointInterval">pointInterval</a> to irregular time units, <code>day</code>, <code>month</code> and <code>year</code>. A day is usually the same as 24 hours,but <code>pointIntervalUnit</code> also takes the DST crossover into considerationwhen dealing with local time. Combine this option with <code>pointInterval</code>to draw weeks, quarters, 6 months, 10 years etc.</p>
 
 </div>
 </div>
@@ -950,11 +1237,11 @@ LongDashDotDot </li>
 </div><div class="memdoc">
 
 <p></p>
-<p>Possible values: <code>null</code>, <code>"on"</code>, <code>"between"</code>.</p>
-<p>In a column chart, when pointPlacement is <code>"on"</code>, the point will not create any padding of the X axis. In a polar column chart this means that the first column points directly north. If the pointPlacement is <code>"between"</code>, the columns will be laid out between ticks. This is useful for example for visualising an amount between two points in time or in a certain sector of a polar chart.</p>
-<p>Since <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_highcharts.html">Highcharts</a> 3.0.2, the point placement can also be numeric, where 0 is on the axis value, -0.5 is between this value and the previous, and 0.5 is between this value and the next. Unlike the textual options, numeric point placement options won't affect axis padding.</p>
-<p>Note that pointPlacement needs a <a href="#plotOptions.series.pointRange">pointRange</a> to work. For column series this is computed, but for line-type series it needs to be set.</p>
-<p>Defaults to <code>null</code> in cartesian charts, <code>"between"</code> in polar charts. </p>
+<p>Possible values: <code>null</code>, <code>&quot;on&quot;</code>, <code>&quot;between&quot;</code>.</p>
+<p>In a column chart, when pointPlacement is <code>&quot;on&quot;</code>, the point willnot create any padding of the X axis. In a polar column chart thismeans that the first column points directly north. If the pointPlacementis <code>&quot;between&quot;</code>, the columns will be laid out between ticks. Thisis useful for example for visualising an amount between two pointsin time or in a certain sector of a polar chart.</p>
+<p>Since <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_highcharts.html">Highcharts</a> 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won&amp;#39;t affect axispadding.</p>
+<p>Note that pointPlacement needs a <a href="#plotOptions.series.pointRange">pointRange</a> to work. For column series this is computed, but forline-type series it needs to be set.</p>
+<p>Defaults to <code>null</code> in cartesian charts, <code>&quot;between&quot;</code> in polar charts.</p>
 
 </div>
 </div>
@@ -976,7 +1263,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>If no x values are given for the points in a series, pointStart defines on what value to start. For example, if a series contains one yearly value starting from 1945, set pointStart to 1945. </p>
+<p></p>
+<p>If no x values are given for the points in a series, pointStart defineson what value to start. For example, if a series contains one yearlyvalue starting from 1945, set pointStart to 1945.</p>
 
 </div>
 </div>
@@ -998,8 +1286,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Whether to select the series initially. If </p>
-<p><code>showCheckbox</code> is true, the checkbox next to the series name will be checked for a selected series. </p>
+<p></p>
+<p>Whether to select the series initially. If <code>showCheckbox</code> is true,the checkbox next to the series name in the legend will be checked for aselected series.</p>
 
 </div>
 </div>
@@ -1021,8 +1309,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Whether to apply a drop shadow to the graph line. Since 2.3 the shadow can be an object configuration containing </p>
-<p><code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>. </p>
+<p></p>
+<p>Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.</p>
 
 </div>
 </div>
@@ -1044,8 +1332,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>If true, a checkbox is displayed next to the legend item to allow selecting the series. The state of the checkbox is determined by the </p>
-<p><code>selected</code> option. </p>
+<p></p>
+<p>If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe <code>selected</code> option.</p>
 
 </div>
 </div>
@@ -1067,8 +1355,78 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Whether to display this particular series or series type in the legend. The default value is </p>
-<p><code>true</code> for standalone series, <code>false</code> for linked series. </p>
+<p></p>
+<p>Whether to display this particular series or series type in the legend.The default value is <code>true</code> for standalone series, <code>false</code> for linkedseries.</p>
+
+</div>
+</div>
+<a class="anchor" id="aee484904cca585a21850765817c8f708"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.SkipKeyboardNavigation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>If set to <code>True</code>, the accessibility module will skip past the pointsin this series for keyboard navigation.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9cd77ba5569f72753c6d998d331c12bd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.SoftThreshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>When this is true, the series will not cause the Y axis to crossthe zero plane (or <a href="#plotOptions.series.threshold">threshold</a> option)unless the data actually crosses the plane.</p>
+<p>For example, if <code>softThreshold</code> is <code>false</code>, a series of 0, 1, 2,3 will make the Y axis show negative values according to the <code>minPadding</code>option. If <code>softThreshold</code> is <code>true</code>, the Y axis starts at 0.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0155bb38abeb08fda9e618de4c89b64"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AreasplinerangeSeriesStacking Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.Stacking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Whether to stack the values of each series on top of each other.Possible values are <code>null</code> to disable, <code>&quot;normal&quot;</code> to stack by value or<code>&quot;percent&quot;</code>. When stacking is enabled, data must be sorted in ascendingX order. A special stacking option is with the streamgraph series type,where the stacking option is set to <code>&quot;stream&quot;</code>.</p>
 
 </div>
 </div>
@@ -1090,7 +1448,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>A wrapper object for all the series options in specific states. </p>
+<p></p>
+<p>A wrapper object for all the series options in specific states.</p>
 
 </div>
 </div>
@@ -1112,8 +1471,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Whether to apply steps to the line. Possible values are </p>
-<p><code>left</code>, <code>center</code> and <code>right</code>. Prior to 2.3.5, only <code>left</code> was supported. </p>
+<p></p>
+<p>Whether to apply steps to the line. Possible values are <code>left</code>, <code>center</code>and <code>right</code>.</p>
 
 </div>
 </div>
@@ -1135,8 +1494,31 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Sticky tracking of mouse events. When true, the </p>
-<p><code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. </p>
+<p></p>
+<p>Sticky tracking of mouse events. When true, the <code>mouseOut</code> eventon a series isn&amp;#39;t triggered until the mouse moves over another series,or out of the plot area. When false, the <code>mouseOut</code> event on aseries is triggered when the mouse leaves the area around the series&amp;#39;graph or markers. This also implies the tooltip when not shared. When<code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.</p>
+
+</div>
+</div>
+<a class="anchor" id="a700b234d56cd36365441f7662dbe7ff8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.Threshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>The Y axis value to serve as the base for the area, for distinguishingbetween values above and below a threshold. If <code>null</code>, the areabehaves like a line series with fill between the graph and the Yaxis minimum.</p>
 
 </div>
 </div>
@@ -1158,7 +1540,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level. </p>
+<p></p>
+<p>A configuration object for the tooltip rendering of each single series.Properties are inherited from <a href="#tooltip">tooltip</a>, but only thefollowing properties can be defined on a series level.</p>
 
 </div>
 </div>
@@ -1180,7 +1563,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Whether the whole area or just the line should respond to mouseover tooltips and other mouse or touch events. </p>
+<p></p>
+<p>Whether the whole area or just the line should respond to mouseovertooltips and other mouse or touch events.</p>
 
 </div>
 </div>
@@ -1202,8 +1586,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to </p>
-<p><code>0</code> disable. </p>
+<p></p>
+<p>When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to <code>0</code> disable.</p>
 
 </div>
 </div>
@@ -1225,8 +1609,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>The type of series. Can be one of </p>
-<p><code>area</code>, <code>areaspline</code>, <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>, <code>scatter</code> or <code>spline</code>. From version 2.3, <code>arearange</code>, <code>areasplinerange</code> and <code>columnrange</code> are supported with the highcharts-more.js component. </p>
+<p></p>
+<p>The type of series, for example <code>line</code> or <code>column</code>.</p>
 
 </div>
 </div>
@@ -1248,7 +1632,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Set the initial visibility of the series. </p>
+<p></p>
+<p>Set the initial visibility of the series.</p>
 
 </div>
 </div>
@@ -1270,7 +1655,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>When using dual or multiple x axes, this number defines which xAxis the particular series is connected to. It refers to either the <a href="#xAxis.id">axis id</a> or the index of the axis in the xAxis array, with 0 being the first. </p>
+<p></p>
+<p>When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the <a href="#xAxis.id">axisid</a> or the index of the axis in the xAxis array, with0 being the first.</p>
 
 </div>
 </div>
@@ -1292,7 +1678,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>When using dual or multiple y axes, this number defines which yAxis the particular series is connected to. It refers to either the <a href="#yAxis.id">axis id</a> or the index of the axis in the yAxis array, with 0 being the first. </p>
+<p></p>
+<p>When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the <a href="#yAxis.id">axisid</a> or the index of the axis in the yAxis array, with0 being the first.</p>
 
 </div>
 </div>
@@ -1314,7 +1701,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Define the visual z index of the series. </p>
+<p></p>
+<p>Define the visual z index of the series.</p>
 
 </div>
 </div>
@@ -1336,11 +1724,12 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Defines the Axis on which the zones are applied. </p>
+<p></p>
+<p>Defines the Axis on which the zones are applied.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab4ffcc4621154c9e4a74fda483eba5fe"></a>
+<a class="anchor" id="a4a74bd7ca629019b21a0c33f8f43052a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1348,7 +1737,7 @@ LongDashDotDot </li>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_zones.html">AreasplinerangeSeriesZones</a> Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.Zones</td>
+          <td class="memname">List&lt;<a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_zone.html">AreasplinerangeSeriesZone</a>&gt; Highsoft.Web.Mvc.Charts.AreasplinerangeSeries.Zones</td>
         </tr>
       </table>
   </td>
@@ -1358,12 +1747,14 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>An array defining zones within a series. </p>
+<p></p>
+<p>An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code>option.</p>
+<p>In styled mode, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">viewlive demo</a>).</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/PC/Documents/highcharts.net/MVC_Highcharts/CodeGeneration/<a class="el" href="_areasplinerange_series_8cs.html">AreasplinerangeSeries.cs</a></li>
+<li>C:/Users/PC/Documents/highcharts.net/_HC6/MVC_Highcharts/CodeGeneration/<a class="el" href="_areasplinerange_series_8cs.html">AreasplinerangeSeries.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

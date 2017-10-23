@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover =
 [
     [ "PlotOptionsScatterMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#a7c1efdce89a6b4de17d82337d148e26e", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#aebbe45c233fefd9b8384cace60e4a9ee", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#a55b515397f931b717afe2ad1400c7ece", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#a5bca512acdddeb86b8946ae01e19b3a7", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#abc5ea157fe8230b0e863a67dc778bee3", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#a549129e8b070afdc32d825d9bca3c5a1", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#a8adb4f44cd821f6a5a57c239903d12c4", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#a575ae61d96ca74d3a7fcb84cfd8d3862", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#a276452858662606b72604afa2ac011d9", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#a37a8575b507fe5dcbcbf2dd6e77812cf", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#a871c11167a9f943cca5f5975e173ebf2", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker_states_hover.html#a2ed11c1d9eaf67f21db513d56c8bc48d", null ],

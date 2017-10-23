@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover =
 [
     [ "LineSeriesDataMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#a9026172358b9f523f80fbcf1ca1be437", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#abde62691802731659a8bca6915b80feb", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#a7e132343bcf70e1688ab2cbc7b68cbab", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#a39e4e74f02a18309a28c377d967702ad", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#a9773791c6587d4223d6a7dc4e04de099", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#aee8e7e457c990c30eb97096d0e3eddc4", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#a4a8bd4f146e85571ec1e9c01c05b7d15", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#a4760b59cc636e9831f3ecddefba09f77", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#a4f8538060af8aa4cb03ab8b6ef9c648e", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#abeef9b27511e570f40669705b39f5ac7", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#a6cd6a77eadbda388c267a361312a1cce", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_line_series_data_marker_states_hover.html#a68fcf204c2fc412a0fd32b8096edd5cf", null ],

@@ -8,7 +8,5 @@ var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_states_hov
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_states_hover.html#a23a8a021cee9dcd09971adc3d328fefb", null ],
     [ "LineWidth_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_states_hover.html#a4f6a8a322d92eb4ab3cfc25f7a7dd59d", null ],
     [ "LineWidthPlus", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_states_hover.html#a4ad345a5248f7294d9e8bd8b496ea344", null ],
-    [ "LineWidthPlus_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_states_hover.html#a528075385668b34e85e7c8b8d3f04934", null ],
-    [ "Marker", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_states_hover.html#af87d29139d6d090a9c556d35cfe5b78a", null ],
-    [ "Marker_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_states_hover.html#a711f046b48d88b218b2b71de19f83fb0", null ]
+    [ "LineWidthPlus_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_states_hover.html#a528075385668b34e85e7c8b8d3f04934", null ]
 ];

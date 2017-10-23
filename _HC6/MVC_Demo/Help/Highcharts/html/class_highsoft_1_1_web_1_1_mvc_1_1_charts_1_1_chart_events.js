@@ -13,10 +13,14 @@ var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events =
     [ "Drilldown_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#a39c6810ecae8ef2aa8c3e02a03e2e028", null ],
     [ "Drillup", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#a9ca7e1573b649ff45cfdb556fcd2e4f5", null ],
     [ "Drillup_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#a5c7942cde9939b58787049d0f046e336", null ],
+    [ "Drillupall", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#ac825ce71c61305fe5c569b0ca29aacf0", null ],
+    [ "Drillupall_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#ad6f219fb2c973f054ab1f22e9f0ba183", null ],
     [ "Load", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#aa98b73625afa6943c7823afb0636d0bf", null ],
     [ "Load_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#a59fcc0d4aa35710941265d7f8e6d2346", null ],
     [ "Redraw", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#ad1973b77b1c5912521f41df3d1c2ccd0", null ],
     [ "Redraw_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#abead9457b53b09ad54a05e3bfcf20d9d", null ],
+    [ "Render", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#a369db462e88aaa5c58ef6d5ba25347bc", null ],
+    [ "Render_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#a8aa1d74d9306b266817a2b8193905383", null ],
     [ "Selection", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#a11473514ac47f0785dfb45628e980786", null ],
     [ "Selection_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_chart_events.html#ae583c594a349cb59eca001e254a51627", null ]
 ];

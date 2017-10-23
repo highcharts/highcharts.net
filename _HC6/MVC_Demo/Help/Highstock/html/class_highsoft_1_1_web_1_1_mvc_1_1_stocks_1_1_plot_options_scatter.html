@@ -32,6 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Highstock
+   &#160;<span id="projectnumber">6.0.1</span>
    </div>
   </td>
  </tr>
@@ -123,98 +124,116 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ac24649480129c4f31bc87e2e4925f261"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#ac24649480129c4f31bc87e2e4925f261">AllowPointSelect</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac24649480129c4f31bc87e2e4925f261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow this series' points to be selected by clicking on the markers or bars.  <a href="#ac24649480129c4f31bc87e2e4925f261">More...</a><br /></td></tr>
-<tr class="separator:ac24649480129c4f31bc87e2e4925f261"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab119d7da82e8b905a30c0cd7142605f6"><td class="memItemLeft" align="right" valign="top">Animation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#ab119d7da82e8b905a30c0cd7142605f6">Animation</a><code> [get, set]</code></td></tr>
-<tr class="separator:ab119d7da82e8b905a30c0cd7142605f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a816f862047a260d0dd8cf37156b224"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a0a816f862047a260d0dd8cf37156b224">Color</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a0a816f862047a260d0dd8cf37156b224"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main color of the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the  <a href="#a0a816f862047a260d0dd8cf37156b224">More...</a><br /></td></tr>
-<tr class="separator:a0a816f862047a260d0dd8cf37156b224"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc4e6b44ff9de90f3deaa124fda244da"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#adc4e6b44ff9de90f3deaa124fda244da">Compare</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:adc4e6b44ff9de90f3deaa124fda244da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare the values of the series against the first value in the visible range. The y axis will show percentage or absolute change depending on whether  <a href="#adc4e6b44ff9de90f3deaa124fda244da">More...</a><br /></td></tr>
-<tr class="separator:adc4e6b44ff9de90f3deaa124fda244da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47010d8e90fb4f157c101481e97b78df"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a47010d8e90fb4f157c101481e97b78df">CropThreshold</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a47010d8e90fb4f157c101481e97b78df"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the series contains less points than the crop threshold, all points are drawn, event if the points fall outside the visible plot area at the current zoom. The advantage of drawing all points (including markers and columns), is that animation is performed on updates. On the other hand, when the series contains more points than the crop threshold, the series data is cropped to only contain points that fall within the plot area. The advantage of cropping away invisible points is to increase performance on large series. .  <a href="#a47010d8e90fb4f157c101481e97b78df">More...</a><br /></td></tr>
-<tr class="separator:a47010d8e90fb4f157c101481e97b78df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e48dade8ce41053aecfcaae3e1debb2"><td class="memItemLeft" align="right" valign="top">PlotOptionsScatterCursor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a9e48dade8ce41053aecfcaae3e1debb2">Cursor</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a9e48dade8ce41053aecfcaae3e1debb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can set the cursor to "pointer" if you have click events attached to the series, to signal to the user that the points and lines can be clicked.  <a href="#a9e48dade8ce41053aecfcaae3e1debb2">More...</a><br /></td></tr>
-<tr class="separator:a9e48dade8ce41053aecfcaae3e1debb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10ff401ba3d97733a07d33155db1343e"><td class="memItemLeft" align="right" valign="top">PlotOptionsScatterDashStyle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a10ff401ba3d97733a07d33155db1343e">DashStyle</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a10ff401ba3d97733a07d33155db1343e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A name for the dash style to use for the graph. Applies only to series type having a graph, like  <a href="#a10ff401ba3d97733a07d33155db1343e">More...</a><br /></td></tr>
-<tr class="separator:a10ff401ba3d97733a07d33155db1343e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a708c225963e5e9d4a09043d2eaf34b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html">PlotOptionsScatterDataGrouping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a5a708c225963e5e9d4a09043d2eaf34b">DataGrouping</a><code> [get, set]</code></td></tr>
-<tr class="separator:a5a708c225963e5e9d4a09043d2eaf34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1563cc491b78ed218d28b988d8aac27c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_labels.html">PlotOptionsScatterDataLabels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a1563cc491b78ed218d28b988d8aac27c">DataLabels</a><code> [get, set]</code></td></tr>
-<tr class="separator:a1563cc491b78ed218d28b988d8aac27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4376c6799c844e53d6082519a05fbf3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#af4376c6799c844e53d6082519a05fbf3">EnableMouseTracking</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af4376c6799c844e53d6082519a05fbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. When using shared tooltips (default in stock charts), mouse tracking is not required. For large datasets it improves performance.  <a href="#af4376c6799c844e53d6082519a05fbf3">More...</a><br /></td></tr>
-<tr class="separator:af4376c6799c844e53d6082519a05fbf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a485915133356068d555b0c8674642725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_events.html">PlotOptionsScatterEvents</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a485915133356068d555b0c8674642725">Events</a><code> [get, set]</code></td></tr>
-<tr class="separator:a485915133356068d555b0c8674642725"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1c3f6587b515d839fd3aed31d93fcdb"><td class="memItemLeft" align="right" valign="top">List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#af1c3f6587b515d839fd3aed31d93fcdb">Keys</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af1c3f6587b515d839fd3aed31d93fcdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">An array specifying which option maps to which key in the data point array. This makes it convenient to work with unstructured data arrays from different sources.  <a href="#af1c3f6587b515d839fd3aed31d93fcdb">More...</a><br /></td></tr>
-<tr class="separator:af1c3f6587b515d839fd3aed31d93fcdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a44f33e525c4e9ef882aa477ca1d2d2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a0a44f33e525c4e9ef882aa477ca1d2d2">LegendIndex</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a0a44f33e525c4e9ef882aa477ca1d2d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sequential index of the series within the legend.  <a href="#a0a44f33e525c4e9ef882aa477ca1d2d2">More...</a><br /></td></tr>
-<tr class="separator:a0a44f33e525c4e9ef882aa477ca1d2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a459cf01c117597a0a3c25d931c4d90e9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a459cf01c117597a0a3c25d931c4d90e9">LineWidth</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a459cf01c117597a0a3c25d931c4d90e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The width of the line connecting the data points.  <a href="#a459cf01c117597a0a3c25d931c4d90e9">More...</a><br /></td></tr>
 <tr class="separator:a459cf01c117597a0a3c25d931c4d90e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eee3dbb05892017db35a84e0c1bf0ee"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a6eee3dbb05892017db35a84e0c1bf0ee">LinkedTo</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6eee3dbb05892017db35a84e0c1bf0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a href="#series.id">id</a> of another series to link to. Additionally, the value can be ":previous" to link to the previous series. When two series are linked, only the first one appears in the legend. Toggling the visibility of this also toggles the linked series.  <a href="#a6eee3dbb05892017db35a84e0c1bf0ee">More...</a><br /></td></tr>
-<tr class="separator:a6eee3dbb05892017db35a84e0c1bf0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3897e1fe22119f0bc2479f3271b6a4c"><td class="memItemLeft" align="right" valign="top">PlotOptionsScatterFindNearestPointBy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#ac3897e1fe22119f0bc2479f3271b6a4c">FindNearestPointBy</a><code> [get, set]</code></td></tr>
+<tr class="separator:ac3897e1fe22119f0bc2479f3271b6a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5d7157c07c1de9b8929f82b1ee07fd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_marker.html">PlotOptionsScatterMarker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#ad5d7157c07c1de9b8929f82b1ee07fd5">Marker</a><code> [get, set]</code></td></tr>
 <tr class="separator:ad5d7157c07c1de9b8929f82b1ee07fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a742f92c46425066dd984ab2f7578a4f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a742f92c46425066dd984ab2f7578a4f3">StickyTracking</a><code> [get, set]</code></td></tr>
+<tr class="separator:a742f92c46425066dd984ab2f7578a4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e50b95dc389d23eaf938c2743d8902"><td class="memItemLeft" align="right" valign="top">PlotOptionsScatterLinecap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a59e50b95dc389d23eaf938c2743d8902">Linecap</a><code> [get, set]</code></td></tr>
+<tr class="separator:a59e50b95dc389d23eaf938c2743d8902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af53d069999104b96cec64cb0fdf5a046"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#af53d069999104b96cec64cb0fdf5a046">BoostThreshold</a><code> [get, set]</code></td></tr>
+<tr class="separator:af53d069999104b96cec64cb0fdf5a046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5405961d092636260a1dbaee0e118bbc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a5405961d092636260a1dbaee0e118bbc">GapSize</a><code> [get, set]</code></td></tr>
+<tr class="separator:a5405961d092636260a1dbaee0e118bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0120dd5131a5d55c3ef3f8555362a7f"><td class="memItemLeft" align="right" valign="top">PlotOptionsScatterGapUnit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#ab0120dd5131a5d55c3ef3f8555362a7f">GapUnit</a><code> [get, set]</code></td></tr>
+<tr class="separator:ab0120dd5131a5d55c3ef3f8555362a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb4c52c19793268d50013a9b07b1215d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_label.html">PlotOptionsScatterLabel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#aeb4c52c19793268d50013a9b07b1215d">Label</a><code> [get, set]</code></td></tr>
+<tr class="separator:aeb4c52c19793268d50013a9b07b1215d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a708c225963e5e9d4a09043d2eaf34b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_grouping.html">PlotOptionsScatterDataGrouping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a5a708c225963e5e9d4a09043d2eaf34b">DataGrouping</a><code> [get, set]</code></td></tr>
+<tr class="separator:a5a708c225963e5e9d4a09043d2eaf34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd1e247a8b54dcc49e551582ecf0f3f5"><td class="memItemLeft" align="right" valign="top">Object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#afd1e247a8b54dcc49e551582ecf0f3f5">NavigatorOptions</a><code> [get, set]</code></td></tr>
+<tr class="separator:afd1e247a8b54dcc49e551582ecf0f3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acccb2fda3e89fa031f5dff3728555df2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#acccb2fda3e89fa031f5dff3728555df2">ShowInNavigator</a><code> [get, set]</code></td></tr>
+<tr class="separator:acccb2fda3e89fa031f5dff3728555df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24649480129c4f31bc87e2e4925f261"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#ac24649480129c4f31bc87e2e4925f261">AllowPointSelect</a><code> [get, set]</code></td></tr>
+<tr class="separator:ac24649480129c4f31bc87e2e4925f261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c72f3d4306c59141ba1da50a5ce2de8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a5c72f3d4306c59141ba1da50a5ce2de8">ShowCheckbox</a><code> [get, set]</code></td></tr>
+<tr class="separator:a5c72f3d4306c59141ba1da50a5ce2de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab119d7da82e8b905a30c0cd7142605f6"><td class="memItemLeft" align="right" valign="top">Animation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#ab119d7da82e8b905a30c0cd7142605f6">Animation</a><code> [get, set]</code></td></tr>
+<tr class="separator:ab119d7da82e8b905a30c0cd7142605f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485915133356068d555b0c8674642725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_events.html">PlotOptionsScatterEvents</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a485915133356068d555b0c8674642725">Events</a><code> [get, set]</code></td></tr>
+<tr class="separator:a485915133356068d555b0c8674642725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5acac21a5318e36ddf0081200395c2e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_point.html">PlotOptionsScatterPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a5acac21a5318e36ddf0081200395c2e8">Point</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a5acac21a5318e36ddf0081200395c2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Properties for each single point  <a href="#a5acac21a5318e36ddf0081200395c2e8">More...</a><br /></td></tr>
 <tr class="separator:a5acac21a5318e36ddf0081200395c2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1563cc491b78ed218d28b988d8aac27c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_data_labels.html">PlotOptionsScatterDataLabels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a1563cc491b78ed218d28b988d8aac27c">DataLabels</a><code> [get, set]</code></td></tr>
+<tr class="separator:a1563cc491b78ed218d28b988d8aac27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47010d8e90fb4f157c101481e97b78df"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a47010d8e90fb4f157c101481e97b78df">CropThreshold</a><code> [get, set]</code></td></tr>
+<tr class="separator:a47010d8e90fb4f157c101481e97b78df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7350aa9da8dfffb9e61caf633e11ff9d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a7350aa9da8dfffb9e61caf633e11ff9d">PointRange</a><code> [get, set]</code></td></tr>
+<tr class="separator:a7350aa9da8dfffb9e61caf633e11ff9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816f81282eb580800eabad9c266079fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a816f81282eb580800eabad9c266079fe">SoftThreshold</a><code> [get, set]</code></td></tr>
+<tr class="separator:a816f81282eb580800eabad9c266079fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9859d9dfa34d7b837946a214b292255"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_states.html">PlotOptionsScatterStates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#aa9859d9dfa34d7b837946a214b292255">States</a><code> [get, set]</code></td></tr>
+<tr class="separator:aa9859d9dfa34d7b837946a214b292255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f258ffee879cd220096a573327ef754"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a4f258ffee879cd220096a573327ef754">TurboThreshold</a><code> [get, set]</code></td></tr>
+<tr class="separator:a4f258ffee879cd220096a573327ef754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8a542dab40437a81e02ab92763892c1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#ac8a542dab40437a81e02ab92763892c1">AnimationLimit</a><code> [get, set]</code></td></tr>
+<tr class="separator:ac8a542dab40437a81e02ab92763892c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affa6ff9834cb6008c4077417f5c3efa7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#affa6ff9834cb6008c4077417f5c3efa7">ClassName</a><code> [get, set]</code></td></tr>
+<tr class="separator:affa6ff9834cb6008c4077417f5c3efa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a816f862047a260d0dd8cf37156b224"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a0a816f862047a260d0dd8cf37156b224">Color</a><code> [get, set]</code></td></tr>
+<tr class="separator:a0a816f862047a260d0dd8cf37156b224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa64c2b3a4fa311d251b5ebdc3f9813bc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#aa64c2b3a4fa311d251b5ebdc3f9813bc">ColorIndex</a><code> [get, set]</code></td></tr>
+<tr class="separator:aa64c2b3a4fa311d251b5ebdc3f9813bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25849f0675b7374a46e21aa6a835d0eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a25849f0675b7374a46e21aa6a835d0eb">ConnectNulls</a><code> [get, set]</code></td></tr>
+<tr class="separator:a25849f0675b7374a46e21aa6a835d0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e48dade8ce41053aecfcaae3e1debb2"><td class="memItemLeft" align="right" valign="top">PlotOptionsScatterCursor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a9e48dade8ce41053aecfcaae3e1debb2">Cursor</a><code> [get, set]</code></td></tr>
+<tr class="separator:a9e48dade8ce41053aecfcaae3e1debb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ff401ba3d97733a07d33155db1343e"><td class="memItemLeft" align="right" valign="top">PlotOptionsScatterDashStyle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a10ff401ba3d97733a07d33155db1343e">DashStyle</a><code> [get, set]</code></td></tr>
+<tr class="separator:a10ff401ba3d97733a07d33155db1343e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a8632c2f21b85a4e7730935fc0495c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a07a8632c2f21b85a4e7730935fc0495c">Description</a><code> [get, set]</code></td></tr>
+<tr class="separator:a07a8632c2f21b85a4e7730935fc0495c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4376c6799c844e53d6082519a05fbf3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#af4376c6799c844e53d6082519a05fbf3">EnableMouseTracking</a><code> [get, set]</code></td></tr>
+<tr class="separator:af4376c6799c844e53d6082519a05fbf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d0cfe34cf922d60c5f5b179bce5a77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#aa9d0cfe34cf922d60c5f5b179bce5a77">ExposeElementToA11y</a><code> [get, set]</code></td></tr>
+<tr class="separator:aa9d0cfe34cf922d60c5f5b179bce5a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a858f99e9b24ff3389e8b1952b5426d8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a858f99e9b24ff3389e8b1952b5426d8d">GetExtremesFromAll</a><code> [get, set]</code></td></tr>
+<tr class="separator:a858f99e9b24ff3389e8b1952b5426d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c3f6587b515d839fd3aed31d93fcdb"><td class="memItemLeft" align="right" valign="top">List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#af1c3f6587b515d839fd3aed31d93fcdb">Keys</a><code> [get, set]</code></td></tr>
+<tr class="separator:af1c3f6587b515d839fd3aed31d93fcdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eee3dbb05892017db35a84e0c1bf0ee"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a6eee3dbb05892017db35a84e0c1bf0ee">LinkedTo</a><code> [get, set]</code></td></tr>
+<tr class="separator:a6eee3dbb05892017db35a84e0c1bf0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd15452647a563cc157a0cd2fe065de"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a1bd15452647a563cc157a0cd2fe065de">NegativeColor</a><code> [get, set]</code></td></tr>
+<tr class="separator:a1bd15452647a563cc157a0cd2fe065de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8476c2e3bdb99c7858b4280a86c2c968"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a8476c2e3bdb99c7858b4280a86c2c968">PointDescriptionFormatter</a><code> [get, set]</code></td></tr>
+<tr class="separator:a8476c2e3bdb99c7858b4280a86c2c968"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9702cb06980199305cea33be58e864b5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a9702cb06980199305cea33be58e864b5">PointInterval</a><code> [get, set]</code></td></tr>
 <tr class="separator:a9702cb06980199305cea33be58e864b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01bf1c1de0e5b3be756e517f23402711"><td class="memItemLeft" align="right" valign="top">PlotOptionsScatterPointIntervalUnit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a01bf1c1de0e5b3be756e517f23402711">PointIntervalUnit</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a01bf1c1de0e5b3be756e517f23402711"><td class="mdescLeft">&#160;</td><td class="mdescRight">On datetime series, this allows for setting the <a href="plotOptions.series.pointInterval">pointInterval</a> to the two irregular time units,  <a href="#a01bf1c1de0e5b3be756e517f23402711">More...</a><br /></td></tr>
 <tr class="separator:a01bf1c1de0e5b3be756e517f23402711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bfb625230f690b9c576c472f92ae692"><td class="memItemLeft" align="right" valign="top">PointPlacement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a3bfb625230f690b9c576c472f92ae692">PointPlacement</a><code> [get, set]</code></td></tr>
 <tr class="separator:a3bfb625230f690b9c576c472f92ae692"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7350aa9da8dfffb9e61caf633e11ff9d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a7350aa9da8dfffb9e61caf633e11ff9d">PointRange</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7350aa9da8dfffb9e61caf633e11ff9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The width of each point on the x axis. For example in a column chart with one value each day, the pointRange would be 1 day (= 24 * 3600 * 1000 milliseconds). This is normally computed automatically, but this option can be used to override the automatic value.  <a href="#a7350aa9da8dfffb9e61caf633e11ff9d">More...</a><br /></td></tr>
-<tr class="separator:a7350aa9da8dfffb9e61caf633e11ff9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eb274b470b7c121f044be69c7e8e70b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a2eb274b470b7c121f044be69c7e8e70b">PointStart</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a2eb274b470b7c121f044be69c7e8e70b"><td class="mdescLeft">&#160;</td><td class="mdescRight">If no x values are given for the points in a series, pointStart defines on what value to start. On a datetime X axis, the number will be given as milliseconds since 1970-01-01, for example  <a href="#a2eb274b470b7c121f044be69c7e8e70b">More...</a><br /></td></tr>
 <tr class="separator:a2eb274b470b7c121f044be69c7e8e70b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1134d1165166d88a78199d03a6e7104e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a1134d1165166d88a78199d03a6e7104e">Selected</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a1134d1165166d88a78199d03a6e7104e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to select the series initially. If  <a href="#a1134d1165166d88a78199d03a6e7104e">More...</a><br /></td></tr>
 <tr class="separator:a1134d1165166d88a78199d03a6e7104e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04c3e081cded11a757dbdc6d70e9c24a"><td class="memItemLeft" align="right" valign="top">Shadow&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a04c3e081cded11a757dbdc6d70e9c24a">Shadow</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a04c3e081cded11a757dbdc6d70e9c24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to apply a drop shadow to the graph line. Since 1.1.7 the shadow can be an object configuration containing  <a href="#a04c3e081cded11a757dbdc6d70e9c24a">More...</a><br /></td></tr>
 <tr class="separator:a04c3e081cded11a757dbdc6d70e9c24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c72f3d4306c59141ba1da50a5ce2de8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a5c72f3d4306c59141ba1da50a5ce2de8">ShowCheckbox</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a5c72f3d4306c59141ba1da50a5ce2de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, a checkbox is displayed next to the legend item to allow selecting the series. The state of the checkbox is determined by the  <a href="#a5c72f3d4306c59141ba1da50a5ce2de8">More...</a><br /></td></tr>
-<tr class="separator:a5c72f3d4306c59141ba1da50a5ce2de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a428db63d78b96206d4b6cd5fe89f5dd9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a428db63d78b96206d4b6cd5fe89f5dd9">ShowInLegend</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a428db63d78b96206d4b6cd5fe89f5dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to display this particular series or series type in the legend. The default value is  <a href="#a428db63d78b96206d4b6cd5fe89f5dd9">More...</a><br /></td></tr>
 <tr class="separator:a428db63d78b96206d4b6cd5fe89f5dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5fd724b2533847601683b0dac73ade7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#af5fd724b2533847601683b0dac73ade7">SkipKeyboardNavigation</a><code> [get, set]</code></td></tr>
+<tr class="separator:af5fd724b2533847601683b0dac73ade7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a376b213fd3cf3c58709b370b37240f48"><td class="memItemLeft" align="right" valign="top">PlotOptionsScatterStacking&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a376b213fd3cf3c58709b370b37240f48">Stacking</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a376b213fd3cf3c58709b370b37240f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to stack the values of each series on top of each other. Possible values are null to disable, "normal" to stack by value or "percent".  <a href="#a376b213fd3cf3c58709b370b37240f48">More...</a><br /></td></tr>
 <tr class="separator:a376b213fd3cf3c58709b370b37240f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9859d9dfa34d7b837946a214b292255"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_states.html">PlotOptionsScatterStates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#aa9859d9dfa34d7b837946a214b292255">States</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa9859d9dfa34d7b837946a214b292255"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper object for all the series options in specific states.  <a href="#aa9859d9dfa34d7b837946a214b292255">More...</a><br /></td></tr>
-<tr class="separator:aa9859d9dfa34d7b837946a214b292255"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a742f92c46425066dd984ab2f7578a4f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a742f92c46425066dd984ab2f7578a4f3">StickyTracking</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a742f92c46425066dd984ab2f7578a4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sticky tracking of mouse events. When true, the  <a href="#a742f92c46425066dd984ab2f7578a4f3">More...</a><br /></td></tr>
-<tr class="separator:a742f92c46425066dd984ab2f7578a4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f258ffee879cd220096a573327ef754"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a4f258ffee879cd220096a573327ef754">TurboThreshold</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4f258ffee879cd220096a573327ef754"><td class="mdescLeft">&#160;</td><td class="mdescRight">When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to  <a href="#a4f258ffee879cd220096a573327ef754">More...</a><br /></td></tr>
-<tr class="separator:a4f258ffee879cd220096a573327ef754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab660915d396d0591d1232d1ded6b7a38"><td class="memItemLeft" align="right" valign="top">PlotOptionsScatterStep&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#ab660915d396d0591d1232d1ded6b7a38">Step</a><code> [get, set]</code></td></tr>
+<tr class="separator:ab660915d396d0591d1232d1ded6b7a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacdae27af5b9c6f473849fdfedcc4077"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#aacdae27af5b9c6f473849fdfedcc4077">Threshold</a><code> [get, set]</code></td></tr>
+<tr class="separator:aacdae27af5b9c6f473849fdfedcc4077"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a185cf868d39306d22131d3f74498dfdc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a185cf868d39306d22131d3f74498dfdc">Visible</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a185cf868d39306d22131d3f74498dfdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the initial visibility of the series.  <a href="#a185cf868d39306d22131d3f74498dfdc">More...</a><br /></td></tr>
 <tr class="separator:a185cf868d39306d22131d3f74498dfdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad66841fbebd4e54fe306eb113cb6da7d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#ad66841fbebd4e54fe306eb113cb6da7d">ZoneAxis</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ad66841fbebd4e54fe306eb113cb6da7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the Axis on which the zones are applied.  <a href="#ad66841fbebd4e54fe306eb113cb6da7d">More...</a><br /></td></tr>
 <tr class="separator:ad66841fbebd4e54fe306eb113cb6da7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28b885ad00ea757e5b92215caf7ea0c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_zones.html">PlotOptionsScatterZones</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a28b885ad00ea757e5b92215caf7ea0c5">Zones</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a28b885ad00ea757e5b92215caf7ea0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">An array defining zones within a series.  <a href="#a28b885ad00ea757e5b92215caf7ea0c5">More...</a><br /></td></tr>
-<tr class="separator:a28b885ad00ea757e5b92215caf7ea0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a1f85658db643dad914a3852bfcb006"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_zone.html">PlotOptionsScatterZone</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a7a1f85658db643dad914a3852bfcb006">Zones</a><code> [get, set]</code></td></tr>
+<tr class="separator:a7a1f85658db643dad914a3852bfcb006"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc4e6b44ff9de90f3deaa124fda244da"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#adc4e6b44ff9de90f3deaa124fda244da">Compare</a><code> [get, set]</code></td></tr>
+<tr class="separator:adc4e6b44ff9de90f3deaa124fda244da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa04c0c57cc20211afac93caca889b0eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#aa04c0c57cc20211afac93caca889b0eb">CompareStart</a><code> [get, set]</code></td></tr>
+<tr class="separator:aa04c0c57cc20211afac93caca889b0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3abecb4a9818ebad48697ffb746391c9"><td class="memItemLeft" align="right" valign="top">PlotOptionsScatterCompareBase&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter.html#a3abecb4a9818ebad48697ffb746391c9">CompareBase</a><code> [get, set]</code></td></tr>
+<tr class="separator:a3abecb4a9818ebad48697ffb746391c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae48e234b282d0fe503f1c461061bc993"></a>
@@ -251,7 +270,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Allow this series' points to be selected by clicking on the markers or bars. </p>
+<p></p>
+<p>Allow this series&amp;#39; points to be selected by clicking on the graphic (columns, point markers, pie slices, map areas etc).</p>
 
 </div>
 </div>
@@ -274,14 +294,86 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-<p>Enable or disable the initial animation when a series is displayed. The animation can also be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods.The following properties are supported:</p>
+<p>Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods. Thefollowing properties are supported:</p>
 <dl>
-<dt>duration </dt>
+<dt>duration</dt>
 <dd>The duration of the animation in milliseconds.</dd>
 <dt>easing</dt>
-<dd>When using jQuery as the general framework, the easing can be set to <code>linear</code> or<code>swing</code>. More easing functions are available with the use of jQuery plug-ins, most notablythe jQuery UI suite. See <a href="http://api.jquery.com/animate/">the jQuery docs</a>. When using MooTools as the general framework, use the property name <code>transition</code> instead of <code>easing</code>.</dd>
+<dd>A string reference to an easing function set on the <code>Math</code> object.See the <em>Custom easing function</em> demo below.</dd>
 </dl>
-<p>Due to poor performance, animation is disabled in old IE browsers for column charts and polar charts.</p>
+<p>Due to poor performance, animation is disabled in old IE browsersfor several chart types.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac8a542dab40437a81e02ab92763892c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.AnimationLimit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesn&amp;#39;trun if there is more than 250 points totally. To disable this cap, set<code>animationLimit</code> to <code>Infinity</code>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af53d069999104b96cec64cb0fdf5a046"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.BoostThreshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Set the point threshold for when a series should enter boost mode.</p>
+<p>Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.</p>
+<p>To disable boosting on the series, set the <code>boostThreshold</code> to 0. Setting itto 1 will force boosting.</p>
+<p>Requires <code>modules/boost.js</code>.</p>
+
+</div>
+</div>
+<a class="anchor" id="affa6ff9834cb6008c4077417f5c3efa7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.ClassName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>A class name to apply to the series&amp;#39; graphical elements.</p>
 
 </div>
 </div>
@@ -303,8 +395,32 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The main color of the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the </p>
-<p><code>options.colors</code> array. </p>
+<p></p>
+<p>The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the <code>options.colors</code> array.</p>
+<p>In styled mode, the color can be defined by the<a href="#plotOptions.series.colorIndex">colorIndex</a> option. Also, the seriescolor can be set with the <code>.highcharts-series</code>, <code>.highcharts-color-{n}</code>,<code>.highcharts-{type}-series</code> or <code>.highcharts-series-{n}</code> class, orindividual classes given by the <code>className</code> option.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa64c2b3a4fa311d251b5ebdc3f9813bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.ColorIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name <code>highcharts-color-{n}</code>.</p>
 
 </div>
 </div>
@@ -326,8 +442,77 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Compare the values of the series against the first value in the visible range. The y axis will show percentage or absolute change depending on whether </p>
-<p><code>compare</code> is set to <code>"percent"</code> or <code>"value"</code>. When this is applied to multiple series, it allows comparing the development of the series against each other. </p>
+<p></p>
+<p>Compare the values of the series against the first non-null, non-zero value in the visible range. The y axis will show percentageor absolute change depending on whether <code>compare</code> is set to <code>&quot;percent&quot;</code>or <code>&quot;value&quot;</code>. When this is applied to multiple series, it allowscomparing the development of the series against each other.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3abecb4a9818ebad48697ffb746391c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlotOptionsScatterCompareBase Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.CompareBase</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>When <a href="#plotOptions.series.compare">compare</a> is <code>percent</code>, this optiondictates whether to use 0 or 100 as the base of comparison.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa04c0c57cc20211afac93caca889b0eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.CompareStart</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Defines if comparisson should start from the first point within the visiblerange or should start from the first point <b>before</b> the range.In other words, this flag determines if first point within the visible rangewill have 0% (base) or should have been already calculated according to theprevious point.</p>
+
+</div>
+</div>
+<a class="anchor" id="a25849f0675b7374a46e21aa6a835d0eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.ConnectNulls</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.</p>
 
 </div>
 </div>
@@ -349,7 +534,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>When the series contains less points than the crop threshold, all points are drawn, event if the points fall outside the visible plot area at the current zoom. The advantage of drawing all points (including markers and columns), is that animation is performed on updates. On the other hand, when the series contains more points than the crop threshold, the series data is cropped to only contain points that fall within the plot area. The advantage of cropping away invisible points is to increase performance on large series. . </p>
+<p></p>
+<p>When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.</p>
 
 </div>
 </div>
@@ -371,7 +557,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>You can set the cursor to "pointer" if you have click events attached to the series, to signal to the user that the points and lines can be clicked. </p>
+<p></p>
+<p>You can set the cursor to &quot;pointer&quot; if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.</p>
 
 </div>
 </div>
@@ -393,30 +580,31 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A name for the dash style to use for the graph. Applies only to series type having a graph, like </p>
-<p><code>line</code>, <code>spline</code>, <code>area</code> and <code>scatter</code> in case it has a <code>lineWidth</code>. The value for the <code>dashStyle</code> include: </p><ul>
+<p></p>
+<p>A name for the dash style to use for the graph, or for some series typesthe outline of each shape. The value for the <code>dashStyle</code> include:</p>
+<ul>
 <li>
-Solid </li>
+Solid</li>
 <li>
-ShortDash </li>
+ShortDash</li>
 <li>
-ShortDot </li>
+ShortDot</li>
 <li>
-ShortDashDot </li>
+ShortDashDot</li>
 <li>
-ShortDashDotDot </li>
+ShortDashDotDot</li>
 <li>
-Dot </li>
+Dot</li>
 <li>
-Dash </li>
+Dash</li>
 <li>
-LongDash </li>
+LongDash</li>
 <li>
-DashDot </li>
+DashDot</li>
 <li>
-LongDashDot </li>
+LongDashDot</li>
 <li>
-LongDashDotDot </li>
+LongDashDotDot</li>
 </ul>
 
 </div>
@@ -440,6 +628,8 @@ LongDashDotDot </li>
 </div><div class="memdoc">
 
 <p></p>
+<p>Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_highstock.html">Highstock</a> by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe <code>groupPixelWidth</code> option.</p>
+<p>If data grouping is applied, the grouping information of groupedpoints can be read from the <a href="#Point.dataGroup">Point.dataGroup</a>.</p>
 
 </div>
 </div>
@@ -462,6 +652,32 @@ LongDashDotDot </li>
 </div><div class="memdoc">
 
 <p></p>
+<p>Options for the series data labels, appearing next to each datapoint.</p>
+<p>In styled mode, the data labels can be styled wtih the <code>.highcharts-data-label-box</code> and <code>.highcharts-data-label</code> class names (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels">see example</a>).</p>
+
+</div>
+</div>
+<a class="anchor" id="a07a8632c2f21b85a4e7730935fc0495c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.Description</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Requires the <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_accessibility.html">Accessibility</a> module.</p>
+<p>A description of the series to add to the screen reader informationabout the series.</p>
 
 </div>
 </div>
@@ -483,7 +699,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. When using shared tooltips (default in stock charts), mouse tracking is not required. For large datasets it improves performance. </p>
+<p></p>
+<p>Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.</p>
 
 </div>
 </div>
@@ -506,6 +723,127 @@ LongDashDotDot </li>
 </div><div class="memdoc">
 
 <p></p>
+<p>General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the <code>Highcharts.addEvent</code>function.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa9d0cfe34cf922d60c5f5b179bce5a77"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.ExposeElementToA11y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.</p>
+<p>Requires the <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_accessibility.html">Accessibility</a> module.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3897e1fe22119f0bc2479f3271b6a4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlotOptionsScatterFindNearestPointBy Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.FindNearestPointBy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to <code>&amp;#39;xy&amp;#39;</code> for scatter series and <code>&amp;#39;x&amp;#39;</code> for most otherseries. If the data has duplicate x-values, it is recommended toset this to <code>&amp;#39;xy&amp;#39;</code> to allow hovering over all points.</p>
+<p>Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5405961d092636260a1dbaee0e118bbc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.GapSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Defines when to display a gap in the graph, together with the <code>gapUnit</code>option.</p>
+<p>When the <code>gapUnit</code> is <code>relative</code> (default), a gap size of 5 meansthat if the distance between two points is greater than five timesthat of the two closest points, the graph will be broken.</p>
+<p>When the <code>gapUnit</code> is <code>value</code>, the gap is based on absolute axis values,which on a datetime axis is milliseconds.</p>
+<p>In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available for daytimehours, while gaps will appear in nights and weekends.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab0120dd5131a5d55c3ef3f8555362a7f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlotOptionsScatterGapUnit Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.GapUnit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Together with <code>gapSize</code>, this option defines where to draw gaps in the graph.</p>
+
+</div>
+</div>
+<a class="anchor" id="a858f99e9b24ff3389e8b1952b5426d8d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.GetExtremesFromAll</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Whether to use the Y extremes of the total chart width or only thezoomed area when zooming in on parts of the X axis. By default, theY axis adjusts to the min and max of the visible data. Cartesianseries only.</p>
 
 </div>
 </div>
@@ -527,11 +865,12 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>An array specifying which option maps to which key in the data point array. This makes it convenient to work with unstructured data arrays from different sources. </p>
+<p></p>
+<p>An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.</p>
 
 </div>
 </div>
-<a class="anchor" id="a0a44f33e525c4e9ef882aa477ca1d2d2"></a>
+<a class="anchor" id="aeb4c52c19793268d50013a9b07b1215d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -539,7 +878,7 @@ LongDashDotDot </li>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.LegendIndex</td>
+          <td class="memname"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_label.html">PlotOptionsScatterLabel</a> Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.Label</td>
         </tr>
       </table>
   </td>
@@ -549,7 +888,33 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>The sequential index of the series within the legend. </p>
+<p></p>
+<p><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_series.html">Series</a> labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.</p>
+<p>The series labels currently work with series types having a<code>graph</code> or an <code>area</code>.</p>
+<p>Requires the <code>series-label.js</code> module.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59e50b95dc389d23eaf938c2743d8902"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlotOptionsScatterLinecap Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.Linecap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>The SVG value used for the <code>stroke-linecap</code> and <code>stroke-linejoin</code>of a line graph. Round means that lines are rounded in the ends andbends.</p>
 
 </div>
 </div>
@@ -571,7 +936,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>The width of the line connecting the data points. </p>
+<p></p>
+<p>The width of the line connecting the data points.</p>
 
 </div>
 </div>
@@ -593,7 +959,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>The <a href="#series.id">id</a> of another series to link to. Additionally, the value can be ":previous" to link to the previous series. When two series are linked, only the first one appears in the legend. Toggling the visibility of this also toggles the linked series. </p>
+<p></p>
+<p>The <a href="#series.id">id</a> of another series to link to. Additionally,the value can be &quot;:previous&quot; to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.</p>
 
 </div>
 </div>
@@ -616,6 +983,55 @@ LongDashDotDot </li>
 </div><div class="memdoc">
 
 <p></p>
+<p>Options for the point markers of line-like series. Properties like<code>fillColor</code>, <code>lineColor</code> and <code>lineWidth</code> define the visual appearanceof the markers. Other series types, like column series, don&amp;#39;t havemarkers, but have visual options on the series level instead.</p>
+<p>In styled mode, the markers can be styled with the <code>.highcharts-point</code>,<code>.highcharts-point-hover</code> and <code>.highcharts-point-select</code>class names.</p>
+
+</div>
+</div>
+<a class="anchor" id="afd1e247a8b54dcc49e551582ecf0f3f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Object Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.NavigatorOptions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Options for the corresponding navigator series if <code>showInNavigator</code>is <code>true</code> for this series. Available options are the same as anyseries, documented at <a href="#plotOptions.series">plotOptions</a> and<a href="#series">series</a>.</p>
+<p>These options are merged with options in <a href="#navigator.series">navigator.series</a>, and will take precedence if the same option is defined bothplaces.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bd15452647a563cc157a0cd2fe065de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.NegativeColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>The color for the parts of the graph or points that are below the<a href="#plotOptions.series.threshold">threshold</a>.</p>
 
 </div>
 </div>
@@ -637,7 +1053,31 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Properties for each single point </p>
+<p></p>
+<p>Properties for each single point.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8476c2e3bdb99c7858b4280a86c2c968"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.PointDescriptionFormatter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Same as <a href="#accessibility.pointDescriptionFormatter">accessibility.pointDescriptionFormatter</a>, but for an individual series. Overridesthe chart wide configuration.</p>
 
 </div>
 </div>
@@ -660,8 +1100,8 @@ LongDashDotDot </li>
 </div><div class="memdoc">
 
 <p></p>
-<p>If no x values are given for the points in a series, pointInterval defines the interval of the x values in milliseconds. For example, if a series contains one value each day, set pointInterval to <code>24 * 3600 * 1000</code>.</p>
-<p>Since <a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_highstock.html">Highstock</a> 2.1, it can be combined with <code>pointIntervalUnit</code> to draw irregular intervals.</p>
+<p>If no x values are given for the points in a series, <code>pointInterval</code>defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set <code>pointInterval</code> to<code>10</code>. In true <code>datetime</code> axes, the <code>pointInterval</code> is set inmilliseconds.</p>
+<p>It can be also be combined with <code>pointIntervalUnit</code> to draw irregulartime intervals.</p>
 
 </div>
 </div>
@@ -683,8 +1123,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>On datetime series, this allows for setting the <a href="plotOptions.series.pointInterval">pointInterval</a> to the two irregular time units, </p>
-<p><code>month</code> and <code>year</code>. Combine it with <code>pointInterval</code> to draw quarters, 6 months, 10 years etc. </p>
+<p></p>
+<p>On datetime series, this allows for setting the<a href="#plotOptions.series.pointInterval">pointInterval</a> to irregular time units, <code>day</code>, <code>month</code> and <code>year</code>. A day is usually the same as 24 hours,but <code>pointIntervalUnit</code> also takes the DST crossover into considerationwhen dealing with local time. Combine this option with <code>pointInterval</code>to draw weeks, quarters, 6 months, 10 years etc.</p>
 
 </div>
 </div>
@@ -707,11 +1147,11 @@ LongDashDotDot </li>
 </div><div class="memdoc">
 
 <p></p>
-<p>Possible values: <code>null</code>, <code>"on"</code>, <code>"between"</code>.</p>
-<p>In a column chart, when pointPlacement is <code>"on"</code>, the point will not create any padding of the X axis. In a polar column chart this means that the first column points directly north. If the pointPlacement is <code>"between"</code>, the columns will be laid out between ticks. This is useful for example for visualising an amount between two points in time or in a certain sector of a polar chart.</p>
-<p>Since Highcharts 3.0.2, the point placement can also be numeric, where 0 is on the axis value, -0.5 is between this value and the previous, and 0.5 is between this value and the next. Unlike the textual options, numeric point placement options won't affect axis padding.</p>
-<p>Note that pointPlacement needs a <a href="#plotOptions.series.pointRange">pointRange</a> to work. For column series this is computed, but for line-type series it needs to be set.</p>
-<p>Defaults to <code>null</code> in cartesian charts, <code>"between"</code> in polar charts. </p>
+<p>Possible values: <code>null</code>, <code>&quot;on&quot;</code>, <code>&quot;between&quot;</code>.</p>
+<p>In a column chart, when pointPlacement is <code>&quot;on&quot;</code>, the point willnot create any padding of the X axis. In a polar column chart thismeans that the first column points directly north. If the pointPlacementis <code>&quot;between&quot;</code>, the columns will be laid out between ticks. Thisis useful for example for visualising an amount between two pointsin time or in a certain sector of a polar chart.</p>
+<p>Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won&amp;#39;t affect axispadding.</p>
+<p>Note that pointPlacement needs a <a href="#plotOptions.series.pointRange">pointRange</a> to work. For column series this is computed, but forline-type series it needs to be set.</p>
+<p>Defaults to <code>null</code> in cartesian charts, <code>&quot;between&quot;</code> in polar charts.</p>
 
 </div>
 </div>
@@ -733,7 +1173,12 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>The width of each point on the x axis. For example in a column chart with one value each day, the pointRange would be 1 day (= 24 * 3600 * 1000 milliseconds). This is normally computed automatically, but this option can be used to override the automatic value. </p>
+<p></p>
+<p>The width of each point on the x axis. For example in a column chartwith one value each day, the pointRange would be 1 day (= 24 * 3600</p>
+<ul>
+<li>
+1000 milliseconds). This is normally computed automatically, butthis option can be used to override the automatic value.</li>
+</ul>
 
 </div>
 </div>
@@ -755,8 +1200,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>If no x values are given for the points in a series, pointStart defines on what value to start. On a datetime X axis, the number will be given as milliseconds since 1970-01-01, for example </p>
-<p><code>Date.UTC(2011, 0, 1)</code>. </p>
+<p></p>
+<p>If no x values are given for the points in a series, pointStart defineson what value to start. For example, if a series contains one yearlyvalue starting from 1945, set pointStart to 1945.</p>
 
 </div>
 </div>
@@ -778,8 +1223,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Whether to select the series initially. If </p>
-<p><code>showCheckbox</code> is true, the checkbox next to the series name in the legend will be checked for a selected series. </p>
+<p></p>
+<p>Whether to select the series initially. If <code>showCheckbox</code> is true,the checkbox next to the series name in the legend will be checked for aselected series.</p>
 
 </div>
 </div>
@@ -801,8 +1246,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Whether to apply a drop shadow to the graph line. Since 1.1.7 the shadow can be an object configuration containing </p>
-<p><code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>. </p>
+<p></p>
+<p>Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.</p>
 
 </div>
 </div>
@@ -824,8 +1269,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>If true, a checkbox is displayed next to the legend item to allow selecting the series. The state of the checkbox is determined by the </p>
-<p><code>selected</code> option. </p>
+<p></p>
+<p>If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe <code>selected</code> option.</p>
 
 </div>
 </div>
@@ -847,8 +1292,78 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Whether to display this particular series or series type in the legend. The default value is </p>
-<p><code>true</code> for standalone series, <code>false</code> for linked series. </p>
+<p></p>
+<p>Whether to display this particular series or series type in the legend.The default value is <code>true</code> for standalone series, <code>false</code> for linkedseries.</p>
+
+</div>
+</div>
+<a class="anchor" id="acccb2fda3e89fa031f5dff3728555df2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.ShowInNavigator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Whether or not to show the series in the navigator. Takes precedenceover <a href="#navigator.baseSeries">navigator.baseSeries</a> if defined.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5fd724b2533847601683b0dac73ade7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.SkipKeyboardNavigation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>If set to <code>True</code>, the accessibility module will skip past the pointsin this series for keyboard navigation.</p>
+
+</div>
+</div>
+<a class="anchor" id="a816f81282eb580800eabad9c266079fe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.SoftThreshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>When this is true, the series will not cause the Y axis to crossthe zero plane (or <a href="#plotOptions.series.threshold">threshold</a> option)unless the data actually crosses the plane.</p>
+<p>For example, if <code>softThreshold</code> is <code>false</code>, a series of 0, 1, 2,3 will make the Y axis show negative values according to the <code>minPadding</code>option. If <code>softThreshold</code> is <code>true</code>, the Y axis starts at 0.</p>
 
 </div>
 </div>
@@ -870,7 +1385,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Whether to stack the values of each series on top of each other. Possible values are null to disable, "normal" to stack by value or "percent". </p>
+<p></p>
+<p>Whether to stack the values of each series on top of each other.Possible values are <code>null</code> to disable, <code>&quot;normal&quot;</code> to stack by value or<code>&quot;percent&quot;</code>. When stacking is enabled, data must be sorted in ascendingX order. A special stacking option is with the streamgraph series type,where the stacking option is set to <code>&quot;stream&quot;</code>.</p>
 
 </div>
 </div>
@@ -892,7 +1408,31 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>A wrapper object for all the series options in specific states. </p>
+<p></p>
+<p>A wrapper object for all the series options in specific states.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab660915d396d0591d1232d1ded6b7a38"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlotOptionsScatterStep Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.Step</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Whether to apply steps to the line. Possible values are <code>left</code>, <code>center</code>and <code>right</code>.</p>
 
 </div>
 </div>
@@ -914,8 +1454,31 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Sticky tracking of mouse events. When true, the </p>
-<p><code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the tooltip will be hidden when moving the mouse between series. </p>
+<p></p>
+<p>Sticky tracking of mouse events. When true, the <code>mouseOut</code> eventon a series isn&amp;#39;t triggered until the mouse moves over another series,or out of the plot area. When false, the <code>mouseOut</code> event on a seriesis triggered when the mouse leaves the area around the series&amp;#39; graphor markers. This also implies the tooltip. When <code>stickyTracking</code>is false and <code>tooltip.shared</code> is false, the tooltip will be hiddenwhen moving the mouse between series.</p>
+
+</div>
+</div>
+<a class="anchor" id="aacdae27af5b9c6f473849fdfedcc4077"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.Threshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with<a href="#plotOptions.series.negativeColor">negativeColor</a>.</p>
 
 </div>
 </div>
@@ -937,8 +1500,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to </p>
-<p><code>0</code> disable. </p>
+<p></p>
+<p>When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to <code>0</code> disable.</p>
 
 </div>
 </div>
@@ -960,7 +1523,8 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Set the initial visibility of the series. </p>
+<p></p>
+<p>Set the initial visibility of the series.</p>
 
 </div>
 </div>
@@ -982,11 +1546,12 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>Defines the Axis on which the zones are applied. </p>
+<p></p>
+<p>Defines the Axis on which the zones are applied.</p>
 
 </div>
 </div>
-<a class="anchor" id="a28b885ad00ea757e5b92215caf7ea0c5"></a>
+<a class="anchor" id="a7a1f85658db643dad914a3852bfcb006"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -994,7 +1559,7 @@ LongDashDotDot </li>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_zones.html">PlotOptionsScatterZones</a> Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.Zones</td>
+          <td class="memname">List&lt;<a class="el" href="class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_zone.html">PlotOptionsScatterZone</a>&gt; Highsoft.Web.Mvc.Stocks.PlotOptionsScatter.Zones</td>
         </tr>
       </table>
   </td>
@@ -1004,12 +1569,14 @@ LongDashDotDot </li>
 </table>
 </div><div class="memdoc">
 
-<p>An array defining zones within a series. </p>
+<p></p>
+<p>An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the <code>zoneAxis</code>option.</p>
+<p>In styled mode, the color zones are styled with the <code>.highcharts-zone-{n}</code> class, or custom classed from the <code>className</code> option (<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/">viewlive demo</a>).</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/PC/Documents/highcharts.net/MVC_Highstock/CodeGeneration/<a class="el" href="_plot_options_scatter_8cs.html">PlotOptionsScatter.cs</a></li>
+<li>C:/Users/PC/Documents/highcharts.net/_HC6/MVC_Highstock/CodeGeneration/<a class="el" href="_plot_options_scatter_8cs.html">PlotOptionsScatter.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -5,6 +5,8 @@ var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_y_axis_plot_bands =
     [ "BorderColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_y_axis_plot_bands.html#a976207309a9ec9984aec04d362ea9019", null ],
     [ "BorderWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_y_axis_plot_bands.html#a8c9a2e4d0f43deda5f89c536a3b4a032", null ],
     [ "BorderWidth_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_y_axis_plot_bands.html#a233357e70e10873d1615823d6ce6bb7a", null ],
+    [ "ClassName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_y_axis_plot_bands.html#a7498519ca462052faa4dcdac48113a78", null ],
+    [ "ClassName_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_y_axis_plot_bands.html#af93db9be39884f2ceb2b79ddddf01b0a", null ],
     [ "Color", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_y_axis_plot_bands.html#a3ef38598f4b14bd2e35421c7a2f3d33a", null ],
     [ "Color_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_y_axis_plot_bands.html#a7e6b97962b223dc9741e7411fb8e5114", null ],
     [ "Events", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_y_axis_plot_bands.html#afe103914ee513154a54a0e701afb9c50", null ],

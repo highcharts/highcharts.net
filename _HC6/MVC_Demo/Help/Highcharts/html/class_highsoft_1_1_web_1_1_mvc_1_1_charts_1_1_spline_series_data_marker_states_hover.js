@@ -1,10 +1,12 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover =
 [
     [ "SplineSeriesDataMarkerStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#abef7621cf61932dfd5f6e76554ce9e0c", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#ac3b836f63d4d3c66adfd543c80f1222e", null ],
+    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#a5c83a64f388787f336dd407ea35b3589", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#ad05075c61d601652d7dda2dc6d751ec3", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#a647432eb28528b762a922e0f0ea19ee5", null ],
-    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#a23d5563c8697a5b6463f92c7b2cb6f78", null ],
-    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#a8c9d91142a33dedeb4fca5cd52b01ea1", null ],
+    [ "FillColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#a8ae7b7e70d68e563d6abf683fc718f87", null ],
+    [ "FillColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#a499e5f5eca4a46df6ba83652d0e50c8a", null ],
     [ "LineColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#a9f52581af5160259ec59c09de993ff1c", null ],
     [ "LineColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#ab5451c27da29cd3699d8edb9cc2963b5", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_spline_series_data_marker_states_hover.html#a8abe518dbd2a00fda76c3507badbb171", null ],

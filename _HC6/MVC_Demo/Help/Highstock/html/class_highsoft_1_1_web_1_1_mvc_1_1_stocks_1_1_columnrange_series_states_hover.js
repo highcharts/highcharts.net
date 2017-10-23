@@ -1,6 +1,8 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover =
 [
     [ "ColumnrangeSeriesStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#a02c6cddaea500cfe4727bea72b75d20f", null ],
+    [ "Brightness", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#ae066e885b78d9dc5877f310ea7ae638a", null ],
+    [ "Brightness_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#a04b60711d4da3289d110814e634f23a4", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#ad29077c6a50d37716a1e1a0bccbc6961", null ],
     [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#aa110d98ae48a331dcbde7c15e08011da", null ],
     [ "Halo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#ae460ece1e1b8b76140efc8b4df380411", null ],
@@ -10,5 +12,7 @@ var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hove
     [ "LineWidthPlus", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#a14176a4dafdf4e75dc55977de6522573", null ],
     [ "LineWidthPlus_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#a93dbccfca2602129d7016aba33dda04d", null ],
     [ "Marker", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#a070d884c063bc084b644497ed880331f", null ],
-    [ "Marker_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#aba355b03b723d9eb6655c43fc05dfc78", null ]
+    [ "Marker_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#aba355b03b723d9eb6655c43fc05dfc78", null ],
+    [ "Shadow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#a1bef6011244c4c60c8ebc5a45416abcd", null ],
+    [ "Shadow_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_states_hover.html#a5576e4bbdfb8a25d26a9d86a6037b893", null ]
 ];
