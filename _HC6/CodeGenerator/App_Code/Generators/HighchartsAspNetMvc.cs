@@ -807,6 +807,9 @@ public class HighchartsAspNetMvc
         _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
         _propertyTypeMappings.Add("pane.background", "List<PaneBackground>");
         _propertyTypeMappings.Add("plotOptions.series", "PlotOptionsSeries");
+        _propertyTypeMappings.Add("annotations", "List<Annotations>");
+        _propertyTypeMappings.Add("annotations.labels", "List<AnnotationsLabels>");
+        _propertyTypeMappings.Add("annotations.shapes", "List<AnnotationsShapes>");
     }
 
     private void InitPropertyInitMappings()
@@ -843,6 +846,9 @@ public class HighchartsAspNetMvc
         _propertyInitMappings.Add("series<treemap>.levels", "new List<TreemapSeriesLevels>()");
         _propertyInitMappings.Add("pane.background", "new List<PaneBackground>()");
         _propertyInitMappings.Add("plotOptions.series", "new PlotOptionsSeries()");
+        _propertyInitMappings.Add("annotations", "new List<Annotations>()");
+        _propertyInitMappings.Add("annotations.labels", "new List<AnnotationsLabels>()");
+        _propertyInitMappings.Add("annotations.shapes", "new List<AnnotationsShapes>()");
     }
 
     private void InitLists()
@@ -859,6 +865,9 @@ public class HighchartsAspNetMvc
         _lists.Add("xAxis.plotBands");
         _lists.Add("xAxis.plotLines");
         _lists.Add("series<treemap>.levels");
+        _lists.Add("annotations");
+        _lists.Add("annotations.labels");
+        _lists.Add("annotations.shapes");
     }
 
     private void InitSeriesMappings()
