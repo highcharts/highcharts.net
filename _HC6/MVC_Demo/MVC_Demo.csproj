@@ -172,6 +172,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Demo\DemoController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AnnotationsController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\AreaNegativeController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\AreaBasicController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\AreaStackedController.cs" />
@@ -313,6 +314,7 @@
       <DependentUpon>ChartData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\CompanyData.cs" />
+    <Compile Include="Models\AnnotationsData.cs" />
     <Compile Include="Models\DataGrouping.cs">
       <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
@@ -1137,6 +1139,8 @@
     <Content Include="Areas\Highcharts\Views\Shared\Demo1.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\Demo1.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\Demo2.cshtml" />
+    <Content Include="App_Data\annotations.csv" />
+    <Content Include="Areas\Highcharts\Views\Shared\Annotations.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />

@@ -4,6 +4,8 @@ using System.Net;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace MVC_Demo.Models
 {
@@ -196,6 +198,30 @@ namespace MVC_Demo.Models
             }
 
             return flags;
+        }
+
+        public static List<AnnotationsData> GetDataForAnnotationsChart()
+        {
+            var results = new List<AnnotationsData>();
+            HttpServerUtility server = HttpContext.Current.Server;
+            try
+            {
+                using (StreamReader sr = new StreamReader(server.MapPath("~/App_Data/annotations.csv")))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        var pair = line.Split(',');
+                        results.Add(new AnnotationsData { X = Convert.ToDouble(pair[0]), Y = Convert.ToDouble(pair[1]) });
+                    }
+                }
+
+                return results;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private static double DateToUTC(DateTime theDate)
