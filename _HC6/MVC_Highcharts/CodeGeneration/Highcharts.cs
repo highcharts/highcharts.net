@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Chart = Chart_DefaultValue = new Chart();
 			Legend = Legend_DefaultValue = new Legend();
 			Defs = Defs_DefaultValue = new Defs();
-			Annotations = Annotations_DefaultValue = new Annotations();
+			Annotations = Annotations_DefaultValue = new List<Annotations>();
 			Boost = Boost_DefaultValue = new Boost();
 			Data = Data_DefaultValue = new Data();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
@@ -91,8 +91,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>Options for configuring annotations, for example labels, arrows or shapes. Annotations can be tied to points, axis coordinates or chartpixel coordinates.</p>
 		/// </summary>
-		public Annotations Annotations { get; set; }
-		private Annotations Annotations_DefaultValue { get; set; }
+		public List<Annotations> Annotations { get; set; }
+		private List<Annotations> Annotations_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -252,7 +252,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
 			if (Legend.IsDirty()) h.Add("legend",Legend.ToHashtable());
 			if (Defs.IsDirty()) h.Add("defs",Defs.ToHashtable());
-			if (Annotations.IsDirty()) h.Add("annotations",Annotations.ToHashtable());
+			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
 			if (Boost.IsDirty()) h.Add("boost",Boost.ToHashtable());
 			if (Data.IsDirty()) h.Add("data",Data.ToHashtable());
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));

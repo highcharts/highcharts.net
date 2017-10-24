@@ -18,8 +18,8 @@ namespace Highsoft.Web.Mvc.Charts
 			LabelOptions = LabelOptions_DefaultValue = new AnnotationsLabelOptions();
 			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsShapeOptions();
 			ZIndex = ZIndex_DefaultValue = 6;
-			Labels = Labels_DefaultValue = new AnnotationsLabels();
-			Shapes = Shapes_DefaultValue = new AnnotationsShapes();
+			Labels = Labels_DefaultValue = new List<AnnotationsLabels>();
+			Shapes = Shapes_DefaultValue = new List<AnnotationsShapes>();
 			
 		}	
 		
@@ -55,15 +55,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An array of labels for the annotation. For options that apply to multiplelabels, they can be added to the <a href="annotations.labelOptions.html">labelOptions</a>.</p>
 		/// </summary>
-		public AnnotationsLabels Labels { get; set; }
-		private AnnotationsLabels Labels_DefaultValue { get; set; }
+		public List<AnnotationsLabels> Labels { get; set; }
+		private List<AnnotationsLabels> Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// <p>An array of shapes for the annotation. For options that apply to multipleshapes, then can be added to the <a href="annotations.shapeOptions.html">shapeOptions</a>.</p>
 		/// </summary>
-		public AnnotationsShapes Shapes { get; set; }
-		private AnnotationsShapes Shapes_DefaultValue { get; set; }
+		public List<AnnotationsShapes> Shapes { get; set; }
+		private List<AnnotationsShapes> Shapes_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -74,8 +74,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
 			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
-			if (Shapes.IsDirty()) h.Add("shapes",Shapes.ToHashtable());
+			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(Labels));
+			if (Shapes != Shapes_DefaultValue) h.Add("shapes", HashifyList(Shapes));
 			
 
 			return h;
