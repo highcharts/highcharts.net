@@ -27,8 +27,8 @@ namespace DailyScheduler
 
         static void Main()
         {
-            HandleWrapperBuilder(null, null);
-            //HandleNuget(null, null);
+            //HandleWrapperBuilder(null, null);
+            HandleNuget(null, null);
             StartTimer();
             
             Console.Write("Press any key to exit... ");
@@ -71,7 +71,7 @@ namespace DailyScheduler
             try
             {
                 NugetPublisher publisher = new NugetPublisher();
-
+                
                 publisher.UpdateFiles(SERVER_HC_WRAPPER_FILE_PATH, SERVER_HC_NUSPEC_FILE_PATH, SERVER_HC_NUGET_PUSH_FILE_PATH, "Highcharts");
                 publisher.UpdateFiles(SERVER_HS_WRAPPER_FILE_PATH, SERVER_HS_NUSPEC_FILE_PATH, SERVER_HS_NUGET_PUSH_FILE_PATH, "Highstock");
 
@@ -92,6 +92,7 @@ namespace DailyScheduler
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
+                Console.WriteLine(ex.InnerException);
                 Console.ReadLine();
             }
         }

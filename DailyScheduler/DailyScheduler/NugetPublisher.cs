@@ -24,6 +24,7 @@ namespace DailyScheduler
 
         void UpdateNuspecFile(string filePath, string version)
         {
+            Console.WriteLine("Updating: " + filePath);
             string[] lines = File.ReadAllLines(filePath);
 
             int index = GetVersionLineIndex(lines, filePath);
@@ -31,18 +32,24 @@ namespace DailyScheduler
             lines[index] = $"<version>{version}</version>";
 
             File.WriteAllLines(filePath, lines);
+            Console.WriteLine("Updated: "+filePath);
         }
 
         void UpdateBatchFile(string filePath, string version, string wrapper)
         {
+            Console.WriteLine("Updating: " + filePath);
             string[] lines = File.ReadAllLines(filePath);
 
             string[] options = lines[1].Split(' ');
+
+            //Console.WriteLine("line0: " + lines[0]);
+            ////Console.WriteLine("line1: " + lines[1]);
 
             options[2] = $"Highsoft.{wrapper}.{version}.nupkg";
             lines[1] = options[0] + " " + options[1] + " " + options[2] + " " + options[3] + " " + options[4] + " " + options[5] + " " + options[6] + " " + options[7];
             
             File.WriteAllLines(filePath, lines);
+            Console.WriteLine("Updated: "+filePath);
         }
 
 
