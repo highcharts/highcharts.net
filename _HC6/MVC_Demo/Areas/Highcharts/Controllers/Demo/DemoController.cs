@@ -225,6 +225,9 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                 case "Scatter":
                     ViewBag.Title = "Scatter plot";
                     break;
+                case "ScatterBoost":
+                    ViewBag.Title = "Scatter plot with 1 million points";
+                    break;
                 case "Bubble":
                     ViewBag.Title = "Bubble chart";
                     break;

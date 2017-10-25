@@ -215,6 +215,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieDrilldownController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieSemiCircleController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\Docs.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ScatterBoostController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\SparklineController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\StreamgraphController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapLargeDatasetController.cs" />
@@ -336,6 +337,7 @@
       <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RangeData.cs" />
+    <Compile Include="Models\ScatterBoost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1146,6 +1148,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\Annotations.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\LineBoost.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\Streamgraph.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ScatterBoost.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />

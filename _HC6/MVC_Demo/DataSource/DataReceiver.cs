@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.IO;
 using System.Threading.Tasks;
+using Highsoft.Web.Mvc.Charts;
 
 namespace MVC_Demo.Models
 {
@@ -248,6 +249,19 @@ namespace MVC_Demo.Models
                     spike = 0;
 
                 list.Add(new LineBoostData { X = i, Y = 2 * Math.Sin(i / 100) + a + b + c + spike + random.NextDouble() });
+            }
+
+            return list;
+        }
+
+        public static List<ScatterSeriesData> GetDataForScatterBoost(int number)
+        {
+            List<ScatterSeriesData> list = new List<ScatterSeriesData>();
+            Random random = new Random();
+
+            for(int i=0;i<number;i++)
+            {
+                list.Add(new ScatterSeriesData { X = Math.Pow(random.NextDouble(), 2) * 100, Y = Math.Pow(random.NextDouble(), 2) * 100 });
             }
 
             return list;
