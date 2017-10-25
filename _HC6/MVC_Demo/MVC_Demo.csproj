@@ -216,6 +216,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieSemiCircleController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\Docs.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\SparklineController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\StreamgraphController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapLargeDatasetController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapWithLevelsController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapColoraxisController.cs" />
@@ -1144,6 +1145,7 @@
     <Content Include="App_Data\annotations.csv" />
     <Content Include="Areas\Highcharts\Views\Shared\Annotations.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\LineBoost.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Streamgraph.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />

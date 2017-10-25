@@ -153,6 +153,9 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                 case "Sparkline":
                     ViewBag.Title = "Sparkline charts";
                     break;
+                case "Streamgraph":
+                    ViewBag.Title = "Streamgraph";
+                    break;
 
                 //column and bar charts
                 case "BarBasic":

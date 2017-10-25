@@ -1,0 +1,157 @@
+﻿<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/streamgraph.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/annotations.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+@Html.Highsoft().GetHighcharts(new Highcharts
+{
+    Chart = new Chart
+    {
+        Type = ChartType.Streamgraph,
+        MarginBottom = 30,
+        ZoomType = ChartZoomType.X
+    },
+    Colors = ViewData["Colors"] as List<string>,
+    Title = new Title
+    {
+        Floating = true,
+        Align = TitleAlign.Left,
+        Text = "Winter Olympic Medal Wins"
+    },
+    Subtitle = new Subtitle
+    {
+        Floating = true,
+        Align = SubtitleAlign.Left,
+        Y = 30,
+        Text = "Source: <a href=\"https://www.sports-reference.com/olympics/winter/1924/\">sports-reference.com</a>"
+    },
+    XAxis = new List<XAxis>
+    {
+        new XAxis
+        {
+            MaxPadding = 0,
+            Type = XAxisType.Category,
+            Crosshair = new XAxisCrosshair { Width = 10 },
+            Categories = ViewData["Categories"] as List<string>,
+            Labels = new XAxisLabels
+            {
+                Align = XAxisLabelsAlign.Left,
+                ReserveSpace = false,
+                Rotation = 270
+            },
+            LineWidth = 0,
+            TickWidth = 0
+        }
+    },
+    YAxis = new List<YAxis>
+    {
+        new YAxis
+        {
+            Visible = false,
+            StartOnTick = false,
+            EndOnTick = false
+        }
+    },
+    Legend = new Legend { Enabled = false },
+    Annotations = new List<Annotations>
+    {
+        new Annotations
+        {
+            Labels = new List<AnnotationsLabels>
+            {
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        X = 5.5,
+                        Y = 30,
+                        XAxis = "0",
+                        YAxis = "0"
+                    },
+                    Text = "Cancelled<br>during<br>World War II"
+                },
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        X = 18,
+                        Y = 90,
+                        XAxis = "0",
+                        YAxis = "0"
+                    },
+                    Text = "Soviet Union fell,<br>Germany united"
+                }
+            },
+            LabelOptions = new AnnotationsLabelOptions
+            {
+                BackgroundColor = "rgba(255,255,255,0.5)",
+                BorderColor = "silver"
+            }
+        }
+    },
+    PlotOptions = new PlotOptions
+    {
+        Series = new PlotOptionsSeries
+        {
+            Label = new PlotOptionsSeriesLabel
+            {
+                MinFontSize = 5,
+                MaxFontSize = 15
+            }
+        }
+    },
+    Series = new List<Series>
+    {
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Finland"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Austria"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Sweden"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Norway"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["U.S."],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["East Germany"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["West Germany"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Germany"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Netherlands"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Italy"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Canada"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Switzerland"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Great Britain"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["France"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Hungary"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Unified Team"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Soviet Union"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Russia"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Japan"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Czechoslovakia"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Poland"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Spain"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["China"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["South Korea"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Czech Republic"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Belarus"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Kazakhstan"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Bulgaria"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Denmark"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Ukraine"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Australia"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Belgium"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Romania"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Liechtenstein"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Yugoslavia"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Luxembourg"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["New Zealand"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["North Korea"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Slovakia"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Croatia"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Slovenia"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Latvia"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Estonia"],
+        (ViewData["Medals"] as Dictionary<string,StreamgraphSeries>)["Uzbekistan"]
+    },
+    Exporting = new Exporting
+    {
+        SourceWidth = 800,
+        SourceHeight = 600
+    }
+}, "chart")
