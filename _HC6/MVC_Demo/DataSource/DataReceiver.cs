@@ -224,6 +224,35 @@ namespace MVC_Demo.Models
             }
         }
 
+        public static List<LineBoostData> GetDataForLineBoost(int number)
+        {
+            List<LineBoostData> list = new List<LineBoostData>();
+            double a, b, c, spike;
+            a = b = c = spike = 0;
+            Random random = new Random();
+
+            for(int i = 0; i<number; i++)
+            {
+                if (i % 100 == 0)
+                    a = 2 * random.NextDouble();
+
+                if (i % 1000 == 0)
+                    a = 2 * random.NextDouble();
+
+                if (i % 10000 == 0)
+                    a = 2 * random.NextDouble();
+
+                if (i % 50000 == 0)
+                    spike = 10;
+                else
+                    spike = 0;
+
+                list.Add(new LineBoostData { X = i, Y = 2 * Math.Sin(i / 100) + a + b + c + spike + random.NextDouble() });
+            }
+
+            return list;
+        }
+
         private static double DateToUTC(DateTime theDate)
         {
             DateTime d1 = new DateTime(1970, 1, 1);
