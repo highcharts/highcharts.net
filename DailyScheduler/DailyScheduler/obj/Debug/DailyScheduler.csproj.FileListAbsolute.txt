@@ -9,3 +9,4 @@ C:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\obj\Debug\Dai
 C:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\obj\Debug\DailyScheduler.pdb
 C:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\bin\Debug\DailyScheduler.exe
 C:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\bin\Debug\DailyScheduler.pdb
+c:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\obj\Debug\DailyScheduler.csprojResolveAssemblyReference.cache

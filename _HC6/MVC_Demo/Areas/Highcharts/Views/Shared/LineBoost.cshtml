@@ -8,7 +8,7 @@
 {
     Chart = new Chart { ZoomType = ChartZoomType.X },
     Boost = new Boost { UseGPUTranslations = true },
-    Title = new Title { Text = "Highcharts drawing 400000 points" },
+    Title = new Title { Text = "Highcharts drawing 500000 points" },
     Subtitle = new Subtitle { Text = "Using the Boost module" },
     Tooltip = new Tooltip { ValueDecimals = 2 },
     Series = new List<Series>
@@ -17,7 +17,7 @@
         {
             Data = ViewData["data"] as List<LineSeriesData>,
             LineWidth = 0.5,
-            TurboThreshold = 400000
+            TurboThreshold = 500000
         }
     }
 }, "chart")

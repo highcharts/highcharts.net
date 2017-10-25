@@ -225,9 +225,9 @@ namespace MVC_Demo.Models
             }
         }
 
-        public static List<LineBoostData> GetDataForLineBoost(int number)
+        public static List<LineSeriesData> GetDataForLineBoost(int number)
         {
-            List<LineBoostData> list = new List<LineBoostData>();
+            List<LineSeriesData> list = new List<LineSeriesData>();
             double a, b, c, spike;
             a = b = c = spike = 0;
             Random random = new Random();
@@ -248,7 +248,7 @@ namespace MVC_Demo.Models
                 else
                     spike = 0;
 
-                list.Add(new LineBoostData { X = i, Y = 2 * Math.Sin(i / 100) + a + b + c + spike + random.NextDouble() });
+                list.Add(new LineSeriesData { X = i, Y = 2 * Math.Sin(i / 100) + a + b + c + spike + random.NextDouble() });
             }
 
             return list;

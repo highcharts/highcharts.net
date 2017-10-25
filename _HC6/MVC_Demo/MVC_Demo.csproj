@@ -337,7 +337,6 @@
       <DependentUpon>ChartData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RangeData.cs" />
-    <Compile Include="Models\ScatterBoost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
