@@ -79,13 +79,13 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
 
             SetViewBag(demo, theme);
 
-            string text = System.IO.File.ReadAllText(Server.MapPath("~/Content/Areas/Highcharts/Controllers/Shared/" + demo + "Controller.cs.txt"));
-            ViewBag.ControllerCode = text;
+            //string text = System.IO.File.ReadAllText(Server.MapPath("~/Content/Areas/Highcharts/Controllers/Shared/" + demo + "Controller.cs.txt"));
+            //ViewBag.ControllerCode = text;
 
-            text = System.IO.File.ReadAllText(Server.MapPath("~/Areas/Highcharts/Views/Shared/" + demo + ".cshtml"));
-            ViewBag.ViewCode = text;
+            //text = System.IO.File.ReadAllText(Server.MapPath("~/Areas/Highcharts/Views/Shared/" + demo + ".cshtml"));
+            //ViewBag.ViewCode = text;
 
-            switch(demo)
+            switch (demo)
             {
                 //line charts
                 case "LineBasic":
@@ -96,6 +96,9 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                     break;
                 case "LineLabels":
                     ViewBag.Title = "With data labels";
+                    break;
+                case "Annotations":
+                    ViewBag.Title = "With annotations";
                     break;
                 case "LineTimeSeries":
                     ViewBag.Title = "Time series, zoomable";
@@ -114,6 +117,9 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                     break;
                 case "LineLogAxis":
                     ViewBag.Title = "Logarithmic axis";
+                    break;
+                case "LineBoost":
+                    ViewBag.Title = "Line chart with 500k points";
                     break;
 
                 //area charts
