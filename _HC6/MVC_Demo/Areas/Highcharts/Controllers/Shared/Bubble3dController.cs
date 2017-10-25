@@ -14,44 +14,39 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
         {
             List<BubbleSeriesData> bubble1Values = new List<BubbleSeriesData>();
             List<BubbleSeriesData> bubble2Values = new List<BubbleSeriesData>();
-            List<BubbleSeriesData> bubble3Values = new List<BubbleSeriesData>();
+            
+            bubble1Values.Add(new BubbleSeriesData { X = 9, Y = 81, Z = 63 });
+            bubble1Values.Add(new BubbleSeriesData { X = 98, Y = 5, Z = 89 });
+            bubble1Values.Add(new BubbleSeriesData { X = 51, Y = 50, Z = 73 });
+            bubble1Values.Add(new BubbleSeriesData { X = 41, Y = 22, Z = 14 });
+            bubble1Values.Add(new BubbleSeriesData { X = 58, Y = 24, Z = 20 });
+            bubble1Values.Add(new BubbleSeriesData { X = 78, Y = 37, Z = 34 });
+            bubble1Values.Add(new BubbleSeriesData { X = 55, Y = 56, Z = 53 });
+            bubble1Values.Add(new BubbleSeriesData { X = 18, Y = 45, Z = 70 });
+            bubble1Values.Add(new BubbleSeriesData { X = 42, Y = 44, Z = 28 });
+            bubble1Values.Add(new BubbleSeriesData { X = 3, Y = 52, Z = 59 });
+            bubble1Values.Add(new BubbleSeriesData { X = 31, Y = 18, Z = 97 });
+            bubble1Values.Add(new BubbleSeriesData { X = 79, Y = 91, Z = 63 });
+            bubble1Values.Add(new BubbleSeriesData { X = 93, Y = 23, Z = 23 });
+            bubble1Values.Add(new BubbleSeriesData { X = 44, Y = 83, Z = 22 });
 
-            bubble1Values.Add(new BubbleSeriesData { X = 97, Y = 36, Z = 79 });
-            bubble1Values.Add(new BubbleSeriesData { X = 94, Y = 74, Z = 60 });
-            bubble1Values.Add(new BubbleSeriesData { X = 68, Y = 76, Z = 58 });
-            bubble1Values.Add(new BubbleSeriesData { X = 64, Y = 87, Z = 56 });
-            bubble1Values.Add(new BubbleSeriesData { X = 68, Y = 27, Z = 73 });
-            bubble1Values.Add(new BubbleSeriesData { X = 74, Y = 99, Z = 42 });
-            bubble1Values.Add(new BubbleSeriesData { X = 7, Y = 93, Z = 87 });
-            bubble1Values.Add(new BubbleSeriesData { X = 51, Y = 69, Z = 40 });
-            bubble1Values.Add(new BubbleSeriesData { X = 38, Y = 23, Z = 33 });
-            bubble1Values.Add(new BubbleSeriesData { X = 57, Y = 86, Z = 31 });
-
-            bubble2Values.Add(new BubbleSeriesData { X = 25, Y = 10, Z = 87 });
-            bubble2Values.Add(new BubbleSeriesData { X = 2, Y = 75, Z = 59 });
-            bubble2Values.Add(new BubbleSeriesData { X = 11, Y = 54, Z = 8 });
-            bubble2Values.Add(new BubbleSeriesData { X = 86, Y = 55, Z = 93 });
-            bubble2Values.Add(new BubbleSeriesData { X = 5, Y = 3, Z = 58 });
-            bubble2Values.Add(new BubbleSeriesData { X = 90, Y = 63, Z = 44 });
-            bubble2Values.Add(new BubbleSeriesData { X = 91, Y = 33, Z = 17 });
-            bubble2Values.Add(new BubbleSeriesData { X = 97, Y = 3, Z = 56 });
-            bubble2Values.Add(new BubbleSeriesData { X = 15, Y = 67, Z = 48 });
-            bubble2Values.Add(new BubbleSeriesData { X = 54, Y = 25, Z = 81 });
-
-            bubble3Values.Add(new BubbleSeriesData { X = 47, Y = 47, Z = 11 });
-            bubble3Values.Add(new BubbleSeriesData { X = 20, Y = 12, Z = 4 });
-            bubble3Values.Add(new BubbleSeriesData { X = 6, Y = 76, Z = 91 });
-            bubble3Values.Add(new BubbleSeriesData { X = 30, Y = 30, Z = 60 });
-            bubble3Values.Add(new BubbleSeriesData { X = 57, Y = 98, Z = 64 });
-            bubble3Values.Add(new BubbleSeriesData { X = 61, Y = 17, Z = 80 });
-            bubble3Values.Add(new BubbleSeriesData { X = 83, Y = 60, Z = 13 });
-            bubble3Values.Add(new BubbleSeriesData { X = 67, Y = 78, Z = 75 });
-            bubble3Values.Add(new BubbleSeriesData { X = 64, Y = 12, Z = 10 });
-            bubble3Values.Add(new BubbleSeriesData { X = 30, Y = 77, Z = 82 });
+            bubble2Values.Add(new BubbleSeriesData { X = 42, Y = 38, Z = 20 });
+            bubble2Values.Add(new BubbleSeriesData { X = 6, Y = 18, Z = 1 });
+            bubble2Values.Add(new BubbleSeriesData { X = 1, Y = 93, Z = 55 });
+            bubble2Values.Add(new BubbleSeriesData { X = 57, Y = 2, Z = 90 });
+            bubble2Values.Add(new BubbleSeriesData { X = 80, Y = 76, Z = 22 });
+            bubble2Values.Add(new BubbleSeriesData { X = 11, Y = 74, Z = 96 });
+            bubble2Values.Add(new BubbleSeriesData { X = 88, Y = 56, Z = 10 });
+            bubble2Values.Add(new BubbleSeriesData { X = 30, Y = 47, Z = 49 });
+            bubble2Values.Add(new BubbleSeriesData { X = 57, Y = 62, Z = 98 });
+            bubble2Values.Add(new BubbleSeriesData { X = 4, Y = 16, Z = 16 });
+            bubble2Values.Add(new BubbleSeriesData { X = 46, Y = 10, Z = 11 });
+            bubble2Values.Add(new BubbleSeriesData { X = 22, Y = 87, Z = 89 });
+            bubble2Values.Add(new BubbleSeriesData { X = 57, Y = 91, Z = 82 });
+            bubble2Values.Add(new BubbleSeriesData { X = 42, Y = 15, Z = 98 });
 
             ViewData["bubble1"] = bubble1Values;
             ViewData["bubble2"] = bubble2Values;
-            ViewData["bubble3"] = bubble3Values;
 
             return View();
         }
