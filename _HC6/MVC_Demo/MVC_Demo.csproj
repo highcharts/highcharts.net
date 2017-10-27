@@ -207,6 +207,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnDrilldownController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ComboMeteogramController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ComboTimelineController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeActivityController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeClockController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeSolidController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineBoostController.cs" />
@@ -1150,6 +1151,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\Streamgraph.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\ScatterBoost.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\Scatter3D.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeActivity.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />

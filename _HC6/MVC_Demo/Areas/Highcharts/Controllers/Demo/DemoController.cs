@@ -288,6 +288,16 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                     break;
 
                 //Gauges
+                case "GaugeSpeedometer":
+                    ViewBag.Title = "Angular gauge";
+                    break;
+                case "GaugeSolid":
+                    ViewBag.Title = "Solid gauge";
+                    break;
+                case "GaugeActivity":
+                    ViewBag.Title = "Activity gauge";
+                    break;
+
                 case "Heatmap":
                     ViewBag.Title = "Heat map";
                     break;
