@@ -231,6 +231,9 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                 case "Bubble":
                     ViewBag.Title = "Bubble chart";
                     break;
+                case "Bubble3d":
+                    ViewBag.Title = "3D bubbles";
+                    break;
 
                 //Dynamic charts
                 case "DynamicUpdate":
