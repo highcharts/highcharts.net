@@ -283,7 +283,9 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                 case "Pie3DDonut":
                     ViewBag.Title = "3D donut";
                     break;
-
+                case "Scatter3D":
+                    ViewBag.Title = "Scatter 3D chart";
+                    break;
 
                 //Gauges
                 case "Heatmap":
