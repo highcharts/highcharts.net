@@ -209,7 +209,9 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\ComboTimelineController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeActivityController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeClockController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeDualController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeSolidController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeVUMeterController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineBoostController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieMonochromeController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieGradientController.cs" />
@@ -1152,6 +1154,8 @@
     <Content Include="Areas\Highcharts\Views\Shared\ScatterBoost.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\Scatter3D.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeActivity.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeDual.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeVUMeter.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />
