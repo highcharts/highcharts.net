@@ -178,6 +178,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\AreaStackedController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\BubbleController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\Bubble3dController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BulletGraphController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ComboController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ComboDualAxesController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\BarBasicController.cs" />
@@ -1156,6 +1157,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\GaugeActivity.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeDual.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeVUMeter.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\BulletGraph.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />
