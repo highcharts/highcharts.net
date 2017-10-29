@@ -810,6 +810,7 @@ public class HighchartsAspNetMvc
         _propertyTypeMappings.Add("annotations", "List<Annotations>");
         _propertyTypeMappings.Add("annotations.labels", "List<AnnotationsLabels>");
         _propertyTypeMappings.Add("annotations.shapes", "List<AnnotationsShapes>");
+        _propertyTypeMappings.Add("colorAxis.dataClasses", "List<ColorAxisDataClasses>");
     }
 
     private void InitPropertyInitMappings()
@@ -849,6 +850,7 @@ public class HighchartsAspNetMvc
         _propertyInitMappings.Add("annotations", "new List<Annotations>()");
         _propertyInitMappings.Add("annotations.labels", "new List<AnnotationsLabels>()");
         _propertyInitMappings.Add("annotations.shapes", "new List<AnnotationsShapes>()");
+        _propertyInitMappings.Add("colorAxis.dataClasses", "new List<ColorAxisDataClasses>()");
     }
 
     private void InitLists()
@@ -868,6 +870,7 @@ public class HighchartsAspNetMvc
         _lists.Add("annotations");
         _lists.Add("annotations.labels");
         _lists.Add("annotations.shapes");
+        _lists.Add("colorAxis.dataClasses");
     }
 
     private void InitSeriesMappings()

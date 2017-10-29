@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TickLength = TickLength_DefaultValue = null;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			DataClassColor = DataClassColor_DefaultValue = ColorAxisDataClassColor.Tween;
-			DataClasses = DataClasses_DefaultValue = new ColorAxisDataClasses();
+			DataClasses = DataClasses_DefaultValue = new List<ColorAxisDataClasses>();
 			Max = Max_DefaultValue = null;
 			Min = Min_DefaultValue = null;
 			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
@@ -165,8 +165,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// <p>An array of data classes or ranges for the choropleth map. If nonegiven, the color axis is scalar and values are distributed as a gradientbetween the minimum and maximum colors.</p>
 		/// </summary>
-		public ColorAxisDataClasses DataClasses { get; set; }
-		private ColorAxisDataClasses DataClasses_DefaultValue { get; set; }
+		public List<ColorAxisDataClasses> DataClasses { get; set; }
+		private List<ColorAxisDataClasses> DataClasses_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -459,7 +459,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (DataClassColor != DataClassColor_DefaultValue) h.Add("dataClassColor", Highcharts.FirstCharacterToLower(DataClassColor.ToString()));
-			if (DataClasses.IsDirty()) h.Add("dataClasses",DataClasses.ToHashtable());
+			if (DataClasses != DataClasses_DefaultValue) h.Add("dataClasses", HashifyList(DataClasses));
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
