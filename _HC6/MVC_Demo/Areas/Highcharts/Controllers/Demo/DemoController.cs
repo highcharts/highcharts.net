@@ -297,12 +297,18 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                 case "GaugeActivity":
                     ViewBag.Title = "Activity gauge";
                     break;
+                case "BulletGraph":
+                    ViewBag.Title = "Bullet graph";
+                    break;
 
                 case "Heatmap":
                     ViewBag.Title = "Heat map";
                     break;
                 case "HeatmapCanvas":
                     ViewBag.Title = "Large heat map";
+                    break;
+                case "Honeycomb":
+                    ViewBag.Title = "Tile map, honeycomb";
                     break;
                 case "TreemapColoraxis":
                     ViewBag.Title = "Tree map with color axis";
