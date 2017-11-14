@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Charts
             if (serial.Substring(0, 3) != "Ver")
                 return false;
 
-            if (GetLicenseVersion(serial) != GetAssemblyVersion())
+            if (GetLicenseVersion(serial) < GetAssemblyVersion())
                 return false;
 
             if (serial.Substring(4, 7) != "NetWrap")
@@ -44,14 +44,20 @@ namespace Highsoft.Web.Mvc.Charts
         }
 
 
-        static string GetAssemblyVersion()
+        static int GetAssemblyVersion()
         {
-            return Assembly.GetExecutingAssembly().GetName().Version.Major.ToString();
+            return Convert.ToInt32(Assembly.GetExecutingAssembly().GetName().Version.Major.ToString());
         }
 
-        static string GetLicenseVersion(string serial)
+        static int GetLicenseVersion(string serial)
         {
-            return serial.Substring(3, 1);
+            int result;
+            bool success = int.TryParse(serial.Substring(3, 1), out result);
+
+            if (success)
+                return result;
+
+            return -1;
         }
 
         static string DecodeSerial(string text)

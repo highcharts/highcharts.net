@@ -17,6 +17,8 @@ namespace SourceCodeGenerator.Parser
         private string Product { get; set; }
         private string JsonFilePath { get; set; }
         public List<ApiItem> Items { get; private set; }
+
+        public long missing { get; set; }
         public JsonParser(string product)
         {
             Product = product;
@@ -28,18 +30,9 @@ namespace SourceCodeGenerator.Parser
 
             Product = product;
             JsonFilePath = jsonFilePath;
+
+            missing = 0;
         }
-
-        //public void GetJsonObjects()
-        //{
-        //    var objects = GetObjectFromJsonFile();
-
-        //    //foreach (Dictionary<string, object> item in objects)
-        //    //{
-        //    //    ApiItem apiItem = new ApiItem(item);
-        //    //    Items.Add(apiItem);
-        //    //}
-        //}
 
         public void GetObjectFromJsonFile()
         {
@@ -55,6 +48,28 @@ namespace SourceCodeGenerator.Parser
 
 
             }
+
+            Console.WriteLine("Missing = " + missing);
+            Console.WriteLine("Items counter = " + Items.Count);
+        }
+
+        public void ProcessObjects()
+        {
+            int counter = 0;
+            foreach(var item in Items)
+            {
+                if (!string.IsNullOrWhiteSpace(item.Extends))
+                {
+                    Console.WriteLine(item.FullName + " : " + item.Extends);
+                    counter++;
+                }
+            }
+            Console.WriteLine("objects with extends : " + counter);
+        }
+
+        private void Objects(ApiItem item)
+        {
+
         }
 
         private void CreateApiItem(string name, JToken item, bool isParent = false, string parent = "")
@@ -87,11 +102,11 @@ namespace SourceCodeGenerator.Parser
                 if (jDescription != null)
                     apiItem.Description = jDescription.Value<string>();
 
-                JToken jExtends = meta.SelectToken("extends", false);
+                JToken jExtends = doclet.SelectToken("extends", false);
                 if (jExtends != null)
                     apiItem.Extends = jExtends.Value<string>();
 
-                JToken jSince = meta.SelectToken("since", false);
+                JToken jSince = doclet.SelectToken("since", false);
                 if (jSince != null)
                     apiItem.Since = jSince.Value<string>();
 
@@ -119,11 +134,20 @@ namespace SourceCodeGenerator.Parser
                 }
             }
 
+
+            //if (apiItem.Products != null && !apiItem.Products.Any(p => p == Product))
+            //    return;
+            
             if (apiItem.FullName == null)
             {
-                int c = 7;
+                missing++;
             }
 
+            if (string.IsNullOrWhiteSpace(apiItem.FullName))
+                if (!string.IsNullOrWhiteSpace(apiItem.Parent))
+                    apiItem.FullName = apiItem.Parent + "." + apiItem.Title;
+                else
+                    apiItem.FullName = apiItem.Title;
 
             Items.Add(apiItem);
             Console.WriteLine(apiItem.Title + ": "+apiItem.FullName);
@@ -135,6 +159,11 @@ namespace SourceCodeGenerator.Parser
             foreach (var child in children)
             {
                 var childName = ((JProperty)child).Name;
+
+                //Remove garbage without a name of the element
+                if (string.IsNullOrWhiteSpace(childName))
+                    continue;
+
                 CreateApiItem(childName, child.First, true, apiItem.FullName);
             }
         }
