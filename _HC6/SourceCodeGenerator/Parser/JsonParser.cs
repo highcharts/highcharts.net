@@ -44,32 +44,82 @@ namespace SourceCodeGenerator.Parser
                     continue;
 
                 CreateApiItem(item.Name, item.Value);
-                Console.WriteLine(item.Name);
+                //Console.WriteLine(item.Name);
 
 
             }
 
-            Console.WriteLine("Missing = " + missing);
-            Console.WriteLine("Items counter = " + Items.Count);
+            //Console.WriteLine("Missing = " + missing);
+            //Console.WriteLine("Items counter = " + Items.Count);
         }
 
         public void ProcessObjects()
         {
-            int counter = 0;
-            foreach(var item in Items)
+            
+            int index = 0;
+            var item = Items[index];
+            while (true)
             {
                 if (!string.IsNullOrWhiteSpace(item.Extends))
                 {
-                    Console.WriteLine(item.FullName + " : " + item.Extends);
-                    counter++;
+                    string[] extendsTbl = item.Extends.Split(',');
+
+                    foreach (var extends in extendsTbl)
+                    {
+                        var sourceItem = Items.Where(p => p.FullName == extends)?.FirstOrDefault();
+
+                        if (sourceItem == null)
+                            throw new Exception($"Missing item: {extends}");
+
+                        if (!string.IsNullOrWhiteSpace(sourceItem.Extends))
+                        {
+                            item = sourceItem;
+                            continue;
+                        }
+
+                        CopyObjects(item, sourceItem);
+                        RemoveExtends(item, extends);
+                    }
                 }
+
+                if (index == Items.Count - 1)
+                    break;
+
+                item = Items[++index];
             }
-            Console.WriteLine("objects with extends : " + counter);
         }
 
-        private void Objects(ApiItem item)
+        public void RemoveExtends(ApiItem item, string extends)
         {
+            item.Extends = item.Extends.Replace(extends, "");
 
+            if (string.IsNullOrEmpty(item.Extends))
+                return;
+
+            item.Extends.Replace(",,", ",");
+
+            if (item.Extends.StartsWith(","))
+                item.Extends.Remove(0, 1);
+
+            if (item.Extends.EndsWith(","))
+                item.Extends.Remove(item.Extends.Length - 1);
+        }
+
+        private void CopyObjects(ApiItem item, ApiItem sourceItem)
+        {
+            var itemsToCopy = Items.Where(p => p.FullName.StartsWith(sourceItem.FullName) && p.FullName.Length > sourceItem.FullName.Length && !item.Exclude.Any(q => q == p.Title)).ToList();
+
+            foreach(var copy in itemsToCopy)
+            {
+                var newItem = copy.Clone();
+
+                newItem.Parent = item.FullName;
+                newItem.FullName = item.FullName + "." + copy.Title;
+
+                Items.Add(newItem);
+
+                Console.WriteLine(newItem.FullName);
+            }
         }
 
         private void CreateApiItem(string name, JToken item, bool isParent = false, string parent = "")
@@ -104,7 +154,7 @@ namespace SourceCodeGenerator.Parser
 
                 JToken jExtends = doclet.SelectToken("extends", false);
                 if (jExtends != null)
-                    apiItem.Extends = jExtends.Value<string>();
+                    apiItem.Extends = jExtends.Value<string>().Replace("{","").Replace("}","");
 
                 JToken jSince = doclet.SelectToken("since", false);
                 if (jSince != null)
@@ -150,7 +200,7 @@ namespace SourceCodeGenerator.Parser
                     apiItem.FullName = apiItem.Title;
 
             Items.Add(apiItem);
-            Console.WriteLine(apiItem.Title + ": "+apiItem.FullName);
+            //Console.WriteLine(apiItem.Title + ": "+apiItem.FullName);
 
             JToken children = item.SelectToken("children", false);
             if (children == null)
