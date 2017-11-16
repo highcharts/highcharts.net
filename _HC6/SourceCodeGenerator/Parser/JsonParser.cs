@@ -62,7 +62,7 @@ namespace SourceCodeGenerator.Parser
             {
                 if (!string.IsNullOrWhiteSpace(item.Extends))
                 {
-                    string[] extendsTbl = item.Extends.Split(',');
+                    IEnumerable<string> extendsTbl = item.Extends.Split(',').ToList();
 
                     foreach (var extends in extendsTbl)
                     {
@@ -107,9 +107,13 @@ namespace SourceCodeGenerator.Parser
 
         private void CopyObjects(ApiItem item, ApiItem sourceItem)
         {
+            
             var itemsToCopy = Items.Where(p => p.FullName.StartsWith(sourceItem.FullName) && p.FullName.Length > sourceItem.FullName.Length && !item.Exclude.Any(q => q == p.Title)).ToList();
+            //Console.WriteLine($"--------------------{itemsToCopy.Count}----------------------------");
+            //Console.ReadLine();
 
-            foreach(var copy in itemsToCopy)
+
+            foreach (var copy in itemsToCopy)
             {
                 var newItem = copy.Clone();
 
@@ -129,32 +133,35 @@ namespace SourceCodeGenerator.Parser
             apiItem.Parent = parent;
             apiItem.Title = name;
 
-            JToken meta = item.SelectToken("meta", false);
-            if(meta != null)
-            {
-                JToken jFullname = meta.SelectToken("fullname", false);
-                if(jFullname != null)
-                    apiItem.FullName = jFullname.Value<string>();
-
-                JToken jName = meta.SelectToken("name", false);
-                if(jName != null)
-                    apiItem.Title = jName.Value<string>();
-
-                JToken jDefault = meta.SelectToken("default", false);
-                if(jDefault != null)
-                    apiItem.Defaults = jDefault.Value<string>();
-            }
-
             JToken doclet = item.SelectToken("doclet", false);
             if(doclet != null)
             {
+                JToken jProducts = doclet.SelectToken("products", false);
+                if (jProducts != null)
+                    apiItem.Products = jProducts.Select(t => (string)t).ToList();
+
+                if (!apiItem.Products.Contains(Product) && apiItem.Products.Any())
+                    return;
+
                 JToken jDescription = doclet.SelectToken("description", false);
                 if (jDescription != null)
                     apiItem.Description = jDescription.Value<string>();
 
+
+
+                //Make extend IList<string> i poprawić poniższą logikę
                 JToken jExtends = doclet.SelectToken("extends", false);
                 if (jExtends != null)
-                    apiItem.Extends = jExtends.Value<string>().Replace("{","").Replace("}","");
+                    apiItem.Extends = jExtends.Value<string>().Replace("{","").Replace("}","").Replace("series","").Replace(",,",",");
+
+                if (!string.IsNullOrWhiteSpace(apiItem.Extends))
+                {
+                    if (apiItem.Extends.StartsWith(","))
+                        apiItem.Extends.Remove(0, 1);
+
+                    if (apiItem.Extends.EndsWith(","))
+                        apiItem.Extends.Remove(apiItem.Extends.Length - 1);
+                }
 
                 JToken jSince = doclet.SelectToken("since", false);
                 if (jSince != null)
@@ -168,10 +175,6 @@ namespace SourceCodeGenerator.Parser
                 if (jDefault != null)
                     apiItem.Defaults = jDefault.Value<string>();
 
-                JToken jProducts = doclet.SelectToken("products", false);
-                if (jProducts != null)
-                    apiItem.Products = jProducts.Select(t => (string)t).ToList();
-
                 JToken jExclude = doclet.SelectToken("exclude", false);
                 if (jExclude != null)
                     apiItem.Exclude = jExclude.Select(t => (string)t).ToList();
@@ -184,10 +187,26 @@ namespace SourceCodeGenerator.Parser
                 }
             }
 
+            JToken meta = item.SelectToken("meta", false);
+            if (meta != null)
+            {
+                JToken jFullname = meta.SelectToken("fullname", false);
+                if (jFullname != null)
+                    apiItem.FullName = jFullname.Value<string>();
+
+                JToken jName = meta.SelectToken("name", false);
+                if (jName != null)
+                    apiItem.Title = jName.Value<string>();
+
+                JToken jDefault = meta.SelectToken("default", false);
+                if (jDefault != null)
+                    apiItem.Defaults = jDefault.Value<string>();
+            }
+
 
             //if (apiItem.Products != null && !apiItem.Products.Any(p => p == Product))
             //    return;
-            
+
             if (apiItem.FullName == null)
             {
                 missing++;

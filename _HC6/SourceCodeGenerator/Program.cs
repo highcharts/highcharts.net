@@ -11,7 +11,7 @@ namespace SourceCodeGenerator
     {
         static void Main(string[] args)
         {
-            JsonParser parser = new JsonParser("Highcharts", @"C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\JsonFiles\highcharts.json");
+            JsonParser parser = new JsonParser("highcharts", @"C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\JsonFiles\highcharts.json");
             parser.GetObjectFromJsonFile();
             parser.ProcessObjects();
 
