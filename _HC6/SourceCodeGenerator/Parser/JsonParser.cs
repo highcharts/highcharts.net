@@ -12,17 +12,13 @@ using System.Threading.Tasks;
 
 namespace SourceCodeGenerator.Parser
 {
-    public class JsonParser
+    public class JsonParser : IJsonParser
     {
         private string Product { get; set; }
         private string JsonFilePath { get; set; }
         public List<ApiItem> Items { get; private set; }
 
         public long missing { get; set; }
-        public JsonParser(string product)
-        {
-            Product = product;
-        }
 
         public JsonParser(string product, string jsonFilePath)
         {
@@ -34,81 +30,81 @@ namespace SourceCodeGenerator.Parser
             missing = 0;
         }
 
-        public void GetObjectFromJsonFile()
+        public List<ApiItem> Get()
+        {
+            GetObjectFromJsonFile();
+            ProcessObjects();
+
+            return Items;
+        }
+
+        private void GetObjectFromJsonFile()
         {
             JObject jObject = JObject.Parse(File.ReadAllText(JsonFilePath));
 
-            foreach(var item in jObject.Properties())
+            foreach (var item in jObject.Properties())
             {
                 if (string.IsNullOrWhiteSpace(item.Name) || item.Name == "_meta")
                     continue;
 
                 CreateApiItem(item.Name, item.Value);
-                //Console.WriteLine(item.Name);
-
-
             }
-
-            //Console.WriteLine("Missing = " + missing);
-            //Console.WriteLine("Items counter = " + Items.Count);
         }
 
-        public void ProcessObjects()
+        private void ProcessObjects()
         {
-            
             int index = 0;
             var item = Items[index];
+            bool isAnyExtendsToDo = false;
             while (true)
             {
-                if (!string.IsNullOrWhiteSpace(item.Extends))
+                Console.WriteLine($"{index} | Items.Count={Items.Count} | Start!");
+
+                item.Extends.Remove(item.FullName);
+
+                List<string> extendsTmpList = new List<string>(item.Extends.Select(p => string.Copy(p)));
+
+                foreach (var extends in extendsTmpList)
                 {
-                    IEnumerable<string> extendsTbl = item.Extends.Split(',').ToList();
+                    var sourceItem = Items.Where(p => p.FullName == extends)?.FirstOrDefault();
 
-                    foreach (var extends in extendsTbl)
+                    //it's missing or not generated yet
+                    if (sourceItem == null)
+                        continue;
+
+                    if (sourceItem.Extends.Any())
                     {
-                        var sourceItem = Items.Where(p => p.FullName == extends)?.FirstOrDefault();
-
-                        if (sourceItem == null)
-                            throw new Exception($"Missing item: {extends}");
-
-                        if (!string.IsNullOrWhiteSpace(sourceItem.Extends))
-                        {
-                            item = sourceItem;
-                            continue;
-                        }
-
-                        CopyObjects(item, sourceItem);
-                        RemoveExtends(item, extends);
+                        isAnyExtendsToDo = true;
+                        continue;
                     }
+
+                    CopyObjects(item, sourceItem);
+                    item.Extends.Remove(extends);
                 }
 
                 if (index == Items.Count - 1)
+                {
+                    if(isAnyExtendsToDo)
+                    {
+                        isAnyExtendsToDo = false;
+                        index = 0;
+                        item = Items[index];
+                        continue;
+                    }
+
                     break;
+                }
 
                 item = Items[++index];
             }
-        }
 
-        public void RemoveExtends(ApiItem item, string extends)
-        {
-            item.Extends = item.Extends.Replace(extends, "");
-
-            if (string.IsNullOrEmpty(item.Extends))
-                return;
-
-            item.Extends.Replace(",,", ",");
-
-            if (item.Extends.StartsWith(","))
-                item.Extends.Remove(0, 1);
-
-            if (item.Extends.EndsWith(","))
-                item.Extends.Remove(item.Extends.Length - 1);
+            Console.WriteLine("Items.Count = " + Items.Count);
         }
 
         private void CopyObjects(ApiItem item, ApiItem sourceItem)
         {
-            
-            var itemsToCopy = Items.Where(p => p.FullName.StartsWith(sourceItem.FullName) && p.FullName.Length > sourceItem.FullName.Length && !item.Exclude.Any(q => q == p.Title)).ToList();
+
+            var itemsToCopy = Items.Where(p => p.FullName.StartsWith(sourceItem.FullName + ".") && !item.Exclude.Any(q => q == p.Title)).ToList();
             //Console.WriteLine($"--------------------{itemsToCopy.Count}----------------------------");
             //Console.ReadLine();
 
@@ -134,7 +130,7 @@ namespace SourceCodeGenerator.Parser
             apiItem.Title = name;
 
             JToken doclet = item.SelectToken("doclet", false);
-            if(doclet != null)
+            if (doclet != null)
             {
                 JToken jProducts = doclet.SelectToken("products", false);
                 if (jProducts != null)
@@ -146,21 +142,14 @@ namespace SourceCodeGenerator.Parser
                 JToken jDescription = doclet.SelectToken("description", false);
                 if (jDescription != null)
                     apiItem.Description = jDescription.Value<string>();
-
-
-
-                //Make extend IList<string> i poprawić poniższą logikę
+                
                 JToken jExtends = doclet.SelectToken("extends", false);
                 if (jExtends != null)
-                    apiItem.Extends = jExtends.Value<string>().Replace("{","").Replace("}","").Replace("series","").Replace(",,",",");
-
-                if (!string.IsNullOrWhiteSpace(apiItem.Extends))
                 {
-                    if (apiItem.Extends.StartsWith(","))
-                        apiItem.Extends.Remove(0, 1);
+                    apiItem.Extends = jExtends.Value<string>().Replace("{", "").Replace("}", "").Split(',').ToList();
 
-                    if (apiItem.Extends.EndsWith(","))
-                        apiItem.Extends.Remove(apiItem.Extends.Length - 1);
+                    if (apiItem.Extends.Contains("series"))
+                        apiItem.Extends.Remove("series");
                 }
 
                 JToken jSince = doclet.SelectToken("since", false);

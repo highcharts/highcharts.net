@@ -11,11 +11,12 @@ namespace SourceCodeGenerator
     {
         static void Main(string[] args)
         {
-            JsonParser parser = new JsonParser("highcharts", @"C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\JsonFiles\highcharts.json");
-            parser.GetObjectFromJsonFile();
-            parser.ProcessObjects();
+            JsonParser jsonParser = new JsonParser("highcharts", @"C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\JsonFiles\highcharts.json");
+            HighchartsGenerator hcg = new HighchartsGenerator(jsonParser);
+            hcg.GenerateCode();
 
             Console.ReadLine();
+
         }
     }
 }

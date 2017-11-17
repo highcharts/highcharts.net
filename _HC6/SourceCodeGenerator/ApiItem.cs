@@ -91,7 +91,7 @@ public class ApiItem
     public List<string> Parents { get; set; } = new List<string>();
 
     public IList<string> Types { get; set; } = new List<string>();
-    public string Extends { get; set; }
+    public IList<string> Extends { get; set; } = new List<string>();
     public IList<string> Exclude { get; set; } = new List<string>();
     public string Since { get; set; }
 
@@ -111,7 +111,7 @@ public class ApiItem
         item.Products = new List<string>(Products.Select(p => string.Copy(p)));
         item.Parents = new List<string>(Parents.Select(p => string.Copy(p)));
         item.Types = new List<string>(Types.Select(p => string.Copy(p)));
-        item.Extends = string.IsNullOrWhiteSpace(Extends) ? null : string.Copy(Extends);
+        item.Extends = new List<string>(Extends.Select(p => string.Copy(p)));
         item.Exclude = new List<string>(Exclude.Select(p => string.Copy(p)));
         item.Since = string.IsNullOrWhiteSpace(Since) ? null : string.Copy(Since);
 
