@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Collections;
 using SourceCodeGenerator.Parser;
+using SourceCodeGenerator.Services;
 
 /// <summary>
 /// Summary description for AspNetMvc
@@ -30,10 +31,10 @@ public class HighchartsGenerator
     List<string> _excludedProperties; // properties that do not need to be ported to the server-side wrapper
     List<string> _customProperties; // properties that need custom JSON mappings (Animation, Shadow, etc). Defined in the CodeAddOns folder.
 
-    string AssemblyFilePath { get; set; }
     IJsonParser JsonParser { get; set; }
+    IFileService FileService { get; set; }
 
-    public HighchartsGenerator(IJsonParser jsonParser)
+    public HighchartsGenerator(IJsonParser jsonParser, IFileService fileService)
     {
         _apiItems = new List<ApiItem>();
         _typeMappings = new Hashtable();
@@ -46,7 +47,7 @@ public class HighchartsGenerator
         _lists = new List<string>();
 
         JsonParser = jsonParser;
-        AssemblyFilePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+        FileService = fileService;
 
         InitTypeMappings();
         InitPropertyTypeMappings();
@@ -60,10 +61,12 @@ public class HighchartsGenerator
 
     public void GenerateCode()
     {
+        FileService.PrepareFolder(ROOT_CLASS);
         ///ParseItems();
         _apiItems = JsonParser.Get();
 
         //var items = _apiItems.Where(p => p.FullName.ToLower().Contains("yaxis.opposite"));
+
 
         GenerateClass(new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS });
         for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)
@@ -247,8 +250,8 @@ public class HighchartsGenerator
     private void GenerateClass(ApiItem item)
     {
         string className = item.Title;
-        string codeTemplate = File.ReadAllText(AssemblyFilePath + "\\CodeTemplates\\Class.tpl");
-        string propertyTemplate = File.ReadAllText(AssemblyFilePath + "\\CodeTemplates\\Property.tpl");
+        string codeTemplate = FileService.GetClassTemplate();
+        string propertyTemplate = FileService.GetPropertyTemplate();
 
         string properties = "";
         string defaultValues = "";
@@ -320,24 +323,12 @@ public class HighchartsGenerator
                         .Replace("{HighTemplate.ExtendsClass}", extendsClass)
                         .Replace("{HighTemplate.ClassName}", GetClassNameFromItem(item));
 
-        string fileName = GetClassNameFromItem(item);
-        try
-        {
-            fileName = AssemblyFilePath + "\\CodeGeneration\\" + ROOT_CLASS + "\\" + GetClassNameFromItem(item) + ".cs";
-        }
-        catch (Exception ex)
-        {
-            throw;
-        }
-
-        File.WriteAllText(fileName, codeTemplate);
+        FileService.SaveClass(ROOT_CLASS, GetClassNameFromItem(item), codeTemplate);
     }
 
     private void GenerateEnum(ApiItem apiItem)
     {
-        string enumTemplate = File.ReadAllText(AssemblyFilePath+"\\CodeTemplates\\Enum.tpl");
-        string fileName = AssemblyFilePath + "\\CodeGeneration\\" + ROOT_CLASS + "\\Enums\\" + GetClassNameFromItem(apiItem) + ".cs";
-
+        string enumTemplate = FileService.GetEnumTemplate();
         List<string> enumValues = new List<string>();
 
         string enumList = "";
@@ -382,7 +373,7 @@ public class HighchartsGenerator
                         .Replace("{HighTemplate.EnumName}", GetClassNameFromItem(apiItem))
                         .Replace("{HighTemplate.EnumList}", enumList);
 
-        File.WriteAllText(fileName, enumTemplate);
+        FileService.SaveEnum(ROOT_CLASS, GetClassNameFromItem(apiItem), enumTemplate);
     }
 
     private void AddDefaultsToEnum(ApiItem apiItem)

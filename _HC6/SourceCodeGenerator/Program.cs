@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SourceCodeGenerator.Parser;
+using SourceCodeGenerator.Services;
 
 namespace SourceCodeGenerator
 {
@@ -11,8 +12,9 @@ namespace SourceCodeGenerator
     {
         static void Main(string[] args)
         {
-            JsonParser jsonParser = new JsonParser("highcharts", @"C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\JsonFiles\highcharts.json");
-            HighchartsGenerator hcg = new HighchartsGenerator(jsonParser);
+            FileService fileService = new FileService();
+            JsonParser jsonParser = new JsonParser("highcharts", fileService);
+            HighchartsGenerator hcg = new HighchartsGenerator(jsonParser, fileService);
             hcg.GenerateCode();
 
             Console.ReadLine();

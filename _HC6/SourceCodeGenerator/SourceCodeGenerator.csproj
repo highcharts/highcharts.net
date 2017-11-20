@@ -48,36 +48,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiItem.cs" />
-    <Compile Include="CodeAddOns\Animation.cs">
+    <Content Include="CodeAddOns\Animation.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="CodeAddOns\Background.cs">
+    </Content>
+    <Content Include="CodeAddOns\Background.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="CodeAddOns\BaseObject.cs">
+    </Content>
+    <Content Include="CodeAddOns\BaseObject.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="CodeAddOns\Crosshair.cs">
+    </Content>
+    <Content Include="CodeAddOns\Crosshair.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="CodeAddOns\IObjectList.cs">
+    </Content>
+    <Content Include="CodeAddOns\IObjectList.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="CodeAddOns\MenuItem.cs">
+    </Content>
+    <Content Include="CodeAddOns\MenuItem.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="CodeAddOns\PointPlacement.cs">
+    </Content>
+    <Content Include="CodeAddOns\PointPlacement.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="CodeAddOns\Shadow.cs">
+    </Content>
+    <Content Include="CodeAddOns\Shadow.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="CodeAddOns\Stop.cs">
+    </Content>
+    <Content Include="CodeAddOns\Stop.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="CodeAddOns\Symbol.cs">
+    </Content>
+    <Content Include="CodeAddOns\Symbol.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
+    </Content>
     <Compile Include="Generators\HighchartsGenerator.cs" />
     <Compile Include="Parser\Doclet.cs" />
     <Compile Include="Parser\IJsonParser.cs" />
@@ -87,22 +87,25 @@
     <Compile Include="Parser\Meta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FileService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="CodeTemplates\Class.tpl">
+    <Content Include="CodeTemplates\Class.tpl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="CodeTemplates\Enum.tpl">
+    </Content>
+    <Content Include="CodeTemplates\Enum.tpl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="CodeTemplates\Property.tpl">
+    </Content>
+    <Content Include="CodeTemplates\Property.tpl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="CodeTemplates\RootClass.tpl">
+    </Content>
+    <Content Include="CodeTemplates\RootClass.tpl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="JsonFiles\highcharts.json" />
+    </Content>
+    <Content Include="JsonFiles\highcharts.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

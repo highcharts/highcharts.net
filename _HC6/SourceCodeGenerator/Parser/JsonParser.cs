@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SourceCodeGenerator.Services;
 
 
 
@@ -15,17 +16,20 @@ namespace SourceCodeGenerator.Parser
     public class JsonParser : IJsonParser
     {
         private string Product { get; set; }
-        private string JsonFilePath { get; set; }
+        private IFileService FileService { get; set; }
+
         public List<ApiItem> Items { get; private set; }
 
         public long missing { get; set; }
 
-        public JsonParser(string product, string jsonFilePath)
+
+
+        public JsonParser(string product, IFileService fileService)
         {
             Items = new List<ApiItem>();
 
             Product = product;
-            JsonFilePath = jsonFilePath;
+            FileService = fileService;
 
             missing = 0;
         }
@@ -40,7 +44,7 @@ namespace SourceCodeGenerator.Parser
 
         private void GetObjectFromJsonFile()
         {
-            JObject jObject = JObject.Parse(File.ReadAllText(JsonFilePath));
+            JObject jObject = JObject.Parse(FileService.GetJsonContent());
 
             foreach (var item in jObject.Properties())
             {

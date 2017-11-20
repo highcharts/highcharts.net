@@ -5,7 +5,6 @@ C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\Newtonso
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\Newtonsoft.Json.xml
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.exe
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.pdb
-C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.csprojResolveAssemblyReference.cache
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeAddOns\Animation.cs
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeAddOns\Background.cs
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeAddOns\BaseObject.cs
@@ -20,3 +19,5 @@ C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeTemp
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeTemplates\Enum.tpl
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeTemplates\Property.tpl
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeTemplates\RootClass.tpl
+C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\JsonFiles\highcharts.json
+C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.csprojResolveAssemblyReference.cache
