@@ -17,12 +17,8 @@ namespace SourceCodeGenerator.Parser
     {
         private string Product { get; set; }
         private IFileService FileService { get; set; }
-
         public List<ApiItem> Items { get; private set; }
-
         public long missing { get; set; }
-
-
 
         public JsonParser(string product, IFileService fileService)
         {
@@ -62,8 +58,6 @@ namespace SourceCodeGenerator.Parser
             bool isAnyExtendsToDo = false;
             while (true)
             {
-                Console.WriteLine($"{index} | Items.Count={Items.Count} | Start!");
-
                 item.Extends.Remove(item.FullName);
 
                 List<string> extendsTmpList = new List<string>(item.Extends.Select(p => string.Copy(p)));
@@ -102,16 +96,16 @@ namespace SourceCodeGenerator.Parser
                 item = Items[++index];
             }
 
+            var itemsWithObjectType = Items.Where(p => p.Types.Contains("Object")).ToList();
+            var itemsWithEmptyType = Items.Where(p => !p.Types.Any()).ToList();
+
+
             Console.WriteLine("Items.Count = " + Items.Count);
         }
 
         private void CopyObjects(ApiItem item, ApiItem sourceItem)
         {
-
             var itemsToCopy = Items.Where(p => p.FullName.StartsWith(sourceItem.FullName + ".") && !item.Exclude.Any(q => q == p.Title)).ToList();
-            //Console.WriteLine($"--------------------{itemsToCopy.Count}----------------------------");
-            //Console.ReadLine();
-
 
             foreach (var copy in itemsToCopy)
             {
@@ -122,11 +116,11 @@ namespace SourceCodeGenerator.Parser
 
                 Items.Add(newItem);
 
-                Console.WriteLine(newItem.FullName);
+                //Console.WriteLine(newItem.FullName);
             }
         }
 
-        private void CreateApiItem(string name, JToken item, bool isParent = false, string parent = "")
+        private void CreateApiItem(string name, JToken item, bool isParent = false, string parent = null)
         {
             ApiItem apiItem = new ApiItem();
             apiItem.IsParent = isParent;
@@ -196,14 +190,13 @@ namespace SourceCodeGenerator.Parser
                     apiItem.Defaults = jDefault.Value<string>();
             }
 
-
-            //if (apiItem.Products != null && !apiItem.Products.Any(p => p == Product))
-            //    return;
-
             if (apiItem.FullName == null)
             {
                 missing++;
             }
+
+            if (apiItem.Description == null)
+                missing++;
 
             if (string.IsNullOrWhiteSpace(apiItem.FullName))
                 if (!string.IsNullOrWhiteSpace(apiItem.Parent))

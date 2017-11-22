@@ -64,7 +64,7 @@ public class HighchartsGenerator
         FileService.PrepareFolder(ROOT_CLASS);
         ///ParseItems();
         _apiItems = JsonParser.Get();
-
+        ProcessApiItems();
         //var items = _apiItems.Where(p => p.FullName.ToLower().Contains("yaxis.opposite"));
 
 
@@ -691,10 +691,10 @@ public class HighchartsGenerator
             //    }
             //}
 
-            if (item.Parents.Count == level && item.IsParent)
-            {
+            //if (item.Parents.Count == level && item.IsParent)
+            //{
                 GenerateClass(item);
-            }
+            //}
         }
     }
 
