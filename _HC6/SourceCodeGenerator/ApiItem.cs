@@ -89,6 +89,7 @@ public class ApiItem
     public IList<string> Extends { get; set; } = new List<string>();
     public IList<string> Exclude { get; set; } = new List<string>();
     public string Since { get; set; }
+    public bool HasChildren { get; set; }
 
     public ApiItem Clone()
     {
@@ -108,6 +109,7 @@ public class ApiItem
         item.Extends = new List<string>(Extends.Select(p => string.Copy(p)));
         item.Exclude = new List<string>(Exclude.Select(p => string.Copy(p)));
         item.Since = string.IsNullOrWhiteSpace(Since) ? null : string.Copy(Since);
+        item.HasChildren = HasChildren;
 
         return item;
     }

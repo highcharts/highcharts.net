@@ -69,10 +69,10 @@ public class HighchartsGenerator
 
 
         GenerateClass(new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS });
-        for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)
-        {
-            GenerateClassesForLevel(i);
-        }
+        //for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)
+        //{
+            GenerateClassesForLevel(0);
+        //}
     }
 
     /// <summary>
@@ -489,7 +489,7 @@ public class HighchartsGenerator
         string propertyName = GetPropertyName(child);
         string returnType = GetPropertyReturnType(child, propertyName);
 
-        if (child.Values != null && child.Values.Count > 0)
+        if (child.Values != null && child.Values.Any())
             returnType = GetClassNameFromItem(child);
 
         if (propertyName == "PointDescriptionThreshold")
@@ -566,13 +566,13 @@ public class HighchartsGenerator
         if (child.ReturnType == "Array" && child.Title == "zones")
             returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones", "Zone"));
         else
-        if (child.IsParent)
+        //if (child.IsParent)
             returnType = GetClassNameFromItem(child);
-        else
-        {
-            if (returnType == "Boolean|Object")
-                returnType = "object";
-        }
+        //else
+        //{
+        //    if (returnType == "Boolean|Object")
+        //        returnType = "object";
+        //}
 
         if (returnType.EndsWith("DataDataLabels"))
             returnType = returnType.Replace("DataData", "Data");
@@ -693,7 +693,12 @@ public class HighchartsGenerator
 
             //if (item.Parents.Count == level && item.IsParent)
             //{
+            if (item.HasChildren)
                 GenerateClass(item);
+            else
+            {
+                int w = 7;
+            }
             //}
         }
     }
@@ -1013,7 +1018,7 @@ public class HighchartsGenerator
             defaults = _propertyInitMappings[item.Title].ToString();
         }
 
-        if (item.Values != null && item.Values.Count > 0)
+        if (item.Values != null && item.Values.Any())
         {
             return GetDefaultValueForEnum(item);
         }

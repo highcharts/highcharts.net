@@ -17,6 +17,7 @@ namespace SourceCodeGenerator
             HighchartsGenerator hcg = new HighchartsGenerator(jsonParser, fileService);
             hcg.GenerateCode();
 
+            Console.WriteLine("THE END");
             Console.ReadLine();
 
         }
