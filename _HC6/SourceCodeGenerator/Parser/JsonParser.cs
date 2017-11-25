@@ -17,8 +17,7 @@ namespace SourceCodeGenerator.Parser
     {
         private string Product { get; set; }
         private IFileService FileService { get; set; }
-        public List<ApiItem> Items { get; private set; }
-        public long missing { get; set; }
+        public IList<ApiItem> Items { get; private set; }
 
         public JsonParser(string product, IFileService fileService)
         {
@@ -26,8 +25,6 @@ namespace SourceCodeGenerator.Parser
 
             Product = product;
             FileService = fileService;
-
-            missing = 0;
         }
 
         public List<ApiItem> Get()
@@ -35,7 +32,7 @@ namespace SourceCodeGenerator.Parser
             GetObjectFromJsonFile();
             ProcessObjects();
 
-            return Items;
+            return Items.ToList();
         }
 
         private void GetObjectFromJsonFile()
@@ -96,16 +93,21 @@ namespace SourceCodeGenerator.Parser
                 item = Items[++index];
             }
 
-            var itemsWithObjectType = Items.Where(p => p.Types.Contains("Object")).ToList();
-            var itemsWithEmptyType = Items.Where(p => !p.Types.Any()).ToList();
-
-
             Console.WriteLine("Items.Count = " + Items.Count);
         }
 
         private void CopyObjects(ApiItem item, ApiItem sourceItem)
         {
-            var itemsToCopy = Items.Where(p => p.FullName.StartsWith(sourceItem.FullName + ".") && !item.Exclude.Any(q => q == p.Title)).ToList();
+            var itemsToCopy = Items.Where(p => p.FullName.StartsWith(item.FullName + ".") && !item.Exclude.Any(q => q == p.Title)).ToList();
+
+            int counter = 0;
+            if (sourceItem.FullName == "series")
+            {
+                var itemsToRemove = itemsToCopy.Where(p => p.Extends.Contains("series")).ToList();
+                                
+                foreach(var removeItem in itemsToRemove)
+                    itemsToCopy.RemoveAll(p => p.FullName.StartsWith(removeItem.FullName));
+            }
 
             foreach (var copy in itemsToCopy)
             {
@@ -146,8 +148,8 @@ namespace SourceCodeGenerator.Parser
                 {
                     apiItem.Extends = jExtends.Value<string>().Replace("{", "").Replace("}", "").Split(',').ToList();
 
-                    if (apiItem.Extends.Contains("series"))
-                        apiItem.Extends.Remove("series");
+                    //if (apiItem.Extends.Contains("series"))
+                    //    apiItem.Extends.Remove("series");
                 }
 
                 JToken jSince = doclet.SelectToken("since", false);
@@ -190,14 +192,6 @@ namespace SourceCodeGenerator.Parser
                     apiItem.Defaults = jDefault.Value<string>();
             }
 
-            if (apiItem.FullName == null)
-            {
-                missing++;
-            }
-
-            if (apiItem.Description == null)
-                missing++;
-
             if (string.IsNullOrWhiteSpace(apiItem.FullName))
                 if (!string.IsNullOrWhiteSpace(apiItem.Parent))
                     apiItem.FullName = apiItem.Parent + "." + apiItem.Title;
@@ -210,6 +204,9 @@ namespace SourceCodeGenerator.Parser
             JToken children = item.SelectToken("children", false);
             if (children == null)
                 return;
+
+            if(children.Any())
+                apiItem.HasChildren = true;
 
             foreach (var child in children)
             {
