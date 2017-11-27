@@ -524,7 +524,7 @@ public class HighchartsGenerator
 
     private string GetPropertyReturnType(ApiItem child, string propertyName)
     {
-        string returnType = child.IsParent ? propertyName : child.ReturnType;
+        string returnType = child.ReturnType;
 
         if (propertyName.ToLower() == "data" && child.Parent != null)
         {
@@ -559,7 +559,7 @@ public class HighchartsGenerator
         if (_propertyTypeMappings[propertyName] != null)
             return _propertyTypeMappings[propertyName].ToString();
 
-        if (returnType != null)
+        if (!string.IsNullOrEmpty(returnType))
             if (_typeMappings[returnType] != null)
                 return _typeMappings[returnType].ToString();
 
@@ -661,7 +661,10 @@ public class HighchartsGenerator
             if (child.ReturnType == "Array" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
-            return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+            if(child.HasChildren)
+                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+
+            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
         // Event (javascript function)
         if (child.ReturnType != null && (child.ReturnType.ToLower() == "function" || child.ReturnType.ToLower() == "string|function"))
@@ -695,10 +698,6 @@ public class HighchartsGenerator
             //{
             if (item.HasChildren)
                 GenerateClass(item);
-            else
-            {
-                int w = 7;
-            }
             //}
         }
     }
@@ -1023,8 +1022,8 @@ public class HighchartsGenerator
             return GetDefaultValueForEnum(item);
         }
 
-        if (!item.IsParent)
-        {
+        //if (!item.IsParent)
+        //{
             if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.Parent == null)
                 return defaults;
 
@@ -1094,9 +1093,9 @@ public class HighchartsGenerator
                 return "\"\"";
             if (defaults == null)
                 return "null";
-        }
-        else
-        {
+        //}
+        //else
+        //{
             //return String.Format("new {0}()", FirstCharToUpper(item.Title));
             if (_propertyInitMappings[item.FullName] != null)
             {
@@ -1119,9 +1118,13 @@ public class HighchartsGenerator
             if (item.FullName.ToLower().Contains("levels.datalabels"))
                 item.FullName = item.FullName.Replace("levels.", "");
 
-            return String.Format("new {0}()", GetClassNameFromItem(item));
+            if (item.HasChildren)
+                return String.Format("new {0}()", GetClassNameFromItem(item));
+            //else
+            //    return item.Defaults;
 
-        }
+
+        //}
 
         return defaults;
     }

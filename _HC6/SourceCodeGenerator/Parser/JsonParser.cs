@@ -129,6 +129,30 @@ namespace SourceCodeGenerator.Parser
             apiItem.Parent = parent;
             apiItem.Title = name;
 
+            //przenieść to niżej - doclet powinien być pierwszy ze względu na products
+            JToken meta = item.SelectToken("meta", false);
+            if (meta != null)
+            {
+                JToken jFullname = meta.SelectToken("fullname", false);
+                if (jFullname != null)
+                    apiItem.FullName = jFullname.Value<string>();
+
+                JToken jName = meta.SelectToken("name", false);
+                if (jName != null)
+                    apiItem.Title = jName.Value<string>();
+
+                JToken jDefault = meta.SelectToken("default", false);
+                if (jDefault != null)
+                    apiItem.Defaults = jDefault.Value<string>();
+            }
+
+            if (string.IsNullOrWhiteSpace(apiItem.FullName))
+                if (!string.IsNullOrWhiteSpace(apiItem.Parent))
+                    apiItem.FullName = apiItem.Parent + "." + apiItem.Title;
+                else
+                    apiItem.FullName = apiItem.Title;
+
+
             JToken doclet = item.SelectToken("doclet", false);
             if (doclet != null)
             {
@@ -173,30 +197,13 @@ namespace SourceCodeGenerator.Parser
                 {
                     JToken jNames = jType.SelectToken("names");
                     apiItem.Types = jNames.Select(t => (string)t).ToList();
+
+                    //tylko testowo
+                    apiItem.ReturnType = apiItem.Types[0];
                 }
             }
 
-            JToken meta = item.SelectToken("meta", false);
-            if (meta != null)
-            {
-                JToken jFullname = meta.SelectToken("fullname", false);
-                if (jFullname != null)
-                    apiItem.FullName = jFullname.Value<string>();
-
-                JToken jName = meta.SelectToken("name", false);
-                if (jName != null)
-                    apiItem.Title = jName.Value<string>();
-
-                JToken jDefault = meta.SelectToken("default", false);
-                if (jDefault != null)
-                    apiItem.Defaults = jDefault.Value<string>();
-            }
-
-            if (string.IsNullOrWhiteSpace(apiItem.FullName))
-                if (!string.IsNullOrWhiteSpace(apiItem.Parent))
-                    apiItem.FullName = apiItem.Parent + "." + apiItem.Title;
-                else
-                    apiItem.FullName = apiItem.Title;
+            
 
             Items.Add(apiItem);
             //Console.WriteLine(apiItem.Title + ": "+apiItem.FullName);
