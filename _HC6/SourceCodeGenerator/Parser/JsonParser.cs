@@ -44,7 +44,9 @@ namespace SourceCodeGenerator.Parser
                 if (string.IsNullOrWhiteSpace(item.Name) || item.Name == "_meta")
                     continue;
 
-                CreateApiItem(item.Name, item.Value);
+                //usunąć tego if'a
+                //if(item.Name == "plotOptions")
+                    CreateApiItem(item.Name, item.Value);
             }
         }
 
@@ -98,7 +100,12 @@ namespace SourceCodeGenerator.Parser
 
         private void CopyObjects(ApiItem item, ApiItem sourceItem)
         {
-            var itemsToCopy = Items.Where(p => p.FullName.StartsWith(item.FullName + ".") && !item.Exclude.Any(q => q == p.Title)).ToList();
+            var itemsToCopy = Items.Where(p => p.FullName.StartsWith(sourceItem.FullName + ".") &&
+            !item.Exclude.Any(q => 
+            {
+                var name = p.FullName.Replace(sourceItem.FullName + ".","");
+                return q == name.Split('.')[0];
+            })).ToList();
 
             int counter = 0;
             if (sourceItem.FullName == "series")
@@ -114,7 +121,7 @@ namespace SourceCodeGenerator.Parser
                 var newItem = copy.Clone();
 
                 newItem.Parent = item.FullName;
-                newItem.FullName = item.FullName + "." + copy.Title;
+                newItem.FullName = item.FullName + "." + copy.FullName.Replace(sourceItem.FullName + ".", "");
 
                 Items.Add(newItem);
 
