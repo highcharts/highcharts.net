@@ -10,100 +10,62 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsVector  : BaseObject
+	public partial class PlotOptionsvector  : BaseObject
 	{
-		public PlotOptionsVector()
+		public PlotOptionsvector()
 		{
-			LineWidth = LineWidth_DefaultValue = 2;
-			RotationOrigin = RotationOrigin_DefaultValue = center;
-			States = States_DefaultValue = null;
-			Tooltip = Tooltip_DefaultValue = null;
-			VectorLength = VectorLength_DefaultValue = 20;
-			Label = Label_DefaultValue = null;
+			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = null;
-			Point = Point_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Point = Point_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = "x";
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Keys = Keys_DefaultValue = new List<string>();
-			LinkedTo = LinkedTo_DefaultValue = null;
+			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
-			PointIntervalUnit = PointIntervalUnit_DefaultValue = null;
+			PointIntervalUnit = PointIntervalUnit_DefaultValue = "";
 			PointPlacement = PointPlacement_DefaultValue = "new PointPlacement()";
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = null;
-			Zones = Zones_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
+			Zones = Zones_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			LineWidth = LineWidth_DefaultValue = 0;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
+			Tooltip = Tooltip_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = false;
 			
 		}	
 		
 
 		/// <summary>
-		/// The line width for each vector arrow.
-		/// </summary>
-		public PlotOptionsVectorLineWidth LineWidth { get; set; }
-		private PlotOptionsVectorLineWidth LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// What part of the vector it should be rotated around. Can be one of`start`, `center` and `end`. When `start`, the vectors will start fromthe given [x, y] position, and when `end` the vectors will end in the[x, y] position.
-		/// </summary>
-		public PlotOptionsVectorRotationOrigin RotationOrigin { get; set; }
-		private PlotOptionsVectorRotationOrigin RotationOrigin_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsVectorStates States { get; set; }
-		private PlotOptionsVectorStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsVectorTooltip Tooltip { get; set; }
-		private PlotOptionsVectorTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Maximum length of the arrows in the vector plot. The individual arrowlength is computed between 0 and this value.
-		/// </summary>
-		public PlotOptionsVectorVectorLength VectorLength { get; set; }
-		private PlotOptionsVectorVectorLength VectorLength_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsSeriesLabel Label { get; set; }
-		private PlotOptionsSeriesLabel Label_DefaultValue { get; set; }
+		public PlotOptionsvectorlabel Label { get; set; }
+		private PlotOptionsvectorlabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -137,15 +99,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsSeriesEvents Events { get; set; }
-		private PlotOptionsSeriesEvents Events_DefaultValue { get; set; }
+		public PlotOptionsvectorevents Events { get; set; }
+		private PlotOptionsvectorevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsSeriesPoint Point { get; set; }
-		private PlotOptionsSeriesPoint Point_DefaultValue { get; set; }
+		public PlotOptionsvectorpoint Point { get; set; }
+		private PlotOptionsvectorpoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public PlotOptionsvectordataLabels DataLabels { get; set; }
+		private PlotOptionsvectordataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -158,8 +127,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsSeriesStates States { get; set; }
-		private PlotOptionsSeriesStates States_DefaultValue { get; set; }
+		public PlotOptionsvectorstates States { get; set; }
+		private PlotOptionsvectorstates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -347,15 +316,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsSeriesTooltip Tooltip { get; set; }
-		private PlotOptionsSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsvectortooltip Tooltip { get; set; }
+		private PlotOptionsvectortooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsSeriesZone> Zones { get; set; }
-		private List<PlotOptionsSeriesZone> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsvectorzones> Zones { get; set; }
+		private List<PlotOptionsvectorzones> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -375,8 +344,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsScatterFindNearestPointBy FindNearestPointBy { get; set; }
-		private PlotOptionsScatterFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		public PlotOptionsvectorfindNearestPointBy FindNearestPointBy { get; set; }
+		private PlotOptionsvectorfindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from <a class="internal">#tooltip</a>.Overridable properties are `headerFormat`, `pointFormat`, `yDecimals`,`xDateFormat`, `yPrefix` and `ySuffix`. Unlike other series, ina scatter plot the series.name by default shows in the headerFormatand point.x and point.y in the pointFormat.
+		/// </summary>
+		public PlotOptionsvectortooltip Tooltip { get; set; }
+		private PlotOptionsvectortooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -390,11 +366,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (RotationOrigin != RotationOrigin_DefaultValue) h.Add("rotationOrigin",RotationOrigin);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
@@ -402,6 +373,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
@@ -439,6 +411,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			
 

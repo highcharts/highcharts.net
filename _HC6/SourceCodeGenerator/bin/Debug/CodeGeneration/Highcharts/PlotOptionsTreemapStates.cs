@@ -10,45 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsTreemapStates  : BaseObject
+	public partial class PlotOptionstreemapstates  : BaseObject
 	{
-		public PlotOptionsTreemapStates()
+		public PlotOptionstreemapstates()
 		{
-			Hover = Hover_DefaultValue = null;
-			Normal = Normal_DefaultValue = null;
-			Hover = Hover_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// Options for the hovered series
-		/// </summary>
-		public PlotOptionsTreemapStatesHover Hover { get; set; }
-		private PlotOptionsTreemapStatesHover Hover_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsHeatmapStatesNormal Normal { get; set; }
-		private PlotOptionsHeatmapStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsHeatmapStatesHover Hover { get; set; }
-		private PlotOptionsHeatmapStatesHover Hover_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 
 			return h;

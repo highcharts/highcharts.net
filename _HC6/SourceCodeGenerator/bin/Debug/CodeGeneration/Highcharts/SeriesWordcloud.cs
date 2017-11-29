@@ -10,43 +10,42 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class SeriesWordcloud  : BaseObject
+	public partial class Serieswordcloud  : BaseObject
 	{
-		public SeriesWordcloud()
+		public Serieswordcloud()
 		{
-			Data = Data_DefaultValue = new List<SeriesWordcloudData>();
-			Label = Label_DefaultValue = null;
+			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = null;
-			Point = Point_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Point = Point_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
-			LinkedTo = LinkedTo_DefaultValue = null;
+			LinkedTo = LinkedTo_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			Marker = Marker_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 50;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = False;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
@@ -57,27 +56,20 @@ namespace Highsoft.Web.Mvc.Charts
 			Clip = Clip_DefaultValue = False;
 			ColorByPoint = ColorByPoint_DefaultValue = True;
 			PlacementStrategy = PlacementStrategy_DefaultValue = center;
-			Rotation = Rotation_DefaultValue = null;
+			Rotation = Rotation_DefaultValue = "";
 			ShowInLegend = ShowInLegend_DefaultValue = False;
 			Spiral = Spiral_DefaultValue = rectangular;
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","Impact},{ sans-serif"}};
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// An array of data points for the series. For the `wordcloud` seriestype, points can be given in the following ways:1.  An array of arrays with 2 values. In this case, the valuescorrespond to `name,weight`.  ```js    data: [        ['Lorem', 4],        ['Ipsum', 1]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.arearange.turboThreshold),this option is not available. ```js    data: [{        name: "Lorem",        weight: 4    }, {        name: "Ipsum",        weight: 1    }] ```
-		/// </summary>
-		public List<SeriesWordcloudData> Data { get; set; }
-		private List<SeriesWordcloudData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsSeriesLabel Label { get; set; }
-		private PlotOptionsSeriesLabel Label_DefaultValue { get; set; }
+		public Serieswordcloudlabel Label { get; set; }
+		private Serieswordcloudlabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -97,15 +89,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsSeriesEvents Events { get; set; }
-		private PlotOptionsSeriesEvents Events_DefaultValue { get; set; }
+		public Serieswordcloudevents Events { get; set; }
+		private Serieswordcloudevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsSeriesPoint Point { get; set; }
-		private PlotOptionsSeriesPoint Point_DefaultValue { get; set; }
+		public Serieswordcloudpoint Point { get; set; }
+		private Serieswordcloudpoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,8 +110,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsSeriesStates States { get; set; }
-		private PlotOptionsSeriesStates States_DefaultValue { get; set; }
+		public Serieswordcloudstates States { get; set; }
+		private Serieswordcloudstates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -244,8 +236,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsSeriesTooltip Tooltip { get; set; }
-		private PlotOptionsSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public Serieswordcloudtooltip Tooltip { get; set; }
+		private Serieswordcloudtooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -279,22 +271,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnStates States { get; set; }
-		private PlotOptionsColumnStates States_DefaultValue { get; set; }
+		public Serieswordcloudstates States { get; set; }
+		private Serieswordcloudstates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnStickyTracking StickyTracking { get; set; }
-		private PlotOptionsColumnStickyTracking StickyTracking_DefaultValue { get; set; }
+		public SerieswordcloudstickyTracking StickyTracking { get; set; }
+		private SerieswordcloudstickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnTooltip Tooltip { get; set; }
-		private PlotOptionsColumnTooltip Tooltip_DefaultValue { get; set; }
+		public Serieswordcloudtooltip Tooltip { get; set; }
+		private Serieswordcloudtooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -342,50 +334,50 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsWordcloudBorderWidth BorderWidth { get; set; }
-		private PlotOptionsWordcloudBorderWidth BorderWidth_DefaultValue { get; set; }
+		public SerieswordcloudborderWidth BorderWidth { get; set; }
+		private SerieswordcloudborderWidth BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsWordcloudClip Clip { get; set; }
-		private PlotOptionsWordcloudClip Clip_DefaultValue { get; set; }
+		public Serieswordcloudclip Clip { get; set; }
+		private Serieswordcloudclip Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
 		/// </summary>
-		public PlotOptionsWordcloudColorByPoint ColorByPoint { get; set; }
-		private PlotOptionsWordcloudColorByPoint ColorByPoint_DefaultValue { get; set; }
+		public SerieswordcloudcolorByPoint ColorByPoint { get; set; }
+		private SerieswordcloudcolorByPoint ColorByPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// This option decides which algorithm is used for placement, and rotationof a word. The choice of algorith is therefore a crucial part of theresulting layout of the wordcloud.It is possible for users to add their own custom placement strategiesfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-placement-strategies)
 		/// </summary>
-		public PlotOptionsWordcloudPlacementStrategy PlacementStrategy { get; set; }
-		private PlotOptionsWordcloudPlacementStrategy PlacementStrategy_DefaultValue { get; set; }
+		public SerieswordcloudplacementStrategy PlacementStrategy { get; set; }
+		private SerieswordcloudplacementStrategy PlacementStrategy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Rotation options for the words in the wordcloud.
 		/// </summary>
-		public PlotOptionsWordcloudRotation Rotation { get; set; }
-		private PlotOptionsWordcloudRotation Rotation_DefaultValue { get; set; }
+		public Serieswordcloudrotation Rotation { get; set; }
+		private Serieswordcloudrotation Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsWordcloudShowInLegend ShowInLegend { get; set; }
-		private PlotOptionsWordcloudShowInLegend ShowInLegend_DefaultValue { get; set; }
+		public SerieswordcloudshowInLegend ShowInLegend { get; set; }
+		private SerieswordcloudshowInLegend ShowInLegend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Spiral used for placing a word after the inital position experienced acollision with either another word or the borders.It is possible for users to add their own custom spiralling algorithmsfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
 		/// </summary>
-		public PlotOptionsWordcloudSpiral Spiral { get; set; }
-		private PlotOptionsWordcloudSpiral Spiral_DefaultValue { get; set; }
+		public Serieswordcloudspiral Spiral { get; set; }
+		private Serieswordcloudspiral Spiral_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -398,15 +390,14 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsWordcloudTooltip Tooltip { get; set; }
-		private PlotOptionsWordcloudTooltip Tooltip_DefaultValue { get; set; }
+		public Serieswordcloudtooltip Tooltip { get; set; }
+		private Serieswordcloudtooltip Tooltip_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);

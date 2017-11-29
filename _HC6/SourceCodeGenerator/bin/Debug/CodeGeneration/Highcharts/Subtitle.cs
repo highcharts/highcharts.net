@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Floating = Floating_DefaultValue = false;
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = null;
+			VerticalAlign = VerticalAlign_DefaultValue = "";
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			

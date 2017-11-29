@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsWindbarbTooltip  : BaseObject
+	public partial class PlotOptionswindbarbtooltip  : BaseObject
 	{
-		public PlotOptionsWindbarbTooltip()
+		public PlotOptionswindbarbtooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = <b>{series.name}</b>: {point.value} ({point.beaufort})<br/>;
 			
 		}	
-		
-
-		/// <summary>
-		/// The default point format for the wind barb tooltip. Note the `point.beaufort` property that refers to the Beaufort wind scale. Thenames can be internationalized by modifying`Highcharts.seriesTypes.windbarb.prototype.beaufortNames`.
-		/// </summary>
-		public PlotOptionsWindbarbTooltipPointFormat PointFormat { get; set; }
-		private PlotOptionsWindbarbTooltipPointFormat PointFormat_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

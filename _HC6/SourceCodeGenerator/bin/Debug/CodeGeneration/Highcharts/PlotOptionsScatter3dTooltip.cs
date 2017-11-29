@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsScatter3dTooltip  : BaseObject
+	public partial class PlotOptionsscatter3dtooltip  : BaseObject
 	{
-		public PlotOptionsScatter3dTooltip()
+		public PlotOptionsscatter3dtooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>z: <b>{point.z}</b><br/>;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsScatter3dTooltipPointFormat PointFormat { get; set; }
-		private PlotOptionsScatter3dTooltipPointFormat PointFormat_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

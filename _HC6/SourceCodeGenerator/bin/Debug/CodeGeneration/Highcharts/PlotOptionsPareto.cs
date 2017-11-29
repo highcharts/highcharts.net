@@ -10,60 +10,53 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsPareto  : BaseObject
+	public partial class PlotOptionspareto  : BaseObject
 	{
-		public PlotOptionsPareto()
+		public PlotOptionspareto()
 		{
-			ZIndex = ZIndex_DefaultValue = 3;
-			Label = Label_DefaultValue = null;
+			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = null;
-			Marker = Marker_DefaultValue = null;
-			Point = Point_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Marker = Marker_DefaultValue = "";
+			Point = Point_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = "";
 			DashStyle = DashStyle_DefaultValue = "Solid";
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Linecap = Linecap_DefaultValue = "round";
-			LinkedTo = LinkedTo_DefaultValue = null;
+			LinkedTo = LinkedTo_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = null;
-			ConnectEnds = ConnectEnds_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
+			ConnectEnds = ConnectEnds_DefaultValue = "";
 			Linecap = Linecap_DefaultValue = "round";
 			
 		}	
 		
 
 		/// <summary>
-		/// Higher zIndex than column series to draw line above shapes.
-		/// </summary>
-		public PlotOptionsParetoZIndex ZIndex { get; set; }
-		private PlotOptionsParetoZIndex ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsSeriesLabel Label { get; set; }
-		private PlotOptionsSeriesLabel Label_DefaultValue { get; set; }
+		public PlotOptionsparetolabel Label { get; set; }
+		private PlotOptionsparetolabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -97,22 +90,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsSeriesEvents Events { get; set; }
-		private PlotOptionsSeriesEvents Events_DefaultValue { get; set; }
+		public PlotOptionsparetoevents Events { get; set; }
+		private PlotOptionsparetoevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
 		/// </summary>
-		public PlotOptionsSeriesMarker Marker { get; set; }
-		private PlotOptionsSeriesMarker Marker_DefaultValue { get; set; }
+		public PlotOptionsparetomarker Marker { get; set; }
+		private PlotOptionsparetomarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsSeriesPoint Point { get; set; }
-		private PlotOptionsSeriesPoint Point_DefaultValue { get; set; }
+		public PlotOptionsparetopoint Point { get; set; }
+		private PlotOptionsparetopoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public PlotOptionsparetodataLabels DataLabels { get; set; }
+		private PlotOptionsparetodataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -125,8 +125,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsSeriesStates States { get; set; }
-		private PlotOptionsSeriesStates States_DefaultValue { get; set; }
+		public PlotOptionsparetostates States { get; set; }
+		private PlotOptionsparetostates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -272,8 +272,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsSeriesTooltip Tooltip { get; set; }
-		private PlotOptionsSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsparetotooltip Tooltip { get; set; }
+		private PlotOptionsparetotooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -294,7 +294,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
@@ -303,6 +302,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Navigation()
 		{
-			ButtonOptions = ButtonOptions_DefaultValue = null;
+			ButtonOptions = ButtonOptions_DefaultValue = "";
 			MenuStyle = MenuStyle_DefaultValue = new Hashtable{{ "border", "1px solid #999999"},{ "background", "#ffffff"},{ "padding", "5px 0" }};
 			MenuItemStyle = MenuItemStyle_DefaultValue = new Hashtable{{ "padding", "0.5em 1em"},{ "color", "#333333"},{ "background", "none" }};
 			MenuItemHoverStyle = MenuItemHoverStyle_DefaultValue = new Hashtable{{ "background", "#335cad"},{ "color", "#ffffff" }};
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A collection of options for buttons appearing in the exporting module.In styled mode, the buttons are styled with the `.highcharts-contextbutton` and `.highcharts-button-symbol` class.
 		/// </summary>
-		public NavigationButtonOptions ButtonOptions { get; set; }
-		private NavigationButtonOptions ButtonOptions_DefaultValue { get; set; }
+		public NavigationbuttonOptions ButtonOptions { get; set; }
+		private NavigationbuttonOptions ButtonOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>

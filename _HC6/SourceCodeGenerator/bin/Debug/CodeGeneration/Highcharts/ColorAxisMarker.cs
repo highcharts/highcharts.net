@@ -10,36 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class ColorAxisMarker  : BaseObject
+	public partial class ColorAxismarker  : BaseObject
 	{
-		public ColorAxisMarker()
+		public ColorAxismarker()
 		{
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Color = Color_DefaultValue = "#999999";
 			
 		}	
-		
-
-		/// <summary>
-		/// Animation for the marker as it moves between values. Set to `false`to disable animation. Defaults to `{ duration: 50 }`.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// The color of the marker.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			
 
 			return h;

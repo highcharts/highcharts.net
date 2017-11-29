@@ -10,45 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class NavigationMenuStyle  : BaseObject
+	public partial class NavigationmenuStyle  : BaseObject
 	{
-		public NavigationMenuStyle()
+		public NavigationmenuStyle()
 		{
-			Border = Border_DefaultValue = 1px solid #999999;
-			Background = Background_DefaultValue = #ffffff;
-			Padding = Padding_DefaultValue = 5px 0;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public NavigationMenuStyleBorder Border { get; set; }
-		private NavigationMenuStyleBorder Border_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public NavigationMenuStyleBackground Background { get; set; }
-		private NavigationMenuStyleBackground Background_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public NavigationMenuStylePadding Padding { get; set; }
-		private NavigationMenuStylePadding Padding_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Border != Border_DefaultValue) h.Add("border",Border);
-			if (Background != Background_DefaultValue) h.Add("background",Background);
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			
 
 			return h;

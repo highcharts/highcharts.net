@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public NoData()
 		{
 			Position = Position_DefaultValue = new Hashtable();
-			Attr = Attr_DefaultValue = null;
+			Attr = Attr_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			Style = Style_DefaultValue = null;
+			Style = Style_DefaultValue = "";
 			
 		}	
 		
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the no-data label.
 		/// </summary>
-		public NoDataStyle Style { get; set; }
-		private NoDataStyle Style_DefaultValue { get; set; }
+		public NoDatastyle Style { get; set; }
+		private NoDatastyle Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

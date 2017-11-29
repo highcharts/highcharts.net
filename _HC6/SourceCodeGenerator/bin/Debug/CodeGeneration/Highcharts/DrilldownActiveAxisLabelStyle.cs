@@ -10,54 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class DrilldownActiveAxisLabelStyle  : BaseObject
+	public partial class DrilldownactiveAxisLabelStyle  : BaseObject
 	{
-		public DrilldownActiveAxisLabelStyle()
+		public DrilldownactiveAxisLabelStyle()
 		{
-			Cursor = Cursor_DefaultValue = pointer;
-			Color = Color_DefaultValue = #003399;
-			FontWeight = FontWeight_DefaultValue = bold;
-			TextDecoration = TextDecoration_DefaultValue = underline;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public DrilldownActiveAxisLabelStyleCursor Cursor { get; set; }
-		private DrilldownActiveAxisLabelStyleCursor Cursor_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public DrilldownActiveAxisLabelStyleColor Color { get; set; }
-		private DrilldownActiveAxisLabelStyleColor Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public DrilldownActiveAxisLabelStyleFontWeight FontWeight { get; set; }
-		private DrilldownActiveAxisLabelStyleFontWeight FontWeight_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public DrilldownActiveAxisLabelStyleTextDecoration TextDecoration { get; set; }
-		private DrilldownActiveAxisLabelStyleTextDecoration TextDecoration_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
-			if (TextDecoration != TextDecoration_DefaultValue) h.Add("textDecoration",TextDecoration);
 			
 
 			return h;

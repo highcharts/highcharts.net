@@ -16,15 +16,15 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Description = Description_DefaultValue = "undefined";
 			TypeDescription = TypeDescription_DefaultValue = "undefined";
-			Events = Events_DefaultValue = null;
+			Events = Events_DefaultValue = "";
 			ParallelCoordinates = ParallelCoordinates_DefaultValue = False;
-			ParallelAxes = ParallelAxes_DefaultValue = null;
+			ParallelAxes = ParallelAxes_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			ColorCount = ColorCount_DefaultValue = 10;
 			DefaultSeriesType = DefaultSeriesType_DefaultValue = "line";
 			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
 			Spacing = Spacing_DefaultValue = new List<double> {10, 10, 15, 10};
-			ResetZoomButton = ResetZoomButton_DefaultValue = null;
+			ResetZoomButton = ResetZoomButton_DefaultValue = "";
 			Width = Width_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "#335cad";
@@ -32,13 +32,13 @@ namespace Highsoft.Web.Mvc.Charts
 			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
 			AlignTicks = AlignTicks_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			ClassName = ClassName_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
 			Margin = Margin_DefaultValue = new double[]{};
 			MarginBottom = MarginBottom_DefaultValue = null;
 			MarginLeft = MarginLeft_DefaultValue = null;
 			MarginRight = MarginRight_DefaultValue = null;
 			MarginTop = MarginTop_DefaultValue = null;
-			PanKey = PanKey_DefaultValue = null;
+			PanKey = PanKey_DefaultValue = "";
 			Panning = Panning_DefaultValue = false;
 			PinchType = PinchType_DefaultValue = "null";
 			Inverted = Inverted_DefaultValue = false;
@@ -49,18 +49,18 @@ namespace Highsoft.Web.Mvc.Charts
 			PlotShadow = PlotShadow_DefaultValue = new Shadow() { Enabled = false };
 			Polar = Polar_DefaultValue = false;
 			Reflow = Reflow_DefaultValue = true;
-			RenderTo = RenderTo_DefaultValue = null;
+			RenderTo = RenderTo_DefaultValue = "";
 			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(51,92,173,0.25)";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShowAxes = ShowAxes_DefaultValue = null;
+			ShowAxes = ShowAxes_DefaultValue = "";
 			SpacingBottom = SpacingBottom_DefaultValue = 15;
 			SpacingLeft = SpacingLeft_DefaultValue = 10;
 			SpacingRight = SpacingRight_DefaultValue = 10;
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","\"Lucida Grande\"},{ \"Lucida Sans Unicode\"},{ Verdana},{ Arial},{ Helvetica},{ sans-serif"},{"fontSize","12px"}};
-			Type = Type_DefaultValue = ChartType.Bar;
-			ZoomType = ZoomType_DefaultValue = null;
-			Options3d = Options3d_DefaultValue = null;
+			Type = Type_DefaultValue = Charttype.Bar;
+			ZoomType = ZoomType_DefaultValue = "";
+			Options3d = Options3d_DefaultValue = "";
 			
 		}	
 		
@@ -82,22 +82,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Event listeners for the chart.
 		/// </summary>
-		public ChartEvents Events { get; set; }
-		private ChartEvents Events_DefaultValue { get; set; }
+		public Chartevents Events { get; set; }
+		private Chartevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Flag to render charts as a parallel coordinates plot. In a parallelcoordinates plot (||-coords) by default all required yAxes are generatedand the legend is disabled. This feature requires`modules/parallel-coordinates.js`.
 		/// </summary>
-		public ChartParallelCoordinates ParallelCoordinates { get; set; }
-		private ChartParallelCoordinates ParallelCoordinates_DefaultValue { get; set; }
+		public ChartparallelCoordinates ParallelCoordinates { get; set; }
+		private ChartparallelCoordinates ParallelCoordinates_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Common options for all yAxes rendered in a parallel coordinates plot.This feature requires `modules/parallel-coordinates.js`.The default options are:<pre>parallelAxes: {lineWidth: 1,       // classic mode onlygridlinesWidth: 0,  // classic mode onlytitle: {text: '',reserveSpace: false},labels: {x: 0,y: 0,align: 'center',reserveSpace: false},offset: 0}</pre>
 		/// </summary>
-		public ChartParallelAxes ParallelAxes { get; set; }
-		private ChartParallelAxes ParallelAxes_DefaultValue { get; set; }
+		public ChartparallelAxes ParallelAxes { get; set; }
+		private ChartparallelAxes ParallelAxes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -138,8 +138,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The button that appears after a selection zoom, allowing the userto reset zoom.
 		/// </summary>
-		public ChartResetZoomButton ResetZoomButton { get; set; }
-		private ChartResetZoomButton ResetZoomButton_DefaultValue { get; set; }
+		public ChartresetZoomButton ResetZoomButton { get; set; }
+		private ChartresetZoomButton ResetZoomButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -376,8 +376,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The default series type for the chart. Can be any of the chart typeslisted under [plotOptions](#plotOptions).
 		/// </summary>
-		public ChartType Type { get; set; }
-		private ChartType Type_DefaultValue { get; set; }
+		public Charttype Type { get; set; }
+		private Charttype Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -390,8 +390,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options to render charts in 3 dimensions. This feature requires`highcharts-3d.js`, found in the download package or online at[code.highcharts.com/highcharts-3d.js](http://code.highcharts.com/highcharts-3d.js).
 		/// </summary>
-		public ChartOptions3d Options3d { get; set; }
-		private ChartOptions3d Options3d_DefaultValue { get; set; }
+		public Chartoptions3d Options3d { get; set; }
+		private Chartoptions3d Options3d_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

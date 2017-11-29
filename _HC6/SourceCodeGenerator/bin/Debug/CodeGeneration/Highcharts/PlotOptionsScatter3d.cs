@@ -10,32 +10,32 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsScatter3d  : BaseObject
+	public partial class PlotOptionsscatter3d  : BaseObject
 	{
-		public PlotOptionsScatter3d()
+		public PlotOptionsscatter3d()
 		{
-			Tooltip = Tooltip_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
-			Label = Label_DefaultValue = null;
+			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = null;
-			Marker = Marker_DefaultValue = null;
-			Point = Point_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Marker = Marker_DefaultValue = "";
+			Point = Point_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = "x";
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = "";
 			DashStyle = DashStyle_DefaultValue = "Solid";
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -43,41 +43,35 @@ namespace Highsoft.Web.Mvc.Charts
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Keys = Keys_DefaultValue = new List<string>();
 			Linecap = Linecap_DefaultValue = "round";
-			LinkedTo = LinkedTo_DefaultValue = null;
+			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
-			PointIntervalUnit = PointIntervalUnit_DefaultValue = null;
+			PointIntervalUnit = PointIntervalUnit_DefaultValue = "";
 			PointPlacement = PointPlacement_DefaultValue = "new PointPlacement()";
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Stacking = Stacking_DefaultValue = "null";
-			Step = Step_DefaultValue = null;
+			Step = Step_DefaultValue = "";
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = null;
-			Zones = Zones_DefaultValue = null;
-			ConnectEnds = ConnectEnds_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
+			Zones = Zones_DefaultValue = "";
+			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Linecap = Linecap_DefaultValue = "round";
 			LineWidth = LineWidth_DefaultValue = 0;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
-			Marker = Marker_DefaultValue = null;
+			Marker = Marker_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = false;
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsScatter3dTooltip Tooltip { get; set; }
-		private PlotOptionsScatter3dTooltip Tooltip_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -89,8 +83,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsSeriesLabel Label { get; set; }
-		private PlotOptionsSeriesLabel Label_DefaultValue { get; set; }
+		public PlotOptionsscatter3dlabel Label { get; set; }
+		private PlotOptionsscatter3dlabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -124,22 +118,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsSeriesEvents Events { get; set; }
-		private PlotOptionsSeriesEvents Events_DefaultValue { get; set; }
+		public PlotOptionsscatter3devents Events { get; set; }
+		private PlotOptionsscatter3devents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
 		/// </summary>
-		public PlotOptionsSeriesMarker Marker { get; set; }
-		private PlotOptionsSeriesMarker Marker_DefaultValue { get; set; }
+		public PlotOptionsscatter3dmarker Marker { get; set; }
+		private PlotOptionsscatter3dmarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsSeriesPoint Point { get; set; }
-		private PlotOptionsSeriesPoint Point_DefaultValue { get; set; }
+		public PlotOptionsscatter3dpoint Point { get; set; }
+		private PlotOptionsscatter3dpoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public PlotOptionsscatter3ddataLabels DataLabels { get; set; }
+		private PlotOptionsscatter3ddataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -159,8 +160,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsSeriesStates States { get; set; }
-		private PlotOptionsSeriesStates States_DefaultValue { get; set; }
+		public PlotOptionsscatter3dstates States { get; set; }
+		private PlotOptionsscatter3dstates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -390,15 +391,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsSeriesTooltip Tooltip { get; set; }
-		private PlotOptionsSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsscatter3dtooltip Tooltip { get; set; }
+		private PlotOptionsscatter3dtooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsSeriesZone> Zones { get; set; }
-		private List<PlotOptionsSeriesZone> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsscatter3dzones> Zones { get; set; }
+		private List<PlotOptionsscatter3dzones> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -432,15 +433,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsScatterFindNearestPointBy FindNearestPointBy { get; set; }
-		private PlotOptionsScatterFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		public PlotOptionsscatter3dfindNearestPointBy FindNearestPointBy { get; set; }
+		private PlotOptionsscatter3dfindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsScatterMarker Marker { get; set; }
-		private PlotOptionsScatterMarker Marker_DefaultValue { get; set; }
+		public PlotOptionsscatter3dmarker Marker { get; set; }
+		private PlotOptionsscatter3dmarker Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from <a class="internal">#tooltip</a>.Overridable properties are `headerFormat`, `pointFormat`, `yDecimals`,`xDateFormat`, `yPrefix` and `ySuffix`. Unlike other series, ina scatter plot the series.name by default shows in the headerFormatand point.x and point.y in the pointFormat.
+		/// </summary>
+		public PlotOptionsscatter3dtooltip Tooltip { get; set; }
+		private PlotOptionsscatter3dtooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -454,7 +462,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
@@ -464,6 +471,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
@@ -511,6 +519,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			
 

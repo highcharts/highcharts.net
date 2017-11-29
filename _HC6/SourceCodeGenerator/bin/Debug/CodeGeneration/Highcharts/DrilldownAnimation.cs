@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class DrilldownAnimation  : BaseObject
+	public partial class Drilldownanimation  : BaseObject
 	{
-		public DrilldownAnimation()
+		public Drilldownanimation()
 		{
-			Duration = Duration_DefaultValue = 500;
 			
 		}	
-		
-
-		/// <summary>
-		/// Duration for the drilldown animation.
-		/// </summary>
-		public DrilldownAnimationDuration Duration { get; set; }
-		private DrilldownAnimationDuration Duration_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
 			
 
 			return h;

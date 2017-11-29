@@ -10,13 +10,10 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsSunburstDataLabels  : BaseObject
+	public partial class PlotOptionssunburstdataLabels  : BaseObject
 	{
-		public PlotOptionsSunburstDataLabels()
+		public PlotOptionssunburstdataLabels()
 		{
-			Defer = Defer_DefaultValue = True;
-			Style = Style_DefaultValue = null;
-			RotationMode = RotationMode_DefaultValue = perpendicular;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
@@ -25,16 +22,16 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = 5;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
-			Format = Format_DefaultValue = null;
-			BackgroundColor = BackgroundColor_DefaultValue = null;
+			Format = Format_DefaultValue = "";
+			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "undefined";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			Inside = Inside_DefaultValue = null;
+			Inside = Inside_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = "justify";
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;
@@ -43,27 +40,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSunburstDataLabelsDefer Defer { get; set; }
-		private PlotOptionsSunburstDataLabelsDefer Defer_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSunburstDataLabelsStyle Style { get; set; }
-		private PlotOptionsSunburstDataLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Decides how the data label will be rotated according to the perimeterof the sunburst. It can either be parallel or perpendicular to theperimeter.`series.rotation` takes precedence over `rotationMode`.
-		/// </summary>
-		public PlotOptionsSunburstDataLabelsRotationMode RotationMode { get; set; }
-		private PlotOptionsSunburstDataLabelsRotationMode RotationMode_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Callback JavaScript function to format the data label. Note thatif a `format` is defined, the format takes precedence and the formatteris ignored. Available data are:<table><tbody><tr><td>`this.percentage`</td><td>Stacked series and pies only. The point's percentage of thetotal.</td></tr><tr><td>`this.point`</td><td>The point object. The point name, if defined, is availablethrough `this.point.name`.</td></tr><tr><td>`this.series`:</td><td>The series object. The series name is available through `this.series.name`.</td></tr><tr><td>`this.total`</td><td>Stacked series only. The total value at this point's x value.</td></tr><tr><td>`this.x`:</td><td>The x value.</td></tr><tr><td>`this.y`:</td><td>The y value.</td></tr></tbody></table>
@@ -230,9 +206,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode",RotationMode);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);

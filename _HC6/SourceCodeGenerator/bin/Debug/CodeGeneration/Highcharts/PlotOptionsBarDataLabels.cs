@@ -10,36 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsBarDataLabels  : BaseObject
+	public partial class PlotOptionsbardataLabels  : BaseObject
 	{
-		public PlotOptionsBarDataLabels()
+		public PlotOptionsbardataLabels()
 		{
-			Align = Align_DefaultValue = "left";
-			X = X_DefaultValue = 5;
 			
 		}	
-		
-
-		/// <summary>
-		/// Alignment of the data label relative to the data point.
-		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// The x position of the data label relative to the data point.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
-			if (X != X_DefaultValue) h.Add("x",X);
 			
 
 			return h;

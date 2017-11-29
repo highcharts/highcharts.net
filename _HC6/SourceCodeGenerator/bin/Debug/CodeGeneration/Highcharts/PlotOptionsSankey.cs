@@ -10,116 +10,54 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsSankey  : BaseObject
+	public partial class PlotOptionssankey  : BaseObject
 	{
-		public PlotOptionsSankey()
+		public PlotOptionssankey()
 		{
-			ColorByPoint = ColorByPoint_DefaultValue = True;
-			CurveFactor = CurveFactor_DefaultValue = 0.33;
-			LinkOpacity = LinkOpacity_DefaultValue = 0.5;
-			NodeWidth = NodeWidth_DefaultValue = 20;
-			NodePadding = NodePadding_DefaultValue = 10;
-			ShowInLegend = ShowInLegend_DefaultValue = False;
-			States = States_DefaultValue = null;
-			Tooltip = Tooltip_DefaultValue = null;
-			Label = Label_DefaultValue = null;
+			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = null;
-			Point = Point_DefaultValue = null;
-			States = States_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Point = Point_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Keys = Keys_DefaultValue = new List<string>();
-			LinkedTo = LinkedTo_DefaultValue = null;
+			LinkedTo = LinkedTo_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			Marker = Marker_DefaultValue = true;
 			MinPointLength = MinPointLength_DefaultValue = 0;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = False;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
-			DataGrouping = DataGrouping_DefaultValue = null;
+			DataGrouping = DataGrouping_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyColorByPoint ColorByPoint { get; set; }
-		private PlotOptionsSankeyColorByPoint ColorByPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Higher numbers makes the links in a sankey diagram render more curved.A `curveFactor` of 0 makes the lines straight.
-		/// </summary>
-		public PlotOptionsSankeyCurveFactor CurveFactor { get; set; }
-		private PlotOptionsSankeyCurveFactor CurveFactor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Opacity for the links between nodes in the sankey diagram.
-		/// </summary>
-		public PlotOptionsSankeyLinkOpacity LinkOpacity { get; set; }
-		private PlotOptionsSankeyLinkOpacity LinkOpacity_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel width of each node in a sankey diagram, or the height in casethe chart is inverted.
-		/// </summary>
-		public PlotOptionsSankeyNodeWidth NodeWidth { get; set; }
-		private PlotOptionsSankeyNodeWidth NodeWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The padding between nodes in a sankey diagram, in pixels.
-		/// </summary>
-		public PlotOptionsSankeyNodePadding NodePadding { get; set; }
-		private PlotOptionsSankeyNodePadding NodePadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyShowInLegend ShowInLegend { get; set; }
-		private PlotOptionsSankeyShowInLegend ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyStates States { get; set; }
-		private PlotOptionsSankeyStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyTooltip Tooltip { get; set; }
-		private PlotOptionsSankeyTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsSeriesLabel Label { get; set; }
-		private PlotOptionsSeriesLabel Label_DefaultValue { get; set; }
+		public PlotOptionssankeylabel Label { get; set; }
+		private PlotOptionssankeylabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -146,22 +84,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsSeriesEvents Events { get; set; }
-		private PlotOptionsSeriesEvents Events_DefaultValue { get; set; }
+		public PlotOptionssankeyevents Events { get; set; }
+		private PlotOptionssankeyevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsSeriesPoint Point { get; set; }
-		private PlotOptionsSeriesPoint Point_DefaultValue { get; set; }
+		public PlotOptionssankeypoint Point { get; set; }
+		private PlotOptionssankeypoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public PlotOptionssankeydataLabels DataLabels { get; set; }
+		private PlotOptionssankeydataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsSeriesStates States { get; set; }
-		private PlotOptionsSeriesStates States_DefaultValue { get; set; }
+		public PlotOptionssankeystates States { get; set; }
+		private PlotOptionssankeystates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -286,8 +231,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsSeriesTooltip Tooltip { get; set; }
-		private PlotOptionsSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionssankeytooltip Tooltip { get; set; }
+		private PlotOptionssankeytooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -307,22 +252,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnStates States { get; set; }
-		private PlotOptionsColumnStates States_DefaultValue { get; set; }
+		public PlotOptionssankeystates States { get; set; }
+		private PlotOptionssankeystates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnStickyTracking StickyTracking { get; set; }
-		private PlotOptionsColumnStickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionssankeydataLabels DataLabels { get; set; }
+		private PlotOptionssankeydataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnTooltip Tooltip { get; set; }
-		private PlotOptionsColumnTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionssankeystickyTracking StickyTracking { get; set; }
+		private PlotOptionssankeystickyTracking StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionssankeytooltip Tooltip { get; set; }
+		private PlotOptionssankeytooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -342,28 +294,21 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnDataGrouping DataGrouping { get; set; }
-		private PlotOptionsColumnDataGrouping DataGrouping_DefaultValue { get; set; }
+		public PlotOptionssankeydataGrouping DataGrouping { get; set; }
+		private PlotOptionssankeydataGrouping DataGrouping_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (CurveFactor != CurveFactor_DefaultValue) h.Add("curveFactor",CurveFactor);
-			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
-			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
-			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
@@ -386,6 +331,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);

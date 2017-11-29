@@ -16,10 +16,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Enabled = Enabled_DefaultValue = true;
 			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = 30;
-			KeyboardNavigation = KeyboardNavigation_DefaultValue = null;
+			KeyboardNavigation = KeyboardNavigation_DefaultValue = "";
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
 			OnTableAnchorClick = OnTableAnchorClick_DefaultValue = "";
-			PointDateFormat = PointDateFormat_DefaultValue = null;
+			PointDateFormat = PointDateFormat_DefaultValue = "";
 			PointDateFormatter = PointDateFormatter_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			ScreenReaderSectionFormatter = ScreenReaderSectionFormatter_DefaultValue = "";
@@ -45,8 +45,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for keyboard navigation.
 		/// </summary>
-		public AccessibilityKeyboardNavigation KeyboardNavigation { get; set; }
-		private AccessibilityKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
+		public AccessibilitykeyboardNavigation KeyboardNavigation { get; set; }
+		private AccessibilitykeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>

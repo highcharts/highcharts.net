@@ -10,36 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class ResponsiveRules  : BaseObject
+	public partial class Responsiverules  : BaseObject
 	{
-		public ResponsiveRules()
+		public Responsiverules()
 		{
-			ChartOptions = ChartOptions_DefaultValue = null;
-			Condition = Condition_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// A full set of chart options to apply as overrides to the generalchart options. The chart options are applied when the given ruleis active.A special case is configuration objects that take arrays, for example[xAxis](#xAxis), [yAxis](#yAxis) or [series](#series). For thesecollections, an `id` option is used to map the new option set toan existing object. If an existing object of the same id is not found,the item of the same indexupdated. So for example, setting `chartOptions`with two series items without an `id`, will cause the existing chart'stwo series to be updated with respective options.
-		/// </summary>
-		public ResponsiveRulesChartOptions ChartOptions { get; set; }
-		private ResponsiveRulesChartOptions ChartOptions_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// Under which conditions the rule applies.
-		/// </summary>
-		public ResponsiveRulesCondition Condition { get; set; }
-		private ResponsiveRulesCondition Condition_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
-			if (Condition.IsDirty()) h.Add("condition",Condition.ToHashtable());
 			
 
 			return h;

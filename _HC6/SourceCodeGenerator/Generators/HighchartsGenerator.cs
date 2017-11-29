@@ -67,11 +67,11 @@ public class HighchartsGenerator
         ProcessApiItems(_apiItems);
         //var items = _apiItems.Where(p => p.FullName.ToLower().Contains("yaxis.opposite"));
 
-
-        GenerateClass(new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS });
+        var root = new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS };
+        GenerateClass(root, GetChildren(root));
         //for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)
         //{
-            GenerateClassesForLevel(_apiItems);
+        GenerateClassesForLevel(_apiItems);
         //}
     }
 
@@ -252,16 +252,19 @@ public class HighchartsGenerator
     private List<ApiItem> GetChildrenFromBaseClasses(ApiItem item)
     {
         var addedChildren = new List<ApiItem>();
-        foreach(var baseClassFullName in item.Extends)
+        foreach (var baseClassFullName in item.Extends)
         {
             var baseClass = FindApiItem(baseClassFullName, item);
 
-            if(baseClass.Extends.Any())
+            if (baseClass.Extends.Any())
             {
                 addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !item.Exclude.Any(q => q == p.Title)));
             }
 
-            addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title)).ToList());
+            if (baseClass.FullName == "series")
+                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !p.Extends.Any(q => q == "series")).ToList());
+            else
+                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title)).ToList());
         }
 
         return addedChildren;
@@ -302,7 +305,7 @@ public class HighchartsGenerator
         return null;
     }
 
-    private void GenerateClass(ApiItem item)
+    private void GenerateClass(ApiItem item, List<ApiItem> children)
     {
         string className = item.Title;
         string codeTemplate = FileService.GetClassTemplate();
@@ -311,17 +314,7 @@ public class HighchartsGenerator
         string properties = "";
         string defaultValues = "";
         string hashtableComparers = "";
-        List<ApiItem> children;
 
-        if (item.Title == ROOT_CLASS)
-            children = FindRootChildren();
-        else
-        {
-            children = item.Children.ToList(); // FindImmediateChildren(item);
-
-            if(item.Extends.Any())
-                children.AddRange(GetChildrenFromBaseClasses(item));
-        }
 
         if (item.FullName.ToLower().EndsWith("zones"))
             item.FullName = item.FullName.Remove(item.FullName.Length - 5) + "Zone";
@@ -385,7 +378,7 @@ public class HighchartsGenerator
 
         FileService.SaveClass(ROOT_CLASS, GetClassNameFromItem(item), codeTemplate);
 
-        children.Clear();
+        //children.Clear();
     }
 
     private void GenerateEnum(ApiItem apiItem)
@@ -628,7 +621,7 @@ public class HighchartsGenerator
         if (child.ReturnType == "Array" && child.Title == "zones")
             returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones", "Zone"));
         else
-        //if (child.IsParent)
+            //if (child.IsParent)
             returnType = GetClassNameFromItem(child);
         //else
         //{
@@ -723,7 +716,7 @@ public class HighchartsGenerator
             if (child.ReturnType == "Array" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
-            if(child.HasChildren)
+            if (child.HasChildren)
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
@@ -760,11 +753,40 @@ public class HighchartsGenerator
             //{
             if (item.HasChildren)
             {
-                GenerateClass(item);
-                GenerateClassesForLevel(item.Children);
+                var children = GetChildren(item);
+
+                GenerateClass(item, children);
+                GenerateClassesForLevel(children);
             }
             //}
         }
+    }
+
+    private List<ApiItem> GetChildren(ApiItem item)
+    {
+        List<ApiItem> children;
+        List<ApiItem> clones = new List<ApiItem>();
+
+        if (item.Title == ROOT_CLASS)
+            children = _apiItems;// FindRootChildren();
+        else
+        {
+            children = item.Children.ToList(); // FindImmediateChildren(item);
+
+            if (item.Extends.Any())
+                children.AddRange(GetChildrenFromBaseClasses(item));
+        }
+
+        foreach(var child in children)
+        {
+            var clone = child.Clone();
+            clone.Parent = item;
+            clone.FullName = item.FullName + child.Title;
+
+            clones.Add(clone);
+        }
+
+        return clones;
     }
 
     private List<ApiItem> FindImmediateChildren(ApiItem rootItem)
@@ -1089,104 +1111,104 @@ public class HighchartsGenerator
 
         //if (!item.IsParent)
         //{
-            if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName == null)
-                return defaults;
+        if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName == null)
+            return defaults;
 
-            if (item.Title.ToLower() == "position")
-                return defaults;
+        if (item.Title.ToLower() == "position")
+            return defaults;
 
-            if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
+        if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
+        {
+            return "double.MinValue";
+        }
+        if (item.ReturnType.ToLower() == "function" || item.ReturnType.ToLower() == "string|function")
+            return "\"\"";
+
+        if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
+            defaults = "";
+
+        if (!String.IsNullOrEmpty(item.Defaults))
+        {
+            if (item.ReturnType == "String" ||
+                item.ReturnType == "Color" ||
+                item.ReturnType == "String|Number" ||
+                item.ReturnType == "Number|String")
             {
-                return "double.MinValue";
+                return '"' + defaults.Replace("\"", "'") + '"';
             }
-            if (item.ReturnType.ToLower() == "function" || item.ReturnType.ToLower() == "string|function")
-                return "\"\"";
-
-            if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
-                defaults = "";
-
-            if (!String.IsNullOrEmpty(item.Defaults))
+            if (item.ReturnType.StartsWith("Array.<String>")) // thereis Array<String>; ending with ; in Highstock
             {
-                if (item.ReturnType == "String" ||
-                    item.ReturnType == "Color" ||
-                    item.ReturnType == "String|Number" ||
-                    item.ReturnType == "Number|String")
-                {
-                    return '"' + defaults.Replace("\"", "'") + '"';
-                }
-                if (item.ReturnType.StartsWith("Array.<String>")) // thereis Array<String>; ending with ; in Highstock
-                {
-                    return "new List<string> " + item.Defaults
-                                        .Replace("'", "\"")
-                                        .Replace("[", "{")
-                                        .Replace("]", "}");
-                }
-                if (item.ReturnType == "Array.<Number>")
-                {
-                    return "new List<double> " + item.Defaults
-                                        .Replace("[", "{")
-                                        .Replace("]", "}");
-                }
-                if ((_propertyTypeMappings[item.Title] != null &&
-                    _propertyTypeMappings[item.Title].ToString() == "Hashtable") ||
-                    (_typeMappings[(item.ReturnType)] != null &&
-                    _typeMappings[(item.ReturnType)].ToString() == "Hashtable"))
-                {
-                    string result = "new Hashtable" + "{" + item.Defaults
-                                                        .Replace(",", "},{")
-                                                        .Replace(";", "},{")
-                                                        .Replace(":", ",") + "}";
-                    if (item.Title == "position")
-                        result = result.Replace("0", "\"0\"");
-
-
-
-                    return result;
-                }
-                if (defaults == "undefined")
-                {
-                    return "null";
-                }
+                return "new List<string> " + item.Defaults
+                                    .Replace("'", "\"")
+                                    .Replace("[", "{")
+                                    .Replace("]", "}");
             }
-            else
+            if (item.ReturnType == "Array.<Number>")
             {
-                if (item.ReturnType == "Number")
-                    return "null";
+                return "new List<double> " + item.Defaults
+                                    .Replace("[", "{")
+                                    .Replace("]", "}");
             }
+            if ((_propertyTypeMappings[item.Title] != null &&
+                _propertyTypeMappings[item.Title].ToString() == "Hashtable") ||
+                (_typeMappings[(item.ReturnType)] != null &&
+                _typeMappings[(item.ReturnType)].ToString() == "Hashtable"))
+            {
+                string result = "new Hashtable" + "{" + item.Defaults
+                                                    .Replace(",", "},{")
+                                                    .Replace(";", "},{")
+                                                    .Replace(":", ",") + "}";
+                if (item.Title == "position")
+                    result = result.Replace("0", "\"0\"");
 
-            if (defaults == "")
-                return "\"\"";
-            if (defaults == null)
+
+
+                return result;
+            }
+            if (defaults == "undefined")
+            {
                 return "null";
+            }
+        }
+        else
+        {
+            if (item.ReturnType == "Number")
+                return "null";
+        }
+
+        if (defaults == "")
+            return "\"\"";
+        if (defaults == null)
+            return "null";
         //}
         //else
         //{
-            //return String.Format("new {0}()", FirstCharToUpper(item.Title));
-            if (_propertyInitMappings[item.FullName] != null)
-            {
-                return _propertyInitMappings[item.FullName].ToString();
-            }
-            if (_propertyInitMappings[item.Title] != null)
-            {
-                return _propertyInitMappings[item.Title].ToString();
-            }
+        //return String.Format("new {0}()", FirstCharToUpper(item.Title));
+        if (_propertyInitMappings[item.FullName] != null)
+        {
+            return _propertyInitMappings[item.FullName].ToString();
+        }
+        if (_propertyInitMappings[item.Title] != null)
+        {
+            return _propertyInitMappings[item.Title].ToString();
+        }
 
-            //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
-            //    item.IsParent = false;
+        //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
+        //    item.IsParent = false;
 
-            if (item.ReturnType == "Array" && item.Title == "zones")
-                return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
+        if (item.ReturnType == "Array" && item.Title == "zones")
+            return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
 
-            if (item.FullName.ToLower().Contains("data.datalabels"))
-                item.FullName = item.FullName.Replace("data.", "");
+        if (item.FullName.ToLower().Contains("data.datalabels"))
+            item.FullName = item.FullName.Replace("data.", "");
 
-            if (item.FullName.ToLower().Contains("levels.datalabels"))
-                item.FullName = item.FullName.Replace("levels.", "");
+        if (item.FullName.ToLower().Contains("levels.datalabels"))
+            item.FullName = item.FullName.Replace("levels.", "");
 
-            if (item.HasChildren)
-                return String.Format("new {0}()", GetClassNameFromItem(item));
-            //else
-            //    return item.Defaults;
+        if (item.HasChildren)
+            return String.Format("new {0}()", GetClassNameFromItem(item));
+        //else
+        //    return item.Defaults;
 
 
         //}

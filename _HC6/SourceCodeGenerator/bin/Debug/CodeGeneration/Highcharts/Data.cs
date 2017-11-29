@@ -16,15 +16,15 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Columns = Columns_DefaultValue = new List<List<Object>>();
 			Complete = Complete_DefaultValue = "";
-			Csv = Csv_DefaultValue = null;
-			DateFormat = DateFormat_DefaultValue = null;
+			Csv = Csv_DefaultValue = "";
+			DateFormat = DateFormat_DefaultValue = "";
 			DecimalPoint = DecimalPoint_DefaultValue = ".";
 			EndColumn = EndColumn_DefaultValue = null;
 			EndRow = EndRow_DefaultValue = null;
 			FirstRowAsNames = FirstRowAsNames_DefaultValue = true;
-			GoogleSpreadsheetKey = GoogleSpreadsheetKey_DefaultValue = null;
-			GoogleSpreadsheetWorksheet = GoogleSpreadsheetWorksheet_DefaultValue = null;
-			ItemDelimiter = ItemDelimiter_DefaultValue = null;
+			GoogleSpreadsheetKey = GoogleSpreadsheetKey_DefaultValue = "";
+			GoogleSpreadsheetWorksheet = GoogleSpreadsheetWorksheet_DefaultValue = "";
+			ItemDelimiter = ItemDelimiter_DefaultValue = "";
 			LineDelimiter = LineDelimiter_DefaultValue = "\n";
 			ParseDate = ParseDate_DefaultValue = "";
 			Parsed = Parsed_DefaultValue = "";
@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			StartColumn = StartColumn_DefaultValue = 0;
 			StartRow = StartRow_DefaultValue = 0;
 			SwitchRowsAndColumns = SwitchRowsAndColumns_DefaultValue = false;
-			Table = Table_DefaultValue = null;
+			Table = Table_DefaultValue = "";
 			
 		}	
 		

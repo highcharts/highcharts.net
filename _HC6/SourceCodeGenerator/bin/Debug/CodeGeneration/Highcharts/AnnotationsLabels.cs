@@ -10,11 +10,10 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class AnnotationsLabels  : BaseObject
+	public partial class Annotationslabels  : BaseObject
 	{
-		public AnnotationsLabels()
+		public Annotationslabels()
 		{
-			Point = Point_DefaultValue = null;
 			Align = Align_DefaultValue = center;
 			AllowOverlap = AllowOverlap_DefaultValue = False;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
@@ -27,7 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = 5;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = null;
+			Style = Style_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
 			X = X_DefaultValue = 0;
@@ -40,24 +39,17 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// This option defines the point to which the label will be connected.It can be either the point which exists in the series - it is referencedby the point's id - or a new point with defined x, y properiesand optionally axes.
-		/// </summary>
-		public string Point { get; set; }
-		private string Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The alignment of the annotation's label. If right,the right side of the label should be touching the point.
 		/// </summary>
-		public AnnotationsLabelOptionsAlign Align { get; set; }
-		private AnnotationsLabelOptionsAlign Align_DefaultValue { get; set; }
+		public Annotationslabelsalign Align { get; set; }
+		private Annotationslabelsalign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to allow the annotation's labels to overlap.To make the labels less sensitive for overlapping, the can be set to 0.
 		/// </summary>
-		public AnnotationsLabelOptionsAllowOverlap AllowOverlap { get; set; }
-		private AnnotationsLabelOptionsAllowOverlap AllowOverlap_DefaultValue { get; set; }
+		public AnnotationslabelsallowOverlap AllowOverlap { get; set; }
+		private AnnotationslabelsallowOverlap AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -77,22 +69,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The border radius in pixels for the annotaiton's label.
 		/// </summary>
-		public AnnotationsLabelOptionsBorderRadius BorderRadius { get; set; }
-		private AnnotationsLabelOptionsBorderRadius BorderRadius_DefaultValue { get; set; }
+		public AnnotationslabelsborderRadius BorderRadius { get; set; }
+		private AnnotationslabelsborderRadius BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border width in pixels for the annotation's label
 		/// </summary>
-		public AnnotationsLabelOptionsBorderWidth BorderWidth { get; set; }
-		private AnnotationsLabelOptionsBorderWidth BorderWidth_DefaultValue { get; set; }
+		public AnnotationslabelsborderWidth BorderWidth { get; set; }
+		private AnnotationslabelsborderWidth BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to hide the annotation's label that is outside the plot area.
 		/// </summary>
-		public AnnotationsLabelOptionsCrop Crop { get; set; }
-		private AnnotationsLabelOptionsCrop Crop_DefaultValue { get; set; }
+		public Annotationslabelscrop Crop { get; set; }
+		private Annotationslabelscrop Crop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -105,15 +97,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle the annotation's label that flow outside the plotarea. The justify option aligns the label inside the plot area.
 		/// </summary>
-		public AnnotationsLabelOptionsOverflow Overflow { get; set; }
-		private AnnotationsLabelOptionsOverflow Overflow_DefaultValue { get; set; }
+		public Annotationslabelsoverflow Overflow { get; set; }
+		private Annotationslabelsoverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When either the borderWidth or the backgroundColor is set,thisis the padding within the box.
 		/// </summary>
-		public AnnotationsLabelOptionsPadding Padding { get; set; }
-		private AnnotationsLabelOptionsPadding Padding_DefaultValue { get; set; }
+		public Annotationslabelspadding Padding { get; set; }
+		private Annotationslabelspadding Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -154,15 +146,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The x position offset of the label relative to the point.Note that if a `distance` is defined, the distance takesprecedence over `x` and `y` options.
 		/// </summary>
-		public AnnotationsLabelOptionsX X { get; set; }
-		private AnnotationsLabelOptionsX X_DefaultValue { get; set; }
+		public Annotationslabelsx X { get; set; }
+		private Annotationslabelsx X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The y position offset of the label relative to the point.Note that if a `distance` is defined, the distance takesprecedence over `x` and `y` options.
 		/// </summary>
-		public AnnotationsLabelOptionsY Y { get; set; }
-		private AnnotationsLabelOptionsY Y_DefaultValue { get; set; }
+		public Annotationslabelsy Y { get; set; }
+		private Annotationslabelsy Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -190,7 +182,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);

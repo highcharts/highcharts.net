@@ -10,52 +10,42 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsWordcloud  : BaseObject
+	public partial class PlotOptionswordcloud  : BaseObject
 	{
-		public PlotOptionsWordcloud()
+		public PlotOptionswordcloud()
 		{
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			Clip = Clip_DefaultValue = False;
-			ColorByPoint = ColorByPoint_DefaultValue = True;
-			PlacementStrategy = PlacementStrategy_DefaultValue = center;
-			Rotation = Rotation_DefaultValue = null;
-			ShowInLegend = ShowInLegend_DefaultValue = False;
-			Spiral = Spiral_DefaultValue = rectangular;
-			Style = Style_DefaultValue = new Hashtable{{"fontFamily","Impact},{ sans-serif"}};
-			Tooltip = Tooltip_DefaultValue = null;
-			Label = Label_DefaultValue = null;
+			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = null;
-			Point = Point_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Point = Point_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
-			LinkedTo = LinkedTo_DefaultValue = null;
+			LinkedTo = LinkedTo_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			Marker = Marker_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 50;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = False;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
@@ -66,80 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWordcloudBorderWidth BorderWidth { get; set; }
-		private PlotOptionsWordcloudBorderWidth BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWordcloudClip Clip { get; set; }
-		private PlotOptionsWordcloudClip Clip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
-		/// </summary>
-		public PlotOptionsWordcloudColorByPoint ColorByPoint { get; set; }
-		private PlotOptionsWordcloudColorByPoint ColorByPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option decides which algorithm is used for placement, and rotationof a word. The choice of algorith is therefore a crucial part of theresulting layout of the wordcloud.It is possible for users to add their own custom placement strategiesfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-placement-strategies)
-		/// </summary>
-		public PlotOptionsWordcloudPlacementStrategy PlacementStrategy { get; set; }
-		private PlotOptionsWordcloudPlacementStrategy PlacementStrategy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Rotation options for the words in the wordcloud.
-		/// </summary>
-		public PlotOptionsWordcloudRotation Rotation { get; set; }
-		private PlotOptionsWordcloudRotation Rotation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWordcloudShowInLegend ShowInLegend { get; set; }
-		private PlotOptionsWordcloudShowInLegend ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Spiral used for placing a word after the inital position experienced acollision with either another word or the borders.It is possible for users to add their own custom spiralling algorithmsfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
-		/// </summary>
-		public PlotOptionsWordcloudSpiral Spiral { get; set; }
-		private PlotOptionsWordcloudSpiral Spiral_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// CSS styles for the words.
-		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWordcloudTooltip Tooltip { get; set; }
-		private PlotOptionsWordcloudTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsSeriesLabel Label { get; set; }
-		private PlotOptionsSeriesLabel Label_DefaultValue { get; set; }
+		public PlotOptionswordcloudlabel Label { get; set; }
+		private PlotOptionswordcloudlabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -159,15 +79,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsSeriesEvents Events { get; set; }
-		private PlotOptionsSeriesEvents Events_DefaultValue { get; set; }
+		public PlotOptionswordcloudevents Events { get; set; }
+		private PlotOptionswordcloudevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsSeriesPoint Point { get; set; }
-		private PlotOptionsSeriesPoint Point_DefaultValue { get; set; }
+		public PlotOptionswordcloudpoint Point { get; set; }
+		private PlotOptionswordcloudpoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -180,8 +100,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsSeriesStates States { get; set; }
-		private PlotOptionsSeriesStates States_DefaultValue { get; set; }
+		public PlotOptionswordcloudstates States { get; set; }
+		private PlotOptionswordcloudstates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -306,8 +226,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsSeriesTooltip Tooltip { get; set; }
-		private PlotOptionsSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionswordcloudtooltip Tooltip { get; set; }
+		private PlotOptionswordcloudtooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -341,22 +261,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnStates States { get; set; }
-		private PlotOptionsColumnStates States_DefaultValue { get; set; }
+		public PlotOptionswordcloudstates States { get; set; }
+		private PlotOptionswordcloudstates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnStickyTracking StickyTracking { get; set; }
-		private PlotOptionsColumnStickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionswordcloudstickyTracking StickyTracking { get; set; }
+		private PlotOptionswordcloudstickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnTooltip Tooltip { get; set; }
-		private PlotOptionsColumnTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionswordcloudtooltip Tooltip { get; set; }
+		private PlotOptionswordcloudtooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -398,16 +318,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
-			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (Spiral != Spiral_DefaultValue) h.Add("spiral",Spiral);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);

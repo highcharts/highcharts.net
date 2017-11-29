@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsErrorbarTooltip  : BaseObject
+	public partial class PlotOptionserrorbartooltip  : BaseObject
 	{
-		public PlotOptionsErrorbarTooltip()
+		public PlotOptionserrorbartooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = <span style="color:{point.color}">●</span> {series.name}: <b>{point.low}</b> - <b>{point.high}</b><br/>;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsErrorbarTooltipPointFormat PointFormat { get; set; }
-		private PlotOptionsErrorbarTooltipPointFormat PointFormat_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

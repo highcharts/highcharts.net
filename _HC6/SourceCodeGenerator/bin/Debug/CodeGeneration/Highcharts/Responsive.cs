@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Responsive()
 		{
-			Rules = Rules_DefaultValue = null;
+			Rules = Rules_DefaultValue = "";
 			
 		}	
 		

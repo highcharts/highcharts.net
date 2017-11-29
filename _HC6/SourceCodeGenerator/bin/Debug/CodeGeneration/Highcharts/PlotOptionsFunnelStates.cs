@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsFunnelStates  : BaseObject
+	public partial class PlotOptionsfunnelstates  : BaseObject
 	{
-		public PlotOptionsFunnelStates()
+		public PlotOptionsfunnelstates()
 		{
-			Select = Select_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// Options for a selected funnel item.
-		/// </summary>
-		public PlotOptionsFunnelStatesSelect Select { get; set; }
-		private PlotOptionsFunnelStatesSelect Select_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

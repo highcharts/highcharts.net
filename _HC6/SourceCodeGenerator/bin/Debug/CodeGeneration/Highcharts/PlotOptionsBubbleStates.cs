@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsBubbleStates  : BaseObject
+	public partial class PlotOptionsbubblestates  : BaseObject
 	{
-		public PlotOptionsBubbleStates()
+		public PlotOptionsbubblestates()
 		{
-			Hover = Hover_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBubbleStatesHover Hover { get; set; }
-		private PlotOptionsBubbleStatesHover Hover_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 
 			return h;

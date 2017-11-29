@@ -19,9 +19,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Margin = Margin_DefaultValue = null;
 			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			Floating = Floating_DefaultValue = false;
-			Style = Style_DefaultValue = null;
+			Style = Style_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = null;
+			VerticalAlign = VerticalAlign_DefaultValue = "";
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			

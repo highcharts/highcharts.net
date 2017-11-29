@@ -10,68 +10,63 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class SeriesSunburst  : BaseObject
+	public partial class Seriessunburst  : BaseObject
 	{
-		public SeriesSunburst()
+		public Seriessunburst()
 		{
-			Data = Data_DefaultValue = new List<SeriesSunburstData>();
-			Label = Label_DefaultValue = null;
+			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = null;
-			Point = Point_DefaultValue = null;
-			States = States_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Point = Point_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
-			LinkedTo = LinkedTo_DefaultValue = null;
+			LinkedTo = LinkedTo_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Size = Size_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = "";
+			Size = Size_DefaultValue = "";
 			ShowInLegend = ShowInLegend_DefaultValue = False;
 			StickyTracking = StickyTracking_DefaultValue = False;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
 			Colors = Colors_DefaultValue = new List<string>();
 			StartAngle = StartAngle_DefaultValue = 0;
-			Events = Events_DefaultValue = null;
-			Point = Point_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Point = Point_DefaultValue = "";
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
+			DataLabels = DataLabels_DefaultValue = "";
 			RootId = RootId_DefaultValue = "undefined";
 			LevelIsConstant = LevelIsConstant_DefaultValue = True;
-			Levels = Levels_DefaultValue = null;
+			Levels = Levels_DefaultValue = "";
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
 			
 		}	
 		
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public List<SeriesSunburstData> Data { get; set; }
-		private List<SeriesSunburstData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsSeriesLabel Label { get; set; }
-		private PlotOptionsSeriesLabel Label_DefaultValue { get; set; }
+		public Seriessunburstlabel Label { get; set; }
+		private Seriessunburstlabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -98,22 +93,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsSeriesEvents Events { get; set; }
-		private PlotOptionsSeriesEvents Events_DefaultValue { get; set; }
+		public Seriessunburstevents Events { get; set; }
+		private Seriessunburstevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsSeriesPoint Point { get; set; }
-		private PlotOptionsSeriesPoint Point_DefaultValue { get; set; }
+		public Seriessunburstpoint Point { get; set; }
+		private Seriessunburstpoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public SeriessunburstdataLabels DataLabels { get; set; }
+		private SeriessunburstdataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsSeriesStates States { get; set; }
-		private PlotOptionsSeriesStates States_DefaultValue { get; set; }
+		public Seriessunburststates States { get; set; }
+		private Seriessunburststates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -231,8 +233,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsSeriesTooltip Tooltip { get; set; }
-		private PlotOptionsSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public Seriessunbursttooltip Tooltip { get; set; }
+		private Seriessunbursttooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -240,6 +242,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SeriessunburstdataLabels DataLabels { get; set; }
+		private SeriessunburstdataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -259,15 +268,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
 		/// </summary>
-		public PlotOptionsPieStickyTracking StickyTracking { get; set; }
-		private PlotOptionsPieStickyTracking StickyTracking_DefaultValue { get; set; }
+		public SeriessunburststickyTracking StickyTracking { get; set; }
+		private SeriessunburststickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPieTooltip Tooltip { get; set; }
-		private PlotOptionsPieTooltip Tooltip_DefaultValue { get; set; }
+		public Seriessunbursttooltip Tooltip { get; set; }
+		private Seriessunbursttooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -287,8 +296,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPieStates States { get; set; }
-		private PlotOptionsPieStates States_DefaultValue { get; set; }
+		public Seriessunburststates States { get; set; }
+		private Seriessunburststates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -308,15 +317,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPieEvents Events { get; set; }
-		private PlotOptionsPieEvents Events_DefaultValue { get; set; }
+		public Seriessunburstevents Events { get; set; }
+		private Seriessunburstevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPiePoint Point { get; set; }
-		private PlotOptionsPiePoint Point_DefaultValue { get; set; }
+		public Seriessunburstpoint Point { get; set; }
+		private Seriessunburstpoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -324,6 +333,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string[] Center { get; set; }
 		private string[] Center_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SeriessunburstdataLabels DataLabels { get; set; }
+		private SeriessunburstdataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -336,8 +352,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Used together with the levels and `allowDrillToNode` options. Whenset to false the first level visible when drilling is consideredto be level one. Otherwise the level will be the same as the treestructure.
 		/// </summary>
-		public PlotOptionsSunburstLevelIsConstant LevelIsConstant { get; set; }
-		private PlotOptionsSunburstLevelIsConstant LevelIsConstant_DefaultValue { get; set; }
+		public SeriessunburstlevelIsConstant LevelIsConstant { get; set; }
+		private SeriessunburstlevelIsConstant LevelIsConstant_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -358,13 +374,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -384,6 +400,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
@@ -396,6 +413,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Center != Center_DefaultValue) h.Add("center",Center);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (RootId != RootId_DefaultValue) h.Add("rootId",RootId);
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
 			if (Levels.IsDirty()) h.Add("levels",Levels.ToHashtable());

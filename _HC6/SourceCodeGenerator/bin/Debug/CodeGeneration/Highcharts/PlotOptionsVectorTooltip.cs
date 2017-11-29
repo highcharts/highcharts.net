@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsVectorTooltip  : BaseObject
+	public partial class PlotOptionsvectortooltip  : BaseObject
 	{
-		public PlotOptionsVectorTooltip()
+		public PlotOptionsvectortooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = <b>[{point.x}, {point.y}]</b><br/>Length: <b>{point.length}</b><br/>Direction: <b>{point.direction}°</b><br/>;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsVectorTooltipPointFormat PointFormat { get; set; }
-		private PlotOptionsVectorTooltipPointFormat PointFormat_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

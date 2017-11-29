@@ -18,12 +18,12 @@ namespace Highsoft.Web.Mvc.Charts
 			EndOnTick = EndOnTick_DefaultValue = true;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 72;
 			ShowLastLabel = ShowLastLabel_DefaultValue = false;
-			Labels = Labels_DefaultValue = null;
+			Labels = Labels_DefaultValue = "";
 			MaxPadding = MaxPadding_DefaultValue = 0.05;
 			MinPadding = MinPadding_DefaultValue = 0.05;
 			StartOnTick = StartOnTick_DefaultValue = true;
-			Title = Title_DefaultValue = null;
-			StackLabels = StackLabels_DefaultValue = null;
+			Title = Title_DefaultValue = "";
+			StackLabels = StackLabels_DefaultValue = "";
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			LineWidth = LineWidth_DefaultValue = 0;
 			Opposite = Opposite_DefaultValue = false;
@@ -35,11 +35,11 @@ namespace Highsoft.Web.Mvc.Charts
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			Stops = Stops_DefaultValue = new List<Stop>();
 			TickWidth = TickWidth_DefaultValue = 0;
-			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
-			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
+			PlotBands = PlotBands_DefaultValue = "";
+			PlotLines = PlotLines_DefaultValue = "";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
-			Labels = Labels_DefaultValue = null;
+			Labels = Labels_DefaultValue = "";
 			MinPadding = MinPadding_DefaultValue = 0.01;
 			MaxPadding = MaxPadding_DefaultValue = 0.01;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
@@ -50,7 +50,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = "null";
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
 			TickPosition = TickPosition_DefaultValue = "outside";
-			Title = Title_DefaultValue = null;
+			Title = Title_DefaultValue = "";
 			Type = Type_DefaultValue = "linear";
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
@@ -61,9 +61,9 @@ namespace Highsoft.Web.Mvc.Charts
 			TickColor = TickColor_DefaultValue = "#ccd6eb";
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
-			Categories = Categories_DefaultValue = null;
+			Categories = Categories_DefaultValue = "";
 			Ceiling = Ceiling_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			Floor = Floor_DefaultValue = null;
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = "Solid";
@@ -91,16 +91,16 @@ namespace Highsoft.Web.Mvc.Charts
 			TickAmount = TickAmount_DefaultValue = null;
 			TickInterval = TickInterval_DefaultValue = null;
 			TickPositioner = TickPositioner_DefaultValue = "";
-			TickPositions = TickPositions_DefaultValue = null;
+			TickPositions = TickPositions_DefaultValue = "";
 			TickWidth = TickWidth_DefaultValue = null;
 			UniqueNames = UniqueNames_DefaultValue = true;
-			Units = Units_DefaultValue = null;
+			Units = Units_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Breaks = Breaks_DefaultValue = null;
-			Crosshair = Crosshair_DefaultValue = new XAxisCrosshair();
-			Events = Events_DefaultValue = null;
-			PlotBands = PlotBands_DefaultValue = new List<XAxisPlotBands>();
-			PlotLines = PlotLines_DefaultValue = new List<XAxisPlotLines>();
+			Breaks = Breaks_DefaultValue = "";
+			Crosshair = Crosshair_DefaultValue = new YAxiscrosshair();
+			Events = Events_DefaultValue = "";
+			PlotBands = PlotBands_DefaultValue = "";
+			PlotLines = PlotLines_DefaultValue = "";
 			
 		}	
 		
@@ -108,8 +108,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
 		/// </summary>
-		public YAxisTooltipValueFormat TooltipValueFormat { get; set; }
-		private YAxisTooltipValueFormat TooltipValueFormat_DefaultValue { get; set; }
+		public YAxistooltipValueFormat TooltipValueFormat { get; set; }
+		private YAxistooltipValueFormat TooltipValueFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -122,8 +122,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public YAxisTickPixelInterval TickPixelInterval { get; set; }
-		private YAxisTickPixelInterval TickPixelInterval_DefaultValue { get; set; }
+		public YAxistickPixelInterval TickPixelInterval { get; set; }
+		private YAxistickPixelInterval TickPixelInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -136,8 +136,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public YAxisLabels Labels { get; set; }
-		private YAxisLabels Labels_DefaultValue { get; set; }
+		public YAxislabels Labels { get; set; }
+		private YAxislabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -164,15 +164,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public YAxisTitle Title { get; set; }
-		private YAxisTitle Title_DefaultValue { get; set; }
+		public YAxistitle Title { get; set; }
+		private YAxistitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The stack labels show the total value for each bar in a stackedcolumn or bar chart. The label will be placed on top of positivecolumns and below negative columns. In case of an inverted columnchart or a bar chart the label is placed to the right of positivebars and to the left of negative bars.
 		/// </summary>
-		public YAxisStackLabels StackLabels { get; set; }
-		private YAxisStackLabels StackLabels_DefaultValue { get; set; }
+		public YAxisstackLabels StackLabels { get; set; }
+		private YAxisstackLabels StackLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -255,15 +255,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of objects defining plot bands on the Y axis.
 		/// </summary>
-		public List<YAxisPlotBands> PlotBands { get; set; }
-		private List<YAxisPlotBands> PlotBands_DefaultValue { get; set; }
+		public List<object> PlotBands { get; set; }
+		private List<object> PlotBands_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array of objects representing plot lines on the X axis
 		/// </summary>
-		public List<YAxisPlotLines> PlotLines { get; set; }
-		private List<YAxisPlotLines> PlotLines_DefaultValue { get; set; }
+		public List<object> PlotLines { get; set; }
+		private List<object> PlotLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -283,8 +283,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The axis labels show the number or category for each tick.
 		/// </summary>
-		public XAxisLabels Labels { get; set; }
-		private XAxisLabels Labels_DefaultValue { get; set; }
+		public YAxislabels Labels { get; set; }
+		private YAxislabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -360,8 +360,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The axis title, showing next to the axis line.
 		/// </summary>
-		public XAxisTitle Title { get; set; }
-		private XAxisTitle Title_DefaultValue { get; set; }
+		public YAxistitle Title { get; set; }
+		private YAxistitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -668,8 +668,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Datetime axis only. An array determining what time intervals theticks are allowed to fall on. Each array item is an array where thefirst value is the time unit and the second value another array ofallowed multiples. Defaults to:<pre>units: [[    'millisecond', // unit name    [1, 2, 5, 10, 20, 25, 50, 100, 200, 500] // allowed multiples], [    'second',    [1, 2, 5, 10, 15, 30]], [    'minute',    [1, 2, 5, 10, 15, 30]], [    'hour',    [1, 2, 3, 4, 6, 8, 12]], [    'day',    [1]], [    'week',    [1]], [    'month',    [1, 3, 6]], [    'year',    null]]</pre>
 		/// </summary>
-		public XAxisUnits Units { get; set; }
-		private XAxisUnits Units_DefaultValue { get; set; }
+		public YAxisunits Units { get; set; }
+		private YAxisunits Units_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -682,8 +682,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array defining breaks in the axis, the sections defined will beleft out and all the points shifted closer to each other.
 		/// </summary>
-		public XAxisBreaks Breaks { get; set; }
-		private XAxisBreaks Breaks_DefaultValue { get; set; }
+		public YAxisbreaks Breaks { get; set; }
+		private YAxisbreaks Breaks_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -696,22 +696,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Event handlers for the axis.
 		/// </summary>
-		public XAxisEvents Events { get; set; }
-		private XAxisEvents Events_DefaultValue { get; set; }
+		public YAxisevents Events { get; set; }
+		private YAxisevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array of colored bands stretching across the plot area markingan interval on the axis.In styled mode, the plot bands are styled by the `.highcharts-plot-band` class in addition to the `className` option.
 		/// </summary>
-		public List<XAxisPlotBands> PlotBands { get; set; }
-		private List<XAxisPlotBands> PlotBands_DefaultValue { get; set; }
+		public List<object> PlotBands { get; set; }
+		private List<object> PlotBands_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array of lines stretching across the plot area, marking a specificvalue on one of the axes.In styled mode, the plot lines are styled by the `.highcharts-plot-line` class in addition to the `className` option.
 		/// </summary>
-		public List<XAxisPlotLines> PlotLines { get; set; }
-		private List<XAxisPlotLines> PlotLines_DefaultValue { get; set; }
+		public List<object> PlotLines { get; set; }
+		private List<object> PlotLines_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -739,8 +739,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (Stops.Any()) h.Add("stops", GetLists(Stops));
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
-			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
-			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
+			if (PlotBands.IsDirty()) h.Add("plotBands",PlotBands.ToHashtable());
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines",PlotLines);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
@@ -803,8 +803,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
 			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
-			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
+			if (PlotBands.IsDirty()) h.Add("plotBands",PlotBands.ToHashtable());
+			if (PlotLines.IsDirty()) h.Add("plotLines",PlotLines.ToHashtable());
 			
 
 			return h;

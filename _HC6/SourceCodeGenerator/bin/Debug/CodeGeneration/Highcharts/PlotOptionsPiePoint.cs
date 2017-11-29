@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsPiePoint  : BaseObject
+	public partial class PlotOptionspiepoint  : BaseObject
 	{
-		public PlotOptionsPiePoint()
+		public PlotOptionspiepoint()
 		{
-			Events = Events_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsPiePointEvents Events { get; set; }
-		private PlotOptionsPiePointEvents Events_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

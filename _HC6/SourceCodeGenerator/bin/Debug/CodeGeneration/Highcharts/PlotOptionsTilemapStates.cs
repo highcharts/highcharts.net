@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsTilemapStates  : BaseObject
+	public partial class PlotOptionstilemapstates  : BaseObject
 	{
-		public PlotOptionsTilemapStates()
+		public PlotOptionstilemapstates()
 		{
-			Hover = Hover_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsTilemapStatesHover Hover { get; set; }
-		private PlotOptionsTilemapStatesHover Hover_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 
 			return h;

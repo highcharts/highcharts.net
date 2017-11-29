@@ -15,11 +15,11 @@ namespace Highsoft.Web.Mvc.Charts
 		public Annotations()
 		{
 			Visible = Visible_DefaultValue = True;
-			LabelOptions = LabelOptions_DefaultValue = null;
-			ShapeOptions = ShapeOptions_DefaultValue = null;
+			LabelOptions = LabelOptions_DefaultValue = "";
+			ShapeOptions = ShapeOptions_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = 6;
-			Labels = Labels_DefaultValue = new List<AnnotationsLabels>();
-			Shapes = Shapes_DefaultValue = new List<AnnotationsShapes>();
+			Labels = Labels_DefaultValue = "";
+			Shapes = Shapes_DefaultValue = "";
 			
 		}	
 		
@@ -27,22 +27,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether the annotation is visible.
 		/// </summary>
-		public AnnotationsVisible Visible { get; set; }
-		private AnnotationsVisible Visible_DefaultValue { get; set; }
+		public Annotationsvisible Visible { get; set; }
+		private Annotationsvisible Visible_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for annotation's labels. Each label inherits optionsfrom the labelOptions object. An option from the labelOptions can beoverwritten by config for a specific label.
 		/// </summary>
-		public AnnotationsLabelOptions LabelOptions { get; set; }
-		private AnnotationsLabelOptions LabelOptions_DefaultValue { get; set; }
+		public AnnotationslabelOptions LabelOptions { get; set; }
+		private AnnotationslabelOptions LabelOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for annotation's shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptions can beoverwritten by config for a specific shape.
 		/// </summary>
-		public AnnotationsShapeOptions ShapeOptions { get; set; }
-		private AnnotationsShapeOptions ShapeOptions_DefaultValue { get; set; }
+		public AnnotationsshapeOptions ShapeOptions { get; set; }
+		private AnnotationsshapeOptions ShapeOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -55,15 +55,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of labels for the annotation. For options that apply to multiplelabels, they can be added to the [labelOptions](annotations.labelOptions.html).
 		/// </summary>
-		public List<AnnotationsLabels> Labels { get; set; }
-		private List<AnnotationsLabels> Labels_DefaultValue { get; set; }
+		public List<object> Labels { get; set; }
+		private List<object> Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array of shapes for the annotation. For options that apply to multipleshapes, then can be added to the [shapeOptions](annotations.shapeOptions.html).
 		/// </summary>
-		public List<AnnotationsShapes> Shapes { get; set; }
-		private List<AnnotationsShapes> Shapes_DefaultValue { get; set; }
+		public List<object> Shapes { get; set; }
+		private List<object> Shapes_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -74,8 +74,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
 			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(Labels));
-			if (Shapes != Shapes_DefaultValue) h.Add("shapes", HashifyList(Shapes));
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (Shapes.IsDirty()) h.Add("shapes",Shapes.ToHashtable());
 			
 
 			return h;

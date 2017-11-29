@@ -10,103 +10,65 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsXrange  : BaseObject
+	public partial class PlotOptionsxrange  : BaseObject
 	{
-		public PlotOptionsXrange()
+		public PlotOptionsxrange()
 		{
-			ColorByPoint = ColorByPoint_DefaultValue = True;
-			Tooltip = Tooltip_DefaultValue = null;
-			BorderRadius = BorderRadius_DefaultValue = 3;
-			PartialFill = PartialFill_DefaultValue = null;
-			Data = Data_DefaultValue = new List<PlotOptionsXrangeData>();
-			Label = Label_DefaultValue = null;
+			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = null;
-			Point = Point_DefaultValue = null;
-			States = States_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Point = Point_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
-			LinkedTo = LinkedTo_DefaultValue = null;
+			LinkedTo = LinkedTo_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = null;
-			Zones = Zones_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
+			Zones = Zones_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			Marker = Marker_DefaultValue = true;
 			PointPadding = PointPadding_DefaultValue = 0.1;
 			MinPointLength = MinPointLength_DefaultValue = 0;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = False;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
-			DataGrouping = DataGrouping_DefaultValue = null;
+			DataGrouping = DataGrouping_DefaultValue = "";
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			
 		}	
 		
 
 		/// <summary>
-		/// In an X-range series, this option makes all points of the same Y-axiscategory the same color.
-		/// </summary>
-		public PlotOptionsXrangeColorByPoint ColorByPoint { get; set; }
-		private PlotOptionsXrangeColorByPoint ColorByPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsXrangeTooltip Tooltip { get; set; }
-		private PlotOptionsXrangeTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsXrangeBorderRadius BorderRadius { get; set; }
-		private PlotOptionsXrangeBorderRadius BorderRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A partial fill for each point, typically used to visualize how much ofa task is performed. The partial fill object can be set either on seriesor point level.
-		/// </summary>
-		public PlotOptionsXrangePartialFill PartialFill { get; set; }
-		private PlotOptionsXrangePartialFill PartialFill_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public List<PlotOptionsXrangeData> Data { get; set; }
-		private List<PlotOptionsXrangeData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsSeriesLabel Label { get; set; }
-		private PlotOptionsSeriesLabel Label_DefaultValue { get; set; }
+		public PlotOptionsxrangelabel Label { get; set; }
+		private PlotOptionsxrangelabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -133,22 +95,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsSeriesEvents Events { get; set; }
-		private PlotOptionsSeriesEvents Events_DefaultValue { get; set; }
+		public PlotOptionsxrangeevents Events { get; set; }
+		private PlotOptionsxrangeevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsSeriesPoint Point { get; set; }
-		private PlotOptionsSeriesPoint Point_DefaultValue { get; set; }
+		public PlotOptionsxrangepoint Point { get; set; }
+		private PlotOptionsxrangepoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public PlotOptionsxrangedataLabels DataLabels { get; set; }
+		private PlotOptionsxrangedataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsSeriesStates States { get; set; }
-		private PlotOptionsSeriesStates States_DefaultValue { get; set; }
+		public PlotOptionsxrangestates States { get; set; }
+		private PlotOptionsxrangestates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -287,15 +256,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsSeriesTooltip Tooltip { get; set; }
-		private PlotOptionsSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsxrangetooltip Tooltip { get; set; }
+		private PlotOptionsxrangetooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsSeriesZone> Zones { get; set; }
-		private List<PlotOptionsSeriesZone> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsxrangezones> Zones { get; set; }
+		private List<PlotOptionsxrangezones> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -336,22 +305,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnStates States { get; set; }
-		private PlotOptionsColumnStates States_DefaultValue { get; set; }
+		public PlotOptionsxrangestates States { get; set; }
+		private PlotOptionsxrangestates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnStickyTracking StickyTracking { get; set; }
-		private PlotOptionsColumnStickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionsxrangedataLabels DataLabels { get; set; }
+		private PlotOptionsxrangedataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnTooltip Tooltip { get; set; }
-		private PlotOptionsColumnTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsxrangestickyTracking StickyTracking { get; set; }
+		private PlotOptionsxrangestickyTracking StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsxrangetooltip Tooltip { get; set; }
+		private PlotOptionsxrangetooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -399,8 +375,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnDataGrouping DataGrouping { get; set; }
-		private PlotOptionsColumnDataGrouping DataGrouping_DefaultValue { get; set; }
+		public PlotOptionsxrangedataGrouping DataGrouping { get; set; }
+		private PlotOptionsxrangedataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -414,17 +390,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
-			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
@@ -453,6 +425,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);

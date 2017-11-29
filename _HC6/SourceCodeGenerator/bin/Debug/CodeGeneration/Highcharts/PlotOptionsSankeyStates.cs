@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsSankeyStates  : BaseObject
+	public partial class PlotOptionssankeystates  : BaseObject
 	{
-		public PlotOptionsSankeyStates()
+		public PlotOptionssankeystates()
 		{
-			Hover = Hover_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyStatesHover Hover { get; set; }
-		private PlotOptionsSankeyStatesHover Hover_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 
 			return h;

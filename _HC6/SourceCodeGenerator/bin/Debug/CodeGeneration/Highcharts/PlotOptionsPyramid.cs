@@ -10,57 +10,56 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsPyramid  : BaseObject
+	public partial class PlotOptionspyramid  : BaseObject
 	{
-		public PlotOptionsPyramid()
+		public PlotOptionspyramid()
 		{
-			NeckWidth = NeckWidth_DefaultValue = "0%";
-			NeckHeight = NeckHeight_DefaultValue = "0%";
-			Reversed = Reversed_DefaultValue = true;
-			Label = Label_DefaultValue = null;
+			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = null;
-			Point = Point_DefaultValue = null;
-			States = States_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Point = Point_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Linecap = Linecap_DefaultValue = "round";
-			LinkedTo = LinkedTo_DefaultValue = null;
+			LinkedTo = LinkedTo_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Linecap = Linecap_DefaultValue = "round";
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Clip = Clip_DefaultValue = False;
+			DataLabels = DataLabels_DefaultValue = "";
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			ShowInLegend = ShowInLegend_DefaultValue = False;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			StickyTracking = StickyTracking_DefaultValue = False;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
 			Colors = Colors_DefaultValue = new List<string>();
 			EndAngle = EndAngle_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
 			MinSize = MinSize_DefaultValue = 80;
 			StartAngle = StartAngle_DefaultValue = 0;
-			Events = Events_DefaultValue = null;
-			Point = Point_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Point = Point_DefaultValue = "";
 			Depth = Depth_DefaultValue = 0;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
@@ -69,37 +68,17 @@ namespace Highsoft.Web.Mvc.Charts
 			Height = Height_DefaultValue = 100%;
 			NeckHeight = NeckHeight_DefaultValue = 25%;
 			Reversed = Reversed_DefaultValue = false;
-			States = States_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = "";
+			States = States_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// The pyramid neck width is zero by default, as opposed to the funnel, which shares the same layout logic.
-		/// </summary>
-		public string NeckWidth { get; set; }
-		private string NeckWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pyramid neck width is zero by default, as opposed to the funnel, which shares the same layout logic.
-		/// </summary>
-		public string NeckHeight { get; set; }
-		private string NeckHeight_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pyramid is reversed by default, as opposed to the funnel, whichshares the layout engine, and is not reversed.
-		/// </summary>
-		public bool? Reversed { get; set; }
-		private bool? Reversed_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsSeriesLabel Label { get; set; }
-		private PlotOptionsSeriesLabel Label_DefaultValue { get; set; }
+		public PlotOptionspyramidlabel Label { get; set; }
+		private PlotOptionspyramidlabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -126,22 +105,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsSeriesEvents Events { get; set; }
-		private PlotOptionsSeriesEvents Events_DefaultValue { get; set; }
+		public PlotOptionspyramidevents Events { get; set; }
+		private PlotOptionspyramidevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsSeriesPoint Point { get; set; }
-		private PlotOptionsSeriesPoint Point_DefaultValue { get; set; }
+		public PlotOptionspyramidpoint Point { get; set; }
+		private PlotOptionspyramidpoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public PlotOptionspyramiddataLabels DataLabels { get; set; }
+		private PlotOptionspyramiddataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsSeriesStates States { get; set; }
-		private PlotOptionsSeriesStates States_DefaultValue { get; set; }
+		public PlotOptionspyramidstates States { get; set; }
+		private PlotOptionspyramidstates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -266,8 +252,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsSeriesTooltip Tooltip { get; set; }
-		private PlotOptionsSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionspyramidtooltip Tooltip { get; set; }
+		private PlotOptionspyramidtooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -294,8 +280,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPieClip Clip { get; set; }
-		private PlotOptionsPieClip Clip_DefaultValue { get; set; }
+		public PlotOptionspyramidclip Clip { get; set; }
+		private PlotOptionspyramidclip Clip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionspyramiddataLabels DataLabels { get; set; }
+		private PlotOptionspyramiddataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -322,15 +315,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
 		/// </summary>
-		public PlotOptionsPieStickyTracking StickyTracking { get; set; }
-		private PlotOptionsPieStickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionspyramidstickyTracking StickyTracking { get; set; }
+		private PlotOptionspyramidstickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPieTooltip Tooltip { get; set; }
-		private PlotOptionsPieTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionspyramidtooltip Tooltip { get; set; }
+		private PlotOptionspyramidtooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -350,8 +343,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPieStates States { get; set; }
-		private PlotOptionsPieStates States_DefaultValue { get; set; }
+		public PlotOptionspyramidstates States { get; set; }
+		private PlotOptionspyramidstates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -392,15 +385,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPieEvents Events { get; set; }
-		private PlotOptionsPieEvents Events_DefaultValue { get; set; }
+		public PlotOptionspyramidevents Events { get; set; }
+		private PlotOptionspyramidevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPiePoint Point { get; set; }
-		private PlotOptionsPiePoint Point_DefaultValue { get; set; }
+		public PlotOptionspyramidpoint Point { get; set; }
+		private PlotOptionspyramidpoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -460,25 +453,30 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionspyramiddataLabels DataLabels { get; set; }
+		private PlotOptionspyramiddataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options for the series states.
 		/// </summary>
-		public PlotOptionsFunnelStates States { get; set; }
-		private PlotOptionsFunnelStates States_DefaultValue { get; set; }
+		public PlotOptionspyramidstates States { get; set; }
+		private PlotOptionspyramidstates States_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
-			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
-			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -502,6 +500,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
@@ -525,6 +524,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			
 

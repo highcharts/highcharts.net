@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsPieStates  : BaseObject
+	public partial class PlotOptionspiestates  : BaseObject
 	{
-		public PlotOptionsPieStates()
+		public PlotOptionspiestates()
 		{
-			Hover = Hover_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsPieStatesHover Hover { get; set; }
-		private PlotOptionsPieStatesHover Hover_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 
 			return h;

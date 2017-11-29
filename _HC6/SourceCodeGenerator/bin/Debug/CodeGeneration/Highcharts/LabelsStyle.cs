@@ -10,36 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class LabelsStyle  : BaseObject
+	public partial class Labelsstyle  : BaseObject
 	{
-		public LabelsStyle()
+		public Labelsstyle()
 		{
-			Position = Position_DefaultValue = new Hashtable();
-			Color = Color_DefaultValue = #333333;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public LabelsStyleColor Color { get; set; }
-		private LabelsStyleColor Color_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Position != Position_DefaultValue) h.Add("position",Position);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			
 
 			return h;

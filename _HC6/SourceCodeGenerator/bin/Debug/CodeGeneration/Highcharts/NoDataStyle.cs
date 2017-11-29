@@ -10,45 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class NoDataStyle  : BaseObject
+	public partial class NoDatastyle  : BaseObject
 	{
-		public NoDataStyle()
+		public NoDatastyle()
 		{
-			FontWeight = FontWeight_DefaultValue = bold;
-			FontSize = FontSize_DefaultValue = 12px;
-			Color = Color_DefaultValue = #666666;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public NoDataStyleFontWeight FontWeight { get; set; }
-		private NoDataStyleFontWeight FontWeight_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public NoDataStyleFontSize FontSize { get; set; }
-		private NoDataStyleFontSize FontSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public NoDataStyleColor Color { get; set; }
-		private NoDataStyleColor Color_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
-			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			
 
 			return h;

@@ -10,63 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class TooltipStyle  : BaseObject
+	public partial class Tooltipstyle  : BaseObject
 	{
-		public TooltipStyle()
+		public Tooltipstyle()
 		{
-			Color = Color_DefaultValue = #333333;
-			Cursor = Cursor_DefaultValue = default;
-			FontSize = FontSize_DefaultValue = 12px;
-			PointerEvents = PointerEvents_DefaultValue = none;
-			WhiteSpace = WhiteSpace_DefaultValue = nowrap;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TooltipStyleColor Color { get; set; }
-		private TooltipStyleColor Color_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TooltipStyleCursor Cursor { get; set; }
-		private TooltipStyleCursor Cursor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TooltipStyleFontSize FontSize { get; set; }
-		private TooltipStyleFontSize FontSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TooltipStylePointerEvents PointerEvents { get; set; }
-		private TooltipStylePointerEvents PointerEvents_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TooltipStyleWhiteSpace WhiteSpace { get; set; }
-		private TooltipStyleWhiteSpace WhiteSpace_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
-			if (PointerEvents != PointerEvents_DefaultValue) h.Add("pointerEvents",PointerEvents);
-			if (WhiteSpace != WhiteSpace_DefaultValue) h.Add("whiteSpace",WhiteSpace);
 			
 
 			return h;

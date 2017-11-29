@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsScatterMarker  : BaseObject
+	public partial class PlotOptionsscattermarker  : BaseObject
 	{
-		public PlotOptionsScatterMarker()
+		public PlotOptionsscattermarker()
 		{
-			Enabled = Enabled_DefaultValue = True;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsScatterMarkerEnabled Enabled { get; set; }
-		private PlotOptionsScatterMarkerEnabled Enabled_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;

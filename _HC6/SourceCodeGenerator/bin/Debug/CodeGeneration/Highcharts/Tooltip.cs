@@ -29,20 +29,20 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333"},{ "cursor", "default"},{ "fontSize", "12px"},{ "pointerEvents", "none"},{ "whiteSpace", "nowrap" }};
 			BorderColor = BorderColor_DefaultValue = "null";
 			Crosshairs = Crosshairs_DefaultValue = new List<Crosshair>();
-			FollowPointer = FollowPointer_DefaultValue = null;
-			FollowTouchMove = FollowTouchMove_DefaultValue = null;
+			FollowPointer = FollowPointer_DefaultValue = "";
+			FollowTouchMove = FollowTouchMove_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			HideDelay = HideDelay_DefaultValue = 500;
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
 			Shape = Shape_DefaultValue = "callout";
 			Shared = Shared_DefaultValue = false;
-			Split = Split_DefaultValue = null;
+			Split = Split_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
-			ValuePrefix = ValuePrefix_DefaultValue = null;
-			ValueSuffix = ValueSuffix_DefaultValue = null;
-			XDateFormat = XDateFormat_DefaultValue = null;
+			ValuePrefix = ValuePrefix_DefaultValue = "";
+			ValueSuffix = ValueSuffix_DefaultValue = "";
+			XDateFormat = XDateFormat_DefaultValue = "";
 			
 		}	
 		

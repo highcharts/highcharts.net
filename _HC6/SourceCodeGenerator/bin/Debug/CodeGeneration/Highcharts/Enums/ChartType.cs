@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-    public enum ChartType
+    public enum Charttype
     {
         Bar, 
 		Heatmap, 

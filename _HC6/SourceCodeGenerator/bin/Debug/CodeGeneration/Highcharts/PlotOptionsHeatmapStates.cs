@@ -10,36 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsHeatmapStates  : BaseObject
+	public partial class PlotOptionsheatmapstates  : BaseObject
 	{
-		public PlotOptionsHeatmapStates()
+		public PlotOptionsheatmapstates()
 		{
-			Normal = Normal_DefaultValue = null;
-			Hover = Hover_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsHeatmapStatesNormal Normal { get; set; }
-		private PlotOptionsHeatmapStatesNormal Normal_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsHeatmapStatesHover Hover { get; set; }
-		private PlotOptionsHeatmapStatesHover Hover_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 
 			return h;

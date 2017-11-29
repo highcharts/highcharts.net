@@ -14,22 +14,22 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Exporting()
 		{
-			Csv = Csv_DefaultValue = null;
+			Csv = Csv_DefaultValue = "";
 			ShowTable = ShowTable_DefaultValue = False;
 			Type = Type_DefaultValue = image/png;
 			Url = Url_DefaultValue = "https://export.highcharts.com/";
 			PrintMaxWidth = PrintMaxWidth_DefaultValue = 780;
 			Scale = Scale_DefaultValue = 2;
-			Buttons = Buttons_DefaultValue = null;
-			MenuItemDefinitions = MenuItemDefinitions_DefaultValue = null;
+			Buttons = Buttons_DefaultValue = "";
+			MenuItemDefinitions = MenuItemDefinitions_DefaultValue = "";
 			AllowHTML = AllowHTML_DefaultValue = false;
 			ChartOptions = ChartOptions_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Error = Error_DefaultValue = "";
 			FallbackToExportServer = FallbackToExportServer_DefaultValue = true;
 			Filename = Filename_DefaultValue = "chart";
-			FormAttributes = FormAttributes_DefaultValue = null;
-			LibURL = LibURL_DefaultValue = null;
+			FormAttributes = FormAttributes_DefaultValue = "";
+			LibURL = LibURL_DefaultValue = "";
 			SourceHeight = SourceHeight_DefaultValue = null;
 			SourceWidth = SourceWidth_DefaultValue = null;
 			Width = Width_DefaultValue = null;
@@ -40,22 +40,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for exporting data to CSV or ExCel, or displaying the datain a HTML table or a JavaScript structure. Requires the`export-data.js` module. This module adds data export options to theexport menu and provides functions like `Chart.getCSV`,`Chart.getTable`, `Chart.getDataRows` and `Chart.viewData`.
 		/// </summary>
-		public ExportingCsv Csv { get; set; }
-		private ExportingCsv Csv_DefaultValue { get; set; }
+		public Exportingcsv Csv { get; set; }
+		private Exportingcsv Csv_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Export-data module required. Show a HTML table below the chart with the chart's current data.
 		/// </summary>
-		public ExportingShowTable ShowTable { get; set; }
-		private ExportingShowTable ShowTable_DefaultValue { get; set; }
+		public ExportingshowTable ShowTable { get; set; }
+		private ExportingshowTable ShowTable_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Default MIME type for exporting if `chart.exportChart()` is calledwithout specifying a `type` option. Possible values are `image/png`, `image/jpeg`, `application/pdf` and `image/svg+xml`.
 		/// </summary>
-		public ExportingType Type { get; set; }
-		private ExportingType Type_DefaultValue { get; set; }
+		public Exportingtype Type { get; set; }
+		private Exportingtype Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -75,22 +75,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Defines the scale or zoom factor for the exported image comparedto the on-screen display. While for instance a 600px wide chartmay look good on a website, it will look bad in print. The defaultscale of 2 makes this chart export to a 1200px PNG or JPG.
 		/// </summary>
-		public ExportingScale Scale { get; set; }
-		private ExportingScale Scale_DefaultValue { get; set; }
+		public Exportingscale Scale { get; set; }
+		private Exportingscale Scale_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the export related buttons, print and export. In additionto the default buttons listed here, custom buttons can be added.See [navigation.buttonOptions](#navigation.buttonOptions) for generaloptions.
 		/// </summary>
-		public ExportingButtons Buttons { get; set; }
-		private ExportingButtons Buttons_DefaultValue { get; set; }
+		public Exportingbuttons Buttons { get; set; }
+		private Exportingbuttons Buttons_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a `key` that is referenced in the[menuItems](#exporting.buttons.contextButton.menuItems) setting,and a `value`, which is an object with the following properties:<dl><dt>onclick</dt><dd>The click handler for the menu item</dd><dt>text</dt><dd>The text for the menu item</dd><dt>textKey</dt><dd>If internationalization is required, the key to a language string</dd></dl>
 		/// </summary>
-		public ExportingMenuItemDefinitions MenuItemDefinitions { get; set; }
-		private ExportingMenuItemDefinitions MenuItemDefinitions_DefaultValue { get; set; }
+		public ExportingmenuItemDefinitions MenuItemDefinitions { get; set; }
+		private ExportingmenuItemDefinitions MenuItemDefinitions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -103,8 +103,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Additional chart options to be merged into an exported chart. Forexample, a common use case is to add data labels to improve readabilityof the exported chart, or to add a printer-friendly color scheme.
 		/// </summary>
-		public ExportingChartOptions ChartOptions { get; set; }
-		private ExportingChartOptions ChartOptions_DefaultValue { get; set; }
+		public ExportingchartOptions ChartOptions { get; set; }
+		private ExportingchartOptions ChartOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -138,8 +138,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An object containing additional attributes for the POST form thatsends the SVG to the export server. For example, a `target` can beset to make sure the generated image is received in another frame, or a custom `enctype` or `encoding` can be set.
 		/// </summary>
-		public ExportingFormAttributes FormAttributes { get; set; }
-		private ExportingFormAttributes FormAttributes_DefaultValue { get; set; }
+		public ExportingformAttributes FormAttributes { get; set; }
+		private ExportingformAttributes FormAttributes_DefaultValue { get; set; }
 		 
 
 		/// <summary>

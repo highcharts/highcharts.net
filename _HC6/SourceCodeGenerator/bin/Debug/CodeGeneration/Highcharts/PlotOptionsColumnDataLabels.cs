@@ -10,45 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsColumnDataLabels  : BaseObject
+	public partial class PlotOptionscolumndataLabels  : BaseObject
 	{
-		public PlotOptionsColumnDataLabels()
+		public PlotOptionscolumndataLabels()
 		{
-			Align = Align_DefaultValue = null;
-			VerticalAlign = VerticalAlign_DefaultValue = null;
-			Y = Y_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsColumnDataLabelsAlign Align { get; set; }
-		private PlotOptionsColumnDataLabelsAlign Align_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsColumnDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private PlotOptionsColumnDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsColumnDataLabelsY Y { get; set; }
-		private PlotOptionsColumnDataLabelsY Y_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;

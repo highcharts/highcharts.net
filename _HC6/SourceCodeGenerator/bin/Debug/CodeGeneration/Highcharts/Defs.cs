@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Defs()
 		{
-			Markers = Markers_DefaultValue = null;
+			Markers = Markers_DefaultValue = "";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for configuring markers for annotations.An example of the arrow marker:<pre>{  arrow: {    id: 'arrow',    refY: 5,    refX: 5,    markerWidth: 10,    markerHeight: 10,    children: [{      tagName: 'path',      attrs: {        d: 'M 0 0 L 10 5 L 0 10 Z',        strokeWidth: 0      }    }]  }}</pre>
 		/// </summary>
-		public DefsMarkers Markers { get; set; }
-		private DefsMarkers Markers_DefaultValue { get; set; }
+		public Defsmarkers Markers { get; set; }
+		private Defsmarkers Markers_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

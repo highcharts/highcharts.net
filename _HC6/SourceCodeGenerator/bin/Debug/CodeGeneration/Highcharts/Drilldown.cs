@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ActiveAxisLabelStyle = ActiveAxisLabelStyle_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#003399"},{ "fontWeight", "bold"},{ "textDecoration", "underline" }};
 			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#003399"},{ "fontWeight", "bold"},{ "textDecoration", "underline" }};
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			DrillUpButton = DrillUpButton_DefaultValue = null;
+			DrillUpButton = DrillUpButton_DefaultValue = "";
 			AllowPointDrilldown = AllowPointDrilldown_DefaultValue = true;
 			Series = Series_DefaultValue = new List<Series>();
 			
@@ -48,8 +48,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for the drill up button that appears when drilling downon a series. The text for the button is defined in [lang.drillUpText](#lang.drillUpText).
 		/// </summary>
-		public DrilldownDrillUpButton DrillUpButton { get; set; }
-		private DrilldownDrillUpButton DrillUpButton_DefaultValue { get; set; }
+		public DrilldowndrillUpButton DrillUpButton { get; set; }
+		private DrilldowndrillUpButton DrillUpButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>

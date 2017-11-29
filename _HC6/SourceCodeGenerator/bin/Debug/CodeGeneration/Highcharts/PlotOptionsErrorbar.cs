@@ -10,55 +10,51 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsErrorbar  : BaseObject
+	public partial class PlotOptionserrorbar  : BaseObject
 	{
-		public PlotOptionsErrorbar()
+		public PlotOptionserrorbar()
 		{
-			Color = Color_DefaultValue = "#000000";
-			Grouping = Grouping_DefaultValue = False;
-			LinkedTo = LinkedTo_DefaultValue = ":previous";
-			Tooltip = Tooltip_DefaultValue = null;
-			WhiskerWidth = WhiskerWidth_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
-			Label = Label_DefaultValue = null;
+			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = null;
-			Point = Point_DefaultValue = null;
+			Events = Events_DefaultValue = "";
+			Point = Point_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = "x";
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = null;
+			Cursor = Cursor_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Keys = Keys_DefaultValue = new List<string>();
-			LinkedTo = LinkedTo_DefaultValue = null;
+			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
-			PointIntervalUnit = PointIntervalUnit_DefaultValue = null;
+			PointIntervalUnit = PointIntervalUnit_DefaultValue = "";
 			PointPlacement = PointPlacement_DefaultValue = "new PointPlacement()";
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Stacking = Stacking_DefaultValue = "null";
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = null;
-			Zones = Zones_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
+			Zones = Zones_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			Crisp = Crisp_DefaultValue = true;
@@ -68,10 +64,11 @@ namespace Highsoft.Web.Mvc.Charts
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			PointRange = PointRange_DefaultValue = null;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
 			SoftThreshold = SoftThreshold_DefaultValue = False;
 			StickyTracking = StickyTracking_DefaultValue = False;
-			Tooltip = Tooltip_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = "";
 			Threshold = Threshold_DefaultValue = 0;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -80,18 +77,18 @@ namespace Highsoft.Web.Mvc.Charts
 			Grouping = Grouping_DefaultValue = true;
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
-			DataGrouping = DataGrouping_DefaultValue = null;
+			DataGrouping = DataGrouping_DefaultValue = "";
 			Depth = Depth_DefaultValue = 25;
-			EdgeColor = EdgeColor_DefaultValue = null;
+			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
-			Threshold = Threshold_DefaultValue = null;
-			Tooltip = Tooltip_DefaultValue = null;
+			Threshold = Threshold_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = "";
 			WhiskerLength = WhiskerLength_DefaultValue = 50%;
 			FillColor = FillColor_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 1;
 			MedianWidth = MedianWidth_DefaultValue = 2;
-			States = States_DefaultValue = null;
+			States = States_DefaultValue = "";
 			WhiskerWidth = WhiskerWidth_DefaultValue = 2;
 			MedianColor = MedianColor_DefaultValue = "null";
 			StemColor = StemColor_DefaultValue = "null";
@@ -103,41 +100,6 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The main color of the bars. This can be overridden by [stemColor](#plotOptions.errorbar.stemColor) and [whiskerColor](#plotOptions.errorbar.whiskerColor)individually.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsErrorbarGrouping Grouping { get; set; }
-		private PlotOptionsErrorbarGrouping Grouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The parent series of the error bar. The default value links it tothe previous series. Otherwise, use the id of the parent series.
-		/// </summary>
-		public string LinkedTo { get; set; }
-		private string LinkedTo_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsErrorbarTooltip Tooltip { get; set; }
-		private PlotOptionsErrorbarTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The line width of the whiskers, the horizontal lines marking lowand high values. When `null`, the general [lineWidth](#plotOptions.errorbar.lineWidth) applies.
-		/// </summary>
-		public double? WhiskerWidth { get; set; }
-		private double? WhiskerWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
@@ -147,8 +109,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsSeriesLabel Label { get; set; }
-		private PlotOptionsSeriesLabel Label_DefaultValue { get; set; }
+		public PlotOptionserrorbarlabel Label { get; set; }
+		private PlotOptionserrorbarlabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -175,15 +137,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsSeriesEvents Events { get; set; }
-		private PlotOptionsSeriesEvents Events_DefaultValue { get; set; }
+		public PlotOptionserrorbarevents Events { get; set; }
+		private PlotOptionserrorbarevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsSeriesPoint Point { get; set; }
-		private PlotOptionsSeriesPoint Point_DefaultValue { get; set; }
+		public PlotOptionserrorbarpoint Point { get; set; }
+		private PlotOptionserrorbarpoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public PlotOptionserrorbardataLabels DataLabels { get; set; }
+		private PlotOptionserrorbardataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -203,8 +172,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsSeriesStates States { get; set; }
-		private PlotOptionsSeriesStates States_DefaultValue { get; set; }
+		public PlotOptionserrorbarstates States { get; set; }
+		private PlotOptionserrorbarstates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -406,15 +375,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsSeriesTooltip Tooltip { get; set; }
-		private PlotOptionsSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionserrorbartooltip Tooltip { get; set; }
+		private PlotOptionserrorbartooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsSeriesZone> Zones { get; set; }
-		private List<PlotOptionsSeriesZone> Zones_DefaultValue { get; set; }
+		public List<PlotOptionserrorbarzones> Zones { get; set; }
+		private List<PlotOptionserrorbarzones> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -483,8 +452,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnStates States { get; set; }
-		private PlotOptionsColumnStates States_DefaultValue { get; set; }
+		public PlotOptionserrorbarstates States { get; set; }
+		private PlotOptionserrorbarstates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionserrorbardataLabels DataLabels { get; set; }
+		private PlotOptionserrorbardataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -497,15 +473,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnStickyTracking StickyTracking { get; set; }
-		private PlotOptionsColumnStickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionserrorbarstickyTracking StickyTracking { get; set; }
+		private PlotOptionserrorbarstickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnTooltip Tooltip { get; set; }
-		private PlotOptionsColumnTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionserrorbartooltip Tooltip { get; set; }
+		private PlotOptionserrorbartooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -567,8 +543,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnDataGrouping DataGrouping { get; set; }
-		private PlotOptionsColumnDataGrouping DataGrouping_DefaultValue { get; set; }
+		public PlotOptionserrorbardataGrouping DataGrouping { get; set; }
+		private PlotOptionserrorbardataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -602,15 +578,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsBoxplotThreshold Threshold { get; set; }
-		private PlotOptionsBoxplotThreshold Threshold_DefaultValue { get; set; }
+		public PlotOptionserrorbarthreshold Threshold { get; set; }
+		private PlotOptionserrorbarthreshold Threshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsBoxplotTooltip Tooltip { get; set; }
-		private PlotOptionsBoxplotTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionserrorbartooltip Tooltip { get; set; }
+		private PlotOptionserrorbartooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -644,8 +620,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsBoxplotStates States { get; set; }
-		private PlotOptionsBoxplotStates States_DefaultValue { get; set; }
+		public PlotOptionserrorbarstates States { get; set; }
+		private PlotOptionserrorbarstates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -694,11 +670,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
-			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (WhiskerWidth != WhiskerWidth_DefaultValue) h.Add("whiskerWidth",WhiskerWidth);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
@@ -706,6 +677,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
@@ -753,6 +725,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());

@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Global()
 		{
-			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = null;
+			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "";
 			UseUTC = UseUTC_DefaultValue = true;
-			Date = Date_DefaultValue = null;
-			CanvasToolsURL = CanvasToolsURL_DefaultValue = null;
+			Date = Date_DefaultValue = "";
+			CanvasToolsURL = CanvasToolsURL_DefaultValue = "";
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "undefined";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;

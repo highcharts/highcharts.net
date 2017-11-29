@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class ExportingButtons  : BaseObject
+	public partial class Exportingbuttons  : BaseObject
 	{
-		public ExportingButtons()
+		public Exportingbuttons()
 		{
-			ContextButton = ContextButton_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// Options for the export button.In styled mode, export button styles can be applied with the`.highcharts-contextbutton` class.
-		/// </summary>
-		public ExportingButtonsContextButton ContextButton { get; set; }
-		private ExportingButtonsContextButton ContextButton_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (ContextButton.IsDirty()) h.Add("contextButton",ContextButton.ToHashtable());
 			
 
 			return h;

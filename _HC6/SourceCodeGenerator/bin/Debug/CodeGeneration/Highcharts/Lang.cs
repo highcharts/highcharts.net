@@ -33,9 +33,9 @@ namespace Highsoft.Web.Mvc.Charts
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
-			ThousandsSep = ThousandsSep_DefaultValue = " ";
-			ShortWeekdays = ShortWeekdays_DefaultValue = null;
-			InvalidDate = InvalidDate_DefaultValue = null;
+			ThousandsSep = ThousandsSep_DefaultValue = "";
+			ShortWeekdays = ShortWeekdays_DefaultValue = "";
+			InvalidDate = InvalidDate_DefaultValue = "";
 			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
 			
 		}	
@@ -51,22 +51,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public LangDownloadCSV DownloadCSV { get; set; }
-		private LangDownloadCSV DownloadCSV_DefaultValue { get; set; }
+		public LangdownloadCSV DownloadCSV { get; set; }
+		private LangdownloadCSV DownloadCSV_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public LangDownloadXLS DownloadXLS { get; set; }
-		private LangDownloadXLS DownloadXLS_DefaultValue { get; set; }
+		public LangdownloadXLS DownloadXLS { get; set; }
+		private LangdownloadXLS DownloadXLS_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public LangViewData ViewData { get; set; }
-		private LangViewData ViewData_DefaultValue { get; set; }
+		public LangviewData ViewData { get; set; }
+		private LangviewData ViewData_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class LegendKeyboardNavigation  : BaseObject
+	public partial class LegendkeyboardNavigation  : BaseObject
 	{
-		public LegendKeyboardNavigation()
+		public LegendkeyboardNavigation()
 		{
-			Enabled = Enabled_DefaultValue = true;
 			
 		}	
-		
-
-		/// <summary>
-		/// Enable/disable keyboard navigation for the legend. Requires the Accessibilitymodule.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;

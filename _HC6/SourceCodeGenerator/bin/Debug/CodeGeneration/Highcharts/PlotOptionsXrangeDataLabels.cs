@@ -10,45 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsXrangeDataLabels  : BaseObject
+	public partial class PlotOptionsxrangedataLabels  : BaseObject
 	{
-		public PlotOptionsXrangeDataLabels()
+		public PlotOptionsxrangedataLabels()
 		{
-			VerticalAlign = VerticalAlign_DefaultValue = middle;
-			Inside = Inside_DefaultValue = True;
-			Formatter = Formatter_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsXrangeDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private PlotOptionsXrangeDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsXrangeDataLabelsInside Inside { get; set; }
-		private PlotOptionsXrangeDataLabelsInside Inside_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The default formatter for X-range data labels displays the percentageof the partial fill amount.
-		/// </summary>
-		public PlotOptionsXrangeDataLabelsFormatter Formatter { get; set; }
-		private PlotOptionsXrangeDataLabelsFormatter Formatter_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
-			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			
 
 			return h;

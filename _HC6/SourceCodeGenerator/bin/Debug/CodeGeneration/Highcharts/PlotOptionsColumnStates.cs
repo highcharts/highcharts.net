@@ -10,36 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsColumnStates  : BaseObject
+	public partial class PlotOptionscolumnstates  : BaseObject
 	{
-		public PlotOptionsColumnStates()
+		public PlotOptionscolumnstates()
 		{
-			Hover = Hover_DefaultValue = null;
-			Select = Select_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsColumnStatesHover Hover { get; set; }
-		private PlotOptionsColumnStatesHover Hover_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsColumnStatesSelect Select { get; set; }
-		private PlotOptionsColumnStatesSelect Select_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
-			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

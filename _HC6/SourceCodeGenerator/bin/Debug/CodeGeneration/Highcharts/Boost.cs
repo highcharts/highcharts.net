@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			SeriesThreshold = SeriesThreshold_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
-			Debug = Debug_DefaultValue = null;
+			Debug = Debug_DefaultValue = "";
 			UseGPUTranslations = UseGPUTranslations_DefaultValue = false;
 			AllowForce = AllowForce_DefaultValue = true;
 			
@@ -26,8 +26,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Set the series threshold for when the boost should kick in globally.Setting to e.g. 20 will cause the whole chart to enter boost modeif there are 20 or more series active. When the chart is in boost mode,every series in it will be rendered to a common canvas. This offersa significant speed improvment in charts with a very highamount of series.
 		/// </summary>
-		public BoostSeriesThreshold SeriesThreshold { get; set; }
-		private BoostSeriesThreshold SeriesThreshold_DefaultValue { get; set; }
+		public BoostseriesThreshold SeriesThreshold { get; set; }
+		private BoostseriesThreshold SeriesThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -40,8 +40,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Debugging options for boost.Useful for benchmarking, and general timing.
 		/// </summary>
-		public BoostDebug Debug { get; set; }
-		private BoostDebug Debug_DefaultValue { get; set; }
+		public Boostdebug Debug { get; set; }
+		private Boostdebug Debug_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -14,26 +14,26 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Legend()
 		{
-			KeyboardNavigation = KeyboardNavigation_DefaultValue = null;
+			KeyboardNavigation = KeyboardNavigation_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = True;
 			Align = Align_DefaultValue = "center";
 			Layout = Layout_DefaultValue = "horizontal";
 			LabelFormatter = LabelFormatter_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#999999";
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			Navigation = Navigation_DefaultValue = null;
+			Navigation = Navigation_DefaultValue = "";
 			ItemStyle = ItemStyle_DefaultValue = new Hashtable{{ "color", "#333333"},{ "cursor", "pointer"},{ "fontSize", "12px"},{ "fontWeight", "bold"},{ "textOverflow", "ellipsis" }};
 			ItemHoverStyle = ItemHoverStyle_DefaultValue = new Hashtable{{ "color", "#000000" }};
 			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new Hashtable{{ "color", "#cccccc" }};
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = null;
+			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = "";
 			SquareSymbol = SquareSymbol_DefaultValue = true;
 			SymbolPadding = SymbolPadding_DefaultValue = 5;
 			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
-			Title = Title_DefaultValue = null;
-			BackgroundColor = BackgroundColor_DefaultValue = null;
+			Title = Title_DefaultValue = "";
+			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			Floating = Floating_DefaultValue = false;
 			ItemDistance = ItemDistance_DefaultValue = null;
@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = 8;
 			Reversed = Reversed_DefaultValue = false;
 			Rtl = Rtl_DefaultValue = false;
-			Style = Style_DefaultValue = null;
+			Style = Style_DefaultValue = "";
 			SymbolHeight = SymbolHeight_DefaultValue = null;
 			SymbolRadius = SymbolRadius_DefaultValue = null;
 			SymbolWidth = SymbolWidth_DefaultValue = null;
@@ -60,8 +60,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Keyboard navigation for the legend. Requires the Accessibility module.
 		/// </summary>
-		public LegendKeyboardNavigation KeyboardNavigation { get; set; }
-		private LegendKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
+		public LegendkeyboardNavigation KeyboardNavigation { get; set; }
+		private LegendkeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -109,8 +109,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for the paging or navigation appearing when the legendis overflown. Navigation works well on screen, but not in staticexported images. One way of working around that is to [increasethe chart height in export](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/legend/navigation-enabled-false/).
 		/// </summary>
-		public LegendNavigation Navigation { get; set; }
-		private LegendNavigation Navigation_DefaultValue { get; set; }
+		public Legendnavigation Navigation { get; set; }
+		private Legendnavigation Navigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -144,8 +144,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Default styling for the checkbox next to a legend item when`showCheckbox` is true.
 		/// </summary>
-		public LegendItemCheckboxStyle ItemCheckboxStyle { get; set; }
-		private LegendItemCheckboxStyle ItemCheckboxStyle_DefaultValue { get; set; }
+		public LegenditemCheckboxStyle ItemCheckboxStyle { get; set; }
+		private LegenditemCheckboxStyle ItemCheckboxStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -186,8 +186,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A title to be added on top of the legend.
 		/// </summary>
-		public LegendTitle Title { get; set; }
-		private LegendTitle Title_DefaultValue { get; set; }
+		public Legendtitle Title { get; set; }
+		private Legendtitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>

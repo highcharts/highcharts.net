@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsStreamgraphMarker  : BaseObject
+	public partial class PlotOptionsstreamgraphmarker  : BaseObject
 	{
-		public PlotOptionsStreamgraphMarker()
+		public PlotOptionsstreamgraphmarker()
 		{
-			Enabled = Enabled_DefaultValue = False;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsStreamgraphMarkerEnabled Enabled { get; set; }
-		private PlotOptionsStreamgraphMarkerEnabled Enabled_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;

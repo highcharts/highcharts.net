@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsSunburstDataLabelsStyle  : BaseObject
+	public partial class PlotOptionssunburstdataLabelsstyle  : BaseObject
 	{
-		public PlotOptionsSunburstDataLabelsStyle()
+		public PlotOptionssunburstdataLabelsstyle()
 		{
-			TextOverflow = TextOverflow_DefaultValue = ellipsis;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSunburstDataLabelsStyleTextOverflow TextOverflow { get; set; }
-		private PlotOptionsSunburstDataLabelsStyleTextOverflow TextOverflow_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (TextOverflow != TextOverflow_DefaultValue) h.Add("textOverflow",TextOverflow);
 			
 
 			return h;

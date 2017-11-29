@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsColumnrangeStates  : BaseObject
+	public partial class PlotOptionscolumnrangestates  : BaseObject
 	{
-		public PlotOptionsColumnrangeStates()
+		public PlotOptionscolumnrangestates()
 		{
-			Hover = Hover_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsColumnrangeStatesHover Hover { get; set; }
-		private PlotOptionsColumnrangeStatesHover Hover_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
 			
 
 			return h;

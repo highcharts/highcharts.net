@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsBoxplotTooltip  : BaseObject
+	public partial class PlotOptionsboxplottooltip  : BaseObject
 	{
-		public PlotOptionsBoxplotTooltip()
+		public PlotOptionsboxplottooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBoxplotTooltipPointFormat PointFormat { get; set; }
-		private PlotOptionsBoxplotTooltipPointFormat PointFormat_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

@@ -10,17 +10,13 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class ChartParallelAxes  : BaseObject
+	public partial class ChartparallelAxes  : BaseObject
 	{
-		public ChartParallelAxes()
+		public ChartparallelAxes()
 		{
-			LineWidth = LineWidth_DefaultValue = 1;
-			Title = Title_DefaultValue = null;
-			Labels = Labels_DefaultValue = null;
-			Offset = Offset_DefaultValue = 0;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
-			Labels = Labels_DefaultValue = null;
+			Labels = Labels_DefaultValue = "";
 			MinPadding = MinPadding_DefaultValue = 0.01;
 			MaxPadding = MaxPadding_DefaultValue = 0.01;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
@@ -31,16 +27,16 @@ namespace Highsoft.Web.Mvc.Charts
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = "null";
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
 			TickPosition = TickPosition_DefaultValue = "outside";
-			Title = Title_DefaultValue = null;
+			Title = Title_DefaultValue = "";
 			Type = Type_DefaultValue = "linear";
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
 			LineColor = LineColor_DefaultValue = "#ccd6eb";
 			LineWidth = LineWidth_DefaultValue = 1;
 			TickColor = TickColor_DefaultValue = "#ccd6eb";
 			AllowDecimals = AllowDecimals_DefaultValue = true;
-			Categories = Categories_DefaultValue = null;
+			Categories = Categories_DefaultValue = "";
 			Ceiling = Ceiling_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			Floor = Floor_DefaultValue = null;
 			GridZIndex = GridZIndex_DefaultValue = 1;
@@ -63,22 +59,22 @@ namespace Highsoft.Web.Mvc.Charts
 			TickAmount = TickAmount_DefaultValue = null;
 			TickInterval = TickInterval_DefaultValue = null;
 			TickPositioner = TickPositioner_DefaultValue = "";
-			TickPositions = TickPositions_DefaultValue = null;
+			TickPositions = TickPositions_DefaultValue = "";
 			TickWidth = TickWidth_DefaultValue = null;
 			UniqueNames = UniqueNames_DefaultValue = true;
-			Units = Units_DefaultValue = null;
+			Units = Units_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Crosshair = Crosshair_DefaultValue = new XAxisCrosshair();
-			Events = Events_DefaultValue = null;
+			Crosshair = Crosshair_DefaultValue = new ChartparallelAxescrosshair();
+			Events = Events_DefaultValue = "";
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = null;
 			EndOnTick = EndOnTick_DefaultValue = true;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 72;
 			ShowLastLabel = ShowLastLabel_DefaultValue = false;
-			Labels = Labels_DefaultValue = null;
+			Labels = Labels_DefaultValue = "";
 			MaxPadding = MaxPadding_DefaultValue = 0.05;
 			MinPadding = MinPadding_DefaultValue = 0.05;
 			StartOnTick = StartOnTick_DefaultValue = true;
-			Title = Title_DefaultValue = null;
+			Title = Title_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 0;
 			Opposite = Opposite_DefaultValue = false;
 			Min = Min_DefaultValue = null;
@@ -87,34 +83,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesLineWidth LineWidth { get; set; }
-		private ChartParallelAxesLineWidth LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Titles for yAxes are taken from [xAxis.categories](#xAxis.categories). All options for `xAxis.labels` applies to parallel coordinates titles.For example, to style categories, use [xAxis.labels.style](#xAxis.labels.style).
-		/// </summary>
-		public ChartParallelAxesTitle Title { get; set; }
-		private ChartParallelAxesTitle Title_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesLabels Labels { get; set; }
-		private ChartParallelAxesLabels Labels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesOffset Offset { get; set; }
-		private ChartParallelAxesOffset Offset_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
@@ -133,8 +101,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The axis labels show the number or category for each tick.
 		/// </summary>
-		public XAxisLabels Labels { get; set; }
-		private XAxisLabels Labels_DefaultValue { get; set; }
+		public ChartparallelAxeslabels Labels { get; set; }
+		private ChartparallelAxeslabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -210,8 +178,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The axis title, showing next to the axis line.
 		/// </summary>
-		public XAxisTitle Title { get; set; }
-		private XAxisTitle Title_DefaultValue { get; set; }
+		public ChartparallelAxestitle Title { get; set; }
+		private ChartparallelAxestitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -455,8 +423,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Datetime axis only. An array determining what time intervals theticks are allowed to fall on. Each array item is an array where thefirst value is the time unit and the second value another array ofallowed multiples. Defaults to:<pre>units: [[    'millisecond', // unit name    [1, 2, 5, 10, 20, 25, 50, 100, 200, 500] // allowed multiples], [    'second',    [1, 2, 5, 10, 15, 30]], [    'minute',    [1, 2, 5, 10, 15, 30]], [    'hour',    [1, 2, 3, 4, 6, 8, 12]], [    'day',    [1]], [    'week',    [1]], [    'month',    [1, 3, 6]], [    'year',    null]]</pre>
 		/// </summary>
-		public XAxisUnits Units { get; set; }
-		private XAxisUnits Units_DefaultValue { get; set; }
+		public ChartparallelAxesunits Units { get; set; }
+		private ChartparallelAxesunits Units_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -476,15 +444,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Event handlers for the axis.
 		/// </summary>
-		public XAxisEvents Events { get; set; }
-		private XAxisEvents Events_DefaultValue { get; set; }
+		public ChartparallelAxesevents Events { get; set; }
+		private ChartparallelAxesevents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
 		/// </summary>
-		public YAxisTooltipValueFormat TooltipValueFormat { get; set; }
-		private YAxisTooltipValueFormat TooltipValueFormat_DefaultValue { get; set; }
+		public ChartparallelAxestooltipValueFormat TooltipValueFormat { get; set; }
+		private ChartparallelAxestooltipValueFormat TooltipValueFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -497,8 +465,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public YAxisTickPixelInterval TickPixelInterval { get; set; }
-		private YAxisTickPixelInterval TickPixelInterval_DefaultValue { get; set; }
+		public ChartparallelAxestickPixelInterval TickPixelInterval { get; set; }
+		private ChartparallelAxestickPixelInterval TickPixelInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -511,8 +479,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public YAxisLabels Labels { get; set; }
-		private YAxisLabels Labels_DefaultValue { get; set; }
+		public ChartparallelAxeslabels Labels { get; set; }
+		private ChartparallelAxeslabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -539,8 +507,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public YAxisTitle Title { get; set; }
-		private YAxisTitle Title_DefaultValue { get; set; }
+		public ChartparallelAxestitle Title { get; set; }
+		private ChartparallelAxestitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -582,10 +550,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
-			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());

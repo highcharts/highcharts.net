@@ -10,27 +10,18 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsBellcurveMarker  : BaseObject
+	public partial class PlotOptionsbellcurvemarker  : BaseObject
 	{
-		public PlotOptionsBellcurveMarker()
+		public PlotOptionsbellcurvemarker()
 		{
-			Enabled = Enabled_DefaultValue = False;
 			
 		}	
-		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBellcurveMarkerEnabled Enabled { get; set; }
-		private PlotOptionsBellcurveMarkerEnabled Enabled_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;
