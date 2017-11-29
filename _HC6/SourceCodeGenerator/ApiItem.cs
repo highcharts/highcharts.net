@@ -6,10 +6,38 @@ using System.Web;
 
 public class ApiItem
 {
+
+    public string FullName { get; set; }
+    public string Title { get; set; }
+    public string ParentFullName { get; set; }
+    public bool IsParent { get; set; }
+    public string ReturnType { get; set; }
+
+    public string Description { get; set; }
+    public string Defaults { get; set; }
+    public IList<string> Values { get; set; }
+    public bool Deprecated { get; set; }
+    public List<string> Products { get; set; }
+    public IList<string> Types { get; set; }
+    public IList<string> Extends { get; set; }
+    public IList<string> Exclude { get; set; }
+    public string Since { get; set; }
+    public bool HasChildren { get; set; }
+    public IList<ApiItem> Children { get; set; }
+    public ApiItem Parent { get; set; }
+
     public ApiItem()
     {
+        ParentFullName = null;
+        ReturnType = string.Empty;
+        Description = string.Empty;
+        Values = new List<string>();
+        Products = new List<string>();
+        Types = new List<string>();
+        Extends = new List<string>();
+        Exclude = new List<string>();
+        Children = new List<ApiItem>();
         Parent = null;
-        Description = "";
     }
 
     //public ApiItem(Dictionary<string, object> item)
@@ -31,7 +59,7 @@ public class ApiItem
     //    IsParent = (bool)item["isParent"];
 
     //    if (item.TryGetValue("parent", out outValue))
-    //        Parent = item["parent"] as string;
+    //        ParentFullName = item["parent"] as string;
     //    if (item.TryGetValue("deprecated", out outValue))
     //        Deprecated = item["deprecated"] == null ? false : (bool)item["deprecated"];
     //    if (item.TryGetValue("returnType", out outValue))
@@ -74,22 +102,6 @@ public class ApiItem
 
     //}
 
-    public string FullName { get; set; }
-    public string Title { get; set; }
-    public string Parent { get; set; }
-    public bool IsParent { get; set; }
-    public string ReturnType { get; set; } = string.Empty;
-
-    public string Description { get; set; } = string.Empty;
-    public string Defaults { get; set; }
-    public List<string> Values { get; set; } = new List<string>();
-    public bool Deprecated { get; set; }
-    public List<string> Products { get; set; } = new List<string>();
-    public IList<string> Types { get; set; } = new List<string>();
-    public IList<string> Extends { get; set; } = new List<string>();
-    public IList<string> Exclude { get; set; } = new List<string>();
-    public string Since { get; set; }
-    public bool HasChildren { get; set; }
 
     public ApiItem Clone()
     {
@@ -97,7 +109,7 @@ public class ApiItem
 
         item.FullName = string.IsNullOrWhiteSpace(FullName) ? string.Empty : string.Copy(FullName);
         item.Title = string.IsNullOrWhiteSpace(Title) ? string.Empty : string.Copy(Title);
-        item.Parent = string.IsNullOrWhiteSpace(Parent) ? null : string.Copy(Parent);
+        item.ParentFullName = string.IsNullOrWhiteSpace(ParentFullName) ? null : string.Copy(ParentFullName);
         item.IsParent = IsParent;
         item.ReturnType = string.IsNullOrWhiteSpace(ReturnType) ? string.Empty : string.Copy(ReturnType);
         item.Description = string.IsNullOrWhiteSpace(Description) ? string.Empty : string.Copy(Description);

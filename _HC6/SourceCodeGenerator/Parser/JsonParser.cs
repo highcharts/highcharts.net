@@ -30,8 +30,10 @@ namespace SourceCodeGenerator.Parser
         public List<ApiItem> Get()
         {
             GetObjectFromJsonFile();
-            ProcessObjects();
+            //ProcessObjects();
 
+
+            
             return Items.ToList();
         }
 
@@ -120,7 +122,7 @@ namespace SourceCodeGenerator.Parser
             {
                 var newItem = copy.Clone();
 
-                newItem.Parent = item.FullName;
+                newItem.ParentFullName = item.FullName;
                 newItem.FullName = item.FullName + "." + copy.FullName.Replace(sourceItem.FullName + ".", "");
 
                 Items.Add(newItem);
@@ -129,10 +131,11 @@ namespace SourceCodeGenerator.Parser
             }
         }
 
-        private void CreateApiItem(string name, JToken item, bool isParent = false, string parent = null)
+        private void CreateApiItem(string name, JToken item, bool isParent = false, ApiItem parent = null)
         {
             ApiItem apiItem = new ApiItem();
             apiItem.IsParent = isParent;
+            apiItem.ParentFullName = parent?.FullName;
             apiItem.Parent = parent;
             apiItem.Title = name;
 
@@ -154,8 +157,8 @@ namespace SourceCodeGenerator.Parser
             }
 
             if (string.IsNullOrWhiteSpace(apiItem.FullName))
-                if (!string.IsNullOrWhiteSpace(apiItem.Parent))
-                    apiItem.FullName = apiItem.Parent + "." + apiItem.Title;
+                if (!string.IsNullOrWhiteSpace(apiItem.ParentFullName))
+                    apiItem.FullName = apiItem.ParentFullName + "." + apiItem.Title;
                 else
                     apiItem.FullName = apiItem.Title;
 
@@ -210,9 +213,11 @@ namespace SourceCodeGenerator.Parser
                 }
             }
 
-            
 
-            Items.Add(apiItem);
+            if (parent == null)
+                Items.Add(apiItem);
+            else
+                parent.Children.Add(apiItem);
             //Console.WriteLine(apiItem.Title + ": "+apiItem.FullName);
 
             JToken children = item.SelectToken("children", false);
@@ -230,7 +235,7 @@ namespace SourceCodeGenerator.Parser
                 if (string.IsNullOrWhiteSpace(childName))
                     continue;
 
-                CreateApiItem(childName, child.First, true, apiItem.FullName);
+                CreateApiItem(childName, child.First, true, apiItem);
             }
         }
     }

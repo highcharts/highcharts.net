@@ -64,14 +64,14 @@ public class HighchartsGenerator
         FileService.PrepareFolder(ROOT_CLASS);
         ///ParseItems();
         _apiItems = JsonParser.Get();
-        ProcessApiItems();
+        ProcessApiItems(_apiItems);
         //var items = _apiItems.Where(p => p.FullName.ToLower().Contains("yaxis.opposite"));
 
 
         GenerateClass(new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS });
         //for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)
         //{
-            GenerateClassesForLevel(0);
+            GenerateClassesForLevel(_apiItems);
         //}
     }
 
@@ -121,13 +121,13 @@ public class HighchartsGenerator
     //    ProcessApiItems();
     //}
 
-    private void ProcessApiItems()
+    private void ProcessApiItems(IList<ApiItem> items)
     {
         //AppendMissingApiItems();
 
         string multitypeslist = "";
 
-        foreach (ApiItem apiItem in _apiItems)
+        foreach (ApiItem apiItem in items)
         {
             //if (apiItem.ReturnType != null && apiItem.ReturnType.Contains("|"))
             //    multitypeslist += System.Environment.NewLine+apiItem.FullName+" : "+apiItem.ReturnType;
@@ -191,6 +191,9 @@ public class HighchartsGenerator
             AddDefaultsToEnum(apiItem);
 
             UpdateDefaultsForHighcharts(apiItem);
+
+            if (apiItem.HasChildren)
+                ProcessApiItems(apiItem.Children);
         }
     }
 
@@ -246,6 +249,58 @@ public class HighchartsGenerator
 
     //}
 
+    private List<ApiItem> GetChildrenFromBaseClasses(ApiItem item)
+    {
+        var addedChildren = new List<ApiItem>();
+        foreach(var baseClassFullName in item.Extends)
+        {
+            var baseClass = FindApiItem(baseClassFullName, item);
+
+            if(baseClass.Extends.Any())
+            {
+                addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !item.Exclude.Any(q => q == p.Title)));
+            }
+
+            addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title)).ToList());
+        }
+
+        return addedChildren;
+    }
+
+    private ApiItem FindApiItem(string baseClassFullName, ApiItem item)
+    {
+        if (item.Parent != null)
+        {
+            if (item.Parent.FullName == baseClassFullName)
+                return item.Parent;
+
+            foreach (var apiItem in item.Parent.Children)
+            {
+                if (apiItem.FullName == baseClassFullName)
+                    return apiItem;
+            }
+        }
+
+        return FindApiItemInTree(baseClassFullName, _apiItems);
+    }
+
+    private ApiItem FindApiItemInTree(string baseClassFullName, IList<ApiItem> items)
+    {
+        foreach (var item in items)
+        {
+            if (item.FullName == baseClassFullName)
+                return item;
+
+            if (item.Children.Any())
+            {
+                var result = FindApiItemInTree(baseClassFullName, item.Children);
+                if (result != null)
+                    return result;
+            }
+        }
+
+        return null;
+    }
 
     private void GenerateClass(ApiItem item)
     {
@@ -261,7 +316,12 @@ public class HighchartsGenerator
         if (item.Title == ROOT_CLASS)
             children = FindRootChildren();
         else
-            children = FindImmediateChildren(item);
+        {
+            children = item.Children.ToList(); // FindImmediateChildren(item);
+
+            if(item.Extends.Any())
+                children.AddRange(GetChildrenFromBaseClasses(item));
+        }
 
         if (item.FullName.ToLower().EndsWith("zones"))
             item.FullName = item.FullName.Remove(item.FullName.Length - 5) + "Zone";
@@ -281,24 +341,24 @@ public class HighchartsGenerator
             if (child == item)
                 continue;
 
-            child.Parent = item.FullName;
+            child.ParentFullName = item.FullName;
 
             if (child.Values != null && child.Values.Count > 0)
             {
                 GenerateEnum(child);
             }
 
-            if (child.Parent.ToLower().Contains("highcharts") && propertyName.ToLower().Contains("series") && propertyName.Length > 6)
+            if (child.ParentFullName.ToLower().Contains("highcharts") && propertyName.ToLower().Contains("series") && propertyName.Length > 6)
                 continue;
 
-            if (propertyName.ToLower().EndsWith("datalabels") && (child.Parent.ToLower().EndsWith("data") || child.Parent.ToLower().EndsWith("levels")))
+            if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
                 child.IsParent = true;
 
             string formattedProperty = FormatProperty(propertyTemplate, child);
             string formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
             string formattedComparer = FormatPropertyComparer(propertyName, child);
 
-            if (propertyName.ToLower().EndsWith("datalabels") && (child.Parent.ToLower().EndsWith("data") || child.Parent.ToLower().EndsWith("levels")))
+            if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
                 child.IsParent = false;
 
             if (formattedDefaultProperty.ToLower().Contains("datalabels") && formattedDefaultProperty.Contains("null"))
@@ -324,6 +384,8 @@ public class HighchartsGenerator
                         .Replace("{HighTemplate.ClassName}", GetClassNameFromItem(item));
 
         FileService.SaveClass(ROOT_CLASS, GetClassNameFromItem(item), codeTemplate);
+
+        children.Clear();
     }
 
     private void GenerateEnum(ApiItem apiItem)
@@ -501,16 +563,16 @@ public class HighchartsGenerator
         if (propertyName == "FillColor")
             returnType = "object";
 
-        if (propertyName == "Data" && child.Parent.ToLower() == "highcharts")
+        if (propertyName == "Data" && child.ParentFullName.ToLower() == "highcharts")
             returnType = "Data";
 
-        if (propertyName == "Height" && child.Parent.ToLower() == "chart")
+        if (propertyName == "Height" && child.ParentFullName.ToLower() == "chart")
             returnType = "double?";
 
-        if (propertyName == "Margin" && child.Parent.ToLower() != "chart")
+        if (propertyName == "Margin" && child.ParentFullName.ToLower() != "chart")
             returnType = "double?";
 
-        if (propertyName == "Margin" && child.Parent.ToLower() == "chart")
+        if (propertyName == "Margin" && child.ParentFullName.ToLower() == "chart")
             returnType = "double[]";
 
         return propertyTemplate
@@ -526,9 +588,9 @@ public class HighchartsGenerator
     {
         string returnType = child.ReturnType;
 
-        if (propertyName.ToLower() == "data" && child.Parent != null)
+        if (propertyName.ToLower() == "data" && child.ParentFullName != null)
         {
-            string result = child.Parent;
+            string result = child.ParentFullName;
             if (_seriesMappings[result] != null)
             {
                 result = (string)_seriesMappings[result];
@@ -549,7 +611,7 @@ public class HighchartsGenerator
             return "List<" + result + "Data" + ">";
         }
 
-        if (child.Parent != ROOT_CLASS && (child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis"))
+        if (child.ParentFullName != ROOT_CLASS && (child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis"))
             return "string";
 
         if (_propertyTypeMappings[child.FullName] != null)
@@ -605,20 +667,20 @@ public class HighchartsGenerator
         // fully qualified names that are collections
         if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
         {
-            if (child.FullName == "Data" && child.Parent.ToLower().Contains("highcharts"))
+            if (child.FullName == "Data" && child.ParentFullName.ToLower().Contains("highcharts"))
                 return String.Format(complexPropertyFormat, child.FullName, FirstCharToLower(child.FullName));
 
             if (child.FullName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
 
-            if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && child.Parent != "Highcharts")
+            if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && child.ParentFullName != "Highcharts")
                 return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
         if (_lists.Contains(propertyName))
         {
-            if (propertyName == "Data" && child.Parent.ToLower().Contains("highcharts"))
+            if (propertyName == "Data" && child.ParentFullName.ToLower().Contains("highcharts"))
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             if (propertyName == "Data")
@@ -634,7 +696,7 @@ public class HighchartsGenerator
             if (child.FullName == "plotOptions.series")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
-            if (child.Title.ToLower() == "series" && child.Parent == "Highcharts")
+            if (child.Title.ToLower() == "series" && child.ParentFullName == "Highcharts")
                 return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
             if (propertyName.ToLower().Contains("pointplacement"))
@@ -655,7 +717,7 @@ public class HighchartsGenerator
         // Complex object with nested objects / properties
         if (child.IsParent)
         {
-            if ((child.Parent == "chart.resetZoomButton" || child.Parent == "credits" || child.Parent == "noData") && propertyName == "Position")
+            if ((child.ParentFullName == "chart.resetZoomButton" || child.ParentFullName == "credits" || child.ParentFullName == "noData") && propertyName == "Position")
                 return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
 
             if (child.ReturnType == "Array" && child.Title == "zones")
@@ -682,9 +744,9 @@ public class HighchartsGenerator
         }
     }
 
-    private void GenerateClassesForLevel(int level)
+    private void GenerateClassesForLevel(IList<ApiItem> items)
     {
-        foreach (ApiItem item in _apiItems)
+        foreach (ApiItem item in items)
         {
             //if (item.FullName.ToLower().Contains("boxplot") || item.Title.ToLower().Contains("boxplot"))
             //{
@@ -697,7 +759,10 @@ public class HighchartsGenerator
             //if (item.Parents.Count == level && item.IsParent)
             //{
             if (item.HasChildren)
+            {
                 GenerateClass(item);
+                GenerateClassesForLevel(item.Children);
+            }
             //}
         }
     }
@@ -728,7 +793,7 @@ public class HighchartsGenerator
         List<ApiItem> children = new List<ApiItem>();
         foreach (ApiItem item in _apiItems)
         {
-            if (item.Parent == null)
+            if (item.ParentFullName == null)
             {
                 children.Add(item);
             }
@@ -953,12 +1018,12 @@ public class HighchartsGenerator
         if (item.Defaults == "\n")
             return "null";
 
-        if (item.Title.ToLower() == "data" && item.Parent != null)
+        if (item.Title.ToLower() == "data" && item.ParentFullName != null)
         {
-            if (item.Parent.ToLower() == "highcharts")
+            if (item.ParentFullName.ToLower() == "highcharts")
                 return "new Data()";
 
-            string result = item.Parent;
+            string result = item.ParentFullName;
             if (_seriesMappings[result] != null)
             {
                 result = (string)_seriesMappings[result];
@@ -984,28 +1049,28 @@ public class HighchartsGenerator
         if (item.Title.ToLower() == "fillcolor")
             return "null";
 
-        //if (item.Title.ToLower() == "background" && item.Parent.ToLower() == "pane")
+        //if (item.Title.ToLower() == "background" && item.ParentFullName.ToLower() == "pane")
         //    return "new List<Background>()";
 
-        if (item.Title.ToLower() == "enabled" && item.Parent.ToLower() == "series<treemap>.datalabels")
+        if (item.Title.ToLower() == "enabled" && item.ParentFullName.ToLower() == "series<treemap>.datalabels")
             return "null";
 
         if (item.Title.ToLower() == "fillcolor")
             return "null";
 
-        if (item.Title.ToLower() == "height" && item.Parent.ToLower() == "chart")
+        if (item.Title.ToLower() == "height" && item.ParentFullName.ToLower() == "chart")
             return "null";
 
-        if (item.Title.ToLower() == "margin" && item.Parent.ToLower() != "chart")
+        if (item.Title.ToLower() == "margin" && item.ParentFullName.ToLower() != "chart")
             return "null";
 
-        if (item.Title.ToLower() == "margin" && item.Parent.ToLower() == "chart")
+        if (item.Title.ToLower() == "margin" && item.ParentFullName.ToLower() == "chart")
             return "new double[]{}";
 
         if (item.Title.ToLower() == "stops")
             return "new List<Stop>()";
 
-        //if (item.Title.ToLower().Contains("datalabels") && item.Parent.ToLower().EndsWith("data"))
+        //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
         //    item.IsParent = true;
 
         if (_propertyInitMappings[item.FullName] != null)
@@ -1024,7 +1089,7 @@ public class HighchartsGenerator
 
         //if (!item.IsParent)
         //{
-            if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.Parent == null)
+            if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName == null)
                 return defaults;
 
             if (item.Title.ToLower() == "position")
@@ -1037,7 +1102,7 @@ public class HighchartsGenerator
             if (item.ReturnType.ToLower() == "function" || item.ReturnType.ToLower() == "string|function")
                 return "\"\"";
 
-            if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.Parent != null)
+            if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
                 defaults = "";
 
             if (!String.IsNullOrEmpty(item.Defaults))
@@ -1106,7 +1171,7 @@ public class HighchartsGenerator
                 return _propertyInitMappings[item.Title].ToString();
             }
 
-            //if (item.Title.ToLower().Contains("datalabels") && item.Parent.ToLower().EndsWith("data"))
+            //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
             //    item.IsParent = false;
 
             if (item.ReturnType == "Array" && item.Title == "zones")
