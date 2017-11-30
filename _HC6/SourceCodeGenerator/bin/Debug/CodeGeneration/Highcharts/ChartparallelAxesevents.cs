@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class ChartparallelAxesevents  : BaseObject
+	public partial class ChartParallelAxesEvents  : BaseObject
 	{
-		public ChartparallelAxesevents()
+		public ChartParallelAxesEvents()
 		{
 			
 		}	

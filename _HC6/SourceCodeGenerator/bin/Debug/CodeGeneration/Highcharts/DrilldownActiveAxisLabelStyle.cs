@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class DrilldownactiveAxisLabelStyle  : BaseObject
+	public partial class DrilldownActiveAxisLabelStyle  : BaseObject
 	{
-		public DrilldownactiveAxisLabelStyle()
+		public DrilldownActiveAxisLabelStyle()
 		{
 			
 		}	

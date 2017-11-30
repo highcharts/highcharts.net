@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsgauge  : BaseObject
+	public partial class PlotOptionsGauge  : BaseObject
 	{
-		public PlotOptionsgauge()
+		public PlotOptionsGauge()
 		{
 			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsgaugelabel Label { get; set; }
-		private PlotOptionsgaugelabel Label_DefaultValue { get; set; }
+		public PlotOptionsGaugeLabel Label { get; set; }
+		private PlotOptionsGaugeLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -89,29 +89,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsgaugeevents Events { get; set; }
-		private PlotOptionsgaugeevents Events_DefaultValue { get; set; }
+		public PlotOptionsGaugeEvents Events { get; set; }
+		private PlotOptionsGaugeEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsgaugepoint Point { get; set; }
-		private PlotOptionsgaugepoint Point_DefaultValue { get; set; }
+		public PlotOptionsGaugePoint Point { get; set; }
+		private PlotOptionsGaugePoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionsgaugedataLabels DataLabels { get; set; }
-		private PlotOptionsgaugedataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsGaugeDataLabels DataLabels { get; set; }
+		private PlotOptionsGaugeDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsgaugestates States { get; set; }
-		private PlotOptionsgaugestates States_DefaultValue { get; set; }
+		public PlotOptionsGaugeStates States { get; set; }
+		private PlotOptionsGaugeStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -264,8 +264,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsgaugetooltip Tooltip { get; set; }
-		private PlotOptionsgaugetooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsGaugeTooltip Tooltip { get; set; }
+		private PlotOptionsGaugeTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>

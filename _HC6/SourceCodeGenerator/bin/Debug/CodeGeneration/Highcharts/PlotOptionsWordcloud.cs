@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionswordcloud  : BaseObject
+	public partial class PlotOptionsWordcloud  : BaseObject
 	{
-		public PlotOptionswordcloud()
+		public PlotOptionsWordcloud()
 		{
 			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -58,8 +58,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionswordcloudlabel Label { get; set; }
-		private PlotOptionswordcloudlabel Label_DefaultValue { get; set; }
+		public PlotOptionsWordcloudLabel Label { get; set; }
+		private PlotOptionsWordcloudLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -79,15 +79,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionswordcloudevents Events { get; set; }
-		private PlotOptionswordcloudevents Events_DefaultValue { get; set; }
+		public PlotOptionsWordcloudEvents Events { get; set; }
+		private PlotOptionsWordcloudEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionswordcloudpoint Point { get; set; }
-		private PlotOptionswordcloudpoint Point_DefaultValue { get; set; }
+		public PlotOptionsWordcloudPoint Point { get; set; }
+		private PlotOptionsWordcloudPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -100,8 +100,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionswordcloudstates States { get; set; }
-		private PlotOptionswordcloudstates States_DefaultValue { get; set; }
+		public PlotOptionsWordcloudStates States { get; set; }
+		private PlotOptionsWordcloudStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -226,8 +226,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionswordcloudtooltip Tooltip { get; set; }
-		private PlotOptionswordcloudtooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsWordcloudTooltip Tooltip { get; set; }
+		private PlotOptionsWordcloudTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -261,22 +261,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionswordcloudstates States { get; set; }
-		private PlotOptionswordcloudstates States_DefaultValue { get; set; }
+		public PlotOptionsWordcloudStates States { get; set; }
+		private PlotOptionsWordcloudStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionswordcloudstickyTracking StickyTracking { get; set; }
-		private PlotOptionswordcloudstickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionsWordcloudStickyTracking StickyTracking { get; set; }
+		private PlotOptionsWordcloudStickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionswordcloudtooltip Tooltip { get; set; }
-		private PlotOptionswordcloudtooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsWordcloudTooltip Tooltip { get; set; }
+		private PlotOptionsWordcloudTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>

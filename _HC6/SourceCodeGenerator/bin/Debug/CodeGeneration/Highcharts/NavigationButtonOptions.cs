@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class NavigationbuttonOptions  : BaseObject
+	public partial class NavigationButtonOptions  : BaseObject
 	{
-		public NavigationbuttonOptions()
+		public NavigationButtonOptions()
 		{
 			
 		}	

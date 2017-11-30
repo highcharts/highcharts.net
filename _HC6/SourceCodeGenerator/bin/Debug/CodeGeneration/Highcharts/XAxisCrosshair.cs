@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class XAxiscrosshair  : BaseObject
+	public partial class XAxisCrosshair  : BaseObject
 	{
-		public XAxiscrosshair()
+		public XAxisCrosshair()
 		{
 			
 		}	

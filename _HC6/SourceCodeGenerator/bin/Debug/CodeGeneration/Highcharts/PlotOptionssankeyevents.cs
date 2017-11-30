@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionssankeyevents  : BaseObject
+	public partial class PlotOptionsSankeyEvents  : BaseObject
 	{
-		public PlotOptionssankeyevents()
+		public PlotOptionsSankeyEvents()
 		{
 			
 		}	

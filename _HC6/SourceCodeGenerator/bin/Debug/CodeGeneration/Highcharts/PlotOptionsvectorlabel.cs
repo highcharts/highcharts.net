@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsvectorlabel  : BaseObject
+	public partial class PlotOptionsVectorLabel  : BaseObject
 	{
-		public PlotOptionsvectorlabel()
+		public PlotOptionsVectorLabel()
 		{
 			
 		}	

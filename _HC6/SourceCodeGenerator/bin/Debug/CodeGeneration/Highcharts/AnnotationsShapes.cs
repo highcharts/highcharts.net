@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Annotationsshapes  : BaseObject
+	public partial class AnnotationsShapes  : BaseObject
 	{
-		public Annotationsshapes()
+		public AnnotationsShapes()
 		{
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
@@ -35,8 +35,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The pixel stroke width of the shape.
 		/// </summary>
-		public AnnotationsshapesstrokeWidth StrokeWidth { get; set; }
-		private AnnotationsshapesstrokeWidth StrokeWidth_DefaultValue { get; set; }
+		public AnnotationsShapesStrokeWidth StrokeWidth { get; set; }
+		private AnnotationsShapesStrokeWidth StrokeWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -49,8 +49,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The radius of the shape.
 		/// </summary>
-		public Annotationsshapesr R { get; set; }
-		private Annotationsshapesr R_DefaultValue { get; set; }
+		public AnnotationsShapesR R { get; set; }
+		private AnnotationsShapesR R_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsfunnel  : BaseObject
+	public partial class PlotOptionsFunnel  : BaseObject
 	{
-		public PlotOptionsfunnel()
+		public PlotOptionsFunnel()
 		{
 			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -68,8 +68,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsfunnellabel Label { get; set; }
-		private PlotOptionsfunnellabel Label_DefaultValue { get; set; }
+		public PlotOptionsFunnelLabel Label { get; set; }
+		private PlotOptionsFunnelLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -96,29 +96,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsfunnelevents Events { get; set; }
-		private PlotOptionsfunnelevents Events_DefaultValue { get; set; }
+		public PlotOptionsFunnelEvents Events { get; set; }
+		private PlotOptionsFunnelEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsfunnelpoint Point { get; set; }
-		private PlotOptionsfunnelpoint Point_DefaultValue { get; set; }
+		public PlotOptionsFunnelPoint Point { get; set; }
+		private PlotOptionsFunnelPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionsfunneldataLabels DataLabels { get; set; }
-		private PlotOptionsfunneldataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsFunnelDataLabels DataLabels { get; set; }
+		private PlotOptionsFunnelDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsfunnelstates States { get; set; }
-		private PlotOptionsfunnelstates States_DefaultValue { get; set; }
+		public PlotOptionsFunnelStates States { get; set; }
+		private PlotOptionsFunnelStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -243,8 +243,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsfunneltooltip Tooltip { get; set; }
-		private PlotOptionsfunneltooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsFunnelTooltip Tooltip { get; set; }
+		private PlotOptionsFunnelTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -271,15 +271,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsfunnelclip Clip { get; set; }
-		private PlotOptionsfunnelclip Clip_DefaultValue { get; set; }
+		public PlotOptionsFunnelClip Clip { get; set; }
+		private PlotOptionsFunnelClip Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsfunneldataLabels DataLabels { get; set; }
-		private PlotOptionsfunneldataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsFunnelDataLabels DataLabels { get; set; }
+		private PlotOptionsFunnelDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -306,15 +306,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
 		/// </summary>
-		public PlotOptionsfunnelstickyTracking StickyTracking { get; set; }
-		private PlotOptionsfunnelstickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionsFunnelStickyTracking StickyTracking { get; set; }
+		private PlotOptionsFunnelStickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsfunneltooltip Tooltip { get; set; }
-		private PlotOptionsfunneltooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsFunnelTooltip Tooltip { get; set; }
+		private PlotOptionsFunnelTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -334,8 +334,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsfunnelstates States { get; set; }
-		private PlotOptionsfunnelstates States_DefaultValue { get; set; }
+		public PlotOptionsFunnelStates States { get; set; }
+		private PlotOptionsFunnelStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -376,15 +376,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsfunnelevents Events { get; set; }
-		private PlotOptionsfunnelevents Events_DefaultValue { get; set; }
+		public PlotOptionsFunnelEvents Events { get; set; }
+		private PlotOptionsFunnelEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsfunnelpoint Point { get; set; }
-		private PlotOptionsfunnelpoint Point_DefaultValue { get; set; }
+		public PlotOptionsFunnelPoint Point { get; set; }
+		private PlotOptionsFunnelPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>

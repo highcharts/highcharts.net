@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			DataClassColor = DataClassColor_DefaultValue = "tween";
-			DataClasses = DataClasses_DefaultValue = "";
+			DataClasses = DataClasses_DefaultValue = new List<ColorAxisDataClasses>();
 			Max = Max_DefaultValue = null;
 			Min = Min_DefaultValue = null;
 			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
@@ -132,15 +132,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The triangular marker on a scalar color axis that points to thevalue of the hovered area. To disable the marker, set `marker:null`.
 		/// </summary>
-		public ColorAxismarker Marker { get; set; }
-		private ColorAxismarker Marker_DefaultValue { get; set; }
+		public ColorAxisMarker Marker { get; set; }
+		private ColorAxisMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The axis labels show the number for each tick.For more live examples on label options, see [xAxis.labels in theHighcharts API.](/highcharts#xAxis.labels)
 		/// </summary>
-		public ColorAxislabels Labels { get; set; }
-		private ColorAxislabels Labels_DefaultValue { get; set; }
+		public ColorAxisLabels Labels { get; set; }
+		private ColorAxisLabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -160,8 +160,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The pixel length of the main tick marks on the color axis.
 		/// </summary>
-		public ColorAxistickLength TickLength { get; set; }
-		private ColorAxistickLength TickLength_DefaultValue { get; set; }
+		public ColorAxisTickLength TickLength { get; set; }
+		private ColorAxisTickLength TickLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -188,8 +188,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data classes or ranges for the choropleth map. If nonegiven, the color axis is scalar and values are distributed as a gradientbetween the minimum and maximum colors.
 		/// </summary>
-		public List<object> DataClasses { get; set; }
-		private List<object> DataClasses_DefaultValue { get; set; }
+		public List<ColorAxisDataClasses> DataClasses { get; set; }
+		private List<ColorAxisDataClasses> DataClasses_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -251,8 +251,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The axis labels show the number or category for each tick.
 		/// </summary>
-		public ColorAxislabels Labels { get; set; }
-		private ColorAxislabels Labels_DefaultValue { get; set; }
+		public ColorAxisLabels Labels { get; set; }
+		private ColorAxisLabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -552,8 +552,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Datetime axis only. An array determining what time intervals theticks are allowed to fall on. Each array item is an array where thefirst value is the time unit and the second value another array ofallowed multiples. Defaults to:<pre>units: [[    'millisecond', // unit name    [1, 2, 5, 10, 20, 25, 50, 100, 200, 500] // allowed multiples], [    'second',    [1, 2, 5, 10, 15, 30]], [    'minute',    [1, 2, 5, 10, 15, 30]], [    'hour',    [1, 2, 3, 4, 6, 8, 12]], [    'day',    [1]], [    'week',    [1]], [    'month',    [1, 3, 6]], [    'year',    null]]</pre>
 		/// </summary>
-		public ColorAxisunits Units { get; set; }
-		private ColorAxisunits Units_DefaultValue { get; set; }
+		public ColorAxisUnits Units { get; set; }
+		private ColorAxisUnits Units_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -566,8 +566,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Event handlers for the axis.
 		/// </summary>
-		public ColorAxisevents Events { get; set; }
-		private ColorAxisevents Events_DefaultValue { get; set; }
+		public ColorAxisEvents Events { get; set; }
+		private ColorAxisEvents Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -588,7 +588,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (DataClassColor != DataClassColor_DefaultValue) h.Add("dataClassColor",DataClassColor);
-			if (DataClasses.IsDirty()) h.Add("dataClasses",DataClasses.ToHashtable());
+			if (DataClasses != DataClasses_DefaultValue) h.Add("dataClasses", HashifyList(DataClasses));
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);

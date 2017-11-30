@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsxrangedataGrouping  : BaseObject
+	public partial class PlotOptionsXrangeDataGrouping  : BaseObject
 	{
-		public PlotOptionsxrangedataGrouping()
+		public PlotOptionsXrangeDataGrouping()
 		{
 			
 		}	

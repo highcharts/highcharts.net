@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsheatmapanimation  : BaseObject
+	public partial class PlotOptionsHeatmapAnimation  : BaseObject
 	{
-		public PlotOptionsheatmapanimation()
+		public PlotOptionsHeatmapAnimation()
 		{
 			
 		}	

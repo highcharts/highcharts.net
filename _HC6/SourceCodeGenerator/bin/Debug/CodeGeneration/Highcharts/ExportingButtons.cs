@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Exportingbuttons  : BaseObject
+	public partial class ExportingButtons  : BaseObject
 	{
-		public Exportingbuttons()
+		public ExportingButtons()
 		{
 			
 		}	

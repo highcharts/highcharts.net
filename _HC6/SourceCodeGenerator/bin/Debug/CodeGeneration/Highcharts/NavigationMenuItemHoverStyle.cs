@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class NavigationmenuItemHoverStyle  : BaseObject
+	public partial class NavigationMenuItemHoverStyle  : BaseObject
 	{
-		public NavigationmenuItemHoverStyle()
+		public NavigationMenuItemHoverStyle()
 		{
 			
 		}	

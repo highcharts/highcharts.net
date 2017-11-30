@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Drilldownanimation  : BaseObject
+	public partial class DrilldownAnimation  : BaseObject
 	{
-		public Drilldownanimation()
+		public DrilldownAnimation()
 		{
 			
 		}	

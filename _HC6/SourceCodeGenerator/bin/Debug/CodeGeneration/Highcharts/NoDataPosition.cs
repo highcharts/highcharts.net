@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class NoDataposition  : BaseObject
+	public partial class NoDataPosition  : BaseObject
 	{
-		public NoDataposition()
+		public NoDataPosition()
 		{
 			
 		}	

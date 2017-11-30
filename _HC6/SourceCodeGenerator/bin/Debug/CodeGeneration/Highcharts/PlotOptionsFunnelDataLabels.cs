@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsfunneldataLabels  : BaseObject
+	public partial class PlotOptionsFunnelDataLabels  : BaseObject
 	{
-		public PlotOptionsfunneldataLabels()
+		public PlotOptionsFunnelDataLabels()
 		{
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};

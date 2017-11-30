@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionscolumnrangetooltip  : BaseObject
+	public partial class PlotOptionsColumnrangeTooltip  : BaseObject
 	{
-		public PlotOptionscolumnrangetooltip()
+		public PlotOptionsColumnrangeTooltip()
 		{
 			
 		}	

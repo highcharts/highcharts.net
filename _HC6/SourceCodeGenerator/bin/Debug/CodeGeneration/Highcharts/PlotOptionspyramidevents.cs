@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionspyramidevents  : BaseObject
+	public partial class PlotOptionsPyramidEvents  : BaseObject
 	{
-		public PlotOptionspyramidevents()
+		public PlotOptionsPyramidEvents()
 		{
 			
 		}	

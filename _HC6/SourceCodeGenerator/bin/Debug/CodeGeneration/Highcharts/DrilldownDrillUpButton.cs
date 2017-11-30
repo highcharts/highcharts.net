@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class DrilldowndrillUpButton  : BaseObject
+	public partial class DrilldownDrillUpButton  : BaseObject
 	{
-		public DrilldowndrillUpButton()
+		public DrilldownDrillUpButton()
 		{
 			
 		}	

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class AccessibilitykeyboardNavigation  : BaseObject
+	public partial class AccessibilityKeyboardNavigation  : BaseObject
 	{
-		public AccessibilitykeyboardNavigation()
+		public AccessibilityKeyboardNavigation()
 		{
 			
 		}	

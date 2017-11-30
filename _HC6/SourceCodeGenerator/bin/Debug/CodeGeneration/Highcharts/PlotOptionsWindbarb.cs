@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionswindbarb  : BaseObject
+	public partial class PlotOptionsWindbarb  : BaseObject
 	{
-		public PlotOptionswindbarb()
+		public PlotOptionsWindbarb()
 		{
 			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -82,8 +82,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionswindbarblabel Label { get; set; }
-		private PlotOptionswindbarblabel Label_DefaultValue { get; set; }
+		public PlotOptionsWindbarbLabel Label { get; set; }
+		private PlotOptionsWindbarbLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -110,22 +110,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionswindbarbevents Events { get; set; }
-		private PlotOptionswindbarbevents Events_DefaultValue { get; set; }
+		public PlotOptionsWindbarbEvents Events { get; set; }
+		private PlotOptionsWindbarbEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionswindbarbpoint Point { get; set; }
-		private PlotOptionswindbarbpoint Point_DefaultValue { get; set; }
+		public PlotOptionsWindbarbPoint Point { get; set; }
+		private PlotOptionsWindbarbPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionswindbarbdataLabels DataLabels { get; set; }
-		private PlotOptionswindbarbdataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsWindbarbDataLabels DataLabels { get; set; }
+		private PlotOptionsWindbarbDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -138,8 +138,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionswindbarbstates States { get; set; }
-		private PlotOptionswindbarbstates States_DefaultValue { get; set; }
+		public PlotOptionsWindbarbStates States { get; set; }
+		private PlotOptionsWindbarbStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -327,15 +327,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionswindbarbtooltip Tooltip { get; set; }
-		private PlotOptionswindbarbtooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsWindbarbTooltip Tooltip { get; set; }
+		private PlotOptionsWindbarbTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionswindbarbzones> Zones { get; set; }
-		private List<PlotOptionswindbarbzones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsWindbarbZone> Zones { get; set; }
+		private List<PlotOptionsWindbarbZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -390,15 +390,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionswindbarbstates States { get; set; }
-		private PlotOptionswindbarbstates States_DefaultValue { get; set; }
+		public PlotOptionsWindbarbStates States { get; set; }
+		private PlotOptionsWindbarbStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionswindbarbdataLabels DataLabels { get; set; }
-		private PlotOptionswindbarbdataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsWindbarbDataLabels DataLabels { get; set; }
+		private PlotOptionsWindbarbDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -411,15 +411,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionswindbarbstickyTracking StickyTracking { get; set; }
-		private PlotOptionswindbarbstickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionsWindbarbStickyTracking StickyTracking { get; set; }
+		private PlotOptionsWindbarbStickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionswindbarbtooltip Tooltip { get; set; }
-		private PlotOptionswindbarbtooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsWindbarbTooltip Tooltip { get; set; }
+		private PlotOptionsWindbarbTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class LegenditemCheckboxStyle  : BaseObject
+	public partial class LegendItemCheckboxStyle  : BaseObject
 	{
-		public LegenditemCheckboxStyle()
+		public LegendItemCheckboxStyle()
 		{
 			
 		}	

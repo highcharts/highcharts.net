@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsbar  : BaseObject
+	public partial class PlotOptionsBar  : BaseObject
 	{
-		public PlotOptionsbar()
+		public PlotOptionsBar()
 		{
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
@@ -96,8 +96,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsbarlabel Label { get; set; }
-		private PlotOptionsbarlabel Label_DefaultValue { get; set; }
+		public PlotOptionsBarLabel Label { get; set; }
+		private PlotOptionsBarLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -124,22 +124,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsbarevents Events { get; set; }
-		private PlotOptionsbarevents Events_DefaultValue { get; set; }
+		public PlotOptionsBarEvents Events { get; set; }
+		private PlotOptionsBarEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsbarpoint Point { get; set; }
-		private PlotOptionsbarpoint Point_DefaultValue { get; set; }
+		public PlotOptionsBarPoint Point { get; set; }
+		private PlotOptionsBarPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionsbardataLabels DataLabels { get; set; }
-		private PlotOptionsbardataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsBarDataLabels DataLabels { get; set; }
+		private PlotOptionsBarDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -159,8 +159,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsbarstates States { get; set; }
-		private PlotOptionsbarstates States_DefaultValue { get; set; }
+		public PlotOptionsBarStates States { get; set; }
+		private PlotOptionsBarStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -362,15 +362,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsbartooltip Tooltip { get; set; }
-		private PlotOptionsbartooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsBarTooltip Tooltip { get; set; }
+		private PlotOptionsBarTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsbarzones> Zones { get; set; }
-		private List<PlotOptionsbarzones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsBarZone> Zones { get; set; }
+		private List<PlotOptionsBarZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -439,15 +439,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsbarstates States { get; set; }
-		private PlotOptionsbarstates States_DefaultValue { get; set; }
+		public PlotOptionsBarStates States { get; set; }
+		private PlotOptionsBarStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsbardataLabels DataLabels { get; set; }
-		private PlotOptionsbardataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsBarDataLabels DataLabels { get; set; }
+		private PlotOptionsBarDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -460,15 +460,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsbarstickyTracking StickyTracking { get; set; }
-		private PlotOptionsbarstickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionsBarStickyTracking StickyTracking { get; set; }
+		private PlotOptionsBarStickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsbartooltip Tooltip { get; set; }
-		private PlotOptionsbartooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsBarTooltip Tooltip { get; set; }
+		private PlotOptionsBarTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -530,8 +530,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsbardataGrouping DataGrouping { get; set; }
-		private PlotOptionsbardataGrouping DataGrouping_DefaultValue { get; set; }
+		public PlotOptionsBarDataGrouping DataGrouping { get; set; }
+		private PlotOptionsBarDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>

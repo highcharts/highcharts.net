@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsarea  : BaseObject
+	public partial class PlotOptionsArea  : BaseObject
 	{
-		public PlotOptionsarea()
+		public PlotOptionsArea()
 		{
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsarealabel Label { get; set; }
-		private PlotOptionsarealabel Label_DefaultValue { get; set; }
+		public PlotOptionsAreaLabel Label { get; set; }
+		private PlotOptionsAreaLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -113,29 +113,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsareaevents Events { get; set; }
-		private PlotOptionsareaevents Events_DefaultValue { get; set; }
+		public PlotOptionsAreaEvents Events { get; set; }
+		private PlotOptionsAreaEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
 		/// </summary>
-		public PlotOptionsareamarker Marker { get; set; }
-		private PlotOptionsareamarker Marker_DefaultValue { get; set; }
+		public PlotOptionsAreaMarker Marker { get; set; }
+		private PlotOptionsAreaMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsareapoint Point { get; set; }
-		private PlotOptionsareapoint Point_DefaultValue { get; set; }
+		public PlotOptionsAreaPoint Point { get; set; }
+		private PlotOptionsAreaPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionsareadataLabels DataLabels { get; set; }
-		private PlotOptionsareadataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsAreaDataLabels DataLabels { get; set; }
+		private PlotOptionsAreaDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -155,8 +155,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsareastates States { get; set; }
-		private PlotOptionsareastates States_DefaultValue { get; set; }
+		public PlotOptionsAreaStates States { get; set; }
+		private PlotOptionsAreaStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -386,15 +386,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsareatooltip Tooltip { get; set; }
-		private PlotOptionsareatooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsAreaTooltip Tooltip { get; set; }
+		private PlotOptionsAreaTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsareazones> Zones { get; set; }
-		private List<PlotOptionsareazones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsAreaZone> Zones { get; set; }
+		private List<PlotOptionsAreaZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>

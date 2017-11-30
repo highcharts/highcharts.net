@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Exportingcsv  : BaseObject
+	public partial class ExportingCsv  : BaseObject
 	{
-		public Exportingcsv()
+		public ExportingCsv()
 		{
 			
 		}	

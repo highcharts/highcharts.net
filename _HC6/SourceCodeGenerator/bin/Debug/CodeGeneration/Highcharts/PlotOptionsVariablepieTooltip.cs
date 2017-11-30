@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsvariablepietooltip  : BaseObject
+	public partial class PlotOptionsVariablepieTooltip  : BaseObject
 	{
-		public PlotOptionsvariablepietooltip()
+		public PlotOptionsVariablepieTooltip()
 		{
 			
 		}	

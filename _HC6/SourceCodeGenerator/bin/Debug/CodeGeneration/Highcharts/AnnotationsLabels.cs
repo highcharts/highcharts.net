@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Annotationslabels  : BaseObject
+	public partial class AnnotationsLabels  : BaseObject
 	{
-		public Annotationslabels()
+		public AnnotationsLabels()
 		{
 			Align = Align_DefaultValue = center;
 			AllowOverlap = AllowOverlap_DefaultValue = False;
@@ -41,15 +41,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The alignment of the annotation's label. If right,the right side of the label should be touching the point.
 		/// </summary>
-		public Annotationslabelsalign Align { get; set; }
-		private Annotationslabelsalign Align_DefaultValue { get; set; }
+		public AnnotationsLabelsAlign Align { get; set; }
+		private AnnotationsLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to allow the annotation's labels to overlap.To make the labels less sensitive for overlapping, the can be set to 0.
 		/// </summary>
-		public AnnotationslabelsallowOverlap AllowOverlap { get; set; }
-		private AnnotationslabelsallowOverlap AllowOverlap_DefaultValue { get; set; }
+		public AnnotationsLabelsAllowOverlap AllowOverlap { get; set; }
+		private AnnotationsLabelsAllowOverlap AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -69,22 +69,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The border radius in pixels for the annotaiton's label.
 		/// </summary>
-		public AnnotationslabelsborderRadius BorderRadius { get; set; }
-		private AnnotationslabelsborderRadius BorderRadius_DefaultValue { get; set; }
+		public AnnotationsLabelsBorderRadius BorderRadius { get; set; }
+		private AnnotationsLabelsBorderRadius BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border width in pixels for the annotation's label
 		/// </summary>
-		public AnnotationslabelsborderWidth BorderWidth { get; set; }
-		private AnnotationslabelsborderWidth BorderWidth_DefaultValue { get; set; }
+		public AnnotationsLabelsBorderWidth BorderWidth { get; set; }
+		private AnnotationsLabelsBorderWidth BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to hide the annotation's label that is outside the plot area.
 		/// </summary>
-		public Annotationslabelscrop Crop { get; set; }
-		private Annotationslabelscrop Crop_DefaultValue { get; set; }
+		public AnnotationsLabelsCrop Crop { get; set; }
+		private AnnotationsLabelsCrop Crop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -97,15 +97,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle the annotation's label that flow outside the plotarea. The justify option aligns the label inside the plot area.
 		/// </summary>
-		public Annotationslabelsoverflow Overflow { get; set; }
-		private Annotationslabelsoverflow Overflow_DefaultValue { get; set; }
+		public AnnotationsLabelsOverflow Overflow { get; set; }
+		private AnnotationsLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When either the borderWidth or the backgroundColor is set,thisis the padding within the box.
 		/// </summary>
-		public Annotationslabelspadding Padding { get; set; }
-		private Annotationslabelspadding Padding_DefaultValue { get; set; }
+		public AnnotationsLabelsPadding Padding { get; set; }
+		private AnnotationsLabelsPadding Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -146,15 +146,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The x position offset of the label relative to the point.Note that if a `distance` is defined, the distance takesprecedence over `x` and `y` options.
 		/// </summary>
-		public Annotationslabelsx X { get; set; }
-		private Annotationslabelsx X_DefaultValue { get; set; }
+		public AnnotationsLabelsX X { get; set; }
+		private AnnotationsLabelsX X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The y position offset of the label relative to the point.Note that if a `distance` is defined, the distance takesprecedence over `x` and `y` options.
 		/// </summary>
-		public Annotationslabelsy Y { get; set; }
-		private Annotationslabelsy Y_DefaultValue { get; set; }
+		public AnnotationsLabelsY Y { get; set; }
+		private AnnotationsLabelsY Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>

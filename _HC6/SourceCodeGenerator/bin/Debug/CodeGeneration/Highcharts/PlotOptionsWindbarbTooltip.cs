@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionswindbarbtooltip  : BaseObject
+	public partial class PlotOptionsWindbarbTooltip  : BaseObject
 	{
-		public PlotOptionswindbarbtooltip()
+		public PlotOptionsWindbarbTooltip()
 		{
 			
 		}	

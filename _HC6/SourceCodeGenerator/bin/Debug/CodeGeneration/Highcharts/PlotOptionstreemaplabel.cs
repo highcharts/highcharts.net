@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionstreemaplabel  : BaseObject
+	public partial class PlotOptionsTreemapLabel  : BaseObject
 	{
-		public PlotOptionstreemaplabel()
+		public PlotOptionsTreemapLabel()
 		{
 			
 		}	

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsfunnelpoint  : BaseObject
+	public partial class PlotOptionsFunnelPoint  : BaseObject
 	{
-		public PlotOptionsfunnelpoint()
+		public PlotOptionsFunnelPoint()
 		{
 			
 		}	

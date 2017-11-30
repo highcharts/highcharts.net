@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Tooltipstyle  : BaseObject
+	public partial class TooltipStyle  : BaseObject
 	{
-		public Tooltipstyle()
+		public TooltipStyle()
 		{
 			
 		}	

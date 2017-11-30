@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SourceCodeGenerator.Parser;
+using SourceCodeGenerator.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -8,8 +10,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 using System.Collections;
-using SourceCodeGenerator.Parser;
-using SourceCodeGenerator.Services;
+using System.Text;
+
 
 /// <summary>
 /// Summary description for AspNetMvc
@@ -307,7 +309,6 @@ public class HighchartsGenerator
 
     private void GenerateClass(ApiItem item, List<ApiItem> children)
     {
-        string className = item.Title;
         string codeTemplate = FileService.GetClassTemplate();
         string propertyTemplate = FileService.GetPropertyTemplate();
 
@@ -362,8 +363,11 @@ public class HighchartsGenerator
             hashtableComparers += formattedComparer;
         }
 
+
+        string className = GetClassNameFromItem(item);
         string extendsClass = "";
-        if (_seriesMappings.ContainsKey(item.FullName))
+        //if (_seriesMappings.ContainsKey(item.FullName))
+        if (className.EndsWith("Series"))
             extendsClass = ": Series";
         else
             extendsClass = ": BaseObject";
@@ -374,9 +378,9 @@ public class HighchartsGenerator
                         .Replace("{HighTemplate.Properties}", properties)
                         .Replace("{HighTemplate.HashtableInit}", hashtableComparers)
                         .Replace("{HighTemplate.ExtendsClass}", extendsClass)
-                        .Replace("{HighTemplate.ClassName}", GetClassNameFromItem(item));
+                        .Replace("{HighTemplate.ClassName}", className);
 
-        FileService.SaveClass(ROOT_CLASS, GetClassNameFromItem(item), codeTemplate);
+        FileService.SaveClass(ROOT_CLASS, className, codeTemplate);
 
         //children.Clear();
     }
@@ -510,17 +514,22 @@ public class HighchartsGenerator
     private string GetClassNameFromItem(ApiItem item)
     {
         string[] parts = item.FullName.Split('.');
-        string result = "";
+        StringBuilder result = new StringBuilder();
 
         foreach (string part in parts)
         {
-            string formattedPart = part;
-            if (_seriesMappings[part] != null)
-                formattedPart = (string)_seriesMappings[part];
-            result += FirstCharToUpper(formattedPart);
+            //string formattedPart = part;
+
+            //if (_seriesMappings[part] != null)
+            //    formattedPart = (string)_seriesMappings[part];
+
+            if (result.ToString() == "Series")
+                result.Insert(0, FirstCharToUpper(part));
+            else
+                result.Append(FirstCharToUpper(part));
         }
 
-        return result;
+        return result.ToString();
     }
 
     private string GetPropertyName(ApiItem item)
@@ -781,7 +790,7 @@ public class HighchartsGenerator
         {
             var clone = child.Clone();
             clone.Parent = item;
-            clone.FullName = item.FullName + child.Title;
+            clone.FullName = item.FullName + "." + child.Title;
 
             clones.Add(clone);
         }

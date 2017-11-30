@@ -60,8 +60,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Keyboard navigation for the legend. Requires the Accessibility module.
 		/// </summary>
-		public LegendkeyboardNavigation KeyboardNavigation { get; set; }
-		private LegendkeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
+		public LegendKeyboardNavigation KeyboardNavigation { get; set; }
+		private LegendKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -109,8 +109,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for the paging or navigation appearing when the legendis overflown. Navigation works well on screen, but not in staticexported images. One way of working around that is to [increasethe chart height in export](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/legend/navigation-enabled-false/).
 		/// </summary>
-		public Legendnavigation Navigation { get; set; }
-		private Legendnavigation Navigation_DefaultValue { get; set; }
+		public LegendNavigation Navigation { get; set; }
+		private LegendNavigation Navigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -144,8 +144,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Default styling for the checkbox next to a legend item when`showCheckbox` is true.
 		/// </summary>
-		public LegenditemCheckboxStyle ItemCheckboxStyle { get; set; }
-		private LegenditemCheckboxStyle ItemCheckboxStyle_DefaultValue { get; set; }
+		public LegendItemCheckboxStyle ItemCheckboxStyle { get; set; }
+		private LegendItemCheckboxStyle ItemCheckboxStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -186,8 +186,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A title to be added on top of the legend.
 		/// </summary>
-		public Legendtitle Title { get; set; }
-		private Legendtitle Title_DefaultValue { get; set; }
+		public LegendTitle Title { get; set; }
+		private LegendTitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>

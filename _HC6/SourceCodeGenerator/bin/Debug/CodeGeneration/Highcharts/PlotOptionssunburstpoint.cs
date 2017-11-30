@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionssunburstpoint  : BaseObject
+	public partial class PlotOptionsSunburstPoint  : BaseObject
 	{
-		public PlotOptionssunburstpoint()
+		public PlotOptionsSunburstPoint()
 		{
 			
 		}	

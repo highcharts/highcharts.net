@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsscatter3d  : BaseObject
+	public partial class PlotOptionsScatter3d  : BaseObject
 	{
-		public PlotOptionsscatter3d()
+		public PlotOptionsScatter3d()
 		{
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
@@ -83,8 +83,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsscatter3dlabel Label { get; set; }
-		private PlotOptionsscatter3dlabel Label_DefaultValue { get; set; }
+		public PlotOptionsScatter3dLabel Label { get; set; }
+		private PlotOptionsScatter3dLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,29 +118,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsscatter3devents Events { get; set; }
-		private PlotOptionsscatter3devents Events_DefaultValue { get; set; }
+		public PlotOptionsScatter3dEvents Events { get; set; }
+		private PlotOptionsScatter3dEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
 		/// </summary>
-		public PlotOptionsscatter3dmarker Marker { get; set; }
-		private PlotOptionsscatter3dmarker Marker_DefaultValue { get; set; }
+		public PlotOptionsScatter3dMarker Marker { get; set; }
+		private PlotOptionsScatter3dMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsscatter3dpoint Point { get; set; }
-		private PlotOptionsscatter3dpoint Point_DefaultValue { get; set; }
+		public PlotOptionsScatter3dPoint Point { get; set; }
+		private PlotOptionsScatter3dPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionsscatter3ddataLabels DataLabels { get; set; }
-		private PlotOptionsscatter3ddataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsScatter3dDataLabels DataLabels { get; set; }
+		private PlotOptionsScatter3dDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -160,8 +160,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsscatter3dstates States { get; set; }
-		private PlotOptionsscatter3dstates States_DefaultValue { get; set; }
+		public PlotOptionsScatter3dStates States { get; set; }
+		private PlotOptionsScatter3dStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -391,15 +391,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsscatter3dtooltip Tooltip { get; set; }
-		private PlotOptionsscatter3dtooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsScatter3dTooltip Tooltip { get; set; }
+		private PlotOptionsScatter3dTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsscatter3dzones> Zones { get; set; }
-		private List<PlotOptionsscatter3dzones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsScatter3dZone> Zones { get; set; }
+		private List<PlotOptionsScatter3dZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -433,22 +433,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsscatter3dfindNearestPointBy FindNearestPointBy { get; set; }
-		private PlotOptionsscatter3dfindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		public PlotOptionsScatter3dFindNearestPointBy FindNearestPointBy { get; set; }
+		private PlotOptionsScatter3dFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsscatter3dmarker Marker { get; set; }
-		private PlotOptionsscatter3dmarker Marker_DefaultValue { get; set; }
+		public PlotOptionsScatter3dMarker Marker { get; set; }
+		private PlotOptionsScatter3dMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from <a class="internal">#tooltip</a>.Overridable properties are `headerFormat`, `pointFormat`, `yDecimals`,`xDateFormat`, `yPrefix` and `ySuffix`. Unlike other series, ina scatter plot the series.name by default shows in the headerFormatand point.x and point.y in the pointFormat.
 		/// </summary>
-		public PlotOptionsscatter3dtooltip Tooltip { get; set; }
-		private PlotOptionsscatter3dtooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsScatter3dTooltip Tooltip { get; set; }
+		private PlotOptionsScatter3dTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>

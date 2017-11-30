@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsgaugestates  : BaseObject
+	public partial class PlotOptionsGaugeStates  : BaseObject
 	{
-		public PlotOptionsgaugestates()
+		public PlotOptionsGaugeStates()
 		{
 			
 		}	

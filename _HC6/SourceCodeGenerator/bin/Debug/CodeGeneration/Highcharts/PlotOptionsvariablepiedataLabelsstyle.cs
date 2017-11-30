@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsvariablepiedataLabelsstyle  : BaseObject
+	public partial class PlotOptionsVariablepieDataLabelsStyle  : BaseObject
 	{
-		public PlotOptionsvariablepiedataLabelsstyle()
+		public PlotOptionsVariablepieDataLabelsStyle()
 		{
 			
 		}	

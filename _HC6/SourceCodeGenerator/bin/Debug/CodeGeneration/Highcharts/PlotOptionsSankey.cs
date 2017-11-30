@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionssankey  : BaseObject
+	public partial class PlotOptionsSankey  : BaseObject
 	{
-		public PlotOptionssankey()
+		public PlotOptionsSankey()
 		{
 			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -56,8 +56,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionssankeylabel Label { get; set; }
-		private PlotOptionssankeylabel Label_DefaultValue { get; set; }
+		public PlotOptionsSankeyLabel Label { get; set; }
+		private PlotOptionsSankeyLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -84,29 +84,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionssankeyevents Events { get; set; }
-		private PlotOptionssankeyevents Events_DefaultValue { get; set; }
+		public PlotOptionsSankeyEvents Events { get; set; }
+		private PlotOptionsSankeyEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionssankeypoint Point { get; set; }
-		private PlotOptionssankeypoint Point_DefaultValue { get; set; }
+		public PlotOptionsSankeyPoint Point { get; set; }
+		private PlotOptionsSankeyPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionssankeydataLabels DataLabels { get; set; }
-		private PlotOptionssankeydataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsSankeyDataLabels DataLabels { get; set; }
+		private PlotOptionsSankeyDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionssankeystates States { get; set; }
-		private PlotOptionssankeystates States_DefaultValue { get; set; }
+		public PlotOptionsSankeyStates States { get; set; }
+		private PlotOptionsSankeyStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -231,8 +231,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionssankeytooltip Tooltip { get; set; }
-		private PlotOptionssankeytooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsSankeyTooltip Tooltip { get; set; }
+		private PlotOptionsSankeyTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -252,29 +252,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionssankeystates States { get; set; }
-		private PlotOptionssankeystates States_DefaultValue { get; set; }
+		public PlotOptionsSankeyStates States { get; set; }
+		private PlotOptionsSankeyStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionssankeydataLabels DataLabels { get; set; }
-		private PlotOptionssankeydataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsSankeyDataLabels DataLabels { get; set; }
+		private PlotOptionsSankeyDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionssankeystickyTracking StickyTracking { get; set; }
-		private PlotOptionssankeystickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionsSankeyStickyTracking StickyTracking { get; set; }
+		private PlotOptionsSankeyStickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionssankeytooltip Tooltip { get; set; }
-		private PlotOptionssankeytooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsSankeyTooltip Tooltip { get; set; }
+		private PlotOptionsSankeyTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -294,8 +294,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionssankeydataGrouping DataGrouping { get; set; }
-		private PlotOptionssankeydataGrouping DataGrouping_DefaultValue { get; set; }
+		public PlotOptionsSankeyDataGrouping DataGrouping { get; set; }
+		private PlotOptionsSankeyDataGrouping DataGrouping_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

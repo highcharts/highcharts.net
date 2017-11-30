@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class LegenditemHiddenStyle  : BaseObject
+	public partial class LegendItemHiddenStyle  : BaseObject
 	{
-		public LegenditemHiddenStyle()
+		public LegendItemHiddenStyle()
 		{
 			
 		}	

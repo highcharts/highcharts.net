@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionswordcloudtooltip  : BaseObject
+	public partial class PlotOptionsWordcloudTooltip  : BaseObject
 	{
-		public PlotOptionswordcloudtooltip()
+		public PlotOptionsWordcloudTooltip()
 		{
 			
 		}	

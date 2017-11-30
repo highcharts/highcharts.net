@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsbellcurve  : BaseObject
+	public partial class PlotOptionsBellcurve  : BaseObject
 	{
-		public PlotOptionsbellcurve()
+		public PlotOptionsBellcurve()
 		{
 			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsbellcurvelabel Label { get; set; }
-		private PlotOptionsbellcurvelabel Label_DefaultValue { get; set; }
+		public PlotOptionsBellcurveLabel Label { get; set; }
+		private PlotOptionsBellcurveLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -107,29 +107,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsbellcurveevents Events { get; set; }
-		private PlotOptionsbellcurveevents Events_DefaultValue { get; set; }
+		public PlotOptionsBellcurveEvents Events { get; set; }
+		private PlotOptionsBellcurveEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
 		/// </summary>
-		public PlotOptionsbellcurvemarker Marker { get; set; }
-		private PlotOptionsbellcurvemarker Marker_DefaultValue { get; set; }
+		public PlotOptionsBellcurveMarker Marker { get; set; }
+		private PlotOptionsBellcurveMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsbellcurvepoint Point { get; set; }
-		private PlotOptionsbellcurvepoint Point_DefaultValue { get; set; }
+		public PlotOptionsBellcurvePoint Point { get; set; }
+		private PlotOptionsBellcurvePoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionsbellcurvedataLabels DataLabels { get; set; }
-		private PlotOptionsbellcurvedataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsBellcurveDataLabels DataLabels { get; set; }
+		private PlotOptionsBellcurveDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -149,8 +149,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsbellcurvestates States { get; set; }
-		private PlotOptionsbellcurvestates States_DefaultValue { get; set; }
+		public PlotOptionsBellcurveStates States { get; set; }
+		private PlotOptionsBellcurveStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -345,15 +345,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsbellcurvetooltip Tooltip { get; set; }
-		private PlotOptionsbellcurvetooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsBellcurveTooltip Tooltip { get; set; }
+		private PlotOptionsBellcurveTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsbellcurvezones> Zones { get; set; }
-		private List<PlotOptionsbellcurvezones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsBellcurveZone> Zones { get; set; }
+		private List<PlotOptionsBellcurveZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionssunburst  : BaseObject
+	public partial class PlotOptionsSunburst  : BaseObject
 	{
-		public PlotOptionssunburst()
+		public PlotOptionsSunburst()
 		{
 			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -59,8 +59,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionssunburstlabel Label { get; set; }
-		private PlotOptionssunburstlabel Label_DefaultValue { get; set; }
+		public PlotOptionsSunburstLabel Label { get; set; }
+		private PlotOptionsSunburstLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -87,29 +87,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionssunburstevents Events { get; set; }
-		private PlotOptionssunburstevents Events_DefaultValue { get; set; }
+		public PlotOptionsSunburstEvents Events { get; set; }
+		private PlotOptionsSunburstEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionssunburstpoint Point { get; set; }
-		private PlotOptionssunburstpoint Point_DefaultValue { get; set; }
+		public PlotOptionsSunburstPoint Point { get; set; }
+		private PlotOptionsSunburstPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionssunburstdataLabels DataLabels { get; set; }
-		private PlotOptionssunburstdataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsSunburstDataLabels DataLabels { get; set; }
+		private PlotOptionsSunburstDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionssunburststates States { get; set; }
-		private PlotOptionssunburststates States_DefaultValue { get; set; }
+		public PlotOptionsSunburstStates States { get; set; }
+		private PlotOptionsSunburstStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -227,8 +227,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionssunbursttooltip Tooltip { get; set; }
-		private PlotOptionssunbursttooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsSunburstTooltip Tooltip { get; set; }
+		private PlotOptionsSunburstTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -241,8 +241,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionssunburstdataLabels DataLabels { get; set; }
-		private PlotOptionssunburstdataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsSunburstDataLabels DataLabels { get; set; }
+		private PlotOptionsSunburstDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -262,15 +262,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
 		/// </summary>
-		public PlotOptionssunburststickyTracking StickyTracking { get; set; }
-		private PlotOptionssunburststickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionsSunburstStickyTracking StickyTracking { get; set; }
+		private PlotOptionsSunburstStickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionssunbursttooltip Tooltip { get; set; }
-		private PlotOptionssunbursttooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsSunburstTooltip Tooltip { get; set; }
+		private PlotOptionsSunburstTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -290,8 +290,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionssunburststates States { get; set; }
-		private PlotOptionssunburststates States_DefaultValue { get; set; }
+		public PlotOptionsSunburstStates States { get; set; }
+		private PlotOptionsSunburstStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -311,15 +311,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionssunburstevents Events { get; set; }
-		private PlotOptionssunburstevents Events_DefaultValue { get; set; }
+		public PlotOptionsSunburstEvents Events { get; set; }
+		private PlotOptionsSunburstEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionssunburstpoint Point { get; set; }
-		private PlotOptionssunburstpoint Point_DefaultValue { get; set; }
+		public PlotOptionsSunburstPoint Point { get; set; }
+		private PlotOptionsSunburstPoint Point_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

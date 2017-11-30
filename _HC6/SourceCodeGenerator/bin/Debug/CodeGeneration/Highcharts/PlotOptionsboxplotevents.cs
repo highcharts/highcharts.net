@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsboxplotevents  : BaseObject
+	public partial class PlotOptionsBoxplotEvents  : BaseObject
 	{
-		public PlotOptionsboxplotevents()
+		public PlotOptionsBoxplotEvents()
 		{
 			
 		}	

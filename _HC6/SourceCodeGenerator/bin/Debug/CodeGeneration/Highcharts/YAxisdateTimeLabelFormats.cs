@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class YAxisdateTimeLabelFormats  : BaseObject
+	public partial class YAxisDateTimeLabelFormats  : BaseObject
 	{
-		public YAxisdateTimeLabelFormats()
+		public YAxisDateTimeLabelFormats()
 		{
 			
 		}	

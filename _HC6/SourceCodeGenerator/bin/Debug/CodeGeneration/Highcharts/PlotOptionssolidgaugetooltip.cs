@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionssolidgaugetooltip  : BaseObject
+	public partial class PlotOptionsSolidgaugeTooltip  : BaseObject
 	{
-		public PlotOptionssolidgaugetooltip()
+		public PlotOptionsSolidgaugeTooltip()
 		{
 			
 		}	

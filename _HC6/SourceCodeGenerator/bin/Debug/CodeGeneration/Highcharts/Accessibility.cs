@@ -45,8 +45,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for keyboard navigation.
 		/// </summary>
-		public AccessibilitykeyboardNavigation KeyboardNavigation { get; set; }
-		private AccessibilitykeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
+		public AccessibilityKeyboardNavigation KeyboardNavigation { get; set; }
+		private AccessibilityKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>

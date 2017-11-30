@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Creditsstyle  : BaseObject
+	public partial class CreditsStyle  : BaseObject
 	{
-		public Creditsstyle()
+		public CreditsStyle()
 		{
 			
 		}	

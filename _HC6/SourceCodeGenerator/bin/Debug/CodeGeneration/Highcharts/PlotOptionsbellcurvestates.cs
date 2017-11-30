@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsbellcurvestates  : BaseObject
+	public partial class PlotOptionsBellcurveStates  : BaseObject
 	{
-		public PlotOptionsbellcurvestates()
+		public PlotOptionsBellcurveStates()
 		{
 			
 		}	

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionssankeydataGrouping  : BaseObject
+	public partial class PlotOptionsSankeyDataGrouping  : BaseObject
 	{
-		public PlotOptionssankeydataGrouping()
+		public PlotOptionsSankeyDataGrouping()
 		{
 			
 		}	

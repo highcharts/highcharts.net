@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionssunburstdataLabelsstyle  : BaseObject
+	public partial class PlotOptionsSunburstDataLabelsStyle  : BaseObject
 	{
-		public PlotOptionssunburstdataLabelsstyle()
+		public PlotOptionsSunburstDataLabelsStyle()
 		{
 			
 		}	

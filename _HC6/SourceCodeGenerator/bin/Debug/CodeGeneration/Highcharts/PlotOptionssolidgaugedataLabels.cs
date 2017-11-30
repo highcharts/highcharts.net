@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionssolidgaugedataLabels  : BaseObject
+	public partial class PlotOptionsSolidgaugeDataLabels  : BaseObject
 	{
-		public PlotOptionssolidgaugedataLabels()
+		public PlotOptionsSolidgaugeDataLabels()
 		{
 			Align = Align_DefaultValue = "center";
 			Formatter = Formatter_DefaultValue = "";

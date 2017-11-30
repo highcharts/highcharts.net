@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionshistogramstates  : BaseObject
+	public partial class PlotOptionsHistogramStates  : BaseObject
 	{
-		public PlotOptionshistogramstates()
+		public PlotOptionsHistogramStates()
 		{
 			
 		}	

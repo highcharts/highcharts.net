@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsstreamgraph  : BaseObject
+	public partial class PlotOptionsStreamgraph  : BaseObject
 	{
-		public PlotOptionsstreamgraph()
+		public PlotOptionsStreamgraph()
 		{
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
@@ -84,8 +84,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsstreamgraphlabel Label { get; set; }
-		private PlotOptionsstreamgraphlabel Label_DefaultValue { get; set; }
+		public PlotOptionsStreamgraphLabel Label { get; set; }
+		private PlotOptionsStreamgraphLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -119,29 +119,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsstreamgraphevents Events { get; set; }
-		private PlotOptionsstreamgraphevents Events_DefaultValue { get; set; }
+		public PlotOptionsStreamgraphEvents Events { get; set; }
+		private PlotOptionsStreamgraphEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
 		/// </summary>
-		public PlotOptionsstreamgraphmarker Marker { get; set; }
-		private PlotOptionsstreamgraphmarker Marker_DefaultValue { get; set; }
+		public PlotOptionsStreamgraphMarker Marker { get; set; }
+		private PlotOptionsStreamgraphMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsstreamgraphpoint Point { get; set; }
-		private PlotOptionsstreamgraphpoint Point_DefaultValue { get; set; }
+		public PlotOptionsStreamgraphPoint Point { get; set; }
+		private PlotOptionsStreamgraphPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionsstreamgraphdataLabels DataLabels { get; set; }
-		private PlotOptionsstreamgraphdataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsStreamgraphDataLabels DataLabels { get; set; }
+		private PlotOptionsStreamgraphDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -161,8 +161,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsstreamgraphstates States { get; set; }
-		private PlotOptionsstreamgraphstates States_DefaultValue { get; set; }
+		public PlotOptionsStreamgraphStates States { get; set; }
+		private PlotOptionsStreamgraphStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -385,15 +385,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsstreamgraphtooltip Tooltip { get; set; }
-		private PlotOptionsstreamgraphtooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsStreamgraphTooltip Tooltip { get; set; }
+		private PlotOptionsStreamgraphTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsstreamgraphzones> Zones { get; set; }
-		private List<PlotOptionsstreamgraphzones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsStreamgraphZone> Zones { get; set; }
+		private List<PlotOptionsStreamgraphZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>

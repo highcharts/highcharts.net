@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionscolumnrange  : BaseObject
+	public partial class PlotOptionsColumnrange  : BaseObject
 	{
-		public PlotOptionscolumnrange()
+		public PlotOptionsColumnrange()
 		{
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
@@ -90,8 +90,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionscolumnrangelabel Label { get; set; }
-		private PlotOptionscolumnrangelabel Label_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeLabel Label { get; set; }
+		private PlotOptionsColumnrangeLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,22 +118,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionscolumnrangeevents Events { get; set; }
-		private PlotOptionscolumnrangeevents Events_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeEvents Events { get; set; }
+		private PlotOptionsColumnrangeEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionscolumnrangepoint Point { get; set; }
-		private PlotOptionscolumnrangepoint Point_DefaultValue { get; set; }
+		public PlotOptionsColumnrangePoint Point { get; set; }
+		private PlotOptionsColumnrangePoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionscolumnrangedataLabels DataLabels { get; set; }
-		private PlotOptionscolumnrangedataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeDataLabels DataLabels { get; set; }
+		private PlotOptionsColumnrangeDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -146,8 +146,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionscolumnrangestates States { get; set; }
-		private PlotOptionscolumnrangestates States_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeStates States { get; set; }
+		private PlotOptionsColumnrangeStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -328,15 +328,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionscolumnrangetooltip Tooltip { get; set; }
-		private PlotOptionscolumnrangetooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeTooltip Tooltip { get; set; }
+		private PlotOptionsColumnrangeTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionscolumnrangezones> Zones { get; set; }
-		private List<PlotOptionscolumnrangezones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsColumnrangeZone> Zones { get; set; }
+		private List<PlotOptionsColumnrangeZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -405,29 +405,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionscolumnrangestates States { get; set; }
-		private PlotOptionscolumnrangestates States_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeStates States { get; set; }
+		private PlotOptionsColumnrangeStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionscolumnrangedataLabels DataLabels { get; set; }
-		private PlotOptionscolumnrangedataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeDataLabels DataLabels { get; set; }
+		private PlotOptionsColumnrangeDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionscolumnrangestickyTracking StickyTracking { get; set; }
-		private PlotOptionscolumnrangestickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeStickyTracking StickyTracking { get; set; }
+		private PlotOptionsColumnrangeStickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionscolumnrangetooltip Tooltip { get; set; }
-		private PlotOptionscolumnrangetooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeTooltip Tooltip { get; set; }
+		private PlotOptionsColumnrangeTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -482,8 +482,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionscolumnrangedataGrouping DataGrouping { get; set; }
-		private PlotOptionscolumnrangedataGrouping DataGrouping_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeDataGrouping DataGrouping { get; set; }
+		private PlotOptionsColumnrangeDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>

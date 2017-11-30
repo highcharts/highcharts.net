@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsvariablepiedataLabels  : BaseObject
+	public partial class PlotOptionsVariablepieDataLabels  : BaseObject
 	{
-		public PlotOptionsvariablepiedataLabels()
+		public PlotOptionsVariablepieDataLabels()
 		{
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};

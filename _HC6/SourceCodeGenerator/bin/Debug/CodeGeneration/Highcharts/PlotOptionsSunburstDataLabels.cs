@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionssunburstdataLabels  : BaseObject
+	public partial class PlotOptionsSunburstDataLabels  : BaseObject
 	{
-		public PlotOptionssunburstdataLabels()
+		public PlotOptionsSunburstDataLabels()
 		{
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};

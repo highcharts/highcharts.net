@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsparetopoint  : BaseObject
+	public partial class PlotOptionsParetoPoint  : BaseObject
 	{
-		public PlotOptionsparetopoint()
+		public PlotOptionsParetoPoint()
 		{
 			
 		}	

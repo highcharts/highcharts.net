@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the no-data label.
 		/// </summary>
-		public NoDatastyle Style { get; set; }
-		private NoDatastyle Style_DefaultValue { get; set; }
+		public NoDataStyle Style { get; set; }
+		private NoDataStyle Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

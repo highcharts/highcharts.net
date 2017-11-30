@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionspie  : BaseObject
+	public partial class PlotOptionsPie  : BaseObject
 	{
-		public PlotOptionspie()
+		public PlotOptionsPie()
 		{
 			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -49,8 +49,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionspielabel Label { get; set; }
-		private PlotOptionspielabel Label_DefaultValue { get; set; }
+		public PlotOptionsPieLabel Label { get; set; }
+		private PlotOptionsPieLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -77,29 +77,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionspieevents Events { get; set; }
-		private PlotOptionspieevents Events_DefaultValue { get; set; }
+		public PlotOptionsPieEvents Events { get; set; }
+		private PlotOptionsPieEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionspiepoint Point { get; set; }
-		private PlotOptionspiepoint Point_DefaultValue { get; set; }
+		public PlotOptionsPiePoint Point { get; set; }
+		private PlotOptionsPiePoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionspiedataLabels DataLabels { get; set; }
-		private PlotOptionspiedataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsPieDataLabels DataLabels { get; set; }
+		private PlotOptionsPieDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionspiestates States { get; set; }
-		private PlotOptionspiestates States_DefaultValue { get; set; }
+		public PlotOptionsPieStates States { get; set; }
+		private PlotOptionsPieStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -224,8 +224,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionspietooltip Tooltip { get; set; }
-		private PlotOptionspietooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsPieTooltip Tooltip { get; set; }
+		private PlotOptionsPieTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>

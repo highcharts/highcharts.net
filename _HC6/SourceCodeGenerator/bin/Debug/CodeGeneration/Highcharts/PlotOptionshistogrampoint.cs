@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionshistogrampoint  : BaseObject
+	public partial class PlotOptionsHistogramPoint  : BaseObject
 	{
-		public PlotOptionshistogrampoint()
+		public PlotOptionsHistogramPoint()
 		{
 			
 		}	

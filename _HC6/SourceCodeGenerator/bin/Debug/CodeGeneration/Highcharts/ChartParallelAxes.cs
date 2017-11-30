@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class ChartparallelAxes  : BaseObject
+	public partial class ChartParallelAxes  : BaseObject
 	{
-		public ChartparallelAxes()
+		public ChartParallelAxes()
 		{
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
@@ -64,7 +64,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Units = Units_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Crosshair = Crosshair_DefaultValue = new ChartparallelAxescrosshair();
+			Crosshair = Crosshair_DefaultValue = new ChartParallelAxesCrosshair();
 			Events = Events_DefaultValue = "";
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = null;
 			EndOnTick = EndOnTick_DefaultValue = true;
@@ -101,8 +101,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The axis labels show the number or category for each tick.
 		/// </summary>
-		public ChartparallelAxeslabels Labels { get; set; }
-		private ChartparallelAxeslabels Labels_DefaultValue { get; set; }
+		public ChartParallelAxesLabels Labels { get; set; }
+		private ChartParallelAxesLabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -178,8 +178,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The axis title, showing next to the axis line.
 		/// </summary>
-		public ChartparallelAxestitle Title { get; set; }
-		private ChartparallelAxestitle Title_DefaultValue { get; set; }
+		public ChartParallelAxesTitle Title { get; set; }
+		private ChartParallelAxesTitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -423,8 +423,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Datetime axis only. An array determining what time intervals theticks are allowed to fall on. Each array item is an array where thefirst value is the time unit and the second value another array ofallowed multiples. Defaults to:<pre>units: [[    'millisecond', // unit name    [1, 2, 5, 10, 20, 25, 50, 100, 200, 500] // allowed multiples], [    'second',    [1, 2, 5, 10, 15, 30]], [    'minute',    [1, 2, 5, 10, 15, 30]], [    'hour',    [1, 2, 3, 4, 6, 8, 12]], [    'day',    [1]], [    'week',    [1]], [    'month',    [1, 3, 6]], [    'year',    null]]</pre>
 		/// </summary>
-		public ChartparallelAxesunits Units { get; set; }
-		private ChartparallelAxesunits Units_DefaultValue { get; set; }
+		public ChartParallelAxesUnits Units { get; set; }
+		private ChartParallelAxesUnits Units_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -444,15 +444,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Event handlers for the axis.
 		/// </summary>
-		public ChartparallelAxesevents Events { get; set; }
-		private ChartparallelAxesevents Events_DefaultValue { get; set; }
+		public ChartParallelAxesEvents Events { get; set; }
+		private ChartParallelAxesEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
 		/// </summary>
-		public ChartparallelAxestooltipValueFormat TooltipValueFormat { get; set; }
-		private ChartparallelAxestooltipValueFormat TooltipValueFormat_DefaultValue { get; set; }
+		public ChartParallelAxesTooltipValueFormat TooltipValueFormat { get; set; }
+		private ChartParallelAxesTooltipValueFormat TooltipValueFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -465,8 +465,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public ChartparallelAxestickPixelInterval TickPixelInterval { get; set; }
-		private ChartparallelAxestickPixelInterval TickPixelInterval_DefaultValue { get; set; }
+		public ChartParallelAxesTickPixelInterval TickPixelInterval { get; set; }
+		private ChartParallelAxesTickPixelInterval TickPixelInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -479,8 +479,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public ChartparallelAxeslabels Labels { get; set; }
-		private ChartparallelAxeslabels Labels_DefaultValue { get; set; }
+		public ChartParallelAxesLabels Labels { get; set; }
+		private ChartParallelAxesLabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -507,8 +507,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public ChartparallelAxestitle Title { get; set; }
-		private ChartparallelAxestitle Title_DefaultValue { get; set; }
+		public ChartParallelAxesTitle Title { get; set; }
+		private ChartParallelAxesTitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>

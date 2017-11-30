@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsxrange  : BaseObject
+	public partial class PlotOptionsXrange  : BaseObject
 	{
-		public PlotOptionsxrange()
+		public PlotOptionsXrange()
 		{
 			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -67,8 +67,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsxrangelabel Label { get; set; }
-		private PlotOptionsxrangelabel Label_DefaultValue { get; set; }
+		public PlotOptionsXrangeLabel Label { get; set; }
+		private PlotOptionsXrangeLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -95,29 +95,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsxrangeevents Events { get; set; }
-		private PlotOptionsxrangeevents Events_DefaultValue { get; set; }
+		public PlotOptionsXrangeEvents Events { get; set; }
+		private PlotOptionsXrangeEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsxrangepoint Point { get; set; }
-		private PlotOptionsxrangepoint Point_DefaultValue { get; set; }
+		public PlotOptionsXrangePoint Point { get; set; }
+		private PlotOptionsXrangePoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionsxrangedataLabels DataLabels { get; set; }
-		private PlotOptionsxrangedataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsXrangeDataLabels DataLabels { get; set; }
+		private PlotOptionsXrangeDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsxrangestates States { get; set; }
-		private PlotOptionsxrangestates States_DefaultValue { get; set; }
+		public PlotOptionsXrangeStates States { get; set; }
+		private PlotOptionsXrangeStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -256,15 +256,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsxrangetooltip Tooltip { get; set; }
-		private PlotOptionsxrangetooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsXrangeTooltip Tooltip { get; set; }
+		private PlotOptionsXrangeTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsxrangezones> Zones { get; set; }
-		private List<PlotOptionsxrangezones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsXrangeZone> Zones { get; set; }
+		private List<PlotOptionsXrangeZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -305,29 +305,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsxrangestates States { get; set; }
-		private PlotOptionsxrangestates States_DefaultValue { get; set; }
+		public PlotOptionsXrangeStates States { get; set; }
+		private PlotOptionsXrangeStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsxrangedataLabels DataLabels { get; set; }
-		private PlotOptionsxrangedataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsXrangeDataLabels DataLabels { get; set; }
+		private PlotOptionsXrangeDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsxrangestickyTracking StickyTracking { get; set; }
-		private PlotOptionsxrangestickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionsXrangeStickyTracking StickyTracking { get; set; }
+		private PlotOptionsXrangeStickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsxrangetooltip Tooltip { get; set; }
-		private PlotOptionsxrangetooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsXrangeTooltip Tooltip { get; set; }
+		private PlotOptionsXrangeTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -375,8 +375,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsxrangedataGrouping DataGrouping { get; set; }
-		private PlotOptionsxrangedataGrouping DataGrouping_DefaultValue { get; set; }
+		public PlotOptionsXrangeDataGrouping DataGrouping { get; set; }
+		private PlotOptionsXrangeDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>

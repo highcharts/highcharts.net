@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsbubbleanimation  : BaseObject
+	public partial class PlotOptionsBubbleAnimation  : BaseObject
 	{
-		public PlotOptionsbubbleanimation()
+		public PlotOptionsBubbleAnimation()
 		{
 			
 		}	

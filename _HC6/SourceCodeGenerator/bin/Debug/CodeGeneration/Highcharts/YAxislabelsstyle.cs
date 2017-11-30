@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class YAxislabelsstyle  : BaseObject
+	public partial class YAxisLabelsStyle  : BaseObject
 	{
-		public YAxislabelsstyle()
+		public YAxisLabelsStyle()
 		{
 			
 		}	

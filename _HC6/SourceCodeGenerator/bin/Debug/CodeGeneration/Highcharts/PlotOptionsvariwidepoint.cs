@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsvariwidepoint  : BaseObject
+	public partial class PlotOptionsVariwidePoint  : BaseObject
 	{
-		public PlotOptionsvariwidepoint()
+		public PlotOptionsVariwidePoint()
 		{
 			
 		}	

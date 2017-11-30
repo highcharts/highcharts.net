@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class AnnotationsshapeOptions  : BaseObject
+	public partial class AnnotationsShapeOptions  : BaseObject
 	{
-		public AnnotationsshapeOptions()
+		public AnnotationsShapeOptions()
 		{
 			
 		}	

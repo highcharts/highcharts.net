@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class ChartresetZoomButton  : BaseObject
+	public partial class ChartResetZoomButton  : BaseObject
 	{
-		public ChartresetZoomButton()
+		public ChartResetZoomButton()
 		{
 			
 		}	

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class TooltipdateTimeLabelFormats  : BaseObject
+	public partial class TooltipDateTimeLabelFormats  : BaseObject
 	{
-		public TooltipdateTimeLabelFormats()
+		public TooltipDateTimeLabelFormats()
 		{
 			
 		}	

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionstreemappoint  : BaseObject
+	public partial class PlotOptionsTreemapPoint  : BaseObject
 	{
-		public PlotOptionstreemappoint()
+		public PlotOptionsTreemapPoint()
 		{
 			
 		}	

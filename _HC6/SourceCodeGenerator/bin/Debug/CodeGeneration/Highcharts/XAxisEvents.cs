@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class XAxisevents  : BaseObject
+	public partial class XAxisEvents  : BaseObject
 	{
-		public XAxisevents()
+		public XAxisEvents()
 		{
 			
 		}	

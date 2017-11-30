@@ -74,10 +74,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Units = Units_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
 			Breaks = Breaks_DefaultValue = "";
-			Crosshair = Crosshair_DefaultValue = new XAxiscrosshair();
+			Crosshair = Crosshair_DefaultValue = new XAxisCrosshair();
 			Events = Events_DefaultValue = "";
-			PlotBands = PlotBands_DefaultValue = "";
-			PlotLines = PlotLines_DefaultValue = "";
+			PlotBands = PlotBands_DefaultValue = new List<XAxisPlotBands>();
+			PlotLines = PlotLines_DefaultValue = new List<XAxisPlotLines>();
 			
 		}	
 		
@@ -99,8 +99,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The axis labels show the number or category for each tick.
 		/// </summary>
-		public XAxislabels Labels { get; set; }
-		private XAxislabels Labels_DefaultValue { get; set; }
+		public XAxisLabels Labels { get; set; }
+		private XAxisLabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -176,8 +176,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The axis title, showing next to the axis line.
 		/// </summary>
-		public XAxistitle Title { get; set; }
-		private XAxistitle Title_DefaultValue { get; set; }
+		public XAxisTitle Title { get; set; }
+		private XAxisTitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -484,8 +484,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Datetime axis only. An array determining what time intervals theticks are allowed to fall on. Each array item is an array where thefirst value is the time unit and the second value another array ofallowed multiples. Defaults to:<pre>units: [[    'millisecond', // unit name    [1, 2, 5, 10, 20, 25, 50, 100, 200, 500] // allowed multiples], [    'second',    [1, 2, 5, 10, 15, 30]], [    'minute',    [1, 2, 5, 10, 15, 30]], [    'hour',    [1, 2, 3, 4, 6, 8, 12]], [    'day',    [1]], [    'week',    [1]], [    'month',    [1, 3, 6]], [    'year',    null]]</pre>
 		/// </summary>
-		public XAxisunits Units { get; set; }
-		private XAxisunits Units_DefaultValue { get; set; }
+		public XAxisUnits Units { get; set; }
+		private XAxisUnits Units_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -498,8 +498,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array defining breaks in the axis, the sections defined will beleft out and all the points shifted closer to each other.
 		/// </summary>
-		public XAxisbreaks Breaks { get; set; }
-		private XAxisbreaks Breaks_DefaultValue { get; set; }
+		public XAxisBreaks Breaks { get; set; }
+		private XAxisBreaks Breaks_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -512,22 +512,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Event handlers for the axis.
 		/// </summary>
-		public XAxisevents Events { get; set; }
-		private XAxisevents Events_DefaultValue { get; set; }
+		public XAxisEvents Events { get; set; }
+		private XAxisEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array of colored bands stretching across the plot area markingan interval on the axis.In styled mode, the plot bands are styled by the `.highcharts-plot-band` class in addition to the `className` option.
 		/// </summary>
-		public List<object> PlotBands { get; set; }
-		private List<object> PlotBands_DefaultValue { get; set; }
+		public List<XAxisPlotBands> PlotBands { get; set; }
+		private List<XAxisPlotBands> PlotBands_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array of lines stretching across the plot area, marking a specificvalue on one of the axes.In styled mode, the plot lines are styled by the `.highcharts-plot-line` class in addition to the `className` option.
 		/// </summary>
-		public List<object> PlotLines { get; set; }
-		private List<object> PlotLines_DefaultValue { get; set; }
+		public List<XAxisPlotLines> PlotLines { get; set; }
+		private List<XAxisPlotLines> PlotLines_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -596,8 +596,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
 			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (PlotBands.IsDirty()) h.Add("plotBands",PlotBands.ToHashtable());
-			if (PlotLines.IsDirty()) h.Add("plotLines",PlotLines.ToHashtable());
+			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			
 
 			return h;

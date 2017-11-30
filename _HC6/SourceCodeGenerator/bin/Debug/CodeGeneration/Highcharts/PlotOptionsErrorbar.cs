@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionserrorbar  : BaseObject
+	public partial class PlotOptionsErrorbar  : BaseObject
 	{
-		public PlotOptionserrorbar()
+		public PlotOptionsErrorbar()
 		{
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
@@ -109,8 +109,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionserrorbarlabel Label { get; set; }
-		private PlotOptionserrorbarlabel Label_DefaultValue { get; set; }
+		public PlotOptionsErrorbarLabel Label { get; set; }
+		private PlotOptionsErrorbarLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -137,22 +137,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionserrorbarevents Events { get; set; }
-		private PlotOptionserrorbarevents Events_DefaultValue { get; set; }
+		public PlotOptionsErrorbarEvents Events { get; set; }
+		private PlotOptionsErrorbarEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionserrorbarpoint Point { get; set; }
-		private PlotOptionserrorbarpoint Point_DefaultValue { get; set; }
+		public PlotOptionsErrorbarPoint Point { get; set; }
+		private PlotOptionsErrorbarPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionserrorbardataLabels DataLabels { get; set; }
-		private PlotOptionserrorbardataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsErrorbarDataLabels DataLabels { get; set; }
+		private PlotOptionsErrorbarDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -172,8 +172,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionserrorbarstates States { get; set; }
-		private PlotOptionserrorbarstates States_DefaultValue { get; set; }
+		public PlotOptionsErrorbarStates States { get; set; }
+		private PlotOptionsErrorbarStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -375,15 +375,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionserrorbartooltip Tooltip { get; set; }
-		private PlotOptionserrorbartooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsErrorbarTooltip Tooltip { get; set; }
+		private PlotOptionsErrorbarTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionserrorbarzones> Zones { get; set; }
-		private List<PlotOptionserrorbarzones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsErrorbarZone> Zones { get; set; }
+		private List<PlotOptionsErrorbarZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -452,15 +452,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionserrorbarstates States { get; set; }
-		private PlotOptionserrorbarstates States_DefaultValue { get; set; }
+		public PlotOptionsErrorbarStates States { get; set; }
+		private PlotOptionsErrorbarStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionserrorbardataLabels DataLabels { get; set; }
-		private PlotOptionserrorbardataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsErrorbarDataLabels DataLabels { get; set; }
+		private PlotOptionsErrorbarDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -473,15 +473,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionserrorbarstickyTracking StickyTracking { get; set; }
-		private PlotOptionserrorbarstickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionsErrorbarStickyTracking StickyTracking { get; set; }
+		private PlotOptionsErrorbarStickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionserrorbartooltip Tooltip { get; set; }
-		private PlotOptionserrorbartooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsErrorbarTooltip Tooltip { get; set; }
+		private PlotOptionsErrorbarTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -543,8 +543,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionserrorbardataGrouping DataGrouping { get; set; }
-		private PlotOptionserrorbardataGrouping DataGrouping_DefaultValue { get; set; }
+		public PlotOptionsErrorbarDataGrouping DataGrouping { get; set; }
+		private PlotOptionsErrorbarDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -578,15 +578,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionserrorbarthreshold Threshold { get; set; }
-		private PlotOptionserrorbarthreshold Threshold_DefaultValue { get; set; }
+		public PlotOptionsErrorbarThreshold Threshold { get; set; }
+		private PlotOptionsErrorbarThreshold Threshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionserrorbartooltip Tooltip { get; set; }
-		private PlotOptionserrorbartooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsErrorbarTooltip Tooltip { get; set; }
+		private PlotOptionsErrorbarTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -620,8 +620,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionserrorbarstates States { get; set; }
-		private PlotOptionserrorbarstates States_DefaultValue { get; set; }
+		public PlotOptionsErrorbarStates States { get; set; }
+		private PlotOptionsErrorbarStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>

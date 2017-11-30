@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsscatter  : BaseObject
+	public partial class PlotOptionsScatter  : BaseObject
 	{
-		public PlotOptionsscatter()
+		public PlotOptionsScatter()
 		{
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
@@ -59,7 +59,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = "";
 			Zones = Zones_DefaultValue = "";
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -78,8 +77,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsscatterlabel Label { get; set; }
-		private PlotOptionsscatterlabel Label_DefaultValue { get; set; }
+		public PlotOptionsScatterLabel Label { get; set; }
+		private PlotOptionsScatterLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -113,29 +112,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsscatterevents Events { get; set; }
-		private PlotOptionsscatterevents Events_DefaultValue { get; set; }
+		public PlotOptionsScatterEvents Events { get; set; }
+		private PlotOptionsScatterEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
 		/// </summary>
-		public PlotOptionsscattermarker Marker { get; set; }
-		private PlotOptionsscattermarker Marker_DefaultValue { get; set; }
+		public PlotOptionsScatterMarker Marker { get; set; }
+		private PlotOptionsScatterMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsscatterpoint Point { get; set; }
-		private PlotOptionsscatterpoint Point_DefaultValue { get; set; }
+		public PlotOptionsScatterPoint Point { get; set; }
+		private PlotOptionsScatterPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionsscatterdataLabels DataLabels { get; set; }
-		private PlotOptionsscatterdataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsScatterDataLabels DataLabels { get; set; }
+		private PlotOptionsScatterDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -155,8 +154,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsscatterstates States { get; set; }
-		private PlotOptionsscatterstates States_DefaultValue { get; set; }
+		public PlotOptionsScatterStates States { get; set; }
+		private PlotOptionsScatterStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -384,17 +383,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsscattertooltip Tooltip { get; set; }
-		private PlotOptionsscattertooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsscatterzones> Zones { get; set; }
-		private List<PlotOptionsscatterzones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsScatterZone> Zones { get; set; }
+		private List<PlotOptionsScatterZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -471,7 +463,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);

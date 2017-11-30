@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionswaterfalldataGrouping  : BaseObject
+	public partial class PlotOptionsWaterfallDataGrouping  : BaseObject
 	{
-		public PlotOptionswaterfalldataGrouping()
+		public PlotOptionsWaterfallDataGrouping()
 		{
 			
 		}	

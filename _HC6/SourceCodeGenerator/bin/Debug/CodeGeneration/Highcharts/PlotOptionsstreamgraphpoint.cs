@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsstreamgraphpoint  : BaseObject
+	public partial class PlotOptionsStreamgraphPoint  : BaseObject
 	{
-		public PlotOptionsstreamgraphpoint()
+		public PlotOptionsStreamgraphPoint()
 		{
 			
 		}	

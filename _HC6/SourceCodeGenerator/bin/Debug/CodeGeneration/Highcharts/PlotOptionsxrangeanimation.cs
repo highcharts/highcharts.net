@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsxrangeanimation  : BaseObject
+	public partial class PlotOptionsXrangeAnimation  : BaseObject
 	{
-		public PlotOptionsxrangeanimation()
+		public PlotOptionsXrangeAnimation()
 		{
 			
 		}	

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class ChartparallelAxestitle  : BaseObject
+	public partial class ChartParallelAxesTitle  : BaseObject
 	{
-		public ChartparallelAxestitle()
+		public ChartParallelAxesTitle()
 		{
 			Align = Align_DefaultValue = "middle";
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};

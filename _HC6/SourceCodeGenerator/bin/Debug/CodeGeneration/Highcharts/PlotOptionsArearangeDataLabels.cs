@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsarearangedataLabels  : BaseObject
+	public partial class PlotOptionsArearangeDataLabels  : BaseObject
 	{
-		public PlotOptionsarearangedataLabels()
+		public PlotOptionsArearangeDataLabels()
 		{
 			
 		}	

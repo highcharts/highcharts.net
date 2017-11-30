@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Responsiverules  : BaseObject
+	public partial class ResponsiveRules  : BaseObject
 	{
-		public Responsiverules()
+		public ResponsiveRules()
 		{
 			
 		}	

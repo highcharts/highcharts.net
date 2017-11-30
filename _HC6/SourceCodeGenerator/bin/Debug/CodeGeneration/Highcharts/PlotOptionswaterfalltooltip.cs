@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionswaterfalltooltip  : BaseObject
+	public partial class PlotOptionsWaterfallTooltip  : BaseObject
 	{
-		public PlotOptionswaterfalltooltip()
+		public PlotOptionsWaterfallTooltip()
 		{
 			
 		}	

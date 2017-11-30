@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsscatterpoint  : BaseObject
+	public partial class PlotOptionsScatterPoint  : BaseObject
 	{
-		public PlotOptionsscatterpoint()
+		public PlotOptionsScatterPoint()
 		{
 			
 		}	

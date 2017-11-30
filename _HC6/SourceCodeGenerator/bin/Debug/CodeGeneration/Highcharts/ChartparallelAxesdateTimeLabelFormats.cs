@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class ChartparallelAxesdateTimeLabelFormats  : BaseObject
+	public partial class ChartParallelAxesDateTimeLabelFormats  : BaseObject
 	{
-		public ChartparallelAxesdateTimeLabelFormats()
+		public ChartParallelAxesDateTimeLabelFormats()
 		{
 			
 		}	

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionspolygontooltip  : BaseObject
+	public partial class PlotOptionsPolygonTooltip  : BaseObject
 	{
-		public PlotOptionspolygontooltip()
+		public PlotOptionsPolygonTooltip()
 		{
 			
 		}	

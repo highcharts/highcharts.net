@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Size = Size_DefaultValue = 85%;
 			StartAngle = StartAngle_DefaultValue = 0;
-			Background = Background_DefaultValue = "";
+			Background = Background_DefaultValue = new List<PaneBackground>();
 			EndAngle = EndAngle_DefaultValue = null;
 			
 		}	
@@ -47,8 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of background items for the pane.
 		/// </summary>
-		public List<object> Background { get; set; }
-		private List<object> Background_DefaultValue { get; set; }
+		public List<PaneBackground> Background { get; set; }
+		private List<PaneBackground> Background_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -65,7 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
-			if (Background.IsDirty()) h.Add("background",Background.ToHashtable());
+			if (Background != Background_DefaultValue) h.Add("background", HashifyList(Background));
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			
 

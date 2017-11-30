@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class YAxisplotBands  : BaseObject
+	public partial class YAxisPlotBands  : BaseObject
 	{
-		public YAxisplotBands()
+		public YAxisPlotBands()
 		{
 			
 		}	

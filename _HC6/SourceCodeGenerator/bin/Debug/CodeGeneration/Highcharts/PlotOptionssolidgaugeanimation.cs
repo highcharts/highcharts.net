@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionssolidgaugeanimation  : BaseObject
+	public partial class PlotOptionsSolidgaugeAnimation  : BaseObject
 	{
-		public PlotOptionssolidgaugeanimation()
+		public PlotOptionsSolidgaugeAnimation()
 		{
 			
 		}	

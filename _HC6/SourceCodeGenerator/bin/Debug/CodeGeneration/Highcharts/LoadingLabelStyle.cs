@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class LoadinglabelStyle  : BaseObject
+	public partial class LoadingLabelStyle  : BaseObject
 	{
-		public LoadinglabelStyle()
+		public LoadingLabelStyle()
 		{
 			
 		}	

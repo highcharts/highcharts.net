@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Boostdebug  : BaseObject
+	public partial class BoostDebug  : BaseObject
 	{
-		public Boostdebug()
+		public BoostDebug()
 		{
 			
 		}	

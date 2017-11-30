@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionshistogram  : BaseObject
+	public partial class PlotOptionsHistogram  : BaseObject
 	{
-		public PlotOptionshistogram()
+		public PlotOptionsHistogram()
 		{
 			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -85,8 +85,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionshistogramlabel Label { get; set; }
-		private PlotOptionshistogramlabel Label_DefaultValue { get; set; }
+		public PlotOptionsHistogramLabel Label { get; set; }
+		private PlotOptionsHistogramLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -113,22 +113,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionshistogramevents Events { get; set; }
-		private PlotOptionshistogramevents Events_DefaultValue { get; set; }
+		public PlotOptionsHistogramEvents Events { get; set; }
+		private PlotOptionsHistogramEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionshistogrampoint Point { get; set; }
-		private PlotOptionshistogrampoint Point_DefaultValue { get; set; }
+		public PlotOptionsHistogramPoint Point { get; set; }
+		private PlotOptionsHistogramPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionshistogramdataLabels DataLabels { get; set; }
-		private PlotOptionshistogramdataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsHistogramDataLabels DataLabels { get; set; }
+		private PlotOptionsHistogramDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -148,8 +148,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionshistogramstates States { get; set; }
-		private PlotOptionshistogramstates States_DefaultValue { get; set; }
+		public PlotOptionsHistogramStates States { get; set; }
+		private PlotOptionsHistogramStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -330,15 +330,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionshistogramtooltip Tooltip { get; set; }
-		private PlotOptionshistogramtooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsHistogramTooltip Tooltip { get; set; }
+		private PlotOptionsHistogramTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionshistogramzones> Zones { get; set; }
-		private List<PlotOptionshistogramzones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsHistogramZone> Zones { get; set; }
+		private List<PlotOptionsHistogramZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -407,15 +407,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionshistogramstates States { get; set; }
-		private PlotOptionshistogramstates States_DefaultValue { get; set; }
+		public PlotOptionsHistogramStates States { get; set; }
+		private PlotOptionsHistogramStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionshistogramdataLabels DataLabels { get; set; }
-		private PlotOptionshistogramdataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsHistogramDataLabels DataLabels { get; set; }
+		private PlotOptionsHistogramDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -428,15 +428,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionshistogramstickyTracking StickyTracking { get; set; }
-		private PlotOptionshistogramstickyTracking StickyTracking_DefaultValue { get; set; }
+		public PlotOptionsHistogramStickyTracking StickyTracking { get; set; }
+		private PlotOptionsHistogramStickyTracking StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionshistogramtooltip Tooltip { get; set; }
-		private PlotOptionshistogramtooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsHistogramTooltip Tooltip { get; set; }
+		private PlotOptionsHistogramTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -498,8 +498,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionshistogramdataGrouping DataGrouping { get; set; }
-		private PlotOptionshistogramdataGrouping DataGrouping_DefaultValue { get; set; }
+		public PlotOptionsHistogramDataGrouping DataGrouping { get; set; }
+		private PlotOptionsHistogramDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>

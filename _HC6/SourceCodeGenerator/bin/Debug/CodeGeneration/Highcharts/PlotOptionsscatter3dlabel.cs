@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsscatter3dlabel  : BaseObject
+	public partial class PlotOptionsScatter3dLabel  : BaseObject
 	{
-		public PlotOptionsscatter3dlabel()
+		public PlotOptionsScatter3dLabel()
 		{
 			
 		}	

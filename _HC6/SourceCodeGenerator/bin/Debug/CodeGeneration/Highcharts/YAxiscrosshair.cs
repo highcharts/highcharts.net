@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class YAxiscrosshair  : BaseObject
+	public partial class YAxisCrosshair  : BaseObject
 	{
-		public YAxiscrosshair()
+		public YAxisCrosshair()
 		{
 			
 		}	

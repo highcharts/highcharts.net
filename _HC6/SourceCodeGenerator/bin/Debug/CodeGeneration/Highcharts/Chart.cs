@@ -58,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SpacingRight = SpacingRight_DefaultValue = 10;
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","\"Lucida Grande\"},{ \"Lucida Sans Unicode\"},{ Verdana},{ Arial},{ Helvetica},{ sans-serif"},{"fontSize","12px"}};
-			Type = Type_DefaultValue = Charttype.Bar;
+			Type = Type_DefaultValue = ChartType.Bar;
 			ZoomType = ZoomType_DefaultValue = "";
 			Options3d = Options3d_DefaultValue = "";
 			
@@ -82,22 +82,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Event listeners for the chart.
 		/// </summary>
-		public Chartevents Events { get; set; }
-		private Chartevents Events_DefaultValue { get; set; }
+		public ChartEvents Events { get; set; }
+		private ChartEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Flag to render charts as a parallel coordinates plot. In a parallelcoordinates plot (||-coords) by default all required yAxes are generatedand the legend is disabled. This feature requires`modules/parallel-coordinates.js`.
 		/// </summary>
-		public ChartparallelCoordinates ParallelCoordinates { get; set; }
-		private ChartparallelCoordinates ParallelCoordinates_DefaultValue { get; set; }
+		public ChartParallelCoordinates ParallelCoordinates { get; set; }
+		private ChartParallelCoordinates ParallelCoordinates_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Common options for all yAxes rendered in a parallel coordinates plot.This feature requires `modules/parallel-coordinates.js`.The default options are:<pre>parallelAxes: {lineWidth: 1,       // classic mode onlygridlinesWidth: 0,  // classic mode onlytitle: {text: '',reserveSpace: false},labels: {x: 0,y: 0,align: 'center',reserveSpace: false},offset: 0}</pre>
 		/// </summary>
-		public ChartparallelAxes ParallelAxes { get; set; }
-		private ChartparallelAxes ParallelAxes_DefaultValue { get; set; }
+		public ChartParallelAxes ParallelAxes { get; set; }
+		private ChartParallelAxes ParallelAxes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -138,8 +138,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The button that appears after a selection zoom, allowing the userto reset zoom.
 		/// </summary>
-		public ChartresetZoomButton ResetZoomButton { get; set; }
-		private ChartresetZoomButton ResetZoomButton_DefaultValue { get; set; }
+		public ChartResetZoomButton ResetZoomButton { get; set; }
+		private ChartResetZoomButton ResetZoomButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -376,8 +376,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The default series type for the chart. Can be any of the chart typeslisted under [plotOptions](#plotOptions).
 		/// </summary>
-		public Charttype Type { get; set; }
-		private Charttype Type_DefaultValue { get; set; }
+		public ChartType Type { get; set; }
+		private ChartType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -390,8 +390,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options to render charts in 3 dimensions. This feature requires`highcharts-3d.js`, found in the download package or online at[code.highcharts.com/highcharts-3d.js](http://code.highcharts.com/highcharts-3d.js).
 		/// </summary>
-		public Chartoptions3d Options3d { get; set; }
-		private Chartoptions3d Options3d_DefaultValue { get; set; }
+		public ChartOptions3d Options3d { get; set; }
+		private ChartOptions3d Options3d_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

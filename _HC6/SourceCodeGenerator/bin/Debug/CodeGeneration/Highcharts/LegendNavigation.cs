@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Legendnavigation  : BaseObject
+	public partial class LegendNavigation  : BaseObject
 	{
-		public Legendnavigation()
+		public LegendNavigation()
 		{
 			
 		}	

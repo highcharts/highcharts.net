@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Panebackground  : BaseObject
+	public partial class PaneBackground  : BaseObject
 	{
-		public Panebackground()
+		public PaneBackground()
 		{
 			
 		}	

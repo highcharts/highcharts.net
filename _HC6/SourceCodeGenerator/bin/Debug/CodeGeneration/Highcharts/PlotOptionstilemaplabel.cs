@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionstilemaplabel  : BaseObject
+	public partial class PlotOptionsTilemapLabel  : BaseObject
 	{
-		public PlotOptionstilemaplabel()
+		public PlotOptionsTilemapLabel()
 		{
 			
 		}	

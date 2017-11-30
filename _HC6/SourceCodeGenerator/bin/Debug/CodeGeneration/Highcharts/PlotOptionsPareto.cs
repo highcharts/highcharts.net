@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionspareto  : BaseObject
+	public partial class PlotOptionsPareto  : BaseObject
 	{
-		public PlotOptionspareto()
+		public PlotOptionsPareto()
 		{
 			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -55,8 +55,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionsparetolabel Label { get; set; }
-		private PlotOptionsparetolabel Label_DefaultValue { get; set; }
+		public PlotOptionsParetoLabel Label { get; set; }
+		private PlotOptionsParetoLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -90,29 +90,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionsparetoevents Events { get; set; }
-		private PlotOptionsparetoevents Events_DefaultValue { get; set; }
+		public PlotOptionsParetoEvents Events { get; set; }
+		private PlotOptionsParetoEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
 		/// </summary>
-		public PlotOptionsparetomarker Marker { get; set; }
-		private PlotOptionsparetomarker Marker_DefaultValue { get; set; }
+		public PlotOptionsParetoMarker Marker { get; set; }
+		private PlotOptionsParetoMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionsparetopoint Point { get; set; }
-		private PlotOptionsparetopoint Point_DefaultValue { get; set; }
+		public PlotOptionsParetoPoint Point { get; set; }
+		private PlotOptionsParetoPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionsparetodataLabels DataLabels { get; set; }
-		private PlotOptionsparetodataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsParetoDataLabels DataLabels { get; set; }
+		private PlotOptionsParetoDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -125,8 +125,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionsparetostates States { get; set; }
-		private PlotOptionsparetostates States_DefaultValue { get; set; }
+		public PlotOptionsParetoStates States { get; set; }
+		private PlotOptionsParetoStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -272,8 +272,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public PlotOptionsparetotooltip Tooltip { get; set; }
-		private PlotOptionsparetotooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsParetoTooltip Tooltip { get; set; }
+		private PlotOptionsParetoTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>

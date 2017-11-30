@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Series  : BaseObject
+	public partial class Series  : Series
 	{
 		public Series()
 		{
@@ -67,176 +67,176 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A `bellcurve` series. If the [type](#series.bellcurve.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.bellcurve](#plotOptions.bellcurve).
 		/// </summary>
-		public Seriesbellcurve Bellcurve { get; set; }
-		private Seriesbellcurve Bellcurve_DefaultValue { get; set; }
+		public BellcurveSeries Bellcurve { get; set; }
+		private BellcurveSeries Bellcurve_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `bullet` series. If the [type](#series.bullet.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.bullet](#plotOptions.bullet).
 		/// </summary>
-		public Seriesbullet Bullet { get; set; }
-		private Seriesbullet Bullet_DefaultValue { get; set; }
+		public BulletSeries Bullet { get; set; }
+		private BulletSeries Bullet_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `line` series. If the [type](#series.line.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.line](#plotOptions.line).
 		/// </summary>
-		public Seriesline Line { get; set; }
-		private Seriesline Line_DefaultValue { get; set; }
+		public LineSeries Line { get; set; }
+		private LineSeries Line_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `funnel` series. If the [type](#series.funnel.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.funnel](#plotOptions.funnel).
 		/// </summary>
-		public Seriesfunnel Funnel { get; set; }
-		private Seriesfunnel Funnel_DefaultValue { get; set; }
+		public FunnelSeries Funnel { get; set; }
+		private FunnelSeries Funnel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `pyramid` series. If the [type](#series.pyramid.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.pyramid](#plotOptions.pyramid).
 		/// </summary>
-		public Seriespyramid Pyramid { get; set; }
-		private Seriespyramid Pyramid_DefaultValue { get; set; }
+		public PyramidSeries Pyramid { get; set; }
+		private PyramidSeries Pyramid_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `histogram` series. If the [type](#series.histogram.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.histogram](#plotOptions.histogram).
 		/// </summary>
-		public Serieshistogram Histogram { get; set; }
-		private Serieshistogram Histogram_DefaultValue { get; set; }
+		public HistogramSeries Histogram { get; set; }
+		private HistogramSeries Histogram_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `pareto` series. If the [type](#series.pareto.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.pareto](#plotOptions.pareto).
 		/// </summary>
-		public Seriespareto Pareto { get; set; }
-		private Seriespareto Pareto_DefaultValue { get; set; }
+		public ParetoSeries Pareto { get; set; }
+		private ParetoSeries Pareto_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `sankey` series. If the [type](#series.sankey.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.sankey](#plotOptions.sankey).
 		/// </summary>
-		public Seriessankey Sankey { get; set; }
-		private Seriessankey Sankey_DefaultValue { get; set; }
+		public SankeySeries Sankey { get; set; }
+		private SankeySeries Sankey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `solidgauge` series. If the [type](#series.solidgauge.type) optionis not specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.solidgauge](#plotOptions.solidgauge).
 		/// </summary>
-		public Seriessolidgauge Solidgauge { get; set; }
-		private Seriessolidgauge Solidgauge_DefaultValue { get; set; }
+		public SolidgaugeSeries Solidgauge { get; set; }
+		private SolidgaugeSeries Solidgauge_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `streamgraph` series. If the [type](#series.streamgraph.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.streamgraph](#plotOptions.streamgraph).
 		/// </summary>
-		public Seriesstreamgraph Streamgraph { get; set; }
-		private Seriesstreamgraph Streamgraph_DefaultValue { get; set; }
+		public StreamgraphSeries Streamgraph { get; set; }
+		private StreamgraphSeries Streamgraph_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `sunburst` series. If the [type](#series.sunburst.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.sunburst](#plotOptions.sunburst).
 		/// </summary>
-		public Seriessunburst Sunburst { get; set; }
-		private Seriessunburst Sunburst_DefaultValue { get; set; }
+		public SunburstSeries Sunburst { get; set; }
+		private SunburstSeries Sunburst_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `treemap` series. If the [type](#series.treemap.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.treemap](#plotOptions.treemap).
 		/// </summary>
-		public Seriestreemap Treemap { get; set; }
-		private Seriestreemap Treemap_DefaultValue { get; set; }
+		public TreemapSeries Treemap { get; set; }
+		private TreemapSeries Treemap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `tilemap` series. If the [type](#series.tilemap.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.tilemap](#plotOptions.tilemap).
 		/// </summary>
-		public Seriestilemap Tilemap { get; set; }
-		private Seriestilemap Tilemap_DefaultValue { get; set; }
+		public TilemapSeries Tilemap { get; set; }
+		private TilemapSeries Tilemap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `variablepie` series. If the [type](#series.variablepie.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.variablepie](#plotOptions.variablepie).
 		/// </summary>
-		public Seriesvariablepie Variablepie { get; set; }
-		private Seriesvariablepie Variablepie_DefaultValue { get; set; }
+		public VariablepieSeries Variablepie { get; set; }
+		private VariablepieSeries Variablepie_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `variwide` series. If the [type](#series.variwide.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.variwide](#plotOptions.variwide).
 		/// </summary>
-		public Seriesvariwide Variwide { get; set; }
-		private Seriesvariwide Variwide_DefaultValue { get; set; }
+		public VariwideSeries Variwide { get; set; }
+		private VariwideSeries Variwide_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `vector` series. If the [type](#series.vector.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.vector](#plotOptions.vector).
 		/// </summary>
-		public Seriesvector Vector { get; set; }
-		private Seriesvector Vector_DefaultValue { get; set; }
+		public VectorSeries Vector { get; set; }
+		private VectorSeries Vector_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `windbarb` series. If the [type](#series.windbarb.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.windbarb](#plotOptions.windbarb).
 		/// </summary>
-		public Serieswindbarb Windbarb { get; set; }
-		private Serieswindbarb Windbarb_DefaultValue { get; set; }
+		public WindbarbSeries Windbarb { get; set; }
+		private WindbarbSeries Windbarb_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `wordcloud` series. If the [type](#series.wordcloud.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.wordcloud](#plotOptions.wordcloud).
 		/// </summary>
-		public Serieswordcloud Wordcloud { get; set; }
-		private Serieswordcloud Wordcloud_DefaultValue { get; set; }
+		public WordcloudSeries Wordcloud { get; set; }
+		private WordcloudSeries Wordcloud_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An `xrange` series. If the [type](#series.xrange.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.xrange](#plotOptions.xrange).
 		/// </summary>
-		public Seriesxrange Xrange { get; set; }
-		private Seriesxrange Xrange_DefaultValue { get; set; }
+		public XrangeSeries Xrange { get; set; }
+		private XrangeSeries Xrange_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `area` series. If the [type](#series.area.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.area](#plotOptions.area).
 		/// </summary>
-		public Seriesarea Area { get; set; }
-		private Seriesarea Area_DefaultValue { get; set; }
+		public AreaSeries Area { get; set; }
+		private AreaSeries Area_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `areaspline` series. If the [type](#series.areaspline.type) optionis not specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.areaspline](#plotOptions.areaspline).
 		/// </summary>
-		public Seriesareaspline Areaspline { get; set; }
-		private Seriesareaspline Areaspline_DefaultValue { get; set; }
+		public AreasplineSeries Areaspline { get; set; }
+		private AreasplineSeries Areaspline_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `bar` series. If the [type](#series.bar.type) option is not specified,it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.bar](#plotOptions.bar).
 		/// </summary>
-		public Seriesbar Bar { get; set; }
-		private Seriesbar Bar_DefaultValue { get; set; }
+		public BarSeries Bar { get; set; }
+		private BarSeries Bar_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `column` series. If the [type](#series.column.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.column](#plotOptions.column).
 		/// </summary>
-		public Seriescolumn Column { get; set; }
-		private Seriescolumn Column_DefaultValue { get; set; }
+		public ColumnSeries Column { get; set; }
+		private ColumnSeries Column_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `pie` series. If the [type](#series.pie.type) option is not specified,it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.pie](#plotOptions.pie).
 		/// </summary>
-		public Seriespie Pie { get; set; }
-		private Seriespie Pie_DefaultValue { get; set; }
+		public PieSeries Pie { get; set; }
+		private PieSeries Pie_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `scatter` series. If the [type](#series.scatter.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.scatter](#plotOptions.scatter).
 		/// </summary>
-		public Seriesscatter Scatter { get; set; }
-		private Seriesscatter Scatter_DefaultValue { get; set; }
+		public ScatterSeries Scatter { get; set; }
+		private ScatterSeries Scatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -305,85 +305,85 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A `spline` series. If the [type](#series.spline.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.spline](#plotOptions.spline).
 		/// </summary>
-		public Seriesspline Spline { get; set; }
-		private Seriesspline Spline_DefaultValue { get; set; }
+		public SplineSeries Spline { get; set; }
+		private SplineSeries Spline_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `scatter3d` series. If the [type](#series.scatter3d.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.scatter3d](#plotOptions.scatter3d).
 		/// </summary>
-		public Seriesscatter3d Scatter3d { get; set; }
-		private Seriesscatter3d Scatter3d_DefaultValue { get; set; }
+		public Scatter3dSeries Scatter3d { get; set; }
+		private Scatter3dSeries Scatter3d_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `arearange` series. If the [type](#series.arearange.type) optionis not specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.arearange](#plotOptions.arearange).
 		/// </summary>
-		public Seriesarearange Arearange { get; set; }
-		private Seriesarearange Arearange_DefaultValue { get; set; }
+		public ArearangeSeries Arearange { get; set; }
+		private ArearangeSeries Arearange_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `areasplinerange` series. If the [type](#series.areasplinerange.type) option is not specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.areasplinerange](#plotOptions.areasplinerange).
 		/// </summary>
-		public Seriesareasplinerange Areasplinerange { get; set; }
-		private Seriesareasplinerange Areasplinerange_DefaultValue { get; set; }
+		public AreasplinerangeSeries Areasplinerange { get; set; }
+		private AreasplinerangeSeries Areasplinerange_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `boxplot` series. If the [type](#series.boxplot.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.boxplot](#plotOptions.boxplot).
 		/// </summary>
-		public Seriesboxplot Boxplot { get; set; }
-		private Seriesboxplot Boxplot_DefaultValue { get; set; }
+		public BoxplotSeries Boxplot { get; set; }
+		private BoxplotSeries Boxplot_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `bubble` series. If the [type](#series.bubble.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.bubble](#plotOptions.bubble).
 		/// </summary>
-		public Seriesbubble Bubble { get; set; }
-		private Seriesbubble Bubble_DefaultValue { get; set; }
+		public BubbleSeries Bubble { get; set; }
+		private BubbleSeries Bubble_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `columnrange` series. If the [type](#series.columnrange.type)option is not specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.columnrange](#plotOptions.columnrange).
 		/// </summary>
-		public Seriescolumnrange Columnrange { get; set; }
-		private Seriescolumnrange Columnrange_DefaultValue { get; set; }
+		public ColumnrangeSeries Columnrange { get; set; }
+		private ColumnrangeSeries Columnrange_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `errorbar` series. If the [type](#series.errorbar.type) optionis not specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.errorbar](#plotOptions.errorbar).
 		/// </summary>
-		public Serieserrorbar Errorbar { get; set; }
-		private Serieserrorbar Errorbar_DefaultValue { get; set; }
+		public ErrorbarSeries Errorbar { get; set; }
+		private ErrorbarSeries Errorbar_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `gauge` series. If the [type](#series.gauge.type) option is notspecified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.gauge](#plotOptions.gauge).
 		/// </summary>
-		public Seriesgauge Gauge { get; set; }
-		private Seriesgauge Gauge_DefaultValue { get; set; }
+		public GaugeSeries Gauge { get; set; }
+		private GaugeSeries Gauge_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `polygon` series. If the [type](#series.polygon.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.polygon](#plotOptions.polygon).
 		/// </summary>
-		public Seriespolygon Polygon { get; set; }
-		private Seriespolygon Polygon_DefaultValue { get; set; }
+		public PolygonSeries Polygon { get; set; }
+		private PolygonSeries Polygon_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `waterfall` series. If the [type](#series.waterfall.type) optionis not specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.waterfall](#plotOptions.waterfall).
 		/// </summary>
-		public Serieswaterfall Waterfall { get; set; }
-		private Serieswaterfall Waterfall_DefaultValue { get; set; }
+		public WaterfallSeries Waterfall { get; set; }
+		private WaterfallSeries Waterfall_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `heatmap` series. If the [type](#series.heatmap.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.heatmap](#plotOptions.heatmap).
 		/// </summary>
-		public Seriesheatmap Heatmap { get; set; }
-		private Seriesheatmap Heatmap_DefaultValue { get; set; }
+		public HeatmapSeries Heatmap { get; set; }
+		private HeatmapSeries Heatmap_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

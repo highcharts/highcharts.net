@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class ColorAxislabelsstyle  : BaseObject
+	public partial class ColorAxisLabelsStyle  : BaseObject
 	{
-		public ColorAxislabelsstyle()
+		public ColorAxisLabelsStyle()
 		{
 			
 		}	

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionspolygon  : BaseObject
+	public partial class PlotOptionsPolygon  : BaseObject
 	{
-		public PlotOptionspolygon()
+		public PlotOptionsPolygon()
 		{
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
@@ -57,7 +57,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Step = Step_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = "";
 			Zones = Zones_DefaultValue = "";
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -65,7 +64,6 @@ namespace Highsoft.Web.Mvc.Charts
 			LineWidth = LineWidth_DefaultValue = 0;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
 			Marker = Marker_DefaultValue = "";
-			Tooltip = Tooltip_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = false;
 			
 		}	
@@ -81,8 +79,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public PlotOptionspolygonlabel Label { get; set; }
-		private PlotOptionspolygonlabel Label_DefaultValue { get; set; }
+		public PlotOptionsPolygonLabel Label { get; set; }
+		private PlotOptionsPolygonLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -116,29 +114,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
-		public PlotOptionspolygonevents Events { get; set; }
-		private PlotOptionspolygonevents Events_DefaultValue { get; set; }
+		public PlotOptionsPolygonEvents Events { get; set; }
+		private PlotOptionsPolygonEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
 		/// </summary>
-		public PlotOptionspolygonmarker Marker { get; set; }
-		private PlotOptionspolygonmarker Marker_DefaultValue { get; set; }
+		public PlotOptionsPolygonMarker Marker { get; set; }
+		private PlotOptionsPolygonMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public PlotOptionspolygonpoint Point { get; set; }
-		private PlotOptionspolygonpoint Point_DefaultValue { get; set; }
+		public PlotOptionsPolygonPoint Point { get; set; }
+		private PlotOptionsPolygonPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public PlotOptionspolygondataLabels DataLabels { get; set; }
-		private PlotOptionspolygondataLabels DataLabels_DefaultValue { get; set; }
+		public PlotOptionsPolygonDataLabels DataLabels { get; set; }
+		private PlotOptionsPolygonDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -151,8 +149,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public PlotOptionspolygonstates States { get; set; }
-		private PlotOptionspolygonstates States_DefaultValue { get; set; }
+		public PlotOptionsPolygonStates States { get; set; }
+		private PlotOptionsPolygonStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -373,17 +371,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionspolygontooltip Tooltip { get; set; }
-		private PlotOptionspolygontooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionspolygonzones> Zones { get; set; }
-		private List<PlotOptionspolygonzones> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsPolygonZone> Zones { get; set; }
+		private List<PlotOptionsPolygonZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -417,22 +408,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionspolygonfindNearestPointBy FindNearestPointBy { get; set; }
-		private PlotOptionspolygonfindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		public PlotOptionsPolygonFindNearestPointBy FindNearestPointBy { get; set; }
+		private PlotOptionsPolygonFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionspolygonmarker Marker { get; set; }
-		private PlotOptionspolygonmarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from <a class="internal">#tooltip</a>.Overridable properties are `headerFormat`, `pointFormat`, `yDecimals`,`xDateFormat`, `yPrefix` and `ySuffix`. Unlike other series, ina scatter plot the series.name by default shows in the headerFormatand point.x and point.y in the pointFormat.
-		/// </summary>
-		public PlotOptionspolygontooltip Tooltip { get; set; }
-		private PlotOptionspolygontooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsPolygonMarker Marker { get; set; }
+		private PlotOptionsPolygonMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -493,7 +477,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Step != Step_DefaultValue) h.Add("step",Step);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -501,7 +484,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			
 

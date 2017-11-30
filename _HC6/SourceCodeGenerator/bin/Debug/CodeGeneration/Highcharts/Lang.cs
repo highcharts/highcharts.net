@@ -51,22 +51,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public LangdownloadCSV DownloadCSV { get; set; }
-		private LangdownloadCSV DownloadCSV_DefaultValue { get; set; }
+		public LangDownloadCSV DownloadCSV { get; set; }
+		private LangDownloadCSV DownloadCSV_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public LangdownloadXLS DownloadXLS { get; set; }
-		private LangdownloadXLS DownloadXLS_DefaultValue { get; set; }
+		public LangDownloadXLS DownloadXLS { get; set; }
+		private LangDownloadXLS DownloadXLS_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public LangviewData ViewData { get; set; }
-		private LangviewData ViewData_DefaultValue { get; set; }
+		public LangViewData ViewData { get; set; }
+		private LangViewData ViewData_DefaultValue { get; set; }
 		 
 
 		/// <summary>

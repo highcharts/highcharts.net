@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionstilemappoint  : BaseObject
+	public partial class PlotOptionsTilemapPoint  : BaseObject
 	{
-		public PlotOptionstilemappoint()
+		public PlotOptionsTilemapPoint()
 		{
 			
 		}	

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionswindbarbanimation  : BaseObject
+	public partial class PlotOptionsWindbarbAnimation  : BaseObject
 	{
-		public PlotOptionswindbarbanimation()
+		public PlotOptionsWindbarbAnimation()
 		{
 			
 		}	

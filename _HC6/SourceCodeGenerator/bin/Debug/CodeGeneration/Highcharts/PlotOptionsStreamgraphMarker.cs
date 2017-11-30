@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsstreamgraphmarker  : BaseObject
+	public partial class PlotOptionsStreamgraphMarker  : BaseObject
 	{
-		public PlotOptionsstreamgraphmarker()
+		public PlotOptionsStreamgraphMarker()
 		{
 			
 		}	

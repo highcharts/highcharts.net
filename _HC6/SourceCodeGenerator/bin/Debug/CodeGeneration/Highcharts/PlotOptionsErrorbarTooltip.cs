@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionserrorbartooltip  : BaseObject
+	public partial class PlotOptionsErrorbarTooltip  : BaseObject
 	{
-		public PlotOptionserrorbartooltip()
+		public PlotOptionsErrorbarTooltip()
 		{
 			
 		}	

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionswordcloudstates  : BaseObject
+	public partial class PlotOptionsWordcloudStates  : BaseObject
 	{
-		public PlotOptionswordcloudstates()
+		public PlotOptionsWordcloudStates()
 		{
 			
 		}	
