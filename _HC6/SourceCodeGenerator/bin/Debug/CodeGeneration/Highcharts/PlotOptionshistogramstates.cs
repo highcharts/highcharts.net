@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsHistogramStates()
 		{
+			Hover = Hover_DefaultValue = "";
+			Select = Select_DefaultValue = "";
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHistogramStatesHover Hover { get; set; }
+		private PlotOptionsHistogramStatesHover Hover_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHistogramStatesSelect Select { get; set; }
+		private PlotOptionsHistogramStatesSelect Select_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

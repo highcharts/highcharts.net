@@ -14,14 +14,41 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartResetZoomButton()
 		{
+			Theme = Theme_DefaultValue = "";
+			Position = Position_DefaultValue = new Hashtable();
+			RelativeTo = RelativeTo_DefaultValue = "plot";
 			
 		}	
+		
+
+		/// <summary>
+		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, the borderradius. The theme also supports `style`, a collection of CSS propertiesfor the text. Equivalent attributes for the hover state are givenin `theme.states.hover`.
+		/// </summary>
+		public ChartResetZoomButtonTheme Theme { get; set; }
+		private ChartResetZoomButtonTheme Theme_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// The position of the button.
+		/// </summary>
+		public Hashtable Position { get; set; }
+		private Hashtable Position_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// What frame the button should be placed related to. Can be either`plot` or `chart`
+		/// </summary>
+		public string RelativeTo { get; set; }
+		private string RelativeTo_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());
+			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
 			
 
 			return h;

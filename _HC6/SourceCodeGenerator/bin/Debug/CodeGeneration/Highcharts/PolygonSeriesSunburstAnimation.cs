@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PolygonSeriesSunburstAnimation()
 		{
+			Duration = Duration_DefaultValue = 1000;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PolygonSeriesSunburstAnimationDuration Duration { get; set; }
+		private PolygonSeriesSunburstAnimationDuration Duration_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
 			
 
 			return h;

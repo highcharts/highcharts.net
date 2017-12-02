@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public FunnelSeriesSunburstAnimation()
 		{
+			Duration = Duration_DefaultValue = 1000;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public FunnelSeriesSunburstAnimationDuration Duration { get; set; }
+		private FunnelSeriesSunburstAnimationDuration Duration_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
 			
 
 			return h;

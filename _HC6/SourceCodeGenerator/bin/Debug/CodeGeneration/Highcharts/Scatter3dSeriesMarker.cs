@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Scatter3dSeriesMarker()
 		{
+			Enabled = Enabled_DefaultValue = True;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public Scatter3dSeriesMarkerEnabled Enabled { get; set; }
+		private Scatter3dSeriesMarkerEnabled Enabled_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;

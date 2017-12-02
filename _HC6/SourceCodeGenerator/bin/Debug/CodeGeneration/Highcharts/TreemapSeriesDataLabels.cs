@@ -14,15 +14,38 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesDataLabels()
 		{
+			Enabled = Enabled_DefaultValue = True;
+			Defer = Defer_DefaultValue = False;
+			VerticalAlign = VerticalAlign_DefaultValue = middle;
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = True;
-			VerticalAlign = VerticalAlign_DefaultValue = middle;
 			Crop = Crop_DefaultValue = False;
 			Overflow = Overflow_DefaultValue = False;
 			Padding = Padding_DefaultValue = 0;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public TreemapSeriesDataLabelsEnabled Enabled { get; set; }
+		private TreemapSeriesDataLabelsEnabled Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public TreemapSeriesDataLabelsDefer Defer { get; set; }
+		private TreemapSeriesDataLabelsDefer Defer_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public TreemapSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private TreemapSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -36,13 +59,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public TreemapSeriesDataLabelsInside Inside { get; set; }
 		private TreemapSeriesDataLabelsInside Inside_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TreemapSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private TreemapSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,9 +86,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);

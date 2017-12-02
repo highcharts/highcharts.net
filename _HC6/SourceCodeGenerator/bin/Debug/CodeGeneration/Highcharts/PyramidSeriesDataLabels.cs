@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PyramidSeriesDataLabels()
 		{
+			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PyramidSeriesDataLabelsConnectorWidth ConnectorWidth { get; set; }
+		private PyramidSeriesDataLabelsConnectorWidth ConnectorWidth_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			
 
 			return h;

@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VariwideSeriesTooltip()
 		{
+			Distance = Distance_DefaultValue = 6;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public VariwideSeriesTooltipDistance Distance { get; set; }
+		private VariwideSeriesTooltipDistance Distance_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			
 
 			return h;

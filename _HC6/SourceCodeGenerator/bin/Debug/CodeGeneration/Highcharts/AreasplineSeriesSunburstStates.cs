@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreasplineSeriesSunburstStates()
 		{
+			Hover = Hover_DefaultValue = "";
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public AreasplineSeriesSunburstStatesHover Hover { get; set; }
+		private AreasplineSeriesSunburstStatesHover Hover_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 
 			return h;

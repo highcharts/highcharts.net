@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PolygonSeriesSunburstStates()
 		{
+			Hover = Hover_DefaultValue = "";
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PolygonSeriesSunburstStatesHover Hover { get; set; }
+		private PolygonSeriesSunburstStatesHover Hover_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 
 			return h;

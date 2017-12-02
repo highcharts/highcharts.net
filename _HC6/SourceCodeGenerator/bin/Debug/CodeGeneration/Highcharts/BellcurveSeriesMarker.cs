@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BellcurveSeriesMarker()
 		{
+			Enabled = Enabled_DefaultValue = False;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public BellcurveSeriesMarkerEnabled Enabled { get; set; }
+		private BellcurveSeriesMarkerEnabled Enabled_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;

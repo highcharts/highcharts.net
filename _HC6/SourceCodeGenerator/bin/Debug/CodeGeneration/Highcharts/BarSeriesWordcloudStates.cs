@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BarSeriesWordcloudStates()
 		{
+			Hover = Hover_DefaultValue = "";
+			Select = Select_DefaultValue = "";
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public BarSeriesWordcloudStatesHover Hover { get; set; }
+		private BarSeriesWordcloudStatesHover Hover_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public BarSeriesWordcloudStatesSelect Select { get; set; }
+		private BarSeriesWordcloudStatesSelect Select_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

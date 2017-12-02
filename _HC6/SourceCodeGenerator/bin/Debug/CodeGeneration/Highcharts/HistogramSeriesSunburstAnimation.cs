@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HistogramSeriesSunburstAnimation()
 		{
+			Duration = Duration_DefaultValue = 1000;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HistogramSeriesSunburstAnimationDuration Duration { get; set; }
+		private HistogramSeriesSunburstAnimationDuration Duration_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
 			
 
 			return h;

@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsFunnelPoint()
 		{
+			Events = Events_DefaultValue = "";
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsFunnelPointEvents Events { get; set; }
+		private PlotOptionsFunnelPointEvents Events_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

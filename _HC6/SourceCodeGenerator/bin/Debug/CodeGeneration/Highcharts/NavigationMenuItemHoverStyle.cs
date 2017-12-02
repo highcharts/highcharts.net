@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public NavigationMenuItemHoverStyle()
 		{
+			Background = Background_DefaultValue = #335cad;
+			Color = Color_DefaultValue = #ffffff;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public NavigationMenuItemHoverStyleBackground Background { get; set; }
+		private NavigationMenuItemHoverStyleBackground Background_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public NavigationMenuItemHoverStyleColor Color { get; set; }
+		private NavigationMenuItemHoverStyleColor Color_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Background != Background_DefaultValue) h.Add("background",Background);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			
 
 			return h;

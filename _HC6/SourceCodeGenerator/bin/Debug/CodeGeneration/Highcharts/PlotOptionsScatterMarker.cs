@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsScatterMarker()
 		{
+			Enabled = Enabled_DefaultValue = True;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsScatterMarkerEnabled Enabled { get; set; }
+		private PlotOptionsScatterMarkerEnabled Enabled_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;

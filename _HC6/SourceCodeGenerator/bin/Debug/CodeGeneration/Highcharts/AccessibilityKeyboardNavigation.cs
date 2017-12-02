@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AccessibilityKeyboardNavigation()
 		{
+			Enabled = Enabled_DefaultValue = true;
+			SkipNullPoints = SkipNullPoints_DefaultValue = false;
 			
 		}	
+		
+
+		/// <summary>
+		/// Enable keyboard navigation for the chart.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// Skip null points when navigating through points with thekeyboard.
+		/// </summary>
+		public bool? SkipNullPoints { get; set; }
+		private bool? SkipNullPoints_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (SkipNullPoints != SkipNullPoints_DefaultValue) h.Add("skipNullPoints",SkipNullPoints);
 			
 
 			return h;

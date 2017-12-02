@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ErrorbarSeriesSunburstPoint()
 		{
+			Events = Events_DefaultValue = "";
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ErrorbarSeriesSunburstPointEvents Events { get; set; }
+		private ErrorbarSeriesSunburstPointEvents Events_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

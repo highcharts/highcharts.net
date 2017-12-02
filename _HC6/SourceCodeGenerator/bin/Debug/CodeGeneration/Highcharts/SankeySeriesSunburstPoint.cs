@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesSunburstPoint()
 		{
+			Events = Events_DefaultValue = "";
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SankeySeriesSunburstPointEvents Events { get; set; }
+		private SankeySeriesSunburstPointEvents Events_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

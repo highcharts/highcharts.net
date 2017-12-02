@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxisTitleStyle()
 		{
+			Color = Color_DefaultValue = #666666;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisTitleStyleColor Color { get; set; }
+		private YAxisTitleStyleColor Color_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			
 
 			return h;

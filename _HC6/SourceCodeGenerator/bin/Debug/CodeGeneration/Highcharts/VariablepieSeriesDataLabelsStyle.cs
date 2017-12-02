@@ -14,14 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VariablepieSeriesDataLabelsStyle()
 		{
+			FontSize = FontSize_DefaultValue = 11px;
+			FontWeight = FontWeight_DefaultValue = bold;
+			Color = Color_DefaultValue = contrast;
+			TextOutline = TextOutline_DefaultValue = 1px contrast;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public VariablepieSeriesDataLabelsStyleFontSize FontSize { get; set; }
+		private VariablepieSeriesDataLabelsStyleFontSize FontSize_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public VariablepieSeriesDataLabelsStyleFontWeight FontWeight { get; set; }
+		private VariablepieSeriesDataLabelsStyleFontWeight FontWeight_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public VariablepieSeriesDataLabelsStyleColor Color { get; set; }
+		private VariablepieSeriesDataLabelsStyleColor Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public VariablepieSeriesDataLabelsStyleTextOutline TextOutline { get; set; }
+		private VariablepieSeriesDataLabelsStyleTextOutline TextOutline_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (TextOutline != TextOutline_DefaultValue) h.Add("textOutline",TextOutline);
 			
 
 			return h;

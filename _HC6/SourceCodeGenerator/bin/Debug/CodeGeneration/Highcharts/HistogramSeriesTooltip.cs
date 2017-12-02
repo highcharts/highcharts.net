@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HistogramSeriesTooltip()
 		{
+			HeaderFormat = HeaderFormat_DefaultValue = "";
+			PointFormat = PointFormat_DefaultValue = "";
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HistogramSeriesTooltipHeaderFormat HeaderFormat { get; set; }
+		private HistogramSeriesTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HistogramSeriesTooltipPointFormat PointFormat { get; set; }
+		private HistogramSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
+			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

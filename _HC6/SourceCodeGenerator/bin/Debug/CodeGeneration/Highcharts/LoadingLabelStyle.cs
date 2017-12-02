@@ -14,14 +14,41 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LoadingLabelStyle()
 		{
+			FontWeight = FontWeight_DefaultValue = bold;
+			Position = Position_DefaultValue = new Hashtable();
+			Top = Top_DefaultValue = 45%;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public LoadingLabelStyleFontWeight FontWeight { get; set; }
+		private LoadingLabelStyleFontWeight FontWeight_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public Hashtable Position { get; set; }
+		private Hashtable Position_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public LoadingLabelStyleTop Top { get; set; }
+		private LoadingLabelStyleTop Top_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Top != Top_DefaultValue) h.Add("top",Top);
 			
 
 			return h;

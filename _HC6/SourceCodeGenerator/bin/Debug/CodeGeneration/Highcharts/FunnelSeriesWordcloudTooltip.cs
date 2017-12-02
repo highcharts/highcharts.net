@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public FunnelSeriesWordcloudTooltip()
 		{
+			FollowPointer = FollowPointer_DefaultValue = True;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public FunnelSeriesWordcloudTooltipFollowPointer FollowPointer { get; set; }
+		private FunnelSeriesWordcloudTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			
 
 			return h;

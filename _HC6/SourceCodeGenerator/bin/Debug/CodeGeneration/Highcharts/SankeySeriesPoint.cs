@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesPoint()
 		{
+			Events = Events_DefaultValue = "";
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// Events for each single point.
+		/// </summary>
+		public SankeySeriesPointEvents Events { get; set; }
+		private SankeySeriesPointEvents Events_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

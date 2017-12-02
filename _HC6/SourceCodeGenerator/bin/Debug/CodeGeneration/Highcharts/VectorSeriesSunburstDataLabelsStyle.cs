@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VectorSeriesSunburstDataLabelsStyle()
 		{
+			TextOverflow = TextOverflow_DefaultValue = ellipsis;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public VectorSeriesSunburstDataLabelsStyleTextOverflow TextOverflow { get; set; }
+		private VectorSeriesSunburstDataLabelsStyleTextOverflow TextOverflow_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (TextOverflow != TextOverflow_DefaultValue) h.Add("textOverflow",TextOverflow);
 			
 
 			return h;

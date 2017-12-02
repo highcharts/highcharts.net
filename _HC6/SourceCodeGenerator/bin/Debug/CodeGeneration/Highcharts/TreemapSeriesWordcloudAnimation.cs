@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesWordcloudAnimation()
 		{
+			Duration = Duration_DefaultValue = 500;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public TreemapSeriesWordcloudAnimationDuration Duration { get; set; }
+		private TreemapSeriesWordcloudAnimationDuration Duration_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
 			
 
 			return h;

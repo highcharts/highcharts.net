@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BubbleSeriesSunburstTooltip()
 		{
+			FollowPointer = FollowPointer_DefaultValue = True;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public BubbleSeriesSunburstTooltipFollowPointer FollowPointer { get; set; }
+		private BubbleSeriesSunburstTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			
 
 			return h;

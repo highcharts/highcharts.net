@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SplineSeriesSunburstAnimation()
 		{
+			Duration = Duration_DefaultValue = 1000;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SplineSeriesSunburstAnimationDuration Duration { get; set; }
+		private SplineSeriesSunburstAnimationDuration Duration_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
 			
 
 			return h;

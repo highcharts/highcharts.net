@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PolygonSeriesWordcloudTooltip()
 		{
+			FollowPointer = FollowPointer_DefaultValue = True;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PolygonSeriesWordcloudTooltipFollowPointer FollowPointer { get; set; }
+		private PolygonSeriesWordcloudTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			
 
 			return h;

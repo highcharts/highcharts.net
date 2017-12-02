@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VariablepieSeriesWordcloudTooltip()
 		{
+			FollowPointer = FollowPointer_DefaultValue = True;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public VariablepieSeriesWordcloudTooltipFollowPointer FollowPointer { get; set; }
+		private VariablepieSeriesWordcloudTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			
 
 			return h;

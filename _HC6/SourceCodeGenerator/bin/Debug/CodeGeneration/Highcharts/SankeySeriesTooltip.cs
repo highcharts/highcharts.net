@@ -14,14 +14,59 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesTooltip()
 		{
+			FollowPointer = FollowPointer_DefaultValue = True;
+			HeaderFormat = HeaderFormat_DefaultValue = <span class="highcharts-header">{series.name}</span><br/>;
+			PointFormat = PointFormat_DefaultValue = {point.fromNode.name} → {point.toNode.name}: <b>{point.weight}</b><br/>;
+			NodeFormat = NodeFormat_DefaultValue = {point.name}: <b>{point.sum}</b><br/>;
+			NodeFormatter = NodeFormatter_DefaultValue = "";
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SankeySeriesTooltipFollowPointer FollowPointer { get; set; }
+		private SankeySeriesTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SankeySeriesTooltipHeaderFormat HeaderFormat { get; set; }
+		private SankeySeriesTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SankeySeriesTooltipPointFormat PointFormat { get; set; }
+		private SankeySeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to show for _nodes_ in tooltipof a sankey diagram series, as opposed to links.
+		/// </summary>
+		public SankeySeriesTooltipNodeFormat NodeFormat { get; set; }
+		private SankeySeriesTooltipNodeFormat NodeFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A callback for defining the format for _nodes_ in the sankey chart'stooltip, as opposed to links.
+		/// </summary>
+		public string NodeFormatter { get; set; }
+		private string NodeFormatter_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
+			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
+			if (NodeFormatter != NodeFormatter_DefaultValue) h.Add("nodeFormatter",NodeFormatter);
 			
 
 			return h;

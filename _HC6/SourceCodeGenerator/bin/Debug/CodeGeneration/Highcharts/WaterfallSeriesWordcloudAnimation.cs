@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WaterfallSeriesWordcloudAnimation()
 		{
+			Duration = Duration_DefaultValue = 500;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public WaterfallSeriesWordcloudAnimationDuration Duration { get; set; }
+		private WaterfallSeriesWordcloudAnimationDuration Duration_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
 			
 
 			return h;

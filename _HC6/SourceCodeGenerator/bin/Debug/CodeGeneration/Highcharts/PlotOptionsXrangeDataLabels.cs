@@ -14,14 +14,41 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsXrangeDataLabels()
 		{
+			VerticalAlign = VerticalAlign_DefaultValue = middle;
+			Inside = Inside_DefaultValue = True;
+			Formatter = Formatter_DefaultValue = "";
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsXrangeDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsXrangeDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsXrangeDataLabelsInside Inside { get; set; }
+		private PlotOptionsXrangeDataLabelsInside Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The default formatter for X-range data labels displays the percentageof the partial fill amount.
+		/// </summary>
+		public PlotOptionsXrangeDataLabelsFormatter Formatter { get; set; }
+		private PlotOptionsXrangeDataLabelsFormatter Formatter_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			
 
 			return h;

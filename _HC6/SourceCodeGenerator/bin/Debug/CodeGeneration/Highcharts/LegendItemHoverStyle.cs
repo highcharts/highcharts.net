@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LegendItemHoverStyle()
 		{
+			Color = Color_DefaultValue = #000000;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public LegendItemHoverStyleColor Color { get; set; }
+		private LegendItemHoverStyleColor Color_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			
 
 			return h;

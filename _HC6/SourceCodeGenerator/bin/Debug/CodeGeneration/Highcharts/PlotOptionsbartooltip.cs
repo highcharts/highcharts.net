@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBarTooltip()
 		{
+			Distance = Distance_DefaultValue = 6;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsBarTooltipDistance Distance { get; set; }
+		private PlotOptionsBarTooltipDistance Distance_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			
 
 			return h;

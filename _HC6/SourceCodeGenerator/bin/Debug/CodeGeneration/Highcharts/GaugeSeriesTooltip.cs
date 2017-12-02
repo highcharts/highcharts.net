@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public GaugeSeriesTooltip()
 		{
+			HeaderFormat = HeaderFormat_DefaultValue = "";
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public GaugeSeriesTooltipHeaderFormat HeaderFormat { get; set; }
+		private GaugeSeriesTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			
 
 			return h;

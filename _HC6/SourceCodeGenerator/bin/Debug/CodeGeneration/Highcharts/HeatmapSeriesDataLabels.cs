@@ -14,14 +14,68 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HeatmapSeriesDataLabels()
 		{
+			Formatter = Formatter_DefaultValue = "";
+			Inside = Inside_DefaultValue = True;
+			VerticalAlign = VerticalAlign_DefaultValue = middle;
+			Crop = Crop_DefaultValue = False;
+			Overflow = Overflow_DefaultValue = False;
+			Padding = Padding_DefaultValue = 0;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HeatmapSeriesDataLabelsFormatter Formatter { get; set; }
+		private HeatmapSeriesDataLabelsFormatter Formatter_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HeatmapSeriesDataLabelsInside Inside { get; set; }
+		private HeatmapSeriesDataLabelsInside Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HeatmapSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private HeatmapSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HeatmapSeriesDataLabelsCrop Crop { get; set; }
+		private HeatmapSeriesDataLabelsCrop Crop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HeatmapSeriesDataLabelsOverflow Overflow { get; set; }
+		private HeatmapSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HeatmapSeriesDataLabelsPadding Padding { get; set; }
+		private HeatmapSeriesDataLabelsPadding Padding_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			
 
 			return h;

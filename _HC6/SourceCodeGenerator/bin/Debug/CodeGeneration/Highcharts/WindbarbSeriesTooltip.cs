@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WindbarbSeriesTooltip()
 		{
+			PointFormat = PointFormat_DefaultValue = <b>{series.name}</b>: {point.value} ({point.beaufort})<br/>;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// The default point format for the wind barb tooltip. Note the `point.beaufort` property that refers to the Beaufort wind scale. Thenames can be internationalized by modifying`Highcharts.seriesTypes.windbarb.prototype.beaufortNames`.
+		/// </summary>
+		public WindbarbSeriesTooltipPointFormat PointFormat { get; set; }
+		private WindbarbSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

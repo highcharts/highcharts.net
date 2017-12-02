@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Scatter3dSeriesWordcloudAnimation()
 		{
+			Duration = Duration_DefaultValue = 500;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public Scatter3dSeriesWordcloudAnimationDuration Duration { get; set; }
+		private Scatter3dSeriesWordcloudAnimationDuration Duration_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
 			
 
 			return h;

@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesDrillUpButton()
 		{
+			Position = Position_DefaultValue = new Hashtable();
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// The position of the button.
+		/// </summary>
+		public Hashtable Position { get; set; }
+		private Hashtable Position_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Position != Position_DefaultValue) h.Add("position",Position);
 			
 
 			return h;

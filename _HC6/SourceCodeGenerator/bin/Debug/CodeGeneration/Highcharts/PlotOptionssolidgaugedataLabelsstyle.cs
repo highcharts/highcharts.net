@@ -14,14 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSolidgaugeDataLabelsStyle()
 		{
+			FontSize = FontSize_DefaultValue = 11px;
+			FontWeight = FontWeight_DefaultValue = bold;
+			Color = Color_DefaultValue = contrast;
+			TextOutline = TextOutline_DefaultValue = 1px contrast;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSolidgaugeDataLabelsStyleFontSize FontSize { get; set; }
+		private PlotOptionsSolidgaugeDataLabelsStyleFontSize FontSize_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSolidgaugeDataLabelsStyleFontWeight FontWeight { get; set; }
+		private PlotOptionsSolidgaugeDataLabelsStyleFontWeight FontWeight_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSolidgaugeDataLabelsStyleColor Color { get; set; }
+		private PlotOptionsSolidgaugeDataLabelsStyleColor Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSolidgaugeDataLabelsStyleTextOutline TextOutline { get; set; }
+		private PlotOptionsSolidgaugeDataLabelsStyleTextOutline TextOutline_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (TextOutline != TextOutline_DefaultValue) h.Add("textOutline",TextOutline);
 			
 
 			return h;

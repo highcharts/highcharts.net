@@ -14,14 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreasplinerangeSeriesDataLabelsStyle()
 		{
+			FontSize = FontSize_DefaultValue = 11px;
+			FontWeight = FontWeight_DefaultValue = bold;
+			Color = Color_DefaultValue = contrast;
+			TextOutline = TextOutline_DefaultValue = 1px contrast;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public AreasplinerangeSeriesDataLabelsStyleFontSize FontSize { get; set; }
+		private AreasplinerangeSeriesDataLabelsStyleFontSize FontSize_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public AreasplinerangeSeriesDataLabelsStyleFontWeight FontWeight { get; set; }
+		private AreasplinerangeSeriesDataLabelsStyleFontWeight FontWeight_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public AreasplinerangeSeriesDataLabelsStyleColor Color { get; set; }
+		private AreasplinerangeSeriesDataLabelsStyleColor Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public AreasplinerangeSeriesDataLabelsStyleTextOutline TextOutline { get; set; }
+		private AreasplinerangeSeriesDataLabelsStyleTextOutline TextOutline_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (TextOutline != TextOutline_DefaultValue) h.Add("textOutline",TextOutline);
 			
 
 			return h;

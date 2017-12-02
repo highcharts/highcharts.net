@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public StreamgraphSeriesMarker()
 		{
+			Enabled = Enabled_DefaultValue = False;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public StreamgraphSeriesMarkerEnabled Enabled { get; set; }
+		private StreamgraphSeriesMarkerEnabled Enabled_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;

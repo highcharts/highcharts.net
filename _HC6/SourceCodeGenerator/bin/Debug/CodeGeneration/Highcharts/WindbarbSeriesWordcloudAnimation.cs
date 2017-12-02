@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WindbarbSeriesWordcloudAnimation()
 		{
+			Duration = Duration_DefaultValue = 500;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public WindbarbSeriesWordcloudAnimationDuration Duration { get; set; }
+		private WindbarbSeriesWordcloudAnimationDuration Duration_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
 			
 
 			return h;

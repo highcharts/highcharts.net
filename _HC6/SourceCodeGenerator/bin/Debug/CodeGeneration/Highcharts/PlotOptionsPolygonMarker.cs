@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPolygonMarker()
 		{
+			Enabled = Enabled_DefaultValue = False;
+			States = States_DefaultValue = "";
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPolygonMarkerEnabled Enabled { get; set; }
+		private PlotOptionsPolygonMarkerEnabled Enabled_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPolygonMarkerStates States { get; set; }
+		private PlotOptionsPolygonMarkerStates States_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			
 
 			return h;

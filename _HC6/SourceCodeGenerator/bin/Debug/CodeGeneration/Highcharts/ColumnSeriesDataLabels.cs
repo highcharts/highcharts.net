@@ -14,14 +14,41 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColumnSeriesDataLabels()
 		{
+			Align = Align_DefaultValue = "";
+			VerticalAlign = VerticalAlign_DefaultValue = "";
+			Y = Y_DefaultValue = "";
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ColumnSeriesDataLabelsAlign Align { get; set; }
+		private ColumnSeriesDataLabelsAlign Align_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ColumnSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private ColumnSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ColumnSeriesDataLabelsY Y { get; set; }
+		private ColumnSeriesDataLabelsY Y_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;

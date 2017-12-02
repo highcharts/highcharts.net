@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WaterfallSeriesTooltip()
 		{
+			Distance = Distance_DefaultValue = 6;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public WaterfallSeriesTooltipDistance Distance { get; set; }
+		private WaterfallSeriesTooltipDistance Distance_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			
 
 			return h;

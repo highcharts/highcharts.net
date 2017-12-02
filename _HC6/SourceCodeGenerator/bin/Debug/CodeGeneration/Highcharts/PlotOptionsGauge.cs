@@ -14,6 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsGauge()
 		{
+			DataLabels = DataLabels_DefaultValue = "";
+			Dial = Dial_DefaultValue = "";
+			Pivot = Pivot_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = "";
+			ShowInLegend = ShowInLegend_DefaultValue = False;
+			Overshoot = Overshoot_DefaultValue = 0;
+			Wrap = Wrap_DefaultValue = true;
 			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -21,7 +28,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
 			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
 			ClassName = ClassName_DefaultValue = "";
@@ -32,7 +38,6 @@ namespace Highsoft.Web.Mvc.Charts
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
-			Linecap = Linecap_DefaultValue = "round";
 			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
@@ -41,15 +46,62 @@ namespace Highsoft.Web.Mvc.Charts
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Linecap = Linecap_DefaultValue = "round";
 			
 		}	
 		
+
+		/// <summary>
+		/// Data labels for the gauge. For gauges, the data labels are enabledby default and shown in a bordered box below the point.
+		/// </summary>
+		public PlotOptionsGaugeDataLabels DataLabels { get; set; }
+		private PlotOptionsGaugeDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the dial or arrow pointer of the gauge.In styled mode, the dial is styled with the `.highcharts-gauge-series .highcharts-dial` rule.
+		/// </summary>
+		public PlotOptionsGaugeDial Dial { get; set; }
+		private PlotOptionsGaugeDial Dial_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the pivot or the center point of the gauge.In styled mode, the pivot is styled with the `.highcharts-gauge-series .highcharts-pivot` rule.
+		/// </summary>
+		public PlotOptionsGaugePivot Pivot { get; set; }
+		private PlotOptionsGaugePivot Pivot_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsGaugeTooltip Tooltip { get; set; }
+		private PlotOptionsGaugeTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to display this particular series or series type in thelegend. Defaults to false for gauge series.
+		/// </summary>
+		public bool? ShowInLegend { get; set; }
+		private bool? ShowInLegend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Allow the dial to overshoot the end of the perimeter axis by thismany degrees. Say if the gauge axis goes from 0 to 60, a value of100, or 1000, will show 5 degrees beyond the end of the axis.
+		/// </summary>
+		public double? Overshoot { get; set; }
+		private double? Overshoot_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When this option is `true`, the dial will wrap around the axes. Forinstance, in a full-range gauge going from 0 to 360, a value of 400will point to 40\. When `wrap` is `false`, the dial stops at 360.
+		/// </summary>
+		public bool? Wrap { get; set; }
+		private bool? Wrap_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
@@ -98,13 +150,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsGaugePoint Point { get; set; }
 		private PlotOptionsGaugePoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsGaugeDataLabels DataLabels { get; set; }
-		private PlotOptionsGaugeDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -178,13 +223,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The line cap used for line ends and line joins on the graph.
-		/// </summary>
-		public string Linecap { get; set; }
-		private string Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.
 		/// </summary>
 		public string LinkedTo { get; set; }
@@ -241,13 +279,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
@@ -259,13 +290,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsGaugeTooltip Tooltip { get; set; }
-		private PlotOptionsGaugeTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -286,6 +310,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (Dial.IsDirty()) h.Add("dial",Dial.ToHashtable());
+			if (Pivot.IsDirty()) h.Add("pivot",Pivot.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
+			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
+			if (Wrap != Wrap_DefaultValue) h.Add("wrap",Wrap);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
@@ -293,7 +324,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -304,7 +334,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) h.Add("pointDescriptionFormatter",PointDescriptionFormatter);
@@ -313,10 +342,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
 			

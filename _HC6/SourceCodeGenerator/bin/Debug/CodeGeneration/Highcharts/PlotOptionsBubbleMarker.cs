@@ -14,14 +14,68 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBubbleMarker()
 		{
+			LineColor = LineColor_DefaultValue = "";
+			LineWidth = LineWidth_DefaultValue = 1;
+			Radius = Radius_DefaultValue = "";
+			States = States_DefaultValue = "";
+			Symbol = Symbol_DefaultValue = "circle";
+			FillColor = FillColor_DefaultValue = null;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsBubbleMarkerLineColor LineColor { get; set; }
+		private PlotOptionsBubbleMarkerLineColor LineColor_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsBubbleMarkerLineWidth LineWidth { get; set; }
+		private PlotOptionsBubbleMarkerLineWidth LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// In bubble charts, the radius is overridden and determined based on the point's data value.
+		/// </summary>
+		public PlotOptionsBubbleMarkerRadius Radius { get; set; }
+		private PlotOptionsBubbleMarkerRadius Radius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsBubbleMarkerStates States { get; set; }
+		private PlotOptionsBubbleMarkerStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A predefined shape or symbol for the marker. Possible values are"circle", "square", "diamond", "triangle" and "triangle-down".Additionally, the URL to a graphic can be given on the form`url(graphic.png)`. Note that for the image to be applied to exportedcharts, its URL needs to be accessible by the export server.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols`. The callback is thenused by its method name, as shown in the demo.
+		/// </summary>
+		public string Symbol { get; set; }
+		private string Symbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The fill color of the point marker. When `null`, the series' orpoint's color is used.
+		/// </summary>
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
+			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			
 
 			return h;

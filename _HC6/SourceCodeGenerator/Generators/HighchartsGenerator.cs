@@ -260,13 +260,13 @@ public class HighchartsGenerator
 
             if (baseClass.Extends.Any())
             {
-                addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !item.Exclude.Any(q => q == p.Title)));
+                addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !item.Exclude.Any(q => q == p.Title) && !item.Children.Select(x => x.Title).Any(q => q == p.Title)));
             }
 
             if (baseClass.FullName == "series")
-                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !p.Extends.Any(q => q == "series")).ToList());
+                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !item.Children.Select(x => x.Title).Any(q => q == p.Title) && !p.Extends.Any(q => q == "series")).ToList());
             else
-                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title)).ToList());
+                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !item.Children.Select(x => x.Title).Any(q => q == p.Title)).ToList());
         }
 
         return addedChildren;
@@ -322,7 +322,6 @@ public class HighchartsGenerator
 
         foreach (ApiItem child in children)
         {
-            //string propertyName = FirstCharToUpper(child.Title);
             string propertyName = GetPropertyName(child);
 
             if (string.IsNullOrEmpty(propertyName))
@@ -366,8 +365,8 @@ public class HighchartsGenerator
 
         string className = GetClassNameFromItem(item);
         string extendsClass = "";
-        //if (_seriesMappings.ContainsKey(item.FullName))
-        if (className.EndsWith("Series"))
+        
+        if (className.EndsWith("Series") && item.Parent?.FullName == "series")
             extendsClass = ": Series";
         else
             extendsClass = ": BaseObject";
@@ -381,8 +380,6 @@ public class HighchartsGenerator
                         .Replace("{HighTemplate.ClassName}", className);
 
         FileService.SaveClass(ROOT_CLASS, className, codeTemplate);
-
-        //children.Clear();
     }
 
     private void GenerateEnum(ApiItem apiItem)

@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColumnrangeSeriesStates()
 		{
+			Hover = Hover_DefaultValue = "";
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ColumnrangeSeriesStatesHover Hover { get; set; }
+		private ColumnrangeSeriesStatesHover Hover_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
 			
 
 			return h;

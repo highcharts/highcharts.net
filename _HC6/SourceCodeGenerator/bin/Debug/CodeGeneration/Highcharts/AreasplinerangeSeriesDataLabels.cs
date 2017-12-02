@@ -14,10 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreasplinerangeSeriesDataLabels()
 		{
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = "";
+			VerticalAlign = VerticalAlign_DefaultValue = "";
+			XLow = XLow_DefaultValue = 0;
+			XHigh = XHigh_DefaultValue = 0;
+			YLow = YLow_DefaultValue = 16;
+			YHigh = YHigh_DefaultValue = -6;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
-			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
 			Padding = Padding_DefaultValue = 5;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -42,10 +46,45 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the [inside](#plotOptions.column.dataLabels.inside) option. Can be one of "left", "center"or "right".
+		/// 
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public AreasplinerangeSeriesDataLabelsAlign Align { get; set; }
+		private AreasplinerangeSeriesDataLabelsAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public AreasplinerangeSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private AreasplinerangeSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// X offset of the lower data labels relative to the point value.
+		/// </summary>
+		public double? XLow { get; set; }
+		private double? XLow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// X offset of the higher data labels relative to the point value.
+		/// </summary>
+		public double? XHigh { get; set; }
+		private double? XHigh_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Y offset of the lower data labels relative to the point value.
+		/// </summary>
+		public double? YLow { get; set; }
+		private double? YLow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Y offset of the higher data labels relative to the point value.
+		/// </summary>
+		public double? YHigh { get; set; }
+		private double? YHigh_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -60,13 +99,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
-		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -207,9 +239,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (XLow != XLow_DefaultValue) h.Add("xLow",XLow);
+			if (XHigh != XHigh_DefaultValue) h.Add("xHigh",XHigh);
+			if (YLow != YLow_DefaultValue) h.Add("yLow",YLow);
+			if (YHigh != YHigh_DefaultValue) h.Add("yHigh",YHigh);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);

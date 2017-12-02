@@ -14,6 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AnnotationsShapes()
 		{
+			Point = Point_DefaultValue = "";
+			Points = Points_DefaultValue = "";
+			MarkerEnd = MarkerEnd_DefaultValue = "";
+			MarkerStart = MarkerStart_DefaultValue = "";
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
@@ -24,6 +28,34 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// This option defines the point to which the shape will be connected.It can be either the point which exists in the series - it is referencedby the point's id - or a new point with defined x, y propertiesand optionally axes.
+		/// </summary>
+		public string Point { get; set; }
+		private string Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of points for the shape. This option is available for shapeswhich can use multiple points such as path. A point can be either a point object or a point's id.
+		/// </summary>
+		public AnnotationsShapesPoints Points { get; set; }
+		private AnnotationsShapesPoints Points_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Id of the marker which will be drawn at the final vertex of the path.Custom markers can be defined in defs property.
+		/// </summary>
+		public string MarkerEnd { get; set; }
+		private string MarkerEnd_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Id of the marker which will be drawn at the first vertex of the path.Custom markers can be defined in defs property.
+		/// </summary>
+		public string MarkerStart { get; set; }
+		private string MarkerStart_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The color of the shape's stroke.
@@ -78,6 +110,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Point != Point_DefaultValue) h.Add("point",Point);
+			if (Points != Points_DefaultValue) h.Add("points",Points);
+			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
+			if (MarkerStart != MarkerStart_DefaultValue) h.Add("markerStart",MarkerStart);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);

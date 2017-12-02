@@ -14,14 +14,41 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WindbarbSeriesDataLabels()
 		{
+			Align = Align_DefaultValue = "";
+			VerticalAlign = VerticalAlign_DefaultValue = "";
+			Y = Y_DefaultValue = "";
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public WindbarbSeriesDataLabelsAlign Align { get; set; }
+		private WindbarbSeriesDataLabelsAlign Align_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public WindbarbSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private WindbarbSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public WindbarbSeriesDataLabelsY Y { get; set; }
+		private WindbarbSeriesDataLabelsY Y_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;

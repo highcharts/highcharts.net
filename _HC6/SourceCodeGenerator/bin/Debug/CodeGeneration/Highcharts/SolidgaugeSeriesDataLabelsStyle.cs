@@ -14,14 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SolidgaugeSeriesDataLabelsStyle()
 		{
+			FontSize = FontSize_DefaultValue = 11px;
+			FontWeight = FontWeight_DefaultValue = bold;
+			Color = Color_DefaultValue = contrast;
+			TextOutline = TextOutline_DefaultValue = 1px contrast;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SolidgaugeSeriesDataLabelsStyleFontSize FontSize { get; set; }
+		private SolidgaugeSeriesDataLabelsStyleFontSize FontSize_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SolidgaugeSeriesDataLabelsStyleFontWeight FontWeight { get; set; }
+		private SolidgaugeSeriesDataLabelsStyleFontWeight FontWeight_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SolidgaugeSeriesDataLabelsStyleColor Color { get; set; }
+		private SolidgaugeSeriesDataLabelsStyleColor Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SolidgaugeSeriesDataLabelsStyleTextOutline TextOutline { get; set; }
+		private SolidgaugeSeriesDataLabelsStyleTextOutline TextOutline_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (TextOutline != TextOutline_DefaultValue) h.Add("textOutline",TextOutline);
 			
 
 			return h;

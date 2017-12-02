@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSolidgaugeTooltip()
 		{
+			HeaderFormat = HeaderFormat_DefaultValue = "";
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSolidgaugeTooltipHeaderFormat HeaderFormat { get; set; }
+		private PlotOptionsSolidgaugeTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			
 
 			return h;

@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LegendTitle()
 		{
+			Style = Style_DefaultValue = new Hashtable{{"fontWeight","bold"}};
+			Text = Text_DefaultValue = "null";
 			
 		}	
+		
+
+		/// <summary>
+		/// Generic CSS styles for the legend title.
+		/// </summary>
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// A text or HTML string for the title.
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Text != Text_DefaultValue) h.Add("text",Text);
 			
 
 			return h;

@@ -14,14 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public CreditsPosition()
 		{
+			Align = Align_DefaultValue = "right";
+			X = X_DefaultValue = -10;
+			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
+			Y = Y_DefaultValue = -5;
 			
 		}	
+		
+
+		/// <summary>
+		/// Horizontal alignment of the credits.
+		/// </summary>
+		public string Align { get; set; }
+		private string Align_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// Horizontal pixel offset of the credits.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Vertical alignment of the credits.
+		/// </summary>
+		public string VerticalAlign { get; set; }
+		private string VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Vertical pixel offset of the credits.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;

@@ -14,8 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SplineSeriesSunburstDataLabels()
 		{
+			Defer = Defer_DefaultValue = True;
+			Style = Style_DefaultValue = "";
+			RotationMode = RotationMode_DefaultValue = perpendicular;
 			Formatter = Formatter_DefaultValue = "";
-			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -6;
@@ -25,7 +27,6 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
-			Defer = Defer_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "";
 			BackgroundColor = BackgroundColor_DefaultValue = "";
@@ -42,17 +43,31 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public SplineSeriesSunburstDataLabelsDefer Defer { get; set; }
+		private SplineSeriesSunburstDataLabelsDefer Defer_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SplineSeriesSunburstDataLabelsStyle Style { get; set; }
+		private SplineSeriesSunburstDataLabelsStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Decides how the data label will be rotated according to the perimeterof the sunburst. It can either be parallel or perpendicular to theperimeter.`series.rotation` takes precedence over `rotationMode`.
+		/// </summary>
+		public SplineSeriesSunburstDataLabelsRotationMode RotationMode { get; set; }
+		private SplineSeriesSunburstDataLabelsRotationMode RotationMode_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Callback JavaScript function to format the data label. Note thatif a `format` is defined, the format takes precedence and the formatteris ignored. Available data are:<table><tbody><tr><td>`this.percentage`</td><td>Stacked series and pies only. The point's percentage of thetotal.</td></tr><tr><td>`this.point`</td><td>The point object. The point name, if defined, is availablethrough `this.point.name`.</td></tr><tr><td>`this.series`:</td><td>The series object. The series name is available through `this.series.name`.</td></tr><tr><td>`this.total`</td><td>Stacked series only. The total value at this point's x value.</td></tr><tr><td>`this.x`:</td><td>The x value.</td></tr><tr><td>`this.y`:</td><td>The y value.</td></tr></tbody></table>
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
-		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -116,13 +131,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to defer displaying the data labels until the initial seriesanimation has finished.
-		/// </summary>
-		public bool? Defer { get; set; }
-		private bool? Defer_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -206,8 +214,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode",RotationMode);
+			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
@@ -217,7 +227,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);

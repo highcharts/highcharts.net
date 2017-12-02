@@ -14,14 +14,41 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxisLabelsStyle()
 		{
+			Color = Color_DefaultValue = #666666;
+			Cursor = Cursor_DefaultValue = default;
+			FontSize = FontSize_DefaultValue = 11px;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisLabelsStyleColor Color { get; set; }
+		private YAxisLabelsStyleColor Color_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisLabelsStyleCursor Cursor { get; set; }
+		private YAxisLabelsStyleCursor Cursor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisLabelsStyleFontSize FontSize { get; set; }
+		private YAxisLabelsStyleFontSize FontSize_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			
 
 			return h;

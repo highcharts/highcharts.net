@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreaSeriesWordcloudStyle()
 		{
+			FontFamily = FontFamily_DefaultValue = Impact, sans-serif;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// The font family to use for the word cloud.
+		/// </summary>
+		public AreaSeriesWordcloudStyleFontFamily FontFamily { get; set; }
+		private AreaSeriesWordcloudStyleFontFamily FontFamily_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FontFamily != FontFamily_DefaultValue) h.Add("fontFamily",FontFamily);
 			
 
 			return h;

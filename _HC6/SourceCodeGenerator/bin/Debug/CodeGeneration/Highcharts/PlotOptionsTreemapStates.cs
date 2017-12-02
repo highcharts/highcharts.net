@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemapStates()
 		{
+			Hover = Hover_DefaultValue = "";
+			Normal = Normal_DefaultValue = "";
 			
 		}	
+		
+
+		/// <summary>
+		/// Options for the hovered series
+		/// </summary>
+		public PlotOptionsTreemapStatesHover Hover { get; set; }
+		private PlotOptionsTreemapStatesHover Hover_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapStatesNormal Normal { get; set; }
+		private PlotOptionsTreemapStatesNormal Normal_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			
 
 			return h;

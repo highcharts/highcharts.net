@@ -14,14 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LegendItemStyle()
 		{
+			Color = Color_DefaultValue = #333333;
+			FontSize = FontSize_DefaultValue = 12px;
+			FontWeight = FontWeight_DefaultValue = bold;
+			TextOverflow = TextOverflow_DefaultValue = ellipsis;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public LegendItemStyleColor Color { get; set; }
+		private LegendItemStyleColor Color_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public LegendItemStyleFontSize FontSize { get; set; }
+		private LegendItemStyleFontSize FontSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public LegendItemStyleFontWeight FontWeight { get; set; }
+		private LegendItemStyleFontWeight FontWeight_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public LegendItemStyleTextOverflow TextOverflow { get; set; }
+		private LegendItemStyleTextOverflow TextOverflow_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (TextOverflow != TextOverflow_DefaultValue) h.Add("textOverflow",TextOverflow);
 			
 
 			return h;

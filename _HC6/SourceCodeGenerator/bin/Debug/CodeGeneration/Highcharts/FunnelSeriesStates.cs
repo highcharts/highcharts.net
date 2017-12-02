@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public FunnelSeriesStates()
 		{
+			Select = Select_DefaultValue = "";
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// Options for a selected funnel item.
+		/// </summary>
+		public FunnelSeriesStatesSelect Select { get; set; }
+		private FunnelSeriesStatesSelect Select_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PolygonSeriesTooltip()
 		{
+			FollowPointer = FollowPointer_DefaultValue = True;
+			PointFormat = PointFormat_DefaultValue = "";
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PolygonSeriesTooltipFollowPointer FollowPointer { get; set; }
+		private PolygonSeriesTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PolygonSeriesTooltipPointFormat PointFormat { get; set; }
+		private PolygonSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
+			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

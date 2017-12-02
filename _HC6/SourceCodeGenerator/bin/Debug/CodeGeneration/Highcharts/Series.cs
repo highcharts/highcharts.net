@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class Series  : Series
+	public partial class Series  : BaseObject
 	{
 		public Series()
 		{

@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPyramidDataLabels()
 		{
+			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPyramidDataLabelsConnectorWidth ConnectorWidth { get; set; }
+		private PlotOptionsPyramidDataLabelsConnectorWidth ConnectorWidth_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			
 
 			return h;

@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesTooltip()
 		{
+			HeaderFormat = HeaderFormat_DefaultValue = "";
+			PointFormat = PointFormat_DefaultValue = <b>{point.name}</b>: {point.value}<br/>;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public TreemapSeriesTooltipHeaderFormat HeaderFormat { get; set; }
+		private TreemapSeriesTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public TreemapSeriesTooltipPointFormat PointFormat { get; set; }
+		private TreemapSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
+			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

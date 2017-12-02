@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsColumnrangeTooltip()
 		{
+			Distance = Distance_DefaultValue = 6;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsColumnrangeTooltipDistance Distance { get; set; }
+		private PlotOptionsColumnrangeTooltipDistance Distance_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			
 
 			return h;

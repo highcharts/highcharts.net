@@ -14,10 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VariablepieSeriesDataLabels()
 		{
+			Distance = Distance_DefaultValue = 30;
+			Enabled = Enabled_DefaultValue = True;
 			Formatter = Formatter_DefaultValue = "";
+			X = X_DefaultValue = 0;
+			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
+			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
+			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
+			SoftConnector = SoftConnector_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
-			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = 5;
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -26,7 +32,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "";
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "undefined";
@@ -42,10 +47,59 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Callback JavaScript function to format the data label. Note thatif a `format` is defined, the format takes precedence and the formatteris ignored. Available data are:<table><tbody><tr><td>`this.percentage`</td><td>Stacked series and pies only. The point's percentage of thetotal.</td></tr><tr><td>`this.point`</td><td>The point object. The point name, if defined, is availablethrough `this.point.name`.</td></tr><tr><td>`this.series`:</td><td>The series object. The series name is available through `this.series.name`.</td></tr><tr><td>`this.total`</td><td>Stacked series only. The total value at this point's x value.</td></tr><tr><td>`this.x`:</td><td>The x value.</td></tr><tr><td>`this.y`:</td><td>The y value.</td></tr></tbody></table>
+		/// The distance of the data label from the pie's edge. Negative numbersput the data label on top of the pie slices. Connectors are onlyshown for data labels outside the pie.
 		/// </summary>
-		public string Formatter { get; set; }
-		private string Formatter_DefaultValue { get; set; }
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the data labels.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public VariablepieSeriesDataLabelsFormatter Formatter { get; set; }
+		private VariablepieSeriesDataLabelsFormatter Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to render the connector as a soft arc or a line with sharpbreak.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The color of the line connecting the data label to the pie slice.The default color is the same as the point's color.In styled mode, the connector stroke is given in the`.highcharts-data-label-connector` class.
+		/// </summary>
+		public string ConnectorColor { get; set; }
+		private string ConnectorColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The distance from the data label to the connector.
+		/// </summary>
+		public double? ConnectorPadding { get; set; }
+		private double? ConnectorPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the line connecting the data label to the pie slice.In styled mode, the connector stroke width is given in the`.highcharts-data-label-connector` class.
+		/// </summary>
+		public double? ConnectorWidth { get; set; }
+		private double? ConnectorWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to render the connector as a soft arc or a line with sharpbreak.
+		/// </summary>
+		public double? SoftConnector { get; set; }
+		private double? SoftConnector_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -60,13 +114,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string VerticalAlign { get; set; }
 		private string VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x position offset of the label relative to the point.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -123,13 +170,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Defer { get; set; }
 		private bool? Defer_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the data labels.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -206,10 +246,16 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
+			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
+			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
+			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
-			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -218,7 +264,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);

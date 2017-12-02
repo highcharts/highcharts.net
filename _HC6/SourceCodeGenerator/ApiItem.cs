@@ -123,6 +123,8 @@ public class ApiItem
         item.Since = string.IsNullOrWhiteSpace(Since) ? null : string.Copy(Since);
         item.HasChildren = HasChildren;
 
+        Children.ToList().ForEach(p => item.Children.Add(p.Clone()));
+
         return item;
     }
 }

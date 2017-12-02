@@ -14,14 +14,86 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBulletLabel()
 		{
+			Enabled = Enabled_DefaultValue = True;
+			ConnectorAllowed = ConnectorAllowed_DefaultValue = True;
+			ConnectorNeighbourDistance = ConnectorNeighbourDistance_DefaultValue = 24;
+			MinFontSize = MinFontSize_DefaultValue = null;
+			MaxFontSize = MaxFontSize_DefaultValue = null;
+			OnArea = OnArea_DefaultValue = "";
+			Style = Style_DefaultValue = "";
+			BoxesToAvoid = BoxesToAvoid_DefaultValue = "";
 			
 		}	
+		
+
+		/// <summary>
+		/// Enable the series label per series.
+		/// </summary>
+		public PlotOptionsBulletLabelEnabled Enabled { get; set; }
+		private PlotOptionsBulletLabelEnabled Enabled_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// Allow labels to be placed distant to the graph if necessary,and draw a connector line to the graph.
+		/// </summary>
+		public PlotOptionsBulletLabelConnectorAllowed ConnectorAllowed { get; set; }
+		private PlotOptionsBulletLabelConnectorAllowed ConnectorAllowed_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If the label is closer than this to a neighbour graph, draw aconnector.
+		/// </summary>
+		public PlotOptionsBulletLabelConnectorNeighbourDistance ConnectorNeighbourDistance { get; set; }
+		private PlotOptionsBulletLabelConnectorNeighbourDistance ConnectorNeighbourDistance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For area-like series, allow the font size to vary so thatsmall areas get a smaller font size. The default applies thiseffect to area-like series but not line-like series.
+		/// </summary>
+		public double? MinFontSize { get; set; }
+		private double? MinFontSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For area-like series, allow the font size to vary so thatsmall areas get a smaller font size. The default applies thiseffect to area-like series but not line-like series.
+		/// </summary>
+		public double? MaxFontSize { get; set; }
+		private double? MaxFontSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Draw the label on the area of an area series. By default itis drawn on the area. Set it to `false` to draw it next tothe graph instead.
+		/// </summary>
+		public bool? OnArea { get; set; }
+		private bool? OnArea_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Styles for the series label. The color defaults to the seriescolor, or a contrast color if `onArea`.
+		/// </summary>
+		public PlotOptionsBulletLabelStyle Style { get; set; }
+		private PlotOptionsBulletLabelStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of boxes to avoid when laying out the labels. Each item has a `left`, `right`, `top` and `bottom` property.
+		/// </summary>
+		public List<object> BoxesToAvoid { get; set; }
+		private List<object> BoxesToAvoid_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (ConnectorAllowed != ConnectorAllowed_DefaultValue) h.Add("connectorAllowed",ConnectorAllowed);
+			if (ConnectorNeighbourDistance != ConnectorNeighbourDistance_DefaultValue) h.Add("connectorNeighbourDistance",ConnectorNeighbourDistance);
+			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
+			if (MaxFontSize != MaxFontSize_DefaultValue) h.Add("maxFontSize",MaxFontSize);
+			if (OnArea != OnArea_DefaultValue) h.Add("onArea",OnArea);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (BoxesToAvoid != BoxesToAvoid_DefaultValue) h.Add("boxesToAvoid",BoxesToAvoid);
 			
 
 			return h;

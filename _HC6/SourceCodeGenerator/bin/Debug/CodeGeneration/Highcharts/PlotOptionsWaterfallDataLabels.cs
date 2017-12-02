@@ -14,14 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWaterfallDataLabels()
 		{
+			Inside = Inside_DefaultValue = True;
 			
 		}	
-		 
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsWaterfallDataLabelsInside Inside { get; set; }
+		private PlotOptionsWaterfallDataLabelsInside Inside_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			
 
 			return h;

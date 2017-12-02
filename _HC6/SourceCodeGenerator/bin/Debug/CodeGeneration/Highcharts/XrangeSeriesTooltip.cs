@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public XrangeSeriesTooltip()
 		{
+			HeaderFormat = HeaderFormat_DefaultValue = <span style="font-size: 0.85em">{point.x} - {point.x2}</span><br/>;
+			PointFormat = PointFormat_DefaultValue = <span style="color:{point.color}">●</span> {series.name}: <b>{point.yCategory}</b><br/>;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public XrangeSeriesTooltipHeaderFormat HeaderFormat { get; set; }
+		private XrangeSeriesTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public XrangeSeriesTooltipPointFormat PointFormat { get; set; }
+		private XrangeSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
+			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

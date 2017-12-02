@@ -14,14 +14,68 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsHeatmapDataLabels()
 		{
+			Formatter = Formatter_DefaultValue = "";
+			Inside = Inside_DefaultValue = True;
+			VerticalAlign = VerticalAlign_DefaultValue = middle;
+			Crop = Crop_DefaultValue = False;
+			Overflow = Overflow_DefaultValue = False;
+			Padding = Padding_DefaultValue = 0;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHeatmapDataLabelsFormatter Formatter { get; set; }
+		private PlotOptionsHeatmapDataLabelsFormatter Formatter_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHeatmapDataLabelsInside Inside { get; set; }
+		private PlotOptionsHeatmapDataLabelsInside Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHeatmapDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsHeatmapDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHeatmapDataLabelsCrop Crop { get; set; }
+		private PlotOptionsHeatmapDataLabelsCrop Crop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHeatmapDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsHeatmapDataLabelsOverflow Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHeatmapDataLabelsPadding Padding { get; set; }
+		private PlotOptionsHeatmapDataLabelsPadding Padding_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			
 
 			return h;

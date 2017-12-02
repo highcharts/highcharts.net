@@ -14,14 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public DrilldownActiveDataLabelStyle()
 		{
+			Cursor = Cursor_DefaultValue = pointer;
+			Color = Color_DefaultValue = #003399;
+			FontWeight = FontWeight_DefaultValue = bold;
+			TextDecoration = TextDecoration_DefaultValue = underline;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public DrilldownActiveDataLabelStyleCursor Cursor { get; set; }
+		private DrilldownActiveDataLabelStyleCursor Cursor_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public DrilldownActiveDataLabelStyleColor Color { get; set; }
+		private DrilldownActiveDataLabelStyleColor Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public DrilldownActiveDataLabelStyleFontWeight FontWeight { get; set; }
+		private DrilldownActiveDataLabelStyleFontWeight FontWeight_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public DrilldownActiveDataLabelStyleTextDecoration TextDecoration { get; set; }
+		private DrilldownActiveDataLabelStyleTextDecoration TextDecoration_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (TextDecoration != TextDecoration_DefaultValue) h.Add("textDecoration",TextDecoration);
 			
 
 			return h;

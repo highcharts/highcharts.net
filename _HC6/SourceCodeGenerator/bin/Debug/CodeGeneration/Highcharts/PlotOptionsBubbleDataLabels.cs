@@ -14,14 +14,41 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBubbleDataLabels()
 		{
+			Formatter = Formatter_DefaultValue = "";
+			Inside = Inside_DefaultValue = True;
+			VerticalAlign = VerticalAlign_DefaultValue = middle;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsBubbleDataLabelsFormatter Formatter { get; set; }
+		private PlotOptionsBubbleDataLabelsFormatter Formatter_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsBubbleDataLabelsInside Inside { get; set; }
+		private PlotOptionsBubbleDataLabelsInside Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsBubbleDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsBubbleDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			
 
 			return h;

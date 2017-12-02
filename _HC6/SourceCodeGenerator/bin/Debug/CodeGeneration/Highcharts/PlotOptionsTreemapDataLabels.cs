@@ -14,14 +14,86 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemapDataLabels()
 		{
+			Enabled = Enabled_DefaultValue = True;
+			Defer = Defer_DefaultValue = False;
+			VerticalAlign = VerticalAlign_DefaultValue = middle;
+			Formatter = Formatter_DefaultValue = "";
+			Inside = Inside_DefaultValue = True;
+			Crop = Crop_DefaultValue = False;
+			Overflow = Overflow_DefaultValue = False;
+			Padding = Padding_DefaultValue = 0;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapDataLabelsEnabled Enabled { get; set; }
+		private PlotOptionsTreemapDataLabelsEnabled Enabled_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapDataLabelsDefer Defer { get; set; }
+		private PlotOptionsTreemapDataLabelsDefer Defer_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsTreemapDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapDataLabelsFormatter Formatter { get; set; }
+		private PlotOptionsTreemapDataLabelsFormatter Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapDataLabelsInside Inside { get; set; }
+		private PlotOptionsTreemapDataLabelsInside Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapDataLabelsCrop Crop { get; set; }
+		private PlotOptionsTreemapDataLabelsCrop Crop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsTreemapDataLabelsOverflow Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapDataLabelsPadding Padding { get; set; }
+		private PlotOptionsTreemapDataLabelsPadding Padding_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			
 
 			return h;

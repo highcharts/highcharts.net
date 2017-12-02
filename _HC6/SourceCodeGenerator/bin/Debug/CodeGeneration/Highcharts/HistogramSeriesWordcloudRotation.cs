@@ -14,14 +14,41 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HistogramSeriesWordcloudRotation()
 		{
+			From = From_DefaultValue = 0;
+			Orientations = Orientations_DefaultValue = 2;
+			To = To_DefaultValue = 90;
 			
 		}	
+		
+
+		/// <summary>
+		/// The smallest degree of rotation for a word.
+		/// </summary>
+		public HistogramSeriesWordcloudRotationFrom From { get; set; }
+		private HistogramSeriesWordcloudRotationFrom From_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// The number of possible orientations for a word, within the range of`rotation.from` and `rotation.to`.
+		/// </summary>
+		public HistogramSeriesWordcloudRotationOrientations Orientations { get; set; }
+		private HistogramSeriesWordcloudRotationOrientations Orientations_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The largest degree of rotation for a word.
+		/// </summary>
+		public HistogramSeriesWordcloudRotationTo To { get; set; }
+		private HistogramSeriesWordcloudRotationTo To_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (From != From_DefaultValue) h.Add("from",From);
+			if (Orientations != Orientations_DefaultValue) h.Add("orientations",Orientations);
+			if (To != To_DefaultValue) h.Add("to",To);
 			
 
 			return h;

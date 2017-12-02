@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ParetoSeries()
 		{
+			Data = Data_DefaultValue = new List<SeriesParetoData>();
 			Sunburst = Sunburst_DefaultValue = "";
 			Wordcloud = Wordcloud_DefaultValue = "";
 			Id = Id_DefaultValue = "";
@@ -49,7 +50,6 @@ namespace Highsoft.Web.Mvc.Charts
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
-			Linecap = Linecap_DefaultValue = "round";
 			LinkedTo = LinkedTo_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
@@ -63,6 +63,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// An array of data points for the series. For the `pareto` series type,points are calculated dynamically.
+		/// </summary>
+		public List<SeriesParetoData> Data { get; set; }
+		private List<SeriesParetoData> Data_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// A `sunburst` series. If the [type](#series.sunburst.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.sunburst](#plotOptions.sunburst).
@@ -310,13 +317,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The line cap used for line ends and line joins on the graph.
-		/// </summary>
-		public string Linecap { get; set; }
-		private string Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.
 		/// </summary>
 		public string LinkedTo { get; set; }
@@ -390,6 +390,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (Sunburst.IsDirty()) h.Add("sunburst",Sunburst.ToHashtable());
 			if (Wordcloud.IsDirty()) h.Add("wordcloud",Wordcloud.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
@@ -425,7 +426,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) h.Add("pointDescriptionFormatter",PointDescriptionFormatter);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);

@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AnnotationsLabels()
 		{
+			Point = Point_DefaultValue = "";
 			Align = Align_DefaultValue = center;
 			AllowOverlap = AllowOverlap_DefaultValue = False;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
@@ -37,6 +38,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// This option defines the point to which the label will be connected.It can be either the point which exists in the series - it is referencedby the point's id - or a new point with defined x, y properiesand optionally axes.
+		/// </summary>
+		public string Point { get; set; }
+		private string Point_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The alignment of the annotation's label. If right,the right side of the label should be touching the point.
@@ -182,6 +190,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);

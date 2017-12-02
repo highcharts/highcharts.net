@@ -14,14 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LoadingStyle()
 		{
+			Position = Position_DefaultValue = new Hashtable();
+			BackgroundColor = BackgroundColor_DefaultValue = #ffffff;
+			Opacity = Opacity_DefaultValue = 0.5;
+			TextAlign = TextAlign_DefaultValue = center;
 			
 		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public Hashtable Position { get; set; }
+		private Hashtable Position_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public LoadingStyleBackgroundColor BackgroundColor { get; set; }
+		private LoadingStyleBackgroundColor BackgroundColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public LoadingStyleOpacity Opacity { get; set; }
+		private LoadingStyleOpacity Opacity_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public LoadingStyleTextAlign TextAlign { get; set; }
+		private LoadingStyleTextAlign TextAlign_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
+			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
+			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			
 
 			return h;
