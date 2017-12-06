@@ -262,11 +262,16 @@ public class HighchartsGenerator
             if (baseClass == null)
             {
                 List<string> parts = baseClassFullName.Split('.').ToList();
+                var baseClassTitle = parts[parts.Count - 1];
                 parts.RemoveAt(parts.Count - 1);
                 var baseClassParentFullName = string.Join(".", parts);
                 var baseClassParent = FindApiItem(baseClassParentFullName, item.Parent);
 
-                baseClass = GetChildrenFromBaseClasses(baseClassParent).Where(p => p.FullName == baseClassFullName).FirstOrDefault();
+                var baseClassParentChildren = GetChildrenFromBaseClasses(baseClassParent);
+                baseClass = baseClassParentChildren.Where(p => p.Title == baseClassTitle).FirstOrDefault();
+
+                if (baseClass == null)
+                    return new List<ApiItem>();
             }
 
             if (baseClass.Extends.Any())
