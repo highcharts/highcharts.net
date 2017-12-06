@@ -258,6 +258,17 @@ public class HighchartsGenerator
         {
             var baseClass = FindApiItem(baseClassFullName, item);
 
+            //children for base class are not yet generated
+            if (baseClass == null)
+            {
+                List<string> parts = baseClassFullName.Split('.').ToList();
+                parts.RemoveAt(parts.Count - 1);
+                var baseClassParentFullName = string.Join(".", parts);
+                var baseClassParent = FindApiItem(baseClassParentFullName, item.Parent);
+
+                baseClass = GetChildrenFromBaseClasses(baseClassParent).Where(p => p.FullName == baseClassFullName).FirstOrDefault();
+            }
+
             if (baseClass.Extends.Any())
             {
                 addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !item.Exclude.Any(q => q == p.Title) && !item.Children.Select(x => x.Title).Any(q => q == p.Title)));
@@ -266,6 +277,8 @@ public class HighchartsGenerator
             if (baseClass.FullName == "series")
             {
                 addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !item.Children.Select(x => x.Title).Any(q => q == p.Title) && !p.Extends.Any(q => q == "series")).ToList());
+
+                //do usuniecią po naprawie jsona
                 addedChildren = addedChildren.Where(p => p.Title != "wordcloud" && p.Title != "sunburst").ToList();
             }
             else
@@ -748,9 +761,6 @@ public class HighchartsGenerator
 
     private void GenerateClassesForLevel(IList<ApiItem> items, int level = 0)
     {
-        Console.WriteLine("level = " + level);
-        
-
         foreach (ApiItem item in items)
         {
             if (item.Children.Any() || item.Extends.Any())
@@ -775,8 +785,13 @@ public class HighchartsGenerator
         {
             children = item.Children.ToList(); // FindImmediateChildren(item);
 
-            if (item.Extends.Any())
-                children.AddRange(GetChildrenFromBaseClasses(item));
+            //warunek do usunięcia
+            if (item.FullName != "series.bellcurve.data" && item.FullName != "series.histogram.data")
+            {
+
+                if (item.Extends.Any())
+                    children.AddRange(GetChildrenFromBaseClasses(item));
+            }
         }
 
         foreach(var child in children)
@@ -789,41 +804,6 @@ public class HighchartsGenerator
         }
 
         return clones;
-    }
-
-    private List<ApiItem> FindImmediateChildren(ApiItem rootItem)
-    {
-        List<ApiItem> children = new List<ApiItem>();
-
-        foreach (ApiItem item in _apiItems)
-        {
-            int lastIndex = item.FullName.LastIndexOf('.');
-            string parent = item.FullName;
-
-            if (lastIndex > 0)
-                parent = item.FullName.Substring(0, lastIndex);
-
-            if (parent == rootItem.FullName)
-            {
-                children.Add(item);
-            }
-        }
-
-        return children;
-    }
-
-    private List<ApiItem> FindRootChildren()
-    {
-        List<ApiItem> children = new List<ApiItem>();
-        foreach (ApiItem item in _apiItems)
-        {
-            if (item.ParentFullName == null)
-            {
-                children.Add(item);
-            }
-        }
-
-        return children;
     }
 
     private void InitEnumMappings()
