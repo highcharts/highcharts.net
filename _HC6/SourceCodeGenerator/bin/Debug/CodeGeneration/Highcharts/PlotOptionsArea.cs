@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsArea()
 		{
-			SoftThreshold = SoftThreshold_DefaultValue = false;
+			SoftThreshold = SoftThreshold_DefaultValue = False;
 			Threshold = Threshold_DefaultValue = 0;
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = null;
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Charts
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Marker = Marker_DefaultValue = "";

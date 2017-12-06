@@ -19,8 +19,8 @@ namespace Highsoft.Web.Mvc.Charts
 			TrackByArea = TrackByArea_DefaultValue = True;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";

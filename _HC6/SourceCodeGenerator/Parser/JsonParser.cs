@@ -139,28 +139,7 @@ namespace SourceCodeGenerator.Parser
             apiItem.Parent = parent;
             apiItem.Title = name;
 
-            //przenieść to niżej - doclet powinien być pierwszy ze względu na products
-            JToken meta = item.SelectToken("meta", false);
-            if (meta != null)
-            {
-                JToken jFullname = meta.SelectToken("fullname", false);
-                if (jFullname != null)
-                    apiItem.FullName = jFullname.Value<string>();
-
-                JToken jName = meta.SelectToken("name", false);
-                if (jName != null)
-                    apiItem.Title = jName.Value<string>();
-
-                JToken jDefault = meta.SelectToken("default", false);
-                if (jDefault != null)
-                    apiItem.Defaults = jDefault.Value<string>();
-            }
-
-            if (string.IsNullOrWhiteSpace(apiItem.FullName))
-                if (!string.IsNullOrWhiteSpace(apiItem.ParentFullName))
-                    apiItem.FullName = apiItem.ParentFullName + "." + apiItem.Title;
-                else
-                    apiItem.FullName = apiItem.Title;
+            
 
 
             JToken doclet = item.SelectToken("doclet", false);
@@ -169,6 +148,13 @@ namespace SourceCodeGenerator.Parser
                 JToken jProducts = doclet.SelectToken("products", false);
                 if (jProducts != null)
                     apiItem.Products = jProducts.Select(t => (string)t).ToList();
+
+                //pattern for products: products = parentProducts + (existingProducts - parentProducts)
+                if (apiItem.Parent != null)
+                {
+                    apiItem.Parent.Products.ForEach(p => apiItem.Products.Remove(p));
+                    apiItem.Products.AddRange(apiItem.Parent.Products);
+                }
 
                 if (!apiItem.Products.Contains(Product) && apiItem.Products.Any())
                     return;
@@ -213,6 +199,27 @@ namespace SourceCodeGenerator.Parser
                 }
             }
 
+            JToken meta = item.SelectToken("meta", false);
+            if (meta != null)
+            {
+                JToken jFullname = meta.SelectToken("fullname", false);
+                if (jFullname != null)
+                    apiItem.FullName = jFullname.Value<string>();
+
+                JToken jName = meta.SelectToken("name", false);
+                if (jName != null)
+                    apiItem.Title = jName.Value<string>();
+
+                JToken jDefault = meta.SelectToken("default", false);
+                if (jDefault != null)
+                    apiItem.Defaults = jDefault.Value<string>();
+            }
+
+            if (string.IsNullOrWhiteSpace(apiItem.FullName))
+                if (!string.IsNullOrWhiteSpace(apiItem.ParentFullName))
+                    apiItem.FullName = apiItem.ParentFullName + "." + apiItem.Title;
+                else
+                    apiItem.FullName = apiItem.Title;
 
             if (parent == null)
                 Items.Add(apiItem);
@@ -223,9 +230,6 @@ namespace SourceCodeGenerator.Parser
             JToken children = item.SelectToken("children", false);
             if (children == null)
                 return;
-
-            if(children.Any())
-                apiItem.HasChildren = true;
 
             foreach (var child in children)
             {

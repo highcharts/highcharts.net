@@ -26,12 +26,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Rowsize = Rowsize_DefaultValue = 1;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			SoftThreshold = SoftThreshold_DefaultValue = true;
+			SoftThreshold = SoftThreshold_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";

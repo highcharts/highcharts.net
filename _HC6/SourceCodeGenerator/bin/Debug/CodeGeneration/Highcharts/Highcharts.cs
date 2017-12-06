@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			PlotOptions = PlotOptions_DefaultValue = "";
 			Series = Series_DefaultValue = new List<Series>();
-			Accessibility = Accessibility_DefaultValue = "";
-			Chart = Chart_DefaultValue = "";
-			Legend = Legend_DefaultValue = "";
 			Defs = Defs_DefaultValue = "";
 			Annotations = Annotations_DefaultValue = new List<Annotations>();
 			Boost = Boost_DefaultValue = "";
@@ -26,8 +23,11 @@ namespace Highsoft.Web.Mvc.Charts
 			YAxis = YAxis_DefaultValue = "";
 			Lang = Lang_DefaultValue = "";
 			Drilldown = Drilldown_DefaultValue = "";
+			Chart = Chart_DefaultValue = "";
 			Exporting = Exporting_DefaultValue = "";
 			Navigation = Navigation_DefaultValue = "";
+			Legend = Legend_DefaultValue = "";
+			Accessibility = Accessibility_DefaultValue = "";
 			NoData = NoData_DefaultValue = "";
 			Global = Global_DefaultValue = "";
 			XAxis = XAxis_DefaultValue = "";
@@ -58,27 +58,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<Series> Series { get; set; }
 		private List<Series> Series_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for configuring accessibility for the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
-		/// </summary>
-		public HighchartsAccessibility Accessibility { get; set; }
-		private HighchartsAccessibility Accessibility_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options regarding the chart area and plot area as well as generalchart options.
-		/// </summary>
-		public HighchartsChart Chart { get; set; }
-		private HighchartsChart Chart_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The legend is a box containing a symbol and name for each seriesitem or point item in the chart. Each series (or points in caseof pie charts) is represented by a symbol and its name in the legend. It is possible to override the symbol creator function andcreate [custom legend symbols](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/studies/legend-custom-symbol/).
-		/// </summary>
-		public HighchartsLegend Legend { get; set; }
-		private HighchartsLegend Legend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -131,6 +110,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options regarding the chart area and plot area as well as generalchart options.
+		/// </summary>
+		public HighchartsChart Chart { get; set; }
+		private HighchartsChart Chart_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options for the exporting module. For an overview on the matter, see [the docs](http://www.highcharts.com/docs/export-module/export-module-overview).
 		/// </summary>
 		public HighchartsExporting Exporting { get; set; }
@@ -142,6 +128,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public HighchartsNavigation Navigation { get; set; }
 		private HighchartsNavigation Navigation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The legend is a box containing a symbol and name for each seriesitem or point item in the chart. Each series (or points in caseof pie charts) is represented by a symbol and its name in the legend. It is possible to override the symbol creator function andcreate [custom legend symbols](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/studies/legend-custom-symbol/).
+		/// </summary>
+		public HighchartsLegend Legend { get; set; }
+		private HighchartsLegend Legend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for configuring accessibility for the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
+		/// </summary>
+		public HighchartsAccessibility Accessibility { get; set; }
+		private HighchartsAccessibility Accessibility_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -248,9 +248,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (PlotOptions != PlotOptions_DefaultValue) h.Add("plotOptions",PlotOptions);
 			if (Series != Series_DefaultValue) h.Add("series", HashifyList(Series));
-			if (Accessibility != Accessibility_DefaultValue) h.Add("accessibility",Accessibility);
-			if (Chart != Chart_DefaultValue) h.Add("chart",Chart);
-			if (Legend != Legend_DefaultValue) h.Add("legend",Legend);
 			if (Defs != Defs_DefaultValue) h.Add("defs",Defs);
 			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
 			if (Boost != Boost_DefaultValue) h.Add("boost",Boost);
@@ -258,8 +255,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
 			if (Lang != Lang_DefaultValue) h.Add("lang",Lang);
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (Chart != Chart_DefaultValue) h.Add("chart",Chart);
 			if (Exporting != Exporting_DefaultValue) h.Add("exporting",Exporting);
 			if (Navigation != Navigation_DefaultValue) h.Add("navigation",Navigation);
+			if (Legend != Legend_DefaultValue) h.Add("legend",Legend);
+			if (Accessibility != Accessibility_DefaultValue) h.Add("accessibility",Accessibility);
 			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
 			if (Global != Global_DefaultValue) h.Add("global",Global);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));

@@ -18,11 +18,12 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = "";
 			Tooltip = Tooltip_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 3;
+			PointRange = PointRange_DefaultValue = 0;
 			PartialFill = PartialFill_DefaultValue = "";
 			Data = Data_DefaultValue = new List<PlotOptionsXrangeData>();
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
@@ -45,7 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = "";
-			Marker = Marker_DefaultValue = true;
+			Marker = Marker_DefaultValue = "";
 			PointPadding = PointPadding_DefaultValue = 0.1;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			States = States_DefaultValue = "";
@@ -87,6 +88,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsXrangeBorderRadius BorderRadius { get; set; }
 		private PlotOptionsXrangeBorderRadius BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsXrangePointRange PointRange { get; set; }
+		private PlotOptionsXrangePointRange PointRange_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -370,6 +378,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
@@ -407,7 +416,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
-			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
+			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			
 

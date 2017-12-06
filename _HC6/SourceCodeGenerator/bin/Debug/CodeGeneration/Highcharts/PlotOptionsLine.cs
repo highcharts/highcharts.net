@@ -18,15 +18,15 @@ namespace Highsoft.Web.Mvc.Charts
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Marker = Marker_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			DataLabels = DataLabels_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			SoftThreshold = SoftThreshold_DefaultValue = true;
+			SoftThreshold = SoftThreshold_DefaultValue = True;
 			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;

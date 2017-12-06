@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Formatter = Formatter_DefaultValue = "";
 			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = -6;
+			Y = Y_DefaultValue = 0;
 			Padding = Padding_DefaultValue = 5;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
@@ -38,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UseHTML = UseHTML_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
 			ZIndex = ZIndex_DefaultValue = 6;
+			Filter = Filter_DefaultValue = "";
 			
 		}	
 		
@@ -208,6 +209,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A declarative filter for which data labels to display. Thedeclarative filter is designed for use when callback functions arenot available, like when the chart options require a pure JSONstructure or for use with graphical editors. For programmaticcontrol, use the `formatter` instead, and return `false` to disablea single data label.
+		/// </summary>
+		public PlotOptionsSunburstDataLabelsFilter Filter { get; set; }
+		private PlotOptionsSunburstDataLabelsFilter Filter_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -238,6 +246,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			
 
 			return h;

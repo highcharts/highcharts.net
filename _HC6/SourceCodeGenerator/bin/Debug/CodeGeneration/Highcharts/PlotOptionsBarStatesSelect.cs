@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Color = Color_DefaultValue = #cccccc;
 			BorderColor = BorderColor_DefaultValue = #000000;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			
 		}	
 		
@@ -33,13 +32,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsBarStatesSelectBorderColor BorderColor { get; set; }
 		private PlotOptionsBarStatesSelectBorderColor BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -48,7 +40,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			
 
 			return h;

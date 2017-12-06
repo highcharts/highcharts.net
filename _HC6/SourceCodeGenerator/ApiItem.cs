@@ -22,7 +22,6 @@ public class ApiItem
     public IList<string> Extends { get; set; }
     public IList<string> Exclude { get; set; }
     public string Since { get; set; }
-    public bool HasChildren { get; set; }
     public IList<ApiItem> Children { get; set; }
     public ApiItem Parent { get; set; }
 
@@ -121,7 +120,6 @@ public class ApiItem
         item.Extends = new List<string>(Extends.Select(p => string.Copy(p)));
         item.Exclude = new List<string>(Exclude.Select(p => string.Copy(p)));
         item.Since = string.IsNullOrWhiteSpace(Since) ? null : string.Copy(Since);
-        item.HasChildren = HasChildren;
 
         Children.ToList().ForEach(p => item.Children.Add(p.Clone()));
 

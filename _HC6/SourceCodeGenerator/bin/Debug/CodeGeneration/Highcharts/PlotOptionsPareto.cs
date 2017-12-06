@@ -17,8 +17,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ZIndex = ZIndex_DefaultValue = 3;
 			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Marker = Marker_DefaultValue = "";

@@ -20,12 +20,12 @@ namespace Highsoft.Web.Mvc.Charts
 			NeckWidth = NeckWidth_DefaultValue = 30%;
 			Height = Height_DefaultValue = 100%;
 			NeckHeight = NeckHeight_DefaultValue = 25%;
-			Reversed = Reversed_DefaultValue = false;
+			Reversed = Reversed_DefaultValue = False;
 			DataLabels = DataLabels_DefaultValue = "";
 			States = States_DefaultValue = "";
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Linecap = Linecap_DefaultValue = "round";
 			Clip = Clip_DefaultValue = False;
-			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = True;
 			ShowInLegend = ShowInLegend_DefaultValue = False;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			StickyTracking = StickyTracking_DefaultValue = False;

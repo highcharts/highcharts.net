@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSeriesMarkerStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = True;
 			RadiusPlus = RadiusPlus_DefaultValue = 2;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
 			FillColor = FillColor_DefaultValue = null;

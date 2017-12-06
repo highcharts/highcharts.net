@@ -194,7 +194,7 @@ public class HighchartsGenerator
 
             UpdateDefaultsForHighcharts(apiItem);
 
-            if (apiItem.HasChildren)
+            if (apiItem.Children.Any())
                 ProcessApiItems(apiItem.Children);
         }
     }
@@ -264,7 +264,10 @@ public class HighchartsGenerator
             }
 
             if (baseClass.FullName == "series")
+            {
                 addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !item.Children.Select(x => x.Title).Any(q => q == p.Title) && !p.Extends.Any(q => q == "series")).ToList());
+                addedChildren = addedChildren.Where(p => p.Title != "wordcloud" && p.Title != "sunburst").ToList();
+            }
             else
                 addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !item.Children.Select(x => x.Title).Any(q => q == p.Title)).ToList());
         }
@@ -722,7 +725,7 @@ public class HighchartsGenerator
             if (child.ReturnType == "Array" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
-            if (child.HasChildren)
+            if (child.Children.Any())
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
@@ -743,26 +746,19 @@ public class HighchartsGenerator
         }
     }
 
-    private void GenerateClassesForLevel(IList<ApiItem> items)
+    private void GenerateClassesForLevel(IList<ApiItem> items, int level = 0)
     {
+        Console.WriteLine("level = " + level);
+        
+
         foreach (ApiItem item in items)
         {
-            //if (item.FullName.ToLower().Contains("boxplot") || item.Title.ToLower().Contains("boxplot"))
-            //{
-            //    if (item.FullName.ToLower().Contains("datalabels") || item.Title.ToLower().Contains("datalabels"))
-            //    {
-            //        item.IsParent = true;
-            //    }
-            //}
-
-            //if (item.Parents.Count == level && item.IsParent)
-            //{
-            if (item.HasChildren)
+            if (item.Children.Any() || item.Extends.Any())
             {
                 var children = GetChildren(item);
 
                 GenerateClass(item, children);
-                GenerateClassesForLevel(children);
+                GenerateClassesForLevel(children, level + 1);
             }
             //}
         }
@@ -1211,7 +1207,7 @@ public class HighchartsGenerator
         if (item.FullName.ToLower().Contains("levels.datalabels"))
             item.FullName = item.FullName.Replace("levels.", "");
 
-        if (item.HasChildren)
+        if (item.Children.Any())
             return String.Format("new {0}()", GetClassNameFromItem(item));
         //else
         //    return item.Defaults;

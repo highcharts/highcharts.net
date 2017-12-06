@@ -21,8 +21,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Levels = Levels_DefaultValue = "";
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";

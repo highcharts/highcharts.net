@@ -21,8 +21,8 @@ namespace Highsoft.Web.Mvc.Charts
 			SizeBy = SizeBy_DefaultValue = "area";
 			Tooltip = Tooltip_DefaultValue = "";
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Clip = Clip_DefaultValue = False;
 			DataLabels = DataLabels_DefaultValue = "";
-			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = True;
 			Size = Size_DefaultValue = "";
 			ShowInLegend = ShowInLegend_DefaultValue = False;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;

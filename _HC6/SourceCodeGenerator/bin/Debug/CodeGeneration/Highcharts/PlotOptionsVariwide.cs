@@ -17,8 +17,8 @@ namespace Highsoft.Web.Mvc.Charts
 			PointPadding = PointPadding_DefaultValue = 0;
 			GroupPadding = GroupPadding_DefaultValue = 0;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
@@ -50,7 +50,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			Marker = Marker_DefaultValue = true;
+			Marker = Marker_DefaultValue = "";
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			PointRange = PointRange_DefaultValue = null;
@@ -511,7 +511,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
-			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
+			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			
 
 			return h;

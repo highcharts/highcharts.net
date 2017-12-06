@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Charts
 			States = States_DefaultValue = "";
 			Tooltip = Tooltip_DefaultValue = "";
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Selected = Selected_DefaultValue = false;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Marker = Marker_DefaultValue = true;
+			Marker = Marker_DefaultValue = "";
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			StickyTracking = StickyTracking_DefaultValue = False;
 			Colors = Colors_DefaultValue = new List<string>();
@@ -336,7 +336,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
+			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			
 
 			return h;

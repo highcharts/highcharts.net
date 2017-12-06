@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsBarStatesHover()
 		{
 			Brightness = Brightness_DefaultValue = 0.1;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			BorderColor = BorderColor_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
@@ -29,13 +28,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Brightness { get; set; }
 		private double? Brightness_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -71,7 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);

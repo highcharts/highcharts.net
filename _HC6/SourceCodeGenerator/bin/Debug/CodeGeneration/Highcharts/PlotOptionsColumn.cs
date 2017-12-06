@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsColumn()
 		{
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			Crisp = Crisp_DefaultValue = true;
+			Crisp = Crisp_DefaultValue = True;
 			GroupPadding = GroupPadding_DefaultValue = 0.2;
-			Marker = Marker_DefaultValue = true;
+			Marker = Marker_DefaultValue = "";
 			PointPadding = PointPadding_DefaultValue = 0.1;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			CropThreshold = CropThreshold_DefaultValue = 50;
@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
@@ -523,7 +523,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
-			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
+			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);

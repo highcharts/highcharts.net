@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			BaseSeries = BaseSeries_DefaultValue = null;
 			Data = Data_DefaultValue = new List<SeriesBellcurveData>();
-			Sunburst = Sunburst_DefaultValue = "";
-			Wordcloud = Wordcloud_DefaultValue = "";
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -29,8 +27,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ZIndex = ZIndex_DefaultValue = null;
 			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
@@ -67,7 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Linecap = Linecap_DefaultValue = "round";
-			SoftThreshold = SoftThreshold_DefaultValue = false;
+			SoftThreshold = SoftThreshold_DefaultValue = False;
 			Threshold = Threshold_DefaultValue = 0;
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = null;
@@ -93,20 +91,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<SeriesBellcurveData> Data { get; set; }
 		private List<SeriesBellcurveData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A `sunburst` series. If the [type](#series.sunburst.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.sunburst](#plotOptions.sunburst).
-		/// </summary>
-		public BellcurveSeriesSunburst Sunburst { get; set; }
-		private BellcurveSeriesSunburst Sunburst_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A `wordcloud` series. If the [type](#series.wordcloud.type) option isnot specified, it is inherited from [chart.type](#chart.type).For options that apply to multiple series, it is recommended to addthem to the [plotOptions.series](#plotOptions.series) options structure.To apply to all series of this specific type, apply it to [plotOptions.wordcloud](#plotOptions.wordcloud).
-		/// </summary>
-		public BellcurveSeriesWordcloud Wordcloud { get; set; }
-		private BellcurveSeriesWordcloud Wordcloud_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -528,8 +512,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
 			if (Data.Any()) h.Add("data",HashifyList(Data));
-			if (Sunburst.IsDirty()) h.Add("sunburst",Sunburst.ToHashtable());
-			if (Wordcloud.IsDirty()) h.Add("wordcloud",Wordcloud.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);

@@ -20,13 +20,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Tooltip = Tooltip_DefaultValue = "";
 			VectorLength = VectorLength_DefaultValue = 20;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			DataLabels = DataLabels_DefaultValue = "";
-			SoftThreshold = SoftThreshold_DefaultValue = true;
+			SoftThreshold = SoftThreshold_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";

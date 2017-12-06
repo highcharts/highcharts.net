@@ -20,8 +20,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Stacking = Stacking_DefaultValue = stream;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Linecap = Linecap_DefaultValue = "round";
-			SoftThreshold = SoftThreshold_DefaultValue = false;
+			SoftThreshold = SoftThreshold_DefaultValue = False;
 			Threshold = Threshold_DefaultValue = 0;
 			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "null";

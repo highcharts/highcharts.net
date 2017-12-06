@@ -15,15 +15,15 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsArearange()
 		{
 			LineWidth = LineWidth_DefaultValue = 1;
-			Threshold = Threshold_DefaultValue = null;
+			Threshold = Threshold_DefaultValue = "";
 			Tooltip = Tooltip_DefaultValue = "";
-			TrackByArea = TrackByArea_DefaultValue = true;
+			TrackByArea = TrackByArea_DefaultValue = True;
 			DataLabels = DataLabels_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Marker = Marker_DefaultValue = "";
@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Linecap = Linecap_DefaultValue = "round";
-			SoftThreshold = SoftThreshold_DefaultValue = false;
+			SoftThreshold = SoftThreshold_DefaultValue = False;
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "null";

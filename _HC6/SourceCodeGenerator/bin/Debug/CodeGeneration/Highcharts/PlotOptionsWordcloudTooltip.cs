@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsWordcloudTooltip()
 		{
 			FollowPointer = FollowPointer_DefaultValue = True;
+			PointFormat = PointFormat_DefaultValue = <span style="color:{point.color}">●</span> {series.name}: <b>{point.weight}</b><br/>;
 			
 		}	
 		
@@ -24,6 +25,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsWordcloudTooltipFollowPointer FollowPointer { get; set; }
 		private PlotOptionsWordcloudTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsWordcloudTooltipPointFormat PointFormat { get; set; }
+		private PlotOptionsWordcloudTooltipPointFormat PointFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
+			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

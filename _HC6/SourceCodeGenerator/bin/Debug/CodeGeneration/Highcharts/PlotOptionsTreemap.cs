@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemap()
 		{
-			ShowInLegend = ShowInLegend_DefaultValue = false;
+			ShowInLegend = ShowInLegend_DefaultValue = False;
 			DataLabels = DataLabels_DefaultValue = "";
 			Tooltip = Tooltip_DefaultValue = "";
-			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = True;
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = "sliceAndDice";
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = "vertical";
-			AlternateStartingDirection = AlternateStartingDirection_DefaultValue = false;
-			LevelIsConstant = LevelIsConstant_DefaultValue = true;
+			AlternateStartingDirection = AlternateStartingDirection_DefaultValue = False;
+			LevelIsConstant = LevelIsConstant_DefaultValue = True;
 			DrillUpButton = DrillUpButton_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#e6e6e6";
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -34,12 +34,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Levels = Levels_DefaultValue = "";
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
-			SoftThreshold = SoftThreshold_DefaultValue = true;
+			SoftThreshold = SoftThreshold_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";

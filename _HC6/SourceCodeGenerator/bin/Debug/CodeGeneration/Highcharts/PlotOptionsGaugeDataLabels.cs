@@ -39,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
+			Filter = Filter_DefaultValue = "";
 			
 		}	
 		
@@ -216,6 +217,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Shape { get; set; }
 		private string Shape_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A declarative filter for which data labels to display. Thedeclarative filter is designed for use when callback functions arenot available, like when the chart options require a pure JSONstructure or for use with graphical editors. For programmaticcontrol, use the `formatter` instead, and return `false` to disablea single data label.
+		/// </summary>
+		public PlotOptionsGaugeDataLabelsFilter Filter { get; set; }
+		private PlotOptionsGaugeDataLabelsFilter Filter_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -247,6 +255,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			
 
 			return h;

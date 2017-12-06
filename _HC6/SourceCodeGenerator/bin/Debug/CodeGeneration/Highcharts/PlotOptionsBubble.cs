@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Marker = Marker_DefaultValue = "";
 			MinSize = MinSize_DefaultValue = "8";
 			MaxSize = MaxSize_DefaultValue = "20%";
-			SoftThreshold = SoftThreshold_DefaultValue = false;
+			SoftThreshold = SoftThreshold_DefaultValue = False;
 			States = States_DefaultValue = "";
 			Tooltip = Tooltip_DefaultValue = "";
 			TurboThreshold = TurboThreshold_DefaultValue = 0;
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ZMin = ZMin_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";

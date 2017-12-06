@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","Impact},{ sans-serif"}};
 			Tooltip = Tooltip_DefaultValue = "";
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			Marker = Marker_DefaultValue = true;
+			Marker = Marker_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = False;

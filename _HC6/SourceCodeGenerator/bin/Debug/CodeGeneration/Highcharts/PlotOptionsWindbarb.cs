@@ -21,8 +21,8 @@ namespace Highsoft.Web.Mvc.Charts
 			VectorLength = VectorLength_DefaultValue = 20;
 			YOffset = YOffset_DefaultValue = -20;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			ShowCheckbox = ShowCheckbox_DefaultValue = False;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
@@ -52,7 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			Crisp = Crisp_DefaultValue = true;
+			Crisp = Crisp_DefaultValue = True;
 			GroupPadding = GroupPadding_DefaultValue = 0.2;
 			PointPadding = PointPadding_DefaultValue = 0.1;
 			MinPointLength = MinPointLength_DefaultValue = 0;
