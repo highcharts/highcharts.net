@@ -92,7 +92,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A histogram is a column series which represents the distribution of the dataset in the base series. Histogram splits data into bins and shows their frequencies.
+		/// A histogram is a column series which represents the distribution of the dataset in the base series. Histogram splits data into bins and shows theirfrequencies.
 		/// </summary>
 		public PlotOptionsHistogram Histogram { get; set; }
 		private PlotOptionsHistogram Histogram_DefaultValue { get; set; }

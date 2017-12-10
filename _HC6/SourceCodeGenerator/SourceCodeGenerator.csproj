@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiItem.cs" />
+    <Compile Include="Services\FilterService.cs" />
     <Content Include="CodeAddOns\Animation.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

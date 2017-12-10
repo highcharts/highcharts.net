@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// Options for the hovered point. These settings override the normalstate options when a point is moused over or touched.
 		/// </summary>
 		public PlotOptionsColumnStatesHover Hover { get; set; }
 		private PlotOptionsColumnStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Options for the selected point. These settings override the normalstate options when a point is selected.
 		/// </summary>
 		public PlotOptionsColumnStatesSelect Select { get; set; }
 		private PlotOptionsColumnStatesSelect Select_DefaultValue { get; set; }

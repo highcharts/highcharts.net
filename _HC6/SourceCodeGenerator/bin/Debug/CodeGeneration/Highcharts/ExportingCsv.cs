@@ -16,7 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ColumnHeaderFormatter = ColumnHeaderFormatter_DefaultValue = "";
 			DateFormat = DateFormat_DefaultValue = %Y-%m-%d %H:%M:%S;
-			ItemDelimiter = ItemDelimiter_DefaultValue = ,;
+			DecimalPoint = DecimalPoint_DefaultValue = "";
+			ItemDelimiter = ItemDelimiter_DefaultValue = "";
 			LineDelimiter = LineDelimiter_DefaultValue = "";
 			
 		}	
@@ -37,10 +38,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The item delimiter in the exported data. Use `;` for directexporting to Excel.
+		/// Which decimal point to use for exported CSV. Defaults to the sameas the browser locale, typically `.` (English) or `,` (German,French etc).
 		/// </summary>
-		public ExportingCsvItemDelimiter ItemDelimiter { get; set; }
-		private ExportingCsvItemDelimiter ItemDelimiter_DefaultValue { get; set; }
+		public string DecimalPoint { get; set; }
+		private string DecimalPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The item delimiter in the exported data. Use `;` for directexporting to Excel. Defaults to a best guess based on the browserlocale. If the locale _decimal point_ is `,`, the `itemDelimiter`defaults to `;`, otherwise the `itemDelimiter` defaults to `,`.
+		/// </summary>
+		public string ItemDelimiter { get; set; }
+		private string ItemDelimiter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -56,6 +64,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (ColumnHeaderFormatter != ColumnHeaderFormatter_DefaultValue) h.Add("columnHeaderFormatter",ColumnHeaderFormatter);
 			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
+			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
 			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);
 			if (LineDelimiter != LineDelimiter_DefaultValue) h.Add("lineDelimiter",LineDelimiter);
 			

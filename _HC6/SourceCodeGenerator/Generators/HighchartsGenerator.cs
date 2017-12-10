@@ -1084,11 +1084,11 @@ public class HighchartsGenerator
 
         if (_propertyInitMappings[item.FullName] != null)
         {
-            defaults = _propertyInitMappings[item.FullName].ToString();
+            return _propertyInitMappings[item.FullName].ToString();
         }
         else if (_propertyInitMappings[item.Title] != null)
         {
-            defaults = _propertyInitMappings[item.Title].ToString();
+            return _propertyInitMappings[item.Title].ToString();
         }
 
         if (item.Values != null && item.Values.Any())

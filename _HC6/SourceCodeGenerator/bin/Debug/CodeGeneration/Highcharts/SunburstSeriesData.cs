@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public SunburstSeriesData()
 		{
 			Value = Value_DefaultValue = null;
+			Sliced = Sliced_DefaultValue = false;
 			Name = Name_DefaultValue = "undefined";
 			Weight = Weight_DefaultValue = null;
 			Drilldown = Drilldown_DefaultValue = "";
@@ -39,6 +40,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Value { get; set; }
 		private double? Value_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to display a slice offset from the center.
+		/// </summary>
+		public bool? Sliced { get; set; }
+		private bool? Sliced_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -151,6 +159,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Value != Value_DefaultValue) h.Add("value",Value);
+			if (Sliced != Sliced_DefaultValue) h.Add("sliced",Sliced);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);

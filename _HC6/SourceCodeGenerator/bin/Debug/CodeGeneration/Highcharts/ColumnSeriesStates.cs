@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
-			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
+			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
+			if (Select != Select_DefaultValue) h.Add("select",Select);
 			
 
 			return h;

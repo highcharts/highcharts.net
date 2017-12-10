@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
-			XAxis = XAxis_DefaultValue = null;
-			YAxis = YAxis_DefaultValue = null;
+			XAxis = XAxis_DefaultValue = new List<XAxis>();
+			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			
 		}	
 		

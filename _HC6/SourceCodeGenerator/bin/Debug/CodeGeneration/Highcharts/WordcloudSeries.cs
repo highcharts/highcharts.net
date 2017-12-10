@@ -15,6 +15,15 @@ namespace Highsoft.Web.Mvc.Charts
 		public WordcloudSeries()
 		{
 			Data = Data_DefaultValue = new List<SeriesWordcloudData>();
+			Id = Id_DefaultValue = "";
+			Index = Index_DefaultValue = null;
+			LegendIndex = LegendIndex_DefaultValue = null;
+			Name = Name_DefaultValue = "";
+			Stack = Stack_DefaultValue = "null";
+			Type = Type_DefaultValue = "";
+			XAxis = XAxis_DefaultValue = new List<XAxis>();
+			YAxis = YAxis_DefaultValue = new List<YAxis>();
+			ZIndex = ZIndex_DefaultValue = null;
 			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = False;
 			Events = Events_DefaultValue = "";
@@ -35,7 +44,6 @@ namespace Highsoft.Web.Mvc.Charts
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			Marker = Marker_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = False;
@@ -50,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Rotation = Rotation_DefaultValue = "";
 			ShowInLegend = ShowInLegend_DefaultValue = False;
 			Spiral = Spiral_DefaultValue = rectangular;
-			Style = Style_DefaultValue = new Hashtable{{"fontFamily","Impact},{ sans-serif"}};
+			Style = Style_DefaultValue = new Hashtable{{"fontFamily","sans-serif"},{ "fontWeight", "900"}};
 			Tooltip = Tooltip_DefaultValue = "";
 			
 		}	
@@ -61,6 +69,69 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<SeriesWordcloudData> Data { get; set; }
 		private List<SeriesWordcloudData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
+		/// </summary>
+		public string Id { get; set; }
+		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The index of the series in the chart, affecting the internal indexin the `chart.series` array, the visible Z index as well as the orderin the legend.
+		/// </summary>
+		public double? Index { get; set; }
+		private double? Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The sequential index of the series in the legend.
+		/// </summary>
+		public double? LegendIndex { get; set; }
+		private double? LegendIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of the series as shown in the legend, tooltip etc.
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option allows grouping series in a stacked chart. The stackoption can be a string or a number or anything else, as long as thegrouped series' stack options match each other.
+		/// </summary>
+		public string Stack { get; set; }
+		private string Stack_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The type of series, for example `line` or `column`.
+		/// </summary>
+		public string Type { get; set; }
+		private string Type_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
+		/// </summary>
+		public string XAxis { get; set; }
+		private string XAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
+		/// </summary>
+		public string YAxis { get; set; }
+		private string YAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Define the visual z index of the series.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -204,13 +275,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to group non-stacked columns or to let them render independentof each other. Non-grouped columns will be laid out individuallyand overlap each other.
-		/// </summary>
-		public bool? Marker { get; set; }
-		private bool? Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series. .
 		/// </summary>
 		public double? CropThreshold { get; set; }
@@ -327,6 +391,15 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
+			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
+			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
@@ -347,7 +420,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);

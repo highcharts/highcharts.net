@@ -14,24 +14,24 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsHistogramStatesSelect()
 		{
-			Color = Color_DefaultValue = #cccccc;
-			BorderColor = BorderColor_DefaultValue = #000000;
+			Color = Color_DefaultValue = "#cccccc";
+			BorderColor = BorderColor_DefaultValue = "#000000";
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// A specific color for the selected point.
 		/// </summary>
-		public PlotOptionsHistogramStatesSelectColor Color { get; set; }
-		private PlotOptionsHistogramStatesSelectColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// A specific border color for the selected point.
 		/// </summary>
-		public PlotOptionsHistogramStatesSelectBorderColor BorderColor { get; set; }
-		private PlotOptionsHistogramStatesSelectBorderColor BorderColor_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

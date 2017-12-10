@@ -43,6 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
+			Pane = Pane_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = false;
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
@@ -276,6 +277,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Refers to the index in the [panes](#panes) array. Used for circulargauges and polar charts. When the option is not set then first panewill be used.
+		/// </summary>
+		public double? Pane { get; set; }
+		private double? Pane_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to reverse the axis so that the highest number is closestto the origin. If the chart is inverted, the x axis is reversed bydefault.
 		/// </summary>
 		public bool? Reversed { get; set; }
@@ -483,6 +491,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);
 			if (MinTickInterval != MinTickInterval_DefaultValue) h.Add("minTickInterval",MinTickInterval);
+			if (Pane != Pane_DefaultValue) h.Add("pane",Pane);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);

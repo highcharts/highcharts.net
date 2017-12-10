@@ -14,16 +14,24 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWordcloudStyle()
 		{
-			FontFamily = FontFamily_DefaultValue = Impact, sans-serif;
+			FontFamily = FontFamily_DefaultValue = sans-serif;
+			FontWeight = FontWeight_DefaultValue = 900;
 			
 		}	
 		
 
 		/// <summary>
-		/// The font family to use for the word cloud.
+		/// 
 		/// </summary>
 		public PlotOptionsWordcloudStyleFontFamily FontFamily { get; set; }
 		private PlotOptionsWordcloudStyleFontFamily FontFamily_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsWordcloudStyleFontWeight FontWeight { get; set; }
+		private PlotOptionsWordcloudStyleFontWeight FontWeight_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (FontFamily != FontFamily_DefaultValue) h.Add("fontFamily",FontFamily);
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
 			
 
 			return h;

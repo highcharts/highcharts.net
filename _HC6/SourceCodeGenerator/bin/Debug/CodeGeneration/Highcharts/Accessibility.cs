@@ -14,9 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Accessibility()
 		{
-			KeyboardNavigation = KeyboardNavigation_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = True;
-			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = 30;
+			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = False;
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
 			OnTableAnchorClick = OnTableAnchorClick_DefaultValue = "";
 			PointDateFormat = PointDateFormat_DefaultValue = "";
@@ -27,13 +26,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public AccessibilityKeyboardNavigation KeyboardNavigation { get; set; }
-		private AccessibilityKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Enable accessibility features for the chart.
@@ -102,7 +94,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue) h.Add("pointDescriptionThreshold",PointDescriptionThreshold);
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);

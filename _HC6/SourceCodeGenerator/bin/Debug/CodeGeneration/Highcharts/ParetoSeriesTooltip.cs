@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A string to append to the tooltip format.
 		/// </summary>
-		public string FooterFormat { get; set; }
-		private string FooterFormat_DefaultValue { get; set; }
+		public ParetoSeriesTooltipFooterFormat FooterFormat { get; set; }
+		private ParetoSeriesTooltipFooterFormat FooterFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>

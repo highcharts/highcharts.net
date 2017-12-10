@@ -20,17 +20,18 @@ namespace Highsoft.Web.Mvc.Charts
 			Annotations = Annotations_DefaultValue = new List<Annotations>();
 			Boost = Boost_DefaultValue = "";
 			Data = Data_DefaultValue = new Data();
-			YAxis = YAxis_DefaultValue = "";
+			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			Lang = Lang_DefaultValue = "";
 			Drilldown = Drilldown_DefaultValue = "";
 			Chart = Chart_DefaultValue = "";
 			Exporting = Exporting_DefaultValue = "";
 			Navigation = Navigation_DefaultValue = "";
+			KeyboardNavigation = KeyboardNavigation_DefaultValue = "";
 			Legend = Legend_DefaultValue = "";
-			Accessibility = Accessibility_DefaultValue = "";
 			NoData = NoData_DefaultValue = "";
 			Global = Global_DefaultValue = "";
-			XAxis = XAxis_DefaultValue = "";
+			Accessibility = Accessibility_DefaultValue = "";
+			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			Colors = Colors_DefaultValue = new List<string>();
 			Title = Title_DefaultValue = "";
 			Subtitle = Subtitle_DefaultValue = "";
@@ -75,7 +76,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the Boost module. The Boost module allows certain series typesto be rendered by WebGL instead of the default SVG. This allows hundreds ofthousands of data points to be rendered in milliseconds. In addition to theWebGL rendering it saves time by skipping processing and inspection of thedata wherever possible.In addition to the global `boost` option, each series has a[boostThreshold](#plotOptions.series.boostThreshold) that defines when theboost should kick in.Requires the `modules/boost.js` module.
+		/// Options for the Boost module. The Boost module allows certain series typesto be rendered by WebGL instead of the default SVG. This allows hundreds ofthousands of data points to be rendered in milliseconds. In addition to theWebGL rendering it saves time by skipping processing and inspection of thedata wherever possible. This introduces some limitations to what features areavailable in Boost mode. See [the docs](https://www.highcharts.com/docs/advanced-chart-features/boost-module)for details.In addition to the global `boost` option, each series has a[boostThreshold](#plotOptions.series.boostThreshold) that defines when theboost should kick in.Requires the `modules/boost.js` module.
 		/// </summary>
 		public HighchartsBoost Boost { get; set; }
 		private HighchartsBoost Boost_DefaultValue { get; set; }
@@ -131,17 +132,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public HighchartsKeyboardNavigation KeyboardNavigation { get; set; }
+		private HighchartsKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The legend is a box containing a symbol and name for each seriesitem or point item in the chart. Each series (or points in caseof pie charts) is represented by a symbol and its name in the legend. It is possible to override the symbol creator function andcreate [custom legend symbols](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/studies/legend-custom-symbol/).
 		/// </summary>
 		public HighchartsLegend Legend { get; set; }
 		private HighchartsLegend Legend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for configuring accessibility for the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
-		/// </summary>
-		public HighchartsAccessibility Accessibility { get; set; }
-		private HighchartsAccessibility Accessibility_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -156,6 +157,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public HighchartsGlobal Global { get; set; }
 		private HighchartsGlobal Global_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for configuring accessibility for the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
+		/// </summary>
+		public HighchartsAccessibility Accessibility { get; set; }
+		private HighchartsAccessibility Accessibility_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -258,10 +266,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Chart != Chart_DefaultValue) h.Add("chart",Chart);
 			if (Exporting != Exporting_DefaultValue) h.Add("exporting",Exporting);
 			if (Navigation != Navigation_DefaultValue) h.Add("navigation",Navigation);
+			if (KeyboardNavigation != KeyboardNavigation_DefaultValue) h.Add("keyboardNavigation",KeyboardNavigation);
 			if (Legend != Legend_DefaultValue) h.Add("legend",Legend);
-			if (Accessibility != Accessibility_DefaultValue) h.Add("accessibility",Accessibility);
 			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
 			if (Global != Global_DefaultValue) h.Add("global",Global);
+			if (Accessibility != Accessibility_DefaultValue) h.Add("accessibility",Accessibility);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Title != Title_DefaultValue) h.Add("title",Title);

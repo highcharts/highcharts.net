@@ -58,6 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinorTickInterval = MinorTickInterval_DefaultValue = null;
 			MinorTicks = MinorTicks_DefaultValue = false;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
+			Pane = Pane_DefaultValue = null;
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			SoftMax = SoftMax_DefaultValue = null;
@@ -382,6 +383,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Refers to the index in the [panes](#panes) array. Used for circulargauges and polar charts. When the option is not set then first panewill be used.
+		/// </summary>
+		public double? Pane { get; set; }
+		private double? Pane_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to show the last tick label. Defaults to `true` on cartesiancharts, and `false` on polar charts.
 		/// </summary>
 		public bool? ShowLastLabel { get; set; }
@@ -506,6 +514,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
+			if (Pane != Pane_DefaultValue) h.Add("pane",Pane);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);

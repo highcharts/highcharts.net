@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = "";
 			RootId = RootId_DefaultValue = "undefined";
 			LevelIsConstant = LevelIsConstant_DefaultValue = True;
+			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			Levels = Levels_DefaultValue = "";
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
 			Label = Label_DefaultValue = "";
@@ -79,6 +80,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsSunburstLevelIsConstant LevelIsConstant { get; set; }
 		private PlotOptionsSunburstLevelIsConstant LevelIsConstant_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSunburstSlicedOffset SlicedOffset { get; set; }
+		private PlotOptionsSunburstSlicedOffset SlicedOffset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -306,6 +314,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (RootId != RootId_DefaultValue) h.Add("rootId",RootId);
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
+			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (Levels.IsDirty()) h.Add("levels",Levels.ToHashtable());
 			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());

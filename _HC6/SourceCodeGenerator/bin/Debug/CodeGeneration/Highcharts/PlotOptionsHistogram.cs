@@ -52,7 +52,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Zones = Zones_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			Crisp = Crisp_DefaultValue = True;
-			Marker = Marker_DefaultValue = "";
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			PointRange = PointRange_DefaultValue = null;
@@ -77,14 +76,14 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// A preferable number of bins. It is a suggestion, so a histogram may havea different number of bins. By default it is set to the square of thebase series' data length. Available options are: `square-root`,`sturges`, `rice`. You can also define a function which takes a`baseSeries` as a parameter and should return a positive integer.
+		/// A preferable number of bins. It is a suggestion, so a histogram may havea different number of bins. By default it is set to the square rootof the base series' data length. Available options are: `square-root`,`sturges`, `rice`. You can also define a function which takes a`baseSeries` as a parameter and should return a positive integer.
 		/// </summary>
 		public string BinsNumber { get; set; }
 		private string BinsNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Width of each bin. By default the bin's width is calculated as `(max - min) / number of bins`.This option takes precedence over [binsNumber](#plotOptions.histogram.binsNumber).
+		/// Width of each bin. By default the bin's width is calculated as`(max - min) / number of bins`. This option takes precedence over[binsNumber](#plotOptions.histogram.binsNumber).
 		/// </summary>
 		public double? BinWidth { get; set; }
 		private double? BinWidth_DefaultValue { get; set; }
@@ -343,13 +342,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to group non-stacked columns or to let them render independentof each other. Non-grouped columns will be laid out individuallyand overlap each other.
-		/// </summary>
-		public bool? Marker { get; set; }
-		private bool? Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The minimal height for a column or width for a bar. By default,0 values are not shown. To visualize a 0 (or close to zero) point,set the minimal point length to a pixel value like 3\. In stackedcolumn charts, minPointLength might not be respected for tightlypacked values.
 		/// </summary>
 		public double? MinPointLength { get; set; }
@@ -528,7 +520,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
-			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);

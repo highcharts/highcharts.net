@@ -26,8 +26,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover` rule.
 		/// </summary>
-		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
+		public PlotOptionsXrangeStatesHoverBrightness Brightness { get; set; }
+		private PlotOptionsXrangeStatesHoverBrightness Brightness_DefaultValue { get; set; }
 		 
 
 		/// <summary>

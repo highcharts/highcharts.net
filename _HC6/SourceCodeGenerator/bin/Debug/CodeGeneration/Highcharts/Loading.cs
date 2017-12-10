@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Loading()
 		{
-			LabelStyle = LabelStyle_DefaultValue = new Hashtable{{ "fontWeight", "bold"},{ "position", "relative"},{ "top", "45%" }};
+			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
 			Style = Style_DefaultValue = new Hashtable{{ "position", "absolute"},{ "backgroundColor", "#ffffff"},{ "opacity", 0.5},{ "textAlign", "center" }};
 			HideDuration = HideDuration_DefaultValue = 100;
 			ShowDuration = ShowDuration_DefaultValue = 100;

@@ -10,36 +10,27 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class ColumnSeriesStatesSelect  : BaseObject
+	public partial class KeyboardNavigation  : BaseObject
 	{
-		public ColumnSeriesStatesSelect()
+		public KeyboardNavigation()
 		{
-			Color = Color_DefaultValue = #cccccc;
-			BorderColor = BorderColor_DefaultValue = #000000;
+			Mode = Mode_DefaultValue = "normal";
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// Set the keyboard navigation mode for the chart. Can be "normal"or "serialize". In normal mode, left/right arrow keys movebetween points in a series, while up/down arrow keys move betweenseries. Up/down navigation acts intelligently to figure out whichseries makes sense to move to from any given point.In "serialize" mode, points are instead navigated as a single list. Left/right behaves as in "normal" mode. Up/down arrow keyswill behave like left/right. This is useful for unifying navigation behavior with/without screen readers enabled.
 		/// </summary>
-		public ColumnSeriesStatesSelectColor Color { get; set; }
-		private ColumnSeriesStatesSelectColor Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ColumnSeriesStatesSelectBorderColor BorderColor { get; set; }
-		private ColumnSeriesStatesSelectBorderColor BorderColor_DefaultValue { get; set; }
+		public string Mode { get; set; }
+		private string Mode_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (Mode != Mode_DefaultValue) h.Add("mode",Mode);
 			
 
 			return h;

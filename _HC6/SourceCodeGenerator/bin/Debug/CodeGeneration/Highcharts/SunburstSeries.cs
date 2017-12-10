@@ -15,6 +15,14 @@ namespace Highsoft.Web.Mvc.Charts
 		public SunburstSeries()
 		{
 			Data = Data_DefaultValue = new List<SeriesSunburstData>();
+			Id = Id_DefaultValue = "";
+			Index = Index_DefaultValue = null;
+			LegendIndex = LegendIndex_DefaultValue = null;
+			Name = Name_DefaultValue = "";
+			Type = Type_DefaultValue = "";
+			XAxis = XAxis_DefaultValue = new List<XAxis>();
+			YAxis = YAxis_DefaultValue = new List<YAxis>();
+			ZIndex = ZIndex_DefaultValue = null;
 			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = False;
 			ShowCheckbox = ShowCheckbox_DefaultValue = False;
@@ -48,6 +56,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = "";
 			RootId = RootId_DefaultValue = "undefined";
 			LevelIsConstant = LevelIsConstant_DefaultValue = True;
+			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			Levels = Levels_DefaultValue = "";
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
 			
@@ -59,6 +68,62 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<SeriesSunburstData> Data { get; set; }
 		private List<SeriesSunburstData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
+		/// </summary>
+		public string Id { get; set; }
+		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The index of the series in the chart, affecting the internal indexin the `chart.series` array, the visible Z index as well as the orderin the legend.
+		/// </summary>
+		public double? Index { get; set; }
+		private double? Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The sequential index of the series in the legend.
+		/// </summary>
+		public double? LegendIndex { get; set; }
+		private double? LegendIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of the series as shown in the legend, tooltip etc.
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The type of series, for example `line` or `column`.
+		/// </summary>
+		public string Type { get; set; }
+		private string Type_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
+		/// </summary>
+		public string XAxis { get; set; }
+		private string XAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
+		/// </summary>
+		public string YAxis { get; set; }
+		private string YAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Define the visual z index of the series.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -293,6 +358,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public SunburstSeriesSlicedOffset SlicedOffset { get; set; }
+		private SunburstSeriesSlicedOffset SlicedOffset_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set options on specific levels. Takes precedence over series options,but not point options.
 		/// </summary>
 		public List<object> Levels { get; set; }
@@ -311,6 +383,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
+			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
@@ -344,6 +424,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (RootId != RootId_DefaultValue) h.Add("rootId",RootId);
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
+			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (Levels.IsDirty()) h.Add("levels",Levels.ToHashtable());
 			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
 			

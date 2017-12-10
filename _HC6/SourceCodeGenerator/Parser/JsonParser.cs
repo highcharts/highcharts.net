@@ -30,10 +30,6 @@ namespace SourceCodeGenerator.Parser
         public List<ApiItem> Get()
         {
             GetObjectFromJsonFile();
-            //ProcessObjects();
-
-
-            
             return Items.ToList();
         }
 
@@ -46,88 +42,7 @@ namespace SourceCodeGenerator.Parser
                 if (string.IsNullOrWhiteSpace(item.Name) || item.Name == "_meta")
                     continue;
 
-                //usunąć tego if'a
-                //if(item.Name == "plotOptions")
-                    CreateApiItem(item.Name, item.Value);
-            }
-        }
-
-        private void ProcessObjects()
-        {
-            int index = 0;
-            var item = Items[index];
-            bool isAnyExtendsToDo = false;
-            while (true)
-            {
-                item.Extends.Remove(item.FullName);
-
-                List<string> extendsTmpList = new List<string>(item.Extends.Select(p => string.Copy(p)));
-
-                foreach (var extends in extendsTmpList)
-                {
-                    var sourceItem = Items.Where(p => p.FullName == extends)?.FirstOrDefault();
-
-                    //it's missing or not generated yet
-                    if (sourceItem == null)
-                        continue;
-
-                    if (sourceItem.Extends.Any())
-                    {
-                        isAnyExtendsToDo = true;
-                        continue;
-                    }
-
-                    CopyObjects(item, sourceItem);
-                    item.Extends.Remove(extends);
-                }
-
-                if (index == Items.Count - 1)
-                {
-                    if(isAnyExtendsToDo)
-                    {
-                        isAnyExtendsToDo = false;
-                        index = 0;
-                        item = Items[index];
-                        continue;
-                    }
-
-                    break;
-                }
-
-                item = Items[++index];
-            }
-
-            Console.WriteLine("Items.Count = " + Items.Count);
-        }
-
-        private void CopyObjects(ApiItem item, ApiItem sourceItem)
-        {
-            var itemsToCopy = Items.Where(p => p.FullName.StartsWith(sourceItem.FullName + ".") &&
-            !item.Exclude.Any(q => 
-            {
-                var name = p.FullName.Replace(sourceItem.FullName + ".","");
-                return q == name.Split('.')[0];
-            })).ToList();
-
-            int counter = 0;
-            if (sourceItem.FullName == "series")
-            {
-                var itemsToRemove = itemsToCopy.Where(p => p.Extends.Contains("series")).ToList();
-                                
-                foreach(var removeItem in itemsToRemove)
-                    itemsToCopy.RemoveAll(p => p.FullName.StartsWith(removeItem.FullName));
-            }
-
-            foreach (var copy in itemsToCopy)
-            {
-                var newItem = copy.Clone();
-
-                newItem.ParentFullName = item.FullName;
-                newItem.FullName = item.FullName + "." + copy.FullName.Replace(sourceItem.FullName + ".", "");
-
-                Items.Add(newItem);
-
-                //Console.WriteLine(newItem.FullName);
+                CreateApiItem(item.Name, item.Value);
             }
         }
 
@@ -138,9 +53,6 @@ namespace SourceCodeGenerator.Parser
             apiItem.ParentFullName = parent?.FullName;
             apiItem.Parent = parent;
             apiItem.Title = name;
-
-            
-
 
             JToken doclet = item.SelectToken("doclet", false);
             if (doclet != null)
@@ -165,12 +77,7 @@ namespace SourceCodeGenerator.Parser
                 
                 JToken jExtends = doclet.SelectToken("extends", false);
                 if (jExtends != null)
-                {
                     apiItem.Extends = jExtends.Value<string>().Replace("{", "").Replace("}", "").Split(',').ToList();
-
-                    //if (apiItem.Extends.Contains("series"))
-                    //    apiItem.Extends.Remove("series");
-                }
 
                 JToken jSince = doclet.SelectToken("since", false);
                 if (jSince != null)
@@ -221,11 +128,14 @@ namespace SourceCodeGenerator.Parser
                 else
                     apiItem.FullName = apiItem.Title;
 
+            //remove this condition if bug in json will be fixed
+            if (apiItem.FullName.StartsWith("plotOptions.column.marker"))
+                return;
+
             if (parent == null)
                 Items.Add(apiItem);
             else
                 parent.Children.Add(apiItem);
-            //Console.WriteLine(apiItem.Title + ": "+apiItem.FullName);
 
             JToken children = item.SelectToken("children", false);
             if (children == null)
