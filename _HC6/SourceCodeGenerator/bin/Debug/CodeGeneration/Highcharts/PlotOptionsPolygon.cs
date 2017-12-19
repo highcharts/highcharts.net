@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
-			Cursor = Cursor_DefaultValue = "";
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			Cursor = Cursor_DefaultValue = PlotOptionsPolygonCursor.Null;
+			DashStyle = DashStyle_DefaultValue = PlotOptionsPolygonDashStyle.Solid;
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
@@ -44,21 +44,21 @@ namespace Highsoft.Web.Mvc.Charts
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
-			PointIntervalUnit = PointIntervalUnit_DefaultValue = "";
+			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsPolygonPointIntervalUnit.Null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
-			Stacking = Stacking_DefaultValue = "null";
-			Step = Step_DefaultValue = "";
+			Stacking = Stacking_DefaultValue = PlotOptionsPolygonStacking.Null;
+			Step = Step_DefaultValue = PlotOptionsPolygonStep.Null;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = "";
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = "round";
+			Linecap = Linecap_DefaultValue = PlotOptionsPolygonLinecap.Round;
 			LineWidth = LineWidth_DefaultValue = 0;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
 			
@@ -201,15 +201,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public PlotOptionsPolygonCursor Cursor { get; set; }
+		private PlotOptionsPolygonCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A name for the dash style to use for the graph, or for some series typesthe outline of each shape. The value for the `dashStyle` include:*   Solid*   ShortDash*   ShortDot*   ShortDashDot*   ShortDashDotDot*   Dot*   Dash*   LongDash*   DashDot*   LongDashDot*   LongDashDotDot
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public PlotOptionsPolygonDashStyle DashStyle { get; set; }
+		private PlotOptionsPolygonDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -278,8 +278,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
 		/// </summary>
-		public string PointIntervalUnit { get; set; }
-		private string PointIntervalUnit_DefaultValue { get; set; }
+		public PlotOptionsPolygonPointIntervalUnit PointIntervalUnit { get; set; }
+		private PlotOptionsPolygonPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -327,15 +327,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether to stack the values of each series on top of each other.Possible values are `null` to disable, `"normal"` to stack by value or`"percent"`. When stacking is enabled, data must be sorted in ascendingX order. A special stacking option is with the streamgraph series type,where the stacking option is set to `"stream"`.
 		/// </summary>
-		public string Stacking { get; set; }
-		private string Stacking_DefaultValue { get; set; }
+		public PlotOptionsPolygonStacking Stacking { get; set; }
+		private PlotOptionsPolygonStacking Stacking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to apply steps to the line. Possible values are `left`, `center`and `right`.
 		/// </summary>
-		public string Step { get; set; }
-		private string Step_DefaultValue { get; set; }
+		public PlotOptionsPolygonStep Step { get; set; }
+		private PlotOptionsPolygonStep Step_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -376,8 +376,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
 		/// </summary>
-		public string Linecap { get; set; }
-		private string Linecap_DefaultValue { get; set; }
+		public PlotOptionsPolygonLinecap Linecap { get; set; }
+		private PlotOptionsPolygonLinecap Linecap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -417,8 +417,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
@@ -428,7 +428,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) h.Add("pointDescriptionFormatter",PointDescriptionFormatter);
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
-			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit",PointIntervalUnit);
+			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPlacement.IsDirty())
 				if (PointPlacement.Value.HasValue)
 					h.Add("pointPlacement", PointPlacement.Value);
@@ -439,14 +439,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking",Stacking);
-			if (Step != Step_DefaultValue) h.Add("step",Step);
+			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
+			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
 			

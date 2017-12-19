@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
-			Cursor = Cursor_DefaultValue = "";
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			Cursor = Cursor_DefaultValue = PlotOptionsParetoCursor.Null;
+			DashStyle = DashStyle_DefaultValue = PlotOptionsParetoDashStyle.Solid;
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = "";
 			ConnectEnds = ConnectEnds_DefaultValue = "";
-			Linecap = Linecap_DefaultValue = "round";
+			Linecap = Linecap_DefaultValue = PlotOptionsParetoLinecap.Round;
 			
 		}	
 		
@@ -188,15 +188,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public PlotOptionsParetoCursor Cursor { get; set; }
+		private PlotOptionsParetoCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A name for the dash style to use for the graph, or for some series typesthe outline of each shape. The value for the `dashStyle` include:*   Solid*   ShortDash*   ShortDot*   ShortDashDot*   ShortDashDotDot*   Dot*   Dash*   LongDash*   DashDot*   LongDashDot*   LongDashDotDot
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public PlotOptionsParetoDashStyle DashStyle { get; set; }
+		private PlotOptionsParetoDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -286,8 +286,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
 		/// </summary>
-		public string Linecap { get; set; }
-		private string Linecap_DefaultValue { get; set; }
+		public PlotOptionsParetoLinecap Linecap { get; set; }
+		private PlotOptionsParetoLinecap Linecap_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -313,8 +313,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
@@ -327,7 +327,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			
 
 			return h;

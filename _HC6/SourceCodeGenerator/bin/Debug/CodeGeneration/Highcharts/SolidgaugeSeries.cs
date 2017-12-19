@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = "";
-			Type = Type_DefaultValue = "";
+			Type = Type_DefaultValue = SolidgaugeSeriesType.Null;
 			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ZIndex = ZIndex_DefaultValue = null;
@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = "";
+			Cursor = Cursor_DefaultValue = SolidgaugeSeriesCursor.Null;
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
-			PointIntervalUnit = PointIntervalUnit_DefaultValue = "";
+			PointIntervalUnit = PointIntervalUnit_DefaultValue = SolidgaugeSeriesPointIntervalUnit.Null;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Overshoot = Overshoot_DefaultValue = 0;
 			Wrap = Wrap_DefaultValue = true;
 			ColorByPoint = ColorByPoint_DefaultValue = True;
-			Linecap = Linecap_DefaultValue = "round";
+			Linecap = Linecap_DefaultValue = SolidgaugeSeriesLinecap.Round;
 			Rounded = Rounded_DefaultValue = false;
 			Threshold = Threshold_DefaultValue = null;
 			
@@ -102,8 +102,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The type of series, for example `line` or `column`.
 		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
+		public SolidgaugeSeriesType Type { get; set; }
+		private SolidgaugeSeriesType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -214,8 +214,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public SolidgaugeSeriesCursor Cursor { get; set; }
+		private SolidgaugeSeriesCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -277,8 +277,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
 		/// </summary>
-		public string PointIntervalUnit { get; set; }
-		private string PointIntervalUnit_DefaultValue { get; set; }
+		public SolidgaugeSeriesPointIntervalUnit PointIntervalUnit { get; set; }
+		private SolidgaugeSeriesPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -368,8 +368,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether the strokes of the solid gauge should be `round` or `square`.
 		/// </summary>
-		public string Linecap { get; set; }
-		private string Linecap_DefaultValue { get; set; }
+		public SolidgaugeSeriesLinecap Linecap { get; set; }
+		private SolidgaugeSeriesLinecap Linecap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -395,7 +395,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
@@ -411,7 +411,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
@@ -420,7 +420,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) h.Add("pointDescriptionFormatter",PointDescriptionFormatter);
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
-			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit",PointIntervalUnit);
+			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
@@ -433,7 +433,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
 			if (Wrap != Wrap_DefaultValue) h.Add("wrap",Wrap);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (Rounded != Rounded_DefaultValue) h.Add("rounded",Rounded);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			

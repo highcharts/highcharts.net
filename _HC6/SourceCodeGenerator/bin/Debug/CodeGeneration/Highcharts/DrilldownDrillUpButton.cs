@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public DrilldownDrillUpButton()
 		{
 			Position = Position_DefaultValue = new Hashtable();
-			RelativeTo = RelativeTo_DefaultValue = "plotBox";
+			RelativeTo = RelativeTo_DefaultValue = DrilldownDrillUpButtonRelativeTo.PlotBox;
 			Theme = Theme_DefaultValue = "";
 			
 		}	
@@ -31,8 +31,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// What box to align the button to. Can be either `plotBox` or`spacingBox.
 		/// </summary>
-		public string RelativeTo { get; set; }
-		private string RelativeTo_DefaultValue { get; set; }
+		public DrilldownDrillUpButtonRelativeTo RelativeTo { get; set; }
+		private DrilldownDrillUpButtonRelativeTo RelativeTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Position != Position_DefaultValue) h.Add("position",Position);
-			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
+			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo", Highcharts.FirstCharacterToLower(RelativeTo.ToString()));
 			if (Theme != Theme_DefaultValue) h.Add("theme",Theme);
 			
 

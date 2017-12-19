@@ -17,14 +17,16 @@ namespace SourceCodeGenerator.Parser
     {
         private string Product { get; set; }
         private IFileService FileService { get; set; }
+        private IFilterService FilterService { get; set; }
         public IList<ApiItem> Items { get; private set; }
 
-        public JsonParser(string product, IFileService fileService)
+        public JsonParser(string product, IFileService fileService, IFilterService filterService)
         {
             Items = new List<ApiItem>();
 
             Product = product;
             FileService = fileService;
+            FilterService = filterService;
         }
 
         public List<ApiItem> Get()
@@ -74,7 +76,7 @@ namespace SourceCodeGenerator.Parser
                 JToken jDescription = doclet.SelectToken("description", false);
                 if (jDescription != null)
                     apiItem.Description = jDescription.Value<string>();
-                
+
                 JToken jExtends = doclet.SelectToken("extends", false);
                 if (jExtends != null)
                     apiItem.Extends = jExtends.Value<string>().Replace("{", "").Replace("}", "").Split(',').ToList();
@@ -94,6 +96,10 @@ namespace SourceCodeGenerator.Parser
                 JToken jExclude = doclet.SelectToken("exclude", false);
                 if (jExclude != null)
                     apiItem.Exclude = jExclude.Select(t => (string)t).ToList();
+
+                JToken jValues = doclet.SelectToken("values", false);
+                if (jValues != null)
+                    apiItem.Values = GetValues(jValues.Value<string>());
 
                 JToken jType = doclet.SelectToken("type", false);
                 if (jType != null)
@@ -128,6 +134,9 @@ namespace SourceCodeGenerator.Parser
                 else
                     apiItem.FullName = apiItem.Title;
 
+            if (FilterService.IsIgnoredValuesProperty(apiItem.FullName))
+                apiItem.Values.Clear();
+
             //remove this condition if bug in json will be fixed
             if (apiItem.FullName.StartsWith("plotOptions.column.marker"))
                 return;
@@ -151,6 +160,21 @@ namespace SourceCodeGenerator.Parser
 
                 CreateApiItem(childName, child.First, true, apiItem);
             }
+        }
+
+        public List<string> GetValues(string values)
+        {
+            List<string> result = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(values))
+                return result;
+
+            var tab = values.Remove(values.Length - 1, 1).Remove(0, 1).Replace("\"", string.Empty).Replace("\r", string.Empty).Replace("\n", string.Empty).Replace(" ", string.Empty).Replace("-", "_").Split(',');
+
+            foreach (var t in tab)
+                result.Add(t);
+
+            return result;
         }
     }
 }

@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
-			Align = Align_DefaultValue = "center";
-			VerticalAlign = VerticalAlign_DefaultValue = "middle";
+			Align = Align_DefaultValue = NoDataPositionAlign.Center;
+			VerticalAlign = VerticalAlign_DefaultValue = NoDataPositionVerticalAlign.Middle;
 			
 		}	
 		
@@ -39,15 +39,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Horizontal alignment of the label.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public NoDataPositionAlign Align { get; set; }
+		private NoDataPositionAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Vertical alignment of the label.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public NoDataPositionVerticalAlign VerticalAlign { get; set; }
+		private NoDataPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -56,8 +56,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Align != Align_DefaultValue) h.Add("align",Align);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			
 
 			return h;

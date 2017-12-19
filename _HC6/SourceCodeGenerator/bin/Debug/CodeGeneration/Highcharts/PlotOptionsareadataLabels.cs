@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsAreaDataLabels()
 		{
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = PlotOptionsAreaDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
-			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsAreaDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			Padding = Padding_DefaultValue = 5;
@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "undefined";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Inside = Inside_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = "justify";
+			Overflow = Overflow_DefaultValue = PlotOptionsAreaDataLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
@@ -47,8 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the [inside](#plotOptions.column.dataLabels.inside) option. Can be one of "left", "center"or "right".
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public PlotOptionsAreaDataLabelsAlign Align { get; set; }
+		private PlotOptionsAreaDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -68,8 +68,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public PlotOptionsAreaDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsAreaDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -187,8 +187,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle data labels that flow outside the plot area. The defaultis `justify`, which aligns them inside the plot area. For columnsand bars, this means it will be moved inside the bar. To displaydata labels outside the plot area, set `crop` to `false` and `overflow`to `"none"`.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public PlotOptionsAreaDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsAreaDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -230,10 +230,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
@@ -250,7 +250,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);

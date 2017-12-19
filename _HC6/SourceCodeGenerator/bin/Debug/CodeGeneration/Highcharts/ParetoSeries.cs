@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Stack = Stack_DefaultValue = "null";
-			Type = Type_DefaultValue = "";
+			Type = Type_DefaultValue = ParetoSeriesType.Null;
 			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ZIndex = ZIndex_DefaultValue = null;
@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
-			Cursor = Cursor_DefaultValue = "";
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			Cursor = Cursor_DefaultValue = ParetoSeriesCursor.Null;
+			DashStyle = DashStyle_DefaultValue = ParetoSeriesDashStyle.Solid;
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = "";
 			ConnectEnds = ConnectEnds_DefaultValue = "";
-			Linecap = Linecap_DefaultValue = "round";
+			Linecap = Linecap_DefaultValue = ParetoSeriesLinecap.Round;
 			ZIndex = ZIndex_DefaultValue = 3;
 			
 		}	
@@ -115,8 +115,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The type of series, for example `line` or `column`.
 		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
+		public ParetoSeriesType Type { get; set; }
+		private ParetoSeriesType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -269,15 +269,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public ParetoSeriesCursor Cursor { get; set; }
+		private ParetoSeriesCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A name for the dash style to use for the graph, or for some series typesthe outline of each shape. The value for the `dashStyle` include:*   Solid*   ShortDash*   ShortDot*   ShortDashDot*   ShortDashDotDot*   Dot*   Dash*   LongDash*   DashDot*   LongDashDot*   LongDashDotDot
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public ParetoSeriesDashStyle DashStyle { get; set; }
+		private ParetoSeriesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -367,8 +367,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
 		/// </summary>
-		public string Linecap { get; set; }
-		private string Linecap_DefaultValue { get; set; }
+		public ParetoSeriesLinecap Linecap { get; set; }
+		private ParetoSeriesLinecap Linecap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -389,7 +389,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
@@ -411,8 +411,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
@@ -425,7 +425,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 

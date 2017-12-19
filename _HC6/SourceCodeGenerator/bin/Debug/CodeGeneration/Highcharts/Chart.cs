@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TypeDescription = TypeDescription_DefaultValue = "undefined";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			ColorCount = ColorCount_DefaultValue = 10;
-			DefaultSeriesType = DefaultSeriesType_DefaultValue = "line";
+			DefaultSeriesType = DefaultSeriesType_DefaultValue = ChartDefaultSeriesType.Line;
 			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = True;
 			Spacing = Spacing_DefaultValue = new List<double> {10, 10, 15, 10};
 			ResetZoomButton = ResetZoomButton_DefaultValue = "";
@@ -38,9 +38,9 @@ namespace Highsoft.Web.Mvc.Charts
 			MarginLeft = MarginLeft_DefaultValue = null;
 			MarginRight = MarginRight_DefaultValue = null;
 			MarginTop = MarginTop_DefaultValue = null;
-			PanKey = PanKey_DefaultValue = "";
+			PanKey = PanKey_DefaultValue = ChartPanKey.Null;
 			Panning = Panning_DefaultValue = false;
-			PinchType = PinchType_DefaultValue = "null";
+			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
 			Inverted = Inverted_DefaultValue = false;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "null";
@@ -58,8 +58,8 @@ namespace Highsoft.Web.Mvc.Charts
 			SpacingRight = SpacingRight_DefaultValue = 10;
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","\"Lucida Grande\"},{ \"Lucida Sans Unicode\"},{ Verdana},{ Arial},{ Helvetica},{ sans-serif"},{"fontSize","12px"}};
-			Type = Type_DefaultValue = ChartType.Bar;
-			ZoomType = ZoomType_DefaultValue = "";
+			Type = Type_DefaultValue = ChartType.Line;
+			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
 			Options3d = Options3d_DefaultValue = "";
 			
 		}	
@@ -117,8 +117,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Alias of `type`.
 		/// </summary>
-		public string DefaultSeriesType { get; set; }
-		private string DefaultSeriesType_DefaultValue { get; set; }
+		public ChartDefaultSeriesType DefaultSeriesType { get; set; }
+		private ChartDefaultSeriesType DefaultSeriesType_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -236,8 +236,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Allows setting a key to switch between zooming and panning. Can beone of `alt`, `ctrl`, `meta` (the command key on Mac and Windowskey on Windows) or `shift`. The keys are mapped directly to the keyproperties of the click event argument (`event.altKey`, `event.ctrlKey`,`event.metaKey` and `event.shiftKey`).
 		/// </summary>
-		public string PanKey { get; set; }
-		private string PanKey_DefaultValue { get; set; }
+		public ChartPanKey PanKey { get; set; }
+		private ChartPanKey PanKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -250,8 +250,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Equivalent to [zoomType](#chart.zoomType), but for multitouch gesturesonly. By default, the `pinchType` is the same as the `zoomType` setting.However, pinching can be enabled separately in some cases, for examplein stock charts where a mouse drag pans the chart, while pinchingis enabled. When [tooltip.followTouchMove](#tooltip.followTouchMove)is true, pinchType only applies to two-finger touches.
 		/// </summary>
-		public string PinchType { get; set; }
-		private string PinchType_DefaultValue { get; set; }
+		public ChartPinchType PinchType { get; set; }
+		private ChartPinchType PinchType_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -383,8 +383,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Decides in what dimensions the user can zoom by dragging the mouse.Can be one of `x`, `y` or `xy`.
 		/// </summary>
-		public string ZoomType { get; set; }
-		private string ZoomType_DefaultValue { get; set; }
+		public ChartZoomType ZoomType { get; set; }
+		private ChartZoomType ZoomType_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -405,7 +405,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (ColorCount != ColorCount_DefaultValue) h.Add("colorCount",ColorCount);
-			if (DefaultSeriesType != DefaultSeriesType_DefaultValue) h.Add("defaultSeriesType",DefaultSeriesType);
+			if (DefaultSeriesType != DefaultSeriesType_DefaultValue) h.Add("defaultSeriesType", Highcharts.FirstCharacterToLower(DefaultSeriesType.ToString()));
 			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
 			if (Spacing != Spacing_DefaultValue) h.Add("spacing",Spacing);
 			if (ResetZoomButton.IsDirty()) h.Add("resetZoomButton",ResetZoomButton.ToHashtable());
@@ -422,9 +422,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MarginLeft != MarginLeft_DefaultValue) h.Add("marginLeft",MarginLeft);
 			if (MarginRight != MarginRight_DefaultValue) h.Add("marginRight",MarginRight);
 			if (MarginTop != MarginTop_DefaultValue) h.Add("marginTop",MarginTop);
-			if (PanKey != PanKey_DefaultValue) h.Add("panKey",PanKey);
+			if (PanKey != PanKey_DefaultValue) h.Add("panKey", Highcharts.FirstCharacterToLower(PanKey.ToString()));
 			if (Panning != Panning_DefaultValue) h.Add("panning",Panning);
-			if (PinchType != PinchType_DefaultValue) h.Add("pinchType",PinchType);
+			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", Highcharts.FirstCharacterToLower(PinchType.ToString()));
 			if (Inverted != Inverted_DefaultValue) h.Add("inverted",Inverted);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
@@ -443,7 +443,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SpacingTop != SpacingTop_DefaultValue) h.Add("spacingTop",SpacingTop);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType",ZoomType);
+			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", Highcharts.FirstCharacterToLower(ZoomType.ToString()));
 			if (Options3d.IsDirty()) h.Add("options3d",Options3d.ToHashtable());
 			
 

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Csv = Csv_DefaultValue = "";
 			ShowTable = ShowTable_DefaultValue = False;
-			Type = Type_DefaultValue = image/png;
+			Type = Type_DefaultValue = ExportingType.Imagepng;
 			Url = Url_DefaultValue = "https://export.highcharts.com/";
 			PrintMaxWidth = PrintMaxWidth_DefaultValue = 780;
 			Scale = Scale_DefaultValue = 2;
@@ -176,7 +176,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Csv.IsDirty()) h.Add("csv",Csv.ToHashtable());
 			if (ShowTable != ShowTable_DefaultValue) h.Add("showTable",ShowTable);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Url != Url_DefaultValue) h.Add("url",Url);
 			if (PrintMaxWidth != PrintMaxWidth_DefaultValue) h.Add("printMaxWidth",PrintMaxWidth);
 			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);

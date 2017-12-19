@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			SoftConnector = SoftConnector_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
-			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsVariablepieDataLabelsVerticalAlign.Bottom;
 			Y = Y_DefaultValue = 0;
 			Padding = Padding_DefaultValue = 5;
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "undefined";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Inside = Inside_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = "justify";
+			Overflow = Overflow_DefaultValue = PlotOptionsVariablepieDataLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
@@ -113,8 +113,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public PlotOptionsVariablepieDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsVariablepieDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -211,8 +211,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle data labels that flow outside the plot area. The defaultis `justify`, which aligns them inside the plot area. For columnsand bars, this means it will be moved inside the bar. To displaydata labels outside the plot area, set `crop` to `false` and `overflow`to `"none"`.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public PlotOptionsVariablepieDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsVariablepieDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -263,7 +263,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -277,7 +277,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);

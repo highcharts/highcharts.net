@@ -26,10 +26,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = true;
 			SymbolX = SymbolX_DefaultValue = 12.5;
 			SymbolY = SymbolY_DefaultValue = 10.5;
-			Align = Align_DefaultValue = "right";
+			Align = Align_DefaultValue = ExportingButtonsContextButtonAlign.Right;
 			ButtonSpacing = ButtonSpacing_DefaultValue = 3;
 			Height = Height_DefaultValue = 22;
-			VerticalAlign = VerticalAlign_DefaultValue = "top";
+			VerticalAlign = VerticalAlign_DefaultValue = ExportingButtonsContextButtonVerticalAlign.Top;
 			Text = Text_DefaultValue = "null";
 			Width = Width_DefaultValue = 24;
 			Y = Y_DefaultValue = 0;
@@ -127,8 +127,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Alignment for the buttons.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public ExportingButtonsContextButtonAlign Align { get; set; }
+		private ExportingButtonsContextButtonAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -148,8 +148,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The vertical alignment of the buttons. Can be one of "top", "middle"or "bottom".
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public ExportingButtonsContextButtonVerticalAlign VerticalAlign { get; set; }
+		private ExportingButtonsContextButtonVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -210,10 +210,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (SymbolX != SymbolX_DefaultValue) h.Add("symbolX",SymbolX);
 			if (SymbolY != SymbolY_DefaultValue) h.Add("symbolY",SymbolY);
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

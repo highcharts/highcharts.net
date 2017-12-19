@@ -414,6 +414,8 @@ public class HighchartsGenerator
             if (apiItem.Values[i] == null)
                 apiItem.Values[i] = "null";
 
+            apiItem.Values[i] = apiItem.Values[i].Replace("'", "");
+
             if (apiItem.Values[i].Contains('-'))
             {
                 var tab = apiItem.Values[i].Split('-');

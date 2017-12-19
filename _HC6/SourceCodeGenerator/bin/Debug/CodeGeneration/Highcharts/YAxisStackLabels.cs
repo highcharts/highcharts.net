@@ -18,12 +18,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = False;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = "";
-			Align = Align_DefaultValue = "";
+			Align = Align_DefaultValue = YAxisStackLabelsAlign.Left;
 			Format = Format_DefaultValue = "{total}";
 			Rotation = Rotation_DefaultValue = 0;
-			TextAlign = TextAlign_DefaultValue = "";
+			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Left;
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "";
+			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Top;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -61,8 +61,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Defines the horizontal alignment of the stack total label. Can beone of `"left"`, `"center"` or `"right"`. The default value is calculatedat runtime and depends on orientation and whether the stack is positiveor negative.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public YAxisStackLabelsAlign Align { get; set; }
+		private YAxisStackLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -82,8 +82,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The text alignment for the label. While `align` determines wherethe texts anchor point is placed with regards to the stack, `textAlign`determines how the text is aligned against its anchor point. Possiblevalues are `"left"`, `"center"` and `"right"`. The default valueis calculated at runtime and depends on orientation and whether thestack is positive or negative.
 		/// </summary>
-		public string TextAlign { get; set; }
-		private string TextAlign_DefaultValue { get; set; }
+		public YAxisStackLabelsTextAlign TextAlign { get; set; }
+		private YAxisStackLabelsTextAlign TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -96,8 +96,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Defines the vertical alignment of the stack total label. Can be oneof `"top"`, `"middle"` or `"bottom"`. The default value is calculatedat runtime and depends on orientation and whether the stack is positiveor negative.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public YAxisStackLabelsVerticalAlign VerticalAlign { get; set; }
+		private YAxisStackLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -122,12 +122,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
+			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", Highcharts.FirstCharacterToLower(TextAlign.ToString()));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

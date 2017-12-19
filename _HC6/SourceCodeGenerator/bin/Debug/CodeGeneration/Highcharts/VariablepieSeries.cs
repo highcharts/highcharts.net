@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = "";
-			Type = Type_DefaultValue = "";
+			Type = Type_DefaultValue = VariablepieSeriesType.Null;
 			ZIndex = ZIndex_DefaultValue = null;
 			Label = Label_DefaultValue = "";
 			AllowPointSelect = AllowPointSelect_DefaultValue = False;
@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = "";
+			Cursor = Cursor_DefaultValue = VariablepieSeriesCursor.Null;
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Linecap = Linecap_DefaultValue = "round";
+			Linecap = Linecap_DefaultValue = VariablepieSeriesLinecap.Round;
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Clip = Clip_DefaultValue = False;
 			DataLabels = DataLabels_DefaultValue = "";
@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxPointSize = MaxPointSize_DefaultValue = "100%";
 			ZMin = ZMin_DefaultValue = null;
 			ZMax = ZMax_DefaultValue = null;
-			SizeBy = SizeBy_DefaultValue = "area";
+			SizeBy = SizeBy_DefaultValue = VariablepieSeriesSizeBy.Area;
 			Tooltip = Tooltip_DefaultValue = "";
 			
 		}	
@@ -107,8 +107,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The type of series, for example `line` or `column`.
 		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
+		public VariablepieSeriesType Type { get; set; }
+		private VariablepieSeriesType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -170,8 +170,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public VariablepieSeriesCursor Cursor { get; set; }
+		private VariablepieSeriesCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -247,8 +247,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
 		/// </summary>
-		public string Linecap { get; set; }
-		private string Linecap_DefaultValue { get; set; }
+		public VariablepieSeriesLinecap Linecap { get; set; }
+		private VariablepieSeriesLinecap Linecap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -415,8 +415,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether the pie slice's value should be represented by the area or the radius of the slice. Can be either `area` or `radius`. Thedefault, `area`, corresponds best to the human perception of the sizeof each pie slice.
 		/// </summary>
-		public string SizeBy { get; set; }
-		private string SizeBy_DefaultValue { get; set; }
+		public VariablepieSeriesSizeBy SizeBy { get; set; }
+		private VariablepieSeriesSizeBy SizeBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -435,7 +435,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
@@ -444,7 +444,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
@@ -455,7 +455,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
@@ -479,7 +479,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MaxPointSize != MaxPointSize_DefaultValue) h.Add("maxPointSize",MaxPointSize);
 			if (ZMin != ZMin_DefaultValue) h.Add("zMin",ZMin);
 			if (ZMax != ZMax_DefaultValue) h.Add("zMax",ZMax);
-			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy",SizeBy);
+			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy", Highcharts.FirstCharacterToLower(SizeBy.ToString()));
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			
 

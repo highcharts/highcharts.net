@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PaneBackground()
 		{
-			Shape = Shape_DefaultValue = "circle";
+			Shape = Shape_DefaultValue = PaneBackgroundShape.Circle;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			BackgroundColor = BackgroundColor_DefaultValue = "";
@@ -28,8 +28,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Tha shape of the pane background. When `solid`, the backgroundis circular. When `arc`, the background extends only from the minto the max of the value axis.
 		/// </summary>
-		public string Shape { get; set; }
-		private string Shape_DefaultValue { get; set; }
+		public PaneBackgroundShape Shape { get; set; }
+		private PaneBackgroundShape Shape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -78,7 +78,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (Shape != Shape_DefaultValue) h.Add("shape", Highcharts.FirstCharacterToLower(Shape.ToString()));
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BackgroundColor.IsDirty()) h.Add("backgroundColor",BackgroundColor.ToHashtable());

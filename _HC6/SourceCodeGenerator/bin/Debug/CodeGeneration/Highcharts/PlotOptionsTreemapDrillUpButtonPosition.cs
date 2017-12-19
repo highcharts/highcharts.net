@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemapDrillUpButtonPosition()
 		{
-			Align = Align_DefaultValue = right;
+			Align = Align_DefaultValue = PlotOptionsTreemapDrillUpButtonPositionAlign.Right;
 			X = X_DefaultValue = -10;
 			Y = Y_DefaultValue = 10;
-			VerticalAlign = VerticalAlign_DefaultValue = top;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsTreemapDrillUpButtonPositionVerticalAlign.Top;
 			
 		}	
 		
@@ -54,10 +54,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			
 
 			return h;

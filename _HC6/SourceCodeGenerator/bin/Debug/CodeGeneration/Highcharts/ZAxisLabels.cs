@@ -17,13 +17,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = True;
 			Style = Style_DefaultValue = "";
 			X = X_DefaultValue = 0;
-			Align = Align_DefaultValue = "";
+			Align = Align_DefaultValue = ZAxisLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
 			Distance = Distance_DefaultValue = 15;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = "";
+			Overflow = Overflow_DefaultValue = ZAxisLabelsOverflow.Null;
 			Padding = Padding_DefaultValue = 5;
 			ReserveSpace = ReserveSpace_DefaultValue = true;
 			Rotation = Rotation_DefaultValue = 0;
@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UseHTML = UseHTML_DefaultValue = false;
 			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
-			Position3d = Position3d_DefaultValue = offset;
+			Position3d = Position3d_DefaultValue = ZAxisLabelsPosition3d.Offset;
 			Skew3d = Skew3d_DefaultValue = False;
 			
 		}	
@@ -62,8 +62,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// What part of the string the given position is anchored to.If `left`, the left side of the string is at the axis position.Can be one of `"left"`, `"center"` or `"right"`. Defaults toan intelligent guess based on which side of the chart the axisis on and the rotation of the label.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public ZAxisLabelsAlign Align { get; set; }
+		private ZAxisLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -104,8 +104,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle overflowing labels on horizontal axis. Can beundefined, `false` or `"justify"`. By default it aligns insidethe chart area. If "justify", labels will not render outsidethe plot area. If `false`, it will not be aligned at all.If there is room to move it, it will be aligned to the edge,else it will be removed.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public ZAxisLabelsOverflow Overflow { get; set; }
+		private ZAxisLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -185,13 +185,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (X != X_DefaultValue) h.Add("x",X);
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (AutoRotationLimit != AutoRotationLimit_DefaultValue) h.Add("autoRotationLimit",AutoRotationLimit);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
@@ -200,7 +200,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Position3d != Position3d_DefaultValue) h.Add("position3d",Position3d);
+			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);
 			
 

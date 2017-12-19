@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Align = Align_DefaultValue = "right";
 			X = X_DefaultValue = -10;
 			Y = Y_DefaultValue = 10;
-			VerticalAlign = VerticalAlign_DefaultValue = "top";
+			VerticalAlign = VerticalAlign_DefaultValue = ChartResetZoomButtonPositionVerticalAlign.Top;
 			
 		}	
 		
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The vertical alignment of the button.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public ChartResetZoomButtonPositionVerticalAlign VerticalAlign { get; set; }
+		private ChartResetZoomButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			
 
 			return h;

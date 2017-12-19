@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Depth = Depth_DefaultValue = 100;
 			FitToPlot = FitToPlot_DefaultValue = True;
 			ViewDistance = ViewDistance_DefaultValue = 25;
-			AxisLabelPosition = AxisLabelPosition_DefaultValue = "default";
+			AxisLabelPosition = AxisLabelPosition_DefaultValue = ChartOptions3dAxisLabelPosition.Default;
 			Frame = Frame_DefaultValue = "";
 			
 		}	
@@ -71,8 +71,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Set it to `"auto"` to automatically move the labels to the bestedge.
 		/// </summary>
-		public string AxisLabelPosition { get; set; }
-		private string AxisLabelPosition_DefaultValue { get; set; }
+		public ChartOptions3dAxisLabelPosition AxisLabelPosition { get; set; }
+		private ChartOptions3dAxisLabelPosition AxisLabelPosition_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -92,7 +92,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (FitToPlot != FitToPlot_DefaultValue) h.Add("fitToPlot",FitToPlot);
 			if (ViewDistance != ViewDistance_DefaultValue) h.Add("viewDistance",ViewDistance);
-			if (AxisLabelPosition != AxisLabelPosition_DefaultValue) h.Add("axisLabelPosition",AxisLabelPosition);
+			if (AxisLabelPosition != AxisLabelPosition_DefaultValue) h.Add("axisLabelPosition", Highcharts.FirstCharacterToLower(AxisLabelPosition.ToString()));
 			if (Frame.IsDirty()) h.Add("frame",Frame.ToHashtable());
 			
 

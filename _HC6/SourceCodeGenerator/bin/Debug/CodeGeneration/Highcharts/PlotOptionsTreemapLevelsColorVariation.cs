@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemapLevelsColorVariation()
 		{
-			Key = Key_DefaultValue = "";
+			Key = Key_DefaultValue = PlotOptionsTreemapLevelsColorVariationKey.Brightness;
 			To = To_DefaultValue = null;
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The key of a color variation. Currently supports `brightness` only.
 		/// </summary>
-		public string Key { get; set; }
-		private string Key_DefaultValue { get; set; }
+		public PlotOptionsTreemapLevelsColorVariationKey Key { get; set; }
+		private PlotOptionsTreemapLevelsColorVariationKey Key_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Key != Key_DefaultValue) h.Add("key",Key);
+			if (Key != Key_DefaultValue) h.Add("key", Highcharts.FirstCharacterToLower(Key.ToString()));
 			if (To != To_DefaultValue) h.Add("to",To);
 			
 

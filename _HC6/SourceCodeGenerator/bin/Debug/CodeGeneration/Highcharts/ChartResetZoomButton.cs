@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Theme = Theme_DefaultValue = "";
 			Position = Position_DefaultValue = new Hashtable();
-			RelativeTo = RelativeTo_DefaultValue = "plot";
+			RelativeTo = RelativeTo_DefaultValue = ChartResetZoomButtonRelativeTo.Plot;
 			
 		}	
 		
@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// What frame the button should be placed related to. Can be either`plot` or `chart`
 		/// </summary>
-		public string RelativeTo { get; set; }
-		private string RelativeTo_DefaultValue { get; set; }
+		public ChartResetZoomButtonRelativeTo RelativeTo { get; set; }
+		private ChartResetZoomButtonRelativeTo RelativeTo_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -48,7 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());
 			if (Position != Position_DefaultValue) h.Add("position",Position);
-			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
+			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo", Highcharts.FirstCharacterToLower(RelativeTo.ToString()));
 			
 
 			return h;

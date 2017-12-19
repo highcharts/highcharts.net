@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ZIndex = ZIndex_DefaultValue = 2;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = PlotOptionsSolidgaugeDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			X = X_DefaultValue = 0;
@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Inside = Inside_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = "justify";
+			Overflow = Overflow_DefaultValue = PlotOptionsSolidgaugeDataLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
@@ -110,8 +110,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the [inside](#plotOptions.column.dataLabels.inside) option. Can be one of "left", "center"or "right".
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public PlotOptionsSolidgaugeDataLabelsAlign Align { get; set; }
+		private PlotOptionsSolidgaugeDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -194,8 +194,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle data labels that flow outside the plot area. The defaultis `justify`, which aligns them inside the plot area. For columnsand bars, this means it will be moved inside the bar. To displaydata labels outside the plot area, set `crop` to `false` and `overflow`to `"none"`.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public PlotOptionsSolidgaugeDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsSolidgaugeDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -239,7 +239,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (X != X_DefaultValue) h.Add("x",X);
@@ -251,7 +251,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);

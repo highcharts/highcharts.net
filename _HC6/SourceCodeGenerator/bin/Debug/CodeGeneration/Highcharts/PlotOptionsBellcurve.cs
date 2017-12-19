@@ -29,13 +29,13 @@ namespace Highsoft.Web.Mvc.Charts
 			States = States_DefaultValue = "";
 			StickyTracking = StickyTracking_DefaultValue = True;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = "x";
+			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsBellcurveFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = "";
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			Cursor = Cursor_DefaultValue = PlotOptionsBellcurveCursor.Null;
+			DashStyle = DashStyle_DefaultValue = PlotOptionsBellcurveDashStyle.Solid;
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
@@ -56,7 +56,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Zones = Zones_DefaultValue = "";
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = "round";
+			Linecap = Linecap_DefaultValue = PlotOptionsBellcurveLinecap.Round;
 			SoftThreshold = SoftThreshold_DefaultValue = False;
 			Threshold = Threshold_DefaultValue = 0;
 			FillColor = FillColor_DefaultValue = null;
@@ -176,8 +176,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
 		/// </summary>
-		public string FindNearestPointBy { get; set; }
-		private string FindNearestPointBy_DefaultValue { get; set; }
+		public PlotOptionsBellcurveFindNearestPointBy FindNearestPointBy { get; set; }
+		private PlotOptionsBellcurveFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -211,15 +211,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public PlotOptionsBellcurveCursor Cursor { get; set; }
+		private PlotOptionsBellcurveCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A name for the dash style to use for the graph, or for some series typesthe outline of each shape. The value for the `dashStyle` include:*   Solid*   ShortDash*   ShortDot*   ShortDashDot*   ShortDashDotDot*   Dot*   Dash*   LongDash*   DashDot*   LongDashDot*   LongDashDotDot
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public PlotOptionsBellcurveDashStyle DashStyle { get; set; }
+		private PlotOptionsBellcurveDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -365,8 +365,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
 		/// </summary>
-		public string Linecap { get; set; }
-		private string Linecap_DefaultValue { get; set; }
+		public PlotOptionsBellcurveLinecap Linecap { get; set; }
+		private PlotOptionsBellcurveLinecap Linecap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -437,13 +437,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
+			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
@@ -468,7 +468,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);

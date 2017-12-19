@@ -16,9 +16,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Defer = Defer_DefaultValue = True;
 			Style = Style_DefaultValue = "";
-			RotationMode = RotationMode_DefaultValue = perpendicular;
+			RotationMode = RotationMode_DefaultValue = SunburstSeriesDataLabelsRotationMode.Perpendicular;
 			Formatter = Formatter_DefaultValue = "";
-			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
+			VerticalAlign = VerticalAlign_DefaultValue = SunburstSeriesDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			Padding = Padding_DefaultValue = 5;
@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "undefined";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Inside = Inside_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = "justify";
+			Overflow = Overflow_DefaultValue = SunburstSeriesDataLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
@@ -74,8 +74,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public SunburstSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private SunburstSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -179,8 +179,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle data labels that flow outside the plot area. The defaultis `justify`, which aligns them inside the plot area. For columnsand bars, this means it will be moved inside the bar. To displaydata labels outside the plot area, set `crop` to `false` and `overflow`to `"none"`.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public SunburstSeriesDataLabelsOverflow Overflow { get; set; }
+		private SunburstSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -224,9 +224,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode",RotationMode);
+			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode", Highcharts.FirstCharacterToLower(RotationMode.ToString()));
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
@@ -241,7 +241,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);

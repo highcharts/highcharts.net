@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "#cccccc";
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			DashStyle = DashStyle_DefaultValue = YAxisCrosshairDashStyle.Solid;
 			Snap = Snap_DefaultValue = true;
 			Width = Width_DefaultValue = 1;
 			ZIndex = ZIndex_DefaultValue = 2;
@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The dash style for the crosshair. See[series.dashStyle](#plotOptions.series.dashStyle)for possible values.
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public YAxisCrosshairDashStyle DashStyle { get; set; }
+		private YAxisCrosshairDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

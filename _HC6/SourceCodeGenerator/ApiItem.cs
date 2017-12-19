@@ -113,7 +113,7 @@ public class ApiItem
         item.ReturnType = string.IsNullOrWhiteSpace(ReturnType) ? string.Empty : string.Copy(ReturnType);
         item.Description = string.IsNullOrWhiteSpace(Description) ? string.Empty : string.Copy(Description);
         item.Defaults = string.IsNullOrWhiteSpace(Defaults) ? string.Empty : string.Copy(Defaults);
-        item.Values = new List<string>(Values.Select(p => string.Copy(p)));
+        item.Values = new List<string>(Values.Where(q => q != null).Select(p => string.Copy(p)));
         item.Deprecated = Deprecated;
         item.Products = new List<string>(Products.Select(p => string.Copy(p)));
         item.Types = new List<string>(Types.Select(p => string.Copy(p)));

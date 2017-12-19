@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsHistogram()
 		{
-			BinsNumber = BinsNumber_DefaultValue = "square-root";
+			BinsNumber = BinsNumber_DefaultValue = PlotOptionsHistogramBinsNumber.SquareRoot;
 			BinWidth = BinWidth_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = 0;
 			GroupPadding = GroupPadding_DefaultValue = 0;
@@ -28,12 +28,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = "x";
+			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsHistogramFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = "";
+			Cursor = Cursor_DefaultValue = PlotOptionsHistogramCursor.Null;
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A preferable number of bins. It is a suggestion, so a histogram may havea different number of bins. By default it is set to the square rootof the base series' data length. Available options are: `square-root`,`sturges`, `rice`. You can also define a function which takes a`baseSeries` as a parameter and should return a positive integer.
 		/// </summary>
-		public string BinsNumber { get; set; }
-		private string BinsNumber_DefaultValue { get; set; }
+		public PlotOptionsHistogramBinsNumber BinsNumber { get; set; }
+		private PlotOptionsHistogramBinsNumber BinsNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -176,8 +176,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
 		/// </summary>
-		public string FindNearestPointBy { get; set; }
-		private string FindNearestPointBy_DefaultValue { get; set; }
+		public PlotOptionsHistogramFindNearestPointBy FindNearestPointBy { get; set; }
+		private PlotOptionsHistogramFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -211,8 +211,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public PlotOptionsHistogramCursor Cursor { get; set; }
+		private PlotOptionsHistogramCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -478,7 +478,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (BinsNumber != BinsNumber_DefaultValue) h.Add("binsNumber",BinsNumber);
+			if (BinsNumber != BinsNumber_DefaultValue) h.Add("binsNumber", Highcharts.FirstCharacterToLower(BinsNumber.ToString()));
 			if (BinWidth != BinWidth_DefaultValue) h.Add("binWidth",BinWidth);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
@@ -496,12 +496,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
+			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);

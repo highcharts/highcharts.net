@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Min = Min_DefaultValue = "";
 			Max = Max_DefaultValue = "";
 			Angle = Angle_DefaultValue = 0;
-			GridLineInterpolation = GridLineInterpolation_DefaultValue = "null";
+			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
 			MaxColor = MaxColor_DefaultValue = "#003399";
 			MinColor = MinColor_DefaultValue = "#e6ebf5";
 			ReversedStacks = ReversedStacks_DefaultValue = true;
@@ -41,12 +41,12 @@ namespace Highsoft.Web.Mvc.Charts
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
-			MinorTickPosition = MinorTickPosition_DefaultValue = outside;
+			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			TickLength = TickLength_DefaultValue = 10;
-			TickmarkPlacement = TickmarkPlacement_DefaultValue = between;
-			TickPosition = TickPosition_DefaultValue = outside;
-			Type = Type_DefaultValue = linear;
+			TickmarkPlacement = TickmarkPlacement_DefaultValue = YAxisTickmarkPlacement.Between;
+			TickPosition = TickPosition_DefaultValue = YAxisTickPosition.Outside;
+			Type = Type_DefaultValue = YAxisType.Linear;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
@@ -62,12 +62,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = "";
 			Floor = Floor_DefaultValue = null;
-			GridLineDashStyle = GridLineDashStyle_DefaultValue = "Solid";
+			GridLineDashStyle = GridLineDashStyle_DefaultValue = YAxisGridLineDashStyle.Solid;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Id = Id_DefaultValue = "null";
 			LinkedTo = LinkedTo_DefaultValue = null;
 			MaxZoom = MaxZoom_DefaultValue = null;
-			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = "Solid";
+			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = YAxisMinorGridLineDashStyle.Solid;
 			MinorTickInterval = MinorTickInterval_DefaultValue = null;
 			MinorTicks = MinorTicks_DefaultValue = false;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
@@ -213,8 +213,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Polar charts only. Whether the grid lines should draw as a polygonwith straight lines between categories, or as circles. Can be either`circle` or `polygon`.
 		/// </summary>
-		public string GridLineInterpolation { get; set; }
-		private string GridLineInterpolation_DefaultValue { get; set; }
+		public YAxisGridLineInterpolation GridLineInterpolation { get; set; }
+		private YAxisGridLineInterpolation GridLineInterpolation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -430,8 +430,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The dash or dot style of the grid lines. For possible values, see[this demonstration](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public string GridLineDashStyle { get; set; }
-		private string GridLineDashStyle_DefaultValue { get; set; }
+		public YAxisGridLineDashStyle GridLineDashStyle { get; set; }
+		private YAxisGridLineDashStyle GridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -465,8 +465,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The dash or dot style of the minor grid lines. For possible values,see [this demonstration](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public string MinorGridLineDashStyle { get; set; }
-		private string MinorGridLineDashStyle_DefaultValue { get; set; }
+		public YAxisMinorGridLineDashStyle MinorGridLineDashStyle { get; set; }
+		private YAxisMinorGridLineDashStyle MinorGridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -623,7 +623,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (Angle != Angle_DefaultValue) h.Add("angle",Angle);
-			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation",GridLineInterpolation);
+			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation", Highcharts.FirstCharacterToLower(GridLineInterpolation.ToString()));
 			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
 			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
@@ -633,12 +633,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
-			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition",MinorTickPosition);
+			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
 			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
-			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement",TickmarkPlacement);
-			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition",TickPosition);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
+			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highcharts.FirstCharacterToLower(TickPosition.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
 			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
@@ -654,12 +654,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
-			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle",GridLineDashStyle);
+			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle", Highcharts.FirstCharacterToLower(GridLineDashStyle.ToString()));
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxZoom != MaxZoom_DefaultValue) h.Add("maxZoom",MaxZoom);
-			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle",MinorGridLineDashStyle);
+			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle", Highcharts.FirstCharacterToLower(MinorGridLineDashStyle.ToString()));
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);

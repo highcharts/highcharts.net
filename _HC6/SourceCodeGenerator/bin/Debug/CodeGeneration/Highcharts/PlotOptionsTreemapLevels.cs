@@ -19,8 +19,8 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = "";
-			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = "";
-			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = "";
+			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLevelsLayoutAlgorithm.SliceAndDice;
+			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLevelsLayoutStartingDirection.Vertical;
 			Level = Level_DefaultValue = null;
 			
 		}	
@@ -64,15 +64,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Can set the layoutAlgorithm option on a specific level.
 		/// </summary>
-		public string LayoutAlgorithm { get; set; }
-		private string LayoutAlgorithm_DefaultValue { get; set; }
+		public PlotOptionsTreemapLevelsLayoutAlgorithm LayoutAlgorithm { get; set; }
+		private PlotOptionsTreemapLevelsLayoutAlgorithm LayoutAlgorithm_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set the layoutStartingDirection option on a specific level.
 		/// </summary>
-		public string LayoutStartingDirection { get; set; }
-		private string LayoutStartingDirection_DefaultValue { get; set; }
+		public PlotOptionsTreemapLevelsLayoutStartingDirection LayoutStartingDirection { get; set; }
+		private PlotOptionsTreemapLevelsLayoutStartingDirection LayoutStartingDirection_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -91,8 +91,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorVariation.IsDirty()) h.Add("colorVariation",ColorVariation.ToHashtable());
-			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm",LayoutAlgorithm);
-			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection",LayoutStartingDirection);
+			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
+			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
 			if (Level != Level_DefaultValue) h.Add("level",Level);
 			
 

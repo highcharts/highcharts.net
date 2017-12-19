@@ -14,12 +14,12 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColorAxisLabels()
 		{
-			Overflow = Overflow_DefaultValue = "justify";
+			Overflow = Overflow_DefaultValue = ColorAxisLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			Enabled = Enabled_DefaultValue = True;
 			Style = Style_DefaultValue = "";
 			X = X_DefaultValue = 0;
-			Align = Align_DefaultValue = "";
+			Align = Align_DefaultValue = ColorAxisLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
 			Distance = Distance_DefaultValue = 15;
@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UseHTML = UseHTML_DefaultValue = false;
 			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
-			Position3d = Position3d_DefaultValue = offset;
+			Position3d = Position3d_DefaultValue = ColorAxisLabelsPosition3d.Offset;
 			Skew3d = Skew3d_DefaultValue = False;
 			
 		}	
@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle overflowing labels on horizontal color axis. Can beundefined or "justify". If "justify", labels will not renderoutside the legend area. If there is room to move it, it will bealigned to the edge, else it will be removed.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public ColorAxisLabelsOverflow Overflow { get; set; }
+		private ColorAxisLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -76,8 +76,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// What part of the string the given position is anchored to.If `left`, the left side of the string is at the axis position.Can be one of `"left"`, `"center"` or `"right"`. Defaults toan intelligent guess based on which side of the chart the axisis on and the rotation of the label.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public ColorAxisLabelsAlign Align { get; set; }
+		private ColorAxisLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -182,12 +182,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (X != X_DefaultValue) h.Add("x",X);
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (AutoRotationLimit != AutoRotationLimit_DefaultValue) h.Add("autoRotationLimit",AutoRotationLimit);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
@@ -200,7 +200,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Position3d != Position3d_DefaultValue) h.Add("position3d",Position3d);
+			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);
 			
 

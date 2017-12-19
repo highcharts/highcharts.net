@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			HideDelay = HideDelay_DefaultValue = 500;
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
-			Shape = Shape_DefaultValue = "callout";
+			Shape = Shape_DefaultValue = TooltipShape.Callout;
 			Shared = Shared_DefaultValue = false;
 			Split = Split_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
@@ -197,8 +197,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The name of a symbol to use for the border around the tooltip.
 		/// </summary>
-		public string Shape { get; set; }
-		private string Shape_DefaultValue { get; set; }
+		public TooltipShape Shape { get; set; }
+		private TooltipShape Shape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -275,7 +275,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (PointFormatter != PointFormatter_DefaultValue) h.Add("pointFormatter",PointFormatter);
 			if (Positioner != Positioner_DefaultValue) h.Add("positioner",Positioner);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (Shape != Shape_DefaultValue) h.Add("shape", Highcharts.FirstCharacterToLower(Shape.ToString()));
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);
 			if (Split != Split_DefaultValue) h.Add("split",Split);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);

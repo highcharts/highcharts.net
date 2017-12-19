@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "null";
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			DashStyle = DashStyle_DefaultValue = ZAxisPlotLinesDashStyle.Solid;
 			Events = Events_DefaultValue = "";
 			Id = Id_DefaultValue = "null";
 			Value = Value_DefaultValue = null;
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The dashing or dot style for the plot line. For possible values see[this overview](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public ZAxisPlotLinesDashStyle DashStyle { get; set; }
+		private ZAxisPlotLinesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -96,7 +96,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Value != Value_DefaultValue) h.Add("value",Value);

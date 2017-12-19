@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = True;
-			Align = Align_DefaultValue = "center";
-			Layout = Layout_DefaultValue = "horizontal";
+			Align = Align_DefaultValue = LegendAlign.Center;
+			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
 			LabelFormatter = LabelFormatter_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#999999";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = "";
 			SquareSymbol = SquareSymbol_DefaultValue = True;
 			SymbolPadding = SymbolPadding_DefaultValue = 5;
-			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
+			VerticalAlign = VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			Title = Title_DefaultValue = "";
@@ -74,15 +74,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The horizontal alignment of the legend box within the chart area.Valid values are `left`, `center` and `right`.In the case that the legend is aligned in a corner position, the`layout` option will determine whether to place it above/belowor on the side of the plot area.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public LegendAlign Align { get; set; }
+		private LegendAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The layout of the legend items. Can be one of "horizontal" or "vertical".
 		/// </summary>
-		public string Layout { get; set; }
-		private string Layout_DefaultValue { get; set; }
+		public LegendLayout Layout { get; set; }
+		private LegendLayout Layout_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -165,8 +165,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The vertical alignment of the legend box. Can be one of `top`,`middle` or `bottom`. Vertical position can be further determinedby the `y` option.In the case that the legend is aligned in a corner position, the`layout` option will determine whether to place it above/belowor on the side of the plot area.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public LegendVerticalAlign VerticalAlign { get; set; }
+		private LegendVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -336,8 +336,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Align != Align_DefaultValue) h.Add("align",Align);
-			if (Layout != Layout_DefaultValue) h.Add("layout",Layout);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Layout != Layout_DefaultValue) h.Add("layout", Highcharts.FirstCharacterToLower(Layout.ToString()));
 			if (LabelFormatter != LabelFormatter_DefaultValue) h.Add("labelFormatter",LabelFormatter);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -349,7 +349,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ItemCheckboxStyle.IsDirty()) h.Add("itemCheckboxStyle",ItemCheckboxStyle.ToHashtable());
 			if (SquareSymbol != SquareSymbol_DefaultValue) h.Add("squareSymbol",SquareSymbol);
 			if (SymbolPadding != SymbolPadding_DefaultValue) h.Add("symbolPadding",SymbolPadding);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());

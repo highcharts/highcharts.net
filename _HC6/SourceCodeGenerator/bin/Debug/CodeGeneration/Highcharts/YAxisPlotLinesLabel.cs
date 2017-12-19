@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Text = Text_DefaultValue = "";
 			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "";
+			VerticalAlign = VerticalAlign_DefaultValue = YAxisPlotLinesLabelVerticalAlign.Top;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Vertical alignment of the label relative to the plot line. Can beone of "top", "middle" or "bottom".
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public YAxisPlotLinesLabelVerticalAlign VerticalAlign { get; set; }
+		private YAxisPlotLinesLabelVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -100,7 +100,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
