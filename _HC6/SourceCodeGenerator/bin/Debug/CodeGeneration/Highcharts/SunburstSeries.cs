@@ -358,7 +358,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// If a point is sliced, moved out from the center, how many pixelsshould it be moved?.
 		/// </summary>
 		public SunburstSeriesSlicedOffset SlicedOffset { get; set; }
 		private SunburstSeriesSlicedOffset SlicedOffset_DefaultValue { get; set; }

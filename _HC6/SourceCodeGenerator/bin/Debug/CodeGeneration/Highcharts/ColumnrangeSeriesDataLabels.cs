@@ -14,8 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColumnrangeSeriesDataLabels()
 		{
+			Align = Align_DefaultValue = ColumnrangeSeriesDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
+			VerticalAlign = VerticalAlign_DefaultValue = ColumnrangeSeriesDataLabelsVerticalAlign.Bottom;
 			Padding = Padding_DefaultValue = 5;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -36,8 +38,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Shape = Shape_DefaultValue = "square";
 			ZIndex = ZIndex_DefaultValue = 6;
 			Filter = Filter_DefaultValue = "";
-			Align = Align_DefaultValue = "";
-			VerticalAlign = VerticalAlign_DefaultValue = "";
 			XLow = XLow_DefaultValue = 0;
 			XHigh = XHigh_DefaultValue = 0;
 			YLow = YLow_DefaultValue = 0;
@@ -45,6 +45,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the [inside](#plotOptions.column.dataLabels.inside) option. Can be one of "left", "center"or "right".
+		/// </summary>
+		public ColumnrangeSeriesDataLabelsAlign Align { get; set; }
+		private ColumnrangeSeriesDataLabelsAlign Align_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Callback JavaScript function to format the data label. Note thatif a `format` is defined, the format takes precedence and the formatteris ignored. Available data are:<table><tbody><tr><td>`this.percentage`</td><td>Stacked series and pies only. The point's percentage of thetotal.</td></tr><tr><td>`this.point`</td><td>The point object. The point name, if defined, is availablethrough `this.point.name`.</td></tr><tr><td>`this.series`:</td><td>The series object. The series name is available through `this.series.name`.</td></tr><tr><td>`this.total`</td><td>Stacked series only. The total value at this point's x value.</td></tr><tr><td>`this.x`:</td><td>The x value.</td></tr><tr><td>`this.y`:</td><td>The y value.</td></tr></tbody></table>
@@ -58,6 +65,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
+		/// </summary>
+		public ColumnrangeSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private ColumnrangeSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -201,20 +215,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public ColumnrangeSeriesDataLabelsAlign Align { get; set; }
-		private ColumnrangeSeriesDataLabelsAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ColumnrangeSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private ColumnrangeSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// X offset of the lower data labels relative to the point value.
 		/// </summary>
 		public double? XLow { get; set; }
@@ -246,8 +246,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -268,8 +270,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
-			if (Align != Align_DefaultValue) h.Add("align",Align);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (XLow != XLow_DefaultValue) h.Add("xLow",XLow);
 			if (XHigh != XHigh_DefaultValue) h.Add("xHigh",XHigh);
 			if (YLow != YLow_DefaultValue) h.Add("yLow",YLow);

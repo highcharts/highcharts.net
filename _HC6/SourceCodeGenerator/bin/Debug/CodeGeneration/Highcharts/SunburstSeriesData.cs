@@ -43,7 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to display a slice offset from the center.
+		/// Whether to display a slice offset from the center. When a sunburst point is sliced, its children are also offset.
 		/// </summary>
 		public bool? Sliced { get; set; }
 		private bool? Sliced_DefaultValue { get; set; }

@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = YAxisLabelsOverflow.Null;
 			Padding = Padding_DefaultValue = 5;
-			ReserveSpace = ReserveSpace_DefaultValue = true;
+			ReserveSpace = ReserveSpace_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
@@ -123,7 +123,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to reserve space for the labels. This can be turned offwhen for example the labels are rendered inside the plot areainstead of outside.
+		/// Whether to reserve space for the labels. By default, space isreserved for the labels in these cases:* On all horizontal axes.* On vertical axes if `label.align` is `right` on a left-sideaxis or `left` on a right-side axis.* On vertical axes if `label.align` is `center`.This can be turned off when for example the labels are renderedinside the plot area instead of outside.
 		/// </summary>
 		public bool? ReserveSpace { get; set; }
 		private bool? ReserveSpace_DefaultValue { get; set; }

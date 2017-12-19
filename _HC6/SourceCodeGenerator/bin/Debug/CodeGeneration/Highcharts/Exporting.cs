@@ -16,6 +16,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Csv = Csv_DefaultValue = "";
 			ShowTable = ShowTable_DefaultValue = False;
+			UseMultiLevelHeaders = UseMultiLevelHeaders_DefaultValue = True;
+			UseRowspanHeaders = UseRowspanHeaders_DefaultValue = True;
+			TableCaption = TableCaption_DefaultValue = null;
 			Type = Type_DefaultValue = ExportingType.Imagepng;
 			Url = Url_DefaultValue = "https://export.highcharts.com/";
 			PrintMaxWidth = PrintMaxWidth_DefaultValue = 780;
@@ -49,6 +52,27 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ExportingShowTable ShowTable { get; set; }
 		private ExportingShowTable ShowTable_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Export-data module required. Use multi level headers in data table.If [csv.columnHeaderFormatter](#exporting.csv.columnHeaderFormatter)is defined, it has to return objects in order for multi level headersto work.
+		/// </summary>
+		public ExportingUseMultiLevelHeaders UseMultiLevelHeaders { get; set; }
+		private ExportingUseMultiLevelHeaders UseMultiLevelHeaders_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Export-data module required. If using multi level table headers, userowspans for headers that have only one level.
+		/// </summary>
+		public ExportingUseRowspanHeaders UseRowspanHeaders { get; set; }
+		private ExportingUseRowspanHeaders UseRowspanHeaders_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Export-data module required. Caption for the data table. Same aschart title by default. Set to `false` to disable.
+		/// </summary>
+		public bool? TableCaption { get; set; }
+		private bool? TableCaption_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -176,6 +200,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Csv.IsDirty()) h.Add("csv",Csv.ToHashtable());
 			if (ShowTable != ShowTable_DefaultValue) h.Add("showTable",ShowTable);
+			if (UseMultiLevelHeaders != UseMultiLevelHeaders_DefaultValue) h.Add("useMultiLevelHeaders",UseMultiLevelHeaders);
+			if (UseRowspanHeaders != UseRowspanHeaders_DefaultValue) h.Add("useRowspanHeaders",UseRowspanHeaders);
+			if (TableCaption != TableCaption_DefaultValue) h.Add("tableCaption",TableCaption);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Url != Url_DefaultValue) h.Add("url",Url);
 			if (PrintMaxWidth != PrintMaxWidth_DefaultValue) h.Add("printMaxWidth",PrintMaxWidth);

@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Formatter callback for the column headers. Parameters are:- `item` - The series or axis object)- `key` -  The point key, for example y or z- `keyLength` - The amount of value keys for this item, for  example a range series has the keys `low` and `high` so the  key length is 2.By default it returns the series name, followed by the key ifthere is more than one key. For the axis it returns the axistitle or "Category" or "DateTime" by default.Return `false` to use Highcharts' proposed header.
+		/// Formatter callback for the column headers. Parameters are:- `item` - The series or axis object)- `key` -  The point key, for example y or z- `keyLength` - The amount of value keys for this item, for  example a range series has the keys `low` and `high` so the  key length is 2.If [useMultiLevelHeaders](#exporting.useMultiLevelHeaders) is true, columnHeaderFormatter by default returns an object withcolumnTitle and topLevelColumnTitle for each key. Columns withthe same topLevelColumnTitle have their titles merged into a single cell with colspan for table/Excel export.If `useMultiLevelHeaders` is false, or for CSV export, it returnsthe series name, followed by the key if there is more than onekey.For the axis it returns the axis title or "Category" or"DateTime" by default.Return `false` to use Highcharts' proposed header.
 		/// </summary>
 		public string ColumnHeaderFormatter { get; set; }
 		private string ColumnHeaderFormatter_DefaultValue { get; set; }

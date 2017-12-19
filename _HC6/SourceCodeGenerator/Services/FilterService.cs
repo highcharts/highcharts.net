@@ -9,10 +9,19 @@ namespace SourceCodeGenerator.Services
     public class FilterService : IFilterService
     {
         private IList<string> IgnoreValuesForFullNames = new List<string> { "plotOptions.series.dataLabels.filter.operator" };
+        private IList<string> IgnoreItems = new List<string> { "plotOptions.arearange.dataLabels.align", "plotOptions.arearange.dataLabels.verticalAlign" };
 
-        public bool IsIgnoredValuesProperty(string fullName)
+        public bool IsValuesPropertyIgnored(string fullName)
         {
             if (IgnoreValuesForFullNames.Any(p => p == fullName))
+                return true;
+
+            return false;
+        }
+
+        public bool IsItemIgnored(string fullName)
+        {
+            if (IgnoreItems.Any(p => p == fullName))
                 return true;
 
             return false;
@@ -21,6 +30,7 @@ namespace SourceCodeGenerator.Services
 
     public interface IFilterService
     {
-        bool IsIgnoredValuesProperty(string fullName);
+        bool IsValuesPropertyIgnored(string fullName);
+        bool IsItemIgnored(string fullName);
     }
 }

@@ -134,7 +134,10 @@ namespace SourceCodeGenerator.Parser
                 else
                     apiItem.FullName = apiItem.Title;
 
-            if (FilterService.IsIgnoredValuesProperty(apiItem.FullName))
+            if (FilterService.IsItemIgnored(apiItem.FullName))
+                return;
+
+            if (FilterService.IsValuesPropertyIgnored(apiItem.FullName))
                 apiItem.Values.Clear();
 
             //remove this condition if bug in json will be fixed
