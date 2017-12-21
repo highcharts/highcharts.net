@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsErrorbarTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = <span style="color:{point.color}">●</span> {series.name}: <b>{point.low}</b> - <b>{point.high}</b><br/>;
+			PointFormat = PointFormat_DefaultValue = "";
 			
 		}	
 		

@@ -14,24 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBarDataLabels()
 		{
-			Align = Align_DefaultValue = "left";
-			X = X_DefaultValue = 5;
+			Align = Align_DefaultValue = "";
+			VerticalAlign = VerticalAlign_DefaultValue = "";
+			Y = Y_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// Alignment of the data label relative to the data point.
+		/// 
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public PlotOptionsBarDataLabelsAlign Align { get; set; }
+		private PlotOptionsBarDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The x position of the data label relative to the data point.
+		/// 
 		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
+		public PlotOptionsBarDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsBarDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsBarDataLabelsY Y { get; set; }
+		private PlotOptionsBarDataLabelsY Y_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -39,7 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align",Align);
-			if (X != X_DefaultValue) h.Add("x",X);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;

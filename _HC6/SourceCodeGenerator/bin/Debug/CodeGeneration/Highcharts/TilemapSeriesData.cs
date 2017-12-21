@@ -14,149 +14,41 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TilemapSeriesData()
 		{
-			Drilldown = Drilldown_DefaultValue = "";
-			ClassName = ClassName_DefaultValue = "";
-			ColorIndex = ColorIndex_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = "";
-			Description = Description_DefaultValue = "undefined";
-			Id = Id_DefaultValue = "null";
-			Labelrank = Labelrank_DefaultValue = null;
-			Name = Name_DefaultValue = "";
-			Selected = Selected_DefaultValue = false;
-			Events = Events_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			Value = Value_DefaultValue = null;
 			X = X_DefaultValue = double.MinValue;
 			Y = Y_DefaultValue = double.MinValue;
-			PointPadding = PointPadding_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An additional, individual class name for the data point's graphicrepresentation.
-		/// </summary>
-		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Styled mode only. A specific color index to use for the point, so itsgraphic representations are given the class name`highcharts-color-{n}`.
-		/// </summary>
-		public double? ColorIndex { get; set; }
-		private double? ColorIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels)
-		/// </summary>
-		public TilemapSeriesDataLabels DataLabels { get; set; }
-		private TilemapSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A description of the point to add to the screen reader informationabout the point. Requires the Accessibility module.
-		/// </summary>
-		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
-		/// </summary>
-		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The rank for this point's data label in case of collision. If twodata labels are about to overlap, only the one with the highest `labelrank`will be drawn.
-		/// </summary>
-		public double? Labelrank { get; set; }
-		private double? Labelrank_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the data point is selected initially.
-		/// </summary>
-		public bool? Selected { get; set; }
-		private bool? Selected_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public TilemapSeriesDataEvents Events { get; set; }
-		private TilemapSeriesDataEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the point. In heat maps the point color is rarely setexplicitly, as we use the color to denote the `value`. Options forthis are set in the [colorAxis](#colorAxis) configuration.
+		/// The color of the point. In tilemaps the point color is rarely setexplicitly, as we use the color to denote the `value`. Options forthis are set in the [colorAxis](#colorAxis) configuration.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The value of the point, resulting in a color controled by optionsas set in the [colorAxis](#colorAxis) configuration.
-		/// </summary>
-		public double? Value { get; set; }
-		private double? Value_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x value of the point. For datetime axes,the X value is the timestamp in milliseconds since 1970.
+		/// The x coordinate of the point.Note that for some [tileShapes](#plotOptions.tilemap.tileShape) the gridcoordinates are offset.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The y value of the point.
+		/// The y coordinate of the point.Note that for some [tileShapes](#plotOptions.tilemap.tileShape) the gridcoordinates are offset.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Point padding for a single point.
-		/// </summary>
-		public double? PointPadding { get; set; }
-		private double? PointPadding_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			
 
 			return h;

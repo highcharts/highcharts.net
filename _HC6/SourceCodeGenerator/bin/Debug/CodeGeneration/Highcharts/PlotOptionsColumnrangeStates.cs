@@ -15,22 +15,31 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsColumnrangeStates()
 		{
 			Hover = Hover_DefaultValue = "";
+			Select = Select_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// Options for the hovered point. These settings override the normalstate options when a point is moused over or touched.
 		/// </summary>
 		public PlotOptionsColumnrangeStatesHover Hover { get; set; }
 		private PlotOptionsColumnrangeStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the selected point. These settings override the normalstate options when a point is selected.
+		/// </summary>
+		public PlotOptionsColumnrangeStatesSelect Select { get; set; }
+		private PlotOptionsColumnrangeStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

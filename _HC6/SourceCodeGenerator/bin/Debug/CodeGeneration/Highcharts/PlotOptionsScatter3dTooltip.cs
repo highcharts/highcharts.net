@@ -14,10 +14,18 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsScatter3dTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>z: <b>{point.z}</b><br/>;
+			HeaderFormat = HeaderFormat_DefaultValue = <span class="highcharts-color-{point.colorIndex}">●</span> <span class="highcharts-header"> {series.name}</span><br/>;
+			PointFormat = PointFormat_DefaultValue = x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsScatter3dTooltipHeaderFormat HeaderFormat { get; set; }
+		private PlotOptionsScatter3dTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -30,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 

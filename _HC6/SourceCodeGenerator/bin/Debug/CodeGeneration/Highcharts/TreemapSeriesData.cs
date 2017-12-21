@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ColorValue = ColorValue_DefaultValue = null;
 			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
@@ -28,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Selected = Selected_DefaultValue = false;
 			Events = Events_DefaultValue = "";
 			Color = Color_DefaultValue = "";
+			Value = Value_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			
 		}	
@@ -66,6 +68,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual color for the point. By default the color is pulled fromthe global `colors` array.In styled mode, the `color` option doesn't take effect. Instead, use `colorIndex`.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -132,6 +141,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The value of the point, resulting in a color controled by optionsas set in the [colorAxis](#colorAxis) configuration.
+		/// </summary>
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Point padding for a single point.
 		/// </summary>
 		public double? PointPadding { get; set; }
@@ -147,6 +163,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -156,6 +173,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			
 

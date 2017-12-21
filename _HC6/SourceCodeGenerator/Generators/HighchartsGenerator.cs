@@ -276,18 +276,21 @@ public class HighchartsGenerator
 
             if (baseClass.Extends.Any())
             {
-                addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !item.Exclude.Any(q => q == p.Title) && !item.Children.Select(x => x.Title).Any(q => q == p.Title)));
+                //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
+                addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !item.Exclude.Any(q => q == p.Title) ));
             }
 
             if (baseClass.FullName == "series")
             {
-                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !item.Children.Select(x => x.Title).Any(q => q == p.Title) && !p.Extends.Any(q => q == "series")).ToList());
+                //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
+                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title)  && !p.Extends.Any(q => q == "series")).ToList());
 
                 //do usuniecią po naprawie jsona
                 addedChildren = addedChildren.Where(p => p.Title != "wordcloud" && p.Title != "sunburst").ToList();
             }
             else
-                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !item.Children.Select(x => x.Title).Any(q => q == p.Title)).ToList());
+                //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
+                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) ));
         }
 
         return addedChildren;
@@ -797,7 +800,11 @@ public class HighchartsGenerator
             {
 
                 if (item.Extends.Any())
-                    children.AddRange(GetChildrenFromBaseClasses(item));
+                {
+                    var baseChildren = GetChildrenFromBaseClasses(item);
+                    children = item.Children.Where(p => baseChildren.Any(x => x.Title != p.Title)).ToList();
+                    children.AddRange(baseChildren);
+                }
             }
         }
 

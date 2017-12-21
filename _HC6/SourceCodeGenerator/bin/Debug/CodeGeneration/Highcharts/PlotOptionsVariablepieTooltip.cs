@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVariablepieTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = <span style="color:{point.color}">●</span> {series.name}<br/>Value: {point.y}<br/>Size: {point.z}<br/>;
+			FollowPointer = FollowPointer_DefaultValue = True;
 			
 		}	
 		
@@ -22,15 +22,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsVariablepieTooltipPointFormat PointFormat { get; set; }
-		private PlotOptionsVariablepieTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public PlotOptionsVariablepieTooltipFollowPointer FollowPointer { get; set; }
+		private PlotOptionsVariablepieTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			
 
 			return h;

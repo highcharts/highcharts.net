@@ -14,24 +14,21 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPieDataLabels()
 		{
-			Distance = Distance_DefaultValue = 30;
-			Enabled = Enabled_DefaultValue = True;
+			Align = Align_DefaultValue = PlotOptionsPieDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
-			X = X_DefaultValue = 0;
-			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
-			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
-			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
-			SoftConnector = SoftConnector_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsPieDataLabelsVerticalAlign.Bottom;
+			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			Padding = Padding_DefaultValue = 5;
+			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "";
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "undefined";
@@ -48,59 +45,17 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The distance of the data label from the pie's edge. Negative numbersput the data label on top of the pie slices. Connectors are onlyshown for data labels outside the pie.
+		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the [inside](#plotOptions.column.dataLabels.inside) option. Can be one of "left", "center"or "right".
 		/// </summary>
-		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
+		public PlotOptionsPieDataLabelsAlign Align { get; set; }
+		private PlotOptionsPieDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Enable or disable the data labels.
+		/// Callback JavaScript function to format the data label. Note thatif a `format` is defined, the format takes precedence and the formatteris ignored. Available data are:<table><tbody><tr><td>`this.percentage`</td><td>Stacked series and pies only. The point's percentage of thetotal.</td></tr><tr><td>`this.point`</td><td>The point object. The point name, if defined, is availablethrough `this.point.name`.</td></tr><tr><td>`this.series`:</td><td>The series object. The series name is available through `this.series.name`.</td></tr><tr><td>`this.total`</td><td>Stacked series only. The total value at this point's x value.</td></tr><tr><td>`this.x`:</td><td>The x value.</td></tr><tr><td>`this.y`:</td><td>The y value.</td></tr></tbody></table>
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsPieDataLabelsFormatter Formatter { get; set; }
-		private PlotOptionsPieDataLabelsFormatter Formatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to render the connector as a soft arc or a line with sharpbreak.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the line connecting the data label to the pie slice.The default color is the same as the point's color.In styled mode, the connector stroke is given in the`.highcharts-data-label-connector` class.
-		/// </summary>
-		public string ConnectorColor { get; set; }
-		private string ConnectorColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The distance from the data label to the connector.
-		/// </summary>
-		public double? ConnectorPadding { get; set; }
-		private double? ConnectorPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the line connecting the data label to the pie slice.In styled mode, the connector stroke width is given in the`.highcharts-data-label-connector` class.
-		/// </summary>
-		public double? ConnectorWidth { get; set; }
-		private double? ConnectorWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to render the connector as a soft arc or a line with sharpbreak.
-		/// </summary>
-		public double? SoftConnector { get; set; }
-		private double? SoftConnector_DefaultValue { get; set; }
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,6 +73,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The x position offset of the label relative to the point.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The y position offset of the label relative to the point.
 		/// </summary>
 		public double? Y { get; set; }
@@ -129,6 +91,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Padding { get; set; }
 		private double? Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to allow data labels to overlap. To make the labels lesssensitive for overlapping, the [dataLabels.padding](#plotOptions.series.dataLabels.padding) can be set to 0.
+		/// </summary>
+		public bool? AllowOverlap { get; set; }
+		private bool? AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -171,6 +140,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Defer { get; set; }
 		private bool? Defer_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the data labels.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -254,24 +230,21 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
-			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
-			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
-			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);

@@ -33,6 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Text = Text_DefaultValue = "null";
 			Width = Width_DefaultValue = 24;
 			Y = Y_DefaultValue = 0;
+			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
 			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 3;
 			Theme = Theme_DefaultValue = "";
@@ -174,6 +175,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Fill color for the symbol within the button.
+		/// </summary>
+		public string SymbolFill { get; set; }
+		private string SymbolFill_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color of the symbol's stroke or line.
 		/// </summary>
 		public string SymbolStroke { get; set; }
@@ -217,6 +225,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (SymbolStroke != SymbolStroke_DefaultValue) h.Add("symbolStroke",SymbolStroke);
 			if (SymbolStrokeWidth != SymbolStrokeWidth_DefaultValue) h.Add("symbolStrokeWidth",SymbolStrokeWidth);
 			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());

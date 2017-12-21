@@ -14,43 +14,22 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxisTitle()
 		{
-			Rotation = Rotation_DefaultValue = 270;
-			Text = Text_DefaultValue = Values;
-			Margin = Margin_DefaultValue = null;
 			Align = Align_DefaultValue = YAxisTitleAlign.Middle;
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
 			Position3d = Position3d_DefaultValue = YAxisTitlePosition3d.Offset;
 			Skew3d = Skew3d_DefaultValue = YAxisTitleSkew3d.False;
 			Enabled = Enabled_DefaultValue = "middle";
+			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			ReserveSpace = ReserveSpace_DefaultValue = true;
+			Rotation = Rotation_DefaultValue = 0;
+			Text = Text_DefaultValue = "null";
 			UseHTML = UseHTML_DefaultValue = false;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
 		}	
 		
-
-		/// <summary>
-		/// The rotation of the text in degrees. 0 is horizontal, 270 isvertical reading from bottom to top.
-		/// </summary>
-		public YAxisTitleRotation Rotation { get; set; }
-		private YAxisTitleRotation Rotation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The actual text of the axis title. Horizontal texts can containHTML, but rotated texts are painted using vector techniques andmust be clean text. The Y axis title is disabled by setting the`text` option to `null`.
-		/// </summary>
-		public YAxisTitleText Text { get; set; }
-		private YAxisTitleText Text_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel distance between the axis labels and the title. Positivevalues are outside the axis line, negative are inside.
-		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Alignment of the title relative to the axis values. Possiblevalues are "low", "middle" or "high".
@@ -88,6 +67,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The pixel distance between the axis labels or line and the title. Defaults to 0 for horizontal axes, 10 for vertical
+		/// </summary>
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The distance of the axis title from the axis line. By default, thisdistance is computed from the offset width of the labels, the labels'distance from the axis and the title's margin. However when the offsetoption is set, it overrides all this.
 		/// </summary>
 		public double? Offset { get; set; }
@@ -99,6 +85,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? ReserveSpace { get; set; }
 		private bool? ReserveSpace_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The rotation of the text in degrees. 0 is horizontal, 270 is verticalreading from bottom to top.
+		/// </summary>
+		public double? Rotation { get; set; }
+		private double? Rotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The actual text of the axis title. It can contain basic HTML textmarkup like <b>, <i> and spans with style.
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -126,16 +126,16 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d", Highcharts.FirstCharacterToLower(Skew3d.ToString()));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
+			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
+			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

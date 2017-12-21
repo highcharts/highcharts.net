@@ -14,14 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxisLabels()
 		{
-			X = X_DefaultValue = -8;
-			Align = Align_DefaultValue = YAxisLabelsAlign.Left;
-			Distance = Distance_DefaultValue = -25;
-			Y = Y_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = True;
 			Style = Style_DefaultValue = "";
+			X = X_DefaultValue = 0;
+			Align = Align_DefaultValue = YAxisLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
+			Distance = Distance_DefaultValue = 15;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = YAxisLabelsOverflow.Null;
@@ -31,40 +30,13 @@ namespace Highsoft.Web.Mvc.Charts
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
+			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
 			Position3d = Position3d_DefaultValue = YAxisLabelsPosition3d.Offset;
 			Skew3d = Skew3d_DefaultValue = False;
 			
 		}	
 		
-
-		/// <summary>
-		/// The x position offset of the label relative to the tick positionon the axis. Defaults to -15 for left axis, 15 for right axis.
-		/// </summary>
-		public YAxisLabelsX X { get; set; }
-		private YAxisLabelsX X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// What part of the string the given position is anchored to. Canbe one of `"left"`, `"center"` or `"right"`. The exact positionalso depends on the `labels.x` setting.Angular gauges and solid gauges defaults to `center`.
-		/// </summary>
-		public YAxisLabelsAlign Align { get; set; }
-		private YAxisLabelsAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Angular gauges and solid gauges only. The label's pixel distancefrom the perimeter of the plot area.
-		/// </summary>
-		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y position offset of the label relative to the tick positionon the axis.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Enable or disable the axis labels.
@@ -81,6 +53,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The x position offset of the label relative to the tick positionon the axis.
+		/// </summary>
+		public YAxisLabelsX X { get; set; }
+		private YAxisLabelsX X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// What part of the string the given position is anchored to.If `left`, the left side of the string is at the axis position.Can be one of `"left"`, `"center"` or `"right"`. Defaults toan intelligent guess based on which side of the chart the axisis on and the rotation of the label.
+		/// </summary>
+		public YAxisLabelsAlign Align { get; set; }
+		private YAxisLabelsAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// For horizontal axes, the allowed degrees of label rotationto prevent overlapping labels. If there is enough space,labels are not rotated. As the chart gets narrower, itwill start rotating the labels -45 degrees, then removeevery second label and try again with rotations 0 and -45 etc.Set it to `false` to disable rotation, which willcause the labels to word-wrap if possible.
 		/// </summary>
 		public List<double> AutoRotation { get; set; }
@@ -92,6 +78,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? AutoRotationLimit { get; set; }
 		private double? AutoRotationLimit_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Polar charts only. The label's pixel distance from the perimeterof the plot area.
+		/// </summary>
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -158,6 +151,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The y position offset of the label relative to the tick positionon the axis. The default makes it adapt to the font size onbottom axis.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The Z index for the axis labels.
 		/// </summary>
 		public double? ZIndex { get; set; }
@@ -182,14 +182,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (AutoRotationLimit != AutoRotationLimit_DefaultValue) h.Add("autoRotationLimit",AutoRotationLimit);
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
@@ -199,6 +198,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);

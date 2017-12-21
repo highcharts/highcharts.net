@@ -15,15 +15,23 @@ namespace Highsoft.Web.Mvc.Charts
 		public BubbleSeriesMarkerStates()
 		{
 			Hover = Hover_DefaultValue = "";
+			Select = Select_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// The hover state for a single point marker.
 		/// </summary>
 		public BubbleSeriesMarkerStatesHover Hover { get; set; }
 		private BubbleSeriesMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
+		/// </summary>
+		public BubbleSeriesMarkerStatesSelect Select { get; set; }
+		private BubbleSeriesMarkerStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

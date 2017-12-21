@@ -20,16 +20,20 @@ namespace Highsoft.Web.Mvc.Charts
 			Weight = Weight_DefaultValue = null;
 			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
+			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Events = Events_DefaultValue = "";
 			Color = Color_DefaultValue = "";
+			Value = Value_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			Parent = Parent_DefaultValue = "undefined";
+			Value = Value_DefaultValue = null;
 			ColorValue = ColorValue_DefaultValue = null;
 			
 		}	
@@ -78,6 +82,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Individual color for the point. By default the color is pulled fromthe global `colors` array.In styled mode, the `color` option doesn't take effect. Instead, use `colorIndex`.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Styled mode only. A specific color index to use for the point, so itsgraphic representations are given the class name`highcharts-color-{n}`.
 		/// </summary>
 		public double? ColorIndex { get; set; }
@@ -113,6 +124,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether the data point is selected initially.
 		/// </summary>
 		public bool? Selected { get; set; }
@@ -134,6 +152,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The value of the point, resulting in a color controled by optionsas set in the [colorAxis](#colorAxis) configuration.
+		/// </summary>
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Point padding for a single point.
 		/// </summary>
 		public double? PointPadding { get; set; }
@@ -145,6 +170,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Parent { get; set; }
 		private string Parent_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The value of the point, resulting in a relative area of the pointin the treemap.
+		/// </summary>
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -164,16 +196,20 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
+			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
+			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);
 			
 

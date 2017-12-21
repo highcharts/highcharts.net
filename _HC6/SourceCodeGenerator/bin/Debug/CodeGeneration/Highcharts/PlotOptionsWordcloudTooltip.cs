@@ -14,8 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWordcloudTooltip()
 		{
-			FollowPointer = FollowPointer_DefaultValue = True;
-			PointFormat = PointFormat_DefaultValue = <span style="color:{point.color}">●</span> {series.name}: <b>{point.weight}</b><br/>;
+			Distance = Distance_DefaultValue = 6;
 			
 		}	
 		
@@ -23,23 +22,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsWordcloudTooltipFollowPointer FollowPointer { get; set; }
-		private PlotOptionsWordcloudTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWordcloudTooltipPointFormat PointFormat { get; set; }
-		private PlotOptionsWordcloudTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public PlotOptionsWordcloudTooltipDistance Distance { get; set; }
+		private PlotOptionsWordcloudTooltipDistance Distance_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			
 
 			return h;

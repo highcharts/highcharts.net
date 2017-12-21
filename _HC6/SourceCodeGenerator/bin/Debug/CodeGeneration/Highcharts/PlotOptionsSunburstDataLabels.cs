@@ -14,10 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSunburstDataLabels()
 		{
-			Defer = Defer_DefaultValue = True;
-			Style = Style_DefaultValue = "";
-			RotationMode = RotationMode_DefaultValue = PlotOptionsSunburstDataLabelsRotationMode.Perpendicular;
+			Distance = Distance_DefaultValue = 30;
+			Enabled = Enabled_DefaultValue = True;
 			Formatter = Formatter_DefaultValue = "";
+			X = X_DefaultValue = 0;
+			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
+			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
+			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
+			SoftConnector = SoftConnector_DefaultValue = null;
+			Formatter = Formatter_DefaultValue = "";
+			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsSunburstDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
@@ -27,6 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
+			Defer = Defer_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "";
 			BackgroundColor = BackgroundColor_DefaultValue = "";
@@ -44,24 +51,59 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// The distance of the data label from the pie's edge. Negative numbersput the data label on top of the pie slices. Connectors are onlyshown for data labels outside the pie.
 		/// </summary>
-		public PlotOptionsSunburstDataLabelsDefer Defer { get; set; }
-		private PlotOptionsSunburstDataLabelsDefer Defer_DefaultValue { get; set; }
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the data labels.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsSunburstDataLabelsStyle Style { get; set; }
-		private PlotOptionsSunburstDataLabelsStyle Style_DefaultValue { get; set; }
+		public PlotOptionsSunburstDataLabelsFormatter Formatter { get; set; }
+		private PlotOptionsSunburstDataLabelsFormatter Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Decides how the data label will be rotated according to the perimeterof the sunburst. It can either be parallel or perpendicular to theperimeter.`series.rotation` takes precedence over `rotationMode`.
+		/// Whether to render the connector as a soft arc or a line with sharpbreak.
 		/// </summary>
-		public PlotOptionsSunburstDataLabelsRotationMode RotationMode { get; set; }
-		private PlotOptionsSunburstDataLabelsRotationMode RotationMode_DefaultValue { get; set; }
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The color of the line connecting the data label to the pie slice.The default color is the same as the point's color.In styled mode, the connector stroke is given in the`.highcharts-data-label-connector` class.
+		/// </summary>
+		public string ConnectorColor { get; set; }
+		private string ConnectorColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The distance from the data label to the connector.
+		/// </summary>
+		public double? ConnectorPadding { get; set; }
+		private double? ConnectorPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the line connecting the data label to the pie slice.In styled mode, the connector stroke width is given in the`.highcharts-data-label-connector` class.
+		/// </summary>
+		public double? ConnectorWidth { get; set; }
+		private double? ConnectorWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to render the connector as a soft arc or a line with sharpbreak.
+		/// </summary>
+		public double? SoftConnector { get; set; }
+		private double? SoftConnector_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -69,6 +111,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
+		/// </summary>
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -132,6 +181,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to defer displaying the data labels until the initial seriesanimation has finished.
+		/// </summary>
+		public bool? Defer { get; set; }
+		private bool? Defer_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -222,10 +278,16 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode", Highcharts.FirstCharacterToLower(RotationMode.ToString()));
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
+			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
+			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
+			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
+			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
@@ -235,6 +297,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
+			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);

@@ -14,8 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsXrangeTooltip()
 		{
-			HeaderFormat = HeaderFormat_DefaultValue = <span style="font-size: 0.85em">{point.x} - {point.x2}</span><br/>;
-			PointFormat = PointFormat_DefaultValue = <span style="color:{point.color}">●</span> {series.name}: <b>{point.yCategory}</b><br/>;
+			Distance = Distance_DefaultValue = 6;
 			
 		}	
 		
@@ -23,23 +22,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsXrangeTooltipHeaderFormat HeaderFormat { get; set; }
-		private PlotOptionsXrangeTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsXrangeTooltipPointFormat PointFormat { get; set; }
-		private PlotOptionsXrangeTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public PlotOptionsXrangeTooltipDistance Distance { get; set; }
+		private PlotOptionsXrangeTooltipDistance Distance_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			
 
 			return h;

@@ -14,23 +14,59 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSankeyStatesHover()
 		{
-			LinkOpacity = LinkOpacity_DefaultValue = 1;
+			Brightness = Brightness_DefaultValue = 0.1;
+			BorderColor = BorderColor_DefaultValue = "";
+			Color = Color_DefaultValue = "undefined";
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			Enabled = Enabled_DefaultValue = true;
 			
 		}	
 		
 
 		/// <summary>
-		/// Opacity for the links between nodes in the sankey diagram inhover mode.
+		/// How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover` rule.
 		/// </summary>
-		public PlotOptionsSankeyStatesHoverLinkOpacity LinkOpacity { get; set; }
-		private PlotOptionsSankeyStatesHoverLinkOpacity LinkOpacity_DefaultValue { get; set; }
+		public PlotOptionsSankeyStatesHoverBrightness Brightness { get; set; }
+		private PlotOptionsSankeyStatesHoverBrightness Brightness_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A specific border color for the hovered point. Defaults toinherit the normal state border color.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A specific color for the hovered point.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Animation setting for hovering the graph in line-type series.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable separate styles for the hovered series to visualize that theuser hovers either the series itself or the legend. .
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
+			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;

@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPolygonTooltip()
 		{
-			FollowPointer = FollowPointer_DefaultValue = True;
-			PointFormat = PointFormat_DefaultValue = "";
+			HeaderFormat = HeaderFormat_DefaultValue = <span class="highcharts-color-{point.colorIndex}">●</span> <span class="highcharts-header"> {series.name}</span><br/>;
+			PointFormat = PointFormat_DefaultValue = x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>;
 			
 		}	
 		
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPolygonTooltipFollowPointer FollowPointer { get; set; }
-		private PlotOptionsPolygonTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
+		public PlotOptionsPolygonTooltipHeaderFormat HeaderFormat { get; set; }
+		private PlotOptionsPolygonTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 

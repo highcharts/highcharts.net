@@ -14,7 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSunburstDataLabelsStyle()
 		{
-			TextOverflow = TextOverflow_DefaultValue = ellipsis;
+			FontSize = FontSize_DefaultValue = 11px;
+			FontWeight = FontWeight_DefaultValue = bold;
+			Color = Color_DefaultValue = contrast;
+			TextOutline = TextOutline_DefaultValue = 1px contrast;
 			
 		}	
 		
@@ -22,15 +25,39 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsSunburstDataLabelsStyleTextOverflow TextOverflow { get; set; }
-		private PlotOptionsSunburstDataLabelsStyleTextOverflow TextOverflow_DefaultValue { get; set; }
+		public PlotOptionsSunburstDataLabelsStyleFontSize FontSize { get; set; }
+		private PlotOptionsSunburstDataLabelsStyleFontSize FontSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSunburstDataLabelsStyleFontWeight FontWeight { get; set; }
+		private PlotOptionsSunburstDataLabelsStyleFontWeight FontWeight_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSunburstDataLabelsStyleColor Color { get; set; }
+		private PlotOptionsSunburstDataLabelsStyleColor Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSunburstDataLabelsStyleTextOutline TextOutline { get; set; }
+		private PlotOptionsSunburstDataLabelsStyleTextOutline TextOutline_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (TextOverflow != TextOverflow_DefaultValue) h.Add("textOverflow",TextOverflow);
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (TextOutline != TextOutline_DefaultValue) h.Add("textOutline",TextOutline);
 			
 
 			return h;

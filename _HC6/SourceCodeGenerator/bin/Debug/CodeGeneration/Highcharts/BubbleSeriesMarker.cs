@@ -19,7 +19,11 @@ namespace Highsoft.Web.Mvc.Charts
 			Radius = Radius_DefaultValue = "";
 			States = States_DefaultValue = "";
 			Symbol = Symbol_DefaultValue = "circle";
+			LineWidth = LineWidth_DefaultValue = 0;
+			LineColor = LineColor_DefaultValue = "#ffffff";
+			States = States_DefaultValue = "";
 			FillColor = FillColor_DefaultValue = null;
+			Symbol = Symbol_DefaultValue = "null";
 			
 		}	
 		
@@ -60,10 +64,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The width of the point marker's outline.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The color of the point marker's outline. When `null`, the series'or point's color is used.
+		/// </summary>
+		public string LineColor { get; set; }
+		private string LineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// States for a single point marker.
+		/// </summary>
+		public BubbleSeriesMarkerStates States { get; set; }
+		private BubbleSeriesMarkerStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The fill color of the point marker. When `null`, the series' orpoint's color is used.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A predefined shape or symbol for the marker. When null, the symbolis pulled from options.symbols. Other possible values are "circle","square", "diamond", "triangle" and "triangle-down".Additionally, the URL to a graphic can be given on this form:"url(graphic.png)". Note that for the image to be applied to exportedcharts, its URL needs to be accessible by the export server.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols`. The callback is thenused by its method name, as shown in the demo.
+		/// </summary>
+		public string Symbol { get; set; }
+		private string Symbol_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -75,7 +107,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
+			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			
 
 			return h;

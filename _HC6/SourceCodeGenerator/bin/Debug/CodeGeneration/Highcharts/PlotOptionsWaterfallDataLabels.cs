@@ -14,7 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWaterfallDataLabels()
 		{
-			Inside = Inside_DefaultValue = True;
+			Align = Align_DefaultValue = "";
+			VerticalAlign = VerticalAlign_DefaultValue = "";
+			Y = Y_DefaultValue = "";
 			
 		}	
 		
@@ -22,15 +24,31 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsWaterfallDataLabelsInside Inside { get; set; }
-		private PlotOptionsWaterfallDataLabelsInside Inside_DefaultValue { get; set; }
+		public PlotOptionsWaterfallDataLabelsAlign Align { get; set; }
+		private PlotOptionsWaterfallDataLabelsAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsWaterfallDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsWaterfallDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsWaterfallDataLabelsY Y { get; set; }
+		private PlotOptionsWaterfallDataLabelsY Y_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;

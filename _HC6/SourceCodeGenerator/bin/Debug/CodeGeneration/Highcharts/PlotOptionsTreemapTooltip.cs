@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemapTooltip()
 		{
-			HeaderFormat = HeaderFormat_DefaultValue = "";
-			PointFormat = PointFormat_DefaultValue = <b>{point.name}</b>: {point.value}<br/>;
+			HeaderFormat = HeaderFormat_DefaultValue = <span class="highcharts-color-{point.colorIndex}">●</span> <span class="highcharts-header"> {series.name}</span><br/>;
+			PointFormat = PointFormat_DefaultValue = x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>;
 			
 		}	
 		

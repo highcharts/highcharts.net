@@ -19,6 +19,9 @@ namespace Highsoft.Web.Mvc.Charts
 			VerticalAlign = VerticalAlign_DefaultValue = middle;
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = True;
+			Formatter = Formatter_DefaultValue = "";
+			Inside = Inside_DefaultValue = True;
+			VerticalAlign = VerticalAlign_DefaultValue = middle;
 			Crop = Crop_DefaultValue = False;
 			Overflow = Overflow_DefaultValue = False;
 			Padding = Padding_DefaultValue = 0;
@@ -64,6 +67,27 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public TreemapSeriesDataLabelsFormatter Formatter { get; set; }
+		private TreemapSeriesDataLabelsFormatter Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public TreemapSeriesDataLabelsInside Inside { get; set; }
+		private TreemapSeriesDataLabelsInside Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public TreemapSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private TreemapSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public TreemapSeriesDataLabelsCrop Crop { get; set; }
 		private TreemapSeriesDataLabelsCrop Crop_DefaultValue { get; set; }
 		 
@@ -91,6 +115,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);

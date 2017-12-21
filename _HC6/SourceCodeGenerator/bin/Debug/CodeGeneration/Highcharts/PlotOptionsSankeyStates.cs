@@ -15,15 +15,23 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSankeyStates()
 		{
 			Hover = Hover_DefaultValue = "";
+			Select = Select_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// Options for the hovered point. These settings override the normalstate options when a point is moused over or touched.
 		/// </summary>
 		public PlotOptionsSankeyStatesHover Hover { get; set; }
 		private PlotOptionsSankeyStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the selected point. These settings override the normalstate options when a point is selected.
+		/// </summary>
+		public PlotOptionsSankeyStatesSelect Select { get; set; }
+		private PlotOptionsSankeyStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

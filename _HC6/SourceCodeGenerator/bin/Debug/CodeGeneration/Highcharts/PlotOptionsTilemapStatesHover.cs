@@ -14,7 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemapStatesHover()
 		{
-			Halo = Halo_DefaultValue = "";
+			Halo = Halo_DefaultValue = False;
+			Brightness = Brightness_DefaultValue = 0.2;
 			
 		}	
 		
@@ -24,13 +25,21 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsTilemapStatesHoverHalo Halo { get; set; }
 		private PlotOptionsTilemapStatesHoverHalo Halo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTilemapStatesHoverBrightness Brightness { get; set; }
+		private PlotOptionsTilemapStatesHoverBrightness Brightness_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
+			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
+			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			
 
 			return h;

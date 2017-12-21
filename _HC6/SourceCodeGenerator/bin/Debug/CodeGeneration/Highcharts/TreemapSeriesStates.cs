@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hover = Hover_DefaultValue = "";
 			Normal = Normal_DefaultValue = "";
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
@@ -32,6 +33,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public TreemapSeriesStatesNormal Normal { get; set; }
 		private TreemapSeriesStatesNormal Normal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public TreemapSeriesStatesHover Hover { get; set; }
+		private TreemapSeriesStatesHover Hover_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -40,6 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 
 			return h;

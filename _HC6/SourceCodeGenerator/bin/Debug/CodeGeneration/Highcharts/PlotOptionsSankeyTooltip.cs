@@ -14,11 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSankeyTooltip()
 		{
-			FollowPointer = FollowPointer_DefaultValue = True;
-			HeaderFormat = HeaderFormat_DefaultValue = <span class="highcharts-header">{series.name}</span><br/>;
-			PointFormat = PointFormat_DefaultValue = {point.fromNode.name} → {point.toNode.name}: <b>{point.weight}</b><br/>;
-			NodeFormat = NodeFormat_DefaultValue = {point.name}: <b>{point.sum}</b><br/>;
-			NodeFormatter = NodeFormatter_DefaultValue = "";
+			Distance = Distance_DefaultValue = 6;
 			
 		}	
 		
@@ -26,47 +22,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsSankeyTooltipFollowPointer FollowPointer { get; set; }
-		private PlotOptionsSankeyTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyTooltipHeaderFormat HeaderFormat { get; set; }
-		private PlotOptionsSankeyTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyTooltipPointFormat PointFormat { get; set; }
-		private PlotOptionsSankeyTooltipPointFormat PointFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to show for _nodes_ in tooltipof a sankey diagram series, as opposed to links.
-		/// </summary>
-		public PlotOptionsSankeyTooltipNodeFormat NodeFormat { get; set; }
-		private PlotOptionsSankeyTooltipNodeFormat NodeFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A callback for defining the format for _nodes_ in the sankey chart'stooltip, as opposed to links.
-		/// </summary>
-		public string NodeFormatter { get; set; }
-		private string NodeFormatter_DefaultValue { get; set; }
+		public PlotOptionsSankeyTooltipDistance Distance { get; set; }
+		private PlotOptionsSankeyTooltipDistance Distance_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
-			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
-			if (NodeFormatter != NodeFormatter_DefaultValue) h.Add("nodeFormatter",NodeFormatter);
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			
 
 			return h;

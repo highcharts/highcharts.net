@@ -14,8 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColorAxisLabels()
 		{
-			Overflow = Overflow_DefaultValue = ColorAxisLabelsOverflow.Justify;
-			Rotation = Rotation_DefaultValue = 0;
 			Enabled = Enabled_DefaultValue = True;
 			Style = Style_DefaultValue = "";
 			X = X_DefaultValue = 0;
@@ -25,8 +23,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Distance = Distance_DefaultValue = 15;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
+			Overflow = Overflow_DefaultValue = ColorAxisLabelsOverflow.Null;
 			Padding = Padding_DefaultValue = 5;
 			ReserveSpace = ReserveSpace_DefaultValue = null;
+			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
 			UseHTML = UseHTML_DefaultValue = false;
@@ -37,20 +37,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// How to handle overflowing labels on horizontal color axis. Can beundefined or "justify". If "justify", labels will not renderoutside the legend area. If there is room to move it, it will bealigned to the edge, else it will be removed.
-		/// </summary>
-		public ColorAxisLabelsOverflow Overflow { get; set; }
-		private ColorAxisLabelsOverflow Overflow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ColorAxisLabelsRotation Rotation { get; set; }
-		private ColorAxisLabelsRotation Rotation_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Enable or disable the axis labels.
@@ -116,6 +102,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// How to handle overflowing labels on horizontal axis. Can beundefined, `false` or `"justify"`. By default it aligns insidethe chart area. If "justify", labels will not render outsidethe plot area. If `false`, it will not be aligned at all.If there is room to move it, it will be aligned to the edge,else it will be removed.
+		/// </summary>
+		public ColorAxisLabelsOverflow Overflow { get; set; }
+		private ColorAxisLabelsOverflow Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The pixel padding for axis labels, to ensure white space betweenthem.
 		/// </summary>
 		public double? Padding { get; set; }
@@ -127,6 +120,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? ReserveSpace { get; set; }
 		private bool? ReserveSpace_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Rotation of the labels in degrees.
+		/// </summary>
+		public double? Rotation { get; set; }
+		private double? Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -182,8 +182,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (X != X_DefaultValue) h.Add("x",X);
@@ -193,8 +191,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
+			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);

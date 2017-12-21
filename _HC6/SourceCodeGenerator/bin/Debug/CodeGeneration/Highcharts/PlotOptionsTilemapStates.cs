@@ -14,10 +14,18 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemapStates()
 		{
+			Normal = Normal_DefaultValue = "";
 			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTilemapStatesNormal Normal { get; set; }
+		private PlotOptionsTilemapStatesNormal Normal_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -30,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 

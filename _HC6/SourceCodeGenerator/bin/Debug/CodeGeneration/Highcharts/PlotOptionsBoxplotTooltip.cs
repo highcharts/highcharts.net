@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBoxplotTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = "";
+			Distance = Distance_DefaultValue = 6;
 			
 		}	
 		
@@ -22,15 +22,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsBoxplotTooltipPointFormat PointFormat { get; set; }
-		private PlotOptionsBoxplotTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public PlotOptionsBoxplotTooltipDistance Distance { get; set; }
+		private PlotOptionsBoxplotTooltipDistance Distance_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			
 
 			return h;

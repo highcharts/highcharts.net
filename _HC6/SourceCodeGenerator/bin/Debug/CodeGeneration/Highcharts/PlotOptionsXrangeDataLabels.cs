@@ -14,12 +14,19 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsXrangeDataLabels()
 		{
-			VerticalAlign = VerticalAlign_DefaultValue = middle;
-			Inside = Inside_DefaultValue = True;
-			Formatter = Formatter_DefaultValue = "";
+			Align = Align_DefaultValue = "";
+			VerticalAlign = VerticalAlign_DefaultValue = "";
+			Y = Y_DefaultValue = "";
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsXrangeDataLabelsAlign Align { get; set; }
+		private PlotOptionsXrangeDataLabelsAlign Align_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -31,24 +38,17 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsXrangeDataLabelsInside Inside { get; set; }
-		private PlotOptionsXrangeDataLabelsInside Inside_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The default formatter for X-range data labels displays the percentageof the partial fill amount.
-		/// </summary>
-		public PlotOptionsXrangeDataLabelsFormatter Formatter { get; set; }
-		private PlotOptionsXrangeDataLabelsFormatter Formatter_DefaultValue { get; set; }
+		public PlotOptionsXrangeDataLabelsY Y { get; set; }
+		private PlotOptionsXrangeDataLabelsY Y_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
-			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;

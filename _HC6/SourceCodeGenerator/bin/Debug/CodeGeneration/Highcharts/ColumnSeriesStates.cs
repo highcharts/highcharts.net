@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// Options for the hovered point. These settings override the normalstate options when a point is moused over or touched.
 		/// </summary>
 		public ColumnSeriesStatesHover Hover { get; set; }
 		private ColumnSeriesStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Options for the selected point. These settings override the normalstate options when a point is selected.
 		/// </summary>
 		public ColumnSeriesStatesSelect Select { get; set; }
 		private ColumnSeriesStatesSelect Select_DefaultValue { get; set; }
@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
-			if (Select != Select_DefaultValue) h.Add("select",Select);
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

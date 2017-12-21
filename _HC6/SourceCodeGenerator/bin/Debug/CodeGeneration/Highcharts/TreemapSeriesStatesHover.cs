@@ -14,28 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesStatesHover()
 		{
-			BorderColor = BorderColor_DefaultValue = #999999;
-			Brightness = Brightness_DefaultValue = null;
 			Halo = Halo_DefaultValue = False;
-			Opacity = Opacity_DefaultValue = 0.75;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Brightness = Brightness_DefaultValue = 0.2;
 			
 		}	
 		
-
-		/// <summary>
-		/// The border color for the hovered state.
-		/// </summary>
-		public TreemapSeriesStatesHoverBorderColor BorderColor { get; set; }
-		private TreemapSeriesStatesHoverBorderColor BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Brightness for the hovered point. Defaults to 0 if the heatmapseries is loaded, otherwise 0.1.
-		/// </summary>
-		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
@@ -45,28 +28,18 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The opacity of a point in treemap. When a point has children,the visibility of the children is determined by the opacity.
+		/// 
 		/// </summary>
-		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The shadow option for hovered state.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
+		public TreemapSeriesStatesHoverBrightness Brightness { get; set; }
+		private TreemapSeriesStatesHoverBrightness Brightness_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			
 
 			return h;
