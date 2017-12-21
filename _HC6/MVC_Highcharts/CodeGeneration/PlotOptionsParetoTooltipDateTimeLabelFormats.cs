@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsParetoTooltipDateTimeLabelFormats()
 		{
-			Millisecond = Millisecond_DefaultValue = "%A, %b %e, %H:%M:%S.%L";
-			Second = Second_DefaultValue = "%A, %b %e, %H:%M:%S";
-			Minute = Minute_DefaultValue = "%A, %b %e, %H:%M";
-			Hour = Hour_DefaultValue = "%A, %b %e, %H:%M";
-			Day = Day_DefaultValue = "%A, %b %e, %Y";
-			Week = Week_DefaultValue = "Week from %A, %b %e, %Y";
-			Month = Month_DefaultValue = "%B %Y";
-			Year = Year_DefaultValue = "%Y";
+			Millisecond = Millisecond_DefaultValue = %A, %b %e, %H:%M:%S.%L;
+			Second = Second_DefaultValue = %A, %b %e, %H:%M:%S;
+			Minute = Minute_DefaultValue = %A, %b %e, %H:%M;
+			Hour = Hour_DefaultValue = %A, %b %e, %H:%M;
+			Day = Day_DefaultValue = %A, %b %e, %Y;
+			Week = Week_DefaultValue = Week from %A, %b %e, %Y;
+			Month = Month_DefaultValue = %B %Y;
+			Year = Year_DefaultValue = %Y;
 			
 		}	
 		
@@ -29,57 +29,57 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Millisecond { get; set; }
-		private string Millisecond_DefaultValue { get; set; }
+		public PlotOptionsParetoTooltipDateTimeLabelFormatsMillisecond Millisecond { get; set; }
+		private PlotOptionsParetoTooltipDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Second { get; set; }
-		private string Second_DefaultValue { get; set; }
+		public PlotOptionsParetoTooltipDateTimeLabelFormatsSecond Second { get; set; }
+		private PlotOptionsParetoTooltipDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Minute { get; set; }
-		private string Minute_DefaultValue { get; set; }
+		public PlotOptionsParetoTooltipDateTimeLabelFormatsMinute Minute { get; set; }
+		private PlotOptionsParetoTooltipDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Hour { get; set; }
-		private string Hour_DefaultValue { get; set; }
+		public PlotOptionsParetoTooltipDateTimeLabelFormatsHour Hour { get; set; }
+		private PlotOptionsParetoTooltipDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Day { get; set; }
-		private string Day_DefaultValue { get; set; }
+		public PlotOptionsParetoTooltipDateTimeLabelFormatsDay Day { get; set; }
+		private PlotOptionsParetoTooltipDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Week { get; set; }
-		private string Week_DefaultValue { get; set; }
+		public PlotOptionsParetoTooltipDateTimeLabelFormatsWeek Week { get; set; }
+		private PlotOptionsParetoTooltipDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Month { get; set; }
-		private string Month_DefaultValue { get; set; }
+		public PlotOptionsParetoTooltipDateTimeLabelFormatsMonth Month { get; set; }
+		private PlotOptionsParetoTooltipDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Year { get; set; }
-		private string Year_DefaultValue { get; set; }
+		public PlotOptionsParetoTooltipDateTimeLabelFormatsYear Year { get; set; }
+		private PlotOptionsParetoTooltipDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

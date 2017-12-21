@@ -15,19 +15,19 @@ namespace Highsoft.Web.Mvc.Charts
 		public AnnotationsLabelOptions()
 		{
 			Align = Align_DefaultValue = AnnotationsLabelOptionsAlign.Center;
-			AllowOverlap = AllowOverlap_DefaultValue = False;
+			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			BorderColor = BorderColor_DefaultValue = "black";
 			BorderRadius = BorderRadius_DefaultValue = 1;
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Crop = Crop_DefaultValue = False;
+			Crop = Crop_DefaultValue = false;
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = AnnotationsLabelOptionsOverflow.Justify;
 			Padding = Padding_DefaultValue = 5;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = "";
-			UseHTML = UseHTML_DefaultValue = False;
+			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelOptionsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -16;

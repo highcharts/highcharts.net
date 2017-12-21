@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBubblePoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsBubblePointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsBubblePointEvents Events { get; set; }
 		private PlotOptionsBubblePointEvents Events_DefaultValue { get; set; }

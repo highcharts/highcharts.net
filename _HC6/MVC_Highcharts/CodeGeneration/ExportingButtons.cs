@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ExportingButtons()
 		{
-			ContextButton = ContextButton_DefaultValue = new ExportingButtonsContextButton();
+			ContextButton = ContextButton_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the export button.</p><p>In styled mode, export button styles can be applied with the<code>.highcharts-contextbutton</code> class.</p>
+		/// Options for the export button.In styled mode, export button styles can be applied with the`.highcharts-contextbutton` class.
 		/// </summary>
 		public ExportingButtonsContextButton ContextButton { get; set; }
 		private ExportingButtonsContextButton ContextButton_DefaultValue { get; set; }

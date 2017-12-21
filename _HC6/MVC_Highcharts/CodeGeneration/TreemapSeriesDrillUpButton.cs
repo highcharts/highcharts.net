@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The position of the button.</p>
+		/// The position of the button.
 		/// </summary>
 		public Hashtable Position { get; set; }
 		private Hashtable Position_DefaultValue { get; set; }

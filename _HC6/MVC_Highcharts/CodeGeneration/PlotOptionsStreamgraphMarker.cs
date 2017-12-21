@@ -14,12 +14,12 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsStreamgraphMarker()
 		{
-			Enabled = Enabled_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 0;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			Radius = Radius_DefaultValue = 4;
-			States = States_DefaultValue = new PlotOptionsStreamgraphMarkerStates();
+			States = States_DefaultValue = "";
 			FillColor = FillColor_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = "";
 			Height = Height_DefaultValue = null;
 			Symbol = Symbol_DefaultValue = "null";
 			Width = Width_DefaultValue = null;
@@ -28,63 +28,63 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Enable or disable the point marker. If <code>null</code>, the markers are hiddenwhen the data is dense, and shown for more widespread data points.</p>
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>The width of the point marker&#39;s outline.</p>
+		/// The width of the point marker's outline.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the point marker&#39;s outline. When <code>null</code>, the series&#39;or point&#39;s color is used.</p>
+		/// The color of the point marker's outline. When `null`, the series'or point's color is used.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The radius of the point marker.</p>
+		/// The radius of the point marker.
 		/// </summary>
 		public double? Radius { get; set; }
 		private double? Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>States for a single point marker.</p>
+		/// States for a single point marker.
 		/// </summary>
 		public PlotOptionsStreamgraphMarkerStates States { get; set; }
 		private PlotOptionsStreamgraphMarkerStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The fill color of the point marker. When <code>null</code>, the series&#39; orpoint&#39;s color is used.</p>
+		/// The fill color of the point marker. When `null`, the series' orpoint's color is used.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Image markers only. Set the image width explicitly. When using thisoption, a <code>width</code> must also be set.</p>
+		/// Enable or disable the point marker. If `null`, the markers are hiddenwhen the data is dense, and shown for more widespread data points.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Image markers only. Set the image width explicitly. When using thisoption, a `width` must also be set.
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A predefined shape or symbol for the marker. When null, the symbolis pulled from options.symbols. Other possible values are &quot;circle&quot;,&quot;square&quot;, &quot;diamond&quot;, &quot;triangle&quot; and &quot;triangle-down&quot;.</p><p>Additionally, the URL to a graphic can be given on this form:&quot;url(graphic.png)&quot;. Note that for the image to be applied to exportedcharts, its URL needs to be accessible by the export server.</p><p>Custom callbacks for symbol path generation can also be added to<code>Highcharts.SVGRenderer.prototype.symbols</code>. The callback is thenused by its method name, as shown in the demo.</p>
+		/// A predefined shape or symbol for the marker. When null, the symbolis pulled from options.symbols. Other possible values are "circle","square", "diamond", "triangle" and "triangle-down".Additionally, the URL to a graphic can be given on this form:"url(graphic.png)". Note that for the image to be applied to exportedcharts, its URL needs to be accessible by the export server.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols`. The callback is thenused by its method name, as shown in the demo.
 		/// </summary>
 		public string Symbol { get; set; }
 		private string Symbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Image markers only. Set the image width explicitly. When using thisoption, a <code>height</code> must also be set.</p>
+		/// Image markers only. Set the image width explicitly. When using thisoption, a `height` must also be set.
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
@@ -94,12 +94,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);

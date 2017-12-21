@@ -14,16 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WordcloudSeriesStatesHoverAnimation()
 		{
-			Duration = Duration_DefaultValue = null;
+			Duration = Duration_DefaultValue = 50;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The duration of the hover animation in milliseconds. Bydefault the hover state animates quickly in, and slowly backto normal.</p>
+		/// The duration of the hover animation in milliseconds. Bydefault the hover state animates quickly in, and slowly backto normal.
 		/// </summary>
-		public double? Duration { get; set; }
-		private double? Duration_DefaultValue { get; set; }
+		public WordcloudSeriesStatesHoverAnimationDuration Duration { get; set; }
+		private WordcloudSeriesStatesHoverAnimationDuration Duration_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

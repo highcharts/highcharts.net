@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ScatterSeriesDataMarkerStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Enabled = Enabled_DefaultValue = True;
+			Enabled = Enabled_DefaultValue = true;
 			RadiusPlus = RadiusPlus_DefaultValue = 2;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
 			FillColor = FillColor_DefaultValue = null;

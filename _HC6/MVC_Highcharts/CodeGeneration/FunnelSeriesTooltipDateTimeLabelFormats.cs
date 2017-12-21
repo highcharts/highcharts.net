@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public FunnelSeriesTooltipDateTimeLabelFormats()
 		{
-			Millisecond = Millisecond_DefaultValue = "%A, %b %e, %H:%M:%S.%L";
-			Second = Second_DefaultValue = "%A, %b %e, %H:%M:%S";
-			Minute = Minute_DefaultValue = "%A, %b %e, %H:%M";
-			Hour = Hour_DefaultValue = "%A, %b %e, %H:%M";
-			Day = Day_DefaultValue = "%A, %b %e, %Y";
-			Week = Week_DefaultValue = "Week from %A, %b %e, %Y";
-			Month = Month_DefaultValue = "%B %Y";
-			Year = Year_DefaultValue = "%Y";
+			Millisecond = Millisecond_DefaultValue = %A, %b %e, %H:%M:%S.%L;
+			Second = Second_DefaultValue = %A, %b %e, %H:%M:%S;
+			Minute = Minute_DefaultValue = %A, %b %e, %H:%M;
+			Hour = Hour_DefaultValue = %A, %b %e, %H:%M;
+			Day = Day_DefaultValue = %A, %b %e, %Y;
+			Week = Week_DefaultValue = Week from %A, %b %e, %Y;
+			Month = Month_DefaultValue = %B %Y;
+			Year = Year_DefaultValue = %Y;
 			
 		}	
 		
@@ -29,57 +29,57 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Millisecond { get; set; }
-		private string Millisecond_DefaultValue { get; set; }
+		public FunnelSeriesTooltipDateTimeLabelFormatsMillisecond Millisecond { get; set; }
+		private FunnelSeriesTooltipDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Second { get; set; }
-		private string Second_DefaultValue { get; set; }
+		public FunnelSeriesTooltipDateTimeLabelFormatsSecond Second { get; set; }
+		private FunnelSeriesTooltipDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Minute { get; set; }
-		private string Minute_DefaultValue { get; set; }
+		public FunnelSeriesTooltipDateTimeLabelFormatsMinute Minute { get; set; }
+		private FunnelSeriesTooltipDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Hour { get; set; }
-		private string Hour_DefaultValue { get; set; }
+		public FunnelSeriesTooltipDateTimeLabelFormatsHour Hour { get; set; }
+		private FunnelSeriesTooltipDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Day { get; set; }
-		private string Day_DefaultValue { get; set; }
+		public FunnelSeriesTooltipDateTimeLabelFormatsDay Day { get; set; }
+		private FunnelSeriesTooltipDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Week { get; set; }
-		private string Week_DefaultValue { get; set; }
+		public FunnelSeriesTooltipDateTimeLabelFormatsWeek Week { get; set; }
+		private FunnelSeriesTooltipDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Month { get; set; }
-		private string Month_DefaultValue { get; set; }
+		public FunnelSeriesTooltipDateTimeLabelFormatsMonth Month { get; set; }
+		private FunnelSeriesTooltipDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Year { get; set; }
-		private string Year_DefaultValue { get; set; }
+		public FunnelSeriesTooltipDateTimeLabelFormatsYear Year { get; set; }
+		private FunnelSeriesTooltipDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

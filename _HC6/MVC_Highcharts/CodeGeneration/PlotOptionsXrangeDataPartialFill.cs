@@ -15,20 +15,20 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsXrangeDataPartialFill()
 		{
 			Amount = Amount_DefaultValue = null;
-			Fill = Fill_DefaultValue = null;
+			Fill = Fill_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The amount of the X-range point to be filled. Values can be 0-1 and are converted to percentages in the default data label formatter.</p>
+		/// The amount of the X-range point to be filled. Values can be 0-1 and are converted to percentages in the default data label formatter.
 		/// </summary>
 		public double? Amount { get; set; }
 		private double? Amount_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The fill color to be used for partial fills. Defaults to a darker shadeof the point color.</p>
+		/// The fill color to be used for partial fills. Defaults to a darker shadeof the point color.
 		/// </summary>
 		public string Fill { get; set; }
 		private string Fill_DefaultValue { get; set; }

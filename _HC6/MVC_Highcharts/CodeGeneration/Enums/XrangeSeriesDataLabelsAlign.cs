@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum XrangeSeriesDataLabelsAlign
     {
-        Null, 
-		Left, 
+        Left, 
 		Center, 
 		Right
     }

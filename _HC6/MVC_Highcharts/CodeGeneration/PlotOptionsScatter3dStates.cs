@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsScatter3dStates()
 		{
-			Hover = Hover_DefaultValue = new PlotOptionsScatter3dStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsScatter3dStatesHover Hover { get; set; }
 		private PlotOptionsScatter3dStatesHover Hover_DefaultValue { get; set; }

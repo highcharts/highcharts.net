@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVectorStatesHoverMarkerStatesHoverAnimation()
 		{
-			Duration = Duration_DefaultValue = null;
+			Duration = Duration_DefaultValue = 50;
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Duration { get; set; }
-		private double? Duration_DefaultValue { get; set; }
+		public PlotOptionsVectorStatesHoverMarkerStatesHoverAnimationDuration Duration { get; set; }
+		private PlotOptionsVectorStatesHoverMarkerStatesHoverAnimationDuration Duration_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

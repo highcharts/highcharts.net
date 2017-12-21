@@ -25,13 +25,13 @@ namespace Highsoft.Web.Mvc.Charts
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ZIndex = ZIndex_DefaultValue = null;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = False;
+			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			States = States_DefaultValue = "";
-			StickyTracking = StickyTracking_DefaultValue = True;
+			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
@@ -51,9 +51,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Tooltip = Tooltip_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
+			Marker = Marker_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			States = States_DefaultValue = "";
-			StickyTracking = StickyTracking_DefaultValue = False;
+			StickyTracking = StickyTracking_DefaultValue = false;
 			Tooltip = Tooltip_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -62,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			BorderWidth = BorderWidth_DefaultValue = 0;
-			Clip = Clip_DefaultValue = False;
-			ColorByPoint = ColorByPoint_DefaultValue = True;
+			Clip = Clip_DefaultValue = false;
+			ColorByPoint = ColorByPoint_DefaultValue = true;
 			PlacementStrategy = PlacementStrategy_DefaultValue = center;
 			Rotation = Rotation_DefaultValue = "";
-			ShowInLegend = ShowInLegend_DefaultValue = False;
+			ShowInLegend = ShowInLegend_DefaultValue = false;
 			Spiral = Spiral_DefaultValue = rectangular;
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","sans-serif"},{ "fontWeight", "900"}};
 			Tooltip = Tooltip_DefaultValue = "";
@@ -334,6 +335,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to group non-stacked columns or to let them render independentof each other. Non-grouped columns will be laid out individuallyand overlap each other.
+		/// </summary>
+		public bool? Marker { get; set; }
+		private bool? Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series. .
 		/// </summary>
 		public double? CropThreshold { get; set; }
@@ -507,6 +515,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);

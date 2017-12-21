@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ParetoSeriesTooltipDateTimeLabelFormats()
 		{
-			Millisecond = Millisecond_DefaultValue = "%A, %b %e, %H:%M:%S.%L";
-			Second = Second_DefaultValue = "%A, %b %e, %H:%M:%S";
-			Minute = Minute_DefaultValue = "%A, %b %e, %H:%M";
-			Hour = Hour_DefaultValue = "%A, %b %e, %H:%M";
-			Day = Day_DefaultValue = "%A, %b %e, %Y";
-			Week = Week_DefaultValue = "Week from %A, %b %e, %Y";
-			Month = Month_DefaultValue = "%B %Y";
-			Year = Year_DefaultValue = "%Y";
+			Millisecond = Millisecond_DefaultValue = %A, %b %e, %H:%M:%S.%L;
+			Second = Second_DefaultValue = %A, %b %e, %H:%M:%S;
+			Minute = Minute_DefaultValue = %A, %b %e, %H:%M;
+			Hour = Hour_DefaultValue = %A, %b %e, %H:%M;
+			Day = Day_DefaultValue = %A, %b %e, %Y;
+			Week = Week_DefaultValue = Week from %A, %b %e, %Y;
+			Month = Month_DefaultValue = %B %Y;
+			Year = Year_DefaultValue = %Y;
 			
 		}	
 		
@@ -29,57 +29,57 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Millisecond { get; set; }
-		private string Millisecond_DefaultValue { get; set; }
+		public ParetoSeriesTooltipDateTimeLabelFormatsMillisecond Millisecond { get; set; }
+		private ParetoSeriesTooltipDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Second { get; set; }
-		private string Second_DefaultValue { get; set; }
+		public ParetoSeriesTooltipDateTimeLabelFormatsSecond Second { get; set; }
+		private ParetoSeriesTooltipDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Minute { get; set; }
-		private string Minute_DefaultValue { get; set; }
+		public ParetoSeriesTooltipDateTimeLabelFormatsMinute Minute { get; set; }
+		private ParetoSeriesTooltipDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Hour { get; set; }
-		private string Hour_DefaultValue { get; set; }
+		public ParetoSeriesTooltipDateTimeLabelFormatsHour Hour { get; set; }
+		private ParetoSeriesTooltipDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Day { get; set; }
-		private string Day_DefaultValue { get; set; }
+		public ParetoSeriesTooltipDateTimeLabelFormatsDay Day { get; set; }
+		private ParetoSeriesTooltipDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Week { get; set; }
-		private string Week_DefaultValue { get; set; }
+		public ParetoSeriesTooltipDateTimeLabelFormatsWeek Week { get; set; }
+		private ParetoSeriesTooltipDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Month { get; set; }
-		private string Month_DefaultValue { get; set; }
+		public ParetoSeriesTooltipDateTimeLabelFormatsMonth Month { get; set; }
+		private ParetoSeriesTooltipDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Year { get; set; }
-		private string Year_DefaultValue { get; set; }
+		public ParetoSeriesTooltipDateTimeLabelFormatsYear Year { get; set; }
+		private ParetoSeriesTooltipDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

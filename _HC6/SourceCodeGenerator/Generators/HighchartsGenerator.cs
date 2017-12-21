@@ -64,65 +64,14 @@ public class HighchartsGenerator
     public void GenerateCode()
     {
         FileService.PrepareFolder(ROOT_CLASS);
-        ///ParseItems();
         _apiItems = JsonParser.Get();
         ProcessApiItems(_apiItems);
-        //var items = _apiItems.Where(p => p.FullName.ToLower().Contains("yaxis.opposite"));
 
         var root = new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS };
         GenerateClass(root, GetChildren(root));
-        //for (int i = 0; i < PROPERTY_NESTED_LEVELS; i++)
-        //{
         GenerateClassesForLevel(_apiItems);
-        //}
     }
-
-    /// <summary>
-    /// Read all properties from the JSON documentation file and create the respective ApiItem objects in memory
-    /// </summary>
-    //private void ParseItems()
-    //{
-    //    JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-    //    jsonSerializer.MaxJsonLength = Int32.MaxValue;
-
-    //    string jsonAPI = File.ReadAllText(Server.MapPath("~/" + ROOT_CLASS + ".json"));
-    //    object[] jsonObject = jsonSerializer.Deserialize<object[]>(jsonAPI);
-
-    //    foreach (Dictionary<string, object> item in jsonObject)
-    //    {
-    //        ApiItem apiItem = new ApiItem(item);
-
-    //        // do not add deprecated properties / objects to the API items collection
-    //        if (apiItem.Deprecated)
-    //            continue;
-
-    //        // hover.market.state for all plotOptions has no returnType set - needs to be fixed after JSON is updated
-    //        if (apiItem.ReturnType != null && apiItem.ReturnType == "" && apiItem.IsParent == false)
-    //        {
-    //            continue;
-    //        }
-
-    //        if (apiItem.FullName != null && apiItem.FullName.ToLower().Contains("series<"))
-    //        {
-    //            string[] tab = apiItem.FullName.Split('>');
-    //            string[] seriesDetails = tab[0].Split('<');
-    //            string value = FirstCharToUpper(seriesDetails[1]) + FirstCharToUpper(seriesDetails[0]);
-    //            string key = tab[0] + '>';
-
-    //            if (!_seriesMappings.Contains(key))
-    //                _seriesMappings[key] = value;
-    //        }
-
-    //        if (apiItem.Products != null && apiItem.Products.Any(p => p == "highcharts"))
-    //        {
-    //            _apiItems.Add(apiItem);
-    //        }
-    //    }
-
-    //    // Customize some of the API items for functionality that cannot be inferred automatically from the JSON file
-    //    ProcessApiItems();
-    //}
-
+    
     private void ProcessApiItems(IList<ApiItem> items)
     {
         //AppendMissingApiItems();
@@ -780,7 +729,6 @@ public class HighchartsGenerator
                 GenerateClass(item, children);
                 GenerateClassesForLevel(children, level + 1);
             }
-            //}
         }
     }
 

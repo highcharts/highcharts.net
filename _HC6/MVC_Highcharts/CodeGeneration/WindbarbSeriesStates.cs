@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WindbarbSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new WindbarbSeriesStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// 
 		/// </summary>
 		public WindbarbSeriesStatesHover Hover { get; set; }
 		private WindbarbSeriesStatesHover Hover_DefaultValue { get; set; }

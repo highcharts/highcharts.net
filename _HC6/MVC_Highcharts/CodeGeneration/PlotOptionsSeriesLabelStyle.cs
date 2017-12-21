@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSeriesLabelStyle()
 		{
-			FontWeight = FontWeight_DefaultValue = "bold";
+			FontWeight = FontWeight_DefaultValue = bold;
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontWeight { get; set; }
-		private string FontWeight_DefaultValue { get; set; }
+		public PlotOptionsSeriesLabelStyleFontWeight FontWeight { get; set; }
+		private PlotOptionsSeriesLabelStyleFontWeight FontWeight_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

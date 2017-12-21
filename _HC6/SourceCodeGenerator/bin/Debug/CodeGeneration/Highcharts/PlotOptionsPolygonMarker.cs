@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPolygonMarker()
 		{
-			Enabled = Enabled_DefaultValue = True;
+			Enabled = Enabled_DefaultValue = true;
 			
 		}	
 		

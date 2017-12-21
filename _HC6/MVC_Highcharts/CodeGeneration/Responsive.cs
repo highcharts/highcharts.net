@@ -14,16 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Responsive()
 		{
-			Rules = Rules_DefaultValue = new ResponsiveRules();
+			Rules = Rules_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>A set of rules for responsive settings. The rules are executed fromthe top down.</p>
+		/// A set of rules for responsive settings. The rules are executed fromthe top down.
 		/// </summary>
-		public ResponsiveRules Rules { get; set; }
-		private ResponsiveRules Rules_DefaultValue { get; set; }
+		public List<object> Rules { get; set; }
+		private List<object> Rules_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

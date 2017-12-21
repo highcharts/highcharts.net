@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum TilemapSeriesDataLabelsOverflow
     {
-        Null, 
-		Justify, 
+        Justify, 
 		None
     }
 }

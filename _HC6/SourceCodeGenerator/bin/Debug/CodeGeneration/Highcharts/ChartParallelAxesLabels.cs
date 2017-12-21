@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Align = Align_DefaultValue = ChartParallelAxesLabelsAlign.Left;
 			Distance = Distance_DefaultValue = -25;
 			Y = Y_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = True;
+			Enabled = Enabled_DefaultValue = true;
 			Style = Style_DefaultValue = "";
 			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = ChartParallelAxesLabelsAlign.Left;
@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
 			Position3d = Position3d_DefaultValue = ChartParallelAxesLabelsPosition3d.Offset;
-			Skew3d = Skew3d_DefaultValue = False;
+			Skew3d = Skew3d_DefaultValue = false;
 			
 		}	
 		

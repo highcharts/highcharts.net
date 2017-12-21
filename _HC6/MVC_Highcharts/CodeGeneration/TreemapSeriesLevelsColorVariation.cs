@@ -14,21 +14,21 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesLevelsColorVariation()
 		{
-			Key = Key_DefaultValue = TreemapSeriesLevelsColorVariationKey.Null;
+			Key = Key_DefaultValue = TreemapSeriesLevelsColorVariationKey.Brightness;
 			To = To_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The key of a color variation. Currently supports <code>brightness</code> only.</p>
+		/// The key of a color variation. Currently supports `brightness` only.
 		/// </summary>
 		public TreemapSeriesLevelsColorVariationKey Key { get; set; }
 		private TreemapSeriesLevelsColorVariationKey Key_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The ending value of a color variation. The last sibling will receive thisvalue.</p>
+		/// The ending value of a color variation. The last sibling will receive thisvalue.
 		/// </summary>
 		public double? To { get; set; }
 		private double? To_DefaultValue { get; set; }

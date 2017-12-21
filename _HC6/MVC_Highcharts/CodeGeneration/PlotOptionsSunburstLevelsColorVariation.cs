@@ -14,24 +14,24 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSunburstLevelsColorVariation()
 		{
-			Key = Key_DefaultValue = null;
+			Key = Key_DefaultValue = "";
 			To = To_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The key of a color variation. Currently supports <code>brightness</code> only.</p>
+		/// The key of a color variation. Currently supports `brightness` only.
 		/// </summary>
 		public string Key { get; set; }
 		private string Key_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The ending value of a color variation. The last sibling will receive thisvalue.</p>
+		/// The ending value of a color variation. The last sibling will receive thisvalue.
 		/// </summary>
-		public string To { get; set; }
-		private string To_DefaultValue { get; set; }
+		public double? To { get; set; }
+		private double? To_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

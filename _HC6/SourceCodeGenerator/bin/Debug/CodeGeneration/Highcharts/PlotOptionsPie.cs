@@ -15,13 +15,13 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsPie()
 		{
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
-			Clip = Clip_DefaultValue = False;
+			Clip = Clip_DefaultValue = false;
 			DataLabels = DataLabels_DefaultValue = "";
-			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = True;
+			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			Size = Size_DefaultValue = "";
-			ShowInLegend = ShowInLegend_DefaultValue = False;
+			ShowInLegend = ShowInLegend_DefaultValue = false;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
-			StickyTracking = StickyTracking_DefaultValue = False;
+			StickyTracking = StickyTracking_DefaultValue = false;
 			Tooltip = Tooltip_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -35,14 +35,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Point = Point_DefaultValue = "";
 			Depth = Depth_DefaultValue = 0;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = False;
-			ShowCheckbox = ShowCheckbox_DefaultValue = False;
+			AllowPointSelect = AllowPointSelect_DefaultValue = false;
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			DataLabels = DataLabels_DefaultValue = "";
 			States = States_DefaultValue = "";
-			StickyTracking = StickyTracking_DefaultValue = True;
+			StickyTracking = StickyTracking_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;

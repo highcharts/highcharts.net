@@ -14,21 +14,21 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LabelsItems()
 		{
-			Html = Html_DefaultValue = null;
-			Style = Style_DefaultValue = null;
+			Html = Html_DefaultValue = "";
+			Style = Style_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Inner HTML or text for the label.</p>
+		/// Inner HTML or text for the label.
 		/// </summary>
 		public string Html { get; set; }
 		private string Html_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for each label. To position the label, use left and toplike this:</p><pre>style: {    left: '100px',    top: '100px'}</pre>
+		/// CSS styles for each label. To position the label, use left and toplike this:<pre>style: {    left: '100px',    top: '100px'}</pre>
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }

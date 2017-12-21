@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BellcurveSeriesPoint()
 		{
-			Events = Events_DefaultValue = new BellcurveSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public BellcurveSeriesPointEvents Events { get; set; }
 		private BellcurveSeriesPointEvents Events_DefaultValue { get; set; }

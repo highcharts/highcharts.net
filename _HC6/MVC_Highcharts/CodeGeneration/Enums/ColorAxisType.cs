@@ -8,6 +8,8 @@ namespace Highsoft.Web.Mvc.Charts
     public enum ColorAxisType
     {
         Linear, 
-		Logarithmic
+		Logarithmic, 
+		Datetime, 
+		Category
     }
 }

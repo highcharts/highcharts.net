@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsParetoPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsParetoPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsParetoPointEvents Events { get; set; }
 		private PlotOptionsParetoPointEvents Events_DefaultValue { get; set; }

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVariwideAnimation()
 		{
-			Duration = Duration_DefaultValue = null;
+			Duration = Duration_DefaultValue = 1000;
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Duration { get; set; }
-		private double? Duration_DefaultValue { get; set; }
+		public PlotOptionsVariwideAnimationDuration Duration { get; set; }
+		private PlotOptionsVariwideAnimationDuration Duration_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -14,69 +14,69 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SunburstSeriesLevels()
 		{
-			BorderColor = BorderColor_DefaultValue = null;
+			BorderColor = BorderColor_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = null;
-			BorderDashStyle = BorderDashStyle_DefaultValue = null;
-			Color = Color_DefaultValue = null;
-			ColorVariation = ColorVariation_DefaultValue = new SunburstSeriesLevelsColorVariation();
-			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
+			BorderDashStyle = BorderDashStyle_DefaultValue = "";
+			Color = Color_DefaultValue = "";
+			ColorVariation = ColorVariation_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = "";
 			Rotation = Rotation_DefaultValue = null;
-			RotationMode = RotationMode_DefaultValue = null;
+			RotationMode = RotationMode_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Can set a <code>borderColor</code> on all points which lies on the same level.</p>
+		/// Can set a `borderColor` on all points which lies on the same level.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Can set a <code>borderWidth</code> on all points which lies on the same level.</p>
+		/// Can set a `borderWidth` on all points which lies on the same level.
 		/// </summary>
-		public string BorderWidth { get; set; }
-		private string BorderWidth_DefaultValue { get; set; }
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Can set a <code>borderDashStyle</code> on all points which lies on the same level.</p>
+		/// Can set a `borderDashStyle` on all points which lies on the same level.
 		/// </summary>
 		public string BorderDashStyle { get; set; }
 		private string BorderDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Can set a <code>color</code> on all points which lies on the same level.</p>
+		/// Can set a `color` on all points which lies on the same level.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Can set a <code>colorVariation</code> on all points which lies on the same level.</p>
+		/// Can set a `colorVariation` on all points which lies on the same level.
 		/// </summary>
 		public SunburstSeriesLevelsColorVariation ColorVariation { get; set; }
 		private SunburstSeriesLevelsColorVariation ColorVariation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Can set a <code>dataLabels</code> on all points which lies on the same level.</p>
+		/// Can set a `dataLabels` on all points which lies on the same level.
 		/// </summary>
 		public SunburstSeriesDataLabels DataLabels { get; set; }
 		private SunburstSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Can set a <code>rotation</code> on all points which lies on the same level.</p>
+		/// Can set a `rotation` on all points which lies on the same level.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Can set a <code>rotationMode</code> on all points which lies on the same level.</p>
+		/// Can set a `rotationMode` on all points which lies on the same level.
 		/// </summary>
 		public string RotationMode { get; set; }
 		private string RotationMode_DefaultValue { get; set; }
@@ -91,7 +91,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderDashStyle != BorderDashStyle_DefaultValue) h.Add("borderDashStyle",BorderDashStyle);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorVariation.IsDirty()) h.Add("colorVariation",ColorVariation.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode",RotationMode);
 			

@@ -15,10 +15,10 @@ namespace Highsoft.Web.Mvc.Charts
 		public HeatmapSeriesDataLabels()
 		{
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = True;
+			Inside = Inside_DefaultValue = true;
 			VerticalAlign = VerticalAlign_DefaultValue = middle;
-			Crop = Crop_DefaultValue = False;
-			Overflow = Overflow_DefaultValue = False;
+			Crop = Crop_DefaultValue = false;
+			Overflow = Overflow_DefaultValue = false;
 			Padding = Padding_DefaultValue = 0;
 			
 		}	

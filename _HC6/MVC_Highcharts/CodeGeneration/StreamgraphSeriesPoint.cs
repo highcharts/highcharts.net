@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public StreamgraphSeriesPoint()
 		{
-			Events = Events_DefaultValue = new StreamgraphSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public StreamgraphSeriesPointEvents Events { get; set; }
 		private StreamgraphSeriesPointEvents Events_DefaultValue { get; set; }

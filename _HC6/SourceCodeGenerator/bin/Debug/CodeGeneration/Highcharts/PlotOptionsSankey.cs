@@ -14,24 +14,24 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSankey()
 		{
-			ColorByPoint = ColorByPoint_DefaultValue = True;
+			ColorByPoint = ColorByPoint_DefaultValue = true;
 			CurveFactor = CurveFactor_DefaultValue = 0.33;
 			DataLabels = DataLabels_DefaultValue = "";
 			LinkOpacity = LinkOpacity_DefaultValue = 0.5;
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			NodePadding = NodePadding_DefaultValue = 10;
-			ShowInLegend = ShowInLegend_DefaultValue = False;
+			ShowInLegend = ShowInLegend_DefaultValue = false;
 			States = States_DefaultValue = "";
 			Tooltip = Tooltip_DefaultValue = "";
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = False;
-			ShowCheckbox = ShowCheckbox_DefaultValue = False;
+			AllowPointSelect = AllowPointSelect_DefaultValue = false;
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			DataLabels = DataLabels_DefaultValue = "";
 			States = States_DefaultValue = "";
-			StickyTracking = StickyTracking_DefaultValue = True;
+			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
@@ -49,10 +49,11 @@ namespace Highsoft.Web.Mvc.Charts
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = "";
+			Marker = Marker_DefaultValue = true;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			States = States_DefaultValue = "";
 			DataLabels = DataLabels_DefaultValue = "";
-			StickyTracking = StickyTracking_DefaultValue = False;
+			StickyTracking = StickyTracking_DefaultValue = false;
 			Tooltip = Tooltip_DefaultValue = "";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
@@ -307,6 +308,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to group non-stacked columns or to let them render independentof each other. Non-grouped columns will be laid out individuallyand overlap each other.
+		/// </summary>
+		public bool? Marker { get; set; }
+		private bool? Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The minimal height for a column or width for a bar. By default,0 values are not shown. To visualize a 0 (or close to zero) point,set the minimal point length to a pixel value like 3\. In stackedcolumn charts, minPointLength might not be respected for tightlypacked values.
 		/// </summary>
 		public double? MinPointLength { get; set; }
@@ -401,6 +409,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
+			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());

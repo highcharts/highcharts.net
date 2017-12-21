@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Accessibility()
 		{
-			Enabled = Enabled_DefaultValue = True;
-			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = False;
+			Enabled = Enabled_DefaultValue = true;
+			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = false;
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
 			OnTableAnchorClick = OnTableAnchorClick_DefaultValue = "";
 			PointDateFormat = PointDateFormat_DefaultValue = "";

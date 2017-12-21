@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemapPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsTreemapPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsTreemapPointEvents Events { get; set; }
 		private PlotOptionsTreemapPointEvents Events_DefaultValue { get; set; }

@@ -16,30 +16,30 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Position = Position_DefaultValue = new Hashtable();
 			RelativeTo = RelativeTo_DefaultValue = DrilldownDrillUpButtonRelativeTo.PlotBox;
-			Theme = Theme_DefaultValue = null;
+			Theme = Theme_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Positioning options for the button within the <code>relativeTo</code> box.Available properties are <code>x</code>, <code>y</code>, <code>align</code> and <code>verticalAlign</code>.</p>
+		/// Positioning options for the button within the `relativeTo` box.Available properties are `x`, `y`, `align` and `verticalAlign`.
 		/// </summary>
 		public Hashtable Position { get; set; }
 		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>What box to align the button to. Can be either <code>plotBox</code> or`spacingBox.</p>
+		/// What box to align the button to. Can be either `plotBox` or`spacingBox.
 		/// </summary>
 		public DrilldownDrillUpButtonRelativeTo RelativeTo { get; set; }
 		private DrilldownDrillUpButtonRelativeTo RelativeTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A collection of attributes for the button. The object takes SVG attributeslike <code>fill</code>, <code>stroke</code>, <code>stroke-width</code> or <code>r</code>, the border radius.The theme also supports <code>style</code>, a collection of CSS properties forthe text. Equivalent attributes for the hover state are given in<code>theme.states.hover</code>.</p>
+		/// A collection of attributes for the button. The object takes SVG attributeslike `fill`, `stroke`, `stroke-width` or `r`, the border radius.The theme also supports `style`, a collection of CSS properties forthe text. Equivalent attributes for the hover state are given in`theme.states.hover`.
 		/// </summary>
-		public Object Theme { get; set; }
-		private Object Theme_DefaultValue { get; set; }
+		public DrilldownDrillUpButtonTheme Theme { get; set; }
+		private DrilldownDrillUpButtonTheme Theme_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

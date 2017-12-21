@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemapPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsTilemapPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsTilemapPointEvents Events { get; set; }
 		private PlotOptionsTilemapPointEvents Events_DefaultValue { get; set; }

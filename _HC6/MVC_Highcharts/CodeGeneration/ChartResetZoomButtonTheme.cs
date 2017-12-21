@@ -14,16 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartResetZoomButtonTheme()
 		{
-			ZIndex = ZIndex_DefaultValue = null;
+			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The Z index for the reset zoom button.</p>
+		/// The Z index for the reset zoom button. The default value places it below the tooltip that has Z index 7.
 		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
+		public ChartResetZoomButtonThemeZIndex ZIndex { get; set; }
+		private ChartResetZoomButtonThemeZIndex ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

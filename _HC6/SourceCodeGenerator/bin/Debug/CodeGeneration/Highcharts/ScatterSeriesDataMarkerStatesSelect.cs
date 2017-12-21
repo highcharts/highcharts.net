@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#000000";
-			LineWidth = LineWidth_DefaultValue = 2;
+			LineWidth = LineWidth_DefaultValue = 0;
 			Enabled = Enabled_DefaultValue = true;
 			Radius = Radius_DefaultValue = null;
 			

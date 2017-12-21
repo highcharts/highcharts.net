@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColorAxisLabelsStyle()
 		{
-			Color = Color_DefaultValue = "#666666";
-			Cursor = Cursor_DefaultValue = "default";
-			FontSize = FontSize_DefaultValue = "11px";
+			Color = Color_DefaultValue = #666666;
+			Cursor = Cursor_DefaultValue = default;
+			FontSize = FontSize_DefaultValue = 11px;
 			
 		}	
 		
@@ -24,22 +24,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public ColorAxisLabelsStyleColor Color { get; set; }
+		private ColorAxisLabelsStyleColor Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public ColorAxisLabelsStyleCursor Cursor { get; set; }
+		private ColorAxisLabelsStyleCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontSize { get; set; }
-		private string FontSize_DefaultValue { get; set; }
+		public ColorAxisLabelsStyleFontSize FontSize { get; set; }
+		private ColorAxisLabelsStyleFontSize FontSize_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

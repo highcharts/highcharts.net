@@ -14,21 +14,21 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LineSeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = new LineSeriesStatesHoverMarkerStatesHover();
-			Select = Select_DefaultValue = new LineSeriesStatesHoverMarkerStatesSelect();
+			Hover = Hover_DefaultValue = "";
+			Select = Select_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The hover state for a single point marker.</p>
+		/// The hover state for a single point marker.
 		/// </summary>
 		public LineSeriesStatesHoverMarkerStatesHover Hover { get; set; }
 		private LineSeriesStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The appearance of the point marker when selected. In order toallow a point to be selected, set the <code>series.allowPointSelect</code>option to true.</p>
+		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
 		/// </summary>
 		public LineSeriesStatesHoverMarkerStatesSelect Select { get; set; }
 		private LineSeriesStatesHoverMarkerStatesSelect Select_DefaultValue { get; set; }

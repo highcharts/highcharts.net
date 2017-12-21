@@ -14,45 +14,45 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBulletTargetOptions()
 		{
-			Width = Width_DefaultValue = "140%";
-			Height = Height_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			Width = Width_DefaultValue = 140%;
+			Height = Height_DefaultValue = 3;
+			BorderWidth = BorderWidth_DefaultValue = 0;
+			BorderColor = BorderColor_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The width of the rectangle representing the target. Could be set asa pixel value or as a percentage of a column width.</p>
+		/// The width of the rectangle representing the target. Could be set asa pixel value or as a percentage of a column width.
 		/// </summary>
-		public string Width { get; set; }
-		private string Width_DefaultValue { get; set; }
+		public double? Width { get; set; }
+		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The height of the rectangle representing the target.</p>
+		/// The height of the rectangle representing the target.
 		/// </summary>
-		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
+		public PlotOptionsBulletTargetOptionsHeight Height { get; set; }
+		private PlotOptionsBulletTargetOptionsHeight Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The border width of the rectangle representing the target.</p><p>In styled mode, use class <code>highcharts-bullet-target</code> instead.</p>
+		/// The border width of the rectangle representing the target.In styled mode, use class `highcharts-bullet-target` instead.
 		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
+		public PlotOptionsBulletTargetOptionsBorderWidth BorderWidth { get; set; }
+		private PlotOptionsBulletTargetOptionsBorderWidth BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The border color of the rectangle representing the target. Whennot set, the  point&#39;s border color is used.</p><p>In styled mode, use class <code>highcharts-bullet-target</code> instead.</p>
+		/// The border color of the rectangle representing the target. Whennot set, the  point's border color is used.In styled mode, use class `highcharts-bullet-target` instead.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the rectangle representing the target. When not set,point&#39;s color (if set in point&#39;s options -<a href="#series.bullet.data.color"><code>color</code></a>) or zone of the target value(if <a href="#plotOptions.bullet.zones"><code>zones</code></a> or<a href="#plotOptions.bullet.negativeColor"><code>negativeColor</code></a> are set)or the same color as the point has is used.</p><p>In styled mode, use class <code>highcharts-bullet-target</code> instead.</p>
+		/// The color of the rectangle representing the target. When not set,point's color (if set in point's options -[`color`](#series.bullet.data.color)) or zone of the target value(if [`zones`](#plotOptions.bullet.zones) or[`negativeColor`](#plotOptions.bullet.negativeColor) are set)or the same color as the point has is used.In styled mode, use class `highcharts-bullet-target` instead.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }

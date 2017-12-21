@@ -22,21 +22,21 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The color of the panel.</p>
+		/// The color of the panel.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The thickness of the panel.</p>
+		/// The thickness of the panel.
 		/// </summary>
 		public double? Size { get; set; }
 		private double? Size_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to display the frame. Possible values are <code>true</code>, <code>false</code>,<code>&quot;auto&quot;</code> to display only the frames behind the data, and <code>&quot;default&quot;</code>to display faces behind the data based on the axis layout, ignoringthe point of view.</p>
+		/// Whether to display the frame. Possible values are `true`, `false`,`"auto"` to display only the frames behind the data, and `"default"`to display faces behind the data based on the axis layout, ignoringthe point of view.
 		/// </summary>
 		public ChartOptions3dFrameTopVisible Visible { get; set; }
 		private ChartOptions3dFrameTopVisible Visible_DefaultValue { get; set; }

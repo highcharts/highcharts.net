@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBoxplotLabel()
 		{
-			Enabled = Enabled_DefaultValue = True;
-			ConnectorAllowed = ConnectorAllowed_DefaultValue = True;
+			Enabled = Enabled_DefaultValue = true;
+			ConnectorAllowed = ConnectorAllowed_DefaultValue = true;
 			ConnectorNeighbourDistance = ConnectorNeighbourDistance_DefaultValue = 24;
 			MinFontSize = MinFontSize_DefaultValue = null;
 			MaxFontSize = MaxFontSize_DefaultValue = null;

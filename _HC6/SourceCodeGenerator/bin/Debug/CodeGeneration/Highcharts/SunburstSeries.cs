@@ -24,14 +24,14 @@ namespace Highsoft.Web.Mvc.Charts
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ZIndex = ZIndex_DefaultValue = null;
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = False;
-			ShowCheckbox = ShowCheckbox_DefaultValue = False;
+			AllowPointSelect = AllowPointSelect_DefaultValue = false;
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			DataLabels = DataLabels_DefaultValue = "";
 			States = States_DefaultValue = "";
-			StickyTracking = StickyTracking_DefaultValue = True;
+			StickyTracking = StickyTracking_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
@@ -51,9 +51,9 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			DataLabels = DataLabels_DefaultValue = "";
 			Size = Size_DefaultValue = "";
-			ShowInLegend = ShowInLegend_DefaultValue = False;
+			ShowInLegend = ShowInLegend_DefaultValue = false;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
-			StickyTracking = StickyTracking_DefaultValue = False;
+			StickyTracking = StickyTracking_DefaultValue = false;
 			Tooltip = Tooltip_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -65,7 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			DataLabels = DataLabels_DefaultValue = "";
 			RootId = RootId_DefaultValue = "undefined";
-			LevelIsConstant = LevelIsConstant_DefaultValue = True;
+			LevelIsConstant = LevelIsConstant_DefaultValue = true;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			Levels = Levels_DefaultValue = "";
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;

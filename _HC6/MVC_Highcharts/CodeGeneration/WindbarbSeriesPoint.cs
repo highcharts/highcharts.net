@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WindbarbSeriesPoint()
 		{
-			Events = Events_DefaultValue = new WindbarbSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public WindbarbSeriesPointEvents Events { get; set; }
 		private WindbarbSeriesPointEvents Events_DefaultValue { get; set; }

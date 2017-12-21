@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ParetoSeriesPoint()
 		{
-			Events = Events_DefaultValue = new ParetoSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public ParetoSeriesPointEvents Events { get; set; }
 		private ParetoSeriesPointEvents Events_DefaultValue { get; set; }

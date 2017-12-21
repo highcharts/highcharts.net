@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BulletSeriesPoint()
 		{
-			Events = Events_DefaultValue = new BulletSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public BulletSeriesPointEvents Events { get; set; }
 		private BulletSeriesPointEvents Events_DefaultValue { get; set; }

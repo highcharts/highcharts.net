@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PaneBackgroundBackgroundColorLinearGradient()
 		{
-			X1 = X1_DefaultValue = null;
-			Y1 = Y1_DefaultValue = null;
-			X2 = X2_DefaultValue = null;
-			Y2 = Y2_DefaultValue = null;
+			X1 = X1_DefaultValue = 0;
+			Y1 = Y1_DefaultValue = 0;
+			X2 = X2_DefaultValue = 0;
+			Y2 = Y2_DefaultValue = 1;
 			
 		}	
 		
@@ -25,29 +25,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? X1 { get; set; }
-		private double? X1_DefaultValue { get; set; }
+		public PaneBackgroundBackgroundColorLinearGradientX1 X1 { get; set; }
+		private PaneBackgroundBackgroundColorLinearGradientX1 X1_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Y1 { get; set; }
-		private double? Y1_DefaultValue { get; set; }
+		public PaneBackgroundBackgroundColorLinearGradientY1 Y1 { get; set; }
+		private PaneBackgroundBackgroundColorLinearGradientY1 Y1_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? X2 { get; set; }
-		private double? X2_DefaultValue { get; set; }
+		public PaneBackgroundBackgroundColorLinearGradientX2 X2 { get; set; }
+		private PaneBackgroundBackgroundColorLinearGradientX2 X2_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Y2 { get; set; }
-		private double? Y2_DefaultValue { get; set; }
+		public PaneBackgroundBackgroundColorLinearGradientY2 Y2 { get; set; }
+		private PaneBackgroundBackgroundColorLinearGradientY2 Y2_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

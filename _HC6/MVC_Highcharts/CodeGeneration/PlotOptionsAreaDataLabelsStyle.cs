@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsAreaDataLabelsStyle()
 		{
-			FontSize = FontSize_DefaultValue = "11px";
-			FontWeight = FontWeight_DefaultValue = "bold";
-			Color = Color_DefaultValue = "contrast";
-			TextOutline = TextOutline_DefaultValue = "1px contrast";
+			FontSize = FontSize_DefaultValue = 11px;
+			FontWeight = FontWeight_DefaultValue = bold;
+			Color = Color_DefaultValue = contrast;
+			TextOutline = TextOutline_DefaultValue = 1px contrast;
 			
 		}	
 		
@@ -25,29 +25,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontSize { get; set; }
-		private string FontSize_DefaultValue { get; set; }
+		public PlotOptionsAreaDataLabelsStyleFontSize FontSize { get; set; }
+		private PlotOptionsAreaDataLabelsStyleFontSize FontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontWeight { get; set; }
-		private string FontWeight_DefaultValue { get; set; }
+		public PlotOptionsAreaDataLabelsStyleFontWeight FontWeight { get; set; }
+		private PlotOptionsAreaDataLabelsStyleFontWeight FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public PlotOptionsAreaDataLabelsStyleColor Color { get; set; }
+		private PlotOptionsAreaDataLabelsStyleColor Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string TextOutline { get; set; }
-		private string TextOutline_DefaultValue { get; set; }
+		public PlotOptionsAreaDataLabelsStyleTextOutline TextOutline { get; set; }
+		private PlotOptionsAreaDataLabelsStyleTextOutline TextOutline_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -14,16 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSunburstStatesHoverAnimation()
 		{
-			Duration = Duration_DefaultValue = null;
+			Duration = Duration_DefaultValue = 50;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The duration of the hover animation in milliseconds. Bydefault the hover state animates quickly in, and slowly backto normal.</p>
+		/// The duration of the hover animation in milliseconds. Bydefault the hover state animates quickly in, and slowly backto normal.
 		/// </summary>
-		public double? Duration { get; set; }
-		private double? Duration_DefaultValue { get; set; }
+		public PlotOptionsSunburstStatesHoverAnimationDuration Duration { get; set; }
+		private PlotOptionsSunburstStatesHoverAnimationDuration Duration_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

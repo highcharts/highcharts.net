@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsAreasplineLabelStyle()
 		{
-			FontWeight = FontWeight_DefaultValue = "bold";
+			FontWeight = FontWeight_DefaultValue = bold;
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontWeight { get; set; }
-		private string FontWeight_DefaultValue { get; set; }
+		public PlotOptionsAreasplineLabelStyleFontWeight FontWeight { get; set; }
+		private PlotOptionsAreasplineLabelStyleFontWeight FontWeight_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

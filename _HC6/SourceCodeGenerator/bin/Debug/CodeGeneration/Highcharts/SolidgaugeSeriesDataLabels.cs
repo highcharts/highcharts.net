@@ -14,11 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SolidgaugeSeriesDataLabels()
 		{
-			Enabled = Enabled_DefaultValue = True;
-			Defer = Defer_DefaultValue = False;
+			Enabled = Enabled_DefaultValue = true;
+			Defer = Defer_DefaultValue = false;
 			Y = Y_DefaultValue = 15;
 			BorderRadius = BorderRadius_DefaultValue = 3;
-			Crop = Crop_DefaultValue = False;
+			Crop = Crop_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = "top";
 			ZIndex = ZIndex_DefaultValue = 2;
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			VerticalAlign = VerticalAlign_DefaultValue = SolidgaugeSeriesDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 0;
+			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = 5;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BorderRadius = BorderRadius_DefaultValue = 0;

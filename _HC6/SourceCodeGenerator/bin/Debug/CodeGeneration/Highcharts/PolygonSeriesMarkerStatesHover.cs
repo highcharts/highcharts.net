@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PolygonSeriesMarkerStatesHover()
 		{
-			Enabled = Enabled_DefaultValue = False;
+			Enabled = Enabled_DefaultValue = false;
 			
 		}	
 		

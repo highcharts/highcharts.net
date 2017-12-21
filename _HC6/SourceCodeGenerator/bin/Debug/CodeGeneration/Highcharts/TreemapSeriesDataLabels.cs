@@ -14,16 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesDataLabels()
 		{
-			Enabled = Enabled_DefaultValue = True;
-			Defer = Defer_DefaultValue = False;
+			Enabled = Enabled_DefaultValue = true;
+			Defer = Defer_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = middle;
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = True;
+			Inside = Inside_DefaultValue = true;
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = True;
+			Inside = Inside_DefaultValue = true;
 			VerticalAlign = VerticalAlign_DefaultValue = middle;
-			Crop = Crop_DefaultValue = False;
-			Overflow = Overflow_DefaultValue = False;
+			Crop = Crop_DefaultValue = false;
+			Overflow = Overflow_DefaultValue = false;
 			Padding = Padding_DefaultValue = 0;
 			
 		}	

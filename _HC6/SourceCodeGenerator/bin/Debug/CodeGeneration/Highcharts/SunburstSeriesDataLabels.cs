@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SunburstSeriesDataLabels()
 		{
-			Defer = Defer_DefaultValue = True;
+			Defer = Defer_DefaultValue = true;
 			Style = Style_DefaultValue = "";
 			RotationMode = RotationMode_DefaultValue = SunburstSeriesDataLabelsRotationMode.Perpendicular;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			VerticalAlign = VerticalAlign_DefaultValue = SunburstSeriesDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 0;
+			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = 5;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;

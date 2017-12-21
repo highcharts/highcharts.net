@@ -23,28 +23,28 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Horizontal alignment of the credits.</p>
+		/// Horizontal alignment of the credits.
 		/// </summary>
 		public CreditsPositionAlign Align { get; set; }
 		private CreditsPositionAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Horizontal pixel offset of the credits.</p>
+		/// Horizontal pixel offset of the credits.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Vertical alignment of the credits.</p>
+		/// Vertical alignment of the credits.
 		/// </summary>
 		public CreditsPositionVerticalAlign VerticalAlign { get; set; }
 		private CreditsPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Vertical pixel offset of the credits.</p>
+		/// Vertical pixel offset of the credits.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

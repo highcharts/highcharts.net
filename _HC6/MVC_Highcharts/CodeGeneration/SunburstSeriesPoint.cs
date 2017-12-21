@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SunburstSeriesPoint()
 		{
-			Events = Events_DefaultValue = new SunburstSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// 
 		/// </summary>
 		public SunburstSeriesPointEvents Events { get; set; }
 		private SunburstSeriesPointEvents Events_DefaultValue { get; set; }

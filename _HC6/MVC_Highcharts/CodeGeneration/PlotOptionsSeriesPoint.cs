@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSeriesPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsSeriesPointEvents Events { get; set; }
 		private PlotOptionsSeriesPointEvents Events_DefaultValue { get; set; }

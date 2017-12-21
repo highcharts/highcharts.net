@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSplinePoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsSplinePointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsSplinePointEvents Events { get; set; }
 		private PlotOptionsSplinePointEvents Events_DefaultValue { get; set; }

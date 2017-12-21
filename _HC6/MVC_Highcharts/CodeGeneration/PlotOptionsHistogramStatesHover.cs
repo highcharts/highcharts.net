@@ -15,8 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsHistogramStatesHover()
 		{
 			Brightness = Brightness_DefaultValue = 0.1;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			BorderColor = BorderColor_DefaultValue = null;
+			BorderColor = BorderColor_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Enabled = Enabled_DefaultValue = true;
@@ -25,42 +24,35 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.</p><p>In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the <code>.highcharts-point:hover</code> rule.</p>
+		/// How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover` rule.
 		/// </summary>
-		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
+		public PlotOptionsHistogramStatesHoverBrightness Brightness { get; set; }
+		private PlotOptionsHistogramStatesHoverBrightness Brightness_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>A specific border color for the hovered point. Defaults toinherit the normal state border color.</p>
+		/// A specific border color for the hovered point. Defaults toinherit the normal state border color.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A specific color for the hovered point.</p>
+		/// A specific color for the hovered point.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Animation setting for hovering the graph in line-type series.</p>
+		/// Animation setting for hovering the graph in line-type series.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Enable separate styles for the hovered series to visualize that theuser hovers either the series itself or the legend. .</p>
+		/// Enable separate styles for the hovered series to visualize that theuser hovers either the series itself or the legend. .
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -71,7 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);

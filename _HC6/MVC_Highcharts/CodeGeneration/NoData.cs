@@ -15,36 +15,36 @@ namespace Highsoft.Web.Mvc.Charts
 		public NoData()
 		{
 			Position = Position_DefaultValue = new Hashtable();
-			Attr = Attr_DefaultValue = null;
+			Attr = Attr_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			Style = Style_DefaultValue = new NoDataStyle();
+			Style = Style_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The position of the no-data label, relative to the plot area.</p>
+		/// The position of the no-data label, relative to the plot area.
 		/// </summary>
 		public Hashtable Position { get; set; }
 		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An object of additional SVG attributes for the no-data label.</p>
+		/// An object of additional SVG attributes for the no-data label.
 		/// </summary>
 		public Hashtable Attr { get; set; }
 		private Hashtable Attr_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to insert the label as HTML, or as pseudo-HTML rendered withSVG.</p>
+		/// Whether to insert the label as HTML, or as pseudo-HTML rendered withSVG.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the no-data label.</p>
+		/// CSS styles for the no-data label.
 		/// </summary>
 		public NoDataStyle Style { get; set; }
 		private NoDataStyle Style_DefaultValue { get; set; }

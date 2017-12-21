@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemap()
 		{
-			ShowInLegend = ShowInLegend_DefaultValue = False;
+			ShowInLegend = ShowInLegend_DefaultValue = false;
 			DataLabels = DataLabels_DefaultValue = "";
 			Tooltip = Tooltip_DefaultValue = "";
-			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = True;
+			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLayoutAlgorithm.SliceAndDice;
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLayoutStartingDirection.Vertical;
-			AlternateStartingDirection = AlternateStartingDirection_DefaultValue = False;
-			LevelIsConstant = LevelIsConstant_DefaultValue = True;
+			AlternateStartingDirection = AlternateStartingDirection_DefaultValue = false;
+			LevelIsConstant = LevelIsConstant_DefaultValue = true;
 			DrillUpButton = DrillUpButton_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#e6e6e6";
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -37,16 +37,16 @@ namespace Highsoft.Web.Mvc.Charts
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
-			AllowPointSelect = AllowPointSelect_DefaultValue = False;
-			ShowCheckbox = ShowCheckbox_DefaultValue = False;
+			AllowPointSelect = AllowPointSelect_DefaultValue = false;
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			DataLabels = DataLabels_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			SoftThreshold = SoftThreshold_DefaultValue = True;
+			SoftThreshold = SoftThreshold_DefaultValue = true;
 			States = States_DefaultValue = "";
-			StickyTracking = StickyTracking_DefaultValue = True;
+			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsTreemapFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;

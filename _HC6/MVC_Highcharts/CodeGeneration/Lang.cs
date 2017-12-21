@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public Lang()
 		{
 			DrillUpText = DrillUpText_DefaultValue = "Back to {series.name}";
-			DownloadCSV = DownloadCSV_DefaultValue = "Download CSV";
-			DownloadXLS = DownloadXLS_DefaultValue = "Download XLS";
-			ViewData = ViewData_DefaultValue = "View data table";
+			DownloadCSV = DownloadCSV_DefaultValue = Download CSV;
+			DownloadXLS = DownloadXLS_DefaultValue = Download XLS;
+			ViewData = ViewData_DefaultValue = View data table;
 			PrintChart = PrintChart_DefaultValue = "Print chart";
 			DownloadPNG = DownloadPNG_DefaultValue = "Download PNG image";
 			DownloadJPEG = DownloadJPEG_DefaultValue = "Download JPEG image";
@@ -33,170 +33,170 @@ namespace Highsoft.Web.Mvc.Charts
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
-			ThousandsSep = ThousandsSep_DefaultValue = " ";
-			ShortWeekdays = ShortWeekdays_DefaultValue = null;
-			InvalidDate = InvalidDate_DefaultValue = null;
+			ThousandsSep = ThousandsSep_DefaultValue = "";
+			ShortWeekdays = ShortWeekdays_DefaultValue = "";
+			InvalidDate = InvalidDate_DefaultValue = "";
 			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The text for the button that appears when drilling down, linkingback to the parent series. The parent series&#39; name is inserted for<code>{series.name}</code>.</p>
+		/// The text for the button that appears when drilling down, linkingback to the parent series. The parent series' name is inserted for`{series.name}`.
 		/// </summary>
 		public string DrillUpText { get; set; }
 		private string DrillUpText_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Export-data module only. The text for the menu item.</p>
+		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public string DownloadCSV { get; set; }
-		private string DownloadCSV_DefaultValue { get; set; }
+		public LangDownloadCSV DownloadCSV { get; set; }
+		private LangDownloadCSV DownloadCSV_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Export-data module only. The text for the menu item.</p>
+		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public string DownloadXLS { get; set; }
-		private string DownloadXLS_DefaultValue { get; set; }
+		public LangDownloadXLS DownloadXLS { get; set; }
+		private LangDownloadXLS DownloadXLS_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Export-data module only. The text for the menu item.</p>
+		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public string ViewData { get; set; }
-		private string ViewData_DefaultValue { get; set; }
+		public LangViewData ViewData { get; set; }
+		private LangViewData ViewData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Exporting module only. The text for the menu item to print the chart.</p>
+		/// Exporting module only. The text for the menu item to print the chart.
 		/// </summary>
 		public string PrintChart { get; set; }
 		private string PrintChart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Exporting module only. The text for the PNG download menu item.</p>
+		/// Exporting module only. The text for the PNG download menu item.
 		/// </summary>
 		public string DownloadPNG { get; set; }
 		private string DownloadPNG_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Exporting module only. The text for the JPEG download menu item.</p>
+		/// Exporting module only. The text for the JPEG download menu item.
 		/// </summary>
 		public string DownloadJPEG { get; set; }
 		private string DownloadJPEG_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Exporting module only. The text for the PDF download menu item.</p>
+		/// Exporting module only. The text for the PDF download menu item.
 		/// </summary>
 		public string DownloadPDF { get; set; }
 		private string DownloadPDF_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Exporting module only. The text for the SVG download menu item.</p>
+		/// Exporting module only. The text for the SVG download menu item.
 		/// </summary>
 		public string DownloadSVG { get; set; }
 		private string DownloadSVG_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Exporting module menu. The tooltip title for the context menu holdingprint and export menu items.</p>
+		/// Exporting module menu. The tooltip title for the context menu holdingprint and export menu items.
 		/// </summary>
 		public string ContextButtonTitle { get; set; }
 		private string ContextButtonTitle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The text to display when the chart contains no data. Requires theno-data module, see <a href="#noData">noData</a>.</p>
+		/// The text to display when the chart contains no data. Requires theno-data module, see [noData](#noData).
 		/// </summary>
 		public string NoData { get; set; }
 		private string NoData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The loading text that appears when the chart is set into the loadingstate following a call to <code>chart.showLoading</code>.</p>
+		/// The loading text that appears when the chart is set into the loadingstate following a call to `chart.showLoading`.
 		/// </summary>
 		public string Loading { get; set; }
 		private string Loading_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An array containing the months names. Corresponds to the <code>%B</code> formatin <code>Highcharts.dateFormat()</code>.</p>
+		/// An array containing the months names. Corresponds to the `%B` formatin `Highcharts.dateFormat()`.
 		/// </summary>
 		public List<string> Months { get; set; }
 		private List<string> Months_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An array containing the months names in abbreviated form. Correspondsto the <code>%b</code> format in <code>Highcharts.dateFormat()</code>.</p>
+		/// An array containing the months names in abbreviated form. Correspondsto the `%b` format in `Highcharts.dateFormat()`.
 		/// </summary>
 		public List<string> ShortMonths { get; set; }
 		private List<string> ShortMonths_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An array containing the weekday names.</p>
+		/// An array containing the weekday names.
 		/// </summary>
 		public List<string> Weekdays { get; set; }
 		private List<string> Weekdays_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The default decimal point used in the <code>Highcharts.numberFormat</code>method unless otherwise specified in the function arguments.</p>
+		/// The default decimal point used in the `Highcharts.numberFormat`method unless otherwise specified in the function arguments.
 		/// </summary>
 		public string DecimalPoint { get; set; }
 		private string DecimalPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p><a href="http://en.wikipedia.org/wiki/Metric_prefix">Metric prefixes</a> usedto shorten high numbers in axis labels. Replacing any of the positionswith <code>null</code> causes the full number to be written. Setting <code>numericSymbols</code>to <code>null</code> disables shortening altogether.</p>
+		/// [Metric prefixes](http://en.wikipedia.org/wiki/Metric_prefix) usedto shorten high numbers in axis labels. Replacing any of the positionswith `null` causes the full number to be written. Setting `numericSymbols`to `null` disables shortening altogether.
 		/// </summary>
 		public List<string> NumericSymbols { get; set; }
 		private List<string> NumericSymbols_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The text for the label appearing when a chart is zoomed.</p>
+		/// The text for the label appearing when a chart is zoomed.
 		/// </summary>
 		public string ResetZoom { get; set; }
 		private string ResetZoom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The tooltip title for the label appearing when a chart is zoomed.</p>
+		/// The tooltip title for the label appearing when a chart is zoomed.
 		/// </summary>
 		public string ResetZoomTitle { get; set; }
 		private string ResetZoomTitle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The default thousands separator used in the <code>Highcharts.numberFormat</code>method unless otherwise specified in the function arguments. SinceHighcharts 4.1 it defaults to a single space character, which iscompatible with ISO and works across Anglo-American and continentalEuropean languages.</p><p>The default is a single space.</p>
+		/// The default thousands separator used in the `Highcharts.numberFormat`method unless otherwise specified in the function arguments. SinceHighcharts 4.1 it defaults to a single space character, which iscompatible with ISO and works across Anglo-American and continentalEuropean languages.The default is a single space.
 		/// </summary>
 		public string ThousandsSep { get; set; }
 		private string ThousandsSep_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Short week days, starting Sunday. If not specified, Highcharts usesthe first three letters of the <code>lang.weekdays</code> option.</p>
+		/// Short week days, starting Sunday. If not specified, Highcharts usesthe first three letters of the `lang.weekdays` option.
 		/// </summary>
 		public List<string> ShortWeekdays { get; set; }
 		private List<string> ShortWeekdays_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>What to show in a date field for invalid dates. Defaults to an emptystring.</p>
+		/// What to show in a date field for invalid dates. Defaults to an emptystring.
 		/// </summary>
 		public string InvalidDate { get; set; }
 		private string InvalidDate_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The magnitude of <a href="#lang.numericSymbol">numericSymbols</a> replacements.Use 10000 for Japanese, Korean and various Chinese locales, whichuse symbols for 10^4, 10^8 and 10^12.</p>
+		/// The magnitude of [numericSymbols](#lang.numericSymbol) replacements.Use 10000 for Japanese, Korean and various Chinese locales, whichuse symbols for 10^4, 10^8 and 10^12.
 		/// </summary>
 		public double? NumericSymbolMagnitude { get; set; }
 		private double? NumericSymbolMagnitude_DefaultValue { get; set; }

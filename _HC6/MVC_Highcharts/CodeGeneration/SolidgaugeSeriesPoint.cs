@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SolidgaugeSeriesPoint()
 		{
-			Events = Events_DefaultValue = new SolidgaugeSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public SolidgaugeSeriesPointEvents Events { get; set; }
 		private SolidgaugeSeriesPointEvents Events_DefaultValue { get; set; }

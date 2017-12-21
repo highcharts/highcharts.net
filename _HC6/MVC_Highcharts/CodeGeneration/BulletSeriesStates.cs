@@ -14,16 +14,24 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BulletSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new BulletSeriesStatesHover();
+			Hover = Hover_DefaultValue = "";
+			Select = Select_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// Options for the hovered point. These settings override the normalstate options when a point is moused over or touched.
 		/// </summary>
 		public BulletSeriesStatesHover Hover { get; set; }
 		private BulletSeriesStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the selected point. These settings override the normalstate options when a point is selected.
+		/// </summary>
+		public BulletSeriesStatesSelect Select { get; set; }
+		private BulletSeriesStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

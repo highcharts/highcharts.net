@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public Loading()
 		{
 			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
-			Style = Style_DefaultValue = new LoadingStyle();
+			Style = Style_DefaultValue = new Hashtable{{ "position", "absolute"},{ "backgroundColor", "#ffffff"},{ "opacity", 0.5},{ "textAlign", "center" }};
 			HideDuration = HideDuration_DefaultValue = 100;
 			ShowDuration = ShowDuration_DefaultValue = 100;
 			
@@ -23,28 +23,28 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>CSS styles for the loading label <code>span</code>.</p>
+		/// CSS styles for the loading label `span`.
 		/// </summary>
 		public Hashtable LabelStyle { get; set; }
 		private Hashtable LabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the loading screen that covers the plot area.</p>
+		/// CSS styles for the loading screen that covers the plot area.
 		/// </summary>
-		public LoadingStyle Style { get; set; }
-		private LoadingStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The duration in milliseconds of the fade out effect.</p>
+		/// The duration in milliseconds of the fade out effect.
 		/// </summary>
 		public double? HideDuration { get; set; }
 		private double? HideDuration_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The duration in milliseconds of the fade in effect.</p>
+		/// The duration in milliseconds of the fade in effect.
 		/// </summary>
 		public double? ShowDuration { get; set; }
 		private double? ShowDuration_DefaultValue { get; set; }

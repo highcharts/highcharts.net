@@ -15,9 +15,10 @@ namespace Highsoft.Web.Mvc.Charts
 		public XAxisTitle()
 		{
 			Align = Align_DefaultValue = XAxisTitleAlign.Middle;
-			Style = Style_DefaultValue = new XAxisTitleStyle();
+			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
 			Position3d = Position3d_DefaultValue = XAxisTitlePosition3d.Offset;
 			Skew3d = Skew3d_DefaultValue = XAxisTitleSkew3d.False;
+			Enabled = Enabled_DefaultValue = "middle";
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			ReserveSpace = ReserveSpace_DefaultValue = true;
@@ -31,84 +32,91 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Alignment of the title relative to the axis values. Possiblevalues are &quot;low&quot;, &quot;middle&quot; or &quot;high&quot;.</p>
+		/// Alignment of the title relative to the axis values. Possiblevalues are "low", "middle" or "high".
 		/// </summary>
 		public XAxisTitleAlign Align { get; set; }
 		private XAxisTitleAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting <code>textOverflow: &#39;ellipsis&#39;</code>, by setting a specific <code>width</code> or by setting <code>wordSpace: &#39;nowrap&#39;</code>.</p><p>In styled mode, the stroke width is given in the<code>.highcharts-axis-title</code> class.</p>
+		/// CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting `textOverflow: 'ellipsis'`, by setting a specific `width` or by setting `wordSpace: 'nowrap'`.In styled mode, the stroke width is given in the`.highcharts-axis-title` class.
 		/// </summary>
-		public XAxisTitleStyle Style { get; set; }
-		private XAxisTitleStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Defines how the title is repositioned according to the 3D chartorientation.</p><ul><li><code>&#39;offset&#39;</code>: Maintain a fixed horizontal/vertical distance from thetick marks, despite the chart orientation. This is the backwardscompatible behavior, and causes skewing of X and Z axes.</li><li><code>&#39;chart&#39;</code>: Preserve 3D position relative to the chart.This looks nice, but hard to read if the text isn&#39;tforward-facing.</li><li><code>&#39;flap&#39;</code>: Rotated text along the axis to compensate for the chartorientation. This tries to maintain text as legible as possible onall orientations.</li><li><code>&#39;ortho&#39;</code>: Rotated text along the axis direction so that the labelsare orthogonal to the axis. This is very similar to <code>&#39;flap&#39;</code>, butprevents skewing the labels (X and Y scaling are still present).</li><li><code>null</code>: Will use the config from <code>labels.position3d</code></li></ul>
+		/// Defines how the title is repositioned according to the 3D chartorientation.- `'offset'`: Maintain a fixed horizontal/vertical distance from the  tick marks, despite the chart orientation. This is the backwards  compatible behavior, and causes skewing of X and Z axes.- `'chart'`: Preserve 3D position relative to the chart.  This looks nice, but hard to read if the text isn't  forward-facing.- `'flap'`: Rotated text along the axis to compensate for the chart  orientation. This tries to maintain text as legible as possible on  all orientations.- `'ortho'`: Rotated text along the axis direction so that the labels  are orthogonal to the axis. This is very similar to `'flap'`, but  prevents skewing the labels (X and Y scaling are still present).- `null`: Will use the config from `labels.position3d`
 		/// </summary>
 		public XAxisTitlePosition3d Position3d { get; set; }
 		private XAxisTitlePosition3d Position3d_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>If enabled, the axis title will skewed to follow the perspective.</p><p>This will fix overlapping labels and titles, but texts become lesslegible due to the distortion.</p><p>The final appearance depends heavily on <code>title.position3d</code>.</p><p>A <code>null</code> value will use the config from <code>labels.skew3d</code>.</p>
+		/// If enabled, the axis title will skewed to follow the perspective.This will fix overlapping labels and titles, but texts become lesslegible due to the distortion.The final appearance depends heavily on `title.position3d`.A `null` value will use the config from `labels.skew3d`.
 		/// </summary>
 		public XAxisTitleSkew3d Skew3d { get; set; }
 		private XAxisTitleSkew3d Skew3d_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel distance between the axis labels or line and the title. Defaults to 0 for horizontal axes, 10 for vertical</p>
+		/// Deprecated. Set the `text` to `null` to disable the title.
+		/// </summary>
+		public string Enabled { get; set; }
+		private string Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel distance between the axis labels or line and the title. Defaults to 0 for horizontal axes, 10 for vertical
 		/// </summary>
 		public double? Margin { get; set; }
 		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The distance of the axis title from the axis line. By default, thisdistance is computed from the offset width of the labels, the labels&#39;distance from the axis and the title&#39;s margin. However when the offsetoption is set, it overrides all this.</p>
+		/// The distance of the axis title from the axis line. By default, thisdistance is computed from the offset width of the labels, the labels'distance from the axis and the title's margin. However when the offsetoption is set, it overrides all this.
 		/// </summary>
 		public double? Offset { get; set; }
 		private double? Offset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to reserve space for the title when laying out the axis.</p>
+		/// Whether to reserve space for the title when laying out the axis.
 		/// </summary>
 		public bool? ReserveSpace { get; set; }
 		private bool? ReserveSpace_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The rotation of the text in degrees. 0 is horizontal, 270 is verticalreading from bottom to top.</p>
+		/// The rotation of the text in degrees. 0 is horizontal, 270 is verticalreading from bottom to top.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The actual text of the axis title. It can contain basic HTML textmarkup like <b>, <i> and spans with style.</p>
+		/// The actual text of the axis title. It can contain basic HTML textmarkup like <b>, <i> and spans with style.
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a> to render the axis title.</p>
+		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the axis title.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Horizontal pixel offset of the title position.</p>
+		/// Horizontal pixel offset of the title position.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Vertical pixel offset of the title position.</p>
+		/// Vertical pixel offset of the title position.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
@@ -122,6 +130,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d", Highcharts.FirstCharacterToLower(Skew3d.ToString()));
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);

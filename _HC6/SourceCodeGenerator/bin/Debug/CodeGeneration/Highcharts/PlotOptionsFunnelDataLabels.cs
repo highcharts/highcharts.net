@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsFunnelDataLabels()
 		{
 			Distance = Distance_DefaultValue = 30;
-			Enabled = Enabled_DefaultValue = True;
+			Enabled = Enabled_DefaultValue = true;
 			Formatter = Formatter_DefaultValue = "";
 			X = X_DefaultValue = 0;
 			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsFunnelDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 0;
+			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = 5;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;

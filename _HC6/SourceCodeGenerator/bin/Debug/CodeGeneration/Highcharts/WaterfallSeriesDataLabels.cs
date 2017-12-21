@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WaterfallSeriesDataLabels()
 		{
-			Inside = Inside_DefaultValue = True;
+			Inside = Inside_DefaultValue = true;
 			
 		}	
 		

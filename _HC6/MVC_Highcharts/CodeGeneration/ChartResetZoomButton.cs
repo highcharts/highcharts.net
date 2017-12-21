@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartResetZoomButton()
 		{
-			Theme = Theme_DefaultValue = new ChartResetZoomButtonTheme();
+			Theme = Theme_DefaultValue = "";
 			Position = Position_DefaultValue = new Hashtable();
 			RelativeTo = RelativeTo_DefaultValue = ChartResetZoomButtonRelativeTo.Plot;
 			
@@ -22,21 +22,21 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>A collection of attributes for the button. The object takes SVGattributes like <code>fill</code>, <code>stroke</code>, <code>stroke-width</code> or <code>r</code>, the borderradius. The theme also supports <code>style</code>, a collection of CSS propertiesfor the text. Equivalent attributes for the hover state are givenin <code>theme.states.hover</code>.</p>
+		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, the borderradius. The theme also supports `style`, a collection of CSS propertiesfor the text. Equivalent attributes for the hover state are givenin `theme.states.hover`.
 		/// </summary>
 		public ChartResetZoomButtonTheme Theme { get; set; }
 		private ChartResetZoomButtonTheme Theme_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The position of the button.</p>
+		/// The position of the button.
 		/// </summary>
 		public Hashtable Position { get; set; }
 		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>What frame the button should be placed related to. Can be either<code>plot</code> or <code>chart</code></p>
+		/// What frame the button should be placed related to. Can be either`plot` or `chart`
 		/// </summary>
 		public ChartResetZoomButtonRelativeTo RelativeTo { get; set; }
 		private ChartResetZoomButtonRelativeTo RelativeTo_DefaultValue { get; set; }

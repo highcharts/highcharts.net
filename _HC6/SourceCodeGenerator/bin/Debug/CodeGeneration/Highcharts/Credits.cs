@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Credits()
 		{
-			Enabled = Enabled_DefaultValue = True;
+			Enabled = Enabled_DefaultValue = true;
 			Href = Href_DefaultValue = "http://www.highcharts.com";
 			Position = Position_DefaultValue = new Hashtable();
 			Style = Style_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#999999"},{ "fontSize", "10px" }};

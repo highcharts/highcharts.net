@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SplineSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new SplineSeriesStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public SplineSeriesStatesHover Hover { get; set; }
 		private SplineSeriesStatesHover Hover_DefaultValue { get; set; }

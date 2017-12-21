@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BellcurveSeriesMarker()
 		{
-			Enabled = Enabled_DefaultValue = False;
+			Enabled = Enabled_DefaultValue = false;
 			
 		}	
 		

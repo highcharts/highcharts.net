@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PyramidSeriesPoint()
 		{
-			Events = Events_DefaultValue = new PyramidSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// 
 		/// </summary>
 		public PyramidSeriesPointEvents Events { get; set; }
 		private PyramidSeriesPointEvents Events_DefaultValue { get; set; }

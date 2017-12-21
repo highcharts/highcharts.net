@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsErrorbarPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsErrorbarPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsErrorbarPointEvents Events { get; set; }
 		private PlotOptionsErrorbarPointEvents Events_DefaultValue { get; set; }

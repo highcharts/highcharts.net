@@ -14,77 +14,77 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartOptions3dFrame()
 		{
-			Visible = Visible_DefaultValue = "default";
-			Size = Size_DefaultValue = null;
-			Bottom = Bottom_DefaultValue = new ChartOptions3dFrameBottom();
-			Top = Top_DefaultValue = new ChartOptions3dFrameTop();
-			Left = Left_DefaultValue = new ChartOptions3dFrameLeft();
-			Right = Right_DefaultValue = new ChartOptions3dFrameRight();
-			Back = Back_DefaultValue = new ChartOptions3dFrameBack();
-			Front = Front_DefaultValue = new ChartOptions3dFrameFront();
-			Side = Side_DefaultValue = new ChartOptions3dFrameSide();
+			Visible = Visible_DefaultValue = default;
+			Size = Size_DefaultValue = 1;
+			Bottom = Bottom_DefaultValue = "";
+			Top = Top_DefaultValue = "";
+			Left = Left_DefaultValue = "";
+			Right = Right_DefaultValue = "";
+			Back = Back_DefaultValue = "";
+			Front = Front_DefaultValue = "";
+			Side = Side_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Whether the frames are visible.</p>
+		/// Whether the frames are visible.
 		/// </summary>
-		public string Visible { get; set; }
-		private string Visible_DefaultValue { get; set; }
+		public ChartOptions3dFrameVisible Visible { get; set; }
+		private ChartOptions3dFrameVisible Visible_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>General pixel thickness for the frame faces.</p>
+		/// General pixel thickness for the frame faces.
 		/// </summary>
-		public double? Size { get; set; }
-		private double? Size_DefaultValue { get; set; }
+		public ChartOptions3dFrameSize Size { get; set; }
+		private ChartOptions3dFrameSize Size_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The bottom of the frame around a 3D chart.</p>
+		/// The bottom of the frame around a 3D chart.
 		/// </summary>
 		public ChartOptions3dFrameBottom Bottom { get; set; }
 		private ChartOptions3dFrameBottom Bottom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The top of the frame around a 3D chart.</p>
+		/// The top of the frame around a 3D chart.
 		/// </summary>
 		public ChartOptions3dFrameTop Top { get; set; }
 		private ChartOptions3dFrameTop Top_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The left side of the frame around a 3D chart.</p>
+		/// The left side of the frame around a 3D chart.
 		/// </summary>
 		public ChartOptions3dFrameLeft Left { get; set; }
 		private ChartOptions3dFrameLeft Left_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The right of the frame around a 3D chart.</p>
+		/// The right of the frame around a 3D chart.
 		/// </summary>
 		public ChartOptions3dFrameRight Right { get; set; }
 		private ChartOptions3dFrameRight Right_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The back side of the frame around a 3D chart.</p>
+		/// The back side of the frame around a 3D chart.
 		/// </summary>
 		public ChartOptions3dFrameBack Back { get; set; }
 		private ChartOptions3dFrameBack Back_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The front of the frame around a 3D chart.</p>
+		/// The front of the frame around a 3D chart.
 		/// </summary>
 		public ChartOptions3dFrameFront Front { get; set; }
 		private ChartOptions3dFrameFront Front_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Note: As of v5.0.12, <code>frame.left</code> or <code>frame.right</code> should be usedinstead.</p><p>The side for the frame around a 3D chart.</p>
+		/// Note: As of v5.0.12, `frame.left` or `frame.right` should be usedinstead.The side for the frame around a 3D chart.
 		/// </summary>
 		public ChartOptions3dFrameSide Side { get; set; }
 		private ChartOptions3dFrameSide Side_DefaultValue { get; set; }
@@ -97,11 +97,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (Bottom.IsDirty()) h.Add("bottom",Bottom.ToHashtable());
-			if (Top.IsDirty()) h.Add("top",Top.ToHashtable());
-			if (Left.IsDirty()) h.Add("left",Left.ToHashtable());
-			if (Right.IsDirty()) h.Add("right",Right.ToHashtable());
-			if (Back.IsDirty()) h.Add("back",Back.ToHashtable());
-			if (Front.IsDirty()) h.Add("front",Front.ToHashtable());
+			if (Top != Top_DefaultValue) h.Add("top",Top);
+			if (Left != Left_DefaultValue) h.Add("left",Left);
+			if (Right != Right_DefaultValue) h.Add("right",Right);
+			if (Back != Back_DefaultValue) h.Add("back",Back);
+			if (Front != Front_DefaultValue) h.Add("front",Front);
 			if (Side.IsDirty()) h.Add("side",Side.ToHashtable());
 			
 

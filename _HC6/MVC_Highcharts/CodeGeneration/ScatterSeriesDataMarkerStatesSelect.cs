@@ -24,35 +24,35 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The fill color of the point marker.</p>
+		/// The fill color of the point marker.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the point marker&#39;s outline. When <code>null</code>, the series&#39;or point&#39;s color is used.</p>
+		/// The color of the point marker's outline. When `null`, the series'or point's color is used.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The width of the point marker&#39;s outline.</p>
+		/// The width of the point marker's outline.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Enable or disable visible feedback for selection.</p>
+		/// Enable or disable visible feedback for selection.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The radius of the point marker. In hover state, it defaults to thenormal state&#39;s radius + 2.</p>
+		/// The radius of the point marker. In hover state, it defaults to thenormal state's radius + 2.
 		/// </summary>
 		public double? Radius { get; set; }
 		private double? Radius_DefaultValue { get; set; }

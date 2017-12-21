@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesDataLabels()
 		{
-			Enabled = Enabled_DefaultValue = True;
+			Enabled = Enabled_DefaultValue = true;
 			BackgroundColor = BackgroundColor_DefaultValue = none;
-			Crop = Crop_DefaultValue = False;
+			Crop = Crop_DefaultValue = false;
 			NodeFormat = NodeFormat_DefaultValue = "";
 			NodeFormatter = NodeFormatter_DefaultValue = "";
 			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = True;
+			Inside = Inside_DefaultValue = true;
 			
 		}	
 		

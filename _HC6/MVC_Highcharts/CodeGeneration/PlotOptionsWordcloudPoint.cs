@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWordcloudPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsWordcloudPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsWordcloudPointEvents Events { get; set; }
 		private PlotOptionsWordcloudPointEvents Events_DefaultValue { get; set; }

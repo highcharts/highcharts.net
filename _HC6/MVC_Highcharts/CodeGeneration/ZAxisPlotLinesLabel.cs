@@ -16,11 +16,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Align = Align_DefaultValue = "left";
 			Rotation = Rotation_DefaultValue = null;
-			Style = Style_DefaultValue = null;
-			Text = Text_DefaultValue = null;
-			TextAlign = TextAlign_DefaultValue = null;
+			Style = Style_DefaultValue = "";
+			Text = Text_DefaultValue = "";
+			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = ZAxisPlotLinesLabelVerticalAlign.Null;
+			VerticalAlign = VerticalAlign_DefaultValue = ZAxisPlotLinesLabelVerticalAlign.Top;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -28,63 +28,63 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Horizontal alignment of the label. Can be one of &quot;left&quot;, &quot;center&quot;or &quot;right&quot;.</p>
+		/// Horizontal alignment of the label. Can be one of "left", "center"or "right".
 		/// </summary>
 		public string Align { get; set; }
 		private string Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Rotation of the text label in degrees. Defaults to 0 for horizontalplot lines and 90 for vertical lines.</p>
+		/// Rotation of the text label in degrees. Defaults to 0 for horizontalplot lines and 90 for vertical lines.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the text label.</p><p>In styled mode, the labels are styled by the<code>.highcharts-plot-line-label</code> class.</p>
+		/// CSS styles for the text label.In styled mode, the labels are styled by the`.highcharts-plot-line-label` class.
 		/// </summary>
-		public Object Style { get; set; }
-		private Object Style_DefaultValue { get; set; }
+		public ZAxisPlotLinesLabelStyle Style { get; set; }
+		private ZAxisPlotLinesLabelStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The text itself. A subset of HTML is supported.</p>
+		/// The text itself. A subset of HTML is supported.
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The text alignment for the label. While <code>align</code> determines wherethe texts anchor point is placed within the plot band, <code>textAlign</code>determines how the text is aligned against its anchor point. Possiblevalues are &quot;left&quot;, &quot;center&quot; and &quot;right&quot;. Defaults to the same asthe <code>align</code> option.</p>
+		/// The text alignment for the label. While `align` determines wherethe texts anchor point is placed within the plot band, `textAlign`determines how the text is aligned against its anchor point. Possiblevalues are "left", "center" and "right". Defaults to the same asthe `align` option.
 		/// </summary>
 		public string TextAlign { get; set; }
 		private string TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a> to render the labels.</p>
+		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Vertical alignment of the label relative to the plot line. Can beone of &quot;top&quot;, &quot;middle&quot; or &quot;bottom&quot;.</p>
+		/// Vertical alignment of the label relative to the plot line. Can beone of "top", "middle" or "bottom".
 		/// </summary>
 		public ZAxisPlotLinesLabelVerticalAlign VerticalAlign { get; set; }
 		private ZAxisPlotLinesLabelVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Horizontal position relative the alignment. Default varies by orientation.</p>
+		/// Horizontal position relative the alignment. Default varies by orientation.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Vertical position of the text baseline relative to the alignment. Default varies by orientation.</p>
+		/// Vertical position of the text baseline relative to the alignment. Default varies by orientation.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

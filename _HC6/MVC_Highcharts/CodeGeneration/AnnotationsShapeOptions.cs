@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public AnnotationsShapeOptions()
 		{
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
-			StrokeWidth = StrokeWidth_DefaultValue = null;
+			StrokeWidth = StrokeWidth_DefaultValue = 1;
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
-			R = R_DefaultValue = null;
+			R = R_DefaultValue = 0;
 			Type = Type_DefaultValue = "'rect'";
 			Width = Width_DefaultValue = null;
 			Height = Height_DefaultValue = null;
@@ -26,49 +26,49 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The color of the shape&#39;s stroke.</p>
+		/// The color of the shape's stroke.
 		/// </summary>
 		public string Stroke { get; set; }
 		private string Stroke_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel stroke width of the shape.</p>
+		/// The pixel stroke width of the shape.
 		/// </summary>
-		public double? StrokeWidth { get; set; }
-		private double? StrokeWidth_DefaultValue { get; set; }
+		public AnnotationsShapeOptionsStrokeWidth StrokeWidth { get; set; }
+		private AnnotationsShapeOptionsStrokeWidth StrokeWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the shape&#39;s fill.</p>
+		/// The color of the shape's fill.
 		/// </summary>
 		public string Fill { get; set; }
 		private string Fill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The radius of the shape.</p>
+		/// The radius of the shape.
 		/// </summary>
-		public double? R { get; set; }
-		private double? R_DefaultValue { get; set; }
+		public AnnotationsShapeOptionsR R { get; set; }
+		private AnnotationsShapeOptionsR R_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The type of the shape, e.g. circle or rectangle.</p>
+		/// The type of the shape, e.g. circle or rectangle.
 		/// </summary>
 		public string Type { get; set; }
 		private string Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The width of the shape.</p>
+		/// The width of the shape.
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The height of the shape.</p>
+		/// The height of the shape.
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }

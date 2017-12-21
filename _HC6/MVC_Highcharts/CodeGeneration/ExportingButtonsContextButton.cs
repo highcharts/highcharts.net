@@ -33,162 +33,170 @@ namespace Highsoft.Web.Mvc.Charts
 			Text = Text_DefaultValue = "null";
 			Width = Width_DefaultValue = 24;
 			Y = Y_DefaultValue = 0;
+			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
 			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 1;
-			Theme = Theme_DefaultValue = new ExportingButtonsContextButtonTheme();
+			Theme = Theme_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The class name of the context button.</p>
+		/// The class name of the context button.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The class name of the menu appearing from the button.</p>
+		/// The class name of the menu appearing from the button.
 		/// </summary>
 		public string MenuClassName { get; set; }
 		private string MenuClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The symbol for the button. Points to a definition function inthe <code>Highcharts.Renderer.symbols</code> collection. The default <code>exportIcon</code>function is part of the exporting module.</p>
+		/// The symbol for the button. Points to a definition function inthe `Highcharts.Renderer.symbols` collection. The default `exportIcon`function is part of the exporting module.
 		/// </summary>
 		public string Symbol { get; set; }
 		private string Symbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The key to a <a href="#lang">lang</a> option setting that is used for thebutton<code>s title tooltip. When the key is</code>contextButtonTitle`, itrefers to <a href="#lang.contextButtonTitle">lang.contextButtonTitle</a>that defaults to &quot;Chart context menu&quot;.</p>
+		/// The key to a [lang](#lang) option setting that is used for thebutton`s title tooltip. When the key is `contextButtonTitle`, itrefers to [lang.contextButtonTitle](#lang.contextButtonTitle)that defaults to "Chart context menu".
 		/// </summary>
 		public string _titleKey { get; set; }
 		private string _titleKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A collection of strings pointing to config options for the menuitems. The config options are defined in the<code>menuItemDefinitions</code> option.</p><p>By default, there is the &quot;Print&quot; menu item plus one menu itemfor each of the available export types. </p><p>Defaults to </p><pre>[    'printChart',    'separator',    'downloadPNG',    'downloadJPEG',    'downloadPDF',    'downloadSVG']</pre>
+		/// A collection of strings pointing to config options for the menuitems. The config options are defined in the`menuItemDefinitions` option.By default, there is the "Print" menu item plus one menu itemfor each of the available export types. Defaults to <pre>['printChart','separator','downloadPNG','downloadJPEG','downloadPDF','downloadSVG']</pre>
 		/// </summary>
 		public List<MenuItem> MenuItems { get; set; }
 		private List<MenuItem> MenuItems_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A click handler callback to use on the button directly instead ofthe popup menu.</p>
+		/// A click handler callback to use on the button directly instead ofthe popup menu.
 		/// </summary>
 		public string Onclick { get; set; }
 		private string Onclick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>See <a href="#navigation.buttonOptions.symbolFill">navigation.buttonOptions.symbolFill</a>.</p>
+		/// See [navigation.buttonOptions.symbolFill](#navigation.buttonOptions.symbolFill).
 		/// </summary>
 		public string SymbolFill { get; set; }
 		private string SymbolFill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The horizontal position of the button relative to the <code>align</code>option.</p>
+		/// The horizontal position of the button relative to the `align`option.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel size of the symbol on the button.</p>
+		/// The pixel size of the symbol on the button.
 		/// </summary>
 		public double? SymbolSize { get; set; }
 		private double? SymbolSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to enable buttons.</p>
+		/// Whether to enable buttons.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The x position of the center of the symbol inside the button.</p>
+		/// The x position of the center of the symbol inside the button.
 		/// </summary>
 		public double? SymbolX { get; set; }
 		private double? SymbolX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The y position of the center of the symbol inside the button.</p>
+		/// The y position of the center of the symbol inside the button.
 		/// </summary>
 		public double? SymbolY { get; set; }
 		private double? SymbolY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Alignment for the buttons.</p>
+		/// Alignment for the buttons.
 		/// </summary>
 		public ExportingButtonsContextButtonAlign Align { get; set; }
 		private ExportingButtonsContextButtonAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel spacing between buttons.</p>
+		/// The pixel spacing between buttons.
 		/// </summary>
 		public double? ButtonSpacing { get; set; }
 		private double? ButtonSpacing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Pixel height of the buttons.</p>
+		/// Pixel height of the buttons.
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The vertical alignment of the buttons. Can be one of &quot;top&quot;, &quot;middle&quot;or &quot;bottom&quot;.</p>
+		/// The vertical alignment of the buttons. Can be one of "top", "middle"or "bottom".
 		/// </summary>
 		public ExportingButtonsContextButtonVerticalAlign VerticalAlign { get; set; }
 		private ExportingButtonsContextButtonVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A text string to add to the individual button.</p>
+		/// A text string to add to the individual button.
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel width of the button.</p>
+		/// The pixel width of the button.
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The vertical offset of the button&#39;s position relative to its<code>verticalAlign</code>.</p>
+		/// The vertical offset of the button's position relative to its`verticalAlign`.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the symbol&#39;s stroke or line.</p>
+		/// Fill color for the symbol within the button.
+		/// </summary>
+		public string SymbolFill { get; set; }
+		private string SymbolFill_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The color of the symbol's stroke or line.
 		/// </summary>
 		public string SymbolStroke { get; set; }
 		private string SymbolStroke_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel stroke width of the symbol on the button.</p>
+		/// The pixel stroke width of the symbol on the button.
 		/// </summary>
 		public double? SymbolStrokeWidth { get; set; }
 		private double? SymbolStrokeWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A configuration object for the button theme. The object acceptsSVG properties like <code>stroke-width</code>, <code>stroke</code> and <code>fill</code>. Tri-statebutton styles are supported by the <code>states.hover</code> and <code>states.select</code>objects.</p>
+		/// A configuration object for the button theme. The object acceptsSVG properties like `stroke-width`, `stroke` and `fill`. Tri-statebutton styles are supported by the `states.hover` and `states.select`objects.
 		/// </summary>
 		public ExportingButtonsContextButtonTheme Theme { get; set; }
 		private ExportingButtonsContextButtonTheme Theme_DefaultValue { get; set; }
@@ -203,7 +211,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (_titleKey != _titleKey_DefaultValue) h.Add("_titleKey",_titleKey);
 			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems",MenuItems);
-			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("ExportingButtonsContextButtonOnclick.onclick", Onclick); }  
+			if (Onclick != Onclick_DefaultValue) h.Add("onclick",Onclick);
 			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
@@ -217,6 +225,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (SymbolStroke != SymbolStroke_DefaultValue) h.Add("symbolStroke",SymbolStroke);
 			if (SymbolStrokeWidth != SymbolStrokeWidth_DefaultValue) h.Add("symbolStrokeWidth",SymbolStrokeWidth);
 			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());

@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWaterfallPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsWaterfallPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsWaterfallPointEvents Events { get; set; }
 		private PlotOptionsWaterfallPointEvents Events_DefaultValue { get; set; }

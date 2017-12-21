@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBellcurveStates()
 		{
-			Hover = Hover_DefaultValue = new PlotOptionsBellcurveStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsBellcurveStatesHover Hover { get; set; }
 		private PlotOptionsBellcurveStatesHover Hover_DefaultValue { get; set; }

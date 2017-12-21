@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum VariwideSeriesDataLabelsAlign
     {
-        Null, 
-		Left, 
+        Left, 
 		Center, 
 		Right
     }

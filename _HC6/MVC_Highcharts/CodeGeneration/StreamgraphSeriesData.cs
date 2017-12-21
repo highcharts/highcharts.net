@@ -14,110 +14,110 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public StreamgraphSeriesData()
 		{
-			Drilldown = Drilldown_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = null;
+			Drilldown = Drilldown_DefaultValue = "";
+			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = new StreamgraphSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
-			Name = Name_DefaultValue = null;
+			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
 			Y = Y_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = new StreamgraphSeriesDataEvents();
-			Marker = Marker_DefaultValue = new StreamgraphSeriesDataMarker();
+			Events = Events_DefaultValue = "";
+			Marker = Marker_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a>array to use for a drilldown for this point.</p>
+		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
 		/// </summary>
 		public string Drilldown { get; set; }
 		private string Drilldown_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An additional, individual class name for the data point&#39;s graphicrepresentation.</p>
+		/// An additional, individual class name for the data point's graphicrepresentation.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Individual color for the point. By default the color is pulled fromthe global <code>colors</code> array.</p>
+		/// Individual color for the point. By default the color is pulled fromthe global `colors` array.In styled mode, the `color` option doesn't take effect. Instead, use `colorIndex`.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Styled mode only. A specific color index to use for the point, so itsgraphic representations are given the class name <code>highcharts-color-{n}</code>.</p>
+		/// Styled mode only. A specific color index to use for the point, so itsgraphic representations are given the class name`highcharts-color-{n}`.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Individual data label for each point. The options are the same asthe ones for <a href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a></p>
+		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels)
 		/// </summary>
 		public StreamgraphSeriesDataLabels DataLabels { get; set; }
 		private StreamgraphSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A description of the point to add to the screen reader informationabout the point. Requires the Accessibility module.</p>
+		/// A description of the point to add to the screen reader informationabout the point. Requires the Accessibility module.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An id for the point. This can be used after render time to get apointer to the point object through <code>chart.get()</code>.</p>
+		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The rank for this point&#39;s data label in case of collision. If twodata labels are about to overlap, only the one with the highest <code>labelrank</code>will be drawn.</p>
+		/// The rank for this point's data label in case of collision. If twodata labels are about to overlap, only the one with the highest `labelrank`will be drawn.
 		/// </summary>
 		public double? Labelrank { get; set; }
 		private double? Labelrank_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The name of the point as shown in the legend, tooltip, dataLabeletc.</p>
+		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether the data point is selected initially.</p>
+		/// Whether the data point is selected initially.
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.</p>
+		/// The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The y value of the point.</p>
+		/// The y value of the point.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Individual point events</p>
+		/// Individual point events
 		/// </summary>
 		public StreamgraphSeriesDataEvents Events { get; set; }
 		private StreamgraphSeriesDataEvents Events_DefaultValue { get; set; }
@@ -138,7 +138,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
@@ -146,8 +146,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
+			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			
 
 			return h;

@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesStates()
 		{
-			Hover = Hover_DefaultValue = new SankeySeriesStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// 
 		/// </summary>
 		public SankeySeriesStatesHover Hover { get; set; }
 		private SankeySeriesStatesHover Hover_DefaultValue { get; set; }

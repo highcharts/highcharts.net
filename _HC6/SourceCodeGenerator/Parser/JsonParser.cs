@@ -123,9 +123,15 @@ namespace SourceCodeGenerator.Parser
                 if (jName != null)
                     apiItem.Title = jName.Value<string>();
 
-                JToken jDefault = meta.SelectToken("default", false);
-                if (jDefault != null)
-                    apiItem.Defaults = jDefault.Value<string>();
+                if (string.IsNullOrEmpty(apiItem.Defaults))
+                {
+                    JToken jDefault = meta.SelectToken("default", false);
+                    if (jDefault != null)
+                        apiItem.Defaults = jDefault.Value<string>();
+
+                    if (apiItem.Defaults == "False" || apiItem.Defaults == "True")
+                        apiItem.Defaults = apiItem.Defaults.First().ToString().ToLower() + apiItem.Defaults.Substring(1);
+                }
             }
 
             if (string.IsNullOrWhiteSpace(apiItem.FullName))
@@ -141,8 +147,8 @@ namespace SourceCodeGenerator.Parser
                 apiItem.Values.Clear();
 
             //remove this condition if bug in json will be fixed
-            if (apiItem.FullName.StartsWith("plotOptions.column.marker"))
-                return;
+            //if (apiItem.FullName.StartsWith("plotOptions.column.marker"))
+            //    return;
 
             if (parent == null)
                 Items.Add(apiItem);

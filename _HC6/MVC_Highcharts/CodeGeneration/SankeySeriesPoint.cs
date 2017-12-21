@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesPoint()
 		{
-			Events = Events_DefaultValue = new SankeySeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public SankeySeriesPointEvents Events { get; set; }
 		private SankeySeriesPointEvents Events_DefaultValue { get; set; }

@@ -14,16 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public DrilldownAnimation()
 		{
-			Duration = Duration_DefaultValue = "500";
+			Duration = Duration_DefaultValue = 500;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Duration for the drilldown animation.</p>
+		/// Duration for the drilldown animation.
 		/// </summary>
-		public string Duration { get; set; }
-		private string Duration_DefaultValue { get; set; }
+		public DrilldownAnimationDuration Duration { get; set; }
+		private DrilldownAnimationDuration Duration_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

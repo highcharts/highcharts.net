@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsAreasplinerangeStates()
 		{
-			Hover = Hover_DefaultValue = new PlotOptionsAreasplinerangeStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsAreasplinerangeStatesHover Hover { get; set; }
 		private PlotOptionsAreasplinerangeStatesHover Hover_DefaultValue { get; set; }

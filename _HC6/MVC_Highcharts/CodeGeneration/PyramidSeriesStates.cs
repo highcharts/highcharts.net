@@ -14,23 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PyramidSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new PyramidSeriesStatesHover();
+			Select = Select_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// Options for a selected funnel item.
 		/// </summary>
-		public PyramidSeriesStatesHover Hover { get; set; }
-		private PyramidSeriesStatesHover Hover_DefaultValue { get; set; }
+		public PyramidSeriesStatesSelect Select { get; set; }
+		private PyramidSeriesStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

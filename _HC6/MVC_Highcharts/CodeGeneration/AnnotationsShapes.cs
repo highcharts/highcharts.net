@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AnnotationsShapes()
 		{
-			Point = Point_DefaultValue = new AnnotationsShapesPoint();
-			Points = Points_DefaultValue = null;
-			MarkerEnd = MarkerEnd_DefaultValue = null;
-			MarkerStart = MarkerStart_DefaultValue = null;
+			Point = Point_DefaultValue = "";
+			Points = Points_DefaultValue = "";
+			MarkerEnd = MarkerEnd_DefaultValue = "";
+			MarkerStart = MarkerStart_DefaultValue = "";
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
-			StrokeWidth = StrokeWidth_DefaultValue = null;
+			StrokeWidth = StrokeWidth_DefaultValue = 1;
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
-			R = R_DefaultValue = null;
+			R = R_DefaultValue = 0;
 			Type = Type_DefaultValue = "'rect'";
 			Width = Width_DefaultValue = null;
 			Height = Height_DefaultValue = null;
@@ -30,77 +30,77 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>This option defines the point to which the shape will be connected.It can be either the point which exists in the series - it is referencedby the point&#39;s id - or a new point with defined x, y propertiesand optionally axes.</p>
+		/// This option defines the point to which the shape will be connected.It can be either the point which exists in the series - it is referencedby the point's id - or a new point with defined x, y propertiesand optionally axes.
 		/// </summary>
-		public AnnotationsShapesPoint Point { get; set; }
-		private AnnotationsShapesPoint Point_DefaultValue { get; set; }
+		public string Point { get; set; }
+		private string Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An array of points for the shape. This option is available for shapeswhich can use multiple points such as path. A point can be either a point object or a point&#39;s id.</p>
+		/// An array of points for the shape. This option is available for shapeswhich can use multiple points such as path. A point can be either a point object or a point's id.
 		/// </summary>
-		public Array Points { get; set; }
-		private Array Points_DefaultValue { get; set; }
+		public AnnotationsShapesPoints Points { get; set; }
+		private AnnotationsShapesPoints Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Id of the marker which will be drawn at the final vertex of the path.Custom markers can be defined in defs property.</p>
+		/// Id of the marker which will be drawn at the final vertex of the path.Custom markers can be defined in defs property.
 		/// </summary>
 		public string MarkerEnd { get; set; }
 		private string MarkerEnd_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Id of the marker which will be drawn at the first vertex of the path.Custom markers can be defined in defs property.</p>
+		/// Id of the marker which will be drawn at the first vertex of the path.Custom markers can be defined in defs property.
 		/// </summary>
 		public string MarkerStart { get; set; }
 		private string MarkerStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the shape&#39;s stroke.</p>
+		/// The color of the shape's stroke.
 		/// </summary>
 		public string Stroke { get; set; }
 		private string Stroke_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel stroke width of the shape.</p>
+		/// The pixel stroke width of the shape.
 		/// </summary>
-		public double? StrokeWidth { get; set; }
-		private double? StrokeWidth_DefaultValue { get; set; }
+		public AnnotationsShapesStrokeWidth StrokeWidth { get; set; }
+		private AnnotationsShapesStrokeWidth StrokeWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the shape&#39;s fill.</p>
+		/// The color of the shape's fill.
 		/// </summary>
 		public string Fill { get; set; }
 		private string Fill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The radius of the shape.</p>
+		/// The radius of the shape.
 		/// </summary>
-		public double? R { get; set; }
-		private double? R_DefaultValue { get; set; }
+		public AnnotationsShapesR R { get; set; }
+		private AnnotationsShapesR R_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The type of the shape, e.g. circle or rectangle.</p>
+		/// The type of the shape, e.g. circle or rectangle.
 		/// </summary>
 		public string Type { get; set; }
 		private string Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The width of the shape.</p>
+		/// The width of the shape.
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The height of the shape.</p>
+		/// The height of the shape.
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
@@ -110,7 +110,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (Point != Point_DefaultValue) h.Add("point",Point);
 			if (Points != Points_DefaultValue) h.Add("points",Points);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (MarkerStart != MarkerStart_DefaultValue) h.Add("markerStart",MarkerStart);

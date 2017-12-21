@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSankeyPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsSankeyPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsSankeyPointEvents Events { get; set; }
 		private PlotOptionsSankeyPointEvents Events_DefaultValue { get; set; }

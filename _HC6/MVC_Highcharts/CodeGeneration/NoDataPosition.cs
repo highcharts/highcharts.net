@@ -23,28 +23,28 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Horizontal offset of the label, in pixels.</p>
+		/// Horizontal offset of the label, in pixels.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Vertical offset of the label, in pixels.</p>
+		/// Vertical offset of the label, in pixels.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Horizontal alignment of the label.</p>
+		/// Horizontal alignment of the label.
 		/// </summary>
 		public NoDataPositionAlign Align { get; set; }
 		private NoDataPositionAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Vertical alignment of the label.</p>
+		/// Vertical alignment of the label.
 		/// </summary>
 		public NoDataPositionVerticalAlign VerticalAlign { get; set; }
 		private NoDataPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }

@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HistogramSeriesDataLabelsStyle()
 		{
-			FontSize = FontSize_DefaultValue = "11px";
-			FontWeight = FontWeight_DefaultValue = "bold";
-			Color = Color_DefaultValue = "contrast";
-			TextOutline = TextOutline_DefaultValue = "1px contrast";
+			FontSize = FontSize_DefaultValue = 11px;
+			FontWeight = FontWeight_DefaultValue = bold;
+			Color = Color_DefaultValue = contrast;
+			TextOutline = TextOutline_DefaultValue = 1px contrast;
 			
 		}	
 		
@@ -25,29 +25,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontSize { get; set; }
-		private string FontSize_DefaultValue { get; set; }
+		public HistogramSeriesDataLabelsStyleFontSize FontSize { get; set; }
+		private HistogramSeriesDataLabelsStyleFontSize FontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontWeight { get; set; }
-		private string FontWeight_DefaultValue { get; set; }
+		public HistogramSeriesDataLabelsStyleFontWeight FontWeight { get; set; }
+		private HistogramSeriesDataLabelsStyleFontWeight FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public HistogramSeriesDataLabelsStyleColor Color { get; set; }
+		private HistogramSeriesDataLabelsStyleColor Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string TextOutline { get; set; }
-		private string TextOutline_DefaultValue { get; set; }
+		public HistogramSeriesDataLabelsStyleTextOutline TextOutline { get; set; }
+		private HistogramSeriesDataLabelsStyleTextOutline TextOutline_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

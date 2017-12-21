@@ -21,62 +21,62 @@ namespace Highsoft.Web.Mvc.Charts
 			FitToPlot = FitToPlot_DefaultValue = true;
 			ViewDistance = ViewDistance_DefaultValue = 100;
 			AxisLabelPosition = AxisLabelPosition_DefaultValue = ChartOptions3dAxisLabelPosition.Null;
-			Frame = Frame_DefaultValue = new ChartOptions3dFrame();
+			Frame = Frame_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Wether to render the chart using the 3D functionality.</p>
+		/// Wether to render the chart using the 3D functionality.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>One of the two rotation angles for the chart.</p>
+		/// One of the two rotation angles for the chart.
 		/// </summary>
 		public double? Alpha { get; set; }
 		private double? Alpha_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>One of the two rotation angles for the chart.</p>
+		/// One of the two rotation angles for the chart.
 		/// </summary>
 		public double? Beta { get; set; }
 		private double? Beta_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The total depth of the chart.</p>
+		/// The total depth of the chart.
 		/// </summary>
 		public double? Depth { get; set; }
 		private double? Depth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether the 3d box should automatically adjust to the chart plotarea.</p>
+		/// Whether the 3d box should automatically adjust to the chart plotarea.
 		/// </summary>
 		public bool? FitToPlot { get; set; }
 		private bool? FitToPlot_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Defines the distance the viewer is standing in front of the chart,this setting is important to calculate the perspective effectin column and scatter charts. It is not used for 3D pie charts.</p>
+		/// Defines the distance the viewer is standing in front of the chart,this setting is important to calculate the perspective effectin column and scatter charts. It is not used for 3D pie charts.
 		/// </summary>
 		public double? ViewDistance { get; set; }
 		private double? ViewDistance_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Set it to <code>&quot;auto&quot;</code> to automatically move the labels to the bestedge.</p>
+		/// Set it to `"auto"` to automatically move the labels to the bestedge.
 		/// </summary>
 		public ChartOptions3dAxisLabelPosition AxisLabelPosition { get; set; }
 		private ChartOptions3dAxisLabelPosition AxisLabelPosition_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Provides the option to draw a frame around the charts by defininga bottom, front and back panel.</p>
+		/// Provides the option to draw a frame around the charts by defininga bottom, front and back panel.
 		/// </summary>
 		public ChartOptions3dFrame Frame { get; set; }
 		private ChartOptions3dFrame Frame_DefaultValue { get; set; }

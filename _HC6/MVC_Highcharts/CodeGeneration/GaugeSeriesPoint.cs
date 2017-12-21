@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public GaugeSeriesPoint()
 		{
-			Events = Events_DefaultValue = new GaugeSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public GaugeSeriesPointEvents Events { get; set; }
 		private GaugeSeriesPointEvents Events_DefaultValue { get; set; }

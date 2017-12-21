@@ -23,28 +23,28 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The pixel radius of the pivot.</p>
+		/// The pixel radius of the pivot.
 		/// </summary>
 		public double? Radius { get; set; }
 		private double? Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The border or stroke width of the pivot.</p>
+		/// The border or stroke width of the pivot.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The border or stroke color of the pivot. In able to change this,the borderWidth must also be set to something other than the default0.</p>
+		/// The border or stroke color of the pivot. In able to change this,the borderWidth must also be set to something other than the default0.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The background color or fill of the pivot.</p>
+		/// The background color or fill of the pivot.
 		/// </summary>
 		public string BackgroundColor { get; set; }
 		private string BackgroundColor_DefaultValue { get; set; }

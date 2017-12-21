@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemapData()
 		{
-			Color = Color_DefaultValue = null;
+			Color = Color_DefaultValue = "";
 			X = X_DefaultValue = double.MinValue;
 			Y = Y_DefaultValue = double.MinValue;
 			
@@ -22,21 +22,21 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The color of the point. In tilemaps the point color is rarely setexplicitly, as we use the color to denote the <code>value</code>. Options forthis are set in the <a href="#colorAxis">colorAxis</a> configuration.</p>
+		/// The color of the point. In tilemaps the point color is rarely setexplicitly, as we use the color to denote the `value`. Options forthis are set in the [colorAxis](#colorAxis) configuration.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The x coordinate of the point.</p><p>Note that for some <a href="#plotOptions.tilemap.tileShape">tileShapes</a> the gridcoordinates are offset.</p>
+		/// The x coordinate of the point.Note that for some [tileShapes](#plotOptions.tilemap.tileShape) the gridcoordinates are offset.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The y coordinate of the point.</p><p>Note that for some <a href="#plotOptions.tilemap.tileShape">tileShapes</a> the gridcoordinates are offset.</p>
+		/// The y coordinate of the point.Note that for some [tileShapes](#plotOptions.tilemap.tileShape) the gridcoordinates are offset.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

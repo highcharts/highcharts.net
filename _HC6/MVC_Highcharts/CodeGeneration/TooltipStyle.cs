@@ -14,11 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TooltipStyle()
 		{
-			Color = Color_DefaultValue = "#333333";
-			Cursor = Cursor_DefaultValue = "default";
-			FontSize = FontSize_DefaultValue = "12px";
-			PointerEvents = PointerEvents_DefaultValue = "none";
-			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
+			Color = Color_DefaultValue = #333333;
+			Cursor = Cursor_DefaultValue = default;
+			FontSize = FontSize_DefaultValue = 12px;
+			PointerEvents = PointerEvents_DefaultValue = none;
+			WhiteSpace = WhiteSpace_DefaultValue = nowrap;
 			
 		}	
 		
@@ -26,36 +26,36 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public TooltipStyleColor Color { get; set; }
+		private TooltipStyleColor Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public TooltipStyleCursor Cursor { get; set; }
+		private TooltipStyleCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontSize { get; set; }
-		private string FontSize_DefaultValue { get; set; }
+		public TooltipStyleFontSize FontSize { get; set; }
+		private TooltipStyleFontSize FontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string PointerEvents { get; set; }
-		private string PointerEvents_DefaultValue { get; set; }
+		public TooltipStylePointerEvents PointerEvents { get; set; }
+		private TooltipStylePointerEvents PointerEvents_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string WhiteSpace { get; set; }
-		private string WhiteSpace_DefaultValue { get; set; }
+		public TooltipStyleWhiteSpace WhiteSpace { get; set; }
+		private TooltipStyleWhiteSpace WhiteSpace_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -17,16 +17,16 @@ namespace Highsoft.Web.Mvc.Charts
 			TargetOptions = TargetOptions_DefaultValue = "";
 			Tooltip = Tooltip_DefaultValue = "";
 			Label = Label_DefaultValue = "";
-			AllowPointSelect = AllowPointSelect_DefaultValue = False;
-			ShowCheckbox = ShowCheckbox_DefaultValue = False;
+			AllowPointSelect = AllowPointSelect_DefaultValue = false;
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			DataLabels = DataLabels_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			SoftThreshold = SoftThreshold_DefaultValue = True;
+			SoftThreshold = SoftThreshold_DefaultValue = true;
 			States = States_DefaultValue = "";
-			StickyTracking = StickyTracking_DefaultValue = True;
+			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsBulletFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
@@ -58,16 +58,17 @@ namespace Highsoft.Web.Mvc.Charts
 			Zones = Zones_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			Crisp = Crisp_DefaultValue = True;
+			Crisp = Crisp_DefaultValue = true;
 			GroupPadding = GroupPadding_DefaultValue = 0.2;
+			Marker = Marker_DefaultValue = true;
 			PointPadding = PointPadding_DefaultValue = 0.1;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			PointRange = PointRange_DefaultValue = null;
 			States = States_DefaultValue = "";
 			DataLabels = DataLabels_DefaultValue = "";
-			SoftThreshold = SoftThreshold_DefaultValue = False;
-			StickyTracking = StickyTracking_DefaultValue = False;
+			SoftThreshold = SoftThreshold_DefaultValue = false;
+			StickyTracking = StickyTracking_DefaultValue = false;
 			Tooltip = Tooltip_DefaultValue = "";
 			Threshold = Threshold_DefaultValue = 0;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
@@ -409,6 +410,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to group non-stacked columns or to let them render independentof each other. Non-grouped columns will be laid out individuallyand overlap each other.
+		/// </summary>
+		public bool? Marker { get; set; }
+		private bool? Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Padding between each column or bar, in x axis units.
 		/// </summary>
 		public double? PointPadding { get; set; }
@@ -616,6 +624,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
+			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);

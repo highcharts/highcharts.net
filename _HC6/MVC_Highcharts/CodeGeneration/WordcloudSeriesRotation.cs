@@ -14,32 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WordcloudSeriesRotation()
 		{
-			From = From_DefaultValue = null;
-			Orientations = Orientations_DefaultValue = null;
-			To = To_DefaultValue = null;
+			From = From_DefaultValue = 0;
+			Orientations = Orientations_DefaultValue = 2;
+			To = To_DefaultValue = 90;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The smallest degree of rotation for a word.</p>
+		/// The smallest degree of rotation for a word.
 		/// </summary>
-		public double? From { get; set; }
-		private double? From_DefaultValue { get; set; }
+		public WordcloudSeriesRotationFrom From { get; set; }
+		private WordcloudSeriesRotationFrom From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The number of possible orientations for a word, within the range of<code>rotation.from</code> and <code>rotation.to</code>.</p>
+		/// The number of possible orientations for a word, within the range of`rotation.from` and `rotation.to`.
 		/// </summary>
-		public double? Orientations { get; set; }
-		private double? Orientations_DefaultValue { get; set; }
+		public WordcloudSeriesRotationOrientations Orientations { get; set; }
+		private WordcloudSeriesRotationOrientations Orientations_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The largest degree of rotation for a word.</p>
+		/// The largest degree of rotation for a word.
 		/// </summary>
-		public double? To { get; set; }
-		private double? To_DefaultValue { get; set; }
+		public WordcloudSeriesRotationTo To { get; set; }
+		private WordcloudSeriesRotationTo To_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

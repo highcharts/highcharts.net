@@ -14,16 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxisStackLabels()
 		{
-			AllowOverlap = AllowOverlap_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = null;
+			AllowOverlap = AllowOverlap_DefaultValue = false;
+			Enabled = Enabled_DefaultValue = false;
 			Formatter = Formatter_DefaultValue = "";
-			Style = Style_DefaultValue = new YAxisStackLabelsStyle();
-			Align = Align_DefaultValue = YAxisStackLabelsAlign.Null;
+			Style = Style_DefaultValue = "";
+			Align = Align_DefaultValue = YAxisStackLabelsAlign.Left;
 			Format = Format_DefaultValue = "{total}";
 			Rotation = Rotation_DefaultValue = 0;
-			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Null;
+			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Left;
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
+			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Top;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -31,84 +31,84 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Allow the stack labels to overlap.</p>
+		/// Allow the stack labels to overlap.
 		/// </summary>
-		public bool? AllowOverlap { get; set; }
-		private bool? AllowOverlap_DefaultValue { get; set; }
+		public YAxisStackLabelsAllowOverlap AllowOverlap { get; set; }
+		private YAxisStackLabelsAllowOverlap AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Enable or disable the stack total labels.</p>
+		/// Enable or disable the stack total labels.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public YAxisStackLabelsEnabled Enabled { get; set; }
+		private YAxisStackLabelsEnabled Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Callback JavaScript function to format the label. The value isgiven by <code>this.total</code>. Defaults to:</p><pre>function() {    return this.total;}</pre>
+		/// Callback JavaScript function to format the label. The value isgiven by `this.total`.
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the label.</p><p>In styled mode, the styles are set in the<code>.highcharts-stack-label</code> class.</p>
+		/// CSS styles for the label.In styled mode, the styles are set in the`.highcharts-stack-label` class.
 		/// </summary>
-		public YAxisStackLabelsStyle Style { get; set; }
-		private YAxisStackLabelsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Defines the horizontal alignment of the stack total label. Can beone of <code>&quot;left&quot;</code>, <code>&quot;center&quot;</code> or <code>&quot;right&quot;</code>. The default value is calculatedat runtime and depends on orientation and whether the stack is positiveor negative.</p>
+		/// Defines the horizontal alignment of the stack total label. Can beone of `"left"`, `"center"` or `"right"`. The default value is calculatedat runtime and depends on orientation and whether the stack is positiveor negative.
 		/// </summary>
 		public YAxisStackLabelsAlign Align { get; set; }
 		private YAxisStackLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A <a href="http://docs.highcharts.com/#formatting">format string</a> for thedata label. Available variables are the same as for <code>formatter</code>.</p>
+		/// A [format string](http://docs.highcharts.com/#formatting) for thedata label. Available variables are the same as for `formatter`.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Rotation of the labels in degrees.</p>
+		/// Rotation of the labels in degrees.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The text alignment for the label. While <code>align</code> determines wherethe texts anchor point is placed with regards to the stack, <code>textAlign</code>determines how the text is aligned against its anchor point. Possiblevalues are <code>&quot;left&quot;</code>, <code>&quot;center&quot;</code> and <code>&quot;right&quot;</code>. The default valueis calculated at runtime and depends on orientation and whether thestack is positive or negative.</p>
+		/// The text alignment for the label. While `align` determines wherethe texts anchor point is placed with regards to the stack, `textAlign`determines how the text is aligned against its anchor point. Possiblevalues are `"left"`, `"center"` and `"right"`. The default valueis calculated at runtime and depends on orientation and whether thestack is positive or negative.
 		/// </summary>
 		public YAxisStackLabelsTextAlign TextAlign { get; set; }
 		private YAxisStackLabelsTextAlign TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a>to render the labels.</p>
+		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Defines the vertical alignment of the stack total label. Can be oneof <code>&quot;top&quot;</code>, <code>&quot;middle&quot;</code> or <code>&quot;bottom&quot;</code>. The default value is calculatedat runtime and depends on orientation and whether the stack is positiveor negative.</p>
+		/// Defines the vertical alignment of the stack total label. Can be oneof `"top"`, `"middle"` or `"bottom"`. The default value is calculatedat runtime and depends on orientation and whether the stack is positiveor negative.
 		/// </summary>
 		public YAxisStackLabelsVerticalAlign VerticalAlign { get; set; }
 		private YAxisStackLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The x position offset of the label relative to the left of the stackedbar. The default value is calculated at runtime and depends on orientationand whether the stack is positive or negative.</p>
+		/// The x position offset of the label relative to the left of the stackedbar. The default value is calculated at runtime and depends on orientationand whether the stack is positive or negative.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The y position offset of the label relative to the tick positionon the axis. The default value is calculated at runtime and dependson orientation and whether the stack is positive or negative.</p>
+		/// The y position offset of the label relative to the tick positionon the axis. The default value is calculated at runtime and dependson orientation and whether the stack is positive or negative.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
@@ -120,7 +120,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("YAxisStackLabelsFormatter.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Format != Format_DefaultValue) h.Add("format",Format);

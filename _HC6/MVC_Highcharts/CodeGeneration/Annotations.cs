@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Annotations()
 		{
-			Visible = Visible_DefaultValue = null;
-			LabelOptions = LabelOptions_DefaultValue = new AnnotationsLabelOptions();
-			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsShapeOptions();
+			Visible = Visible_DefaultValue = true;
+			LabelOptions = LabelOptions_DefaultValue = "";
+			ShapeOptions = ShapeOptions_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = 6;
 			Labels = Labels_DefaultValue = new List<AnnotationsLabels>();
 			Shapes = Shapes_DefaultValue = new List<AnnotationsShapes>();
@@ -25,42 +25,42 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Whether the annotation is visible.</p>
+		/// Whether the annotation is visible.
 		/// </summary>
-		public bool? Visible { get; set; }
-		private bool? Visible_DefaultValue { get; set; }
+		public AnnotationsVisible Visible { get; set; }
+		private AnnotationsVisible Visible_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Options for annotation&#39;s labels. Each label inherits optionsfrom the labelOptions object. An option from the labelOptions can beoverwritten by config for a specific label.</p>
+		/// Options for annotation's labels. Each label inherits optionsfrom the labelOptions object. An option from the labelOptions can beoverwritten by config for a specific label.
 		/// </summary>
 		public AnnotationsLabelOptions LabelOptions { get; set; }
 		private AnnotationsLabelOptions LabelOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Options for annotation&#39;s shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptions can beoverwritten by config for a specific shape.</p>
+		/// Options for annotation's shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptions can beoverwritten by config for a specific shape.
 		/// </summary>
 		public AnnotationsShapeOptions ShapeOptions { get; set; }
 		private AnnotationsShapeOptions ShapeOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The Z index of the annotation.</p>
+		/// The Z index of the annotation.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An array of labels for the annotation. For options that apply to multiplelabels, they can be added to the <a href="annotations.labelOptions.html">labelOptions</a>.</p>
+		/// An array of labels for the annotation. For options that apply to multiplelabels, they can be added to the [labelOptions](annotations.labelOptions.html).
 		/// </summary>
 		public List<AnnotationsLabels> Labels { get; set; }
 		private List<AnnotationsLabels> Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An array of shapes for the annotation. For options that apply to multipleshapes, then can be added to the <a href="annotations.shapeOptions.html">shapeOptions</a>.</p>
+		/// An array of shapes for the annotation. For options that apply to multipleshapes, then can be added to the [shapeOptions](annotations.shapeOptions.html).
 		/// </summary>
 		public List<AnnotationsShapes> Shapes { get; set; }
 		private List<AnnotationsShapes> Shapes_DefaultValue { get; set; }

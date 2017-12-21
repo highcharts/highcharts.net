@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public LabelsStyle()
 		{
 			Position = Position_DefaultValue = new Hashtable();
-			Color = Color_DefaultValue = "#333333";
+			Color = Color_DefaultValue = #333333;
 			
 		}	
 		
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public LabelsStyleColor Color { get; set; }
+		private LabelsStyleColor Color_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

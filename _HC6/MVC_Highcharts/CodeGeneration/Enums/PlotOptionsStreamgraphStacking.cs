@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsStreamgraphStacking
     {
-        Stream, 
-		Null, 
+        Null, 
 		Normal, 
 		Percent
     }

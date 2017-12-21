@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HeatmapSeriesStatesHover()
 		{
-			Halo = Halo_DefaultValue = False;
+			Halo = Halo_DefaultValue = false;
 			Brightness = Brightness_DefaultValue = 0.2;
 			
 		}	

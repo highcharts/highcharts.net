@@ -14,37 +14,29 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemapStatesHoverHalo()
 		{
-			Enabled = Enabled_DefaultValue = null;
-			Size = Size_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = null;
-			Attributes = Attributes_DefaultValue = new PlotOptionsTilemapStatesHoverHaloAttributes();
+			Size = Size_DefaultValue = 10;
+			Opacity = Opacity_DefaultValue = 0.25;
+			Attributes = Attributes_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>The pixel size of the halo. For point markers this is the radiusof the halo. For pie slices it is the width of the halo outsidethe slice. For bubbles it defaults to 5 and is the width of thehalo outside the bubble.</p>
+		/// The pixel size of the halo. For point markers this is the radiusof the halo. For pie slices it is the width of the halo outsidethe slice. For bubbles it defaults to 5 and is the width of thehalo outside the bubble.
 		/// </summary>
 		public double? Size { get; set; }
 		private double? Size_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Opacity for the halo unless a specific fill is overridden usingthe <code>attributes</code> setting. Note that Highcharts is only able toapply opacity to colors of hex or rgb(a) formats.</p>
+		/// Opacity for the halo unless a specific fill is overridden usingthe `attributes` setting. Note that Highcharts is only able toapply opacity to colors of hex or rgb(a) formats.
 		/// </summary>
 		public double? Opacity { get; set; }
 		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A collection of SVG attributes to override the appearance of thehalo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.</p>
+		/// A collection of SVG attributes to override the appearance of thehalo, for example `fill`, `stroke` and `stroke-width`.
 		/// </summary>
 		public PlotOptionsTilemapStatesHoverHaloAttributes Attributes { get; set; }
 		private PlotOptionsTilemapStatesHoverHaloAttributes Attributes_DefaultValue { get; set; }
@@ -54,10 +46,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Attributes.IsDirty()) h.Add("attributes",Attributes.ToHashtable());
+			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);
 			
 
 			return h;

@@ -24,35 +24,35 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>A callback function to gain complete control on when the responsiverule applies. Return <code>true</code> if it applies. This opens for checkingagainst other metrics than the chart size, or example the documentsize or other elements.</p>
+		/// A callback function to gain complete control on when the responsiverule applies. Return `true` if it applies. This opens for checkingagainst other metrics than the chart size, or example the documentsize or other elements.
 		/// </summary>
 		public string Callback { get; set; }
 		private string Callback_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The responsive rule applies if the chart height is less than this.</p>
+		/// The responsive rule applies if the chart height is less than this.
 		/// </summary>
 		public double? MaxHeight { get; set; }
 		private double? MaxHeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The responsive rule applies if the chart width is less than this.</p>
+		/// The responsive rule applies if the chart width is less than this.
 		/// </summary>
 		public double? MaxWidth { get; set; }
 		private double? MaxWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The responsive rule applies if the chart height is greater than this.</p>
+		/// The responsive rule applies if the chart height is greater than this.
 		/// </summary>
 		public double? MinHeight { get; set; }
 		private double? MinHeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The responsive rule applies if the chart width is greater than this.</p>
+		/// The responsive rule applies if the chart width is greater than this.
 		/// </summary>
 		public double? MinWidth { get; set; }
 		private double? MinWidth_DefaultValue { get; set; }
@@ -62,7 +62,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Callback != Callback_DefaultValue) { h.Add("callback",Callback); Highcharts.AddFunction("ResponsiveRulesConditionCallback.callback", Callback); }  
+			if (Callback != Callback_DefaultValue) h.Add("callback",Callback);
 			if (MaxHeight != MaxHeight_DefaultValue) h.Add("maxHeight",MaxHeight);
 			if (MaxWidth != MaxWidth_DefaultValue) h.Add("maxWidth",MaxWidth);
 			if (MinHeight != MinHeight_DefaultValue) h.Add("minHeight",MinHeight);

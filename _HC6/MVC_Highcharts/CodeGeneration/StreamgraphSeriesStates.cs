@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public StreamgraphSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new StreamgraphSeriesStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public StreamgraphSeriesStatesHover Hover { get; set; }
 		private StreamgraphSeriesStatesHover Hover_DefaultValue { get; set; }

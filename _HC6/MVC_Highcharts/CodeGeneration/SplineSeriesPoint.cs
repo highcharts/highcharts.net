@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SplineSeriesPoint()
 		{
-			Events = Events_DefaultValue = new SplineSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public SplineSeriesPointEvents Events { get; set; }
 		private SplineSeriesPointEvents Events_DefaultValue { get; set; }

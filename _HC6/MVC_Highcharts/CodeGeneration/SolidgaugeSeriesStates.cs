@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SolidgaugeSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new SolidgaugeSeriesStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public SolidgaugeSeriesStatesHover Hover { get; set; }
 		private SolidgaugeSeriesStatesHover Hover_DefaultValue { get; set; }

@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsColumnStates()
 		{
-			Hover = Hover_DefaultValue = new PlotOptionsColumnStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsColumnStatesHover Hover { get; set; }
 		private PlotOptionsColumnStatesHover Hover_DefaultValue { get; set; }

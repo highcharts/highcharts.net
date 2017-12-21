@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public DrilldownActiveAxisLabelStyle()
 		{
-			Cursor = Cursor_DefaultValue = "pointer";
-			Color = Color_DefaultValue = "#003399";
-			FontWeight = FontWeight_DefaultValue = "bold";
-			TextDecoration = TextDecoration_DefaultValue = "underline";
+			Cursor = Cursor_DefaultValue = pointer;
+			Color = Color_DefaultValue = #003399;
+			FontWeight = FontWeight_DefaultValue = bold;
+			TextDecoration = TextDecoration_DefaultValue = underline;
 			
 		}	
 		
@@ -25,29 +25,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public DrilldownActiveAxisLabelStyleCursor Cursor { get; set; }
+		private DrilldownActiveAxisLabelStyleCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public DrilldownActiveAxisLabelStyleColor Color { get; set; }
+		private DrilldownActiveAxisLabelStyleColor Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontWeight { get; set; }
-		private string FontWeight_DefaultValue { get; set; }
+		public DrilldownActiveAxisLabelStyleFontWeight FontWeight { get; set; }
+		private DrilldownActiveAxisLabelStyleFontWeight FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string TextDecoration { get; set; }
-		private string TextDecoration_DefaultValue { get; set; }
+		public DrilldownActiveAxisLabelStyleTextDecoration TextDecoration { get; set; }
+		private DrilldownActiveAxisLabelStyleTextDecoration TextDecoration_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -14,11 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPieEvents()
 		{
-			CheckboxClick = CheckboxClick_DefaultValue = "";
-			LegendItemClick = LegendItemClick_DefaultValue = "";
 			AfterAnimate = AfterAnimate_DefaultValue = "";
+			CheckboxClick = CheckboxClick_DefaultValue = "";
 			Click = Click_DefaultValue = "";
 			Hide = Hide_DefaultValue = "";
+			LegendItemClick = LegendItemClick_DefaultValue = "";
 			MouseOut = MouseOut_DefaultValue = "";
 			MouseOver = MouseOver_DefaultValue = "";
 			Show = Show_DefaultValue = "";
@@ -27,56 +27,56 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Fires when the checkbox next to the point name in the legend is clicked.One parameter, event, is passed to the function. The state of thecheckbox is found by event.checked. The checked item is found byevent.item. Return false to prevent the default action which is totoggle the select state of the series.</p>
-		/// </summary>
-		public string CheckboxClick { get; set; }
-		private string CheckboxClick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Not applicable to pies, as the legend item is per point. See point.events.</p>
-		/// </summary>
-		public string LegendItemClick { get; set; }
-		private string LegendItemClick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Fires after the series has finished its initial animation, or incase animation is disabled, immediately as the series is displayed.</p>
+		/// Fires after the series has finished its initial animation, or incase animation is disabled, immediately as the series is displayed.
 		/// </summary>
 		public string AfterAnimate { get; set; }
 		private string AfterAnimate_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Fires when the series is clicked. One parameter, <code>event</code>, is passedto the function, containing common event information. Additionally,<code>event.point</code> holds a pointer to the nearest point on the graph.</p>
+		/// Fires when the checkbox next to the series' name in the legend isclicked. One parameter, `event`, is passed to the function. The stateof the checkbox is found by `event.checked`. The checked item isfound by `event.item`. Return `false` to prevent the default actionwhich is to toggle the select state of the series.
+		/// </summary>
+		public string CheckboxClick { get; set; }
+		private string CheckboxClick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when the series is clicked. One parameter, `event`, is passedto the function, containing common event information. Additionally,`event.point` holds a pointer to the nearest point on the graph.
 		/// </summary>
 		public string Click { get; set; }
 		private string Click_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Fires when the series is hidden after chart generation time, eitherby clicking the legend item or by calling <code>.hide()</code>.</p>
+		/// Fires when the series is hidden after chart generation time, eitherby clicking the legend item or by calling `.hide()`.
 		/// </summary>
 		public string Hide { get; set; }
 		private string Hide_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Fires when the mouse leaves the graph. One parameter, <code>event</code>, ispassed to the function, containing common event information. If the<a href="#plotOptions.series">stickyTracking</a> option is true, <code>mouseOut</code>doesn&#39;t happen before the mouse enters another graph or leaves theplot area.</p>
+		/// Fires when the legend item belonging to the series is clicked. Oneparameter, `event`, is passed to the function. The default actionis to toggle the visibility of the series. This can be preventedby returning `false` or calling `event.preventDefault()`.
+		/// </summary>
+		public string LegendItemClick { get; set; }
+		private string LegendItemClick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when the mouse leaves the graph. One parameter, `event`, ispassed to the function, containing common event information. If the[stickyTracking](#plotOptions.series) option is true, `mouseOut`doesn't happen before the mouse enters another graph or leaves theplot area.
 		/// </summary>
 		public string MouseOut { get; set; }
 		private string MouseOut_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Fires when the mouse enters the graph. One parameter, <code>event</code>, ispassed to the function, containing common event information.</p>
+		/// Fires when the mouse enters the graph. One parameter, `event`, ispassed to the function, containing common event information.
 		/// </summary>
 		public string MouseOver { get; set; }
 		private string MouseOver_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Fires when the series is shown after chart generation time, eitherby clicking the legend item or by calling <code>.show()</code>.</p>
+		/// Fires when the series is shown after chart generation time, eitherby clicking the legend item or by calling `.show()`.
 		/// </summary>
 		public string Show { get; set; }
 		private string Show_DefaultValue { get; set; }
@@ -86,14 +86,14 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); Highcharts.AddFunction("PlotOptionsPieEventsCheckboxClick.checkboxClick", CheckboxClick); }  
-			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("PlotOptionsPieEventsLegendItemClick.legendItemClick", LegendItemClick); }  
-			if (AfterAnimate != AfterAnimate_DefaultValue) { h.Add("afterAnimate",AfterAnimate); Highcharts.AddFunction("PlotOptionsPieEventsAfterAnimate.afterAnimate", AfterAnimate); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("PlotOptionsPieEventsClick.click", Click); }  
-			if (Hide != Hide_DefaultValue) { h.Add("hide",Hide); Highcharts.AddFunction("PlotOptionsPieEventsHide.hide", Hide); }  
-			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highcharts.AddFunction("PlotOptionsPieEventsMouseOut.mouseOut", MouseOut); }  
-			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highcharts.AddFunction("PlotOptionsPieEventsMouseOver.mouseOver", MouseOver); }  
-			if (Show != Show_DefaultValue) { h.Add("show",Show); Highcharts.AddFunction("PlotOptionsPieEventsShow.show", Show); }  
+			if (AfterAnimate != AfterAnimate_DefaultValue) h.Add("afterAnimate",AfterAnimate);
+			if (CheckboxClick != CheckboxClick_DefaultValue) h.Add("checkboxClick",CheckboxClick);
+			if (Click != Click_DefaultValue) h.Add("click",Click);
+			if (Hide != Hide_DefaultValue) h.Add("hide",Hide);
+			if (LegendItemClick != LegendItemClick_DefaultValue) h.Add("legendItemClick",LegendItemClick);
+			if (MouseOut != MouseOut_DefaultValue) h.Add("mouseOut",MouseOut);
+			if (MouseOver != MouseOver_DefaultValue) h.Add("mouseOver",MouseOver);
+			if (Show != Show_DefaultValue) h.Add("show",Show);
 			
 
 			return h;

@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FooterFormat = FooterFormat_DefaultValue = "";
 			Padding = Padding_DefaultValue = 8;
 			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			FollowPointer = FollowPointer_DefaultValue = "";
 			FollowTouchMove = FollowTouchMove_DefaultValue = "";
 			HideDelay = HideDelay_DefaultValue = 500;

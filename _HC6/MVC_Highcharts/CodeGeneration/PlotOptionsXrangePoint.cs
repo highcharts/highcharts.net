@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsXrangePoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsXrangePointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsXrangePointEvents Events { get; set; }
 		private PlotOptionsXrangePointEvents Events_DefaultValue { get; set; }

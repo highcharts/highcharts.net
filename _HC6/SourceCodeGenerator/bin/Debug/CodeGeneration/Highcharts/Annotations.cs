@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Annotations()
 		{
-			Visible = Visible_DefaultValue = True;
+			Visible = Visible_DefaultValue = true;
 			LabelOptions = LabelOptions_DefaultValue = "";
 			ShapeOptions = ShapeOptions_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = 6;

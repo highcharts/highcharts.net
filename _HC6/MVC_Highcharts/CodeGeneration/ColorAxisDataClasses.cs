@@ -14,37 +14,37 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColorAxisDataClasses()
 		{
-			Color = Color_DefaultValue = null;
+			Color = Color_DefaultValue = "";
 			From = From_DefaultValue = null;
-			Name = Name_DefaultValue = null;
+			Name = Name_DefaultValue = "";
 			To = To_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The color of each data class. If not set, the color is pulled fromthe global or chart-specific <a href="#colors">colors</a> array. In styled mode, this option is ignored. Instead, use colors defined inCSS.</p>
+		/// The color of each data class. If not set, the color is pulled fromthe global or chart-specific [colors](#colors) array. In styled mode, this option is ignored. Instead, use colors defined inCSS.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The start of the value range that the data class represents, relatingto the point value.</p>
+		/// The start of the value range that the data class represents, relatingto the point value.
 		/// </summary>
 		public double? From { get; set; }
 		private double? From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The name of the data class as it appears in the legend. If no nameis given, it is automatically created based on the <code>from</code> and <code>to</code>values. For full programmatic control, <a href="#legend.labelFormatter">legend.labelFormatter</a> can be used. In the formatter, <code>this.from</code> and <code>this.to</code> can be accessed.</p>
+		/// The name of the data class as it appears in the legend. If no nameis given, it is automatically created based on the `from` and `to`values. For full programmatic control, [legend.labelFormatter](#legend.labelFormatter) can be used. In the formatter, `this.from` and `this.to` can be accessed.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The end of the value range that the data class represents, relatingto the point value.</p>
+		/// The end of the value range that the data class represents, relatingto the point value.
 		/// </summary>
 		public double? To { get; set; }
 		private double? To_DefaultValue { get; set; }

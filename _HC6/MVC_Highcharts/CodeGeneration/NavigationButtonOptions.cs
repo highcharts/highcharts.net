@@ -28,111 +28,111 @@ namespace Highsoft.Web.Mvc.Charts
 			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
 			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 1;
-			Theme = Theme_DefaultValue = new NavigationButtonOptionsTheme();
+			Theme = Theme_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The pixel size of the symbol on the button.</p>
+		/// The pixel size of the symbol on the button.
 		/// </summary>
 		public double? SymbolSize { get; set; }
 		private double? SymbolSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to enable buttons.</p>
+		/// Whether to enable buttons.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The x position of the center of the symbol inside the button.</p>
+		/// The x position of the center of the symbol inside the button.
 		/// </summary>
 		public double? SymbolX { get; set; }
 		private double? SymbolX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The y position of the center of the symbol inside the button.</p>
+		/// The y position of the center of the symbol inside the button.
 		/// </summary>
 		public double? SymbolY { get; set; }
 		private double? SymbolY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Alignment for the buttons.</p>
+		/// Alignment for the buttons.
 		/// </summary>
 		public NavigationButtonOptionsAlign Align { get; set; }
 		private NavigationButtonOptionsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel spacing between buttons.</p>
+		/// The pixel spacing between buttons.
 		/// </summary>
 		public double? ButtonSpacing { get; set; }
 		private double? ButtonSpacing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Pixel height of the buttons.</p>
+		/// Pixel height of the buttons.
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The vertical alignment of the buttons. Can be one of &quot;top&quot;, &quot;middle&quot;or &quot;bottom&quot;.</p>
+		/// The vertical alignment of the buttons. Can be one of "top", "middle"or "bottom".
 		/// </summary>
 		public NavigationButtonOptionsVerticalAlign VerticalAlign { get; set; }
 		private NavigationButtonOptionsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A text string to add to the individual button.</p>
+		/// A text string to add to the individual button.
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel width of the button.</p>
+		/// The pixel width of the button.
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The vertical offset of the button&#39;s position relative to its<code>verticalAlign</code>.</p>
+		/// The vertical offset of the button's position relative to its`verticalAlign`.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Fill color for the symbol within the button.</p>
+		/// Fill color for the symbol within the button.
 		/// </summary>
 		public string SymbolFill { get; set; }
 		private string SymbolFill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the symbol&#39;s stroke or line.</p>
+		/// The color of the symbol's stroke or line.
 		/// </summary>
 		public string SymbolStroke { get; set; }
 		private string SymbolStroke_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel stroke width of the symbol on the button.</p>
+		/// The pixel stroke width of the symbol on the button.
 		/// </summary>
 		public double? SymbolStrokeWidth { get; set; }
 		private double? SymbolStrokeWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A configuration object for the button theme. The object acceptsSVG properties like <code>stroke-width</code>, <code>stroke</code> and <code>fill</code>. Tri-statebutton styles are supported by the <code>states.hover</code> and <code>states.select</code>objects.</p>
+		/// A configuration object for the button theme. The object acceptsSVG properties like `stroke-width`, `stroke` and `fill`. Tri-statebutton styles are supported by the `states.hover` and `states.select`objects.
 		/// </summary>
 		public NavigationButtonOptionsTheme Theme { get; set; }
 		private NavigationButtonOptionsTheme Theme_DefaultValue { get; set; }

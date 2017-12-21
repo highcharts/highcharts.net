@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public Exporting()
 		{
 			Csv = Csv_DefaultValue = "";
-			ShowTable = ShowTable_DefaultValue = False;
-			UseMultiLevelHeaders = UseMultiLevelHeaders_DefaultValue = True;
-			UseRowspanHeaders = UseRowspanHeaders_DefaultValue = True;
+			ShowTable = ShowTable_DefaultValue = false;
+			UseMultiLevelHeaders = UseMultiLevelHeaders_DefaultValue = true;
+			UseRowspanHeaders = UseRowspanHeaders_DefaultValue = true;
 			TableCaption = TableCaption_DefaultValue = null;
 			Type = Type_DefaultValue = ExportingType.Imagepng;
 			Url = Url_DefaultValue = "https://export.highcharts.com/";

@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BubbleSeriesMarkerStatesHover()
 		{
-			RadiusPlus = RadiusPlus_DefaultValue = null;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Enabled = Enabled_DefaultValue = true;
+			RadiusPlus = RadiusPlus_DefaultValue = 2;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
 			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ffffff";
@@ -27,56 +27,56 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The number of pixels to increase the radius of the hovered point.</p>
-		/// </summary>
-		public double? RadiusPlus { get; set; }
-		private double? RadiusPlus_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Animation when hovering over the marker.</p>
+		/// Animation when hovering over the marker.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Enable or disable the point marker.</p>
+		/// Enable or disable the point marker.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The additional line width for a hovered point.</p>
+		/// The number of pixels to increase the radius of the hovered point.
+		/// </summary>
+		public double? RadiusPlus { get; set; }
+		private double? RadiusPlus_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The additional line width for a hovered point.
 		/// </summary>
 		public double? LineWidthPlus { get; set; }
 		private double? LineWidthPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The fill color of the marker in hover state.</p>
+		/// The fill color of the marker in hover state.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the point marker&#39;s outline. When <code>null</code>, theseries&#39; or point&#39;s color is used.</p>
+		/// The color of the point marker's outline. When `null`, theseries' or point's color is used.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The width of the point marker&#39;s outline.</p>
+		/// The width of the point marker's outline.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The radius of the point marker. In hover state, it defaults to thenormal state&#39;s radius + 2 as per the <a href="#plotOptions.series.marker.states.hover.radiusPlus">radiusPlus</a> option.</p>
+		/// The radius of the point marker. In hover state, it defaults to thenormal state's radius + 2 as per the [radiusPlus](#plotOptions.series.marker.states.hover.radiusPlus) option.
 		/// </summary>
 		public double? Radius { get; set; }
 		private double? Radius_DefaultValue { get; set; }
@@ -86,9 +86,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (RadiusPlus != RadiusPlus_DefaultValue) h.Add("radiusPlus",RadiusPlus);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (RadiusPlus != RadiusPlus_DefaultValue) h.Add("radiusPlus",RadiusPlus);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);

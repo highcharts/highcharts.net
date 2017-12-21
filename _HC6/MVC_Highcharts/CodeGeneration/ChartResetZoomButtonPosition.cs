@@ -15,36 +15,36 @@ namespace Highsoft.Web.Mvc.Charts
 		public ChartResetZoomButtonPosition()
 		{
 			Align = Align_DefaultValue = "right";
-			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
+			X = X_DefaultValue = -10;
+			Y = Y_DefaultValue = 10;
 			VerticalAlign = VerticalAlign_DefaultValue = ChartResetZoomButtonPositionVerticalAlign.Top;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The horizontal alignment of the button.</p>
+		/// The horizontal alignment of the button.
 		/// </summary>
 		public string Align { get; set; }
 		private string Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The horizontal offset of the button.</p>
+		/// The horizontal offset of the button.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The vertical offset of the button.</p>
+		/// The vertical offset of the button.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The vertical alignment of the button.</p>
+		/// The vertical alignment of the button.
 		/// </summary>
 		public ChartResetZoomButtonPositionVerticalAlign VerticalAlign { get; set; }
 		private ChartResetZoomButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }

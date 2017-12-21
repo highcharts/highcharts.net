@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AnnotationsLabelOptionsStyle()
 		{
-			FontSize = FontSize_DefaultValue = "11px";
-			FontWeigth = FontWeigth_DefaultValue = "bold";
-			Color = Color_DefaultValue = "contrast";
+			FontSize = FontSize_DefaultValue = 11px;
+			FontWeight = FontWeight_DefaultValue = normal;
+			Color = Color_DefaultValue = contrast;
 			
 		}	
 		
@@ -24,22 +24,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontSize { get; set; }
-		private string FontSize_DefaultValue { get; set; }
+		public AnnotationsLabelOptionsStyleFontSize FontSize { get; set; }
+		private AnnotationsLabelOptionsStyleFontSize FontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontWeigth { get; set; }
-		private string FontWeigth_DefaultValue { get; set; }
+		public AnnotationsLabelOptionsStyleFontWeight FontWeight { get; set; }
+		private AnnotationsLabelOptionsStyleFontWeight FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public AnnotationsLabelOptionsStyleColor Color { get; set; }
+		private AnnotationsLabelOptionsStyleColor Color_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
-			if (FontWeigth != FontWeigth_DefaultValue) h.Add("fontWeigth",FontWeigth);
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			
 

@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Enable/disable keyboard navigation for the legend. Requires the Accessibilitymodule.</p>
+		/// Enable/disable keyboard navigation for the legend. Requires the Accessibilitymodule.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }

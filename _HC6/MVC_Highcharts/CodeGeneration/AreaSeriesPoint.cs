@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreaSeriesPoint()
 		{
-			Events = Events_DefaultValue = new AreaSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public AreaSeriesPointEvents Events { get; set; }
 		private AreaSeriesPointEvents Events_DefaultValue { get; set; }

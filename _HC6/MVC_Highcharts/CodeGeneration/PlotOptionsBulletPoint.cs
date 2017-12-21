@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBulletPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsBulletPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsBulletPointEvents Events { get; set; }
 		private PlotOptionsBulletPointEvents Events_DefaultValue { get; set; }

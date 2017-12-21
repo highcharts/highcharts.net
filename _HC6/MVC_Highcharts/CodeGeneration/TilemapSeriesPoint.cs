@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TilemapSeriesPoint()
 		{
-			Events = Events_DefaultValue = new TilemapSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public TilemapSeriesPointEvents Events { get; set; }
 		private TilemapSeriesPointEvents Events_DefaultValue { get; set; }

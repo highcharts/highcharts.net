@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LoadingLabelStyle()
 		{
-			FontWeight = FontWeight_DefaultValue = "bold";
+			FontWeight = FontWeight_DefaultValue = bold;
 			Position = Position_DefaultValue = new Hashtable();
-			Top = Top_DefaultValue = "45%";
+			Top = Top_DefaultValue = 45%;
 			
 		}	
 		
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontWeight { get; set; }
-		private string FontWeight_DefaultValue { get; set; }
+		public LoadingLabelStyleFontWeight FontWeight { get; set; }
+		private LoadingLabelStyleFontWeight FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Top { get; set; }
-		private string Top_DefaultValue { get; set; }
+		public LoadingLabelStyleTop Top { get; set; }
+		private LoadingLabelStyleTop Top_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

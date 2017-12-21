@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWindbarbPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsWindbarbPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsWindbarbPointEvents Events { get; set; }
 		private PlotOptionsWindbarbPointEvents Events_DefaultValue { get; set; }

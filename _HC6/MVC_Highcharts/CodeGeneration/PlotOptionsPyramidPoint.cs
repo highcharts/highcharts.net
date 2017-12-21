@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPyramidPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsPyramidPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// 
 		/// </summary>
 		public PlotOptionsPyramidPointEvents Events { get; set; }
 		private PlotOptionsPyramidPointEvents Events_DefaultValue { get; set; }

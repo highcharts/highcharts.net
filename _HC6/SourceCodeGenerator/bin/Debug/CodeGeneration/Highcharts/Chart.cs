@@ -15,20 +15,20 @@ namespace Highsoft.Web.Mvc.Charts
 		public Chart()
 		{
 			Events = Events_DefaultValue = "";
-			ParallelCoordinates = ParallelCoordinates_DefaultValue = False;
+			ParallelCoordinates = ParallelCoordinates_DefaultValue = false;
 			ParallelAxes = ParallelAxes_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			TypeDescription = TypeDescription_DefaultValue = "undefined";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			ColorCount = ColorCount_DefaultValue = 10;
 			DefaultSeriesType = DefaultSeriesType_DefaultValue = ChartDefaultSeriesType.Line;
-			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = True;
+			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
 			Spacing = Spacing_DefaultValue = new List<double> {10, 10, 15, 10};
 			ResetZoomButton = ResetZoomButton_DefaultValue = "";
 			Width = Width_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "#335cad";
-			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
+			BackgroundColor = BackgroundColor_DefaultValue = "#FFFFFF";
 			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
 			AlignTicks = AlignTicks_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };

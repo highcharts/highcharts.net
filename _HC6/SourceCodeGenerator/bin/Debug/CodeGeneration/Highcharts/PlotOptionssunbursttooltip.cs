@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSunburstTooltip()
 		{
-			FollowPointer = FollowPointer_DefaultValue = True;
+			FollowPointer = FollowPointer_DefaultValue = true;
 			
 		}	
 		

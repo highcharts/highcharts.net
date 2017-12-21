@@ -14,69 +14,69 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPolygonLabel()
 		{
-			Enabled = Enabled_DefaultValue = null;
-			ConnectorAllowed = ConnectorAllowed_DefaultValue = null;
-			ConnectorNeighbourDistance = ConnectorNeighbourDistance_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
+			ConnectorAllowed = ConnectorAllowed_DefaultValue = true;
+			ConnectorNeighbourDistance = ConnectorNeighbourDistance_DefaultValue = 24;
 			MinFontSize = MinFontSize_DefaultValue = null;
 			MaxFontSize = MaxFontSize_DefaultValue = null;
-			OnArea = OnArea_DefaultValue = null;
-			Style = Style_DefaultValue = new PlotOptionsPolygonLabelStyle();
-			BoxesToAvoid = BoxesToAvoid_DefaultValue = null;
+			OnArea = OnArea_DefaultValue = "";
+			Style = Style_DefaultValue = "";
+			BoxesToAvoid = BoxesToAvoid_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Enable the series label per series.</p>
+		/// Enable the series label per series.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public PlotOptionsPolygonLabelEnabled Enabled { get; set; }
+		private PlotOptionsPolygonLabelEnabled Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Allow labels to be placed distant to the graph if necessary,and draw a connector line to the graph.</p>
+		/// Allow labels to be placed distant to the graph if necessary,and draw a connector line to the graph.
 		/// </summary>
-		public bool? ConnectorAllowed { get; set; }
-		private bool? ConnectorAllowed_DefaultValue { get; set; }
+		public PlotOptionsPolygonLabelConnectorAllowed ConnectorAllowed { get; set; }
+		private PlotOptionsPolygonLabelConnectorAllowed ConnectorAllowed_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>If the label is closer than this to a neighbour graph, draw aconnector.</p>
+		/// If the label is closer than this to a neighbour graph, draw aconnector.
 		/// </summary>
-		public double? ConnectorNeighbourDistance { get; set; }
-		private double? ConnectorNeighbourDistance_DefaultValue { get; set; }
+		public PlotOptionsPolygonLabelConnectorNeighbourDistance ConnectorNeighbourDistance { get; set; }
+		private PlotOptionsPolygonLabelConnectorNeighbourDistance ConnectorNeighbourDistance_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>For area-like series, allow the font size to vary so thatsmall areas get a smaller font size. The default applies thiseffect to area-like series but not line-like series.</p>
+		/// For area-like series, allow the font size to vary so thatsmall areas get a smaller font size. The default applies thiseffect to area-like series but not line-like series.
 		/// </summary>
 		public double? MinFontSize { get; set; }
 		private double? MinFontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>For area-like series, allow the font size to vary so thatsmall areas get a smaller font size. The default applies thiseffect to area-like series but not line-like series.</p>
+		/// For area-like series, allow the font size to vary so thatsmall areas get a smaller font size. The default applies thiseffect to area-like series but not line-like series.
 		/// </summary>
 		public double? MaxFontSize { get; set; }
 		private double? MaxFontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Draw the label on the area of an area series. By default itis drawn on the area. Set it to <code>false</code> to draw it next tothe graph instead.</p>
+		/// Draw the label on the area of an area series. By default itis drawn on the area. Set it to `false` to draw it next tothe graph instead.
 		/// </summary>
 		public bool? OnArea { get; set; }
 		private bool? OnArea_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Styles for the series label. The color defaults to the seriescolor, or a contrast color if <code>onArea</code>.</p>
+		/// Styles for the series label. The color defaults to the seriescolor, or a contrast color if `onArea`.
 		/// </summary>
 		public PlotOptionsPolygonLabelStyle Style { get; set; }
 		private PlotOptionsPolygonLabelStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An array of boxes to avoid when laying out the labels. Each item has a <code>left</code>, <code>right</code>, <code>top</code> and <code>bottom</code> property.</p>
+		/// An array of boxes to avoid when laying out the labels. Each item has a `left`, `right`, `top` and `bottom` property.
 		/// </summary>
 		public List<object> BoxesToAvoid { get; set; }
 		private List<object> BoxesToAvoid_DefaultValue { get; set; }

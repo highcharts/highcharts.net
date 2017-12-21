@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ChartOptions3dAxisLabelPosition
     {
-        Default, 
-		Null, 
+        Null, 
 		Auto
     }
 }

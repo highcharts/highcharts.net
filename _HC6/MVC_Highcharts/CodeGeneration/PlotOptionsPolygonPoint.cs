@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPolygonPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsPolygonPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsPolygonPointEvents Events { get; set; }
 		private PlotOptionsPolygonPointEvents Events_DefaultValue { get; set; }

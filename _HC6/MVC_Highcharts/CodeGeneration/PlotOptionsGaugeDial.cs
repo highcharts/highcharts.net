@@ -27,56 +27,56 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The length of the dial&#39;s base part, relative to the total radiusor length of the dial.</p>
+		/// The length of the dial's base part, relative to the total radiusor length of the dial.
 		/// </summary>
 		public string BaseLength { get; set; }
 		private string BaseLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel width of the base of the gauge dial. The base is the partclosest to the pivot, defined by baseLength.</p>
+		/// The pixel width of the base of the gauge dial. The base is the partclosest to the pivot, defined by baseLength.
 		/// </summary>
 		public double? BaseWidth { get; set; }
 		private double? BaseWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The radius or length of the dial, in percentages relative to theradius of the gauge itself.</p>
+		/// The radius or length of the dial, in percentages relative to theradius of the gauge itself.
 		/// </summary>
 		public string Radius { get; set; }
 		private string Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The length of the dial&#39;s rear end, the part that extends out on theother side of the pivot. Relative to the dial&#39;s length.</p>
+		/// The length of the dial's rear end, the part that extends out on theother side of the pivot. Relative to the dial's length.
 		/// </summary>
 		public string RearLength { get; set; }
 		private string RearLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The width of the top of the dial, closest to the perimeter. The pivotnarrows in from the base to the top.</p>
+		/// The width of the top of the dial, closest to the perimeter. The pivotnarrows in from the base to the top.
 		/// </summary>
 		public double? TopWidth { get; set; }
 		private double? TopWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The background or fill color of the gauge&#39;s dial.</p>
+		/// The background or fill color of the gauge's dial.
 		/// </summary>
 		public string BackgroundColor { get; set; }
 		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The border color or stroke of the gauge&#39;s dial. By default, the borderWidthis 0, so this must be set in addition to a custom border color.</p>
+		/// The border color or stroke of the gauge's dial. By default, the borderWidthis 0, so this must be set in addition to a custom border color.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The width of the gauge dial border in pixels.</p>
+		/// The width of the gauge dial border in pixels.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }

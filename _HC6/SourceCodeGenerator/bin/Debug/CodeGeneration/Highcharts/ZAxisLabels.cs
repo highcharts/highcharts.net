@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ZAxisLabels()
 		{
-			Enabled = Enabled_DefaultValue = True;
+			Enabled = Enabled_DefaultValue = true;
 			Style = Style_DefaultValue = "";
 			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = ZAxisLabelsAlign.Left;
@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
 			Position3d = Position3d_DefaultValue = ZAxisLabelsPosition3d.Offset;
-			Skew3d = Skew3d_DefaultValue = False;
+			Skew3d = Skew3d_DefaultValue = false;
 			
 		}	
 		

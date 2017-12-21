@@ -15,14 +15,14 @@ namespace Highsoft.Web.Mvc.Charts
 		public ZAxis()
 		{
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			EndOnTick = EndOnTick_DefaultValue = False;
+			EndOnTick = EndOnTick_DefaultValue = false;
 			Labels = Labels_DefaultValue = "";
 			MaxPadding = MaxPadding_DefaultValue = 0.01;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ZAxisMinorTickPosition.Outside;
 			MinPadding = MinPadding_DefaultValue = 0.01;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
-			StartOnTick = StartOnTick_DefaultValue = False;
+			StartOnTick = StartOnTick_DefaultValue = false;
 			TickLength = TickLength_DefaultValue = 10;
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = ZAxisTickmarkPlacement.Between;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;

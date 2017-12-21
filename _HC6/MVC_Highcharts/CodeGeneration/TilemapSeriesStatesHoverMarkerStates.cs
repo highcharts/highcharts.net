@@ -14,21 +14,21 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TilemapSeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = new TilemapSeriesStatesHoverMarkerStatesHover();
-			Select = Select_DefaultValue = new TilemapSeriesStatesHoverMarkerStatesSelect();
+			Hover = Hover_DefaultValue = "";
+			Select = Select_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The hover state for a single point marker.</p>
+		/// The hover state for a single point marker.
 		/// </summary>
 		public TilemapSeriesStatesHoverMarkerStatesHover Hover { get; set; }
 		private TilemapSeriesStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The appearance of the point marker when selected. In order toallow a point to be selected, set the <code>series.allowPointSelect</code>option to true.</p>
+		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
 		/// </summary>
 		public TilemapSeriesStatesHoverMarkerStatesSelect Select { get; set; }
 		private TilemapSeriesStatesHoverMarkerStatesSelect Select_DefaultValue { get; set; }

@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartParallelAxesDateTimeLabelFormats()
 		{
-			Millisecond = Millisecond_DefaultValue = "%H:%M:%S.%L";
-			Second = Second_DefaultValue = "%H:%M:%S";
-			Minute = Minute_DefaultValue = "%H:%M";
-			Hour = Hour_DefaultValue = "%H:%M";
-			Day = Day_DefaultValue = "%e. %b";
-			Week = Week_DefaultValue = "%e. %b";
-			Month = Month_DefaultValue = "%b '%y";
-			Year = Year_DefaultValue = "%Y";
+			Millisecond = Millisecond_DefaultValue = %H:%M:%S.%L;
+			Second = Second_DefaultValue = %H:%M:%S;
+			Minute = Minute_DefaultValue = %H:%M;
+			Hour = Hour_DefaultValue = %H:%M;
+			Day = Day_DefaultValue = %e. %b;
+			Week = Week_DefaultValue = %e. %b;
+			Month = Month_DefaultValue = %b '%y;
+			Year = Year_DefaultValue = %Y;
 			
 		}	
 		
@@ -29,57 +29,57 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Millisecond { get; set; }
-		private string Millisecond_DefaultValue { get; set; }
+		public ChartParallelAxesDateTimeLabelFormatsMillisecond Millisecond { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Second { get; set; }
-		private string Second_DefaultValue { get; set; }
+		public ChartParallelAxesDateTimeLabelFormatsSecond Second { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Minute { get; set; }
-		private string Minute_DefaultValue { get; set; }
+		public ChartParallelAxesDateTimeLabelFormatsMinute Minute { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Hour { get; set; }
-		private string Hour_DefaultValue { get; set; }
+		public ChartParallelAxesDateTimeLabelFormatsHour Hour { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Day { get; set; }
-		private string Day_DefaultValue { get; set; }
+		public ChartParallelAxesDateTimeLabelFormatsDay Day { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Week { get; set; }
-		private string Week_DefaultValue { get; set; }
+		public ChartParallelAxesDateTimeLabelFormatsWeek Week { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Month { get; set; }
-		private string Month_DefaultValue { get; set; }
+		public ChartParallelAxesDateTimeLabelFormatsMonth Month { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Year { get; set; }
-		private string Year_DefaultValue { get; set; }
+		public ChartParallelAxesDateTimeLabelFormatsYear Year { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public Pane()
 		{
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
-			Size = Size_DefaultValue = "85%";
-			StartAngle = StartAngle_DefaultValue = null;
+			Size = Size_DefaultValue = 85%;
+			StartAngle = StartAngle_DefaultValue = 0;
 			Background = Background_DefaultValue = new List<PaneBackground>();
 			EndAngle = EndAngle_DefaultValue = null;
 			
@@ -24,35 +24,35 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The center of a polar chart or angular gauge, given as an arrayof [x, y] positions. Positions can be given as integers that transformto pixels, or as percentages of the plot area size.</p>
+		/// The center of a polar chart or angular gauge, given as an arrayof [x, y] positions. Positions can be given as integers that transformto pixels, or as percentages of the plot area size.
 		/// </summary>
 		public string[] Center { get; set; }
 		private string[] Center_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The size of the pane, either as a number defining pixels, or apercentage defining a percentage of the plot are.</p>
+		/// The size of the pane, either as a number defining pixels, or apercentage defining a percentage of the plot are.
 		/// </summary>
-		public string Size { get; set; }
-		private string Size_DefaultValue { get; set; }
+		public double? Size { get; set; }
+		private double? Size_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The start angle of the polar X axis or gauge axis, given in degreeswhere 0 is north. Defaults to 0.</p>
+		/// The start angle of the polar X axis or gauge axis, given in degreeswhere 0 is north. Defaults to 0.
 		/// </summary>
 		public double? StartAngle { get; set; }
 		private double? StartAngle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An array of background items for the pane.</p>
+		/// An array of background items for the pane.
 		/// </summary>
 		public List<PaneBackground> Background { get; set; }
 		private List<PaneBackground> Background_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The end angle of the polar X axis or gauge value axis, given in degreeswhere 0 is north. Defaults to <a href="#pane.startAngle">startAngle</a> + 360.</p>
+		/// The end angle of the polar X axis or gauge value axis, given in degreeswhere 0 is north. Defaults to [startAngle](#pane.startAngle) + 360.
 		/// </summary>
 		public double? EndAngle { get; set; }
 		private double? EndAngle_DefaultValue { get; set; }

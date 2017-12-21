@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VariwideSeriesPoint()
 		{
-			Events = Events_DefaultValue = new VariwideSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public VariwideSeriesPointEvents Events { get; set; }
 		private VariwideSeriesPointEvents Events_DefaultValue { get; set; }

@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsAreaZone()
 		{
-			ClassName = ClassName_DefaultValue = null;
-			Color = Color_DefaultValue = null;
-			DashStyle = DashStyle_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
+			DashStyle = DashStyle_DefaultValue = "";
 			FillColor = FillColor_DefaultValue = null;
 			Value = Value_DefaultValue = null;
 			
@@ -24,35 +24,35 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Styled mode only. A custom class name for the zone.</p>
+		/// Styled mode only. A custom class name for the zone.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Defines the color of the series.</p>
+		/// Defines the color of the series.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A name for the dash style to use for the graph.</p>
+		/// A name for the dash style to use for the graph.
 		/// </summary>
 		public string DashStyle { get; set; }
 		private string DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Defines the fill color for the series (in area type series)</p>
+		/// Defines the fill color for the series (in area type series)
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The value up to where the zone extends, if undefined the zones stretchesto the last value in the series.</p>
+		/// The value up to where the zone extends, if undefined the zones stretchesto the last value in the series.
 		/// </summary>
 		public double? Value { get; set; }
 		private double? Value_DefaultValue { get; set; }

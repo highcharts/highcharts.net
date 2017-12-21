@@ -40,8 +40,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Filter = Filter_DefaultValue = "";
 			XLow = XLow_DefaultValue = 0;
 			XHigh = XHigh_DefaultValue = 0;
-			YLow = YLow_DefaultValue = 0;
-			YHigh = YHigh_DefaultValue = 0;
+			YLow = YLow_DefaultValue = 16;
+			YHigh = YHigh_DefaultValue = -6;
 			
 		}	
 		

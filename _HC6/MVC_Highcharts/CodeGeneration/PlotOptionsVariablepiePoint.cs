@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVariablepiePoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsVariablepiePointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// 
 		/// </summary>
 		public PlotOptionsVariablepiePointEvents Events { get; set; }
 		private PlotOptionsVariablepiePointEvents Events_DefaultValue { get; set; }

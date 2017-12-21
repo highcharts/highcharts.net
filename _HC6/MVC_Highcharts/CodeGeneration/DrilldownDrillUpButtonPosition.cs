@@ -15,36 +15,36 @@ namespace Highsoft.Web.Mvc.Charts
 		public DrilldownDrillUpButtonPosition()
 		{
 			Align = Align_DefaultValue = "right";
-			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
+			X = X_DefaultValue = -10;
+			Y = Y_DefaultValue = 10;
 			VerticalAlign = VerticalAlign_DefaultValue = DrilldownDrillUpButtonPositionVerticalAlign.Top;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Horizontal alignment.</p>
+		/// Horizontal alignment.
 		/// </summary>
 		public string Align { get; set; }
 		private string Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The X offset of the button.</p>
+		/// The X offset of the button.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The Y offset of the button.</p>
+		/// The Y offset of the button.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Vertical alignment of the button.</p>
+		/// Vertical alignment of the button.
 		/// </summary>
 		public DrilldownDrillUpButtonPositionVerticalAlign VerticalAlign { get; set; }
 		private DrilldownDrillUpButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }

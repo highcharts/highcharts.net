@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsGaugePoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsGaugePointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsGaugePointEvents Events { get; set; }
 		private PlotOptionsGaugePointEvents Events_DefaultValue { get; set; }

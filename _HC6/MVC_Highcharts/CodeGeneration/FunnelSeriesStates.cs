@@ -14,23 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public FunnelSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new FunnelSeriesStatesHover();
+			Select = Select_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// Options for a selected funnel item.
 		/// </summary>
-		public FunnelSeriesStatesHover Hover { get; set; }
-		private FunnelSeriesStatesHover Hover_DefaultValue { get; set; }
+		public FunnelSeriesStatesSelect Select { get; set; }
+		private FunnelSeriesStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

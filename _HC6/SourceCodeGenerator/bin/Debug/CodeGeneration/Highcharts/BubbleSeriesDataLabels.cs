@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public BubbleSeriesDataLabels()
 		{
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = True;
+			Inside = Inside_DefaultValue = true;
 			VerticalAlign = VerticalAlign_DefaultValue = middle;
 			
 		}	

@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSunburstPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsSunburstPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// 
 		/// </summary>
 		public PlotOptionsSunburstPointEvents Events { get; set; }
 		private PlotOptionsSunburstPointEvents Events_DefaultValue { get; set; }

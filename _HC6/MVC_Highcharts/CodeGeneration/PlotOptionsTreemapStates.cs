@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemapStates()
 		{
-			Hover = Hover_DefaultValue = new PlotOptionsTreemapStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series</p>
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsTreemapStatesHover Hover { get; set; }
 		private PlotOptionsTreemapStatesHover Hover_DefaultValue { get; set; }

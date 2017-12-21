@@ -15,20 +15,20 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsXrangeData()
 		{
 			X2 = X2_DefaultValue = null;
-			PartialFill = PartialFill_DefaultValue = new PlotOptionsXrangeDataPartialFill();
+			PartialFill = PartialFill_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The ending X value of the range point.</p>
+		/// The ending X value of the range point.
 		/// </summary>
 		public double? X2 { get; set; }
 		private double? X2_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A partial fill for each point, typically used to visualize how much ofa task is performed. The partial fill object can be set either on seriesor point level.</p>
+		/// A partial fill for each point, typically used to visualize how much ofa task is performed. The partial fill object can be set either on seriesor point level.
 		/// </summary>
 		public PlotOptionsXrangeDataPartialFill PartialFill { get; set; }
 		private PlotOptionsXrangeDataPartialFill PartialFill_DefaultValue { get; set; }

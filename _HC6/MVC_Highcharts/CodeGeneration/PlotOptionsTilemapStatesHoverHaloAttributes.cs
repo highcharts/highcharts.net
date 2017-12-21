@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemapStatesHoverHaloAttributes()
 		{
-			ZIndex = ZIndex_DefaultValue = null;
+			ZIndex = ZIndex_DefaultValue = 3;
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
+		public PlotOptionsTilemapStatesHoverHaloAttributesZIndex ZIndex { get; set; }
+		private PlotOptionsTilemapStatesHoverHaloAttributesZIndex ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -17,42 +17,42 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = true;
 			Href = Href_DefaultValue = "http://www.highcharts.com";
 			Position = Position_DefaultValue = new Hashtable();
-			Style = Style_DefaultValue = new CreditsStyle();
+			Style = Style_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#999999"},{ "fontSize", "10px" }};
 			Text = Text_DefaultValue = "Highcharts.com";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Whether to show the credits text.</p>
+		/// Whether to show the credits text.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The URL for the credits label.</p>
+		/// The URL for the credits label.
 		/// </summary>
 		public string Href { get; set; }
 		private string Href_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Position configuration for the credits label.</p>
+		/// Position configuration for the credits label.
 		/// </summary>
 		public Hashtable Position { get; set; }
 		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the credits label.</p>
+		/// CSS styles for the credits label.
 		/// </summary>
-		public CreditsStyle Style { get; set; }
-		private CreditsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The text for the credits label.</p>
+		/// The text for the credits label.
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }

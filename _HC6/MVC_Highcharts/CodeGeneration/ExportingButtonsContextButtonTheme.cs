@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The default fill exists only to capture hover events.</p>
+		/// The default fill exists only to capture hover events.
 		/// </summary>
 		public string Fill { get; set; }
 		private string Fill_DefaultValue { get; set; }

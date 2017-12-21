@@ -17,58 +17,58 @@ namespace Highsoft.Web.Mvc.Charts
 			Shape = Shape_DefaultValue = PaneBackgroundShape.Solid;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
-			BackgroundColor = BackgroundColor_DefaultValue = new PaneBackgroundBackgroundColor();
-			InnerRadius = InnerRadius_DefaultValue = "0";
-			OuterRadius = OuterRadius_DefaultValue = "105%";
-			ClassName = ClassName_DefaultValue = null;
+			BackgroundColor = BackgroundColor_DefaultValue = "";
+			InnerRadius = InnerRadius_DefaultValue = 0;
+			OuterRadius = OuterRadius_DefaultValue = 105%;
+			ClassName = ClassName_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Tha shape of the pane background. When <code>solid</code>, the backgroundis circular. When <code>arc</code>, the background extends only from the minto the max of the value axis.</p>
+		/// Tha shape of the pane background. When `solid`, the backgroundis circular. When `arc`, the background extends only from the minto the max of the value axis.
 		/// </summary>
 		public PaneBackgroundShape Shape { get; set; }
 		private PaneBackgroundShape Shape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pixel border width of the pane background.</p>
+		/// The pixel border width of the pane background.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The pane background border color.</p>
+		/// The pane background border color.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The background color or gradient for the pane.</p>
+		/// The background color or gradient for the pane.
 		/// </summary>
-		public PaneBackgroundBackgroundColor BackgroundColor { get; set; }
-		private PaneBackgroundBackgroundColor BackgroundColor_DefaultValue { get; set; }
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The inner radius of the pane background. Can be either numeric(pixels) or a percentage string.</p>
+		/// The inner radius of the pane background. Can be either numeric(pixels) or a percentage string.
 		/// </summary>
-		public string InnerRadius { get; set; }
-		private string InnerRadius_DefaultValue { get; set; }
+		public double? InnerRadius { get; set; }
+		private double? InnerRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The outer radius of the circular pane background. Can be eithernumeric (pixels) or a percentage string.</p>
+		/// The outer radius of the circular pane background. Can be eithernumeric (pixels) or a percentage string.
 		/// </summary>
-		public string OuterRadius { get; set; }
-		private string OuterRadius_DefaultValue { get; set; }
+		public double? OuterRadius { get; set; }
+		private double? OuterRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The class name for this background.</p>
+		/// The class name for this background.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }

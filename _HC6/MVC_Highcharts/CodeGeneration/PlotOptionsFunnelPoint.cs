@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsFunnelPoint()
 		{
-			Events = Events_DefaultValue = new PlotOptionsFunnelPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// 
 		/// </summary>
 		public PlotOptionsFunnelPointEvents Events { get; set; }
 		private PlotOptionsFunnelPointEvents Events_DefaultValue { get; set; }

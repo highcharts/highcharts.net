@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public XrangeSeriesDataLabels()
 		{
 			VerticalAlign = VerticalAlign_DefaultValue = middle;
-			Inside = Inside_DefaultValue = True;
+			Inside = Inside_DefaultValue = true;
 			Formatter = Formatter_DefaultValue = "";
 			
 		}	

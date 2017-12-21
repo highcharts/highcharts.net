@@ -14,21 +14,21 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PaneBackgroundBackgroundColor()
 		{
-			LinearGradient = LinearGradient_DefaultValue = new PaneBackgroundBackgroundColorLinearGradient();
+			LinearGradient = LinearGradient_DefaultValue = "";
 			Stops = Stops_DefaultValue = new List<Stop>();
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// Definition of the gradient, similar to SVG: object literal holdsstart position (x1, y1) and the end position (x2, y2) relativeto the shape, where 0 means top/left and 1 is bottom/right.All positions are floats between 0 and 1.
 		/// </summary>
 		public PaneBackgroundBackgroundColorLinearGradient LinearGradient { get; set; }
 		private PaneBackgroundBackgroundColorLinearGradient LinearGradient_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// The stops is an array of tuples, where the firstitem is a float between 0 and 1 assigning the relative position inthe gradient, and the second item is the color.
 		/// </summary>
 		public List<Stop> Stops { get; set; }
 		private List<Stop> Stops_DefaultValue { get; set; }

@@ -14,77 +14,69 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesLevels()
 		{
-			BorderColor = BorderColor_DefaultValue = null;
-			BorderDashStyle = BorderDashStyle_DefaultValue = null;
+			BorderColor = BorderColor_DefaultValue = "";
+			BorderDashStyle = BorderDashStyle_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = null;
-			Color = Color_DefaultValue = null;
-			ColorVariation = ColorVariation_DefaultValue = new TreemapSeriesLevelsColorVariation();
-			DataLabels = DataLabels_DefaultValue = new TreemapSeriesDataLabels();
-			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = TreemapSeriesLevelsLayoutAlgorithm.Null;
-			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = TreemapSeriesLevelsLayoutStartingDirection.Null;
+			Color = Color_DefaultValue = "";
+			ColorVariation = ColorVariation_DefaultValue = "";
+			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = TreemapSeriesLevelsLayoutAlgorithm.SliceAndDice;
+			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = TreemapSeriesLevelsLayoutStartingDirection.Vertical;
 			Level = Level_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Can set a <code>borderColor</code> on all points which lies on the same level.</p>
+		/// Can set a `borderColor` on all points which lies on the same level.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Set the dash style of the border of all the point which lies on thelevel. See <a href"#plotoptions.scatter.dashstyle">plotOptions.scatter.dashStyle</a> for possible options.</p>
+		/// Set the dash style of the border of all the point which lies on thelevel. See <a href"#plotoptions.scatter.dashstyle">plotOptions.scatter.dashStyle</a> for possible options.
 		/// </summary>
 		public string BorderDashStyle { get; set; }
 		private string BorderDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Can set the borderWidth on all points which lies on the same level.</p>
+		/// Can set the borderWidth on all points which lies on the same level.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Can set a color on all points which lies on the same level.</p>
+		/// Can set a color on all points which lies on the same level.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A configuration object to define how the color of a child varies from theparent&#39;s color. The variation is distributed among the children of node.For example when setting brightness, the brightness change will rangefrom the parent&#39;s original brightness on the first child, to the amountset in the <code>to</code> setting on the last node. This allows a gradient-likecolor scheme that sets children out from each other while highlightingthe grouping on treemaps and sectors on sunburst charts.</p>
+		/// A configuration object to define how the color of a child varies from theparent's color. The variation is distributed among the children of node.For example when setting brightness, the brightness change will rangefrom the parent's original brightness on the first child, to the amountset in the `to` setting on the last node. This allows a gradient-likecolor scheme that sets children out from each other while highlightingthe grouping on treemaps and sectors on sunburst charts.
 		/// </summary>
 		public TreemapSeriesLevelsColorVariation ColorVariation { get; set; }
 		private TreemapSeriesLevelsColorVariation ColorVariation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Can set the options of dataLabels on each point which lies on thelevel. <a href="#plotOptions.treemap.dataLabels">plotOptions.treemap.dataLabels</a>for possible values.</p>
-		/// </summary>
-		public TreemapSeriesDataLabels DataLabels { get; set; }
-		private TreemapSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Can set the layoutAlgorithm option on a specific level.</p>
+		/// Can set the layoutAlgorithm option on a specific level.
 		/// </summary>
 		public TreemapSeriesLevelsLayoutAlgorithm LayoutAlgorithm { get; set; }
 		private TreemapSeriesLevelsLayoutAlgorithm LayoutAlgorithm_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Can set the layoutStartingDirection option on a specific level.</p>
+		/// Can set the layoutStartingDirection option on a specific level.
 		/// </summary>
 		public TreemapSeriesLevelsLayoutStartingDirection LayoutStartingDirection { get; set; }
 		private TreemapSeriesLevelsLayoutStartingDirection LayoutStartingDirection_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Decides which level takes effect from the options set in the levelsobject.</p>
+		/// Decides which level takes effect from the options set in the levelsobject.
 		/// </summary>
 		public double? Level { get; set; }
 		private double? Level_DefaultValue { get; set; }
@@ -99,7 +91,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorVariation.IsDirty()) h.Add("colorVariation",ColorVariation.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
 			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
 			if (Level != Level_DefaultValue) h.Add("level",Level);

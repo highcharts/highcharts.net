@@ -15,13 +15,13 @@ namespace Highsoft.Web.Mvc.Charts
 		public YAxis()
 		{
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = null;
-			EndOnTick = EndOnTick_DefaultValue = True;
+			EndOnTick = EndOnTick_DefaultValue = true;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 72;
-			ShowLastLabel = ShowLastLabel_DefaultValue = True;
+			ShowLastLabel = ShowLastLabel_DefaultValue = true;
 			Labels = Labels_DefaultValue = "";
 			MaxPadding = MaxPadding_DefaultValue = 0.05;
 			MinPadding = MinPadding_DefaultValue = 0.05;
-			StartOnTick = StartOnTick_DefaultValue = True;
+			StartOnTick = StartOnTick_DefaultValue = true;
 			Title = Title_DefaultValue = "";
 			StackLabels = StackLabels_DefaultValue = "";
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
@@ -40,14 +40,14 @@ namespace Highsoft.Web.Mvc.Charts
 			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			EndOnTick = EndOnTick_DefaultValue = False;
+			EndOnTick = EndOnTick_DefaultValue = false;
 			Labels = Labels_DefaultValue = "";
 			MaxPadding = MaxPadding_DefaultValue = 0.01;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
 			MinPadding = MinPadding_DefaultValue = 0.01;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
-			StartOnTick = StartOnTick_DefaultValue = False;
+			StartOnTick = StartOnTick_DefaultValue = false;
 			TickLength = TickLength_DefaultValue = 10;
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = YAxisTickmarkPlacement.Between;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;

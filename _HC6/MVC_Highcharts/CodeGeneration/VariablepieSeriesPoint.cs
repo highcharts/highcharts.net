@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VariablepieSeriesPoint()
 		{
-			Events = Events_DefaultValue = new VariablepieSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// 
 		/// </summary>
 		public VariablepieSeriesPointEvents Events { get; set; }
 		private VariablepieSeriesPointEvents Events_DefaultValue { get; set; }

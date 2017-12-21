@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartOptions3d()
 		{
-			Enabled = Enabled_DefaultValue = False;
+			Enabled = Enabled_DefaultValue = false;
 			Alpha = Alpha_DefaultValue = 0;
 			Beta = Beta_DefaultValue = 0;
 			Depth = Depth_DefaultValue = 100;
-			FitToPlot = FitToPlot_DefaultValue = True;
-			ViewDistance = ViewDistance_DefaultValue = 25;
-			AxisLabelPosition = AxisLabelPosition_DefaultValue = ChartOptions3dAxisLabelPosition.Default;
+			FitToPlot = FitToPlot_DefaultValue = true;
+			ViewDistance = ViewDistance_DefaultValue = 100;
+			AxisLabelPosition = AxisLabelPosition_DefaultValue = ChartOptions3dAxisLabelPosition.Null;
 			Frame = Frame_DefaultValue = "";
 			
 		}	

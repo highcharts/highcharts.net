@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Y = Y_DefaultValue = 0;
 			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
-			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 3;
+			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 1;
 			Theme = Theme_DefaultValue = "";
 			
 		}	

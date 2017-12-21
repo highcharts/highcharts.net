@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public LegendItemCheckboxStyle()
 		{
 			Position = Position_DefaultValue = new Hashtable();
-			Width = Width_DefaultValue = "13px";
-			Height = Height_DefaultValue = "13px";
+			Width = Width_DefaultValue = 13px;
+			Height = Height_DefaultValue = 13px;
 			
 		}	
 		
@@ -31,15 +31,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Width { get; set; }
-		private string Width_DefaultValue { get; set; }
+		public LegendItemCheckboxStyleWidth Width { get; set; }
+		private LegendItemCheckboxStyleWidth Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Height { get; set; }
-		private string Height_DefaultValue { get; set; }
+		public LegendItemCheckboxStyleHeight Height { get; set; }
+		private LegendItemCheckboxStyleHeight Height_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

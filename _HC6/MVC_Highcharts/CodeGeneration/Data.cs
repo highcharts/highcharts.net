@@ -16,15 +16,15 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Columns = Columns_DefaultValue = new List<List<Object>>();
 			Complete = Complete_DefaultValue = "";
-			Csv = Csv_DefaultValue = null;
-			DateFormat = DateFormat_DefaultValue = null;
+			Csv = Csv_DefaultValue = "";
+			DateFormat = DateFormat_DefaultValue = DataDateFormat.Undefined;
 			DecimalPoint = DecimalPoint_DefaultValue = ".";
 			EndColumn = EndColumn_DefaultValue = null;
 			EndRow = EndRow_DefaultValue = null;
 			FirstRowAsNames = FirstRowAsNames_DefaultValue = true;
-			GoogleSpreadsheetKey = GoogleSpreadsheetKey_DefaultValue = null;
-			GoogleSpreadsheetWorksheet = GoogleSpreadsheetWorksheet_DefaultValue = null;
-			ItemDelimiter = ItemDelimiter_DefaultValue = null;
+			GoogleSpreadsheetKey = GoogleSpreadsheetKey_DefaultValue = "";
+			GoogleSpreadsheetWorksheet = GoogleSpreadsheetWorksheet_DefaultValue = "";
+			ItemDelimiter = ItemDelimiter_DefaultValue = "";
 			LineDelimiter = LineDelimiter_DefaultValue = "\n";
 			ParseDate = ParseDate_DefaultValue = "";
 			Parsed = Parsed_DefaultValue = "";
@@ -33,146 +33,146 @@ namespace Highsoft.Web.Mvc.Charts
 			StartColumn = StartColumn_DefaultValue = 0;
 			StartRow = StartRow_DefaultValue = 0;
 			SwitchRowsAndColumns = SwitchRowsAndColumns_DefaultValue = false;
-			Table = Table_DefaultValue = null;
+			Table = Table_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>A two-dimensional array representing the input data on tabular form.This input can be used when the data is already parsed, for examplefrom a grid view component. Each cell can be a string or number.If not switchRowsAndColumns is set, the columns are interpreted asseries.</p>
+		/// A two-dimensional array representing the input data on tabular form.This input can be used when the data is already parsed, for examplefrom a grid view component. Each cell can be a string or number.If not switchRowsAndColumns is set, the columns are interpreted asseries.
 		/// </summary>
 		public List<List<object>> Columns { get; set; }
 		private List<List<object>> Columns_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The callback that is evaluated when the data is finished loading,optionally from an external source, and parsed. The first argumentpassed is a finished chart options object, containing the series.These options can be extended with additional options and passeddirectly to the chart constructor.</p>
+		/// The callback that is evaluated when the data is finished loading,optionally from an external source, and parsed. The first argumentpassed is a finished chart options object, containing the series.These options can be extended with additional options and passeddirectly to the chart constructor.
 		/// </summary>
 		public string Complete { get; set; }
 		private string Complete_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A comma delimited string to be parsed. Related options are <a href="#data.startRow">startRow</a>, <a href="#data.endRow">endRow</a>, <a href="#data.startColumn">startColumn</a>and <a href="#data.endColumn">endColumn</a> to delimit what part of the tableis used. The <a href="#data.lineDelimiter">lineDelimiter</a> and <a href="#data.itemDelimiter">itemDelimiter</a> options define the CSV delimiter formats.</p><p>The built-in CSV parser doesn&#39;t support all flavours of CSV, so insome cases it may be necessary to use an external CSV parser. See<a href="http://jsfiddle.net/highcharts/u59176h4/">this example</a> of parsingCSV through the MIT licensed <a href="http://papaparse.com/">Papa Parse</a>library.</p>
+		/// A comma delimited string to be parsed. Related options are [startRow](#data.startRow), [endRow](#data.endRow), [startColumn](#data.startColumn)and [endColumn](#data.endColumn) to delimit what part of the tableis used. The [lineDelimiter](#data.lineDelimiter) and [itemDelimiter](#data.itemDelimiter) options define the CSV delimiter formats.The built-in CSV parser doesn't support all flavours of CSV, so insome cases it may be necessary to use an external CSV parser. See[this example](http://jsfiddle.net/highcharts/u59176h4/) of parsingCSV through the MIT licensed [Papa Parse](http://papaparse.com/)library.
 		/// </summary>
 		public string Csv { get; set; }
 		private string Csv_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Which of the predefined date formats in Date.prototype.dateFormatsto use to parse date values. Defaults to a best guess based on whatformat gives valid and ordered dates.</p><p>Valid options include:</p><ul><li><code>YYYY-mm-dd</code></li><li><code>dd/mm/YYYY</code></li><li><code>mm/dd/YYYY</code></li><li><code>dd/mm/YY</code></li><li><code>mm/dd/YY</code></li></ul>
+		/// Which of the predefined date formats in Date.prototype.dateFormatsto use to parse date values. Defaults to a best guess based on whatformat gives valid and ordered dates.Valid options include:*   `YYYY/mm/dd`*   `dd/mm/YYYY`*   `mm/dd/YYYY`*   `dd/mm/YY`*   `mm/dd/YY`
 		/// </summary>
-		public string DateFormat { get; set; }
-		private string DateFormat_DefaultValue { get; set; }
+		public DataDateFormat DateFormat { get; set; }
+		private DataDateFormat DateFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The decimal point used for parsing numbers in the CSV.</p><p>If both this and data.delimiter is set to false, the parser willattempt to deduce the decimal point automatically.</p>
+		/// The decimal point used for parsing numbers in the CSV.If both this and data.delimiter is set to false, the parser willattempt to deduce the decimal point automatically.
 		/// </summary>
 		public string DecimalPoint { get; set; }
 		private string DecimalPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>In tabular input data, the last column (indexed by 0) to use. Defaultsto the last column containing data.</p>
+		/// In tabular input data, the last column (indexed by 0) to use. Defaultsto the last column containing data.
 		/// </summary>
 		public double? EndColumn { get; set; }
 		private double? EndColumn_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>In tabular input data, the last row (indexed by 0) to use. Defaultsto the last row containing data.</p>
+		/// In tabular input data, the last row (indexed by 0) to use. Defaultsto the last row containing data.
 		/// </summary>
 		public double? EndRow { get; set; }
 		private double? EndRow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to use the first row in the data set as series names.</p>
+		/// Whether to use the first row in the data set as series names.
 		/// </summary>
 		public bool? FirstRowAsNames { get; set; }
 		private bool? FirstRowAsNames_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The key for a Google Spreadsheet to load. See <a href="https://developers.google.com/gdata/samples/spreadsheet_sample">general informationon GS</a>.</p>
+		/// The key for a Google Spreadsheet to load. See [general informationon GS](https://developers.google.com/gdata/samples/spreadsheet_sample).
 		/// </summary>
 		public string GoogleSpreadsheetKey { get; set; }
 		private string GoogleSpreadsheetKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The Google Spreadsheet worksheet to use in combination with <a href="#data.googleSpreadsheetKey">googleSpreadsheetKey</a>. The available id&#39;s from your sheet can beread from <code>https://spreadsheets.google.com/feeds/worksheets/{key}/public/basic</code></p>
+		/// The Google Spreadsheet worksheet to use in combination with [googleSpreadsheetKey](#data.googleSpreadsheetKey). The available id's from your sheet can beread from `https://spreadsheets.google.com/feeds/worksheets/{key}/public/basic`
 		/// </summary>
 		public string GoogleSpreadsheetWorksheet { get; set; }
 		private string GoogleSpreadsheetWorksheet_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Item or cell delimiter for parsing CSV. Defaults to the tab character<code>\t</code> if a tab character is found in the CSV string, if not it defaultsto <code>,</code>.</p><p>If this is set to false or undefined, the parser will attempt to deducethe delimiter automatically.</p>
+		/// Item or cell delimiter for parsing CSV. Defaults to the tab character`\t` if a tab character is found in the CSV string, if not it defaultsto `,`.If this is set to false or undefined, the parser will attempt to deducethe delimiter automatically.
 		/// </summary>
 		public string ItemDelimiter { get; set; }
 		private string ItemDelimiter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Line delimiter for parsing CSV.</p>
+		/// Line delimiter for parsing CSV.
 		/// </summary>
 		public string LineDelimiter { get; set; }
 		private string LineDelimiter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A callback function to parse string representations of dates intoJavaScript timestamps. Should return an integer timestamp on success.</p>
+		/// A callback function to parse string representations of dates intoJavaScript timestamps. Should return an integer timestamp on success.
 		/// </summary>
 		public string ParseDate { get; set; }
 		private string ParseDate_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A callback function to access the parsed columns, the two-dimentionalinput data array directly, before they are interpreted into seriesdata and categories. Return <code>false</code> to stop completion, or call <code>this.complete()</code> to continue async.</p>
+		/// A callback function to access the parsed columns, the two-dimentionalinput data array directly, before they are interpreted into seriesdata and categories. Return `false` to stop completion, or call `this.complete()` to continue async.
 		/// </summary>
 		public string Parsed { get; set; }
 		private string Parsed_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The same as the columns input option, but defining rows intead ofcolumns.</p>
+		/// The same as the columns input option, but defining rows intead ofcolumns.
 		/// </summary>
 		public List<List<object>> Rows { get; set; }
 		private List<List<object>> Rows_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An array containing object with Point property names along with whatcolumn id the property should be taken from.</p>
+		/// An array containing object with Point property names along with whatcolumn id the property should be taken from.
 		/// </summary>
 		public List<object> SeriesMapping { get; set; }
 		private List<object> SeriesMapping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>In tabular input data, the first column (indexed by 0) to use.</p>
+		/// In tabular input data, the first column (indexed by 0) to use.
 		/// </summary>
 		public double? StartColumn { get; set; }
 		private double? StartColumn_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>In tabular input data, the first row (indexed by 0) to use.</p>
+		/// In tabular input data, the first row (indexed by 0) to use.
 		/// </summary>
 		public double? StartRow { get; set; }
 		private double? StartRow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Switch rows and columns of the input data, so that <code>this.columns</code>effectively becomes the rows of the data set, and the rows are interpretedas series.</p>
+		/// Switch rows and columns of the input data, so that `this.columns`effectively becomes the rows of the data set, and the rows are interpretedas series.
 		/// </summary>
 		public bool? SwitchRowsAndColumns { get; set; }
 		private bool? SwitchRowsAndColumns_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A HTML table or the id of such to be parsed as input data. Relatedoptions are <code>startRow</code>, <code>endRow</code>, <code>startColumn</code> and <code>endColumn</code> todelimit what part of the table is used.</p>
+		/// A HTML table or the id of such to be parsed as input data. Relatedoptions are `startRow`, `endRow`, `startColumn` and `endColumn` todelimit what part of the table is used.
 		/// </summary>
 		public string Table { get; set; }
 		private string Table_DefaultValue { get; set; }
@@ -183,9 +183,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Columns != Columns_DefaultValue) h.Add("columns",Columns);
-			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); Highcharts.AddFunction("DataComplete.complete", Complete); }  
+			if (Complete != Complete_DefaultValue) h.Add("complete",Complete);
 			if (Csv != Csv_DefaultValue) h.Add("csv",Csv);
-			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
+			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat", Highcharts.FirstCharacterToLower(DateFormat.ToString()));
 			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
 			if (EndColumn != EndColumn_DefaultValue) h.Add("endColumn",EndColumn);
 			if (EndRow != EndRow_DefaultValue) h.Add("endRow",EndRow);
@@ -194,8 +194,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GoogleSpreadsheetWorksheet != GoogleSpreadsheetWorksheet_DefaultValue) h.Add("googleSpreadsheetWorksheet",GoogleSpreadsheetWorksheet);
 			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);
 			if (LineDelimiter != LineDelimiter_DefaultValue) h.Add("lineDelimiter",LineDelimiter);
-			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); Highcharts.AddFunction("DataParseDate.parseDate", ParseDate); }  
-			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); Highcharts.AddFunction("DataParsed.parsed", Parsed); }  
+			if (ParseDate != ParseDate_DefaultValue) h.Add("parseDate",ParseDate);
+			if (Parsed != Parsed_DefaultValue) h.Add("parsed",Parsed);
 			if (Rows != Rows_DefaultValue) h.Add("rows",Rows);
 			if (SeriesMapping != SeriesMapping_DefaultValue) h.Add("seriesMapping",SeriesMapping);
 			if (StartColumn != StartColumn_DefaultValue) h.Add("startColumn",StartColumn);

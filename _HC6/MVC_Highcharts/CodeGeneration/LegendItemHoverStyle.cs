@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LegendItemHoverStyle()
 		{
-			Color = Color_DefaultValue = "#000000";
+			Color = Color_DefaultValue = #000000;
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public LegendItemHoverStyleColor Color { get; set; }
+		private LegendItemHoverStyleColor Color_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

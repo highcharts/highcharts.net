@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public Legend()
 		{
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = True;
+			Enabled = Enabled_DefaultValue = true;
 			Align = Align_DefaultValue = LegendAlign.Center;
 			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
 			LabelFormatter = LabelFormatter_DefaultValue = "";
@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new Hashtable{{ "color", "#cccccc" }};
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = "";
-			SquareSymbol = SquareSymbol_DefaultValue = True;
+			SquareSymbol = SquareSymbol_DefaultValue = true;
 			SymbolPadding = SymbolPadding_DefaultValue = 5;
 			VerticalAlign = VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;

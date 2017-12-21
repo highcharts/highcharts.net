@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public CreditsStyle()
 		{
-			Cursor = Cursor_DefaultValue = "pointer";
-			Color = Color_DefaultValue = "#999999";
-			FontSize = FontSize_DefaultValue = "9px";
+			Cursor = Cursor_DefaultValue = pointer;
+			Color = Color_DefaultValue = #999999;
+			FontSize = FontSize_DefaultValue = 9px;
 			
 		}	
 		
@@ -24,22 +24,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public CreditsStyleCursor Cursor { get; set; }
+		private CreditsStyleCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public CreditsStyleColor Color { get; set; }
+		private CreditsStyleColor Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontSize { get; set; }
-		private string FontSize_DefaultValue { get; set; }
+		public CreditsStyleFontSize FontSize { get; set; }
+		private CreditsStyleFontSize FontSize_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Floating = Floating_DefaultValue = false;
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = SubtitleVerticalAlign.Null;
+			VerticalAlign = VerticalAlign_DefaultValue = SubtitleVerticalAlign.Top;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
@@ -28,63 +28,63 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The subtitle of the chart.</p>
+		/// The subtitle of the chart.
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The horizontal alignment of the subtitle. Can be one of &quot;left&quot;, &quot;center&quot; and &quot;right&quot;.</p>
+		/// The horizontal alignment of the subtitle. Can be one of "left", "center" and "right".
 		/// </summary>
 		public SubtitleAlign Align { get; set; }
 		private SubtitleAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Adjustment made to the subtitle width, normally to reserve spacefor the exporting burger menu.</p>
+		/// Adjustment made to the subtitle width, normally to reserve spacefor the exporting burger menu.
 		/// </summary>
 		public double? WidthAdjust { get; set; }
 		private double? WidthAdjust_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>When the subtitle is floating, the plot area will not move to makespace for it.</p>
+		/// When the subtitle is floating, the plot area will not move to makespace for it.
 		/// </summary>
 		public bool? Floating { get; set; }
 		private bool? Floating_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the title.</p><p>In styled mode, the subtitle style is given in the <code>.highcharts-subtitle</code> class.</p>
+		/// CSS styles for the title.In styled mode, the subtitle style is given in the `.highcharts-subtitle` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a> to render the text.</p>
+		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the text.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The vertical alignment of the title. Can be one of &quot;top&quot;, &quot;middle&quot;and &quot;bottom&quot;. When a value is given, the title behaves as floating.</p>
+		/// The vertical alignment of the title. Can be one of "top", "middle"and "bottom". When a value is given, the title behaves as floating.
 		/// </summary>
 		public SubtitleVerticalAlign VerticalAlign { get; set; }
 		private SubtitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The x position of the subtitle relative to the alignment within chart.spacingLeft and chart.spacingRight.</p>
+		/// The x position of the subtitle relative to the alignment within chart.spacingLeft and chart.spacingRight.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The y position of the subtitle relative to the alignment within chart.spacingTop and chart.spacingBottom. By default the subtitle is laidout below the title unless the title is floating.</p>
+		/// The y position of the subtitle relative to the alignment within chart.spacingTop and chart.spacingBottom. By default the subtitle is laidout below the title unless the title is floating.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

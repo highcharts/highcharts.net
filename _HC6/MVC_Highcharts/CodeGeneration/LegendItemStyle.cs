@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LegendItemStyle()
 		{
-			Color = Color_DefaultValue = "#333333";
-			FontSize = FontSize_DefaultValue = "12px";
-			FontWeight = FontWeight_DefaultValue = "bold";
-			TextOverflow = TextOverflow_DefaultValue = "ellipsis";
+			Color = Color_DefaultValue = #333333;
+			FontSize = FontSize_DefaultValue = 12px;
+			FontWeight = FontWeight_DefaultValue = bold;
+			TextOverflow = TextOverflow_DefaultValue = ellipsis;
 			
 		}	
 		
@@ -25,29 +25,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public LegendItemStyleColor Color { get; set; }
+		private LegendItemStyleColor Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontSize { get; set; }
-		private string FontSize_DefaultValue { get; set; }
+		public LegendItemStyleFontSize FontSize { get; set; }
+		private LegendItemStyleFontSize FontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontWeight { get; set; }
-		private string FontWeight_DefaultValue { get; set; }
+		public LegendItemStyleFontWeight FontWeight { get; set; }
+		private LegendItemStyleFontWeight FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string TextOverflow { get; set; }
-		private string TextOverflow_DefaultValue { get; set; }
+		public LegendItemStyleTextOverflow TextOverflow { get; set; }
+		private LegendItemStyleTextOverflow TextOverflow_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -14,117 +14,117 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesData()
 		{
-			From = From_DefaultValue = null;
-			To = To_DefaultValue = null;
+			From = From_DefaultValue = "";
+			To = To_DefaultValue = "";
 			Outgoing = Outgoing_DefaultValue = false;
 			Weight = Weight_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = new SankeySeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
-			Name = Name_DefaultValue = null;
+			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
-			Events = Events_DefaultValue = new SankeySeriesDataEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The node that the link runs from.</p>
+		/// The node that the link runs from.
 		/// </summary>
 		public string From { get; set; }
 		private string From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The node that the link runs to.</p>
+		/// The node that the link runs to.
 		/// </summary>
 		public string To { get; set; }
 		private string To_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether the link goes out of the system.</p>
+		/// Whether the link goes out of the system.
 		/// </summary>
 		public bool? Outgoing { get; set; }
 		private bool? Outgoing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The weight of the link.</p>
+		/// The weight of the link.
 		/// </summary>
 		public double? Weight { get; set; }
 		private double? Weight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An additional, individual class name for the data point&#39;s graphicrepresentation.</p>
+		/// An additional, individual class name for the data point's graphicrepresentation.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Individual color for the point. By default the color is pulled fromthe global <code>colors</code> array.</p>
+		/// Individual color for the point. By default the color is pulled fromthe global `colors` array.In styled mode, the `color` option doesn't take effect. Instead, use `colorIndex`.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Styled mode only. A specific color index to use for the point, so itsgraphic representations are given the class name <code>highcharts-color-{n}</code>.</p>
+		/// Styled mode only. A specific color index to use for the point, so itsgraphic representations are given the class name`highcharts-color-{n}`.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Individual data label for each point. The options are the same asthe ones for <a href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a></p>
+		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels)
 		/// </summary>
 		public SankeySeriesDataLabels DataLabels { get; set; }
 		private SankeySeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A description of the point to add to the screen reader informationabout the point. Requires the Accessibility module.</p>
+		/// A description of the point to add to the screen reader informationabout the point. Requires the Accessibility module.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An id for the point. This can be used after render time to get apointer to the point object through <code>chart.get()</code>.</p>
+		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The rank for this point&#39;s data label in case of collision. If twodata labels are about to overlap, only the one with the highest <code>labelrank</code>will be drawn.</p>
+		/// The rank for this point's data label in case of collision. If twodata labels are about to overlap, only the one with the highest `labelrank`will be drawn.
 		/// </summary>
 		public double? Labelrank { get; set; }
 		private double? Labelrank_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The name of the point as shown in the legend, tooltip, dataLabeletc.</p>
+		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether the data point is selected initially.</p>
+		/// Whether the data point is selected initially.
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Individual point events</p>
+		/// Individual point events
 		/// </summary>
 		public SankeySeriesDataEvents Events { get; set; }
 		private SankeySeriesDataEvents Events_DefaultValue { get; set; }
@@ -141,13 +141,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			
 
 			return h;

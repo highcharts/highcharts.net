@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Scatter3dSeriesPoint()
 		{
-			Events = Events_DefaultValue = new Scatter3dSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public Scatter3dSeriesPointEvents Events { get; set; }
 		private Scatter3dSeriesPointEvents Events_DefaultValue { get; set; }

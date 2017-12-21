@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PaneBackground()
 		{
-			Shape = Shape_DefaultValue = PaneBackgroundShape.Circle;
+			Shape = Shape_DefaultValue = PaneBackgroundShape.Solid;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			BackgroundColor = BackgroundColor_DefaultValue = "";

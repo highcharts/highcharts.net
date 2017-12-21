@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SunburstSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new SunburstSeriesStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// 
 		/// </summary>
 		public SunburstSeriesStatesHover Hover { get; set; }
 		private SunburstSeriesStatesHover Hover_DefaultValue { get; set; }

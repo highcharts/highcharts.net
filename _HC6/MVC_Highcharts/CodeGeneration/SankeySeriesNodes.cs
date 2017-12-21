@@ -14,29 +14,29 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesNodes()
 		{
-			Id = Id_DefaultValue = null;
-			Color = Color_DefaultValue = null;
+			Id = Id_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The id of the auto-generated node, refering to the <code>from</code> or <code>to</code> setting ofthe link.</p>
+		/// The id of the auto-generated node, refering to the `from` or `to` setting ofthe link.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the auto generated node.</p>
+		/// The color of the auto generated node.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color index of the auto generated node, especially for use in styledmode.</p>
+		/// The color index of the auto generated node, especially for use in styledmode.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }

@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVectorStatesHover()
 		{
-			LineWidthPlus = LineWidthPlus_DefaultValue = null;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Marker = Marker_DefaultValue = new PlotOptionsVectorStatesHoverMarker();
-			Halo = Halo_DefaultValue = new PlotOptionsVectorStatesHoverHalo();
+			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
+			Marker = Marker_DefaultValue = "";
+			Halo = Halo_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = true;
 			LineWidth = LineWidth_DefaultValue = null;
 			
@@ -25,42 +25,42 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Additonal line width for the vector errors when they are hovered.</p>
-		/// </summary>
-		public double? LineWidthPlus { get; set; }
-		private double? LineWidthPlus_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Animation setting for hovering the graph in line-type series.</p>
+		/// Animation setting for hovering the graph in line-type series.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>In Highcharts 1.0, the appearance of all markers belonging tothe hovered series. For settings on the hover state of the individualpoint, see <a href="#plotOptions.series.marker.states.hover">marker.states.hover</a>.</p>
+		/// The additional line width for the graph of a hovered series.
+		/// </summary>
+		public double? LineWidthPlus { get; set; }
+		private double? LineWidthPlus_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// In Highcharts 1.0, the appearance of all markers belonging tothe hovered series. For settings on the hover state of the individualpoint, see [marker.states.hover](#plotOptions.series.marker.states.hover).
 		/// </summary>
 		public PlotOptionsVectorStatesHoverMarker Marker { get; set; }
 		private PlotOptionsVectorStatesHoverMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts.By default the halo is filled by the current point or seriescolor with an opacity of 0.25. The halo can be disabled by settingthe <code>halo</code> option to <code>false</code>.</p><p>In styled mode, the halo is styled with the <code>.highcharts-halo</code> class, with colors inherited from <code>.highcharts-color-{n}</code>.</p>
+		/// Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts.By default the halo is filled by the current point or seriescolor with an opacity of 0.25\. The halo can be disabled by settingthe `halo` option to `false`.In styled mode, the halo is styled with the `.highcharts-halo` class, with colors inherited from `.highcharts-color-{n}`.
 		/// </summary>
 		public PlotOptionsVectorStatesHoverHalo Halo { get; set; }
 		private PlotOptionsVectorStatesHoverHalo Halo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Enable separate styles for the hovered series to visualize that theuser hovers either the series itself or the legend. .</p>
+		/// Enable separate styles for the hovered series to visualize that theuser hovers either the series itself or the legend. .
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Pixel with of the graph line. By default this property isundefined, and the <code>lineWidthPlus</code> property dictates how muchto increase the linewidth from normal state.</p>
+		/// Pixel with of the graph line. By default this property isundefined, and the `lineWidthPlus` property dictates how muchto increase the linewidth from normal state.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -70,9 +70,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
+			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

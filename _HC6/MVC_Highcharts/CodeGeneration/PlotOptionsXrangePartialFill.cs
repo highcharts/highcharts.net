@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsXrangePartialFill()
 		{
-			Fill = Fill_DefaultValue = null;
+			Fill = Fill_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>The fill color to be used for partial fills. Defaults to a darker shadeof the point color.</p>
+		/// The fill color to be used for partial fills. Defaults to a darker shadeof the point color.
 		/// </summary>
 		public string Fill { get; set; }
 		private string Fill_DefaultValue { get; set; }

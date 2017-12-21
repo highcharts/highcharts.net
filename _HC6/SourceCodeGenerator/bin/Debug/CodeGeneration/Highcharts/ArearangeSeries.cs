@@ -26,17 +26,17 @@ namespace Highsoft.Web.Mvc.Charts
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
-			AllowPointSelect = AllowPointSelect_DefaultValue = False;
-			ShowCheckbox = ShowCheckbox_DefaultValue = False;
+			AllowPointSelect = AllowPointSelect_DefaultValue = false;
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = "";
 			Marker = Marker_DefaultValue = "";
 			Point = Point_DefaultValue = "";
 			DataLabels = DataLabels_DefaultValue = "";
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			SoftThreshold = SoftThreshold_DefaultValue = True;
+			SoftThreshold = SoftThreshold_DefaultValue = true;
 			States = States_DefaultValue = "";
-			StickyTracking = StickyTracking_DefaultValue = True;
+			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = ArearangeSeriesFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
@@ -73,7 +73,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Linecap = Linecap_DefaultValue = ArearangeSeriesLinecap.Round;
-			SoftThreshold = SoftThreshold_DefaultValue = False;
+			SoftThreshold = SoftThreshold_DefaultValue = false;
 			Threshold = Threshold_DefaultValue = 0;
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = null;
@@ -81,9 +81,9 @@ namespace Highsoft.Web.Mvc.Charts
 			NegativeFillColor = NegativeFillColor_DefaultValue = "";
 			TrackByArea = TrackByArea_DefaultValue = false;
 			LineWidth = LineWidth_DefaultValue = 1;
-			Threshold = Threshold_DefaultValue = "";
+			Threshold = Threshold_DefaultValue = null;
 			Tooltip = Tooltip_DefaultValue = "";
-			TrackByArea = TrackByArea_DefaultValue = True;
+			TrackByArea = TrackByArea_DefaultValue = true;
 			DataLabels = DataLabels_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			

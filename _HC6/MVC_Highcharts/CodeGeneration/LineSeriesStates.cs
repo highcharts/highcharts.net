@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LineSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new LineSeriesStatesHover();
+			Hover = Hover_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.</p>
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public LineSeriesStatesHover Hover { get; set; }
 		private LineSeriesStatesHover Hover_DefaultValue { get; set; }

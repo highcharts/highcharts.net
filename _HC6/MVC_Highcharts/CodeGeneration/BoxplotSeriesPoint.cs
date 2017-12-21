@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BoxplotSeriesPoint()
 		{
-			Events = Events_DefaultValue = new BoxplotSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// Events for each single point.
 		/// </summary>
 		public BoxplotSeriesPointEvents Events { get; set; }
 		private BoxplotSeriesPointEvents Events_DefaultValue { get; set; }

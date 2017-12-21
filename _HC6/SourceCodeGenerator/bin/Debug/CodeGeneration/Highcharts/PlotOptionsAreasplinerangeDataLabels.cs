@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			XLow = XLow_DefaultValue = 0;
 			XHigh = XHigh_DefaultValue = 0;
-			YLow = YLow_DefaultValue = 0;
-			YHigh = YHigh_DefaultValue = 0;
+			YLow = YLow_DefaultValue = 16;
+			YHigh = YHigh_DefaultValue = -6;
 			Align = Align_DefaultValue = PlotOptionsAreasplinerangeDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};

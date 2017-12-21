@@ -16,35 +16,35 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Align = Align_DefaultValue = TreemapSeriesDrillUpButtonPositionAlign.Right;
 			X = X_DefaultValue = -10;
-			Y = Y_DefaultValue = null;
+			Y = Y_DefaultValue = 10;
 			VerticalAlign = VerticalAlign_DefaultValue = TreemapSeriesDrillUpButtonPositionVerticalAlign.Top;
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Horizontal alignment of the button.</p>
+		/// Horizontal alignment of the button.
 		/// </summary>
 		public TreemapSeriesDrillUpButtonPositionAlign Align { get; set; }
 		private TreemapSeriesDrillUpButtonPositionAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Horizontal offset of the button.</p>
+		/// Horizontal offset of the button.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Vertical offset of the button.</p>
+		/// Vertical offset of the button.
 		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
+		public TreemapSeriesDrillUpButtonPositionY Y { get; set; }
+		private TreemapSeriesDrillUpButtonPositionY Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Vertical alignment of the button.</p>
+		/// Vertical alignment of the button.
 		/// </summary>
 		public TreemapSeriesDrillUpButtonPositionVerticalAlign VerticalAlign { get; set; }
 		private TreemapSeriesDrillUpButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }

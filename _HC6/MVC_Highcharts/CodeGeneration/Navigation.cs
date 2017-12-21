@@ -14,40 +14,40 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Navigation()
 		{
-			ButtonOptions = ButtonOptions_DefaultValue = new NavigationButtonOptions();
-			MenuStyle = MenuStyle_DefaultValue = new NavigationMenuStyle();
-			MenuItemStyle = MenuItemStyle_DefaultValue = new NavigationMenuItemStyle();
-			MenuItemHoverStyle = MenuItemHoverStyle_DefaultValue = new NavigationMenuItemHoverStyle();
+			ButtonOptions = ButtonOptions_DefaultValue = "";
+			MenuStyle = MenuStyle_DefaultValue = new Hashtable{{ "border", "1px solid #999999"},{ "background", "#ffffff"},{ "padding", "5px 0" }};
+			MenuItemStyle = MenuItemStyle_DefaultValue = new Hashtable{{ "padding", "0.5em 1em"},{ "color", "#333333"},{ "background", "none" }};
+			MenuItemHoverStyle = MenuItemHoverStyle_DefaultValue = new Hashtable{{ "background", "#335cad"},{ "color", "#ffffff" }};
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>A collection of options for buttons appearing in the exporting module.</p><p>In styled mode, the buttons are styled with the <code>.highcharts-contextbutton</code> and <code>.highcharts-button-symbol</code> class.</p>
+		/// A collection of options for buttons appearing in the exporting module.In styled mode, the buttons are styled with the `.highcharts-contextbutton` and `.highcharts-button-symbol` class.
 		/// </summary>
 		public NavigationButtonOptions ButtonOptions { get; set; }
 		private NavigationButtonOptions ButtonOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the popup menu appearing by default when the exporticon is clicked. This menu is rendered in HTML.</p>
+		/// CSS styles for the popup menu appearing by default when the exporticon is clicked. This menu is rendered in HTML.
 		/// </summary>
-		public NavigationMenuStyle MenuStyle { get; set; }
-		private NavigationMenuStyle MenuStyle_DefaultValue { get; set; }
+		public Hashtable MenuStyle { get; set; }
+		private Hashtable MenuStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the individual items within the popup menu appearingby default when the export icon is clicked. The menu items are renderedin HTML.</p>
+		/// CSS styles for the individual items within the popup menu appearingby default when the export icon is clicked. The menu items are renderedin HTML.
 		/// </summary>
-		public NavigationMenuItemStyle MenuItemStyle { get; set; }
-		private NavigationMenuItemStyle MenuItemStyle_DefaultValue { get; set; }
+		public Hashtable MenuItemStyle { get; set; }
+		private Hashtable MenuItemStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the hover state of the individual items within thepopup menu appearing by default when the export icon is clicked. The menu items are rendered in HTML.</p>
+		/// CSS styles for the hover state of the individual items within thepopup menu appearing by default when the export icon is clicked. The menu items are rendered in HTML.
 		/// </summary>
-		public NavigationMenuItemHoverStyle MenuItemHoverStyle { get; set; }
-		private NavigationMenuItemHoverStyle MenuItemHoverStyle_DefaultValue { get; set; }
+		public Hashtable MenuItemHoverStyle { get; set; }
+		private Hashtable MenuItemHoverStyle_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

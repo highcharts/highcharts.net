@@ -15,11 +15,10 @@ namespace Highsoft.Web.Mvc.Charts
 		public Accessibility()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = 30;
-			KeyboardNavigation = KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
+			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = false;
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
 			OnTableAnchorClick = OnTableAnchorClick_DefaultValue = "";
-			PointDateFormat = PointDateFormat_DefaultValue = null;
+			PointDateFormat = PointDateFormat_DefaultValue = "";
 			PointDateFormatter = PointDateFormatter_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			ScreenReaderSectionFormatter = ScreenReaderSectionFormatter_DefaultValue = "";
@@ -29,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Enable accessibility features for the chart.</p>
+		/// Enable accessibility features for the chart.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -43,56 +42,49 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// <p>Options for keyboard navigation.</p>
-		/// </summary>
-		public AccessibilityKeyboardNavigation KeyboardNavigation { get; set; }
-		private AccessibilityKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// <p>Whether or not to add series descriptions to charts with a singleseries.</p>
+		/// Whether or not to add series descriptions to charts with a singleseries.
 		/// </summary>
 		public bool? DescribeSingleSeries { get; set; }
 		private bool? DescribeSingleSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Function to run upon clicking the &quot;View as Data Table&quot; link in thescreen reader region.</p><p>By default Highcharts will insert and set focus to a data tablerepresentation of the chart.</p>
+		/// Function to run upon clicking the "View as Data Table" link in thescreen reader region.By default Highcharts will insert and set focus to a data tablerepresentation of the chart.
 		/// </summary>
 		public string OnTableAnchorClick { get; set; }
 		private string OnTableAnchorClick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Date format to use for points on datetime axes when describing themto screen reader users.</p><p>Defaults to the same format as in tooltip.</p><p>For an overview of the replacement codes, see<a href="#Highcharts.dateFormat">dateFormat</a>.</p>
+		/// Date format to use for points on datetime axes when describing themto screen reader users.Defaults to the same format as in tooltip.For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat).
 		/// </summary>
 		public string PointDateFormat { get; set; }
 		private string PointDateFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Formatter function to determine the date/time format used withpoints on datetime axes when describing them to screen reader users.Receives one argument, <code>point</code>, referring to the point to describe.Should return a date format string compatible with<a href="#Highcharts.dateFormat">dateFormat</a>.</p>
+		/// Formatter function to determine the date/time format used withpoints on datetime axes when describing them to screen reader users.Receives one argument, `point`, referring to the point to describe.Should return a date format string compatible with[dateFormat](#Highcharts.dateFormat).
 		/// </summary>
 		public string PointDateFormatter { get; set; }
 		private string PointDateFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Formatter function to use instead of the default for pointdescriptions.Receives one argument, <code>point</code>, referring to the point to describe.Should return a String with the description of the point for a screenreader user.</p>
+		/// Formatter function to use instead of the default for pointdescriptions.Receives one argument, `point`, referring to the point to describe.Should return a String with the description of the point for a screenreader user.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
 		private string PointDescriptionFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>A formatter function to create the HTML contents of the hidden screenreader information region. Receives one argument, <code>chart</code>, referringto the chart object. Should return a String with the HTML contentof the region.</p><p>The link to view the chart as a data table will be addedautomatically after the custom HTML content.</p>
+		/// A formatter function to create the HTML contents of the hidden screenreader information region. Receives one argument, `chart`, referringto the chart object. Should return a String with the HTML contentof the region.The link to view the chart as a data table will be addedautomatically after the custom HTML content.
 		/// </summary>
 		public string ScreenReaderSectionFormatter { get; set; }
 		private string ScreenReaderSectionFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Formatter function to use instead of the default for seriesdescriptions. Receives one argument, <code>series</code>, referring to theseries to describe. Should return a String with the description ofthe series for a screen reader user.</p>
+		/// Formatter function to use instead of the default for seriesdescriptions. Receives one argument, `series`, referring to theseries to describe. Should return a String with the description ofthe series for a screen reader user.
 		/// </summary>
 		public string SeriesDescriptionFormatter { get; set; }
 		private string SeriesDescriptionFormatter_DefaultValue { get; set; }
@@ -103,21 +95,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)
-			{
-				if (PointDescriptionThreshold != null)
-					h.Add("pointDescriptionThreshold", PointDescriptionThreshold);
-				else
-					h.Add("pointDescriptionThreshold", false);
-			}
-			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
+			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue) h.Add("pointDescriptionThreshold",PointDescriptionThreshold);
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
-			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highcharts.AddFunction("AccessibilityOnTableAnchorClick.onTableAnchorClick", OnTableAnchorClick); }  
+			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) h.Add("onTableAnchorClick",OnTableAnchorClick);
 			if (PointDateFormat != PointDateFormat_DefaultValue) h.Add("pointDateFormat",PointDateFormat);
-			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highcharts.AddFunction("AccessibilityPointDateFormatter.pointDateFormatter", PointDateFormatter); }  
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("AccessibilityPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
-			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highcharts.AddFunction("AccessibilityScreenReaderSectionFormatter.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
-			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highcharts.AddFunction("AccessibilitySeriesDescriptionFormatter.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
+			if (PointDateFormatter != PointDateFormatter_DefaultValue) h.Add("pointDateFormatter",PointDateFormatter);
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) h.Add("pointDescriptionFormatter",PointDescriptionFormatter);
+			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter);
+			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter);
 			
 
 			return h;

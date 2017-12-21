@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WordcloudSeriesTooltip()
 		{
-			FollowPointer = FollowPointer_DefaultValue = True;
+			FollowPointer = FollowPointer_DefaultValue = true;
 			PointFormat = PointFormat_DefaultValue = <span style="color:{point.color}">●</span> {series.name}: <b>{point.weight}</b><br/>;
 			
 		}	

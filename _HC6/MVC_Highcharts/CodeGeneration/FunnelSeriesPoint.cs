@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public FunnelSeriesPoint()
 		{
-			Events = Events_DefaultValue = new FunnelSeriesPointEvents();
+			Events = Events_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>Events for each single point.</p>
+		/// 
 		/// </summary>
 		public FunnelSeriesPointEvents Events { get; set; }
 		private FunnelSeriesPointEvents Events_DefaultValue { get; set; }

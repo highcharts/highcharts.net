@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum StreamgraphSeriesStacking
     {
-        Stream, 
-		Null, 
+        Null, 
 		Normal, 
 		Percent
     }

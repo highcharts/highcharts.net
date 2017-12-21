@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxisStackLabels()
 		{
-			AllowOverlap = AllowOverlap_DefaultValue = False;
-			Enabled = Enabled_DefaultValue = False;
+			AllowOverlap = AllowOverlap_DefaultValue = false;
+			Enabled = Enabled_DefaultValue = false;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = "";
 			Align = Align_DefaultValue = YAxisStackLabelsAlign.Left;

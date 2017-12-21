@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public Global()
 		{
 			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "";
-			UseUTC = UseUTC_DefaultValue = True;
+			UseUTC = UseUTC_DefaultValue = true;
 			Date = Date_DefaultValue = "";
 			CanvasToolsURL = CanvasToolsURL_DefaultValue = "";
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";

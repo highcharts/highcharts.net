@@ -23,28 +23,28 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>A number indicating how much space should be left between the startand the end of the break. The break size is given in axis units,so for instance on a <code>datetime</code> axis, a break size of 3600000 wouldindicate the equivalent of an hour.</p>
+		/// A number indicating how much space should be left between the startand the end of the break. The break size is given in axis units,so for instance on a `datetime` axis, a break size of 3600000 wouldindicate the equivalent of an hour.
 		/// </summary>
 		public double? BreakSize { get; set; }
 		private double? BreakSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The point where the break starts.</p>
+		/// The point where the break starts.
 		/// </summary>
 		public double? From { get; set; }
 		private double? From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Defines an interval after which the break appears again. By defaultthe breaks do not repeat.</p>
+		/// Defines an interval after which the break appears again. By defaultthe breaks do not repeat.
 		/// </summary>
 		public double? Repeat { get; set; }
 		private double? Repeat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The point where the break ends.</p>
+		/// The point where the break ends.
 		/// </summary>
 		public double? To { get; set; }
 		private double? To_DefaultValue { get; set; }

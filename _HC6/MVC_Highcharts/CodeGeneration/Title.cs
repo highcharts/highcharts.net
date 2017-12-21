@@ -19,9 +19,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Margin = Margin_DefaultValue = null;
 			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			Floating = Floating_DefaultValue = false;
-			Style = Style_DefaultValue = null;
+			Style = Style_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Null;
+			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Top;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
@@ -29,70 +29,70 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>The title of the chart. To disable the title, set the <code>text</code> to<code>null</code>.</p>
+		/// The title of the chart. To disable the title, set the `text` to`null`.
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The horizontal alignment of the title. Can be one of &quot;left&quot;, &quot;center&quot;and &quot;right&quot;.</p>
+		/// The horizontal alignment of the title. Can be one of "left", "center"and "right".
 		/// </summary>
 		public TitleAlign Align { get; set; }
 		private TitleAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The margin between the title and the plot area, or if a subtitleis present, the margin between the subtitle and the plot area.</p>
+		/// The margin between the title and the plot area, or if a subtitleis present, the margin between the subtitle and the plot area.
 		/// </summary>
 		public double? Margin { get; set; }
 		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Adjustment made to the title width, normally to reserve space forthe exporting burger menu.</p>
+		/// Adjustment made to the title width, normally to reserve space forthe exporting burger menu.
 		/// </summary>
 		public double? WidthAdjust { get; set; }
 		private double? WidthAdjust_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>When the title is floating, the plot area will not move to make spacefor it.</p>
+		/// When the title is floating, the plot area will not move to make spacefor it.
 		/// </summary>
 		public bool? Floating { get; set; }
 		private bool? Floating_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>CSS styles for the title. Use this for font styling, but use <code>align</code>,<code>x</code> and <code>y</code> for text alignment.</p><p>In styled mode, the title style is given in the <code>.highcharts-title</code> class.</p>
+		/// CSS styles for the title. Use this for font styling, but use `align`,`x` and `y` for text alignment.In styled mode, the title style is given in the `.highcharts-title` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Whether to <a href="http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html">use HTML</a> to render the text.</p>
+		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the text.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The vertical alignment of the title. Can be one of <code>&quot;top&quot;</code>, <code>&quot;middle&quot;</code>and <code>&quot;bottom&quot;</code>. When a value is given, the title behaves as if <a href="#title.floating">floating</a> were <code>true</code>.</p>
+		/// The vertical alignment of the title. Can be one of `"top"`, `"middle"`and `"bottom"`. When a value is given, the title behaves as if [floating](#title.floating) were `true`.
 		/// </summary>
 		public TitleVerticalAlign VerticalAlign { get; set; }
 		private TitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The x position of the title relative to the alignment within chart.spacingLeft and chart.spacingRight.</p>
+		/// The x position of the title relative to the alignment within chart.spacingLeft and chart.spacingRight.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The y position of the title relative to the alignment within <a href="#chart.spacingTop">chart.spacingTop</a> and <a href="#chart.spacingBottom">chart.spacingBottom</a>. By default it depends on the font size.</p>
+		/// The y position of the title relative to the alignment within [chart.spacingTop](#chart.spacingTop) and [chart.spacingBottom](#chart.spacingBottom). By default it depends on the font size.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

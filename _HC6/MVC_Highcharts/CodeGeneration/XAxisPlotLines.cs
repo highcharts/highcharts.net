@@ -14,77 +14,77 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public XAxisPlotLines()
 		{
-			ClassName = ClassName_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "null";
 			DashStyle = DashStyle_DefaultValue = XAxisPlotLinesDashStyle.Solid;
-			Events = Events_DefaultValue = null;
+			Events = Events_DefaultValue = "";
 			Id = Id_DefaultValue = "null";
 			Value = Value_DefaultValue = null;
 			Width = Width_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = new XAxisPlotLinesLabel();
+			Label = Label_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// <p>A custom class name, in addition to the default <code>highcharts-plot-line</code>, to apply to each individual line.</p>
+		/// A custom class name, in addition to the default `highcharts-plot-line`, to apply to each individual line.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the line.</p>
+		/// The color of the line.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The dashing or dot style for the plot line. For possible values see<a href="http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/">this overview</a>.</p>
+		/// The dashing or dot style for the plot line. For possible values see[this overview](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public XAxisPlotLinesDashStyle DashStyle { get; set; }
 		private XAxisPlotLinesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An object defining mouse events for the plot line. Supported propertiesare <code>click</code>, <code>mouseover</code>, <code>mouseout</code>, <code>mousemove</code>.</p>
+		/// An object defining mouse events for the plot line. Supported propertiesare `click`, `mouseover`, `mouseout`, `mousemove`.
 		/// </summary>
-		public Object Events { get; set; }
-		private Object Events_DefaultValue { get; set; }
+		public XAxisPlotLinesEvents Events { get; set; }
+		private XAxisPlotLinesEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>An id used for identifying the plot line in Axis.removePlotLine.</p>
+		/// An id used for identifying the plot line in Axis.removePlotLine.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The position of the line in axis units.</p>
+		/// The position of the line in axis units.
 		/// </summary>
 		public double? Value { get; set; }
 		private double? Value_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The width or thickness of the plot line.</p>
+		/// The width or thickness of the plot line.
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The z index of the plot line within the chart.</p>
+		/// The z index of the plot line within the chart.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>Text labels for the plot bands</p>
+		/// Text labels for the plot bands
 		/// </summary>
 		public XAxisPlotLinesLabel Label { get; set; }
 		private XAxisPlotLinesLabel Label_DefaultValue { get; set; }

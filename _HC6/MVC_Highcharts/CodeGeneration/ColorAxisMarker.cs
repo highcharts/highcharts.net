@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// <p>Animation for the marker as it moves between values. Set to <code>false</code>to disable animation. Defaults to <code>{ duration: 50 }</code>.</p>
+		/// Animation for the marker as it moves between values. Set to `false`to disable animation. Defaults to `{ duration: 50 }`.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// <p>The color of the marker.</p>
+		/// The color of the marker.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
