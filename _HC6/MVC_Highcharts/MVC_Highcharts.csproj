@@ -575,7 +575,6 @@
     <Compile Include="CodeGeneration\Enums\ColumnSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\CreditsPositionAlign.cs" />
     <Compile Include="CodeGeneration\Enums\CreditsPositionVerticalAlign.cs" />
-    <Compile Include="CodeGeneration\Enums\DataDateFormat.cs" />
     <Compile Include="CodeGeneration\Enums\DrilldownDrillUpButtonPositionVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\DrilldownDrillUpButtonRelativeTo.cs" />
     <Compile Include="CodeGeneration\Enums\ErrorbarSeriesCursor.cs" />

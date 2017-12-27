@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Columns = Columns_DefaultValue = new List<List<Object>>();
 			Complete = Complete_DefaultValue = "";
 			Csv = Csv_DefaultValue = "";
-			DateFormat = DateFormat_DefaultValue = DataDateFormat.Undefined;
+			DateFormat = DateFormat_DefaultValue = "";
 			DecimalPoint = DecimalPoint_DefaultValue = ".";
 			EndColumn = EndColumn_DefaultValue = null;
 			EndRow = EndRow_DefaultValue = null;
@@ -62,8 +62,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Which of the predefined date formats in Date.prototype.dateFormatsto use to parse date values. Defaults to a best guess based on whatformat gives valid and ordered dates.Valid options include:*   `YYYY/mm/dd`*   `dd/mm/YYYY`*   `mm/dd/YYYY`*   `dd/mm/YY`*   `mm/dd/YY`
 		/// </summary>
-		public DataDateFormat DateFormat { get; set; }
-		private DataDateFormat DateFormat_DefaultValue { get; set; }
+		public string DateFormat { get; set; }
+		private string DateFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -185,7 +185,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Columns != Columns_DefaultValue) h.Add("columns",Columns);
 			if (Complete != Complete_DefaultValue) h.Add("complete",Complete);
 			if (Csv != Csv_DefaultValue) h.Add("csv",Csv);
-			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat", Highcharts.FirstCharacterToLower(DateFormat.ToString()));
+			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
 			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
 			if (EndColumn != EndColumn_DefaultValue) h.Add("endColumn",EndColumn);
 			if (EndRow != EndRow_DefaultValue) h.Add("endRow",EndRow);
