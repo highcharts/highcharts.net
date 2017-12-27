@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public CreditsStyle()
 		{
-			Cursor = Cursor_DefaultValue = pointer;
+			Cursor = Cursor_DefaultValue = "pointer";
 			Color = Color_DefaultValue = "#999999";
 			FontSize = FontSize_DefaultValue = "9px";
 			
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public CreditsStyleCursor Cursor { get; set; }
-		private CreditsStyleCursor Cursor_DefaultValue { get; set; }
+		public string Cursor { get; set; }
+		private string Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>

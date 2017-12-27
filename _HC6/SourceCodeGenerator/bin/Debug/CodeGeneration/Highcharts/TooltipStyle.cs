@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public TooltipStyle()
 		{
 			Color = Color_DefaultValue = "#333333";
-			Cursor = Cursor_DefaultValue = default;
+			Cursor = Cursor_DefaultValue = "default";
 			FontSize = FontSize_DefaultValue = "12px";
 			PointerEvents = PointerEvents_DefaultValue = none;
 			WhiteSpace = WhiteSpace_DefaultValue = nowrap;
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public TooltipStyleCursor Cursor { get; set; }
-		private TooltipStyleCursor Cursor_DefaultValue { get; set; }
+		public string Cursor { get; set; }
+		private string Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>

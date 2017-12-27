@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public XAxisLabelsStyle()
 		{
 			Color = Color_DefaultValue = "#666666";
-			Cursor = Cursor_DefaultValue = default;
+			Cursor = Cursor_DefaultValue = "default";
 			FontSize = FontSize_DefaultValue = "11px";
 			
 		}	
@@ -31,8 +31,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public XAxisLabelsStyleCursor Cursor { get; set; }
-		private XAxisLabelsStyleCursor Cursor_DefaultValue { get; set; }
+		public string Cursor { get; set; }
+		private string Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
