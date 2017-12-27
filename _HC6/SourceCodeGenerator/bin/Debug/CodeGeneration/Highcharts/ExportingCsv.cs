@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ExportingCsv()
 		{
 			ColumnHeaderFormatter = ColumnHeaderFormatter_DefaultValue = "";
-			DateFormat = DateFormat_DefaultValue = %Y-%m-%d %H:%M:%S;
+			DateFormat = DateFormat_DefaultValue = "%Y-%m-%d %H:%M:%S";
 			DecimalPoint = DecimalPoint_DefaultValue = "";
 			ItemDelimiter = ItemDelimiter_DefaultValue = "";
 			LineDelimiter = LineDelimiter_DefaultValue = "";
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Which date format to use for exported dates on a datetime X axis.See `Highcharts.dateFormat`.
 		/// </summary>
-		public ExportingCsvDateFormat DateFormat { get; set; }
-		private ExportingCsvDateFormat DateFormat_DefaultValue { get; set; }
+		public string DateFormat { get; set; }
+		private string DateFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The line delimiter in the exported data, defaults to a newline.
 		/// </summary>
-		public ExportingCsvLineDelimiter LineDelimiter { get; set; }
-		private ExportingCsvLineDelimiter LineDelimiter_DefaultValue { get; set; }
+		public string LineDelimiter { get; set; }
+		private string LineDelimiter_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
