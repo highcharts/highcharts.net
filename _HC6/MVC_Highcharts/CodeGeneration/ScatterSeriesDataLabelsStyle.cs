@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ScatterSeriesDataLabelsStyle()
 		{
-			FontSize = FontSize_DefaultValue = 11px;
-			FontWeight = FontWeight_DefaultValue = bold;
-			Color = Color_DefaultValue = contrast;
-			TextOutline = TextOutline_DefaultValue = 1px contrast;
+			FontSize = FontSize_DefaultValue = "11px";
+			FontWeight = FontWeight_DefaultValue = "bold";
+			Color = Color_DefaultValue = "contrast";
+			TextOutline = TextOutline_DefaultValue = "1px contrast";
 			
 		}	
 		
@@ -25,29 +25,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public ScatterSeriesDataLabelsStyleFontSize FontSize { get; set; }
-		private ScatterSeriesDataLabelsStyleFontSize FontSize_DefaultValue { get; set; }
+		public string FontSize { get; set; }
+		private string FontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public ScatterSeriesDataLabelsStyleFontWeight FontWeight { get; set; }
-		private ScatterSeriesDataLabelsStyleFontWeight FontWeight_DefaultValue { get; set; }
+		public string FontWeight { get; set; }
+		private string FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public ScatterSeriesDataLabelsStyleColor Color { get; set; }
-		private ScatterSeriesDataLabelsStyleColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public ScatterSeriesDataLabelsStyleTextOutline TextOutline { get; set; }
-		private ScatterSeriesDataLabelsStyleTextOutline TextOutline_DefaultValue { get; set; }
+		public string TextOutline { get; set; }
+		private string TextOutline_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

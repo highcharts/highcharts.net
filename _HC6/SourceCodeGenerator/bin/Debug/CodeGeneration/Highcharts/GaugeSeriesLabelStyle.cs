@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public GaugeSeriesLabelStyle()
 		{
-			FontWeight = FontWeight_DefaultValue = bold;
+			FontWeight = FontWeight_DefaultValue = "bold";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public GaugeSeriesLabelStyleFontWeight FontWeight { get; set; }
-		private GaugeSeriesLabelStyleFontWeight FontWeight_DefaultValue { get; set; }
+		public string FontWeight { get; set; }
+		private string FontWeight_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

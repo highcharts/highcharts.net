@@ -18,15 +18,17 @@ namespace SourceCodeGenerator.Parser
         private string Product { get; set; }
         private IFileService FileService { get; set; }
         private IFilterService FilterService { get; set; }
+        private IJsonUpdateService UpdateService { get; set; }
         public IList<ApiItem> Items { get; private set; }
 
-        public JsonParser(string product, IFileService fileService, IFilterService filterService)
+        public JsonParser(string product, IFileService fileService, IFilterService filterService, IJsonUpdateService updateService)
         {
             Items = new List<ApiItem>();
 
             Product = product;
             FileService = fileService;
             FilterService = filterService;
+            UpdateService = updateService;
         }
 
         public List<ApiItem> Get()
@@ -140,6 +142,8 @@ namespace SourceCodeGenerator.Parser
                 else
                     apiItem.FullName = apiItem.Title;
 
+            //Modification area
+
             if (FilterService.IsItemIgnored(apiItem.FullName))
                 return;
 
@@ -147,8 +151,11 @@ namespace SourceCodeGenerator.Parser
                 apiItem.Values.Clear();
 
             //remove this condition if bug in json will be fixed
-            //if (apiItem.FullName.StartsWith("plotOptions.column.marker"))
-            //    return;
+            if (apiItem.FullName.StartsWith("plotOptions.column.marker"))
+                return;
+
+            UpdateService.Update(apiItem);
+            ////////////////////////end of modification area
 
             if (parent == null)
                 Items.Add(apiItem);

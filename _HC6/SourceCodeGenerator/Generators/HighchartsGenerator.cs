@@ -187,19 +187,6 @@ public class HighchartsGenerator
             apiItem.Defaults = "0.01";
     }
 
-    //private void AppendMissingApiItems()
-    //{
-    //    _apiItems.Add(new ApiItem { FullName = "colorAxis", Title = "colorAxis", IsParent = true });
-    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.stops", Title = "stops", IsParent = false, ReturnType = "Array<Array>" });
-    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.min", Title = "min", IsParent = false, ReturnType = "Number" });
-    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.max", Title = "max", IsParent = false, ReturnType = "Number" });
-    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.startOnTick", Title = "startOnTick", IsParent = false, ReturnType = "Boolean", Defaults = "false" });
-    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.endOnTick", Title = "endOnTick", IsParent = false, ReturnType = "Boolean", Defaults = "false" });
-    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.minColor", Title = "minColor", IsParent = false, ReturnType = "String" });
-    //    _apiItems.Add(new ApiItem { FullName = "colorAxis.maxColor", Title = "maxColor", IsParent = false, ReturnType = "String" });
-
-    //}
-
     private List<ApiItem> GetChildrenFromBaseClasses(ApiItem item)
     {
         var addedChildren = new List<ApiItem>();
@@ -843,6 +830,9 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("annotations.labels", "List<AnnotationsLabels>");
         _propertyTypeMappings.Add("annotations.shapes", "List<AnnotationsShapes>");
         _propertyTypeMappings.Add("colorAxis.dataClasses", "List<ColorAxisDataClasses>");
+        //_propertyTypeMappings.Add("fontSize", "string");
+        //_propertyTypeMappings.Add("fontWeight", "string");
+        //_propertyTypeMappings.Add("color", "string");
     }
 
     private void InitPropertyInitMappings()

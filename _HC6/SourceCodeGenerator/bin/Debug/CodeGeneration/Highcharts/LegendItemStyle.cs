@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LegendItemStyle()
 		{
-			Color = Color_DefaultValue = #333333;
-			FontSize = FontSize_DefaultValue = 12px;
-			FontWeight = FontWeight_DefaultValue = bold;
+			Color = Color_DefaultValue = "#333333";
+			FontSize = FontSize_DefaultValue = "12px";
+			FontWeight = FontWeight_DefaultValue = "bold";
 			TextOverflow = TextOverflow_DefaultValue = ellipsis;
 			
 		}	
@@ -25,22 +25,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public LegendItemStyleColor Color { get; set; }
-		private LegendItemStyleColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public LegendItemStyleFontSize FontSize { get; set; }
-		private LegendItemStyleFontSize FontSize_DefaultValue { get; set; }
+		public string FontSize { get; set; }
+		private string FontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public LegendItemStyleFontWeight FontWeight { get; set; }
-		private LegendItemStyleFontWeight FontWeight_DefaultValue { get; set; }
+		public string FontWeight { get; set; }
+		private string FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>

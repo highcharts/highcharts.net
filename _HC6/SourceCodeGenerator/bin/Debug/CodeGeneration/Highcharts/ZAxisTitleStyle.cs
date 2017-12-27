@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ZAxisTitleStyle()
 		{
-			Color = Color_DefaultValue = #666666;
+			Color = Color_DefaultValue = "#666666";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public ZAxisTitleStyleColor Color { get; set; }
-		private ZAxisTitleStyleColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsFunnelStatesSelect()
 		{
-			Color = Color_DefaultValue = #cccccc;
+			Color = Color_DefaultValue = "#cccccc";
 			BorderColor = BorderColor_DefaultValue = #000000;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsFunnelStatesSelectColor Color { get; set; }
-		private PlotOptionsFunnelStatesSelectColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>

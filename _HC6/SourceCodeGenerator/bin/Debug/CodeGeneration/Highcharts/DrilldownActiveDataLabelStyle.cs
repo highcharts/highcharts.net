@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public DrilldownActiveDataLabelStyle()
 		{
 			Cursor = Cursor_DefaultValue = pointer;
-			Color = Color_DefaultValue = #003399;
-			FontWeight = FontWeight_DefaultValue = bold;
+			Color = Color_DefaultValue = "#003399";
+			FontWeight = FontWeight_DefaultValue = "bold";
 			TextDecoration = TextDecoration_DefaultValue = underline;
 			
 		}	
@@ -32,15 +32,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public DrilldownActiveDataLabelStyleColor Color { get; set; }
-		private DrilldownActiveDataLabelStyleColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public DrilldownActiveDataLabelStyleFontWeight FontWeight { get; set; }
-		private DrilldownActiveDataLabelStyleFontWeight FontWeight_DefaultValue { get; set; }
+		public string FontWeight { get; set; }
+		private string FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>

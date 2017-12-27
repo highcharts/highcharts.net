@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ParetoSeriesLabelStyle()
 		{
-			FontWeight = FontWeight_DefaultValue = bold;
+			FontWeight = FontWeight_DefaultValue = "bold";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public ParetoSeriesLabelStyleFontWeight FontWeight { get; set; }
-		private ParetoSeriesLabelStyleFontWeight FontWeight_DefaultValue { get; set; }
+		public string FontWeight { get; set; }
+		private string FontWeight_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

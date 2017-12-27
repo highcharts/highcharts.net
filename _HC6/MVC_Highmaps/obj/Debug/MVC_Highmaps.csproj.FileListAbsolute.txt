@@ -35,4 +35,3 @@ C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highmaps\bin\Debug\Microsoft.Web.I
 C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highmaps\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highmaps\obj\Debug\Highmaps.Web.Mvc.dll
 C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highmaps\obj\Debug\Highmaps.Web.Mvc.pdb
-C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highmaps\obj\Debug\MVC_Highmaps.csprojResolveAssemblyReference.cache

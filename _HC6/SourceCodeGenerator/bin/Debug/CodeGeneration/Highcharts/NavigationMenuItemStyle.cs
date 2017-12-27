@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Padding = Padding_DefaultValue = 0.5em 1em;
 			Background = Background_DefaultValue = none;
-			Color = Color_DefaultValue = #333333;
+			Color = Color_DefaultValue = "#333333";
 			FontSize = FontSize_DefaultValue = "";
 			Transition = Transition_DefaultValue = background 250ms, color 250ms;
 			
@@ -40,8 +40,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public NavigationMenuItemStyleColor Color { get; set; }
-		private NavigationMenuItemStyleColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>

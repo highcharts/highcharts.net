@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AnnotationsLabelsStyle()
 		{
-			FontSize = FontSize_DefaultValue = 11px;
-			FontWeight = FontWeight_DefaultValue = normal;
-			Color = Color_DefaultValue = contrast;
+			FontSize = FontSize_DefaultValue = "11px";
+			FontWeight = FontWeight_DefaultValue = "normal";
+			Color = Color_DefaultValue = "contrast";
 			
 		}	
 		
@@ -24,22 +24,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public AnnotationsLabelsStyleFontSize FontSize { get; set; }
-		private AnnotationsLabelsStyleFontSize FontSize_DefaultValue { get; set; }
+		public string FontSize { get; set; }
+		private string FontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public AnnotationsLabelsStyleFontWeight FontWeight { get; set; }
-		private AnnotationsLabelsStyleFontWeight FontWeight_DefaultValue { get; set; }
+		public string FontWeight { get; set; }
+		private string FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public AnnotationsLabelsStyleColor Color { get; set; }
-		private AnnotationsLabelsStyleColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

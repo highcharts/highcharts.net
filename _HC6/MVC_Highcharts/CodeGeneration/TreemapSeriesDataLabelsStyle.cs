@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesDataLabelsStyle()
 		{
-			FontSize = FontSize_DefaultValue = 11px;
-			FontWeight = FontWeight_DefaultValue = bold;
-			Color = Color_DefaultValue = contrast;
-			TextOutline = TextOutline_DefaultValue = 1px contrast;
+			FontSize = FontSize_DefaultValue = "11px";
+			FontWeight = FontWeight_DefaultValue = "bold";
+			Color = Color_DefaultValue = "contrast";
+			TextOutline = TextOutline_DefaultValue = "1px contrast";
 			
 		}	
 		
@@ -25,29 +25,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public TreemapSeriesDataLabelsStyleFontSize FontSize { get; set; }
-		private TreemapSeriesDataLabelsStyleFontSize FontSize_DefaultValue { get; set; }
+		public string FontSize { get; set; }
+		private string FontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public TreemapSeriesDataLabelsStyleFontWeight FontWeight { get; set; }
-		private TreemapSeriesDataLabelsStyleFontWeight FontWeight_DefaultValue { get; set; }
+		public string FontWeight { get; set; }
+		private string FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public TreemapSeriesDataLabelsStyleColor Color { get; set; }
-		private TreemapSeriesDataLabelsStyleColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public TreemapSeriesDataLabelsStyleTextOutline TextOutline { get; set; }
-		private TreemapSeriesDataLabelsStyleTextOutline TextOutline_DefaultValue { get; set; }
+		public string TextOutline { get; set; }
+		private string TextOutline_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

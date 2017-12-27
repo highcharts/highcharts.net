@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public NoDataStyle()
 		{
-			FontWeight = FontWeight_DefaultValue = bold;
-			FontSize = FontSize_DefaultValue = 12px;
-			Color = Color_DefaultValue = #666666;
+			FontWeight = FontWeight_DefaultValue = "bold";
+			FontSize = FontSize_DefaultValue = "12px";
+			Color = Color_DefaultValue = "#666666";
 			
 		}	
 		
@@ -24,22 +24,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public NoDataStyleFontWeight FontWeight { get; set; }
-		private NoDataStyleFontWeight FontWeight_DefaultValue { get; set; }
+		public string FontWeight { get; set; }
+		private string FontWeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public NoDataStyleFontSize FontSize { get; set; }
-		private NoDataStyleFontSize FontSize_DefaultValue { get; set; }
+		public string FontSize { get; set; }
+		private string FontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public NoDataStyleColor Color { get; set; }
-		private NoDataStyleColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

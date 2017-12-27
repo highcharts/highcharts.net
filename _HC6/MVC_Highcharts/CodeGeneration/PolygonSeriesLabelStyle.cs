@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PolygonSeriesLabelStyle()
 		{
-			FontWeight = FontWeight_DefaultValue = bold;
+			FontWeight = FontWeight_DefaultValue = "bold";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PolygonSeriesLabelStyleFontWeight FontWeight { get; set; }
-		private PolygonSeriesLabelStyleFontWeight FontWeight_DefaultValue { get; set; }
+		public string FontWeight { get; set; }
+		private string FontWeight_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

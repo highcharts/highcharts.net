@@ -14,7 +14,8 @@ namespace SourceCodeGenerator
         {
             FileService fileService = new FileService();
             FilterService filterService = new FilterService();
-            JsonParser jsonParser = new JsonParser("highcharts", fileService, filterService);
+            JsonUpdateService updateService = new JsonUpdateService();
+            JsonParser jsonParser = new JsonParser("highcharts", fileService, filterService, updateService);
             HighchartsGenerator hcg = new HighchartsGenerator(jsonParser, fileService);
             hcg.GenerateCode();
 

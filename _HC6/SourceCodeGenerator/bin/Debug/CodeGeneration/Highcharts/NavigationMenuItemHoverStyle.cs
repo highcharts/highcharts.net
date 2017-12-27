@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public NavigationMenuItemHoverStyle()
 		{
 			Background = Background_DefaultValue = #335cad;
-			Color = Color_DefaultValue = #ffffff;
+			Color = Color_DefaultValue = "#ffffff";
 			
 		}	
 		
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public NavigationMenuItemHoverStyleColor Color { get; set; }
-		private NavigationMenuItemHoverStyleColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

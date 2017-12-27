@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public XAxisLabelsStyle()
 		{
-			Color = Color_DefaultValue = #666666;
+			Color = Color_DefaultValue = "#666666";
 			Cursor = Cursor_DefaultValue = default;
-			FontSize = FontSize_DefaultValue = 11px;
+			FontSize = FontSize_DefaultValue = "11px";
 			
 		}	
 		
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public XAxisLabelsStyleColor Color { get; set; }
-		private XAxisLabelsStyleColor Color_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public XAxisLabelsStyleFontSize FontSize { get; set; }
-		private XAxisLabelsStyleFontSize FontSize_DefaultValue { get; set; }
+		public string FontSize { get; set; }
+		private string FontSize_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
