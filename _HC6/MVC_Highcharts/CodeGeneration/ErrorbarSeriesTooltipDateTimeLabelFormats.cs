@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ErrorbarSeriesTooltipDateTimeLabelFormats()
 		{
-			Millisecond = Millisecond_DefaultValue = %A, %b %e, %H:%M:%S.%L;
-			Second = Second_DefaultValue = %A, %b %e, %H:%M:%S;
-			Minute = Minute_DefaultValue = %A, %b %e, %H:%M;
-			Hour = Hour_DefaultValue = %A, %b %e, %H:%M;
-			Day = Day_DefaultValue = %A, %b %e, %Y;
-			Week = Week_DefaultValue = Week from %A, %b %e, %Y;
-			Month = Month_DefaultValue = %B %Y;
-			Year = Year_DefaultValue = %Y;
+			Millisecond = Millisecond_DefaultValue = "%A, %b %e, %H:%M:%S.%L";
+			Second = Second_DefaultValue = "%A, %b %e, %H:%M:%S";
+			Minute = Minute_DefaultValue = "%A, %b %e, %H:%M";
+			Hour = Hour_DefaultValue = "%A, %b %e, %H:%M";
+			Day = Day_DefaultValue = "%A, %b %e, %Y";
+			Week = Week_DefaultValue = "Week from %A, %b %e, %Y";
+			Month = Month_DefaultValue = "%B %Y";
+			Year = Year_DefaultValue = "%Y";
 			
 		}	
 		
@@ -29,57 +29,57 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public ErrorbarSeriesTooltipDateTimeLabelFormatsMillisecond Millisecond { get; set; }
-		private ErrorbarSeriesTooltipDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
+		public string Millisecond { get; set; }
+		private string Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public ErrorbarSeriesTooltipDateTimeLabelFormatsSecond Second { get; set; }
-		private ErrorbarSeriesTooltipDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
+		public string Second { get; set; }
+		private string Second_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public ErrorbarSeriesTooltipDateTimeLabelFormatsMinute Minute { get; set; }
-		private ErrorbarSeriesTooltipDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
+		public string Minute { get; set; }
+		private string Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public ErrorbarSeriesTooltipDateTimeLabelFormatsHour Hour { get; set; }
-		private ErrorbarSeriesTooltipDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
+		public string Hour { get; set; }
+		private string Hour_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public ErrorbarSeriesTooltipDateTimeLabelFormatsDay Day { get; set; }
-		private ErrorbarSeriesTooltipDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
+		public string Day { get; set; }
+		private string Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public ErrorbarSeriesTooltipDateTimeLabelFormatsWeek Week { get; set; }
-		private ErrorbarSeriesTooltipDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
+		public string Week { get; set; }
+		private string Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public ErrorbarSeriesTooltipDateTimeLabelFormatsMonth Month { get; set; }
-		private ErrorbarSeriesTooltipDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
+		public string Month { get; set; }
+		private string Month_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public ErrorbarSeriesTooltipDateTimeLabelFormatsYear Year { get; set; }
-		private ErrorbarSeriesTooltipDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
+		public string Year { get; set; }
+		private string Year_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

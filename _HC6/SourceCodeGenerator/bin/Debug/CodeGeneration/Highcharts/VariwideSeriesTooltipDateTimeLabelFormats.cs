@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VariwideSeriesTooltipDateTimeLabelFormats()
 		{
-			Millisecond = Millisecond_DefaultValue = %A, %b %e, %H:%M:%S.%L;
-			Second = Second_DefaultValue = %A, %b %e, %H:%M:%S;
-			Minute = Minute_DefaultValue = %A, %b %e, %H:%M;
-			Hour = Hour_DefaultValue = %A, %b %e, %H:%M;
-			Day = Day_DefaultValue = %A, %b %e, %Y;
-			Week = Week_DefaultValue = Week from %A, %b %e, %Y;
-			Month = Month_DefaultValue = %B %Y;
-			Year = Year_DefaultValue = %Y;
+			Millisecond = Millisecond_DefaultValue = "%A, %b %e, %H:%M:%S.%L";
+			Second = Second_DefaultValue = "%A, %b %e, %H:%M:%S";
+			Minute = Minute_DefaultValue = "%A, %b %e, %H:%M";
+			Hour = Hour_DefaultValue = "%A, %b %e, %H:%M";
+			Day = Day_DefaultValue = "%A, %b %e, %Y";
+			Week = Week_DefaultValue = "Week from %A, %b %e, %Y";
+			Month = Month_DefaultValue = "%B %Y";
+			Year = Year_DefaultValue = "%Y";
 			
 		}	
 		
@@ -29,57 +29,57 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public VariwideSeriesTooltipDateTimeLabelFormatsMillisecond Millisecond { get; set; }
-		private VariwideSeriesTooltipDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
+		public string Millisecond { get; set; }
+		private string Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public VariwideSeriesTooltipDateTimeLabelFormatsSecond Second { get; set; }
-		private VariwideSeriesTooltipDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
+		public string Second { get; set; }
+		private string Second_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public VariwideSeriesTooltipDateTimeLabelFormatsMinute Minute { get; set; }
-		private VariwideSeriesTooltipDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
+		public string Minute { get; set; }
+		private string Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public VariwideSeriesTooltipDateTimeLabelFormatsHour Hour { get; set; }
-		private VariwideSeriesTooltipDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
+		public string Hour { get; set; }
+		private string Hour_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public VariwideSeriesTooltipDateTimeLabelFormatsDay Day { get; set; }
-		private VariwideSeriesTooltipDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
+		public string Day { get; set; }
+		private string Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public VariwideSeriesTooltipDateTimeLabelFormatsWeek Week { get; set; }
-		private VariwideSeriesTooltipDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
+		public string Week { get; set; }
+		private string Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public VariwideSeriesTooltipDateTimeLabelFormatsMonth Month { get; set; }
-		private VariwideSeriesTooltipDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
+		public string Month { get; set; }
+		private string Month_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public VariwideSeriesTooltipDateTimeLabelFormatsYear Year { get; set; }
-		private VariwideSeriesTooltipDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
+		public string Year { get; set; }
+		private string Year_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

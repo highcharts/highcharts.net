@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsLineTooltipDateTimeLabelFormats()
 		{
-			Millisecond = Millisecond_DefaultValue = %A, %b %e, %H:%M:%S.%L;
-			Second = Second_DefaultValue = %A, %b %e, %H:%M:%S;
-			Minute = Minute_DefaultValue = %A, %b %e, %H:%M;
-			Hour = Hour_DefaultValue = %A, %b %e, %H:%M;
-			Day = Day_DefaultValue = %A, %b %e, %Y;
-			Week = Week_DefaultValue = Week from %A, %b %e, %Y;
-			Month = Month_DefaultValue = %B %Y;
-			Year = Year_DefaultValue = %Y;
+			Millisecond = Millisecond_DefaultValue = "%A, %b %e, %H:%M:%S.%L";
+			Second = Second_DefaultValue = "%A, %b %e, %H:%M:%S";
+			Minute = Minute_DefaultValue = "%A, %b %e, %H:%M";
+			Hour = Hour_DefaultValue = "%A, %b %e, %H:%M";
+			Day = Day_DefaultValue = "%A, %b %e, %Y";
+			Week = Week_DefaultValue = "Week from %A, %b %e, %Y";
+			Month = Month_DefaultValue = "%B %Y";
+			Year = Year_DefaultValue = "%Y";
 			
 		}	
 		
@@ -29,57 +29,57 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsLineTooltipDateTimeLabelFormatsMillisecond Millisecond { get; set; }
-		private PlotOptionsLineTooltipDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
+		public string Millisecond { get; set; }
+		private string Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsLineTooltipDateTimeLabelFormatsSecond Second { get; set; }
-		private PlotOptionsLineTooltipDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
+		public string Second { get; set; }
+		private string Second_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsLineTooltipDateTimeLabelFormatsMinute Minute { get; set; }
-		private PlotOptionsLineTooltipDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
+		public string Minute { get; set; }
+		private string Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsLineTooltipDateTimeLabelFormatsHour Hour { get; set; }
-		private PlotOptionsLineTooltipDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
+		public string Hour { get; set; }
+		private string Hour_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsLineTooltipDateTimeLabelFormatsDay Day { get; set; }
-		private PlotOptionsLineTooltipDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
+		public string Day { get; set; }
+		private string Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsLineTooltipDateTimeLabelFormatsWeek Week { get; set; }
-		private PlotOptionsLineTooltipDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
+		public string Week { get; set; }
+		private string Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsLineTooltipDateTimeLabelFormatsMonth Month { get; set; }
-		private PlotOptionsLineTooltipDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
+		public string Month { get; set; }
+		private string Month_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsLineTooltipDateTimeLabelFormatsYear Year { get; set; }
-		private PlotOptionsLineTooltipDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
+		public string Year { get; set; }
+		private string Year_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

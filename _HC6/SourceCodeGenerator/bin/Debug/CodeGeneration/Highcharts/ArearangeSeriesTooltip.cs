@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ArearangeSeriesTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = <span style="color:{series.color}">●</span> {series.name}: <b>{point.low}</b> - <b>{point.high}</b><br/>;
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{series.color}'>●</span> {series.name}: <b>{point.low}</b> - <b>{point.high}</b><br/>";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public ArearangeSeriesTooltipPointFormat PointFormat { get; set; }
-		private ArearangeSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Scatter3dSeriesTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>z: <b>{point.z}</b><br/>;
+			PointFormat = PointFormat_DefaultValue = "x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>z: <b>{point.z}</b><br/>";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Scatter3dSeriesTooltipPointFormat PointFormat { get; set; }
-		private Scatter3dSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

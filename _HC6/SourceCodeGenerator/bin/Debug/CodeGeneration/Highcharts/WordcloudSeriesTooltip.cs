@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public WordcloudSeriesTooltip()
 		{
 			FollowPointer = FollowPointer_DefaultValue = true;
-			PointFormat = PointFormat_DefaultValue = <span style="color:{point.color}">●</span> {series.name}: <b>{point.weight}</b><br/>;
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.weight}</b><br/>";
 			
 		}	
 		
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public WordcloudSeriesTooltipPointFormat PointFormat { get; set; }
-		private WordcloudSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

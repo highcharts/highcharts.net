@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VectorSeriesTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = <b>[{point.x}, {point.y}]</b><br/>Length: <b>{point.length}</b><br/>Direction: <b>{point.direction}°</b><br/>;
+			PointFormat = PointFormat_DefaultValue = "<b>[{point.x}, {point.y}]</b><br/>Length: <b>{point.length}</b><br/>Direction: <b>{point.direction}°</b><br/>";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public VectorSeriesTooltipPointFormat PointFormat { get; set; }
-		private VectorSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

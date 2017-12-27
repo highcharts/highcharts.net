@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BubbleSeriesTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = ({point.x}, {point.y}), Size: {point.z};
+			PointFormat = PointFormat_DefaultValue = "({point.x}, {point.y}), Size: {point.z}";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public BubbleSeriesTooltipPointFormat PointFormat { get; set; }
-		private BubbleSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

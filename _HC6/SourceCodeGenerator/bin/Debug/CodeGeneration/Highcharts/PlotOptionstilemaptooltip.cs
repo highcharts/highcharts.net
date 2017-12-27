@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemapTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = {point.x}, {point.y}: {point.value}<br/>;
+			PointFormat = PointFormat_DefaultValue = "{point.x}, {point.y}: {point.value}<br/>";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsTilemapTooltipPointFormat PointFormat { get; set; }
-		private PlotOptionsTilemapTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

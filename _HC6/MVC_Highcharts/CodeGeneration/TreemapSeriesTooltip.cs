@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public TreemapSeriesTooltip()
 		{
 			HeaderFormat = HeaderFormat_DefaultValue = "";
-			PointFormat = PointFormat_DefaultValue = <b>{point.name}</b>: {point.value}<br/>;
+			PointFormat = PointFormat_DefaultValue = "<b>{point.name}</b>: {point.value}<br/>";
 			
 		}	
 		
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public TreemapSeriesTooltipPointFormat PointFormat { get; set; }
-		private TreemapSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

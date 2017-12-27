@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VariablepieSeriesTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = <span style="color:{point.color}">●</span> {series.name}<br/>Value: {point.y}<br/>Size: {point.z}<br/>;
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}<br/>Value: {point.y}<br/>Size: {point.z}<br/>";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public VariablepieSeriesTooltipPointFormat PointFormat { get; set; }
-		private VariablepieSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

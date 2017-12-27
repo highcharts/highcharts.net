@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public XrangeSeriesTooltip()
 		{
 			HeaderFormat = HeaderFormat_DefaultValue = <span style="font-size: 0.85em">{point.x} - {point.x2}</span><br/>;
-			PointFormat = PointFormat_DefaultValue = <span style="color:{point.color}">●</span> {series.name}: <b>{point.yCategory}</b><br/>;
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.yCategory}</b><br/>";
 			
 		}	
 		
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public XrangeSeriesTooltipPointFormat PointFormat { get; set; }
-		private XrangeSeriesTooltipPointFormat PointFormat_DefaultValue { get; set; }
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
