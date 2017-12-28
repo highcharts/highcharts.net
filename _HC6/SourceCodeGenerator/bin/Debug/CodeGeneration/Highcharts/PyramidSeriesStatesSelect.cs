@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PyramidSeriesStatesSelect()
 		{
 			Color = Color_DefaultValue = "#cccccc";
-			BorderColor = BorderColor_DefaultValue = #000000;
+			BorderColor = BorderColor_DefaultValue = "#000000";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			
 		}	
@@ -31,8 +31,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PyramidSeriesStatesSelectBorderColor BorderColor { get; set; }
-		private PyramidSeriesStatesSelectBorderColor BorderColor_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>

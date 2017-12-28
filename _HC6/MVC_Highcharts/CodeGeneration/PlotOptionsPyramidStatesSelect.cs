@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsPyramidStatesSelect()
 		{
 			Color = Color_DefaultValue = "#cccccc";
-			BorderColor = BorderColor_DefaultValue = #000000;
+			BorderColor = BorderColor_DefaultValue = "#000000";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			
 		}	
@@ -31,8 +31,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPyramidStatesSelectBorderColor BorderColor { get; set; }
-		private PlotOptionsPyramidStatesSelectBorderColor BorderColor_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
