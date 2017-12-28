@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsColumnPoint()
 		{
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new PlotOptionsColumnPointEvents();
 			
 		}	
 		

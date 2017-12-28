@@ -14,31 +14,31 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Series()
 		{
-			Bellcurve = Bellcurve_DefaultValue = "";
-			Bullet = Bullet_DefaultValue = "";
-			Line = Line_DefaultValue = "";
-			Funnel = Funnel_DefaultValue = "";
-			Pyramid = Pyramid_DefaultValue = "";
-			Histogram = Histogram_DefaultValue = "";
-			Pareto = Pareto_DefaultValue = "";
-			Sankey = Sankey_DefaultValue = "";
-			Solidgauge = Solidgauge_DefaultValue = "";
-			Streamgraph = Streamgraph_DefaultValue = "";
-			Sunburst = Sunburst_DefaultValue = "";
-			Treemap = Treemap_DefaultValue = "";
-			Tilemap = Tilemap_DefaultValue = "";
-			Variablepie = Variablepie_DefaultValue = "";
-			Variwide = Variwide_DefaultValue = "";
-			Vector = Vector_DefaultValue = "";
-			Windbarb = Windbarb_DefaultValue = "";
-			Wordcloud = Wordcloud_DefaultValue = "";
-			Xrange = Xrange_DefaultValue = "";
-			Area = Area_DefaultValue = "";
-			Areaspline = Areaspline_DefaultValue = "";
-			Bar = Bar_DefaultValue = "";
-			Column = Column_DefaultValue = "";
-			Pie = Pie_DefaultValue = "";
-			Scatter = Scatter_DefaultValue = "";
+			Bellcurve = Bellcurve_DefaultValue = new BellcurveSeries();
+			Bullet = Bullet_DefaultValue = new BulletSeries();
+			Line = Line_DefaultValue = new LineSeries();
+			Funnel = Funnel_DefaultValue = new FunnelSeries();
+			Pyramid = Pyramid_DefaultValue = new PyramidSeries();
+			Histogram = Histogram_DefaultValue = new HistogramSeries();
+			Pareto = Pareto_DefaultValue = new ParetoSeries();
+			Sankey = Sankey_DefaultValue = new SankeySeries();
+			Solidgauge = Solidgauge_DefaultValue = new SolidgaugeSeries();
+			Streamgraph = Streamgraph_DefaultValue = new StreamgraphSeries();
+			Sunburst = Sunburst_DefaultValue = new SunburstSeries();
+			Treemap = Treemap_DefaultValue = new TreemapSeries();
+			Tilemap = Tilemap_DefaultValue = new TilemapSeries();
+			Variablepie = Variablepie_DefaultValue = new VariablepieSeries();
+			Variwide = Variwide_DefaultValue = new VariwideSeries();
+			Vector = Vector_DefaultValue = new VectorSeries();
+			Windbarb = Windbarb_DefaultValue = new WindbarbSeries();
+			Wordcloud = Wordcloud_DefaultValue = new WordcloudSeries();
+			Xrange = Xrange_DefaultValue = new XrangeSeries();
+			Area = Area_DefaultValue = new AreaSeries();
+			Areaspline = Areaspline_DefaultValue = new AreasplineSeries();
+			Bar = Bar_DefaultValue = new BarSeries();
+			Column = Column_DefaultValue = new ColumnSeries();
+			Pie = Pie_DefaultValue = new PieSeries();
+			Scatter = Scatter_DefaultValue = new ScatterSeries();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -48,18 +48,18 @@ namespace Highsoft.Web.Mvc.Charts
 			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ZIndex = ZIndex_DefaultValue = null;
-			Spline = Spline_DefaultValue = "";
-			Scatter3d = Scatter3d_DefaultValue = "";
-			Arearange = Arearange_DefaultValue = "";
-			Areasplinerange = Areasplinerange_DefaultValue = "";
-			Boxplot = Boxplot_DefaultValue = "";
-			Bubble = Bubble_DefaultValue = "";
-			Columnrange = Columnrange_DefaultValue = "";
-			Errorbar = Errorbar_DefaultValue = "";
-			Gauge = Gauge_DefaultValue = "";
-			Polygon = Polygon_DefaultValue = "";
-			Waterfall = Waterfall_DefaultValue = "";
-			Heatmap = Heatmap_DefaultValue = "";
+			Spline = Spline_DefaultValue = new SplineSeries();
+			Scatter3d = Scatter3d_DefaultValue = new Scatter3dSeries();
+			Arearange = Arearange_DefaultValue = new ArearangeSeries();
+			Areasplinerange = Areasplinerange_DefaultValue = new AreasplinerangeSeries();
+			Boxplot = Boxplot_DefaultValue = new BoxplotSeries();
+			Bubble = Bubble_DefaultValue = new BubbleSeries();
+			Columnrange = Columnrange_DefaultValue = new ColumnrangeSeries();
+			Errorbar = Errorbar_DefaultValue = new ErrorbarSeries();
+			Gauge = Gauge_DefaultValue = new GaugeSeries();
+			Polygon = Polygon_DefaultValue = new PolygonSeries();
+			Waterfall = Waterfall_DefaultValue = new WaterfallSeries();
+			Heatmap = Heatmap_DefaultValue = new HeatmapSeries();
 			
 		}	
 		

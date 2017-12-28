@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
 			Y = Y_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new ColumnSeriesDataEvents();
 			
 		}	
 		
@@ -138,7 +138,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Events != Events_DefaultValue) h.Add("events",Events);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

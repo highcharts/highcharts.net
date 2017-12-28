@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBubbleStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsBubbleStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsBubbleStatesHoverMarkerStatesSelect();
 			
 		}	
 		

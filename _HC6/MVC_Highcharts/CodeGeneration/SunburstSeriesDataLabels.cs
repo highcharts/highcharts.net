@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public SunburstSeriesDataLabels()
 		{
 			Defer = Defer_DefaultValue = true;
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new SunburstSeriesDataLabelsStyle();
 			RotationMode = RotationMode_DefaultValue = SunburstSeriesDataLabelsRotationMode.Perpendicular;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
@@ -40,7 +40,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UseHTML = UseHTML_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
 			ZIndex = ZIndex_DefaultValue = 6;
-			Filter = Filter_DefaultValue = "";
+			Filter = Filter_DefaultValue = new SunburstSeriesDataLabelsFilter();
 			
 		}	
 		

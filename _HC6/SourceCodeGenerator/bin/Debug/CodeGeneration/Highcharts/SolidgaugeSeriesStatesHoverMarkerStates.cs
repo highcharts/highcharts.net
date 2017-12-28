@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SolidgaugeSeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new SolidgaugeSeriesStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new SolidgaugeSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		

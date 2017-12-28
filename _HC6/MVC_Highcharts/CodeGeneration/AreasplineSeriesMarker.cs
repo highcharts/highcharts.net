@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LineWidth = LineWidth_DefaultValue = 0;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			Radius = Radius_DefaultValue = 4;
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new AreasplineSeriesMarkerStates();
 			FillColor = FillColor_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = "";
 			Height = Height_DefaultValue = null;

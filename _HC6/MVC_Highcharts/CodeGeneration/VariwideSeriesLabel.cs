@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinFontSize = MinFontSize_DefaultValue = null;
 			MaxFontSize = MaxFontSize_DefaultValue = null;
 			OnArea = OnArea_DefaultValue = "";
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new VariwideSeriesLabelStyle();
 			BoxesToAvoid = BoxesToAvoid_DefaultValue = "";
 			
 		}	

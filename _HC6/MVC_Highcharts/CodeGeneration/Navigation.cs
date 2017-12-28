@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Navigation()
 		{
-			ButtonOptions = ButtonOptions_DefaultValue = "";
+			ButtonOptions = ButtonOptions_DefaultValue = new NavigationButtonOptions();
 			MenuStyle = MenuStyle_DefaultValue = new Hashtable{{ "border", "1px solid #999999"},{ "background", "#ffffff"},{ "padding", "5px 0" }};
 			MenuItemStyle = MenuItemStyle_DefaultValue = new Hashtable{{ "padding", "0.5em 1em"},{ "color", "#333333"},{ "background", "none" }};
 			MenuItemHoverStyle = MenuItemHoverStyle_DefaultValue = new Hashtable{{ "background", "#335cad"},{ "color", "#ffffff" }};

@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ColorAxisLabels()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new ColorAxisLabelsStyle();
 			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = ColorAxisLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};

@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new SunburstSeriesDataEvents();
 			Color = Color_DefaultValue = "";
 			Value = Value_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
@@ -204,7 +204,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Events != Events_DefaultValue) h.Add("events",Events);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);

@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new SankeySeriesStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new SankeySeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		

@@ -24,13 +24,13 @@ namespace Highsoft.Web.Mvc.Charts
 			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = "";
+			Label = Label_DefaultValue = new WordcloudSeriesLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = "";
-			Point = Point_DefaultValue = "";
+			Events = Events_DefaultValue = new WordcloudSeriesEvents();
+			Point = Point_DefaultValue = new WordcloudSeriesPoint();
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new WordcloudSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
@@ -48,13 +48,13 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new WordcloudSeriesTooltip();
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			CropThreshold = CropThreshold_DefaultValue = 50;
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new WordcloudSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new WordcloudSeriesTooltip();
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
@@ -65,11 +65,11 @@ namespace Highsoft.Web.Mvc.Charts
 			Clip = Clip_DefaultValue = false;
 			ColorByPoint = ColorByPoint_DefaultValue = true;
 			PlacementStrategy = PlacementStrategy_DefaultValue = center;
-			Rotation = Rotation_DefaultValue = "";
+			Rotation = Rotation_DefaultValue = new WordcloudSeriesRotation();
 			ShowInLegend = ShowInLegend_DefaultValue = false;
 			Spiral = Spiral_DefaultValue = rectangular;
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","sans-serif"},{ "fontWeight", "900"}};
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new WordcloudSeriesTooltip();
 			
 		}	
 		
@@ -504,7 +504,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);

@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreasplineSeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new AreasplineSeriesStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new AreasplineSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsAreaStates()
 		{
-			Hover = Hover_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsAreaStatesHover();
 			
 		}	
 		

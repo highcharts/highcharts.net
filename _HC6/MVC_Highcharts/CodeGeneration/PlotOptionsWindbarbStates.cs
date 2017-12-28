@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWindbarbStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsWindbarbStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsWindbarbStatesSelect();
 			
 		}	
 		

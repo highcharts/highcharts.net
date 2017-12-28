@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PaneBackgroundBackgroundColor()
 		{
-			LinearGradient = LinearGradient_DefaultValue = "";
+			LinearGradient = LinearGradient_DefaultValue = new PaneBackgroundBackgroundColorLinearGradient();
 			Stops = Stops_DefaultValue = new List<Stop>();
 			
 		}	

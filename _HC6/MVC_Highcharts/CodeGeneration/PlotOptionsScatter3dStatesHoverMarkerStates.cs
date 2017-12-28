@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsScatter3dStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsScatter3dStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsScatter3dStatesHoverMarkerStatesSelect();
 			
 		}	
 		

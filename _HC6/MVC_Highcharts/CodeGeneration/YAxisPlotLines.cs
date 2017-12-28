@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Value = Value_DefaultValue = null;
 			Width = Width_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = "";
+			Label = Label_DefaultValue = new YAxisPlotLinesLabel();
 			
 		}	
 		

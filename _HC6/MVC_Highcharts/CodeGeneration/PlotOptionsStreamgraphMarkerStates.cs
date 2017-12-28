@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsStreamgraphMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsStreamgraphMarkerStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsStreamgraphMarkerStatesSelect();
 			
 		}	
 		

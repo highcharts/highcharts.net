@@ -18,8 +18,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
-			Marker = Marker_DefaultValue = "";
-			Halo = Halo_DefaultValue = "";
+			Marker = Marker_DefaultValue = new PlotOptionsPyramidStatesHoverMarker();
+			Halo = Halo_DefaultValue = new PlotOptionsPyramidStatesHoverHalo();
 			Enabled = Enabled_DefaultValue = true;
 			LineWidth = LineWidth_DefaultValue = null;
 			
@@ -90,7 +90,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
-			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

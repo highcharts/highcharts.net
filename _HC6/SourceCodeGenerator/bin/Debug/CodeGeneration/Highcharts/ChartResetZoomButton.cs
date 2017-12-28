@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartResetZoomButton()
 		{
-			Theme = Theme_DefaultValue = "";
+			Theme = Theme_DefaultValue = new ChartResetZoomButtonTheme();
 			Position = Position_DefaultValue = new Hashtable();
 			RelativeTo = RelativeTo_DefaultValue = ChartResetZoomButtonRelativeTo.Plot;
 			

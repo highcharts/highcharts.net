@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Scatter3dSeriesPoint()
 		{
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new Scatter3dSeriesPointEvents();
 			
 		}	
 		

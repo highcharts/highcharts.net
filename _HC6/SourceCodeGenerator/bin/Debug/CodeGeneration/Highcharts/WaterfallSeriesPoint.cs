@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WaterfallSeriesPoint()
 		{
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new WaterfallSeriesPointEvents();
 			
 		}	
 		

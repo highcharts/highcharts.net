@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = null;
 			BorderDashStyle = BorderDashStyle_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			ColorVariation = ColorVariation_DefaultValue = "";
+			ColorVariation = ColorVariation_DefaultValue = new PlotOptionsSunburstLevelsColorVariation();
 			DataLabels = DataLabels_DefaultValue = "";
 			Rotation = Rotation_DefaultValue = null;
 			RotationMode = RotationMode_DefaultValue = "";

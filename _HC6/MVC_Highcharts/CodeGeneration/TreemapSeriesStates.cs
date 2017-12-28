@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Normal = Normal_DefaultValue = "";
-			Hover = Hover_DefaultValue = "";
+			Hover = Hover_DefaultValue = new TreemapSeriesStatesHover();
+			Normal = Normal_DefaultValue = new TreemapSeriesStatesNormal();
+			Hover = Hover_DefaultValue = new TreemapSeriesStatesHover();
 			
 		}	
 		

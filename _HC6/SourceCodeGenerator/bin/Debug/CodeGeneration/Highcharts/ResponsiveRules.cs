@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ResponsiveRules()
 		{
 			ChartOptions = ChartOptions_DefaultValue = "";
-			Condition = Condition_DefaultValue = "";
+			Condition = Condition_DefaultValue = new ResponsiveRulesCondition();
 			
 		}	
 		

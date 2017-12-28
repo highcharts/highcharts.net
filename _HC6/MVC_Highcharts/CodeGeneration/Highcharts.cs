@@ -14,35 +14,35 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Highcharts()
 		{
-			PlotOptions = PlotOptions_DefaultValue = "";
+			PlotOptions = PlotOptions_DefaultValue = new HighchartsPlotOptions();
 			Series = Series_DefaultValue = new List<Series>();
-			Defs = Defs_DefaultValue = "";
+			Defs = Defs_DefaultValue = new HighchartsDefs();
 			Annotations = Annotations_DefaultValue = new List<Annotations>();
-			Boost = Boost_DefaultValue = "";
+			Boost = Boost_DefaultValue = new HighchartsBoost();
 			Data = Data_DefaultValue = new Data();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
-			Lang = Lang_DefaultValue = "";
-			Drilldown = Drilldown_DefaultValue = "";
-			Chart = Chart_DefaultValue = "";
-			Exporting = Exporting_DefaultValue = "";
-			Navigation = Navigation_DefaultValue = "";
-			KeyboardNavigation = KeyboardNavigation_DefaultValue = "";
-			Legend = Legend_DefaultValue = "";
-			NoData = NoData_DefaultValue = "";
-			Global = Global_DefaultValue = "";
-			Accessibility = Accessibility_DefaultValue = "";
+			Lang = Lang_DefaultValue = new HighchartsLang();
+			Drilldown = Drilldown_DefaultValue = new HighchartsDrilldown();
+			Chart = Chart_DefaultValue = new HighchartsChart();
+			Exporting = Exporting_DefaultValue = new HighchartsExporting();
+			Navigation = Navigation_DefaultValue = new HighchartsNavigation();
+			KeyboardNavigation = KeyboardNavigation_DefaultValue = new HighchartsKeyboardNavigation();
+			Legend = Legend_DefaultValue = new HighchartsLegend();
+			NoData = NoData_DefaultValue = new HighchartsNoData();
+			Global = Global_DefaultValue = new HighchartsGlobal();
+			Accessibility = Accessibility_DefaultValue = new HighchartsAccessibility();
 			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			Colors = Colors_DefaultValue = new List<string>();
-			Title = Title_DefaultValue = "";
-			Subtitle = Subtitle_DefaultValue = "";
-			Labels = Labels_DefaultValue = "";
-			Loading = Loading_DefaultValue = "";
-			Tooltip = Tooltip_DefaultValue = "";
-			Credits = Credits_DefaultValue = "";
-			Responsive = Responsive_DefaultValue = "";
-			Pane = Pane_DefaultValue = "";
-			ColorAxis = ColorAxis_DefaultValue = "";
-			ZAxis = ZAxis_DefaultValue = "";
+			Title = Title_DefaultValue = new HighchartsTitle();
+			Subtitle = Subtitle_DefaultValue = new HighchartsSubtitle();
+			Labels = Labels_DefaultValue = new HighchartsLabels();
+			Loading = Loading_DefaultValue = new HighchartsLoading();
+			Tooltip = Tooltip_DefaultValue = new HighchartsTooltip();
+			Credits = Credits_DefaultValue = new HighchartsCredits();
+			Responsive = Responsive_DefaultValue = new HighchartsResponsive();
+			Pane = Pane_DefaultValue = new HighchartsPane();
+			ColorAxis = ColorAxis_DefaultValue = new HighchartsColorAxis();
+			ZAxis = ZAxis_DefaultValue = new HighchartsZAxis();
 			
 		}	
 		

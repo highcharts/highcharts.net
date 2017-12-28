@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BubbleSeriesPoint()
 		{
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new BubbleSeriesPointEvents();
 			
 		}	
 		

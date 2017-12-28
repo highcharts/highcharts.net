@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsAreasplinerangeMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsAreasplinerangeMarkerStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsAreasplinerangeMarkerStatesSelect();
 			
 		}	
 		

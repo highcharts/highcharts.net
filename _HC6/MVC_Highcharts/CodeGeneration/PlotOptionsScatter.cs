@@ -16,21 +16,21 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			LineWidth = LineWidth_DefaultValue = 0;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
-			Marker = Marker_DefaultValue = "";
+			Marker = Marker_DefaultValue = new PlotOptionsScatterMarker();
 			StickyTracking = StickyTracking_DefaultValue = false;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
-			Label = Label_DefaultValue = "";
+			Label = Label_DefaultValue = new PlotOptionsScatterLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = "";
-			Marker = Marker_DefaultValue = "";
-			Point = Point_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
+			Events = Events_DefaultValue = new PlotOptionsScatterEvents();
+			Marker = Marker_DefaultValue = new PlotOptionsScatterMarker();
+			Point = Point_DefaultValue = new PlotOptionsScatterPoint();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsScatterDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new PlotOptionsScatterStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsScatterFindNearestPointBy.X;
@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = "";
+			Zones = Zones_DefaultValue = new List<PlotOptionsScatterZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Linecap = Linecap_DefaultValue = PlotOptionsScatterLinecap.Round;

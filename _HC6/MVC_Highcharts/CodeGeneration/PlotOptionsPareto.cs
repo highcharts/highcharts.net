@@ -15,17 +15,17 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsPareto()
 		{
 			ZIndex = ZIndex_DefaultValue = 3;
-			Label = Label_DefaultValue = "";
+			Label = Label_DefaultValue = new PlotOptionsParetoLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = "";
-			Marker = Marker_DefaultValue = "";
-			Point = Point_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
+			Events = Events_DefaultValue = new PlotOptionsParetoEvents();
+			Marker = Marker_DefaultValue = new PlotOptionsParetoMarker();
+			Point = Point_DefaultValue = new PlotOptionsParetoPoint();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsParetoDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new PlotOptionsParetoStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsParetoTooltip();
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			Linecap = Linecap_DefaultValue = PlotOptionsParetoLinecap.Round;
 			
@@ -334,7 +334,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			

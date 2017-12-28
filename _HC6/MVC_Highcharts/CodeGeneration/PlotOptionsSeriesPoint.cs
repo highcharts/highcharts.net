@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSeriesPoint()
 		{
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new PlotOptionsSeriesPointEvents();
 			
 		}	
 		

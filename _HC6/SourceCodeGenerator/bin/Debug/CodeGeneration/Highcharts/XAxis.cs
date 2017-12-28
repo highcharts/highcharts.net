@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
-			Labels = Labels_DefaultValue = "";
+			Labels = Labels_DefaultValue = new XAxisLabels();
 			MaxPadding = MaxPadding_DefaultValue = 0.01;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = XAxisMinorTickPosition.Outside;
@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = XAxisTickmarkPlacement.Between;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
 			TickPosition = TickPosition_DefaultValue = XAxisTickPosition.Outside;
-			Title = Title_DefaultValue = "";
+			Title = Title_DefaultValue = new XAxisTitle();
 			Type = Type_DefaultValue = XAxisType.Linear;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
@@ -38,13 +38,13 @@ namespace Highsoft.Web.Mvc.Charts
 			TickColor = TickColor_DefaultValue = "#ccd6eb";
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
-			Breaks = Breaks_DefaultValue = "";
+			Breaks = Breaks_DefaultValue = new XAxisBreaks();
 			Categories = Categories_DefaultValue = new List<string> null;
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new XAxisCrosshair();
 			Description = Description_DefaultValue = "undefined";
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new XAxisEvents();
 			Floor = Floor_DefaultValue = null;
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = XAxisGridLineDashStyle.Solid;
 			GridZIndex = GridZIndex_DefaultValue = 1;

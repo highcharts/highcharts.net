@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PolygonSeriesMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PolygonSeriesMarkerStatesHover();
 			
 		}	
 		

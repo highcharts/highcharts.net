@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public Annotations()
 		{
 			Visible = Visible_DefaultValue = true;
-			LabelOptions = LabelOptions_DefaultValue = "";
-			ShapeOptions = ShapeOptions_DefaultValue = "";
+			LabelOptions = LabelOptions_DefaultValue = new AnnotationsLabelOptions();
+			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsShapeOptions();
 			ZIndex = ZIndex_DefaultValue = 6;
 			Labels = Labels_DefaultValue = new List<AnnotationsLabels>();
 			Shapes = Shapes_DefaultValue = new List<AnnotationsShapes>();

@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ActiveAxisLabelStyle = ActiveAxisLabelStyle_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#003399"},{ "fontWeight", "bold"},{ "textDecoration", "underline" }};
 			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#003399"},{ "fontWeight", "bold"},{ "textDecoration", "underline" }};
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			DrillUpButton = DrillUpButton_DefaultValue = "";
+			DrillUpButton = DrillUpButton_DefaultValue = new DrilldownDrillUpButton();
 			AllowPointDrilldown = AllowPointDrilldown_DefaultValue = true;
 			Series = Series_DefaultValue = new List<Series>();
 			

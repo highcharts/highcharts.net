@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = true;
 			Size = Size_DefaultValue = 2;
 			Opacity = Opacity_DefaultValue = 0.5;
-			Attributes = Attributes_DefaultValue = "";
+			Attributes = Attributes_DefaultValue = new TilemapSeriesStatesHoverHaloAttributes();
 			
 		}	
 		

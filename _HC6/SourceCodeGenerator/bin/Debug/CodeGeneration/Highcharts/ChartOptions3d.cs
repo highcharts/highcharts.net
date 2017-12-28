@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FitToPlot = FitToPlot_DefaultValue = true;
 			ViewDistance = ViewDistance_DefaultValue = 100;
 			AxisLabelPosition = AxisLabelPosition_DefaultValue = ChartOptions3dAxisLabelPosition.Null;
-			Frame = Frame_DefaultValue = "";
+			Frame = Frame_DefaultValue = new ChartOptions3dFrame();
 			
 		}	
 		

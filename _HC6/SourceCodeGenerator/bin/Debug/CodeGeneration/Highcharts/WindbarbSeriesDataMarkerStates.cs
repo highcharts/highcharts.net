@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WindbarbSeriesDataMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new WindbarbSeriesDataMarkerStatesHover();
+			Select = Select_DefaultValue = new WindbarbSeriesDataMarkerStatesSelect();
 			
 		}	
 		

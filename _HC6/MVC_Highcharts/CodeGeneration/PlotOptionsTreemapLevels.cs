@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderDashStyle = BorderDashStyle_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = "";
-			ColorVariation = ColorVariation_DefaultValue = "";
+			ColorVariation = ColorVariation_DefaultValue = new PlotOptionsTreemapLevelsColorVariation();
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLevelsLayoutAlgorithm.SliceAndDice;
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLevelsLayoutStartingDirection.Vertical;
 			Level = Level_DefaultValue = null;

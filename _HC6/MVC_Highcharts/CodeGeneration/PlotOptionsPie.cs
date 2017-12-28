@@ -16,32 +16,32 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Clip = Clip_DefaultValue = false;
-			DataLabels = DataLabels_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsPieDataLabels();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			Size = Size_DefaultValue = "";
 			ShowInLegend = ShowInLegend_DefaultValue = false;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsPieTooltip();
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new PlotOptionsPieStates();
 			Colors = Colors_DefaultValue = new List<string>();
 			EndAngle = EndAngle_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
 			MinSize = MinSize_DefaultValue = 80;
 			StartAngle = StartAngle_DefaultValue = 0;
-			Events = Events_DefaultValue = "";
-			Point = Point_DefaultValue = "";
+			Events = Events_DefaultValue = new PlotOptionsPieEvents();
+			Point = Point_DefaultValue = new PlotOptionsPiePoint();
 			Depth = Depth_DefaultValue = 0;
-			Label = Label_DefaultValue = "";
+			Label = Label_DefaultValue = new PlotOptionsPieLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = "";
-			Point = Point_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
-			States = States_DefaultValue = "";
+			Events = Events_DefaultValue = new PlotOptionsPieEvents();
+			Point = Point_DefaultValue = new PlotOptionsPiePoint();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsPieDataLabels();
+			States = States_DefaultValue = new PlotOptionsPieStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
@@ -59,7 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsPieTooltip();
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Linecap = Linecap_DefaultValue = PlotOptionsPieLinecap.Round;
 			
@@ -451,7 +451,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			

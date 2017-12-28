@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PolygonSeriesMarker()
 		{
 			Enabled = Enabled_DefaultValue = false;
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new PolygonSeriesMarkerStates();
 			
 		}	
 		

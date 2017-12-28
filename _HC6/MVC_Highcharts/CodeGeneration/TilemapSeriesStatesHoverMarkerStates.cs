@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TilemapSeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new TilemapSeriesStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new TilemapSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		

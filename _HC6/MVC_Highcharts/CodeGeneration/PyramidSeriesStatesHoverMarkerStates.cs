@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PyramidSeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PyramidSeriesStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new PyramidSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		

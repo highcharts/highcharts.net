@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemapStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsTilemapStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsTilemapStatesHoverMarkerStatesSelect();
 			
 		}	
 		

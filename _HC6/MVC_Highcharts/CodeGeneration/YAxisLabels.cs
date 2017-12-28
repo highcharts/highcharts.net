@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public YAxisLabels()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new YAxisLabelsStyle();
 			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = YAxisLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};

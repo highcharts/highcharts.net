@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemapStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsTreemapStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsTreemapStatesHoverMarkerStatesSelect();
 			
 		}	
 		

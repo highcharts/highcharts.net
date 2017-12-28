@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HeatmapSeriesStates()
 		{
-			Normal = Normal_DefaultValue = "";
-			Hover = Hover_DefaultValue = "";
+			Normal = Normal_DefaultValue = new HeatmapSeriesStatesNormal();
+			Hover = Hover_DefaultValue = new HeatmapSeriesStatesHover();
 			
 		}	
 		

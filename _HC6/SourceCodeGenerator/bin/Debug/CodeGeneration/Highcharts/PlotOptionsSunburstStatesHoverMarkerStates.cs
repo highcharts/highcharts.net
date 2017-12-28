@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSunburstStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsSunburstStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsSunburstStatesHoverMarkerStatesSelect();
 			
 		}	
 		

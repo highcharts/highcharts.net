@@ -15,20 +15,20 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSunburst()
 		{
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
-			DataLabels = DataLabels_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsSunburstDataLabels();
 			RootId = RootId_DefaultValue = "undefined";
 			LevelIsConstant = LevelIsConstant_DefaultValue = true;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
-			Levels = Levels_DefaultValue = "";
+			Levels = Levels_DefaultValue = new PlotOptionsSunburstLevels();
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
-			Label = Label_DefaultValue = "";
+			Label = Label_DefaultValue = new PlotOptionsSunburstLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = "";
-			Point = Point_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
-			States = States_DefaultValue = "";
+			Events = Events_DefaultValue = new PlotOptionsSunburstEvents();
+			Point = Point_DefaultValue = new PlotOptionsSunburstPoint();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsSunburstDataLabels();
+			States = States_DefaultValue = new PlotOptionsSunburstStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
@@ -45,21 +45,21 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsSunburstTooltip();
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			DataLabels = DataLabels_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsSunburstDataLabels();
 			Size = Size_DefaultValue = "";
 			ShowInLegend = ShowInLegend_DefaultValue = false;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsSunburstTooltip();
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new PlotOptionsSunburstStates();
 			Colors = Colors_DefaultValue = new List<string>();
 			StartAngle = StartAngle_DefaultValue = 0;
-			Events = Events_DefaultValue = "";
-			Point = Point_DefaultValue = "";
+			Events = Events_DefaultValue = new PlotOptionsSunburstEvents();
+			Point = Point_DefaultValue = new PlotOptionsSunburstPoint();
 			
 		}	
 		
@@ -421,7 +421,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Size != Size_DefaultValue) h.Add("size",Size);

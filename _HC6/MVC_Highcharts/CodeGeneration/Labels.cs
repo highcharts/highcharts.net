@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public Labels()
 		{
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333" }};
-			Items = Items_DefaultValue = "";
+			Items = Items_DefaultValue = new LabelsItems();
 			
 		}	
 		

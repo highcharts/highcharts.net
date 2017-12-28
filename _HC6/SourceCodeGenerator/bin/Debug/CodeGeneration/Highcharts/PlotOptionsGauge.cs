@@ -14,22 +14,22 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsGauge()
 		{
-			DataLabels = DataLabels_DefaultValue = "";
-			Dial = Dial_DefaultValue = "";
-			Pivot = Pivot_DefaultValue = "";
-			Tooltip = Tooltip_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
+			Dial = Dial_DefaultValue = new PlotOptionsGaugeDial();
+			Pivot = Pivot_DefaultValue = new PlotOptionsGaugePivot();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsGaugeTooltip();
 			ShowInLegend = ShowInLegend_DefaultValue = false;
 			Overshoot = Overshoot_DefaultValue = 0;
 			Wrap = Wrap_DefaultValue = true;
-			Label = Label_DefaultValue = "";
+			Label = Label_DefaultValue = new PlotOptionsGaugeLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = "";
-			Point = Point_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
-			States = States_DefaultValue = "";
+			Events = Events_DefaultValue = new PlotOptionsGaugeEvents();
+			Point = Point_DefaultValue = new PlotOptionsGaugePoint();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
+			States = States_DefaultValue = new PlotOptionsGaugeStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
@@ -51,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsGaugeTooltip();
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Linecap = Linecap_DefaultValue = PlotOptionsGaugeLinecap.Round;
 			
@@ -379,7 +379,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			

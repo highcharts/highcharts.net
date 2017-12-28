@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UseHTML = UseHTML_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
 			ZIndex = ZIndex_DefaultValue = 6;
-			Filter = Filter_DefaultValue = "";
+			Filter = Filter_DefaultValue = new ColumnrangeSeriesDataLabelsFilter();
 			XLow = XLow_DefaultValue = 0;
 			XHigh = XHigh_DefaultValue = 0;
 			YLow = YLow_DefaultValue = 16;

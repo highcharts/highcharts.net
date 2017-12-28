@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WordcloudSeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new WordcloudSeriesStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new WordcloudSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		

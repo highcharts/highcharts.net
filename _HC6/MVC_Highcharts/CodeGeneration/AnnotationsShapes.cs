@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AnnotationsShapes()
 		{
-			Point = Point_DefaultValue = "";
+			Point = Point_DefaultValue = new AnnotationsShapesPoint();
 			Points = Points_DefaultValue = "";
 			MarkerEnd = MarkerEnd_DefaultValue = "";
 			MarkerStart = MarkerStart_DefaultValue = "";
@@ -110,7 +110,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Point != Point_DefaultValue) h.Add("point",Point);
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Points != Points_DefaultValue) h.Add("points",Points);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (MarkerStart != MarkerStart_DefaultValue) h.Add("markerStart",MarkerStart);

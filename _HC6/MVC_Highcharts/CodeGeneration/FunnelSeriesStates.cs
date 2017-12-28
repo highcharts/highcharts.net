@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public FunnelSeriesStates()
 		{
-			Select = Select_DefaultValue = "";
+			Select = Select_DefaultValue = new FunnelSeriesStatesSelect();
 			
 		}	
 		

@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public BulletSeriesData()
 		{
 			Target = Target_DefaultValue = null;
-			TargetOptions = TargetOptions_DefaultValue = "";
+			TargetOptions = TargetOptions_DefaultValue = new BulletSeriesDataTargetOptions();
 			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
 			Y = Y_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new BulletSeriesDataEvents();
 			
 		}	
 		
@@ -143,7 +143,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Target != Target_DefaultValue) h.Add("target",Target);
-			if (TargetOptions != TargetOptions_DefaultValue) h.Add("targetOptions",TargetOptions);
+			if (TargetOptions.IsDirty()) h.Add("targetOptions",TargetOptions.ToHashtable());
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -156,7 +156,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Events != Events_DefaultValue) h.Add("events",Events);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

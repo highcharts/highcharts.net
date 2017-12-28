@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Legend()
 		{
-			KeyboardNavigation = KeyboardNavigation_DefaultValue = "";
+			KeyboardNavigation = KeyboardNavigation_DefaultValue = new LegendKeyboardNavigation();
 			Enabled = Enabled_DefaultValue = true;
 			Align = Align_DefaultValue = LegendAlign.Center;
 			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
 			LabelFormatter = LabelFormatter_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#999999";
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			Navigation = Navigation_DefaultValue = "";
+			Navigation = Navigation_DefaultValue = new LegendNavigation();
 			ItemStyle = ItemStyle_DefaultValue = new Hashtable{{ "color", "#333333"},{ "cursor", "pointer"},{ "fontSize", "12px"},{ "fontWeight", "bold"},{ "textOverflow", "ellipsis" }};
 			ItemHoverStyle = ItemHoverStyle_DefaultValue = new Hashtable{{ "color", "#000000" }};
 			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new Hashtable{{ "color", "#cccccc" }};
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = "";
+			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new LegendItemCheckboxStyle();
 			SquareSymbol = SquareSymbol_DefaultValue = true;
 			SymbolPadding = SymbolPadding_DefaultValue = 5;
 			VerticalAlign = VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
-			Title = Title_DefaultValue = "";
+			Title = Title_DefaultValue = new LegendTitle();
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			Floating = Floating_DefaultValue = false;

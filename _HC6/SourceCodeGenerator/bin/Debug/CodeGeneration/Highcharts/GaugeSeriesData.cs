@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Y = Y_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new GaugeSeriesDataEvents();
 			
 		}	
 		
@@ -120,7 +120,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Events != Events_DefaultValue) h.Add("events",Events);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

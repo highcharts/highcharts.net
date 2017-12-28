@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ParetoSeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new ParetoSeriesStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new ParetoSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		

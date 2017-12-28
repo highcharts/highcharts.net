@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LineSeriesDataMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new LineSeriesDataMarkerStatesHover();
+			Select = Select_DefaultValue = new LineSeriesDataMarkerStatesSelect();
 			
 		}	
 		

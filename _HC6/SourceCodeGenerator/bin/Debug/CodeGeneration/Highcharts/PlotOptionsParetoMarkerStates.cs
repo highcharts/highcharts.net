@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsParetoMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsParetoMarkerStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsParetoMarkerStatesSelect();
 			
 		}	
 		

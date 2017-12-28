@@ -30,6 +30,11 @@ namespace SourceCodeGenerator.Services
             }
 
             //fullname
+            if (ItemsToUpdate.ContainsKey(item.FullName))
+            {
+                foreach (var info in ItemsToUpdate[item.FullName])
+                    UpdateProperty(item, info);
+            }
         }
 
         private void UpdateProperty(ApiItem item, UpdateInfo info)
@@ -61,6 +66,11 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("year", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("dateFormat", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("lineDelimiter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("chart.options3d.frame.visible", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("chart.options3d.frame.size", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("padding", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("background", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("transition", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
         }
     }
 

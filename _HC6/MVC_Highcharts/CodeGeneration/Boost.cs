@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			SeriesThreshold = SeriesThreshold_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
-			Debug = Debug_DefaultValue = "";
+			Debug = Debug_DefaultValue = new BoostDebug();
 			UseGPUTranslations = UseGPUTranslations_DefaultValue = false;
 			AllowForce = AllowForce_DefaultValue = true;
 			

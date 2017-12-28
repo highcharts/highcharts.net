@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsLineMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsLineMarkerStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsLineMarkerStatesSelect();
 			
 		}	
 		

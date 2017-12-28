@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Chart()
 		{
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new ChartEvents();
 			ParallelCoordinates = ParallelCoordinates_DefaultValue = false;
-			ParallelAxes = ParallelAxes_DefaultValue = "";
+			ParallelAxes = ParallelAxes_DefaultValue = new ChartParallelAxes();
 			Description = Description_DefaultValue = "undefined";
 			TypeDescription = TypeDescription_DefaultValue = "undefined";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DefaultSeriesType = DefaultSeriesType_DefaultValue = ChartDefaultSeriesType.Line;
 			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
 			Spacing = Spacing_DefaultValue = new List<double> {10, 10, 15, 10};
-			ResetZoomButton = ResetZoomButton_DefaultValue = "";
+			ResetZoomButton = ResetZoomButton_DefaultValue = new ChartResetZoomButton();
 			Width = Width_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "#335cad";
@@ -60,7 +60,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","\"Lucida Grande\"},{ \"Lucida Sans Unicode\"},{ Verdana},{ Arial},{ Helvetica},{ sans-serif"},{"fontSize","12px"}};
 			Type = Type_DefaultValue = ChartType.Line;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
-			Options3d = Options3d_DefaultValue = "";
+			Options3d = Options3d_DefaultValue = new ChartOptions3d();
 			
 		}	
 		

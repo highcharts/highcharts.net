@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PolygonSeriesDataMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PolygonSeriesDataMarkerStatesHover();
+			Select = Select_DefaultValue = new PolygonSeriesDataMarkerStatesSelect();
 			
 		}	
 		

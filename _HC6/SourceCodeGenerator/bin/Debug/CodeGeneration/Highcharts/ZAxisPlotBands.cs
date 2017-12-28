@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Id = Id_DefaultValue = "null";
 			To = To_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = "";
+			Label = Label_DefaultValue = new ZAxisPlotBandsLabel();
 			
 		}	
 		

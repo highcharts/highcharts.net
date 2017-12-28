@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsHistogramStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsHistogramStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsHistogramStatesSelect();
 			
 		}	
 		

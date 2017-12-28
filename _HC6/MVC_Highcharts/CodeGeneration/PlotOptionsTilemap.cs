@@ -14,24 +14,24 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemap()
 		{
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new PlotOptionsTilemapStates();
 			PointPadding = PointPadding_DefaultValue = 2;
 			TileShape = TileShape_DefaultValue = hexagon;
 			Colsize = Colsize_DefaultValue = 1;
 			Rowsize = Rowsize_DefaultValue = 1;
 			Data = Data_DefaultValue = new List<PlotOptionsTilemapData>();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
-			Label = Label_DefaultValue = "";
+			Label = Label_DefaultValue = new PlotOptionsTilemapLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = "";
-			Point = Point_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
+			Events = Events_DefaultValue = new PlotOptionsTilemapEvents();
+			Point = Point_DefaultValue = new PlotOptionsTilemapPoint();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsTilemapDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new PlotOptionsTilemapStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsTilemapFindNearestPointBy.X;
@@ -63,21 +63,21 @@ namespace Highsoft.Web.Mvc.Charts
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = "";
-			Zones = Zones_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsTilemapTooltip();
+			Zones = Zones_DefaultValue = new List<PlotOptionsTilemapZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Linecap = Linecap_DefaultValue = PlotOptionsTilemapLinecap.Round;
 			LineWidth = LineWidth_DefaultValue = 0;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsTilemapTooltip();
 			StickyTracking = StickyTracking_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
-			DataLabels = DataLabels_DefaultValue = "";
-			Tooltip = Tooltip_DefaultValue = "";
-			States = States_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsTilemapDataLabels();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsTilemapTooltip();
+			States = States_DefaultValue = new PlotOptionsTilemapStates();
 			PointPadding = PointPadding_DefaultValue = 0;
 			Color = Color_DefaultValue = "null";
 			Colsize = Colsize_DefaultValue = 1;
@@ -619,7 +619,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);

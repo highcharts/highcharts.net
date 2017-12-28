@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ErrorbarSeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new ErrorbarSeriesStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new ErrorbarSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		

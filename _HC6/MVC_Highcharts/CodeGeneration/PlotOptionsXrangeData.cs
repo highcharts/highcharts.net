@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsXrangeData()
 		{
 			X2 = X2_DefaultValue = null;
-			PartialFill = PartialFill_DefaultValue = "";
+			PartialFill = PartialFill_DefaultValue = new PlotOptionsXrangeDataPartialFill();
 			
 		}	
 		

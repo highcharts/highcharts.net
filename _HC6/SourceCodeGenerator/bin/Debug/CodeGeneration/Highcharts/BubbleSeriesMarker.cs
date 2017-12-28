@@ -17,11 +17,11 @@ namespace Highsoft.Web.Mvc.Charts
 			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 1;
 			Radius = Radius_DefaultValue = "";
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new BubbleSeriesMarkerStates();
 			Symbol = Symbol_DefaultValue = "circle";
 			LineWidth = LineWidth_DefaultValue = 0;
 			LineColor = LineColor_DefaultValue = "#ffffff";
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new BubbleSeriesMarkerStates();
 			FillColor = FillColor_DefaultValue = null;
 			Symbol = Symbol_DefaultValue = "null";
 			

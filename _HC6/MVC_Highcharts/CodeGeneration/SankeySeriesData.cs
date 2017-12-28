@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new SankeySeriesDataEvents();
 			
 		}	
 		
@@ -147,7 +147,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Events != Events_DefaultValue) h.Add("events",Events);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

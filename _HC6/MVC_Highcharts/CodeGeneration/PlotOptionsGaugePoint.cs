@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsGaugePoint()
 		{
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new PlotOptionsGaugePointEvents();
 			
 		}	
 		

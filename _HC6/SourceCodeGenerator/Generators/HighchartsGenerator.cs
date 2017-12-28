@@ -684,7 +684,7 @@ public class HighchartsGenerator
             if (child.ReturnType == "Array" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
-            if (child.Children.Any())
+            if (child.Children.Any() || child.Extends.Any())
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
@@ -1110,10 +1110,7 @@ public class HighchartsGenerator
                 return "null";
         }
 
-        if (defaults == "")
-            return "\"\"";
-        if (defaults == null)
-            return "null";
+        
         //}
         //else
         //{
@@ -1139,13 +1136,18 @@ public class HighchartsGenerator
         if (item.FullName.ToLower().Contains("levels.datalabels"))
             item.FullName = item.FullName.Replace("levels.", "");
 
-        if (item.Children.Any())
+        if (item.Children.Any() || item.Extends.Any())
             return String.Format("new {0}()", GetClassNameFromItem(item));
         //else
         //    return item.Defaults;
 
 
         //}
+
+        if (defaults == "")
+            return "\"\"";
+        if (defaults == null)
+            return "null";
 
         return defaults;
     }

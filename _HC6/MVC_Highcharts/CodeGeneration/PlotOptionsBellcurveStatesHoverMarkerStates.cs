@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBellcurveStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new PlotOptionsBellcurveStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsBellcurveStatesHoverMarkerStatesSelect();
 			
 		}	
 		

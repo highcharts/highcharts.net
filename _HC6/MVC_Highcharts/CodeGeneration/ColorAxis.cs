@@ -20,8 +20,8 @@ namespace Highsoft.Web.Mvc.Charts
 			TickPixelInterval = TickPixelInterval_DefaultValue = 72;
 			StartOnTick = StartOnTick_DefaultValue = true;
 			EndOnTick = EndOnTick_DefaultValue = true;
-			Marker = Marker_DefaultValue = "";
-			Labels = Labels_DefaultValue = "";
+			Marker = Marker_DefaultValue = new ColorAxisMarker();
+			Labels = Labels_DefaultValue = new ColorAxisLabels();
 			MinColor = MinColor_DefaultValue = "#e6ebf5";
 			MaxColor = MaxColor_DefaultValue = "#003399";
 			TickLength = TickLength_DefaultValue = 5;
@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Type = Type_DefaultValue = ColorAxisType.Linear;
 			Reversed = Reversed_DefaultValue = "";
 			EndOnTick = EndOnTick_DefaultValue = false;
-			Labels = Labels_DefaultValue = "";
+			Labels = Labels_DefaultValue = new ColorAxisLabels();
 			MaxPadding = MaxPadding_DefaultValue = 0.01;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ColorAxisMinorTickPosition.Outside;
@@ -58,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new ColorAxisEvents();
 			Floor = Floor_DefaultValue = null;
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = ColorAxisGridLineDashStyle.Solid;
 			GridZIndex = GridZIndex_DefaultValue = 1;

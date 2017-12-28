@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
-			Labels = Labels_DefaultValue = "";
+			Labels = Labels_DefaultValue = new ZAxisLabels();
 			MaxPadding = MaxPadding_DefaultValue = 0.01;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ZAxisMinorTickPosition.Outside;
@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = ZAxisTickmarkPlacement.Between;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
 			TickPosition = TickPosition_DefaultValue = ZAxisTickPosition.Outside;
-			Title = Title_DefaultValue = "";
+			Title = Title_DefaultValue = new ZAxisTitle();
 			Type = Type_DefaultValue = ZAxisType.Linear;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
@@ -40,7 +40,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new ZAxisEvents();
 			Floor = Floor_DefaultValue = null;
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = ZAxisGridLineDashStyle.Solid;
 			GridZIndex = GridZIndex_DefaultValue = 1;
@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc.Charts
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Units = Units_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			PlotBands = PlotBands_DefaultValue = "";
-			PlotLines = PlotLines_DefaultValue = "";
+			PlotBands = PlotBands_DefaultValue = new ZAxisPlotBands();
+			PlotLines = PlotLines_DefaultValue = new ZAxisPlotLines();
 			
 		}	
 		

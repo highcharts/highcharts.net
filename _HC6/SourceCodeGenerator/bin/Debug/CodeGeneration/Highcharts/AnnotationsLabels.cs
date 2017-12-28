@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AnnotationsLabels()
 		{
-			Point = Point_DefaultValue = "";
+			Point = Point_DefaultValue = new AnnotationsLabelsPoint();
 			Align = Align_DefaultValue = AnnotationsLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = 5;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new AnnotationsLabelsStyle();
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;

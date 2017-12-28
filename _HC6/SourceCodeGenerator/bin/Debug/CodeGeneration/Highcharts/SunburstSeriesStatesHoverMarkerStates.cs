@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SunburstSeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new SunburstSeriesStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new SunburstSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		

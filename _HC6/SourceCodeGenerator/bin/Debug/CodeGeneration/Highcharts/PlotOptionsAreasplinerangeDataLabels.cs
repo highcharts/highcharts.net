@@ -41,7 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UseHTML = UseHTML_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
 			ZIndex = ZIndex_DefaultValue = 6;
-			Filter = Filter_DefaultValue = "";
+			Filter = Filter_DefaultValue = new PlotOptionsAreasplinerangeDataLabelsFilter();
 			
 		}	
 		

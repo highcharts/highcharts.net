@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemapStates()
 		{
-			Normal = Normal_DefaultValue = "";
-			Hover = Hover_DefaultValue = "";
+			Normal = Normal_DefaultValue = new PlotOptionsTilemapStatesNormal();
+			Hover = Hover_DefaultValue = new PlotOptionsTilemapStatesHover();
 			
 		}	
 		

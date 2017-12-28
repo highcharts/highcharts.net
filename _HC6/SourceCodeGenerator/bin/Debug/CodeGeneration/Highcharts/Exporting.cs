@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Exporting()
 		{
-			Csv = Csv_DefaultValue = "";
+			Csv = Csv_DefaultValue = new ExportingCsv();
 			ShowTable = ShowTable_DefaultValue = false;
 			UseMultiLevelHeaders = UseMultiLevelHeaders_DefaultValue = true;
 			UseRowspanHeaders = UseRowspanHeaders_DefaultValue = true;
@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Url = Url_DefaultValue = "https://export.highcharts.com/";
 			PrintMaxWidth = PrintMaxWidth_DefaultValue = 780;
 			Scale = Scale_DefaultValue = 2;
-			Buttons = Buttons_DefaultValue = "";
+			Buttons = Buttons_DefaultValue = new ExportingButtons();
 			MenuItemDefinitions = MenuItemDefinitions_DefaultValue = "";
 			AllowHTML = AllowHTML_DefaultValue = false;
 			ChartOptions = ChartOptions_DefaultValue = null;

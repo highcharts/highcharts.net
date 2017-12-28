@@ -15,12 +15,12 @@ namespace Highsoft.Web.Mvc.Charts
 		public ChartParallelAxes()
 		{
 			LineWidth = LineWidth_DefaultValue = 1;
-			Title = Title_DefaultValue = "";
-			Labels = Labels_DefaultValue = "";
+			Title = Title_DefaultValue = new ChartParallelAxesTitle();
+			Labels = Labels_DefaultValue = new ChartParallelAxesLabels();
 			Offset = Offset_DefaultValue = 0;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
-			Labels = Labels_DefaultValue = "";
+			Labels = Labels_DefaultValue = new ChartParallelAxesLabels();
 			MaxPadding = MaxPadding_DefaultValue = 0.01;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ChartParallelAxesMinorTickPosition.Outside;
@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = ChartParallelAxesTickmarkPlacement.Between;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
 			TickPosition = TickPosition_DefaultValue = ChartParallelAxesTickPosition.Outside;
-			Title = Title_DefaultValue = "";
+			Title = Title_DefaultValue = new ChartParallelAxesTitle();
 			Type = Type_DefaultValue = ChartParallelAxesType.Linear;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
 			LineColor = LineColor_DefaultValue = "#ccd6eb";
@@ -43,7 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new ChartParallelAxesCrosshair();
 			Description = Description_DefaultValue = "undefined";
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = new ChartParallelAxesEvents();
 			Floor = Floor_DefaultValue = null;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = null;
@@ -75,11 +75,11 @@ namespace Highsoft.Web.Mvc.Charts
 			EndOnTick = EndOnTick_DefaultValue = true;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 72;
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
-			Labels = Labels_DefaultValue = "";
+			Labels = Labels_DefaultValue = new ChartParallelAxesLabels();
 			MaxPadding = MaxPadding_DefaultValue = 0.05;
 			MinPadding = MinPadding_DefaultValue = 0.05;
 			StartOnTick = StartOnTick_DefaultValue = true;
-			Title = Title_DefaultValue = "";
+			Title = Title_DefaultValue = new ChartParallelAxesTitle();
 			LineWidth = LineWidth_DefaultValue = 0;
 			Opposite = Opposite_DefaultValue = false;
 			LineColor = LineColor_DefaultValue = "";

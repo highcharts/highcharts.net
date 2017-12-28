@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Distance = Distance_DefaultValue = -25;
 			Y = Y_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new ChartParallelAxesLabelsStyle();
 			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = ChartParallelAxesLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};

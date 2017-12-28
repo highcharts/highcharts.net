@@ -24,15 +24,15 @@ namespace Highsoft.Web.Mvc.Charts
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ZIndex = ZIndex_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
-			Label = Label_DefaultValue = "";
+			Label = Label_DefaultValue = new ColumnrangeSeriesLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = "";
-			Point = Point_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
+			Events = Events_DefaultValue = new ColumnrangeSeriesEvents();
+			Point = Point_DefaultValue = new ColumnrangeSeriesPoint();
+			DataLabels = DataLabels_DefaultValue = new ColumnrangeSeriesDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			States = States_DefaultValue = "";
+			States = States_DefaultValue = new ColumnrangeSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = ColumnrangeSeriesFindNearestPointBy.X;
@@ -58,8 +58,8 @@ namespace Highsoft.Web.Mvc.Charts
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = "";
-			Zones = Zones_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new ColumnrangeSeriesTooltip();
+			Zones = Zones_DefaultValue = new List<ColumnrangeSeriesZone>();
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			Crisp = Crisp_DefaultValue = true;
@@ -68,10 +68,10 @@ namespace Highsoft.Web.Mvc.Charts
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			PointRange = PointRange_DefaultValue = null;
-			States = States_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
+			States = States_DefaultValue = new ColumnrangeSeriesStates();
+			DataLabels = DataLabels_DefaultValue = new ColumnrangeSeriesDataLabels();
 			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new ColumnrangeSeriesTooltip();
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
@@ -86,8 +86,8 @@ namespace Highsoft.Web.Mvc.Charts
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			PointRange = PointRange_DefaultValue = "";
 			Marker = Marker_DefaultValue = "";
-			States = States_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
+			States = States_DefaultValue = new ColumnrangeSeriesStates();
+			DataLabels = DataLabels_DefaultValue = new ColumnrangeSeriesDataLabels();
 			
 		}	
 		
@@ -662,7 +662,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -691,7 +691,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			
 
 			return h;

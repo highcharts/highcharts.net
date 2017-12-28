@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Enabled = Enabled_DefaultValue = false;
 			Formatter = Formatter_DefaultValue = "";
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new YAxisStackLabelsStyle();
 			Align = Align_DefaultValue = YAxisStackLabelsAlign.Left;
 			Format = Format_DefaultValue = "{total}";
 			Rotation = Rotation_DefaultValue = 0;

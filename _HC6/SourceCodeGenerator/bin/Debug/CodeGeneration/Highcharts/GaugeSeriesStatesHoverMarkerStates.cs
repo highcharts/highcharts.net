@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public GaugeSeriesStatesHoverMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new GaugeSeriesStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new GaugeSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		

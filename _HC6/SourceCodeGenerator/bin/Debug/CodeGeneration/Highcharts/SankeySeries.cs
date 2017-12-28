@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeries()
 		{
-			Nodes = Nodes_DefaultValue = "";
+			Nodes = Nodes_DefaultValue = new SankeySeriesNodes();
 			Data = Data_DefaultValue = new List<SeriesSankeyData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
@@ -25,14 +25,14 @@ namespace Highsoft.Web.Mvc.Charts
 			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = "";
+			Label = Label_DefaultValue = new SankeySeriesLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = "";
-			Point = Point_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
-			States = States_DefaultValue = "";
+			Events = Events_DefaultValue = new SankeySeriesEvents();
+			Point = Point_DefaultValue = new SankeySeriesPoint();
+			DataLabels = DataLabels_DefaultValue = new SankeySeriesDataLabels();
+			States = States_DefaultValue = new SankeySeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			ClassName = ClassName_DefaultValue = "";
@@ -50,24 +50,24 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new SankeySeriesTooltip();
 			MinPointLength = MinPointLength_DefaultValue = 0;
-			States = States_DefaultValue = "";
-			DataLabels = DataLabels_DefaultValue = "";
+			States = States_DefaultValue = new SankeySeriesStates();
+			DataLabels = DataLabels_DefaultValue = new SankeySeriesDataLabels();
 			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = "";
+			Tooltip = Tooltip_DefaultValue = new SankeySeriesTooltip();
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			DataGrouping = DataGrouping_DefaultValue = "";
 			ColorByPoint = ColorByPoint_DefaultValue = true;
 			CurveFactor = CurveFactor_DefaultValue = 0.33;
-			DataLabels = DataLabels_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new SankeySeriesDataLabels();
 			LinkOpacity = LinkOpacity_DefaultValue = 0.5;
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			NodePadding = NodePadding_DefaultValue = 10;
 			ShowInLegend = ShowInLegend_DefaultValue = false;
-			States = States_DefaultValue = "";
-			Tooltip = Tooltip_DefaultValue = "";
+			States = States_DefaultValue = new SankeySeriesStates();
+			Tooltip = Tooltip_DefaultValue = new SankeySeriesTooltip();
 			
 		}	
 		
@@ -490,7 +490,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip != Tooltip_DefaultValue) h.Add("tooltip",Tooltip);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());

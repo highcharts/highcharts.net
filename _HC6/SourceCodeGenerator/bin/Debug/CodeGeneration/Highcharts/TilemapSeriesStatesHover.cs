@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TilemapSeriesStatesHover()
 		{
-			Halo = Halo_DefaultValue = "";
+			Halo = Halo_DefaultValue = new TilemapSeriesStatesHoverHalo();
 			
 		}	
 		

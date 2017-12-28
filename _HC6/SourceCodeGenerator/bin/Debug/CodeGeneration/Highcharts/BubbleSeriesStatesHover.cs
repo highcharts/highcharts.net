@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BubbleSeriesStatesHover()
 		{
-			Halo = Halo_DefaultValue = "";
+			Halo = Halo_DefaultValue = new BubbleSeriesStatesHoverHalo();
 			
 		}	
 		

@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
 			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 1;
-			Theme = Theme_DefaultValue = "";
+			Theme = Theme_DefaultValue = new NavigationButtonOptionsTheme();
 			
 		}	
 		

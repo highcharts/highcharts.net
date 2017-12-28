@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ExportingButtons()
 		{
-			ContextButton = ContextButton_DefaultValue = "";
+			ContextButton = ContextButton_DefaultValue = new ExportingButtonsContextButton();
 			
 		}	
 		

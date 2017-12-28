@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SplineSeriesMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new SplineSeriesMarkerStatesHover();
+			Select = Select_DefaultValue = new SplineSeriesMarkerStatesSelect();
 			
 		}	
 		

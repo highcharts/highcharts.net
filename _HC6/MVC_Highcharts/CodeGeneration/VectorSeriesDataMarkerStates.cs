@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VectorSeriesDataMarkerStates()
 		{
-			Hover = Hover_DefaultValue = "";
-			Select = Select_DefaultValue = "";
+			Hover = Hover_DefaultValue = new VectorSeriesDataMarkerStatesHover();
+			Select = Select_DefaultValue = new VectorSeriesDataMarkerStatesSelect();
 			
 		}	
 		
