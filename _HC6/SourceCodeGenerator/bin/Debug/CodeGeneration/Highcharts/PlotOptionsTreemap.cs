@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DrillUpButton = DrillUpButton_DefaultValue = new PlotOptionsTreemapDrillUpButton();
 			BorderColor = BorderColor_DefaultValue = "#e6e6e6";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Opacity = Opacity_DefaultValue = 0.15;
+			Opacity = Opacity_DefaultValue = null;
 			States = States_DefaultValue = new PlotOptionsTreemapStates();
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;

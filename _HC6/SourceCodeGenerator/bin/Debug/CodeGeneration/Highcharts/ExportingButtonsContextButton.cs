@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Charts
 			X = X_DefaultValue = -10;
 			SymbolSize = SymbolSize_DefaultValue = 14;
 			Enabled = Enabled_DefaultValue = true;
-			SymbolX = SymbolX_DefaultValue = 12.5;
-			SymbolY = SymbolY_DefaultValue = 10.5;
+			SymbolX = SymbolX_DefaultValue = null;
+			SymbolY = SymbolY_DefaultValue = null;
 			Align = Align_DefaultValue = ExportingButtonsContextButtonAlign.Right;
 			ButtonSpacing = ButtonSpacing_DefaultValue = 3;
 			Height = Height_DefaultValue = 22;

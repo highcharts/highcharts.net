@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BulletSeriesDataTargetOptions()
 		{
-			Width = Width_DefaultValue = 140%;
+			Width = Width_DefaultValue = null;
 			Height = Height_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			BorderColor = BorderColor_DefaultValue = "";
@@ -33,15 +33,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The height of the rectangle representing the target.
 		/// </summary>
-		public BulletSeriesDataTargetOptionsHeight Height { get; set; }
-		private BulletSeriesDataTargetOptionsHeight Height_DefaultValue { get; set; }
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border width of the rectangle representing the target.In styled mode, use class `highcharts-bullet-target` instead.
 		/// </summary>
-		public BulletSeriesDataTargetOptionsBorderWidth BorderWidth { get; set; }
-		private BulletSeriesDataTargetOptionsBorderWidth BorderWidth_DefaultValue { get; set; }
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -1149,6 +1149,15 @@ public class HighchartsGenerator
         if (defaults == null)
             return "null";
 
+        if (item.ReturnType == "Number")
+        {
+            int conversionResult;
+            bool success = int.TryParse(defaults, out conversionResult);
+
+            if (!success)
+                return "null";
+        }
+
         return defaults;
     }
 }

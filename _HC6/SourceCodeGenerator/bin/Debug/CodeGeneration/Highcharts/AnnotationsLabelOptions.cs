@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Crop = Crop_DefaultValue = false;
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = AnnotationsLabelOptionsOverflow.Justify;
-			Padding = Padding_DefaultValue = 5;
+			Padding = Padding_DefaultValue = "5";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new AnnotationsLabelOptionsStyle();
@@ -104,8 +104,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// When either the borderWidth or the backgroundColor is set,thisis the padding within the box.
 		/// </summary>
-		public AnnotationsLabelOptionsPadding Padding { get; set; }
-		private AnnotationsLabelOptionsPadding Padding_DefaultValue { get; set; }
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>

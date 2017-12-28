@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSunburstStatesHover()
 		{
-			Brightness = Brightness_DefaultValue = 0.1;
+			Brightness = Brightness_DefaultValue = null;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;

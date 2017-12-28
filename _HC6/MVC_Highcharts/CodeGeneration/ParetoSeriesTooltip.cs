@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			FooterFormat = FooterFormat_DefaultValue = "";
-			Padding = Padding_DefaultValue = 8;
+			Padding = Padding_DefaultValue = "8";
 			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			FollowPointer = FollowPointer_DefaultValue = "";
@@ -49,8 +49,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Padding inside the tooltip, in pixels.
 		/// </summary>
-		public double? Padding { get; set; }
-		private double? Padding_DefaultValue { get; set; }
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>

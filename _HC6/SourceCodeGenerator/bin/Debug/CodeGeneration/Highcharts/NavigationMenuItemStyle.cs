@@ -14,11 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public NavigationMenuItemStyle()
 		{
-			Padding = Padding_DefaultValue = 0.5em 1em;
-			Background = Background_DefaultValue = none;
+			Padding = Padding_DefaultValue = "0.5em 1em";
+			Background = Background_DefaultValue = "none";
 			Color = Color_DefaultValue = "#333333";
 			FontSize = FontSize_DefaultValue = "";
-			Transition = Transition_DefaultValue = background 250ms, color 250ms;
+			Transition = Transition_DefaultValue = "background 250ms, color 250ms";
 			
 		}	
 		
@@ -26,15 +26,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public NavigationMenuItemStylePadding Padding { get; set; }
-		private NavigationMenuItemStylePadding Padding_DefaultValue { get; set; }
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public NavigationMenuItemStyleBackground Background { get; set; }
-		private NavigationMenuItemStyleBackground Background_DefaultValue { get; set; }
+		public string Background { get; set; }
+		private string Background_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public NavigationMenuItemStyleTransition Transition { get; set; }
-		private NavigationMenuItemStyleTransition Transition_DefaultValue { get; set; }
+		public string Transition { get; set; }
+		private string Transition_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

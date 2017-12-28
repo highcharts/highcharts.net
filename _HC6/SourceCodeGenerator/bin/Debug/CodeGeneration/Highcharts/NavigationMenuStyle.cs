@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public NavigationMenuStyle()
 		{
 			Border = Border_DefaultValue = 1px solid #999999;
-			Background = Background_DefaultValue = #ffffff;
-			Padding = Padding_DefaultValue = 5px 0;
+			Background = Background_DefaultValue = "#ffffff";
+			Padding = Padding_DefaultValue = "5px 0";
 			
 		}	
 		
@@ -31,15 +31,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public NavigationMenuStyleBackground Background { get; set; }
-		private NavigationMenuStyleBackground Background_DefaultValue { get; set; }
+		public string Background { get; set; }
+		private string Background_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public NavigationMenuStylePadding Padding { get; set; }
-		private NavigationMenuStylePadding Padding_DefaultValue { get; set; }
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

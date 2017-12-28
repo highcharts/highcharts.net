@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = ColorAxisLabelsOverflow.Null;
-			Padding = Padding_DefaultValue = 5;
+			Padding = Padding_DefaultValue = "5";
 			ReserveSpace = ReserveSpace_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
@@ -111,8 +111,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The pixel padding for axis labels, to ensure white space betweenthem.
 		/// </summary>
-		public double? Padding { get; set; }
-		private double? Padding_DefaultValue { get; set; }
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>

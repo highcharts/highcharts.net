@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsTreemapStatesHoverHalo()
 		{
 			Size = Size_DefaultValue = 10;
-			Opacity = Opacity_DefaultValue = 0.25;
+			Opacity = Opacity_DefaultValue = null;
 			Attributes = Attributes_DefaultValue = "";
 			
 		}	

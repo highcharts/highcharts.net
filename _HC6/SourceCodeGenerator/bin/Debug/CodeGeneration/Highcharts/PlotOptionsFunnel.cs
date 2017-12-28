@@ -16,10 +16,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
-			Width = Width_DefaultValue = 90%;
-			NeckWidth = NeckWidth_DefaultValue = 30%;
-			Height = Height_DefaultValue = 100%;
-			NeckHeight = NeckHeight_DefaultValue = 25%;
+			Width = Width_DefaultValue = null;
+			NeckWidth = NeckWidth_DefaultValue = null;
+			Height = Height_DefaultValue = null;
+			NeckHeight = NeckHeight_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = false;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsFunnelDataLabels();
 			States = States_DefaultValue = new PlotOptionsFunnelStates();

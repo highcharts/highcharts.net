@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Zones = Zones_DefaultValue = new List<XrangeSeriesZone>();
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			PointPadding = PointPadding_DefaultValue = 0.1;
+			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			States = States_DefaultValue = new XrangeSeriesStates();
 			DataLabels = DataLabels_DefaultValue = new XrangeSeriesDataLabels();

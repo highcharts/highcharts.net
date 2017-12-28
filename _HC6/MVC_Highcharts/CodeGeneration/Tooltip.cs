@@ -19,8 +19,8 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			FooterFormat = FooterFormat_DefaultValue = "";
-			Padding = Padding_DefaultValue = 8;
-			Snap = Snap_DefaultValue = 10/25;
+			Padding = Padding_DefaultValue = "8";
+			Snap = Snap_DefaultValue = null;
 			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(247,247,247,0.85)";
@@ -85,8 +85,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Padding inside the tooltip, in pixels.
 		/// </summary>
-		public double? Padding { get; set; }
-		private double? Padding_DefaultValue { get; set; }
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Fill = Fill_DefaultValue = "#ffffff";
 			Stroke = Stroke_DefaultValue = "none";
-			Padding = Padding_DefaultValue = 5;
+			Padding = Padding_DefaultValue = "5";
 			
 		}	
 		
@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Padding { get; set; }
-		private double? Padding_DefaultValue { get; set; }
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

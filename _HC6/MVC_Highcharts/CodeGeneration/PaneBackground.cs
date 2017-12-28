@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			BackgroundColor = BackgroundColor_DefaultValue = new PaneBackgroundBackgroundColor();
 			InnerRadius = InnerRadius_DefaultValue = 0;
-			OuterRadius = OuterRadius_DefaultValue = 105%;
+			OuterRadius = OuterRadius_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			
 		}	

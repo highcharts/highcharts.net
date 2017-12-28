@@ -66,8 +66,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Zones = Zones_DefaultValue = new List<VariwideSeriesZone>();
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			GroupPadding = GroupPadding_DefaultValue = 0.2;
-			PointPadding = PointPadding_DefaultValue = 0.1;
+			GroupPadding = GroupPadding_DefaultValue = null;
+			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			CropThreshold = CropThreshold_DefaultValue = 50;
 			PointRange = PointRange_DefaultValue = null;

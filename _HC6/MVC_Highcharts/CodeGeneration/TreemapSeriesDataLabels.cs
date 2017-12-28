@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			VerticalAlign = VerticalAlign_DefaultValue = middle;
 			Crop = Crop_DefaultValue = false;
 			Overflow = Overflow_DefaultValue = false;
-			Padding = Padding_DefaultValue = 0;
+			Padding = Padding_DefaultValue = "0";
 			
 		}	
 		
@@ -102,8 +102,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public TreemapSeriesDataLabelsPadding Padding { get; set; }
-		private TreemapSeriesDataLabelsPadding Padding_DefaultValue { get; set; }
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

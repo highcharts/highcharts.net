@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public NavigationMenuItemHoverStyle()
 		{
-			Background = Background_DefaultValue = #335cad;
+			Background = Background_DefaultValue = "#335cad";
 			Color = Color_DefaultValue = "#ffffff";
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public NavigationMenuItemHoverStyleBackground Background { get; set; }
-		private NavigationMenuItemHoverStyleBackground Background_DefaultValue { get; set; }
+		public string Background { get; set; }
+		private string Background_DefaultValue { get; set; }
 		 
 
 		/// <summary>
