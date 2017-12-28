@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public Lang()
 		{
 			DrillUpText = DrillUpText_DefaultValue = "Back to {series.name}";
-			DownloadCSV = DownloadCSV_DefaultValue = Download CSV;
-			DownloadXLS = DownloadXLS_DefaultValue = Download XLS;
-			ViewData = ViewData_DefaultValue = View data table;
+			DownloadCSV = DownloadCSV_DefaultValue = "Download CSV";
+			DownloadXLS = DownloadXLS_DefaultValue = "Download XLS";
+			ViewData = ViewData_DefaultValue = "View data table";
 			PrintChart = PrintChart_DefaultValue = "Print chart";
 			DownloadPNG = DownloadPNG_DefaultValue = "Download PNG image";
 			DownloadJPEG = DownloadJPEG_DefaultValue = "Download JPEG image";
@@ -51,22 +51,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public LangDownloadCSV DownloadCSV { get; set; }
-		private LangDownloadCSV DownloadCSV_DefaultValue { get; set; }
+		public string DownloadCSV { get; set; }
+		private string DownloadCSV_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public LangDownloadXLS DownloadXLS { get; set; }
-		private LangDownloadXLS DownloadXLS_DefaultValue { get; set; }
+		public string DownloadXLS { get; set; }
+		private string DownloadXLS_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public LangViewData ViewData { get; set; }
-		private LangViewData ViewData_DefaultValue { get; set; }
+		public string ViewData { get; set; }
+		private string ViewData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
