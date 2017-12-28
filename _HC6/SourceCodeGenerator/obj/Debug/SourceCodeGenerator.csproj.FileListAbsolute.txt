@@ -20,4 +20,3 @@ C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeTemp
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeTemplates\Property.tpl
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeTemplates\RootClass.tpl
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\JsonFiles\highcharts.json
-C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.csprojResolveAssemblyReference.cache
