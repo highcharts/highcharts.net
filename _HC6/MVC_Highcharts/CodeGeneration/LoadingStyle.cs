@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public LoadingStyle()
 		{
 			Position = Position_DefaultValue = new Hashtable();
-			BackgroundColor = BackgroundColor_DefaultValue = #ffffff;
-			Opacity = Opacity_DefaultValue = 0.5;
-			TextAlign = TextAlign_DefaultValue = center;
+			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
+			Opacity = Opacity_DefaultValue = null;
+			TextAlign = TextAlign_DefaultValue = "center";
 			
 		}	
 		
@@ -32,22 +32,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public LoadingStyleBackgroundColor BackgroundColor { get; set; }
-		private LoadingStyleBackgroundColor BackgroundColor_DefaultValue { get; set; }
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public LoadingStyleOpacity Opacity { get; set; }
-		private LoadingStyleOpacity Opacity_DefaultValue { get; set; }
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public LoadingStyleTextAlign TextAlign { get; set; }
-		private LoadingStyleTextAlign TextAlign_DefaultValue { get; set; }
+		public string TextAlign { get; set; }
+		private string TextAlign_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
