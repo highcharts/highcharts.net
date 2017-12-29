@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WordcloudSeriesAnimation()
 		{
-			Duration = Duration_DefaultValue = 500;
+			Duration = Duration_DefaultValue = 1000;
 			
 		}	
 		

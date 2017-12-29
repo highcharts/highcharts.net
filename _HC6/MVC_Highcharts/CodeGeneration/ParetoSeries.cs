@@ -58,8 +58,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new ParetoSeriesTooltip();
 			ConnectEnds = ConnectEnds_DefaultValue = "";
-			Linecap = Linecap_DefaultValue = ParetoSeriesLinecap.Round;
-			ZIndex = ZIndex_DefaultValue = 3;
 			
 		}	
 		
@@ -370,20 +368,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public ParetoSeriesLinecap Linecap { get; set; }
-		private ParetoSeriesLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Higher zIndex than column series to draw line above shapes.
-		/// </summary>
-		public ParetoSeriesZIndex ZIndex { get; set; }
-		private ParetoSeriesZIndex ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -434,8 +418,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 
 			return h;

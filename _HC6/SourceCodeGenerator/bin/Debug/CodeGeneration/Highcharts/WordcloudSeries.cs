@@ -51,25 +51,15 @@ namespace Highsoft.Web.Mvc.Charts
 			Tooltip = Tooltip_DefaultValue = new WordcloudSeriesTooltip();
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			CropThreshold = CropThreshold_DefaultValue = 50;
-			States = States_DefaultValue = new WordcloudSeriesStates();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new WordcloudSeriesTooltip();
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			BorderWidth = BorderWidth_DefaultValue = 0;
 			Clip = Clip_DefaultValue = false;
-			ColorByPoint = ColorByPoint_DefaultValue = true;
 			PlacementStrategy = PlacementStrategy_DefaultValue = center;
 			Rotation = Rotation_DefaultValue = new WordcloudSeriesRotation();
-			ShowInLegend = ShowInLegend_DefaultValue = false;
 			Spiral = Spiral_DefaultValue = rectangular;
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","sans-serif"},{ "fontWeight", "900"}};
-			Tooltip = Tooltip_DefaultValue = new WordcloudSeriesTooltip();
 			
 		}	
 		
@@ -334,45 +324,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series. .
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WordcloudSeriesStates States { get; set; }
-		private WordcloudSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WordcloudSeriesStickyTracking StickyTracking { get; set; }
-		private WordcloudSeriesStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WordcloudSeriesTooltip Tooltip { get; set; }
-		private WordcloudSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -399,29 +354,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WordcloudSeriesBorderWidth BorderWidth { get; set; }
-		private WordcloudSeriesBorderWidth BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public WordcloudSeriesClip Clip { get; set; }
 		private WordcloudSeriesClip Clip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
-		/// </summary>
-		public WordcloudSeriesColorByPoint ColorByPoint { get; set; }
-		private WordcloudSeriesColorByPoint ColorByPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -439,13 +373,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public WordcloudSeriesShowInLegend ShowInLegend { get; set; }
-		private WordcloudSeriesShowInLegend ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Spiral used for placing a word after the inital position experienced acollision with either another word or the borders.It is possible for users to add their own custom spiralling algorithmsfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
 		/// </summary>
 		public WordcloudSeriesSpiral Spiral { get; set; }
@@ -457,13 +384,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WordcloudSeriesTooltip Tooltip { get; set; }
-		private WordcloudSeriesTooltip Tooltip_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -507,25 +427,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
 			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (Spiral != Spiral_DefaultValue) h.Add("spiral",Spiral);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			
 
 			return h;

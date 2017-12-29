@@ -55,14 +55,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new SolidgaugeSeriesTooltip();
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = SolidgaugeSeriesLinecap.Round;
-			DataLabels = DataLabels_DefaultValue = new SolidgaugeSeriesDataLabels();
-			Tooltip = Tooltip_DefaultValue = new SolidgaugeSeriesTooltip();
-			ShowInLegend = ShowInLegend_DefaultValue = false;
 			Overshoot = Overshoot_DefaultValue = 0;
 			Wrap = Wrap_DefaultValue = true;
 			ColorByPoint = ColorByPoint_DefaultValue = true;
-			Linecap = Linecap_DefaultValue = SolidgaugeSeriesLinecap.Round;
 			Rounded = Rounded_DefaultValue = false;
 			Threshold = Threshold_DefaultValue = null;
 			
@@ -357,34 +352,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public SolidgaugeSeriesLinecap Linecap { get; set; }
-		private SolidgaugeSeriesLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Data labels for the gauge. For gauges, the data labels are enabledby default and shown in a bordered box below the point.
-		/// </summary>
-		public SolidgaugeSeriesDataLabels DataLabels { get; set; }
-		private SolidgaugeSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public SolidgaugeSeriesTooltip Tooltip { get; set; }
-		private SolidgaugeSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display this particular series or series type in thelegend. Defaults to false for gauge series.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Allow the dial to overshoot the end of the perimeter axis by thismany degrees. Say if the gauge axis goes from 0 to 60, a value of100, or 1000, will show 5 degrees beyond the end of the axis.
 		/// </summary>
 		public double? Overshoot { get; set; }
@@ -403,13 +370,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public SolidgaugeSeriesColorByPoint ColorByPoint { get; set; }
 		private SolidgaugeSeriesColorByPoint ColorByPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the strokes of the solid gauge should be `round` or `square`.
-		/// </summary>
-		public SolidgaugeSeriesLinecap Linecap { get; set; }
-		private SolidgaugeSeriesLinecap Linecap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -471,14 +431,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
 			if (Wrap != Wrap_DefaultValue) h.Add("wrap",Wrap);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (Rounded != Rounded_DefaultValue) h.Add("rounded",Rounded);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			

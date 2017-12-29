@@ -68,14 +68,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			PointRange = PointRange_DefaultValue = null;
-			States = States_DefaultValue = new WindbarbSeriesStates();
-			DataLabels = DataLabels_DefaultValue = new WindbarbSeriesDataLabels();
-			SoftThreshold = SoftThreshold_DefaultValue = false;
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new WindbarbSeriesTooltip();
-			Threshold = Threshold_DefaultValue = 0;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			Grouping = Grouping_DefaultValue = true;
@@ -87,8 +80,6 @@ namespace Highsoft.Web.Mvc.Charts
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			LineWidth = LineWidth_DefaultValue = 2;
 			OnSeries = OnSeries_DefaultValue = "";
-			States = States_DefaultValue = new WindbarbSeriesStates();
-			Tooltip = Tooltip_DefaultValue = new WindbarbSeriesTooltip();
 			VectorLength = VectorLength_DefaultValue = 20;
 			YOffset = YOffset_DefaultValue = -20;
 			
@@ -474,59 +465,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public WindbarbSeriesStates States { get; set; }
-		private WindbarbSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WindbarbSeriesDataLabels DataLabels { get; set; }
-		private WindbarbSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
-		/// </summary>
-		public bool? SoftThreshold { get; set; }
-		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WindbarbSeriesStickyTracking StickyTracking { get; set; }
-		private WindbarbSeriesStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WindbarbSeriesTooltip Tooltip { get; set; }
-		private WindbarbSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The Y axis value to serve as the base for the columns, for distinguishingbetween values above and below a threshold. If `null`, the columnsextend from the padding Y axis minimum.
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -607,20 +549,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public WindbarbSeriesStates States { get; set; }
-		private WindbarbSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WindbarbSeriesTooltip Tooltip { get; set; }
-		private WindbarbSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Pixel length of the stems.
 		/// </summary>
 		public WindbarbSeriesVectorLength VectorLength { get; set; }
@@ -696,14 +624,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
@@ -715,8 +636,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (OnSeries != OnSeries_DefaultValue) h.Add("onSeries",OnSeries);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (YOffset != YOffset_DefaultValue) h.Add("yOffset",YOffset);
 			

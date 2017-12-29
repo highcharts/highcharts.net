@@ -63,19 +63,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Zones = Zones_DefaultValue = new List<PlotOptionsTilemapZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = PlotOptionsTilemapLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 0;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsTilemapTooltip();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			BorderWidth = BorderWidth_DefaultValue = 0;
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsTilemapDataLabels();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsTilemapTooltip();
-			States = States_DefaultValue = new PlotOptionsTilemapStates();
 			PointPadding = PointPadding_DefaultValue = 0;
-			Color = Color_DefaultValue = "null";
 			Colsize = Colsize_DefaultValue = 1;
 			Rowsize = Rowsize_DefaultValue = 1;
 			
@@ -426,55 +415,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public PlotOptionsTilemapLinecap Linecap { get; set; }
-		private PlotOptionsTilemapLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the line connecting the data points.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsTilemapFindNearestPointBy FindNearestPointBy { get; set; }
-		private PlotOptionsTilemapFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from <a class="internal">#tooltip</a>.Overridable properties are `headerFormat`, `pointFormat`, `yDecimals`,`xDateFormat`, `yPrefix` and `ySuffix`. Unlike other series, ina scatter plot the series.name by default shows in the headerFormatand point.x and point.y in the pointFormat.
-		/// </summary>
-		public PlotOptionsTilemapTooltip Tooltip { get; set; }
-		private PlotOptionsTilemapTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on a seriesis triggered when the mouse leaves the area around the series' graphor markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Animation is disabled by default on the heatmap series.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width for each heat map item.
-		/// </summary>
-		public PlotOptionsTilemapBorderWidth BorderWidth { get; set; }
-		private PlotOptionsTilemapBorderWidth BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color applied to null points. In styled mode, a general CSS class isapplied instead.
 		/// </summary>
 		public string NullColor { get; set; }
@@ -482,38 +422,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsTilemapDataLabels DataLabels { get; set; }
-		private PlotOptionsTilemapDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsTilemapTooltip Tooltip { get; set; }
-		private PlotOptionsTilemapTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsTilemapStates States { get; set; }
-		private PlotOptionsTilemapStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Padding between the points in the heatmap.
 		/// </summary>
 		public double? PointPadding { get; set; }
 		private double? PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The main color of the series. In heat maps this color is rarely used,as we mostly use the color to denote the value of each point. Unlessoptions are set in the [colorAxis](#colorAxis), the default valueis pulled from the [options.colors](#colors) array.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -587,19 +499,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (NullColor != NullColor_DefaultValue) h.Add("nullColor",NullColor);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
 			if (Rowsize != Rowsize_DefaultValue) h.Add("rowsize",Rowsize);
 			

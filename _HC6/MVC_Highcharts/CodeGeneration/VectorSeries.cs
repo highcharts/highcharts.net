@@ -63,14 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Tooltip = Tooltip_DefaultValue = new VectorSeriesTooltip();
 			Zones = Zones_DefaultValue = new List<VectorSeriesZone>();
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			LineWidth = LineWidth_DefaultValue = 0;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
-			Tooltip = Tooltip_DefaultValue = new VectorSeriesTooltip();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			LineWidth = LineWidth_DefaultValue = 2;
 			RotationOrigin = RotationOrigin_DefaultValue = VectorSeriesRotationOrigin.Center;
-			States = States_DefaultValue = new VectorSeriesStates();
-			Tooltip = Tooltip_DefaultValue = new VectorSeriesTooltip();
 			VectorLength = VectorLength_DefaultValue = 20;
 			
 		}	
@@ -420,59 +413,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width of the line connecting the data points.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public VectorSeriesFindNearestPointBy FindNearestPointBy { get; set; }
-		private VectorSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from <a class="internal">#tooltip</a>.Overridable properties are `headerFormat`, `pointFormat`, `yDecimals`,`xDateFormat`, `yPrefix` and `ySuffix`. Unlike other series, ina scatter plot the series.name by default shows in the headerFormatand point.x and point.y in the pointFormat.
-		/// </summary>
-		public VectorSeriesTooltip Tooltip { get; set; }
-		private VectorSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on a seriesis triggered when the mouse leaves the area around the series' graphor markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The line width for each vector arrow.
-		/// </summary>
-		public VectorSeriesLineWidth LineWidth { get; set; }
-		private VectorSeriesLineWidth LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// What part of the vector it should be rotated around. Can be one of`start`, `center` and `end`. When `start`, the vectors will start fromthe given [x, y] position, and when `end` the vectors will end in the[x, y] position.
 		/// </summary>
 		public VectorSeriesRotationOrigin RotationOrigin { get; set; }
 		private VectorSeriesRotationOrigin RotationOrigin_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public VectorSeriesStates States { get; set; }
-		private VectorSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public VectorSeriesTooltip Tooltip { get; set; }
-		private VectorSeriesTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -539,14 +483,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (RotationOrigin != RotationOrigin_DefaultValue) h.Add("rotationOrigin", Highcharts.FirstCharacterToLower(RotationOrigin.ToString()));
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			
 

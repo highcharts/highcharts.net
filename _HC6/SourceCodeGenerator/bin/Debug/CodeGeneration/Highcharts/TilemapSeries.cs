@@ -70,26 +70,11 @@ namespace Highsoft.Web.Mvc.Charts
 			Zones = Zones_DefaultValue = new List<TilemapSeriesZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = TilemapSeriesLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 0;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
-			Tooltip = Tooltip_DefaultValue = new TilemapSeriesTooltip();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			BorderWidth = BorderWidth_DefaultValue = 0;
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
-			DataLabels = DataLabels_DefaultValue = new TilemapSeriesDataLabels();
-			Tooltip = Tooltip_DefaultValue = new TilemapSeriesTooltip();
-			States = States_DefaultValue = new TilemapSeriesStates();
 			PointPadding = PointPadding_DefaultValue = 0;
-			Color = Color_DefaultValue = "null";
 			Colsize = Colsize_DefaultValue = 1;
 			Rowsize = Rowsize_DefaultValue = 1;
-			States = States_DefaultValue = new TilemapSeriesStates();
-			PointPadding = PointPadding_DefaultValue = 2;
 			TileShape = TileShape_DefaultValue = hexagon;
-			Colsize = Colsize_DefaultValue = 1;
-			Rowsize = Rowsize_DefaultValue = 1;
 			Data = Data_DefaultValue = new List<SeriesTilemapData>();
 			
 		}	
@@ -488,55 +473,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public TilemapSeriesLinecap Linecap { get; set; }
-		private TilemapSeriesLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the line connecting the data points.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TilemapSeriesFindNearestPointBy FindNearestPointBy { get; set; }
-		private TilemapSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from <a class="internal">#tooltip</a>.Overridable properties are `headerFormat`, `pointFormat`, `yDecimals`,`xDateFormat`, `yPrefix` and `ySuffix`. Unlike other series, ina scatter plot the series.name by default shows in the headerFormatand point.x and point.y in the pointFormat.
-		/// </summary>
-		public TilemapSeriesTooltip Tooltip { get; set; }
-		private TilemapSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on a seriesis triggered when the mouse leaves the area around the series' graphor markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Animation is disabled by default on the heatmap series.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width for each heat map item.
-		/// </summary>
-		public TilemapSeriesBorderWidth BorderWidth { get; set; }
-		private TilemapSeriesBorderWidth BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color applied to null points. In styled mode, a general CSS class isapplied instead.
 		/// </summary>
 		public string NullColor { get; set; }
@@ -544,38 +480,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public TilemapSeriesDataLabels DataLabels { get; set; }
-		private TilemapSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TilemapSeriesTooltip Tooltip { get; set; }
-		private TilemapSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TilemapSeriesStates States { get; set; }
-		private TilemapSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Padding between the points in the heatmap.
 		/// </summary>
 		public double? PointPadding { get; set; }
 		private double? PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The main color of the series. In heat maps this color is rarely used,as we mostly use the color to denote the value of each point. Unlessoptions are set in the [colorAxis](#colorAxis), the default valueis pulled from the [options.colors](#colors) array.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -593,38 +501,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public TilemapSeriesStates States { get; set; }
-		private TilemapSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The padding between points in the tilemap.
-		/// </summary>
-		public TilemapSeriesPointPadding PointPadding { get; set; }
-		private TilemapSeriesPointPadding PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The shape of the tiles in the tilemap. Possible values are `hexagon`,`circle`, `diamond`, and `square`.
 		/// </summary>
 		public TilemapSeriesTileShape TileShape { get; set; }
 		private TilemapSeriesTileShape TileShape_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The column size - how many X axis units each column in the tilemapshould span. Works as in [Heatmaps](#plotOptions.heatmap.colsize).
-		/// </summary>
-		public double? Colsize { get; set; }
-		private double? Colsize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The row size - how many Y axis units each tilemap row should span.Analogous to [colsize](#plotOptions.tilemap.colsize).
-		/// </summary>
-		public double? Rowsize { get; set; }
-		private double? Rowsize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -698,26 +578,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (NullColor != NullColor_DefaultValue) h.Add("nullColor",NullColor);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
 			if (Rowsize != Rowsize_DefaultValue) h.Add("rowsize",Rowsize);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (TileShape != TileShape_DefaultValue) h.Add("tileShape",TileShape);
-			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
-			if (Rowsize != Rowsize_DefaultValue) h.Add("rowsize",Rowsize);
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			
 

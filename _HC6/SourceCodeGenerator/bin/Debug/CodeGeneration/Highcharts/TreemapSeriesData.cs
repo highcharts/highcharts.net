@@ -27,7 +27,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Events = Events_DefaultValue = new TreemapSeriesDataEvents();
-			Color = Color_DefaultValue = "";
 			Value = Value_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			
@@ -126,13 +125,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the point. In heat maps the point color is rarely setexplicitly, as we use the color to denote the `value`. Options forthis are set in the [colorAxis](#colorAxis) configuration.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The value of the point, resulting in a color controled by optionsas set in the [colorAxis](#colorAxis) configuration.
 		/// </summary>
 		public double? Value { get; set; }
@@ -163,7 +155,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			

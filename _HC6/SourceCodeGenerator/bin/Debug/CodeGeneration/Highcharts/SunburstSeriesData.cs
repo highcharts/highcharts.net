@@ -27,11 +27,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Events = Events_DefaultValue = new SunburstSeriesDataEvents();
-			Color = Color_DefaultValue = "";
 			Value = Value_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			Parent = Parent_DefaultValue = "undefined";
-			Value = Value_DefaultValue = null;
 			ColorValue = ColorValue_DefaultValue = null;
 			
 		}	
@@ -129,13 +127,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the point. In heat maps the point color is rarely setexplicitly, as we use the color to denote the `value`. Options forthis are set in the [colorAxis](#colorAxis) configuration.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The value of the point, resulting in a color controled by optionsas set in the [colorAxis](#colorAxis) configuration.
 		/// </summary>
 		public double? Value { get; set; }
@@ -154,13 +145,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Parent { get; set; }
 		private string Parent_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The value of the point, resulting in a relative area of the pointin the treemap.
-		/// </summary>
-		public double? Value { get; set; }
-		private double? Value_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -187,11 +171,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
-			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);
 			
 

@@ -45,10 +45,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsSankeyTooltip();
 			MinPointLength = MinPointLength_DefaultValue = 0;
-			States = States_DefaultValue = new PlotOptionsSankeyStates();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsSankeyDataLabels();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsSankeyTooltip();
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			DataGrouping = DataGrouping_DefaultValue = "";
@@ -274,34 +270,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyStates States { get; set; }
-		private PlotOptionsSankeyStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyDataLabels DataLabels { get; set; }
-		private PlotOptionsSankeyDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyStickyTracking StickyTracking { get; set; }
-		private PlotOptionsSankeyStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyTooltip Tooltip { get; set; }
-		private PlotOptionsSankeyTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
 		/// </summary>
 		public bool? ColorByPoint { get; set; }
@@ -357,10 +325,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);

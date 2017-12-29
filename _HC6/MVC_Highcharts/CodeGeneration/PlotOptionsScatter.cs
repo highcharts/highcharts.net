@@ -62,7 +62,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Zones = Zones_DefaultValue = new List<PlotOptionsScatterZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = PlotOptionsScatterLinecap.Round;
 			
 		}	
 		
@@ -401,13 +400,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public PlotOptionsScatterLinecap Linecap { get; set; }
-		private PlotOptionsScatterLinecap Linecap_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -466,7 +458,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			
 
 			return h;

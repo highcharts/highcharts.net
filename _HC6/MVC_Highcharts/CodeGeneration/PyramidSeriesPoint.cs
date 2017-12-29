@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// Events for each single point.
 		/// </summary>
 		public PyramidSeriesPointEvents Events { get; set; }
 		private PyramidSeriesPointEvents Events_DefaultValue { get; set; }

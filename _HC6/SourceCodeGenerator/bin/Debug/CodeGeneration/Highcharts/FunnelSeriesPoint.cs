@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// Events for each single point.
 		/// </summary>
 		public FunnelSeriesPointEvents Events { get; set; }
 		private FunnelSeriesPointEvents Events_DefaultValue { get; set; }

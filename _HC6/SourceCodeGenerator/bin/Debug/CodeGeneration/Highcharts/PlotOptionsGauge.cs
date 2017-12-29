@@ -50,7 +50,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsGaugeTooltip();
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = PlotOptionsGaugeLinecap.Round;
 			
 		}	
 		
@@ -305,13 +304,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public PlotOptionsGaugeLinecap Linecap { get; set; }
-		private PlotOptionsGaugeLinecap Linecap_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -354,7 +346,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			
 
 			return h;

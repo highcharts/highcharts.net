@@ -18,6 +18,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			VerticalAlign = VerticalAlign_DefaultValue = ColumnrangeSeriesDataLabelsVerticalAlign.Bottom;
+			X = X_DefaultValue = 0;
+			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = "5";
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -38,10 +40,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Shape = Shape_DefaultValue = "square";
 			ZIndex = ZIndex_DefaultValue = 6;
 			Filter = Filter_DefaultValue = new ColumnrangeSeriesDataLabelsFilter();
-			XLow = XLow_DefaultValue = 0;
-			XHigh = XHigh_DefaultValue = 0;
-			YLow = YLow_DefaultValue = 16;
-			YHigh = YHigh_DefaultValue = -6;
 			
 		}	
 		
@@ -72,6 +70,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ColumnrangeSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
 		private ColumnrangeSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The x position offset of the label relative to the point.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The y position offset of the label relative to the point.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -212,34 +224,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ColumnrangeSeriesDataLabelsFilter Filter { get; set; }
 		private ColumnrangeSeriesDataLabelsFilter Filter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// X offset of the lower data labels relative to the point value.
-		/// </summary>
-		public double? XLow { get; set; }
-		private double? XLow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// X offset of the higher data labels relative to the point value.
-		/// </summary>
-		public double? XHigh { get; set; }
-		private double? XHigh_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Y offset of the lower data labels relative to the point value.
-		/// </summary>
-		public double? YLow { get; set; }
-		private double? YLow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Y offset of the higher data labels relative to the point value.
-		/// </summary>
-		public double? YHigh { get; set; }
-		private double? YHigh_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -250,6 +234,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -270,10 +256,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
-			if (XLow != XLow_DefaultValue) h.Add("xLow",XLow);
-			if (XHigh != XHigh_DefaultValue) h.Add("xHigh",XHigh);
-			if (YLow != YLow_DefaultValue) h.Add("yLow",YLow);
-			if (YHigh != YHigh_DefaultValue) h.Add("yHigh",YHigh);
 			
 
 			return h;

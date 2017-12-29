@@ -225,7 +225,6 @@
     <Compile Include="CodeGeneration\BarSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\BarSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\BarSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\BarSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\BarSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\BarSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\BarSeriesZone.cs" />
@@ -280,7 +279,6 @@
     <Compile Include="CodeGeneration\BoxplotSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\BoxplotSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\BoxplotSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\BoxplotSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\BoxplotSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\BoxplotSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\BoxplotSeriesZone.cs" />
@@ -335,7 +333,6 @@
     <Compile Include="CodeGeneration\BulletSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\BulletSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\BulletSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\BulletSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\BulletSeriesTargetOptions.cs" />
     <Compile Include="CodeGeneration\BulletSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\BulletSeriesTooltipDateTimeLabelFormats.cs" />
@@ -390,7 +387,6 @@
     <Compile Include="CodeGeneration\ColumnrangeSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\ColumnrangeSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\ColumnrangeSeriesZone.cs" />
@@ -415,7 +411,6 @@
     <Compile Include="CodeGeneration\ColumnSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\ColumnSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\ColumnSeriesZone.cs" />
@@ -1017,7 +1012,6 @@
     <Compile Include="CodeGeneration\Enums\SunburstSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\SunburstSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\SunburstSeriesDataLabelsOverflow.cs" />
-    <Compile Include="CodeGeneration\Enums\SunburstSeriesDataLabelsRotationMode.cs" />
     <Compile Include="CodeGeneration\Enums\SunburstSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\SunburstSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\TilemapSeriesCursor.cs" />
@@ -1167,7 +1161,6 @@
     <Compile Include="CodeGeneration\ErrorbarSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\ErrorbarSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\ErrorbarSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\ErrorbarSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\ErrorbarSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\ErrorbarSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\ErrorbarSeriesZone.cs" />
@@ -1197,7 +1190,6 @@
     <Compile Include="CodeGeneration\FunnelSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\FunnelSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\FunnelSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\FunnelSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\FunnelSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\FunnelSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\GaugeSeries.cs" />
@@ -1247,7 +1239,6 @@
     <Compile Include="CodeGeneration\HeatmapSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\HeatmapSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\HeatmapSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\HeatmapSeriesStatesNormal.cs" />
     <Compile Include="CodeGeneration\HeatmapSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\HeatmapSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\HeatmapSeriesZone.cs" />
@@ -1272,7 +1263,6 @@
     <Compile Include="CodeGeneration\HistogramSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\HistogramSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\HistogramSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\HistogramSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\HistogramSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\HistogramSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\HistogramSeriesZone.cs" />
@@ -1519,7 +1509,6 @@
     <Compile Include="CodeGeneration\PlotOptionsBarStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBarStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBarStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsBarStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBarTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBarTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBarZone.cs" />
@@ -1569,7 +1558,6 @@
     <Compile Include="CodeGeneration\PlotOptionsBoxplotStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBoxplotStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBoxplotStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsBoxplotStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBoxplotTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBoxplotTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBoxplotZone.cs" />
@@ -1619,7 +1607,6 @@
     <Compile Include="CodeGeneration\PlotOptionsBulletStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBulletStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBulletStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsBulletStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBulletTargetOptions.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBulletTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBulletTooltipDateTimeLabelFormats.cs" />
@@ -1653,7 +1640,6 @@
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnrangeStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnrangeZone.cs" />
@@ -1688,7 +1674,6 @@
     <Compile Include="CodeGeneration\PlotOptionsErrorbarStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsErrorbarStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsErrorbarStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsErrorbarStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsErrorbarTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsErrorbarTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsErrorbarZone.cs" />
@@ -1777,7 +1762,6 @@
     <Compile Include="CodeGeneration\PlotOptionsHistogramStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsHistogramStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsHistogramStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsHistogramStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsHistogramTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsHistogramTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsHistogramZone.cs" />
@@ -1901,7 +1885,6 @@
     <Compile Include="CodeGeneration\PlotOptionsPyramidStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsPyramidStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsPyramidStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsPyramidStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsPyramidTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsPyramidTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSankey.cs" />
@@ -1923,7 +1906,6 @@
     <Compile Include="CodeGeneration\PlotOptionsSankeyStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSankeyStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSankeyStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsSankeyStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSankeyTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSankeyTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsScatter.cs" />
@@ -2125,7 +2107,6 @@
     <Compile Include="CodeGeneration\PlotOptionsTilemapStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsTilemapStatesNormal.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapZone.cs" />
@@ -2195,7 +2176,6 @@
     <Compile Include="CodeGeneration\PlotOptionsVariwideStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsVariwideStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsVariwideStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsVariwideStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsVariwideTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsVariwideTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsVariwideZone.cs" />
@@ -2240,7 +2220,6 @@
     <Compile Include="CodeGeneration\PlotOptionsWaterfallStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWaterfallStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWaterfallStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsWaterfallStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWaterfallTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWaterfallTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWaterfallZone.cs" />
@@ -2263,7 +2242,6 @@
     <Compile Include="CodeGeneration\PlotOptionsWindbarbStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWindbarbStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWindbarbStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsWindbarbStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWindbarbTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWindbarbTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWindbarbZone.cs" />
@@ -2284,7 +2262,6 @@
     <Compile Include="CodeGeneration\PlotOptionsWordcloudStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWordcloudStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWordcloudStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsWordcloudStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWordcloudStyle.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWordcloudTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsWordcloudTooltipDateTimeLabelFormats.cs" />
@@ -2310,7 +2287,6 @@
     <Compile Include="CodeGeneration\PlotOptionsXrangeStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsXrangeStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsXrangeStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsXrangeStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsXrangeTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsXrangeTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsXrangeZone.cs" />
@@ -2369,7 +2345,6 @@
     <Compile Include="CodeGeneration\PyramidSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PyramidSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PyramidSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PyramidSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\PyramidSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\PyramidSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\Responsive.cs" />
@@ -2397,7 +2372,6 @@
     <Compile Include="CodeGeneration\SankeySeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\SankeySeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\SankeySeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\SankeySeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\SankeySeriesTooltip.cs" />
     <Compile Include="CodeGeneration\SankeySeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\Scatter3dSeries.cs" />
@@ -2601,13 +2575,11 @@
     <Compile Include="CodeGeneration\TilemapSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\TilemapSeriesStatesHoverHaloAttributes.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesStatesHoverMarkerStates.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\TilemapSeriesStatesNormal.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesZone.cs" />
@@ -2640,7 +2612,6 @@
     <Compile Include="CodeGeneration\TreemapSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\TreemapSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\TreemapSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\TreemapSeriesStatesNormal.cs" />
     <Compile Include="CodeGeneration\TreemapSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\TreemapSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\TreemapSeriesZone.cs" />
@@ -2688,7 +2659,6 @@
     <Compile Include="CodeGeneration\VariwideSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\VariwideSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\VariwideSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\VariwideSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\VariwideSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\VariwideSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\VariwideSeriesZone.cs" />
@@ -2742,7 +2712,6 @@
     <Compile Include="CodeGeneration\WaterfallSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\WaterfallSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\WaterfallSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\WaterfallSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\WaterfallSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\WaterfallSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\WaterfallSeriesZone.cs" />
@@ -2772,7 +2741,6 @@
     <Compile Include="CodeGeneration\WindbarbSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\WindbarbSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\WindbarbSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\WindbarbSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\WindbarbSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\WindbarbSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\WindbarbSeriesZone.cs" />
@@ -2795,7 +2763,6 @@
     <Compile Include="CodeGeneration\WordcloudSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\WordcloudSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesStyle.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesTooltipDateTimeLabelFormats.cs" />
@@ -2839,7 +2806,6 @@
     <Compile Include="CodeGeneration\XrangeSeriesStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\XrangeSeriesStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\XrangeSeriesStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\XrangeSeriesStatesSelect.cs" />
     <Compile Include="CodeGeneration\XrangeSeriesTooltip.cs" />
     <Compile Include="CodeGeneration\XrangeSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\XrangeSeriesZone.cs" />

@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsPyramidPointEvents Events { get; set; }
 		private PlotOptionsPyramidPointEvents Events_DefaultValue { get; set; }

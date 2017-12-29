@@ -14,21 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HeatmapSeriesStates()
 		{
-			Normal = Normal_DefaultValue = new HeatmapSeriesStatesNormal();
 			Hover = Hover_DefaultValue = new HeatmapSeriesStatesHover();
 			
 		}	
 		
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public HeatmapSeriesStatesNormal Normal { get; set; }
-		private HeatmapSeriesStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public HeatmapSeriesStatesHover Hover { get; set; }
 		private HeatmapSeriesStatesHover Hover_DefaultValue { get; set; }
@@ -38,7 +30,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 

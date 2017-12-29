@@ -48,26 +48,17 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PieSeriesTooltip();
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = PieSeriesLinecap.Round;
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Clip = Clip_DefaultValue = false;
-			DataLabels = DataLabels_DefaultValue = new PieSeriesDataLabels();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			Size = Size_DefaultValue = "";
-			ShowInLegend = ShowInLegend_DefaultValue = false;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new PieSeriesTooltip();
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			States = States_DefaultValue = new PieSeriesStates();
 			Colors = Colors_DefaultValue = new List<string>();
 			EndAngle = EndAngle_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
 			MinSize = MinSize_DefaultValue = 80;
 			StartAngle = StartAngle_DefaultValue = 0;
-			Events = Events_DefaultValue = new PieSeriesEvents();
-			Point = Point_DefaultValue = new PieSeriesPoint();
 			Depth = Depth_DefaultValue = 0;
 			
 		}	
@@ -312,13 +303,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public PieSeriesLinecap Linecap { get; set; }
-		private PieSeriesLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The center of the pie chart relative to the plot area. Can be percentagesor pixel values. The default behaviour (as of 3.0) is to centerthe pie so that all slices and data labels are within the plot area.As a consequence, the pie may actually jump around in a chart withdynamic values, as the data labels move. In that case, the centershould be explicitly set, for example to `["50%", "50%"]`.
 		/// </summary>
 		public string[] Center { get; set; }
@@ -330,13 +314,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PieSeriesClip Clip { get; set; }
 		private PieSeriesClip Clip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PieSeriesDataLabels DataLabels { get; set; }
-		private PieSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -354,13 +331,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to display this particular series or series type in thelegend. Since 2.1, pies are not shown in the legend by default.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// If a point is sliced, moved out from the center, how many pixelsshould it be moved?.
 		/// </summary>
 		public double? SlicedOffset { get; set; }
@@ -368,38 +338,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
-		/// </summary>
-		public PieSeriesStickyTracking StickyTracking { get; set; }
-		private PieSeriesStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PieSeriesTooltip Tooltip { get; set; }
-		private PieSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the border surrounding each slice. When `null`, theborder takes the same color as the slice fill. This can be usedtogether with a `borderWidth` to fill drawing gaps created by antialiazingartefacts in borderless pies.In styled mode, the border stroke is given in the `.highcharts-point` class.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PieSeriesStates States { get; set; }
-		private PieSeriesStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -435,20 +377,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? StartAngle { get; set; }
 		private double? StartAngle_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PieSeriesEvents Events { get; set; }
-		private PieSeriesEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PieSeriesPoint Point { get; set; }
-		private PieSeriesPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -496,26 +424,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			
 

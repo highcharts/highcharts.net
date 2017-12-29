@@ -52,22 +52,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new SankeySeriesTooltip();
 			MinPointLength = MinPointLength_DefaultValue = 0;
-			States = States_DefaultValue = new SankeySeriesStates();
-			DataLabels = DataLabels_DefaultValue = new SankeySeriesDataLabels();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new SankeySeriesTooltip();
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			DataGrouping = DataGrouping_DefaultValue = "";
-			ColorByPoint = ColorByPoint_DefaultValue = true;
 			CurveFactor = CurveFactor_DefaultValue = 0.33;
-			DataLabels = DataLabels_DefaultValue = new SankeySeriesDataLabels();
 			LinkOpacity = LinkOpacity_DefaultValue = 0.5;
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			NodePadding = NodePadding_DefaultValue = 10;
-			ShowInLegend = ShowInLegend_DefaultValue = false;
-			States = States_DefaultValue = new SankeySeriesStates();
-			Tooltip = Tooltip_DefaultValue = new SankeySeriesTooltip();
 			
 		}	
 		
@@ -339,34 +330,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public SankeySeriesStates States { get; set; }
-		private SankeySeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public SankeySeriesDataLabels DataLabels { get; set; }
-		private SankeySeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public SankeySeriesStickyTracking StickyTracking { get; set; }
-		private SankeySeriesStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public SankeySeriesTooltip Tooltip { get; set; }
-		private SankeySeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
 		/// </summary>
 		public bool? ColorByPoint { get; set; }
@@ -388,24 +351,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public SankeySeriesColorByPoint ColorByPoint { get; set; }
-		private SankeySeriesColorByPoint ColorByPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Higher numbers makes the links in a sankey diagram render more curved.A `curveFactor` of 0 makes the lines straight.
 		/// </summary>
 		public SankeySeriesCurveFactor CurveFactor { get; set; }
 		private SankeySeriesCurveFactor CurveFactor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the data labels appearing on top of the nodes and links. Forsankey charts, data labels are visible for the nodes by default, but hidden for links. This is controlled by modifying the `nodeFormat`, andthe `format` that applies to links and is an empty string by default.
-		/// </summary>
-		public SankeySeriesDataLabels DataLabels { get; set; }
-		private SankeySeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -427,27 +376,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public SankeySeriesNodePadding NodePadding { get; set; }
 		private SankeySeriesNodePadding NodePadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public SankeySeriesShowInLegend ShowInLegend { get; set; }
-		private SankeySeriesShowInLegend ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public SankeySeriesStates States { get; set; }
-		private SankeySeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public SankeySeriesTooltip Tooltip { get; set; }
-		private SankeySeriesTooltip Tooltip_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -492,22 +420,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (CurveFactor != CurveFactor_DefaultValue) h.Add("curveFactor",CurveFactor);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			
 
 			return h;

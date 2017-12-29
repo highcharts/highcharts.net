@@ -70,15 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Zones = Zones_DefaultValue = new List<PolygonSeriesZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = PolygonSeriesLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 0;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
-			Marker = Marker_DefaultValue = new PolygonSeriesMarker();
-			Tooltip = Tooltip_DefaultValue = new PolygonSeriesTooltip();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Marker = Marker_DefaultValue = new PolygonSeriesMarker();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new PolygonSeriesTooltip();
 			TrackByArea = TrackByArea_DefaultValue = true;
 			
 		}	
@@ -477,69 +468,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public PolygonSeriesLinecap Linecap { get; set; }
-		private PolygonSeriesLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the line connecting the data points.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PolygonSeriesFindNearestPointBy FindNearestPointBy { get; set; }
-		private PolygonSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PolygonSeriesMarker Marker { get; set; }
-		private PolygonSeriesMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from <a class="internal">#tooltip</a>.Overridable properties are `headerFormat`, `pointFormat`, `yDecimals`,`xDateFormat`, `yPrefix` and `ySuffix`. Unlike other series, ina scatter plot the series.name by default shows in the headerFormatand point.x and point.y in the pointFormat.
-		/// </summary>
-		public PolygonSeriesTooltip Tooltip { get; set; }
-		private PolygonSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on a seriesis triggered when the mouse leaves the area around the series' graphor markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PolygonSeriesMarker Marker { get; set; }
-		private PolygonSeriesMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PolygonSeriesStickyTracking StickyTracking { get; set; }
-		private PolygonSeriesStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PolygonSeriesTooltip Tooltip { get; set; }
-		private PolygonSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public PolygonSeriesTrackByArea TrackByArea { get; set; }
@@ -610,15 +538,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			
 

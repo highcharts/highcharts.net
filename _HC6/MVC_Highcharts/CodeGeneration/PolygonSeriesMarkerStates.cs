@@ -15,15 +15,23 @@ namespace Highsoft.Web.Mvc.Charts
 		public PolygonSeriesMarkerStates()
 		{
 			Hover = Hover_DefaultValue = new PolygonSeriesMarkerStatesHover();
+			Select = Select_DefaultValue = new PolygonSeriesMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// The hover state for a single point marker.
 		/// </summary>
 		public PolygonSeriesMarkerStatesHover Hover { get; set; }
 		private PolygonSeriesMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
+		/// </summary>
+		public PolygonSeriesMarkerStatesSelect Select { get; set; }
+		private PolygonSeriesMarkerStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

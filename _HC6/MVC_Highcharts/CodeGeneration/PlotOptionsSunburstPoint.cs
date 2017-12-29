@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// Events for each single point.
 		/// </summary>
 		public PlotOptionsSunburstPointEvents Events { get; set; }
 		private PlotOptionsSunburstPointEvents Events_DefaultValue { get; set; }

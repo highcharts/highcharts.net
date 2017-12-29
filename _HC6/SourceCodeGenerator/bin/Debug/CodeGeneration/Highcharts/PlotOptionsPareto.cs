@@ -48,7 +48,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsParetoTooltip();
 			ConnectEnds = ConnectEnds_DefaultValue = "";
-			Linecap = Linecap_DefaultValue = PlotOptionsParetoLinecap.Round;
 			
 		}	
 		
@@ -289,13 +288,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public PlotOptionsParetoLinecap Linecap { get; set; }
-		private PlotOptionsParetoLinecap Linecap_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -336,7 +328,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			
 
 			return h;

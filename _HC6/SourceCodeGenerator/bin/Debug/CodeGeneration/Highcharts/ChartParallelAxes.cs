@@ -68,21 +68,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Units = Units_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = null;
-			EndOnTick = EndOnTick_DefaultValue = true;
-			TickPixelInterval = TickPixelInterval_DefaultValue = 72;
-			ShowLastLabel = ShowLastLabel_DefaultValue = true;
-			Labels = Labels_DefaultValue = new ChartParallelAxesLabels();
-			MaxPadding = MaxPadding_DefaultValue = 0.05;
-			MinPadding = MinPadding_DefaultValue = 0.05;
-			StartOnTick = StartOnTick_DefaultValue = true;
-			Title = Title_DefaultValue = new ChartParallelAxesTitle();
-			LineWidth = LineWidth_DefaultValue = 0;
-			Opposite = Opposite_DefaultValue = false;
-			LineColor = LineColor_DefaultValue = "";
-			Min = Min_DefaultValue = "";
-			Max = Max_DefaultValue = "";
 			ReversedStacks = ReversedStacks_DefaultValue = true;
-			TickWidth = TickWidth_DefaultValue = 0;
 			
 		}	
 		
@@ -466,108 +452,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesEndOnTick EndOnTick { get; set; }
-		private ChartParallelAxesEndOnTick EndOnTick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesTickPixelInterval TickPixelInterval { get; set; }
-		private ChartParallelAxesTickPixelInterval TickPixelInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesShowLastLabel ShowLastLabel { get; set; }
-		private ChartParallelAxesShowLastLabel ShowLastLabel_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesLabels Labels { get; set; }
-		private ChartParallelAxesLabels Labels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
-		/// </summary>
-		public ChartParallelAxesMaxPadding MaxPadding { get; set; }
-		private ChartParallelAxesMaxPadding MaxPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
-		/// </summary>
-		public ChartParallelAxesMinPadding MinPadding { get; set; }
-		private ChartParallelAxesMinPadding MinPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.
-		/// </summary>
-		public ChartParallelAxesStartOnTick StartOnTick { get; set; }
-		private ChartParallelAxesStartOnTick StartOnTick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesTitle Title { get; set; }
-		private ChartParallelAxesTitle Title_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesLineWidth LineWidth { get; set; }
-		private ChartParallelAxesLineWidth LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesOpposite Opposite { get; set; }
-		private ChartParallelAxesOpposite Opposite_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesLineColor LineColor { get; set; }
-		private ChartParallelAxesLineColor LineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesMin Min { get; set; }
-		private ChartParallelAxesMin Min_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesMax Max { get; set; }
-		private ChartParallelAxesMax Max_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// If `true`, the first series in a stack will be drawn on top in apositive, non-reversed Y axis. If `false`, the first series is inthe base of the stack.
 		/// </summary>
 		public bool? ReversedStacks { get; set; }
 		private bool? ReversedStacks_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel width of the major tick marks.
-		/// </summary>
-		public double? TickWidth { get; set; }
-		private double? TickWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -628,21 +516,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Units != Units_DefaultValue) h.Add("units",Units);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
-			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
-			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
-			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
-			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
-			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
-			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (Min != Min_DefaultValue) h.Add("min",Min);
-			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
-			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			
 
 			return h;

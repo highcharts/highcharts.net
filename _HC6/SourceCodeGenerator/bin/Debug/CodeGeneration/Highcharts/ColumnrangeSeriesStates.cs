@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColumnrangeSeriesStates()
 		{
-			Hover = Hover_DefaultValue = "";
+			Hover = Hover_DefaultValue = new ColumnrangeSeriesStatesHover();
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public ColumnrangeSeriesStatesHover Hover { get; set; }
 		private ColumnrangeSeriesStatesHover Hover_DefaultValue { get; set; }
@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 
 			return h;

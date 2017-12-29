@@ -8,7 +8,6 @@ namespace Highsoft.Web.Mvc.Charts
     public enum BubbleSeriesLinecap
     {
         Round, 
-		Butt, 
 		Square
     }
 }

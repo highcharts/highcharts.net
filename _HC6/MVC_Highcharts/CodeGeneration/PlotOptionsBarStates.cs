@@ -15,23 +15,15 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsBarStates()
 		{
 			Hover = Hover_DefaultValue = new PlotOptionsBarStatesHover();
-			Select = Select_DefaultValue = new PlotOptionsBarStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// Options for the hovered point. These settings override the normalstate options when a point is moused over or touched.
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsBarStatesHover Hover { get; set; }
 		private PlotOptionsBarStatesHover Hover_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the selected point. These settings override the normalstate options when a point is selected.
-		/// </summary>
-		public PlotOptionsBarStatesSelect Select { get; set; }
-		private PlotOptionsBarStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -39,7 +31,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
-			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

@@ -57,22 +57,13 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
-			States = States_DefaultValue = new XrangeSeriesStates();
-			DataLabels = DataLabels_DefaultValue = new XrangeSeriesDataLabels();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new XrangeSeriesTooltip();
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
 			DataGrouping = DataGrouping_DefaultValue = "";
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
-			ColorByPoint = ColorByPoint_DefaultValue = true;
-			DataLabels = DataLabels_DefaultValue = new XrangeSeriesDataLabels();
-			Tooltip = Tooltip_DefaultValue = new XrangeSeriesTooltip();
-			BorderRadius = BorderRadius_DefaultValue = 3;
 			PartialFill = PartialFill_DefaultValue = new XrangeSeriesPartialFill();
 			
 		}	
@@ -380,45 +371,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public XrangeSeriesStates States { get; set; }
-		private XrangeSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public XrangeSeriesDataLabels DataLabels { get; set; }
-		private XrangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public XrangeSeriesStickyTracking StickyTracking { get; set; }
-		private XrangeSeriesStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public XrangeSeriesTooltip Tooltip { get; set; }
-		private XrangeSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -461,34 +417,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? GroupZPadding { get; set; }
 		private double? GroupZPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// In an X-range series, this option makes all points of the same Y-axiscategory the same color.
-		/// </summary>
-		public XrangeSeriesColorByPoint ColorByPoint { get; set; }
-		private XrangeSeriesColorByPoint ColorByPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public XrangeSeriesDataLabels DataLabels { get; set; }
-		private XrangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public XrangeSeriesTooltip Tooltip { get; set; }
-		private XrangeSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public XrangeSeriesBorderRadius BorderRadius { get; set; }
-		private XrangeSeriesBorderRadius BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -545,22 +473,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
 			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
 			
 

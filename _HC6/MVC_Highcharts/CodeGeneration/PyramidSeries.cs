@@ -48,38 +48,22 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PyramidSeriesTooltip();
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = PyramidSeriesLinecap.Round;
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Clip = Clip_DefaultValue = false;
-			DataLabels = DataLabels_DefaultValue = new PyramidSeriesDataLabels();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
-			ShowInLegend = ShowInLegend_DefaultValue = false;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new PyramidSeriesTooltip();
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			States = States_DefaultValue = new PyramidSeriesStates();
 			Colors = Colors_DefaultValue = new List<string>();
 			EndAngle = EndAngle_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
 			MinSize = MinSize_DefaultValue = 80;
 			StartAngle = StartAngle_DefaultValue = 0;
-			Events = Events_DefaultValue = new PyramidSeriesEvents();
-			Point = Point_DefaultValue = new PyramidSeriesPoint();
 			Depth = Depth_DefaultValue = 0;
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Width = Width_DefaultValue = null;
 			NeckWidth = NeckWidth_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			NeckHeight = NeckHeight_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = false;
-			DataLabels = DataLabels_DefaultValue = new PyramidSeriesDataLabels();
-			States = States_DefaultValue = new PyramidSeriesStates();
-			NeckWidth = NeckWidth_DefaultValue = "0%";
-			NeckHeight = NeckHeight_DefaultValue = "0%";
-			Reversed = Reversed_DefaultValue = true;
 			
 		}	
 		
@@ -323,13 +307,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public PyramidSeriesLinecap Linecap { get; set; }
-		private PyramidSeriesLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The center of the pie chart relative to the plot area. Can be percentagesor pixel values. The default behaviour (as of 3.0) is to centerthe pie so that all slices and data labels are within the plot area.As a consequence, the pie may actually jump around in a chart withdynamic values, as the data labels move. In that case, the centershould be explicitly set, for example to `["50%", "50%"]`.
 		/// </summary>
 		public string[] Center { get; set; }
@@ -344,24 +321,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PyramidSeriesDataLabels DataLabels { get; set; }
-		private PyramidSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Equivalent to [chart.ignoreHiddenSeries](#chart.ignoreHiddenSeries),this option tells whether the series shall be redrawn as if thehidden point were `null`.The default value changed from `false` to `true` with Highcharts3.0.
 		/// </summary>
 		public bool? IgnoreHiddenPoint { get; set; }
 		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display this particular series or series type in thelegend. Since 2.1, pies are not shown in the legend by default.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -372,38 +335,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
-		/// </summary>
-		public PyramidSeriesStickyTracking StickyTracking { get; set; }
-		private PyramidSeriesStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PyramidSeriesTooltip Tooltip { get; set; }
-		private PyramidSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the border surrounding each slice. When `null`, theborder takes the same color as the slice fill. This can be usedtogether with a `borderWidth` to fill drawing gaps created by antialiazingartefacts in borderless pies.In styled mode, the border stroke is given in the `.highcharts-point` class.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PyramidSeriesStates States { get; set; }
-		private PyramidSeriesStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -442,38 +377,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PyramidSeriesEvents Events { get; set; }
-		private PyramidSeriesEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PyramidSeriesPoint Point { get; set; }
-		private PyramidSeriesPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The thickness of a 3D pie. Requires `highcharts-3d.js`
 		/// </summary>
 		public double? Depth { get; set; }
 		private double? Depth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Initial animation is by default disabled for the funnel chart.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The center of the series. By default, it is centered in the middleof the plot area, so it fills the plot area height.
-		/// </summary>
-		public string[] Center { get; set; }
-		private string[] Center_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -506,41 +413,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		/// <summary>
 		/// A reversed funnel has the widest area down. A reversed funnel withno neck width and neck height is a pyramid.
-		/// </summary>
-		public bool? Reversed { get; set; }
-		private bool? Reversed_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PyramidSeriesDataLabels DataLabels { get; set; }
-		private PyramidSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series states.
-		/// </summary>
-		public PyramidSeriesStates States { get; set; }
-		private PyramidSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pyramid neck width is zero by default, as opposed to the funnel, which shares the same layout logic.
-		/// </summary>
-		public string NeckWidth { get; set; }
-		private string NeckWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pyramid neck width is zero by default, as opposed to the funnel, which shares the same layout logic.
-		/// </summary>
-		public string NeckHeight { get; set; }
-		private string NeckHeight_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pyramid is reversed by default, as opposed to the funnel, whichshares the layout engine, and is not reversed.
 		/// </summary>
 		public bool? Reversed { get; set; }
 		private bool? Reversed_DefaultValue { get; set; }
@@ -584,36 +456,20 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
-			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
 			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			

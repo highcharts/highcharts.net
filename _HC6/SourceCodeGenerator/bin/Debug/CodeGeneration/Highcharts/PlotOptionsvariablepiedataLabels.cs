@@ -14,17 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVariablepieDataLabels()
 		{
-			Distance = Distance_DefaultValue = 30;
-			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
-			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
-			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
-			SoftConnector = SoftConnector_DefaultValue = null;
+			Align = Align_DefaultValue = PlotOptionsVariablepieDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsVariablepieDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = "5";
+			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
@@ -48,38 +45,10 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The distance of the data label from the pie's edge. Negative numbersput the data label on top of the pie slices. Connectors are onlyshown for data labels outside the pie.
+		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the [inside](#plotOptions.column.dataLabels.inside) option. Can be one of "left", "center"or "right".
 		/// </summary>
-		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the line connecting the data label to the pie slice.The default color is the same as the point's color.In styled mode, the connector stroke is given in the`.highcharts-data-label-connector` class.
-		/// </summary>
-		public string ConnectorColor { get; set; }
-		private string ConnectorColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The distance from the data label to the connector.
-		/// </summary>
-		public double? ConnectorPadding { get; set; }
-		private double? ConnectorPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the line connecting the data label to the pie slice.In styled mode, the connector stroke width is given in the`.highcharts-data-label-connector` class.
-		/// </summary>
-		public double? ConnectorWidth { get; set; }
-		private double? ConnectorWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to render the connector as a soft arc or a line with sharpbreak.
-		/// </summary>
-		public double? SoftConnector { get; set; }
-		private double? SoftConnector_DefaultValue { get; set; }
+		public PlotOptionsVariablepieDataLabelsAlign Align { get; set; }
+		private PlotOptionsVariablepieDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -122,6 +91,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Padding { get; set; }
 		private string Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to allow data labels to overlap. To make the labels lesssensitive for overlapping, the [dataLabels.padding](#plotOptions.series.dataLabels.padding) can be set to 0.
+		/// </summary>
+		public bool? AllowOverlap { get; set; }
+		private bool? AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -254,17 +230,14 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
-			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
-			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
-			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);

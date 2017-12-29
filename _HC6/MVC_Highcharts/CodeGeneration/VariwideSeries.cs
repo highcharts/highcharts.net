@@ -69,24 +69,14 @@ namespace Highsoft.Web.Mvc.Charts
 			GroupPadding = GroupPadding_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
-			CropThreshold = CropThreshold_DefaultValue = 50;
 			PointRange = PointRange_DefaultValue = null;
-			States = States_DefaultValue = new VariwideSeriesStates();
-			DataLabels = DataLabels_DefaultValue = new VariwideSeriesDataLabels();
-			SoftThreshold = SoftThreshold_DefaultValue = false;
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new VariwideSeriesTooltip();
-			Threshold = Threshold_DefaultValue = 0;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			Grouping = Grouping_DefaultValue = true;
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
 			DataGrouping = DataGrouping_DefaultValue = "";
-			PointPadding = PointPadding_DefaultValue = 0;
-			GroupPadding = GroupPadding_DefaultValue = 0;
 			
 		}	
 		
@@ -477,13 +467,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series. .
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The X axis range that each point is valid for. This determines thewidth of the column. On a categorized axis, the range will be 1by default (one category unit). On linear and datetime axes, therange will be computed as the distance between the two closest datapoints.The default `null` means it is computed automatically, but this optioncan be used to override the automatic value.
 		/// </summary>
 		public double? PointRange { get; set; }
@@ -491,59 +474,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public VariwideSeriesStates States { get; set; }
-		private VariwideSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public VariwideSeriesDataLabels DataLabels { get; set; }
-		private VariwideSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
-		/// </summary>
-		public bool? SoftThreshold { get; set; }
-		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public VariwideSeriesStickyTracking StickyTracking { get; set; }
-		private VariwideSeriesStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public VariwideSeriesTooltip Tooltip { get; set; }
-		private VariwideSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The Y axis value to serve as the base for the columns, for distinguishingbetween values above and below a threshold. If `null`, the columnsextend from the padding Y axis minimum.
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -586,20 +520,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public VariwideSeriesDataGrouping DataGrouping { get; set; }
 		private VariwideSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// In a variwide chart, the point padding is 0 in order to express the horizontal stacking of items.
-		/// </summary>
-		public VariwideSeriesPointPadding PointPadding { get; set; }
-		private VariwideSeriesPointPadding PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// In a variwide chart, the group padding is 0 in order to express the horizontal stacking of items.
-		/// </summary>
-		public VariwideSeriesGroupPadding GroupPadding { get; set; }
-		private VariwideSeriesGroupPadding GroupPadding_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -665,24 +585,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
 			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			
 
 			return h;

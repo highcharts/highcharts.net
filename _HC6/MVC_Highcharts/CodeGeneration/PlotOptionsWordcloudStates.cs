@@ -15,23 +15,15 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsWordcloudStates()
 		{
 			Hover = Hover_DefaultValue = new PlotOptionsWordcloudStatesHover();
-			Select = Select_DefaultValue = new PlotOptionsWordcloudStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// Options for the hovered point. These settings override the normalstate options when a point is moused over or touched.
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsWordcloudStatesHover Hover { get; set; }
 		private PlotOptionsWordcloudStatesHover Hover_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the selected point. These settings override the normalstate options when a point is selected.
-		/// </summary>
-		public PlotOptionsWordcloudStatesSelect Select { get; set; }
-		private PlotOptionsWordcloudStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -39,7 +31,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
-			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

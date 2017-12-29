@@ -71,14 +71,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Zones = Zones_DefaultValue = new List<TreemapSeriesZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = TreemapSeriesLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 0;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
-			Tooltip = Tooltip_DefaultValue = new TreemapSeriesTooltip();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			ShowInLegend = ShowInLegend_DefaultValue = false;
-			DataLabels = DataLabels_DefaultValue = new TreemapSeriesDataLabels();
-			Tooltip = Tooltip_DefaultValue = new TreemapSeriesTooltip();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = TreemapSeriesLayoutAlgorithm.SliceAndDice;
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = TreemapSeriesLayoutStartingDirection.Vertical;
@@ -86,11 +78,8 @@ namespace Highsoft.Web.Mvc.Charts
 			LevelIsConstant = LevelIsConstant_DefaultValue = true;
 			DrillUpButton = DrillUpButton_DefaultValue = new TreemapSeriesDrillUpButton();
 			BorderColor = BorderColor_DefaultValue = "#e6e6e6";
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			Opacity = Opacity_DefaultValue = null;
-			States = States_DefaultValue = new TreemapSeriesStates();
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
-			CropThreshold = CropThreshold_DefaultValue = 300;
 			InteractByLeaf = InteractByLeaf_DefaultValue = "";
 			SortIndex = SortIndex_DefaultValue = null;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
@@ -500,62 +489,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public TreemapSeriesLinecap Linecap { get; set; }
-		private TreemapSeriesLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the line connecting the data points.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TreemapSeriesFindNearestPointBy FindNearestPointBy { get; set; }
-		private TreemapSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from <a class="internal">#tooltip</a>.Overridable properties are `headerFormat`, `pointFormat`, `yDecimals`,`xDateFormat`, `yPrefix` and `ySuffix`. Unlike other series, ina scatter plot the series.name by default shows in the headerFormatand point.x and point.y in the pointFormat.
-		/// </summary>
-		public TreemapSeriesTooltip Tooltip { get; set; }
-		private TreemapSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on a seriesis triggered when the mouse leaves the area around the series' graphor markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display this series type or specific series item in thelegend.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TreemapSeriesDataLabels DataLabels { get; set; }
-		private TreemapSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TreemapSeriesTooltip Tooltip { get; set; }
-		private TreemapSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to ignore hidden points when the layout algorithm runs.If `false`, hidden points will leave open spaces.
 		/// </summary>
 		public bool? IgnoreHiddenPoint { get; set; }
@@ -605,13 +538,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width of the border surrounding each tree map item.
-		/// </summary>
-		public TreemapSeriesBorderWidth BorderWidth { get; set; }
-		private TreemapSeriesBorderWidth BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The opacity of a point in treemap. When a point has children, thevisibility of the children is determined by the opacity.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -619,24 +545,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public TreemapSeriesStates States { get; set; }
-		private TreemapSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When enabled the user can click on a point which is a parent andzoom in on its children.
 		/// </summary>
 		public bool? AllowDrillToNode { get; set; }
 		private bool? AllowDrillToNode_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -739,14 +651,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
 			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
@@ -754,11 +658,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
 			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (InteractByLeaf != InteractByLeaf_DefaultValue) h.Add("interactByLeaf",InteractByLeaf);
 			if (SortIndex != SortIndex_DefaultValue) h.Add("sortIndex",SortIndex);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);

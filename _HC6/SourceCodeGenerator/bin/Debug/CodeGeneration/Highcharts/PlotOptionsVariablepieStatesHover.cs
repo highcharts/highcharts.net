@@ -14,8 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVariablepieStatesHover()
 		{
-			Brightness = Brightness_DefaultValue = null;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
 			Marker = Marker_DefaultValue = new PlotOptionsVariablepieStatesHoverMarker();
@@ -25,20 +23,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.In styled mode, the hover brightness is by default replacedby a fill-opacity given in the `.highcharts-point-hover` class.
-		/// </summary>
-		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Animation setting for hovering the graph in line-type series.
@@ -86,8 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());

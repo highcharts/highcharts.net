@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsSunburstStatesHover Hover { get; set; }
 		private PlotOptionsSunburstStatesHover Hover_DefaultValue { get; set; }

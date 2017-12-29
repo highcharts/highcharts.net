@@ -219,14 +219,18 @@ public class HighchartsGenerator
             if (baseClass.FullName == "series")
             {
                 //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
-                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title)  && !p.Extends.Any(q => q == "series")).ToList());
+                var children = baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !p.Extends.Any(q => q == "series"));
+                addedChildren.AddRange(children.Where(p => !addedChildren.Any(x => x.Title == p.Title)));
 
                 //do usuniecią po naprawie jsona
                 addedChildren = addedChildren.Where(p => p.Title != "wordcloud" && p.Title != "sunburst").ToList();
             }
             else
+            {
                 //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
-                addedChildren.AddRange(baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) ));
+                var children = baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title));
+                addedChildren.AddRange(children.Where(p => !addedChildren.Any(x => x.Title == p.Title)));
+            }
         }
 
         return addedChildren;

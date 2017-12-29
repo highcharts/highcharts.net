@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
 		public TilemapSeriesStatesHover Hover { get; set; }
 		private TilemapSeriesStatesHover Hover_DefaultValue { get; set; }

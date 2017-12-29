@@ -55,12 +55,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new GaugeSeriesTooltip();
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = GaugeSeriesLinecap.Round;
-			DataLabels = DataLabels_DefaultValue = new GaugeSeriesDataLabels();
 			Dial = Dial_DefaultValue = new GaugeSeriesDial();
 			Pivot = Pivot_DefaultValue = new GaugeSeriesPivot();
-			Tooltip = Tooltip_DefaultValue = new GaugeSeriesTooltip();
-			ShowInLegend = ShowInLegend_DefaultValue = false;
 			Overshoot = Overshoot_DefaultValue = 0;
 			Wrap = Wrap_DefaultValue = true;
 			
@@ -355,20 +351,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public GaugeSeriesLinecap Linecap { get; set; }
-		private GaugeSeriesLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Data labels for the gauge. For gauges, the data labels are enabledby default and shown in a bordered box below the point.
-		/// </summary>
-		public GaugeSeriesDataLabels DataLabels { get; set; }
-		private GaugeSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Options for the dial or arrow pointer of the gauge.In styled mode, the dial is styled with the `.highcharts-gauge-series .highcharts-dial` rule.
 		/// </summary>
 		public GaugeSeriesDial Dial { get; set; }
@@ -380,20 +362,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public GaugeSeriesPivot Pivot { get; set; }
 		private GaugeSeriesPivot Pivot_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public GaugeSeriesTooltip Tooltip { get; set; }
-		private GaugeSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display this particular series or series type in thelegend. Defaults to false for gauge series.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -455,12 +423,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Dial.IsDirty()) h.Add("dial",Dial.ToHashtable());
 			if (Pivot.IsDirty()) h.Add("pivot",Pivot.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
 			if (Wrap != Wrap_DefaultValue) h.Add("wrap",Wrap);
 			

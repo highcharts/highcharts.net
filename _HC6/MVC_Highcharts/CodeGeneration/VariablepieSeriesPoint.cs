@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// Events for each single point.
 		/// </summary>
 		public VariablepieSeriesPointEvents Events { get; set; }
 		private VariablepieSeriesPointEvents Events_DefaultValue { get; set; }

@@ -14,14 +14,12 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ArearangeSeriesDataLabels()
 		{
-			XLow = XLow_DefaultValue = 0;
-			XHigh = XHigh_DefaultValue = 0;
-			YLow = YLow_DefaultValue = 16;
-			YHigh = YHigh_DefaultValue = -6;
 			Align = Align_DefaultValue = ArearangeSeriesDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
 			VerticalAlign = VerticalAlign_DefaultValue = ArearangeSeriesDataLabelsVerticalAlign.Bottom;
+			X = X_DefaultValue = 0;
+			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = "5";
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -45,34 +43,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// X offset of the lower data labels relative to the point value.
-		/// </summary>
-		public double? XLow { get; set; }
-		private double? XLow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// X offset of the higher data labels relative to the point value.
-		/// </summary>
-		public double? XHigh { get; set; }
-		private double? XHigh_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Y offset of the lower data labels relative to the point value.
-		/// </summary>
-		public double? YLow { get; set; }
-		private double? YLow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Y offset of the higher data labels relative to the point value.
-		/// </summary>
-		public double? YHigh { get; set; }
-		private double? YHigh_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the [inside](#plotOptions.column.dataLabels.inside) option. Can be one of "left", "center"or "right".
@@ -100,6 +70,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ArearangeSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
 		private ArearangeSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The x position offset of the label relative to the point.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The y position offset of the label relative to the point.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -246,14 +230,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (XLow != XLow_DefaultValue) h.Add("xLow",XLow);
-			if (XHigh != XHigh_DefaultValue) h.Add("xHigh",XHigh);
-			if (YLow != YLow_DefaultValue) h.Add("yLow",YLow);
-			if (YHigh != YHigh_DefaultValue) h.Add("yHigh",YHigh);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);

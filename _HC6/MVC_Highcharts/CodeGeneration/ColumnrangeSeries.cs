@@ -66,14 +66,8 @@ namespace Highsoft.Web.Mvc.Charts
 			GroupPadding = GroupPadding_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
-			CropThreshold = CropThreshold_DefaultValue = 50;
 			PointRange = PointRange_DefaultValue = null;
-			States = States_DefaultValue = new ColumnrangeSeriesStates();
-			DataLabels = DataLabels_DefaultValue = new ColumnrangeSeriesDataLabels();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new ColumnrangeSeriesTooltip();
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			Grouping = Grouping_DefaultValue = true;
@@ -84,10 +78,7 @@ namespace Highsoft.Web.Mvc.Charts
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
-			PointRange = PointRange_DefaultValue = "";
 			Marker = Marker_DefaultValue = "";
-			States = States_DefaultValue = new ColumnrangeSeriesStates();
-			DataLabels = DataLabels_DefaultValue = new ColumnrangeSeriesDataLabels();
 			
 		}	
 		
@@ -457,13 +448,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series. .
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The X axis range that each point is valid for. This determines thewidth of the column. On a categorized axis, the range will be 1by default (one category unit). On linear and datetime axes, therange will be computed as the distance between the two closest datapoints.The default `null` means it is computed automatically, but this optioncan be used to override the automatic value.
 		/// </summary>
 		public double? PointRange { get; set; }
@@ -471,45 +455,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public ColumnrangeSeriesStates States { get; set; }
-		private ColumnrangeSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ColumnrangeSeriesDataLabels DataLabels { get; set; }
-		private ColumnrangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ColumnrangeSeriesStickyTracking StickyTracking { get; set; }
-		private ColumnrangeSeriesStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ColumnrangeSeriesTooltip Tooltip { get; set; }
-		private ColumnrangeSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -585,29 +534,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public ColumnrangeSeriesPointRange PointRange { get; set; }
-		private ColumnrangeSeriesPointRange PointRange_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public ColumnrangeSeriesMarker Marker { get; set; }
 		private ColumnrangeSeriesMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ColumnrangeSeriesStates States { get; set; }
-		private ColumnrangeSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Extended data labels for range series types. Range series data labelshave no `x` and `y` options. Instead, they have `xLow`, `xHigh`,`yLow` and `yHigh` options to allow the higher and lower data labelsets individually.
-		/// </summary>
-		public ColumnrangeSeriesDataLabels DataLabels { get; set; }
-		private ColumnrangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -670,14 +598,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
@@ -688,10 +610,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
-			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			
 
 			return h;

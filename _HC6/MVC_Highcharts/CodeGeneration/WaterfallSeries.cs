@@ -71,16 +71,8 @@ namespace Highsoft.Web.Mvc.Charts
 			GroupPadding = GroupPadding_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
-			CropThreshold = CropThreshold_DefaultValue = 50;
 			PointRange = PointRange_DefaultValue = null;
-			States = States_DefaultValue = new WaterfallSeriesStates();
-			DataLabels = DataLabels_DefaultValue = new WaterfallSeriesDataLabels();
-			SoftThreshold = SoftThreshold_DefaultValue = false;
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new WaterfallSeriesTooltip();
-			Threshold = Threshold_DefaultValue = 0;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			Grouping = Grouping_DefaultValue = true;
@@ -91,12 +83,9 @@ namespace Highsoft.Web.Mvc.Charts
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
-			DataLabels = DataLabels_DefaultValue = new WaterfallSeriesDataLabels();
 			LineWidth = LineWidth_DefaultValue = 1;
 			LineColor = LineColor_DefaultValue = "#333333";
 			DashStyle = DashStyle_DefaultValue = "Dot";
-			BorderColor = BorderColor_DefaultValue = "#333333";
-			States = States_DefaultValue = new WaterfallSeriesStates();
 			UpColor = UpColor_DefaultValue = "";
 			
 		}	
@@ -502,13 +491,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series. .
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The X axis range that each point is valid for. This determines thewidth of the column. On a categorized axis, the range will be 1by default (one category unit). On linear and datetime axes, therange will be computed as the distance between the two closest datapoints.The default `null` means it is computed automatically, but this optioncan be used to override the automatic value.
 		/// </summary>
 		public double? PointRange { get; set; }
@@ -516,59 +498,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public WaterfallSeriesStates States { get; set; }
-		private WaterfallSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WaterfallSeriesDataLabels DataLabels { get; set; }
-		private WaterfallSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
-		/// </summary>
-		public bool? SoftThreshold { get; set; }
-		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WaterfallSeriesStickyTracking StickyTracking { get; set; }
-		private WaterfallSeriesStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WaterfallSeriesTooltip Tooltip { get; set; }
-		private WaterfallSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The Y axis value to serve as the base for the columns, for distinguishingbetween values above and below a threshold. If `null`, the columnsextend from the padding Y axis minimum.
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -642,13 +575,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public WaterfallSeriesDataLabels DataLabels { get; set; }
-		private WaterfallSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The width of the line connecting waterfall columns.
 		/// </summary>
 		public double? LineWidth { get; set; }
@@ -667,20 +593,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string DashStyle { get; set; }
 		private string DashStyle_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the border of each waterfall column.In styled mode, the border stroke can be set with the `.highcharts-point` class.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WaterfallSeriesStates States { get; set; }
-		private WaterfallSeriesStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -755,16 +667,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
@@ -775,12 +679,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (UpColor != UpColor_DefaultValue) h.Add("upColor",UpColor);
 			
 

@@ -62,20 +62,11 @@ namespace Highsoft.Web.Mvc.Charts
 			Zones = Zones_DefaultValue = new List<PlotOptionsAreasplinerangeZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Linecap = Linecap_DefaultValue = PlotOptionsAreasplinerangeLinecap.Round;
-			SoftThreshold = SoftThreshold_DefaultValue = false;
-			Threshold = Threshold_DefaultValue = 0;
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "null";
 			NegativeFillColor = NegativeFillColor_DefaultValue = "";
 			TrackByArea = TrackByArea_DefaultValue = false;
-			LineWidth = LineWidth_DefaultValue = 1;
-			Threshold = Threshold_DefaultValue = null;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsAreasplinerangeTooltip();
-			TrackByArea = TrackByArea_DefaultValue = true;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsAreasplinerangeDataLabels();
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			
 		}	
 		
@@ -417,27 +408,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
-		/// </summary>
-		public PlotOptionsAreasplinerangeLinecap Linecap { get; set; }
-		private PlotOptionsAreasplinerangeLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
-		/// </summary>
-		public bool? SoftThreshold { get; set; }
-		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The Y axis value to serve as the base for the area, for distinguishingbetween values above and below a threshold. If `null`, the areabehaves like a line series with fill between the graph and the Yaxis minimum.
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.
 		/// </summary>
 		public object FillColor { get; set; }
@@ -470,48 +440,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? TrackByArea { get; set; }
 		private bool? TrackByArea_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel width of the arearange graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsAreasplinerangeThreshold Threshold { get; set; }
-		private PlotOptionsAreasplinerangeThreshold Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsAreasplinerangeTooltip Tooltip { get; set; }
-		private PlotOptionsAreasplinerangeTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the whole area or just the line should respond to mouseovertooltips and other mouse or touch events.
-		/// </summary>
-		public bool? TrackByArea { get; set; }
-		private bool? TrackByArea_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Extended data labels for range series types. Range series data labelshave no `x` and `y` options. Instead, they have `xLow`, `xHigh`,`yLow` and `yHigh` options to allow the higher and lower data labelsets individually.
-		/// </summary>
-		public PlotOptionsAreasplinerangeDataLabels DataLabels { get; set; }
-		private PlotOptionsAreasplinerangeDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -570,20 +498,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			
 
 			return h;
