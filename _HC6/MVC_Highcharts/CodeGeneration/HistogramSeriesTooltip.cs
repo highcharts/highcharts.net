@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public HistogramSeriesTooltipHeaderFormat HeaderFormat { get; set; }
-		private HistogramSeriesTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
+		public string HeaderFormat { get; set; }
+		private string HeaderFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>

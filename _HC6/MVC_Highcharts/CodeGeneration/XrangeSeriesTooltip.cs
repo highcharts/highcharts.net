@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public XrangeSeriesTooltip()
 		{
-			HeaderFormat = HeaderFormat_DefaultValue = <span style="font-size: 0.85em">{point.x} - {point.x2}</span><br/>;
+			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 0.85em'>{point.x} - {point.x2}</span><br/>";
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.yCategory}</b><br/>";
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public XrangeSeriesTooltipHeaderFormat HeaderFormat { get; set; }
-		private XrangeSeriesTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
+		public string HeaderFormat { get; set; }
+		private string HeaderFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>

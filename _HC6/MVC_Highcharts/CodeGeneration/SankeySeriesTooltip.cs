@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public SankeySeriesTooltip()
 		{
 			FollowPointer = FollowPointer_DefaultValue = true;
-			HeaderFormat = HeaderFormat_DefaultValue = <span class="highcharts-header">{series.name}</span><br/>;
+			HeaderFormat = HeaderFormat_DefaultValue = "<span class='highcharts-header'>{series.name}</span><br/>";
 			PointFormat = PointFormat_DefaultValue = "{point.fromNode.name} → {point.toNode.name}: <b>{point.weight}</b><br/>";
 			NodeFormat = NodeFormat_DefaultValue = {point.name}: <b>{point.sum}</b><br/>;
 			NodeFormatter = NodeFormatter_DefaultValue = "";
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public SankeySeriesTooltipHeaderFormat HeaderFormat { get; set; }
-		private SankeySeriesTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
+		public string HeaderFormat { get; set; }
+		private string HeaderFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>

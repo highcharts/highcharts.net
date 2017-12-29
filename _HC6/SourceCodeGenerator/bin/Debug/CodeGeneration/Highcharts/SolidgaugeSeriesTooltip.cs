@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public SolidgaugeSeriesTooltipHeaderFormat HeaderFormat { get; set; }
-		private SolidgaugeSeriesTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
+		public string HeaderFormat { get; set; }
+		private string HeaderFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ScatterSeriesTooltip()
 		{
-			HeaderFormat = HeaderFormat_DefaultValue = <span class="highcharts-color-{point.colorIndex}">●</span> <span class="highcharts-header"> {series.name}</span><br/>;
+			HeaderFormat = HeaderFormat_DefaultValue = "<span class='highcharts-color-{point.colorIndex}'>●</span> <span class='highcharts-header'> {series.name}</span><br/>";
 			PointFormat = PointFormat_DefaultValue = "x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>";
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public ScatterSeriesTooltipHeaderFormat HeaderFormat { get; set; }
-		private ScatterSeriesTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
+		public string HeaderFormat { get; set; }
+		private string HeaderFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>

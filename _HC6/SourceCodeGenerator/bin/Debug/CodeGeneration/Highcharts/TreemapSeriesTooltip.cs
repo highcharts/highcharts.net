@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public TreemapSeriesTooltipHeaderFormat HeaderFormat { get; set; }
-		private TreemapSeriesTooltipHeaderFormat HeaderFormat_DefaultValue { get; set; }
+		public string HeaderFormat { get; set; }
+		private string HeaderFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
