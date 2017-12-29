@@ -14,18 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBubble()
 		{
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsBubbleDataLabels();
-			Marker = Marker_DefaultValue = new PlotOptionsBubbleMarker();
 			MinSize = MinSize_DefaultValue = "8";
 			MaxSize = MaxSize_DefaultValue = "20%";
-			SoftThreshold = SoftThreshold_DefaultValue = false;
-			States = States_DefaultValue = new PlotOptionsBubbleStates();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsBubbleTooltip();
-			TurboThreshold = TurboThreshold_DefaultValue = 0;
 			ZThreshold = ZThreshold_DefaultValue = 0;
-			ZoneAxis = ZoneAxis_DefaultValue = z;
 			DisplayNegative = DisplayNegative_DefaultValue = true;
-			NegativeColor = NegativeColor_DefaultValue = "null";
 			SizeBy = SizeBy_DefaultValue = PlotOptionsBubbleSizeBy.Area;
 			SizeByAbsoluteValue = SizeByAbsoluteValue_DefaultValue = false;
 			ZMax = ZMax_DefaultValue = null;
@@ -90,20 +82,6 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBubbleDataLabels DataLabels { get; set; }
-		private PlotOptionsBubbleDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`, `.highcharts-point-hover` and `.highcharts-point-select`class names.
-		/// </summary>
-		public PlotOptionsBubbleMarker Marker { get; set; }
-		private PlotOptionsBubbleMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Minimum bubble size. Bubbles will automatically size between the`minSize` and `maxSize` to reflect the `z` value of each bubble.Can be either pixels (when no unit is given), or a percentage ofthe smallest one of the plot width and height.
 		/// </summary>
 		public string MinSize { get; set; }
@@ -118,34 +96,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
-		/// </summary>
-		public bool? SoftThreshold { get; set; }
-		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBubbleStates States { get; set; }
-		private PlotOptionsBubbleStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBubbleTooltip Tooltip { get; set; }
-		private PlotOptionsBubbleTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBubbleTurboThreshold TurboThreshold { get; set; }
-		private PlotOptionsBubbleTurboThreshold TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When [displayNegative](#plotOptions.bubble.displayNegative) is `false`,bubbles with lower Z values are skipped. When `displayNegative`is `true` and a [negativeColor](#plotOptions.bubble.negativeColor)is given, points with lower Z is colored.
 		/// </summary>
 		public double? ZThreshold { get; set; }
@@ -153,24 +103,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBubbleZoneAxis ZoneAxis { get; set; }
-		private PlotOptionsBubbleZoneAxis ZoneAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to display negative sized bubbles. The threshold is givenby the [zThreshold](#plotOptions.bubble.zThreshold) option, and negativebubbles can be visualized by setting [negativeColor](#plotOptions.bubble.negativeColor).
 		/// </summary>
 		public bool? DisplayNegative { get; set; }
 		private bool? DisplayNegative_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When a point's Z value is below the [zThreshold](#plotOptions.bubble.zThreshold) setting, this color is used.
-		/// </summary>
-		public string NegativeColor { get; set; }
-		private string NegativeColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -590,18 +526,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
 			if (MaxSize != MaxSize_DefaultValue) h.Add("maxSize",MaxSize);
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (ZThreshold != ZThreshold_DefaultValue) h.Add("zThreshold",ZThreshold);
-			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (DisplayNegative != DisplayNegative_DefaultValue) h.Add("displayNegative",DisplayNegative);
-			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy", Highcharts.FirstCharacterToLower(SizeBy.ToString()));
 			if (SizeByAbsoluteValue != SizeByAbsoluteValue_DefaultValue) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
 			if (ZMax != ZMax_DefaultValue) h.Add("zMax",ZMax);

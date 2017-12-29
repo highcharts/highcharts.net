@@ -14,8 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPolygon()
 		{
-			Marker = Marker_DefaultValue = new PlotOptionsPolygonMarker();
-			StickyTracking = StickyTracking_DefaultValue = false;
 			TrackByArea = TrackByArea_DefaultValue = true;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsPolygonLabel();
@@ -71,20 +69,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsPolygonMarker Marker { get; set; }
-		private PlotOptionsPolygonMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsPolygonStickyTracking StickyTracking { get; set; }
-		private PlotOptionsPolygonStickyTracking StickyTracking_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
@@ -454,8 +438,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());

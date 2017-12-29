@@ -14,11 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemap()
 		{
-			States = States_DefaultValue = new PlotOptionsTilemapStates();
-			PointPadding = PointPadding_DefaultValue = 2;
 			TileShape = TileShape_DefaultValue = hexagon;
-			Colsize = Colsize_DefaultValue = 1;
-			Rowsize = Rowsize_DefaultValue = 1;
 			Data = Data_DefaultValue = new List<PlotOptionsTilemapData>();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsTilemapLabel();
@@ -87,38 +83,10 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsTilemapStates States { get; set; }
-		private PlotOptionsTilemapStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The padding between points in the tilemap.
-		/// </summary>
-		public PlotOptionsTilemapPointPadding PointPadding { get; set; }
-		private PlotOptionsTilemapPointPadding PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The shape of the tiles in the tilemap. Possible values are `hexagon`,`circle`, `diamond`, and `square`.
 		/// </summary>
 		public PlotOptionsTilemapTileShape TileShape { get; set; }
 		private PlotOptionsTilemapTileShape TileShape_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The column size - how many X axis units each column in the tilemapshould span. Works as in [Heatmaps](#plotOptions.heatmap.colsize).
-		/// </summary>
-		public double? Colsize { get; set; }
-		private double? Colsize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The row size - how many Y axis units each tilemap row should span.Analogous to [colsize](#plotOptions.tilemap.colsize).
-		/// </summary>
-		public double? Rowsize { get; set; }
-		private double? Rowsize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -566,11 +534,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (TileShape != TileShape_DefaultValue) h.Add("tileShape",TileShape);
-			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
-			if (Rowsize != Rowsize_DefaultValue) h.Add("rowsize",Rowsize);
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());

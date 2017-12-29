@@ -14,9 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SunburstSeriesData()
 		{
-			Value = Value_DefaultValue = null;
 			Sliced = Sliced_DefaultValue = false;
-			Name = Name_DefaultValue = "undefined";
 			Weight = Weight_DefaultValue = null;
 			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
@@ -40,24 +38,10 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The value of the point, resulting in a relative area of the pointin the sunburst.
-		/// </summary>
-		public double? Value { get; set; }
-		private double? Value_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to display a slice offset from the center. When a sunburst point is sliced, its children are also offset.
 		/// </summary>
 		public bool? Sliced { get; set; }
 		private bool? Sliced_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The name decides the text for a word.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -190,9 +174,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (Sliced != Sliced_DefaultValue) h.Add("sliced",Sliced);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);

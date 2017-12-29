@@ -875,7 +875,6 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstDataLabelsOverflow.cs" />
-    <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstDataLabelsRotationMode.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsTilemapCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsTilemapDashStyle.cs" />
@@ -1667,7 +1666,6 @@
     <Compile Include="CodeGeneration\PlotOptionsColumnStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnZone.cs" />
@@ -1713,7 +1711,6 @@
     <Compile Include="CodeGeneration\PlotOptionsFunnelStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFunnelStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFunnelStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsFunnelStatesSelect.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFunnelTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFunnelTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsGauge.cs" />
@@ -1758,7 +1755,6 @@
     <Compile Include="CodeGeneration\PlotOptionsHeatmapStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsHeatmapStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsHeatmapStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsHeatmapStatesNormal.cs" />
     <Compile Include="CodeGeneration\PlotOptionsHeatmapTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsHeatmapTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsHeatmapZone.cs" />
@@ -2124,7 +2120,6 @@
     <Compile Include="CodeGeneration\PlotOptionsTilemapStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapStatesHoverHalo.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsTilemapStatesHoverHaloAttributes.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapStatesHoverMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapStatesHoverMarkerStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapStatesHoverMarkerStatesHover.cs" />
@@ -2157,7 +2152,6 @@
     <Compile Include="CodeGeneration\PlotOptionsTreemapStatesHoverMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapStatesHoverMarkerStatesHoverAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapStatesHoverMarkerStatesSelect.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsTreemapStatesNormal.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapZone.cs" />
@@ -2595,7 +2589,6 @@
     <Compile Include="CodeGeneration\TilemapSeries.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesAnimation.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesData.cs" />
-    <Compile Include="CodeGeneration\TilemapSeriesDataEvents.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesDataLabels.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesDataLabelsFilter.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesDataLabelsStyle.cs" />

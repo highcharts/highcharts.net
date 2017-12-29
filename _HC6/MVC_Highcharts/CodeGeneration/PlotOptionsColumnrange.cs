@@ -14,10 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsColumnrange()
 		{
-			PointRange = PointRange_DefaultValue = "";
 			Marker = Marker_DefaultValue = "";
-			States = States_DefaultValue = new PlotOptionsColumnrangeStates();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsColumnrangeDataLabels();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsColumnrangeLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -86,29 +83,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnrangePointRange PointRange { get; set; }
-		private PlotOptionsColumnrangePointRange PointRange_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public PlotOptionsColumnrangeMarker Marker { get; set; }
 		private PlotOptionsColumnrangeMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsColumnrangeStates States { get; set; }
-		private PlotOptionsColumnrangeStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Extended data labels for range series types. Range series data labelshave no `x` and `y` options. Instead, they have `xLow`, `xHigh`,`yLow` and `yHigh` options to allow the higher and lower data labelsets individually.
-		/// </summary>
-		public PlotOptionsColumnrangeDataLabels DataLabels { get; set; }
-		private PlotOptionsColumnrangeDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -542,10 +518,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);

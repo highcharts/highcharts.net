@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Enabled = Enabled_DefaultValue = true;
 			Defer = Defer_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = middle;
-			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = true;
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = true;
 			VerticalAlign = VerticalAlign_DefaultValue = middle;
@@ -41,27 +38,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public TreemapSeriesDataLabelsDefer Defer { get; set; }
 		private TreemapSeriesDataLabelsDefer Defer_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TreemapSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private TreemapSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TreemapSeriesDataLabelsFormatter Formatter { get; set; }
-		private TreemapSeriesDataLabelsFormatter Formatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public TreemapSeriesDataLabelsInside Inside { get; set; }
-		private TreemapSeriesDataLabelsInside Inside_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -112,9 +88,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
-			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
-			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);

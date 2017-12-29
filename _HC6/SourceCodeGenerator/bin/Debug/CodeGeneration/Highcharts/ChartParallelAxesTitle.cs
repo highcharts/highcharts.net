@@ -14,9 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartParallelAxesTitle()
 		{
-			Rotation = Rotation_DefaultValue = 270;
-			Text = Text_DefaultValue = Values;
-			Margin = Margin_DefaultValue = null;
 			Align = Align_DefaultValue = ChartParallelAxesTitleAlign.Middle;
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
 			Position3d = Position3d_DefaultValue = ChartParallelAxesTitlePosition3d.Offset;
@@ -33,27 +30,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// The rotation of the text in degrees. 0 is horizontal, 270 isvertical reading from bottom to top.
-		/// </summary>
-		public ChartParallelAxesTitleRotation Rotation { get; set; }
-		private ChartParallelAxesTitleRotation Rotation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The actual text of the axis title. Horizontal texts can containHTML, but rotated texts are painted using vector techniques andmust be clean text. The Y axis title is disabled by setting the`text` option to `null`.
-		/// </summary>
-		public ChartParallelAxesTitleText Text { get; set; }
-		private ChartParallelAxesTitleText Text_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel distance between the axis labels and the title. Positivevalues are outside the axis line, negative are inside.
-		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Alignment of the title relative to the axis values. Possiblevalues are "low", "middle" or "high".
@@ -150,9 +126,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));

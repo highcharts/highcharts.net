@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Intervals = Intervals_DefaultValue = 3;
 			PointsInInterval = PointsInInterval_DefaultValue = 3;
-			Marker = Marker_DefaultValue = new PlotOptionsBellcurveMarker();
 			Label = Label_DefaultValue = new PlotOptionsBellcurveLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -84,13 +83,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsBellcurvePointsInInterval PointsInInterval { get; set; }
 		private PlotOptionsBellcurvePointsInInterval PointsInInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBellcurveMarker Marker { get; set; }
-		private PlotOptionsBellcurveMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -456,7 +448,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Intervals != Intervals_DefaultValue) h.Add("intervals",Intervals);
 			if (PointsInInterval != PointsInInterval_DefaultValue) h.Add("pointsInInterval",PointsInInterval);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);

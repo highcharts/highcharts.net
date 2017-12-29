@@ -14,10 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVector()
 		{
-			LineWidth = LineWidth_DefaultValue = 2;
 			RotationOrigin = RotationOrigin_DefaultValue = PlotOptionsVectorRotationOrigin.Center;
-			States = States_DefaultValue = new PlotOptionsVectorStates();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsVectorTooltip();
 			VectorLength = VectorLength_DefaultValue = 20;
 			Label = Label_DefaultValue = new PlotOptionsVectorLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -67,31 +64,10 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The line width for each vector arrow.
-		/// </summary>
-		public PlotOptionsVectorLineWidth LineWidth { get; set; }
-		private PlotOptionsVectorLineWidth LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// What part of the vector it should be rotated around. Can be one of`start`, `center` and `end`. When `start`, the vectors will start fromthe given [x, y] position, and when `end` the vectors will end in the[x, y] position.
 		/// </summary>
 		public PlotOptionsVectorRotationOrigin RotationOrigin { get; set; }
 		private PlotOptionsVectorRotationOrigin RotationOrigin_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsVectorStates States { get; set; }
-		private PlotOptionsVectorStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsVectorTooltip Tooltip { get; set; }
-		private PlotOptionsVectorTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -406,10 +382,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (RotationOrigin != RotationOrigin_DefaultValue) h.Add("rotationOrigin", Highcharts.FirstCharacterToLower(RotationOrigin.ToString()));
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

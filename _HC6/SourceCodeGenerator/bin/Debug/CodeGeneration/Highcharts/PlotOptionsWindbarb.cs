@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			LineWidth = LineWidth_DefaultValue = 2;
 			OnSeries = OnSeries_DefaultValue = "";
-			States = States_DefaultValue = new PlotOptionsWindbarbStates();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsWindbarbTooltip();
 			VectorLength = VectorLength_DefaultValue = 20;
 			YOffset = YOffset_DefaultValue = -20;
 			Label = Label_DefaultValue = new PlotOptionsWindbarbLabel();
@@ -97,20 +95,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string OnSeries { get; set; }
 		private string OnSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWindbarbStates States { get; set; }
-		private PlotOptionsWindbarbStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWindbarbTooltip Tooltip { get; set; }
-		private PlotOptionsWindbarbTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -560,8 +544,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (OnSeries != OnSeries_DefaultValue) h.Add("onSeries",OnSeries);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (YOffset != YOffset_DefaultValue) h.Add("yOffset",YOffset);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());

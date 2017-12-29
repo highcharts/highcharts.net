@@ -14,10 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsStreamgraph()
 		{
-			FillOpacity = FillOpacity_DefaultValue = 1;
-			LineWidth = LineWidth_DefaultValue = 0;
-			Marker = Marker_DefaultValue = new PlotOptionsStreamgraphMarker();
-			Stacking = Stacking_DefaultValue = stream;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsStreamgraphLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -77,34 +73,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsStreamgraphFillOpacity FillOpacity { get; set; }
-		private PlotOptionsStreamgraphFillOpacity FillOpacity_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsStreamgraphLineWidth LineWidth { get; set; }
-		private PlotOptionsStreamgraphLineWidth LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsStreamgraphMarker Marker { get; set; }
-		private PlotOptionsStreamgraphMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsStreamgraphStacking Stacking { get; set; }
-		private PlotOptionsStreamgraphStacking Stacking_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -502,10 +470,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking",Stacking);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

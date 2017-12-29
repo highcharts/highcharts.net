@@ -15,10 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSunburst()
 		{
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsSunburstDataLabels();
 			RootId = RootId_DefaultValue = "undefined";
 			LevelIsConstant = LevelIsConstant_DefaultValue = true;
-			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			Levels = Levels_DefaultValue = new PlotOptionsSunburstLevels();
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
 			Label = Label_DefaultValue = new PlotOptionsSunburstLabel();
@@ -72,13 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSunburstDataLabels DataLabels { get; set; }
-		private PlotOptionsSunburstDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Which point to use as a root in the visualization.
 		/// </summary>
 		public string RootId { get; set; }
@@ -90,13 +81,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsSunburstLevelIsConstant LevelIsConstant { get; set; }
 		private PlotOptionsSunburstLevelIsConstant LevelIsConstant_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If a point is sliced, moved out from the center, how many pixelsshould it be moved?.
-		/// </summary>
-		public PlotOptionsSunburstSlicedOffset SlicedOffset { get; set; }
-		private PlotOptionsSunburstSlicedOffset SlicedOffset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -391,10 +375,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Center != Center_DefaultValue) h.Add("center",Center);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (RootId != RootId_DefaultValue) h.Add("rootId",RootId);
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
-			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (Levels.IsDirty()) h.Add("levels",Levels.ToHashtable());
 			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());

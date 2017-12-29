@@ -14,12 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsArearange()
 		{
-			LineWidth = LineWidth_DefaultValue = 1;
-			Threshold = Threshold_DefaultValue = null;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsArearangeTooltip();
-			TrackByArea = TrackByArea_DefaultValue = true;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsArearangeDataLabels();
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsArearangeLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -80,48 +74,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// Pixel width of the arearange graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsArearangeThreshold Threshold { get; set; }
-		private PlotOptionsArearangeThreshold Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsArearangeTooltip Tooltip { get; set; }
-		private PlotOptionsArearangeTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the whole area or just the line should respond to mouseovertooltips and other mouse or touch events.
-		/// </summary>
-		public bool? TrackByArea { get; set; }
-		private bool? TrackByArea_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Extended data labels for range series types. Range series data labelshave no `x` and `y` options. Instead, they have `xLow`, `xHigh`,`yLow` and `yHigh` options to allow the higher and lower data labelsets individually.
-		/// </summary>
-		public PlotOptionsArearangeDataLabels DataLabels { get; set; }
-		private PlotOptionsArearangeDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -526,12 +478,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

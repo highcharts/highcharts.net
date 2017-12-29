@@ -14,19 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new TreemapSeriesStatesHover();
 			Normal = Normal_DefaultValue = new TreemapSeriesStatesNormal();
 			Hover = Hover_DefaultValue = new TreemapSeriesStatesHover();
 			
 		}	
 		
-
-		/// <summary>
-		/// Options for the hovered series
-		/// </summary>
-		public TreemapSeriesStatesHover Hover { get; set; }
-		private TreemapSeriesStatesHover Hover_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
@@ -46,7 +38,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			

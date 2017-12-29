@@ -14,12 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWaterfall()
 		{
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsWaterfallDataLabels();
 			LineWidth = LineWidth_DefaultValue = 1;
 			LineColor = LineColor_DefaultValue = "#333333";
 			DashStyle = DashStyle_DefaultValue = "Dot";
-			BorderColor = BorderColor_DefaultValue = "#333333";
-			States = States_DefaultValue = new PlotOptionsWaterfallStates();
 			UpColor = UpColor_DefaultValue = "";
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsWaterfallLabel();
@@ -93,13 +90,6 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWaterfallDataLabels DataLabels { get; set; }
-		private PlotOptionsWaterfallDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The width of the line connecting waterfall columns.
 		/// </summary>
 		public double? LineWidth { get; set; }
@@ -118,20 +108,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string DashStyle { get; set; }
 		private string DashStyle_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the border of each waterfall column.In styled mode, the border stroke can be set with the `.highcharts-point` class.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWaterfallStates States { get; set; }
-		private PlotOptionsWaterfallStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -614,12 +590,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (UpColor != UpColor_DefaultValue) h.Add("upColor",UpColor);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());

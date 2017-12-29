@@ -14,15 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public GaugeSeriesDataLabels()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			Defer = Defer_DefaultValue = false;
-			Y = Y_DefaultValue = 15;
-			BorderRadius = BorderRadius_DefaultValue = 3;
-			Crop = Crop_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "top";
-			ZIndex = ZIndex_DefaultValue = 2;
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			Align = Align_DefaultValue = GaugeSeriesDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
@@ -52,69 +43,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// Enable or disable the data labels.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public GaugeSeriesDataLabelsDefer Defer { get; set; }
-		private GaugeSeriesDataLabelsDefer Defer_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y position offset of the label relative to the center of thegauge.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border radius in pixels for the gauge's data label.
-		/// </summary>
-		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public GaugeSeriesDataLabelsCrop Crop { get; set; }
-		private GaugeSeriesDataLabelsCrop Crop_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The vertical alignment of the data label.
-		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The Z index of the data labels. A value of 2 display them behindthe dial.
-		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width in pixels for the gauge data label.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border color for the data label.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the [inside](#plotOptions.column.dataLabels.inside) option. Can be one of "left", "center"or "right".
@@ -302,15 +230,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());

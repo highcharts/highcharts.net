@@ -14,8 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVariwide()
 		{
-			PointPadding = PointPadding_DefaultValue = 0;
-			GroupPadding = GroupPadding_DefaultValue = 0;
 			Label = Label_DefaultValue = new PlotOptionsVariwideLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -80,20 +78,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// In a variwide chart, the point padding is 0 in order to express the horizontal stacking of items.
-		/// </summary>
-		public PlotOptionsVariwidePointPadding PointPadding { get; set; }
-		private PlotOptionsVariwidePointPadding PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// In a variwide chart, the group padding is 0 in order to express the horizontal stacking of items.
-		/// </summary>
-		public PlotOptionsVariwideGroupPadding GroupPadding { get; set; }
-		private PlotOptionsVariwideGroupPadding GroupPadding_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
@@ -526,8 +510,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

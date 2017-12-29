@@ -14,11 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsErrorbar()
 		{
-			Color = Color_DefaultValue = "#000000";
-			Grouping = Grouping_DefaultValue = false;
-			LinkedTo = LinkedTo_DefaultValue = ":previous";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsErrorbarTooltip();
-			WhiskerWidth = WhiskerWidth_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsErrorbarLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -102,41 +97,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// The main color of the bars. This can be overridden by [stemColor](#plotOptions.errorbar.stemColor) and [whiskerColor](#plotOptions.errorbar.whiskerColor)individually.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsErrorbarGrouping Grouping { get; set; }
-		private PlotOptionsErrorbarGrouping Grouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The parent series of the error bar. The default value links it tothe previous series. Otherwise, use the id of the parent series.
-		/// </summary>
-		public string LinkedTo { get; set; }
-		private string LinkedTo_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsErrorbarTooltip Tooltip { get; set; }
-		private PlotOptionsErrorbarTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The line width of the whiskers, the horizontal lines marking lowand high values. When `null`, the general [lineWidth](#plotOptions.errorbar.lineWidth) applies.
-		/// </summary>
-		public double? WhiskerWidth { get; set; }
-		private double? WhiskerWidth_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -702,11 +662,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
-			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (WhiskerWidth != WhiskerWidth_DefaultValue) h.Add("whiskerWidth",WhiskerWidth);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);

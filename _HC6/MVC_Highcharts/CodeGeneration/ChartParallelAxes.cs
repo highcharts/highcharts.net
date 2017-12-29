@@ -14,10 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartParallelAxes()
 		{
-			LineWidth = LineWidth_DefaultValue = 1;
-			Title = Title_DefaultValue = new ChartParallelAxesTitle();
-			Labels = Labels_DefaultValue = new ChartParallelAxesLabels();
-			Offset = Offset_DefaultValue = 0;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Labels = Labels_DefaultValue = new ChartParallelAxesLabels();
@@ -90,34 +86,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesLineWidth LineWidth { get; set; }
-		private ChartParallelAxesLineWidth LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Titles for yAxes are taken from [xAxis.categories](#xAxis.categories). All options for `xAxis.labels` applies to parallel coordinates titles.For example, to style categories, use [xAxis.labels.style](#xAxis.labels.style).
-		/// </summary>
-		public ChartParallelAxesTitle Title { get; set; }
-		private ChartParallelAxesTitle Title_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesLabels Labels { get; set; }
-		private ChartParallelAxesLabels Labels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public ChartParallelAxesOffset Offset { get; set; }
-		private ChartParallelAxesOffset Offset_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
@@ -606,10 +574,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
-			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());

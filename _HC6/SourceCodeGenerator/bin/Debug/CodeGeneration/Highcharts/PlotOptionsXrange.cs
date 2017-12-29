@@ -14,10 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsXrange()
 		{
-			ColorByPoint = ColorByPoint_DefaultValue = true;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsXrangeDataLabels();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsXrangeTooltip();
-			BorderRadius = BorderRadius_DefaultValue = 3;
 			PointRange = PointRange_DefaultValue = 0;
 			PartialFill = PartialFill_DefaultValue = new PlotOptionsXrangePartialFill();
 			Data = Data_DefaultValue = new List<PlotOptionsXrangeData>();
@@ -69,34 +65,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// In an X-range series, this option makes all points of the same Y-axiscategory the same color.
-		/// </summary>
-		public PlotOptionsXrangeColorByPoint ColorByPoint { get; set; }
-		private PlotOptionsXrangeColorByPoint ColorByPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsXrangeDataLabels DataLabels { get; set; }
-		private PlotOptionsXrangeDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsXrangeTooltip Tooltip { get; set; }
-		private PlotOptionsXrangeTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsXrangeBorderRadius BorderRadius { get; set; }
-		private PlotOptionsXrangeBorderRadius BorderRadius_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
@@ -438,10 +406,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
 			if (Data.Any()) h.Add("data",HashifyList(Data));

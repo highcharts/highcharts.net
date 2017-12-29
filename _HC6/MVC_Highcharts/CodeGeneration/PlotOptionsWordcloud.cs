@@ -14,16 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWordcloud()
 		{
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			BorderWidth = BorderWidth_DefaultValue = 0;
 			Clip = Clip_DefaultValue = false;
-			ColorByPoint = ColorByPoint_DefaultValue = true;
 			PlacementStrategy = PlacementStrategy_DefaultValue = center;
 			Rotation = Rotation_DefaultValue = new PlotOptionsWordcloudRotation();
-			ShowInLegend = ShowInLegend_DefaultValue = false;
 			Spiral = Spiral_DefaultValue = rectangular;
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","sans-serif"},{ "fontWeight", "900"}};
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsWordcloudTooltip();
 			Label = Label_DefaultValue = new PlotOptionsWordcloudLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
@@ -67,29 +62,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWordcloudBorderWidth BorderWidth { get; set; }
-		private PlotOptionsWordcloudBorderWidth BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public PlotOptionsWordcloudClip Clip { get; set; }
 		private PlotOptionsWordcloudClip Clip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
-		/// </summary>
-		public PlotOptionsWordcloudColorByPoint ColorByPoint { get; set; }
-		private PlotOptionsWordcloudColorByPoint ColorByPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -107,13 +81,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWordcloudShowInLegend ShowInLegend { get; set; }
-		private PlotOptionsWordcloudShowInLegend ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Spiral used for placing a word after the inital position experienced acollision with either another word or the borders.It is possible for users to add their own custom spiralling algorithmsfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
 		/// </summary>
 		public PlotOptionsWordcloudSpiral Spiral { get; set; }
@@ -125,13 +92,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsWordcloudTooltip Tooltip { get; set; }
-		private PlotOptionsWordcloudTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -390,16 +350,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
 			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (Spiral != Spiral_DefaultValue) h.Add("spiral",Spiral);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);

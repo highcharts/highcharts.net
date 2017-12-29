@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			ZMin = ZMin_DefaultValue = null;
 			ZMax = ZMax_DefaultValue = null;
 			SizeBy = SizeBy_DefaultValue = PlotOptionsVariablepieSizeBy.Area;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsVariablepieTooltip();
 			Label = Label_DefaultValue = new PlotOptionsVariablepieLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -105,13 +104,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsVariablepieSizeBy SizeBy { get; set; }
 		private PlotOptionsVariablepieSizeBy SizeBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsVariablepieTooltip Tooltip { get; set; }
-		private PlotOptionsVariablepieTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -459,7 +451,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ZMin != ZMin_DefaultValue) h.Add("zMin",ZMin);
 			if (ZMax != ZMax_DefaultValue) h.Add("zMax",ZMax);
 			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy", Highcharts.FirstCharacterToLower(SizeBy.ToString()));
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

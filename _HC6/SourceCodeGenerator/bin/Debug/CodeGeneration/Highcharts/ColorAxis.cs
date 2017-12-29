@@ -14,28 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColorAxis()
 		{
-			MinPadding = MinPadding_DefaultValue = 0;
-			MaxPadding = MaxPadding_DefaultValue = 0;
-			GridLineWidth = GridLineWidth_DefaultValue = 1;
-			TickPixelInterval = TickPixelInterval_DefaultValue = 72;
-			StartOnTick = StartOnTick_DefaultValue = true;
-			EndOnTick = EndOnTick_DefaultValue = true;
 			Marker = Marker_DefaultValue = new ColorAxisMarker();
-			Labels = Labels_DefaultValue = new ColorAxisLabels();
 			MinColor = MinColor_DefaultValue = "#e6ebf5";
 			MaxColor = MaxColor_DefaultValue = "#003399";
-			TickLength = TickLength_DefaultValue = 5;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			DataClassColor = DataClassColor_DefaultValue = ColorAxisDataClassColor.Tween;
 			DataClasses = DataClasses_DefaultValue = new List<ColorAxisDataClasses>();
-			Max = Max_DefaultValue = null;
-			Min = Min_DefaultValue = null;
-			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
-			TickInterval = TickInterval_DefaultValue = null;
 			Stops = Stops_DefaultValue = new List<Stop>();
-			Type = Type_DefaultValue = ColorAxisType.Linear;
-			Reversed = Reversed_DefaultValue = "";
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Labels = Labels_DefaultValue = new ColorAxisLabels();
 			MaxPadding = MaxPadding_DefaultValue = 0.01;
@@ -89,59 +75,10 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer.
-		/// </summary>
-		public double? MinPadding { get; set; }
-		private double? MinPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer.
-		/// </summary>
-		public double? MaxPadding { get; set; }
-		private double? MaxPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the grid lines extending from the axis across thegradient of a scalar color axis.
-		/// </summary>
-		public double? GridLineWidth { get; set; }
-		private double? GridLineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If [tickInterval](#colorAxis.tickInterval) is `null` this optionsets the approximate pixel interval of the tick marks.
-		/// </summary>
-		public double? TickPixelInterval { get; set; }
-		private double? TickPixelInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.
-		/// </summary>
-		public bool? StartOnTick { get; set; }
-		private bool? StartOnTick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to force the axis to end on a tick. Use this option withthe [maxPadding](#colorAxis.maxPadding) option to control the axisend.
-		/// </summary>
-		public bool? EndOnTick { get; set; }
-		private bool? EndOnTick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The triangular marker on a scalar color axis that points to thevalue of the hovered area. To disable the marker, set `marker:null`.
 		/// </summary>
 		public ColorAxisMarker Marker { get; set; }
 		private ColorAxisMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The axis labels show the number for each tick.For more live examples on label options, see [xAxis.labels in theHighcharts API.](/highcharts#xAxis.labels)
-		/// </summary>
-		public ColorAxisLabels Labels { get; set; }
-		private ColorAxisLabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -156,13 +93,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string MaxColor { get; set; }
 		private string MaxColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel length of the main tick marks on the color axis.
-		/// </summary>
-		public ColorAxisTickLength TickLength { get; set; }
-		private ColorAxisTickLength TickLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -194,52 +124,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The maximum value of the axis in terms of map point values. If `null`,the max value is automatically calculated. If the `endOnTick` optionis true, the max value might be rounded up.
-		/// </summary>
-		public double? Max { get; set; }
-		private double? Max_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The minimum value of the axis in terms of map point values. If `null`,the min value is automatically calculated. If the `startOnTick`option is true, the min value might be rounded down.
-		/// </summary>
-		public double? Min { get; set; }
-		private double? Min_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Color of the grid lines extending from the axis across the gradient.
-		/// </summary>
-		public string GridLineColor { get; set; }
-		private string GridLineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The interval of the tick marks in axis units. When `null`, the tickinterval is computed to approximately follow the `tickPixelInterval`.
-		/// </summary>
-		public double? TickInterval { get; set; }
-		private double? TickInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Color stops for the gradient of a scalar color axis. Use this incases where a linear gradient between a `minColor` and `maxColor`is not sufficient. The stops is an array of tuples, where the firstitem is a float between 0 and 1 assigning the relative position inthe gradient, and the second item is the color.
 		/// </summary>
 		public List<Stop> Stops { get; set; }
 		private List<Stop> Stops_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The type of interpolation to use for the color axis. Can be `linear`or `logarithmic`.
-		/// </summary>
-		public ColorAxisType Type { get; set; }
-		private ColorAxisType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to reverse the axis so that the highest number is closestto the origin. Defaults to `false` in a horizontal legend and `true`in a vertical legend, where the smallest value starts on top.
-		/// </summary>
-		public bool? Reversed { get; set; }
-		private bool? Reversed_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -582,28 +470,14 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
-			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
-			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
-			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
-			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
-			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
 			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
-			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (DataClassColor != DataClassColor_DefaultValue) h.Add("dataClassColor", Highcharts.FirstCharacterToLower(DataClassColor.ToString()));
 			if (DataClasses != DataClasses_DefaultValue) h.Add("dataClasses", HashifyList(DataClasses));
-			if (Max != Max_DefaultValue) h.Add("max",Max);
-			if (Min != Min_DefaultValue) h.Add("min",Min);
-			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
-			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
 			if (Stops.Any()) h.Add("stops", GetLists(Stops));
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);

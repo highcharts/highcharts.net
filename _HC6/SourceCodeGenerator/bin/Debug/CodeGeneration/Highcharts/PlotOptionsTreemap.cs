@@ -14,9 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemap()
 		{
-			ShowInLegend = ShowInLegend_DefaultValue = false;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsTreemapDataLabels();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsTreemapTooltip();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLayoutAlgorithm.SliceAndDice;
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLayoutStartingDirection.Vertical;
@@ -24,11 +21,8 @@ namespace Highsoft.Web.Mvc.Charts
 			LevelIsConstant = LevelIsConstant_DefaultValue = true;
 			DrillUpButton = DrillUpButton_DefaultValue = new PlotOptionsTreemapDrillUpButton();
 			BorderColor = BorderColor_DefaultValue = "#e6e6e6";
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			Opacity = Opacity_DefaultValue = null;
-			States = States_DefaultValue = new PlotOptionsTreemapStates();
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
-			CropThreshold = CropThreshold_DefaultValue = 300;
 			InteractByLeaf = InteractByLeaf_DefaultValue = "";
 			SortIndex = SortIndex_DefaultValue = null;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
@@ -92,27 +86,6 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Whether to display this series type or specific series item in thelegend.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsTreemapDataLabels DataLabels { get; set; }
-		private PlotOptionsTreemapDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsTreemapTooltip Tooltip { get; set; }
-		private PlotOptionsTreemapTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to ignore hidden points when the layout algorithm runs.If `false`, hidden points will leave open spaces.
 		/// </summary>
 		public bool? IgnoreHiddenPoint { get; set; }
@@ -162,13 +135,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width of the border surrounding each tree map item.
-		/// </summary>
-		public PlotOptionsTreemapBorderWidth BorderWidth { get; set; }
-		private PlotOptionsTreemapBorderWidth BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The opacity of a point in treemap. When a point has children, thevisibility of the children is determined by the opacity.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -176,24 +142,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsTreemapStates States { get; set; }
-		private PlotOptionsTreemapStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When enabled the user can click on a point which is a parent andzoom in on its children.
 		/// </summary>
 		public bool? AllowDrillToNode { get; set; }
 		private bool? AllowDrillToNode_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -606,9 +558,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
 			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
@@ -616,11 +565,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
 			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (InteractByLeaf != InteractByLeaf_DefaultValue) h.Add("interactByLeaf",InteractByLeaf);
 			if (SortIndex != SortIndex_DefaultValue) h.Add("sortIndex",SortIndex);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);

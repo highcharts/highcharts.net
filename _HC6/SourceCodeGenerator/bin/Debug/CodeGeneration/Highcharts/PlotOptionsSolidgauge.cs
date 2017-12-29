@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSolidgauge()
 		{
 			ColorByPoint = ColorByPoint_DefaultValue = true;
-			Linecap = Linecap_DefaultValue = PlotOptionsSolidgaugeLinecap.Round;
 			Rounded = Rounded_DefaultValue = false;
 			Threshold = Threshold_DefaultValue = null;
 			Label = Label_DefaultValue = new PlotOptionsSolidgaugeLabel();
@@ -65,13 +64,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsSolidgaugeColorByPoint ColorByPoint { get; set; }
 		private PlotOptionsSolidgaugeColorByPoint ColorByPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the strokes of the solid gauge should be `round` or `square`.
-		/// </summary>
-		public PlotOptionsSolidgaugeLinecap Linecap { get; set; }
-		private PlotOptionsSolidgaugeLinecap Linecap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -359,7 +351,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (Rounded != Rounded_DefaultValue) h.Add("rounded",Rounded);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());

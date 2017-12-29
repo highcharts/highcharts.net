@@ -14,8 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SunburstSeriesDataLabels()
 		{
-			Defer = Defer_DefaultValue = true;
-			Style = Style_DefaultValue = new SunburstSeriesDataLabelsStyle();
 			RotationMode = RotationMode_DefaultValue = SunburstSeriesDataLabelsRotationMode.Perpendicular;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable{{"color", "contrast"},{ "fontSize", "11px"},{ "fontWeight", "bold"},{ "textOutline", "1px contrast" }};
@@ -44,20 +42,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public SunburstSeriesDataLabelsDefer Defer { get; set; }
-		private SunburstSeriesDataLabelsDefer Defer_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public SunburstSeriesDataLabelsStyle Style { get; set; }
-		private SunburstSeriesDataLabelsStyle Style_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Decides how the data label will be rotated according to the perimeterof the sunburst. It can either be parallel or perpendicular to theperimeter.`series.rotation` takes precedence over `rotationMode`.
@@ -238,8 +222,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode", Highcharts.FirstCharacterToLower(RotationMode.ToString()));
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());

@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsBullet()
 		{
 			TargetOptions = TargetOptions_DefaultValue = new PlotOptionsBulletTargetOptions();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsBulletTooltip();
 			Label = Label_DefaultValue = new PlotOptionsBulletLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -91,13 +90,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsBulletTargetOptions TargetOptions { get; set; }
 		private PlotOptionsBulletTargetOptions TargetOptions_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBulletTooltip Tooltip { get; set; }
-		private PlotOptionsBulletTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -567,7 +559,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (TargetOptions.IsDirty()) h.Add("targetOptions",TargetOptions.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

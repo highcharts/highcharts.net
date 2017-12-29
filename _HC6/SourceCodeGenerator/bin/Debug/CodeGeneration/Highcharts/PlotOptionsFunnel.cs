@@ -14,15 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsFunnel()
 		{
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Width = Width_DefaultValue = null;
 			NeckWidth = NeckWidth_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			NeckHeight = NeckHeight_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = false;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsFunnelDataLabels();
-			States = States_DefaultValue = new PlotOptionsFunnelStates();
 			Label = Label_DefaultValue = new PlotOptionsFunnelLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -75,20 +71,6 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Initial animation is by default disabled for the funnel chart.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The center of the series. By default, it is centered in the middleof the plot area, so it fills the plot area height.
-		/// </summary>
-		public string[] Center { get; set; }
-		private string[] Center_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The width of the funnel compared to the width of the plot area,or the pixel width if it is a number.
 		/// </summary>
 		public double? Width { get; set; }
@@ -121,20 +103,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Reversed { get; set; }
 		private bool? Reversed_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsFunnelDataLabels DataLabels { get; set; }
-		private PlotOptionsFunnelDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series states.
-		/// </summary>
-		public PlotOptionsFunnelStates States { get; set; }
-		private PlotOptionsFunnelStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -470,15 +438,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

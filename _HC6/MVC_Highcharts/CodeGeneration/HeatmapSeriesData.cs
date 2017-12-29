@@ -14,10 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HeatmapSeriesData()
 		{
-			Color = Color_DefaultValue = "";
 			Value = Value_DefaultValue = null;
-			X = X_DefaultValue = double.MinValue;
-			Y = Y_DefaultValue = double.MinValue;
 			PointPadding = PointPadding_DefaultValue = null;
 			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
@@ -37,31 +34,10 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The color of the point. In heat maps the point color is rarely setexplicitly, as we use the color to denote the `value`. Options forthis are set in the [colorAxis](#colorAxis) configuration.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The value of the point, resulting in a color controled by optionsas set in the [colorAxis](#colorAxis) configuration.
 		/// </summary>
 		public double? Value { get; set; }
 		private double? Value_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x value of the point. For datetime axes,the X value is the timestamp in milliseconds since 1970.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y value of the point.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -166,10 +142,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);

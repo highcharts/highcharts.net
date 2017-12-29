@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public TreemapSeriesData()
 		{
 			Parent = Parent_DefaultValue = "undefined";
-			Value = Value_DefaultValue = null;
 			ColorValue = ColorValue_DefaultValue = null;
 			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
@@ -40,13 +39,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Parent { get; set; }
 		private string Parent_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The value of the point, resulting in a relative area of the pointin the treemap.
-		/// </summary>
-		public double? Value { get; set; }
-		private double? Value_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -159,7 +151,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
-			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);

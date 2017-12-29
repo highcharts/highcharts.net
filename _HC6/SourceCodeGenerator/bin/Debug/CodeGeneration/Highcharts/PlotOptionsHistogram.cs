@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			BinsNumber = BinsNumber_DefaultValue = PlotOptionsHistogramBinsNumber.SquareRoot;
 			BinWidth = BinWidth_DefaultValue = null;
-			PointPadding = PointPadding_DefaultValue = 0;
-			GroupPadding = GroupPadding_DefaultValue = 0;
-			Grouping = Grouping_DefaultValue = false;
-			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsHistogramTooltip();
 			Label = Label_DefaultValue = new PlotOptionsHistogramLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -100,41 +95,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? BinWidth { get; set; }
 		private double? BinWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsHistogramPointPadding PointPadding { get; set; }
-		private PlotOptionsHistogramPointPadding PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsHistogramGroupPadding GroupPadding { get; set; }
-		private PlotOptionsHistogramGroupPadding GroupPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsHistogramGrouping Grouping { get; set; }
-		private PlotOptionsHistogramGrouping Grouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PointPlacement PointPlacement { get; set; }
-		private PointPlacement PointPlacement_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsHistogramTooltip Tooltip { get; set; }
-		private PlotOptionsHistogramTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -584,15 +544,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (BinsNumber != BinsNumber_DefaultValue) h.Add("binsNumber", Highcharts.FirstCharacterToLower(BinsNumber.ToString()));
 			if (BinWidth != BinWidth_DefaultValue) h.Add("binWidth",BinWidth);
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
-			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
-			if (PointPlacement.IsDirty())
-				if (PointPlacement.Value.HasValue)
-					h.Add("pointPlacement", PointPlacement.Value);
-				else
-					h.Add("pointPlacement", PointPlacement.ToJSON());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

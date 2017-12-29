@@ -14,7 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsScatter3d()
 		{
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsScatter3dTooltip();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsScatter3dLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -73,13 +72,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsScatter3dTooltip Tooltip { get; set; }
-		private PlotOptionsScatter3dTooltip Tooltip_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -470,7 +462,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

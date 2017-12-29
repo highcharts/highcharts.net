@@ -14,10 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartParallelAxesLabels()
 		{
-			X = X_DefaultValue = -8;
-			Align = Align_DefaultValue = ChartParallelAxesLabelsAlign.Left;
-			Distance = Distance_DefaultValue = -25;
-			Y = Y_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Style = Style_DefaultValue = new ChartParallelAxesLabelsStyle();
 			X = X_DefaultValue = 0;
@@ -41,34 +37,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// The x position offset of the label relative to the tick positionon the axis. Defaults to -15 for left axis, 15 for right axis.
-		/// </summary>
-		public ChartParallelAxesLabelsX X { get; set; }
-		private ChartParallelAxesLabelsX X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// What part of the string the given position is anchored to. Canbe one of `"left"`, `"center"` or `"right"`. The exact positionalso depends on the `labels.x` setting.Angular gauges and solid gauges defaults to `center`.
-		/// </summary>
-		public ChartParallelAxesLabelsAlign Align { get; set; }
-		private ChartParallelAxesLabelsAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Angular gauges and solid gauges only. The label's pixel distancefrom the perimeter of the plot area.
-		/// </summary>
-		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y position offset of the label relative to the tick positionon the axis.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Enable or disable the axis labels.
@@ -214,10 +182,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (X != X_DefaultValue) h.Add("x",X);

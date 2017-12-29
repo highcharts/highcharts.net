@@ -14,10 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsScatter()
 		{
-			LineWidth = LineWidth_DefaultValue = 0;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = xy;
-			Marker = Marker_DefaultValue = new PlotOptionsScatterMarker();
-			StickyTracking = StickyTracking_DefaultValue = false;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsScatterLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -70,34 +66,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// The width of the line connecting the data points.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsScatterFindNearestPointBy FindNearestPointBy { get; set; }
-		private PlotOptionsScatterFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsScatterMarker Marker { get; set; }
-		private PlotOptionsScatterMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on a seriesis triggered when the mouse leaves the area around the series' graphor markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -446,10 +414,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

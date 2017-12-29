@@ -737,7 +737,7 @@ public class HighchartsGenerator
                 if (item.Extends.Any())
                 {
                     var baseChildren = GetChildrenFromBaseClasses(item);
-                    children = item.Children.Where(p => baseChildren.Any(x => x.Title != p.Title)).ToList();
+                    children = item.Children.Where(p => !baseChildren.Any(x => x.Title == p.Title)).ToList();
                     children.AddRange(baseChildren);
                 }
             }

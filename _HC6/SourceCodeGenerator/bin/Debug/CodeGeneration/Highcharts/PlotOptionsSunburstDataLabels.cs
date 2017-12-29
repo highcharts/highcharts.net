@@ -15,9 +15,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSunburstDataLabels()
 		{
 			Distance = Distance_DefaultValue = 30;
-			Enabled = Enabled_DefaultValue = true;
-			Formatter = Formatter_DefaultValue = "";
-			X = X_DefaultValue = 0;
 			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
 			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
@@ -55,27 +52,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Distance { get; set; }
 		private double? Distance_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the data labels.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSunburstDataLabelsFormatter Formatter { get; set; }
-		private PlotOptionsSunburstDataLabelsFormatter Formatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to render the connector as a soft arc or a line with sharpbreak.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -279,9 +255,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
-			if (X != X_DefaultValue) h.Add("x",X);
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
 			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);

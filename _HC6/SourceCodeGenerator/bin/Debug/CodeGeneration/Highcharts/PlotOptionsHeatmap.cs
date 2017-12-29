@@ -14,14 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsHeatmap()
 		{
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			BorderWidth = BorderWidth_DefaultValue = 0;
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsHeatmapDataLabels();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsHeatmapTooltip();
-			States = States_DefaultValue = new PlotOptionsHeatmapStates();
 			PointPadding = PointPadding_DefaultValue = 0;
-			Color = Color_DefaultValue = "null";
 			Colsize = Colsize_DefaultValue = 1;
 			Rowsize = Rowsize_DefaultValue = 1;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
@@ -82,20 +76,6 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Animation is disabled by default on the heatmap series.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width for each heat map item.
-		/// </summary>
-		public PlotOptionsHeatmapBorderWidth BorderWidth { get; set; }
-		private PlotOptionsHeatmapBorderWidth BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color applied to null points. In styled mode, a general CSS class isapplied instead.
 		/// </summary>
 		public string NullColor { get; set; }
@@ -103,38 +83,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsHeatmapDataLabels DataLabels { get; set; }
-		private PlotOptionsHeatmapDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsHeatmapTooltip Tooltip { get; set; }
-		private PlotOptionsHeatmapTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsHeatmapStates States { get; set; }
-		private PlotOptionsHeatmapStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Padding between the points in the heatmap.
 		/// </summary>
 		public double? PointPadding { get; set; }
 		private double? PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The main color of the series. In heat maps this color is rarely used,as we mostly use the color to denote the value of each point. Unlessoptions are set in the [colorAxis](#colorAxis), the default valueis pulled from the [options.colors](#colors) array.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -526,14 +478,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (NullColor != NullColor_DefaultValue) h.Add("nullColor",NullColor);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
 			if (Rowsize != Rowsize_DefaultValue) h.Add("rowsize",Rowsize);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);

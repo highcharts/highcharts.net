@@ -20,7 +20,6 @@ namespace Highsoft.Web.Mvc.Charts
 			_titleKey = _titleKey_DefaultValue = "contextButtonTitle";
 			MenuItems = MenuItems_DefaultValue = new List<MenuItem>();
 			Onclick = Onclick_DefaultValue = "";
-			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			X = X_DefaultValue = -10;
 			SymbolSize = SymbolSize_DefaultValue = 14;
 			Enabled = Enabled_DefaultValue = true;
@@ -81,13 +80,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Onclick { get; set; }
 		private string Onclick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// See [navigation.buttonOptions.symbolFill](#navigation.buttonOptions.symbolFill).
-		/// </summary>
-		public string SymbolFill { get; set; }
-		private string SymbolFill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -212,7 +204,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (_titleKey != _titleKey_DefaultValue) h.Add("_titleKey",_titleKey);
 			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems",MenuItems);
 			if (Onclick != Onclick_DefaultValue) h.Add("onclick",Onclick);
-			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);

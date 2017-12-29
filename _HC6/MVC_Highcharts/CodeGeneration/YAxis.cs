@@ -15,30 +15,13 @@ namespace Highsoft.Web.Mvc.Charts
 		public YAxis()
 		{
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = null;
-			EndOnTick = EndOnTick_DefaultValue = true;
-			TickPixelInterval = TickPixelInterval_DefaultValue = 72;
-			ShowLastLabel = ShowLastLabel_DefaultValue = true;
-			Labels = Labels_DefaultValue = new YAxisLabels();
-			MaxPadding = MaxPadding_DefaultValue = 0.05;
-			MinPadding = MinPadding_DefaultValue = 0.05;
-			StartOnTick = StartOnTick_DefaultValue = true;
-			Title = Title_DefaultValue = new YAxisTitle();
 			StackLabels = StackLabels_DefaultValue = new YAxisStackLabels();
-			GridLineWidth = GridLineWidth_DefaultValue = 1;
-			LineWidth = LineWidth_DefaultValue = 0;
-			Opposite = Opposite_DefaultValue = false;
-			LineColor = LineColor_DefaultValue = "";
-			Min = Min_DefaultValue = "";
-			Max = Max_DefaultValue = "";
 			Angle = Angle_DefaultValue = 0;
 			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
 			MaxColor = MaxColor_DefaultValue = "#003399";
 			MinColor = MinColor_DefaultValue = "#e6ebf5";
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			Stops = Stops_DefaultValue = new List<Stop>();
-			TickWidth = TickWidth_DefaultValue = 0;
-			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
-			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Labels = Labels_DefaultValue = new YAxisLabels();
@@ -116,108 +99,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisEndOnTick EndOnTick { get; set; }
-		private YAxisEndOnTick EndOnTick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisTickPixelInterval TickPixelInterval { get; set; }
-		private YAxisTickPixelInterval TickPixelInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisShowLastLabel ShowLastLabel { get; set; }
-		private YAxisShowLastLabel ShowLastLabel_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisLabels Labels { get; set; }
-		private YAxisLabels Labels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
-		/// </summary>
-		public YAxisMaxPadding MaxPadding { get; set; }
-		private YAxisMaxPadding MaxPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
-		/// </summary>
-		public YAxisMinPadding MinPadding { get; set; }
-		private YAxisMinPadding MinPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.
-		/// </summary>
-		public YAxisStartOnTick StartOnTick { get; set; }
-		private YAxisStartOnTick StartOnTick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisTitle Title { get; set; }
-		private YAxisTitle Title_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The stack labels show the total value for each bar in a stackedcolumn or bar chart. The label will be placed on top of positivecolumns and below negative columns. In case of an inverted columnchart or a bar chart the label is placed to the right of positivebars and to the left of negative bars.
 		/// </summary>
 		public YAxisStackLabels StackLabels { get; set; }
 		private YAxisStackLabels StackLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisGridLineWidth GridLineWidth { get; set; }
-		private YAxisGridLineWidth GridLineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisLineWidth LineWidth { get; set; }
-		private YAxisLineWidth LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisOpposite Opposite { get; set; }
-		private YAxisOpposite Opposite_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisLineColor LineColor { get; set; }
-		private YAxisLineColor LineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisMin Min { get; set; }
-		private YAxisMin Min_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisMax Max { get; set; }
-		private YAxisMax Max_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -260,27 +145,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<Stop> Stops { get; set; }
 		private List<Stop> Stops_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel width of the major tick marks.
-		/// </summary>
-		public double? TickWidth { get; set; }
-		private double? TickWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array of objects defining plot bands on the Y axis.
-		/// </summary>
-		public List<YAxisPlotBands> PlotBands { get; set; }
-		private List<YAxisPlotBands> PlotBands_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array of objects representing plot lines on the X axis
-		/// </summary>
-		public List<YAxisPlotLines> PlotLines { get; set; }
-		private List<YAxisPlotLines> PlotLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -743,30 +607,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
-			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
-			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
-			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
-			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
-			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
-			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (StackLabels.IsDirty()) h.Add("stackLabels",StackLabels.ToHashtable());
-			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (Min != Min_DefaultValue) h.Add("min",Min);
-			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (Angle != Angle_DefaultValue) h.Add("angle",Angle);
 			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation", Highcharts.FirstCharacterToLower(GridLineInterpolation.ToString()));
 			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
 			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (Stops.Any()) h.Add("stops", GetLists(Stops));
-			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
-			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
-			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());

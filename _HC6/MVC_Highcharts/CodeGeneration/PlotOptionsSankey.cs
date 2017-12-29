@@ -14,15 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSankey()
 		{
-			ColorByPoint = ColorByPoint_DefaultValue = true;
 			CurveFactor = CurveFactor_DefaultValue = 0.33;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsSankeyDataLabels();
 			LinkOpacity = LinkOpacity_DefaultValue = 0.5;
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			NodePadding = NodePadding_DefaultValue = 10;
-			ShowInLegend = ShowInLegend_DefaultValue = false;
-			States = States_DefaultValue = new PlotOptionsSankeyStates();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsSankeyTooltip();
 			Label = Label_DefaultValue = new PlotOptionsSankeyLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -62,24 +57,10 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyColorByPoint ColorByPoint { get; set; }
-		private PlotOptionsSankeyColorByPoint ColorByPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Higher numbers makes the links in a sankey diagram render more curved.A `curveFactor` of 0 makes the lines straight.
 		/// </summary>
 		public PlotOptionsSankeyCurveFactor CurveFactor { get; set; }
 		private PlotOptionsSankeyCurveFactor CurveFactor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the data labels appearing on top of the nodes and links. Forsankey charts, data labels are visible for the nodes by default, but hidden for links. This is controlled by modifying the `nodeFormat`, andthe `format` that applies to links and is an empty string by default.
-		/// </summary>
-		public PlotOptionsSankeyDataLabels DataLabels { get; set; }
-		private PlotOptionsSankeyDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -101,27 +82,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsSankeyNodePadding NodePadding { get; set; }
 		private PlotOptionsSankeyNodePadding NodePadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyShowInLegend ShowInLegend { get; set; }
-		private PlotOptionsSankeyShowInLegend ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyStates States { get; set; }
-		private PlotOptionsSankeyStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyTooltip Tooltip { get; set; }
-		private PlotOptionsSankeyTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -366,15 +326,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (CurveFactor != CurveFactor_DefaultValue) h.Add("curveFactor",CurveFactor);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

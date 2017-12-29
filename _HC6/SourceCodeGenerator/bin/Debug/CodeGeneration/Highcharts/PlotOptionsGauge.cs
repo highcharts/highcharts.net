@@ -14,11 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsGauge()
 		{
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
 			Dial = Dial_DefaultValue = new PlotOptionsGaugeDial();
 			Pivot = Pivot_DefaultValue = new PlotOptionsGaugePivot();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsGaugeTooltip();
-			ShowInLegend = ShowInLegend_DefaultValue = false;
 			Overshoot = Overshoot_DefaultValue = 0;
 			Wrap = Wrap_DefaultValue = true;
 			Label = Label_DefaultValue = new PlotOptionsGaugeLabel();
@@ -59,13 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Data labels for the gauge. For gauges, the data labels are enabledby default and shown in a bordered box below the point.
-		/// </summary>
-		public PlotOptionsGaugeDataLabels DataLabels { get; set; }
-		private PlotOptionsGaugeDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Options for the dial or arrow pointer of the gauge.In styled mode, the dial is styled with the `.highcharts-gauge-series .highcharts-dial` rule.
 		/// </summary>
 		public PlotOptionsGaugeDial Dial { get; set; }
@@ -77,20 +67,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsGaugePivot Pivot { get; set; }
 		private PlotOptionsGaugePivot Pivot_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsGaugeTooltip Tooltip { get; set; }
-		private PlotOptionsGaugeTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display this particular series or series type in thelegend. Defaults to false for gauge series.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -342,11 +318,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Dial.IsDirty()) h.Add("dial",Dial.ToHashtable());
 			if (Pivot.IsDirty()) h.Add("pivot",Pivot.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
 			if (Wrap != Wrap_DefaultValue) h.Add("wrap",Wrap);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());

@@ -14,9 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPyramid()
 		{
-			NeckWidth = NeckWidth_DefaultValue = "0%";
-			NeckHeight = NeckHeight_DefaultValue = "0%";
-			Reversed = Reversed_DefaultValue = true;
 			Label = Label_DefaultValue = new PlotOptionsPyramidLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -76,27 +73,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// The pyramid neck width is zero by default, as opposed to the funnel, which shares the same layout logic.
-		/// </summary>
-		public string NeckWidth { get; set; }
-		private string NeckWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pyramid neck width is zero by default, as opposed to the funnel, which shares the same layout logic.
-		/// </summary>
-		public string NeckHeight { get; set; }
-		private string NeckHeight_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pyramid is reversed by default, as opposed to the funnel, whichshares the layout engine, and is not reversed.
-		/// </summary>
-		public bool? Reversed { get; set; }
-		private bool? Reversed_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
@@ -494,9 +470,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
-			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
-			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
