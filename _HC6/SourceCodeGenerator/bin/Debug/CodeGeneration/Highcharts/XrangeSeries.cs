@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data points for the series. For the `xrange` series type,points can be given in the following ways:1.  An array of objects with named values. The objects are pointconfiguration objects as seen below. ```js    data: [{        x: Date.UTC(2017, 0, 1),        x2: Date.UTC(2017, 0, 3),        name: "Test",        y: 0,        color: "#00FF00"    }, {        x: Date.UTC(2017, 0, 4),        x2: Date.UTC(2017, 0, 5),        name: "Deploy",        y: 1,        color: "#FF0000"    }] ```
 		/// </summary>
-		public List<SeriesXrangeData> Data { get; set; }
-		private List<SeriesXrangeData> Data_DefaultValue { get; set; }
+		public List<XrangeSeriesData> Data { get; set; }
+		private List<XrangeSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

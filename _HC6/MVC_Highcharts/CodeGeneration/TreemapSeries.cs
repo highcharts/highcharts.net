@@ -92,8 +92,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data points for the series. For the `treemap` seriestype, points can be given in the following ways:1.  An array of numerical values. In this case, the numerical valueswill be interpreted as `value` options. Example: ```js data: [0, 5, 3, 5] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.treemap.turboThreshold),this option is not available. ```js    data: [{        value: 9,        name: "Point2",        color: "#00FF00"    }, {        value: 6,        name: "Point1",        color: "#FF00FF"    }] ```
 		/// </summary>
-		public List<SeriesTreemapData> Data { get; set; }
-		private List<SeriesTreemapData> Data_DefaultValue { get; set; }
+		public List<TreemapSeriesData> Data { get; set; }
+		private List<TreemapSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data points for the series. For the `pareto` series type,points are calculated dynamically.
 		/// </summary>
-		public List<SeriesParetoData> Data { get; set; }
-		private List<SeriesParetoData> Data_DefaultValue { get; set; }
+		public List<ParetoSeriesData> Data { get; set; }
+		private List<ParetoSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

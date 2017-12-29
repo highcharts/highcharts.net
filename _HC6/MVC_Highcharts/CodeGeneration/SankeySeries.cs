@@ -73,8 +73,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data points for the series. For the `sankey` series type,points can be given in the following way:An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.area.turboThreshold),this option is not available. ```js    data: [{        from: 'Category1',        to: 'Category2',        weight: 2    }, {        from: 'Category1',        to: 'Category3',        weight: 5    }] ```
 		/// </summary>
-		public List<SeriesSankeyData> Data { get; set; }
-		private List<SeriesSankeyData> Data_DefaultValue { get; set; }
+		public List<SankeySeriesData> Data { get; set; }
+		private List<SankeySeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data points for the series. For the `variablepie` series type,points can be given in the following ways:1.  An array of arrays with 2 values. In this case, the numerical valueswill be interpreted as `y, z` options. Example: ```js data: [     [40, 75],     [50, 50],     [60, 40] ]  ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series'[turboThreshold](#series.variablepie.turboThreshold), this option is notavailable. ```js data: [{     y: 1,     z: 4,     name: "Point2",     color: "#00FF00"  }, {     y: 7,     z: 10,     name: "Point1",     color: "#FF00FF"  }] ```
 		/// </summary>
-		public List<SeriesVariablepieData> Data { get; set; }
-		private List<SeriesVariablepieData> Data_DefaultValue { get; set; }
+		public List<VariablepieSeriesData> Data { get; set; }
+		private List<VariablepieSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

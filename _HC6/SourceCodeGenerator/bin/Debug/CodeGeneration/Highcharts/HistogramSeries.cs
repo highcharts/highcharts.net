@@ -96,8 +96,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data points for the series. For the `histogram` series type,points are calculated dynamically. See[histogram.baseSeries](#series.histogram.baseSeries).
 		/// </summary>
-		public List<SeriesHistogramData> Data { get; set; }
-		private List<SeriesHistogramData> Data_DefaultValue { get; set; }
+		public List<HistogramSeriesData> Data { get; set; }
+		private List<HistogramSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

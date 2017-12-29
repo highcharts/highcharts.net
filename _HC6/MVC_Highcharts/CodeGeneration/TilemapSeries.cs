@@ -510,8 +510,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<SeriesTilemapData> Data { get; set; }
-		private List<SeriesTilemapData> Data_DefaultValue { get; set; }
+		public List<TilemapSeriesData> Data { get; set; }
+		private List<TilemapSeriesData> Data_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

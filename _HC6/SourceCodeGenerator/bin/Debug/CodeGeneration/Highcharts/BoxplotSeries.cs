@@ -99,8 +99,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data points for the series. For the `boxplot` seriestype, points can be given in the following ways:1.  An array of arrays with 6 or 5 values. In this case, the valuescorrespond to `x,low,q1,median,q3,high`. If the first value is astring, it is applied as the name of the point, and the `x` valueis inferred. The `x` value can also be omitted, in which case theinner arrays should be of length 5\. Then the `x` value is automaticallycalculated, either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. ```js    data: [        [0, 3, 0, 10, 3, 5],        [1, 7, 8, 7, 2, 9],        [2, 6, 9, 5, 1, 3]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.boxplot.turboThreshold),this option is not available. ```js    data: [{        x: 1,        low: 4,        q1: 9,        median: 9,        q3: 1,        high: 10,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        low: 5,        q1: 7,        median: 3,        q3: 6,        high: 2,        name: "Point1",        color: "#FF00FF"    }] ```
 		/// </summary>
-		public List<SeriesBoxplotData> Data { get; set; }
-		private List<SeriesBoxplotData> Data_DefaultValue { get; set; }
+		public List<BoxplotSeriesData> Data { get; set; }
+		private List<BoxplotSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

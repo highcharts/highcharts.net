@@ -66,8 +66,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<SeriesSunburstData> Data { get; set; }
-		private List<SeriesSunburstData> Data_DefaultValue { get; set; }
+		public List<SunburstSeriesData> Data { get; set; }
+		private List<SunburstSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

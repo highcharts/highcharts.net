@@ -89,8 +89,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data points for the series. For the `bellcurve` series type,points are calculated dynamically.
 		/// </summary>
-		public List<SeriesBellcurveData> Data { get; set; }
-		private List<SeriesBellcurveData> Data_DefaultValue { get; set; }
+		public List<BellcurveSeriesData> Data { get; set; }
+		private List<BellcurveSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -80,8 +80,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data points for the series. For the `scatter3d` seriestype, points can be given in the following ways:1.  An array of arrays with 3 values. In this case, the values correspondto `x,y,z`. If the first value is a string, it is applied as the nameof the point, and the `x` value is inferred. ```js    data: [        [0, 0, 1],        [1, 8, 7],        [2, 9, 2]    ] ```3.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.scatter3d.turboThreshold),this option is not available. ```js    data: [{        x: 1,        y: 2,        z: 24,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        y: 4,        z: 12,        name: "Point1",        color: "#FF00FF"    }] ```
 		/// </summary>
-		public List<SeriesScatter3dData> Data { get; set; }
-		private List<SeriesScatter3dData> Data_DefaultValue { get; set; }
+		public List<Scatter3dSeriesData> Data { get; set; }
+		private List<Scatter3dSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -557,23 +557,11 @@ public class HighchartsGenerator
         {
             string result = child.ParentFullName;
             if (_seriesMappings[result] != null)
-            {
                 result = (string)_seriesMappings[result];
-            }
             else
-            {
-                if (result.Contains('.'))
-                {
-                    var tab = result.Split('.');
-                    result = "";
+                result = GetClassNameFromItem(child);
 
-                    foreach (var item in tab)
-                        result += FirstCharToUpper(item);
-                }
-                else
-                    result = FirstCharToUpper(result);
-            }
-            return "List<" + result + "Data" + ">";
+            return "List<" + result + ">";
         }
 
         if (child.ParentFullName != ROOT_CLASS && (child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis"))

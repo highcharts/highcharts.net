@@ -67,8 +67,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data points for the series. For the `solidgauge` seriestype, points can be given in the following ways:1.  An array of numerical values. In this case, the numerical valueswill be interpreted as `y` options. Example: ```js data: [0, 5, 3, 5] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.solidgauge.turboThreshold),this option is not available. ```js    data: [{        y: 5,        name: "Point2",        color: "#00FF00"    }, {        y: 7,        name: "Point1",        color: "#FF00FF"    }] ```The typical gauge only contains a single data value.
 		/// </summary>
-		public List<SeriesSolidgaugeData> Data { get; set; }
-		private List<SeriesSolidgaugeData> Data_DefaultValue { get; set; }
+		public List<SolidgaugeSeriesData> Data { get; set; }
+		private List<SolidgaugeSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

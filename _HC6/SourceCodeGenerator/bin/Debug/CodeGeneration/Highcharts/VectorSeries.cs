@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of data points for the series. For the `vector` series type,points can be given in the following ways:1.  An array of arrays with 4 values. In this case, the values correspondto `x,y,length,direction`. If the first value is a string, it is applied asthe name of the point, and the `x` value is inferred. ```js    data: [        [0, 0, 10, 90],        [0, 1, 5, 180],        [1, 1, 2, 270]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.area.turboThreshold),this option is not available. ```js    data: [{        x: 0,        y: 0,        name: "Point2",        length: 10,        direction: 90    }, {        x: 1,        y: 1,        name: "Point1",        direction: 270    }] ```
 		/// </summary>
-		public List<SeriesVectorData> Data { get; set; }
-		private List<SeriesVectorData> Data_DefaultValue { get; set; }
+		public List<VectorSeriesData> Data { get; set; }
+		private List<VectorSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
