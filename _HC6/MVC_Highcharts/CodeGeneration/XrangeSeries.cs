@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public XrangeSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesXrangeData>();
+			Data = Data_DefaultValue = new List<XrangeSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

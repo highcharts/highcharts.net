@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreaSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesAreaData>();
+			Data = Data_DefaultValue = new List<AreaSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

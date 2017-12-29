@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public StreamgraphSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesStreamgraphData>();
+			Data = Data_DefaultValue = new List<StreamgraphSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

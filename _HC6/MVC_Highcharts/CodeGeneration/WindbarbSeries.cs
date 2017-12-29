@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WindbarbSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesWindbarbData>();
+			Data = Data_DefaultValue = new List<WindbarbSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

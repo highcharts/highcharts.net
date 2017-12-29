@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public FunnelSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesFunnelData>();
+			Data = Data_DefaultValue = new List<FunnelSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

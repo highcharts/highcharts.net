@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VariablepieSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesVariablepieData>();
+			Data = Data_DefaultValue = new List<VariablepieSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

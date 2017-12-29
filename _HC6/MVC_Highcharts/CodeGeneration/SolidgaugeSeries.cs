@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SolidgaugeSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesSolidgaugeData>();
+			Data = Data_DefaultValue = new List<SolidgaugeSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

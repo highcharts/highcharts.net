@@ -75,7 +75,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Colsize = Colsize_DefaultValue = 1;
 			Rowsize = Rowsize_DefaultValue = 1;
 			TileShape = TileShape_DefaultValue = hexagon;
-			Data = Data_DefaultValue = new List<SeriesTilemapData>();
+			Data = Data_DefaultValue = new List<TilemapSeriesData>();
 			
 		}	
 		

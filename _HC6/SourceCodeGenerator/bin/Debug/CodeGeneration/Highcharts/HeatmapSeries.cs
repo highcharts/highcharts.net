@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HeatmapSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesHeatmapData>();
+			Data = Data_DefaultValue = new List<HeatmapSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

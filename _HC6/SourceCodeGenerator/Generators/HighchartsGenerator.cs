@@ -581,21 +581,13 @@ public class HighchartsGenerator
         if (child.ReturnType == "Array" && child.Title == "zones")
             returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones", "Zone"));
         else
-            //if (child.IsParent)
             returnType = GetClassNameFromItem(child);
-        //else
-        //{
-        //    if (returnType == "Boolean|Object")
-        //        returnType = "object";
-        //}
 
         if (returnType.EndsWith("DataDataLabels"))
             returnType = returnType.Replace("DataData", "Data");
 
         if (returnType.EndsWith("LevelsDataLabels"))
             returnType = returnType.Replace("LevelsData", "Data");
-
-
 
         return returnType;
     }
@@ -973,25 +965,11 @@ public class HighchartsGenerator
 
             string result = item.ParentFullName;
             if (_seriesMappings[result] != null)
-            {
                 result = (string)_seriesMappings[result];
-            }
             else
-            {
-                if (result.Contains('.'))
-                {
-                    var tab = result.Split('.');
-                    result = "";
-
-                    foreach (var t in tab)
-                        result += FirstCharToUpper(t);
-                }
-                else
-                {
-                    result = FirstCharToUpper(result);
-                }
-            }
-            return "new List<" + result + "Data" + ">()";//null;
+                result = GetClassNameFromItem(item);
+            
+            return "new List<" + result + ">()";
         }
 
         if (item.Title.ToLower() == "fillcolor")

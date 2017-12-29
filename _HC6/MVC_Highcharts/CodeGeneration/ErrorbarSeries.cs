@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ErrorbarSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesErrorbarData>();
+			Data = Data_DefaultValue = new List<ErrorbarSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

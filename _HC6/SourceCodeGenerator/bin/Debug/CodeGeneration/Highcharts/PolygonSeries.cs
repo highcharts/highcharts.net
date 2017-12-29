@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PolygonSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesPolygonData>();
+			Data = Data_DefaultValue = new List<PolygonSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

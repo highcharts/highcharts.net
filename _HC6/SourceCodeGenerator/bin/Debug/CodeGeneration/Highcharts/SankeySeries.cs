@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public SankeySeries()
 		{
 			Nodes = Nodes_DefaultValue = new SankeySeriesNodes();
-			Data = Data_DefaultValue = new List<SeriesSankeyData>();
+			Data = Data_DefaultValue = new List<SankeySeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

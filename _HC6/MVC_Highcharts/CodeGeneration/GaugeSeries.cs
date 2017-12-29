@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public GaugeSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesGaugeData>();
+			Data = Data_DefaultValue = new List<GaugeSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

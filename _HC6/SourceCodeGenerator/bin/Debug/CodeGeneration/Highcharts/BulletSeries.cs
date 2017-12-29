@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BulletSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesBulletData>();
+			Data = Data_DefaultValue = new List<BulletSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

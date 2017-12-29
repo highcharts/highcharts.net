@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WaterfallSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesWaterfallData>();
+			Data = Data_DefaultValue = new List<WaterfallSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

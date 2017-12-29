@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreasplineSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesAreasplineData>();
+			Data = Data_DefaultValue = new List<AreasplineSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

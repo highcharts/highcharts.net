@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VariwideSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesVariwideData>();
+			Data = Data_DefaultValue = new List<VariwideSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

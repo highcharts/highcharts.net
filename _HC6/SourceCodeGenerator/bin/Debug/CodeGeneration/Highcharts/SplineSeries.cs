@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SplineSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesSplineData>();
+			Data = Data_DefaultValue = new List<SplineSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

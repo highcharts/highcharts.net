@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesTreemapData>();
+			Data = Data_DefaultValue = new List<TreemapSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

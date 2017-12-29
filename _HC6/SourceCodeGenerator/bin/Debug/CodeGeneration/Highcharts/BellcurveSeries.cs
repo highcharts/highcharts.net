@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public BellcurveSeries()
 		{
 			BaseSeries = BaseSeries_DefaultValue = null;
-			Data = Data_DefaultValue = new List<SeriesBellcurveData>();
+			Data = Data_DefaultValue = new List<BellcurveSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

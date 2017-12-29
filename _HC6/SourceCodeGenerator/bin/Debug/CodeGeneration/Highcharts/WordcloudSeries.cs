@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WordcloudSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesWordcloudData>();
+			Data = Data_DefaultValue = new List<WordcloudSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

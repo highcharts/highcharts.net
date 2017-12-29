@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BubbleSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesBubbleData>();
+			Data = Data_DefaultValue = new List<BubbleSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

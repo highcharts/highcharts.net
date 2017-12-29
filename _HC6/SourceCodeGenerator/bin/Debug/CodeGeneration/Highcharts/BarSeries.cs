@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BarSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesBarData>();
+			Data = Data_DefaultValue = new List<BarSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

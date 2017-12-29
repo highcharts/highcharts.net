@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BoxplotSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesBoxplotData>();
+			Data = Data_DefaultValue = new List<BoxplotSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

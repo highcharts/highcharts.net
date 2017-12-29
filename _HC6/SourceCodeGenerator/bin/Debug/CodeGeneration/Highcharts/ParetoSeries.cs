@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ParetoSeries()
 		{
 			BaseSeries = BaseSeries_DefaultValue = null;
-			Data = Data_DefaultValue = new List<SeriesParetoData>();
+			Data = Data_DefaultValue = new List<ParetoSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PyramidSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesPyramidData>();
+			Data = Data_DefaultValue = new List<PyramidSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;

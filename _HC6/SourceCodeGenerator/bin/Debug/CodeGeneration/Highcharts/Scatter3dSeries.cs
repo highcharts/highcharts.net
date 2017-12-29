@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Scatter3dSeries()
 		{
-			Data = Data_DefaultValue = new List<SeriesScatter3dData>();
+			Data = Data_DefaultValue = new List<Scatter3dSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
