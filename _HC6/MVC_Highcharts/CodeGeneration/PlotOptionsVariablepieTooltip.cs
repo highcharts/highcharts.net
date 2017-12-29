@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsVariablepieTooltipFollowPointer FollowPointer { get; set; }
-		private PlotOptionsVariablepieTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
+		public bool? FollowPointer { get; set; }
+		private bool? FollowPointer_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

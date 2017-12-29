@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public FunnelSeriesTooltipFollowPointer FollowPointer { get; set; }
-		private FunnelSeriesTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
+		public bool? FollowPointer { get; set; }
+		private bool? FollowPointer_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

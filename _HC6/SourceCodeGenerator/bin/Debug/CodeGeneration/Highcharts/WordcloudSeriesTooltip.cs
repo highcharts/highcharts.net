@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public WordcloudSeriesTooltipFollowPointer FollowPointer { get; set; }
-		private WordcloudSeriesTooltipFollowPointer FollowPointer_DefaultValue { get; set; }
+		public bool? FollowPointer { get; set; }
+		private bool? FollowPointer_DefaultValue { get; set; }
 		 
 
 		/// <summary>
