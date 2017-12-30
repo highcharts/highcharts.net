@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
 			Breaks = Breaks_DefaultValue = new XAxisBreaks();
-			Categories = Categories_DefaultValue = new List<string> null;
+			Categories = Categories_DefaultValue = new List<string>();
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new XAxisCrosshair();

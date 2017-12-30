@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TickColor = TickColor_DefaultValue = "#ccd6eb";
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
-			Categories = Categories_DefaultValue = new List<string> null;
+			Categories = Categories_DefaultValue = new List<string>();
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Description = Description_DefaultValue = "undefined";

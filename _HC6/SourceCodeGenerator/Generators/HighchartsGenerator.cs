@@ -1043,10 +1043,13 @@ public class HighchartsGenerator
             }
             if (item.ReturnType.StartsWith("Array.<String>")) // thereis Array<String>; ending with ; in Highstock
             {
-                return "new List<string> " + item.Defaults
-                                    .Replace("'", "\"")
-                                    .Replace("[", "{")
-                                    .Replace("]", "}");
+                if(item.ParentFullName == "lang")
+                    return "new List<string> " + item.Defaults
+                                        .Replace("'", "\"")
+                                        .Replace("[", "{")
+                                        .Replace("]", "}");
+
+                return "new List<string>()";
             }
             if (item.ReturnType == "Array.<Number>")
             {
