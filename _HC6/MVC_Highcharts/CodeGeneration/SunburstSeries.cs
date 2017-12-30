@@ -20,8 +20,8 @@ namespace Highsoft.Web.Mvc.Charts
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Type = Type_DefaultValue = SunburstSeriesType.Null;
-			XAxis = XAxis_DefaultValue = new List<XAxis>();
-			YAxis = YAxis_DefaultValue = new List<YAxis>();
+			XAxis = XAxis_DefaultValue = "";
+			YAxis = YAxis_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = null;
 			Label = Label_DefaultValue = new SunburstSeriesLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;

@@ -45,8 +45,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Name = Name_DefaultValue = "";
 			Stack = Stack_DefaultValue = "null";
 			Type = Type_DefaultValue = TypeSeries.Null;
-			XAxis = XAxis_DefaultValue = new List<XAxis>();
-			YAxis = YAxis_DefaultValue = new List<YAxis>();
+			XAxis = XAxis_DefaultValue = "";
+			YAxis = YAxis_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = null;
 			Spline = Spline_DefaultValue = new SplineSeries();
 			Scatter3d = Scatter3d_DefaultValue = new Scatter3dSeries();

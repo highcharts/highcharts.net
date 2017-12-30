@@ -21,8 +21,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Name = Name_DefaultValue = "";
 			Stack = Stack_DefaultValue = "null";
 			Type = Type_DefaultValue = BarSeriesType.Null;
-			XAxis = XAxis_DefaultValue = new List<XAxis>();
-			YAxis = YAxis_DefaultValue = new List<YAxis>();
+			XAxis = XAxis_DefaultValue = "";
+			YAxis = YAxis_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new BarSeriesLabel();

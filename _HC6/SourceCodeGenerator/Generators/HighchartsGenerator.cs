@@ -998,6 +998,8 @@ public class HighchartsGenerator
 
         //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
         //    item.IsParent = true;
+        if ((item.Title == "xAxis" || item.Title == "yAxis") && item.ParentFullName != ROOT_CLASS)
+            return "\"\"";
 
         if (_propertyInitMappings[item.FullName] != null)
         {
@@ -1015,8 +1017,7 @@ public class HighchartsGenerator
 
         //if (!item.IsParent)
         //{
-        if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName == null)
-            return defaults;
+        
 
         if (item.Title.ToLower() == "position")
             return defaults;
@@ -1085,14 +1086,14 @@ public class HighchartsGenerator
         //else
         //{
         //return String.Format("new {0}()", FirstCharToUpper(item.Title));
-        if (_propertyInitMappings[item.FullName] != null)
-        {
-            return _propertyInitMappings[item.FullName].ToString();
-        }
-        if (_propertyInitMappings[item.Title] != null)
-        {
-            return _propertyInitMappings[item.Title].ToString();
-        }
+        //if (_propertyInitMappings[item.FullName] != null)
+        //{
+        //    return _propertyInitMappings[item.FullName].ToString();
+        //}
+        //if (_propertyInitMappings[item.Title] != null)
+        //{
+        //    return _propertyInitMappings[item.Title].ToString();
+        //}
 
         //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
         //    item.IsParent = false;
