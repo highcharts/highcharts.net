@@ -237,8 +237,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Configure a crosshair that follows either the mouse pointer or thehovered point.In styled mode, the crosshairs are styled in the`.highcharts-crosshair`, `.highcharts-crosshair-thin` or`.highcharts-xaxis-category` classes.
 		/// </summary>
-		public bool? Crosshair { get; set; }
-		private bool? Crosshair_DefaultValue { get; set; }
+		public ChartParallelAxesCrosshair Crosshair { get; set; }
+		private ChartParallelAxesCrosshair Crosshair_DefaultValue { get; set; }
 		 
 
 		/// <summary>
