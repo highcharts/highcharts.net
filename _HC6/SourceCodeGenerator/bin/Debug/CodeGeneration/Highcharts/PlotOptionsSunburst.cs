@@ -71,8 +71,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Used together with the levels and `allowDrillToNode` options. Whenset to false the first level visible when drilling is consideredto be level one. Otherwise the level will be the same as the treestructure.
 		/// </summary>
-		public PlotOptionsSunburstLevelIsConstant LevelIsConstant { get; set; }
-		private PlotOptionsSunburstLevelIsConstant LevelIsConstant_DefaultValue { get; set; }
+		public bool? LevelIsConstant { get; set; }
+		private bool? LevelIsConstant_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -29,22 +29,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable the series label per series.
 		/// </summary>
-		public PlotOptionsParetoLabelEnabled Enabled { get; set; }
-		private PlotOptionsParetoLabelEnabled Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Allow labels to be placed distant to the graph if necessary,and draw a connector line to the graph.
 		/// </summary>
-		public PlotOptionsParetoLabelConnectorAllowed ConnectorAllowed { get; set; }
-		private PlotOptionsParetoLabelConnectorAllowed ConnectorAllowed_DefaultValue { get; set; }
+		public bool? ConnectorAllowed { get; set; }
+		private bool? ConnectorAllowed_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// If the label is closer than this to a neighbour graph, draw aconnector.
 		/// </summary>
-		public PlotOptionsParetoLabelConnectorNeighbourDistance ConnectorNeighbourDistance { get; set; }
-		private PlotOptionsParetoLabelConnectorNeighbourDistance ConnectorNeighbourDistance_DefaultValue { get; set; }
+		public double? ConnectorNeighbourDistance { get; set; }
+		private double? ConnectorNeighbourDistance_DefaultValue { get; set; }
 		 
 
 		/// <summary>

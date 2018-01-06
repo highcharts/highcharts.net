@@ -24,22 +24,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The smallest degree of rotation for a word.
 		/// </summary>
-		public PlotOptionsWordcloudRotationFrom From { get; set; }
-		private PlotOptionsWordcloudRotationFrom From_DefaultValue { get; set; }
+		public double? From { get; set; }
+		private double? From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The number of possible orientations for a word, within the range of`rotation.from` and `rotation.to`.
 		/// </summary>
-		public PlotOptionsWordcloudRotationOrientations Orientations { get; set; }
-		private PlotOptionsWordcloudRotationOrientations Orientations_DefaultValue { get; set; }
+		public double? Orientations { get; set; }
+		private double? Orientations_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The largest degree of rotation for a word.
 		/// </summary>
-		public PlotOptionsWordcloudRotationTo To { get; set; }
-		private PlotOptionsWordcloudRotationTo To_DefaultValue { get; set; }
+		public double? To { get; set; }
+		private double? To_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

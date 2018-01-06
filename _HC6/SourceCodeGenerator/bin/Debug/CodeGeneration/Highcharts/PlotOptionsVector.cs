@@ -69,8 +69,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Maximum length of the arrows in the vector plot. The individual arrowlength is computed between 0 and this value.
 		/// </summary>
-		public PlotOptionsVectorVectorLength VectorLength { get; set; }
-		private PlotOptionsVectorVectorLength VectorLength_DefaultValue { get; set; }
+		public double? VectorLength { get; set; }
+		private double? VectorLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>

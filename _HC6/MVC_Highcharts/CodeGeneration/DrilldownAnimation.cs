@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Duration for the drilldown animation.
 		/// </summary>
-		public DrilldownAnimationDuration Duration { get; set; }
-		private DrilldownAnimationDuration Duration_DefaultValue { get; set; }
+		public double? Duration { get; set; }
+		private double? Duration_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

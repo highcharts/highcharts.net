@@ -537,8 +537,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The line width of the wind barb symbols.
 		/// </summary>
-		public WindbarbSeriesLineWidth LineWidth { get; set; }
-		private WindbarbSeriesLineWidth LineWidth_DefaultValue { get; set; }
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -551,15 +551,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Pixel length of the stems.
 		/// </summary>
-		public WindbarbSeriesVectorLength VectorLength { get; set; }
-		private WindbarbSeriesVectorLength VectorLength_DefaultValue { get; set; }
+		public double? VectorLength { get; set; }
+		private double? VectorLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Vertical offset from the cartesian position, in pixels. The default valuemakes sure the symbols don't overlap the X axis when `onSeries` is`null`, and that they don't overlap the linked series when `onSeries` isgiven.
 		/// </summary>
-		public WindbarbSeriesYOffset YOffset { get; set; }
-		private WindbarbSeriesYOffset YOffset_DefaultValue { get; set; }
+		public double? YOffset { get; set; }
+		private double? YOffset_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

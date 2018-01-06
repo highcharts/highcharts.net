@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public SplineSeriesDataMarkerStatesHoverAnimationDuration Duration { get; set; }
-		private SplineSeriesDataMarkerStatesHoverAnimationDuration Duration_DefaultValue { get; set; }
+		public double? Duration { get; set; }
+		private double? Duration_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

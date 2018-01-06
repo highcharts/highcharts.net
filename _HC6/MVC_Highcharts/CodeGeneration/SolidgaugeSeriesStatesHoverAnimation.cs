@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The duration of the hover animation in milliseconds. Bydefault the hover state animates quickly in, and slowly backto normal.
 		/// </summary>
-		public SolidgaugeSeriesStatesHoverAnimationDuration Duration { get; set; }
-		private SolidgaugeSeriesStatesHoverAnimationDuration Duration_DefaultValue { get; set; }
+		public double? Duration { get; set; }
+		private double? Duration_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

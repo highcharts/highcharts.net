@@ -29,22 +29,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable the series label per series.
 		/// </summary>
-		public PlotOptionsPieLabelEnabled Enabled { get; set; }
-		private PlotOptionsPieLabelEnabled Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Allow labels to be placed distant to the graph if necessary,and draw a connector line to the graph.
 		/// </summary>
-		public PlotOptionsPieLabelConnectorAllowed ConnectorAllowed { get; set; }
-		private PlotOptionsPieLabelConnectorAllowed ConnectorAllowed_DefaultValue { get; set; }
+		public bool? ConnectorAllowed { get; set; }
+		private bool? ConnectorAllowed_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// If the label is closer than this to a neighbour graph, draw aconnector.
 		/// </summary>
-		public PlotOptionsPieLabelConnectorNeighbourDistance ConnectorNeighbourDistance { get; set; }
-		private PlotOptionsPieLabelConnectorNeighbourDistance ConnectorNeighbourDistance_DefaultValue { get; set; }
+		public double? ConnectorNeighbourDistance { get; set; }
+		private double? ConnectorNeighbourDistance_DefaultValue { get; set; }
 		 
 
 		/// <summary>

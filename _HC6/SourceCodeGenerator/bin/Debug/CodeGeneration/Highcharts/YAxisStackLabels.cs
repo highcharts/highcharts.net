@@ -33,15 +33,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Allow the stack labels to overlap.
 		/// </summary>
-		public YAxisStackLabelsAllowOverlap AllowOverlap { get; set; }
-		private YAxisStackLabelsAllowOverlap AllowOverlap_DefaultValue { get; set; }
+		public bool? AllowOverlap { get; set; }
+		private bool? AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable or disable the stack total labels.
 		/// </summary>
-		public YAxisStackLabelsEnabled Enabled { get; set; }
-		private YAxisStackLabelsEnabled Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>

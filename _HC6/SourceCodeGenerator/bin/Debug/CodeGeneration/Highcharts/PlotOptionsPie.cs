@@ -67,8 +67,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPieClip Clip { get; set; }
-		private PlotOptionsPieClip Clip_DefaultValue { get; set; }
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>

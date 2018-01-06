@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable or disable the axis labels.
 		/// </summary>
-		public ColorAxisLabelsEnabled Enabled { get; set; }
-		private ColorAxisLabelsEnabled Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -55,8 +55,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The x position offset of the label relative to the tick positionon the axis.
 		/// </summary>
-		public ColorAxisLabelsX X { get; set; }
-		private ColorAxisLabelsX X_DefaultValue { get; set; }
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -174,8 +174,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// If enabled, the axis labels will skewed to follow the perspective. This will fix overlapping labels and titles, but texts become lesslegible due to the distortion.The final appearance depends heavily on `labels.position3d`.
 		/// </summary>
-		public ColorAxisLabelsSkew3d Skew3d { get; set; }
-		private ColorAxisLabelsSkew3d Skew3d_DefaultValue { get; set; }
+		public bool? Skew3d { get; set; }
+		private bool? Skew3d_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

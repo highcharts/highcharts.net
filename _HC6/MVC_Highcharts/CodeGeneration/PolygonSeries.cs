@@ -470,8 +470,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PolygonSeriesTrackByArea TrackByArea { get; set; }
-		private PolygonSeriesTrackByArea TrackByArea_DefaultValue { get; set; }
+		public bool? TrackByArea { get; set; }
+		private bool? TrackByArea_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

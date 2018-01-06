@@ -27,8 +27,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether the annotation is visible.
 		/// </summary>
-		public AnnotationsVisible Visible { get; set; }
-		private AnnotationsVisible Visible_DefaultValue { get; set; }
+		public bool? Visible { get; set; }
+		private bool? Visible_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -35,8 +35,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The pixel stroke width of the shape.
 		/// </summary>
-		public AnnotationsShapeOptionsStrokeWidth StrokeWidth { get; set; }
-		private AnnotationsShapeOptionsStrokeWidth StrokeWidth_DefaultValue { get; set; }
+		public double? StrokeWidth { get; set; }
+		private double? StrokeWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -49,8 +49,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The radius of the shape.
 		/// </summary>
-		public AnnotationsShapeOptionsR R { get; set; }
-		private AnnotationsShapeOptionsR R_DefaultValue { get; set; }
+		public double? R { get; set; }
+		private double? R_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -58,8 +58,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether to give each point an individual color.
 		/// </summary>
-		public PlotOptionsSolidgaugeColorByPoint ColorByPoint { get; set; }
-		private PlotOptionsSolidgaugeColorByPoint ColorByPoint_DefaultValue { get; set; }
+		public bool? ColorByPoint { get; set; }
+		private bool? ColorByPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>

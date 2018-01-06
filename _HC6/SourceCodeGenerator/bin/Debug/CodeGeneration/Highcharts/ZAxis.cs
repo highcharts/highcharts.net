@@ -17,10 +17,10 @@ namespace Highsoft.Web.Mvc.Charts
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Labels = Labels_DefaultValue = new ZAxisLabels();
-			MaxPadding = MaxPadding_DefaultValue = 0.01;
+			MaxPadding = MaxPadding_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ZAxisMinorTickPosition.Outside;
-			MinPadding = MinPadding_DefaultValue = 0.01;
+			MinPadding = MinPadding_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			StartOnTick = StartOnTick_DefaultValue = false;
 			TickLength = TickLength_DefaultValue = 10;
@@ -88,8 +88,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether to force the axis to end on a tick. Use this option withthe `maxPadding` option to control the axis end.
 		/// </summary>
-		public ZAxisEndOnTick EndOnTick { get; set; }
-		private ZAxisEndOnTick EndOnTick_DefaultValue { get; set; }
+		public bool? EndOnTick { get; set; }
+		private bool? EndOnTick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -102,15 +102,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
 		/// </summary>
-		public ZAxisMaxPadding MaxPadding { get; set; }
-		private ZAxisMaxPadding MaxPadding_DefaultValue { get; set; }
+		public double? MaxPadding { get; set; }
+		private double? MaxPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel length of the minor tick marks.
 		/// </summary>
-		public ZAxisMinorTickLength MinorTickLength { get; set; }
-		private ZAxisMinorTickLength MinorTickLength_DefaultValue { get; set; }
+		public double? MinorTickLength { get; set; }
+		private double? MinorTickLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -123,29 +123,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a min extremeis set using `axis.setExtremes()`, the minPadding will be ignored.
 		/// </summary>
-		public ZAxisMinPadding MinPadding { get; set; }
-		private ZAxisMinPadding MinPadding_DefaultValue { get; set; }
+		public double? MinPadding { get; set; }
+		private double? MinPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// For datetime axes, this decides where to put the tick between weeks. 0 = Sunday, 1 = Monday.
 		/// </summary>
-		public ZAxisStartOfWeek StartOfWeek { get; set; }
-		private ZAxisStartOfWeek StartOfWeek_DefaultValue { get; set; }
+		public double? StartOfWeek { get; set; }
+		private double? StartOfWeek_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to force the axis to start on a tick. Use this option withthe `minPadding` option to control the axis start.
 		/// </summary>
-		public ZAxisStartOnTick StartOnTick { get; set; }
-		private ZAxisStartOnTick StartOnTick_DefaultValue { get; set; }
+		public bool? StartOnTick { get; set; }
+		private bool? StartOnTick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel length of the main tick marks.
 		/// </summary>
-		public ZAxisTickLength TickLength { get; set; }
-		private ZAxisTickLength TickLength_DefaultValue { get; set; }
+		public double? TickLength { get; set; }
+		private double? TickLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -158,8 +158,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// If tickInterval is `null` this option sets the approximate pixelinterval of the tick marks. Not applicable to categorized axis.The tick interval is also influenced by the [minTickInterval](#xAxis.minTickInterval) option, that, by default prevents ticks from beingdenser than the data points.
 		/// </summary>
-		public ZAxisTickPixelInterval TickPixelInterval { get; set; }
-		private ZAxisTickPixelInterval TickPixelInterval_DefaultValue { get; set; }
+		public double? TickPixelInterval { get; set; }
+		private double? TickPixelInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -193,8 +193,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Width of the minor, secondary grid lines.In styled mode, the stroke width is given in the`.highcharts-grid-line` class.
 		/// </summary>
-		public ZAxisMinorGridLineWidth MinorGridLineWidth { get; set; }
-		private ZAxisMinorGridLineWidth MinorGridLineWidth_DefaultValue { get; set; }
+		public double? MinorGridLineWidth { get; set; }
+		private double? MinorGridLineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>

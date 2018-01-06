@@ -354,8 +354,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public WordcloudSeriesClip Clip { get; set; }
-		private WordcloudSeriesClip Clip_DefaultValue { get; set; }
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>

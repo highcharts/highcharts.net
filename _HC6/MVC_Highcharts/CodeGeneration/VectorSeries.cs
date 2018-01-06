@@ -422,8 +422,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Maximum length of the arrows in the vector plot. The individual arrowlength is computed between 0 and this value.
 		/// </summary>
-		public VectorSeriesVectorLength VectorLength { get; set; }
-		private VectorSeriesVectorLength VectorLength_DefaultValue { get; set; }
+		public double? VectorLength { get; set; }
+		private double? VectorLength_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

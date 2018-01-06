@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSankey()
 		{
-			CurveFactor = CurveFactor_DefaultValue = 0.33;
-			LinkOpacity = LinkOpacity_DefaultValue = 0.5;
+			CurveFactor = CurveFactor_DefaultValue = null;
+			LinkOpacity = LinkOpacity_DefaultValue = null;
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			NodePadding = NodePadding_DefaultValue = 10;
 			Label = Label_DefaultValue = new PlotOptionsSankeyLabel();
@@ -55,29 +55,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Higher numbers makes the links in a sankey diagram render more curved.A `curveFactor` of 0 makes the lines straight.
 		/// </summary>
-		public PlotOptionsSankeyCurveFactor CurveFactor { get; set; }
-		private PlotOptionsSankeyCurveFactor CurveFactor_DefaultValue { get; set; }
+		public double? CurveFactor { get; set; }
+		private double? CurveFactor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Opacity for the links between nodes in the sankey diagram.
 		/// </summary>
-		public PlotOptionsSankeyLinkOpacity LinkOpacity { get; set; }
-		private PlotOptionsSankeyLinkOpacity LinkOpacity_DefaultValue { get; set; }
+		public double? LinkOpacity { get; set; }
+		private double? LinkOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel width of each node in a sankey diagram, or the height in casethe chart is inverted.
 		/// </summary>
-		public PlotOptionsSankeyNodeWidth NodeWidth { get; set; }
-		private PlotOptionsSankeyNodeWidth NodeWidth_DefaultValue { get; set; }
+		public double? NodeWidth { get; set; }
+		private double? NodeWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The padding between nodes in a sankey diagram, in pixels.
 		/// </summary>
-		public PlotOptionsSankeyNodePadding NodePadding { get; set; }
-		private PlotOptionsSankeyNodePadding NodePadding_DefaultValue { get; set; }
+		public double? NodePadding { get; set; }
+		private double? NodePadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>

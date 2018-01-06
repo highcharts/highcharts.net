@@ -48,8 +48,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether to allow the annotation's labels to overlap.To make the labels less sensitive for overlapping, the can be set to 0.
 		/// </summary>
-		public AnnotationsLabelOptionsAllowOverlap AllowOverlap { get; set; }
-		private AnnotationsLabelOptionsAllowOverlap AllowOverlap_DefaultValue { get; set; }
+		public bool? AllowOverlap { get; set; }
+		private bool? AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -69,22 +69,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The border radius in pixels for the annotaiton's label.
 		/// </summary>
-		public AnnotationsLabelOptionsBorderRadius BorderRadius { get; set; }
-		private AnnotationsLabelOptionsBorderRadius BorderRadius_DefaultValue { get; set; }
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border width in pixels for the annotation's label
 		/// </summary>
-		public AnnotationsLabelOptionsBorderWidth BorderWidth { get; set; }
-		private AnnotationsLabelOptionsBorderWidth BorderWidth_DefaultValue { get; set; }
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to hide the annotation's label that is outside the plot area.
 		/// </summary>
-		public AnnotationsLabelOptionsCrop Crop { get; set; }
-		private AnnotationsLabelOptionsCrop Crop_DefaultValue { get; set; }
+		public bool? Crop { get; set; }
+		private bool? Crop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -146,15 +146,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The x position offset of the label relative to the point.Note that if a `distance` is defined, the distance takesprecedence over `x` and `y` options.
 		/// </summary>
-		public AnnotationsLabelOptionsX X { get; set; }
-		private AnnotationsLabelOptionsX X_DefaultValue { get; set; }
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The y position offset of the label relative to the point.Note that if a `distance` is defined, the distance takesprecedence over `x` and `y` options.
 		/// </summary>
-		public AnnotationsLabelOptionsY Y { get; set; }
-		private AnnotationsLabelOptionsY Y_DefaultValue { get; set; }
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>

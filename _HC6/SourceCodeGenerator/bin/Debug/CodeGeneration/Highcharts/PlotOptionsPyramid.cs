@@ -260,8 +260,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPyramidClip Clip { get; set; }
-		private PlotOptionsPyramidClip Clip_DefaultValue { get; set; }
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>

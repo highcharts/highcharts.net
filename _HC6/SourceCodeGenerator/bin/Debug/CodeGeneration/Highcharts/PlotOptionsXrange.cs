@@ -64,8 +64,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsXrangePointRange PointRange { get; set; }
-		private PlotOptionsXrangePointRange PointRange_DefaultValue { get; set; }
+		public double? PointRange { get; set; }
+		private double? PointRange_DefaultValue { get; set; }
 		 
 
 		/// <summary>

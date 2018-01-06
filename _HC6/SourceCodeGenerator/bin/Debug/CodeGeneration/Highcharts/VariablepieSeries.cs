@@ -317,8 +317,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public VariablepieSeriesClip Clip { get; set; }
-		private VariablepieSeriesClip Clip_DefaultValue { get; set; }
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>

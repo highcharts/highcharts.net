@@ -52,6 +52,7 @@
     <Compile Include="Services\FilterService.cs" />
     <Compile Include="Services\JsonUpdateService.cs" />
     <Compile Include="Services\Objects\UpdateInfo.cs" />
+    <Compile Include="Services\TypeService.cs" />
     <Content Include="CodeAddOns\Animation.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

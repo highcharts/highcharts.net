@@ -55,8 +55,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			DataGrouping = DataGrouping_DefaultValue = "";
-			CurveFactor = CurveFactor_DefaultValue = 0.33;
-			LinkOpacity = LinkOpacity_DefaultValue = 0.5;
+			CurveFactor = CurveFactor_DefaultValue = null;
+			LinkOpacity = LinkOpacity_DefaultValue = null;
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			NodePadding = NodePadding_DefaultValue = 10;
 			
@@ -353,29 +353,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Higher numbers makes the links in a sankey diagram render more curved.A `curveFactor` of 0 makes the lines straight.
 		/// </summary>
-		public SankeySeriesCurveFactor CurveFactor { get; set; }
-		private SankeySeriesCurveFactor CurveFactor_DefaultValue { get; set; }
+		public double? CurveFactor { get; set; }
+		private double? CurveFactor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Opacity for the links between nodes in the sankey diagram.
 		/// </summary>
-		public SankeySeriesLinkOpacity LinkOpacity { get; set; }
-		private SankeySeriesLinkOpacity LinkOpacity_DefaultValue { get; set; }
+		public double? LinkOpacity { get; set; }
+		private double? LinkOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel width of each node in a sankey diagram, or the height in casethe chart is inverted.
 		/// </summary>
-		public SankeySeriesNodeWidth NodeWidth { get; set; }
-		private SankeySeriesNodeWidth NodeWidth_DefaultValue { get; set; }
+		public double? NodeWidth { get; set; }
+		private double? NodeWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The padding between nodes in a sankey diagram, in pixels.
 		/// </summary>
-		public SankeySeriesNodePadding NodePadding { get; set; }
-		private SankeySeriesNodePadding NodePadding_DefaultValue { get; set; }
+		public double? NodePadding { get; set; }
+		private double? NodePadding_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

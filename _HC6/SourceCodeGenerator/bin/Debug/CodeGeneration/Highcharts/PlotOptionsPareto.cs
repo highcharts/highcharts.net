@@ -55,8 +55,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Higher zIndex than column series to draw line above shapes.
 		/// </summary>
-		public PlotOptionsParetoZIndex ZIndex { get; set; }
-		private PlotOptionsParetoZIndex ZIndex_DefaultValue { get; set; }
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>

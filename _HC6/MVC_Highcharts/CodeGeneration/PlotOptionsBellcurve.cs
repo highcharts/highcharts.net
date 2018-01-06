@@ -71,15 +71,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// This option allows to define the length of the bell curve. A unit of thelength of the bell curve is standard deviation.
 		/// </summary>
-		public PlotOptionsBellcurveIntervals Intervals { get; set; }
-		private PlotOptionsBellcurveIntervals Intervals_DefaultValue { get; set; }
+		public double? Intervals { get; set; }
+		private double? Intervals_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Defines how many points should be plotted within 1 interval. See `plotOptions.bellcurve.intervals`.
 		/// </summary>
-		public PlotOptionsBellcurvePointsInInterval PointsInInterval { get; set; }
-		private PlotOptionsBellcurvePointsInInterval PointsInInterval_DefaultValue { get; set; }
+		public double? PointsInInterval { get; set; }
+		private double? PointsInInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>

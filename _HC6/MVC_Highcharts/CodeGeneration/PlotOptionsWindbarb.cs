@@ -79,8 +79,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The line width of the wind barb symbols.
 		/// </summary>
-		public PlotOptionsWindbarbLineWidth LineWidth { get; set; }
-		private PlotOptionsWindbarbLineWidth LineWidth_DefaultValue { get; set; }
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -93,15 +93,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Pixel length of the stems.
 		/// </summary>
-		public PlotOptionsWindbarbVectorLength VectorLength { get; set; }
-		private PlotOptionsWindbarbVectorLength VectorLength_DefaultValue { get; set; }
+		public double? VectorLength { get; set; }
+		private double? VectorLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Vertical offset from the cartesian position, in pixels. The default valuemakes sure the symbols don't overlap the X axis when `onSeries` is`null`, and that they don't overlap the linked series when `onSeries` isgiven.
 		/// </summary>
-		public PlotOptionsWindbarbYOffset YOffset { get; set; }
-		private PlotOptionsWindbarbYOffset YOffset_DefaultValue { get; set; }
+		public double? YOffset { get; set; }
+		private double? YOffset_DefaultValue { get; set; }
 		 
 
 		/// <summary>

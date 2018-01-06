@@ -39,8 +39,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Vertical offset of the button.
 		/// </summary>
-		public PlotOptionsTreemapDrillUpButtonPositionY Y { get; set; }
-		private PlotOptionsTreemapDrillUpButtonPositionY Y_DefaultValue { get; set; }
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>

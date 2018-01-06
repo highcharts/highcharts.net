@@ -29,22 +29,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable the series label per series.
 		/// </summary>
-		public PlotOptionsWordcloudLabelEnabled Enabled { get; set; }
-		private PlotOptionsWordcloudLabelEnabled Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Allow labels to be placed distant to the graph if necessary,and draw a connector line to the graph.
 		/// </summary>
-		public PlotOptionsWordcloudLabelConnectorAllowed ConnectorAllowed { get; set; }
-		private PlotOptionsWordcloudLabelConnectorAllowed ConnectorAllowed_DefaultValue { get; set; }
+		public bool? ConnectorAllowed { get; set; }
+		private bool? ConnectorAllowed_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// If the label is closer than this to a neighbour graph, draw aconnector.
 		/// </summary>
-		public PlotOptionsWordcloudLabelConnectorNeighbourDistance ConnectorNeighbourDistance { get; set; }
-		private PlotOptionsWordcloudLabelConnectorNeighbourDistance ConnectorNeighbourDistance_DefaultValue { get; set; }
+		public double? ConnectorNeighbourDistance { get; set; }
+		private double? ConnectorNeighbourDistance_DefaultValue { get; set; }
 		 
 
 		/// <summary>

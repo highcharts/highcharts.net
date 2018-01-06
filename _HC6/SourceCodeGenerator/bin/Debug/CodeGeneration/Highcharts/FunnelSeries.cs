@@ -316,8 +316,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public FunnelSeriesClip Clip { get; set; }
-		private FunnelSeriesClip Clip_DefaultValue { get; set; }
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>

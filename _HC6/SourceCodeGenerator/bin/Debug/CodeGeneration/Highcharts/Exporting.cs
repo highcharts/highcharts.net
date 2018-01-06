@@ -50,22 +50,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Export-data module required. Show a HTML table below the chart with the chart's current data.
 		/// </summary>
-		public ExportingShowTable ShowTable { get; set; }
-		private ExportingShowTable ShowTable_DefaultValue { get; set; }
+		public bool? ShowTable { get; set; }
+		private bool? ShowTable_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Export-data module required. Use multi level headers in data table.If [csv.columnHeaderFormatter](#exporting.csv.columnHeaderFormatter)is defined, it has to return objects in order for multi level headersto work.
 		/// </summary>
-		public ExportingUseMultiLevelHeaders UseMultiLevelHeaders { get; set; }
-		private ExportingUseMultiLevelHeaders UseMultiLevelHeaders_DefaultValue { get; set; }
+		public bool? UseMultiLevelHeaders { get; set; }
+		private bool? UseMultiLevelHeaders_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Export-data module required. If using multi level table headers, userowspans for headers that have only one level.
 		/// </summary>
-		public ExportingUseRowspanHeaders UseRowspanHeaders { get; set; }
-		private ExportingUseRowspanHeaders UseRowspanHeaders_DefaultValue { get; set; }
+		public bool? UseRowspanHeaders { get; set; }
+		private bool? UseRowspanHeaders_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -99,8 +99,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Defines the scale or zoom factor for the exported image comparedto the on-screen display. While for instance a 600px wide chartmay look good on a website, it will look bad in print. The defaultscale of 2 makes this chart export to a 1200px PNG or JPG.
 		/// </summary>
-		public ExportingScale Scale { get; set; }
-		private ExportingScale Scale_DefaultValue { get; set; }
+		public double? Scale { get; set; }
+		private double? Scale_DefaultValue { get; set; }
 		 
 
 		/// <summary>

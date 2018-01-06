@@ -19,9 +19,10 @@ namespace SourceCodeGenerator.Parser
         private IFileService FileService { get; set; }
         private IFilterService FilterService { get; set; }
         private IJsonUpdateService UpdateService { get; set; }
+        private ITypeService TypeService { get; set; }
         public IList<ApiItem> Items { get; private set; }
 
-        public JsonParser(string product, IFileService fileService, IFilterService filterService, IJsonUpdateService updateService)
+        public JsonParser(string product, IFileService fileService, IFilterService filterService, IJsonUpdateService updateService, ITypeService typeService)
         {
             Items = new List<ApiItem>();
 
@@ -29,6 +30,7 @@ namespace SourceCodeGenerator.Parser
             FileService = fileService;
             FilterService = filterService;
             UpdateService = updateService;
+            TypeService = typeService;
         }
 
         public List<ApiItem> Get()
@@ -155,6 +157,8 @@ namespace SourceCodeGenerator.Parser
                 return;
 
             UpdateService.Update(apiItem);
+
+            TypeService.SetReturnType(apiItem);
             ////////////////////////end of modification area
 
             if (parent == null)

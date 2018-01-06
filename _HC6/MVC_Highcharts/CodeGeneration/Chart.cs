@@ -75,8 +75,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Flag to render charts as a parallel coordinates plot. In a parallelcoordinates plot (||-coords) by default all required yAxes are generatedand the legend is disabled. This feature requires`modules/parallel-coordinates.js`.
 		/// </summary>
-		public ChartParallelCoordinates ParallelCoordinates { get; set; }
-		private ChartParallelCoordinates ParallelCoordinates_DefaultValue { get; set; }
+		public bool? ParallelCoordinates { get; set; }
+		private bool? ParallelCoordinates_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -68,8 +68,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPolygonTrackByArea TrackByArea { get; set; }
-		private PlotOptionsPolygonTrackByArea TrackByArea_DefaultValue { get; set; }
+		public bool? TrackByArea { get; set; }
+		private bool? TrackByArea_DefaultValue { get; set; }
 		 
 
 		/// <summary>
