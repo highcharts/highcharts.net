@@ -897,6 +897,7 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("yAxis.plotLines.label.style", "new Hashtable()");
         _propertyInitMappings.Add("zAxis.plotLines.label.style", "new Hashtable()");
         _propertyInitMappings.Add("zAxis.plotBands.label.style", "new Hashtable()");
+        _propertyInitMappings.Add("xAxis.tickPositions", "new List<double>()");
         //_propertyInitMappings.Add("series.columnrange.marker", "null");
     }
 
@@ -920,6 +921,7 @@ public class HighchartsGenerator
         _lists.Add("annotations.shapes.points");
         _lists.Add("colorAxis.dataClasses");
         _lists.Add("Highcharts.colors");
+        _lists.Add("xAxis.tickPositions");
     }
 
     private void InitSeriesMappings()

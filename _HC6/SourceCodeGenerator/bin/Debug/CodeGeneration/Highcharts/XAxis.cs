@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TickAmount = TickAmount_DefaultValue = null;
 			TickInterval = TickInterval_DefaultValue = null;
 			TickPositioner = TickPositioner_DefaultValue = "";
-			TickPositions = TickPositions_DefaultValue = "";
+			TickPositions = TickPositions_DefaultValue = new List<double>();
 			TickWidth = TickWidth_DefaultValue = null;
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
@@ -592,7 +592,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
 			if (TickPositioner != TickPositioner_DefaultValue) h.Add("tickPositioner",TickPositioner);
-			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
+			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions", HashifyList(TickPositions));
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
