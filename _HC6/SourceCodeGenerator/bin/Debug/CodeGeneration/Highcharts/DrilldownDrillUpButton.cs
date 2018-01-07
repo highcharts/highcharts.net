@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Position = Position_DefaultValue = new Hashtable();
 			RelativeTo = RelativeTo_DefaultValue = DrilldownDrillUpButtonRelativeTo.PlotBox;
-			Theme = Theme_DefaultValue = "";
+			Theme = Theme_DefaultValue = null;
 			
 		}	
 		
@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A collection of attributes for the button. The object takes SVG attributeslike `fill`, `stroke`, `stroke-width` or `r`, the border radius.The theme also supports `style`, a collection of CSS properties forthe text. Equivalent attributes for the hover state are given in`theme.states.hover`.
 		/// </summary>
-		public DrilldownDrillUpButtonTheme Theme { get; set; }
-		private DrilldownDrillUpButtonTheme Theme_DefaultValue { get; set; }
+		public Object Theme { get; set; }
+		private Object Theme_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
