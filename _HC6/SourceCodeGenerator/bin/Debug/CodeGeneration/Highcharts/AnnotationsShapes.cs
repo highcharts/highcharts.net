@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public AnnotationsShapes()
 		{
 			Point = Point_DefaultValue = new AnnotationsShapesPoint();
-			Points = Points_DefaultValue = "";
+			Points = Points_DefaultValue = new List<AnnotationsShapesPoint>();
 			MarkerEnd = MarkerEnd_DefaultValue = "";
 			MarkerStart = MarkerStart_DefaultValue = "";
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
@@ -39,8 +39,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of points for the shape. This option is available for shapeswhich can use multiple points such as path. A point can be either a point object or a point's id.
 		/// </summary>
-		public AnnotationsShapesPoints Points { get; set; }
-		private AnnotationsShapesPoints Points_DefaultValue { get; set; }
+		public List<AnnotationsShapesPoint> Points { get; set; }
+		private List<AnnotationsShapesPoint> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
