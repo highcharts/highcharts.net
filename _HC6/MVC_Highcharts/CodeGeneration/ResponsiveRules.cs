@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ResponsiveRules()
 		{
-			ChartOptions = ChartOptions_DefaultValue = "";
+			ChartOptions = ChartOptions_DefaultValue = null;
 			Condition = Condition_DefaultValue = new ResponsiveRulesCondition();
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A full set of chart options to apply as overrides to the generalchart options. The chart options are applied when the given ruleis active.A special case is configuration objects that take arrays, for example[xAxis](#xAxis), [yAxis](#yAxis) or [series](#series). For thesecollections, an `id` option is used to map the new option set toan existing object. If an existing object of the same id is not found,the item of the same indexupdated. So for example, setting `chartOptions`with two series items without an `id`, will cause the existing chart'stwo series to be updated with respective options.
 		/// </summary>
-		public ResponsiveRulesChartOptions ChartOptions { get; set; }
-		private ResponsiveRulesChartOptions ChartOptions_DefaultValue { get; set; }
+		public Object ChartOptions { get; set; }
+		private Object ChartOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -825,6 +825,7 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("exporting.menuItemDefinitions", "Object");
         _propertyTypeMappings.Add("exporting.chartOptions", "Object");
         _propertyTypeMappings.Add("exporting.formAttributes", "Object");
+        _propertyTypeMappings.Add("responsive.rules.chartOptions", "Object");
         //_propertyTypeMappings.Add("fontSize", "string");
         //_propertyTypeMappings.Add("fontWeight", "string");
         //_propertyTypeMappings.Add("color", "string");
@@ -875,6 +876,7 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("exporting.menuItemDefinitions", "null");
         _propertyInitMappings.Add("exporting.chartOptions", "null");
         _propertyInitMappings.Add("exporting.formAttributes", "null");
+        _propertyInitMappings.Add("responsive.rules.chartOptions", "null");
         //_propertyInitMappings.Add("series.columnrange.marker", "null");
     }
 
