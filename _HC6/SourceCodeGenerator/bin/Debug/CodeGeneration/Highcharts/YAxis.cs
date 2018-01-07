@@ -83,7 +83,6 @@ namespace Highsoft.Web.Mvc.Charts
 			TickPositions = TickPositions_DefaultValue = "";
 			TickWidth = TickWidth_DefaultValue = null;
 			UniqueNames = UniqueNames_DefaultValue = true;
-			Units = Units_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
 			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
@@ -575,13 +574,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Datetime axis only. An array determining what time intervals theticks are allowed to fall on. Each array item is an array where thefirst value is the time unit and the second value another array ofallowed multiples. Defaults to:<pre>units: [[    'millisecond', // unit name    [1, 2, 5, 10, 20, 25, 50, 100, 200, 500] // allowed multiples], [    'second',    [1, 2, 5, 10, 15, 30]], [    'minute',    [1, 2, 5, 10, 15, 30]], [    'hour',    [1, 2, 3, 4, 6, 8, 12]], [    'day',    [1]], [    'week',    [1]], [    'month',    [1, 3, 6]], [    'year',    null]]</pre>
-		/// </summary>
-		public YAxisUnits Units { get; set; }
-		private YAxisUnits Units_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether axis, including axis title, line, ticks and labels, shouldbe visible.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -675,7 +667,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
-			if (Units != Units_DefaultValue) h.Add("units",Units);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
