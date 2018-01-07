@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The value to compare against.
 		/// </summary>
-		public PlotOptionsSeriesDataLabelsFilterValue Value { get; set; }
-		private PlotOptionsSeriesDataLabelsFilterValue Value_DefaultValue { get; set; }
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

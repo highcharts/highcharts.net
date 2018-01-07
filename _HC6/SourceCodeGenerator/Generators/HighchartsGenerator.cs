@@ -773,6 +773,7 @@ public class HighchartsGenerator
         _typeMappings.Add("Array.<Number>", "List<double>");
         _typeMappings.Add("Array.<Array.<Mixed>>", "List<List<object>>");
         _typeMappings.Add("Array.<Object>", "List<object>");
+        _typeMappings.Add("Mixed", "double?");
     }
 
     private void InitPropertyTypeMappings()

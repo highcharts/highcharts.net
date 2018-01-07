@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The value to compare against.
 		/// </summary>
-		public GaugeSeriesDataLabelsFilterValue Value { get; set; }
-		private GaugeSeriesDataLabelsFilterValue Value_DefaultValue { get; set; }
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
