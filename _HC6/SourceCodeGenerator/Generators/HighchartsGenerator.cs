@@ -818,6 +818,7 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("colorAxis.dataClasses", "List<ColorAxisDataClasses>");
         _propertyTypeMappings.Add("annotations.shapes.points", "List<AnnotationsShapesPoint>");
         _propertyTypeMappings.Add("attributes", "Object");
+        _propertyTypeMappings.Add("defs.markers", "Object");
         //_propertyTypeMappings.Add("fontSize", "string");
         //_propertyTypeMappings.Add("fontWeight", "string");
         //_propertyTypeMappings.Add("color", "string");
@@ -863,6 +864,7 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("colorAxis.dataClasses", "new List<ColorAxisDataClasses>()");
         _propertyInitMappings.Add("annotations.shapes.points", "new List<AnnotationsShapesPoint>()");
         _propertyInitMappings.Add("attributes", "null");
+        _propertyInitMappings.Add("defs.markers", "null");
         //_propertyInitMappings.Add("series.columnrange.marker", "null");
     }
 
