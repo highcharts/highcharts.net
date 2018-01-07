@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Y = Y_DefaultValue = double.MinValue;
 			Events = Events_DefaultValue = new VariablepieSeriesDataEvents();
 			LegendIndex = LegendIndex_DefaultValue = null;
-			Sliced = Sliced_DefaultValue = "";
+			Sliced = Sliced_DefaultValue = null;
 			
 		}	
 		

@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Radius = Radius_DefaultValue = 4;
 			States = States_DefaultValue = new PlotOptionsGaugeStatesHoverMarkerStates();
 			FillColor = FillColor_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = "";
+			Enabled = Enabled_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			Symbol = Symbol_DefaultValue = "null";
 			Width = Width_DefaultValue = null;

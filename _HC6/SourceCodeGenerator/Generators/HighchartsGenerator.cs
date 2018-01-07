@@ -863,6 +863,7 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("colorAxis.dataClasses", "new List<ColorAxisDataClasses>()");
         _propertyInitMappings.Add("annotations.shapes.points", "new List<AnnotationsShapesPoint>()");
         _propertyInitMappings.Add("attributes", "null");
+        //_propertyInitMappings.Add("series.columnrange.marker", "null");
     }
 
     private void InitLists()
@@ -1087,7 +1088,7 @@ public class HighchartsGenerator
         }
         else
         {
-            if (item.ReturnType == "Number")
+            if (item.ReturnType == "Number" || item.ReturnType == "Boolean")
                 return "null";
         }
 

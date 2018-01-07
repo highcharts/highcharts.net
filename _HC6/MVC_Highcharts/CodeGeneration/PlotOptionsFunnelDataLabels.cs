@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "undefined";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			Inside = Inside_DefaultValue = "";
+			Inside = Inside_DefaultValue = null;
 			Overflow = Overflow_DefaultValue = PlotOptionsFunnelDataLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;

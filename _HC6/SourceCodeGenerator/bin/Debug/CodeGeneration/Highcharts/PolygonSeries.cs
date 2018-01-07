@@ -61,14 +61,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = PolygonSeriesStacking.Null;
 			Step = Step_DefaultValue = PolygonSeriesStep.Null;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Tooltip = Tooltip_DefaultValue = new PolygonSeriesTooltip();
 			Zones = Zones_DefaultValue = new List<PolygonSeriesZone>();
-			ConnectEnds = ConnectEnds_DefaultValue = "";
+			ConnectEnds = ConnectEnds_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			TrackByArea = TrackByArea_DefaultValue = true;
 			

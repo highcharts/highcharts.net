@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Tooltip = Tooltip_DefaultValue = new ColumnrangeSeriesTooltip();
@@ -77,7 +77,7 @@ namespace Highsoft.Web.Mvc.Charts
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
-			Marker = Marker_DefaultValue = "";
+			Marker = Marker_DefaultValue = null;
 			
 		}	
 		
@@ -526,8 +526,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public ColumnrangeSeriesMarker Marker { get; set; }
-		private ColumnrangeSeriesMarker Marker_DefaultValue { get; set; }
+		public bool? Marker { get; set; }
+		private bool? Marker_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

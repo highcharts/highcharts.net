@@ -19,11 +19,11 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = "8";
 			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
-			FollowPointer = FollowPointer_DefaultValue = "";
-			FollowTouchMove = FollowTouchMove_DefaultValue = "";
+			FollowPointer = FollowPointer_DefaultValue = null;
+			FollowTouchMove = FollowTouchMove_DefaultValue = null;
 			HideDelay = HideDelay_DefaultValue = 500;
 			PointFormatter = PointFormatter_DefaultValue = "";
-			Split = Split_DefaultValue = "";
+			Split = Split_DefaultValue = null;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = "";
 			ValueSuffix = ValueSuffix_DefaultValue = "";

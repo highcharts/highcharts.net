@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "#e6e6e6";
 			Opacity = Opacity_DefaultValue = null;
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
-			InteractByLeaf = InteractByLeaf_DefaultValue = "";
+			InteractByLeaf = InteractByLeaf_DefaultValue = null;
 			SortIndex = SortIndex_DefaultValue = null;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
@@ -66,7 +66,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = PlotOptionsTreemapStacking.Null;
 			Step = Step_DefaultValue = PlotOptionsTreemapStep.Null;
 			Threshold = Threshold_DefaultValue = 0;
@@ -74,7 +74,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsTreemapTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsTreemapZone>();
-			ConnectEnds = ConnectEnds_DefaultValue = "";
+			ConnectEnds = ConnectEnds_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			
 		}	

@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PieSeriesData()
 		{
 			LegendIndex = LegendIndex_DefaultValue = null;
-			Sliced = Sliced_DefaultValue = "";
+			Sliced = Sliced_DefaultValue = null;
 			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";

@@ -53,7 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = PlotOptionsLineStacking.Null;
 			Step = Step_DefaultValue = PlotOptionsLineStep.Null;
 			Threshold = Threshold_DefaultValue = 0;
@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsLineTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsLineZone>();
-			ConnectEnds = ConnectEnds_DefaultValue = "";
+			ConnectEnds = ConnectEnds_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			
 		}	

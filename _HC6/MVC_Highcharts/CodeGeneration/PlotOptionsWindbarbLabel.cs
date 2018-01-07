@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectorNeighbourDistance = ConnectorNeighbourDistance_DefaultValue = 24;
 			MinFontSize = MinFontSize_DefaultValue = null;
 			MaxFontSize = MaxFontSize_DefaultValue = null;
-			OnArea = OnArea_DefaultValue = "";
+			OnArea = OnArea_DefaultValue = null;
 			Style = Style_DefaultValue = new PlotOptionsWindbarbLabelStyle();
 			BoxesToAvoid = BoxesToAvoid_DefaultValue = "";
 			

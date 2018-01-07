@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsColumnrange()
 		{
-			Marker = Marker_DefaultValue = "";
+			Marker = Marker_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsColumnrangeLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsColumnrangeTooltip();
@@ -76,8 +76,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnrangeMarker Marker { get; set; }
-		private PlotOptionsColumnrangeMarker Marker_DefaultValue { get; set; }
+		public bool? Marker { get; set; }
+		private bool? Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>

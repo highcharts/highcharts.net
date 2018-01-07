@@ -53,7 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = "";
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = PlotOptionsTilemapStacking.Null;
 			Step = Step_DefaultValue = PlotOptionsTilemapStep.Null;
 			Threshold = Threshold_DefaultValue = 0;
@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsTilemapTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsTilemapZone>();
-			ConnectEnds = ConnectEnds_DefaultValue = "";
+			ConnectEnds = ConnectEnds_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
 			PointPadding = PointPadding_DefaultValue = 0;

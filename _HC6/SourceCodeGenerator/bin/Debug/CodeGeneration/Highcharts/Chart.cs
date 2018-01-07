@@ -52,7 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 			RenderTo = RenderTo_DefaultValue = "";
 			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(51,92,173,0.25)";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShowAxes = ShowAxes_DefaultValue = "";
+			ShowAxes = ShowAxes_DefaultValue = null;
 			SpacingBottom = SpacingBottom_DefaultValue = 15;
 			SpacingLeft = SpacingLeft_DefaultValue = 10;
 			SpacingRight = SpacingRight_DefaultValue = 10;
