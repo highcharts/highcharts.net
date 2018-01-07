@@ -479,18 +479,16 @@ public class HighchartsGenerator
         string[] parts = item.FullName.Split('.');
         StringBuilder result = new StringBuilder();
 
-        foreach (string part in parts)
-        {
-            //string formattedPart = part;
-
-            //if (_seriesMappings[part] != null)
-            //    formattedPart = (string)_seriesMappings[part];
-
-            if (result.ToString() == "Series")
-                result.Insert(0, FirstCharToUpper(part));
-            else
-                result.Append(FirstCharToUpper(part));
-        }
+        if (item.ParentFullName == ROOT_CLASS)
+            result.Append(FirstCharToUpper(item.Title));
+        else
+            foreach (string part in parts)
+            {
+                if (result.ToString() == "Series")
+                    result.Insert(0, FirstCharToUpper(part));
+                else
+                    result.Append(FirstCharToUpper(part));
+            }
 
         return result.ToString();
     }
