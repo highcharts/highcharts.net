@@ -832,6 +832,10 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("yAxis.plotLines.events", "Object");
         _propertyTypeMappings.Add("zAxis.plotBands.events", "Object");
         _propertyTypeMappings.Add("zAxis.plotLines.events", "Object");
+        _propertyTypeMappings.Add("xAxis.plotLines.label.style", "Hashtable");
+        _propertyTypeMappings.Add("yAxis.plotLines.label.style", "Hashtable");
+        _propertyTypeMappings.Add("zAxis.plotLines.label.style", "Hashtable");
+        _propertyTypeMappings.Add("zAxis.plotBands.label.style", "Hashtable");
         //_propertyTypeMappings.Add("fontSize", "string");
         //_propertyTypeMappings.Add("fontWeight", "string");
         //_propertyTypeMappings.Add("color", "string");
@@ -889,6 +893,10 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("yAxis.plotLines.events", "null");
         _propertyInitMappings.Add("zAxis.plotBands.events", "null");
         _propertyInitMappings.Add("zAxis.plotLines.events", "null");
+        _propertyInitMappings.Add("xAxis.plotLines.label.style", "new Hashtable()");
+        _propertyInitMappings.Add("yAxis.plotLines.label.style", "new Hashtable()");
+        _propertyInitMappings.Add("zAxis.plotLines.label.style", "new Hashtable()");
+        _propertyInitMappings.Add("zAxis.plotBands.label.style", "new Hashtable()");
         //_propertyInitMappings.Add("series.columnrange.marker", "null");
     }
 

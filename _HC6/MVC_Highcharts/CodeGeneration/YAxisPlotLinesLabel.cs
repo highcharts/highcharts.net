@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Align = Align_DefaultValue = "left";
 			Rotation = Rotation_DefaultValue = null;
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
 			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the text label.In styled mode, the labels are styled by the`.highcharts-plot-line-label` class.
 		/// </summary>
-		public YAxisPlotLinesLabelStyle Style { get; set; }
-		private YAxisPlotLinesLabelStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
