@@ -672,6 +672,10 @@ public class HighchartsGenerator
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
         }
+
+        if (!child.IsParent)
+            return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+
         // Event (javascript function)
         if (child.ReturnType != null && (child.ReturnType.ToLower() == "function" || child.ReturnType.ToLower() == "string|function"))
             return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName), ROOT_CLASS);
@@ -893,6 +897,7 @@ public class HighchartsGenerator
         _lists.Add("annotations.shapes");
         _lists.Add("annotations.shapes.points");
         _lists.Add("colorAxis.dataClasses");
+        _lists.Add("Highcharts.colors");
     }
 
     private void InitSeriesMappings()

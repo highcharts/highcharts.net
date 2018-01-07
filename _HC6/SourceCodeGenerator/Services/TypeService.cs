@@ -11,10 +11,11 @@ namespace SourceCodeGenerator.Services
         private const string BoolType = "Boolean";
         private const string NumberType = "Number";
         private const string StringType = "String";
+        private const string ObjectType = "Object";
 
         public void SetReturnType(ApiItem item)
         {
-            if(item.Defaults != null && string.IsNullOrWhiteSpace(item.ReturnType) )
+            if (item.Defaults != null && string.IsNullOrWhiteSpace(item.ReturnType) )
                 item.ReturnType = GetType(item);
         }
         private string GetType(ApiItem item)
