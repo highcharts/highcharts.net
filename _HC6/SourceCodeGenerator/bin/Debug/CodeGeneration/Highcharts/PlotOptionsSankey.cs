@@ -47,7 +47,6 @@ namespace Highsoft.Web.Mvc.Charts
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
-			DataGrouping = DataGrouping_DefaultValue = "";
 			
 		}	
 		
@@ -281,13 +280,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<string> Colors { get; set; }
 		private List<string> Colors_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSankeyDataGrouping DataGrouping { get; set; }
-		private PlotOptionsSankeyDataGrouping DataGrouping_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -327,7 +319,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			
 
 			return h;

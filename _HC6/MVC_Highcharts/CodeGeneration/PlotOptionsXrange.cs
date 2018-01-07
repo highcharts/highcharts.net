@@ -55,7 +55,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Colors = Colors_DefaultValue = new List<string>();
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
-			DataGrouping = DataGrouping_DefaultValue = "";
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			
 		}	
@@ -349,13 +348,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsXrangeDataGrouping DataGrouping { get; set; }
-		private PlotOptionsXrangeDataGrouping DataGrouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The spacing between columns on the Z Axis in a 3D chart. Requires`highcharts-3d.js`.
 		/// </summary>
 		public double? GroupZPadding { get; set; }
@@ -407,7 +399,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
-			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			
 

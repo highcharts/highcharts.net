@@ -54,7 +54,6 @@ namespace Highsoft.Web.Mvc.Charts
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
-			DataGrouping = DataGrouping_DefaultValue = "";
 			CurveFactor = CurveFactor_DefaultValue = null;
 			LinkOpacity = LinkOpacity_DefaultValue = null;
 			NodeWidth = NodeWidth_DefaultValue = 20;
@@ -344,13 +343,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public SankeySeriesDataGrouping DataGrouping { get; set; }
-		private SankeySeriesDataGrouping DataGrouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Higher numbers makes the links in a sankey diagram render more curved.A `curveFactor` of 0 makes the lines straight.
 		/// </summary>
 		public double? CurveFactor { get; set; }
@@ -422,7 +414,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			if (CurveFactor != CurveFactor_DefaultValue) h.Add("curveFactor",CurveFactor);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);

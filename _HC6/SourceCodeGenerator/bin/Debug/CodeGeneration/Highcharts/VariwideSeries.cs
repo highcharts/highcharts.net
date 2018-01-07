@@ -76,7 +76,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Grouping = Grouping_DefaultValue = true;
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
-			DataGrouping = DataGrouping_DefaultValue = "";
 			
 		}	
 		
@@ -513,13 +512,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public VariwideSeriesDataGrouping DataGrouping { get; set; }
-		private VariwideSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -592,7 +584,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
-			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			
 
 			return h;

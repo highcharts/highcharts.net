@@ -78,7 +78,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Grouping = Grouping_DefaultValue = true;
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
-			DataGrouping = DataGrouping_DefaultValue = "";
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
@@ -536,13 +535,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBoxplotDataGrouping DataGrouping { get; set; }
-		private PlotOptionsBoxplotDataGrouping DataGrouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Depth of the columns in a 3D column chart. Requires `highcharts-3d.js`.
 		/// </summary>
 		public double? Depth { get; set; }
@@ -642,7 +634,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
-			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
