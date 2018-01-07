@@ -24,14 +24,14 @@ namespace Highsoft.Web.Mvc.Charts
 			PrintMaxWidth = PrintMaxWidth_DefaultValue = 780;
 			Scale = Scale_DefaultValue = 2;
 			Buttons = Buttons_DefaultValue = new ExportingButtons();
-			MenuItemDefinitions = MenuItemDefinitions_DefaultValue = "";
+			MenuItemDefinitions = MenuItemDefinitions_DefaultValue = null;
 			AllowHTML = AllowHTML_DefaultValue = false;
 			ChartOptions = ChartOptions_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Error = Error_DefaultValue = "";
 			FallbackToExportServer = FallbackToExportServer_DefaultValue = true;
 			Filename = Filename_DefaultValue = "chart";
-			FormAttributes = FormAttributes_DefaultValue = "";
+			FormAttributes = FormAttributes_DefaultValue = null;
 			LibURL = LibURL_DefaultValue = "";
 			SourceHeight = SourceHeight_DefaultValue = null;
 			SourceWidth = SourceWidth_DefaultValue = null;
@@ -113,8 +113,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a `key` that is referenced in the[menuItems](#exporting.buttons.contextButton.menuItems) setting,and a `value`, which is an object with the following properties:<dl><dt>onclick</dt><dd>The click handler for the menu item</dd><dt>text</dt><dd>The text for the menu item</dd><dt>textKey</dt><dd>If internationalization is required, the key to a language string</dd></dl>
 		/// </summary>
-		public ExportingMenuItemDefinitions MenuItemDefinitions { get; set; }
-		private ExportingMenuItemDefinitions MenuItemDefinitions_DefaultValue { get; set; }
+		public Object MenuItemDefinitions { get; set; }
+		private Object MenuItemDefinitions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -127,8 +127,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Additional chart options to be merged into an exported chart. Forexample, a common use case is to add data labels to improve readabilityof the exported chart, or to add a printer-friendly color scheme.
 		/// </summary>
-		public ExportingChartOptions ChartOptions { get; set; }
-		private ExportingChartOptions ChartOptions_DefaultValue { get; set; }
+		public Object ChartOptions { get; set; }
+		private Object ChartOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -162,8 +162,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An object containing additional attributes for the POST form thatsends the SVG to the export server. For example, a `target` can beset to make sure the generated image is received in another frame, or a custom `enctype` or `encoding` can be set.
 		/// </summary>
-		public ExportingFormAttributes FormAttributes { get; set; }
-		private ExportingFormAttributes FormAttributes_DefaultValue { get; set; }
+		public Object FormAttributes { get; set; }
+		private Object FormAttributes_DefaultValue { get; set; }
 		 
 
 		/// <summary>

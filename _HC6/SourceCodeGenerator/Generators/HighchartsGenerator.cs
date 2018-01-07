@@ -820,6 +820,9 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("attributes", "Object");
         _propertyTypeMappings.Add("defs.markers", "Object");
         _propertyTypeMappings.Add("drilldown.drillUpButton.theme", "Object");
+        _propertyTypeMappings.Add("exporting.menuItemDefinitions", "Object");
+        _propertyTypeMappings.Add("exporting.chartOptions", "Object");
+        _propertyTypeMappings.Add("exporting.formAttributes", "Object");
         //_propertyTypeMappings.Add("fontSize", "string");
         //_propertyTypeMappings.Add("fontWeight", "string");
         //_propertyTypeMappings.Add("color", "string");
@@ -867,6 +870,9 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("attributes", "null");
         _propertyInitMappings.Add("defs.markers", "null");
         _propertyInitMappings.Add("drilldown.drillUpButton.theme", "null");
+        _propertyInitMappings.Add("exporting.menuItemDefinitions", "null");
+        _propertyInitMappings.Add("exporting.chartOptions", "null");
+        _propertyInitMappings.Add("exporting.formAttributes", "null");
         //_propertyInitMappings.Add("series.columnrange.marker", "null");
     }
 
