@@ -880,6 +880,7 @@ public class HighchartsGenerator
         _lists.Add("annotations");
         _lists.Add("annotations.labels");
         _lists.Add("annotations.shapes");
+        _lists.Add("annotations.shapes.points");
         _lists.Add("colorAxis.dataClasses");
     }
 

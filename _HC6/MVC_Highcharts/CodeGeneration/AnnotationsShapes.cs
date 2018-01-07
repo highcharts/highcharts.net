@@ -111,7 +111,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (Points != Points_DefaultValue) h.Add("points",Points);
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(Points));
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (MarkerStart != MarkerStart_DefaultValue) h.Add("markerStart",MarkerStart);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
