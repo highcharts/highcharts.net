@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "null";
 			DashStyle = DashStyle_DefaultValue = ZAxisPlotLinesDashStyle.Solid;
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
 			Value = Value_DefaultValue = null;
 			Width = Width_DefaultValue = null;
@@ -51,8 +51,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An object defining mouse events for the plot line. Supported propertiesare `click`, `mouseover`, `mouseout`, `mousemove`.
 		/// </summary>
-		public ZAxisPlotLinesEvents Events { get; set; }
-		private ZAxisPlotLinesEvents Events_DefaultValue { get; set; }
+		public Object Events { get; set; }
+		private Object Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>

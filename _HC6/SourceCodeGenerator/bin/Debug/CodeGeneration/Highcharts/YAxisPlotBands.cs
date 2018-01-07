@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "null";
-			Events = Events_DefaultValue = "";
+			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
 			To = To_DefaultValue = null;
@@ -59,8 +59,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An object defining mouse events for the plot band. Supported propertiesare `click`, `mouseover`, `mouseout`, `mousemove`.
 		/// </summary>
-		public YAxisPlotBandsEvents Events { get; set; }
-		private YAxisPlotBandsEvents Events_DefaultValue { get; set; }
+		public Object Events { get; set; }
+		private Object Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>

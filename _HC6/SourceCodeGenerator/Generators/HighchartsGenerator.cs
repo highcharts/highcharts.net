@@ -826,6 +826,12 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("exporting.chartOptions", "Object");
         _propertyTypeMappings.Add("exporting.formAttributes", "Object");
         _propertyTypeMappings.Add("responsive.rules.chartOptions", "Object");
+        _propertyTypeMappings.Add("xAxis.plotBands.events", "Object");
+        _propertyTypeMappings.Add("xAxis.plotLines.events", "Object");
+        _propertyTypeMappings.Add("yAxis.plotBands.events", "Object");
+        _propertyTypeMappings.Add("yAxis.plotLines.events", "Object");
+        _propertyTypeMappings.Add("zAxis.plotBands.events", "Object");
+        _propertyTypeMappings.Add("zAxis.plotLines.events", "Object");
         //_propertyTypeMappings.Add("fontSize", "string");
         //_propertyTypeMappings.Add("fontWeight", "string");
         //_propertyTypeMappings.Add("color", "string");
@@ -877,6 +883,12 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("exporting.chartOptions", "null");
         _propertyInitMappings.Add("exporting.formAttributes", "null");
         _propertyInitMappings.Add("responsive.rules.chartOptions", "null");
+        _propertyInitMappings.Add("xAxis.plotBands.events", "null");
+        _propertyInitMappings.Add("xAxis.plotLines.events", "null");
+        _propertyInitMappings.Add("yAxis.plotBands.events", "null");
+        _propertyInitMappings.Add("yAxis.plotLines.events", "null");
+        _propertyInitMappings.Add("zAxis.plotBands.events", "null");
+        _propertyInitMappings.Add("zAxis.plotLines.events", "null");
         //_propertyInitMappings.Add("series.columnrange.marker", "null");
     }
 
