@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Size = Size_DefaultValue = 10;
 			Opacity = Opacity_DefaultValue = null;
-			Attributes = Attributes_DefaultValue = "";
+			Attributes = Attributes_DefaultValue = null;
 			
 		}	
 		
@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A collection of SVG attributes to override the appearance of thehalo, for example `fill`, `stroke` and `stroke-width`.
 		/// </summary>
-		public PlotOptionsTilemapStatesHoverHaloAttributes Attributes { get; set; }
-		private PlotOptionsTilemapStatesHoverHaloAttributes Attributes_DefaultValue { get; set; }
+		public Object Attributes { get; set; }
+		private Object Attributes_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
