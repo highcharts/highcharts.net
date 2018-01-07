@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A string to append to the tooltip format.
 		/// </summary>
-		public TooltipFooterFormat FooterFormat { get; set; }
-		private TooltipFooterFormat FooterFormat_DefaultValue { get; set; }
+		public string FooterFormat { get; set; }
+		private string FooterFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A string to append to the tooltip format.
 		/// </summary>
-		public PlotOptionsBellcurveTooltipFooterFormat FooterFormat { get; set; }
-		private PlotOptionsBellcurveTooltipFooterFormat FooterFormat_DefaultValue { get; set; }
+		public string FooterFormat { get; set; }
+		private string FooterFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>

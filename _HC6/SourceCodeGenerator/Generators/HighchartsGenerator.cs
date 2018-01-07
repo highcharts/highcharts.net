@@ -71,7 +71,7 @@ public class HighchartsGenerator
         GenerateClass(root, GetChildren(root));
         GenerateClassesForLevel(_apiItems);
     }
-    
+
     private void ProcessApiItems(IList<ApiItem> items)
     {
         //AppendMissingApiItems();
@@ -213,7 +213,7 @@ public class HighchartsGenerator
             if (baseClass.Extends.Any())
             {
                 //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
-                addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !item.Exclude.Any(q => q == p.Title) ));
+                addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !item.Exclude.Any(q => q == p.Title)));
             }
 
             if (baseClass.FullName == "series")
@@ -329,7 +329,7 @@ public class HighchartsGenerator
 
         string className = GetClassNameFromItem(item);
         string extendsClass = "";
-        
+
         if (className.EndsWith("Series") && item.Parent?.FullName == "series")
             extendsClass = ": Series";
         else
@@ -583,6 +583,7 @@ public class HighchartsGenerator
         else
             returnType = GetClassNameFromItem(child);
 
+
         if (returnType.EndsWith("DataDataLabels"))
             returnType = returnType.Replace("DataData", "Data");
 
@@ -727,7 +728,7 @@ public class HighchartsGenerator
             }
         }
 
-        foreach(var child in children)
+        foreach (var child in children)
         {
             var clone = child.Clone();
             clone.Parent = item;
@@ -970,7 +971,7 @@ public class HighchartsGenerator
                 result = (string)_seriesMappings[result];
             else
                 result = GetClassNameFromItem(item);
-            
+
             return "new List<" + result + ">()";
         }
 
@@ -1019,7 +1020,7 @@ public class HighchartsGenerator
 
         //if (!item.IsParent)
         //{
-        
+
 
         if (item.Title.ToLower() == "position")
             return defaults;
@@ -1045,7 +1046,7 @@ public class HighchartsGenerator
             }
             if (item.ReturnType.StartsWith("Array.<String>")) // thereis Array<String>; ending with ; in Highstock
             {
-                if(item.ParentFullName == "lang")
+                if (item.ParentFullName == "lang")
                     return "new List<string> " + item.Defaults
                                         .Replace("'", "\"")
                                         .Replace("[", "{")
@@ -1086,7 +1087,7 @@ public class HighchartsGenerator
                 return "null";
         }
 
-        
+
         //}
         //else
         //{

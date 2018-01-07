@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A string to append to the tooltip format.
 		/// </summary>
-		public PlotOptionsScatter3dTooltipFooterFormat FooterFormat { get; set; }
-		private PlotOptionsScatter3dTooltipFooterFormat FooterFormat_DefaultValue { get; set; }
+		public string FooterFormat { get; set; }
+		private string FooterFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>

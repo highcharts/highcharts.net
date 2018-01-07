@@ -10,13 +10,11 @@ namespace SourceCodeGenerator.Services
     {
         private const string BoolType = "Boolean";
         private const string NumberType = "Number";
+        private const string StringType = "String";
 
         public void SetReturnType(ApiItem item)
         {
-            if (string.IsNullOrWhiteSpace(item.Defaults))
-                return;
-
-            if(string.IsNullOrWhiteSpace(item.ReturnType))
+            if(item.Defaults != null && string.IsNullOrWhiteSpace(item.ReturnType) )
                 item.ReturnType = GetType(item);
         }
         private string GetType(ApiItem item)
@@ -26,6 +24,9 @@ namespace SourceCodeGenerator.Services
 
             if (IsNumber(item))
                 return NumberType;
+
+            if (IsString(item))
+                return StringType;
 
             return string.Empty;
         }
@@ -40,6 +41,11 @@ namespace SourceCodeGenerator.Services
         {
             double result;
             return double.TryParse(item.Defaults, out result);
+        }
+
+        private bool IsString(ApiItem item)
+        {
+            return item.Defaults == string.Empty;
         }
     }
 
