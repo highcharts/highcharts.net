@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "#333333";
 			FontSize = FontSize_DefaultValue = "12px";
 			FontWeight = FontWeight_DefaultValue = "bold";
-			TextOverflow = TextOverflow_DefaultValue = ellipsis;
+			TextOverflow = TextOverflow_DefaultValue = "ellipsis";
 			
 		}	
 		
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public LegendItemStyleTextOverflow TextOverflow { get; set; }
-		private LegendItemStyleTextOverflow TextOverflow_DefaultValue { get; set; }
+		public string TextOverflow { get; set; }
+		private string TextOverflow_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

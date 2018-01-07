@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWordcloudStyle()
 		{
-			FontFamily = FontFamily_DefaultValue = sans-serif;
+			FontFamily = FontFamily_DefaultValue = "sans-serif";
 			FontWeight = FontWeight_DefaultValue = "900";
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsWordcloudStyleFontFamily FontFamily { get; set; }
-		private PlotOptionsWordcloudStyleFontFamily FontFamily_DefaultValue { get; set; }
+		public string FontFamily { get; set; }
+		private string FontFamily_DefaultValue { get; set; }
 		 
 
 		/// <summary>

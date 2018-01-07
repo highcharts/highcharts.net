@@ -45,7 +45,7 @@ namespace SourceCodeGenerator.Services
 
         private bool IsString(ApiItem item)
         {
-            return item.Defaults == string.Empty;
+            return item.Defaults != null;
         }
     }
 

@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsWordcloud()
 		{
 			Clip = Clip_DefaultValue = false;
-			PlacementStrategy = PlacementStrategy_DefaultValue = center;
+			PlacementStrategy = PlacementStrategy_DefaultValue = "center";
 			Rotation = Rotation_DefaultValue = new PlotOptionsWordcloudRotation();
-			Spiral = Spiral_DefaultValue = rectangular;
+			Spiral = Spiral_DefaultValue = "rectangular";
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","sans-serif"},{ "fontWeight", "900"}};
 			Label = Label_DefaultValue = new PlotOptionsWordcloudLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -64,8 +64,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// This option decides which algorithm is used for placement, and rotationof a word. The choice of algorith is therefore a crucial part of theresulting layout of the wordcloud.It is possible for users to add their own custom placement strategiesfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-placement-strategies)
 		/// </summary>
-		public PlotOptionsWordcloudPlacementStrategy PlacementStrategy { get; set; }
-		private PlotOptionsWordcloudPlacementStrategy PlacementStrategy_DefaultValue { get; set; }
+		public string PlacementStrategy { get; set; }
+		private string PlacementStrategy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Spiral used for placing a word after the inital position experienced acollision with either another word or the borders.It is possible for users to add their own custom spiralling algorithmsfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
 		/// </summary>
-		public PlotOptionsWordcloudSpiral Spiral { get; set; }
-		private PlotOptionsWordcloudSpiral Spiral_DefaultValue { get; set; }
+		public string Spiral { get; set; }
+		private string Spiral_DefaultValue { get; set; }
 		 
 
 		/// <summary>

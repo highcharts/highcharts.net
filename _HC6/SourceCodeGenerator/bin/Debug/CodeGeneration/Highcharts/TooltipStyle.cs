@@ -17,8 +17,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "#333333";
 			Cursor = Cursor_DefaultValue = "default";
 			FontSize = FontSize_DefaultValue = "12px";
-			PointerEvents = PointerEvents_DefaultValue = none;
-			WhiteSpace = WhiteSpace_DefaultValue = nowrap;
+			PointerEvents = PointerEvents_DefaultValue = "none";
+			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
 			
 		}	
 		
@@ -47,15 +47,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public TooltipStylePointerEvents PointerEvents { get; set; }
-		private TooltipStylePointerEvents PointerEvents_DefaultValue { get; set; }
+		public string PointerEvents { get; set; }
+		private string PointerEvents_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public TooltipStyleWhiteSpace WhiteSpace { get; set; }
-		private TooltipStyleWhiteSpace WhiteSpace_DefaultValue { get; set; }
+		public string WhiteSpace { get; set; }
+		private string WhiteSpace_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

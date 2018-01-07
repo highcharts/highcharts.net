@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Cursor = Cursor_DefaultValue = "pointer";
 			Color = Color_DefaultValue = "#003399";
 			FontWeight = FontWeight_DefaultValue = "bold";
-			TextDecoration = TextDecoration_DefaultValue = underline;
+			TextDecoration = TextDecoration_DefaultValue = "underline";
 			
 		}	
 		
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public DrilldownActiveDataLabelStyleTextDecoration TextDecoration { get; set; }
-		private DrilldownActiveDataLabelStyleTextDecoration TextDecoration_DefaultValue { get; set; }
+		public string TextDecoration { get; set; }
+		private string TextDecoration_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

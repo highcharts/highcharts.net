@@ -74,7 +74,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointPadding = PointPadding_DefaultValue = 0;
 			Colsize = Colsize_DefaultValue = 1;
 			Rowsize = Rowsize_DefaultValue = 1;
-			TileShape = TileShape_DefaultValue = hexagon;
+			TileShape = TileShape_DefaultValue = "hexagon";
 			Data = Data_DefaultValue = new List<TilemapSeriesData>();
 			
 		}	
@@ -503,8 +503,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The shape of the tiles in the tilemap. Possible values are `hexagon`,`circle`, `diamond`, and `square`.
 		/// </summary>
-		public TilemapSeriesTileShape TileShape { get; set; }
-		private TilemapSeriesTileShape TileShape_DefaultValue { get; set; }
+		public string TileShape { get; set; }
+		private string TileShape_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -66,7 +66,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TickWidth = TickWidth_DefaultValue = null;
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
-			TooltipValueFormat = TooltipValueFormat_DefaultValue = null;
+			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			
 		}	
@@ -439,8 +439,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
 		/// </summary>
-		public ChartParallelAxesTooltipValueFormat TooltipValueFormat { get; set; }
-		private ChartParallelAxesTooltipValueFormat TooltipValueFormat_DefaultValue { get; set; }
+		public string TooltipValueFormat { get; set; }
+		private string TooltipValueFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>

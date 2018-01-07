@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxis()
 		{
-			TooltipValueFormat = TooltipValueFormat_DefaultValue = null;
+			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			StackLabels = StackLabels_DefaultValue = new YAxisStackLabels();
 			Angle = Angle_DefaultValue = 0;
 			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
@@ -93,8 +93,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
 		/// </summary>
-		public YAxisTooltipValueFormat TooltipValueFormat { get; set; }
-		private YAxisTooltipValueFormat TooltipValueFormat_DefaultValue { get; set; }
+		public string TooltipValueFormat { get; set; }
+		private string TooltipValueFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>

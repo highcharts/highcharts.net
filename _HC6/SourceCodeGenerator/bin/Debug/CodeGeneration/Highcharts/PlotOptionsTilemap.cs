@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemap()
 		{
-			TileShape = TileShape_DefaultValue = hexagon;
+			TileShape = TileShape_DefaultValue = "hexagon";
 			Data = Data_DefaultValue = new List<PlotOptionsTilemapData>();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsTilemapLabel();
@@ -74,8 +74,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The shape of the tiles in the tilemap. Possible values are `hexagon`,`circle`, `diamond`, and `square`.
 		/// </summary>
-		public PlotOptionsTilemapTileShape TileShape { get; set; }
-		private PlotOptionsTilemapTileShape TileShape_DefaultValue { get; set; }
+		public string TileShape { get; set; }
+		private string TileShape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
