@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (HideDuration != HideDuration_DefaultValue) h.Add("hideDuration",HideDuration);
 			if (ShowDuration != ShowDuration_DefaultValue) h.Add("showDuration",ShowDuration);
 			

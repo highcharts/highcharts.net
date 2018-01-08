@@ -435,7 +435,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
 			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
 			if (Spiral != Spiral_DefaultValue) h.Add("spiral",Spiral);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 
 			return h;

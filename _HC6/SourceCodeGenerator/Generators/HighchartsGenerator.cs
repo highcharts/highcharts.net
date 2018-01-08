@@ -667,7 +667,7 @@ public class HighchartsGenerator
             if (child.ReturnType == "Array" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
-            if (child.Children.Any() || child.Extends.Any())
+            if ((child.Children.Any() || child.Extends.Any()) && child.ReturnType != "CSSObject")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));

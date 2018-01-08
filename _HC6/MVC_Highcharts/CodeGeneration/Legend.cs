@@ -342,9 +342,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
-			if (ItemStyle.IsDirty()) h.Add("itemStyle",ItemStyle.ToHashtable());
-			if (ItemHoverStyle.IsDirty()) h.Add("itemHoverStyle",ItemHoverStyle.ToHashtable());
-			if (ItemHiddenStyle.IsDirty()) h.Add("itemHiddenStyle",ItemHiddenStyle.ToHashtable());
+			if (ItemStyle != ItemStyle_DefaultValue) h.Add("itemStyle",ItemStyle);
+			if (ItemHoverStyle != ItemHoverStyle_DefaultValue) h.Add("itemHoverStyle",ItemHoverStyle);
+			if (ItemHiddenStyle != ItemHiddenStyle_DefaultValue) h.Add("itemHiddenStyle",ItemHiddenStyle);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ItemCheckboxStyle.IsDirty()) h.Add("itemCheckboxStyle",ItemCheckboxStyle.ToHashtable());
 			if (SquareSymbol != SquareSymbol_DefaultValue) h.Add("squareSymbol",SquareSymbol);

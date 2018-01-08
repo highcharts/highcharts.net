@@ -70,8 +70,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (ActiveAxisLabelStyle.IsDirty()) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle.ToHashtable());
-			if (ActiveDataLabelStyle.IsDirty()) h.Add("activeDataLabelStyle",ActiveDataLabelStyle.ToHashtable());
+			if (ActiveAxisLabelStyle != ActiveAxisLabelStyle_DefaultValue) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle);
+			if (ActiveDataLabelStyle != ActiveDataLabelStyle_DefaultValue) h.Add("activeDataLabelStyle",ActiveDataLabelStyle);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
 			if (AllowPointDrilldown != AllowPointDrilldown_DefaultValue) h.Add("allowPointDrilldown",AllowPointDrilldown);

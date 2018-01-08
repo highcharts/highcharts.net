@@ -266,7 +266,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Crosshairs != Crosshairs_DefaultValue) h.Add("crosshairs",Crosshairs);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);

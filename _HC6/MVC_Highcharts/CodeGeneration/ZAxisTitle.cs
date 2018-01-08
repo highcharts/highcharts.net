@@ -127,7 +127,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d", Highcharts.FirstCharacterToLower(Skew3d.ToString()));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);

@@ -314,7 +314,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
 			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
 			if (Spiral != Spiral_DefaultValue) h.Add("spiral",Spiral);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);

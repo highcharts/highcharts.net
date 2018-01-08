@@ -203,7 +203,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);

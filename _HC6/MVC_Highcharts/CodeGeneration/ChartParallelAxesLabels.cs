@@ -183,7 +183,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
