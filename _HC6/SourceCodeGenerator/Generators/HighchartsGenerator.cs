@@ -667,7 +667,7 @@ public class HighchartsGenerator
             if (child.ReturnType == "Array" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
-            if ((child.Children.Any() || child.Extends.Any()) && child.ReturnType != "CSSObject")
+            if ((child.Children.Any() || child.Extends.Any() || child.ReturnType == "Object") && child.ReturnType != "CSSObject")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
@@ -1159,7 +1159,7 @@ public class HighchartsGenerator
         if (item.FullName.ToLower().Contains("levels.datalabels"))
             item.FullName = item.FullName.Replace("levels.", "");
 
-        if (item.Children.Any() || item.Extends.Any())
+        if (item.Children.Any() || item.Extends.Any() || item.ReturnType == "Object")
             return String.Format("new {0}()", GetClassNameFromItem(item));
         //else
         //    return item.Defaults;

@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderDashStyle = BorderDashStyle_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new SunburstSeriesLevelsColorVariation();
-			DataLabels = DataLabels_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
 			Rotation = Rotation_DefaultValue = null;
 			RotationMode = RotationMode_DefaultValue = "";
 			
@@ -91,7 +91,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderDashStyle != BorderDashStyle_DefaultValue) h.Add("borderDashStyle",BorderDashStyle);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorVariation.IsDirty()) h.Add("colorVariation",ColorVariation.ToHashtable());
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode",RotationMode);
 			
