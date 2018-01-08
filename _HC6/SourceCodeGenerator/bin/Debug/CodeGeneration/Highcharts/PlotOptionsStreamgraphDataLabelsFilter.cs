@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Property = Property_DefaultValue = "";
 			Operator = Operator_DefaultValue = "";
-			Value = Value_DefaultValue = "";
+			Value = Value_DefaultValue = null;
 			
 		}	
 		

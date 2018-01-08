@@ -836,9 +836,10 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("yAxis.plotLines.label.style", "Hashtable");
         _propertyTypeMappings.Add("zAxis.plotLines.label.style", "Hashtable");
         _propertyTypeMappings.Add("zAxis.plotBands.label.style", "Hashtable");
-        //_propertyTypeMappings.Add("fontSize", "string");
-        //_propertyTypeMappings.Add("fontWeight", "string");
-        //_propertyTypeMappings.Add("color", "string");
+        _propertyTypeMappings.Add("global.Date", "Object");
+
+        //temporary
+        _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
     }
 
     private void InitPropertyInitMappings()
@@ -898,7 +899,10 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("zAxis.plotLines.label.style", "new Hashtable()");
         _propertyInitMappings.Add("zAxis.plotBands.label.style", "new Hashtable()");
         _propertyInitMappings.Add("xAxis.tickPositions", "new List<double>()");
-        //_propertyInitMappings.Add("series.columnrange.marker", "null");
+        _propertyInitMappings.Add("global.Date", "null");
+
+        //temporary
+        _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
     }
 
     private void InitLists()

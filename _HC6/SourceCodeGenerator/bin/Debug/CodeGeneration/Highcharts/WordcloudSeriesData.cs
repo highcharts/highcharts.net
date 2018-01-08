@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new Hashtable();
 			Description = Description_DefaultValue = "undefined";
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
@@ -52,8 +52,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels)
 		/// </summary>
-		public WordcloudSeriesDataLabels DataLabels { get; set; }
-		private WordcloudSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		public Hashtable DataLabels { get; set; }
+		private Hashtable DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>

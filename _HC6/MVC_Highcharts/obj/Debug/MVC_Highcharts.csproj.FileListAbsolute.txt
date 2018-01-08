@@ -17,3 +17,4 @@ C:\Users\PC\Documents\highcharts.net\_HC5\MVC_Highcharts\obj\Debug\Highcharts.We
 C:\Users\PC\Documents\highcharts.net\_HC5\MVC_Highcharts\obj\Debug\Highcharts.Web.Mvc.pdb
 C:\Users\PC\Documents\highcharts.net\_HC5\MVC_Highcharts\obj\Debug\MVC_Highcharts.csprojResolveAssemblyReference.cache
 C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highcharts\obj\Debug\MVC_Highcharts.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\highcharts.net\_HC6\MVC_Highcharts\bin\Debug\Highcharts.Web.Mvc.XML

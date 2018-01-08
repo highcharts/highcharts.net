@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "";
 			UseUTC = UseUTC_DefaultValue = true;
-			Date = Date_DefaultValue = "";
+			Date = Date_DefaultValue = null;
 			CanvasToolsURL = CanvasToolsURL_DefaultValue = "";
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "undefined";
@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A custom `Date` class for advanced date handling. For example,[JDate](https://githubcom/tahajahangir/jdate) can be hooked in tohandle Jalali dates.
 		/// </summary>
-		public GlobalDate Date { get; set; }
-		private GlobalDate Date_DefaultValue { get; set; }
+		public Object Date { get; set; }
+		private Object Date_DefaultValue { get; set; }
 		 
 
 		/// <summary>
