@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// This option defines the point to which the label will be connected.It can be either the point which exists in the series - it is referencedby the point's id - or a new point with defined x, y properiesand optionally axes.
 		/// </summary>
-		public string Point { get; set; }
-		private string Point_DefaultValue { get; set; }
+		public AnnotationsLabelsPoint Point { get; set; }
+		private AnnotationsLabelsPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>

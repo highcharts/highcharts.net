@@ -93,6 +93,7 @@ namespace SourceCodeGenerator.Services
             //remove after double type solution will be implemented
             ItemsToUpdate.Add("crosshair", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
             ItemsToUpdate.Add("plotOptions.series.dataLabels.filter.value", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("annotations.labels.point", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
         }
     }
 

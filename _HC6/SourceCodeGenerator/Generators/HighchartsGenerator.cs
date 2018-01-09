@@ -900,6 +900,7 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("zAxis.plotBands.label.style", "new Hashtable()");
         _propertyInitMappings.Add("xAxis.tickPositions", "new List<double>()");
         _propertyInitMappings.Add("global.Date", "null");
+        _propertyInitMappings.Add("boxesToAvoid", "new List<object>()");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");

@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxFontSize = MaxFontSize_DefaultValue = null;
 			OnArea = OnArea_DefaultValue = null;
 			Style = Style_DefaultValue = new WaterfallSeriesLabelStyle();
-			BoxesToAvoid = BoxesToAvoid_DefaultValue = "";
+			BoxesToAvoid = BoxesToAvoid_DefaultValue = new List<object>();
 			
 		}	
 		
