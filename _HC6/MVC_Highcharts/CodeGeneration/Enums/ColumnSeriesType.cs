@@ -23,6 +23,27 @@ namespace Highsoft.Web.Mvc.Charts
 		Funnel, 
 		Gauge, 
 		Scatter, 
-		Waterfall
+		Waterfall, 
+		Bar, 
+		Heatmap, 
+		Pyramid, 
+		Polygon, 
+		Treemap, 
+		Solidgauge, 
+		Bellcurve, 
+		Bullet, 
+		Histogram, 
+		Pareto, 
+		Sankey, 
+		Scatter3d, 
+		Streamgraph, 
+		Sunburst, 
+		Tilemap, 
+		Variablepie, 
+		Variwide, 
+		Vector, 
+		Windbarb, 
+		Wordcloud, 
+		Xrange
     }
 }

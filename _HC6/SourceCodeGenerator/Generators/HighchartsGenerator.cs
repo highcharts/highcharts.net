@@ -425,7 +425,7 @@ public class HighchartsGenerator
                 apiItem.Values.Insert(0, defaults);
         }
 
-        if (apiItem.FullName == "chart.type" || (apiItem.FullName.StartsWith("series<") && apiItem.FullName.EndsWith(">.type")))
+        if ((apiItem.FullName.Contains("series") && apiItem.FullName.Contains("type")) || apiItem.FullName == "chart.type" || (apiItem.FullName.StartsWith("series<") && apiItem.FullName.EndsWith(">.type")))
         {
             apiItem.Values.Add("bar");
             apiItem.Values.Add("heatmap");
