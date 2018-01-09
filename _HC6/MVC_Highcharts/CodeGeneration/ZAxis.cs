@@ -71,8 +71,8 @@ namespace Highsoft.Web.Mvc.Charts
 			TickWidth = TickWidth_DefaultValue = null;
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
-			PlotBands = PlotBands_DefaultValue = new ZAxisPlotBands();
-			PlotLines = PlotLines_DefaultValue = new ZAxisPlotLines();
+			PlotBands = PlotBands_DefaultValue = new List<ZAxisPlotBands>();
+			PlotLines = PlotLines_DefaultValue = new List<ZAxisPlotLines>();
 			
 		}	
 		
@@ -479,15 +479,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array of colored bands stretching across the plot area markingan interval on the axis.In styled mode, the plot bands are styled by the `.highcharts-plot-band` class in addition to the `className` option.
 		/// </summary>
-		public List<object> PlotBands { get; set; }
-		private List<object> PlotBands_DefaultValue { get; set; }
+		public List<ZAxisPlotBands> PlotBands { get; set; }
+		private List<ZAxisPlotBands> PlotBands_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array of lines stretching across the plot area, marking a specificvalue on one of the axes.In styled mode, the plot lines are styled by the `.highcharts-plot-line` class in addition to the `className` option.
 		/// </summary>
-		public List<object> PlotLines { get; set; }
-		private List<object> PlotLines_DefaultValue { get; set; }
+		public List<ZAxisPlotLines> PlotLines { get; set; }
+		private List<ZAxisPlotLines> PlotLines_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -551,8 +551,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (PlotBands.IsDirty()) h.Add("plotBands",PlotBands.ToHashtable());
-			if (PlotLines.IsDirty()) h.Add("plotLines",PlotLines.ToHashtable());
+			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			
 
 			return h;

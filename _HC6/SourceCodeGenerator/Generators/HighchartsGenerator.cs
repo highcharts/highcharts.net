@@ -811,6 +811,9 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("xAxis.plotBands", "List<XAxisPlotBands>");
         _propertyTypeMappings.Add("xAxis.plotLines", "List<XAxisPlotLines>");
         _propertyTypeMappings.Add("xAxis.plotBands.label.style", "Hashtable");
+        _propertyTypeMappings.Add("zAxis.plotBands", "List<ZAxisPlotBands>");
+        _propertyTypeMappings.Add("zAxis.plotLines", "List<ZAxisPlotLines>");
+        _propertyTypeMappings.Add("zAxis.plotBands.label.style", "Hashtable");
         _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
         _propertyTypeMappings.Add("pane.background", "List<PaneBackground>");
         _propertyTypeMappings.Add("plotOptions.series", "PlotOptionsSeries");
@@ -835,7 +838,6 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("xAxis.plotLines.label.style", "Hashtable");
         _propertyTypeMappings.Add("yAxis.plotLines.label.style", "Hashtable");
         _propertyTypeMappings.Add("zAxis.plotLines.label.style", "Hashtable");
-        _propertyTypeMappings.Add("zAxis.plotBands.label.style", "Hashtable");
         _propertyTypeMappings.Add("global.Date", "Object");
 
         //temporary
@@ -873,6 +875,9 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("xAxis.plotLines", "new List<XAxisPlotLines>()");
         _propertyInitMappings.Add("xAxis.plotBands", "new List<XAxisPlotBands>()");
         _propertyInitMappings.Add("xAxis.plotBands.label.style", "new Hashtable()");
+        _propertyInitMappings.Add("zAxis.plotLines", "new List<ZAxisPlotLines>()");
+        _propertyInitMappings.Add("zAxis.plotBands", "new List<ZAxisPlotBands>()");
+        _propertyInitMappings.Add("zAxis.plotBands.label.style", "new Hashtable()");
         _propertyInitMappings.Add("series<treemap>.levels", "new List<TreemapSeriesLevels>()");
         _propertyInitMappings.Add("pane.background", "new List<PaneBackground>()");
         _propertyInitMappings.Add("plotOptions.series", "new PlotOptionsSeries()");
@@ -897,7 +902,6 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("xAxis.plotLines.label.style", "new Hashtable()");
         _propertyInitMappings.Add("yAxis.plotLines.label.style", "new Hashtable()");
         _propertyInitMappings.Add("zAxis.plotLines.label.style", "new Hashtable()");
-        _propertyInitMappings.Add("zAxis.plotBands.label.style", "new Hashtable()");
         _propertyInitMappings.Add("xAxis.tickPositions", "new List<double>()");
         _propertyInitMappings.Add("global.Date", "null");
         _propertyInitMappings.Add("boxesToAvoid", "new List<object>()");
@@ -919,6 +923,8 @@ public class HighchartsGenerator
         _lists.Add("yAxis.plotLines");
         _lists.Add("xAxis.plotBands");
         _lists.Add("xAxis.plotLines");
+        _lists.Add("zAxis.plotBands");
+        _lists.Add("zAxis.plotLines");
         _lists.Add("series<treemap>.levels");
         _lists.Add("annotations");
         _lists.Add("annotations.labels");
