@@ -9,6 +9,7 @@ namespace SourceCodeGenerator.Enums
     public enum ApiPropertyName
     {
         Types,
-        ReturnType
+        ReturnType,
+        Values
     }
 }

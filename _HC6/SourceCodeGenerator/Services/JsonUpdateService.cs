@@ -44,7 +44,9 @@ namespace SourceCodeGenerator.Services
                 case ApiPropertyName.ReturnType:
                     item.ReturnType = info.Value;
                     break;
-                
+                case ApiPropertyName.Values:
+                    item.Values.Add(info.Value);
+                    break;
             }
         }
 
@@ -88,6 +90,7 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("followPointer", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
             ItemsToUpdate.Add("nodeFormat", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("plotOptions.columnrange.marker", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
+            ItemsToUpdate.Add("chart.pinchType", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Values, Value = "null" } });
             //ItemsToUpdate.Add("dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
 
             //remove after double type solution will be implemented

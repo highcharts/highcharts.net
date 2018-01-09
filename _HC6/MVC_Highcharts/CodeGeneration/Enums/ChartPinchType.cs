@@ -9,6 +9,7 @@ namespace Highsoft.Web.Mvc.Charts
     {
         X, 
 		Y, 
-		Xy
+		Xy, 
+		Null
     }
 }
