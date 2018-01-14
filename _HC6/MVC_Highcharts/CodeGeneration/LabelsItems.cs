@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public LabelsItems()
 		{
 			Html = Html_DefaultValue = "";
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		
