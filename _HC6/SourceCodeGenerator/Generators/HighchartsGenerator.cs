@@ -913,6 +913,13 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("boxesToAvoid", "new List<object>()");
         _propertyInitMappings.Add("labels.items", "new List<LabelsItems>()");
         _propertyInitMappings.Add("chart.parallelAxes.labels.style", "new Hashtable()");
+        _propertyInitMappings.Add("annotations.labelOptions.style", "new Hashtable()");
+        _propertyInitMappings.Add("annotations.labels.style", "new Hashtable()");
+        _propertyInitMappings.Add("colorAxis.labels.style", "new Hashtable()");
+        _propertyInitMappings.Add("xAxis.labels.style", "new Hashtable()");
+        _propertyInitMappings.Add("yAxis.labels.style", "new Hashtable()");
+        _propertyInitMappings.Add("zAxis.labels.style", "new Hashtable()");
+        _propertyInitMappings.Add("yAxis.stackLabels.style", "new Hashtable()");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");

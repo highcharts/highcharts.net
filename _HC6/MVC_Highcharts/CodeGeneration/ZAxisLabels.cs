@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ZAxisLabels()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			Style = Style_DefaultValue = new ZAxisLabelsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = ZAxisLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
