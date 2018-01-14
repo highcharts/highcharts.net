@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// This option defines the point to which the shape will be connected.It can be either the point which exists in the series - it is referencedby the point's id - or a new point with defined x, y propertiesand optionally axes.
 		/// </summary>
-		public string Point { get; set; }
-		private string Point_DefaultValue { get; set; }
+		public AnnotationsShapesPoint Point { get; set; }
+		private AnnotationsShapesPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
