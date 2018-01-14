@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			ArrowSize = ArrowSize_DefaultValue = 12;
 			Enabled = Enabled_DefaultValue = true;
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		

@@ -920,6 +920,10 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("yAxis.labels.style", "new Hashtable()");
         _propertyInitMappings.Add("zAxis.labels.style", "new Hashtable()");
         _propertyInitMappings.Add("yAxis.stackLabels.style", "new Hashtable()");
+        _propertyInitMappings.Add("legend.style", "new Hashtable()");
+        _propertyInitMappings.Add("legend.navigation.style", "new Hashtable()");
+        _propertyInitMappings.Add("noData.attr", "new Hashtable()");
+        _propertyInitMappings.Add("title.style", "new Hashtable()");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");

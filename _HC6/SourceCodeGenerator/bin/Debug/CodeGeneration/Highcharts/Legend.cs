@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = "8";
 			Reversed = Reversed_DefaultValue = false;
 			Rtl = Rtl_DefaultValue = false;
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new Hashtable();
 			SymbolHeight = SymbolHeight_DefaultValue = null;
 			SymbolRadius = SymbolRadius_DefaultValue = null;
 			SymbolWidth = SymbolWidth_DefaultValue = null;

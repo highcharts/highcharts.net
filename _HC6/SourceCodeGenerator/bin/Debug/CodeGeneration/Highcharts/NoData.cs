@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public NoData()
 		{
 			Position = Position_DefaultValue = new Hashtable();
-			Attr = Attr_DefaultValue = new NoDataAttr();
+			Attr = Attr_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
 			Style = Style_DefaultValue = new NoDataStyle();
 			
