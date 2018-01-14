@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ChartParallelAxesLabels()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			Style = Style_DefaultValue = new ChartParallelAxesLabelsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = ChartParallelAxesLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};

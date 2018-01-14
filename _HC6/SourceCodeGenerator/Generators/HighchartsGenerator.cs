@@ -912,6 +912,7 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("global.Date", "null");
         _propertyInitMappings.Add("boxesToAvoid", "new List<object>()");
         _propertyInitMappings.Add("labels.items", "new List<LabelsItems>()");
+        _propertyInitMappings.Add("chart.parallelAxes.labels.style", "new Hashtable()");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
