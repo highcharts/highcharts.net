@@ -905,6 +905,8 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("xAxis.tickPositions", "new List<double>()");
         _propertyInitMappings.Add("yAxis.tickPositions", "new List<double>()");
         _propertyInitMappings.Add("zAxis.tickPositions", "new List<double>()");
+        _propertyInitMappings.Add("chart.parallelAxes.tickPositions", "new List<double>()");
+        _propertyInitMappings.Add("colorAxis.tickPositions", "new List<double>()");
         _propertyInitMappings.Add("global.Date", "null");
         _propertyInitMappings.Add("boxesToAvoid", "new List<object>()");
 
