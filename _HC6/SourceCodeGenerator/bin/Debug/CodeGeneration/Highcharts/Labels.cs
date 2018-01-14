@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public Labels()
 		{
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333" }};
-			Items = Items_DefaultValue = new LabelsItems();
+			Items = Items_DefaultValue = new List<LabelsItems>();
 			
 		}	
 		
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A HTML label that can be positioned anywhere in the chart area.
 		/// </summary>
-		public List<object> Items { get; set; }
-		private List<object> Items_DefaultValue { get; set; }
+		public List<LabelsItems> Items { get; set; }
+		private List<LabelsItems> Items_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Items.IsDirty()) h.Add("items",Items.ToHashtable());
+			if (Items != Items_DefaultValue) h.Add("items", HashifyList(Items));
 			
 
 			return h;
