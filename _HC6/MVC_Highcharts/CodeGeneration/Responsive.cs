@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Responsive()
 		{
-			Rules = Rules_DefaultValue = new ResponsiveRules();
+			Rules = Rules_DefaultValue = new List<ResponsiveRules>();
 			
 		}	
 		
@@ -22,15 +22,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A set of rules for responsive settings. The rules are executed fromthe top down.
 		/// </summary>
-		public List<object> Rules { get; set; }
-		private List<object> Rules_DefaultValue { get; set; }
+		public List<ResponsiveRules> Rules { get; set; }
+		private List<ResponsiveRules> Rules_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Rules.IsDirty()) h.Add("rules",Rules.ToHashtable());
+			if (Rules != Rules_DefaultValue) h.Add("rules", HashifyList(Rules));
 			
 
 			return h;

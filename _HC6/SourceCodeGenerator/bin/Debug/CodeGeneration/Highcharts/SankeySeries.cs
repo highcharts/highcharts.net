@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeries()
 		{
-			Nodes = Nodes_DefaultValue = new SankeySeriesNodes();
+			Nodes = Nodes_DefaultValue = new List<SankeySeriesNodes>();
 			Data = Data_DefaultValue = new List<SankeySeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
@@ -65,8 +65,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A collection of options for the individual nodes. The nodes in a sankey diagram are auto-generated instances of `Highcharts.Point`, but options canbe applied here and linked by the `id`.
 		/// </summary>
-		public List<object> Nodes { get; set; }
-		private List<object> Nodes_DefaultValue { get; set; }
+		public List<SankeySeriesNodes> Nodes { get; set; }
+		private List<SankeySeriesNodes> Nodes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -374,7 +374,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Nodes.IsDirty()) h.Add("nodes",Nodes.ToHashtable());
+			if (Nodes != Nodes_DefaultValue) h.Add("nodes", HashifyList(Nodes));
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);

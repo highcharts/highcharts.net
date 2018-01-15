@@ -841,7 +841,12 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("global.Date", "Object");
         _propertyTypeMappings.Add("labels.items", "List<LabelsItems>");
         _propertyTypeMappings.Add("plotOptions.sunburst.levels", "List<PlotOptionsSunburstLevels>");
+        _propertyTypeMappings.Add("plotOptions.treemap.levels", "List<PlotOptionsTreemapLevels>");
         _propertyTypeMappings.Add("pane.background.backgroundColor", "string");
+        _propertyTypeMappings.Add("responsive.rules", "List<ResponsiveRules>");
+        _propertyTypeMappings.Add("series.treemap.levels", "List<TreemapSeriesLevels>");
+        _propertyTypeMappings.Add("series.sunburst.levels", "List<SunburstSeriesLevels>");
+        _propertyTypeMappings.Add("series.sankey.nodes", "List<SankeySeriesNodes>");
 
         //temporary
         _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
@@ -927,8 +932,13 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("noData.attr", "new Hashtable()");
         _propertyInitMappings.Add("title.style", "new Hashtable()");
         _propertyInitMappings.Add("plotOptions.sunburst.levels", "new List<PlotOptionsSunburstLevels>()");
+        _propertyInitMappings.Add("plotOptions.treemap.levels", "new List<PlotOptionsTreemapLevels>()");
         _propertyInitMappings.Add("lang.shortWeekdays", "new List<string>()");
         _propertyInitMappings.Add("pane.background.backgroundColor", "\"\"");
+        _propertyInitMappings.Add("responsive.rules", "new List<ResponsiveRules>()");
+        _propertyInitMappings.Add("series.treemap.levels", "new List<TreemapSeriesLevels>()");
+        _propertyInitMappings.Add("series.sunburst.levels", "new List<SunburstSeriesLevels>()");
+        _propertyInitMappings.Add("series.sankey.nodes", "new List<SankeySeriesNodes>()");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
@@ -959,6 +969,11 @@ public class HighchartsGenerator
         //_lists.Add("xAxis.tickPositions");
         _lists.Add("labels.items");
         _lists.Add("plotOptions.sunburst.levels");
+        _lists.Add("plotOptions.treemap.levels");
+        _lists.Add("responsive.rules");
+        _lists.Add("series.treemap.levels");
+        _lists.Add("series.sunburst.levels");
+        _lists.Add("series.sankey.nodes");
     }
 
     private void InitSeriesMappings()

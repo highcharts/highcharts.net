@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			RootId = RootId_DefaultValue = "undefined";
 			LevelIsConstant = LevelIsConstant_DefaultValue = true;
-			Levels = Levels_DefaultValue = new SunburstSeriesLevels();
+			Levels = Levels_DefaultValue = new List<SunburstSeriesLevels>();
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
 			
 		}	
@@ -367,8 +367,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Set options on specific levels. Takes precedence over series options,but not point options.
 		/// </summary>
-		public List<object> Levels { get; set; }
-		private List<object> Levels_DefaultValue { get; set; }
+		public List<SunburstSeriesLevels> Levels { get; set; }
+		private List<SunburstSeriesLevels> Levels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -425,7 +425,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (RootId != RootId_DefaultValue) h.Add("rootId",RootId);
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
-			if (Levels.IsDirty()) h.Add("levels",Levels.ToHashtable());
+			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(Levels));
 			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
 			
 

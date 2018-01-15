@@ -84,7 +84,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SortIndex = SortIndex_DefaultValue = null;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
-			Levels = Levels_DefaultValue = new TreemapSeriesLevels();
+			Levels = Levels_DefaultValue = new List<TreemapSeriesLevels>();
 			
 		}	
 		
@@ -582,8 +582,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Set options on specific levels. Takes precedence over series options,but not point options.
 		/// </summary>
-		public List<object> Levels { get; set; }
-		private List<object> Levels_DefaultValue { get; set; }
+		public List<TreemapSeriesLevels> Levels { get; set; }
+		private List<TreemapSeriesLevels> Levels_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -664,7 +664,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SortIndex != SortIndex_DefaultValue) h.Add("sortIndex",SortIndex);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Levels.IsDirty()) h.Add("levels",Levels.ToHashtable());
+			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(Levels));
 			
 
 			return h;
