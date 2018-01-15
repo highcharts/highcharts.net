@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			RootId = RootId_DefaultValue = "undefined";
 			LevelIsConstant = LevelIsConstant_DefaultValue = true;
-			Levels = Levels_DefaultValue = new List<PlotOptionsSunburstList>();
+			Levels = Levels_DefaultValue = new List<PlotOptionsSunburstLevels>();
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
 			Label = Label_DefaultValue = new PlotOptionsSunburstLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Set options on specific levels. Takes precedence over series options,but not point options.
 		/// </summary>
-		public List<PlotOptionsSunburstList> Levels { get; set; }
-		private List<PlotOptionsSunburstList> Levels_DefaultValue { get; set; }
+		public List<PlotOptionsSunburstLevels> Levels { get; set; }
+		private List<PlotOptionsSunburstLevels> Levels_DefaultValue { get; set; }
 		 
 
 		/// <summary>

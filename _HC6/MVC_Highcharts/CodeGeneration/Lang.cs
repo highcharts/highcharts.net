@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
 			ThousandsSep = ThousandsSep_DefaultValue = "";
-			ShortWeekdays = ShortWeekdays_DefaultValue = "";
+			ShortWeekdays = ShortWeekdays_DefaultValue = new List<string>();
 			InvalidDate = InvalidDate_DefaultValue = "";
 			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
 			

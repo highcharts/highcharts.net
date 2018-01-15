@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Shape = Shape_DefaultValue = PaneBackgroundShape.Solid;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
-			BackgroundColor = BackgroundColor_DefaultValue = new PaneBackgroundBackgroundColor();
+			BackgroundColor = BackgroundColor_DefaultValue = "";
 			InnerRadius = InnerRadius_DefaultValue = 0;
 			OuterRadius = OuterRadius_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
@@ -81,7 +81,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shape != Shape_DefaultValue) h.Add("shape", Highcharts.FirstCharacterToLower(Shape.ToString()));
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BackgroundColor.IsDirty()) h.Add("backgroundColor",BackgroundColor.ToHashtable());
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
 			if (OuterRadius != OuterRadius_DefaultValue) h.Add("outerRadius",OuterRadius);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);

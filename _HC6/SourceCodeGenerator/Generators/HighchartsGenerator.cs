@@ -840,7 +840,8 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("zAxis.plotLines.label.style", "Hashtable");
         _propertyTypeMappings.Add("global.Date", "Object");
         _propertyTypeMappings.Add("labels.items", "List<LabelsItems>");
-        _propertyTypeMappings.Add("plotOptions.sunburst.levels", "List<PlotOptionsSunburstList>");
+        _propertyTypeMappings.Add("plotOptions.sunburst.levels", "List<PlotOptionsSunburstLevels>");
+        _propertyTypeMappings.Add("pane.background.backgroundColor", "string");
 
         //temporary
         _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
@@ -925,7 +926,9 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("legend.navigation.style", "new Hashtable()");
         _propertyInitMappings.Add("noData.attr", "new Hashtable()");
         _propertyInitMappings.Add("title.style", "new Hashtable()");
-        _propertyInitMappings.Add("plotOptions.sunburst.levels", "new List<PlotOptionsSunburstList>()");
+        _propertyInitMappings.Add("plotOptions.sunburst.levels", "new List<PlotOptionsSunburstLevels>()");
+        _propertyInitMappings.Add("lang.shortWeekdays", "new List<string>()");
+        _propertyInitMappings.Add("pane.background.backgroundColor", "\"\"");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
