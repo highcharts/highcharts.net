@@ -700,7 +700,14 @@ public class HighchartsGenerator
             {
                 var children = GetChildren(item);
 
-                GenerateClass(item, children);
+                if (item.FullName == "series")
+                {
+                    var seriesChildren = item.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !p.Extends.Any(q => q == "series")).ToList();
+                    GenerateClass(item, seriesChildren);
+                }
+                else
+                    GenerateClass(item, children);
+
                 GenerateClassesForLevel(children, level + 1);
             }
         }
