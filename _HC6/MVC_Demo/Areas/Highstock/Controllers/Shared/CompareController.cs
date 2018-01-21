@@ -103,123 +103,123 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             return AppleDatas;
         }
 
-        private void CompareJsonDataToDatabase_Apple()
-        {
-            string url = "https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=";                                
-            string json;
+        //private void CompareJsonDataToDatabase_Apple()
+        //{
+        //    string url = "https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=";
+        //    string json;
 
-            using (WebClient wc = new WebClient())
-            {
-                json = wc.DownloadString(url);
-            }
+        //    using (WebClient wc = new WebClient())
+        //    {
+        //        json = wc.DownloadString(url);
+        //    }
 
-            json = json.Substring(json.IndexOf('[') + 1);
-            json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
 
-            using (var db = new ChartDataEntities())
-            {
-                while (true)
-                {
-                    if (json.IndexOf('[') == -1)
-                        break;
+        //    using (var db = new ChartDataEntities())
+        //    {
+        //        while (true)
+        //        {
+        //            if (json.IndexOf('[') == -1)
+        //                break;
 
-                    string entity = json.Substring(0, json.IndexOf(']'));
-                    string[] values = entity.Split(',');
+        //            string entity = json.Substring(0, json.IndexOf(']'));
+        //            string[] values = entity.Split(',');
 
-                    db.AppleDatas.Add(
-                        new AppleData
-                        {
-                            Date = Convert.ToDouble(values[0]),
-                            Value = Convert.ToDouble(values[1])
-                        }
-                    );
+        //            db.AppleDatas.Add(
+        //                new AppleData
+        //                {
+        //                    Date = Convert.ToDouble(values[0]),
+        //                    Value = Convert.ToDouble(values[1])
+        //                }
+        //            );
 
-                    json = json.Substring(json.IndexOf('[') + 1);
-                }
-
-
-                db.SaveChanges();
-            }
-        }
-
-        private void CompareJsonDataToDatabase_Microsoft()
-        {
-            string url = "https://www.highcharts.com/samples/data/jsonp.php?filename=msft-c.json&callback=";
-            string json;
-
-            using (WebClient wc = new WebClient())
-            {
-                json = wc.DownloadString(url);
-            }
-
-            json = json.Substring(json.IndexOf('[') + 1);
-            json = json.Substring(json.IndexOf('[') + 1);
-
-            using (var db = new ChartDataEntities())
-            {
-                while (true)
-                {
-                    if (json.IndexOf('[') == -1)
-                        break;
-
-                    string entity = json.Substring(0, json.IndexOf(']'));
-                    string[] values = entity.Split(',');
-
-                    db.MicrosoftDatas.Add(
-                        new MicrosoftData
-                        {
-                            Date = Convert.ToDouble(values[0]),
-                            Value = Convert.ToDouble(values[1])
-                        }
-                    );
-
-                    json = json.Substring(json.IndexOf('[') + 1);
-                }
+        //            json = json.Substring(json.IndexOf('[') + 1);
+        //        }
 
 
-                db.SaveChanges();
-            }
-        }
+        //        db.SaveChanges();
+        //    }
+        //}
+
+        //private void CompareJsonDataToDatabase_Microsoft()
+        //{
+        //    string url = "https://www.highcharts.com/samples/data/jsonp.php?filename=msft-c.json&callback=";
+        //    string json;
+
+        //    using (WebClient wc = new WebClient())
+        //    {
+        //        json = wc.DownloadString(url);
+        //    }
+
+        //    json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
+
+        //    using (var db = new ChartDataEntities())
+        //    {
+        //        while (true)
+        //        {
+        //            if (json.IndexOf('[') == -1)
+        //                break;
+
+        //            string entity = json.Substring(0, json.IndexOf(']'));
+        //            string[] values = entity.Split(',');
+
+        //            db.MicrosoftDatas.Add(
+        //                new MicrosoftData
+        //                {
+        //                    Date = Convert.ToDouble(values[0]),
+        //                    Value = Convert.ToDouble(values[1])
+        //                }
+        //            );
+
+        //            json = json.Substring(json.IndexOf('[') + 1);
+        //        }
 
 
-        private void CompareJsonDataToDatabase_Google()
-        {
-            string url = "https://www.highcharts.com/samples/data/jsonp.php?filename=goog-c.json&callback=";
-            string json;
-
-            using (WebClient wc = new WebClient())
-            {
-                json = wc.DownloadString(url);
-            }
-
-            json = json.Substring(json.IndexOf('[') + 1);
-            json = json.Substring(json.IndexOf('[') + 1);
-
-            using (var db = new ChartDataEntities())
-            {
-                while (true)
-                {
-                    if (json.IndexOf('[') == -1)
-                        break;
-
-                    string entity = json.Substring(0, json.IndexOf(']'));
-                    string[] values = entity.Split(',');
-
-                    db.GoogleDatas.Add(
-                        new GoogleData
-                        {
-                            Date = Convert.ToDouble(values[0]),
-                            Value = Convert.ToDouble(values[1])
-                        }
-                    );
-
-                    json = json.Substring(json.IndexOf('[') + 1);
-                }
+        //        db.SaveChanges();
+        //    }
+        //}
 
 
-                db.SaveChanges();
-            }
-        }
+        //private void CompareJsonDataToDatabase_Google()
+        //{
+        //    string url = "https://www.highcharts.com/samples/data/jsonp.php?filename=goog-c.json&callback=";
+        //    string json;
+
+        //    using (WebClient wc = new WebClient())
+        //    {
+        //        json = wc.DownloadString(url);
+        //    }
+
+        //    json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
+
+        //    using (var db = new ChartDataEntities())
+        //    {
+        //        while (true)
+        //        {
+        //            if (json.IndexOf('[') == -1)
+        //                break;
+
+        //            string entity = json.Substring(0, json.IndexOf(']'));
+        //            string[] values = entity.Split(',');
+
+        //            db.GoogleDatas.Add(
+        //                new GoogleData
+        //                {
+        //                    Date = Convert.ToDouble(values[0]),
+        //                    Value = Convert.ToDouble(values[1])
+        //                }
+        //            );
+
+        //            json = json.Substring(json.IndexOf('[') + 1);
+        //        }
+
+
+        //        db.SaveChanges();
+        //    }
+        //}
 
     }
 }

@@ -17,7 +17,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             list.Add(new TilemapSeriesData { Id = "AZ", Name = "Arizona", X = 5, Y = 3, Value = 6745408 });
             list.Add(new TilemapSeriesData { Id = "AR", Name = "Arkansas", X = 5, Y = 6, Value = 2994079 });
             list.Add(new TilemapSeriesData { Id = "CA", Name = "California", X = 5, Y = 2, Value = 39250017 });
-            list.Add(new TilemapSeriesData { Id = "CO", Name = "Colorado", X = 4, Y = 3, Value = 5540545  });
+            list.Add(new TilemapSeriesData { Id = "CO", Name = "Colorado", X = 4, Y = 3, Value = 5540545 });
             list.Add(new TilemapSeriesData { Id = "CT", Name = "Connecticat", X = 3, Y = 11, Value = 3596677 });
             list.Add(new TilemapSeriesData { Id = "DE", Name = "Delaware", X = 4, Y = 9, Value = 935614 });
             list.Add(new TilemapSeriesData { Id = "DC", Name = "District of Columbia", X = 4, Y = 10, Value = 7288000 });

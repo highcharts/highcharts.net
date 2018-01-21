@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsTilemap()
 		{
 			TileShape = TileShape_DefaultValue = "hexagon";
-			Data = Data_DefaultValue = new List<PlotOptionsTilemapData>();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsTilemapLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -76,13 +75,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string TileShape { get; set; }
 		private string TileShape_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public List<PlotOptionsTilemapData> Data { get; set; }
-		private List<PlotOptionsTilemapData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -447,7 +439,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (TileShape != TileShape_DefaultValue) h.Add("tileShape",TileShape);
-			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

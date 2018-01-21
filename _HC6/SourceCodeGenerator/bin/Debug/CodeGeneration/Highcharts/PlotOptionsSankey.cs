@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSankey()
 		{
-			CurveFactor = CurveFactor_DefaultValue = null;
-			LinkOpacity = LinkOpacity_DefaultValue = null;
+			CurveFactor = CurveFactor_DefaultValue = "0.33";
+			LinkOpacity = LinkOpacity_DefaultValue = "0.5";
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			NodePadding = NodePadding_DefaultValue = 10;
 			Label = Label_DefaultValue = new PlotOptionsSankeyLabel();
@@ -54,15 +54,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Higher numbers makes the links in a sankey diagram render more curved.A `curveFactor` of 0 makes the lines straight.
 		/// </summary>
-		public double? CurveFactor { get; set; }
-		private double? CurveFactor_DefaultValue { get; set; }
+		public string CurveFactor { get; set; }
+		private string CurveFactor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Opacity for the links between nodes in the sankey diagram.
 		/// </summary>
-		public double? LinkOpacity { get; set; }
-		private double? LinkOpacity_DefaultValue { get; set; }
+		public string LinkOpacity { get; set; }
+		private string LinkOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>

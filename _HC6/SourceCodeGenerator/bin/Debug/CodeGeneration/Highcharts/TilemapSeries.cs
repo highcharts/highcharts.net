@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TilemapSeries()
 		{
+			Data = Data_DefaultValue = new List<TilemapSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -75,10 +76,16 @@ namespace Highsoft.Web.Mvc.Charts
 			Colsize = Colsize_DefaultValue = 1;
 			Rowsize = Rowsize_DefaultValue = 1;
 			TileShape = TileShape_DefaultValue = "hexagon";
-			Data = Data_DefaultValue = new List<TilemapSeriesData>();
 			
 		}	
 		
+
+		/// <summary>
+		/// An array of data points for the series. For the `tilemap` seriestype, points can be given in the following ways:1.  An array of arrays with 3 or 2 values. In this case, the valuescorrespond to `x,y,value`. If the first value is a string, it isapplied as the name of the point, and the `x` value is inferred.The `x` value can also be omitted, in which case the inner arraysshould be of length 2\. Then the `x` value is automatically calculated,either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. ```js    data: [        [0, 9, 7],        [1, 10, 4],        [2, 6, 3]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.tilemap.turboThreshold),this option is not available. ```js    data: [{        x: 1,        y: 3,        value: 10,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        y: 7,        value: 10,        name: "Point1",        color: "#FF00FF"    }] ```Note that for some [tileShapes](#plotOptions.tilemap.tileShape) the gridcoordinates are offset.
+		/// </summary>
+		public List<TilemapSeriesData> Data { get; set; }
+		private List<TilemapSeriesData> Data_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
@@ -505,19 +512,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string TileShape { get; set; }
 		private string TileShape_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public List<TilemapSeriesData> Data { get; set; }
-		private List<TilemapSeriesData> Data_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
@@ -583,7 +584,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
 			if (Rowsize != Rowsize_DefaultValue) h.Add("rowsize",Rowsize);
 			if (TileShape != TileShape_DefaultValue) h.Add("tileShape",TileShape);
-			if (Data.Any()) h.Add("data",HashifyList(Data));
 			
 
 			return h;

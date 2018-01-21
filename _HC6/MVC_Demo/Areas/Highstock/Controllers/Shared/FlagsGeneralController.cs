@@ -121,56 +121,56 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             return flags;
         }
 
-        private void FlagsGeneral_JsonDataToDatabase()
-        {
-            string json;
+        //private void FlagsGeneral_JsonDataToDatabase()
+        //{
+        //    string json;
 
-            using (WebClient wc = new WebClient())
-            {
-                json = wc.DownloadString("http://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?");
-            }
+        //    using (WebClient wc = new WebClient())
+        //    {
+        //        json = wc.DownloadString("http://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?");
+        //    }
 
-            json = json.Substring(json.IndexOf('[') + 1);
-            json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
 
-            using (var db = new ChartDataEntities())
-            {
-                while (true)
-                {
-                    if (json.IndexOf('[') == -1)
-                        break;
+        //    using (var db = new ChartDataEntities())
+        //    {
+        //        while (true)
+        //        {
+        //            if (json.IndexOf('[') == -1)
+        //                break;
 
-                    string entity = json.Substring(0, json.IndexOf(']'));
-                    string[] values = entity.Split(',');
+        //            string entity = json.Substring(0, json.IndexOf(']'));
+        //            string[] values = entity.Split(',');
 
-                    string year = values[0].Substring(values[0].IndexOf("(") + 1, 4);
-                    string month = values[1];
-                    string day = values[2].Substring(0, values[2].IndexOf(")"));
-                    string value = values[3];
+        //            string year = values[0].Substring(values[0].IndexOf("(") + 1, 4);
+        //            string month = values[1];
+        //            string day = values[2].Substring(0, values[2].IndexOf(")"));
+        //            string value = values[3];
 
-                    try
-                    {
+        //            try
+        //            {
 
-                        DateTime date = new DateTime(Convert.ToInt16(year), Convert.ToInt16(month), Convert.ToInt16(day));
+        //                DateTime date = new DateTime(Convert.ToInt16(year), Convert.ToInt16(month), Convert.ToInt16(day));
 
-                        db.Flags.Add(
-                                new Flag
-                                {
-                                    Date = DateToUTC(date),
-                                    Value = Convert.ToDouble(value, CultureInfo.InvariantCulture)
-                                }
-                            );
-                    }
-                    catch (Exception)
-                    {
-                    }
+        //                db.Flags.Add(
+        //                        new Flag
+        //                        {
+        //                            Date = DateToUTC(date),
+        //                            Value = Convert.ToDouble(value, CultureInfo.InvariantCulture)
+        //                        }
+        //                    );
+        //            }
+        //            catch (Exception)
+        //            {
+        //            }
 
-                    json = json.Substring(json.IndexOf('[') + 1);
-                }
+        //            json = json.Substring(json.IndexOf('[') + 1);
+        //        }
 
-                db.SaveChanges();
-            }
-        }
+        //        db.SaveChanges();
+        //    }
+        //}
 
         public double DateToUTC(DateTime theDate)
         {

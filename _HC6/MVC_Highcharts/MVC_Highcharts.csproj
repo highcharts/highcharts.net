@@ -49,7 +49,7 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -2089,7 +2089,6 @@
     <Compile Include="CodeGeneration\PlotOptionsSunburstTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemap.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapAnimation.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsTilemapData.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapDataLabels.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapDataLabelsFilter.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTilemapDataLabelsStyle.cs" />
@@ -2563,6 +2562,7 @@
     <Compile Include="CodeGeneration\TilemapSeries.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesAnimation.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesData.cs" />
+    <Compile Include="CodeGeneration\TilemapSeriesDataEvents.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesDataLabels.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesDataLabelsFilter.cs" />
     <Compile Include="CodeGeneration\TilemapSeriesDataLabelsStyle.cs" />

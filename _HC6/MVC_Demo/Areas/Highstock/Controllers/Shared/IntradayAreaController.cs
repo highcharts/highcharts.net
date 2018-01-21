@@ -78,46 +78,46 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             return Intradays;
         }
 
-        private void IntradayArea_JsonDataToDatabase()
-        {
-            string json;
+        //private void IntradayArea_JsonDataToDatabase()
+        //{
+        //    string json;
 
-            using (WebClient wc = new WebClient())
-            {
-                json = wc.DownloadString("https://www.highcharts.com/samples/data/jsonp.php?filename=new-intraday.json&callback=?");
-            }
+        //    using (WebClient wc = new WebClient())
+        //    {
+        //        json = wc.DownloadString("https://www.highcharts.com/samples/data/jsonp.php?filename=new-intraday.json&callback=?");
+        //    }
 
-            json = json.Substring(json.IndexOf('[') + 1);
-            json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
 
-            using (var db = new ChartDataEntities())
-            {
-                while (true)
-                {
-                    if (json.IndexOf('[') == -1)
-                        break;
+        //    using (var db = new ChartDataEntities())
+        //    {
+        //        while (true)
+        //        {
+        //            if (json.IndexOf('[') == -1)
+        //                break;
 
-                    string entity = json.Substring(0, json.IndexOf(']'));
-                    string[] values = entity.Split(',');
+        //            string entity = json.Substring(0, json.IndexOf(']'));
+        //            string[] values = entity.Split(',');
 
-                    db.Intradays.Add(
-                        new Intraday
-                        {
-                            Date = Convert.ToDouble(values[0]),
-                            Open = Convert.ToDouble(values[1]),
-                            High = Convert.ToDouble(values[2]),
-                            Low = Convert.ToDouble(values[3]),
-                            Close = Convert.ToDouble(values[4])
-                        }
-                    );
+        //            db.Intradays.Add(
+        //                new Intraday
+        //                {
+        //                    Date = Convert.ToDouble(values[0]),
+        //                    Open = Convert.ToDouble(values[1]),
+        //                    High = Convert.ToDouble(values[2]),
+        //                    Low = Convert.ToDouble(values[3]),
+        //                    Close = Convert.ToDouble(values[4])
+        //                }
+        //            );
 
-                    json = json.Substring(json.IndexOf('[') + 1);
-                }
+        //            json = json.Substring(json.IndexOf('[') + 1);
+        //        }
 
 
-                db.SaveChanges();
-            }
-        }
+        //        db.SaveChanges();
+        //    }
+        //}
 
     }
 }

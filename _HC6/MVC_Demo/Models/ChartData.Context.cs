@@ -9,28 +9,28 @@
 
 namespace MVC_Demo.Models
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
+    //using System;
+    //using System.Data.Entity;
+    //using System.Data.Entity.Infrastructure;
     
-    public partial class ChartDataEntities : DbContext
-    {
-        public ChartDataEntities()
-            : base("name=ChartDataEntities")
-        {
-        }
+    //public partial class ChartDataEntities : DbContext
+    //{
+    //    public ChartDataEntities()
+    //        : base("name=ChartDataEntities")
+    //    {
+    //    }
     
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
+    //    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    //    {
+    //        throw new UnintentionalCodeFirstException();
+    //    }
     
-        public DbSet<AppleData> AppleDatas { get; set; }
-        public DbSet<CandlestickVolume> CandlestickVolumes { get; set; }
-        public DbSet<DataGrouping> DataGroupings { get; set; }
-        public DbSet<Flag> Flags { get; set; }
-        public DbSet<GoogleData> GoogleDatas { get; set; }
-        public DbSet<Intraday> Intradays { get; set; }
-        public DbSet<MicrosoftData> MicrosoftDatas { get; set; }
-    }
+    //    public DbSet<AppleData> AppleDatas { get; set; }
+    //    public DbSet<CandlestickVolume> CandlestickVolumes { get; set; }
+    //    public DbSet<DataGrouping> DataGroupings { get; set; }
+    //    public DbSet<Flag> Flags { get; set; }
+    //    public DbSet<GoogleData> GoogleDatas { get; set; }
+    //    public DbSet<Intraday> Intradays { get; set; }
+    //    public DbSet<MicrosoftData> MicrosoftDatas { get; set; }
+    //}
 }
