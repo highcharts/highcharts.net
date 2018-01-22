@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Drilldown()
 		{
-			ActiveAxisLabelStyle = ActiveAxisLabelStyle_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#003399"},{ "fontWeight", "bold"},{ "textDecoration", "underline" }};
-			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new Hashtable{{ "cursor", "pointer"},{ "color", "#003399"},{ "fontWeight", "bold"},{ "textDecoration", "underline" }};
+			ActiveAxisLabelStyle = ActiveAxisLabelStyle_DefaultValue = new DrilldownActiveAxisLabelStyle();
+			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new DrilldownActiveDataLabelStyle();
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			DrillUpButton = DrillUpButton_DefaultValue = new DrilldownDrillUpButton();
 			AllowPointDrilldown = AllowPointDrilldown_DefaultValue = true;
@@ -27,15 +27,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Additional styles to apply to the X axis label for a point thathas drilldown data. By default it is underlined and blue to inviteto interaction.
 		/// </summary>
-		public Hashtable ActiveAxisLabelStyle { get; set; }
-		private Hashtable ActiveAxisLabelStyle_DefaultValue { get; set; }
+		public DrilldownActiveAxisLabelStyle ActiveAxisLabelStyle { get; set; }
+		private DrilldownActiveAxisLabelStyle ActiveAxisLabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Additional styles to apply to the data label of a point that hasdrilldown data. By default it is underlined and blue to invite tointeraction.
 		/// </summary>
-		public Hashtable ActiveDataLabelStyle { get; set; }
-		private Hashtable ActiveDataLabelStyle_DefaultValue { get; set; }
+		public DrilldownActiveDataLabelStyle ActiveDataLabelStyle { get; set; }
+		private DrilldownActiveDataLabelStyle ActiveDataLabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,8 +70,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (ActiveAxisLabelStyle != ActiveAxisLabelStyle_DefaultValue) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle);
-			if (ActiveDataLabelStyle != ActiveDataLabelStyle_DefaultValue) h.Add("activeDataLabelStyle",ActiveDataLabelStyle);
+			if (ActiveAxisLabelStyle.IsDirty()) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle.ToHashtable());
+			if (ActiveDataLabelStyle.IsDirty()) h.Add("activeDataLabelStyle",ActiveDataLabelStyle.ToHashtable());
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
 			if (AllowPointDrilldown != AllowPointDrilldown_DefaultValue) h.Add("allowPointDrilldown",AllowPointDrilldown);

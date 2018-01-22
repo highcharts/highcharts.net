@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(247,247,247,0.85)";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333"},{ "cursor", "default"},{ "fontSize", "12px"},{ "pointerEvents", "none"},{ "whiteSpace", "nowrap" }};
+			Style = Style_DefaultValue = new TooltipStyle();
 			BorderColor = BorderColor_DefaultValue = "null";
 			Crosshairs = Crosshairs_DefaultValue = new List<Crosshair>();
 			FollowPointer = FollowPointer_DefaultValue = null;
@@ -134,8 +134,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the tooltip. The tooltip can also be styled throughthe CSS class `.highcharts-tooltip`.
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public TooltipStyle Style { get; set; }
+		private TooltipStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -266,7 +266,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Crosshairs != Crosshairs_DefaultValue) h.Add("crosshairs",Crosshairs);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);

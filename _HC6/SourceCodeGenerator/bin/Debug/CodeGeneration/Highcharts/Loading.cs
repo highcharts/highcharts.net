@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Loading()
 		{
-			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
-			Style = Style_DefaultValue = new Hashtable{{ "position", "absolute"},{ "backgroundColor", "#ffffff"},{ "opacity", 0.5},{ "textAlign", "center" }};
+			LabelStyle = LabelStyle_DefaultValue = new LoadingLabelStyle();
+			Style = Style_DefaultValue = new LoadingStyle();
 			HideDuration = HideDuration_DefaultValue = 100;
 			ShowDuration = ShowDuration_DefaultValue = 100;
 			
@@ -25,15 +25,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the loading label `span`.
 		/// </summary>
-		public Hashtable LabelStyle { get; set; }
-		private Hashtable LabelStyle_DefaultValue { get; set; }
+		public LoadingLabelStyle LabelStyle { get; set; }
+		private LoadingLabelStyle LabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the loading screen that covers the plot area.
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public LoadingStyle Style { get; set; }
+		private LoadingStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (HideDuration != HideDuration_DefaultValue) h.Add("hideDuration",HideDuration);
 			if (ShowDuration != ShowDuration_DefaultValue) h.Add("showDuration",ShowDuration);
 			

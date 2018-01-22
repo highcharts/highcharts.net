@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Enabled = Enabled_DefaultValue = false;
 			Formatter = Formatter_DefaultValue = "";
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new YAxisStackLabelsStyle();
 			Align = Align_DefaultValue = YAxisStackLabelsAlign.Left;
 			Format = Format_DefaultValue = "{total}";
 			Rotation = Rotation_DefaultValue = 0;
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the label.In styled mode, the styles are set in the`.highcharts-stack-label` class.
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public YAxisStackLabelsStyle Style { get; set; }
+		private YAxisStackLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -121,7 +121,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);

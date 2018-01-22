@@ -59,7 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PlacementStrategy = PlacementStrategy_DefaultValue = "center";
 			Rotation = Rotation_DefaultValue = new WordcloudSeriesRotation();
 			Spiral = Spiral_DefaultValue = "rectangular";
-			Style = Style_DefaultValue = new Hashtable{{"fontFamily","sans-serif"},{ "fontWeight", "900"}};
+			Style = Style_DefaultValue = new WordcloudSeriesStyle();
 			
 		}	
 		
@@ -382,8 +382,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the words.
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public WordcloudSeriesStyle Style { get; set; }
+		private WordcloudSeriesStyle Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -435,7 +435,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
 			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
 			if (Spiral != Spiral_DefaultValue) h.Add("spiral",Spiral);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			
 
 			return h;

@@ -25,10 +25,10 @@ namespace Highsoft.Web.Mvc.Charts
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Labels = Labels_DefaultValue = new YAxisLabels();
-			MaxPadding = MaxPadding_DefaultValue = "0.01";
+			MaxPadding = MaxPadding_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
-			MinPadding = MinPadding_DefaultValue = "0.01";
+			MinPadding = MinPadding_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			StartOnTick = StartOnTick_DefaultValue = false;
 			TickLength = TickLength_DefaultValue = 10;
@@ -170,8 +170,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
 		/// </summary>
-		public string MaxPadding { get; set; }
-		private string MaxPadding_DefaultValue { get; set; }
+		public double? MaxPadding { get; set; }
+		private double? MaxPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -191,8 +191,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a min extremeis set using `axis.setExtremes()`, the minPadding will be ignored.
 		/// </summary>
-		public string MinPadding { get; set; }
-		private string MinPadding_DefaultValue { get; set; }
+		public double? MinPadding { get; set; }
+		private double? MinPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PlacementStrategy = PlacementStrategy_DefaultValue = "center";
 			Rotation = Rotation_DefaultValue = new PlotOptionsWordcloudRotation();
 			Spiral = Spiral_DefaultValue = "rectangular";
-			Style = Style_DefaultValue = new Hashtable{{"fontFamily","sans-serif"},{ "fontWeight", "900"}};
+			Style = Style_DefaultValue = new PlotOptionsWordcloudStyle();
 			Label = Label_DefaultValue = new PlotOptionsWordcloudLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
@@ -85,8 +85,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the words.
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public PlotOptionsWordcloudStyle Style { get; set; }
+		private PlotOptionsWordcloudStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -314,7 +314,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
 			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
 			if (Spiral != Spiral_DefaultValue) h.Add("spiral",Spiral);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);

@@ -22,9 +22,9 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "#999999";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			Navigation = Navigation_DefaultValue = new LegendNavigation();
-			ItemStyle = ItemStyle_DefaultValue = new Hashtable{{ "color", "#333333"},{ "cursor", "pointer"},{ "fontSize", "12px"},{ "fontWeight", "bold"},{ "textOverflow", "ellipsis" }};
-			ItemHoverStyle = ItemHoverStyle_DefaultValue = new Hashtable{{ "color", "#000000" }};
-			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new Hashtable{{ "color", "#cccccc" }};
+			ItemStyle = ItemStyle_DefaultValue = new LegendItemStyle();
+			ItemHoverStyle = ItemHoverStyle_DefaultValue = new LegendItemHoverStyle();
+			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new LegendItemHiddenStyle();
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new LegendItemCheckboxStyle();
 			SquareSymbol = SquareSymbol_DefaultValue = true;
@@ -116,22 +116,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for each legend item. Only a subset of CSS is supported,notably those options related to text. The default `textOverflow`property makes long texts truncate. Set it to `null` to wrap textinstead. A `width` property can be added to control the text width.
 		/// </summary>
-		public Hashtable ItemStyle { get; set; }
-		private Hashtable ItemStyle_DefaultValue { get; set; }
+		public LegendItemStyle ItemStyle { get; set; }
+		private LegendItemStyle ItemStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for each legend item in hover mode. Only a subset ofCSS is supported, notably those options related to text. Propertiesare inherited from `style` unless overridden here.
 		/// </summary>
-		public Hashtable ItemHoverStyle { get; set; }
-		private Hashtable ItemHoverStyle_DefaultValue { get; set; }
+		public LegendItemHoverStyle ItemHoverStyle { get; set; }
+		private LegendItemHoverStyle ItemHoverStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for each legend item when the corresponding series orpoint is hidden. Only a subset of CSS is supported, notably thoseoptions related to text. Properties are inherited from `style`unless overridden here.
 		/// </summary>
-		public Hashtable ItemHiddenStyle { get; set; }
-		private Hashtable ItemHiddenStyle_DefaultValue { get; set; }
+		public LegendItemHiddenStyle ItemHiddenStyle { get; set; }
+		private LegendItemHiddenStyle ItemHiddenStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -342,9 +342,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
-			if (ItemStyle != ItemStyle_DefaultValue) h.Add("itemStyle",ItemStyle);
-			if (ItemHoverStyle != ItemHoverStyle_DefaultValue) h.Add("itemHoverStyle",ItemHoverStyle);
-			if (ItemHiddenStyle != ItemHiddenStyle_DefaultValue) h.Add("itemHiddenStyle",ItemHiddenStyle);
+			if (ItemStyle.IsDirty()) h.Add("itemStyle",ItemStyle.ToHashtable());
+			if (ItemHoverStyle.IsDirty()) h.Add("itemHoverStyle",ItemHoverStyle.ToHashtable());
+			if (ItemHiddenStyle.IsDirty()) h.Add("itemHiddenStyle",ItemHiddenStyle.ToHashtable());
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ItemCheckboxStyle.IsDirty()) h.Add("itemCheckboxStyle",ItemCheckboxStyle.ToHashtable());
 			if (SquareSymbol != SquareSymbol_DefaultValue) h.Add("squareSymbol",SquareSymbol);

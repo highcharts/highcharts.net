@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public YAxisTitle()
 		{
 			Align = Align_DefaultValue = YAxisTitleAlign.Middle;
-			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
+			Style = Style_DefaultValue = new YAxisTitleStyle();
 			Position3d = Position3d_DefaultValue = YAxisTitlePosition3d.Offset;
 			Skew3d = Skew3d_DefaultValue = YAxisTitleSkew3d.False;
 			Enabled = Enabled_DefaultValue = "middle";
@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting `textOverflow: 'ellipsis'`, by setting a specific `width` or by setting `wordSpace: 'nowrap'`.In styled mode, the stroke width is given in the`.highcharts-axis-title` class.
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public YAxisTitleStyle Style { get; set; }
+		private YAxisTitleStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -127,7 +127,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d", Highcharts.FirstCharacterToLower(Skew3d.ToString()));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);

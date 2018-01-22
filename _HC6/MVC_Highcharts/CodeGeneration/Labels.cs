@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Labels()
 		{
-			Style = Style_DefaultValue = new Hashtable{{ "color", "#333333" }};
+			Style = Style_DefaultValue = new LabelsStyle();
 			Items = Items_DefaultValue = new List<LabelsItems>();
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Shared CSS styles for all labels.
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public LabelsStyle Style { get; set; }
+		private LabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Items != Items_DefaultValue) h.Add("items", HashifyList(Items));
 			
 

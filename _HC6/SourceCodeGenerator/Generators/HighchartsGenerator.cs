@@ -565,6 +565,9 @@ public class HighchartsGenerator
         if (child.ParentFullName != ROOT_CLASS && (child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis"))
             return "string";
 
+        if (child.Title.ToLower().EndsWith("style") && child.Children.Any())
+            return GetClassNameFromItem(child);
+
         if (_propertyTypeMappings[child.FullName] != null)
             return _propertyTypeMappings[child.FullName].ToString();
         if (_propertyTypeMappings[child.Title] != null)
@@ -667,7 +670,7 @@ public class HighchartsGenerator
             if (child.ReturnType == "Array" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
-            if ((child.Children.Any() || child.Extends.Any() || child.ReturnType == "Object") && child.ReturnType != "CSSObject")
+            if (child.Children.Any() || child.Extends.Any() || child.ReturnType == "Object")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
@@ -797,13 +800,13 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("dateTimeLabelFormats", "Hashtable");
         _propertyTypeMappings.Add("inputPosition", "Hashtable");
         _propertyTypeMappings.Add("attr", "Hashtable");
-        //_propertyTypeMappings.Add("style", "Hashtable");
+        ////_propertyTypeMappings.Add("style", "Hashtable");
         _propertyTypeMappings.Add("inputStyle", "Hashtable");
         _propertyTypeMappings.Add("labelStyle", "Hashtable");
         _propertyTypeMappings.Add("stack", "string");
         _propertyTypeMappings.Add("symbol", "string");
         _propertyTypeMappings.Add("trackBorderColor", "string");
-        //_propertyTypeMappings.Add("background", "List<Background>");
+        ////_propertyTypeMappings.Add("background", "List<Background>");
         _propertyTypeMappings.Add("menuItems", "List<MenuItem>");
         _propertyTypeMappings.Add("crosshairs", "List<Crosshair>");
         _propertyTypeMappings.Add("stops", "List<Stop>");
@@ -867,14 +870,14 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("pointPlacement", "new PointPlacement()");
         _propertyInitMappings.Add("crosshairs", "new List<Crosshair>()");
         _propertyInitMappings.Add("menuItems", "new List<MenuItem>()");
-        //_propertyInitMappings.Add("Symbol", "new Symbol()");
+        ////_propertyInitMappings.Add("Symbol", "new Symbol()");
         _propertyInitMappings.Add("colors", "new List<string>()");
         _propertyInitMappings.Add("center", "new string[] { \"50%\", \"50%\" }");
         _propertyInitMappings.Add("margin", "new string[] {}");
         _propertyInitMappings.Add("position", "new Hashtable()");
         _propertyInitMappings.Add("dateTimeLabelFormats", "new Hashtable()");
         _propertyInitMappings.Add("inputPosition", "new Hashtable()");
-        //_propertyInitMappings.Add("style", "new Hashtable()");
+        ////_propertyInitMappings.Add("style", "new Hashtable()");
         _propertyInitMappings.Add("inputStyle", "new Hashtable()");
         _propertyInitMappings.Add("labelStyle", "new Hashtable()");
         _propertyInitMappings.Add("columns", "new List<List<Object>>()");
@@ -917,7 +920,7 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("xAxis.plotLines.label.style", "new Hashtable()");
         _propertyInitMappings.Add("yAxis.plotLines.label.style", "new Hashtable()");
         _propertyInitMappings.Add("zAxis.plotLines.label.style", "new Hashtable()");
-        _propertyInitMappings.Add("labels.items.style", "new Hashtable()");
+        //_propertyInitMappings.Add("labels.items.style", "new Hashtable()");
         _propertyInitMappings.Add("xAxis.tickPositions", "new List<double>()");
         _propertyInitMappings.Add("yAxis.tickPositions", "new List<double>()");
         _propertyInitMappings.Add("zAxis.tickPositions", "new List<double>()");
@@ -926,18 +929,19 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("global.Date", "null");
         _propertyInitMappings.Add("boxesToAvoid", "new List<object>()");
         _propertyInitMappings.Add("labels.items", "new List<LabelsItems>()");
-        _propertyInitMappings.Add("chart.parallelAxes.labels.style", "new Hashtable()");
-        _propertyInitMappings.Add("annotations.labelOptions.style", "new Hashtable()");
-        _propertyInitMappings.Add("annotations.labels.style", "new Hashtable()");
-        _propertyInitMappings.Add("colorAxis.labels.style", "new Hashtable()");
-        _propertyInitMappings.Add("xAxis.labels.style", "new Hashtable()");
-        _propertyInitMappings.Add("yAxis.labels.style", "new Hashtable()");
-        _propertyInitMappings.Add("zAxis.labels.style", "new Hashtable()");
-        _propertyInitMappings.Add("yAxis.stackLabels.style", "new Hashtable()");
+        //_propertyInitMappings.Add("chart.parallelAxes.labels.style", "new Hashtable()"); object
+        //_propertyInitMappings.Add("annotations.labelOptions.style", "new Hashtable()"); object
+        //_propertyInitMappings.Add("annotations.labels.style", "new Hashtable()"); object
+        //_propertyInitMappings.Add("colorAxis.labels.style", "new Hashtable()"); o
+        //_propertyInitMappings.Add("xAxis.labels.style", "new Hashtable()"); o
+        //_propertyInitMappings.Add("yAxis.labels.style", "new Hashtable()");o
+        //_propertyInitMappings.Add("zAxis.labels.style", "new Hashtable()");o
+        //_propertyInitMappings.Add("yAxis.stackLabels.style", "new Hashtable()");o
         _propertyInitMappings.Add("legend.style", "new Hashtable()");
         _propertyInitMappings.Add("legend.navigation.style", "new Hashtable()");
         _propertyInitMappings.Add("noData.attr", "new Hashtable()");
         _propertyInitMappings.Add("title.style", "new Hashtable()");
+        _propertyInitMappings.Add("labels.items.style", "new Hashtable()");
         _propertyInitMappings.Add("plotOptions.sunburst.levels", "new List<PlotOptionsSunburstLevels>()");
         _propertyInitMappings.Add("plotOptions.treemap.levels", "new List<PlotOptionsTreemapLevels>()");
         _propertyInitMappings.Add("lang.shortWeekdays", "new List<string>()");
@@ -1104,6 +1108,9 @@ public class HighchartsGenerator
         //    item.IsParent = true;
         if ((item.Title == "xAxis" || item.Title == "yAxis") && item.ParentFullName != ROOT_CLASS)
             return "\"\"";
+
+        if (item.Title.ToLower().EndsWith("style") && item.Children.Any())
+            return "new " + GetClassNameFromItem(item) + "()";
 
         if (_propertyInitMappings[item.FullName] != null)
         {

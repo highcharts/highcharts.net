@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = "5";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new AnnotationsLabelsStyle();
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
@@ -133,8 +133,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Styles for the annotation's label.
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public AnnotationsLabelsStyle Style { get; set; }
+		private AnnotationsLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -203,7 +203,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);

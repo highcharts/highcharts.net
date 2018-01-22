@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public YAxisLabels()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			Style = Style_DefaultValue = new Hashtable();
+			Style = Style_DefaultValue = new YAxisLabelsStyle();
 			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = YAxisLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
@@ -48,8 +48,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the label. Use `whiteSpace: 'nowrap'` to preventwrapping of category labels. Use `textOverflow: 'none'` toprevent ellipsis (dots).In styled mode, the labels are styled with the`.highcharts-axis-labels` class.
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public YAxisLabelsStyle Style { get; set; }
+		private YAxisLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -183,7 +183,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
