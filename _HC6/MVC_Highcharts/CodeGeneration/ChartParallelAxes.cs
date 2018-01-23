@@ -21,7 +21,6 @@ namespace Highsoft.Web.Mvc.Charts
 			MinorTickPosition = MinorTickPosition_DefaultValue = ChartParallelAxesMinorTickPosition.Outside;
 			MinPadding = MinPadding_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
-			StartOnTick = StartOnTick_DefaultValue = false;
 			TickLength = TickLength_DefaultValue = 10;
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = ChartParallelAxesTickmarkPlacement.Between;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
@@ -67,6 +66,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			EndOnTick = EndOnTick_DefaultValue = true;
+			StartOnTick = StartOnTick_DefaultValue = true;
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			
 		}	
@@ -119,13 +119,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? StartOfWeek { get; set; }
 		private double? StartOfWeek_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to force the axis to start on a tick. Use this option withthe `minPadding` option to control the axis start.
-		/// </summary>
-		public bool? StartOnTick { get; set; }
-		private bool? StartOnTick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -444,6 +437,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.
+		/// </summary>
+		public bool? StartOnTick { get; set; }
+		private bool? StartOnTick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If `true`, the first series in a stack will be drawn on top in apositive, non-reversed Y axis. If `false`, the first series is inthe base of the stack.
 		/// </summary>
 		public bool? ReversedStacks { get; set; }
@@ -461,7 +461,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
-			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
 			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
@@ -507,6 +506,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
+			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			
 

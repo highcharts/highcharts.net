@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			EndOnTick = EndOnTick_DefaultValue = true;
+			StartOnTick = StartOnTick_DefaultValue = true;
 			StackLabels = StackLabels_DefaultValue = new YAxisStackLabels();
 			Angle = Angle_DefaultValue = 0;
 			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
@@ -30,7 +31,6 @@ namespace Highsoft.Web.Mvc.Charts
 			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
 			MinPadding = MinPadding_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
-			StartOnTick = StartOnTick_DefaultValue = false;
 			TickLength = TickLength_DefaultValue = 10;
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = YAxisTickmarkPlacement.Between;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
@@ -102,6 +102,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? EndOnTick { get; set; }
 		private bool? EndOnTick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.
+		/// </summary>
+		public bool? StartOnTick { get; set; }
+		private bool? StartOnTick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -200,13 +207,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? StartOfWeek { get; set; }
 		private double? StartOfWeek_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to force the axis to start on a tick. Use this option withthe `minPadding` option to control the axis start.
-		/// </summary>
-		public bool? StartOnTick { get; set; }
-		private bool? StartOnTick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -600,6 +600,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
+			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
 			if (StackLabels.IsDirty()) h.Add("stackLabels",StackLabels.ToHashtable());
 			if (Angle != Angle_DefaultValue) h.Add("angle",Angle);
 			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation", Highcharts.FirstCharacterToLower(GridLineInterpolation.ToString()));
@@ -614,7 +615,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
-			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
 			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
