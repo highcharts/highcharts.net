@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.UnitTests
             string json = _renderer.RenderHtml();
 
             Assert.IsFalse(json.Contains("\"text\":\"null\""));
-            Assert.IsFalse(json.Contains("\"text\":null"));
-            Assert.IsFalse(json.Contains("\"text\""));
+            Assert.IsTrue(json.Contains("\"text\":null"));
+            //Assert.IsFalse(json.Contains("\"text\""));
         }
 
         [TestMethod]

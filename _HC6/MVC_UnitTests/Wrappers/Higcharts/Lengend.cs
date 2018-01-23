@@ -426,10 +426,10 @@ namespace Highsoft.Web.Mvc.UnitTests
         [TestMethod]
         public void TestTickmarkPlacement()
         {
-            _axis.TickmarkPlacement = XAxisTickmarkPlacement.Between;
+            _axis.TickmarkPlacement = XAxisTickmarkPlacement.On;
             string json = _renderer.RenderHtml();
 
-            Assert.IsTrue(json.Contains("between"));
+            Assert.IsTrue(json.Contains("on"));
         }
 
         [TestMethod]

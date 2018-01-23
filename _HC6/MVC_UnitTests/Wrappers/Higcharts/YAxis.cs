@@ -362,10 +362,10 @@ namespace Highsoft.Web.Mvc.UnitTests
         [TestMethod]
         public void TestShowLastLabel()
         {
-            _axis.ShowLastLabel = true;
+            _axis.ShowLastLabel = false;
             string json = _renderer.RenderHtml();
 
-            Assert.IsTrue(json.Contains("\"showLastLabel\":true"));
+            Assert.IsTrue(json.Contains("\"showLastLabel\":false"));
         }
 
         [TestMethod]
@@ -425,10 +425,10 @@ namespace Highsoft.Web.Mvc.UnitTests
         [TestMethod]
         public void TestTickmarkPlacement()
         {
-            _axis.TickmarkPlacement = YAxisTickmarkPlacement.Between;
+            _axis.TickmarkPlacement = YAxisTickmarkPlacement.On;
             string json = _renderer.RenderHtml();
 
-            Assert.IsTrue(json.Contains("between"));
+            Assert.IsTrue(json.Contains("on"));
         }
 
         [TestMethod]
