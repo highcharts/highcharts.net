@@ -48,3 +48,4 @@ C:\Repositories\highcharts.net\_HC6\MVC_Highstock\bin\Debug\Microsoft.Web.Infras
 C:\Repositories\highcharts.net\_HC6\MVC_Highstock\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Repositories\highcharts.net\_HC6\MVC_Highstock\obj\Debug\Highstock.Web.Mvc.dll
 C:\Repositories\highcharts.net\_HC6\MVC_Highstock\obj\Debug\Highstock.Web.Mvc.pdb
+C:\Repositories\highcharts.net\_HC6\MVC_Highstock\obj\Debug\MVC_Highstock.csprojResolveAssemblyReference.cache

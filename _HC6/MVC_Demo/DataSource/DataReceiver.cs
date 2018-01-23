@@ -213,7 +213,7 @@ namespace MVC_Demo.Models
                     while ((line = sr.ReadLine()) != null)
                     {
                         var pair = line.Split(',');
-                        results.Add(new AnnotationsData { X = Convert.ToDouble(pair[0]), Y = Convert.ToDouble(pair[1]) });
+                        results.Add(new AnnotationsData { X = Convert.ToDouble(pair[0], new CultureInfo("en-US")), Y = Convert.ToDouble(pair[1], new CultureInfo("en-US")) });
                     }
                 }
 
