@@ -95,14 +95,20 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue) h.Add("pointDescriptionThreshold",PointDescriptionThreshold);
+			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)
+			{
+				if (PointDescriptionThreshold != null)
+					h.Add("pointDescriptionThreshold", PointDescriptionThreshold);
+				else
+					h.Add("pointDescriptionThreshold", false);
+			}
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
-			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) h.Add("onTableAnchorClick",OnTableAnchorClick);
+			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highcharts.AddFunction("AccessibilityOnTableAnchorClick.onTableAnchorClick", OnTableAnchorClick); }  
 			if (PointDateFormat != PointDateFormat_DefaultValue) h.Add("pointDateFormat",PointDateFormat);
-			if (PointDateFormatter != PointDateFormatter_DefaultValue) h.Add("pointDateFormatter",PointDateFormatter);
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) h.Add("pointDescriptionFormatter",PointDescriptionFormatter);
-			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter);
-			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter);
+			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highcharts.AddFunction("AccessibilityPointDateFormatter.pointDateFormatter", PointDateFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("AccessibilityPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highcharts.AddFunction("AccessibilityScreenReaderSectionFormatter.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
+			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highcharts.AddFunction("AccessibilitySeriesDescriptionFormatter.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
 			
 
 			return h;

@@ -203,7 +203,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (_titleKey != _titleKey_DefaultValue) h.Add("_titleKey",_titleKey);
 			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems",MenuItems);
-			if (Onclick != Onclick_DefaultValue) h.Add("onclick",Onclick);
+			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("ExportingButtonsContextButtonOnclick.onclick", Onclick); }  
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);

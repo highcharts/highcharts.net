@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public YAxis()
 		{
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
+			EndOnTick = EndOnTick_DefaultValue = true;
 			StackLabels = StackLabels_DefaultValue = new YAxisStackLabels();
 			Angle = Angle_DefaultValue = 0;
 			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
@@ -23,7 +24,6 @@ namespace Highsoft.Web.Mvc.Charts
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			Stops = Stops_DefaultValue = new List<Stop>();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			EndOnTick = EndOnTick_DefaultValue = false;
 			Labels = Labels_DefaultValue = new YAxisLabels();
 			MaxPadding = MaxPadding_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
@@ -98,6 +98,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? EndOnTick { get; set; }
+		private bool? EndOnTick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The stack labels show the total value for each bar in a stackedcolumn or bar chart. The label will be placed on top of positivecolumns and below negative columns. In case of an inverted columnchart or a bar chart the label is placed to the right of positivebars and to the left of negative bars.
 		/// </summary>
 		public YAxisStackLabels StackLabels { get; set; }
@@ -151,13 +158,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to force the axis to end on a tick. Use this option withthe `maxPadding` option to control the axis end.
-		/// </summary>
-		public bool? EndOnTick { get; set; }
-		private bool? EndOnTick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -599,6 +599,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
+			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (StackLabels.IsDirty()) h.Add("stackLabels",StackLabels.ToHashtable());
 			if (Angle != Angle_DefaultValue) h.Add("angle",Angle);
 			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation", Highcharts.FirstCharacterToLower(GridLineInterpolation.ToString()));
@@ -607,7 +608,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (Stops.Any()) h.Add("stops", GetLists(Stops));
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
-			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
@@ -663,7 +663,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
-			if (TickPositioner != TickPositioner_DefaultValue) h.Add("tickPositioner",TickPositioner);
+			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("YAxisTickPositioner.tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);

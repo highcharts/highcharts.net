@@ -51,3 +51,4 @@ C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\bin\Debug\Microsoft.Web.Infra
 C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Debug\Highcharts.Web.Mvc.dll
 C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Debug\Highcharts.Web.Mvc.pdb
+C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Debug\MVC_Highcharts.csprojResolveAssemblyReference.cache

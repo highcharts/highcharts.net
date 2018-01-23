@@ -7,6 +7,6 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     internal static class CompiledOn
     {
-        internal static DateTime CompilationDate = new DateTime(2017, 10, 18);
+        internal static DateTime CompilationDate = new DateTime(2018, 1, 23);
     }
 }

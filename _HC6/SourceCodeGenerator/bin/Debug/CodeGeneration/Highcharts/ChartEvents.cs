@@ -110,17 +110,17 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
-			if (Drillup != Drillup_DefaultValue) h.Add("drillup",Drillup);
-			if (Drillupall != Drillupall_DefaultValue) h.Add("drillupall",Drillupall);
-			if (AfterPrint != AfterPrint_DefaultValue) h.Add("afterPrint",AfterPrint);
-			if (BeforePrint != BeforePrint_DefaultValue) h.Add("beforePrint",BeforePrint);
-			if (AddSeries != AddSeries_DefaultValue) h.Add("addSeries",AddSeries);
-			if (Click != Click_DefaultValue) h.Add("click",Click);
-			if (Load != Load_DefaultValue) h.Add("load",Load);
-			if (Redraw != Redraw_DefaultValue) h.Add("redraw",Redraw);
-			if (Render != Render_DefaultValue) h.Add("render",Render);
-			if (Selection != Selection_DefaultValue) h.Add("selection",Selection);
+			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); Highcharts.AddFunction("ChartEventsDrilldown.drilldown", Drilldown); }  
+			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); Highcharts.AddFunction("ChartEventsDrillup.drillup", Drillup); }  
+			if (Drillupall != Drillupall_DefaultValue) { h.Add("drillupall",Drillupall); Highcharts.AddFunction("ChartEventsDrillupall.drillupall", Drillupall); }  
+			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highcharts.AddFunction("ChartEventsAfterPrint.afterPrint", AfterPrint); }  
+			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highcharts.AddFunction("ChartEventsBeforePrint.beforePrint", BeforePrint); }  
+			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("ChartEventsAddSeries.addSeries", AddSeries); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("ChartEventsClick.click", Click); }  
+			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("ChartEventsLoad.load", Load); }  
+			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("ChartEventsRedraw.redraw", Redraw); }  
+			if (Render != Render_DefaultValue) { h.Add("render",Render); Highcharts.AddFunction("ChartEventsRender.render", Render); }  
+			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highcharts.AddFunction("ChartEventsSelection.selection", Selection); }  
 			
 
 			return h;

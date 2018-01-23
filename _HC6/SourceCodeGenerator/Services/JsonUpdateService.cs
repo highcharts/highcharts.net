@@ -47,6 +47,9 @@ namespace SourceCodeGenerator.Services
                 case ApiPropertyName.Values:
                     item.Values.Add(info.Value);
                     break;
+                case ApiPropertyName.Exclude:
+                    item.Exclude.Add(info.Value);
+                    break;
             }
         }
 
@@ -95,6 +98,7 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("xAxis.maxPadding", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("yAxis.minPadding", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("yAxis.maxPadding", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("yAxis", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "endOnTick" } });
             //ItemsToUpdate.Add("dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
 
             //remove after double type solution will be implemented

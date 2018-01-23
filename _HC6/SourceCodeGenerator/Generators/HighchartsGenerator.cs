@@ -673,26 +673,23 @@ public class HighchartsGenerator
             if (child.Children.Any() || child.Extends.Any() || child.ReturnType == "Object")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
-            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+            // Event (javascript function)
+            if (child.ReturnType != null && (child.ReturnType.ToLower() == "function" || child.ReturnType.ToLower() == "string|function"))
+                return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName), ROOT_CLASS);
+            // Just a property
+            else
+            {
+                if (propertyName == "PointDescriptionThreshold")
+                    return "if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)\n\t\t\t{\n\t\t\t\tif (PointDescriptionThreshold != null)\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", PointDescriptionThreshold);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", false);\n\t\t\t}\n\t\t\t";
+
+                if (propertyName == "Shadow")
+                    return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+
+                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+            }
         }
-
-        if (!child.IsParent)
-            return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
-
-        // Event (javascript function)
-        if (child.ReturnType != null && (child.ReturnType.ToLower() == "function" || child.ReturnType.ToLower() == "string|function"))
-            return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName), ROOT_CLASS);
-        // Just a property
         else
-        {
-            if (propertyName == "PointDescriptionThreshold")
-                return "if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)\n\t\t\t{\n\t\t\t\tif (PointDescriptionThreshold != null)\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", PointDescriptionThreshold);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", false);\n\t\t\t}\n\t\t\t";
-
-            if (propertyName == "Shadow")
-                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
-
-            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
-        }
+            return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
     }
 
     private void GenerateClassesForLevel(IList<ApiItem> items, int level = 0)

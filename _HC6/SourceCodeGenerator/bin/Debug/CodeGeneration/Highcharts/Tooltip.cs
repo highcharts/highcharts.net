@@ -271,10 +271,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crosshairs != Crosshairs_DefaultValue) h.Add("crosshairs",Crosshairs);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
-			if (Formatter != Formatter_DefaultValue) h.Add("formatter",Formatter);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("TooltipFormatter.formatter", Formatter); }  
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
-			if (PointFormatter != PointFormatter_DefaultValue) h.Add("pointFormatter",PointFormatter);
-			if (Positioner != Positioner_DefaultValue) h.Add("positioner",Positioner);
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("TooltipPointFormatter.pointFormatter", PointFormatter); }  
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("TooltipPositioner.positioner", Positioner); }  
 			if (Shape != Shape_DefaultValue) h.Add("shape", Highcharts.FirstCharacterToLower(Shape.ToString()));
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);
 			if (Split != Split_DefaultValue) h.Add("split",Split);

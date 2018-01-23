@@ -10,6 +10,7 @@ namespace SourceCodeGenerator.Enums
     {
         Types,
         ReturnType,
-        Values
+        Values,
+        Exclude
     }
 }
