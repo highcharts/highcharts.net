@@ -703,6 +703,10 @@ public class HighchartsGenerator
             {
                 var children = GetChildren(item);
 
+                //these classes are already created
+                if (item.ParentFullName != null && item.ParentFullName.EndsWith("levels") && item.Title == "dataLabels")
+                    continue;
+
                 if (item.FullName == "series")
                 {
                     var seriesChildren = item.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !p.Extends.Any(q => q == "series")).ToList();
@@ -1143,6 +1147,19 @@ public class HighchartsGenerator
         if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
             defaults = "";
 
+        if (item.ReturnType == "Array" && item.Title == "zones")
+            return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
+
+        if (item.FullName.ToLower().Contains("data.datalabels"))
+            item.FullName = item.FullName.Replace("data.", "");
+
+        if (item.FullName.ToLower().Contains("levels.datalabels"))
+            item.FullName = item.FullName.Replace("levels.", "");
+
+        if (item.Children.Any() || item.Extends.Any() || item.ReturnType == "Object")
+            return String.Format("new {0}()", GetClassNameFromItem(item));
+
+
         if (!String.IsNullOrEmpty(item.Defaults))
         {
             if (item.ReturnType == "String" ||
@@ -1212,17 +1229,7 @@ public class HighchartsGenerator
         //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
         //    item.IsParent = false;
 
-        if (item.ReturnType == "Array" && item.Title == "zones")
-            return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
-
-        if (item.FullName.ToLower().Contains("data.datalabels"))
-            item.FullName = item.FullName.Replace("data.", "");
-
-        if (item.FullName.ToLower().Contains("levels.datalabels"))
-            item.FullName = item.FullName.Replace("levels.", "");
-
-        if (item.Children.Any() || item.Extends.Any() || item.ReturnType == "Object")
-            return String.Format("new {0}()", GetClassNameFromItem(item));
+        
         //else
         //    return item.Defaults;
 

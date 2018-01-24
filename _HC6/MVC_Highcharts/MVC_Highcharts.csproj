@@ -585,7 +585,6 @@
     <Compile Include="CodeGeneration\Enums\ExportingButtonsContextButtonVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\ExportingType.cs" />
     <Compile Include="CodeGeneration\Enums\FunnelSeriesCursor.cs" />
-    <Compile Include="CodeGeneration\Enums\FunnelSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\FunnelSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\FunnelSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\FunnelSeriesLinecap.cs" />
@@ -642,7 +641,6 @@
     <Compile Include="CodeGeneration\Enums\ParetoSeriesLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\ParetoSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\PieSeriesCursor.cs" />
-    <Compile Include="CodeGeneration\Enums\PieSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PieSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PieSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PieSeriesLinecap.cs" />
@@ -747,7 +745,6 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsErrorbarStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsErrorbarStemDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFunnelCursor.cs" />
-    <Compile Include="CodeGeneration\Enums\PlotOptionsFunnelDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFunnelDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFunnelDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsFunnelLinecap.cs" />
@@ -790,7 +787,6 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsParetoDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsParetoLinecap.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPieCursor.cs" />
-    <Compile Include="CodeGeneration\Enums\PlotOptionsPieDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPieDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPieDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPieLinecap.cs" />
@@ -805,7 +801,6 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsPolygonStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPolygonStep.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPyramidCursor.cs" />
-    <Compile Include="CodeGeneration\Enums\PlotOptionsPyramidDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPyramidDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPyramidDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPyramidLinecap.cs" />
@@ -868,7 +863,6 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsStreamgraphPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsStreamgraphStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstCursor.cs" />
-    <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsTilemapCursor.cs" />
@@ -899,7 +893,6 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsTreemapStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsTreemapStep.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsVariablepieCursor.cs" />
-    <Compile Include="CodeGeneration\Enums\PlotOptionsVariablepieDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsVariablepieDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsVariablepieDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsVariablepieLinecap.cs" />
@@ -948,7 +941,6 @@
     <Compile Include="CodeGeneration\Enums\PolygonSeriesStep.cs" />
     <Compile Include="CodeGeneration\Enums\PolygonSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\PyramidSeriesCursor.cs" />
-    <Compile Include="CodeGeneration\Enums\PyramidSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PyramidSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PyramidSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PyramidSeriesLinecap.cs" />
@@ -1010,7 +1002,6 @@
     <Compile Include="CodeGeneration\Enums\SubtitleAlign.cs" />
     <Compile Include="CodeGeneration\Enums\SubtitleVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\SunburstSeriesCursor.cs" />
-    <Compile Include="CodeGeneration\Enums\SunburstSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\SunburstSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\SunburstSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\SunburstSeriesType.cs" />
@@ -1048,7 +1039,6 @@
     <Compile Include="CodeGeneration\Enums\TreemapSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\TypeSeries.cs" />
     <Compile Include="CodeGeneration\Enums\VariablepieSeriesCursor.cs" />
-    <Compile Include="CodeGeneration\Enums\VariablepieSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\VariablepieSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\VariablepieSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\VariablepieSeriesLinecap.cs" />

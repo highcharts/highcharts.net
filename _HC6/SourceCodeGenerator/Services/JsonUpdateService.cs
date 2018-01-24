@@ -50,6 +50,9 @@ namespace SourceCodeGenerator.Services
                 case ApiPropertyName.Exclude:
                     item.Exclude.Add(info.Value);
                     break;
+                case ApiPropertyName.Extends:
+                    item.Extends.Add(info.Value);
+                    break;
             }
         }
 
@@ -111,6 +114,7 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("pane.background.outerRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("yAxis.plotBands.innerRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("yAxis.plotBands.outerRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("plotOptions.treemap.levels.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.treemap.dataLabels" } });
             //ItemsToUpdate.Add("dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
 
             //remove after double type solution will be implemented

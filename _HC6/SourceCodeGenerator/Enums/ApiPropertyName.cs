@@ -11,6 +11,7 @@ namespace SourceCodeGenerator.Enums
         Types,
         ReturnType,
         Values,
-        Exclude
+        Exclude,
+        Extends
     }
 }
