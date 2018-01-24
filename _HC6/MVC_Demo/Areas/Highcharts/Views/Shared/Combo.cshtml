@@ -7,7 +7,7 @@
 @using Highsoft.Web.Mvc.Charts
 
 
-    @(Html.Highsoft().Highcharts(
+@(Html.Highsoft().Highcharts(
         new Highcharts
         {
             Title = new Title
@@ -23,16 +23,14 @@
             },
             Labels = new Labels
             {
-                Items = new LabelsItems
-                {
+                Items = new List<LabelsItems> { new LabelsItems {
                     Html = "Total fruit consumption",
                     Style = new Hashtable
                     {
                         { "left", "50px" },
                         { "top", "18px" }
                     }
-
-                }
+                }}
             },
             Series = new List<Series>
             {
@@ -78,6 +76,5 @@
             }
         }
         , "chart"));
-        
-        
-    
+
+

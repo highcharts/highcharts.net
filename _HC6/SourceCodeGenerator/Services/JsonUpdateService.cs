@@ -103,6 +103,8 @@ namespace SourceCodeGenerator.Services
                     new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "endOnTick" },
                     new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "startOnTick" }
                 });
+            ItemsToUpdate.Add("plotOptions.pie", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "dataLabels" } });
+            ItemsToUpdate.Add("pane.background.backgroundColor", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
             //ItemsToUpdate.Add("dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
 
             //remove after double type solution will be implemented

@@ -272,7 +272,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Global.IsDirty()) h.Add("global",Global.ToHashtable());
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
-			if (Colors != Colors_DefaultValue) h.Add("colors", HashifyList(Colors));
+			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Subtitle.IsDirty()) h.Add("subtitle",Subtitle.ToHashtable());
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
