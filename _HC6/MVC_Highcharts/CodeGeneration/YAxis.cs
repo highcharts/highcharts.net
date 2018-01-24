@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinColor = MinColor_DefaultValue = "#e6ebf5";
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			Stops = Stops_DefaultValue = new List<Stop>();
+			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Labels = Labels_DefaultValue = new YAxisLabels();
 			MaxPadding = MaxPadding_DefaultValue = null;
@@ -84,7 +85,6 @@ namespace Highsoft.Web.Mvc.Charts
 			TickWidth = TickWidth_DefaultValue = null;
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
-			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
 			
 		}	
@@ -158,6 +158,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<Stop> Stops { get; set; }
 		private List<Stop> Stops_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of objects defining plot bands on the Y axis.
+		/// </summary>
+		public List<YAxisPlotBands> PlotBands { get; set; }
+		private List<YAxisPlotBands> PlotBands_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -581,13 +588,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array of colored bands stretching across the plot area markingan interval on the axis.In styled mode, the plot bands are styled by the `.highcharts-plot-band` class in addition to the `className` option.
-		/// </summary>
-		public List<YAxisPlotBands> PlotBands { get; set; }
-		private List<YAxisPlotBands> PlotBands_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array of lines stretching across the plot area, marking a specificvalue on one of the axes.In styled mode, the plot lines are styled by the `.highcharts-plot-line` class in addition to the `className` option.
 		/// </summary>
 		public List<YAxisPlotLines> PlotLines { get; set; }
@@ -608,6 +608,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (Stops.Any()) h.Add("stops", GetLists(Stops));
+			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
@@ -668,7 +669,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			
 

@@ -101,10 +101,16 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("yAxis", new List<UpdateInfo>()
                 {
                     new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "endOnTick" },
-                    new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "startOnTick" }
+                    new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "startOnTick" },
+                    new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "plotBands" }
                 });
             ItemsToUpdate.Add("plotOptions.pie", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "dataLabels" } });
             ItemsToUpdate.Add("pane.background.backgroundColor", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+            ItemsToUpdate.Add("pane.size", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("pane.background.innerRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("pane.background.outerRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("yAxis.plotBands.innerRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("yAxis.plotBands.outerRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             //ItemsToUpdate.Add("dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
 
             //remove after double type solution will be implemented

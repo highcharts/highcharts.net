@@ -17,9 +17,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Shape = Shape_DefaultValue = PaneBackgroundShape.Solid;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
-			BackgroundColor = BackgroundColor_DefaultValue = "";
-			InnerRadius = InnerRadius_DefaultValue = 0;
-			OuterRadius = OuterRadius_DefaultValue = null;
+			BackgroundColor = BackgroundColor_DefaultValue = new PaneBackgroundBackgroundColor();
+			InnerRadius = InnerRadius_DefaultValue = "0";
+			OuterRadius = OuterRadius_DefaultValue = "105%";
 			ClassName = ClassName_DefaultValue = "";
 			
 		}	
@@ -49,22 +49,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The background color or gradient for the pane.
 		/// </summary>
-		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
+		public PaneBackgroundBackgroundColor BackgroundColor { get; set; }
+		private PaneBackgroundBackgroundColor BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The inner radius of the pane background. Can be either numeric(pixels) or a percentage string.
 		/// </summary>
-		public double? InnerRadius { get; set; }
-		private double? InnerRadius_DefaultValue { get; set; }
+		public string InnerRadius { get; set; }
+		private string InnerRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The outer radius of the circular pane background. Can be eithernumeric (pixels) or a percentage string.
 		/// </summary>
-		public double? OuterRadius { get; set; }
-		private double? OuterRadius_DefaultValue { get; set; }
+		public string OuterRadius { get; set; }
+		private string OuterRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -81,7 +81,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shape != Shape_DefaultValue) h.Add("shape", Highcharts.FirstCharacterToLower(Shape.ToString()));
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
+			if (BackgroundColor.IsDirty()) h.Add("backgroundColor",BackgroundColor.ToHashtable());
 			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
 			if (OuterRadius != OuterRadius_DefaultValue) h.Add("outerRadius",OuterRadius);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);

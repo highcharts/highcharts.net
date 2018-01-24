@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public Pane()
 		{
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
-			Size = Size_DefaultValue = null;
+			Size = Size_DefaultValue = "85%";
 			StartAngle = StartAngle_DefaultValue = 0;
 			Background = Background_DefaultValue = new List<PaneBackground>();
 			EndAngle = EndAngle_DefaultValue = null;
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The size of the pane, either as a number defining pixels, or apercentage defining a percentage of the plot are.
 		/// </summary>
-		public double? Size { get; set; }
-		private double? Size_DefaultValue { get; set; }
+		public string Size { get; set; }
+		private string Size_DefaultValue { get; set; }
 		 
 
 		/// <summary>

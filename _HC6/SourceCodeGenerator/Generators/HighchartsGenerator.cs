@@ -852,7 +852,7 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("labels.items", "List<LabelsItems>");
         _propertyTypeMappings.Add("plotOptions.sunburst.levels", "List<PlotOptionsSunburstLevels>");
         _propertyTypeMappings.Add("plotOptions.treemap.levels", "List<PlotOptionsTreemapLevels>");
-        _propertyTypeMappings.Add("pane.background.backgroundColor", "string");
+        //_propertyTypeMappings.Add("pane.background.backgroundColor", "string");
         _propertyTypeMappings.Add("responsive.rules", "List<ResponsiveRules>");
         _propertyTypeMappings.Add("series.treemap.levels", "List<TreemapSeriesLevels>");
         _propertyTypeMappings.Add("series.sunburst.levels", "List<SunburstSeriesLevels>");
@@ -945,7 +945,7 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("plotOptions.sunburst.levels", "new List<PlotOptionsSunburstLevels>()");
         _propertyInitMappings.Add("plotOptions.treemap.levels", "new List<PlotOptionsTreemapLevels>()");
         _propertyInitMappings.Add("lang.shortWeekdays", "new List<string>()");
-        _propertyInitMappings.Add("pane.background.backgroundColor", "\"\"");
+        //_propertyInitMappings.Add("pane.background.backgroundColor", "\"\"");
         _propertyInitMappings.Add("responsive.rules", "new List<ResponsiveRules>()");
         _propertyInitMappings.Add("series.treemap.levels", "new List<TreemapSeriesLevels>()");
         _propertyInitMappings.Add("series.sunburst.levels", "new List<SunburstSeriesLevels>()");
