@@ -100,7 +100,7 @@
 
         var chart = Highcharts.charts[0];
         chart.series[0].setData(browserData);
-        chart.series[0].setData(versionsData);
+        chart.series[1].setData(versionsData);
 
         chart.redraw();
 
@@ -173,7 +173,6 @@
                 {                    
                     Name = "Browsers",
                     Size = "60%",
-                    InnerSize = "60%",
                     DataLabels = new PieSeriesDataLabels
                     {
                         Formatter = "formatBrowserSeriesDataLabels",
