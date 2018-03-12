@@ -50,6 +50,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Highstock.Web.Mvc, Version=6.0.6625.24179, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Highsoft.Highstock.6.0.6625.24179\lib\net40\Highstock.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
@@ -206,15 +210,15 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeClockController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeDualController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeSolidController.cs" />
-    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeVUMeterController.cs" />
-    <Compile Include="Areas\Highcharts\Controllers\Shared\HoneycombController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeVuMeterController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\HoneycombUsaController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\LineBoostController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieMonochromeController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieGradientController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieDrilldownController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\PieSemiCircleController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\Docs.cs" />
-    <Compile Include="Areas\Highcharts\Controllers\Shared\Scatter3DController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Scatter3dController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ScatterBoostController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\SparklineController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\StreamgraphController.cs" />
@@ -1151,9 +1155,9 @@
     <Content Include="Areas\Highcharts\Views\Shared\Scatter3D.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeActivity.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\GaugeDual.cshtml" />
-    <Content Include="Areas\Highcharts\Views\Shared\GaugeVUMeter.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeVuMeter.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\BulletGraph.cshtml" />
-    <Content Include="Areas\Highcharts\Views\Shared\Honeycomb.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\HoneycombUsa.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />
@@ -1223,10 +1227,6 @@
     <ProjectReference Include="..\MVC_Highcharts\MVC_Highcharts.csproj">
       <Project>{fa4c2a73-1563-47da-8f1b-64ef17d48918}</Project>
       <Name>MVC_Highcharts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MVC_Highstock\MVC_Highstock.csproj">
-      <Project>{d05d7902-fdbe-422d-9f47-c84a74a25258}</Project>
-      <Name>MVC_Highstock</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

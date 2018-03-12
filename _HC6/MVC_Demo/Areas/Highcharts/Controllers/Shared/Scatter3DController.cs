@@ -10,7 +10,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
 {
     public partial class SharedController : Controller
     {
-        public ActionResult Scatter3D()
+        public ActionResult Scatter3d()
         {
             List<Scatter3dSeriesData> list = new List<Scatter3dSeriesData>();
 
