@@ -150,7 +150,6 @@ C:\Repositories\highcharts.net\_HC6\MVC_Demo\bin\System.Xml.dll
 C:\Repositories\highcharts.net\_HC6\MVC_Demo\bin\System.Xml.Linq.dll
 C:\Repositories\highcharts.net\_HC6\MVC_Demo\bin\Highcharts.Web.Mvc.pdb
 C:\Repositories\highcharts.net\_HC6\MVC_Demo\bin\Highcharts.Web.Mvc.xml
-C:\Repositories\highcharts.net\_HC6\MVC_Demo\bin\Highstock.Web.Mvc.pdb
 C:\Repositories\highcharts.net\_HC6\MVC_Demo\bin\Microsoft.Web.Infrastructure.xml
 C:\Repositories\highcharts.net\_HC6\MVC_Demo\bin\System.Net.Http.Formatting.xml
 C:\Repositories\highcharts.net\_HC6\MVC_Demo\bin\System.Web.Http.xml

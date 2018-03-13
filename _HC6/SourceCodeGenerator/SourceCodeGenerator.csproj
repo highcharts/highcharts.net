@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="ApiItem.cs" />
     <Compile Include="Enums\ApiPropertyName.cs" />
+    <Compile Include="Generators\HighstockGenerator.cs" />
     <Compile Include="Services\FilterService.cs" />
     <Compile Include="Services\JsonUpdateService.cs" />
     <Compile Include="Services\Objects\UpdateInfo.cs" />
