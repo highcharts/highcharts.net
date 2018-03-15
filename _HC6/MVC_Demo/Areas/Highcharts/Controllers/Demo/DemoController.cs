@@ -79,11 +79,11 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
 
             SetViewBag(demo, theme);
 
-            //string text = System.IO.File.ReadAllText(Server.MapPath("~/Content/Areas/Highcharts/Controllers/Shared/" + demo + "Controller.cs.txt"));
-            //ViewBag.ControllerCode = text;
+            string text = System.IO.File.ReadAllText(Server.MapPath("~/Content/Areas/Highcharts/Controllers/Shared/" + demo + "Controller.cs.txt"));
+            ViewBag.ControllerCode = text;
 
-            //text = System.IO.File.ReadAllText(Server.MapPath("~/Areas/Highcharts/Views/Shared/" + demo + ".cshtml"));
-            //ViewBag.ViewCode = text;
+            text = System.IO.File.ReadAllText(Server.MapPath("~/Areas/Highcharts/Views/Shared/" + demo + ".cshtml"));
+            ViewBag.ViewCode = text;
 
             switch (demo)
             {
