@@ -73,7 +73,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 
             using (WebClient wc = new WebClient())
             {
-                json = wc.DownloadString("http://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?");
+                json = wc.DownloadString("https://cdn.rawgit.com/highcharts/highcharts/v6.0.5/samples/data/usdeur.json");
             }
 
             json = json.Substring(json.IndexOf('[') + 1);
@@ -81,8 +81,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 
 
             List<Flag> flags = new List<Flag>();
-            //using (var db = new ChartDataEntities())
-            //{
+            
             while (true)
             {
                 if (json.IndexOf('[') == -1)
@@ -91,20 +90,15 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                 string entity = json.Substring(0, json.IndexOf(']'));
                 string[] values = entity.Split(',');
 
-                string year = values[0].Substring(values[0].IndexOf("(") + 1, 4);
-                string month = values[1];
-                string day = values[2].Substring(0, values[2].IndexOf(")"));
-                string value = values[3];
+                string date = values[0];
+                string value = values[1];
 
                 try
                 {
-
-                    DateTime date = new DateTime(Convert.ToInt16(year), Convert.ToInt16(month), Convert.ToInt16(day));
-
                     flags.Add(
                             new Flag
                             {
-                                Date = DateToUTC(date),
+                                Date = Convert.ToDouble(date, CultureInfo.InvariantCulture),
                                 Value = Convert.ToDouble(value, CultureInfo.InvariantCulture)
                             }
                         );
@@ -116,62 +110,9 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                 json = json.Substring(json.IndexOf('[') + 1);
             }
 
-            //                db.SaveChanges();
-            //            }
             return flags;
         }
-
-        //private void FlagsGeneral_JsonDataToDatabase()
-        //{
-        //    string json;
-
-        //    using (WebClient wc = new WebClient())
-        //    {
-        //        json = wc.DownloadString("http://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?");
-        //    }
-
-        //    json = json.Substring(json.IndexOf('[') + 1);
-        //    json = json.Substring(json.IndexOf('[') + 1);
-
-        //    using (var db = new ChartDataEntities())
-        //    {
-        //        while (true)
-        //        {
-        //            if (json.IndexOf('[') == -1)
-        //                break;
-
-        //            string entity = json.Substring(0, json.IndexOf(']'));
-        //            string[] values = entity.Split(',');
-
-        //            string year = values[0].Substring(values[0].IndexOf("(") + 1, 4);
-        //            string month = values[1];
-        //            string day = values[2].Substring(0, values[2].IndexOf(")"));
-        //            string value = values[3];
-
-        //            try
-        //            {
-
-        //                DateTime date = new DateTime(Convert.ToInt16(year), Convert.ToInt16(month), Convert.ToInt16(day));
-
-        //                db.Flags.Add(
-        //                        new Flag
-        //                        {
-        //                            Date = DateToUTC(date),
-        //                            Value = Convert.ToDouble(value, CultureInfo.InvariantCulture)
-        //                        }
-        //                    );
-        //            }
-        //            catch (Exception)
-        //            {
-        //            }
-
-        //            json = json.Substring(json.IndexOf('[') + 1);
-        //        }
-
-        //        db.SaveChanges();
-        //    }
-        //}
-
+        
         public double DateToUTC(DateTime theDate)
         {
             DateTime d1 = new DateTime(1970, 1, 1);
