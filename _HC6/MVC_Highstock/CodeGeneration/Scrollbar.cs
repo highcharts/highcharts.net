@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LiveRedraw = LiveRedraw_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
 			MinWidth = MinWidth_DefaultValue = 6;
-			Step = Step_DefaultValue = "0.2";
+			Step = Step_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 3;
 			BarBackgroundColor = BarBackgroundColor_DefaultValue = "#cccccc";
 			BarBorderWidth = BarBorderWidth_DefaultValue = 1;
@@ -85,8 +85,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Step { get; set; }
-		private string Step_DefaultValue { get; set; }
+		public double? Step { get; set; }
+		private double? Step_DefaultValue { get; set; }
 		 
 
 		/// <summary>

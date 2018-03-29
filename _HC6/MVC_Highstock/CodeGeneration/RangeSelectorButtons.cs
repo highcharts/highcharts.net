@@ -68,7 +68,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Defined the time span for the button. Can be one of `"millisecond","second", "minute", "hour", "day", "week", "month", "ytd", "all"`.
+		/// Defined the time span for the button. Can be one of `millisecond`,`second`, `minute`, `hour`, `day`, `week`, `month`, `ytd`, `all`.
 		/// </summary>
 		public RangeSelectorButtonsType Type { get; set; }
 		private RangeSelectorButtonsType Type_DefaultValue { get; set; }

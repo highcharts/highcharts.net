@@ -26,21 +26,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Fires when a point is clicked. One parameter, `event`, is passedto the function, containing common event information.If the `series.allowPointSelect` option is true, the default actionfor the point's click event is to toggle the point's select state. Returning `false` cancels this action.
+		/// Fires when a point is clicked. One parameter, `event`, is passedto the function, containing common event information.If the `series.allowPointSelect` option is true, the defaultaction for the point's click event is to toggle the point'sselect state. Returning `false` cancels this action.
 		/// </summary>
 		public string Click { get; set; }
 		private string Click_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the mouse leaves the area close to the point. One parameter,`event`, is passed to the function, containing common event information.
+		/// Fires when the mouse leaves the area close to the point. Oneparameter, `event`, is passed to the function, containing commonevent information.
 		/// </summary>
 		public string MouseOut { get; set; }
 		private string MouseOut_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the mouse enters the area close to the point. One parameter,`event`, is passed to the function, containing common event information.
+		/// Fires when the mouse enters the area close to the point. Oneparameter, `event`, is passed to the function, containing commonevent information.
 		/// </summary>
 		public string MouseOver { get; set; }
 		private string MouseOver_DefaultValue { get; set; }
@@ -54,21 +54,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Fires when the point is selected either programmatically or followinga click on the point. One parameter, `event`, is passed to the function. Returning `false` cancels the operation.
+		/// Fires when the point is selected either programmatically orfollowing a click on the point. One parameter, `event`, is passedto the function. Returning `false` cancels the operation.
 		/// </summary>
 		public string Select { get; set; }
 		private string Select_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the point is unselected either programmatically or followinga click on the point. One parameter, `event`, is passed to the function. Returning `false` cancels the operation.
+		/// Fires when the point is unselected either programmatically orfollowing a click on the point. One parameter, `event`, is passedto the function. Returning `false` cancels the operation.
 		/// </summary>
 		public string Unselect { get; set; }
 		private string Unselect_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the point is updated programmatically through the `.update()`method. One parameter, `event`, is passed to the function. The newpoint options can be accessed through `event.options`. Returning`false` cancels the operation.
+		/// Fires when the point is updated programmatically through the`.update()` method. One parameter, `event`, is passed to thefunction. The new point options can be accessed through`event.options`. Returning `false` cancels the operation.
 		/// </summary>
 		public string Update { get; set; }
 		private string Update_DefaultValue { get; set; }

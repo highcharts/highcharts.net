@@ -18,9 +18,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			R = R_DefaultValue = 0;
-			Type = Type_DefaultValue = "'rect'";
 			Width = Width_DefaultValue = null;
 			Height = Height_DefaultValue = null;
+			Type = Type_DefaultValue = "'rect'";
 			
 		}	
 		
@@ -54,13 +54,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The type of the shape, e.g. circle or rectangle.
-		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The width of the shape.
 		/// </summary>
 		public double? Width { get; set; }
@@ -72,6 +65,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The type of the shape, e.g. circle or rectangle.
+		/// </summary>
+		public string Type { get; set; }
+		private string Type_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -82,9 +82,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (R != R_DefaultValue) h.Add("r",R);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (Type != Type_DefaultValue) h.Add("type",Type);
 			
 
 			return h;

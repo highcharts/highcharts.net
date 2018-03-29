@@ -72,6 +72,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Crisp = Crisp_DefaultValue = true;
 			GroupPadding = GroupPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
+			StartFromThreshold = StartFromThreshold_DefaultValue = true;
 			Colors = Colors_DefaultValue = new List<string>();
 			Grouping = Grouping_DefaultValue = true;
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
@@ -87,8 +88,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			FillColor = FillColor_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 1;
 			Style = Style_DefaultValue = new FlagsSeriesStyle();
-			OnSeries = OnSeries_DefaultValue = "undefined";
 			OnKey = OnKey_DefaultValue = FlagsSeriesOnKey.Y;
+			OnSeries = OnSeries_DefaultValue = "undefined";
 			Title = Title_DefaultValue = "A";
 			UseHTML = UseHTML_DefaultValue = false;
 			LineColor = LineColor_DefaultValue = "#000000";
@@ -139,7 +140,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`.
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
 		public FlagsSeriesType Type { get; set; }
 		private FlagsSeriesType Type_DefaultValue { get; set; }
@@ -209,7 +210,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public FlagsSeriesEvents Events { get; set; }
 		private FlagsSeriesEvents Events_DefaultValue { get; set; }
@@ -223,7 +224,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public FlagsSeriesDataLabels DataLabels { get; set; }
 		private FlagsSeriesDataLabels DataLabels_DefaultValue { get; set; }
@@ -363,14 +364,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public FlagsSeriesPointIntervalUnit PointIntervalUnit { get; set; }
 		private FlagsSeriesPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
@@ -454,7 +455,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<FlagsSeriesZone> Zones { get; set; }
 		private List<FlagsSeriesZone> Zones_DefaultValue { get; set; }
@@ -500,6 +501,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? MinPointLength { get; set; }
 		private double? MinPointLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? StartFromThreshold { get; set; }
+		private bool? StartFromThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -601,17 +609,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The text styles of the flag.In styled mode, the styles are set in the `.highcharts-flag-series .highcharts-point` rule.
+		/// The text styles of the flag.In styled mode, the styles are set in the`.highcharts-flag-series .highcharts-point` rule.
 		/// </summary>
 		public FlagsSeriesStyle Style { get; set; }
 		private FlagsSeriesStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The id of the series that the flags should be drawn on. If no idis given, the flags are drawn on the x axis.
-		/// </summary>
-		public string OnSeries { get; set; }
-		private string OnSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -619,6 +620,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public FlagsSeriesOnKey OnKey { get; set; }
 		private FlagsSeriesOnKey OnKey_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The id of the series that the flags should be drawn on. If no idis given, the flags are drawn on the x axis.
+		/// </summary>
+		public string OnSeries { get; set; }
+		private string OnSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -636,7 +644,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The color of the line/border of the flag.In styled mode, the stroke is set in the `.highcharts-flag-series.highcharts-point` rule.
+		/// The color of the line/border of the flag.In styled mode, the stroke is set in the`.highcharts-flag-series.highcharts-point` rule.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
@@ -708,6 +716,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
+			if (StartFromThreshold != StartFromThreshold_DefaultValue) h.Add("startFromThreshold",StartFromThreshold);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
@@ -723,8 +732,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (OnSeries != OnSeries_DefaultValue) h.Add("onSeries",OnSeries);
 			if (OnKey != OnKey_DefaultValue) h.Add("onKey", Highstock.FirstCharacterToLower(OnKey.ToString()));
+			if (OnSeries != OnSeries_DefaultValue) h.Add("onSeries",OnSeries);
 			if (Title != Title_DefaultValue) h.Add("title",Title);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);

@@ -22,15 +22,15 @@ namespace Highsoft.Web.Mvc.Stocks
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			R = R_DefaultValue = 0;
-			Type = Type_DefaultValue = "'rect'";
 			Width = Width_DefaultValue = null;
 			Height = Height_DefaultValue = null;
+			Type = Type_DefaultValue = "'rect'";
 			
 		}	
 		
 
 		/// <summary>
-		/// This option defines the point to which the shape will be connected.It can be either the point which exists in the series - it is referencedby the point's id - or a new point with defined x, y propertiesand optionally axes.
+		/// This option defines the point to which the shape will be connected.It can be either the point which exists in the series - it isreferenced by the point's id - or a new point with defined x, yproperties and optionally axes.
 		/// </summary>
 		public AnnotationsShapesPoint Point { get; set; }
 		private AnnotationsShapesPoint Point_DefaultValue { get; set; }
@@ -86,13 +86,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The type of the shape, e.g. circle or rectangle.
-		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The width of the shape.
 		/// </summary>
 		public double? Width { get; set; }
@@ -104,6 +97,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The type of the shape, e.g. circle or rectangle.
+		/// </summary>
+		public string Type { get; set; }
+		private string Type_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -118,9 +118,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (R != R_DefaultValue) h.Add("r",R);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (Type != Type_DefaultValue) h.Add("type",Type);
 			
 
 			return h;

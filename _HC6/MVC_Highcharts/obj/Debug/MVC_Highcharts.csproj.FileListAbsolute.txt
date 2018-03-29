@@ -52,3 +52,5 @@ C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\bin\Debug\System.Web.WebPages
 C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Debug\Highcharts.Web.Mvc.dll
 C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Debug\Highcharts.Web.Mvc.pdb
 C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Debug\MVC_Highcharts.csprojResolveAssemblyReference.cache
+C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Debug\MVC_Highcharts.csproj.CoreCompileInputs.cache
+C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Debug\MVC_Highcharts.csproj.CopyComplete

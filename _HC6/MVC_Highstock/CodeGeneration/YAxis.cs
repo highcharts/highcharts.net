@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public YAxis()
 		{
 			MinLength = MinLength_DefaultValue = null;
-			MaxLength = MaxLength_DefaultValue = "100%";
+			MaxLength = MaxLength_DefaultValue = "";
 			Resize = Resize_DefaultValue = new YAxisResize();
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			EndOnTick = EndOnTick_DefaultValue = true;
@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			Height = Height_DefaultValue = null;
-			SoftMax = SoftMax_DefaultValue = null;
 			Top = Top_DefaultValue = null;
-			Scrollbar = Scrollbar_DefaultValue = new YAxisScrollbar();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Labels = Labels_DefaultValue = new YAxisLabels();
 			MaxPadding = MaxPadding_DefaultValue = null;
@@ -72,8 +70,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
 			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			MaxRange = MaxRange_DefaultValue = null;
+			Scrollbar = Scrollbar_DefaultValue = new YAxisScrollbar();
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
+			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
 			TickAmount = TickAmount_DefaultValue = null;
 			TickInterval = TickInterval_DefaultValue = null;
@@ -102,7 +102,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for axis resizing for Drag Panes module.This feature requires the `drag-panes.js` module.
+		/// Options for axis resizing. This feature requires the`drag-panes.js` -[classic](http://code.highcharts.com/stock/modules/drag-panes.js) or[styled](http://code.highcharts.com/stock/js/modules/drag-panes.js)mode - module.
 		/// </summary>
 		public YAxisResize Resize { get; set; }
 		private YAxisResize Resize_DefaultValue { get; set; }
@@ -151,24 +151,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A soft maximum for the axis. If the series data maximum is greaterthan this, the axis will stay at this maximum, but if the seriesdata maximum is higher, the axis will flex to show all data.
-		/// </summary>
-		public double? SoftMax { get; set; }
-		private double? SoftMax_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The top position of the Y axis. If it's a number, it is interpretedas pixel position relative to the chart.Since Highstock 2: If it's a percentage string, it is interpretedas percentages of the plot height, offset from plot area top.
 		/// </summary>
 		public double? Top { get; set; }
 		private double? Top_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An optional scrollbar to display on the Y axis in response to limitingthe minimum an maximum of the axis values.In styled mode, all the presentational options for the scrollbarare replaced by the classes `.highcharts-scrollbar-thumb`, `.highcharts-scrollbar-arrow`, `.highcharts-scrollbar-button`, `.highcharts-scrollbar-rifles` and `.highcharts-scrollbar-track`.
-		/// </summary>
-		public YAxisScrollbar Scrollbar { get; set; }
-		private YAxisScrollbar Scrollbar_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -494,6 +480,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// An optional scrollbar to display on the X axis in response to limitingthe minimum and maximum of the axis values.In styled mode, all the presentational options for the scrollbarare replaced by the classes `.highcharts-scrollbar-thumb`, `.highcharts-scrollbar-arrow`, `.highcharts-scrollbar-button`, `.highcharts-scrollbar-rifles` and `.highcharts-scrollbar-track`.
+		/// </summary>
+		public YAxisScrollbar Scrollbar { get; set; }
+		private YAxisScrollbar Scrollbar_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to show the axis line and title when the axis has no data.
 		/// </summary>
 		public bool? ShowEmpty { get; set; }
@@ -505,6 +498,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? ShowFirstLabel { get; set; }
 		private bool? ShowFirstLabel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A soft maximum for the axis. If the series data maximum is less thanthis, the axis will stay at this maximum, but if the series datamaximum is higher, the axis will flex to show all data.
+		/// </summary>
+		public double? SoftMax { get; set; }
+		private double? SoftMax_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -583,9 +583,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
 			if (Top != Top_DefaultValue) h.Add("top",Top);
-			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
@@ -632,8 +630,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (MaxRange != MaxRange_DefaultValue) h.Add("maxRange",MaxRange);
+			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
+			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
 			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);

@@ -21,3 +21,4 @@ C:\Repositories\highcharts.net\_HC6\UtilDateReplacer\bin\Debug\UtilDateReplacer.
 C:\Repositories\highcharts.net\_HC6\UtilDateReplacer\obj\Debug\UtilDateReplacer.csprojResolveAssemblyReference.cache
 C:\Repositories\highcharts.net\_HC6\UtilDateReplacer\obj\Debug\UtilDateReplacer.exe
 C:\Repositories\highcharts.net\_HC6\UtilDateReplacer\obj\Debug\UtilDateReplacer.pdb
+C:\Repositories\highcharts.net\_HC6\UtilDateReplacer\obj\Debug\UtilDateReplacer.csproj.CoreCompileInputs.cache

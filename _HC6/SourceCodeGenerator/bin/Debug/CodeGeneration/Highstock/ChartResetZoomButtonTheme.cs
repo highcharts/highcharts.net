@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The Z index for the reset zoom button. The default value places it below the tooltip that has Z index 7.
+		/// The Z index for the reset zoom button. The default valueplaces it below the tooltip that has Z index 7.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }

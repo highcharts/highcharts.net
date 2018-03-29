@@ -163,3 +163,5 @@ C:\Repositories\highcharts.net\_HC6\MVC_Demo\obj\Debug\MVC_Demo.dll
 C:\Repositories\highcharts.net\_HC6\MVC_Demo\obj\Debug\MVC_Demo.pdb
 C:\Repositories\highcharts.net\_HC6\MVC_Demo\bin\Antlr3.Runtime.dll
 C:\Repositories\highcharts.net\_HC6\MVC_Demo\bin\WebGrease.dll
+C:\Repositories\highcharts.net\_HC6\MVC_Demo\obj\Debug\MVC_Demo.csproj.CoreCompileInputs.cache
+C:\Repositories\highcharts.net\_HC6\MVC_Demo\obj\Debug\MVC_Demo.csproj.CopyComplete

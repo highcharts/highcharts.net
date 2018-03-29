@@ -31,28 +31,28 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// In Highcharts 1.0, the appearance of all markers belonging tothe hovered series. For settings on the hover state of the individualpoint, see [marker.states.hover](#plotOptions.series.marker.states.hover).
+		/// In Highcharts 1.0, the appearance of all markers belonging to thehovered series. For settings on the hover state of the individualpoint, see[marker.states.hover](#plotOptions.series.marker.states.hover).
 		/// </summary>
 		public AreaSeriesStatesHoverMarker Marker { get; set; }
 		private AreaSeriesStatesHoverMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts.By default the halo is filled by the current point or seriescolor with an opacity of 0.25\. The halo can be disabled by settingthe `halo` option to `false`.In styled mode, the halo is styled with the `.highcharts-halo` class, with colors inherited from `.highcharts-color-{n}`.
+		/// Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts.By default the halo is filled by the current point or seriescolor with an opacity of 0.25\. The halo can be disabled bysetting the `halo` option to `false`.In styled mode, the halo is styled with the `.highcharts-halo`class, with colors inherited from `.highcharts-color-{n}`.
 		/// </summary>
 		public AreaSeriesStatesHoverHalo Halo { get; set; }
 		private AreaSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Enable separate styles for the hovered series to visualize that theuser hovers either the series itself or the legend. .
+		/// Enable separate styles for the hovered series to visualize thatthe user hovers either the series itself or the legend. .
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Pixel with of the graph line. By default this property isundefined, and the `lineWidthPlus` property dictates how muchto increase the linewidth from normal state.
+		/// Pixel width of the graph line. By default this property isundefined, and the `lineWidthPlus` property dictates how muchto increase the linewidth from normal state.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }

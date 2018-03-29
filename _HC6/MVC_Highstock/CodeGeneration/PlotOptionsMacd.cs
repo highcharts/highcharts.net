@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			SignalLine = SignalLine_DefaultValue = new PlotOptionsMacdSignalLine();
 			MacdLine = MacdLine_DefaultValue = new PlotOptionsMacdMacdLine();
-			GroupPadding = GroupPadding_DefaultValue = "0.1";
-			PointPadding = PointPadding_DefaultValue = "0.1";
+			GroupPadding = GroupPadding_DefaultValue = null;
+			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
@@ -64,8 +64,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsMacdTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsMacdZone>();
 			CompareStart = CompareStart_DefaultValue = false;
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			Name = Name_DefaultValue = "SMA (14)";
+			Name = Name_DefaultValue = "";
 			Params = Params_DefaultValue = new PlotOptionsMacdParams();
 			
 		}	
@@ -88,15 +87,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string GroupPadding { get; set; }
-		private string GroupPadding_DefaultValue { get; set; }
+		public double? GroupPadding { get; set; }
+		private double? GroupPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string PointPadding { get; set; }
-		private string PointPadding_DefaultValue { get; set; }
+		public double? PointPadding { get; set; }
+		private double? PointPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -114,14 +113,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Defines when to display a gap in the graph, together with the `gapUnit`option.When the `gapUnit` is `relative` (default), a gap size of 5 meansthat if the distance between two points is greater than five timesthat of the two closest points, the graph will be broken.When the `gapUnit` is `value`, the gap is based on absolute axis values,which on a datetime axis is milliseconds.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available for daytimehours, while gaps will appear in nights and weekends.
+		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be grouped into a larger time span. This can make the grouped points to have a greater distance than the absolute value of `gapSize` property, which will resultin disappearing graph completely. To prevent this situation the mentioneddistance between grouped points is used instead of previously defined `gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available for daytimehours, while gaps will appear in nights and weekends.
 		/// </summary>
 		public double? GapSize { get; set; }
 		private double? GapSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Together with `gapSize`, this option defines where to draw gaps in the graph.
+		/// Together with [gapSize](plotOptions.series.gapSize), this option defineswhere to draw gaps in the graph.When the `gapUnit` is `relative` (default), a gap size of 5 meansthat if the distance between two points is greater than five timesthat of the two closest points, the graph will be broken.When the `gapUnit` is `value`, the gap is based on absolute axis values,which on a datetime axis is milliseconds. This also applies to thenavigator series that inherits gap options from the base series.
 		/// </summary>
 		public PlotOptionsMacdGapUnit GapUnit { get; set; }
 		private PlotOptionsMacdGapUnit GapUnit_DefaultValue { get; set; }
@@ -142,7 +141,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Pixel with of the graph line.
+		/// Pixel width of the graph line.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -170,7 +169,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsMacdEvents Events { get; set; }
 		private PlotOptionsMacdEvents Events_DefaultValue { get; set; }
@@ -191,7 +190,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public PlotOptionsMacdDataLabels DataLabels { get; set; }
 		private PlotOptionsMacdDataLabels DataLabels_DefaultValue { get; set; }
@@ -408,7 +407,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsMacdZone> Zones { get; set; }
 		private List<PlotOptionsMacdZone> Zones_DefaultValue { get; set; }
@@ -422,14 +421,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The series name.
+		/// The name of the series as shown in the legend, tooltip etc. If notset, it will be based on a technical indicator type and default params.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
@@ -496,7 +488,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			

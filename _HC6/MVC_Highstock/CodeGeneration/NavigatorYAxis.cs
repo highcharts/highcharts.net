@@ -59,6 +59,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
 			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
+			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
 			TickAmount = TickAmount_DefaultValue = null;
 			TickInterval = TickInterval_DefaultValue = null;
@@ -67,12 +68,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickWidth = TickWidth_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			PlotLines = PlotLines_DefaultValue = new NavigatorYAxisPlotLines();
-			MinLength = MinLength_DefaultValue = null;
-			MaxLength = MaxLength_DefaultValue = "100%";
-			Resize = Resize_DefaultValue = new NavigatorYAxisResize();
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			ReversedStacks = ReversedStacks_DefaultValue = true;
-			SoftMax = SoftMax_DefaultValue = null;
 			
 		}	
 		
@@ -393,6 +390,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A soft maximum for the axis. If the series data maximum is less thanthis, the axis will stay at this maximum, but if the series datamaximum is higher, the axis will flex to show all data.
+		/// </summary>
+		public double? SoftMax { get; set; }
+		private double? SoftMax_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A soft minimum for the axis. If the series data minimum is greaterthan this, the axis will stay at this minimum, but if the seriesdata minimum is lower, the axis will flex to show all data.
 		/// </summary>
 		public double? SoftMin { get; set; }
@@ -449,27 +453,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Minimal size of a resizable axis. Could be set as a percentof plot area or pixel size.This feature requires the `drag-panes.js` module.
-		/// </summary>
-		public double? MinLength { get; set; }
-		private double? MinLength_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Maximal size of a resizable axis. Could be set as a percentof plot area or pixel size.This feature requires the `drag-panes.js` module.
-		/// </summary>
-		public string MaxLength { get; set; }
-		private string MaxLength_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for axis resizing for Drag Panes module.This feature requires the `drag-panes.js` module.
-		/// </summary>
-		public NavigatorYAxisResize Resize { get; set; }
-		private NavigatorYAxisResize Resize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
 		/// </summary>
 		public string TooltipValueFormat { get; set; }
@@ -481,13 +464,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? ReversedStacks { get; set; }
 		private bool? ReversedStacks_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A soft maximum for the axis. If the series data maximum is greaterthan this, the axis will stay at this maximum, but if the seriesdata maximum is higher, the axis will flex to show all data.
-		/// </summary>
-		public double? SoftMax { get; set; }
-		private double? SoftMax_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -539,6 +515,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
+			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
 			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
@@ -547,12 +524,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (PlotLines.IsDirty()) h.Add("plotLines",PlotLines.ToHashtable());
-			if (MinLength != MinLength_DefaultValue) h.Add("minLength",MinLength);
-			if (MaxLength != MaxLength_DefaultValue) h.Add("maxLength",MaxLength);
-			if (Resize.IsDirty()) h.Add("resize",Resize.ToHashtable());
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
-			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
 			
 
 			return h;

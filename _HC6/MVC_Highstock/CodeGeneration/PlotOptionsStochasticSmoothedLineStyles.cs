@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Color of the line.If not set, it's inherited from [plotOptions.stochastic.color](#plotOptions.stochastic.color).
+		/// Color of the line. If not set, it's inherited from[plotOptions.stochastic.color](#plotOptions.stochastic.color).
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }

@@ -22,7 +22,6 @@ C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCo
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.exe
 C:\Users\PC\Documents\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.pdb
 C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\SourceCodeGenerator.exe.config
-C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.csprojResolveAssemblyReference.cache
 C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\JsonFiles\highcharts.json
 C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeAddOns\Animation.cs
 C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\CodeAddOns\Background.cs
@@ -44,3 +43,6 @@ C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\Newtonsoft.Jso
 C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\bin\Debug\Newtonsoft.Json.xml
 C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.exe
 C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.pdb
+C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.csproj.CoreCompileInputs.cache
+C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.csproj.CopyComplete
+C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\obj\Debug\SourceCodeGenerator.csprojResolveAssemblyReference.cache

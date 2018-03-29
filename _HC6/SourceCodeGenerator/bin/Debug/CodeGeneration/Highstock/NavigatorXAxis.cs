@@ -59,6 +59,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			Overscroll = Overscroll_DefaultValue = 0;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
+			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
 			TickAmount = TickAmount_DefaultValue = null;
 			TickInterval = TickInterval_DefaultValue = null;
@@ -389,6 +390,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A soft maximum for the axis. If the series data maximum is less thanthis, the axis will stay at this maximum, but if the series datamaximum is higher, the axis will flex to show all data.
+		/// </summary>
+		public double? SoftMax { get; set; }
+		private double? SoftMax_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A soft minimum for the axis. If the series data minimum is greaterthan this, the axis will stay at this minimum, but if the seriesdata minimum is lower, the axis will flex to show all data.
 		/// </summary>
 		public double? SoftMin { get; set; }
@@ -507,6 +515,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (Overscroll != Overscroll_DefaultValue) h.Add("overscroll",Overscroll);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
+			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
 			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);

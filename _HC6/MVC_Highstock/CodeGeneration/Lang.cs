@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Lang()
 		{
+			Accessibility = Accessibility_DefaultValue = new LangAccessibility();
 			DownloadCSV = DownloadCSV_DefaultValue = "Download CSV";
 			DownloadXLS = DownloadXLS_DefaultValue = "Download XLS";
 			ViewData = ViewData_DefaultValue = "View data table";
@@ -23,10 +24,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			DownloadPDF = DownloadPDF_DefaultValue = "Download PDF document";
 			DownloadSVG = DownloadSVG_DefaultValue = "Download SVG vector image";
 			ContextButtonTitle = ContextButtonTitle_DefaultValue = "Chart context menu";
+			NoData = NoData_DefaultValue = "No data to display";
 			Loading = Loading_DefaultValue = "Loading...";
 			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
-			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",         "Friday", "Saturday"};
+			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+         "Friday", "Saturday"};
 			DecimalPoint = DecimalPoint_DefaultValue = ".";
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
@@ -41,6 +44,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// Configure the accessibility strings in the chart. Requires the [accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).For more dynamic control over the accessibility functionality, see[accessibility.pointDescriptionFormatter](accessibility.pointDescriptionFormatter),[accessibility.seriesDescriptionFormatter](accessibility.seriesDescriptionFormatter), and[accessibility.screenReaderSectionFormatter](accessibility.screenReaderSectionFormatter).
+		/// </summary>
+		public LangAccessibility Accessibility { get; set; }
+		private LangAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Export-data module only. The text for the menu item.
@@ -103,6 +113,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ContextButtonTitle { get; set; }
 		private string ContextButtonTitle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The text to display when the chart contains no data. Requires theno-data module, see [noData](#noData).
+		/// </summary>
+		public string NoData { get; set; }
+		private string NoData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -214,6 +231,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (DownloadCSV != DownloadCSV_DefaultValue) h.Add("downloadCSV",DownloadCSV);
 			if (DownloadXLS != DownloadXLS_DefaultValue) h.Add("downloadXLS",DownloadXLS);
 			if (ViewData != ViewData_DefaultValue) h.Add("viewData",ViewData);
@@ -223,6 +241,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DownloadPDF != DownloadPDF_DefaultValue) h.Add("downloadPDF",DownloadPDF);
 			if (DownloadSVG != DownloadSVG_DefaultValue) h.Add("downloadSVG",DownloadSVG);
 			if (ContextButtonTitle != ContextButtonTitle_DefaultValue) h.Add("contextButtonTitle",ContextButtonTitle);
+			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (Months != Months_DefaultValue) h.Add("months",Months);
 			if (ShortMonths != ShortMonths_DefaultValue) h.Add("shortMonths",ShortMonths);

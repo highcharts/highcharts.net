@@ -80,3 +80,5 @@ C:\Repositories\highcharts.net\_HC6\MVC_UnitTests\bin\Debug\Microsoft.Web.Infras
 C:\Repositories\highcharts.net\_HC6\MVC_UnitTests\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Repositories\highcharts.net\_HC6\MVC_UnitTests\obj\Debug\MVC_UnitTests.dll
 C:\Repositories\highcharts.net\_HC6\MVC_UnitTests\obj\Debug\MVC_UnitTests.pdb
+C:\Repositories\highcharts.net\_HC6\MVC_UnitTests\obj\Debug\MVC_UnitTests.csproj.CoreCompileInputs.cache
+C:\Repositories\highcharts.net\_HC6\MVC_UnitTests\obj\Debug\MVC_UnitTests.csproj.CopyComplete

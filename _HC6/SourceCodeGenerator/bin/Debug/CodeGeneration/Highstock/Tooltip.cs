@@ -105,7 +105,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The HTML of the point's line in the tooltip. Variables are enclosedby curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form. Furthermore,point.y can be extended by the `tooltip.valuePrefix` and `tooltip.valueSuffix` variables. This can also be overridden for each series,which makes it a good hook for displaying units.In styled mode, the dot is colored by a class name ratherthan the point color.
+		/// The HTML of the point's line in the tooltip. Variables are enclosedby curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form. Furthermore,point.y can be extended by the `tooltip.valuePrefix` and`tooltip.valueSuffix` variables. This can also be overridden for eachseries, which makes it a good hook for displaying units.In styled mode, the dot is colored by a class name ratherthan the point color.
 		/// </summary>
 		public string PointFormat { get; set; }
 		private string PointFormat_DefaultValue { get; set; }
@@ -203,14 +203,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// When the tooltip is shared, the entire plot area will capture mousemovement or touch events. Tooltip texts for series types with ordereddata (not pie, scatter, flags etc) will be shown in a single bubble.This is recommended for single series charts and for tablet/mobileoptimized charts.See also [tooltip.split](#tooltip.split), that is better suited forcharts with many series, especially line-type series.
+		/// When the tooltip is shared, the entire plot area will capture mousemovement or touch events. Tooltip texts for series types with ordereddata (not pie, scatter, flags etc) will be shown in a single bubble.This is recommended for single series charts and for tablet/mobileoptimized charts.See also [tooltip.split](#tooltip.split), that is better suited forcharts with many series, especially line-type series. The`tooltip.split` option takes precedence over `tooltip.shared`.
 		/// </summary>
 		public bool? Shared { get; set; }
 		private bool? Shared_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Split the tooltip into one label per series, with the header closeto the axis. This is recommended over [shared](#tooltip.shared) tooltipsfor charts with multiple line series, generally making them easierto read.
+		/// Split the tooltip into one label per series, with the header closeto the axis. This is recommended over [shared](#tooltip.shared) tooltipsfor charts with multiple line series, generally making them easierto read. This option takes precedence over `tooltip.shared`.
 		/// </summary>
 		public bool? Split { get; set; }
 		private bool? Split_DefaultValue { get; set; }
@@ -252,7 +252,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// How many decimals to show for the `point.change` value when the `series.compare` option is set. This is overridable in each series' tooltipoptions object. The default is to preserve all decimals.
+		/// How many decimals to show for the `point.change` value when the`series.compare` option is set. This is overridable in each series' tooltipoptions object. The default is to preserve all decimals.
 		/// </summary>
 		public double? ChangeDecimals { get; set; }
 		private double? ChangeDecimals_DefaultValue { get; set; }

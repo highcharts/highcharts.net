@@ -14,11 +14,19 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ArearangeSeriesMarkerStates()
 		{
+			Normal = Normal_DefaultValue = new ArearangeSeriesMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new ArearangeSeriesMarkerStatesHover();
 			Select = Select_DefaultValue = new ArearangeSeriesMarkerStatesSelect();
 			
 		}	
 		
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public ArearangeSeriesMarkerStatesNormal Normal { get; set; }
+		private ArearangeSeriesMarkerStatesNormal Normal_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The hover state for a single point marker.
@@ -38,6 +46,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			

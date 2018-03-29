@@ -39,6 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Streamgraph = Streamgraph_DefaultValue = new PlotOptionsStreamgraph();
 			Vector = Vector_DefaultValue = new PlotOptionsVector();
 			Windbarb = Windbarb_DefaultValue = new PlotOptionsWindbarb();
+			Xrange = Xrange_DefaultValue = new PlotOptionsXrange();
 			Area = Area_DefaultValue = new PlotOptionsArea();
 			Areaspline = Areaspline_DefaultValue = new PlotOptionsAreaspline();
 			Candlestick = Candlestick_DefaultValue = new PlotOptionsCandlestick();
@@ -59,28 +60,28 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Accumulation Distribution (AD). This series requires `linkedTo` option to be set.
+		/// Accumulation Distribution (AD). This series requires `linkedTo` option tobe set.
 		/// </summary>
 		public PlotOptionsAd Ad { get; set; }
 		private PlotOptionsAd Ad_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Average true range indicator (ATR). This series requires `linkedTo` option to be set.
+		/// Average true range indicator (ATR). This series requires `linkedTo`option to be set.
 		/// </summary>
 		public PlotOptionsAtr Atr { get; set; }
 		private PlotOptionsAtr Atr_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Bollinger bands (BB). This series requires `linkedTo`option to be set and should be loaded after `stock/indicators/indicators.js` file.
+		/// Bollinger bands (BB). This series requires the `linkedTo` option to beset and should be loaded after the `stock/indicators/indicators.js` file.
 		/// </summary>
 		public PlotOptionsBb Bb { get; set; }
 		private PlotOptionsBb Bb_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Commodity Channel Index (CCI). This series requires `linkedTo` option to be set.
+		/// Commodity Channel Index (CCI). This series requires `linkedTo` option tobe set.
 		/// </summary>
 		public PlotOptionsCci Cci { get; set; }
 		private PlotOptionsCci Cci_DefaultValue { get; set; }
@@ -94,35 +95,35 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Exponential moving average indicator (EMA). This series requires `linkedTo` option to be set.
+		/// Exponential moving average indicator (EMA). This series requires the`linkedTo` option to be set.
 		/// </summary>
 		public PlotOptionsEma Ema { get; set; }
 		private PlotOptionsEma Ema_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Ichimoku Kinko Hyo (IKH). This series requires `linkedTo` option to be set.
+		/// Ichimoku Kinko Hyo (IKH). This series requires `linkedTo` option to beset.
 		/// </summary>
 		public PlotOptionsIkh Ikh { get; set; }
 		private PlotOptionsIkh Ikh_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Simple moving average indicator (SMA). This series requires `linkedTo` option to be set.
+		/// Simple moving average indicator (SMA). This series requires `linkedTo`option to be set.
 		/// </summary>
 		public PlotOptionsSma Sma { get; set; }
 		private PlotOptionsSma Sma_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Moving Average Convergence Divergence (MACD). This series requires `linkedTo` option to be set.
+		/// Moving Average Convergence Divergence (MACD). This series requires`linkedTo` option to be set.
 		/// </summary>
 		public PlotOptionsMacd Macd { get; set; }
 		private PlotOptionsMacd Macd_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Money Flow Index. This series requires `linkedTo`option to be set and should be loaded after `stock/indicators/indicators.js` file.
+		/// Money Flow Index. This series requires `linkedTo` option to be set andshould be loaded after the `stock/indicators/indicators.js` file.
 		/// </summary>
 		public PlotOptionsMfi Mfi { get; set; }
 		private PlotOptionsMfi Mfi_DefaultValue { get; set; }
@@ -136,14 +137,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Pivot points indicator. This series requires `linkedTo`option to be set and should be loaded after `stock/indicators/indicators.js` file.
+		/// Pivot points indicator. This series requires the `linkedTo` option to beset and should be loaded after `stock/indicators/indicators.js` file.
 		/// </summary>
 		public PlotOptionsPivotpoints Pivotpoints { get; set; }
 		private PlotOptionsPivotpoints Pivotpoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Price envelopes indicator based on [SMA](#plotOptions.sma) calculations. This series requires `linkedTo`option to be set and should be loaded after `stock/indicators/indicators.js` file.
+		/// Price envelopes indicator based on [SMA](#plotOptions.sma) calculations.This series requires the `linkedTo` option to be set and should be loadedafter the `stock/indicators/indicators.js` file.
 		/// </summary>
 		public PlotOptionsPriceenvelopes Priceenvelopes { get; set; }
 		private PlotOptionsPriceenvelopes Priceenvelopes_DefaultValue { get; set; }
@@ -164,14 +165,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Relative strength index (RSI) technical indicator. This series requires `linkedTo`option to be set and should be loaded after `stock/indicators/indicators.js` file.
+		/// Relative strength index (RSI) technical indicator. This seriesrequires the `linkedTo` option to be set and should be loaded afterthe `stock/indicators/indicators.js` file.
 		/// </summary>
 		public PlotOptionsRsi Rsi { get; set; }
 		private PlotOptionsRsi Rsi_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Stochastic oscillator. This series requires `linkedTo`option to be set and should be loaded after `stock/indicators/indicators.js` file.
+		/// Stochastic oscillator. This series requires the `linkedTo` option to beset and should be loaded after the `stock/indicators/indicators.js` file.
 		/// </summary>
 		public PlotOptionsStochastic Stochastic { get; set; }
 		private PlotOptionsStochastic Stochastic_DefaultValue { get; set; }
@@ -231,6 +232,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsWindbarb Windbarb { get; set; }
 		private PlotOptionsWindbarb Windbarb_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The X-range series displays ranges on the X axis, typically time intervalswith a start and end date.
+		/// </summary>
+		public PlotOptionsXrange Xrange { get; set; }
+		private PlotOptionsXrange Xrange_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -367,6 +375,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Streamgraph.IsDirty()) h.Add("streamgraph",Streamgraph.ToHashtable());
 			if (Vector.IsDirty()) h.Add("vector",Vector.ToHashtable());
 			if (Windbarb.IsDirty()) h.Add("windbarb",Windbarb.ToHashtable());
+			if (Xrange.IsDirty()) h.Add("xrange",Xrange.ToHashtable());
 			if (Area.IsDirty()) h.Add("area",Area.ToHashtable());
 			if (Areaspline.IsDirty()) h.Add("areaspline",Areaspline.ToHashtable());
 			if (Candlestick.IsDirty()) h.Add("candlestick",Candlestick.ToHashtable());

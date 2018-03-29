@@ -14,18 +14,26 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Accessibility()
 		{
+			KeyboardNavigation = KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
 			Enabled = Enabled_DefaultValue = true;
 			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = null;
+			ScreenReaderSectionFormatter = ScreenReaderSectionFormatter_DefaultValue = "";
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
 			OnTableAnchorClick = OnTableAnchorClick_DefaultValue = "";
 			PointDateFormat = PointDateFormat_DefaultValue = "";
 			PointDateFormatter = PointDateFormatter_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
-			ScreenReaderSectionFormatter = ScreenReaderSectionFormatter_DefaultValue = "";
 			SeriesDescriptionFormatter = SeriesDescriptionFormatter_DefaultValue = "";
 			
 		}	
 		
+
+		/// <summary>
+		/// Options for keyboard navigation.
+		/// </summary>
+		public AccessibilityKeyboardNavigation KeyboardNavigation { get; set; }
+		private AccessibilityKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Enable accessibility features for the chart.
@@ -39,6 +47,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public long? PointDescriptionThreshold { get; set; }
 		private long? PointDescriptionThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A formatter function to create the HTML contents of the hidden screenreader information region. Receives one argument, `chart`, referringto the chart object. Should return a String with the HTML contentof the region.The link to view the chart as a data table will be addedautomatically after the custom HTML content.
+		/// </summary>
+		public string ScreenReaderSectionFormatter { get; set; }
+		private string ScreenReaderSectionFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -77,13 +92,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A formatter function to create the HTML contents of the hidden screenreader information region. Receives one argument, `chart`, referringto the chart object. Should return a String with the HTML contentof the region.The link to view the chart as a data table will be addedautomatically after the custom HTML content.
-		/// </summary>
-		public string ScreenReaderSectionFormatter { get; set; }
-		private string ScreenReaderSectionFormatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Formatter function to use instead of the default for seriesdescriptions. Receives one argument, `series`, referring to theseries to describe. Should return a String with the description ofthe series for a screen reader user.
 		/// </summary>
 		public string SeriesDescriptionFormatter { get; set; }
@@ -94,6 +102,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)
 			{
@@ -102,12 +111,12 @@ namespace Highsoft.Web.Mvc.Stocks
 				else
 					h.Add("pointDescriptionThreshold", false);
 			}
+			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highstock.AddFunction("AccessibilityScreenReaderSectionFormatter.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
 			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highstock.AddFunction("AccessibilityOnTableAnchorClick.onTableAnchorClick", OnTableAnchorClick); }  
 			if (PointDateFormat != PointDateFormat_DefaultValue) h.Add("pointDateFormat",PointDateFormat);
 			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highstock.AddFunction("AccessibilityPointDateFormatter.pointDateFormatter", PointDateFormatter); }  
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("AccessibilityPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
-			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highstock.AddFunction("AccessibilityScreenReaderSectionFormatter.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
 			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highstock.AddFunction("AccessibilitySeriesDescriptionFormatter.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
 			
 

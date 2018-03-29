@@ -38,9 +38,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Panning = Panning_DefaultValue = false;
 			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
 			Inverted = Inverted_DefaultValue = false;
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "null";
-			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "null";
 			PlotBorderWidth = PlotBorderWidth_DefaultValue = 0;
 			PlotShadow = PlotShadow_DefaultValue = new Shadow() { Enabled = false };
 			Reflow = Reflow_DefaultValue = true;
@@ -54,6 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","\"Lucida Grande\"},{ \"Lucida Sans Unicode\"},{ Verdana},{ Arial},{ Helvetica},{ sans-serif"},{"fontSize","12px"}};
 			Type = Type_DefaultValue = ChartType.Line;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
+			BorderWidth = BorderWidth_DefaultValue = 0;
+			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "null";
+			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "null";
 			
 		}	
 		
@@ -87,7 +87,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// In styled mode, this sets how many colors the class namesshould rotate between. With ten colors, series (or points) aregiven class names like `highcharts-color-0`, `highcharts-color-0` [...] `highcharts-color-9`. The equivalent in non-styled modeis to set colors using the [colors](#colors) setting.
+		/// In styled mode, this sets how many colors the class namesshould rotate between. With ten colors, series (or points) aregiven class names like `highcharts-color-0`, `highcharts-color-0`[...] `highcharts-color-9`. The equivalent in non-styled modeis to set colors using the [colors](#colors) setting.
 		/// </summary>
 		public double? ColorCount { get; set; }
 		private double? ColorCount_DefaultValue { get; set; }
@@ -227,27 +227,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The pixel width of the outer chart border.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The background color or gradient for the plot area.
-		/// </summary>
-		public string PlotBackgroundColor { get; set; }
-		private string PlotBackgroundColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The URL for an image to use as the plot background. To set an imageas the background for the entire chart, set a CSS background imageto the container element. Note that for the image to be applied toexported charts, its URL needs to be accessible by the export server.
-		/// </summary>
-		public string PlotBackgroundImage { get; set; }
-		private string PlotBackgroundImage_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The pixel width of the plot area border.
 		/// </summary>
 		public double? PlotBorderWidth { get; set; }
@@ -336,6 +315,27 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public ChartZoomType ZoomType { get; set; }
 		private ChartZoomType ZoomType_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel width of the outer chart border.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The background color or gradient for the plot area.
+		/// </summary>
+		public string PlotBackgroundColor { get; set; }
+		private string PlotBackgroundColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The URL for an image to use as the plot background. To set an imageas the background for the entire chart, set a CSS background imageto the container element. Note that for the image to be applied toexported charts, its URL needs to be accessible by the export server.
+		/// </summary>
+		public string PlotBackgroundImage { get; set; }
+		private string PlotBackgroundImage_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -366,9 +366,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Panning != Panning_DefaultValue) h.Add("panning",Panning);
 			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", Highstock.FirstCharacterToLower(PinchType.ToString()));
 			if (Inverted != Inverted_DefaultValue) h.Add("inverted",Inverted);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
-			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
 			if (PlotShadow != PlotShadow_DefaultValue) h.Add("plotShadow",PlotShadow);
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
@@ -382,6 +379,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", Highstock.FirstCharacterToLower(ZoomType.ToString()));
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
+			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			
 
 			return h;

@@ -67,7 +67,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A custom class name, in addition to the default `highcharts-plot-band`, to apply to each individual band.
+		/// A custom class name, in addition to the default `highcharts-plot-band`, toapply to each individual band.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }

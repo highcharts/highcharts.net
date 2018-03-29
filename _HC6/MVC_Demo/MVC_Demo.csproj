@@ -1161,6 +1161,7 @@
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />
+    <None Include="Properties\PublishProfiles\HC6_dev.pubxml" />
     <None Include="Properties\PublishProfiles\Testing_HC5.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Models\ChartData.Context.tt">

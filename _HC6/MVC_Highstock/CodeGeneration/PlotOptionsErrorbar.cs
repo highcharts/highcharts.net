@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The main color of the bars. This can be overridden by [stemColor](#plotOptions.errorbar.stemColor) and [whiskerColor](#plotOptions.errorbar.whiskerColor)individually.
+		/// The main color of the bars. This can be overridden by[stemColor](#plotOptions.errorbar.stemColor) and[whiskerColor](#plotOptions.errorbar.whiskerColor) individually.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
@@ -52,7 +52,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The line width of the whiskers, the horizontal lines marking lowand high values. When `null`, the general [lineWidth](#plotOptions.errorbar.lineWidth) applies.
+		/// The line width of the whiskers, the horizontal lines marking lowand high values. When `null`, the general[lineWidth](#plotOptions.errorbar.lineWidth) applies.
 		/// </summary>
 		public double? WhiskerWidth { get; set; }
 		private double? WhiskerWidth_DefaultValue { get; set; }

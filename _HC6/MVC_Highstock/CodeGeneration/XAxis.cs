@@ -63,8 +63,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			Overscroll = Overscroll_DefaultValue = 0;
 			MaxRange = MaxRange_DefaultValue = null;
+			Scrollbar = Scrollbar_DefaultValue = new XAxisScrollbar();
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
+			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
 			TickAmount = TickAmount_DefaultValue = null;
 			TickInterval = TickInterval_DefaultValue = null;
@@ -424,6 +426,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// An optional scrollbar to display on the X axis in response to limitingthe minimum and maximum of the axis values.In styled mode, all the presentational options for the scrollbarare replaced by the classes `.highcharts-scrollbar-thumb`, `.highcharts-scrollbar-arrow`, `.highcharts-scrollbar-button`, `.highcharts-scrollbar-rifles` and `.highcharts-scrollbar-track`.
+		/// </summary>
+		public XAxisScrollbar Scrollbar { get; set; }
+		private XAxisScrollbar Scrollbar_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to show the axis line and title when the axis has no data.
 		/// </summary>
 		public bool? ShowEmpty { get; set; }
@@ -435,6 +444,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? ShowFirstLabel { get; set; }
 		private bool? ShowFirstLabel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A soft maximum for the axis. If the series data maximum is less thanthis, the axis will stay at this maximum, but if the series datamaximum is higher, the axis will flex to show all data.
+		/// </summary>
+		public double? SoftMax { get; set; }
+		private double? SoftMax_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -567,8 +583,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (Overscroll != Overscroll_DefaultValue) h.Add("overscroll",Overscroll);
 			if (MaxRange != MaxRange_DefaultValue) h.Add("maxRange",MaxRange);
+			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
+			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
 			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);

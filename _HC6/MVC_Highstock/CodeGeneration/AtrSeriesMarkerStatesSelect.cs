@@ -16,9 +16,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#000000";
-			LineWidth = LineWidth_DefaultValue = 0;
-			Enabled = Enabled_DefaultValue = true;
+			LineWidth = LineWidth_DefaultValue = 2;
 			Radius = Radius_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			
 		}	
 		
@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The color of the point marker's outline. When `null`, the series'or point's color is used.
+		/// The color of the point marker's outline. When `null`, theseries' or point's color is used.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
@@ -45,17 +45,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The radius of the point marker. In hover state, it defaultsto the normal state's radius + 2.
+		/// </summary>
+		public double? Radius { get; set; }
+		private double? Radius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable visible feedback for selection.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The radius of the point marker. In hover state, it defaults to thenormal state's radius + 2.
-		/// </summary>
-		public double? Radius { get; set; }
-		private double? Radius_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -65,8 +65,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;

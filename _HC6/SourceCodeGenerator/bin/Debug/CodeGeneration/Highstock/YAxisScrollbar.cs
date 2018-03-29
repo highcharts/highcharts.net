@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public YAxisScrollbar()
 		{
-			Size = Size_DefaultValue = 14;
+			Height = Height_DefaultValue = null;
 			BarBorderRadius = BarBorderRadius_DefaultValue = 0;
 			ButtonBorderRadius = ButtonBorderRadius_DefaultValue = 0;
 			LiveRedraw = LiveRedraw_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
 			MinWidth = MinWidth_DefaultValue = 6;
-			Step = Step_DefaultValue = "0.2";
+			Step = Step_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 3;
 			BarBackgroundColor = BarBackgroundColor_DefaultValue = "#cccccc";
 			BarBorderWidth = BarBorderWidth_DefaultValue = 1;
@@ -41,10 +41,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The width of a vertical scrollbar or height of a horizontal scrollbar. Defaults to 20 on touch devices.
+		/// The height of the scrollbar. The height also applies to the widthof the scroll arrows so that they are always squares. Defaults to20 for touch devices and 14 for mouse devices.
 		/// </summary>
-		public double? Size { get; set; }
-		private double? Size_DefaultValue { get; set; }
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -85,8 +85,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Step { get; set; }
-		private string Step_DefaultValue { get; set; }
+		public double? Step { get; set; }
+		private double? Step_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -198,7 +198,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (BarBorderRadius != BarBorderRadius_DefaultValue) h.Add("barBorderRadius",BarBorderRadius);
 			if (ButtonBorderRadius != ButtonBorderRadius_DefaultValue) h.Add("buttonBorderRadius",ButtonBorderRadius);
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);

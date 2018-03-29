@@ -49,7 +49,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A collection of attributes for the buttons. The object takes SVGattributes like `fill`, `stroke`, `stroke-width`, as well as `style`,a collection of CSS properties for the text.The object can also be extended with states, so you can set presentationaloptions for `hover`, `select` or `disabled` button states.CSS styles for the text label.In styled mode, the buttons are styled by the `.highcharts-range-selector-buttons .highcharts-button` rule with its differentstates.
+		/// A collection of attributes for the buttons. The object takes SVGattributes like `fill`, `stroke`, `stroke-width`, as well as `style`,a collection of CSS properties for the text.The object can also be extended with states, so you can set presentationaloptions for `hover`, `select` or `disabled` button states.CSS styles for the text label.In styled mode, the buttons are styled by the`.highcharts-range-selector-buttons .highcharts-button` rule with itsdifferent states.
 		/// </summary>
 		public RangeSelectorButtonTheme ButtonTheme { get; set; }
 		private RangeSelectorButtonTheme ButtonTheme_DefaultValue { get; set; }
@@ -182,7 +182,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS for the HTML inputs in the range selector.In styled mode, the inputs are styled by the `.highcharts-range-input text` rule in SVG mode, and `input.highcharts-range-selector`when active.
+		/// CSS for the HTML inputs in the range selector.In styled mode, the inputs are styled by the `.highcharts-range-input text`rule in SVG mode, and `input.highcharts-range-selector` when active.
 		/// </summary>
 		public Hashtable InputStyle { get; set; }
 		private Hashtable InputStyle_DefaultValue { get; set; }

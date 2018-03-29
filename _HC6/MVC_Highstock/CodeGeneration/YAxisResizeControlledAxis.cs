@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public YAxisResizeControlledAxis()
 		{
 			Next = Next_DefaultValue = [];
-			Prev = Prev_DefaultValue = [];
+			Prev = Prev_DefaultValue = "";
 			
 		}	
 		
