@@ -37,5 +37,9 @@ _HC6/CodeGenerator/CodeGeneration/Highcharts/
 _HC6/CodeGenerator/CodeGeneration/
 _HC6/MVC_Demo/obj/
 *.force
-_HC6/MVC_Highcharts/bin/Debug/
-_HC6/MVC_Highstock/bin/Debug/
+_HC6/MVC_Highcharts/bin/
+_HC6/MVC_Highcharts/obj/
+_HC6/MVC_Highstock/bin/
+_HC6/MVC_Highstock/obj/
+_HC6/SourceCodeGenerator/obj/
+_HC6/SourceCodeGenerator/bin/
