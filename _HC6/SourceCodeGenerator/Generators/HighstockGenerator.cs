@@ -873,6 +873,8 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("series.treemap.levels", "List<TreemapSeriesLevels>");
         _propertyTypeMappings.Add("series.sunburst.levels", "List<SunburstSeriesLevels>");
         _propertyTypeMappings.Add("series.sankey.nodes", "List<SankeySeriesNodes>");
+        _propertyTypeMappings.Add("yAxis.resize.controlledAxis.next", "List<string>");
+        _propertyTypeMappings.Add("yAxis.resize.controlledAxis.prev", "List<string>");
 
         //temporary
         _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
@@ -966,6 +968,8 @@ public class HighstockGenerator
         _propertyInitMappings.Add("series.treemap.levels", "new List<TreemapSeriesLevels>()");
         _propertyInitMappings.Add("series.sunburst.levels", "new List<SunburstSeriesLevels>()");
         _propertyInitMappings.Add("series.sankey.nodes", "new List<SankeySeriesNodes>()");
+        _propertyInitMappings.Add("yAxis.resize.controlledAxis.next", "new List<string>()");
+        _propertyInitMappings.Add("yAxis.resize.controlledAxis.prev", "new List<string>()");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
@@ -1001,6 +1005,8 @@ public class HighstockGenerator
         _lists.Add("series.treemap.levels");
         _lists.Add("series.sunburst.levels");
         _lists.Add("series.sankey.nodes");
+        _lists.Add("chart.parallelAxes.resize.controlledAxis.next");
+        _lists.Add("chart.parallelAxes.resize.controlledAxis.prev");
     }
 
     private void InitSeriesMappings()

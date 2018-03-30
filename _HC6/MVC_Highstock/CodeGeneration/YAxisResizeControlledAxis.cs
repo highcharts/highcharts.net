@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public YAxisResizeControlledAxis()
 		{
-			Next = Next_DefaultValue = [];
-			Prev = Prev_DefaultValue = "";
+			Next = Next_DefaultValue = new List<string>();
+			Prev = Prev_DefaultValue = new List<string>();
 			
 		}	
 		
@@ -23,15 +23,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Array of axes that should move out of the way of resizingbeing done for the current axis. If not set, the next axiswill be used.This feature requires the `drag-panes.js` module.
 		/// </summary>
-		public YAxisResizeControlledAxisNext Next { get; set; }
-		private YAxisResizeControlledAxisNext Next_DefaultValue { get; set; }
+		public List<string> Next { get; set; }
+		private List<string> Next_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Array of axes that should move with the current axiswhile resizing.This feature requires the `drag-panes.js` module.
 		/// </summary>
-		public YAxisResizeControlledAxisPrev Prev { get; set; }
-		private YAxisResizeControlledAxisPrev Prev_DefaultValue { get; set; }
+		public List<string> Prev { get; set; }
+		private List<string> Prev_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
