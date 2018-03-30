@@ -77,7 +77,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<ArearangeSeriesZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = ArearangeSeriesCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = ArearangeSeriesCompareBase.Min;
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "null";

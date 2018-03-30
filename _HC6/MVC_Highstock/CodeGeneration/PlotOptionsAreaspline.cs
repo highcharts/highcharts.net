@@ -68,7 +68,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<PlotOptionsAreasplineZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = PlotOptionsAreasplineCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = PlotOptionsAreasplineCompareBase.Min;
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "null";

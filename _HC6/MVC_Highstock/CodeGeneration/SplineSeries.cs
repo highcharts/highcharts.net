@@ -78,7 +78,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<SplineSeriesZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = SplineSeriesCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = SplineSeriesCompareBase.Min;
 			
 		}	
 		

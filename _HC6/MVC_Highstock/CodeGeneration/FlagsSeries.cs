@@ -68,7 +68,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<FlagsSeriesZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = FlagsSeriesCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = FlagsSeriesCompareBase.Min;
 			Crisp = Crisp_DefaultValue = true;
 			GroupPadding = GroupPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;

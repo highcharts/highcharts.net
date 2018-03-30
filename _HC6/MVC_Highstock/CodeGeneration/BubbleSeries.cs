@@ -78,7 +78,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<BubbleSeriesZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = BubbleSeriesCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = BubbleSeriesCompareBase.Min;
 			MinSize = MinSize_DefaultValue = 8;
 			MaxSize = MaxSize_DefaultValue = null;
 			ZThreshold = ZThreshold_DefaultValue = 0;

@@ -66,7 +66,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<ColumnrangeSeriesZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = ColumnrangeSeriesCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = ColumnrangeSeriesCompareBase.Min;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			Crisp = Crisp_DefaultValue = true;
 			GroupPadding = GroupPadding_DefaultValue = null;

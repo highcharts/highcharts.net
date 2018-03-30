@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<PolygonSeriesZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = PolygonSeriesCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = PolygonSeriesCompareBase.Min;
 			TrackByArea = TrackByArea_DefaultValue = true;
 			
 		}	

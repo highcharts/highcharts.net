@@ -67,7 +67,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<PlotOptionsPolygonZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = PlotOptionsPolygonCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = PlotOptionsPolygonCompareBase.Min;
 			
 		}	
 		

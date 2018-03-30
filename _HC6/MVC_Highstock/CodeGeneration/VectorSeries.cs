@@ -67,7 +67,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<VectorSeriesZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = VectorSeriesCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = VectorSeriesCompareBase.Min;
 			RotationOrigin = RotationOrigin_DefaultValue = VectorSeriesRotationOrigin.Center;
 			VectorLength = VectorLength_DefaultValue = 20;
 			

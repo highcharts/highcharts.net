@@ -69,7 +69,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<PlotOptionsLineZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = PlotOptionsLineCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = PlotOptionsLineCompareBase.Min;
 			
 		}	
 		

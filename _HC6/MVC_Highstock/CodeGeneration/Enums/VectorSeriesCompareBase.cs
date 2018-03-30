@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum VectorSeriesCompareBase
     {
-        0, 
-		100
+        Min = 0, 
+		Max = 100
     }
 }

@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<PlotOptionsOhlcZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = PlotOptionsOhlcCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = PlotOptionsOhlcCompareBase.Min;
 			GroupPadding = GroupPadding_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;

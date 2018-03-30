@@ -357,6 +357,12 @@ public class HighstockGenerator
             if (apiItem.Values[i] == null)
                 apiItem.Values[i] = "null";
 
+            if (apiItem.Values[i] == "0")
+                apiItem.Values[i] = "Min = 0";
+            else
+            if (apiItem.Values[i] == "100")
+                apiItem.Values[i] = "Max = 100";
+
             apiItem.Values[i] = apiItem.Values[i].Replace("'", "");
 
             if (apiItem.Values[i].Contains('-'))
@@ -470,6 +476,12 @@ public class HighstockGenerator
             foreach (var t in tab)
                 defaultValue += FirstCharToUpper(t);
         }
+
+        if (defaultValue == "0")
+            defaultValue = "Min";
+
+        if (defaultValue == "100")
+            defaultValue = "Max";
 
         return String.Format("{0}.{1}", GetClassNameFromItem(item), FirstCharToUpper(defaultValue));
     }
@@ -1240,6 +1252,8 @@ public class HighstockGenerator
             return "\"\"";
         if (defaults == null)
             return "null";
+        if (defaults == "[]")
+            return "{}";
 
         if (item.ReturnType == "Number")
         {

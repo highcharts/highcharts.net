@@ -28,8 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new AnnotationsLabelOptionsStyle();
-			UseHTML = UseHTML_DefaultValue = false
-*;
+			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelOptionsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -16;

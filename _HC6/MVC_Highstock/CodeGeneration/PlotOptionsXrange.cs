@@ -51,7 +51,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Zones = Zones_DefaultValue = new List<PlotOptionsXrangeZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = PlotOptionsXrangeCompareBase.0;
+			CompareBase = CompareBase_DefaultValue = PlotOptionsXrangeCompareBase.Min;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
