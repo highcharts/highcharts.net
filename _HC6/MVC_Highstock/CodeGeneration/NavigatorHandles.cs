@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Width = Width_DefaultValue = 7;
 			Height = Height_DefaultValue = 15;
-			Symbols = Symbols_DefaultValue = ['navigator-handle', 'navigator-handle'];
+			Symbols = Symbols_DefaultValue = new List<string>();
 			Enabled = Enabled_DefaultValue = true;
 			LineWidth = LineWidth_DefaultValue = 7;
 			BackgroundColor = BackgroundColor_DefaultValue = "#f2f2f2";
@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Array to define shapes of handles. 0-index for left, 1-index forright.Additionally, the URL to a graphic can be given on this form:`url(graphic.png)`. Note that for the image to be applied toexported charts, its URL needs to be accessible by the exportserver.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols`. The callback is thenused by its method name, as shown in the demo.
 		/// </summary>
-		public NavigatorHandlesSymbols Symbols { get; set; }
-		private NavigatorHandlesSymbols Symbols_DefaultValue { get; set; }
+		public List<string> Symbols { get; set; }
+		private List<string> Symbols_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -80,7 +80,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Symbols != Symbols_DefaultValue) h.Add("symbols",Symbols);
+			if (Symbols != Symbols_DefaultValue) h.Add("symbols", HashifyList(Symbols));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);

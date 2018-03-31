@@ -20,7 +20,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Forced = Forced_DefaultValue = false;
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 2;
 			Smoothed = Smoothed_DefaultValue = false;
-			Units = Units_DefaultValue = "";
 			
 		}	
 		
@@ -65,13 +64,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Smoothed { get; set; }
 		private bool? Smoothed_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array determining what time intervals the data is allowed to begrouped to. Each array item is an array where the first value isthe time unit and the second value another array of allowed multiples.Defaults to:<pre>units: [[    'millisecond', // unit name    [1, 2, 5, 10, 20, 25, 50, 100, 200, 500] // allowed multiples], [    'second',    [1, 2, 5, 10, 15, 30]], [    'minute',    [1, 2, 5, 10, 15, 30]], [    'hour',    [1, 2, 3, 4, 6, 8, 12]], [    'day',    [1]], [    'week',    [1]], [    'month',    [1, 3, 6]], [    'year',    null]]</pre>
-		/// </summary>
-		public PlotOptionsArearangeDataGroupingUnits Units { get; set; }
-		private PlotOptionsArearangeDataGroupingUnits Units_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -84,7 +76,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Forced != Forced_DefaultValue) h.Add("forced",Forced);
 			if (GroupPixelWidth != GroupPixelWidth_DefaultValue) h.Add("groupPixelWidth",GroupPixelWidth);
 			if (Smoothed != Smoothed_DefaultValue) h.Add("smoothed",Smoothed);
-			if (Units != Units_DefaultValue) h.Add("units",Units);
 			
 
 			return h;

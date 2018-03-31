@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			GapUnit = GapUnit_DefaultValue = PlotOptionsScatterGapUnit.Relative;
 			Label = Label_DefaultValue = new PlotOptionsScatterLabel();
 			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsScatterDataGrouping();
-			NavigatorOptions = NavigatorOptions_DefaultValue = new PlotOptionsScatterNavigatorOptions();
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -106,13 +105,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsScatterDataGrouping DataGrouping { get; set; }
 		private PlotOptionsScatterDataGrouping DataGrouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the corresponding navigator series if `showInNavigator`is `true` for this series. Available options are the same as anyseries, documented at [plotOptions](#plotOptions.series) and[series](#series).These options are merged with options in [navigator.series](#navigator.series), and will take precedence if the same option is defined bothplaces.
-		/// </summary>
-		public PlotOptionsScatterNavigatorOptions NavigatorOptions { get; set; }
-		private PlotOptionsScatterNavigatorOptions NavigatorOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -467,7 +459,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
-			if (NavigatorOptions.IsDirty()) h.Add("navigatorOptions",NavigatorOptions.ToHashtable());
 			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);

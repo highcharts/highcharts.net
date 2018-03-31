@@ -25,7 +25,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			ZIndex = ZIndex_DefaultValue = null;
 			Label = Label_DefaultValue = new XrangeSeriesLabel();
 			DataGrouping = DataGrouping_DefaultValue = new XrangeSeriesDataGrouping();
-			NavigatorOptions = NavigatorOptions_DefaultValue = new XrangeSeriesNavigatorOptions();
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -150,13 +149,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public XrangeSeriesDataGrouping DataGrouping { get; set; }
 		private XrangeSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the corresponding navigator series if `showInNavigator`is `true` for this series. Available options are the same as anyseries, documented at [plotOptions](#plotOptions.series) and[series](#series).These options are merged with options in [navigator.series](#navigator.series), and will take precedence if the same option is defined bothplaces.
-		/// </summary>
-		public XrangeSeriesNavigatorOptions NavigatorOptions { get; set; }
-		private XrangeSeriesNavigatorOptions NavigatorOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -489,7 +481,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
-			if (NavigatorOptions.IsDirty()) h.Add("navigatorOptions",NavigatorOptions.ToHashtable());
 			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

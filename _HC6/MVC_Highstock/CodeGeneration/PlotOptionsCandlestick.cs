@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsCandlestickLabel();
 			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsCandlestickDataGrouping();
-			NavigatorOptions = NavigatorOptions_DefaultValue = new PlotOptionsCandlestickNavigatorOptions();
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -116,13 +115,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsCandlestickDataGrouping DataGrouping { get; set; }
 		private PlotOptionsCandlestickDataGrouping DataGrouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the corresponding navigator series if `showInNavigator`is `true` for this series. Available options are the same as anyseries, documented at [plotOptions](#plotOptions.series) and[series](#series).These options are merged with options in [navigator.series](#navigator.series), and will take precedence if the same option is defined bothplaces.
-		/// </summary>
-		public PlotOptionsCandlestickNavigatorOptions NavigatorOptions { get; set; }
-		private PlotOptionsCandlestickNavigatorOptions NavigatorOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -547,7 +539,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
-			if (NavigatorOptions.IsDirty()) h.Add("navigatorOptions",NavigatorOptions.ToHashtable());
 			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
