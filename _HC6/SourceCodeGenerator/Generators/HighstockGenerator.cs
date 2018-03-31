@@ -875,6 +875,7 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("series.sankey.nodes", "List<SankeySeriesNodes>");
         _propertyTypeMappings.Add("yAxis.resize.controlledAxis.next", "List<string>");
         _propertyTypeMappings.Add("yAxis.resize.controlledAxis.prev", "List<string>");
+        _propertyTypeMappings.Add("navigator.handles.symbols", "List<string>");
 
         //temporary
         _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
@@ -970,6 +971,7 @@ public class HighstockGenerator
         _propertyInitMappings.Add("series.sankey.nodes", "new List<SankeySeriesNodes>()");
         _propertyInitMappings.Add("yAxis.resize.controlledAxis.next", "new List<string>()");
         _propertyInitMappings.Add("yAxis.resize.controlledAxis.prev", "new List<string>()");
+        _propertyInitMappings.Add("navigator.handles.symbols", "new List<string>()");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
@@ -1007,6 +1009,7 @@ public class HighstockGenerator
         _lists.Add("series.sankey.nodes");
         _lists.Add("chart.parallelAxes.resize.controlledAxis.next");
         _lists.Add("chart.parallelAxes.resize.controlledAxis.prev");
+        _lists.Add("navigator.handles.symbols");
     }
 
     private void InitSeriesMappings()

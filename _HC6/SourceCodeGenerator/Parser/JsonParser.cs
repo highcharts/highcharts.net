@@ -174,7 +174,7 @@ namespace SourceCodeGenerator.Parser
             {
                 var childName = ((JProperty)child).Name;
 
-                //Remove garbage without a name of the element
+                //Remove garbage without the name of the element
                 if (string.IsNullOrWhiteSpace(childName))
                     continue;
 
