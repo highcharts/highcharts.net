@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsRoc()
 		{
+			Name = Name_DefaultValue = "Rate of Change (9)";
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsRocGapUnit.Relative;
@@ -59,11 +60,17 @@ namespace Highsoft.Web.Mvc.Stocks
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsRocTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsRocZone>();
 			CompareStart = CompareStart_DefaultValue = false;
-			Name = Name_DefaultValue = "";
 			Params = Params_DefaultValue = new PlotOptionsRocParams();
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -381,13 +388,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The name of the series as shown in the legend, tooltip etc. If notset, it will be based on a technical indicator type and default params.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsRocParams Params { get; set; }
@@ -398,6 +398,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
@@ -443,7 +444,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			
 

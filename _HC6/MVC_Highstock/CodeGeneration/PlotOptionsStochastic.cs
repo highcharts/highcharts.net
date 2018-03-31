@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsStochastic()
 		{
+			Name = Name_DefaultValue = "Stochastic (14, 3)";
 			SmoothedLine = SmoothedLine_DefaultValue = new PlotOptionsStochasticSmoothedLine();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
@@ -60,11 +61,17 @@ namespace Highsoft.Web.Mvc.Stocks
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsStochasticTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsStochasticZone>();
 			CompareStart = CompareStart_DefaultValue = false;
-			Name = Name_DefaultValue = "";
 			Params = Params_DefaultValue = new PlotOptionsStochasticParams();
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Smoothed line options.
@@ -389,13 +396,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The name of the series as shown in the legend, tooltip etc. If notset, it will be based on a technical indicator type and default params.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsStochasticParams Params { get; set; }
@@ -406,6 +406,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (SmoothedLine.IsDirty()) h.Add("smoothedLine",SmoothedLine.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
@@ -452,7 +453,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			
 

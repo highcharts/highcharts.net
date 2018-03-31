@@ -61,7 +61,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsPriceenvelopesTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsPriceenvelopesZone>();
 			CompareStart = CompareStart_DefaultValue = false;
-			Name = Name_DefaultValue = "";
 			Params = Params_DefaultValue = new PlotOptionsPriceenvelopesParams();
 			
 		}	
@@ -397,13 +396,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The name of the series as shown in the legend, tooltip etc. If notset, it will be based on a technical indicator type and default params.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsPriceenvelopesParams Params { get; set; }
@@ -461,7 +453,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			
 

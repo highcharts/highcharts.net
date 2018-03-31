@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsBb()
 		{
+			Name = Name_DefaultValue = "BB (20, 2)";
 			BottomLine = BottomLine_DefaultValue = new PlotOptionsBbBottomLine();
 			TopLine = TopLine_DefaultValue = new PlotOptionsBbTopLine();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
@@ -61,11 +62,17 @@ namespace Highsoft.Web.Mvc.Stocks
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsBbTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsBbZone>();
 			CompareStart = CompareStart_DefaultValue = false;
-			Name = Name_DefaultValue = "";
 			Params = Params_DefaultValue = new PlotOptionsBbParams();
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Bottom line options.
@@ -397,13 +404,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The name of the series as shown in the legend, tooltip etc. If notset, it will be based on a technical indicator type and default params.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsBbParams Params { get; set; }
@@ -414,6 +414,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (BottomLine.IsDirty()) h.Add("bottomLine",BottomLine.ToHashtable());
 			if (TopLine.IsDirty()) h.Add("topLine",TopLine.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
@@ -461,7 +462,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			
 

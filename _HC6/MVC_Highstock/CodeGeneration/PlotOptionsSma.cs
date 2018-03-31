@@ -14,7 +14,6 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsSma()
 		{
-			Name = Name_DefaultValue = "";
 			Params = Params_DefaultValue = new PlotOptionsSmaParams();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
@@ -64,13 +63,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
-
-		/// <summary>
-		/// The name of the series as shown in the legend, tooltip etc. If notset, it will be based on a technical indicator type and default params.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
@@ -398,7 +390,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
