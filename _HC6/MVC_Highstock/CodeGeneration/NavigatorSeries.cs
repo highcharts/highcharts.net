@@ -17,7 +17,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Type = Type_DefaultValue = NavigatorSeriesType.Bar;
 			FillOpacity = FillOpacity_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 1;
-			Compare = Compare_DefaultValue = new NavigatorSeriesCompare();
 			DataGrouping = DataGrouping_DefaultValue = new NavigatorSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new NavigatorSeriesDataLabels();
 			Id = Id_DefaultValue = "highcharts-navigator-series";
@@ -49,13 +48,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public NavigatorSeriesCompare Compare { get; set; }
-		private NavigatorSeriesCompare Compare_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -121,7 +113,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Compare.IsDirty()) h.Add("compare",Compare.ToHashtable());
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
