@@ -17,11 +17,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Series = Series_DefaultValue = new List<Series>();
 			PlotOptions = PlotOptions_DefaultValue = new PlotOptions();
 			Lang = Lang_DefaultValue = new Lang();
-			Defs = Defs_DefaultValue = new Defs();
 			Annotations = Annotations_DefaultValue = new List<Annotations>();
 			Boost = Boost_DefaultValue = new Boost();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
-			Drilldown = Drilldown_DefaultValue = new Drilldown();
 			Chart = Chart_DefaultValue = new Chart();
 			Exporting = Exporting_DefaultValue = new Exporting();
 			Navigation = Navigation_DefaultValue = new Navigation();
@@ -69,13 +67,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Styled mode only. Configuration object for adding SVG definitions forreusable elements. See [gradients, shadows and patterns](http://www.highcharts.com/docs/chart-design-and-style/gradients-shadows-and-patterns) for more information and code examples.
-		/// </summary>
-		public Defs Defs { get; set; }
-		private Defs Defs_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Options for configuring annotations, for example labels, arrows or shapes. Annotations can be tied to points, axis coordinates or chartpixel coordinates.
 		/// </summary>
 		public List<Annotations> Annotations { get; set; }
@@ -94,13 +85,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<YAxis> YAxis { get; set; }
 		private List<YAxis> YAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for drill down, the concept of inspecting increasingly high resolution data through clicking on chart items like columns or pie slices.The drilldown feature requires the drilldown.js file to be loaded, found in the modules directory of the download package, or online at (code.highcharts.com/modules/drilldown.js)[code.highcharts.com/modules/drilldown.js].
-		/// </summary>
-		public Drilldown Drilldown { get; set; }
-		private Drilldown Drilldown_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -257,11 +241,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
 			if (Lang.IsDirty()) h.Add("lang",Lang.ToHashtable());
-			if (Defs.IsDirty()) h.Add("defs",Defs.ToHashtable());
 			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
 			if (Boost.IsDirty()) h.Add("boost",Boost.ToHashtable());
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			if (Drilldown.IsDirty()) h.Add("drilldown",Drilldown.ToHashtable());
 			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
 			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
 			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());

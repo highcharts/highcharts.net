@@ -1584,7 +1584,6 @@
     <Compile Include="CodeGeneration\LangAccessibilityExporting.cs" />
     <Compile Include="CodeGeneration\LangAccessibilitySeries.cs" />
     <Compile Include="CodeGeneration\LangAccessibilitySeriesSummary.cs" />
-    <Compile Include="CodeGeneration\LangAccessibilitySeriesTypeDescriptions.cs" />
     <Compile Include="CodeGeneration\Legend.cs" />
     <Compile Include="CodeGeneration\LegendItemCheckboxStyle.cs" />
     <Compile Include="CodeGeneration\LegendItemHiddenStyle.cs" />
