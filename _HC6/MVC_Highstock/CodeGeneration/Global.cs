@@ -15,11 +15,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Global()
 		{
 			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "";
-			UseUTC = UseUTC_DefaultValue = "";
+			UseUTC = UseUTC_DefaultValue = null;
 			Date = Date_DefaultValue = null;
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "";
-			TimezoneOffset = TimezoneOffset_DefaultValue = "";
+			TimezoneOffset = TimezoneOffset_DefaultValue = null;
 			
 		}	
 		
@@ -34,8 +34,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// This option is deprecated since v6.0.5. Instead, use[time.useUTC](#time.useUTC) that supports individual time settingsper chart.
 		/// </summary>
-		public GlobalUseUTC UseUTC { get; set; }
-		private GlobalUseUTC UseUTC_DefaultValue { get; set; }
+		public bool? UseUTC { get; set; }
+		private bool? UseUTC_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -48,22 +48,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// This option is deprecated since v6.0.5. Instead, use[time.getTimezoneOffset](#time.getTimezoneOffset) that supportsindividual time settings per chart.
 		/// </summary>
-		public GlobalGetTimezoneOffset GetTimezoneOffset { get; set; }
-		private GlobalGetTimezoneOffset GetTimezoneOffset_DefaultValue { get; set; }
+		public string GetTimezoneOffset { get; set; }
+		private string GetTimezoneOffset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// This option is deprecated since v6.0.5. Instead, use[time.timezone](#time.timezone) that supports individual timesettings per chart.
 		/// </summary>
-		public GlobalTimezone Timezone { get; set; }
-		private GlobalTimezone Timezone_DefaultValue { get; set; }
+		public string Timezone { get; set; }
+		private string Timezone_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// This option is deprecated since v6.0.5. Instead, use[time.timezoneOffset](#time.timezoneOffset) that supports individualtime settings per chart.
 		/// </summary>
-		public GlobalTimezoneOffset TimezoneOffset { get; set; }
-		private GlobalTimezoneOffset TimezoneOffset_DefaultValue { get; set; }
+		public double? TimezoneOffset { get; set; }
+		private double? TimezoneOffset_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
