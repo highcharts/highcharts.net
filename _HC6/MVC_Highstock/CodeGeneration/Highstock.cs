@@ -253,7 +253,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Global.IsDirty()) h.Add("global",Global.ToHashtable());
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (Navigator.IsDirty()) h.Add("navigator",Navigator.ToHashtable());
-			if (Colors.IsDirty()) h.Add("colors",Colors.ToHashtable());
+			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Time.IsDirty()) h.Add("time",Time.ToHashtable());
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Subtitle.IsDirty()) h.Add("subtitle",Subtitle.ToHashtable());

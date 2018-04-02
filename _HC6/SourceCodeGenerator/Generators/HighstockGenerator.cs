@@ -998,7 +998,7 @@ public class HighstockGenerator
         _lists.Add("annotations.shapes");
         _lists.Add("annotations.shapes.points");
         _lists.Add("colorAxis.dataClasses");
-        _lists.Add("Highcharts.colors");
+        _lists.Add("Highstock.colors");
         //_lists.Add("xAxis.tickPositions");
         _lists.Add("labels.items");
         _lists.Add("plotOptions.sunburst.levels");
