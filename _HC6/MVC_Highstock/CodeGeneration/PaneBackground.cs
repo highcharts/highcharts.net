@@ -14,18 +14,10 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PaneBackground()
 		{
-			From = From_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PaneBackgroundFrom From { get; set; }
-		private PaneBackgroundFrom From_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// The class name for this background.
@@ -38,7 +30,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (From != From_DefaultValue) h.Add("from",From);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			
 

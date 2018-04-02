@@ -883,6 +883,7 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("navigator.xAxis.plotLines.label.style", "Hashtable");
         _propertyTypeMappings.Add("navigator.yAxis.plotLines.label.style", "Hashtable");
         _propertyTypeMappings.Add("time.Date", "Object");
+        _propertyTypeMappings.Add("rangeSelector.buttons.dataGrouping", "Object");
 
         //temporary
         _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
@@ -986,6 +987,7 @@ public class HighstockGenerator
         _propertyInitMappings.Add("navigator.xAxis.plotLines.label.style", "new Hashtable()");
         _propertyInitMappings.Add("navigator.yAxis.plotLines.label.style", "new Hashtable()");
         _propertyInitMappings.Add("time.Date", "null");
+        _propertyInitMappings.Add("rangeSelector.buttons.dataGrouping", "null");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
