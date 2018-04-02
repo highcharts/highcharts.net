@@ -455,6 +455,30 @@ public class HighstockGenerator
             apiItem.Values.Add("Windbarb");
             apiItem.Values.Add("Wordcloud");
             apiItem.Values.Add("Xrange");
+
+            apiItem.Values.Add("Candlestick");
+            apiItem.Values.Add("Flags");
+            apiItem.Values.Add("Ohlc");
+            apiItem.Values.Add("Ad");
+            apiItem.Values.Add("Atr");
+            apiItem.Values.Add("Bb");
+            apiItem.Values.Add("Cci");
+            apiItem.Values.Add("Cmf");
+            apiItem.Values.Add("Ema");
+            apiItem.Values.Add("Macd");
+            apiItem.Values.Add("Mfi");
+            apiItem.Values.Add("Momentum");
+            apiItem.Values.Add("Pivotpoints");
+            apiItem.Values.Add("Priceenvelopes");
+            apiItem.Values.Add("Psar");
+            apiItem.Values.Add("Roc");
+            apiItem.Values.Add("Rsi");
+            apiItem.Values.Add("Sma");
+            apiItem.Values.Add("Stochastic");
+            apiItem.Values.Add("Vbp");
+            apiItem.Values.Add("Vwap");
+            apiItem.Values.Add("Wma");
+            apiItem.Values.Add("Zigzag");
         }
     }
 
@@ -632,7 +656,7 @@ public class HighstockGenerator
             if (child.FullName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
 
-            if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && child.ParentFullName != "Highcharts")
+            if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && child.ParentFullName != "Highstock")
                 return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
             if (child.Title == "colors")
@@ -658,7 +682,7 @@ public class HighstockGenerator
             if (child.FullName == "plotOptions.series")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
-            if (child.Title.ToLower() == "series" && child.ParentFullName == "Highcharts")
+            if (child.Title.ToLower() == "series" && child.ParentFullName == "Highstock")
                 return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
 
             if (propertyName.ToLower().Contains("pointplacement"))
@@ -1030,34 +1054,54 @@ public class HighstockGenerator
 
     private void InitSeriesMappings()
     {
-        _seriesMappings.Add("series<ad>", "AdSeries");
-        _seriesMappings.Add("series<area>", "AreaSeries");
-        _seriesMappings.Add("series<arearange>", "ArearangeSeries");
-        _seriesMappings.Add("series<areaspline>", "AreasplineSeries");
-        _seriesMappings.Add("series<areasplinerange>", "AreasplinerangeSeries");
-        _seriesMappings.Add("series<bar>", "BarSeries");
-        _seriesMappings.Add("series<boxplot>", "BoxplotSeries");
-        _seriesMappings.Add("series<bubble>", "BubbleSeries");
-        _seriesMappings.Add("series<column>", "ColumnSeries");
-        _seriesMappings.Add("series<columnrange>", "ColumnrangeSeries");
-        _seriesMappings.Add("series<errorbar>", "ErrorbarSeries");
-        _seriesMappings.Add("series<funnel>", "FunnelSeries");
-        _seriesMappings.Add("series<gauge>", "GaugeSeries");
-        _seriesMappings.Add("series<heatmap>", "HeatmapSeries");
-        _seriesMappings.Add("series<line>", "LineSeries");
-        _seriesMappings.Add("series<pie>", "PieSeries");
-        _seriesMappings.Add("series<polygon>", "PolygonSeries");
-        _seriesMappings.Add("series<pyramid>", "PyramidSeries");
-        _seriesMappings.Add("series<scatter>", "ScatterSeries");
-        _seriesMappings.Add("series<solidgauge>", "SolidgaugeSeries");
-        _seriesMappings.Add("series<spline>", "SplineSeries");
-        _seriesMappings.Add("series<treemap>", "TreemapSeries");
-        _seriesMappings.Add("series<waterfall>", "WaterfallSeries");
+        _seriesMappings.Add("series.ad", "AdSeries");
+        _seriesMappings.Add("series.area", "AreaSeries");
+        _seriesMappings.Add("series.arearange", "ArearangeSeries");
+        _seriesMappings.Add("series.areaspline", "AreasplineSeries");
+        _seriesMappings.Add("series.areasplinerange", "AreasplinerangeSeries");
+        _seriesMappings.Add("series.bar", "BarSeries");
+        _seriesMappings.Add("series.boxplot", "BoxplotSeries");
+        _seriesMappings.Add("series.bubble", "BubbleSeries");
+        _seriesMappings.Add("series.column", "ColumnSeries");
+        _seriesMappings.Add("series.columnrange", "ColumnrangeSeries");
+        _seriesMappings.Add("series.errorbar", "ErrorbarSeries");
+        _seriesMappings.Add("series.funnel", "FunnelSeries");
+        _seriesMappings.Add("series.gauge", "GaugeSeries");
+        _seriesMappings.Add("series.heatmap", "HeatmapSeries");
+        _seriesMappings.Add("series.line", "LineSeries");
+        _seriesMappings.Add("series.pie", "PieSeries");
+        _seriesMappings.Add("series.polygon", "PolygonSeries");
+        _seriesMappings.Add("series.pyramid", "PyramidSeries");
+        _seriesMappings.Add("series.scatter", "ScatterSeries");
+        _seriesMappings.Add("series.solidgauge", "SolidgaugeSeries");
+        _seriesMappings.Add("series.spline", "SplineSeries");
+        _seriesMappings.Add("series.treemap", "TreemapSeries");
+        _seriesMappings.Add("series.waterfall", "WaterfallSeries");
 
         // Highstock specific
-        _seriesMappings.Add("series<flags>", "FlagsSeries");
-        _seriesMappings.Add("series<candlestick>", "CandleStickSeries");
-        _seriesMappings.Add("series<ohlc>", "OhlcSeries");
+        _seriesMappings.Add("series.flags", "FlagsSeries");
+        _seriesMappings.Add("series.candlestick", "CandleStickSeries");
+        _seriesMappings.Add("series.ohlc", "OhlcSeries");
+        _seriesMappings.Add("series.Ad","AdSeries");
+        _seriesMappings.Add("series.Atr", "AtrSeries");
+        _seriesMappings.Add("series.Bb", "BbSeries");
+        _seriesMappings.Add("series.Cci", "CciSeries");
+        _seriesMappings.Add("series.Cmf", "CmfSeries");
+        _seriesMappings.Add("series.Ema", "EmaSeries");
+        _seriesMappings.Add("series.Macd", "MacdSeries");
+        _seriesMappings.Add("series.Mfi", "MfiSeries");
+        _seriesMappings.Add("series.Momentum", "MomentumSeries");
+        _seriesMappings.Add("series.Pivotpoints", "PivotpointsSeries");
+        _seriesMappings.Add("series.Priceenvelopes", "PriceenvelopesSeries");
+        _seriesMappings.Add("series.Psar", "PsarSeries");
+        _seriesMappings.Add("series.Roc", "RocSeries");
+        _seriesMappings.Add("series.Rsi", "RsiSeries");
+        _seriesMappings.Add("series.Sma", "SmaSeries");
+        _seriesMappings.Add("series.Stochastic", "StochasticSeries");
+        _seriesMappings.Add("series.Vbp", "VbpSeries");
+        _seriesMappings.Add("series.Vwap", "VwapSeries");
+        _seriesMappings.Add("series.Wma", "WmaSeries");
+        _seriesMappings.Add("series.Zigzag", "ZigzagSeries");
 
 
     }
