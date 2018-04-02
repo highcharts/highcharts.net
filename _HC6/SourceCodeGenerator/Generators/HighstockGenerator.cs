@@ -879,6 +879,10 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("navigator.xAxis.plotLines.events", "Object");
         _propertyTypeMappings.Add("navigator.yAxis.plotLines.events", "Object");
         _propertyTypeMappings.Add("navigator.xAxis.plotBands.events", "Object");
+        _propertyTypeMappings.Add("navigator.xAxis.plotBands.label.style", "Hashtable");
+        _propertyTypeMappings.Add("navigator.xAxis.plotLines.label.style", "Hashtable");
+        _propertyTypeMappings.Add("navigator.yAxis.plotLines.label.style", "Hashtable");
+        _propertyTypeMappings.Add("time.Date", "Object");
 
         //temporary
         _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
@@ -978,7 +982,10 @@ public class HighstockGenerator
         _propertyInitMappings.Add("navigator.xAxis.plotLines.events", "null");
         _propertyInitMappings.Add("navigator.yAxis.plotLines.events", "null");
         _propertyInitMappings.Add("navigator.xAxis.plotBands.events", "null");
-
+        _propertyInitMappings.Add("navigator.xAxis.plotBands.label.style", "new Hashtable()");
+        _propertyInitMappings.Add("navigator.xAxis.plotLines.label.style", "new Hashtable()");
+        _propertyInitMappings.Add("navigator.yAxis.plotLines.label.style", "new Hashtable()");
+        _propertyInitMappings.Add("time.Date", "null");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
