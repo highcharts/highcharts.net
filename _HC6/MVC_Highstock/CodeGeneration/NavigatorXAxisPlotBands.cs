@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "null";
-			Events = Events_DefaultValue = new NavigatorXAxisPlotBandsEvents();
+			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
 			To = To_DefaultValue = null;
@@ -59,8 +59,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An object defining mouse events for the plot band. Supported propertiesare `click`, `mouseover`, `mouseout`, `mousemove`.
 		/// </summary>
-		public NavigatorXAxisPlotBandsEvents Events { get; set; }
-		private NavigatorXAxisPlotBandsEvents Events_DefaultValue { get; set; }
+		public Object Events { get; set; }
+		private Object Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -106,7 +106,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (To != To_DefaultValue) h.Add("to",To);

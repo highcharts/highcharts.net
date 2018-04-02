@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "null";
 			DashStyle = DashStyle_DefaultValue = NavigatorXAxisPlotLinesDashStyle.Solid;
-			Events = Events_DefaultValue = new NavigatorXAxisPlotLinesEvents();
+			Events = Events_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
 			Value = Value_DefaultValue = null;
 			Width = Width_DefaultValue = null;
@@ -51,8 +51,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An object defining mouse events for the plot line. Supported propertiesare `click`, `mouseover`, `mouseout`, `mousemove`.
 		/// </summary>
-		public NavigatorXAxisPlotLinesEvents Events { get; set; }
-		private NavigatorXAxisPlotLinesEvents Events_DefaultValue { get; set; }
+		public Object Events { get; set; }
+		private Object Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -97,7 +97,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (Width != Width_DefaultValue) h.Add("width",Width);

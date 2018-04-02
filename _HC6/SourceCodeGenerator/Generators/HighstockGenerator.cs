@@ -876,6 +876,9 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("yAxis.resize.controlledAxis.next", "List<string>");
         _propertyTypeMappings.Add("yAxis.resize.controlledAxis.prev", "List<string>");
         _propertyTypeMappings.Add("navigator.handles.symbols", "List<string>");
+        _propertyTypeMappings.Add("navigator.xAxis.plotLines.events", "Object");
+        _propertyTypeMappings.Add("navigator.yAxis.plotLines.events", "Object");
+        _propertyTypeMappings.Add("navigator.xAxis.plotBands.events", "Object");
 
         //temporary
         _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
@@ -972,6 +975,10 @@ public class HighstockGenerator
         _propertyInitMappings.Add("yAxis.resize.controlledAxis.next", "new List<string>()");
         _propertyInitMappings.Add("yAxis.resize.controlledAxis.prev", "new List<string>()");
         _propertyInitMappings.Add("navigator.handles.symbols", "new List<string>()");
+        _propertyInitMappings.Add("navigator.xAxis.plotLines.events", "null");
+        _propertyInitMappings.Add("navigator.yAxis.plotLines.events", "null");
+        _propertyInitMappings.Add("navigator.xAxis.plotBands.events", "null");
+
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
