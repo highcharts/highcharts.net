@@ -64,10 +64,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickAmount = TickAmount_DefaultValue = null;
 			TickInterval = TickInterval_DefaultValue = null;
 			TickPositioner = TickPositioner_DefaultValue = "";
-			TickPositions = TickPositions_DefaultValue = "";
+			TickPositions = TickPositions_DefaultValue = new List<double>();
 			TickWidth = TickWidth_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
-			PlotLines = PlotLines_DefaultValue = new NavigatorYAxisPlotLines();
+			PlotLines = PlotLines_DefaultValue = new List<NavigatorYAxisPlotLines>();
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			
@@ -448,8 +448,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of lines stretching across the plot area, marking a specificvalue on one of the axes.In styled mode, the plot lines are styled by the `.highcharts-plot-line` class in addition to the `className` option.
 		/// </summary>
-		public List<object> PlotLines { get; set; }
-		private List<object> PlotLines_DefaultValue { get; set; }
+		public List<NavigatorYAxisPlotLines> PlotLines { get; set; }
+		private List<NavigatorYAxisPlotLines> PlotLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -523,7 +523,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (PlotLines.IsDirty()) h.Add("plotLines",PlotLines.ToHashtable());
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			

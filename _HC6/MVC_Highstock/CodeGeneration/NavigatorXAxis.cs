@@ -64,11 +64,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickAmount = TickAmount_DefaultValue = null;
 			TickInterval = TickInterval_DefaultValue = null;
 			TickPositioner = TickPositioner_DefaultValue = "";
-			TickPositions = TickPositions_DefaultValue = "";
+			TickPositions = TickPositions_DefaultValue = new List<double>();
 			TickWidth = TickWidth_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
-			PlotBands = PlotBands_DefaultValue = new NavigatorXAxisPlotBands();
-			PlotLines = PlotLines_DefaultValue = new NavigatorXAxisPlotLines();
+			PlotBands = PlotBands_DefaultValue = new List<NavigatorXAxisPlotBands>();
+			PlotLines = PlotLines_DefaultValue = new List<NavigatorXAxisPlotLines>();
 			Ordinal = Ordinal_DefaultValue = true;
 			
 		}	
@@ -448,15 +448,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of colored bands stretching across the plot area markingan interval on the axis.In styled mode, the plot bands are styled by the `.highcharts-plot-band` class in addition to the `className` option.
 		/// </summary>
-		public List<object> PlotBands { get; set; }
-		private List<object> PlotBands_DefaultValue { get; set; }
+		public List<NavigatorXAxisPlotBands> PlotBands { get; set; }
+		private List<NavigatorXAxisPlotBands> PlotBands_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array of lines stretching across the plot area, marking a specificvalue on one of the axes.In styled mode, the plot lines are styled by the `.highcharts-plot-line` class in addition to the `className` option.
 		/// </summary>
-		public List<object> PlotLines { get; set; }
-		private List<object> PlotLines_DefaultValue { get; set; }
+		public List<NavigatorXAxisPlotLines> PlotLines { get; set; }
+		private List<NavigatorXAxisPlotLines> PlotLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -523,8 +523,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (PlotBands.IsDirty()) h.Add("plotBands",PlotBands.ToHashtable());
-			if (PlotLines.IsDirty()) h.Add("plotLines",PlotLines.ToHashtable());
+			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			if (Ordinal != Ordinal_DefaultValue) h.Add("ordinal",Ordinal);
 			
 

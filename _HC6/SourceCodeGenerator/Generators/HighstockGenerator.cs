@@ -909,6 +909,10 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("time.Date", "Object");
         _propertyTypeMappings.Add("rangeSelector.buttons.dataGrouping", "Object");
         _propertyTypeMappings.Add("rangeSelector.buttons", "List<RangeSelectorButtons>");
+        _propertyTypeMappings.Add("navigator.xAxis.plotLines", "List<NavigatorXAxisPlotLines>");
+        _propertyTypeMappings.Add("navigator.xAxis.plotBands", "List<NavigatorXAxisPlotBands>");
+        _propertyTypeMappings.Add("navigator.yAxis.plotLines", "List<NavigatorYAxisPlotLines>");
+        _propertyTypeMappings.Add("navigator.yAxis.plotBands", "List<NavigatorYAxisPlotBands>");
 
         //temporary
         _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
@@ -1015,6 +1019,12 @@ public class HighstockGenerator
         _propertyInitMappings.Add("rangeSelector.buttons.dataGrouping", "null");
         _propertyInitMappings.Add("rangeSelector.buttons", "new List<RangeSelectorButtons>()");
         _propertyInitMappings.Add("rangeSelector.inputBoxStyle", "new Hashtable()");
+        _propertyInitMappings.Add("navigator.xAxis.plotLines", "new List<NavigatorXAxisPlotLines>()");
+        _propertyInitMappings.Add("navigator.xAxis.plotBands", "new List<NavigatorXAxisPlotBands>()");
+        _propertyInitMappings.Add("navigator.xAxis.tickPositions", "new List<double>()");
+        _propertyInitMappings.Add("navigator.yAxis.plotLines", "new List<NavigatorYAxisPlotLines>()");
+        _propertyInitMappings.Add("navigator.yAxis.plotBands", "new List<NavigatorYAxisPlotBands>()");
+        _propertyInitMappings.Add("navigator.yAxis.tickPositions", "new List<double>()");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
@@ -1054,6 +1064,10 @@ public class HighstockGenerator
         _lists.Add("chart.parallelAxes.resize.controlledAxis.prev");
         _lists.Add("navigator.handles.symbols");
         _lists.Add("rangeSelector.buttons");
+        _lists.Add("navigator.xAxis.plotBands");
+        _lists.Add("navigator.xAxis.plotLines");
+        _lists.Add("navigator.yAxis.plotBands");
+        _lists.Add("navigator.yAxis.plotLines");
     }
 
     private void InitSeriesMappings()
