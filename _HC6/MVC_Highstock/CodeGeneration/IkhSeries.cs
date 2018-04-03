@@ -475,43 +475,43 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The styles for Tenkan line
 		/// </summary>
-		public double? TenkanLine { get; set; }
-		private double? TenkanLine_DefaultValue { get; set; }
+		public IkhSeriesTenkanLine TenkanLine { get; set; }
+		private IkhSeriesTenkanLine TenkanLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The styles for Kijun line
 		/// </summary>
-		public double? KijunLine { get; set; }
-		private double? KijunLine_DefaultValue { get; set; }
+		public IkhSeriesKijunLine KijunLine { get; set; }
+		private IkhSeriesKijunLine KijunLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The styles for Chikou line
 		/// </summary>
-		public double? ChikouLine { get; set; }
-		private double? ChikouLine_DefaultValue { get; set; }
+		public IkhSeriesChikouLine ChikouLine { get; set; }
+		private IkhSeriesChikouLine ChikouLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The styles for Senkou Span A line
 		/// </summary>
-		public double? SenkouSpanA { get; set; }
-		private double? SenkouSpanA_DefaultValue { get; set; }
+		public IkhSeriesSenkouSpanA SenkouSpanA { get; set; }
+		private IkhSeriesSenkouSpanA SenkouSpanA_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The styles for Senkou Span B line
 		/// </summary>
-		public double? SenkouSpanB { get; set; }
-		private double? SenkouSpanB_DefaultValue { get; set; }
+		public IkhSeriesSenkouSpanB SenkouSpanB { get; set; }
+		private IkhSeriesSenkouSpanB SenkouSpanB_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The styles for fill between Senkou Span A and B
 		/// </summary>
-		public double? SenkouSpan { get; set; }
-		private double? SenkouSpan_DefaultValue { get; set; }
+		public IkhSeriesSenkouSpan SenkouSpan { get; set; }
+		private IkhSeriesSenkouSpan SenkouSpan_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

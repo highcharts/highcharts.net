@@ -73,43 +73,43 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The styles for Tenkan line
 		/// </summary>
-		public double? TenkanLine { get; set; }
-		private double? TenkanLine_DefaultValue { get; set; }
+		public PlotOptionsIkhTenkanLine TenkanLine { get; set; }
+		private PlotOptionsIkhTenkanLine TenkanLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The styles for Kijun line
 		/// </summary>
-		public double? KijunLine { get; set; }
-		private double? KijunLine_DefaultValue { get; set; }
+		public PlotOptionsIkhKijunLine KijunLine { get; set; }
+		private PlotOptionsIkhKijunLine KijunLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The styles for Chikou line
 		/// </summary>
-		public double? ChikouLine { get; set; }
-		private double? ChikouLine_DefaultValue { get; set; }
+		public PlotOptionsIkhChikouLine ChikouLine { get; set; }
+		private PlotOptionsIkhChikouLine ChikouLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The styles for Senkou Span A line
 		/// </summary>
-		public double? SenkouSpanA { get; set; }
-		private double? SenkouSpanA_DefaultValue { get; set; }
+		public PlotOptionsIkhSenkouSpanA SenkouSpanA { get; set; }
+		private PlotOptionsIkhSenkouSpanA SenkouSpanA_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The styles for Senkou Span B line
 		/// </summary>
-		public double? SenkouSpanB { get; set; }
-		private double? SenkouSpanB_DefaultValue { get; set; }
+		public PlotOptionsIkhSenkouSpanB SenkouSpanB { get; set; }
+		private PlotOptionsIkhSenkouSpanB SenkouSpanB_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The styles for fill between Senkou Span A and B
 		/// </summary>
-		public double? SenkouSpan { get; set; }
-		private double? SenkouSpan_DefaultValue { get; set; }
+		public PlotOptionsIkhSenkouSpan SenkouSpan { get; set; }
+		private PlotOptionsIkhSenkouSpan SenkouSpan_DefaultValue { get; set; }
 		 
 
 		/// <summary>

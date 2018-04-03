@@ -72,15 +72,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The styles for signal line
 		/// </summary>
-		public double? SignalLine { get; set; }
-		private double? SignalLine_DefaultValue { get; set; }
+		public PlotOptionsMacdSignalLine SignalLine { get; set; }
+		private PlotOptionsMacdSignalLine SignalLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The styles for macd line
 		/// </summary>
-		public double? MacdLine { get; set; }
-		private double? MacdLine_DefaultValue { get; set; }
+		public PlotOptionsMacdMacdLine MacdLine { get; set; }
+		private PlotOptionsMacdMacdLine MacdLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>

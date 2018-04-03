@@ -126,6 +126,14 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("global.getTimezoneOffset", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("global.timezone", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("global.timezoneOffset", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("plotOptions.ikh.tenkanLine", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+            ItemsToUpdate.Add("plotOptions.ikh.kijunLine", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+            ItemsToUpdate.Add("plotOptions.ikh.chikouLine", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+            ItemsToUpdate.Add("plotOptions.ikh.senkouSpan", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+            ItemsToUpdate.Add("plotOptions.ikh.senkouSpanA", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+            ItemsToUpdate.Add("plotOptions.ikh.senkouSpanB", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+            ItemsToUpdate.Add("plotOptions.macd.signalLine", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+            ItemsToUpdate.Add("plotOptions.macd.macdLine", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
         }
     }
 
