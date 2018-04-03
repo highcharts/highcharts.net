@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = true;
 			InputBoxBorderColor = InputBoxBorderColor_DefaultValue = "#cccccc";
 			InputBoxHeight = InputBoxHeight_DefaultValue = 17;
-			InputBoxStyle = InputBoxStyle_DefaultValue = "";
+			InputBoxStyle = InputBoxStyle_DefaultValue = new Hashtable();
 			InputBoxWidth = InputBoxWidth_DefaultValue = 90;
 			InputDateFormat = InputDateFormat_DefaultValue = "%b %e %Y,";
 			InputDateParser = InputDateParser_DefaultValue = "";
@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			InputEnabled = InputEnabled_DefaultValue = null;
 			InputStyle = InputStyle_DefaultValue = new Hashtable();
 			Selected = Selected_DefaultValue = null;
-			Buttons = Buttons_DefaultValue = new RangeSelectorButtons();
+			Buttons = Buttons_DefaultValue = new List<RangeSelectorButtons>();
 			
 		}	
 		
@@ -198,8 +198,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of configuration objects for the buttons.Defaults to<pre>buttons: [{    type: 'month',    count: 1,    text: '1m'}, {    type: 'month',    count: 3,    text: '3m'}, {    type: 'month',    count: 6,    text: '6m'}, {    type: 'ytd',    text: 'YTD'}, {    type: 'year',    count: 1,    text: '1y'}, {    type: 'all',    text: 'All'}]</pre>
 		/// </summary>
-		public List<object> Buttons { get; set; }
-		private List<object> Buttons_DefaultValue { get; set; }
+		public List<RangeSelectorButtons> Buttons { get; set; }
+		private List<RangeSelectorButtons> Buttons_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -228,7 +228,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (InputEnabled != InputEnabled_DefaultValue) h.Add("inputEnabled",InputEnabled);
 			if (InputStyle != InputStyle_DefaultValue) h.Add("inputStyle",InputStyle);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Buttons.IsDirty()) h.Add("buttons",Buttons.ToHashtable());
+			if (Buttons != Buttons_DefaultValue) h.Add("buttons", HashifyList(Buttons));
 			
 
 			return h;

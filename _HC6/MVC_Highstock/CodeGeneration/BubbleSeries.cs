@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public BubbleSeries()
 		{
-			Data = Data_DefaultValue = new List<BubbleSeriesData>();
+			Data = Data_DefaultValue = new List<BubbleSeries>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -93,8 +93,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of data points for the series. For the `bubble` series type,points can be given in the following ways:1.  An array of arrays with 3 or 2 values. In this case, the valuescorrespond to `x,y,z`. If the first value is a string, it is appliedas the name of the point, and the `x` value is inferred. The `x`value can also be omitted, in which case the inner arrays shouldbe of length 2\. Then the `x` value is automatically calculated,either starting at 0 and incremented by 1, or from `pointStart` and`pointInterval` given in the series options. ```js    data: [        [0, 1, 2],        [1, 5, 5],        [2, 0, 2]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.bubble.turboThreshold),this option is not available. ```js    data: [{        x: 1,        y: 1,        z: 1,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        y: 5,        z: 4,        name: "Point1",        color: "#FF00FF"    }] ```
 		/// </summary>
-		public List<BubbleSeriesData> Data { get; set; }
-		private List<BubbleSeriesData> Data_DefaultValue { get; set; }
+		public List<BubbleSeries> Data { get; set; }
+		private List<BubbleSeries> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

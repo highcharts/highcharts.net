@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public FlagsSeries()
 		{
-			Data = Data_DefaultValue = new List<FlagsSeriesData>();
+			Data = Data_DefaultValue = new List<FlagsSeries>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -99,8 +99,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of data points for the series. For the `flags` series type,points can be given in the following ways:1.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.flags.turboThreshold),this option is not available. ```js    data: [{    x: 1,    title: "A",    text: "First event"}, {    x: 1,    title: "B",    text: "Second event"}]</pre>
 		/// </summary>
-		public List<FlagsSeriesData> Data { get; set; }
-		private List<FlagsSeriesData> Data_DefaultValue { get; set; }
+		public List<FlagsSeries> Data { get; set; }
+		private List<FlagsSeries> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public CandlestickSeries()
 		{
-			Data = Data_DefaultValue = new List<CandlestickSeriesData>();
+			Data = Data_DefaultValue = new List<CandlestickSeries>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -95,8 +95,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of data points for the series. For the `candlestick` seriestype, points can be given in the following ways:1.  An array of arrays with 5 or 4 values. In this case, the valuescorrespond to `x,open,high,low,close`. If the first value is a string,it is applied as the name of the point, and the `x` value is inferred.The `x` value can also be omitted, in which case the inner arraysshould be of length 4\. Then the `x` value is automatically calculated,either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. ```js    data: [        [0, 7, 2, 0, 4],        [1, 1, 4, 2, 8],        [2, 3, 3, 9, 3]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.candlestick.turboThreshold), this option is not available. ```js    data: [{        x: 1,        open: 9,        high: 2,        low: 4,        close: 6,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        open: 1,        high: 4,        low: 7,        close: 7,        name: "Point1",        color: "#FF00FF"    }] ```
 		/// </summary>
-		public List<CandlestickSeriesData> Data { get; set; }
-		private List<CandlestickSeriesData> Data_DefaultValue { get; set; }
+		public List<CandlestickSeries> Data { get; set; }
+		private List<CandlestickSeries> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

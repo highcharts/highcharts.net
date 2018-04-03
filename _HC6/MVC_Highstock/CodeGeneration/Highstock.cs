@@ -238,12 +238,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Series != Series_DefaultValue) h.Add("series",Series);
+			if (Series != Series_DefaultValue) h.Add("series", HashifyList(Series));
 			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
 			if (Lang.IsDirty()) h.Add("lang",Lang.ToHashtable());
 			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
 			if (Boost.IsDirty()) h.Add("boost",Boost.ToHashtable());
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
 			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
 			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
 			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
@@ -251,7 +251,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Legend.IsDirty()) h.Add("legend",Legend.ToHashtable());
 			if (NoData.IsDirty()) h.Add("noData",NoData.ToHashtable());
 			if (Global.IsDirty()) h.Add("global",Global.ToHashtable());
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
 			if (Navigator.IsDirty()) h.Add("navigator",Navigator.ToHashtable());
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Time.IsDirty()) h.Add("time",Time.ToHashtable());
