@@ -10,11 +10,11 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesStates  : BaseObject
+	public partial class CandleStickSeriesStates  : BaseObject
 	{
-		public CandlestickSeriesStates()
+		public CandleStickSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new CandlestickSeriesStatesHover();
+			Hover = Hover_DefaultValue = new CandleStickSeriesStatesHover();
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
 		/// </summary>
-		public CandlestickSeriesStatesHover Hover { get; set; }
-		private CandlestickSeriesStatesHover Hover_DefaultValue { get; set; }
+		public CandleStickSeriesStatesHover Hover { get; set; }
+		private CandleStickSeriesStatesHover Hover_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

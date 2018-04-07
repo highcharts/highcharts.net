@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesDataLabelsFilter  : BaseObject
+	public partial class CandleStickSeriesDataLabelsFilter  : BaseObject
 	{
-		public CandlestickSeriesDataLabelsFilter()
+		public CandleStickSeriesDataLabelsFilter()
 		{
 			Property = Property_DefaultValue = "";
 			Operator = Operator_DefaultValue = "";

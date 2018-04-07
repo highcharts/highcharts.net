@@ -10,42 +10,42 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeries  : Series
+	public partial class CandleStickSeries  : Series
 	{
-		public CandlestickSeries()
+		public CandleStickSeries()
 		{
-			Data = Data_DefaultValue = new List<CandlestickSeries>();
+			Data = Data_DefaultValue = new List<CandleStickSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Stack = Stack_DefaultValue = "null";
-			Type = Type_DefaultValue = CandlestickSeriesType.Null;
+			Type = Type_DefaultValue = CandleStickSeriesType.Null;
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
-			Label = Label_DefaultValue = new CandlestickSeriesLabel();
-			DataGrouping = DataGrouping_DefaultValue = new CandlestickSeriesDataGrouping();
+			Label = Label_DefaultValue = new CandleStickSeriesLabel();
+			DataGrouping = DataGrouping_DefaultValue = new CandleStickSeriesDataGrouping();
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = new CandlestickSeriesEvents();
-			Point = Point_DefaultValue = new CandlestickSeriesPoint();
-			DataLabels = DataLabels_DefaultValue = new CandlestickSeriesDataLabels();
+			Events = Events_DefaultValue = new CandleStickSeriesEvents();
+			Point = Point_DefaultValue = new CandleStickSeriesPoint();
+			DataLabels = DataLabels_DefaultValue = new CandleStickSeriesDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			PointRange = PointRange_DefaultValue = 0;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new CandlestickSeriesStates();
+			States = States_DefaultValue = new CandleStickSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = CandlestickSeriesFindNearestPointBy.X;
+			FindNearestPointBy = FindNearestPointBy_DefaultValue = CandleStickSeriesFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = CandlestickSeriesCursor.Null;
+			Cursor = Cursor_DefaultValue = CandleStickSeriesCursor.Null;
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
@@ -55,22 +55,22 @@ namespace Highsoft.Web.Mvc.Stocks
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
-			PointIntervalUnit = PointIntervalUnit_DefaultValue = CandlestickSeriesPointIntervalUnit.Null;
+			PointIntervalUnit = PointIntervalUnit_DefaultValue = CandleStickSeriesPointIntervalUnit.Null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			Stacking = Stacking_DefaultValue = CandlestickSeriesStacking.Null;
+			Stacking = Stacking_DefaultValue = CandleStickSeriesStacking.Null;
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new CandlestickSeriesTooltip();
-			Zones = Zones_DefaultValue = new List<CandlestickSeriesZone>();
+			Tooltip = Tooltip_DefaultValue = new CandleStickSeriesTooltip();
+			Zones = Zones_DefaultValue = new List<CandleStickSeriesZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = CandlestickSeriesCompareBase.Min;
+			CompareBase = CompareBase_DefaultValue = CandleStickSeriesCompareBase.Min;
 			GroupPadding = GroupPadding_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
@@ -95,8 +95,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of data points for the series. For the `candlestick` seriestype, points can be given in the following ways:1.  An array of arrays with 5 or 4 values. In this case, the valuescorrespond to `x,open,high,low,close`. If the first value is a string,it is applied as the name of the point, and the `x` value is inferred.The `x` value can also be omitted, in which case the inner arraysshould be of length 4\. Then the `x` value is automatically calculated,either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. ```js    data: [        [0, 7, 2, 0, 4],        [1, 1, 4, 2, 8],        [2, 3, 3, 9, 3]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.candlestick.turboThreshold), this option is not available. ```js    data: [{        x: 1,        open: 9,        high: 2,        low: 4,        close: 6,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        open: 1,        high: 4,        low: 7,        close: 7,        name: "Point1",        color: "#FF00FF"    }] ```
 		/// </summary>
-		public List<CandlestickSeries> Data { get; set; }
-		private List<CandlestickSeries> Data_DefaultValue { get; set; }
+		public List<CandleStickSeriesData> Data { get; set; }
+		private List<CandleStickSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -137,8 +137,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
-		public CandlestickSeriesType Type { get; set; }
-		private CandlestickSeriesType Type_DefaultValue { get; set; }
+		public CandleStickSeriesType Type { get; set; }
+		private CandleStickSeriesType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -172,15 +172,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
-		public CandlestickSeriesLabel Label { get; set; }
-		private CandlestickSeriesLabel Label_DefaultValue { get; set; }
+		public CandleStickSeriesLabel Label { get; set; }
+		private CandleStickSeriesLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](#Point.dataGroup).
 		/// </summary>
-		public CandlestickSeriesDataGrouping DataGrouping { get; set; }
-		private CandlestickSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
+		public CandleStickSeriesDataGrouping DataGrouping { get; set; }
+		private CandleStickSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -214,22 +214,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public CandlestickSeriesEvents Events { get; set; }
-		private CandlestickSeriesEvents Events_DefaultValue { get; set; }
+		public CandleStickSeriesEvents Events { get; set; }
+		private CandleStickSeriesEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
-		public CandlestickSeriesPoint Point { get; set; }
-		private CandlestickSeriesPoint Point_DefaultValue { get; set; }
+		public CandleStickSeriesPoint Point { get; set; }
+		private CandleStickSeriesPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public CandlestickSeriesDataLabels DataLabels { get; set; }
-		private CandlestickSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		public CandleStickSeriesDataLabels DataLabels { get; set; }
+		private CandleStickSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -256,8 +256,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public CandlestickSeriesStates States { get; set; }
-		private CandlestickSeriesStates States_DefaultValue { get; set; }
+		public CandleStickSeriesStates States { get; set; }
+		private CandleStickSeriesStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -277,8 +277,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
 		/// </summary>
-		public CandlestickSeriesFindNearestPointBy FindNearestPointBy { get; set; }
-		private CandlestickSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		public CandleStickSeriesFindNearestPointBy FindNearestPointBy { get; set; }
+		private CandleStickSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -312,8 +312,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
 		/// </summary>
-		public CandlestickSeriesCursor Cursor { get; set; }
-		private CandlestickSeriesCursor Cursor_DefaultValue { get; set; }
+		public CandleStickSeriesCursor Cursor { get; set; }
+		private CandleStickSeriesCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -382,8 +382,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
-		public CandlestickSeriesPointIntervalUnit PointIntervalUnit { get; set; }
-		private CandlestickSeriesPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
+		public CandleStickSeriesPointIntervalUnit PointIntervalUnit { get; set; }
+		private CandleStickSeriesPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -431,8 +431,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Whether to stack the values of each series on top of each other.Possible values are `null` to disable, `"normal"` to stack by value or`"percent"`. When stacking is enabled, data must be sorted in ascendingX order. A special stacking option is with the streamgraph series type,where the stacking option is set to `"stream"`.
 		/// </summary>
-		public CandlestickSeriesStacking Stacking { get; set; }
-		private CandlestickSeriesStacking Stacking_DefaultValue { get; set; }
+		public CandleStickSeriesStacking Stacking { get; set; }
+		private CandleStickSeriesStacking Stacking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -459,15 +459,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
 		/// </summary>
-		public CandlestickSeriesTooltip Tooltip { get; set; }
-		private CandlestickSeriesTooltip Tooltip_DefaultValue { get; set; }
+		public CandleStickSeriesTooltip Tooltip { get; set; }
+		private CandleStickSeriesTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<CandlestickSeriesZone> Zones { get; set; }
-		private List<CandlestickSeriesZone> Zones_DefaultValue { get; set; }
+		public List<CandleStickSeriesZone> Zones { get; set; }
+		private List<CandleStickSeriesZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -487,8 +487,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// When [compare](#plotOptions.series.compare) is `percent`, this optiondictates whether to use 0 or 100 as the base of comparison.
 		/// </summary>
-		public CandlestickSeriesCompareBase CompareBase { get; set; }
-		private CandlestickSeriesCompareBase CompareBase_DefaultValue { get; set; }
+		public CandleStickSeriesCompareBase CompareBase { get; set; }
+		private CandleStickSeriesCompareBase CompareBase_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -653,7 +653,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("CandlestickSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("CandleStickSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPlacement.IsDirty())

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-    public enum CandlestickSeriesPointIntervalUnit
+    public enum CandleStickSeriesPointIntervalUnit
     {
         Null, 
 		Day, 

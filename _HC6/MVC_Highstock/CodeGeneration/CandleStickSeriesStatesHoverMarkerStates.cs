@@ -10,13 +10,13 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesStatesHoverMarkerStates  : BaseObject
+	public partial class CandleStickSeriesStatesHoverMarkerStates  : BaseObject
 	{
-		public CandlestickSeriesStatesHoverMarkerStates()
+		public CandleStickSeriesStatesHoverMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new CandlestickSeriesStatesHoverMarkerStatesNormal();
-			Hover = Hover_DefaultValue = new CandlestickSeriesStatesHoverMarkerStatesHover();
-			Select = Select_DefaultValue = new CandlestickSeriesStatesHoverMarkerStatesSelect();
+			Normal = Normal_DefaultValue = new CandleStickSeriesStatesHoverMarkerStatesNormal();
+			Hover = Hover_DefaultValue = new CandleStickSeriesStatesHoverMarkerStatesHover();
+			Select = Select_DefaultValue = new CandleStickSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		
@@ -24,22 +24,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
 		/// </summary>
-		public CandlestickSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
-		private CandlestickSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
+		public CandleStickSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
+		private CandleStickSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
-		public CandlestickSeriesStatesHoverMarkerStatesHover Hover { get; set; }
-		private CandlestickSeriesStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
+		public CandleStickSeriesStatesHoverMarkerStatesHover Hover { get; set; }
+		private CandleStickSeriesStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
 		/// </summary>
-		public CandlestickSeriesStatesHoverMarkerStatesSelect Select { get; set; }
-		private CandlestickSeriesStatesHoverMarkerStatesSelect Select_DefaultValue { get; set; }
+		public CandleStickSeriesStatesHoverMarkerStatesSelect Select { get; set; }
+		private CandleStickSeriesStatesHoverMarkerStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

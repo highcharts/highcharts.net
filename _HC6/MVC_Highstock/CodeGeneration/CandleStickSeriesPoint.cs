@@ -10,11 +10,11 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesPoint  : BaseObject
+	public partial class CandleStickSeriesPoint  : BaseObject
 	{
-		public CandlestickSeriesPoint()
+		public CandleStickSeriesPoint()
 		{
-			Events = Events_DefaultValue = new CandlestickSeriesPointEvents();
+			Events = Events_DefaultValue = new CandleStickSeriesPointEvents();
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Events for each single point.
 		/// </summary>
-		public CandlestickSeriesPointEvents Events { get; set; }
-		private CandlestickSeriesPointEvents Events_DefaultValue { get; set; }
+		public CandleStickSeriesPointEvents Events { get; set; }
+		private CandleStickSeriesPointEvents Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

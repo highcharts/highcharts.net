@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesTooltipDateTimeLabelFormats  : BaseObject
+	public partial class CandleStickSeriesTooltipDateTimeLabelFormats  : BaseObject
 	{
-		public CandlestickSeriesTooltipDateTimeLabelFormats()
+		public CandleStickSeriesTooltipDateTimeLabelFormats()
 		{
 			Millisecond = Millisecond_DefaultValue = "%A, %b %e, %H:%M:%S.%L";
 			Second = Second_DefaultValue = "%A, %b %e, %H:%M:%S";

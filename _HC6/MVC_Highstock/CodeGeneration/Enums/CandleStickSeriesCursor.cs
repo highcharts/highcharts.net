@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-    public enum CandlestickSeriesCursor
+    public enum CandleStickSeriesCursor
     {
         Null, 
 		Default, 

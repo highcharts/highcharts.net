@@ -314,13 +314,13 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
                     seriesHashtable = polygonSeries.ToHashtable();
                 }
-                if (series is CandlestickSeries)
+                if (series is CandleStickSeries)
                 {
-                    CandlestickSeries candleStickSeries = series as CandlestickSeries;
+                    CandleStickSeries candleStickSeries = series as CandleStickSeries;
 
                     //List<CandleStickSeriesData> seriesData = candleStickSeries.Data;
                     //seriesData.ForEach(data => dataList.Add(data.ToHashtable()));
-                    candleStickSeries.Type = CandlestickSeriesType.Candlestick;
+                    candleStickSeries.Type = CandleStickSeriesType.Candlestick;
 
                     seriesHashtable = candleStickSeries.ToHashtable();
                 }

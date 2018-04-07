@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesStatesHoverMarkerStatesHover  : BaseObject
+	public partial class CandleStickSeriesStatesHoverMarkerStatesHover  : BaseObject
 	{
-		public CandlestickSeriesStatesHoverMarkerStatesHover()
+		public CandleStickSeriesStatesHoverMarkerStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Enabled = Enabled_DefaultValue = true;

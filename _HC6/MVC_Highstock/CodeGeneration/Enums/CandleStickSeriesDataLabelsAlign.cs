@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-    public enum CandlestickSeriesDataLabelsAlign
+    public enum CandleStickSeriesDataLabelsAlign
     {
         Left, 
 		Center, 

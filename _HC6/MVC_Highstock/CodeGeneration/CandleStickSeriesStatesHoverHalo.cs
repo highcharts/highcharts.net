@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesStatesHoverHalo  : BaseObject
+	public partial class CandleStickSeriesStatesHoverHalo  : BaseObject
 	{
-		public CandlestickSeriesStatesHoverHalo()
+		public CandleStickSeriesStatesHoverHalo()
 		{
 			Size = Size_DefaultValue = 10;
 			Opacity = Opacity_DefaultValue = null;

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesStatesHoverMarkerStatesSelect  : BaseObject
+	public partial class CandleStickSeriesStatesHoverMarkerStatesSelect  : BaseObject
 	{
-		public CandlestickSeriesStatesHoverMarkerStatesSelect()
+		public CandleStickSeriesStatesHoverMarkerStatesSelect()
 		{
 			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#000000";

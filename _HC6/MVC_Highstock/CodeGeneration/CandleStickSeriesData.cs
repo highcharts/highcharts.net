@@ -10,22 +10,22 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesData  : BaseObject
+	public partial class CandleStickSeriesData  : BaseObject
 	{
-		public CandlestickSeriesData()
+		public CandleStickSeriesData()
 		{
 			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = new CandlestickSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = new CandleStickSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = new CandlestickSeriesDataEvents();
+			Events = Events_DefaultValue = new CandleStickSeriesDataEvents();
 			High = High_DefaultValue = null;
 			Low = Low_DefaultValue = null;
 			Close = Close_DefaultValue = null;
@@ -65,8 +65,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels)
 		/// </summary>
-		public CandlestickSeriesDataLabels DataLabels { get; set; }
-		private CandlestickSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		public CandleStickSeriesDataLabels DataLabels { get; set; }
+		private CandleStickSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -114,8 +114,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Individual point events
 		/// </summary>
-		public CandlestickSeriesDataEvents Events { get; set; }
-		private CandlestickSeriesDataEvents Events_DefaultValue { get; set; }
+		public CandleStickSeriesDataEvents Events { get; set; }
+		private CandleStickSeriesDataEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>

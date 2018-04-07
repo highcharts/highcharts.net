@@ -10,13 +10,13 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesStatesHover  : BaseObject
+	public partial class CandleStickSeriesStatesHover  : BaseObject
 	{
-		public CandlestickSeriesStatesHover()
+		public CandleStickSeriesStatesHover()
 		{
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
-			Marker = Marker_DefaultValue = new CandlestickSeriesStatesHoverMarker();
-			Halo = Halo_DefaultValue = new CandlestickSeriesStatesHoverHalo();
+			Marker = Marker_DefaultValue = new CandleStickSeriesStatesHoverMarker();
+			Halo = Halo_DefaultValue = new CandleStickSeriesStatesHoverHalo();
 			Enabled = Enabled_DefaultValue = true;
 			LineWidth = LineWidth_DefaultValue = null;
 			
@@ -33,15 +33,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// In Highcharts 1.0, the appearance of all markers belonging to thehovered series. For settings on the hover state of the individualpoint, see[marker.states.hover](#plotOptions.series.marker.states.hover).
 		/// </summary>
-		public CandlestickSeriesStatesHoverMarker Marker { get; set; }
-		private CandlestickSeriesStatesHoverMarker Marker_DefaultValue { get; set; }
+		public CandleStickSeriesStatesHoverMarker Marker { get; set; }
+		private CandleStickSeriesStatesHoverMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts.By default the halo is filled by the current point or seriescolor with an opacity of 0.25\. The halo can be disabled bysetting the `halo` option to `false`.In styled mode, the halo is styled with the `.highcharts-halo`class, with colors inherited from `.highcharts-color-{n}`.
 		/// </summary>
-		public CandlestickSeriesStatesHoverHalo Halo { get; set; }
-		private CandlestickSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
+		public CandleStickSeriesStatesHoverHalo Halo { get; set; }
+		private CandleStickSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
 		 
 
 		/// <summary>

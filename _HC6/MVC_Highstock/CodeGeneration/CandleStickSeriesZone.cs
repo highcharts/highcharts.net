@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesZone  : BaseObject
+	public partial class CandleStickSeriesZone  : BaseObject
 	{
-		public CandlestickSeriesZone()
+		public CandleStickSeriesZone()
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";

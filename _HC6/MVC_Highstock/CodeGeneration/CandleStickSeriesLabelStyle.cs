@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesLabelStyle  : BaseObject
+	public partial class CandleStickSeriesLabelStyle  : BaseObject
 	{
-		public CandlestickSeriesLabelStyle()
+		public CandleStickSeriesLabelStyle()
 		{
 			FontWeight = FontWeight_DefaultValue = "bold";
 			

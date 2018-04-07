@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public OhlcSeries()
 		{
-			Data = Data_DefaultValue = new List<OhlcSeries>();
+			Data = Data_DefaultValue = new List<OhlcSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -93,8 +93,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of data points for the series. For the `ohlc` series type,points can be given in the following ways:1.  An array of arrays with 5 or 4 values. In this case, the valuescorrespond to `x,open,high,low,close`. If the first value is a string,it is applied as the name of the point, and the `x` value is inferred.The `x` value can also be omitted, in which case the inner arraysshould be of length 4\. Then the `x` value is automatically calculated,either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. ```js    data: [        [0, 6, 5, 6, 7],        [1, 9, 4, 8, 2],        [2, 6, 3, 4, 10]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.ohlc.turboThreshold),this option is not available. ```js    data: [{        x: 1,        open: 3,        high: 4,        low: 5,        close: 2,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        open: 4,        high: 3,        low: 6,        close: 7,        name: "Point1",        color: "#FF00FF"    }] ```
 		/// </summary>
-		public List<OhlcSeries> Data { get; set; }
-		private List<OhlcSeries> Data_DefaultValue { get; set; }
+		public List<OhlcSeriesData> Data { get; set; }
+		private List<OhlcSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

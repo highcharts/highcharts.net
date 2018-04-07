@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-    public enum CandlestickSeriesCompareBase
+    public enum CandleStickSeriesCompareBase
     {
         Min = 0, 
 		Max = 100

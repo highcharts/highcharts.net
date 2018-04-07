@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AdSeries()
 		{
-			Data = Data_DefaultValue = new List<AdSeries>();
+			Data = Data_DefaultValue = new List<AdSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -77,8 +77,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<AdSeries> Data { get; set; }
-		private List<AdSeries> Data_DefaultValue { get; set; }
+		public List<AdSeriesData> Data { get; set; }
+		private List<AdSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>

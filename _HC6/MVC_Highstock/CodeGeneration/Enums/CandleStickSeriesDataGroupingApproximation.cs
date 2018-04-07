@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-    public enum CandlestickSeriesDataGroupingApproximation
+    public enum CandleStickSeriesDataGroupingApproximation
     {
         Average, 
 		Averages, 

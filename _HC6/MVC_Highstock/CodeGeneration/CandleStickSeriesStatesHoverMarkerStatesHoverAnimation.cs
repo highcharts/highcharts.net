@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesStatesHoverMarkerStatesHoverAnimation  : BaseObject
+	public partial class CandleStickSeriesStatesHoverMarkerStatesHoverAnimation  : BaseObject
 	{
-		public CandlestickSeriesStatesHoverMarkerStatesHoverAnimation()
+		public CandleStickSeriesStatesHoverMarkerStatesHoverAnimation()
 		{
 			Duration = Duration_DefaultValue = 50;
 			

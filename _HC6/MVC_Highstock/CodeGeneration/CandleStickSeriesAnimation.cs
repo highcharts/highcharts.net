@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesAnimation  : BaseObject
+	public partial class CandleStickSeriesAnimation  : BaseObject
 	{
-		public CandlestickSeriesAnimation()
+		public CandleStickSeriesAnimation()
 		{
 			Duration = Duration_DefaultValue = 1000;
 			

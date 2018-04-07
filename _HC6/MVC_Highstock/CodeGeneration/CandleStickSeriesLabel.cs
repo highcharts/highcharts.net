@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesLabel  : BaseObject
+	public partial class CandleStickSeriesLabel  : BaseObject
 	{
-		public CandlestickSeriesLabel()
+		public CandleStickSeriesLabel()
 		{
 			Enabled = Enabled_DefaultValue = true;
 			ConnectorAllowed = ConnectorAllowed_DefaultValue = true;
@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinFontSize = MinFontSize_DefaultValue = null;
 			MaxFontSize = MaxFontSize_DefaultValue = null;
 			OnArea = OnArea_DefaultValue = null;
-			Style = Style_DefaultValue = new CandlestickSeriesLabelStyle();
+			Style = Style_DefaultValue = new CandleStickSeriesLabelStyle();
 			BoxesToAvoid = BoxesToAvoid_DefaultValue = new List<object>();
 			
 		}	
@@ -71,8 +71,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Styles for the series label. The color defaults to the seriescolor, or a contrast color if `onArea`.
 		/// </summary>
-		public CandlestickSeriesLabelStyle Style { get; set; }
-		private CandlestickSeriesLabelStyle Style_DefaultValue { get; set; }
+		public CandleStickSeriesLabelStyle Style { get; set; }
+		private CandleStickSeriesLabelStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

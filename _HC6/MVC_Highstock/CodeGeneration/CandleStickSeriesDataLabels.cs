@@ -10,14 +10,14 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesDataLabels  : BaseObject
+	public partial class CandleStickSeriesDataLabels  : BaseObject
 	{
-		public CandlestickSeriesDataLabels()
+		public CandleStickSeriesDataLabels()
 		{
-			Align = Align_DefaultValue = CandlestickSeriesDataLabelsAlign.Center;
+			Align = Align_DefaultValue = CandleStickSeriesDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
-			Style = Style_DefaultValue = new CandlestickSeriesDataLabelsStyle();
-			VerticalAlign = VerticalAlign_DefaultValue = CandlestickSeriesDataLabelsVerticalAlign.Bottom;
+			Style = Style_DefaultValue = new CandleStickSeriesDataLabelsStyle();
+			VerticalAlign = VerticalAlign_DefaultValue = CandleStickSeriesDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = "5";
@@ -32,12 +32,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			Format = Format_DefaultValue = "";
 			Shape = Shape_DefaultValue = "square";
 			ZIndex = ZIndex_DefaultValue = 6;
-			Filter = Filter_DefaultValue = new CandlestickSeriesDataLabelsFilter();
+			Filter = Filter_DefaultValue = new CandleStickSeriesDataLabelsFilter();
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "undefined";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Inside = Inside_DefaultValue = null;
-			Overflow = Overflow_DefaultValue = CandlestickSeriesDataLabelsOverflow.Justify;
+			Overflow = Overflow_DefaultValue = CandleStickSeriesDataLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;
 			
@@ -47,8 +47,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
 		/// </summary>
-		public CandlestickSeriesDataLabelsAlign Align { get; set; }
-		private CandlestickSeriesDataLabelsAlign Align_DefaultValue { get; set; }
+		public CandleStickSeriesDataLabelsAlign Align { get; set; }
+		private CandleStickSeriesDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -61,15 +61,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
 		/// </summary>
-		public CandlestickSeriesDataLabelsStyle Style { get; set; }
-		private CandlestickSeriesDataLabelsStyle Style_DefaultValue { get; set; }
+		public CandleStickSeriesDataLabelsStyle Style { get; set; }
+		private CandleStickSeriesDataLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
 		/// </summary>
-		public CandlestickSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private CandlestickSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public CandleStickSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private CandleStickSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -173,8 +173,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A declarative filter for which data labels to display. Thedeclarative filter is designed for use when callback functions arenot available, like when the chart options require a pure JSONstructure or for use with graphical editors. For programmaticcontrol, use the `formatter` instead, and return `false` to disablea single data label.
 		/// </summary>
-		public CandlestickSeriesDataLabelsFilter Filter { get; set; }
-		private CandlestickSeriesDataLabelsFilter Filter_DefaultValue { get; set; }
+		public CandleStickSeriesDataLabelsFilter Filter { get; set; }
+		private CandleStickSeriesDataLabelsFilter Filter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -208,8 +208,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// How to handle data labels that flow outside the plot area. Thedefault is `justify`, which aligns them inside the plot area. Forcolumns and bars, this means it will be moved inside the bar. Todisplay data labels outside the plot area, set `crop` to `false` and`overflow` to `"none"`.
 		/// </summary>
-		public CandlestickSeriesDataLabelsOverflow Overflow { get; set; }
-		private CandlestickSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
+		public CandleStickSeriesDataLabelsOverflow Overflow { get; set; }
+		private CandleStickSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -231,7 +231,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("CandlestickSeriesDataLabelsFormatter.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("CandleStickSeriesDataLabelsFormatter.formatter", Formatter); }  
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);

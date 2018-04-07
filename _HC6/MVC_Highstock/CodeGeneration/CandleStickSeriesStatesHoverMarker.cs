@@ -10,15 +10,15 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class CandlestickSeriesStatesHoverMarker  : BaseObject
+	public partial class CandleStickSeriesStatesHoverMarker  : BaseObject
 	{
-		public CandlestickSeriesStatesHoverMarker()
+		public CandleStickSeriesStatesHoverMarker()
 		{
 			LineWidth = LineWidth_DefaultValue = 0;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
 			Radius = Radius_DefaultValue = 4;
-			States = States_DefaultValue = new CandlestickSeriesStatesHoverMarkerStates();
+			States = States_DefaultValue = new CandleStickSeriesStatesHoverMarkerStates();
 			FillColor = FillColor_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = null;
 			Height = Height_DefaultValue = null;
@@ -59,8 +59,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// States for a single point marker.
 		/// </summary>
-		public CandlestickSeriesStatesHoverMarkerStates States { get; set; }
-		private CandlestickSeriesStatesHoverMarkerStates States_DefaultValue { get; set; }
+		public CandleStickSeriesStatesHoverMarkerStates States { get; set; }
+		private CandleStickSeriesStatesHoverMarkerStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
