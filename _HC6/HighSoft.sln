@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CodeGenerator", "CodeGenerator\", "{24804DC2-691A-4CFE-8C36-ED3C3A42F625}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -45,7 +45,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{24804DC2-691A-4CFE-8C36-ED3C3A42F625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{24804DC2-691A-4CFE-8C36-ED3C3A42F625}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24804DC2-691A-4CFE-8C36-ED3C3A42F625}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{24804DC2-691A-4CFE-8C36-ED3C3A42F625}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{93028492-0DBD-4003-8859-F35AC7C629EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -79,5 +78,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3EAA2791-9624-40DC-9C72-6B955A2FE4DC}
 	EndGlobalSection
 EndGlobal

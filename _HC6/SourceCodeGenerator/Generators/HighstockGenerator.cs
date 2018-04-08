@@ -606,15 +606,7 @@ public class HighstockGenerator
         string returnType = child.ReturnType;
 
         if (propertyName.ToLower() == "data" && child.ParentFullName != null)
-        {
-            //string result = child.ParentFullName;
-            //if (_seriesMappings[result] != null)
-            //    result = (string)_seriesMappings[result];
-            //else
-            //    result = GetClassNameFromItem(child);
-
             return "List<" + GetClassNameFromItem(child) + ">";
-        }
 
         if (child.ParentFullName != ROOT_CLASS && (child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis"))
             return "string";
@@ -1090,56 +1082,7 @@ public class HighstockGenerator
 
     private void InitSeriesMappings()
     {
-        //_seriesMappings.Add("series.ad", "AdSeries");
-        //_seriesMappings.Add("series.area", "AreaSeries");
-        //_seriesMappings.Add("series.arearange", "ArearangeSeries");
-        //_seriesMappings.Add("series.areaspline", "AreasplineSeries");
-        //_seriesMappings.Add("series.areasplinerange", "AreasplinerangeSeries");
-        //_seriesMappings.Add("series.bar", "BarSeries");
-        //_seriesMappings.Add("series.boxplot", "BoxplotSeries");
-        //_seriesMappings.Add("series.bubble", "BubbleSeries");
-        //_seriesMappings.Add("series.column", "ColumnSeries");
-        //_seriesMappings.Add("series.columnrange", "ColumnrangeSeries");
-        //_seriesMappings.Add("series.errorbar", "ErrorbarSeries");
-        //_seriesMappings.Add("series.funnel", "FunnelSeries");
-        //_seriesMappings.Add("series.gauge", "GaugeSeries");
-        //_seriesMappings.Add("series.heatmap", "HeatmapSeries");
-        //_seriesMappings.Add("series.line", "LineSeries");
-        //_seriesMappings.Add("series.pie", "PieSeries");
-        //_seriesMappings.Add("series.polygon", "PolygonSeries");
-        //_seriesMappings.Add("series.pyramid", "PyramidSeries");
-        //_seriesMappings.Add("series.scatter", "ScatterSeries");
-        //_seriesMappings.Add("series.solidgauge", "SolidgaugeSeries");
-        //_seriesMappings.Add("series.spline", "SplineSeries");
-        //_seriesMappings.Add("series.treemap", "TreemapSeries");
-        //_seriesMappings.Add("series.waterfall", "WaterfallSeries");
-
-        // Highstock specific
-        //_seriesMappings.Add("series.flags", "FlagsSeries");
         _seriesMappings.Add("series.candlestick", "CandleStickSeries");
-        //_seriesMappings.Add("series.ohlc", "OhlcSeries");
-        //_seriesMappings.Add("series.ad", "AdSeries");
-        //_seriesMappings.Add("series.atr", "AtrSeries");
-        //_seriesMappings.Add("series.bb", "BbSeries");
-        //_seriesMappings.Add("series.cci", "CciSeries");
-        //_seriesMappings.Add("series.cmf", "CmfSeries");
-        //_seriesMappings.Add("series.ema", "EmaSeries");
-        //_seriesMappings.Add("series.macd", "MacdSeries");
-        //_seriesMappings.Add("series.mfi", "MfiSeries");
-        //_seriesMappings.Add("series.momentum", "MomentumSeries");
-        //_seriesMappings.Add("series.pivotpoints", "PivotpointsSeries");
-        //_seriesMappings.Add("series.priceenvelopes", "PriceenvelopesSeries");
-        //_seriesMappings.Add("series.psar", "PsarSeries");
-        //_seriesMappings.Add("series.roc", "RocSeries");
-        //_seriesMappings.Add("series.rsi", "RsiSeries");
-        //_seriesMappings.Add("series.sma", "SmaSeries");
-        //_seriesMappings.Add("series.stochastic", "StochasticSeries");
-        //_seriesMappings.Add("series.vbp", "VbpSeries");
-        //_seriesMappings.Add("series.vwap", "VwapSeries");
-        //_seriesMappings.Add("series.wma", "WmaSeries");
-        //_seriesMappings.Add("series.zigzag", "ZigzagSeries");
-
-
     }
 
     private void InitExcludedProperties()
@@ -1191,12 +1134,6 @@ public class HighstockGenerator
         {
             if (item.ParentFullName.ToLower() == "highstock")
                 return "new Data()";
-
-            //string result = item.ParentFullName;
-            //if (_seriesMappings[result] != null)
-            //    result = (string)_seriesMappings[result];
-            //else
-            //    result = GetClassNameFromItem(item);
 
             return "new List<" + GetClassNameFromItem(item) + ">()";
         }
