@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MaskFill = MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
 			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
 			OutlineWidth = OutlineWidth_DefaultValue = 2;
-			Series = Series_DefaultValue = new List<Series>();
+			Series = Series_DefaultValue = new NavigatorSeries();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
@@ -84,8 +84,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Options for the navigator series. Available options are the sameas any series, documented at [plotOptions](#plotOptions.series)and [series](#series).Unless data is explicitly defined on navigator.series, the datais borrowed from the first series in the chart.Default series options for the navigator series are:<pre>series: {    type: 'areaspline',    fillOpacity: 0.05,    dataGrouping: {        smoothed: true    },    lineWidth: 1,    marker: {        enabled: false    }}</pre>
 		/// </summary>
-		public List<Series> Series { get; set; }
-		private List<Series> Series_DefaultValue { get; set; }
+		public NavigatorSeries Series { get; set; }
+		private NavigatorSeries Series_DefaultValue { get; set; }
 		 
 
 		/// <summary>

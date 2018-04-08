@@ -137,12 +137,12 @@ namespace MVC_Demo.Models
                 CandlestickVolumes.Add(
                     new CandlestickVolume
                     {
-                        Date = Convert.ToDouble(values[0], CultureInfo.InvariantCulture),
-                        Open = Convert.ToDouble(values[1], CultureInfo.InvariantCulture),
-                        High = Convert.ToDouble(values[2], CultureInfo.InvariantCulture),
-                        Low = Convert.ToDouble(values[3], CultureInfo.InvariantCulture),
-                        Close = Convert.ToDouble(values[4], CultureInfo.InvariantCulture),
-                        Volume = Convert.ToDouble(values[5], CultureInfo.InvariantCulture),
+                        Date = values[0].Trim() == "null" ? (double?)null : Convert.ToDouble(values[0].Trim(), CultureInfo.InvariantCulture),
+                        Open = values[1].Trim() == "null" ? (double?)null : Convert.ToDouble(values[1].Trim(), CultureInfo.InvariantCulture),
+                        High = values[2].Trim() == "null" ? (double?)null : Convert.ToDouble(values[2].Trim(), CultureInfo.InvariantCulture),
+                        Low = values[3].Trim() == "null" ? (double?)null : Convert.ToDouble(values[3].Trim(), CultureInfo.InvariantCulture),
+                        Close = values[4].Trim() == "null" ? (double?)null : Convert.ToDouble(values[4].Trim(), CultureInfo.InvariantCulture),
+                        Volume = values[5].Trim() == "null" ? (double?)null : Convert.ToDouble(values[5].Trim(), CultureInfo.InvariantCulture),
                     }
                 );
 

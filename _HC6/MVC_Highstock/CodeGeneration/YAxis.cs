@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			StartOnTick = StartOnTick_DefaultValue = true;
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
-			Height = Height_DefaultValue = null;
-			Top = Top_DefaultValue = null;
+			Height = Height_DefaultValue = "null";
+			Top = Top_DefaultValue = "null";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Labels = Labels_DefaultValue = new YAxisLabels();
 			MaxPadding = MaxPadding_DefaultValue = null;
@@ -146,15 +146,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The height of the Y axis. If it's a number, it is interpreted aspixels.Since Highstock 2: If it's a percentage string, it is interpretedas percentages of the total plot height.
 		/// </summary>
-		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
+		public string Height { get; set; }
+		private string Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The top position of the Y axis. If it's a number, it is interpretedas pixel position relative to the chart.Since Highstock 2: If it's a percentage string, it is interpretedas percentages of the plot height, offset from plot area top.
 		/// </summary>
-		public double? Top { get; set; }
-		private double? Top_DefaultValue { get; set; }
+		public string Top { get; set; }
+		private string Top_DefaultValue { get; set; }
 		 
 
 		/// <summary>

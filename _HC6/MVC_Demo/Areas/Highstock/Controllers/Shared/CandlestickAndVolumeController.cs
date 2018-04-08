@@ -34,17 +34,17 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     Y = Convert.ToDouble(volume.Volume)
                 });
 
-                navigatorData.Add(new LineSeriesData
-                {
-                    X = Convert.ToDouble(volume.Date),
-                    Y = Convert.ToDouble(volume.Close)
-                });
+                //navigatorData.Add(new LineSeriesData
+                //{
+                //    X = Convert.ToDouble(volume.Date),
+                //    Y = Convert.ToDouble(volume.Close)
+                //});
             }
 
 
             ViewBag.AppleData = appleData.OrderBy(o => o.X).ToList();
             ViewBag.VolumeData = volumeData.OrderBy(o => o.X).ToList();
-            ViewBag.NavigatorData = navigatorData.OrderBy(o => o.X).ToList();
+            //ViewBag.NavigatorData = navigatorData.OrderBy(o => o.X).ToList();
 
             return View(ViewBag);
         }

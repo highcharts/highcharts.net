@@ -918,11 +918,12 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("navigator.yAxis.plotLines.label.style", "Hashtable");
         _propertyTypeMappings.Add("time.Date", "Object");
         _propertyTypeMappings.Add("rangeSelector.buttons.dataGrouping", "Object");
-        _propertyTypeMappings.Add("rangeSelector.buttons", "List<RangeSelectorButtons>");
+        _propertyTypeMappings.Add("rangeSelector.buttons", "List<RangeSelectorButton>");
         _propertyTypeMappings.Add("navigator.xAxis.plotLines", "List<NavigatorXAxisPlotLines>");
         _propertyTypeMappings.Add("navigator.xAxis.plotBands", "List<NavigatorXAxisPlotBands>");
         _propertyTypeMappings.Add("navigator.yAxis.plotLines", "List<NavigatorYAxisPlotLines>");
         _propertyTypeMappings.Add("navigator.yAxis.plotBands", "List<NavigatorYAxisPlotBands>");
+        _propertyTypeMappings.Add("navigator.series", "NavigatorSeries");
 
         //temporary
         _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
@@ -1027,7 +1028,7 @@ public class HighstockGenerator
         _propertyInitMappings.Add("navigator.yAxis.plotLines.label.style", "new Hashtable()");
         _propertyInitMappings.Add("time.Date", "null");
         _propertyInitMappings.Add("rangeSelector.buttons.dataGrouping", "null");
-        _propertyInitMappings.Add("rangeSelector.buttons", "new List<RangeSelectorButtons>()");
+        _propertyInitMappings.Add("rangeSelector.buttons", "new List<RangeSelectorButton>()");
         _propertyInitMappings.Add("rangeSelector.inputBoxStyle", "new Hashtable()");
         _propertyInitMappings.Add("navigator.xAxis.plotLines", "new List<NavigatorXAxisPlotLines>()");
         _propertyInitMappings.Add("navigator.xAxis.plotBands", "new List<NavigatorXAxisPlotBands>()");
@@ -1035,6 +1036,7 @@ public class HighstockGenerator
         _propertyInitMappings.Add("navigator.yAxis.plotLines", "new List<NavigatorYAxisPlotLines>()");
         _propertyInitMappings.Add("navigator.yAxis.plotBands", "new List<NavigatorYAxisPlotBands>()");
         _propertyInitMappings.Add("navigator.yAxis.tickPositions", "new List<double>()");
+        _propertyInitMappings.Add("navigator.series", "new NavigatorSeries()");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");

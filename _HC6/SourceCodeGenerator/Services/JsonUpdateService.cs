@@ -134,6 +134,8 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.ikh.senkouSpanB", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
             ItemsToUpdate.Add("plotOptions.macd.signalLine", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
             ItemsToUpdate.Add("plotOptions.macd.macdLine", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+            ItemsToUpdate.Add("yAxis.top", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("yAxis.height", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
         }
     }
 
