@@ -5,10 +5,15 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-    public enum NavigatorSeriesDataLabelsVerticalAlign
+    public enum RangeSelectorButtonType
     {
-        Top, 
-		Middle, 
-		Bottom
+        Millisecond, 
+		Second, 
+		Minute, 
+		Day, 
+		Week, 
+		Month, 
+		Ytd, 
+		All
     }
 }

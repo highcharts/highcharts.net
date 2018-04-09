@@ -813,11 +813,6 @@
     <Compile Include="CodeGeneration\Enums\MomentumSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\NavigationButtonOptionsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\NavigationButtonOptionsVerticalAlign.cs" />
-    <Compile Include="CodeGeneration\Enums\NavigatorSeriesDataGroupingApproximation.cs" />
-    <Compile Include="CodeGeneration\Enums\NavigatorSeriesDataLabelsAlign.cs" />
-    <Compile Include="CodeGeneration\Enums\NavigatorSeriesDataLabelsOverflow.cs" />
-    <Compile Include="CodeGeneration\Enums\NavigatorSeriesDataLabelsVerticalAlign.cs" />
-    <Compile Include="CodeGeneration\Enums\NavigatorSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\NavigatorXAxisCrosshairDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\NavigatorXAxisGridLineDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\NavigatorXAxisLabelsAlign.cs" />
@@ -1313,7 +1308,7 @@
     <Compile Include="CodeGeneration\Enums\PsarSeriesStep.cs" />
     <Compile Include="CodeGeneration\Enums\PsarSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\RangeSelectorButtonPositionAlign.cs" />
-    <Compile Include="CodeGeneration\Enums\RangeSelectorButtonsType.cs" />
+    <Compile Include="CodeGeneration\Enums\RangeSelectorButtonType.cs" />
     <Compile Include="CodeGeneration\Enums\RangeSelectorInputPositionAlign.cs" />
     <Compile Include="CodeGeneration\Enums\RocSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\RocSeriesDashStyle.cs" />
@@ -1759,12 +1754,6 @@
     <Compile Include="CodeGeneration\NavigationMenuStyle.cs" />
     <Compile Include="CodeGeneration\Navigator.cs" />
     <Compile Include="CodeGeneration\NavigatorHandles.cs" />
-    <Compile Include="CodeGeneration\NavigatorSeries.cs" />
-    <Compile Include="CodeGeneration\NavigatorSeriesDataGrouping.cs" />
-    <Compile Include="CodeGeneration\NavigatorSeriesDataLabels.cs" />
-    <Compile Include="CodeGeneration\NavigatorSeriesDataLabelsFilter.cs" />
-    <Compile Include="CodeGeneration\NavigatorSeriesDataLabelsStyle.cs" />
-    <Compile Include="CodeGeneration\NavigatorSeriesMarker.cs" />
     <Compile Include="CodeGeneration\NavigatorXAxis.cs" />
     <Compile Include="CodeGeneration\NavigatorXAxisBreaks.cs" />
     <Compile Include="CodeGeneration\NavigatorXAxisCrosshair.cs" />
@@ -3143,9 +3132,9 @@
     <Compile Include="CodeGeneration\PsarSeriesTooltipDateTimeLabelFormats.cs" />
     <Compile Include="CodeGeneration\PsarSeriesZone.cs" />
     <Compile Include="CodeGeneration\RangeSelector.cs" />
+    <Compile Include="CodeGeneration\RangeSelectorButton.cs" />
+    <Compile Include="CodeGeneration\RangeSelectorButtonEvents.cs" />
     <Compile Include="CodeGeneration\RangeSelectorButtonPosition.cs" />
-    <Compile Include="CodeGeneration\RangeSelectorButtons.cs" />
-    <Compile Include="CodeGeneration\RangeSelectorButtonsEvents.cs" />
     <Compile Include="CodeGeneration\RangeSelectorButtonTheme.cs" />
     <Compile Include="CodeGeneration\RangeSelectorInputPosition.cs" />
     <Compile Include="CodeGeneration\RangeSelectorLabelStyle.cs" />

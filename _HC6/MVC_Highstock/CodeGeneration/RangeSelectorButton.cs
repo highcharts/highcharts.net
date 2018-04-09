@@ -10,17 +10,17 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class RangeSelectorButtons  : BaseObject
+	public partial class RangeSelectorButton  : BaseObject
 	{
-		public RangeSelectorButtons()
+		public RangeSelectorButton()
 		{
 			Count = Count_DefaultValue = 1;
-			Events = Events_DefaultValue = new RangeSelectorButtonsEvents();
+			Events = Events_DefaultValue = new RangeSelectorButtonEvents();
 			OffsetMax = OffsetMax_DefaultValue = 0;
 			OffsetMin = OffsetMin_DefaultValue = 0;
 			DataGrouping = DataGrouping_DefaultValue = null;
 			Text = Text_DefaultValue = "";
-			Type = Type_DefaultValue = RangeSelectorButtonsType.Millisecond;
+			Type = Type_DefaultValue = RangeSelectorButtonType.Millisecond;
 			
 		}	
 		
@@ -35,8 +35,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public RangeSelectorButtonsEvents Events { get; set; }
-		private RangeSelectorButtonsEvents Events_DefaultValue { get; set; }
+		public RangeSelectorButtonEvents Events { get; set; }
+		private RangeSelectorButtonEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,8 +70,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Defined the time span for the button. Can be one of `millisecond`,`second`, `minute`, `hour`, `day`, `week`, `month`, `ytd`, `all`.
 		/// </summary>
-		public RangeSelectorButtonsType Type { get; set; }
-		private RangeSelectorButtonsType Type_DefaultValue { get; set; }
+		public RangeSelectorButtonType Type { get; set; }
+		private RangeSelectorButtonType Type_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

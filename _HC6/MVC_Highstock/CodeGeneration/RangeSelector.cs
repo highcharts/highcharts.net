@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			InputEnabled = InputEnabled_DefaultValue = null;
 			InputStyle = InputStyle_DefaultValue = new Hashtable();
 			Selected = Selected_DefaultValue = null;
-			Buttons = Buttons_DefaultValue = new List<RangeSelectorButtons>();
+			Buttons = Buttons_DefaultValue = new List<RangeSelectorButton>();
 			
 		}	
 		
@@ -198,8 +198,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of configuration objects for the buttons.Defaults to<pre>buttons: [{    type: 'month',    count: 1,    text: '1m'}, {    type: 'month',    count: 3,    text: '3m'}, {    type: 'month',    count: 6,    text: '6m'}, {    type: 'ytd',    text: 'YTD'}, {    type: 'year',    count: 1,    text: '1y'}, {    type: 'all',    text: 'All'}]</pre>
 		/// </summary>
-		public List<RangeSelectorButtons> Buttons { get; set; }
-		private List<RangeSelectorButtons> Buttons_DefaultValue { get; set; }
+		public List<RangeSelectorButton> Buttons { get; set; }
+		private List<RangeSelectorButton> Buttons_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

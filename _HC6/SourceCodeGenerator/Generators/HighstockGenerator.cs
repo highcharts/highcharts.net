@@ -273,6 +273,11 @@ public class HighstockGenerator
 
     private void GenerateClass(ApiItem item, List<ApiItem> children)
     {
+        //do not generate class for NavigatorSeries (and children), because there should be Series
+        if (item.FullName.Contains("navigator.series"))
+            return;
+
+
         string codeTemplate = FileService.GetClassTemplate();
         string propertyTemplate = FileService.GetPropertyTemplate();
 
@@ -295,6 +300,7 @@ public class HighstockGenerator
                 continue;
             if (_excludedProperties.Contains(child.FullName))
                 continue;
+                
             if (child == item)
                 continue;
 
@@ -689,7 +695,7 @@ public class HighstockGenerator
         }
         if (_propertyTypeMappings.Contains(child.Title) || _propertyTypeMappings.Contains(child.FullName))
         {
-            if (child.FullName == "plotOptions.series")
+            if (child.FullName == "plotOptions.series" || child.FullName == "navigator.series")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             if (child.Title.ToLower() == "series" && child.ParentFullName == "Highstock")
@@ -923,7 +929,7 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("navigator.xAxis.plotBands", "List<NavigatorXAxisPlotBands>");
         _propertyTypeMappings.Add("navigator.yAxis.plotLines", "List<NavigatorYAxisPlotLines>");
         _propertyTypeMappings.Add("navigator.yAxis.plotBands", "List<NavigatorYAxisPlotBands>");
-        _propertyTypeMappings.Add("navigator.series", "NavigatorSeries");
+        _propertyTypeMappings.Add("navigator.series", "Series");
 
         //temporary
         _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
@@ -1036,7 +1042,7 @@ public class HighstockGenerator
         _propertyInitMappings.Add("navigator.yAxis.plotLines", "new List<NavigatorYAxisPlotLines>()");
         _propertyInitMappings.Add("navigator.yAxis.plotBands", "new List<NavigatorYAxisPlotBands>()");
         _propertyInitMappings.Add("navigator.yAxis.tickPositions", "new List<double>()");
-        _propertyInitMappings.Add("navigator.series", "new NavigatorSeries()");
+        _propertyInitMappings.Add("navigator.series", "new Series()");
 
         //temporary
         _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
@@ -1085,6 +1091,7 @@ public class HighstockGenerator
     private void InitSeriesMappings()
     {
         _seriesMappings.Add("series.candlestick", "CandleStickSeries");
+        _seriesMappings.Add("rangeSelector.buttons", "RangeSelectorButton");
     }
 
     private void InitExcludedProperties()
@@ -1097,7 +1104,6 @@ public class HighstockGenerator
         _excludedProperties.Add("plotOptions.polygon.tooltip");
         _excludedProperties.Add("series<polygon>.tooltip");
         _excludedProperties.Add("series<scatter>.tooltip");
-
     }
 
     private void InitCustomProperties()

@@ -10,27 +10,27 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class NavigatorSeriesMarker  : BaseObject
+	public partial class RangeSelectorButtonEvents  : BaseObject
 	{
-		public NavigatorSeriesMarker()
+		public RangeSelectorButtonEvents()
 		{
-			Enabled = Enabled_DefaultValue = false;
+			Click = Click_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// Fires when clicking on the rangeSelector button. One parameter, event,is passed to the function, containing common event information.<pre>click: function(e) {  console.log(this);}</pre>Return false to stop default button's click action.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public string Click { get; set; }
+		private string Click_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("RangeSelectorButtonEventsClick.click", Click); }  
 			
 
 			return h;
