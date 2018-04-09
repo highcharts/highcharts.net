@@ -136,6 +136,16 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.macd.macdLine", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
             ItemsToUpdate.Add("yAxis.top", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("yAxis.height", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+
+            ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.arearange", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.areasplinerange", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.boxplot", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.bubble", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.columnrange", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.errorbar", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.funnel", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.pyramid", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.waterfall", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
         }
     }
 
