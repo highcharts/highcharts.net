@@ -293,6 +293,16 @@
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\HeatMapController.cs.txt" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\MapLineController.cs.txt" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\DistributionMapController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AnnotationsController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineBoostController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\StreamgraphController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ScatterBoostController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Scatter3DController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeActivityController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeDualController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeVUMeterController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BulletGraphController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\HoneycombUsaController.cs.txt" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
