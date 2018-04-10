@@ -11,10 +11,12 @@ namespace SourceCodeGenerator.Services
     public class JsonUpdateService : IJsonUpdateService
     {
         private IDictionary<string, IList<UpdateInfo>> ItemsToUpdate;
+        private IDictionary<string, IList<UpdateInfo>> ItemsToUpdateProducts;
 
         public JsonUpdateService()
         {
             ItemsToUpdate = new Dictionary<string, IList<UpdateInfo>>();
+            ItemsToUpdateProducts = new Dictionary<string, IList<UpdateInfo>>();
 
             Add();
         }
@@ -37,6 +39,18 @@ namespace SourceCodeGenerator.Services
             }
         }
 
+        public void UpdateProducts(ApiItem item)
+        {
+            if (string.IsNullOrWhiteSpace(item.FullName))
+                return;
+
+            if (ItemsToUpdateProducts.ContainsKey(item.FullName))
+            {
+                foreach (var info in ItemsToUpdateProducts[item.FullName])
+                    UpdateProperty(item, info);
+            }
+        }
+
         private void UpdateProperty(ApiItem item, UpdateInfo info)
         {
             switch(info.Name)
@@ -52,6 +66,9 @@ namespace SourceCodeGenerator.Services
                     break;
                 case ApiPropertyName.Extends:
                     item.Extends.Add(info.Value);
+                    break;
+                case ApiPropertyName.Products:
+                    item.Products.Add(info.Value);
                     break;
             }
         }
@@ -146,11 +163,23 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.funnel", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.pyramid", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.waterfall", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+
+            ItemsToUpdate.Add("rangeSelector.buttons.dataGrouping", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataGrouping" } });
+
+            ItemsToUpdateProducts.Add("drilldown.activeAxisLabelStyle", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
+            ItemsToUpdateProducts.Add("drilldown.activeDataLabelStyle", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
+            ItemsToUpdateProducts.Add("drilldown.allowPointDrilldown", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
+            ItemsToUpdateProducts.Add("drilldown.animation", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
+            ItemsToUpdateProducts.Add("drilldown.drillUpButton", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
+            ItemsToUpdateProducts.Add("drilldown.series", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
+
+            ItemsToUpdate.Add("series.line.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels" } });
         }
     }
 
     public interface IJsonUpdateService
     {
         void Update(ApiItem item);
+        void UpdateProducts(ApiItem item);
     }
 }

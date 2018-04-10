@@ -74,9 +74,6 @@ namespace SourceCodeGenerator.Parser
                     apiItem.Products.AddRange(apiItem.Parent.Products);
                 }
 
-                if (!apiItem.Products.Contains(Product) && apiItem.Products.Any())
-                    return;
-
                 JToken jDescription = doclet.SelectToken("description", false);
                 if (jDescription != null)
                     apiItem.Description = jDescription.Value<string>();
@@ -143,6 +140,11 @@ namespace SourceCodeGenerator.Parser
                     apiItem.FullName = apiItem.ParentFullName + "." + apiItem.Title;
                 else
                     apiItem.FullName = apiItem.Title;
+
+            UpdateService.UpdateProducts(apiItem);
+
+            if (!apiItem.Products.Contains(Product) && apiItem.Products.Any())
+                return;
 
             //Modification area
 

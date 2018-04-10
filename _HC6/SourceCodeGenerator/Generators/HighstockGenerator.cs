@@ -277,7 +277,6 @@ public class HighstockGenerator
         if (item.FullName.Contains("navigator.series"))
             return;
 
-
         string codeTemplate = FileService.GetClassTemplate();
         string propertyTemplate = FileService.GetPropertyTemplate();
 
@@ -634,8 +633,8 @@ public class HighstockGenerator
         if (child.ReturnType == "Array" && child.Title == "zones")
             returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones", "Zone"));
         else
-            returnType = GetClassNameFromItem(child);
-
+            if (child.Children.Any() || child.Extends.Any())
+                returnType = GetClassNameFromItem(child);
 
         if (returnType.EndsWith("DataDataLabels"))
             returnType = returnType.Replace("DataData", "Data");
@@ -744,7 +743,14 @@ public class HighstockGenerator
             }
         }
         else
-            return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+        {
+            if (child.Children.Any() || child.Extends.Any())
+                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+
+            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+        }
+
+            
     }
 
     private void GenerateClassesForLevel(IList<ApiItem> items, int level = 0)
@@ -1086,6 +1092,7 @@ public class HighstockGenerator
         _lists.Add("navigator.xAxis.plotLines");
         _lists.Add("navigator.yAxis.plotBands");
         _lists.Add("navigator.yAxis.plotLines");
+        _lists.Add("drilldown.series");
     }
 
     private void InitSeriesMappings()
@@ -1218,9 +1225,11 @@ public class HighstockGenerator
         if (item.FullName.ToLower().Contains("levels.datalabels"))
             item.FullName = item.FullName.Replace("levels.", "");
 
-        if (item.Children.Any() || item.Extends.Any() || item.ReturnType == "Object")
+        if (item.Children.Any() || item.Extends.Any())
             return String.Format("new {0}()", GetClassNameFromItem(item));
 
+        if (item.ReturnType == "Object")
+            return "null";
 
         if (!String.IsNullOrEmpty(item.Defaults))
         {
