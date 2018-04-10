@@ -173,7 +173,7 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdateProducts.Add("drilldown.drillUpButton", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
             ItemsToUpdateProducts.Add("drilldown.series", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
 
-            ItemsToUpdate.Add("series.line.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels" } });
+            ItemsToUpdate.Add("series.line.data.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels" } });
         }
     }
 

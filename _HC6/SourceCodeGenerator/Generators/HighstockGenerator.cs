@@ -313,18 +313,18 @@ public class HighstockGenerator
             if (child.ParentFullName.ToLower().Contains("highstock") && propertyName.ToLower().Contains("series") && propertyName.Length > 6)
                 continue;
 
-            if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
-                child.IsParent = true;
+            //if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
+            //    child.IsParent = true;
 
             string formattedProperty = FormatProperty(propertyTemplate, child);
             string formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
             string formattedComparer = FormatPropertyComparer(propertyName, child);
 
-            if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
-                child.IsParent = false;
+            //if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
+            //    child.IsParent = false;
 
-            if (formattedDefaultProperty.ToLower().Contains("datalabels") && formattedDefaultProperty.Contains("null"))
-                continue;
+            //if (formattedDefaultProperty.ToLower().Contains("datalabels") && formattedDefaultProperty.Contains("null"))
+            //    continue;
 
             properties += formattedProperty;
             defaultValues += formattedDefaultProperty;
