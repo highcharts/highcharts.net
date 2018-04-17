@@ -219,6 +219,12 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.sankey.dataLabels.format", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels.format" } });
 
             ItemsToUpdate.Add("series.sankey.nodes.column", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+
+            ItemsToUpdate.Add("yAxis.opposite", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
+            ItemsToUpdate.Add("plotOptions.sunburst.levels.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.sunburst.dataLabels" } });
+            ItemsToUpdate.Add("plotOptions.sunburst.levels.levelSize", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.sunburst.levelSize" } });
+            ItemsToUpdate.Add("series.sunburst.levels.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "series.sunburst.dataLabels" } });
+            ItemsToUpdate.Add("series.sunburst.levels.levelSize", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "series.sunburst.levelSize" } });
         }
     }
 

@@ -65,15 +65,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Can set a `dataLabels` on all points which lies on the same level.
 		/// </summary>
-		public Object DataLabels { get; set; }
-		private Object DataLabels_DefaultValue { get; set; }
+		public SunburstSeriesDataLabels DataLabels { get; set; }
+		private SunburstSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set a `levelSize` on all points which lies on the same level.
 		/// </summary>
-		public Object LevelSize { get; set; }
-		private Object LevelSize_DefaultValue { get; set; }
+		public SunburstSeriesLevelsLevelSize LevelSize { get; set; }
+		private SunburstSeriesLevelsLevelSize LevelSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>

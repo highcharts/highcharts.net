@@ -880,6 +880,8 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("series.treemap.levels", "List<TreemapSeriesLevels>");
         _propertyTypeMappings.Add("series.sunburst.levels", "List<SunburstSeriesLevels>");
         _propertyTypeMappings.Add("series.sankey.nodes", "List<SankeySeriesNodes>");
+        _propertyTypeMappings.Add("time.Date", "DateTime");
+        _propertyTypeMappings.Add("defs", "Object");
     }
 
     private void InitPropertyInitMappings()
@@ -970,6 +972,9 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("series.treemap.levels", "new List<TreemapSeriesLevels>()");
         _propertyInitMappings.Add("series.sunburst.levels", "new List<SunburstSeriesLevels>()");
         _propertyInitMappings.Add("series.sankey.nodes", "new List<SankeySeriesNodes>()");
+        _propertyInitMappings.Add("time.Date", "new DateTime()");
+        _propertyInitMappings.Add("defs", "null");
+
     }
 
     private void InitLists()

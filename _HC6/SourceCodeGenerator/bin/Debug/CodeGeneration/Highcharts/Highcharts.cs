@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Series = Series_DefaultValue = new List<Series>();
 			PlotOptions = PlotOptions_DefaultValue = new PlotOptions();
 			Lang = Lang_DefaultValue = new Lang();
-			Defs = Defs_DefaultValue = new Defs();
+			Defs = Defs_DefaultValue = null;
 			Annotations = Annotations_DefaultValue = new List<Annotations>();
 			Boost = Boost_DefaultValue = new Boost();
 			Data = Data_DefaultValue = new Data();
@@ -257,7 +257,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Series != Series_DefaultValue) h.Add("series", HashifyList(Series));
 			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
 			if (Lang.IsDirty()) h.Add("lang",Lang.ToHashtable());
-			if (Defs.IsDirty()) h.Add("defs",Defs.ToHashtable());
+			if (Defs != Defs_DefaultValue) h.Add("defs",Defs);
 			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
 			if (Boost.IsDirty()) h.Add("boost",Boost.ToHashtable());
 			if (Data.IsDirty()) h.Add("data",Data.ToHashtable());

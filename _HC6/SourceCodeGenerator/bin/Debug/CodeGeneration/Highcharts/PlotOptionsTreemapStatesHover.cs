@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			BorderColor = BorderColor_DefaultValue = "#999999";
 			Brightness = Brightness_DefaultValue = null;
-			Halo = Halo_DefaultValue = new PlotOptionsTreemapStatesHoverHalo();
 			Opacity = Opacity_DefaultValue = null;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			
@@ -35,13 +34,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Brightness { get; set; }
 		private double? Brightness_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Halo { get; set; }
-		private bool? Halo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -64,7 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
-			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			

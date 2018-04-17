@@ -10,7 +10,7 @@ namespace SourceCodeGenerator.Services
     public class FilterService : IFilterService
     {
         private IList<string> IgnoreValuesForFullNames = new List<string> { "plotOptions.series.dataLabels.filter.operator", "data.dateFormat" };
-        private IList<string> IgnoreItems = new List<string> { "plotOptions.arearange.dataLabels.align", "plotOptions.arearange.dataLabels.verticalAlign", "plotOptions.column.dataGrouping", "xAxis.units", "plotOptions.tilemap.data", "plotOptions.series.dataGrouping.units", "plotOptions.series.navigatorOptions", "plotOptions.sma.name", "pane.background.from"};
+        private IList<string> IgnoreItems = new List<string> { "plotOptions.arearange.dataLabels.align", "plotOptions.arearange.dataLabels.verticalAlign", "plotOptions.column.dataGrouping", "xAxis.units", "plotOptions.tilemap.data", "plotOptions.series.dataGrouping.units", "plotOptions.series.navigatorOptions", "plotOptions.sma.name", "pane.background.from", "plotOptions.treemap.states.hover.halo"};
 
         public bool IsValuesPropertyIgnored(string fullName)
         {

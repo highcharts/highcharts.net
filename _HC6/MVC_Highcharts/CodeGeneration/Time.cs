@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public Time()
 		{
 			UseUTC = UseUTC_DefaultValue = null;
-			Date = Date_DefaultValue = new TimeDate();
+			Date = Date_DefaultValue = new DateTime();
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "undefined";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A custom `Date` class for advanced date handling. For example,[JDate](https://githubcom/tahajahangir/jdate) can be hooked in tohandle Jalali dates.
 		/// </summary>
-		public Object Date { get; set; }
-		private Object Date_DefaultValue { get; set; }
+		public DateTime Date { get; set; }
+		private DateTime Date_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
-			if (Date.IsDirty()) h.Add("date",Date.ToHashtable());
+			if (Date != Date_DefaultValue) h.Add("date",Date);
 			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highcharts.AddFunction("TimeGetTimezoneOffset.getTimezoneOffset", GetTimezoneOffset); }  
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);

@@ -838,6 +838,7 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstDataLabelsRotationMode.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstLevelSizeUnit.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsSunburstLevelsLevelSizeUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsTilemapCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsTilemapDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsTilemapDataLabelsAlign.cs" />
@@ -978,6 +979,7 @@
     <Compile Include="CodeGeneration\Enums\SunburstSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\SunburstSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\SunburstSeriesLevelSizeUnit.cs" />
+    <Compile Include="CodeGeneration\Enums\SunburstSeriesLevelsLevelSizeUnit.cs" />
     <Compile Include="CodeGeneration\Enums\SunburstSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\TilemapSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\TilemapSeriesDashStyle.cs" />
@@ -1989,6 +1991,7 @@
     <Compile Include="CodeGeneration\PlotOptionsSunburstLevels.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSunburstLevelsColorVariation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSunburstLevelSize.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsSunburstLevelsLevelSize.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSunburstPoint.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSunburstPointEvents.cs" />
     <Compile Include="CodeGeneration\PlotOptionsSunburstStates.cs" />
@@ -2036,7 +2039,6 @@
     <Compile Include="CodeGeneration\PlotOptionsTreemapPointEvents.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapStatesHover.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsTreemapStatesHoverHalo.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapTooltip.cs" />
     <Compile Include="CodeGeneration\PlotOptionsTreemapZone.cs" />
     <Compile Include="CodeGeneration\PlotOptionsVariablepie.cs" />
@@ -2437,6 +2439,7 @@
     <Compile Include="CodeGeneration\SunburstSeriesLevels.cs" />
     <Compile Include="CodeGeneration\SunburstSeriesLevelsColorVariation.cs" />
     <Compile Include="CodeGeneration\SunburstSeriesLevelSize.cs" />
+    <Compile Include="CodeGeneration\SunburstSeriesLevelsLevelSize.cs" />
     <Compile Include="CodeGeneration\SunburstSeriesPoint.cs" />
     <Compile Include="CodeGeneration\SunburstSeriesPointEvents.cs" />
     <Compile Include="CodeGeneration\SunburstSeriesStates.cs" />
