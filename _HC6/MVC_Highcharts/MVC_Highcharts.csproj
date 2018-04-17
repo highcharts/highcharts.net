@@ -2728,9 +2728,6 @@
     <Compile Include="CodeGeneration\YAxisEvents.cs" />
     <Compile Include="CodeGeneration\YAxisLabels.cs" />
     <Compile Include="CodeGeneration\YAxisLabelsStyle.cs" />
-    <Compile Include="CodeGeneration\YAxisLineColor.cs" />
-    <Compile Include="CodeGeneration\YAxisMax.cs" />
-    <Compile Include="CodeGeneration\YAxisMin.cs" />
     <Compile Include="CodeGeneration\YAxisPlotBands.cs" />
     <Compile Include="CodeGeneration\YAxisPlotBandsLabel.cs" />
     <Compile Include="CodeGeneration\YAxisPlotLines.cs" />

@@ -27,9 +27,9 @@ namespace Highsoft.Web.Mvc.Charts
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			LineWidth = LineWidth_DefaultValue = 0;
 			Opposite = Opposite_DefaultValue = false;
-			LineColor = LineColor_DefaultValue = new YAxisLineColor();
-			Min = Min_DefaultValue = new YAxisMin();
-			Max = Max_DefaultValue = new YAxisMax();
+			LineColor = LineColor_DefaultValue = "";
+			Min = Min_DefaultValue = null;
+			Max = Max_DefaultValue = null;
 			Angle = Angle_DefaultValue = 0;
 			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
 			MaxColor = MaxColor_DefaultValue = "#003399";
@@ -184,22 +184,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public YAxisLineColor LineColor { get; set; }
-		private YAxisLineColor LineColor_DefaultValue { get; set; }
+		public string LineColor { get; set; }
+		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public YAxisMin Min { get; set; }
-		private YAxisMin Min_DefaultValue { get; set; }
+		public double? Min { get; set; }
+		private double? Min_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public YAxisMax Max { get; set; }
-		private YAxisMax Max_DefaultValue { get; set; }
+		public double? Max { get; set; }
+		private double? Max_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -611,9 +611,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
-			if (LineColor.IsDirty()) h.Add("lineColor",LineColor.ToHashtable());
-			if (Min.IsDirty()) h.Add("min",Min.ToHashtable());
-			if (Max.IsDirty()) h.Add("max",Max.ToHashtable());
+			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (Min != Min_DefaultValue) h.Add("min",Min);
+			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (Angle != Angle_DefaultValue) h.Add("angle",Angle);
 			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation", Highcharts.FirstCharacterToLower(GridLineInterpolation.ToString()));
 			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
