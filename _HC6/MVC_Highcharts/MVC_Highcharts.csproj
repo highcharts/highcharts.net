@@ -1051,9 +1051,9 @@
     <Compile Include="CodeGeneration\Enums\WindbarbSeriesPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\WindbarbSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\WordcloudSeriesCursor.cs" />
-    <Compile Include="CodeGeneration\Enums\WordcloudSeriesDataDataLabelsAlign.cs" />
-    <Compile Include="CodeGeneration\Enums\WordcloudSeriesDataDataLabelsOverflow.cs" />
-    <Compile Include="CodeGeneration\Enums\WordcloudSeriesDataDataLabelsVerticalAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\WordcloudSeriesDataLabelsAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\WordcloudSeriesDataLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\WordcloudSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\WordcloudSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\XAxisCrosshairDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\XAxisGridLineDashStyle.cs" />
@@ -2649,10 +2649,10 @@
     <Compile Include="CodeGeneration\WordcloudSeries.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesAnimation.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesData.cs" />
-    <Compile Include="CodeGeneration\WordcloudSeriesDataDataLabels.cs" />
-    <Compile Include="CodeGeneration\WordcloudSeriesDataDataLabelsStyle.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesDataEvents.cs" />
+    <Compile Include="CodeGeneration\WordcloudSeriesDataLabels.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesDataLabelsFilter.cs" />
+    <Compile Include="CodeGeneration\WordcloudSeriesDataLabelsStyle.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesEvents.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesLabel.cs" />
     <Compile Include="CodeGeneration\WordcloudSeriesLabelStyle.cs" />

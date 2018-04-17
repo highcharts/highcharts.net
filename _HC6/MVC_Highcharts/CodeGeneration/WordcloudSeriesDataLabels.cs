@@ -10,14 +10,14 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class WordcloudSeriesDataDataLabels  : BaseObject
+	public partial class WordcloudSeriesDataLabels  : BaseObject
 	{
-		public WordcloudSeriesDataDataLabels()
+		public WordcloudSeriesDataLabels()
 		{
-			Align = Align_DefaultValue = WordcloudSeriesDataDataLabelsAlign.Center;
+			Align = Align_DefaultValue = WordcloudSeriesDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
-			Style = Style_DefaultValue = new WordcloudSeriesDataDataLabelsStyle();
-			VerticalAlign = VerticalAlign_DefaultValue = WordcloudSeriesDataDataLabelsVerticalAlign.Bottom;
+			Style = Style_DefaultValue = new WordcloudSeriesDataLabelsStyle();
+			VerticalAlign = VerticalAlign_DefaultValue = WordcloudSeriesDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = "5";
@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "undefined";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Inside = Inside_DefaultValue = null;
-			Overflow = Overflow_DefaultValue = WordcloudSeriesDataDataLabelsOverflow.Justify;
+			Overflow = Overflow_DefaultValue = WordcloudSeriesDataLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;
 			
@@ -47,8 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
 		/// </summary>
-		public WordcloudSeriesDataDataLabelsAlign Align { get; set; }
-		private WordcloudSeriesDataDataLabelsAlign Align_DefaultValue { get; set; }
+		public WordcloudSeriesDataLabelsAlign Align { get; set; }
+		private WordcloudSeriesDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -61,15 +61,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
 		/// </summary>
-		public WordcloudSeriesDataDataLabelsStyle Style { get; set; }
-		private WordcloudSeriesDataDataLabelsStyle Style_DefaultValue { get; set; }
+		public WordcloudSeriesDataLabelsStyle Style { get; set; }
+		private WordcloudSeriesDataLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
 		/// </summary>
-		public WordcloudSeriesDataDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private WordcloudSeriesDataDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public WordcloudSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private WordcloudSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -173,8 +173,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A declarative filter for which data labels to display. Thedeclarative filter is designed for use when callback functions arenot available, like when the chart options require a pure JSONstructure or for use with graphical editors. For programmaticcontrol, use the `formatter` instead, and return `false` to disablea single data label.
 		/// </summary>
-		public WordcloudSeriesDataDataLabelsFilter Filter { get; set; }
-		private WordcloudSeriesDataDataLabelsFilter Filter_DefaultValue { get; set; }
+		public WordcloudSeriesDataLabelsFilter Filter { get; set; }
+		private WordcloudSeriesDataLabelsFilter Filter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -208,8 +208,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle data labels that flow outside the plot area. Thedefault is `justify`, which aligns them inside the plot area. Forcolumns and bars, this means it will be moved inside the bar. Todisplay data labels outside the plot area, set `crop` to `false` and`overflow` to `"none"`.
 		/// </summary>
-		public WordcloudSeriesDataDataLabelsOverflow Overflow { get; set; }
-		private WordcloudSeriesDataDataLabelsOverflow Overflow_DefaultValue { get; set; }
+		public WordcloudSeriesDataLabelsOverflow Overflow { get; set; }
+		private WordcloudSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -231,7 +231,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("WordcloudSeriesDataDataLabelsFormatter.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("WordcloudSeriesDataLabelsFormatter.formatter", Formatter); }  
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);

@@ -48,8 +48,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An optional column index of where to place the node. The default behaviour isto place it next to the preceding node.
 		/// </summary>
-		public Undefined Column { get; set; }
-		private Undefined Column_DefaultValue { get; set; }
+		public double? Column { get; set; }
+		private double? Column_DefaultValue { get; set; }
 		 
 
 		/// <summary>

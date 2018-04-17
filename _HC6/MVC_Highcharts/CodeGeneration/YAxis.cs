@@ -177,8 +177,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public bool? Opposite { get; set; }
-		private bool? Opposite_DefaultValue { get; set; }
+		public  Opposite { get; set; }
+		private  Opposite_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class WordcloudSeriesDataDataLabelsStyle  : BaseObject
+	public partial class WordcloudSeriesDataLabelsStyle  : BaseObject
 	{
-		public WordcloudSeriesDataDataLabelsStyle()
+		public WordcloudSeriesDataLabelsStyle()
 		{
 			FontSize = FontSize_DefaultValue = "11px";
 			FontWeight = FontWeight_DefaultValue = "bold";

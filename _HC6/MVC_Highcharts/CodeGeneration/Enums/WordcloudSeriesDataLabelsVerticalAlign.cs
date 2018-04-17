@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-    public enum WordcloudSeriesDataDataLabelsVerticalAlign
+    public enum WordcloudSeriesDataLabelsVerticalAlign
     {
         Top, 
 		Middle, 

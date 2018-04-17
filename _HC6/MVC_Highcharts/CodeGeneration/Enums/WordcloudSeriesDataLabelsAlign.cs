@@ -5,9 +5,10 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-    public enum WordcloudSeriesDataDataLabelsOverflow
+    public enum WordcloudSeriesDataLabelsAlign
     {
-        Justify, 
-		None
+        Left, 
+		Center, 
+		Right
     }
 }
