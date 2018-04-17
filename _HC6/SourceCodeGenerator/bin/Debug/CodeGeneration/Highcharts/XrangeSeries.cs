@@ -53,15 +53,16 @@ namespace Highsoft.Web.Mvc.Charts
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Tooltip = Tooltip_DefaultValue = new XrangeSeriesTooltip();
 			Zones = Zones_DefaultValue = new List<XrangeSeriesZone>();
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
+			StartFromThreshold = StartFromThreshold_DefaultValue = true;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			PartialFill = PartialFill_DefaultValue = new XrangeSeriesPartialFill();
 			
@@ -111,7 +112,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`.
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
 		public XrangeSeriesType Type { get; set; }
 		private XrangeSeriesType Type_DefaultValue { get; set; }
@@ -167,7 +168,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public XrangeSeriesEvents Events { get; set; }
 		private XrangeSeriesEvents Events_DefaultValue { get; set; }
@@ -181,7 +182,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public XrangeSeriesDataLabels DataLabels { get; set; }
 		private XrangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
@@ -335,17 +336,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<XrangeSeriesZone> Zones { get; set; }
 		private List<XrangeSeriesZone> Zones_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -367,6 +361,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? MinPointLength { get; set; }
 		private double? MinPointLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? StartFromThreshold { get; set; }
+		private bool? StartFromThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -402,6 +403,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -461,15 +469,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
+			if (StartFromThreshold != StartFromThreshold_DefaultValue) h.Add("startFromThreshold",StartFromThreshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
 			

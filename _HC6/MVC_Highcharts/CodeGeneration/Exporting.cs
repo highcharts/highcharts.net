@@ -48,7 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Export-data module required. Show a HTML table below the chart with the chart's current data.
+		/// Export-data module required. Show a HTML table below the chart withthe chart's current data.
 		/// </summary>
 		public bool? ShowTable { get; set; }
 		private bool? ShowTable_DefaultValue { get; set; }

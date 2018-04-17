@@ -14,10 +14,12 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVector()
 		{
+			LineWidth = LineWidth_DefaultValue = 2;
 			RotationOrigin = RotationOrigin_DefaultValue = PlotOptionsVectorRotationOrigin.Center;
+			States = States_DefaultValue = new PlotOptionsVectorStates();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsVectorTooltip();
 			VectorLength = VectorLength_DefaultValue = 20;
 			Label = Label_DefaultValue = new PlotOptionsVectorLabel();
-			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
@@ -25,7 +27,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Point = Point_DefaultValue = new PlotOptionsVectorPoint();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsVectorDataLabels();
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsVectorStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsVectorFindNearestPointBy.X;
@@ -52,18 +53,37 @@ namespace Highsoft.Web.Mvc.Charts
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsVectorTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsVectorZone>();
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			
 		}	
 		
+
+		/// <summary>
+		/// The line width for each vector arrow.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// What part of the vector it should be rotated around. Can be one of`start`, `center` and `end`. When `start`, the vectors will start fromthe given [x, y] position, and when `end` the vectors will end in the[x, y] position.
 		/// </summary>
 		public PlotOptionsVectorRotationOrigin RotationOrigin { get; set; }
 		private PlotOptionsVectorRotationOrigin RotationOrigin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVectorStates States { get; set; }
+		private PlotOptionsVectorStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVectorTooltip Tooltip { get; set; }
+		private PlotOptionsVectorTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -78,13 +98,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsVectorLabel Label { get; set; }
 		private PlotOptionsVectorLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel with of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -109,7 +122,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsVectorEvents Events { get; set; }
 		private PlotOptionsVectorEvents Events_DefaultValue { get; set; }
@@ -123,7 +136,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public PlotOptionsVectorDataLabels DataLabels { get; set; }
 		private PlotOptionsVectorDataLabels DataLabels_DefaultValue { get; set; }
@@ -134,13 +147,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsVectorStates States { get; set; }
-		private PlotOptionsVectorStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -256,14 +262,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public PlotOptionsVectorPointIntervalUnit PointIntervalUnit { get; set; }
 		private PlotOptionsVectorPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
@@ -326,34 +332,22 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsVectorTooltip Tooltip { get; set; }
-		private PlotOptionsVectorTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsVectorZone> Zones { get; set; }
 		private List<PlotOptionsVectorZone> Zones_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (RotationOrigin != RotationOrigin_DefaultValue) h.Add("rotationOrigin", Highcharts.FirstCharacterToLower(RotationOrigin.ToString()));
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
@@ -361,7 +355,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
@@ -392,9 +385,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			
 
 			return h;

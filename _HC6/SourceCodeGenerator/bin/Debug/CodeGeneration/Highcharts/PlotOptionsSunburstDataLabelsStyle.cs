@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSunburstDataLabelsStyle()
 		{
+			TextOverflow = TextOverflow_DefaultValue = "ellipsis";
 			FontSize = FontSize_DefaultValue = "11px";
 			FontWeight = FontWeight_DefaultValue = "bold";
 			Color = Color_DefaultValue = "contrast";
@@ -21,6 +22,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string TextOverflow { get; set; }
+		private string TextOverflow_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -54,6 +62,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (TextOverflow != TextOverflow_DefaultValue) h.Add("textOverflow",TextOverflow);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
 			if (Color != Color_DefaultValue) h.Add("color",Color);

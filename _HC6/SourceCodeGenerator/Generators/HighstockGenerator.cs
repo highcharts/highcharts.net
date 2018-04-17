@@ -792,13 +792,15 @@ public class HighstockGenerator
             //warunek do usunięcia
             if (item.FullName != "series.bellcurve.data" && item.FullName != "series.histogram.data")
             {
-
+                
                 if (item.Extends.Any())
                 {
                     var baseChildren = GetChildrenFromBaseClasses(item);
                     children = item.Children.Where(p => !baseChildren.Any(x => x.Title == p.Title)).ToList();
                     children.AddRange(baseChildren);
                 }
+
+                //children items should be extended by base items here
             }
         }
 

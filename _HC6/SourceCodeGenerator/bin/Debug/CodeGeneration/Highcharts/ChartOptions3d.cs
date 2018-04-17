@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartOptions3d()
 		{
+			Frame = Frame_DefaultValue = new ChartOptions3dFrame();
 			Enabled = Enabled_DefaultValue = false;
 			Alpha = Alpha_DefaultValue = 0;
 			Beta = Beta_DefaultValue = 0;
@@ -21,10 +22,16 @@ namespace Highsoft.Web.Mvc.Charts
 			FitToPlot = FitToPlot_DefaultValue = true;
 			ViewDistance = ViewDistance_DefaultValue = 100;
 			AxisLabelPosition = AxisLabelPosition_DefaultValue = ChartOptions3dAxisLabelPosition.Null;
-			Frame = Frame_DefaultValue = new ChartOptions3dFrame();
 			
 		}	
 		
+
+		/// <summary>
+		/// Provides the option to draw a frame around the charts by defininga bottom, front and back panel.
+		/// </summary>
+		public ChartOptions3dFrame Frame { get; set; }
+		private ChartOptions3dFrame Frame_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Wether to render the chart using the 3D functionality.
@@ -73,19 +80,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ChartOptions3dAxisLabelPosition AxisLabelPosition { get; set; }
 		private ChartOptions3dAxisLabelPosition AxisLabelPosition_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Provides the option to draw a frame around the charts by defininga bottom, front and back panel.
-		/// </summary>
-		public ChartOptions3dFrame Frame { get; set; }
-		private ChartOptions3dFrame Frame_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Frame.IsDirty()) h.Add("frame",Frame.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Alpha != Alpha_DefaultValue) h.Add("alpha",Alpha);
 			if (Beta != Beta_DefaultValue) h.Add("beta",Beta);
@@ -93,7 +94,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FitToPlot != FitToPlot_DefaultValue) h.Add("fitToPlot",FitToPlot);
 			if (ViewDistance != ViewDistance_DefaultValue) h.Add("viewDistance",ViewDistance);
 			if (AxisLabelPosition != AxisLabelPosition_DefaultValue) h.Add("axisLabelPosition", Highcharts.FirstCharacterToLower(AxisLabelPosition.ToString()));
-			if (Frame.IsDirty()) h.Add("frame",Frame.ToHashtable());
 			
 
 			return h;

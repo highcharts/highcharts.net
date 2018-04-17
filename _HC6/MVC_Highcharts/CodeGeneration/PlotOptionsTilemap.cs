@@ -14,7 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemap()
 		{
+			States = States_DefaultValue = new PlotOptionsTilemapStates();
+			PointPadding = PointPadding_DefaultValue = 2;
 			TileShape = TileShape_DefaultValue = "hexagon";
+			Colsize = Colsize_DefaultValue = 1;
+			Rowsize = Rowsize_DefaultValue = 1;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsTilemapLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -26,7 +30,6 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsTilemapDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsTilemapStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsTilemapFindNearestPointBy.X;
@@ -48,7 +51,6 @@ namespace Highsoft.Web.Mvc.Charts
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsTilemapPointIntervalUnit.Null;
-			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
@@ -61,20 +63,45 @@ namespace Highsoft.Web.Mvc.Charts
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsTilemapTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsTilemapZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 1;
+			BorderWidth = BorderWidth_DefaultValue = 0;
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
-			PointPadding = PointPadding_DefaultValue = 0;
-			Colsize = Colsize_DefaultValue = 1;
-			Rowsize = Rowsize_DefaultValue = 1;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTilemapStates States { get; set; }
+		private PlotOptionsTilemapStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The padding between points in the tilemap.
+		/// </summary>
+		public double? PointPadding { get; set; }
+		private double? PointPadding_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The shape of the tiles in the tilemap. Possible values are `hexagon`,`circle`, `diamond`, and `square`.
 		/// </summary>
 		public string TileShape { get; set; }
 		private string TileShape_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The column size - how many X axis units each column in the tilemapshould span. Works as in [Heatmaps](#plotOptions.heatmap.colsize).
+		/// </summary>
+		public double? Colsize { get; set; }
+		private double? Colsize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The row size - how many Y axis units each tilemap row should span.Analogous to [colsize](#plotOptions.tilemap.colsize).
+		/// </summary>
+		public double? Rowsize { get; set; }
+		private double? Rowsize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -92,7 +119,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Pixel with of the graph line.
+		/// Pixel width of the graph line.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -120,7 +147,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsTilemapEvents Events { get; set; }
 		private PlotOptionsTilemapEvents Events_DefaultValue { get; set; }
@@ -134,7 +161,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public PlotOptionsTilemapDataLabels DataLabels { get; set; }
 		private PlotOptionsTilemapDataLabels DataLabels_DefaultValue { get; set; }
@@ -152,13 +179,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsTilemapStates States { get; set; }
-		private PlotOptionsTilemapStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -295,24 +315,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public PlotOptionsTilemapPointIntervalUnit PointIntervalUnit { get; set; }
 		private PlotOptionsTilemapPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Possible values: `null`, `"on"`, `"between"`.In a column chart, when pointPlacement is `"on"`, the point willnot create any padding of the X axis. In a polar column chart thismeans that the first column points directly north. If the pointPlacementis `"between"`, the columns will be laid out between ticks. Thisis useful for example for visualising an amount between two pointsin time or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this is computed, but forline-type series it needs to be set.Defaults to `null` in cartesian charts, `"between"` in polar charts.
-		/// </summary>
-		public PointPlacement PointPlacement { get; set; }
-		private PointPlacement PointPlacement_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -386,21 +399,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsTilemapZone> Zones { get; set; }
 		private List<PlotOptionsTilemapZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line series plotacross the extremes.
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
+		/// The border width for each heat map item.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
@@ -411,34 +424,17 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string NullColor { get; set; }
 		private string NullColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding between the points in the heatmap.
-		/// </summary>
-		public double? PointPadding { get; set; }
-		private double? PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The column size - how many X axis units each column in the heatmapshould span.
-		/// </summary>
-		public double? Colsize { get; set; }
-		private double? Colsize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The row size - how many Y axis units each heatmap row should span.
-		/// </summary>
-		public double? Rowsize { get; set; }
-		private double? Rowsize_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (TileShape != TileShape_DefaultValue) h.Add("tileShape",TileShape);
+			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
+			if (Rowsize != Rowsize_DefaultValue) h.Add("rowsize",Rowsize);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
@@ -450,7 +446,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
@@ -472,11 +467,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsTilemapPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
-			if (PointPlacement.IsDirty())
-				if (PointPlacement.Value.HasValue)
-					h.Add("pointPlacement", PointPlacement.Value);
-				else
-					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
@@ -491,9 +481,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (NullColor != NullColor_DefaultValue) h.Add("nullColor",NullColor);
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
-			if (Rowsize != Rowsize_DefaultValue) h.Add("rowsize",Rowsize);
 			
 
 			return h;

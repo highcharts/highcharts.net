@@ -14,7 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SunburstSeriesData()
 		{
+			Value = Value_DefaultValue = null;
 			Sliced = Sliced_DefaultValue = false;
+			Name = Name_DefaultValue = "undefined";
 			Weight = Weight_DefaultValue = null;
 			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
@@ -24,10 +26,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Description = Description_DefaultValue = "undefined";
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
-			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Events = Events_DefaultValue = new SunburstSeriesDataEvents();
-			Value = Value_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			Parent = Parent_DefaultValue = "undefined";
 			ColorValue = ColorValue_DefaultValue = null;
@@ -36,10 +36,24 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
+		/// The value of the point, resulting in a relative area of the pointin the sunburst.
+		/// </summary>
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to display a slice offset from the center. When a sunburst point is sliced, its children are also offset.
 		/// </summary>
 		public bool? Sliced { get; set; }
 		private bool? Sliced_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name decides the text for a word.
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -71,7 +85,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the point, so itsgraphic representations are given the class name`highcharts-color-{n}`.
+		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color by is set bythe `fill` attribute, so the change in class name won't have a visual effectby default.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -106,13 +120,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether the data point is selected initially.
 		/// </summary>
 		public bool? Selected { get; set; }
@@ -124,13 +131,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public SunburstSeriesDataEvents Events { get; set; }
 		private SunburstSeriesDataEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The value of the point, resulting in a color controled by optionsas set in the [colorAxis](#colorAxis) configuration.
-		/// </summary>
-		public double? Value { get; set; }
-		private double? Value_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -158,7 +158,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (Sliced != Sliced_DefaultValue) h.Add("sliced",Sliced);
+			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -168,10 +170,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
 			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);

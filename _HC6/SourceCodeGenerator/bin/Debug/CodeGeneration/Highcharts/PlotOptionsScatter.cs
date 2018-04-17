@@ -14,22 +14,22 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsScatter()
 		{
+			LineWidth = LineWidth_DefaultValue = 0;
+			FindNearestPointBy = FindNearestPointBy_DefaultValue = "xy";
+			Marker = Marker_DefaultValue = new PlotOptionsScatterMarker();
+			StickyTracking = StickyTracking_DefaultValue = false;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsScatterLabel();
-			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsScatterEvents();
-			Marker = Marker_DefaultValue = new PlotOptionsScatterMarker();
 			Point = Point_DefaultValue = new PlotOptionsScatterPoint();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsScatterDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
 			States = States_DefaultValue = new PlotOptionsScatterStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsScatterFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
@@ -61,10 +61,37 @@ namespace Highsoft.Web.Mvc.Charts
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsScatterZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			
 		}	
 		
+
+		/// <summary>
+		/// The width of the line connecting the data points.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string FindNearestPointBy { get; set; }
+		private string FindNearestPointBy_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsScatterMarker Marker { get; set; }
+		private PlotOptionsScatterMarker Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on a seriesis triggered when the mouse leaves the area around the series' graphor markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -78,13 +105,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsScatterLabel Label { get; set; }
 		private PlotOptionsScatterLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel with of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -109,17 +129,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsScatterEvents Events { get; set; }
 		private PlotOptionsScatterEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
-		/// </summary>
-		public PlotOptionsScatterMarker Marker { get; set; }
-		private PlotOptionsScatterMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -130,7 +143,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public PlotOptionsScatterDataLabels DataLabels { get; set; }
 		private PlotOptionsScatterDataLabels DataLabels_DefaultValue { get; set; }
@@ -158,24 +171,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
 		/// </summary>
 		public double? TurboThreshold { get; set; }
 		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
-		/// </summary>
-		public PlotOptionsScatterFindNearestPointBy FindNearestPointBy { get; set; }
-		private PlotOptionsScatterFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -291,14 +290,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public PlotOptionsScatterPointIntervalUnit PointIntervalUnit { get; set; }
 		private PlotOptionsScatterPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
@@ -382,46 +381,39 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsScatterZone> Zones { get; set; }
 		private List<PlotOptionsScatterZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line series plotacross the extremes.
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy",FindNearestPointBy);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -457,7 +449,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			
 
 			return h;

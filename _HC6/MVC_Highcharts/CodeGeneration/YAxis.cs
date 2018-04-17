@@ -16,33 +16,42 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			EndOnTick = EndOnTick_DefaultValue = true;
+			TickPixelInterval = TickPixelInterval_DefaultValue = 72;
+			ShowLastLabel = ShowLastLabel_DefaultValue = true;
+			Labels = Labels_DefaultValue = new YAxisLabels();
+			MaxPadding = MaxPadding_DefaultValue = null;
+			MinPadding = MinPadding_DefaultValue = null;
 			StartOnTick = StartOnTick_DefaultValue = true;
+			Title = Title_DefaultValue = new YAxisTitle();
 			StackLabels = StackLabels_DefaultValue = new YAxisStackLabels();
+			GridLineWidth = GridLineWidth_DefaultValue = 1;
+			LineWidth = LineWidth_DefaultValue = 0;
+			Opposite = Opposite_DefaultValue = false;
+			LineColor = LineColor_DefaultValue = new YAxisLineColor();
+			Min = Min_DefaultValue = new YAxisMin();
+			Max = Max_DefaultValue = new YAxisMax();
 			Angle = Angle_DefaultValue = 0;
 			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
 			MaxColor = MaxColor_DefaultValue = "#003399";
 			MinColor = MinColor_DefaultValue = "#e6ebf5";
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			Stops = Stops_DefaultValue = new List<Stop>();
+			TickWidth = TickWidth_DefaultValue = 0;
 			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
+			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
+			SoftMax = SoftMax_DefaultValue = null;
+			SoftMin = SoftMin_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			Labels = Labels_DefaultValue = new YAxisLabels();
-			MaxPadding = MaxPadding_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
-			MinPadding = MinPadding_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			TickLength = TickLength_DefaultValue = 10;
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = YAxisTickmarkPlacement.Between;
-			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
 			TickPosition = TickPosition_DefaultValue = YAxisTickPosition.Outside;
-			Title = Title_DefaultValue = new YAxisTitle();
 			Type = Type_DefaultValue = YAxisType.Linear;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
-			LineColor = LineColor_DefaultValue = "#ccd6eb";
-			LineWidth = LineWidth_DefaultValue = 1;
 			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
 			TickColor = TickColor_DefaultValue = "#ccd6eb";
 			AllowDecimals = AllowDecimals_DefaultValue = true;
@@ -59,9 +68,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Id = Id_DefaultValue = "null";
 			LinkedTo = LinkedTo_DefaultValue = null;
-			Max = Max_DefaultValue = null;
 			MaxZoom = MaxZoom_DefaultValue = null;
-			Min = Min_DefaultValue = null;
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = YAxisMinorGridLineDashStyle.Solid;
 			MinorTickInterval = MinorTickInterval_DefaultValue = null;
 			MinorTicks = MinorTicks_DefaultValue = false;
@@ -69,23 +76,16 @@ namespace Highsoft.Web.Mvc.Charts
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
 			Offset = Offset_DefaultValue = 0;
-			Opposite = Opposite_DefaultValue = false;
 			Pane = Pane_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = false;
-			ShowLastLabel = ShowLastLabel_DefaultValue = true;
-			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
-			SoftMax = SoftMax_DefaultValue = null;
-			SoftMin = SoftMin_DefaultValue = null;
 			TickAmount = TickAmount_DefaultValue = null;
 			TickInterval = TickInterval_DefaultValue = null;
 			TickPositioner = TickPositioner_DefaultValue = "";
 			TickPositions = TickPositions_DefaultValue = new List<double>();
-			TickWidth = TickWidth_DefaultValue = null;
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
-			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
 			
 		}	
 		
@@ -105,6 +105,41 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public double? TickPixelInterval { get; set; }
+		private double? TickPixelInterval_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? ShowLastLabel { get; set; }
+		private bool? ShowLastLabel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisLabels Labels { get; set; }
+		private YAxisLabels Labels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
+		/// </summary>
+		public double? MaxPadding { get; set; }
+		private double? MaxPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
+		/// </summary>
+		public double? MinPadding { get; set; }
+		private double? MinPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.
 		/// </summary>
 		public bool? StartOnTick { get; set; }
@@ -112,10 +147,59 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisTitle Title { get; set; }
+		private YAxisTitle Title_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The stack labels show the total value for each bar in a stackedcolumn or bar chart. The label will be placed on top of positivecolumns and below negative columns. In case of an inverted columnchart or a bar chart the label is placed to the right of positivebars and to the left of negative bars.
 		/// </summary>
 		public YAxisStackLabels StackLabels { get; set; }
 		private YAxisStackLabels StackLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? GridLineWidth { get; set; }
+		private double? GridLineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Opposite { get; set; }
+		private bool? Opposite_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisLineColor LineColor { get; set; }
+		private YAxisLineColor LineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisMin Min { get; set; }
+		private YAxisMin Min_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisMax Max { get; set; }
+		private YAxisMax Max_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -161,6 +245,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The pixel width of the major tick marks.
+		/// </summary>
+		public double? TickWidth { get; set; }
+		private double? TickWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array of objects defining plot bands on the Y axis.
 		/// </summary>
 		public List<YAxisPlotBands> PlotBands { get; set; }
@@ -168,24 +259,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// An array of objects representing plot lines on the X axis
+		/// </summary>
+		public List<YAxisPlotLines> PlotLines { get; set; }
+		private List<YAxisPlotLines> PlotLines_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A soft maximum for the axis. If the series data maximum is lessthan this, the axis will stay at this maximum, but if the seriesdata maximum is higher, the axis will flex to show all data.
+		/// </summary>
+		public double? SoftMax { get; set; }
+		private double? SoftMax_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A soft minimum for the axis. If the series data minimum is greaterthan this, the axis will stay at this minimum, but if the seriesdata minimum is lower, the axis will flex to show all data.
+		/// </summary>
+		public double? SoftMin { get; set; }
+		private double? SoftMin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The axis labels show the number or category for each tick.
-		/// </summary>
-		public YAxisLabels Labels { get; set; }
-		private YAxisLabels Labels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
-		/// </summary>
-		public double? MaxPadding { get; set; }
-		private double? MaxPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -200,13 +298,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public YAxisMinorTickPosition MinorTickPosition { get; set; }
 		private YAxisMinorTickPosition MinorTickPosition_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a min extremeis set using `axis.setExtremes()`, the minPadding will be ignored.
-		/// </summary>
-		public double? MinPadding { get; set; }
-		private double? MinPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -231,24 +322,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If tickInterval is `null` this option sets the approximate pixelinterval of the tick marks. Not applicable to categorized axis.The tick interval is also influenced by the [minTickInterval](#xAxis.minTickInterval) option, that, by default prevents ticks from beingdenser than the data points.
-		/// </summary>
-		public double? TickPixelInterval { get; set; }
-		private double? TickPixelInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The position of the major tick marks relative to the axis line.Can be one of `inside` and `outside`.
 		/// </summary>
 		public YAxisTickPosition TickPosition { get; set; }
 		private YAxisTickPosition TickPosition_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The axis title, showing next to the axis line.
-		/// </summary>
-		public YAxisTitle Title { get; set; }
-		private YAxisTitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -277,20 +354,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string MinorTickColor { get; set; }
 		private string MinorTickColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the line marking the axis itself.In styled mode, the line stroke is given in the`.highcharts-axis-line` or `.highcharts-xaxis-line` class.
-		/// </summary>
-		public string LineColor { get; set; }
-		private string LineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the line marking the axis itself.In styled mode, the stroke width is given in the`.highcharts-axis-line` or `.highcharts-xaxis-line` class.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -406,24 +469,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The maximum value of the axis. If `null`, the max value isautomatically calculated.If the `endOnTick` option is true, the `max` value mightbe rounded up.If a [tickAmount](#yAxis.tickAmount) is set, the axis may be extendedbeyond the set max in order to reach the given number of ticks. Thesame may happen in a chart with multiple axes, determined by [chart.alignTicks](#chart), where a `tickAmount` is applied internally.
-		/// </summary>
-		public double? Max { get; set; }
-		private double? Max_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Deprecated. Use `minRange` instead.
 		/// </summary>
 		public double? MaxZoom { get; set; }
 		private double? MaxZoom_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The minimum value of the axis. If `null` the min value is automatically calculated.If the `startOnTick` option is true (default), the `min` value mightbe rounded down.The automatically calculated minimum value is also affected by[floor](#yAxis.floor), [softMin](#yAxis.softMin),[minPadding](#yAxis.minPadding), [minRange](#yAxis.minRange)as well as [series.threshold](#plotOptions.series.threshold)and [series.softThreshold](#plotOptions.series.softThreshold).
-		/// </summary>
-		public double? Min { get; set; }
-		private double? Min_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -476,13 +525,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to display the axis on the opposite side of the normal. Thenormal is on the left side for vertical axes and bottom forhorizontal, so the opposite sides will be right and top respectively.This is typically used with dual or multiple axes.
-		/// </summary>
-		public bool? Opposite { get; set; }
-		private bool? Opposite_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Refers to the index in the [panes](#panes) array. Used for circulargauges and polar charts. When the option is not set then first panewill be used.
 		/// </summary>
 		public double? Pane { get; set; }
@@ -497,20 +539,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to show the last tick label. Defaults to `true` on cartesiancharts, and `false` on polar charts.
-		/// </summary>
-		public bool? ShowLastLabel { get; set; }
-		private bool? ShowLastLabel_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the grid lines extending the ticks across the plot area.In styled mode, the stroke width is given in the`.highcharts-grid-line` class.
-		/// </summary>
-		public double? GridLineWidth { get; set; }
-		private double? GridLineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to show the axis line and title when the axis has no data.
 		/// </summary>
 		public bool? ShowEmpty { get; set; }
@@ -522,20 +550,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? ShowFirstLabel { get; set; }
 		private bool? ShowFirstLabel_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A soft maximum for the axis. If the series data maximum is less thanthis, the axis will stay at this maximum, but if the series datamaximum is higher, the axis will flex to show all data.
-		/// </summary>
-		public double? SoftMax { get; set; }
-		private double? SoftMax_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A soft minimum for the axis. If the series data minimum is greaterthan this, the axis will stay at this minimum, but if the seriesdata minimum is lower, the axis will flex to show all data.
-		/// </summary>
-		public double? SoftMin { get; set; }
-		private double? SoftMin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -567,13 +581,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The pixel width of the major tick marks.In styled mode, the stroke width is given in the `.highcharts-tick` class.
-		/// </summary>
-		public double? TickWidth { get; set; }
-		private double? TickWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Applies only when the axis `type` is `category`. When `uniqueNames`is true, points are placed on the X axis according to their names.If the same point name is repeated in the same or another series,the point is placed on the same X position as other points of thesame name. When `uniqueNames` is false, the points are laid out inincreasing X positions regardless of their names, and the X axiscategory will take the name of the last point in each position.
 		/// </summary>
 		public bool? UniqueNames { get; set; }
@@ -585,13 +592,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array of lines stretching across the plot area, marking a specificvalue on one of the axes.In styled mode, the plot lines are styled by the `.highcharts-plot-line` class in addition to the `className` option.
-		/// </summary>
-		public List<YAxisPlotLines> PlotLines { get; set; }
-		private List<YAxisPlotLines> PlotLines_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -600,33 +600,42 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
+			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
+			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
+			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
+			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (StackLabels.IsDirty()) h.Add("stackLabels",StackLabels.ToHashtable());
+			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
+			if (LineColor.IsDirty()) h.Add("lineColor",LineColor.ToHashtable());
+			if (Min.IsDirty()) h.Add("min",Min.ToHashtable());
+			if (Max.IsDirty()) h.Add("max",Max.ToHashtable());
 			if (Angle != Angle_DefaultValue) h.Add("angle",Angle);
 			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation", Highcharts.FirstCharacterToLower(GridLineInterpolation.ToString()));
 			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
 			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (Stops.Any()) h.Add("stops", GetLists(Stops));
+			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
+			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
+			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
-			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
-			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
 			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
-			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
 			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highcharts.FirstCharacterToLower(TickPosition.ToString()));
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
 			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
 			if (TickColor != TickColor_DefaultValue) h.Add("tickColor",TickColor);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
@@ -643,9 +652,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
-			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (MaxZoom != MaxZoom_DefaultValue) h.Add("maxZoom",MaxZoom);
-			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle", Highcharts.FirstCharacterToLower(MinorGridLineDashStyle.ToString()));
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
@@ -653,23 +660,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);
 			if (MinTickInterval != MinTickInterval_DefaultValue) h.Add("minTickInterval",MinTickInterval);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (Pane != Pane_DefaultValue) h.Add("pane",Pane);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
-			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
-			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
-			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
-			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
 			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("YAxisTickPositioner.tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
-			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			
 
 			return h;

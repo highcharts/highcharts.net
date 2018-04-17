@@ -14,10 +14,12 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartParallelAxesLabels()
 		{
+			X = X_DefaultValue = 0;
+			Y = Y_DefaultValue = 4;
+			Align = Align_DefaultValue = "center";
+			ReserveSpace = ReserveSpace_DefaultValue = false;
 			Enabled = Enabled_DefaultValue = true;
 			Style = Style_DefaultValue = new ChartParallelAxesLabelsStyle();
-			X = X_DefaultValue = 0;
-			Align = Align_DefaultValue = ChartParallelAxesLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
 			Distance = Distance_DefaultValue = 15;
@@ -25,18 +27,44 @@ namespace Highsoft.Web.Mvc.Charts
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = ChartParallelAxesLabelsOverflow.Null;
 			Padding = Padding_DefaultValue = "5";
-			ReserveSpace = ReserveSpace_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
-			UseHTML = UseHTML_DefaultValue = false;
-			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
+			UseHTML = UseHTML_DefaultValue = false;
 			Position3d = Position3d_DefaultValue = ChartParallelAxesLabelsPosition3d.Offset;
 			Skew3d = Skew3d_DefaultValue = false;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Align { get; set; }
+		private string Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? ReserveSpace { get; set; }
+		private bool? ReserveSpace_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Enable or disable the axis labels.
@@ -50,20 +78,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ChartParallelAxesLabelsStyle Style { get; set; }
 		private ChartParallelAxesLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x position offset of the label relative to the tick positionon the axis.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// What part of the string the given position is anchored to.If `left`, the left side of the string is at the axis position.Can be one of `"left"`, `"center"` or `"right"`. Defaults toan intelligent guess based on which side of the chart the axisis on and the rotation of the label.
-		/// </summary>
-		public ChartParallelAxesLabelsAlign Align { get; set; }
-		private ChartParallelAxesLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -116,13 +130,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to reserve space for the labels. By default, space isreserved for the labels in these cases:* On all horizontal axes.* On vertical axes if `label.align` is `right` on a left-sideaxis or `left` on a right-side axis.* On vertical axes if `label.align` is `center`.This can be turned off when for example the labels are renderedinside the plot area instead of outside.
-		/// </summary>
-		public bool? ReserveSpace { get; set; }
-		private bool? ReserveSpace_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Rotation of the labels in degrees.
 		/// </summary>
 		public double? Rotation { get; set; }
@@ -144,24 +151,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
-		/// </summary>
-		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y position offset of the label relative to the tick positionon the axis. The default makes it adapt to the font size onbottom axis.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The Z index for the axis labels.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -182,10 +182,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (AutoRotationLimit != AutoRotationLimit_DefaultValue) h.Add("autoRotationLimit",AutoRotationLimit);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
@@ -193,13 +195,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("ChartParallelAxesLabelsFormatter.formatter", Formatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);
 			

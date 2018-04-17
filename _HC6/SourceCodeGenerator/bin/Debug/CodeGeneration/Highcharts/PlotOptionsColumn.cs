@@ -19,13 +19,22 @@ namespace Highsoft.Web.Mvc.Charts
 			GroupPadding = GroupPadding_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
+			CropThreshold = CropThreshold_DefaultValue = 50;
 			PointRange = PointRange_DefaultValue = null;
+			States = States_DefaultValue = new PlotOptionsColumnStates();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsColumnDataLabels();
+			SoftThreshold = SoftThreshold_DefaultValue = false;
+			StartFromThreshold = StartFromThreshold_DefaultValue = true;
+			StickyTracking = StickyTracking_DefaultValue = false;
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsColumnTooltip();
+			Threshold = Threshold_DefaultValue = 0;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			Grouping = Grouping_DefaultValue = true;
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
@@ -37,11 +46,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsColumnEvents();
 			Point = Point_DefaultValue = new PlotOptionsColumnPoint();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsColumnDataLabels();
-			CropThreshold = CropThreshold_DefaultValue = 300;
-			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsColumnStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsColumnFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
@@ -66,12 +70,9 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = PlotOptionsColumnStacking.Null;
-			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsColumnTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsColumnZone>();
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			
 		}	
 		
@@ -112,10 +113,66 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series. .
+		/// </summary>
+		public double? CropThreshold { get; set; }
+		private double? CropThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The X axis range that each point is valid for. This determines thewidth of the column. On a categorized axis, the range will be 1by default (one category unit). On linear and datetime axes, therange will be computed as the distance between the two closest datapoints.The default `null` means it is computed automatically, but this optioncan be used to override the automatic value.
 		/// </summary>
 		public double? PointRange { get; set; }
 		private double? PointRange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsColumnStates States { get; set; }
+		private PlotOptionsColumnStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsColumnDataLabels DataLabels { get; set; }
+		private PlotOptionsColumnDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
+		/// </summary>
+		public bool? SoftThreshold { get; set; }
+		private bool? SoftThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? StartFromThreshold { get; set; }
+		private bool? StartFromThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsColumnTooltip Tooltip { get; set; }
+		private PlotOptionsColumnTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Y axis value to serve as the base for the columns, for distinguishingbetween values above and below a threshold. If `null`, the columnsextend from the padding Y axis minimum.
+		/// </summary>
+		public double? Threshold { get; set; }
+		private double? Threshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -158,6 +215,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -224,7 +288,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsColumnEvents Events { get; set; }
 		private PlotOptionsColumnEvents Events_DefaultValue { get; set; }
@@ -235,41 +299,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsColumnPoint Point { get; set; }
 		private PlotOptionsColumnPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsColumnDataLabels DataLabels { get; set; }
-		private PlotOptionsColumnDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
-		/// </summary>
-		public bool? SoftThreshold { get; set; }
-		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsColumnStates States { get; set; }
-		private PlotOptionsColumnStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -378,14 +407,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public PlotOptionsColumnPointIntervalUnit PointIntervalUnit { get; set; }
 		private PlotOptionsColumnPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
@@ -441,13 +470,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -462,24 +484,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsColumnTooltip Tooltip { get; set; }
-		private PlotOptionsColumnTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsColumnZone> Zones { get; set; }
 		private List<PlotOptionsColumnZone> Zones_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -491,13 +499,22 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
+			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (StartFromThreshold != StartFromThreshold_DefaultValue) h.Add("startFromThreshold",StartFromThreshold);
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
@@ -509,11 +526,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
@@ -542,12 +554,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			
 
 			return h;

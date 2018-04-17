@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
+		/// Options for the hovered series
 		/// </summary>
 		public PlotOptionsTreemapStatesHover Hover { get; set; }
 		private PlotOptionsTreemapStatesHover Hover_DefaultValue { get; set; }

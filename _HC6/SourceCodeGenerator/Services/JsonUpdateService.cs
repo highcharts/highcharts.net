@@ -174,6 +174,49 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdateProducts.Add("drilldown.series", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
 
             ItemsToUpdate.Add("series.line.data.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels" } });
+
+            ItemsToUpdate.Add("series.bar.states.hover", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.hover" } });
+            ItemsToUpdate.Add("series.bar.states.select", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.select" } });
+            ItemsToUpdate.Add("series.bullet.states.hover", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.hover" } });
+            ItemsToUpdate.Add("series.bullet.states.select", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.select" } });
+            ItemsToUpdate.Add("series.column.states.hover", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.hover" } });
+            ItemsToUpdate.Add("series.column.states.select", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.select" } });
+            ItemsToUpdate.Add("series.columnrange.states.hover", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.hover" } });
+            ItemsToUpdate.Add("series.columnrange.states.select", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.select" } });
+            ItemsToUpdate.Add("plotOptions.funnel.states.hover", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.hover" } });
+            ItemsToUpdate.Add("plotOptions.columnrange.states.hover", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.hover" } });
+
+            ItemsToUpdate.Add("series.funnel.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("series.pie.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("plotOptions.funnel.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("plotOptions.heatmap.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("plotOptions.pie.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("plotOptions.pyramid.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("plotOptions.sankey.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("plotOptions.sunburst.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("plotOptions.treemap.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("plotOptions.variablepie.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("plotOptions.xrange.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("plotOptions.bubble.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("series.pyramid.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("series.sunburst.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("series.variablepie.dataLabels.formatter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+
+            ItemsToUpdate.Add("plotOptions.arearange.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.threshold" } });
+            ItemsToUpdate.Add("plotOptions.boxplot.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.threshold" } });
+
+            ItemsToUpdate.Add("plotOptions.bubble.marker.lineColor", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.marker.lineColor" } });
+            ItemsToUpdate.Add("plotOptions.bubble.marker.radius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.marker.radius" } });
+            ItemsToUpdate.Add("yAxis.lineColor", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "xAxis.lineColor" } });
+            ItemsToUpdate.Add("yAxis.min", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "xAxis.min" } });
+            ItemsToUpdate.Add("yAxis.max", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "xAxis.max" } });
+
+            ItemsToUpdate.Add("plotOptions.column.dataLabels.align", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels.align" } });
+            ItemsToUpdate.Add("plotOptions.column.dataLabels.verticalAlign", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels.verticalAlign" } });
+            ItemsToUpdate.Add("plotOptions.column.dataLabels.y", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels.y" } });
+
+            ItemsToUpdate.Add("plotOptions.columnrange.pointRange", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("plotOptions.sankey.dataLabels.format", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels.format" } });
         }
     }
 

@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsSolidgaugeLinecap
     {
-        Round, 
-		Square
+        Square, 
+		Round
     }
 }

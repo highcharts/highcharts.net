@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			LabelOptions = LabelOptions_DefaultValue = new AnnotationsLabelOptions();
 			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsShapeOptions();
-			ZIndex = ZIndex_DefaultValue = 6;
+			ZIndex = ZIndex_DefaultValue = null;
 			Labels = Labels_DefaultValue = new List<AnnotationsLabels>();
 			Shapes = Shapes_DefaultValue = new List<AnnotationsShapes>();
 			
@@ -53,14 +53,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array of labels for the annotation. For options that apply to multiplelabels, they can be added to the [labelOptions](annotations.labelOptions.html).
+		/// An array of labels for the annotation. For options that apply tomultiple labels, they can be added to the[labelOptions](annotations.labelOptions.html).
 		/// </summary>
 		public List<AnnotationsLabels> Labels { get; set; }
 		private List<AnnotationsLabels> Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of shapes for the annotation. For options that apply to multipleshapes, then can be added to the [shapeOptions](annotations.shapeOptions.html).
+		/// An array of shapes for the annotation. For options that apply tomultiple shapes, then can be added to the[shapeOptions](annotations.shapeOptions.html).
 		/// </summary>
 		public List<AnnotationsShapes> Shapes { get; set; }
 		private List<AnnotationsShapes> Shapes_DefaultValue { get; set; }

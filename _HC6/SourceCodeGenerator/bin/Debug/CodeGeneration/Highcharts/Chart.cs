@@ -42,9 +42,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Panning = Panning_DefaultValue = false;
 			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
 			Inverted = Inverted_DefaultValue = false;
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "null";
-			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "null";
 			PlotBorderWidth = PlotBorderWidth_DefaultValue = 0;
 			PlotShadow = PlotShadow_DefaultValue = new Shadow() { Enabled = false };
 			Polar = Polar_DefaultValue = false;
@@ -60,6 +57,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","\"Lucida Grande\"},{ \"Lucida Sans Unicode\"},{ Verdana},{ Arial},{ Helvetica},{ sans-serif"},{"fontSize","12px"}};
 			Type = Type_DefaultValue = ChartType.Line;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
+			BorderWidth = BorderWidth_DefaultValue = 0;
+			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "null";
+			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "null";
 			Options3d = Options3d_DefaultValue = new ChartOptions3d();
 			
 		}	
@@ -108,7 +108,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// In styled mode, this sets how many colors the class namesshould rotate between. With ten colors, series (or points) aregiven class names like `highcharts-color-0`, `highcharts-color-0` [...] `highcharts-color-9`. The equivalent in non-styled modeis to set colors using the [colors](#colors) setting.
+		/// In styled mode, this sets how many colors the class namesshould rotate between. With ten colors, series (or points) aregiven class names like `highcharts-color-0`, `highcharts-color-0`[...] `highcharts-color-9`. The equivalent in non-styled modeis to set colors using the [colors](#colors) setting.
 		/// </summary>
 		public double? ColorCount { get; set; }
 		private double? ColorCount_DefaultValue { get; set; }
@@ -262,27 +262,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The pixel width of the outer chart border.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The background color or gradient for the plot area.
-		/// </summary>
-		public string PlotBackgroundColor { get; set; }
-		private string PlotBackgroundColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The URL for an image to use as the plot background. To set an imageas the background for the entire chart, set a CSS background imageto the container element. Note that for the image to be applied toexported charts, its URL needs to be accessible by the export server.
-		/// </summary>
-		public string PlotBackgroundImage { get; set; }
-		private string PlotBackgroundImage_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The pixel width of the plot area border.
 		/// </summary>
 		public double? PlotBorderWidth { get; set; }
@@ -297,7 +276,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When true, cartesian charts like line, spline, area and column aretransformed into the polar coordinate system. Requires `highcharts-more.js`.
+		/// When true, cartesian charts like line, spline, area and column aretransformed into the polar coordinate system. Requires`highcharts-more.js`.
 		/// </summary>
 		public bool? Polar { get; set; }
 		private bool? Polar_DefaultValue { get; set; }
@@ -388,6 +367,27 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The pixel width of the outer chart border.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The background color or gradient for the plot area.
+		/// </summary>
+		public string PlotBackgroundColor { get; set; }
+		private string PlotBackgroundColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The URL for an image to use as the plot background. To set an imageas the background for the entire chart, set a CSS background imageto the container element. Note that for the image to be applied toexported charts, its URL needs to be accessible by the export server.
+		/// </summary>
+		public string PlotBackgroundImage { get; set; }
+		private string PlotBackgroundImage_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options to render charts in 3 dimensions. This feature requires`highcharts-3d.js`, found in the download package or online at[code.highcharts.com/highcharts-3d.js](http://code.highcharts.com/highcharts-3d.js).
 		/// </summary>
 		public ChartOptions3d Options3d { get; set; }
@@ -426,9 +426,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Panning != Panning_DefaultValue) h.Add("panning",Panning);
 			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", Highcharts.FirstCharacterToLower(PinchType.ToString()));
 			if (Inverted != Inverted_DefaultValue) h.Add("inverted",Inverted);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
-			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
 			if (PlotShadow != PlotShadow_DefaultValue) h.Add("plotShadow",PlotShadow);
 			if (Polar != Polar_DefaultValue) h.Add("polar",Polar);
@@ -444,6 +441,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", Highcharts.FirstCharacterToLower(ZoomType.ToString()));
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
+			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (Options3d.IsDirty()) h.Add("options3d",Options3d.ToHashtable());
 			
 

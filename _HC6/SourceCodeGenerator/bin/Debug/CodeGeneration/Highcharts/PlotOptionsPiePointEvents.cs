@@ -14,77 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPiePointEvents()
 		{
-			Click = Click_DefaultValue = "";
-			MouseOut = MouseOut_DefaultValue = "";
-			MouseOver = MouseOver_DefaultValue = "";
-			Remove = Remove_DefaultValue = "";
-			Select = Select_DefaultValue = "";
-			Unselect = Unselect_DefaultValue = "";
-			Update = Update_DefaultValue = "";
+			LegendItemClick = LegendItemClick_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// Fires when a point is clicked. One parameter, `event`, is passedto the function, containing common event information.If the `series.allowPointSelect` option is true, the default actionfor the point's click event is to toggle the point's select state. Returning `false` cancels this action.
+		/// Fires when the legend item belonging to the pie point (slice) isclicked. The `this` keyword refers to the point itself. One parameter,`event`, is passed to the function, containing common event information. Thedefault action is to toggle the visibility of the point. This can beprevented by calling `event.preventDefault()`.
 		/// </summary>
-		public string Click { get; set; }
-		private string Click_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires when the mouse leaves the area close to the point. One parameter,`event`, is passed to the function, containing common event information.
-		/// </summary>
-		public string MouseOut { get; set; }
-		private string MouseOut_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires when the mouse enters the area close to the point. One parameter,`event`, is passed to the function, containing common event information.
-		/// </summary>
-		public string MouseOver { get; set; }
-		private string MouseOver_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires when the point is removed using the `.remove()` method. Oneparameter, `event`, is passed to the function. Returning `false`cancels the operation.
-		/// </summary>
-		public string Remove { get; set; }
-		private string Remove_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires when the point is selected either programmatically or followinga click on the point. One parameter, `event`, is passed to the function. Returning `false` cancels the operation.
-		/// </summary>
-		public string Select { get; set; }
-		private string Select_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires when the point is unselected either programmatically or followinga click on the point. One parameter, `event`, is passed to the function. Returning `false` cancels the operation.
-		/// </summary>
-		public string Unselect { get; set; }
-		private string Unselect_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires when the point is updated programmatically through the `.update()`method. One parameter, `event`, is passed to the function. The newpoint options can be accessed through `event.options`. Returning`false` cancels the operation.
-		/// </summary>
-		public string Update { get; set; }
-		private string Update_DefaultValue { get; set; }
+		public string LegendItemClick { get; set; }
+		private string LegendItemClick_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("PlotOptionsPiePointEventsClick.click", Click); }  
-			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highcharts.AddFunction("PlotOptionsPiePointEventsMouseOut.mouseOut", MouseOut); }  
-			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highcharts.AddFunction("PlotOptionsPiePointEventsMouseOver.mouseOver", MouseOver); }  
-			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("PlotOptionsPiePointEventsRemove.remove", Remove); }  
-			if (Select != Select_DefaultValue) { h.Add("select",Select); Highcharts.AddFunction("PlotOptionsPiePointEventsSelect.select", Select); }  
-			if (Unselect != Unselect_DefaultValue) { h.Add("unselect",Unselect); Highcharts.AddFunction("PlotOptionsPiePointEventsUnselect.unselect", Unselect); }  
-			if (Update != Update_DefaultValue) { h.Add("update",Update); Highcharts.AddFunction("PlotOptionsPiePointEventsUpdate.update", Update); }  
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("PlotOptionsPiePointEventsLegendItemClick.legendItemClick", LegendItemClick); }  
 			
 
 			return h;

@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ArearangeSeries()
 		{
 			Data = Data_DefaultValue = new List<ArearangeSeriesData>();
+			DataLabels = DataLabels_DefaultValue = new ArearangeSeriesDataLabels();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -32,7 +33,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new ArearangeSeriesEvents();
 			Marker = Marker_DefaultValue = new ArearangeSeriesMarker();
 			Point = Point_DefaultValue = new ArearangeSeriesPoint();
-			DataLabels = DataLabels_DefaultValue = new ArearangeSeriesDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
 			States = States_DefaultValue = new ArearangeSeriesStates();
@@ -63,7 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			Stacking = Stacking_DefaultValue = ArearangeSeriesStacking.Null;
 			Step = Step_DefaultValue = ArearangeSeriesStep.Null;
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
@@ -71,7 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Tooltip = Tooltip_DefaultValue = new ArearangeSeriesTooltip();
 			Zones = Zones_DefaultValue = new List<ArearangeSeriesZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "null";
@@ -82,10 +80,17 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// An array of data points for the series. For the `arearange` seriestype, points can be given in the following ways:1.  An array of arrays with 3 or 2 values. In this case, the valuescorrespond to `x,low,high`. If the first value is a string, it isapplied as the name of the point, and the `x` value is inferred.The `x` value can also be omitted, in which case the inner arraysshould be of length 2\. Then the `x` value is automatically calculated,either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. ```js    data: [        [0, 8, 3],        [1, 1, 1],        [2, 6, 8]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.arearange.turboThreshold),this option is not available. ```js    data: [{        x: 1,        low: 9,        high: 0,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        low: 3,        high: 4,        name: "Point1",        color: "#FF00FF"    }] ```
+		/// An array of data points for the series. For the `arearange` seriestype, points can be given in the following ways:1.  An array of arrays with 3 or 2 values. In this case, the valuescorrespond to `x,low,high`. If the first value is a string, it isapplied as the name of the point, and the `x` value is inferred.The `x` value can also be omitted, in which case the inner arraysshould be of length 2\. Then the `x` value is automatically calculated,either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. ```js    data: [        [0, 8, 3],        [1, 1, 1],        [2, 6, 8]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series'[turboThreshold](#series.arearange.turboThreshold),this option is not available. ```js    data: [{        x: 1,        low: 9,        high: 0,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        low: 3,        high: 4,        name: "Point1",        color: "#FF00FF"    }] ```
 		/// </summary>
 		public List<ArearangeSeriesData> Data { get; set; }
 		private List<ArearangeSeriesData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ArearangeSeriesDataLabels DataLabels { get; set; }
+		private ArearangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -117,7 +122,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`.
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
 		public ArearangeSeriesType Type { get; set; }
 		private ArearangeSeriesType Type_DefaultValue { get; set; }
@@ -159,7 +164,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Pixel with of the graph line.
+		/// Pixel width of the graph line.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -187,7 +192,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public ArearangeSeriesEvents Events { get; set; }
 		private ArearangeSeriesEvents Events_DefaultValue { get; set; }
@@ -205,13 +210,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ArearangeSeriesPoint Point { get; set; }
 		private ArearangeSeriesPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public ArearangeSeriesDataLabels DataLabels { get; set; }
-		private ArearangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -369,14 +367,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public ArearangeSeriesPointIntervalUnit PointIntervalUnit { get; set; }
 		private ArearangeSeriesPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
@@ -425,13 +423,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to stack the values of each series on top of each other.Possible values are `null` to disable, `"normal"` to stack by value or`"percent"`. When stacking is enabled, data must be sorted in ascendingX order. A special stacking option is with the streamgraph series type,where the stacking option is set to `"stream"`.
-		/// </summary>
-		public ArearangeSeriesStacking Stacking { get; set; }
-		private ArearangeSeriesStacking Stacking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to apply steps to the line. Possible values are `left`, `center`and `right`.
 		/// </summary>
 		public ArearangeSeriesStep Step { get; set; }
@@ -467,49 +458,42 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<ArearangeSeriesZone> Zones { get; set; }
 		private List<ArearangeSeriesZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line series plotacross the extremes.
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.
+		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fill opacity for the area. When you set an explicit `fillColor`,the `fillOpacity` is not applied. Instead, you should define theopacity in the `fillColor` with an rgba color definition. The `fillOpacity`setting, also the default setting, overrides the alpha componentof the `color` setting.
+		/// Fill opacity for the area. When you set an explicit `fillColor`,the `fillOpacity` is not applied. Instead, you should define theopacity in the `fillColor` with an rgba color definition. The`fillOpacity` setting, also the default setting, overrides the alphacomponent of the `color` setting.In styled mode, the fill opacity can be set with the `.highcharts-area`class name.
 		/// </summary>
 		public double? FillOpacity { get; set; }
 		private double? FillOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A separate color for the graph line. By default the line takes the`color` of the series, but the lineColor setting allows setting aseparate color for the line without altering the `fillColor`.
+		/// A separate color for the graph line. By default the line takes the`color` of the series, but the lineColor setting allows setting aseparate color for the line without altering the `fillColor`.In styled mode, the line stroke can be set with the `.highcharts-graph`class name.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A separate color for the negative part of the area.
+		/// A separate color for the negative part of the area.In styled mode, a negative color is set with the `.highcharts-negative`class name.
 		/// </summary>
 		public string NegativeFillColor { get; set; }
 		private string NegativeFillColor_DefaultValue { get; set; }
@@ -527,6 +511,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
@@ -544,7 +529,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
@@ -579,7 +563,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
 			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
@@ -587,7 +570,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);

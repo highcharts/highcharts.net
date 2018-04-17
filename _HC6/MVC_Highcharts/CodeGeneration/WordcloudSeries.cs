@@ -49,11 +49,12 @@ namespace Highsoft.Web.Mvc.Charts
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new WordcloudSeriesTooltip();
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
+			StartFromThreshold = StartFromThreshold_DefaultValue = true;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			Clip = Clip_DefaultValue = false;
 			PlacementStrategy = PlacementStrategy_DefaultValue = "center";
@@ -65,7 +66,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// An array of data points for the series. For the `wordcloud` seriestype, points can be given in the following ways:1.  An array of arrays with 2 values. In this case, the valuescorrespond to `name,weight`.  ```js    data: [        ['Lorem', 4],        ['Ipsum', 1]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.arearange.turboThreshold),this option is not available. ```js    data: [{        name: "Lorem",        weight: 4    }, {        name: "Ipsum",        weight: 1    }] ```
+		/// An array of data points for the series. For the `wordcloud` seriestype, points can be given in the following ways:1.  An array of arrays with 2 values. In this case, the valuescorrespond to `name,weight`.  ```js    data: [        ['Lorem', 4],        ['Ipsum', 1]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series'[turboThreshold](#series.arearange.turboThreshold), this option is notavailable. ```js    data: [{        name: "Lorem",        weight: 4    }, {        name: "Ipsum",        weight: 1    }] ```
 		/// </summary>
 		public List<WordcloudSeriesData> Data { get; set; }
 		private List<WordcloudSeriesData> Data_DefaultValue { get; set; }
@@ -107,7 +108,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`.
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
 		public WordcloudSeriesType Type { get; set; }
 		private WordcloudSeriesType Type_DefaultValue { get; set; }
@@ -156,7 +157,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public WordcloudSeriesEvents Events { get; set; }
 		private WordcloudSeriesEvents Events_DefaultValue { get; set; }
@@ -310,17 +311,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The corner radius of the border surrounding each column or bar.
 		/// </summary>
 		public double? BorderRadius { get; set; }
 		private double? BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? StartFromThreshold { get; set; }
+		private bool? StartFromThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -342,6 +343,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<string> Colors { get; set; }
 		private List<string> Colors_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -425,11 +433,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (StartFromThreshold != StartFromThreshold_DefaultValue) h.Add("startFromThreshold",StartFromThreshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);

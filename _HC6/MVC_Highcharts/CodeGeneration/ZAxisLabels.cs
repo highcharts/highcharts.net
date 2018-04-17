@@ -29,9 +29,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
-			UseHTML = UseHTML_DefaultValue = false;
 			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
+			UseHTML = UseHTML_DefaultValue = false;
 			Position3d = Position3d_DefaultValue = ZAxisLabelsPosition3d.Offset;
 			Skew3d = Skew3d_DefaultValue = false;
 			
@@ -144,13 +144,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
-		/// </summary>
-		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The y position offset of the label relative to the tick positionon the axis. The default makes it adapt to the font size onbottom axis.
 		/// </summary>
 		public double? Y { get; set; }
@@ -162,6 +155,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -197,9 +197,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);
 			

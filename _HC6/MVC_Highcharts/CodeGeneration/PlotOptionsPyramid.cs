@@ -14,6 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPyramid()
 		{
+			NeckWidth = NeckWidth_DefaultValue = "0%";
+			NeckHeight = NeckHeight_DefaultValue = "0%";
+			Reversed = Reversed_DefaultValue = true;
 			Label = Label_DefaultValue = new PlotOptionsPyramidLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -39,13 +42,14 @@ namespace Highsoft.Web.Mvc.Charts
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsPyramidTooltip();
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Clip = Clip_DefaultValue = false;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsPyramidDataLabels();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			LegendType = LegendType_DefaultValue = "point";
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			Colors = Colors_DefaultValue = new List<string>();
 			EndAngle = EndAngle_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
@@ -53,13 +57,31 @@ namespace Highsoft.Web.Mvc.Charts
 			StartAngle = StartAngle_DefaultValue = 0;
 			Depth = Depth_DefaultValue = 0;
 			Width = Width_DefaultValue = null;
-			NeckWidth = NeckWidth_DefaultValue = null;
 			Height = Height_DefaultValue = null;
-			NeckHeight = NeckHeight_DefaultValue = null;
-			Reversed = Reversed_DefaultValue = false;
 			
 		}	
 		
+
+		/// <summary>
+		/// The pyramid neck width is zero by default, as opposed to the funnel, which shares the same layout logic.
+		/// </summary>
+		public string NeckWidth { get; set; }
+		private string NeckWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pyramid neck width is zero by default, as opposed to the funnel, which shares the same layout logic.
+		/// </summary>
+		public string NeckHeight { get; set; }
+		private string NeckHeight_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pyramid is reversed by default, as opposed to the funnel, whichshares the layout engine, and is not reversed.
+		/// </summary>
+		public bool? Reversed { get; set; }
+		private bool? Reversed_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
@@ -90,7 +112,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsPyramidEvents Events { get; set; }
 		private PlotOptionsPyramidEvents Events_DefaultValue { get; set; }
@@ -237,13 +259,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The center of the pie chart relative to the plot area. Can be percentagesor pixel values. The default behaviour (as of 3.0) is to centerthe pie so that all slices and data labels are within the plot area.As a consequence, the pie may actually jump around in a chart withdynamic values, as the data labels move. In that case, the centershould be explicitly set, for example to `["50%", "50%"]`.
 		/// </summary>
 		public string[] Center { get; set; }
@@ -272,6 +287,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public string LegendType { get; set; }
+		private string LegendType_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If a point is sliced, moved out from the center, how many pixelsshould it be moved?.
 		/// </summary>
 		public double? SlicedOffset { get; set; }
@@ -283,6 +305,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the `.highcharts-point` class.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -335,37 +364,19 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width of the neck, the lower part of the funnel. A number definespixel width, a percentage string defines a percentage of the plotarea width.
-		/// </summary>
-		public double? NeckWidth { get; set; }
-		private double? NeckWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The height of the funnel or pyramid. If it is a number it definesthe pixel height, if it is a percentage string it is the percentageof the plot area height.
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The height of the neck, the lower part of the funnel. A number definespixel width, a percentage string defines a percentage of the plotarea height.
-		/// </summary>
-		public double? NeckHeight { get; set; }
-		private double? NeckHeight_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A reversed funnel has the widest area down. A reversed funnel withno neck width and neck height is a pyramid.
-		/// </summary>
-		public bool? Reversed { get; set; }
-		private bool? Reversed_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
+			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
+			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
@@ -391,13 +402,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
+			if (LegendType != LegendType_DefaultValue) h.Add("legendType",LegendType);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
@@ -405,10 +417,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
-			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			
 
 			return h;

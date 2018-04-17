@@ -14,12 +14,12 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesData()
 		{
+			Color = Color_DefaultValue = "";
 			From = From_DefaultValue = "";
 			To = To_DefaultValue = "";
 			Outgoing = Outgoing_DefaultValue = false;
 			Weight = Weight_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new SankeySeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
@@ -31,6 +31,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// The color for the individual _link_. By default, the link color is the sameas the node it extends from. The `series.fillOpacity` option also applies tothe points, so when setting a specific link color, consider setting the`fillOpacity` to 1.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The node that the link runs from.
@@ -68,14 +75,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Individual color for the point. By default the color is pulled fromthe global `colors` array.In styled mode, the `color` option doesn't take effect. Instead, use `colorIndex`.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Styled mode only. A specific color index to use for the point, so itsgraphic representations are given the class name`highcharts-color-{n}`.
+		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color by is set bythe `fill` attribute, so the change in class name won't have a visual effectby default.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -134,12 +134,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (Outgoing != Outgoing_DefaultValue) h.Add("outgoing",Outgoing);
 			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);

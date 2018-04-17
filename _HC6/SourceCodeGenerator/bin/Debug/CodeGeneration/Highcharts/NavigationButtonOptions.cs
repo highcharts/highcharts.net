@@ -14,17 +14,17 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public NavigationButtonOptions()
 		{
-			SymbolSize = SymbolSize_DefaultValue = 14;
 			Enabled = Enabled_DefaultValue = true;
+			SymbolSize = SymbolSize_DefaultValue = 14;
 			SymbolX = SymbolX_DefaultValue = null;
 			SymbolY = SymbolY_DefaultValue = null;
 			Align = Align_DefaultValue = NavigationButtonOptionsAlign.Right;
 			ButtonSpacing = ButtonSpacing_DefaultValue = 3;
 			Height = Height_DefaultValue = 22;
-			VerticalAlign = VerticalAlign_DefaultValue = NavigationButtonOptionsVerticalAlign.Top;
 			Text = Text_DefaultValue = "null";
-			Width = Width_DefaultValue = 24;
 			Y = Y_DefaultValue = 0;
+			VerticalAlign = VerticalAlign_DefaultValue = NavigationButtonOptionsVerticalAlign.Top;
+			Width = Width_DefaultValue = 24;
 			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
 			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 1;
@@ -34,17 +34,17 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The pixel size of the symbol on the button.
-		/// </summary>
-		public double? SymbolSize { get; set; }
-		private double? SymbolSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to enable buttons.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel size of the symbol on the button.
+		/// </summary>
+		public double? SymbolSize { get; set; }
+		private double? SymbolSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -83,13 +83,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The vertical alignment of the buttons. Can be one of "top", "middle"or "bottom".
-		/// </summary>
-		public NavigationButtonOptionsVerticalAlign VerticalAlign { get; set; }
-		private NavigationButtonOptionsVerticalAlign VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A text string to add to the individual button.
 		/// </summary>
 		public string Text { get; set; }
@@ -97,17 +90,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The pixel width of the button.
-		/// </summary>
-		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The vertical offset of the button's position relative to its`verticalAlign`.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The vertical alignment of the buttons. Can be one of "top", "middle"or "bottom".
+		/// </summary>
+		public NavigationButtonOptionsVerticalAlign VerticalAlign { get; set; }
+		private NavigationButtonOptionsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel width of the button.
+		/// </summary>
+		public double? Width { get; set; }
+		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -142,17 +142,17 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
 			if (SymbolX != SymbolX_DefaultValue) h.Add("symbolX",SymbolX);
 			if (SymbolY != SymbolY_DefaultValue) h.Add("symbolY",SymbolY);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (SymbolStroke != SymbolStroke_DefaultValue) h.Add("symbolStroke",SymbolStroke);
 			if (SymbolStrokeWidth != SymbolStrokeWidth_DefaultValue) h.Add("symbolStrokeWidth",SymbolStrokeWidth);

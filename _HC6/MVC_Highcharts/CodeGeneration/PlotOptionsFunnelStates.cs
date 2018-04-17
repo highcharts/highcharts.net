@@ -14,13 +14,21 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsFunnelStates()
 		{
+			Select = Select_DefaultValue = new PlotOptionsFunnelStatesSelect();
 			Hover = Hover_DefaultValue = new PlotOptionsFunnelStatesHover();
 			
 		}	
 		
 
 		/// <summary>
-		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
+		/// Options for a selected funnel item.
+		/// </summary>
+		public PlotOptionsFunnelStatesSelect Select { get; set; }
+		private PlotOptionsFunnelStatesSelect Select_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
 		/// </summary>
 		public PlotOptionsFunnelStatesHover Hover { get; set; }
 		private PlotOptionsFunnelStatesHover Hover_DefaultValue { get; set; }
@@ -30,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			
 

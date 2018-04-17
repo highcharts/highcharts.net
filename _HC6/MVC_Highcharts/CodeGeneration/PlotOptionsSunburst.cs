@@ -15,8 +15,12 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSunburst()
 		{
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
+			ColorByPoint = ColorByPoint_DefaultValue = false;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsSunburstDataLabels();
 			RootId = RootId_DefaultValue = "undefined";
 			LevelIsConstant = LevelIsConstant_DefaultValue = true;
+			LevelSize = LevelSize_DefaultValue = new PlotOptionsSunburstLevelSize();
+			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			Levels = Levels_DefaultValue = new List<PlotOptionsSunburstLevels>();
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
 			Label = Label_DefaultValue = new PlotOptionsSunburstLabel();
@@ -43,11 +47,9 @@ namespace Highsoft.Web.Mvc.Charts
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsSunburstTooltip();
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsSunburstDataLabels();
 			Size = Size_DefaultValue = "";
-			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			Colors = Colors_DefaultValue = new List<string>();
 			StartAngle = StartAngle_DefaultValue = 0;
 			
@@ -62,6 +64,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? ColorByPoint { get; set; }
+		private bool? ColorByPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSunburstDataLabels DataLabels { get; set; }
+		private PlotOptionsSunburstDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Which point to use as a root in the visualization.
 		/// </summary>
 		public string RootId { get; set; }
@@ -73,6 +89,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? LevelIsConstant { get; set; }
 		private bool? LevelIsConstant_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines the width of the ring per level.
+		/// </summary>
+		public PlotOptionsSunburstLevelSize LevelSize { get; set; }
+		private PlotOptionsSunburstLevelSize LevelSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If a point is sliced, moved out from the center, how many pixelsshould it be moved?.
+		/// </summary>
+		public double? SlicedOffset { get; set; }
+		private double? SlicedOffset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,7 +148,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsSunburstEvents Events { get; set; }
 		private PlotOptionsSunburstEvents Events_DefaultValue { get; set; }
@@ -258,31 +288,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsSunburstDataLabels DataLabels { get; set; }
-		private PlotOptionsSunburstDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The diameter of the pie relative to the plot area. Can be a percentageor pixel value. Pixel values are given as integers. The defaultbehaviour (as of 3.0) is to scale to the plot area and give roomfor data labels within the plot area. As a consequence, the sizeof the pie may vary when points are updated and data labels morearound. In that case it is best to set a fixed value, for example`"75%"`.
+		/// The diameter of the pie relative to the plot area. Can be a percentageor pixel value. Pixel values are given as integers. The defaultbehaviour (as of 3.0) is to scale to the plot area and give roomfor data labels within the plot area.[slicedOffset](#plotOptions.pie.slicedOffset) is also included in the default size calculation. As a consequence, the sizeof the pie may vary when points are updated and data labels morearound. In that case it is best to set a fixed value, for example`"75%"`.
 		/// </summary>
 		public string Size { get; set; }
 		private string Size_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If a point is sliced, moved out from the center, how many pixelsshould it be moved?.
-		/// </summary>
-		public double? SlicedOffset { get; set; }
-		private double? SlicedOffset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -290,6 +299,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the `.highcharts-point` class.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -311,8 +327,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Center != Center_DefaultValue) h.Add("center",Center);
+			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (RootId != RootId_DefaultValue) h.Add("rootId",RootId);
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
+			if (LevelSize.IsDirty()) h.Add("levelSize",LevelSize.ToHashtable());
+			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(Levels));
 			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
@@ -339,11 +359,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Size != Size_DefaultValue) h.Add("size",Size);
-			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
 			

@@ -14,6 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPolygon()
 		{
+			Marker = Marker_DefaultValue = new PlotOptionsPolygonMarker();
+			StickyTracking = StickyTracking_DefaultValue = false;
 			TrackByArea = TrackByArea_DefaultValue = true;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsPolygonLabel();
@@ -22,12 +24,10 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsPolygonEvents();
-			Marker = Marker_DefaultValue = new PlotOptionsPolygonMarker();
 			Point = Point_DefaultValue = new PlotOptionsPolygonPoint();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsPolygonDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			States = States_DefaultValue = new PlotOptionsPolygonStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsPolygonFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
@@ -60,10 +60,23 @@ namespace Highsoft.Web.Mvc.Charts
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsPolygonZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPolygonMarker Marker { get; set; }
+		private PlotOptionsPolygonMarker Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -87,7 +100,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Pixel with of the graph line.
+		/// Pixel width of the graph line.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -115,17 +128,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsPolygonEvents Events { get; set; }
 		private PlotOptionsPolygonEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
-		/// </summary>
-		public PlotOptionsPolygonMarker Marker { get; set; }
-		private PlotOptionsPolygonMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -136,7 +142,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public PlotOptionsPolygonDataLabels DataLabels { get; set; }
 		private PlotOptionsPolygonDataLabels DataLabels_DefaultValue { get; set; }
@@ -154,13 +160,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsPolygonStates States { get; set; }
 		private PlotOptionsPolygonStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -290,14 +289,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public PlotOptionsPolygonPointIntervalUnit PointIntervalUnit { get; set; }
 		private PlotOptionsPolygonPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
@@ -374,30 +373,25 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsPolygonZone> Zones { get; set; }
 		private List<PlotOptionsPolygonZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line series plotacross the extremes.
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
@@ -406,12 +400,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
@@ -448,7 +440,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			
 
 			return h;

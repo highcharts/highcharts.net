@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the drill up button that appears when drilling downon a series. The text for the button is defined in [lang.drillUpText](#lang.drillUpText).
+		/// Options for the drill up button that appears when drilling downon a series. The text for the button is defined in[lang.drillUpText](#lang.drillUpText).
 		/// </summary>
 		public DrilldownDrillUpButton DrillUpButton { get; set; }
 		private DrilldownDrillUpButton DrillUpButton_DefaultValue { get; set; }

@@ -14,18 +14,20 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsFunnel()
 		{
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Width = Width_DefaultValue = null;
 			NeckWidth = NeckWidth_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			NeckHeight = NeckHeight_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = false;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsFunnelDataLabels();
+			States = States_DefaultValue = new PlotOptionsFunnelStates();
 			Label = Label_DefaultValue = new PlotOptionsFunnelLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsFunnelEvents();
 			Point = Point_DefaultValue = new PlotOptionsFunnelPoint();
-			States = States_DefaultValue = new PlotOptionsFunnelStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
@@ -44,13 +46,12 @@ namespace Highsoft.Web.Mvc.Charts
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsFunnelTooltip();
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Clip = Clip_DefaultValue = false;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsFunnelDataLabels();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			LegendType = LegendType_DefaultValue = "point";
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			Colors = Colors_DefaultValue = new List<string>();
 			EndAngle = EndAngle_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
@@ -60,6 +61,20 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// Initial animation is by default disabled for the funnel chart.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The center of the series. By default, it is centered in the middleof the plot area, so it fills the plot area height.
+		/// </summary>
+		public string[] Center { get; set; }
+		private string[] Center_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The width of the funnel compared to the width of the plot area,or the pixel width if it is a number.
@@ -97,6 +112,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsFunnelDataLabels DataLabels { get; set; }
+		private PlotOptionsFunnelDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series states.
+		/// </summary>
+		public PlotOptionsFunnelStates States { get; set; }
+		private PlotOptionsFunnelStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
 		public PlotOptionsFunnelLabel Label { get; set; }
@@ -118,14 +147,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsFunnelEvents Events { get; set; }
 		private PlotOptionsFunnelEvents Events_DefaultValue { get; set; }
@@ -136,13 +158,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsFunnelPoint Point { get; set; }
 		private PlotOptionsFunnelPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsFunnelStates States { get; set; }
-		private PlotOptionsFunnelStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -272,20 +287,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The center of the pie chart relative to the plot area. Can be percentagesor pixel values. The default behaviour (as of 3.0) is to centerthe pie so that all slices and data labels are within the plot area.As a consequence, the pie may actually jump around in a chart withdynamic values, as the data labels move. In that case, the centershould be explicitly set, for example to `["50%", "50%"]`.
-		/// </summary>
-		public string[] Center { get; set; }
-		private string[] Center_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public bool? Clip { get; set; }
@@ -293,17 +294,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsFunnelDataLabels DataLabels { get; set; }
-		private PlotOptionsFunnelDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Equivalent to [chart.ignoreHiddenSeries](#chart.ignoreHiddenSeries),this option tells whether the series shall be redrawn as if thehidden point were `null`.The default value changed from `false` to `true` with Highcharts3.0.
 		/// </summary>
 		public bool? IgnoreHiddenPoint { get; set; }
 		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string LegendType { get; set; }
+		private string LegendType_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -318,6 +319,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the `.highcharts-point` class.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -366,18 +374,20 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -396,13 +406,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
+			if (LegendType != LegendType_DefaultValue) h.Add("legendType",LegendType);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);

@@ -17,8 +17,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Size = Size_DefaultValue = "85%";
 			StartAngle = StartAngle_DefaultValue = 0;
-			Background = Background_DefaultValue = new List<PaneBackground>();
 			EndAngle = EndAngle_DefaultValue = null;
+			Background = Background_DefaultValue = new List<PaneBackground>();
 			
 		}	
 		
@@ -45,17 +45,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array of background items for the pane.
-		/// </summary>
-		public List<PaneBackground> Background { get; set; }
-		private List<PaneBackground> Background_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The end angle of the polar X axis or gauge value axis, given in degreeswhere 0 is north. Defaults to [startAngle](#pane.startAngle) + 360.
 		/// </summary>
 		public double? EndAngle { get; set; }
 		private double? EndAngle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of background items for the pane.
+		/// </summary>
+		public List<PaneBackground> Background { get; set; }
+		private List<PaneBackground> Background_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -65,8 +65,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
-			if (Background != Background_DefaultValue) h.Add("background", HashifyList(Background));
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
+			if (Background != Background_DefaultValue) h.Add("background", HashifyList(Background));
 			
 
 			return h;

@@ -17,6 +17,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Id = Id_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			Column = Column_DefaultValue = null;
+			Name = Name_DefaultValue = "";
+			Offset = Offset_DefaultValue = 0;
 			
 		}	
 		
@@ -40,6 +43,27 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An optional column index of where to place the node. The default behaviour isto place it next to the preceding node.
+		/// </summary>
+		public Undefined Column { get; set; }
+		private Undefined Column_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name to display for the node in data labels and tooltips. Use this whenthe name is different from the `id`. Where the id must be unique for eachnode, this is not necessary for the name.
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The vertical offset of a node in terms of weight. Positive values shift thenode downwards, negative shift it upwards.
+		/// </summary>
+		public double? Offset { get; set; }
+		private double? Offset_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -49,6 +73,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (Column != Column_DefaultValue) h.Add("column",Column);
+			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			
 
 			return h;

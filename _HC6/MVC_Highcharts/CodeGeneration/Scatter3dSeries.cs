@@ -72,13 +72,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Tooltip = Tooltip_DefaultValue = new Scatter3dSeriesTooltip();
 			Zones = Zones_DefaultValue = new List<Scatter3dSeriesZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			
 		}	
 		
 
 		/// <summary>
-		/// An array of data points for the series. For the `scatter3d` seriestype, points can be given in the following ways:1.  An array of arrays with 3 values. In this case, the values correspondto `x,y,z`. If the first value is a string, it is applied as the nameof the point, and the `x` value is inferred. ```js    data: [        [0, 0, 1],        [1, 8, 7],        [2, 9, 2]    ] ```3.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.scatter3d.turboThreshold),this option is not available. ```js    data: [{        x: 1,        y: 2,        z: 24,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        y: 4,        z: 12,        name: "Point1",        color: "#FF00FF"    }] ```
+		/// An array of data points for the series. For the `scatter3d` seriestype, points can be given in the following ways:1.  An array of arrays with 3 values. In this case, the values correspondto `x,y,z`. If the first value is a string, it is applied as the nameof the point, and the `x` value is inferred. ```js    data: [        [0, 0, 1],        [1, 8, 7],        [2, 9, 2]    ] ```3.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series'[turboThreshold](#series.scatter3d.turboThreshold), this option is notavailable. ```js    data: [{        x: 1,        y: 2,        z: 24,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        y: 4,        z: 12,        name: "Point1",        color: "#FF00FF"    }] ```
 		/// </summary>
 		public List<Scatter3dSeriesData> Data { get; set; }
 		private List<Scatter3dSeriesData> Data_DefaultValue { get; set; }
@@ -120,7 +119,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`.
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
 		public Scatter3dSeriesType Type { get; set; }
 		private Scatter3dSeriesType Type_DefaultValue { get; set; }
@@ -162,7 +161,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Pixel with of the graph line.
+		/// Pixel width of the graph line.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -190,7 +189,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public Scatter3dSeriesEvents Events { get; set; }
 		private Scatter3dSeriesEvents Events_DefaultValue { get; set; }
@@ -211,7 +210,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public Scatter3dSeriesDataLabels DataLabels { get; set; }
 		private Scatter3dSeriesDataLabels DataLabels_DefaultValue { get; set; }
@@ -372,14 +371,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public Scatter3dSeriesPointIntervalUnit PointIntervalUnit { get; set; }
 		private Scatter3dSeriesPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
@@ -470,24 +469,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<Scatter3dSeriesZone> Zones { get; set; }
 		private List<Scatter3dSeriesZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line series plotacross the extremes.
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -556,7 +548,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			
 
 			return h;

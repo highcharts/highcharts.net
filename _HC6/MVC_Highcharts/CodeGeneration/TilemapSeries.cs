@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = "";
-			Stack = Stack_DefaultValue = "null";
 			Type = Type_DefaultValue = TilemapSeriesType.Null;
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
@@ -57,7 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = TilemapSeriesPointIntervalUnit.Null;
-			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
@@ -70,7 +68,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Tooltip = Tooltip_DefaultValue = new TilemapSeriesTooltip();
 			Zones = Zones_DefaultValue = new List<TilemapSeriesZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 1;
+			BorderWidth = BorderWidth_DefaultValue = 0;
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
 			PointPadding = PointPadding_DefaultValue = 0;
 			Colsize = Colsize_DefaultValue = 1;
@@ -116,14 +114,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This option allows grouping series in a stacked chart. The stackoption can be a string or a number or anything else, as long as thegrouped series' stack options match each other.
-		/// </summary>
-		public string Stack { get; set; }
-		private string Stack_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The type of series, for example `line` or `column`.
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
 		public TilemapSeriesType Type { get; set; }
 		private TilemapSeriesType Type_DefaultValue { get; set; }
@@ -165,7 +156,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Pixel with of the graph line.
+		/// Pixel width of the graph line.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -193,7 +184,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public TilemapSeriesEvents Events { get; set; }
 		private TilemapSeriesEvents Events_DefaultValue { get; set; }
@@ -207,7 +198,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public TilemapSeriesDataLabels DataLabels { get; set; }
 		private TilemapSeriesDataLabels DataLabels_DefaultValue { get; set; }
@@ -368,24 +359,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public TilemapSeriesPointIntervalUnit PointIntervalUnit { get; set; }
 		private TilemapSeriesPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Possible values: `null`, `"on"`, `"between"`.In a column chart, when pointPlacement is `"on"`, the point willnot create any padding of the X axis. In a polar column chart thismeans that the first column points directly north. If the pointPlacementis `"between"`, the columns will be laid out between ticks. Thisis useful for example for visualising an amount between two pointsin time or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this is computed, but forline-type series it needs to be set.Defaults to `null` in cartesian charts, `"between"` in polar charts.
-		/// </summary>
-		public PointPlacement PointPlacement { get; set; }
-		private PointPlacement PointPlacement_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -459,21 +443,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<TilemapSeriesZone> Zones { get; set; }
 		private List<TilemapSeriesZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line series plotacross the extremes.
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
+		/// The border width for each heat map item.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
@@ -523,7 +507,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
@@ -561,11 +544,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("TilemapSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
-			if (PointPlacement.IsDirty())
-				if (PointPlacement.Value.HasValue)
-					h.Add("pointPlacement", PointPlacement.Value);
-				else
-					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);

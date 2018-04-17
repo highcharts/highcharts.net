@@ -14,13 +14,21 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPie()
 		{
+			Events = Events_DefaultValue = new PlotOptionsPieEvents();
+			Point = Point_DefaultValue = new PlotOptionsPiePoint();
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Clip = Clip_DefaultValue = false;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsPieDataLabels();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			LegendType = LegendType_DefaultValue = "point";
 			Size = Size_DefaultValue = "";
+			ShowInLegend = ShowInLegend_DefaultValue = false;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
+			StickyTracking = StickyTracking_DefaultValue = false;
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsPieTooltip();
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderWidth = BorderWidth_DefaultValue = 1;
+			States = States_DefaultValue = new PlotOptionsPieStates();
 			Colors = Colors_DefaultValue = new List<string>();
 			EndAngle = EndAngle_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
@@ -31,10 +39,6 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = new PlotOptionsPieEvents();
-			Point = Point_DefaultValue = new PlotOptionsPiePoint();
-			States = States_DefaultValue = new PlotOptionsPieStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
@@ -48,14 +52,25 @@ namespace Highsoft.Web.Mvc.Charts
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsPieTooltip();
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPieEvents Events { get; set; }
+		private PlotOptionsPieEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPiePoint Point { get; set; }
+		private PlotOptionsPiePoint Point_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The center of the pie chart relative to the plot area. Can be percentagesor pixel values. The default behaviour (as of 3.0) is to centerthe pie so that all slices and data labels are within the plot area.As a consequence, the pie may actually jump around in a chart withdynamic values, as the data labels move. In that case, the centershould be explicitly set, for example to `["50%", "50%"]`.
@@ -86,10 +101,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The diameter of the pie relative to the plot area. Can be a percentageor pixel value. Pixel values are given as integers. The defaultbehaviour (as of 3.0) is to scale to the plot area and give roomfor data labels within the plot area. As a consequence, the sizeof the pie may vary when points are updated and data labels morearound. In that case it is best to set a fixed value, for example`"75%"`.
+		/// 
+		/// </summary>
+		public string LegendType { get; set; }
+		private string LegendType_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The diameter of the pie relative to the plot area. Can be a percentageor pixel value. Pixel values are given as integers. The defaultbehaviour (as of 3.0) is to scale to the plot area and give roomfor data labels within the plot area.[slicedOffset](#plotOptions.pie.slicedOffset) is also included in the default size calculation. As a consequence, the sizeof the pie may vary when points are updated and data labels morearound. In that case it is best to set a fixed value, for example`"75%"`.
 		/// </summary>
 		public string Size { get; set; }
 		private string Size_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to display this particular series or series type in thelegend. Since 2.1, pies are not shown in the legend by default.
+		/// </summary>
+		public bool? ShowInLegend { get; set; }
+		private bool? ShowInLegend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -100,10 +129,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip. When `stickyTracking`is false and `tooltip.shared` is false, the tooltip will be hiddenwhen moving the mouse between series.
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPieTooltip Tooltip { get; set; }
+		private PlotOptionsPieTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color of the border surrounding each slice. When `null`, theborder takes the same color as the slice fill. This can be usedtogether with a `borderWidth` to fill drawing gaps created by antialiazingartefacts in borderless pies.In styled mode, the border stroke is given in the `.highcharts-point` class.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the `.highcharts-point` class.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPieStates States { get; set; }
+		private PlotOptionsPieStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -174,34 +231,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
-		/// </summary>
-		public PlotOptionsPieEvents Events { get; set; }
-		private PlotOptionsPieEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Properties for each single point.
-		/// </summary>
-		public PlotOptionsPiePoint Point { get; set; }
-		private PlotOptionsPiePoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsPieStates States { get; set; }
-		private PlotOptionsPieStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -296,13 +325,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
@@ -314,33 +336,27 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsPieTooltip Tooltip { get; set; }
-		private PlotOptionsPieTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
+			if (LegendType != LegendType_DefaultValue) h.Add("legendType",LegendType);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
@@ -351,10 +367,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
@@ -368,11 +380,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsPiePointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			
 
 			return h;

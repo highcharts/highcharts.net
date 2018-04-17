@@ -30,21 +30,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The start of the value range that the data class represents, relatingto the point value.
+		/// The start of the value range that the data class represents,relating to the point value.The range of each `dataClass` is closed in both ends, but can beoverridden by the next `dataClass`.
 		/// </summary>
 		public double? From { get; set; }
 		private double? From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The name of the data class as it appears in the legend. If no nameis given, it is automatically created based on the `from` and `to`values. For full programmatic control, [legend.labelFormatter](#legend.labelFormatter) can be used. In the formatter, `this.from` and `this.to` can be accessed.
+		/// The name of the data class as it appears in the legend.If no name is given, it is automatically created based on the`from` and `to` values. For full programmatic control,[legend.labelFormatter](#legend.labelFormatter) can be used.In the formatter, `this.from` and `this.to` can be accessed.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The end of the value range that the data class represents, relatingto the point value.
+		/// The end of the value range that the data class represents,relating to the point value.The range of each `dataClass` is closed in both ends, but can beoverridden by the next `dataClass`.
 		/// </summary>
 		public double? To { get; set; }
 		private double? To_DefaultValue { get; set; }

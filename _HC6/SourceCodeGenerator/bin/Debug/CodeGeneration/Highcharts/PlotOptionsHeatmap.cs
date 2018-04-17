@@ -14,8 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsHeatmap()
 		{
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			BorderWidth = BorderWidth_DefaultValue = 0;
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsHeatmapDataLabels();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsHeatmapTooltip();
+			States = States_DefaultValue = new PlotOptionsHeatmapStates();
 			PointPadding = PointPadding_DefaultValue = 0;
+			Color = Color_DefaultValue = "null";
 			Colsize = Colsize_DefaultValue = 1;
 			Rowsize = Rowsize_DefaultValue = 1;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
@@ -23,19 +29,15 @@ namespace Highsoft.Web.Mvc.Charts
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsHeatmapEvents();
 			Point = Point_DefaultValue = new PlotOptionsHeatmapPoint();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsHeatmapDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsHeatmapStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsHeatmapFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsHeatmapCursor.Null;
@@ -51,7 +53,6 @@ namespace Highsoft.Web.Mvc.Charts
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsHeatmapPointIntervalUnit.Null;
-			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -62,13 +63,25 @@ namespace Highsoft.Web.Mvc.Charts
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsHeatmapTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsHeatmapZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			
 		}	
 		
+
+		/// <summary>
+		/// Animation is disabled by default on the heatmap series.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border width for each heat map item.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The color applied to null points. In styled mode, a general CSS class isapplied instead.
@@ -78,10 +91,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHeatmapDataLabels DataLabels { get; set; }
+		private PlotOptionsHeatmapDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHeatmapTooltip Tooltip { get; set; }
+		private PlotOptionsHeatmapTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHeatmapStates States { get; set; }
+		private PlotOptionsHeatmapStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Padding between the points in the heatmap.
 		/// </summary>
 		public double? PointPadding { get; set; }
 		private double? PointPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The main color of the series. In heat maps this color is rarely used,as we mostly use the color to denote the value of each point. Unlessoptions are set in the [colorAxis](#colorAxis), the default valueis pulled from the [options.colors](#colors) array.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -113,7 +154,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Pixel with of the graph line.
+		/// Pixel width of the graph line.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -134,14 +175,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsHeatmapEvents Events { get; set; }
 		private PlotOptionsHeatmapEvents Events_DefaultValue { get; set; }
@@ -152,13 +186,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsHeatmapPoint Point { get; set; }
 		private PlotOptionsHeatmapPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsHeatmapDataLabels DataLabels { get; set; }
-		private PlotOptionsHeatmapDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -173,13 +200,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsHeatmapStates States { get; set; }
-		private PlotOptionsHeatmapStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -215,13 +235,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the `options.colors` array.In styled mode, the color can be defined by the[colorIndex](#plotOptions.series.colorIndex) option. Also, the seriescolor can be set with the `.highcharts-series`, `.highcharts-color-{n}`,`.highcharts-{type}-series` or `.highcharts-series-{n}` class, orindividual classes given by the `className` option.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -316,24 +329,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public PlotOptionsHeatmapPointIntervalUnit PointIntervalUnit { get; set; }
 		private PlotOptionsHeatmapPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Possible values: `null`, `"on"`, `"between"`.In a column chart, when pointPlacement is `"on"`, the point willnot create any padding of the X axis. In a polar column chart thismeans that the first column points directly north. If the pointPlacementis `"between"`, the columns will be laid out between ticks. Thisis useful for example for visualising an amount between two pointsin time or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this is computed, but forline-type series it needs to be set.Defaults to `null` in cartesian charts, `"between"` in polar charts.
-		/// </summary>
-		public PointPlacement PointPlacement { get; set; }
-		private PointPlacement PointPlacement_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -407,39 +413,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsHeatmapTooltip Tooltip { get; set; }
-		private PlotOptionsHeatmapTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsHeatmapZone> Zones { get; set; }
 		private List<PlotOptionsHeatmapZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line series plotacross the extremes.
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (NullColor != NullColor_DefaultValue) h.Add("nullColor",NullColor);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
 			if (Rowsize != Rowsize_DefaultValue) h.Add("rowsize",Rowsize);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
@@ -447,19 +445,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
@@ -475,11 +469,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsHeatmapPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
-			if (PointPlacement.IsDirty())
-				if (PointPlacement.Value.HasValue)
-					h.Add("pointPlacement", PointPlacement.Value);
-				else
-					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
@@ -490,10 +479,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			
 
 			return h;

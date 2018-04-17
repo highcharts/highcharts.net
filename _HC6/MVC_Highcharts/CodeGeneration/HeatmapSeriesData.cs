@@ -14,11 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HeatmapSeriesData()
 		{
+			Color = Color_DefaultValue = "";
 			Value = Value_DefaultValue = null;
+			X = X_DefaultValue = double.MinValue;
+			Y = Y_DefaultValue = double.MinValue;
 			PointPadding = PointPadding_DefaultValue = null;
 			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new HeatmapSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
@@ -26,18 +28,37 @@ namespace Highsoft.Web.Mvc.Charts
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
-			X = X_DefaultValue = double.MinValue;
-			Y = Y_DefaultValue = double.MinValue;
 			Events = Events_DefaultValue = new HeatmapSeriesDataEvents();
 			
 		}	
 		
 
 		/// <summary>
+		/// The color of the point. In heat maps the point color is rarely setexplicitly, as we use the color to denote the `value`. Options forthis are set in the [colorAxis](#colorAxis) configuration.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The value of the point, resulting in a color controled by optionsas set in the [colorAxis](#colorAxis) configuration.
 		/// </summary>
 		public double? Value { get; set; }
 		private double? Value_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The x value of the point. For datetime axes,the X value is the timestamp in milliseconds since 1970.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The y value of the point.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -62,14 +83,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Individual color for the point. By default the color is pulled fromthe global `colors` array.In styled mode, the `color` option doesn't take effect. Instead, use `colorIndex`.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Styled mode only. A specific color index to use for the point, so itsgraphic representations are given the class name`highcharts-color-{n}`.
+		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color by is set bythe `fill` attribute, so the change in class name won't have a visual effectby default.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -118,20 +132,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y value of the point.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Individual point events
 		/// </summary>
 		public HeatmapSeriesDataEvents Events { get; set; }
@@ -142,11 +142,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -154,8 +156,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 

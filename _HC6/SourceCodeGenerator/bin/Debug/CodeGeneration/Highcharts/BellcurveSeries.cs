@@ -67,7 +67,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Tooltip = Tooltip_DefaultValue = new BellcurveSeriesTooltip();
 			Zones = Zones_DefaultValue = new List<BellcurveSeriesZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "null";
@@ -129,7 +128,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`.
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
 		public BellcurveSeriesType Type { get; set; }
 		private BellcurveSeriesType Type_DefaultValue { get; set; }
@@ -164,7 +163,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Pixel with of the graph line.
+		/// Pixel width of the graph line.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -192,7 +191,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public BellcurveSeriesEvents Events { get; set; }
 		private BellcurveSeriesEvents Events_DefaultValue { get; set; }
@@ -213,7 +212,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public BellcurveSeriesDataLabels DataLabels { get; set; }
 		private BellcurveSeriesDataLabels DataLabels_DefaultValue { get; set; }
@@ -437,49 +436,42 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<BellcurveSeriesZone> Zones { get; set; }
 		private List<BellcurveSeriesZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line series plotacross the extremes.
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.
+		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fill opacity for the area. When you set an explicit `fillColor`,the `fillOpacity` is not applied. Instead, you should define theopacity in the `fillColor` with an rgba color definition. The `fillOpacity`setting, also the default setting, overrides the alpha componentof the `color` setting.
+		/// Fill opacity for the area. When you set an explicit `fillColor`,the `fillOpacity` is not applied. Instead, you should define theopacity in the `fillColor` with an rgba color definition. The`fillOpacity` setting, also the default setting, overrides the alphacomponent of the `color` setting.In styled mode, the fill opacity can be set with the `.highcharts-area`class name.
 		/// </summary>
 		public double? FillOpacity { get; set; }
 		private double? FillOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A separate color for the graph line. By default the line takes the`color` of the series, but the lineColor setting allows setting aseparate color for the line without altering the `fillColor`.
+		/// A separate color for the graph line. By default the line takes the`color` of the series, but the lineColor setting allows setting aseparate color for the line without altering the `fillColor`.In styled mode, the line stroke can be set with the `.highcharts-graph`class name.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A separate color for the negative part of the area.
+		/// A separate color for the negative part of the area.In styled mode, a negative color is set with the `.highcharts-negative`class name.
 		/// </summary>
 		public string NegativeFillColor { get; set; }
 		private string NegativeFillColor_DefaultValue { get; set; }
@@ -567,7 +559,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);

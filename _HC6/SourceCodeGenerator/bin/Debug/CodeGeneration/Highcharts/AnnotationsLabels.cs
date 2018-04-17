@@ -19,8 +19,9 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			BorderColor = BorderColor_DefaultValue = "black";
-			BorderRadius = BorderRadius_DefaultValue = 1;
+			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 1;
+			ClassName = ClassName_DefaultValue = "";
 			Crop = Crop_DefaultValue = false;
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = AnnotationsLabelsOverflow.Justify;
@@ -32,15 +33,15 @@ namespace Highsoft.Web.Mvc.Charts
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -16;
+			Distance = Distance_DefaultValue = null;
 			Format = Format_DefaultValue = "undefined";
 			Text = Text_DefaultValue = "undefined";
-			Distance = Distance_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// This option defines the point to which the label will be connected.It can be either the point which exists in the series - it is referencedby the point's id - or a new point with defined x, y properiesand optionally axes.
+		/// This option defines the point to which the label will be connected.It can be either the point which exists in the series - it isreferenced by the point's id - or a new point with defined x, yproperies and optionally axes.
 		/// </summary>
 		public AnnotationsLabelsPoint Point { get; set; }
 		private AnnotationsLabelsPoint Point_DefaultValue { get; set; }
@@ -89,14 +90,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to hide the annotation's label that is outside the plot area.
+		/// A class name for styling by CSS.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to hide the annotation's label that is outside the plotarea.
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to format the annotation's label. Note thatif a `format` or `text` are defined, the format or text take precedenceand the formatter is ignored. `This` refers to a point object.
+		/// Callback JavaScript function to format the annotation's label.Note that if a `format` or `text` are defined, the format or texttake precedence and the formatter is ignored. `This` refers to apoint object.
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
@@ -138,7 +146,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the annotation's label.
+		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the annotation's label.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
@@ -166,6 +174,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The label's pixel distance from the point.
+		/// </summary>
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A [format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) string for the data label.
 		/// </summary>
 		public string Format { get; set; }
@@ -177,13 +192,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The label's pixel distance from the point.
-		/// </summary>
-		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -197,6 +205,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("AnnotationsLabelsFormatter.formatter", Formatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
@@ -208,9 +217,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			
 
 			return h;

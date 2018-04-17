@@ -16,6 +16,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			BinsNumber = BinsNumber_DefaultValue = PlotOptionsHistogramBinsNumber.SquareRoot;
 			BinWidth = BinWidth_DefaultValue = null;
+			PointPadding = PointPadding_DefaultValue = 0;
+			GroupPadding = GroupPadding_DefaultValue = 0;
+			Grouping = Grouping_DefaultValue = false;
+			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsHistogramTooltip();
 			Label = Label_DefaultValue = new PlotOptionsHistogramLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -42,7 +47,6 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
-			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -51,21 +55,18 @@ namespace Highsoft.Web.Mvc.Charts
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsHistogramTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsHistogramZone>();
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			Crisp = Crisp_DefaultValue = true;
-			GroupPadding = GroupPadding_DefaultValue = null;
-			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			PointRange = PointRange_DefaultValue = null;
+			StartFromThreshold = StartFromThreshold_DefaultValue = true;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
-			Grouping = Grouping_DefaultValue = true;
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
@@ -86,6 +87,41 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? BinWidth { get; set; }
 		private double? BinWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? PointPadding { get; set; }
+		private double? PointPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? GroupPadding { get; set; }
+		private double? GroupPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Grouping { get; set; }
+		private bool? Grouping_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PointPlacement PointPlacement { get; set; }
+		private PointPlacement PointPlacement_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHistogramTooltip Tooltip { get; set; }
+		private PlotOptionsHistogramTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -117,7 +153,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsHistogramEvents Events { get; set; }
 		private PlotOptionsHistogramEvents Events_DefaultValue { get; set; }
@@ -131,7 +167,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public PlotOptionsHistogramDataLabels DataLabels { get; set; }
 		private PlotOptionsHistogramDataLabels DataLabels_DefaultValue { get; set; }
@@ -271,13 +307,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Possible values: `null`, `"on"`, `"between"`.In a column chart, when pointPlacement is `"on"`, the point willnot create any padding of the X axis. In a polar column chart thismeans that the first column points directly north. If the pointPlacementis `"between"`, the columns will be laid out between ticks. Thisis useful for example for visualising an amount between two pointsin time or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this is computed, but forline-type series it needs to be set.Defaults to `null` in cartesian charts, `"between"` in polar charts.
-		/// </summary>
-		public PointPlacement PointPlacement { get; set; }
-		private PointPlacement PointPlacement_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// If no x values are given for the points in a series, pointStart defineson what value to start. For example, if a series contains one yearlyvalue starting from 1945, set pointStart to 1945.
 		/// </summary>
 		public double? PointStart { get; set; }
@@ -334,24 +363,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsHistogramTooltip Tooltip { get; set; }
-		private PlotOptionsHistogramTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsHistogramZone> Zones { get; set; }
 		private List<PlotOptionsHistogramZone> Zones_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -369,20 +384,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Padding between each value groups, in x axis units.
-		/// </summary>
-		public double? GroupPadding { get; set; }
-		private double? GroupPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding between each column or bar, in x axis units.
-		/// </summary>
-		public double? PointPadding { get; set; }
-		private double? PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The minimal height for a column or width for a bar. By default,0 values are not shown. To visualize a 0 (or close to zero) point,set the minimal point length to a pixel value like 3\. In stackedcolumn charts, minPointLength might not be respected for tightlypacked values.
 		/// </summary>
 		public double? MinPointLength { get; set; }
@@ -394,6 +395,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? PointRange { get; set; }
 		private double? PointRange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? StartFromThreshold { get; set; }
+		private bool? StartFromThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -418,13 +426,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to group non-stacked columns or to let them render independentof each other. Non-grouped columns will be laid out individuallyand overlap each other.
-		/// </summary>
-		public bool? Grouping { get; set; }
-		private bool? Grouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The maximum allowed pixel width for a column, translated to the heightof a bar in a bar chart. This prevents the columns from becomingtoo wide when there is a small number of points in the chart.
 		/// </summary>
 		public double? MaxPointWidth { get; set; }
@@ -436,6 +437,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -472,6 +480,15 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (BinsNumber != BinsNumber_DefaultValue) h.Add("binsNumber", Highcharts.FirstCharacterToLower(BinsNumber.ToString()));
 			if (BinWidth != BinWidth_DefaultValue) h.Add("binWidth",BinWidth);
+			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
+			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
+			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
+			if (PointPlacement.IsDirty())
+				if (PointPlacement.Value.HasValue)
+					h.Add("pointPlacement", PointPlacement.Value);
+				else
+					h.Add("pointPlacement", PointPlacement.ToJSON());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
@@ -498,11 +515,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsHistogramPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
-			if (PointPlacement.IsDirty())
-				if (PointPlacement.Value.HasValue)
-					h.Add("pointPlacement", PointPlacement.Value);
-				else
-					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
@@ -511,21 +523,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
-			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
+			if (StartFromThreshold != StartFromThreshold_DefaultValue) h.Add("startFromThreshold",StartFromThreshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);

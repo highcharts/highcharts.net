@@ -14,8 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartParallelAxes()
 		{
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
+			LineWidth = LineWidth_DefaultValue = 1;
+			Title = Title_DefaultValue = new ChartParallelAxesTitle();
 			Labels = Labels_DefaultValue = new ChartParallelAxesLabels();
+			Offset = Offset_DefaultValue = 0;
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			MaxPadding = MaxPadding_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ChartParallelAxesMinorTickPosition.Outside;
@@ -25,11 +28,9 @@ namespace Highsoft.Web.Mvc.Charts
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = ChartParallelAxesTickmarkPlacement.Between;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
 			TickPosition = TickPosition_DefaultValue = ChartParallelAxesTickPosition.Outside;
-			Title = Title_DefaultValue = new ChartParallelAxesTitle();
 			Type = Type_DefaultValue = ChartParallelAxesType.Linear;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
 			LineColor = LineColor_DefaultValue = "#ccd6eb";
-			LineWidth = LineWidth_DefaultValue = 1;
 			TickColor = TickColor_DefaultValue = "#ccd6eb";
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			Categories = Categories_DefaultValue = new List<string>();
@@ -48,7 +49,6 @@ namespace Highsoft.Web.Mvc.Charts
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
-			Offset = Offset_DefaultValue = 0;
 			Opposite = Opposite_DefaultValue = false;
 			Pane = Pane_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = false;
@@ -73,17 +73,38 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Titles for yAxes are taken from [xAxis.categories](#xAxis.categories). All options for `xAxis.labels` applies to parallel coordinates titles.For example, to style categories, use [xAxis.labels.style](#xAxis.labels.style).
+		/// </summary>
+		public ChartParallelAxesTitle Title { get; set; }
+		private ChartParallelAxesTitle Title_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ChartParallelAxesLabels Labels { get; set; }
+		private ChartParallelAxesLabels Labels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Offset { get; set; }
+		private double? Offset_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The axis labels show the number or category for each tick.
-		/// </summary>
-		public ChartParallelAxesLabels Labels { get; set; }
-		private ChartParallelAxesLabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -150,13 +171,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The axis title, showing next to the axis line.
-		/// </summary>
-		public ChartParallelAxesTitle Title { get; set; }
-		private ChartParallelAxesTitle Title_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The type of axis. Can be one of `linear`, `logarithmic`, `datetime`or `category`. In a datetime axis, the numbers are given inmilliseconds, and tick marks are placed on appropriate values likefull hours or days. In a category axis, the [point names](#series.line.data.name) of the chart's series are usedfor categories, if not a [categories](#xAxis.categories) array isdefined.
 		/// </summary>
 		public ChartParallelAxesType Type { get; set; }
@@ -175,13 +189,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the line marking the axis itself.In styled mode, the stroke width is given in the`.highcharts-axis-line` or `.highcharts-xaxis-line` class.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -308,13 +315,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? MinTickInterval { get; set; }
 		private double? MinTickInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The distance in pixels from the plot area to the axis line.A positive offset moves the axis with it's line, labels and ticksaway from the plot area. This is typically used when two or moreaxes are displayed on the same side of the plot. With multipleaxes the offset is dynamically adjusted to avoid collision, thiscan be overridden by setting offset explicitly.
-		/// </summary>
-		public double? Offset { get; set; }
-		private double? Offset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -454,8 +454,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
+			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
@@ -465,11 +468,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
 			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highcharts.FirstCharacterToLower(TickPosition.ToString()));
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (TickColor != TickColor_DefaultValue) h.Add("tickColor",TickColor);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
@@ -488,7 +489,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);
 			if (MinTickInterval != MinTickInterval_DefaultValue) h.Add("minTickInterval",MinTickInterval);
-			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (Pane != Pane_DefaultValue) h.Add("pane",Pane);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);

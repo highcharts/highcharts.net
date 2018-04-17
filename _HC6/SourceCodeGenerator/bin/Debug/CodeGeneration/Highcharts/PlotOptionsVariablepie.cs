@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ZMin = ZMin_DefaultValue = null;
 			ZMax = ZMax_DefaultValue = null;
 			SizeBy = SizeBy_DefaultValue = PlotOptionsVariablepieSizeBy.Area;
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsVariablepieTooltip();
 			Label = Label_DefaultValue = new PlotOptionsVariablepieLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -43,15 +44,15 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsVariablepieTooltip();
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			Clip = Clip_DefaultValue = false;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsVariablepieDataLabels();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			LegendType = LegendType_DefaultValue = "point";
 			Size = Size_DefaultValue = "";
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			Colors = Colors_DefaultValue = new List<string>();
 			EndAngle = EndAngle_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
@@ -98,6 +99,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVariablepieTooltip Tooltip { get; set; }
+		private PlotOptionsVariablepieTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
 		public PlotOptionsVariablepieLabel Label { get; set; }
@@ -126,7 +134,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsVariablepieEvents Events { get; set; }
 		private PlotOptionsVariablepieEvents Events_DefaultValue { get; set; }
@@ -266,20 +274,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsVariablepieTooltip Tooltip { get; set; }
-		private PlotOptionsVariablepieTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The center of the pie chart relative to the plot area. Can be percentagesor pixel values. The default behaviour (as of 3.0) is to centerthe pie so that all slices and data labels are within the plot area.As a consequence, the pie may actually jump around in a chart withdynamic values, as the data labels move. In that case, the centershould be explicitly set, for example to `["50%", "50%"]`.
 		/// </summary>
 		public string[] Center { get; set; }
@@ -308,7 +302,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The diameter of the pie relative to the plot area. Can be a percentageor pixel value. Pixel values are given as integers. The defaultbehaviour (as of 3.0) is to scale to the plot area and give roomfor data labels within the plot area. As a consequence, the sizeof the pie may vary when points are updated and data labels morearound. In that case it is best to set a fixed value, for example`"75%"`.
+		/// 
+		/// </summary>
+		public string LegendType { get; set; }
+		private string LegendType_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The diameter of the pie relative to the plot area. Can be a percentageor pixel value. Pixel values are given as integers. The defaultbehaviour (as of 3.0) is to scale to the plot area and give roomfor data labels within the plot area.[slicedOffset](#plotOptions.pie.slicedOffset) is also included in the default size calculation. As a consequence, the sizeof the pie may vary when points are updated and data labels morearound. In that case it is best to set a fixed value, for example`"75%"`.
 		/// </summary>
 		public string Size { get; set; }
 		private string Size_DefaultValue { get; set; }
@@ -326,6 +327,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the `.highcharts-point` class.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -379,6 +387,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ZMin != ZMin_DefaultValue) h.Add("zMin",ZMin);
 			if (ZMax != ZMax_DefaultValue) h.Add("zMax",ZMax);
 			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy", Highcharts.FirstCharacterToLower(SizeBy.ToString()));
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
@@ -403,15 +412,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
+			if (LegendType != LegendType_DefaultValue) h.Add("legendType",LegendType);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);

@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartOptions3dFrame()
 		{
+			Side = Side_DefaultValue = new ChartOptions3dFrameSide();
 			Visible = Visible_DefaultValue = "default";
 			Size = Size_DefaultValue = 1;
 			Bottom = Bottom_DefaultValue = new ChartOptions3dFrameBottom();
@@ -22,10 +23,16 @@ namespace Highsoft.Web.Mvc.Charts
 			Right = Right_DefaultValue = new ChartOptions3dFrameRight();
 			Back = Back_DefaultValue = new ChartOptions3dFrameBack();
 			Front = Front_DefaultValue = new ChartOptions3dFrameFront();
-			Side = Side_DefaultValue = new ChartOptions3dFrameSide();
 			
 		}	
 		
+
+		/// <summary>
+		/// Note: As of v5.0.12, `frame.left` or `frame.right` should be usedinstead.The side for the frame around a 3D chart.
+		/// </summary>
+		public ChartOptions3dFrameSide Side { get; set; }
+		private ChartOptions3dFrameSide Side_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Whether the frames are visible.
@@ -81,19 +88,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ChartOptions3dFrameFront Front { get; set; }
 		private ChartOptions3dFrameFront Front_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Note: As of v5.0.12, `frame.left` or `frame.right` should be usedinstead.The side for the frame around a 3D chart.
-		/// </summary>
-		public ChartOptions3dFrameSide Side { get; set; }
-		private ChartOptions3dFrameSide Side_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Side.IsDirty()) h.Add("side",Side.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (Bottom.IsDirty()) h.Add("bottom",Bottom.ToHashtable());
@@ -102,7 +103,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Right.IsDirty()) h.Add("right",Right.ToHashtable());
 			if (Back.IsDirty()) h.Add("back",Back.ToHashtable());
 			if (Front.IsDirty()) h.Add("front",Front.ToHashtable());
-			if (Side.IsDirty()) h.Add("side",Side.ToHashtable());
 			
 
 			return h;

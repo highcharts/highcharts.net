@@ -14,6 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemap()
 		{
+			ShowInLegend = ShowInLegend_DefaultValue = false;
+			ColorByPoint = ColorByPoint_DefaultValue = false;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsTreemapDataLabels();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsTreemapTooltip();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLayoutAlgorithm.SliceAndDice;
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLayoutStartingDirection.Vertical;
@@ -21,11 +25,13 @@ namespace Highsoft.Web.Mvc.Charts
 			LevelIsConstant = LevelIsConstant_DefaultValue = true;
 			DrillUpButton = DrillUpButton_DefaultValue = new PlotOptionsTreemapDrillUpButton();
 			BorderColor = BorderColor_DefaultValue = "#e6e6e6";
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			Opacity = Opacity_DefaultValue = null;
+			States = States_DefaultValue = new PlotOptionsTreemapStates();
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
+			CropThreshold = CropThreshold_DefaultValue = 300;
 			InteractByLeaf = InteractByLeaf_DefaultValue = null;
 			SortIndex = SortIndex_DefaultValue = null;
-			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			Levels = Levels_DefaultValue = new List<PlotOptionsTreemapLevels>();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
@@ -36,10 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsTreemapEvents();
 			Point = Point_DefaultValue = new PlotOptionsTreemapPoint();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsTreemapDataLabels();
-			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsTreemapStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsTreemapFindNearestPointBy.X;
@@ -65,20 +68,45 @@ namespace Highsoft.Web.Mvc.Charts
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = PlotOptionsTreemapStacking.Null;
 			Step = Step_DefaultValue = PlotOptionsTreemapStep.Null;
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsTreemapTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsTreemapZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			
 		}	
 		
+
+		/// <summary>
+		/// Whether to display this series type or specific series item in thelegend.
+		/// </summary>
+		public bool? ShowInLegend { get; set; }
+		private bool? ShowInLegend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
+		/// </summary>
+		public bool? ColorByPoint { get; set; }
+		private bool? ColorByPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapDataLabels DataLabels { get; set; }
+		private PlotOptionsTreemapDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapTooltip Tooltip { get; set; }
+		private PlotOptionsTreemapTooltip Tooltip_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Whether to ignore hidden points when the layout algorithm runs.If `false`, hidden points will leave open spaces.
@@ -130,6 +158,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The width of the border surrounding each tree map item.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The opacity of a point in treemap. When a point has children, thevisibility of the children is determined by the opacity.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -137,10 +172,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A wrapper object for all the series options in specific states.
+		/// </summary>
+		public PlotOptionsTreemapStates States { get; set; }
+		private PlotOptionsTreemapStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When enabled the user can click on a point which is a parent andzoom in on its children.
 		/// </summary>
 		public bool? AllowDrillToNode { get; set; }
 		private bool? AllowDrillToNode_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
+		/// </summary>
+		public double? CropThreshold { get; set; }
+		private double? CropThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -155,13 +204,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? SortIndex { get; set; }
 		private double? SortIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
-		/// </summary>
-		public bool? ColorByPoint { get; set; }
-		private bool? ColorByPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -193,7 +235,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Pixel with of the graph line.
+		/// Pixel width of the graph line.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -221,7 +263,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsTreemapEvents Events { get; set; }
 		private PlotOptionsTreemapEvents Events_DefaultValue { get; set; }
@@ -235,31 +277,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsTreemapDataLabels DataLabels { get; set; }
-		private PlotOptionsTreemapDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsTreemapStates States { get; set; }
-		private PlotOptionsTreemapStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -396,14 +417,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public PlotOptionsTreemapPointIntervalUnit PointIntervalUnit { get; set; }
 		private PlotOptionsTreemapPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
@@ -435,13 +456,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -487,37 +501,27 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsTreemapTooltip Tooltip { get; set; }
-		private PlotOptionsTreemapTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsTreemapZone> Zones { get; set; }
 		private List<PlotOptionsTreemapZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line series plotacross the extremes.
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
+			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
 			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
@@ -525,11 +529,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
 			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
+			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (InteractByLeaf != InteractByLeaf_DefaultValue) h.Add("interactByLeaf",InteractByLeaf);
 			if (SortIndex != SortIndex_DefaultValue) h.Add("sortIndex",SortIndex);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(Levels));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
@@ -540,10 +546,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
@@ -573,17 +576,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
 			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			
 
 			return h;

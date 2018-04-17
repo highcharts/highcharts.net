@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Lang()
 		{
+			Accessibility = Accessibility_DefaultValue = new LangAccessibility();
 			DrillUpText = DrillUpText_DefaultValue = "Back to {series.name}";
 			DownloadCSV = DownloadCSV_DefaultValue = "Download CSV";
 			DownloadXLS = DownloadXLS_DefaultValue = "Download XLS";
@@ -28,7 +29,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Loading = Loading_DefaultValue = "Loading...";
 			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
-			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",         "Friday", "Saturday"};
+			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+         "Friday", "Saturday"};
 			DecimalPoint = DecimalPoint_DefaultValue = ".";
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
@@ -40,6 +42,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// Configure the accessibility strings in the chart. Requires the [accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).For more dynamic control over the accessibility functionality, see[accessibility.pointDescriptionFormatter](accessibility.pointDescriptionFormatter),[accessibility.seriesDescriptionFormatter](accessibility.seriesDescriptionFormatter), and[accessibility.screenReaderSectionFormatter](accessibility.screenReaderSectionFormatter).
+		/// </summary>
+		public LangAccessibility Accessibility { get; set; }
+		private LangAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The text for the button that appears when drilling down, linkingback to the parent series. The parent series' name is inserted for`{series.name}`.
@@ -206,6 +215,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (DrillUpText != DrillUpText_DefaultValue) h.Add("drillUpText",DrillUpText);
 			if (DownloadCSV != DownloadCSV_DefaultValue) h.Add("downloadCSV",DownloadCSV);
 			if (DownloadXLS != DownloadXLS_DefaultValue) h.Add("downloadXLS",DownloadXLS);

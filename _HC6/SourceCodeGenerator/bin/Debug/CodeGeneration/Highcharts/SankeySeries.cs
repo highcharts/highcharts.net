@@ -52,10 +52,11 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new SankeySeriesTooltip();
 			MinPointLength = MinPointLength_DefaultValue = 0;
+			StartFromThreshold = StartFromThreshold_DefaultValue = true;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
-			CurveFactor = CurveFactor_DefaultValue = "0.33";
-			LinkOpacity = LinkOpacity_DefaultValue = "0.5";
+			CurveFactor = CurveFactor_DefaultValue = null;
+			LinkOpacity = LinkOpacity_DefaultValue = null;
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			NodePadding = NodePadding_DefaultValue = 10;
 			
@@ -112,7 +113,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`.
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
 		public SankeySeriesType Type { get; set; }
 		private SankeySeriesType Type_DefaultValue { get; set; }
@@ -168,7 +169,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public SankeySeriesEvents Events { get; set; }
 		private SankeySeriesEvents Events_DefaultValue { get; set; }
@@ -182,7 +183,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public SankeySeriesDataLabels DataLabels { get; set; }
 		private SankeySeriesDataLabels DataLabels_DefaultValue { get; set; }
@@ -329,6 +330,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? StartFromThreshold { get; set; }
+		private bool? StartFromThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
 		/// </summary>
 		public bool? ColorByPoint { get; set; }
@@ -345,15 +353,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Higher numbers makes the links in a sankey diagram render more curved.A `curveFactor` of 0 makes the lines straight.
 		/// </summary>
-		public string CurveFactor { get; set; }
-		private string CurveFactor_DefaultValue { get; set; }
+		public double? CurveFactor { get; set; }
+		private double? CurveFactor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Opacity for the links between nodes in the sankey diagram.
 		/// </summary>
-		public string LinkOpacity { get; set; }
-		private string LinkOpacity_DefaultValue { get; set; }
+		public double? LinkOpacity { get; set; }
+		private double? LinkOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -412,6 +420,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
+			if (StartFromThreshold != StartFromThreshold_DefaultValue) h.Add("startFromThreshold",StartFromThreshold);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (CurveFactor != CurveFactor_DefaultValue) h.Add("curveFactor",CurveFactor);

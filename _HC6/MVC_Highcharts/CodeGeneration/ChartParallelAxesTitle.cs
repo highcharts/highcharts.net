@@ -14,6 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartParallelAxesTitle()
 		{
+			Text = Text_DefaultValue = "Chart title";
+			ReserveSpace = ReserveSpace_DefaultValue = false;
 			Align = Align_DefaultValue = ChartParallelAxesTitleAlign.Middle;
 			Style = Style_DefaultValue = new ChartParallelAxesTitleStyle();
 			Position3d = Position3d_DefaultValue = ChartParallelAxesTitlePosition3d.Offset;
@@ -21,15 +23,27 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = "middle";
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
-			ReserveSpace = ReserveSpace_DefaultValue = true;
 			Rotation = Rotation_DefaultValue = 0;
-			Text = Text_DefaultValue = "null";
 			UseHTML = UseHTML_DefaultValue = false;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? ReserveSpace { get; set; }
+		private bool? ReserveSpace_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Alignment of the title relative to the axis values. Possiblevalues are "low", "middle" or "high".
@@ -39,7 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting `textOverflow: 'ellipsis'`, by setting a specific `width` or by setting `wordSpace: 'nowrap'`.In styled mode, the stroke width is given in the`.highcharts-axis-title` class.
+		/// CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting `textOverflow: 'ellipsis'`, by setting a specific `width` or by setting `whiteSpace: 'nowrap'`.In styled mode, the stroke width is given in the`.highcharts-axis-title` class.
 		/// </summary>
 		public ChartParallelAxesTitleStyle Style { get; set; }
 		private ChartParallelAxesTitleStyle Style_DefaultValue { get; set; }
@@ -81,24 +95,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to reserve space for the title when laying out the axis.
-		/// </summary>
-		public bool? ReserveSpace { get; set; }
-		private bool? ReserveSpace_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The rotation of the text in degrees. 0 is horizontal, 270 is verticalreading from bottom to top.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The actual text of the axis title. It can contain basic HTML textmarkup like <b>, <i> and spans with style.
-		/// </summary>
-		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -126,6 +126,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Text != Text_DefaultValue) h.Add("text",Text);
+			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
@@ -133,9 +135,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

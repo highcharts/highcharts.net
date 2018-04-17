@@ -14,15 +14,18 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSunburstDataLabels()
 		{
+			Defer = Defer_DefaultValue = true;
+			Style = Style_DefaultValue = new PlotOptionsSunburstDataLabelsStyle();
+			RotationMode = RotationMode_DefaultValue = PlotOptionsSunburstDataLabelsRotationMode.Perpendicular;
 			Distance = Distance_DefaultValue = 30;
+			Enabled = Enabled_DefaultValue = true;
+			Formatter = Formatter_DefaultValue = "";
+			X = X_DefaultValue = 0;
 			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
 			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			SoftConnector = SoftConnector_DefaultValue = null;
-			Formatter = Formatter_DefaultValue = "";
-			Style = Style_DefaultValue = new PlotOptionsSunburstDataLabelsStyle();
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsSunburstDataLabelsVerticalAlign.Bottom;
-			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = "5";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -30,9 +33,10 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
-			Defer = Defer_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "";
+			Shape = Shape_DefaultValue = "square";
+			ZIndex = ZIndex_DefaultValue = 6;
+			Filter = Filter_DefaultValue = new PlotOptionsSunburstDataLabelsFilter();
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "undefined";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -40,18 +44,57 @@ namespace Highsoft.Web.Mvc.Charts
 			Overflow = Overflow_DefaultValue = PlotOptionsSunburstDataLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;
-			Shape = Shape_DefaultValue = "square";
-			ZIndex = ZIndex_DefaultValue = 6;
-			Filter = Filter_DefaultValue = new PlotOptionsSunburstDataLabelsFilter();
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Defer { get; set; }
+		private bool? Defer_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSunburstDataLabelsStyle Style { get; set; }
+		private PlotOptionsSunburstDataLabelsStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Decides how the data label will be rotated according to the perimeterof the sunburst. It can either be parallel or perpendicular to theperimeter.`series.rotation` takes precedence over `rotationMode`.
+		/// </summary>
+		public PlotOptionsSunburstDataLabelsRotationMode RotationMode { get; set; }
+		private PlotOptionsSunburstDataLabelsRotationMode RotationMode_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The distance of the data label from the pie's edge. Negative numbersput the data label on top of the pie slices. Connectors are onlyshown for data labels outside the pie.
 		/// </summary>
 		public double? Distance { get; set; }
 		private double? Distance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the data labels.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -83,31 +126,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to format the data label. Note thatif a `format` is defined, the format takes precedence and the formatteris ignored. Available data are:<table><tbody><tr><td>`this.percentage`</td><td>Stacked series and pies only. The point's percentage of thetotal.</td></tr><tr><td>`this.point`</td><td>The point object. The point name, if defined, is availablethrough `this.point.name`.</td></tr><tr><td>`this.series`:</td><td>The series object. The series name is available through `this.series.name`.</td></tr><tr><td>`this.total`</td><td>Stacked series only. The total value at this point's x value.</td></tr><tr><td>`this.x`:</td><td>The x value.</td></tr><tr><td>`this.y`:</td><td>The y value.</td></tr></tbody></table>
-		/// </summary>
-		public string Formatter { get; set; }
-		private string Formatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
-		/// </summary>
-		public PlotOptionsSunburstDataLabelsStyle Style { get; set; }
-		private PlotOptionsSunburstDataLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
 		/// </summary>
 		public PlotOptionsSunburstDataLabelsVerticalAlign VerticalAlign { get; set; }
 		private PlotOptionsSunburstDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x position offset of the label relative to the point.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -139,94 +161,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A class name for the data label. Particularly in styled mode, this canbe used to give each series' or point's data label unique styling.In addition to this option, a default color class name is addedso that we can give the labels a [contrast text shadow](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/data-label-contrast/).
+		/// A class name for the data label. Particularly in styled mode, thiscan be used to give each series' or point's data label uniquestyling. In addition to this option, a default color class name isadded so that we can give the labels a[contrast text shadow](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/data-label-contrast/).
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The text color for the data labels. Defaults to `null`. For certain seriestypes, like column or map, the data labels can be drawn inside the points.In this case the data label will be drawn with maximum contrast by default.Additionally, it will be given a `text-outline` style with the oppositecolor, to further increase the contrast. This can be overridden by settingthe `text-outline` style to `none` in the `dataLabels.style` option.
+		/// The text color for the data labels. Defaults to `null`. For certainseries types, like column or map, the data labels can be drawn insidethe points. In this case the data label will be drawn with maximumcontrast by default. Additionally, it will be given a `text-outline`style with the opposite color, to further increase the contrast. Thiscan be overridden by setting the `text-outline` style to `none` inthe `dataLabels.style` option.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to hide data labels that are outside the plot area. By default,the data label is moved inside the plot area according to the [overflow](#plotOptions.series.dataLabels.overflow) option.
+		/// Whether to hide data labels that are outside the plot area. Bydefault, the data label is moved inside the plot area according tothe [overflow](#plotOptions.series.dataLabels.overflow) option.
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to defer displaying the data labels until the initial seriesanimation has finished.
-		/// </summary>
-		public bool? Defer { get; set; }
-		private bool? Defer_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the data labels.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) for the data label. Available variables arethe same as for `formatter`.
+		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The background color or gradient for the data label.
-		/// </summary>
-		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border color for the data label. Defaults to `undefined`.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The shadow of the box. Works best with `borderWidth` or `backgroundColor`.Since 2.3 the shadow can be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For points with an extent, like columns or map areas, whether to align the datalabel inside the box or to the actual value point. Defaults to `false`in most cases, `true` in stacked columns.
-		/// </summary>
-		public bool? Inside { get; set; }
-		private bool? Inside_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// How to handle data labels that flow outside the plot area. The defaultis `justify`, which aligns them inside the plot area. For columnsand bars, this means it will be moved inside the bar. To displaydata labels outside the plot area, set `crop` to `false` and `overflow`to `"none"`.
-		/// </summary>
-		public PlotOptionsSunburstDataLabelsOverflow Overflow { get; set; }
-		private PlotOptionsSunburstDataLabelsOverflow Overflow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Text rotation in degrees. Note that due to a more complex structure,backgrounds, borders and padding will be lost on a rotated datalabel.
-		/// </summary>
-		public double? Rotation { get; set; }
-		private double? Rotation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
-		/// </summary>
-		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -248,21 +207,73 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsSunburstDataLabelsFilter Filter { get; set; }
 		private PlotOptionsSunburstDataLabelsFilter Filter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The background color or gradient for the data label.
+		/// </summary>
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border color for the data label. Defaults to `undefined`.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The shadow of the box. Works best with `borderWidth` or`backgroundColor`. Since 2.3 the shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For points with an extent, like columns or map areas, whether toalign the data label inside the box or to the actual value point.Defaults to `false` in most cases, `true` in stacked columns.
+		/// </summary>
+		public bool? Inside { get; set; }
+		private bool? Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// How to handle data labels that flow outside the plot area. Thedefault is `justify`, which aligns them inside the plot area. Forcolumns and bars, this means it will be moved inside the bar. Todisplay data labels outside the plot area, set `crop` to `false` and`overflow` to `"none"`.
+		/// </summary>
+		public PlotOptionsSunburstDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsSunburstDataLabelsOverflow Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Text rotation in degrees. Note that due to a more complex structure,backgrounds, borders and padding will be lost on a rotated datalabel.
+		/// </summary>
+		public double? Rotation { get; set; }
+		private double? Rotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to[use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode", Highcharts.FirstCharacterToLower(RotationMode.ToString()));
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsSunburstDataLabelsFormatter.formatter", Formatter); }  
+			if (X != X_DefaultValue) h.Add("x",X);
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
 			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsSunburstDataLabelsFormatter.formatter", Formatter); }  
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -270,9 +281,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
+			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
@@ -280,9 +292,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			
 
 			return h;

@@ -14,6 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsErrorbar()
 		{
+			Color = Color_DefaultValue = "#000000";
+			Grouping = Grouping_DefaultValue = false;
+			LinkedTo = LinkedTo_DefaultValue = ":previous";
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsErrorbarTooltip();
+			WhiskerWidth = WhiskerWidth_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsErrorbarLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -24,13 +29,11 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsErrorbarDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsErrorbarStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsErrorbarFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Cursor = Cursor_DefaultValue = PlotOptionsErrorbarCursor.Null;
 			Description = Description_DefaultValue = "undefined";
@@ -38,7 +41,6 @@ namespace Highsoft.Web.Mvc.Charts
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Keys = Keys_DefaultValue = new List<string>();
-			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
@@ -53,30 +55,24 @@ namespace Highsoft.Web.Mvc.Charts
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsErrorbarTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsErrorbarZone>();
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			BorderRadius = BorderRadius_DefaultValue = 0;
 			Crisp = Crisp_DefaultValue = true;
 			GroupPadding = GroupPadding_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			PointRange = PointRange_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			StartFromThreshold = StartFromThreshold_DefaultValue = true;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
-			Grouping = Grouping_DefaultValue = true;
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
 			Depth = Depth_DefaultValue = 25;
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
-			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			WhiskerLength = WhiskerLength_DefaultValue = null;
 			FillColor = FillColor_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 1;
 			MedianWidth = MedianWidth_DefaultValue = 2;
-			WhiskerWidth = WhiskerWidth_DefaultValue = 2;
 			MedianColor = MedianColor_DefaultValue = "null";
 			StemColor = StemColor_DefaultValue = "null";
 			StemDashStyle = StemDashStyle_DefaultValue = PlotOptionsErrorbarStemDashStyle.Solid;
@@ -85,6 +81,41 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// The main color of the bars. This can be overridden by[stemColor](#plotOptions.errorbar.stemColor) and[whiskerColor](#plotOptions.errorbar.whiskerColor) individually.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Grouping { get; set; }
+		private bool? Grouping_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The parent series of the error bar. The default value links it tothe previous series. Otherwise, use the id of the parent series.
+		/// </summary>
+		public string LinkedTo { get; set; }
+		private string LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsErrorbarTooltip Tooltip { get; set; }
+		private PlotOptionsErrorbarTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line width of the whiskers, the horizontal lines marking lowand high values. When `null`, the general[lineWidth](#plotOptions.errorbar.lineWidth) applies.
+		/// </summary>
+		public double? WhiskerWidth { get; set; }
+		private double? WhiskerWidth_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -122,7 +153,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsErrorbarEvents Events { get; set; }
 		private PlotOptionsErrorbarEvents Events_DefaultValue { get; set; }
@@ -136,7 +167,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public PlotOptionsErrorbarDataLabels DataLabels { get; set; }
 		private PlotOptionsErrorbarDataLabels DataLabels_DefaultValue { get; set; }
@@ -154,13 +185,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsErrorbarStates States { get; set; }
-		private PlotOptionsErrorbarStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -196,13 +220,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the `options.colors` array.In styled mode, the color can be defined by the[colorIndex](#plotOptions.series.colorIndex) option. Also, the seriescolor can be set with the `.highcharts-series`, `.highcharts-color-{n}`,`.highcharts-{type}-series` or `.highcharts-series-{n}` class, orindividual classes given by the `className` option.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -255,13 +272,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.
-		/// </summary>
-		public string LinkedTo { get; set; }
-		private string LinkedTo_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color for the parts of the graph or points that are below the[threshold](#plotOptions.series.threshold).
 		/// </summary>
 		public string NegativeColor { get; set; }
@@ -276,14 +286,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public PlotOptionsErrorbarPointIntervalUnit PointIntervalUnit { get; set; }
 		private PlotOptionsErrorbarPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
@@ -360,31 +370,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsErrorbarTooltip Tooltip { get; set; }
-		private PlotOptionsErrorbarTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsErrorbarZone> Zones { get; set; }
 		private List<PlotOptionsErrorbarZone> Zones_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The corner radius of the border surrounding each column or bar.
-		/// </summary>
-		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -423,10 +412,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
+		/// 
 		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
+		public bool? StartFromThreshold { get; set; }
+		private bool? StartFromThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -441,13 +430,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<string> Colors { get; set; }
 		private List<string> Colors_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to group non-stacked columns or to let them render independentof each other. Non-grouped columns will be laid out individuallyand overlap each other.
-		/// </summary>
-		public bool? Grouping { get; set; }
-		private bool? Grouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -486,13 +468,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The spacing between columns on the Z Axis in a 3D chart. Requires`highcharts-3d.js`.
-		/// </summary>
-		public double? GroupZPadding { get; set; }
-		private double? GroupZPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The length of the whiskers, the horizontal lines marking low andhigh values. It can be a numerical pixel value, or a percentagevalue of the box width. Set `0` to disable whiskers.
 		/// </summary>
 		public double? WhiskerLength { get; set; }
@@ -500,42 +475,35 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The fill color of the box.
+		/// The fill color of the box.In styled mode, the fill color can be set with the`.highcharts-boxplot-box` class.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the line surrounding the box. If any of [stemWidth](#plotOptions.boxplot.stemWidth), [medianWidth](#plotOptions.boxplot.medianWidth)or [whiskerWidth](#plotOptions.boxplot.whiskerWidth) are `null`, the lineWidth also applies to these lines.
+		/// The width of the line surrounding the box. If any of[stemWidth](#plotOptions.boxplot.stemWidth),[medianWidth](#plotOptions.boxplot.medianWidth)or [whiskerWidth](#plotOptions.boxplot.whiskerWidth) are `null`,the lineWidth also applies to these lines.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The pixel width of the median line. If `null`, the [lineWidth](#plotOptions.boxplot.lineWidth) is used.
+		/// The pixel width of the median line. If `null`, the[lineWidth](#plotOptions.boxplot.lineWidth) is used.In styled mode, the median stroke width can be set with the`.highcharts-boxplot-median` class.
 		/// </summary>
 		public double? MedianWidth { get; set; }
 		private double? MedianWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The line width of the whiskers, the horizontal lines marking lowand high values. When `null`, the general [lineWidth](#plotOptions.boxplot.lineWidth) applies.
-		/// </summary>
-		public double? WhiskerWidth { get; set; }
-		private double? WhiskerWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the median line. If `null`, the general series colorapplies.
+		/// The color of the median line. If `null`, the general series colorapplies.In styled mode, the median stroke width can be set with the`.highcharts-boxplot-median` class.
 		/// </summary>
 		public string MedianColor { get; set; }
 		private string MedianColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The color of the stem, the vertical line extending from the box tothe whiskers. If `null`, the series color is used.
+		/// The color of the stem, the vertical line extending from the box tothe whiskers. If `null`, the series color is used.In styled mode, the stem stroke can be set with the`.highcharts-boxplot-stem` class.
 		/// </summary>
 		public string StemColor { get; set; }
 		private string StemColor_DefaultValue { get; set; }
@@ -549,14 +517,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width of the stem, the vertical line extending from the box tothe whiskers. If `null`, the width is inherited from the [lineWidth](#plotOptions.boxplot.lineWidth) option.
+		/// The width of the stem, the vertical line extending from the box tothe whiskers. If `null`, the width is inherited from the[lineWidth](#plotOptions.boxplot.lineWidth) option.In styled mode, the stem stroke width can be set with the`.highcharts-boxplot-stem` class.
 		/// </summary>
 		public double? StemWidth { get; set; }
 		private double? StemWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The color of the whiskers, the horizontal lines marking low and highvalues. When `null`, the general series color is used.
+		/// The color of the whiskers, the horizontal lines marking low and highvalues. When `null`, the general series color is used.In styled mode, the whisker stroke can be set with the`.highcharts-boxplot-whisker` class .
 		/// </summary>
 		public string WhiskerColor { get; set; }
 		private string WhiskerColor_DefaultValue { get; set; }
@@ -566,6 +534,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
+			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (WhiskerWidth != WhiskerWidth_DefaultValue) h.Add("whiskerWidth",WhiskerWidth);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
@@ -576,13 +549,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -590,7 +561,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsErrorbarPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
@@ -609,30 +579,24 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (StartFromThreshold != StartFromThreshold_DefaultValue) h.Add("startFromThreshold",StartFromThreshold);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
-			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			if (WhiskerLength != WhiskerLength_DefaultValue) h.Add("whiskerLength",WhiskerLength);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (MedianWidth != MedianWidth_DefaultValue) h.Add("medianWidth",MedianWidth);
-			if (WhiskerWidth != WhiskerWidth_DefaultValue) h.Add("whiskerWidth",WhiskerWidth);
 			if (MedianColor != MedianColor_DefaultValue) h.Add("medianColor",MedianColor);
 			if (StemColor != StemColor_DefaultValue) h.Add("stemColor",StemColor);
 			if (StemDashStyle != StemDashStyle_DefaultValue) h.Add("stemDashStyle", Highcharts.FirstCharacterToLower(StemDashStyle.ToString()));

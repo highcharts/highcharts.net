@@ -14,16 +14,20 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsArearange()
 		{
+			LineWidth = LineWidth_DefaultValue = 1;
+			Threshold = Threshold_DefaultValue = new PlotOptionsArearangeThreshold();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsArearangeTooltip();
+			TrackByArea = TrackByArea_DefaultValue = true;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsArearangeDataLabels();
+			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsArearangeLabel();
-			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsArearangeEvents();
 			Marker = Marker_DefaultValue = new PlotOptionsArearangeMarker();
 			Point = Point_DefaultValue = new PlotOptionsArearangePoint();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsArearangeDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
 			States = States_DefaultValue = new PlotOptionsArearangeStates();
@@ -51,26 +55,62 @@ namespace Highsoft.Web.Mvc.Charts
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			Stacking = Stacking_DefaultValue = PlotOptionsArearangeStacking.Null;
 			Step = Step_DefaultValue = PlotOptionsArearangeStep.Null;
-			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsArearangeTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsArearangeZone>();
 			ConnectEnds = ConnectEnds_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "null";
 			NegativeFillColor = NegativeFillColor_DefaultValue = "";
-			TrackByArea = TrackByArea_DefaultValue = false;
 			
 		}	
 		
+
+		/// <summary>
+		/// Pixel width of the arearange graph line.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsArearangeThreshold Threshold { get; set; }
+		private PlotOptionsArearangeThreshold Threshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsArearangeTooltip Tooltip { get; set; }
+		private PlotOptionsArearangeTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether the whole area or just the line should respond to mouseovertooltips and other mouse or touch events.
+		/// </summary>
+		public bool? TrackByArea { get; set; }
+		private bool? TrackByArea_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Extended data labels for range series types. Range series data labelshave no `x` and `y` options. Instead, they have `xLow`, `xHigh`,`yLow` and `yHigh` options to allow the higher and lower data labelsets individually.
+		/// </summary>
+		public PlotOptionsArearangeDataLabels DataLabels { get; set; }
+		private PlotOptionsArearangeDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -84,13 +124,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsArearangeLabel Label { get; set; }
 		private PlotOptionsArearangeLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel with of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -115,7 +148,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsArearangeEvents Events { get; set; }
 		private PlotOptionsArearangeEvents Events_DefaultValue { get; set; }
@@ -133,13 +166,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsArearangePoint Point { get; set; }
 		private PlotOptionsArearangePoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsArearangeDataLabels DataLabels { get; set; }
-		private PlotOptionsArearangeDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -297,14 +323,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public PlotOptionsArearangePointIntervalUnit PointIntervalUnit { get; set; }
 		private PlotOptionsArearangePointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
@@ -332,13 +358,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
 		/// </summary>
 		public bool? ShowInLegend { get; set; }
@@ -353,24 +372,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to stack the values of each series on top of each other.Possible values are `null` to disable, `"normal"` to stack by value or`"percent"`. When stacking is enabled, data must be sorted in ascendingX order. A special stacking option is with the streamgraph series type,where the stacking option is set to `"stream"`.
-		/// </summary>
-		public PlotOptionsArearangeStacking Stacking { get; set; }
-		private PlotOptionsArearangeStacking Stacking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to apply steps to the line. Possible values are `left`, `center`and `right`.
 		/// </summary>
 		public PlotOptionsArearangeStep Step { get; set; }
 		private PlotOptionsArearangeStep Step_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -388,82 +393,65 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsArearangeTooltip Tooltip { get; set; }
-		private PlotOptionsArearangeTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the `.highcharts-zone-{n}` class, or custom classed from the `className` option ([viewlive demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsArearangeZone> Zones { get; set; }
 		private List<PlotOptionsArearangeZone> Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line series plotacross the extremes.
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
 		/// </summary>
 		public bool? ConnectEnds { get; set; }
 		private bool? ConnectEnds_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.
+		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fill opacity for the area. When you set an explicit `fillColor`,the `fillOpacity` is not applied. Instead, you should define theopacity in the `fillColor` with an rgba color definition. The `fillOpacity`setting, also the default setting, overrides the alpha componentof the `color` setting.
+		/// Fill opacity for the area. When you set an explicit `fillColor`,the `fillOpacity` is not applied. Instead, you should define theopacity in the `fillColor` with an rgba color definition. The`fillOpacity` setting, also the default setting, overrides the alphacomponent of the `color` setting.In styled mode, the fill opacity can be set with the `.highcharts-area`class name.
 		/// </summary>
 		public double? FillOpacity { get; set; }
 		private double? FillOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A separate color for the graph line. By default the line takes the`color` of the series, but the lineColor setting allows setting aseparate color for the line without altering the `fillColor`.
+		/// A separate color for the graph line. By default the line takes the`color` of the series, but the lineColor setting allows setting aseparate color for the line without altering the `fillColor`.In styled mode, the line stroke can be set with the `.highcharts-graph`class name.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A separate color for the negative part of the area.
+		/// A separate color for the negative part of the area.In styled mode, a negative color is set with the `.highcharts-negative`class name.
 		/// </summary>
 		public string NegativeFillColor { get; set; }
 		private string NegativeFillColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the whole area or just the line should respond to mouseovertooltips and other mouse or touch events.
-		/// </summary>
-		public bool? TrackByArea { get; set; }
-		private bool? TrackByArea_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (Threshold.IsDirty()) h.Add("threshold",Threshold.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
@@ -495,23 +483,17 @@ namespace Highsoft.Web.Mvc.Charts
 					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
 			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
-			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			
 
 			return h;

@@ -102,7 +102,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The Google Spreadsheet worksheet to use in combination with [googleSpreadsheetKey](#data.googleSpreadsheetKey). The available id's from your sheet can beread from `https://spreadsheets.google.com/feeds/worksheets/{key}/public/basic`
+		/// The Google Spreadsheet worksheet to use in combination with[googleSpreadsheetKey](#data.googleSpreadsheetKey). The available id's fromyour sheet can be read from `https://spreadsheets.google.com/feeds/worksheets/{key}/public/basic`.
 		/// </summary>
 		public string GoogleSpreadsheetWorksheet { get; set; }
 		private string GoogleSpreadsheetWorksheet_DefaultValue { get; set; }
@@ -130,7 +130,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A callback function to access the parsed columns, the two-dimentionalinput data array directly, before they are interpreted into seriesdata and categories. Return `false` to stop completion, or call `this.complete()` to continue async.
+		/// A callback function to access the parsed columns, the two-dimentionalinput data array directly, before they are interpreted into seriesdata and categories. Return `false` to stop completion, or call`this.complete()` to continue async.
 		/// </summary>
 		public string Parsed { get; set; }
 		private string Parsed_DefaultValue { get; set; }

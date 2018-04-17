@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			LineWidth = LineWidth_DefaultValue = 0;
 			LineColor = LineColor_DefaultValue = "#ffffff";
+			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
 			Radius = Radius_DefaultValue = 4;
 			States = States_DefaultValue = new WaterfallSeriesStatesHoverMarkerStates();
 			FillColor = FillColor_DefaultValue = null;
@@ -39,6 +40,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The threshold for how dense the point markers should be before theyare hidden, given that `enabled` is not defined. The number indicatesthe horizontal distance between the two closest points in the series,as multiples of the `marker.radius`. In other words, the defaultvalue of 2 means points are hidden if overlapping horizontally.
+		/// </summary>
+		public double? EnabledThreshold { get; set; }
+		private double? EnabledThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -96,6 +104,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);

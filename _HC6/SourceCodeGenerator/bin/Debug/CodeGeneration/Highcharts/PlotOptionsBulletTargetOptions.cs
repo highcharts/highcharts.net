@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The width of the rectangle representing the target. Could be set asa pixel value or as a percentage of a column width.
+		/// The width of the rectangle representing the target. Could be setas a pixel value or as a percentage of a column width.
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }

@@ -29,14 +29,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// What box to align the button to. Can be either `plotBox` or`spacingBox.
+		/// What box to align the button to. Can be either `plotBox` or`spacingBox`.
 		/// </summary>
 		public DrilldownDrillUpButtonRelativeTo RelativeTo { get; set; }
 		private DrilldownDrillUpButtonRelativeTo RelativeTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A collection of attributes for the button. The object takes SVG attributeslike `fill`, `stroke`, `stroke-width` or `r`, the border radius.The theme also supports `style`, a collection of CSS properties forthe text. Equivalent attributes for the hover state are given in`theme.states.hover`.
+		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, the borderradius. The theme also supports `style`, a collection of CSSproperties for the text. Equivalent attributes for the hover stateare given in `theme.states.hover`.
 		/// </summary>
 		public Object Theme { get; set; }
 		private Object Theme_DefaultValue { get; set; }

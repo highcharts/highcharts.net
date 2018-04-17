@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Highcharts()
 		{
-			PlotOptions = PlotOptions_DefaultValue = new PlotOptions();
 			Series = Series_DefaultValue = new List<Series>();
+			PlotOptions = PlotOptions_DefaultValue = new PlotOptions();
+			Lang = Lang_DefaultValue = new Lang();
 			Defs = Defs_DefaultValue = new Defs();
 			Annotations = Annotations_DefaultValue = new List<Annotations>();
 			Boost = Boost_DefaultValue = new Boost();
 			Data = Data_DefaultValue = new Data();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
-			Lang = Lang_DefaultValue = new Lang();
 			Drilldown = Drilldown_DefaultValue = new Drilldown();
 			Chart = Chart_DefaultValue = new Chart();
 			Exporting = Exporting_DefaultValue = new Exporting();
 			Navigation = Navigation_DefaultValue = new Navigation();
-			KeyboardNavigation = KeyboardNavigation_DefaultValue = new KeyboardNavigation();
+			Accessibility = Accessibility_DefaultValue = new Accessibility();
 			Legend = Legend_DefaultValue = new Legend();
 			NoData = NoData_DefaultValue = new NoData();
 			Global = Global_DefaultValue = new Global();
-			Accessibility = Accessibility_DefaultValue = new Accessibility();
 			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			Colors = Colors_DefaultValue = new List<string>();
+			Time = Time_DefaultValue = new Time();
 			Title = Title_DefaultValue = new Title();
 			Subtitle = Subtitle_DefaultValue = new Subtitle();
 			Labels = Labels_DefaultValue = new Labels();
@@ -48,13 +48,6 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The plotOptions is a wrapper object for config objects for each seriestype. The config objects for each series can also be overridden foreach series item as given in the series array.Configuration options for the series are given in three levels. Optionsfor all series in a chart are given in the [plotOptions.series](#plotOptions.series) object. Then options for all series of a specific type aregiven in the plotOptions of that type, for example plotOptions.line.Next, options for one single series are given in [the series array](#series).
-		/// </summary>
-		public PlotOptions PlotOptions { get; set; }
-		private PlotOptions PlotOptions_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public List<Series> Series { get; set; }
@@ -62,10 +55,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The plotOptions is a wrapper object for config objects for each seriestype. The config objects for each series can also be overridden foreach series item as given in the series array.Configuration options for the series are given in three levels. Optionsfor all series in a chart are given in the [plotOptions.series](#plotOptions.series) object. Then options for all series of a specific type aregiven in the plotOptions of that type, for example plotOptions.line.Next, options for one single series are given in [the series array](#series).
+		/// </summary>
+		public PlotOptions PlotOptions { get; set; }
+		private PlotOptions PlotOptions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Language object. The language object is global and it can't be seton each chart initiation. Instead, use `Highcharts.setOptions` toset it before any chart is initialized.<pre>Highcharts.setOptions({    lang: {        months: [            'Janvier', 'Février', 'Mars', 'Avril',            'Mai', 'Juin', 'Juillet', 'Août',            'Septembre', 'Octobre', 'Novembre', 'Décembre'        ],        weekdays: [            'Dimanche', 'Lundi', 'Mardi', 'Mercredi',            'Jeudi', 'Vendredi', 'Samedi'        ]    }});</pre>
+		/// </summary>
+		public Lang Lang { get; set; }
+		private Lang Lang_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Styled mode only. Configuration object for adding SVG definitions forreusable elements. See [gradients, shadows and patterns](http://www.highcharts.com/docs/chart-design-and-style/gradients-shadows-and-patterns) for more information and code examples.
 		/// </summary>
-		public Defs Defs { get; set; }
-		private Defs Defs_DefaultValue { get; set; }
+		public Object Defs { get; set; }
+		private Object Defs_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -97,13 +104,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Language object. The language object is global and it can't be seton each chart initiation. Instead, use `Highcharts.setOptions` toset it before any chart is initialized.<pre>Highcharts.setOptions({    lang: {        months: [            'Janvier', 'Février', 'Mars', 'Avril',            'Mai', 'Juin', 'Juillet', 'Août',            'Septembre', 'Octobre', 'Novembre', 'Décembre'        ],        weekdays: [            'Dimanche', 'Lundi', 'Mardi', 'Mercredi',            'Jeudi', 'Vendredi', 'Samedi'        ]    }});</pre>
-		/// </summary>
-		public Lang Lang { get; set; }
-		private Lang Lang_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Options for drill down, the concept of inspecting increasingly high resolution data through clicking on chart items like columns or pie slices.The drilldown feature requires the drilldown.js file to be loaded, found in the modules directory of the download package, or online at (code.highcharts.com/modules/drilldown.js)[code.highcharts.com/modules/drilldown.js].
 		/// </summary>
 		public Drilldown Drilldown { get; set; }
@@ -111,7 +111,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options regarding the chart area and plot area as well as generalchart options.
+		/// 
 		/// </summary>
 		public Chart Chart { get; set; }
 		private Chart Chart_DefaultValue { get; set; }
@@ -132,38 +132,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Options for configuring accessibility for the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
 		/// </summary>
-		public KeyboardNavigation KeyboardNavigation { get; set; }
-		private KeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
+		public Accessibility Accessibility { get; set; }
+		private Accessibility Accessibility_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The legend is a box containing a symbol and name for each seriesitem or point item in the chart. Each series (or points in caseof pie charts) is represented by a symbol and its name in the legend. It is possible to override the symbol creator function andcreate [custom legend symbols](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/studies/legend-custom-symbol/).
+		/// The legend is a box containing a symbol and name for each seriesitem or point item in the chart. Each series (or points in caseof pie charts) is represented by a symbol and its name in the legend.It is possible to override the symbol creator function andcreate [custom legend symbols](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/studies/legend-custom-symbol/).
 		/// </summary>
 		public Legend Legend { get; set; }
 		private Legend Legend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for displaying a message like "No data to display". This feature requires the file no-data-to-display.js to be loaded in the page. The actual text to display is set in the lang.noData option.
+		/// Options for displaying a message like "No data to display". This feature requires the file no-data-to-display.js to be loaded in thepage. The actual text to display is set in the lang.noData option.
 		/// </summary>
 		public NoData NoData { get; set; }
 		private NoData NoData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Global options that don't apply to each chart. These options, likethe `lang` options, must be set using the `Highcharts.setOptions`method.<pre>Highcharts.setOptions({    global: {        useUTC: false    }});</pre>
+		/// 
 		/// </summary>
 		public Global Global { get; set; }
 		private Global Global_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for configuring accessibility for the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
-		/// </summary>
-		public Accessibility Accessibility { get; set; }
-		private Accessibility Accessibility_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -174,10 +167,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array containing the default colors for the chart's series. Whenall colors are used, new colors are pulled from the start again.Default colors can also be set on a series or series.type basis,see [column.colors](#plotOptions.column.colors), [pie.colors](#plotOptions.pie.colors).In styled mode, the colors option doesn't exist. Instead, colorsare defined in CSS and applied either through series or point classnames, or through the [chart.colorCount](#chart.colorCount) option.### LegacyIn Highcharts 3.x, the default colors were:<pre>colors: ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',     '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a']</pre> In Highcharts 2.x, the default colors were:<pre>colors: ['#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE',    '#DB843D', '#92A8CD', '#A47D7C', '#B5CA92']</pre>
+		/// An array containing the default colors for the chart's series. Whenall colors are used, new colors are pulled from the start again.Default colors can also be set on a series or series.type basis,see [column.colors](#plotOptions.column.colors),[pie.colors](#plotOptions.pie.colors).In styled mode, the colors option doesn't exist. Instead, colorsare defined in CSS and applied either through series or point classnames, or through the [chart.colorCount](#chart.colorCount) option.### LegacyIn Highcharts 3.x, the default colors were:<pre>colors: ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',    '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a']</pre>In Highcharts 2.x, the default colors were:<pre>colors: ['#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE',   '#DB843D', '#92A8CD', '#A47D7C', '#B5CA92']</pre>
 		/// </summary>
 		public List<string> Colors { get; set; }
 		private List<string> Colors_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Time options that can apply globally or to individual charts. Thesesettings affect how `datetime` axes are laid out, how tooltips areformatted, how series[pointIntervalUnit](#plotOptions.series.pointIntervalUnit) works and howthe Highstock range selector handles time.The common use case is that all charts in the same Highcharts objectshare the same time settings, in which case the global settings are setusing `setOptions`.```js// Apply time settings globallyHighcharts.setOptions({    time: {        timezone: 'Europe/London'    }});// Apply time settings by instancevar chart = Highcharts.chart('container', {    time: {        timezone: 'America/New_York'    },    series: [{        data: [1, 4, 3, 5]    }]});// Use the Time objectconsole.log(   'Current time in New York',    chart.time.dateFormat('%Y-%m-%d %H:%M:%S', Date.now()));```Since v6.0.5, the time options were moved from the `global` obect to the`time` object, and time options can be set on each individual chart.
+		/// </summary>
+		public Time Time { get; set; }
+		private Time Time_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -188,7 +188,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The chart's subtitle. This can be used both to display a subtitle belowthe main title, and to display random text anywhere in the chart. Thesubtitle can be updated after chart initialization through the `Chart.setTitle` method.
+		/// The chart's subtitle. This can be used both to display a subtitle belowthe main title, and to display random text anywhere in the chart. Thesubtitle can be updated after chart initialization through the`Chart.setTitle` method.
 		/// </summary>
 		public Subtitle Subtitle { get; set; }
 		private Subtitle Subtitle_DefaultValue { get; set; }
@@ -254,25 +254,25 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
 			if (Series != Series_DefaultValue) h.Add("series", HashifyList(Series));
+			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
+			if (Lang.IsDirty()) h.Add("lang",Lang.ToHashtable());
 			if (Defs.IsDirty()) h.Add("defs",Defs.ToHashtable());
 			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
 			if (Boost.IsDirty()) h.Add("boost",Boost.ToHashtable());
 			if (Data.IsDirty()) h.Add("data",Data.ToHashtable());
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
-			if (Lang.IsDirty()) h.Add("lang",Lang.ToHashtable());
 			if (Drilldown.IsDirty()) h.Add("drilldown",Drilldown.ToHashtable());
 			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
 			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
 			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
-			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (Legend.IsDirty()) h.Add("legend",Legend.ToHashtable());
 			if (NoData.IsDirty()) h.Add("noData",NoData.ToHashtable());
 			if (Global.IsDirty()) h.Add("global",Global.ToHashtable());
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
+			if (Time.IsDirty()) h.Add("time",Time.ToHashtable());
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Subtitle.IsDirty()) h.Add("subtitle",Subtitle.ToHashtable());
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());

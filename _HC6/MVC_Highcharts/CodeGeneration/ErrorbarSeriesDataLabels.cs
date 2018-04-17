@@ -30,6 +30,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Defer = Defer_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "";
+			Shape = Shape_DefaultValue = "square";
+			ZIndex = ZIndex_DefaultValue = 6;
+			Filter = Filter_DefaultValue = new ErrorbarSeriesDataLabelsFilter();
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "undefined";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -37,22 +40,19 @@ namespace Highsoft.Web.Mvc.Charts
 			Overflow = Overflow_DefaultValue = ErrorbarSeriesDataLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;
-			Shape = Shape_DefaultValue = "square";
-			ZIndex = ZIndex_DefaultValue = 6;
-			Filter = Filter_DefaultValue = new ErrorbarSeriesDataLabelsFilter();
 			
 		}	
 		
 
 		/// <summary>
-		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the [inside](#plotOptions.column.dataLabels.inside) option. Can be one of "left", "center"or "right".
+		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
 		/// </summary>
 		public ErrorbarSeriesDataLabelsAlign Align { get; set; }
 		private ErrorbarSeriesDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to format the data label. Note thatif a `format` is defined, the format takes precedence and the formatteris ignored. Available data are:<table><tbody><tr><td>`this.percentage`</td><td>Stacked series and pies only. The point's percentage of thetotal.</td></tr><tr><td>`this.point`</td><td>The point object. The point name, if defined, is availablethrough `this.point.name`.</td></tr><tr><td>`this.series`:</td><td>The series object. The series name is available through `this.series.name`.</td></tr><tr><td>`this.total`</td><td>Stacked series only. The total value at this point's x value.</td></tr><tr><td>`this.x`:</td><td>The x value.</td></tr><tr><td>`this.y`:</td><td>The y value.</td></tr></tbody></table>
+		/// Callback JavaScript function to format the data label. Note that if a`format` is defined, the format takes precedence and the formatter isignored. Available data are:<table><tbody><tr><td>`this.percentage`</td><td>Stacked series and pies only. The point's percentage of thetotal.</td></tr><tr><td>`this.point`</td><td>The point object. The point name, if defined, is availablethrough `this.point.name`.</td></tr><tr><td>`this.series`:</td><td>The series object. The series name is available through`this.series.name`.</td></tr><tr><td>`this.total`</td><td>Stacked series only. The total value at this point's x value.</td></tr><tr><td>`this.x`:</td><td>The x value.</td></tr><tr><td>`this.y`:</td><td>The y value.</td></tr></tbody></table>
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
@@ -115,21 +115,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A class name for the data label. Particularly in styled mode, this canbe used to give each series' or point's data label unique styling.In addition to this option, a default color class name is addedso that we can give the labels a [contrast text shadow](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/data-label-contrast/).
+		/// A class name for the data label. Particularly in styled mode, thiscan be used to give each series' or point's data label uniquestyling. In addition to this option, a default color class name isadded so that we can give the labels a[contrast text shadow](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/data-label-contrast/).
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The text color for the data labels. Defaults to `null`. For certain seriestypes, like column or map, the data labels can be drawn inside the points.In this case the data label will be drawn with maximum contrast by default.Additionally, it will be given a `text-outline` style with the oppositecolor, to further increase the contrast. This can be overridden by settingthe `text-outline` style to `none` in the `dataLabels.style` option.
+		/// The text color for the data labels. Defaults to `null`. For certainseries types, like column or map, the data labels can be drawn insidethe points. In this case the data label will be drawn with maximumcontrast by default. Additionally, it will be given a `text-outline`style with the opposite color, to further increase the contrast. Thiscan be overridden by setting the `text-outline` style to `none` inthe `dataLabels.style` option.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to hide data labels that are outside the plot area. By default,the data label is moved inside the plot area according to the [overflow](#plotOptions.series.dataLabels.overflow) option.
+		/// Whether to hide data labels that are outside the plot area. Bydefault, the data label is moved inside the plot area according tothe [overflow](#plotOptions.series.dataLabels.overflow) option.
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
@@ -150,59 +150,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) for the data label. Available variables arethe same as for `formatter`.
+		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The background color or gradient for the data label.
-		/// </summary>
-		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border color for the data label. Defaults to `undefined`.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The shadow of the box. Works best with `borderWidth` or `backgroundColor`.Since 2.3 the shadow can be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For points with an extent, like columns or map areas, whether to align the datalabel inside the box or to the actual value point. Defaults to `false`in most cases, `true` in stacked columns.
-		/// </summary>
-		public bool? Inside { get; set; }
-		private bool? Inside_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// How to handle data labels that flow outside the plot area. The defaultis `justify`, which aligns them inside the plot area. For columnsand bars, this means it will be moved inside the bar. To displaydata labels outside the plot area, set `crop` to `false` and `overflow`to `"none"`.
-		/// </summary>
-		public ErrorbarSeriesDataLabelsOverflow Overflow { get; set; }
-		private ErrorbarSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Text rotation in degrees. Note that due to a more complex structure,backgrounds, borders and padding will be lost on a rotated datalabel.
-		/// </summary>
-		public double? Rotation { get; set; }
-		private double? Rotation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
-		/// </summary>
-		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -224,6 +175,55 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ErrorbarSeriesDataLabelsFilter Filter { get; set; }
 		private ErrorbarSeriesDataLabelsFilter Filter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The background color or gradient for the data label.
+		/// </summary>
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border color for the data label. Defaults to `undefined`.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The shadow of the box. Works best with `borderWidth` or`backgroundColor`. Since 2.3 the shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For points with an extent, like columns or map areas, whether toalign the data label inside the box or to the actual value point.Defaults to `false` in most cases, `true` in stacked columns.
+		/// </summary>
+		public bool? Inside { get; set; }
+		private bool? Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// How to handle data labels that flow outside the plot area. Thedefault is `justify`, which aligns them inside the plot area. Forcolumns and bars, this means it will be moved inside the bar. Todisplay data labels outside the plot area, set `crop` to `false` and`overflow` to `"none"`.
+		/// </summary>
+		public ErrorbarSeriesDataLabelsOverflow Overflow { get; set; }
+		private ErrorbarSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Text rotation in degrees. Note that due to a more complex structure,backgrounds, borders and padding will be lost on a rotated datalabel.
+		/// </summary>
+		public double? Rotation { get; set; }
+		private double? Rotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to[use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -246,6 +246,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
+			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
@@ -253,9 +256,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			
 
 			return h;

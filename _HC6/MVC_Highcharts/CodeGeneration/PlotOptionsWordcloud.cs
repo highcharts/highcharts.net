@@ -14,14 +14,18 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWordcloud()
 		{
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			BorderWidth = BorderWidth_DefaultValue = 0;
 			Clip = Clip_DefaultValue = false;
+			ColorByPoint = ColorByPoint_DefaultValue = true;
 			PlacementStrategy = PlacementStrategy_DefaultValue = "center";
 			Rotation = Rotation_DefaultValue = new PlotOptionsWordcloudRotation();
+			ShowInLegend = ShowInLegend_DefaultValue = false;
 			Spiral = Spiral_DefaultValue = "rectangular";
 			Style = Style_DefaultValue = new PlotOptionsWordcloudStyle();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsWordcloudTooltip();
 			Label = Label_DefaultValue = new PlotOptionsWordcloudLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsWordcloudEvents();
 			Point = Point_DefaultValue = new PlotOptionsWordcloudPoint();
 			CropThreshold = CropThreshold_DefaultValue = 300;
@@ -40,14 +44,11 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkedTo = LinkedTo_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
-			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsWordcloudTooltip();
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			BorderRadius = BorderRadius_DefaultValue = 0;
+			StartFromThreshold = StartFromThreshold_DefaultValue = true;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			
@@ -57,8 +58,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public bool? Clip { get; set; }
 		private bool? Clip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
+		/// </summary>
+		public bool? ColorByPoint { get; set; }
+		private bool? ColorByPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -76,6 +98,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? ShowInLegend { get; set; }
+		private bool? ShowInLegend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Spiral used for placing a word after the inital position experienced acollision with either another word or the borders.It is possible for users to add their own custom spiralling algorithmsfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
 		/// </summary>
 		public string Spiral { get; set; }
@@ -87,6 +116,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsWordcloudStyle Style { get; set; }
 		private PlotOptionsWordcloudStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsWordcloudTooltip Tooltip { get; set; }
+		private PlotOptionsWordcloudTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -104,14 +140,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsWordcloudEvents Events { get; set; }
 		private PlotOptionsWordcloudEvents Events_DefaultValue { get; set; }
@@ -237,13 +266,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
@@ -258,20 +280,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsWordcloudTooltip Tooltip { get; set; }
-		private PlotOptionsWordcloudTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The corner radius of the border surrounding each column or bar.
 		/// </summary>
 		public double? BorderRadius { get; set; }
@@ -279,17 +287,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? StartFromThreshold { get; set; }
+		private bool? StartFromThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
-		/// </summary>
-		public bool? ColorByPoint { get; set; }
-		private bool? ColorByPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -310,14 +318,18 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
+			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
 			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
+			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (Spiral != Spiral_DefaultValue) h.Add("spiral",Spiral);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
@@ -336,14 +348,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsWordcloudPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (StartFromThreshold != StartFromThreshold_DefaultValue) h.Add("startFromThreshold",StartFromThreshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			

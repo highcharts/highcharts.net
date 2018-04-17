@@ -14,7 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTilemapStatesHoverHalo()
 		{
-			Size = Size_DefaultValue = 10;
+			Enabled = Enabled_DefaultValue = true;
+			Size = Size_DefaultValue = 2;
 			Opacity = Opacity_DefaultValue = null;
 			Attributes = Attributes_DefaultValue = null;
 			
@@ -22,21 +23,28 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The pixel size of the halo. For point markers this is the radiusof the halo. For pie slices it is the width of the halo outsidethe slice. For bubbles it defaults to 5 and is the width of thehalo outside the bubble.
+		/// 
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
 		/// </summary>
 		public double? Size { get; set; }
 		private double? Size_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Opacity for the halo unless a specific fill is overridden usingthe `attributes` setting. Note that Highcharts is only able toapply opacity to colors of hex or rgb(a) formats.
+		/// 
 		/// </summary>
 		public double? Opacity { get; set; }
 		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A collection of SVG attributes to override the appearance of thehalo, for example `fill`, `stroke` and `stroke-width`.
+		/// 
 		/// </summary>
 		public Object Attributes { get; set; }
 		private Object Attributes_DefaultValue { get; set; }
@@ -46,6 +54,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);

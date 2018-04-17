@@ -14,45 +14,68 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBubbleMarker()
 		{
-			LineWidth = LineWidth_DefaultValue = 0;
-			LineColor = LineColor_DefaultValue = "#ffffff";
-			Radius = Radius_DefaultValue = 4;
+			LineColor = LineColor_DefaultValue = new PlotOptionsBubbleMarkerLineColor();
+			LineWidth = LineWidth_DefaultValue = 1;
+			FillOpacity = FillOpacity_DefaultValue = null;
+			Radius = Radius_DefaultValue = new PlotOptionsBubbleMarkerRadius();
 			States = States_DefaultValue = new PlotOptionsBubbleMarkerStates();
+			Symbol = Symbol_DefaultValue = "circle";
+			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
 			FillColor = FillColor_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = null;
 			Height = Height_DefaultValue = null;
-			Symbol = Symbol_DefaultValue = "null";
 			Width = Width_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// The width of the point marker's outline.
+		/// 
+		/// </summary>
+		public PlotOptionsBubbleMarkerLineColor LineColor { get; set; }
+		private PlotOptionsBubbleMarkerLineColor LineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The color of the point marker's outline. When `null`, the series'or point's color is used.
+		/// The fill opacity of the bubble markers.
 		/// </summary>
-		public string LineColor { get; set; }
-		private string LineColor_DefaultValue { get; set; }
+		public double? FillOpacity { get; set; }
+		private double? FillOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The radius of the point marker.
+		/// 
 		/// </summary>
-		public double? Radius { get; set; }
-		private double? Radius_DefaultValue { get; set; }
+		public PlotOptionsBubbleMarkerRadius Radius { get; set; }
+		private PlotOptionsBubbleMarkerRadius Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// States for a single point marker.
+		/// 
 		/// </summary>
 		public PlotOptionsBubbleMarkerStates States { get; set; }
 		private PlotOptionsBubbleMarkerStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A predefined shape or symbol for the marker. Possible values are"circle", "square", "diamond", "triangle" and "triangle-down".Additionally, the URL to a graphic can be given on the form`url(graphic.png)`. Note that for the image to be applied to exportedcharts, its URL needs to be accessible by the export server.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols`. The callback is thenused by its method name, as shown in the demo.
+		/// </summary>
+		public string Symbol { get; set; }
+		private string Symbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The threshold for how dense the point markers should be before theyare hidden, given that `enabled` is not defined. The number indicatesthe horizontal distance between the two closest points in the series,as multiples of the `marker.radius`. In other words, the defaultvalue of 2 means points are hidden if overlapping horizontally.
+		/// </summary>
+		public double? EnabledThreshold { get; set; }
+		private double? EnabledThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -77,13 +100,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A predefined shape or symbol for the marker. When null, the symbolis pulled from options.symbols. Other possible values are "circle","square", "diamond", "triangle" and "triangle-down".Additionally, the URL to a graphic can be given on this form:"url(graphic.png)". Note that for the image to be applied to exportedcharts, its URL needs to be accessible by the export server.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols`. The callback is thenused by its method name, as shown in the demo.
-		/// </summary>
-		public string Symbol { get; set; }
-		private string Symbol_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Image markers only. Set the image width explicitly. When using thisoption, a `height` must also be set.
 		/// </summary>
 		public double? Width { get; set; }
@@ -94,14 +110,16 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (LineColor.IsDirty()) h.Add("lineColor",LineColor.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
+			if (Radius.IsDirty()) h.Add("radius",Radius.ToHashtable());
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
+			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			
 

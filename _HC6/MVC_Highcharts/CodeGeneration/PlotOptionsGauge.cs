@@ -14,10 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsGauge()
 		{
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
 			Dial = Dial_DefaultValue = new PlotOptionsGaugeDial();
 			Pivot = Pivot_DefaultValue = new PlotOptionsGaugePivot();
-			Overshoot = Overshoot_DefaultValue = 0;
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsGaugeTooltip();
+			ShowInLegend = ShowInLegend_DefaultValue = false;
 			Wrap = Wrap_DefaultValue = true;
+			Overshoot = Overshoot_DefaultValue = 0;
 			Label = Label_DefaultValue = new PlotOptionsGaugeLabel();
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
@@ -25,8 +28,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsGaugeEvents();
 			Point = Point_DefaultValue = new PlotOptionsGaugePoint();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
-			States = States_DefaultValue = new PlotOptionsGaugeStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
@@ -38,41 +39,50 @@ namespace Highsoft.Web.Mvc.Charts
 			Keys = Keys_DefaultValue = new List<string>();
 			Linecap = Linecap_DefaultValue = PlotOptionsGaugeLinecap.Round;
 			LinkedTo = LinkedTo_DefaultValue = "";
-			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsGaugePointIntervalUnit.Null;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsGaugeTooltip();
-			BorderWidth = BorderWidth_DefaultValue = 1;
 			
 		}	
 		
 
 		/// <summary>
-		/// Options for the dial or arrow pointer of the gauge.In styled mode, the dial is styled with the `.highcharts-gauge-series .highcharts-dial` rule.
+		/// Data labels for the gauge. For gauges, the data labels are enabledby default and shown in a bordered box below the point.
+		/// </summary>
+		public PlotOptionsGaugeDataLabels DataLabels { get; set; }
+		private PlotOptionsGaugeDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the dial or arrow pointer of the gauge.In styled mode, the dial is styled with the`.highcharts-gauge-series .highcharts-dial` rule.
 		/// </summary>
 		public PlotOptionsGaugeDial Dial { get; set; }
 		private PlotOptionsGaugeDial Dial_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the pivot or the center point of the gauge.In styled mode, the pivot is styled with the `.highcharts-gauge-series .highcharts-pivot` rule.
+		/// Options for the pivot or the center point of the gauge.In styled mode, the pivot is styled with the`.highcharts-gauge-series .highcharts-pivot` rule.
 		/// </summary>
 		public PlotOptionsGaugePivot Pivot { get; set; }
 		private PlotOptionsGaugePivot Pivot_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Allow the dial to overshoot the end of the perimeter axis by thismany degrees. Say if the gauge axis goes from 0 to 60, a value of100, or 1000, will show 5 degrees beyond the end of the axis.
+		/// 
 		/// </summary>
-		public double? Overshoot { get; set; }
-		private double? Overshoot_DefaultValue { get; set; }
+		public PlotOptionsGaugeTooltip Tooltip { get; set; }
+		private PlotOptionsGaugeTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to display this particular series or series type in thelegend. Defaults to false for gauge series.
+		/// </summary>
+		public bool? ShowInLegend { get; set; }
+		private bool? ShowInLegend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -83,6 +93,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Allow the dial to overshoot the end of the perimeter axis by thismany degrees. Say if the gauge axis goes from 0 to 60, a value of100, or 1000, will show 5 degrees beyond the end of the axis when thisoption is set to 5.
+		/// </summary>
+		public double? Overshoot { get; set; }
+		private double? Overshoot_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
 		/// </summary>
 		public PlotOptionsGaugeLabel Label { get; set; }
@@ -90,7 +107,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Pixel with of the graph line.
+		/// Pixel width of the graph line.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -118,7 +135,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
+		/// 
 		/// </summary>
 		public PlotOptionsGaugeEvents Events { get; set; }
 		private PlotOptionsGaugeEvents Events_DefaultValue { get; set; }
@@ -129,20 +146,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsGaugePoint Point { get; set; }
 		private PlotOptionsGaugePoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the `.highcharts-data-label-box` and `.highcharts-data-label` class names ([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsGaugeDataLabels DataLabels { get; set; }
-		private PlotOptionsGaugeDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsGaugeStates States { get; set; }
-		private PlotOptionsGaugeStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -223,13 +226,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color for the parts of the graph or points that are below the[threshold](#plotOptions.series.threshold).
-		/// </summary>
-		public string NegativeColor { get; set; }
-		private string NegativeColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Same as [accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter), but for an individual series. Overridesthe chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
@@ -237,14 +233,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.
+		/// If no x values are given for the points in a series, `pointInterval`defines the interval of the x values. For example, if a series containsone value every decade starting from year 0, set `pointInterval` to`10`. In true `datetime` axes, the `pointInterval` is set inmilliseconds.It can be also be combined with `pointIntervalUnit` to draw irregulartime intervals.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public double? PointInterval { get; set; }
 		private double? PointInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.
+		/// On datetime series, this allows for setting the[pointInterval](#plotOptions.series.pointInterval) to irregular time units, `day`, `month` and `year`. A day is usually the same as 24 hours,but `pointIntervalUnit` also takes the DST crossover into considerationwhen dealing with local time. Combine this option with `pointInterval`to draw weeks, quarters, 6 months, 10 years etc.Please note that this options applies to the _series data_, not theinterval of the axis ticks, which is independent.
 		/// </summary>
 		public PlotOptionsGaugePointIntervalUnit PointIntervalUnit { get; set; }
 		private PlotOptionsGaugePointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
@@ -265,20 +261,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
@@ -290,30 +272,19 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsGaugeTooltip Tooltip { get; set; }
-		private PlotOptionsGaugeTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Dial.IsDirty()) h.Add("dial",Dial.ToHashtable());
 			if (Pivot.IsDirty()) h.Add("pivot",Pivot.ToHashtable());
-			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (Wrap != Wrap_DefaultValue) h.Add("wrap",Wrap);
+			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
@@ -321,8 +292,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -334,18 +303,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
-			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsGaugePointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			
 
 			return h;
