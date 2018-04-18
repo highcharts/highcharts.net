@@ -98,12 +98,6 @@
 		<arg value="/t:Rebuild"/>
 		<arg value="/p:Configuration=Release"/>
 	</exec>
-	
-	<!--<exec program="${MSBuild}">
-		<arg value="${base.dir}\MVC_Demo\MVC_Demo.csproj"/>
-		<arg value="/t:Rebuild"/>
-		<arg value="/p:Configuration=Debug"/>
-	</exec>-->
 </target>
 
 <target name="copy.trial.libraries">

@@ -1,6 +1,0 @@
-c:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\bin\Release\DailyScheduler.exe.config
-c:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\bin\Release\DailyScheduler.exe
-c:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\bin\Release\DailyScheduler.pdb
-c:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\obj\Release\DailyScheduler.exe
-c:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\obj\Release\DailyScheduler.pdb
-c:\Users\PC\Documents\highcharts.net\DailyScheduler\DailyScheduler\obj\Release\DailyScheduler.csprojResolveAssemblyReference.cache
