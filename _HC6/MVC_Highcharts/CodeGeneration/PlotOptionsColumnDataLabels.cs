@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsColumnDataLabels()
 		{
-			Align = Align_DefaultValue = new PlotOptionsColumnDataLabelsAlign();
-			VerticalAlign = VerticalAlign_DefaultValue = new PlotOptionsColumnDataLabelsVerticalAlign();
-			Y = Y_DefaultValue = new PlotOptionsColumnDataLabelsY();
+			Align = Align_DefaultValue = PlotOptionsColumnDataLabelsAlign.Left;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsColumnDataLabelsVerticalAlign.Top;
+			Y = Y_DefaultValue = null;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new PlotOptionsColumnDataLabelsStyle();
 			X = X_DefaultValue = 0;
@@ -61,8 +61,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsColumnDataLabelsY Y { get; set; }
-		private PlotOptionsColumnDataLabelsY Y_DefaultValue { get; set; }
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -230,9 +230,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align.IsDirty()) h.Add("align",Align.ToHashtable());
-			if (VerticalAlign.IsDirty()) h.Add("verticalAlign",VerticalAlign.ToHashtable());
-			if (Y.IsDirty()) h.Add("y",Y.ToHashtable());
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsColumnDataLabelsFormatter.formatter", Formatter); }  
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (X != X_DefaultValue) h.Add("x",X);

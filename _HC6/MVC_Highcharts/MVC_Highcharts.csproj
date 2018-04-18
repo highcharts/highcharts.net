@@ -704,7 +704,9 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsBulletPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsBulletStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnCursor.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsColumnDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnDataLabelsOverflow.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsColumnDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnFindNearestPointBy.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnPointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsColumnrangeCursor.cs" />
@@ -1539,7 +1541,6 @@
     <Compile Include="CodeGeneration\PlotOptionsBubbleLabel.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBubbleLabelStyle.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBubbleMarker.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsBubbleMarkerLineColor.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBubbleMarkerRadius.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBubbleMarkerStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBubbleMarkerStatesHover.cs" />
@@ -1578,11 +1579,8 @@
     <Compile Include="CodeGeneration\PlotOptionsColumn.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnDataLabels.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnDataLabelsFilter.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnDataLabelsStyle.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnDataLabelsVerticalAlign.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsColumnDataLabelsY.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnEvents.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnLabel.cs" />
     <Compile Include="CodeGeneration\PlotOptionsColumnLabelStyle.cs" />
