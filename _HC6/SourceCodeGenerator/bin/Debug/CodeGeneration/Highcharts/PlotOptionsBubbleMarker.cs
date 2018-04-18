@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBubbleMarker()
 		{
-			LineColor = LineColor_DefaultValue = new PlotOptionsBubbleMarkerLineColor();
+			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 1;
 			FillOpacity = FillOpacity_DefaultValue = null;
 			Radius = Radius_DefaultValue = new PlotOptionsBubbleMarkerRadius();
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsBubbleMarkerLineColor LineColor { get; set; }
-		private PlotOptionsBubbleMarkerLineColor LineColor_DefaultValue { get; set; }
+		public string LineColor { get; set; }
+		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -110,7 +110,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineColor.IsDirty()) h.Add("lineColor",LineColor.ToHashtable());
+			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (Radius.IsDirty()) h.Add("radius",Radius.ToHashtable());

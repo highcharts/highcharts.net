@@ -14,11 +14,19 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsStochasticParams()
 		{
+			Periods = Periods_DefaultValue = new List<int>();
 			Index = Index_DefaultValue = 0;
 			Period = Period_DefaultValue = 14;
 			
 		}	
 		
+
+		/// <summary>
+		/// Periods for Stochastic oscillator: [%K, %D].
+		/// </summary>
+		public List<int> Periods { get; set; }
+		private List<int> Periods_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
@@ -38,6 +46,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Periods != Periods_DefaultValue) h.Add("periods",Periods);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Period != Period_DefaultValue) h.Add("period",Period);
 			

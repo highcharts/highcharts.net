@@ -14,10 +14,11 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public YAxisLabels()
 		{
+			X = X_DefaultValue = -8;
+			Align = Align_DefaultValue = YAxisLabelsAlign.Left;
+			Y = Y_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Style = Style_DefaultValue = new YAxisLabelsStyle();
-			X = X_DefaultValue = 0;
-			Align = Align_DefaultValue = YAxisLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
@@ -25,13 +26,33 @@ namespace Highsoft.Web.Mvc.Stocks
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
-			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
 			UseHTML = UseHTML_DefaultValue = false;
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			
 		}	
 		
+
+		/// <summary>
+		/// The x position offset of the label relative to the tick positionon the axis. Defaults to -15 for left axis, 15 for right axis.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// What part of the string the given position is anchored to. Canbe one of `"left"`, `"center"` or `"right"`. The exact positionalso depends on the `labels.x` setting.Angular gauges and solid gauges defaults to `center`.
+		/// </summary>
+		public YAxisLabelsAlign Align { get; set; }
+		private YAxisLabelsAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The y position offset of the label relative to the tick positionon the axis.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Enable or disable the axis labels.
@@ -45,20 +66,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public YAxisLabelsStyle Style { get; set; }
 		private YAxisLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x position offset of the label relative to the tick positionon the axis.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// What part of the string the given position is anchored to.If `left`, the left side of the string is at the axis position.Can be one of `"left"`, `"center"` or `"right"`. Defaults toan intelligent guess based on which side of the chart the axisis on and the rotation of the label.
-		/// </summary>
-		public YAxisLabelsAlign Align { get; set; }
-		private YAxisLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -111,13 +118,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The y position offset of the label relative to the tick positionon the axis. The default makes it adapt to the font size onbottom axis.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The Z index for the axis labels.
 		/// </summary>
 		public double? ZIndex { get; set; }
@@ -142,10 +142,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
+			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("YAxisLabelsFormatter.formatter", Formatter); }  
@@ -153,7 +154,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);

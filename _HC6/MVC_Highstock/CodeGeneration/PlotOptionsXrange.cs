@@ -15,6 +15,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsXrange()
 		{
 			Data = Data_DefaultValue = new List<PlotOptionsXrangeData>();
+			ColorByPoint = ColorByPoint_DefaultValue = true;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsXrangeDataLabels();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsXrangeTooltip();
+			BorderRadius = BorderRadius_DefaultValue = 3;
 			PointRange = PointRange_DefaultValue = 0;
 			PartialFill = PartialFill_DefaultValue = new PlotOptionsXrangePartialFill();
 			Label = Label_DefaultValue = new PlotOptionsXrangeLabel();
@@ -25,7 +29,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsXrangeEvents();
 			Point = Point_DefaultValue = new PlotOptionsXrangePoint();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsXrangeDataLabels();
 			States = States_DefaultValue = new PlotOptionsXrangeStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
@@ -46,17 +49,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsXrangeTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsXrangeZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
 			CompareBase = CompareBase_DefaultValue = PlotOptionsXrangeCompareBase.Min;
-			BorderRadius = BorderRadius_DefaultValue = 0;
 			PointPadding = PointPadding_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			StartFromThreshold = StartFromThreshold_DefaultValue = true;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
@@ -71,6 +71,34 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<PlotOptionsXrangeData> Data { get; set; }
 		private List<PlotOptionsXrangeData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// In an X-range series, this option makes all points of the same Y-axiscategory the same color.
+		/// </summary>
+		public bool? ColorByPoint { get; set; }
+		private bool? ColorByPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsXrangeDataLabels DataLabels { get; set; }
+		private PlotOptionsXrangeDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsXrangeTooltip Tooltip { get; set; }
+		private PlotOptionsXrangeTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -141,13 +169,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsXrangePoint Point { get; set; }
 		private PlotOptionsXrangePoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsXrangeDataLabels DataLabels { get; set; }
-		private PlotOptionsXrangeDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -291,13 +312,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsXrangeTooltip Tooltip { get; set; }
-		private PlotOptionsXrangeTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsXrangeZone> Zones { get; set; }
@@ -326,13 +340,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The corner radius of the border surrounding each column or bar.
-		/// </summary>
-		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Padding between each column or bar, in x axis units.
 		/// </summary>
 		public double? PointPadding { get; set; }
@@ -358,13 +365,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
-		/// </summary>
-		public bool? ColorByPoint { get; set; }
-		private bool? ColorByPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -407,6 +407,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
@@ -417,7 +421,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
@@ -438,17 +441,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (StartFromThreshold != StartFromThreshold_DefaultValue) h.Add("startFromThreshold",StartFromThreshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);

@@ -14,16 +14,20 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsMacd()
 		{
+			Params = Params_DefaultValue = new PlotOptionsMacdParams();
 			SignalLine = SignalLine_DefaultValue = new PlotOptionsMacdSignalLine();
 			MacdLine = MacdLine_DefaultValue = new PlotOptionsMacdMacdLine();
+			Threshold = Threshold_DefaultValue = 0;
 			GroupPadding = GroupPadding_DefaultValue = null;
 			PointPadding = PointPadding_DefaultValue = null;
+			States = States_DefaultValue = new PlotOptionsMacdStates();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsMacdTooltip();
+			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsMacdDataGrouping();
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsMacdGapUnit.Relative;
 			Label = Label_DefaultValue = new PlotOptionsMacdLabel();
-			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsMacdDataGrouping();
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -34,7 +38,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsMacdDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsMacdStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsMacdFindNearestPointBy.X;
@@ -58,16 +61,20 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Step = Step_DefaultValue = PlotOptionsMacdStep.Null;
-			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsMacdTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsMacdZone>();
 			CompareStart = CompareStart_DefaultValue = false;
-			Params = Params_DefaultValue = new PlotOptionsMacdParams();
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsMacdParams Params { get; set; }
+		private PlotOptionsMacdParams Params_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The styles for signal line
@@ -86,6 +93,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public double? Threshold { get; set; }
+		private double? Threshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public double? GroupPadding { get; set; }
 		private double? GroupPadding_DefaultValue { get; set; }
 		 
@@ -95,6 +109,27 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? PointPadding { get; set; }
 		private double? PointPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsMacdStates States { get; set; }
+		private PlotOptionsMacdStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsMacdTooltip Tooltip { get; set; }
+		private PlotOptionsMacdTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsMacdDataGrouping DataGrouping { get; set; }
+		private PlotOptionsMacdDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -130,13 +165,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsMacdLabel Label { get; set; }
 		private PlotOptionsMacdLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](#Point.dataGroup).
-		/// </summary>
-		public PlotOptionsMacdDataGrouping DataGrouping { get; set; }
-		private PlotOptionsMacdDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -207,13 +235,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsMacdStates States { get; set; }
-		private PlotOptionsMacdStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -378,13 +399,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -399,13 +413,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsMacdTooltip Tooltip { get; set; }
-		private PlotOptionsMacdTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsMacdZone> Zones { get; set; }
@@ -417,29 +424,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? CompareStart { get; set; }
 		private bool? CompareStart_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsMacdParams Params { get; set; }
-		private PlotOptionsMacdParams Params_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			if (SignalLine.IsDirty()) h.Add("signalLine",SignalLine.ToHashtable());
 			if (MacdLine.IsDirty()) h.Add("macdLine",MacdLine.ToHashtable());
+			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
@@ -450,7 +454,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
@@ -474,13 +477,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Step != Step_DefaultValue) h.Add("step", Highstock.FirstCharacterToLower(Step.ToString()));
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			
 
 			return h;

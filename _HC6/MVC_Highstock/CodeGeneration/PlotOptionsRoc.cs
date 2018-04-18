@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsRoc()
 		{
 			Name = Name_DefaultValue = "Rate of Change (9)";
+			Params = Params_DefaultValue = new PlotOptionsRocParams();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsRocGapUnit.Relative;
@@ -60,7 +61,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsRocTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsRocZone>();
 			CompareStart = CompareStart_DefaultValue = false;
-			Params = Params_DefaultValue = new PlotOptionsRocParams();
 			
 		}	
 		
@@ -70,6 +70,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsRocParams Params { get; set; }
+		private PlotOptionsRocParams Params_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -385,13 +392,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? CompareStart { get; set; }
 		private bool? CompareStart_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsRocParams Params { get; set; }
-		private PlotOptionsRocParams Params_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -399,6 +399,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
@@ -444,7 +445,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			
 
 			return h;

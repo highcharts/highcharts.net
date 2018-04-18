@@ -14,9 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigatorXAxisLabelsStyle()
 		{
-			Color = Color_DefaultValue = "#666666";
-			Cursor = Cursor_DefaultValue = "default";
-			FontSize = FontSize_DefaultValue = "11px";
+			Color = Color_DefaultValue = "#999999";
 			
 		}	
 		
@@ -26,20 +24,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string FontSize { get; set; }
-		private string FontSize_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -47,8 +31,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			
 
 			return h;

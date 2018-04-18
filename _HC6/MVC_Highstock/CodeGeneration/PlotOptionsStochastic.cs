@@ -15,18 +15,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsStochastic()
 		{
 			Name = Name_DefaultValue = "Stochastic (14, 3)";
+			Params = Params_DefaultValue = new PlotOptionsStochasticParams();
+			Marker = Marker_DefaultValue = new PlotOptionsStochasticMarker();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsStochasticTooltip();
 			SmoothedLine = SmoothedLine_DefaultValue = new PlotOptionsStochasticSmoothedLine();
+			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsStochasticDataGrouping();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsStochasticGapUnit.Relative;
 			Label = Label_DefaultValue = new PlotOptionsStochasticLabel();
-			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsStochasticDataGrouping();
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsStochasticEvents();
-			Marker = Marker_DefaultValue = new PlotOptionsStochasticMarker();
 			Point = Point_DefaultValue = new PlotOptionsStochasticPoint();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsStochasticDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
@@ -58,10 +60,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsStochasticTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsStochasticZone>();
 			CompareStart = CompareStart_DefaultValue = false;
-			Params = Params_DefaultValue = new PlotOptionsStochasticParams();
 			
 		}	
 		
@@ -74,10 +74,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsStochasticParams Params { get; set; }
+		private PlotOptionsStochasticParams Params_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsStochasticMarker Marker { get; set; }
+		private PlotOptionsStochasticMarker Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsStochasticTooltip Tooltip { get; set; }
+		private PlotOptionsStochasticTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Smoothed line options.
 		/// </summary>
 		public PlotOptionsStochasticSmoothedLine SmoothedLine { get; set; }
 		private PlotOptionsStochasticSmoothedLine SmoothedLine_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsStochasticDataGrouping DataGrouping { get; set; }
+		private PlotOptionsStochasticDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -106,13 +134,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsStochasticLabel Label { get; set; }
 		private PlotOptionsStochasticLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](#Point.dataGroup).
-		/// </summary>
-		public PlotOptionsStochasticDataGrouping DataGrouping { get; set; }
-		private PlotOptionsStochasticDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -148,13 +169,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsStochasticEvents Events { get; set; }
 		private PlotOptionsStochasticEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
-		/// </summary>
-		public PlotOptionsStochasticMarker Marker { get; set; }
-		private PlotOptionsStochasticMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -375,13 +389,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsStochasticTooltip Tooltip { get; set; }
-		private PlotOptionsStochasticTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsStochasticZone> Zones { get; set; }
@@ -393,13 +400,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? CompareStart { get; set; }
 		private bool? CompareStart_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsStochasticParams Params { get; set; }
-		private PlotOptionsStochasticParams Params_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -407,18 +407,20 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (SmoothedLine.IsDirty()) h.Add("smoothedLine",SmoothedLine.ToHashtable());
+			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
@@ -450,10 +452,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			
 
 			return h;

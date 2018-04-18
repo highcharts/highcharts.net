@@ -16,6 +16,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			LineWidth = LineWidth_DefaultValue = 2;
 			OnSeries = OnSeries_DefaultValue = "";
+			States = States_DefaultValue = new PlotOptionsWindbarbStates();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsWindbarbTooltip();
 			VectorLength = VectorLength_DefaultValue = 20;
 			YOffset = YOffset_DefaultValue = -20;
 			Label = Label_DefaultValue = new PlotOptionsWindbarbLabel();
@@ -28,7 +30,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsWindbarbDataLabels();
 			PointRange = PointRange_DefaultValue = 0;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsWindbarbStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsWindbarbFindNearestPointBy.X;
@@ -55,7 +56,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsWindbarbTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsWindbarbZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
@@ -93,6 +93,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string OnSeries { get; set; }
 		private string OnSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsWindbarbStates States { get; set; }
+		private PlotOptionsWindbarbStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsWindbarbTooltip Tooltip { get; set; }
+		private PlotOptionsWindbarbTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -177,13 +191,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsWindbarbStates States { get; set; }
-		private PlotOptionsWindbarbStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -369,13 +376,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsWindbarbTooltip Tooltip { get; set; }
-		private PlotOptionsWindbarbTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsWindbarbZone> Zones { get; set; }
@@ -528,6 +528,8 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (OnSeries != OnSeries_DefaultValue) h.Add("onSeries",OnSeries);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (YOffset != YOffset_DefaultValue) h.Add("yOffset",YOffset);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
@@ -540,7 +542,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
@@ -571,7 +572,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);

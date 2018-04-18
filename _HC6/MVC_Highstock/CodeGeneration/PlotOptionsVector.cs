@@ -14,11 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsVector()
 		{
+			LineWidth = LineWidth_DefaultValue = 2;
 			RotationOrigin = RotationOrigin_DefaultValue = PlotOptionsVectorRotationOrigin.Center;
+			States = States_DefaultValue = new PlotOptionsVectorStates();
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsVectorTooltip();
 			VectorLength = VectorLength_DefaultValue = 20;
 			Label = Label_DefaultValue = new PlotOptionsVectorLabel();
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
-			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
@@ -27,7 +29,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsVectorDataLabels();
 			PointRange = PointRange_DefaultValue = 0;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsVectorStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsVectorFindNearestPointBy.X;
@@ -54,7 +55,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsVectorTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsVectorZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
@@ -64,10 +64,31 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
+		/// The line width for each vector arrow.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// What part of the vector it should be rotated around. Can be one of`start`, `center` and `end`. When `start`, the vectors will start fromthe given [x, y] position, and when `end` the vectors will end in the[x, y] position.
 		/// </summary>
 		public PlotOptionsVectorRotationOrigin RotationOrigin { get; set; }
 		private PlotOptionsVectorRotationOrigin RotationOrigin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVectorStates States { get; set; }
+		private PlotOptionsVectorStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVectorTooltip Tooltip { get; set; }
+		private PlotOptionsVectorTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -89,13 +110,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? ShowInNavigator { get; set; }
 		private bool? ShowInNavigator_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel width of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -152,13 +166,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsVectorStates States { get; set; }
-		private PlotOptionsVectorStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -344,13 +351,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsVectorTooltip Tooltip { get; set; }
-		private PlotOptionsVectorTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsVectorZone> Zones { get; set; }
@@ -382,11 +382,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (RotationOrigin != RotationOrigin_DefaultValue) h.Add("rotationOrigin", Highstock.FirstCharacterToLower(RotationOrigin.ToString()));
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
@@ -395,7 +397,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
@@ -426,7 +427,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);

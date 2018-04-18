@@ -14,19 +14,21 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsPivotpoints()
 		{
+			Params = Params_DefaultValue = new PlotOptionsPivotpointsParams();
+			Marker = Marker_DefaultValue = new PlotOptionsPivotpointsMarker();
+			EnableMouseTracking = EnableMouseTracking_DefaultValue = false;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsPivotpointsDataLabels();
+			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsPivotpointsDataGrouping();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsPivotpointsGapUnit.Relative;
 			Label = Label_DefaultValue = new PlotOptionsPivotpointsLabel();
-			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsPivotpointsDataGrouping();
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsPivotpointsEvents();
-			Marker = Marker_DefaultValue = new PlotOptionsPivotpointsMarker();
 			Point = Point_DefaultValue = new PlotOptionsPivotpointsPoint();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsPivotpointsDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
 			States = States_DefaultValue = new PlotOptionsPivotpointsStates();
@@ -41,7 +43,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Cursor = Cursor_DefaultValue = PlotOptionsPivotpointsCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsPivotpointsDashStyle.Solid;
 			Description = Description_DefaultValue = "undefined";
-			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Linecap = Linecap_DefaultValue = PlotOptionsPivotpointsLinecap.Round;
@@ -59,10 +60,44 @@ namespace Highsoft.Web.Mvc.Stocks
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsPivotpointsTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsPivotpointsZone>();
 			CompareStart = CompareStart_DefaultValue = false;
-			Params = Params_DefaultValue = new PlotOptionsPivotpointsParams();
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPivotpointsParams Params { get; set; }
+		private PlotOptionsPivotpointsParams Params_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPivotpointsMarker Marker { get; set; }
+		private PlotOptionsPivotpointsMarker Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? EnableMouseTracking { get; set; }
+		private bool? EnableMouseTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPivotpointsDataLabels DataLabels { get; set; }
+		private PlotOptionsPivotpointsDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPivotpointsDataGrouping DataGrouping { get; set; }
+		private PlotOptionsPivotpointsDataGrouping DataGrouping_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -90,13 +125,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsPivotpointsLabel Label { get; set; }
 		private PlotOptionsPivotpointsLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](#Point.dataGroup).
-		/// </summary>
-		public PlotOptionsPivotpointsDataGrouping DataGrouping { get; set; }
-		private PlotOptionsPivotpointsDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -135,24 +163,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
-		/// </summary>
-		public PlotOptionsPivotpointsMarker Marker { get; set; }
-		private PlotOptionsPivotpointsMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
 		public PlotOptionsPivotpointsPoint Point { get; set; }
 		private PlotOptionsPivotpointsPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsPivotpointsDataLabels DataLabels { get; set; }
-		private PlotOptionsPivotpointsDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -251,13 +265,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
-		/// </summary>
-		public bool? EnableMouseTracking { get; set; }
-		private bool? EnableMouseTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -377,32 +384,27 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? CompareStart { get; set; }
 		private bool? CompareStart_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsPivotpointsParams Params { get; set; }
-		private PlotOptionsPivotpointsParams Params_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
@@ -417,7 +419,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
@@ -435,7 +436,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			
 
 			return h;

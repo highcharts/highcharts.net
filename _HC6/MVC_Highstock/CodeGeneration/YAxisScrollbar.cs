@@ -14,14 +14,16 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public YAxisScrollbar()
 		{
-			Height = Height_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = false;
+			Margin = Margin_DefaultValue = null;
+			ShowFull = ShowFull_DefaultValue = true;
+			Size = Size_DefaultValue = 14;
+			ZIndex = ZIndex_DefaultValue = 3;
 			BarBorderRadius = BarBorderRadius_DefaultValue = 0;
 			ButtonBorderRadius = ButtonBorderRadius_DefaultValue = 0;
 			LiveRedraw = LiveRedraw_DefaultValue = null;
-			Margin = Margin_DefaultValue = null;
 			MinWidth = MinWidth_DefaultValue = 6;
 			Step = Step_DefaultValue = null;
-			ZIndex = ZIndex_DefaultValue = 3;
 			BarBackgroundColor = BarBackgroundColor_DefaultValue = "#cccccc";
 			BarBorderWidth = BarBorderWidth_DefaultValue = 1;
 			BarBorderColor = BarBorderColor_DefaultValue = "#cccccc";
@@ -33,18 +35,44 @@ namespace Highsoft.Web.Mvc.Stocks
 			TrackBackgroundColor = TrackBackgroundColor_DefaultValue = "#f2f2f2";
 			TrackBorderColor = TrackBorderColor_DefaultValue = "#f2f2f2";
 			TrackBorderWidth = TrackBorderWidth_DefaultValue = 1;
-			Enabled = Enabled_DefaultValue = true;
-			ShowFull = ShowFull_DefaultValue = true;
 			TrackBorderRadius = TrackBorderRadius_DefaultValue = 0;
 			
 		}	
 		
 
 		/// <summary>
-		/// The height of the scrollbar. The height also applies to the widthof the scroll arrows so that they are always squares. Defaults to20 for touch devices and 14 for mouse devices.
+		/// Enable the scrollbar on the Y axis.
 		/// </summary>
-		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Pixel margin between the scrollbar and the axis elements.
+		/// </summary>
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to show the scrollbar when it is fully zoomed out at maxrange. Setting it to `false` on the Y axis makes the scrollbar stayhidden until the user zooms in, like common in browsers.
+		/// </summary>
+		public bool? ShowFull { get; set; }
+		private bool? ShowFull_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of a vertical scrollbar or height of a horizontal scrollbar. Defaults to 20 on touch devices.
+		/// </summary>
+		public double? Size { get; set; }
+		private double? Size_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Z index of the scrollbar elements.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -69,13 +97,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The margin between the scrollbar and its axis when the scrollbar isapplied directly to an axis.
-		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The minimum width of the scrollbar.
 		/// </summary>
 		public double? MinWidth { get; set; }
@@ -87,13 +108,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Step { get; set; }
 		private double? Step_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The z index of the scrollbar group.
-		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -174,20 +188,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable or disable the scrollbar.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to show or hide the scrollbar when the scrolled content iszoomed out to it full extent.
-		/// </summary>
-		public bool? ShowFull { get; set; }
-		private bool? ShowFull_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The corner radius of the border of the scrollbar track.
 		/// </summary>
 		public double? TrackBorderRadius { get; set; }
@@ -198,14 +198,16 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
+			if (ShowFull != ShowFull_DefaultValue) h.Add("showFull",ShowFull);
+			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (BarBorderRadius != BarBorderRadius_DefaultValue) h.Add("barBorderRadius",BarBorderRadius);
 			if (ButtonBorderRadius != ButtonBorderRadius_DefaultValue) h.Add("buttonBorderRadius",ButtonBorderRadius);
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MinWidth != MinWidth_DefaultValue) h.Add("minWidth",MinWidth);
 			if (Step != Step_DefaultValue) h.Add("step",Step);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (BarBackgroundColor != BarBackgroundColor_DefaultValue) h.Add("barBackgroundColor",BarBackgroundColor);
 			if (BarBorderWidth != BarBorderWidth_DefaultValue) h.Add("barBorderWidth",BarBorderWidth);
 			if (BarBorderColor != BarBorderColor_DefaultValue) h.Add("barBorderColor",BarBorderColor);
@@ -217,8 +219,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TrackBackgroundColor != TrackBackgroundColor_DefaultValue) h.Add("trackBackgroundColor",TrackBackgroundColor);
 			if (TrackBorderColor != TrackBorderColor_DefaultValue) h.Add("trackBorderColor",TrackBorderColor);
 			if (TrackBorderWidth != TrackBorderWidth_DefaultValue) h.Add("trackBorderWidth",TrackBorderWidth);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (ShowFull != ShowFull_DefaultValue) h.Add("showFull",ShowFull);
 			if (TrackBorderRadius != TrackBorderRadius_DefaultValue) h.Add("trackBorderRadius",TrackBorderRadius);
 			
 

@@ -14,6 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsSma()
 		{
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsSmaTooltip();
+			LinkedTo = LinkedTo_DefaultValue = "";
 			Params = Params_DefaultValue = new PlotOptionsSmaParams();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
@@ -46,7 +48,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Linecap = Linecap_DefaultValue = PlotOptionsSmaLinecap.Round;
-			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
@@ -57,12 +58,25 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsSmaTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsSmaZone>();
 			CompareStart = CompareStart_DefaultValue = false;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsSmaTooltip Tooltip { get; set; }
+		private PlotOptionsSmaTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The main series ID that indicator will be based on. Required for thisindicator.
+		/// </summary>
+		public string LinkedTo { get; set; }
+		private string LinkedTo_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -289,13 +303,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.
-		/// </summary>
-		public string LinkedTo { get; set; }
-		private string LinkedTo_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color for the parts of the graph or points that are below the[threshold](#plotOptions.series.threshold).
 		/// </summary>
 		public string NegativeColor { get; set; }
@@ -366,13 +373,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsSmaTooltip Tooltip { get; set; }
-		private PlotOptionsSmaTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsSmaZone> Zones { get; set; }
@@ -390,6 +390,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
@@ -422,7 +424,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
-			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("PlotOptionsSmaPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
@@ -433,7 +434,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			

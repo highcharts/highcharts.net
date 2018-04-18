@@ -14,32 +14,59 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsMacdParams()
 		{
+			ShortPeriod = ShortPeriod_DefaultValue = 12;
+			LongPeriod = LongPeriod_DefaultValue = 26;
+			SignalPeriod = SignalPeriod_DefaultValue = 9;
+			Period = Period_DefaultValue = 26;
 			Index = Index_DefaultValue = 0;
-			Period = Period_DefaultValue = 14;
 			
 		}	
 		
+
+		/// <summary>
+		/// The short period for indicator calculations.
+		/// </summary>
+		public double? ShortPeriod { get; set; }
+		private double? ShortPeriod_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The long period for indicator calculations.
+		/// </summary>
+		public double? LongPeriod { get; set; }
+		private double? LongPeriod_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The base period for signal calculations.
+		/// </summary>
+		public double? SignalPeriod { get; set; }
+		private double? SignalPeriod_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Period { get; set; }
+		private double? Period_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The base period for indicator calculations.
-		/// </summary>
-		public double? Period { get; set; }
-		private double? Period_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (ShortPeriod != ShortPeriod_DefaultValue) h.Add("shortPeriod",ShortPeriod);
+			if (LongPeriod != LongPeriod_DefaultValue) h.Add("longPeriod",LongPeriod);
+			if (SignalPeriod != SignalPeriod_DefaultValue) h.Add("signalPeriod",SignalPeriod);
 			if (Period != Period_DefaultValue) h.Add("period",Period);
+			if (Index != Index_DefaultValue) h.Add("index",Index);
 			
 
 			return h;

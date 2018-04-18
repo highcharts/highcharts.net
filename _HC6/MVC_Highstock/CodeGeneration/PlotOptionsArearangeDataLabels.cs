@@ -14,6 +14,10 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsArearangeDataLabels()
 		{
+			XLow = XLow_DefaultValue = 0;
+			XHigh = XHigh_DefaultValue = 0;
+			YLow = YLow_DefaultValue = 16;
+			YHigh = YHigh_DefaultValue = -6;
 			Align = Align_DefaultValue = PlotOptionsArearangeDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new PlotOptionsArearangeDataLabelsStyle();
@@ -43,6 +47,34 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// X offset of the lower data labels relative to the point value.
+		/// </summary>
+		public double? XLow { get; set; }
+		private double? XLow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// X offset of the higher data labels relative to the point value.
+		/// </summary>
+		public double? XHigh { get; set; }
+		private double? XHigh_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Y offset of the lower data labels relative to the point value.
+		/// </summary>
+		public double? YLow { get; set; }
+		private double? YLow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Y offset of the higher data labels relative to the point value.
+		/// </summary>
+		public double? YHigh { get; set; }
+		private double? YHigh_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
@@ -230,6 +262,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (XLow != XLow_DefaultValue) h.Add("xLow",XLow);
+			if (XHigh != XHigh_DefaultValue) h.Add("xHigh",XHigh);
+			if (YLow != YLow_DefaultValue) h.Add("yLow",YLow);
+			if (YHigh != YHigh_DefaultValue) h.Add("yHigh",YHigh);
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("PlotOptionsArearangeDataLabelsFormatter.formatter", Formatter); }  
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());

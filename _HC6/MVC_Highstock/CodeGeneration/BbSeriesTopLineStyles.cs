@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Pixel width of the line.
+		/// 
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Color of the line. If not set, it's inherited from[plotOptions.bb.color](#plotOptions.bb.color).
+		/// 
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }

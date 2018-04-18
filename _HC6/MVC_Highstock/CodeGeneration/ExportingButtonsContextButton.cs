@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			_titleKey = _titleKey_DefaultValue = "contextButtonTitle";
 			MenuItems = MenuItems_DefaultValue = new List<MenuItem>();
 			Onclick = Onclick_DefaultValue = "";
+			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			X = X_DefaultValue = -10;
 			Enabled = Enabled_DefaultValue = true;
 			SymbolSize = SymbolSize_DefaultValue = 14;
@@ -32,7 +33,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Y = Y_DefaultValue = 0;
 			VerticalAlign = VerticalAlign_DefaultValue = ExportingButtonsContextButtonVerticalAlign.Top;
 			Width = Width_DefaultValue = 24;
-			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
 			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 1;
 			Theme = Theme_DefaultValue = new ExportingButtonsContextButtonTheme();
@@ -80,6 +80,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Onclick { get; set; }
 		private string Onclick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// See [navigation.buttonOptions.symbolFill](#navigation.buttonOptions.symbolFill).
+		/// </summary>
+		public string SymbolFill { get; set; }
+		private string SymbolFill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -167,13 +174,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Fill color for the symbol within the button.
-		/// </summary>
-		public string SymbolFill { get; set; }
-		private string SymbolFill_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the symbol's stroke or line.
 		/// </summary>
 		public string SymbolStroke { get; set; }
@@ -204,6 +204,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (_titleKey != _titleKey_DefaultValue) h.Add("_titleKey",_titleKey);
 			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems",MenuItems);
 			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highstock.AddFunction("ExportingButtonsContextButtonOnclick.onclick", Onclick); }  
+			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
@@ -216,7 +217,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (SymbolStroke != SymbolStroke_DefaultValue) h.Add("symbolStroke",SymbolStroke);
 			if (SymbolStrokeWidth != SymbolStrokeWidth_DefaultValue) h.Add("symbolStrokeWidth",SymbolStrokeWidth);
 			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());

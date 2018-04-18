@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public XrangeSeries()
 		{
+			Data = Data_DefaultValue = new List<XrangeSeriesData>();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -68,11 +69,17 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointWidth = PointWidth_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
-			Data = Data_DefaultValue = new List<XrangeSeriesData>();
 			PartialFill = PartialFill_DefaultValue = new XrangeSeriesPartialFill();
 			
 		}	
 		
+
+		/// <summary>
+		/// An array of data points for the series. For the `xrange` series type,points can be given in the following ways:1.  An array of objects with named values. The objects are pointconfiguration objects as seen below. ```js    data: [{        x: Date.UTC(2017, 0, 1),        x2: Date.UTC(2017, 0, 3),        name: "Test",        y: 0,        color: "#00FF00"    }, {        x: Date.UTC(2017, 0, 4),        x2: Date.UTC(2017, 0, 5),        name: "Deploy",        y: 1,        color: "#FF0000"    }] ```
+		/// </summary>
+		public List<XrangeSeriesData> Data { get; set; }
+		private List<XrangeSeriesData> Data_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
@@ -453,13 +460,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public List<XrangeSeriesData> Data { get; set; }
-		private List<XrangeSeriesData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A partial fill for each point, typically used to visualize how much ofa task is performed. The partial fill object can be set either on seriesor point level.
 		/// </summary>
 		public XrangeSeriesPartialFill PartialFill { get; set; }
@@ -470,6 +470,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
@@ -524,7 +525,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
-			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
 			
 

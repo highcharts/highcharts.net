@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public ArearangeSeries()
 		{
 			Data = Data_DefaultValue = new List<ArearangeSeriesData>();
+			DataLabels = DataLabels_DefaultValue = new ArearangeSeriesDataLabels();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -36,7 +37,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Events = Events_DefaultValue = new ArearangeSeriesEvents();
 			Marker = Marker_DefaultValue = new ArearangeSeriesMarker();
 			Point = Point_DefaultValue = new ArearangeSeriesPoint();
-			DataLabels = DataLabels_DefaultValue = new ArearangeSeriesDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			PointRange = PointRange_DefaultValue = 0;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
@@ -91,6 +91,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<ArearangeSeriesData> Data { get; set; }
 		private List<ArearangeSeriesData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ArearangeSeriesDataLabels DataLabels { get; set; }
+		private ArearangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -238,13 +245,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public ArearangeSeriesPoint Point { get; set; }
 		private ArearangeSeriesPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public ArearangeSeriesDataLabels DataLabels { get; set; }
-		private ArearangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -567,6 +567,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
@@ -588,7 +589,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);

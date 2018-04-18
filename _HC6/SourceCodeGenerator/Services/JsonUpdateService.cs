@@ -205,15 +205,15 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.arearange.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.threshold" } });
             ItemsToUpdate.Add("plotOptions.boxplot.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.threshold" } });
 
-            ItemsToUpdate.Add("plotOptions.bubble.marker.lineColor", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.marker.lineColor" } });
+            ItemsToUpdate.Add("plotOptions.bubble.marker.lineColor", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Color" } });
             ItemsToUpdate.Add("plotOptions.bubble.marker.radius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.marker.radius" } });
             ItemsToUpdate.Add("yAxis.lineColor", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Color" } });
             ItemsToUpdate.Add("yAxis.min", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("yAxis.max", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
 
-            ItemsToUpdate.Add("plotOptions.column.dataLabels.align", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels.align" } });
-            ItemsToUpdate.Add("plotOptions.column.dataLabels.verticalAlign", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels.verticalAlign" } });
-            ItemsToUpdate.Add("plotOptions.column.dataLabels.y", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels.y" } });
+            ItemsToUpdate.Add("plotOptions.column.dataLabels.align", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "left" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "center" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "right" } });
+            ItemsToUpdate.Add("plotOptions.column.dataLabels.verticalAlign", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "top" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "middle" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "bottom" } });
+            ItemsToUpdate.Add("plotOptions.column.dataLabels.y", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
 
             ItemsToUpdate.Add("plotOptions.columnrange.pointRange", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("plotOptions.sankey.dataLabels.format", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataLabels.format" } });
@@ -225,6 +225,15 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.sunburst.levels.levelSize", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.sunburst.levelSize" } });
             ItemsToUpdate.Add("series.sunburst.levels.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "series.sunburst.dataLabels" } });
             ItemsToUpdate.Add("series.sunburst.levels.levelSize", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "series.sunburst.levelSize" } });
+
+            ItemsToUpdate.Add("plotOptions.bb.topLine.styles.lineColor", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Color" } });
+            ItemsToUpdate.Add("series.bb.topLine.styles.lineColor", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Color" } });
+
+            ItemsToUpdate.Add("navigator.yAxis.title.text", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("plotOptions.candlestick.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("plotOptions.flags.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("plotOptions.ohlc.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("plotOptions.macd.dataGrouping", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
         }
     }
 

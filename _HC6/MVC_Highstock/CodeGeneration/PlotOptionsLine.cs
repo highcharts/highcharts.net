@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsLine()
 		{
+			Linecap = Linecap_DefaultValue = PlotOptionsLineLinecap.Round;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsLineGapUnit.Relative;
@@ -47,7 +48,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Keys = Keys_DefaultValue = new List<string>();
-			Linecap = Linecap_DefaultValue = PlotOptionsLineLinecap.Round;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
@@ -72,6 +72,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// The SVG value used for the `stroke-linecap` and `stroke-linejoin`of a line graph. Round means that lines are rounded in the ends andbends.
+		/// </summary>
+		public PlotOptionsLineLinecap Linecap { get; set; }
+		private PlotOptionsLineLinecap Linecap_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -305,13 +312,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The line cap used for line ends and line joins on the graph.
-		/// </summary>
-		public PlotOptionsLineLinecap Linecap { get; set; }
-		private PlotOptionsLineLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.
 		/// </summary>
 		public string LinkedTo { get; set; }
@@ -462,6 +462,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
@@ -495,7 +496,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("PlotOptionsLinePointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  

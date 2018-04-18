@@ -14,24 +14,27 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsFlagsTooltip()
 		{
+			PointFormat = PointFormat_DefaultValue = "{point.text}<br/>";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			FooterFormat = FooterFormat_DefaultValue = "";
 			Padding = Padding_DefaultValue = "8";
 			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			FollowPointer = FollowPointer_DefaultValue = null;
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
 			HideDelay = HideDelay_DefaultValue = 500;
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Split = Split_DefaultValue = null;
-			ValueDecimals = ValueDecimals_DefaultValue = null;
-			ValuePrefix = ValuePrefix_DefaultValue = "";
-			ValueSuffix = ValueSuffix_DefaultValue = "";
 			XDateFormat = XDateFormat_DefaultValue = "";
-			ChangeDecimals = ChangeDecimals_DefaultValue = null;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// For series on a datetime axes, the date format in the tooltip'sheader will by default be guessed based on the closest data points.This member gives the default string representations used foreach unit. For an overview of the replacement codes, see [dateFormat](#Highcharts.dateFormat).Defaults to:<pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre>
@@ -59,13 +62,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string HeaderFormat { get; set; }
 		private string HeaderFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The HTML of the point's line in the tooltip. Variables are enclosedby curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form. Furthermore,point.y can be extended by the `tooltip.valuePrefix` and`tooltip.valueSuffix` variables. This can also be overridden for eachseries, which makes it a good hook for displaying units.In styled mode, the dot is colored by a class name ratherthan the point color.
-		/// </summary>
-		public string PointFormat { get; set; }
-		private string PointFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -104,59 +100,27 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// How many decimals to show in each series' y value. This is overridablein each series' tooltip options object. The default is to preserveall decimals.
-		/// </summary>
-		public double? ValueDecimals { get; set; }
-		private double? ValueDecimals_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A string to prepend to each series' y value. Overridable in eachseries' tooltip options object.
-		/// </summary>
-		public string ValuePrefix { get; set; }
-		private string ValuePrefix_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A string to append to each series' y value. Overridable in each series'tooltip options object.
-		/// </summary>
-		public string ValueSuffix { get; set; }
-		private string ValueSuffix_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The format for the date in the tooltip header if the X axis is adatetime axis. The default is a best guess based on the smallestdistance between points in the chart.
 		/// </summary>
 		public string XDateFormat { get; set; }
 		private string XDateFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// How many decimals to show for the `point.change` value when the`series.compare` option is set. This is overridable in each series' tooltipoptions object. The default is to preserve all decimals.
-		/// </summary>
-		public double? ChangeDecimals { get; set; }
-		private double? ChangeDecimals_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highstock.AddFunction("PlotOptionsFlagsTooltipPointFormatter.pointFormatter", PointFormatter); }  
 			if (Split != Split_DefaultValue) h.Add("split",Split);
-			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
-			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);
-			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);
 			if (XDateFormat != XDateFormat_DefaultValue) h.Add("xDateFormat",XDateFormat);
-			if (ChangeDecimals != ChangeDecimals_DefaultValue) h.Add("changeDecimals",ChangeDecimals);
 			
 
 			return h;

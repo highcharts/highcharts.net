@@ -14,21 +14,21 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsRocParams()
 		{
-			Index = Index_DefaultValue = 0;
-			Period = Period_DefaultValue = 14;
+			Index = Index_DefaultValue = 3;
+			Period = Period_DefaultValue = 9;
 			
 		}	
 		
 
 		/// <summary>
-		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
+		/// 
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The base period for indicator calculations.
+		/// 
 		/// </summary>
 		public double? Period { get; set; }
 		private double? Period_DefaultValue { get; set; }

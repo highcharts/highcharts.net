@@ -14,41 +14,23 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsPolygonMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new PlotOptionsPolygonMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new PlotOptionsPolygonMarkerStatesHover();
-			Select = Select_DefaultValue = new PlotOptionsPolygonMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public PlotOptionsPolygonMarkerStatesNormal Normal { get; set; }
-		private PlotOptionsPolygonMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The hover state for a single point marker.
+		/// 
 		/// </summary>
 		public PlotOptionsPolygonMarkerStatesHover Hover { get; set; }
 		private PlotOptionsPolygonMarkerStatesHover Hover_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
-		/// </summary>
-		public PlotOptionsPolygonMarkerStatesSelect Select { get; set; }
-		private PlotOptionsPolygonMarkerStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
-			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

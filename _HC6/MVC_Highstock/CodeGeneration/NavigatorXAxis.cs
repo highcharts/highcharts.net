@@ -14,32 +14,34 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigatorXAxis()
 		{
+			Overscroll = Overscroll_DefaultValue = 0;
+			ClassName = ClassName_DefaultValue = "highcharts-navigator-xaxis";
+			TickLength = TickLength_DefaultValue = 0;
+			LineWidth = LineWidth_DefaultValue = 0;
+			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
+			GridLineWidth = GridLineWidth_DefaultValue = 1;
+			TickPixelInterval = TickPixelInterval_DefaultValue = 200;
+			Labels = Labels_DefaultValue = new NavigatorXAxisLabels();
+			Crosshair = Crosshair_DefaultValue = new NavigatorXAxisCrosshair();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
-			Labels = Labels_DefaultValue = new NavigatorXAxisLabels();
 			MaxPadding = MaxPadding_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = NavigatorXAxisMinorTickPosition.Outside;
 			MinPadding = MinPadding_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			StartOnTick = StartOnTick_DefaultValue = false;
-			TickLength = TickLength_DefaultValue = 10;
-			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
 			TickPosition = TickPosition_DefaultValue = NavigatorXAxisTickPosition.Outside;
 			Title = Title_DefaultValue = new NavigatorXAxisTitle();
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
 			LineColor = LineColor_DefaultValue = "#ccd6eb";
-			LineWidth = LineWidth_DefaultValue = 1;
-			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
 			TickColor = TickColor_DefaultValue = "#ccd6eb";
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
 			Breaks = Breaks_DefaultValue = new NavigatorXAxisBreaks();
 			Ceiling = Ceiling_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = "";
-			Crosshair = Crosshair_DefaultValue = new NavigatorXAxisCrosshair();
 			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = new NavigatorXAxisEvents();
 			Floor = Floor_DefaultValue = null;
@@ -56,8 +58,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Offset = Offset_DefaultValue = 0;
 			Reversed = Reversed_DefaultValue = false;
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
-			GridLineWidth = GridLineWidth_DefaultValue = 0;
-			Overscroll = Overscroll_DefaultValue = 0;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
@@ -75,6 +75,69 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public double? Overscroll { get; set; }
+		private double? Overscroll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? TickLength { get; set; }
+		private double? TickLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string GridLineColor { get; set; }
+		private string GridLineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? GridLineWidth { get; set; }
+		private double? GridLineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? TickPixelInterval { get; set; }
+		private double? TickPixelInterval_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public NavigatorXAxisLabels Labels { get; set; }
+		private NavigatorXAxisLabels Labels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public NavigatorXAxisCrosshair Crosshair { get; set; }
+		private NavigatorXAxisCrosshair Crosshair_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
@@ -86,13 +149,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? EndOnTick { get; set; }
 		private bool? EndOnTick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The axis labels show the number or category for each tick.
-		/// </summary>
-		public NavigatorXAxisLabels Labels { get; set; }
-		private NavigatorXAxisLabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -138,20 +194,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The pixel length of the main tick marks.
-		/// </summary>
-		public double? TickLength { get; set; }
-		private double? TickLength_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If tickInterval is `null` this option sets the approximate pixelinterval of the tick marks. Not applicable to categorized axis.The tick interval is also influenced by the [minTickInterval](#xAxis.minTickInterval) option, that, by default prevents ticks from beingdenser than the data points.
-		/// </summary>
-		public double? TickPixelInterval { get; set; }
-		private double? TickPixelInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The position of the major tick marks relative to the axis line.Can be one of `inside` and `outside`.
 		/// </summary>
 		public NavigatorXAxisTickPosition TickPosition { get; set; }
@@ -194,20 +236,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The width of the line marking the axis itself.In styled mode, the stroke width is given in the`.highcharts-axis-line` or `.highcharts-xaxis-line` class.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Color of the grid lines extending the ticks across the plot area.In styled mode, the stroke is given in the `.highcharts-grid-line`class.
-		/// </summary>
-		public string GridLineColor { get; set; }
-		private string GridLineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Color for the main tick marks.In styled mode, the stroke is given in the `.highcharts-tick`class.
 		/// </summary>
 		public string TickColor { get; set; }
@@ -240,20 +268,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Ceiling { get; set; }
 		private double? Ceiling_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A class name that opens for styling the axis by CSS, especially inHighcharts styled mode. The class name is applied to group elementsfor the grid, axis elements and labels.
-		/// </summary>
-		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Configure a crosshair that follows either the mouse pointer or thehovered point.In styled mode, the crosshairs are styled in the`.highcharts-crosshair`, `.highcharts-crosshair-thin` or`.highcharts-xaxis-category` classes.
-		/// </summary>
-		public NavigatorXAxisCrosshair Crosshair { get; set; }
-		private NavigatorXAxisCrosshair Crosshair_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -369,20 +383,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The width of the grid lines extending the ticks across the plot area.In styled mode, the stroke width is given in the`.highcharts-grid-line` class.
-		/// </summary>
-		public double? GridLineWidth { get; set; }
-		private double? GridLineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Additional range on the right side of the xAxis. Works similar to`xAxis.maxPadding`, but value is set in milliseconds. Can be set for bothmain `xAxis` and the navigator's `xAxis`.
-		/// </summary>
-		public double? Overscroll { get; set; }
-		private double? Overscroll_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to show the first tick label.
 		/// </summary>
 		public bool? ShowFirstLabel { get; set; }
@@ -470,32 +470,34 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Overscroll != Overscroll_DefaultValue) h.Add("overscroll",Overscroll);
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
+			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
+			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highstock.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
-			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
-			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
 			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highstock.FirstCharacterToLower(TickPosition.ToString()));
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
 			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
 			if (TickColor != TickColor_DefaultValue) h.Add("tickColor",TickColor);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
 			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
@@ -512,8 +514,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
-			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
-			if (Overscroll != Overscroll_DefaultValue) h.Add("overscroll",Overscroll);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
 			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);

@@ -14,12 +14,12 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsColumnDataLabels()
 		{
-			Align = Align_DefaultValue = PlotOptionsColumnDataLabelsAlign.Center;
+			Align = Align_DefaultValue = PlotOptionsColumnDataLabelsAlign.Left;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsColumnDataLabelsVerticalAlign.Top;
+			Y = Y_DefaultValue = null;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new PlotOptionsColumnDataLabelsStyle();
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsColumnDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = "5";
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -45,10 +45,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
+		/// 
 		/// </summary>
 		public PlotOptionsColumnDataLabelsAlign Align { get; set; }
 		private PlotOptionsColumnDataLabelsAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsColumnDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsColumnDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -66,24 +80,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
-		/// </summary>
-		public PlotOptionsColumnDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private PlotOptionsColumnDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The x position offset of the label relative to the point.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y position offset of the label relative to the point.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -231,11 +231,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("PlotOptionsColumnDataLabelsFormatter.formatter", Formatter); }  
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);

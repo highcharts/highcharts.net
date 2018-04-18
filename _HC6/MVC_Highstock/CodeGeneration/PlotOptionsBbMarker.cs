@@ -14,19 +14,26 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsBbMarker()
 		{
+			Enabled = Enabled_DefaultValue = false;
 			LineWidth = LineWidth_DefaultValue = 0;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
 			Radius = Radius_DefaultValue = 4;
 			States = States_DefaultValue = new PlotOptionsBbMarkerStates();
 			FillColor = FillColor_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			Symbol = Symbol_DefaultValue = "null";
 			Width = Width_DefaultValue = null;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The width of the point marker's outline.
@@ -71,13 +78,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable or disable the point marker. If `null`, the markers are hiddenwhen the data is dense, and shown for more widespread data points.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Image markers only. Set the image width explicitly. When using thisoption, a `width` must also be set.
 		/// </summary>
 		public double? Height { get; set; }
@@ -102,13 +102,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);

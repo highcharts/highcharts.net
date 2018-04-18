@@ -792,15 +792,23 @@ public class HighstockGenerator
             //warunek do usunięcia
             if (item.FullName != "series.bellcurve.data" && item.FullName != "series.histogram.data")
             {
-                
+
                 if (item.Extends.Any())
                 {
                     var baseChildren = GetChildrenFromBaseClasses(item);
-                    children = item.Children.Where(p => !baseChildren.Any(x => x.Title == p.Title)).ToList();
-                    children.AddRange(baseChildren);
-                }
 
-                //children items should be extended by base items here
+                    foreach (var baseElement in baseChildren.Where(p => children.Any(x => x.Title == p.Title)))
+                    {
+                        var child = children.FirstOrDefault(p => p.Title == baseElement.Title);
+
+                        if (child != null)
+                            child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title))).ToList();
+                    }
+
+
+                    //children = item.Children.Where(p => !baseChildren.Any(x => x.Title == p.Title)).ToList();
+                    children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title)));
+                }
             }
         }
 
@@ -938,9 +946,8 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("navigator.yAxis.plotLines", "List<NavigatorYAxisPlotLines>");
         _propertyTypeMappings.Add("navigator.yAxis.plotBands", "List<NavigatorYAxisPlotBands>");
         _propertyTypeMappings.Add("navigator.series", "Series");
-
-        //temporary
-        _propertyTypeMappings.Add("series.wordcloud.data.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.arearange.threshold", "Object");
+        _propertyTypeMappings.Add("plotOptions.stochastic.params.periods", "List<int>");
     }
 
     private void InitPropertyInitMappings()
@@ -1051,9 +1058,8 @@ public class HighstockGenerator
         _propertyInitMappings.Add("navigator.yAxis.plotBands", "new List<NavigatorYAxisPlotBands>()");
         _propertyInitMappings.Add("navigator.yAxis.tickPositions", "new List<double>()");
         _propertyInitMappings.Add("navigator.series", "new Series()");
-
-        //temporary
-        _propertyInitMappings.Add("series.wordcloud.data.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.arearange.threshold", "null");
+        _propertyInitMappings.Add("plotOptions.stochastic.params.periods", "new List<int>()");
     }
 
     private void InitLists()

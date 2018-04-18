@@ -14,18 +14,20 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsStreamgraph()
 		{
+			FillOpacity = FillOpacity_DefaultValue = 1;
+			LineWidth = LineWidth_DefaultValue = 0;
+			Marker = Marker_DefaultValue = new PlotOptionsStreamgraphMarker();
+			Stacking = Stacking_DefaultValue = "stream";
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsStreamgraphGapUnit.Relative;
 			Label = Label_DefaultValue = new PlotOptionsStreamgraphLabel();
 			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsStreamgraphDataGrouping();
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
-			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsStreamgraphEvents();
-			Marker = Marker_DefaultValue = new PlotOptionsStreamgraphMarker();
 			Point = Point_DefaultValue = new PlotOptionsStreamgraphPoint();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsStreamgraphDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
@@ -59,7 +61,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			Stacking = Stacking_DefaultValue = PlotOptionsStreamgraphStacking.Null;
 			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
@@ -69,13 +70,40 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareStart = CompareStart_DefaultValue = false;
 			CompareBase = CompareBase_DefaultValue = PlotOptionsStreamgraphCompareBase.Min;
 			FillColor = FillColor_DefaultValue = null;
-			FillOpacity = FillOpacity_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "null";
 			NegativeFillColor = NegativeFillColor_DefaultValue = "";
 			TrackByArea = TrackByArea_DefaultValue = false;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? FillOpacity { get; set; }
+		private double? FillOpacity_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsStreamgraphMarker Marker { get; set; }
+		private PlotOptionsStreamgraphMarker Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Stacking { get; set; }
+		private string Stacking_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -120,13 +148,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Pixel width of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Allow this series' points to be selected by clicking on the graphic (columns, point markers, pie slices, map areas etc).
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
@@ -152,13 +173,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsStreamgraphEvents Events { get; set; }
 		private PlotOptionsStreamgraphEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
-		/// </summary>
-		public PlotOptionsStreamgraphMarker Marker { get; set; }
-		private PlotOptionsStreamgraphMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -393,13 +407,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to stack the values of each series on top of each other.Possible values are `null` to disable, `"normal"` to stack by value or`"percent"`. When stacking is enabled, data must be sorted in ascendingX order. A special stacking option is with the streamgraph series type,where the stacking option is set to `"stream"`.
-		/// </summary>
-		public PlotOptionsStreamgraphStacking Stacking { get; set; }
-		private PlotOptionsStreamgraphStacking Stacking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
 		/// </summary>
 		public double? Threshold { get; set; }
@@ -463,13 +470,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Fill opacity for the area. When you set an explicit `fillColor`,the `fillOpacity` is not applied. Instead, you should define theopacity in the `fillColor` with an rgba color definition. The`fillOpacity` setting, also the default setting, overrides the alphacomponent of the `color` setting.In styled mode, the fill opacity can be set with the `.highcharts-area`class name.
-		/// </summary>
-		public double? FillOpacity { get; set; }
-		private double? FillOpacity_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A separate color for the graph line. By default the line takes the`color` of the series, but the lineColor setting allows setting aseparate color for the line without altering the `fillColor`.In styled mode, the line stroke can be set with the `.highcharts-graph`class name.
 		/// </summary>
 		public string LineColor { get; set; }
@@ -494,18 +494,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (Stacking != Stacking_DefaultValue) h.Add("stacking",Stacking);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
@@ -543,7 +545,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
@@ -553,7 +554,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);

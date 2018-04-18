@@ -14,6 +14,9 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsColumnrange()
 		{
+			PointRange = PointRange_DefaultValue = null;
+			States = States_DefaultValue = new PlotOptionsColumnrangeStates();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsColumnrangeDataLabels();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			Label = Label_DefaultValue = new PlotOptionsColumnrangeLabel();
 			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsColumnrangeDataGrouping();
@@ -23,10 +26,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsColumnrangeEvents();
 			Point = Point_DefaultValue = new PlotOptionsColumnrangePoint();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsColumnrangeDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			PointRange = PointRange_DefaultValue = 0;
-			States = States_DefaultValue = new PlotOptionsColumnrangeStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsColumnrangeFindNearestPointBy.X;
@@ -77,6 +77,27 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? PointRange { get; set; }
+		private double? PointRange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsColumnrangeStates States { get; set; }
+		private PlotOptionsColumnrangeStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Extended data labels for range series types. Range series data labelshave no `x` and `y` options. Instead, they have `xLow`, `xHigh`,`yLow` and `yHigh` options to allow the higher and lower data labelsets individually.
+		/// </summary>
+		public PlotOptionsColumnrangeDataLabels DataLabels { get; set; }
+		private PlotOptionsColumnrangeDataLabels DataLabels_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -142,31 +163,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsColumnrangeDataLabels DataLabels { get; set; }
-		private PlotOptionsColumnrangeDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
 		/// </summary>
 		public double? CropThreshold { get; set; }
 		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of each point on the x axis. For example in a column chartwith one value each day, the pointRange would be 1 day (= 24 * 3600* 1000 milliseconds). This is normally computed automatically, butthis option can be used to override the automatic value.
-		/// </summary>
-		public double? PointRange { get; set; }
-		private double? PointRange_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsColumnrangeStates States { get; set; }
-		private PlotOptionsColumnrangeStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -502,6 +502,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
@@ -511,10 +514,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));

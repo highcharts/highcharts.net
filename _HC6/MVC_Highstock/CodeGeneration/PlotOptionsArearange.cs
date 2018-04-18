@@ -14,20 +14,24 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsArearange()
 		{
+			LineWidth = LineWidth_DefaultValue = 1;
+			Threshold = Threshold_DefaultValue = null;
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsArearangeTooltip();
+			TrackByArea = TrackByArea_DefaultValue = true;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsArearangeDataLabels();
+			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsArearangeGapUnit.Relative;
 			Label = Label_DefaultValue = new PlotOptionsArearangeLabel();
 			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsArearangeDataGrouping();
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
-			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new PlotOptionsArearangeEvents();
 			Marker = Marker_DefaultValue = new PlotOptionsArearangeMarker();
 			Point = Point_DefaultValue = new PlotOptionsArearangePoint();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsArearangeDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			PointRange = PointRange_DefaultValue = 0;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
@@ -56,14 +60,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Step = Step_DefaultValue = PlotOptionsArearangeStep.Null;
-			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsArearangeTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsArearangeZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
@@ -72,10 +73,51 @@ namespace Highsoft.Web.Mvc.Stocks
 			FillOpacity = FillOpacity_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "null";
 			NegativeFillColor = NegativeFillColor_DefaultValue = "";
-			TrackByArea = TrackByArea_DefaultValue = false;
 			
 		}	
 		
+
+		/// <summary>
+		/// Pixel width of the arearange graph line.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public Object Threshold { get; set; }
+		private Object Threshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsArearangeTooltip Tooltip { get; set; }
+		private PlotOptionsArearangeTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether the whole area or just the line should respond to mouseovertooltips and other mouse or touch events.
+		/// </summary>
+		public bool? TrackByArea { get; set; }
+		private bool? TrackByArea_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Extended data labels for range series types. Range series data labelshave no `x` and `y` options. Instead, they have `xLow`, `xHigh`,`yLow` and `yHigh` options to allow the higher and lower data labelsets individually.
+		/// </summary>
+		public PlotOptionsArearangeDataLabels DataLabels { get; set; }
+		private PlotOptionsArearangeDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
@@ -120,13 +162,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Pixel width of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Allow this series' points to be selected by clicking on the graphic (columns, point markers, pie slices, map areas etc).
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
@@ -166,13 +201,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsArearangePoint Point { get; set; }
 		private PlotOptionsArearangePoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsArearangeDataLabels DataLabels { get; set; }
-		private PlotOptionsArearangeDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -372,13 +400,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
 		/// </summary>
 		public bool? ShowInLegend { get; set; }
@@ -400,13 +421,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -418,13 +432,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ZoneAxis { get; set; }
 		private string ZoneAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsArearangeTooltip Tooltip { get; set; }
-		private PlotOptionsArearangeTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -481,33 +488,30 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string NegativeFillColor { get; set; }
 		private string NegativeFillColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the whole area or just the line should respond to mouseovertooltips and other mouse or touch events.
-		/// </summary>
-		public bool? TrackByArea { get; set; }
-		private bool? TrackByArea_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
@@ -540,14 +544,11 @@ namespace Highsoft.Web.Mvc.Stocks
 					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Step != Step_DefaultValue) h.Add("step", Highstock.FirstCharacterToLower(Step.ToString()));
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
@@ -556,7 +557,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
-			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			
 
 			return h;

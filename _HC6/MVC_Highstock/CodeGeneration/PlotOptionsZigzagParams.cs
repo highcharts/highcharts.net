@@ -14,11 +14,35 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsZigzagParams()
 		{
+			LowIndex = LowIndex_DefaultValue = 2;
+			HighIndex = HighIndex_DefaultValue = 1;
+			Deviation = Deviation_DefaultValue = 1;
 			Index = Index_DefaultValue = 0;
 			Period = Period_DefaultValue = 14;
 			
 		}	
 		
+
+		/// <summary>
+		/// The point index which indicator calculations will base - lowvalue.For example using OHLC data, index=2 means the indicator will becalculated using Low values.
+		/// </summary>
+		public double? LowIndex { get; set; }
+		private double? LowIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The point index which indicator calculations will base - highvalue.For example using OHLC data, index=1 means the indicator will becalculated using High values.
+		/// </summary>
+		public double? HighIndex { get; set; }
+		private double? HighIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The threshold for the value change.For example deviation=1 means the indicator will ignore all pricemovements less than 1%.
+		/// </summary>
+		public double? Deviation { get; set; }
+		private double? Deviation_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
@@ -38,6 +62,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (LowIndex != LowIndex_DefaultValue) h.Add("lowIndex",LowIndex);
+			if (HighIndex != HighIndex_DefaultValue) h.Add("highIndex",HighIndex);
+			if (Deviation != Deviation_DefaultValue) h.Add("deviation",Deviation);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Period != Period_DefaultValue) h.Add("period",Period);
 			

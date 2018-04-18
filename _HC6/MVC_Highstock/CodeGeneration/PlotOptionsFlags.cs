@@ -14,13 +14,17 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsFlags()
 		{
+			PointRange = PointRange_DefaultValue = 0;
 			AllowOverlapX = AllowOverlapX_DefaultValue = false;
 			Shape = Shape_DefaultValue = PlotOptionsFlagsShape.Flag;
 			StackDistance = StackDistance_DefaultValue = 12;
 			TextAlign = TextAlign_DefaultValue = PlotOptionsFlagsTextAlign.Center;
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsFlagsTooltip();
+			Threshold = Threshold_DefaultValue = null;
 			Y = Y_DefaultValue = -30;
 			FillColor = FillColor_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 1;
+			States = States_DefaultValue = new PlotOptionsFlagsStates();
 			Style = Style_DefaultValue = new PlotOptionsFlagsStyle();
 			OnKey = OnKey_DefaultValue = PlotOptionsFlagsOnKey.Y;
 			OnSeries = OnSeries_DefaultValue = "undefined";
@@ -36,9 +40,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Point = Point_DefaultValue = new PlotOptionsFlagsPoint();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsFlagsDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
-			PointRange = PointRange_DefaultValue = 0;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsFlagsStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsFlagsFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
@@ -63,10 +65,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = PlotOptionsFlagsStacking.Null;
-			Threshold = Threshold_DefaultValue = 0;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsFlagsTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsFlagsZone>();
 			Compare = Compare_DefaultValue = "undefined";
 			CompareStart = CompareStart_DefaultValue = false;
@@ -85,6 +85,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? PointRange { get; set; }
+		private double? PointRange_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Whether the flags are allowed to overlap sideways. If `false`, the flagsare moved sideways using an algorithm that seeks to place every flag asclose as possible to its original position.
@@ -115,6 +122,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Specific tooltip options for flag series. Flag series tooltips aredifferent from most other types in that a flag doesn't have a datavalue, so the tooltip rather displays the `text` option for eachpoint.
+		/// </summary>
+		public PlotOptionsFlagsTooltip Tooltip { get; set; }
+		private PlotOptionsFlagsTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Threshold { get; set; }
+		private double? Threshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The y position of the top left corner of the flag relative to eitherthe series (if onSeries is defined), or the x axis. Defaults to`-30`.
 		/// </summary>
 		public double? Y { get; set; }
@@ -133,6 +154,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsFlagsStates States { get; set; }
+		private PlotOptionsFlagsStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -241,24 +269,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The width of each point on the x axis. For example in a column chartwith one value each day, the pointRange would be 1 day (= 24 * 3600* 1000 milliseconds). This is normally computed automatically, butthis option can be used to override the automatic value.
-		/// </summary>
-		public double? PointRange { get; set; }
-		private double? PointRange_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsFlagsStates States { get; set; }
-		private PlotOptionsFlagsStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -430,13 +444,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -448,13 +455,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ZoneAxis { get; set; }
 		private string ZoneAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsFlagsTooltip Tooltip { get; set; }
-		private PlotOptionsFlagsTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -566,13 +566,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (AllowOverlapX != AllowOverlapX_DefaultValue) h.Add("allowOverlapX",AllowOverlapX);
 			if (Shape != Shape_DefaultValue) h.Add("shape", Highstock.FirstCharacterToLower(Shape.ToString()));
 			if (StackDistance != StackDistance_DefaultValue) h.Add("stackDistance",StackDistance);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", Highstock.FirstCharacterToLower(TextAlign.ToString()));
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (OnKey != OnKey_DefaultValue) h.Add("onKey", Highstock.FirstCharacterToLower(OnKey.ToString()));
 			if (OnSeries != OnSeries_DefaultValue) h.Add("onSeries",OnSeries);
@@ -588,9 +592,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
@@ -619,10 +621,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);

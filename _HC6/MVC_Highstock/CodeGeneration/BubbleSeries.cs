@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public BubbleSeries()
 		{
 			Data = Data_DefaultValue = new List<BubbleSeriesData>();
+			Marker = Marker_DefaultValue = new BubbleSeriesMarker();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -34,7 +35,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Events = Events_DefaultValue = new BubbleSeriesEvents();
-			Marker = Marker_DefaultValue = new BubbleSeriesMarker();
 			Point = Point_DefaultValue = new BubbleSeriesPoint();
 			DataLabels = DataLabels_DefaultValue = new BubbleSeriesDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
@@ -95,6 +95,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<BubbleSeriesData> Data { get; set; }
 		private List<BubbleSeriesData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public BubbleSeriesMarker Marker { get; set; }
+		private BubbleSeriesMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -228,13 +235,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public BubbleSeriesEvents Events { get; set; }
 		private BubbleSeriesEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
-		/// </summary>
-		public BubbleSeriesMarker Marker { get; set; }
-		private BubbleSeriesMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -599,6 +599,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
@@ -618,7 +619,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);

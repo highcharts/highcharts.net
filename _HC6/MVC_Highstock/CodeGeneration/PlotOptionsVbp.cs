@@ -14,16 +14,20 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsVbp()
 		{
+			Params = Params_DefaultValue = new PlotOptionsVbpParams();
 			ZoneLines = ZoneLines_DefaultValue = new PlotOptionsVbpZoneLines();
 			VolumeDivision = VolumeDivision_DefaultValue = new PlotOptionsVbpVolumeDivision();
+			AnimationLimit = AnimationLimit_DefaultValue = 1000;
+			EnableMouseTracking = EnableMouseTracking_DefaultValue = false;
 			PointPadding = PointPadding_DefaultValue = 0;
 			ZIndex = ZIndex_DefaultValue = -1;
 			Crisp = Crisp_DefaultValue = true;
+			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsVbpDataGrouping();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsVbpDataLabels();
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsVbpGapUnit.Relative;
 			Label = Label_DefaultValue = new PlotOptionsVbpLabel();
-			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsVbpDataGrouping();
 			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -31,14 +35,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			Events = Events_DefaultValue = new PlotOptionsVbpEvents();
 			Marker = Marker_DefaultValue = new PlotOptionsVbpMarker();
 			Point = Point_DefaultValue = new PlotOptionsVbpPoint();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsVbpDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
 			States = States_DefaultValue = new PlotOptionsVbpStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsVbpFindNearestPointBy.X;
-			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
@@ -46,7 +48,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Cursor = Cursor_DefaultValue = PlotOptionsVbpCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsVbpDashStyle.Solid;
 			Description = Description_DefaultValue = "undefined";
-			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Linecap = Linecap_DefaultValue = PlotOptionsVbpLinecap.Round;
@@ -64,10 +65,16 @@ namespace Highsoft.Web.Mvc.Stocks
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsVbpTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsVbpZone>();
 			CompareStart = CompareStart_DefaultValue = false;
-			Params = Params_DefaultValue = new PlotOptionsVbpParams();
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVbpParams Params { get; set; }
+		private PlotOptionsVbpParams Params_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The styles for lines which determine price zones.
@@ -81,6 +88,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsVbpVolumeDivision VolumeDivision { get; set; }
 		private PlotOptionsVbpVolumeDivision VolumeDivision_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? AnimationLimit { get; set; }
+		private double? AnimationLimit_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? EnableMouseTracking { get; set; }
+		private bool? EnableMouseTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -102,6 +123,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Crisp { get; set; }
 		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVbpDataGrouping DataGrouping { get; set; }
+		private PlotOptionsVbpDataGrouping DataGrouping_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVbpDataLabels DataLabels { get; set; }
+		private PlotOptionsVbpDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -130,13 +165,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsVbpLabel Label { get; set; }
 		private PlotOptionsVbpLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](#Point.dataGroup).
-		/// </summary>
-		public PlotOptionsVbpDataGrouping DataGrouping { get; set; }
-		private PlotOptionsVbpDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -189,13 +217,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsVbpDataLabels DataLabels { get; set; }
-		private PlotOptionsVbpDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
 		/// </summary>
 		public double? CropThreshold { get; set; }
@@ -235,13 +256,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsVbpFindNearestPointBy FindNearestPointBy { get; set; }
 		private PlotOptionsVbpFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesn'trun if there is more than 250 points totally. To disable this cap, set`animationLimit` to `Infinity`.
-		/// </summary>
-		public double? AnimationLimit { get; set; }
-		private double? AnimationLimit_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -291,13 +305,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
-		/// </summary>
-		public bool? EnableMouseTracking { get; set; }
-		private bool? EnableMouseTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -417,29 +424,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? CompareStart { get; set; }
 		private bool? CompareStart_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsVbpParams Params { get; set; }
-		private PlotOptionsVbpParams Params_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			if (ZoneLines.IsDirty()) h.Add("zoneLines",ZoneLines.ToHashtable());
 			if (VolumeDivision.IsDirty()) h.Add("volumeDivision",VolumeDivision.ToHashtable());
+			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
+			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
+			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
@@ -447,14 +451,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
-			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
@@ -462,7 +464,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
@@ -480,7 +481,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			
 
 			return h;

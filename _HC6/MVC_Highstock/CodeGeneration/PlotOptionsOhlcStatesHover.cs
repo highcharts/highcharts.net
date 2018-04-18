@@ -14,34 +14,20 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsOhlcStatesHover()
 		{
-			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
-			Marker = Marker_DefaultValue = new PlotOptionsOhlcStatesHoverMarker();
-			Halo = Halo_DefaultValue = new PlotOptionsOhlcStatesHoverHalo();
+			LineWidth = LineWidth_DefaultValue = 3;
 			Enabled = Enabled_DefaultValue = true;
-			LineWidth = LineWidth_DefaultValue = null;
+			Brightness = Brightness_DefaultValue = null;
+			BorderColor = BorderColor_DefaultValue = "";
+			Color = Color_DefaultValue = "undefined";
 			
 		}	
 		
 
 		/// <summary>
-		/// The additional line width for the graph of a hovered series.
+		/// The pixel width of the line representing the OHLC point.
 		/// </summary>
-		public double? LineWidthPlus { get; set; }
-		private double? LineWidthPlus_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// In Highcharts 1.0, the appearance of all markers belonging to thehovered series. For settings on the hover state of the individualpoint, see[marker.states.hover](#plotOptions.series.marker.states.hover).
-		/// </summary>
-		public PlotOptionsOhlcStatesHoverMarker Marker { get; set; }
-		private PlotOptionsOhlcStatesHoverMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts.By default the halo is filled by the current point or seriescolor with an opacity of 0.25\. The halo can be disabled bysetting the `halo` option to `false`.In styled mode, the halo is styled with the `.highcharts-halo`class, with colors inherited from `.highcharts-color-{n}`.
-		/// </summary>
-		public PlotOptionsOhlcStatesHoverHalo Halo { get; set; }
-		private PlotOptionsOhlcStatesHoverHalo Halo_DefaultValue { get; set; }
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -52,21 +38,35 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Pixel width of the graph line. By default this property isundefined, and the `lineWidthPlus` property dictates how muchto increase the linewidth from normal state.
+		/// How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover` rule.
 		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
+		public double? Brightness { get; set; }
+		private double? Brightness_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A specific border color for the hovered point. Defaults toinherit the normal state border color.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A specific color for the hovered point.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			
 
 			return h;

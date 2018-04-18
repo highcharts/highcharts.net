@@ -14,6 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsPivotpointsDataLabels()
 		{
+			Enabled = Enabled_DefaultValue = true;
+			Format = Format_DefaultValue = "{point.pivotLine}";
 			Align = Align_DefaultValue = PlotOptionsPivotpointsDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
 			Style = Style_DefaultValue = new PlotOptionsPivotpointsDataLabelsStyle();
@@ -28,8 +30,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
-			Format = Format_DefaultValue = "";
 			Shape = Shape_DefaultValue = "square";
 			ZIndex = ZIndex_DefaultValue = 6;
 			Filter = Filter_DefaultValue = new PlotOptionsPivotpointsDataLabelsFilter();
@@ -43,6 +43,20 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
@@ -143,20 +157,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable or disable the data labels.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
-		/// </summary>
-		public string Format { get; set; }
-		private string Format_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The name of a symbol to use for the border around the label. Symbolsare predefined functions on the Renderer object.
 		/// </summary>
 		public string Shape { get; set; }
@@ -230,6 +230,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("PlotOptionsPivotpointsDataLabelsFormatter.formatter", Formatter); }  
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
@@ -244,8 +246,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());

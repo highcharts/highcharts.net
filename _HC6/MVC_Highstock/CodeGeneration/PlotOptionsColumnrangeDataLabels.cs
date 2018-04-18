@@ -40,6 +40,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			Overflow = Overflow_DefaultValue = PlotOptionsColumnrangeDataLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			UseHTML = UseHTML_DefaultValue = false;
+			XLow = XLow_DefaultValue = 0;
+			XHigh = XHigh_DefaultValue = 0;
+			YLow = YLow_DefaultValue = 16;
+			YHigh = YHigh_DefaultValue = -6;
 			
 		}	
 		
@@ -224,6 +228,34 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// X offset of the lower data labels relative to the point value.
+		/// </summary>
+		public double? XLow { get; set; }
+		private double? XLow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// X offset of the higher data labels relative to the point value.
+		/// </summary>
+		public double? XHigh { get; set; }
+		private double? XHigh_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Y offset of the lower data labels relative to the point value.
+		/// </summary>
+		public double? YLow { get; set; }
+		private double? YLow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Y offset of the higher data labels relative to the point value.
+		/// </summary>
+		public double? YHigh { get; set; }
+		private double? YHigh_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -256,6 +288,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (XLow != XLow_DefaultValue) h.Add("xLow",XLow);
+			if (XHigh != XHigh_DefaultValue) h.Add("xHigh",XHigh);
+			if (YLow != YLow_DefaultValue) h.Add("yLow",YLow);
+			if (YHigh != YHigh_DefaultValue) h.Add("yHigh",YHigh);
 			
 
 			return h;

@@ -15,15 +15,23 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsColumnStates()
 		{
 			Hover = Hover_DefaultValue = new PlotOptionsColumnStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsColumnStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
+		/// Options for the hovered point. These settings override the normalstate options when a point is moused over or touched.
 		/// </summary>
 		public PlotOptionsColumnStatesHover Hover { get; set; }
 		private PlotOptionsColumnStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the selected point. These settings override the normalstate options when a point is selected.
+		/// </summary>
+		public PlotOptionsColumnStatesSelect Select { get; set; }
+		private PlotOptionsColumnStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

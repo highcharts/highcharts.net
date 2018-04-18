@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public ColumnrangeSeries()
 		{
 			Data = Data_DefaultValue = new List<ColumnrangeSeriesData>();
+			States = States_DefaultValue = new ColumnrangeSeriesStates();
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -35,7 +36,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			DataLabels = DataLabels_DefaultValue = new ColumnrangeSeriesDataLabels();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			PointRange = PointRange_DefaultValue = 0;
-			States = States_DefaultValue = new ColumnrangeSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = ColumnrangeSeriesFindNearestPointBy.X;
@@ -92,6 +92,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<ColumnrangeSeriesData> Data { get; set; }
 		private List<ColumnrangeSeriesData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ColumnrangeSeriesStates States { get; set; }
+		private ColumnrangeSeriesStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -232,13 +239,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? PointRange { get; set; }
 		private double? PointRange_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public ColumnrangeSeriesStates States { get; set; }
-		private ColumnrangeSeriesStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -575,6 +575,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
@@ -595,7 +596,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));

@@ -15,15 +15,23 @@ namespace Highsoft.Web.Mvc.Stocks
 		public ColumnrangeSeriesStates()
 		{
 			Hover = Hover_DefaultValue = new ColumnrangeSeriesStatesHover();
+			Select = Select_DefaultValue = new ColumnrangeSeriesStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
+		/// 
 		/// </summary>
 		public ColumnrangeSeriesStatesHover Hover { get; set; }
 		private ColumnrangeSeriesStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ColumnrangeSeriesStatesSelect Select { get; set; }
+		private ColumnrangeSeriesStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

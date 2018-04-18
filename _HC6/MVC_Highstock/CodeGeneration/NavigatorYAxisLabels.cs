@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigatorYAxisLabels()
 		{
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = false;
 			Style = Style_DefaultValue = new NavigatorYAxisLabelsStyle();
 			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = NavigatorYAxisLabelsAlign.Left;
@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Enable or disable the axis labels.
+		/// 
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }

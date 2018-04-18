@@ -14,19 +14,23 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigatorYAxis()
 		{
+			ClassName = ClassName_DefaultValue = "highcharts-navigator-yaxis";
+			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			StartOnTick = StartOnTick_DefaultValue = false;
 			EndOnTick = EndOnTick_DefaultValue = false;
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			Labels = Labels_DefaultValue = new NavigatorYAxisLabels();
+			MinPadding = MinPadding_DefaultValue = null;
 			MaxPadding = MaxPadding_DefaultValue = null;
+			Labels = Labels_DefaultValue = new NavigatorYAxisLabels();
+			Crosshair = Crosshair_DefaultValue = new NavigatorYAxisCrosshair();
+			Title = Title_DefaultValue = new NavigatorYAxisTitle();
+			TickLength = TickLength_DefaultValue = 0;
+			TickWidth = TickWidth_DefaultValue = 0;
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = NavigatorYAxisMinorTickPosition.Outside;
-			MinPadding = MinPadding_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
-			TickLength = TickLength_DefaultValue = 10;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
 			TickPosition = TickPosition_DefaultValue = NavigatorYAxisTickPosition.Outside;
-			Title = Title_DefaultValue = new NavigatorYAxisTitle();
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
@@ -38,8 +42,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
 			Breaks = Breaks_DefaultValue = new NavigatorYAxisBreaks();
 			Ceiling = Ceiling_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = "";
-			Crosshair = Crosshair_DefaultValue = new NavigatorYAxisCrosshair();
 			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = new NavigatorYAxisEvents();
 			Floor = Floor_DefaultValue = null;
@@ -57,7 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Opposite = Opposite_DefaultValue = false;
 			Reversed = Reversed_DefaultValue = false;
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
-			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
@@ -65,7 +66,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickInterval = TickInterval_DefaultValue = null;
 			TickPositioner = TickPositioner_DefaultValue = "";
 			TickPositions = TickPositions_DefaultValue = new List<double>();
-			TickWidth = TickWidth_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			PlotLines = PlotLines_DefaultValue = new List<NavigatorYAxisPlotLines>();
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
@@ -73,6 +73,20 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? GridLineWidth { get; set; }
+		private double? GridLineWidth_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -89,24 +103,59 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
+		/// 
 		/// </summary>
-		public Hashtable DateTimeLabelFormats { get; set; }
-		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
+		public double? MinPadding { get; set; }
+		private double? MinPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The axis labels show the number or category for each tick.
+		/// 
+		/// </summary>
+		public double? MaxPadding { get; set; }
+		private double? MaxPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
 		/// </summary>
 		public NavigatorYAxisLabels Labels { get; set; }
 		private NavigatorYAxisLabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
+		/// 
 		/// </summary>
-		public double? MaxPadding { get; set; }
-		private double? MaxPadding_DefaultValue { get; set; }
+		public NavigatorYAxisCrosshair Crosshair { get; set; }
+		private NavigatorYAxisCrosshair Crosshair_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public NavigatorYAxisTitle Title { get; set; }
+		private NavigatorYAxisTitle Title_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? TickLength { get; set; }
+		private double? TickLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? TickWidth { get; set; }
+		private double? TickWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
+		/// </summary>
+		public Hashtable DateTimeLabelFormats { get; set; }
+		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -124,24 +173,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a min extremeis set using `axis.setExtremes()`, the minPadding will be ignored.
-		/// </summary>
-		public double? MinPadding { get; set; }
-		private double? MinPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// For datetime axes, this decides where to put the tick between weeks. 0 = Sunday, 1 = Monday.
 		/// </summary>
 		public double? StartOfWeek { get; set; }
 		private double? StartOfWeek_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel length of the main tick marks.
-		/// </summary>
-		public double? TickLength { get; set; }
-		private double? TickLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -156,13 +191,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public NavigatorYAxisTickPosition TickPosition { get; set; }
 		private NavigatorYAxisTickPosition TickPosition_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The axis title, showing next to the axis line.
-		/// </summary>
-		public NavigatorYAxisTitle Title { get; set; }
-		private NavigatorYAxisTitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -240,20 +268,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Ceiling { get; set; }
 		private double? Ceiling_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A class name that opens for styling the axis by CSS, especially inHighcharts styled mode. The class name is applied to group elementsfor the grid, axis elements and labels.
-		/// </summary>
-		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Configure a crosshair that follows either the mouse pointer or thehovered point.In styled mode, the crosshairs are styled in the`.highcharts-crosshair`, `.highcharts-crosshair-thin` or`.highcharts-xaxis-category` classes.
-		/// </summary>
-		public NavigatorYAxisCrosshair Crosshair { get; set; }
-		private NavigatorYAxisCrosshair Crosshair_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -376,13 +390,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The width of the grid lines extending the ticks across the plot area.In styled mode, the stroke width is given in the`.highcharts-grid-line` class.
-		/// </summary>
-		public double? GridLineWidth { get; set; }
-		private double? GridLineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to show the first tick label.
 		/// </summary>
 		public bool? ShowFirstLabel { get; set; }
@@ -432,13 +439,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The pixel width of the major tick marks.In styled mode, the stroke width is given in the `.highcharts-tick` class.
-		/// </summary>
-		public double? TickWidth { get; set; }
-		private double? TickWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether axis, including axis title, line, ticks and labels, shouldbe visible.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -470,19 +470,23 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
-			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
+			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
+			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
+			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
+			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highstock.FirstCharacterToLower(MinorTickPosition.ToString()));
-			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
-			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
 			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highstock.FirstCharacterToLower(TickPosition.ToString()));
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
 			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
@@ -494,8 +498,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
 			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
@@ -513,7 +515,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
-			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
 			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
@@ -521,7 +522,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
 			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highstock.AddFunction("NavigatorYAxisTickPositioner.tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
-			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);

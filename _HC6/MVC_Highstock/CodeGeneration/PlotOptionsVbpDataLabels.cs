@@ -14,22 +14,22 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsVbpDataLabels()
 		{
+			Enabled = Enabled_DefaultValue = true;
+			AllowOverlap = AllowOverlap_DefaultValue = true;
+			VerticalAlign = VerticalAlign_DefaultValue = "top";
+			Format = Format_DefaultValue = "P: {point.volumePos:.2f} | N: {point.volumeNeg:.2f}";
+			Padding = Padding_DefaultValue = "0";
+			Style = Style_DefaultValue = new PlotOptionsVbpDataLabelsStyle();
 			Align = Align_DefaultValue = PlotOptionsVbpDataLabelsAlign.Center;
 			Formatter = Formatter_DefaultValue = "";
-			Style = Style_DefaultValue = new PlotOptionsVbpDataLabelsStyle();
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsVbpDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -6;
-			Padding = Padding_DefaultValue = "5";
-			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
-			Format = Format_DefaultValue = "";
 			Shape = Shape_DefaultValue = "square";
 			ZIndex = ZIndex_DefaultValue = 6;
 			Filter = Filter_DefaultValue = new PlotOptionsVbpDataLabelsFilter();
@@ -43,6 +43,48 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? AllowOverlap { get; set; }
+		private bool? AllowOverlap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string VerticalAlign { get; set; }
+		private string VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVbpDataLabelsStyle Style { get; set; }
+		private PlotOptionsVbpDataLabelsStyle Style_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
@@ -59,20 +101,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
-		/// </summary>
-		public PlotOptionsVbpDataLabelsStyle Style { get; set; }
-		private PlotOptionsVbpDataLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
-		/// </summary>
-		public PlotOptionsVbpDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private PlotOptionsVbpDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The x position offset of the label relative to the point.
 		/// </summary>
 		public double? X { get; set; }
@@ -84,20 +112,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When either the `borderWidth` or the `backgroundColor` is set,this is the padding within the box.
-		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to allow data labels to overlap. To make the labels lesssensitive for overlapping, the [dataLabels.padding](#plotOptions.series.dataLabels.padding) can be set to 0.
-		/// </summary>
-		public bool? AllowOverlap { get; set; }
-		private bool? AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -140,20 +154,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Defer { get; set; }
 		private bool? Defer_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the data labels.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
-		/// </summary>
-		public string Format { get; set; }
-		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -230,22 +230,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("PlotOptionsVbpDataLabelsFormatter.formatter", Formatter); }  
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
