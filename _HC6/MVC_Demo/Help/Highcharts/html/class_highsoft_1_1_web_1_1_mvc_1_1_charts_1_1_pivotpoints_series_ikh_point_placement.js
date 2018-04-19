@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pivotpoints_series_ikh_point_placement =
+[
+    [ "PivotpointsSeriesIkhPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pivotpoints_series_ikh_point_placement.html#a15296cb047505bf910682c535e4a4692", null ]
+];

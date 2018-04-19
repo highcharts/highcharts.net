@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_windbarb_states_select_marker_states_hover_animation =
+[
+    [ "PlotOptionsWindbarbStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_windbarb_states_select_marker_states_hover_animation.html#a7746fac75f568dd8a0fde7a4a1c2dd2c", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_windbarb_states_select_marker_states_hover_animation.html#a7f0a3849914c136a762a2b6227898869", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_windbarb_states_select_marker_states_hover_animation.html#a5e13526be6d7216f638530157ad3c193", null ]
+];

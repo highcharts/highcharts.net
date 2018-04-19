@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_states_hover_marker_states_hover_animation =
+[
+    [ "CandleStickSeriesStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_states_hover_marker_states_hover_animation.html#afc953ee74ec6559f637fcfa473ae23e9", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_states_hover_marker_states_hover_animation.html#ae67161e87159421b523b9a21b5a97ddd", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_states_hover_marker_states_hover_animation.html#afd88580c5d9793208ef2ac3c9988a4d9", null ]
+];

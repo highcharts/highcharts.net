@@ -1,0 +1,89 @@
+﻿<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+@Html.Highsoft().GetHighcharts(new Highcharts
+{
+    Chart = new Chart
+    {
+        Type = ChartType.Gauge,
+        PlotBorderWidth = 1,
+        PlotBackgroundColor = "#FFF4C6",
+        PlotBackgroundImage = null,
+        Height = 200
+    },
+    Title = new Title
+    {
+        Text = "VU meter"
+    },
+    Pane = new Pane
+    {
+        StartAngle = -45,
+        EndAngle = 45,
+        Center = new string[] { "25%", "145%" },
+        Size = "300"
+    },
+    Tooltip = new Tooltip
+    {
+        Enabled = false
+    },
+    YAxis = new List<YAxis>
+    {
+        new YAxis
+        {
+            Id = "Y1",
+            Min = - 20,
+            Max = 6,
+            MinorTickPosition = YAxisMinorTickPosition.Outside,
+            TickPosition = YAxisTickPosition.Outside,
+            Labels = new YAxisLabels
+            {
+                Distance = 20
+            },
+            PlotBands = new List<YAxisPlotBands>
+            {
+                new YAxisPlotBands
+                {
+                    From = 0,
+                    To = 6,
+                    Color = "#C02316",
+                    InnerRadius = "100%",
+                    OuterRadius = "105%",
+                }
+            },
+            Title = new YAxisTitle
+            {
+                Text = "VU<br/><span style=\"font-size:8px\">Channel A</span>",
+                Y = -40
+            }
+        }
+    },
+    PlotOptions = new PlotOptions
+    {
+        Gauge = new PlotOptionsGauge
+        {
+            DataLabels = new PlotOptionsGaugeDataLabels
+            {
+                Enabled = false
+            },
+            Dial = new PlotOptionsGaugeDial
+            {
+                Radius = "100%"
+            }
+        }
+    },
+    Series = new List<Series>
+    {
+        new GaugeSeries
+        {
+            Name = "Channel A",
+            Data = new List<GaugeSeriesData>
+            {
+                new GaugeSeriesData { Y = -20 }
+            },
+            YAxis = "Y1"
+        }
+    }
+}, "chart")

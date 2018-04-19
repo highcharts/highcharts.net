@@ -16,14 +16,14 @@ namespace DailyScheduler
     {
         private const string FILE_PATH = @"c:\Users\PC\Documents\highcharts.net\Build\new\demo_builder.bat";
         private const string SERVER_FILE_PATH = @"c:\highcharts.net\Build\new\demo_builder.bat";
-        private const string SERVER_HC_WRAPPER_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highcharts\bin\Debug\Highcharts.Web.Mvc.dll";
-        private const string SERVER_HS_WRAPPER_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highstock\bin\Debug\Highstock.Web.Mvc.dll";
-        private const string SERVER_HC_NUSPEC_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highcharts\MVC_Highcharts.nuspec";
-        private const string SERVER_HS_NUSPEC_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highstock\MVC_Highstock.nuspec";
-        private const string SERVER_HC_NUGET_PACK_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highcharts\nuget_pack_highcharts.bat";
-        private const string SERVER_HS_NUGET_PACK_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highstock\nuget_pack_highstock.bat";
-        private const string SERVER_HC_NUGET_PUSH_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highcharts\nuget_push_highcharts.bat";
-        private const string SERVER_HS_NUGET_PUSH_FILE_PATH = @"C:\highcharts.net\_HC5\MVC_Highstock\nuget_push_highstock.bat";
+        private const string SERVER_HC_WRAPPER_FILE_PATH = @"C:\highcharts.net\_HC6\MVC_Highcharts\bin\Release\Highcharts.Web.Mvc.dll";
+        private const string SERVER_HS_WRAPPER_FILE_PATH = @"C:\highcharts.net\_HC6\MVC_Highstock\bin\Release\Highstock.Web.Mvc.dll";
+        private const string SERVER_HC_NUSPEC_FILE_PATH = @"C:\highcharts.net\_HC6\MVC_Highcharts\MVC_Highcharts.nuspec";
+        private const string SERVER_HS_NUSPEC_FILE_PATH = @"C:\highcharts.net\_HC6\MVC_Highstock\MVC_Highstock.nuspec";
+        private const string SERVER_HC_NUGET_PACK_FILE_PATH = @"C:\highcharts.net\_HC6\MVC_Highcharts\nuget_pack_highcharts.bat";
+        private const string SERVER_HS_NUGET_PACK_FILE_PATH = @"C:\highcharts.net\_HC6\MVC_Highstock\nuget_pack_highstock.bat";
+        private const string SERVER_HC_NUGET_PUSH_FILE_PATH = @"C:\highcharts.net\_HC6\MVC_Highcharts\nuget_push_highcharts.bat";
+        private const string SERVER_HS_NUGET_PUSH_FILE_PATH = @"C:\highcharts.net\_HC6\MVC_Highstock\nuget_push_highstock.bat";
 
         static void Main()
         {
@@ -65,13 +65,13 @@ namespace DailyScheduler
 
         static void HandleNuget(object sender, ElapsedEventArgs args)
         {
-            Thread.Sleep(1200000);
+            Thread.Sleep(18000000);
 
             Console.WriteLine("NuGet: "+DateTime.Now);
             try
             {
                 NugetPublisher publisher = new NugetPublisher();
-
+                
                 publisher.UpdateFiles(SERVER_HC_WRAPPER_FILE_PATH, SERVER_HC_NUSPEC_FILE_PATH, SERVER_HC_NUGET_PUSH_FILE_PATH, "Highcharts");
                 publisher.UpdateFiles(SERVER_HS_WRAPPER_FILE_PATH, SERVER_HS_NUSPEC_FILE_PATH, SERVER_HS_NUGET_PUSH_FILE_PATH, "Highstock");
 
@@ -92,6 +92,7 @@ namespace DailyScheduler
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
+                Console.WriteLine(ex.InnerException);
                 Console.ReadLine();
             }
         }

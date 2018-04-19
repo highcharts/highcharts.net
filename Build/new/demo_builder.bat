@@ -1,4 +1,3 @@
 cd c:\Program Files (x86)\NAnt\bin
-nant -buildfile:c:\Users\PC\Documents\highcharts.net\Build\new\ZippedLibraries_HC5.build > c:\Users\PC\Documents\highcharts.net\Build\new\log.txt
-
-cd c:\Users\PC\Documents\highcharts.net\Build\new
+nant -buildfile:c:\highcharts.net\Build\new\ZippedLibraries_HC6.build > c:\highcharts.net\Build\new\log.txt
+cd c:\highcharts.net\Build\new

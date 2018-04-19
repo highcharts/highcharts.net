@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter3d_series_states_select_marker_states_hover_animation =
+[
+    [ "Scatter3dSeriesStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter3d_series_states_select_marker_states_hover_animation.html#ad98a32e54d12318350ea90c0bf26a686", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter3d_series_states_select_marker_states_hover_animation.html#aec906e35fb99889c0a5c5f8204d75a1e", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter3d_series_states_select_marker_states_hover_animation.html#a8507140d14913a50e6c6f2080150daed", null ]
+];

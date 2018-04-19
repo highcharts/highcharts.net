@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_areasplinerange_series_ikh_point_placement =
+[
+    [ "AreasplinerangeSeriesIkhPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_areasplinerange_series_ikh_point_placement.html#ae5d576b17cce129c40ad5c34701c3770", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_states_hover_marker_states_hover_animation =
+[
+    [ "PlotOptionsFunnelStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_states_hover_marker_states_hover_animation.html#ace422c496a9d4ea6170ed94dcc33a657", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_states_hover_marker_states_hover_animation.html#a91d0d8fc8ef14c858d9a26f0a803d6a2", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel_states_hover_marker_states_hover_animation.html#af10de0c4d79986935c02644a031767fd", null ]
+];

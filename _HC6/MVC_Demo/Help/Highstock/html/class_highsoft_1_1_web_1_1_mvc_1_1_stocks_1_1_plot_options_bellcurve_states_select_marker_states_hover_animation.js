@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_bellcurve_states_select_marker_states_hover_animation =
+[
+    [ "PlotOptionsBellcurveStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_bellcurve_states_select_marker_states_hover_animation.html#afc0aec246bce7bb9daad5b8c72f77006", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_bellcurve_states_select_marker_states_hover_animation.html#a08026243adfb545d0f1a3586f1aa61d7", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_bellcurve_states_select_marker_states_hover_animation.html#a433164b280770d33a0601f050ab9db04", null ]
+];

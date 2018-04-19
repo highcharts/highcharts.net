@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_wordcloud_states_select_marker_states_hover_animation =
+[
+    [ "PlotOptionsWordcloudStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_wordcloud_states_select_marker_states_hover_animation.html#adbc4a2d385acbe95fe86dbf366d5a74a", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_wordcloud_states_select_marker_states_hover_animation.html#ae5fee8b4dfc0d3cdd79ec46f8b0a6661", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_wordcloud_states_select_marker_states_hover_animation.html#a2ceed2606f221d230ab10aa89fc18a10", null ]
+];

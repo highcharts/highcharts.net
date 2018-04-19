@@ -1,0 +1,83 @@
+﻿@using System.Collections
+@using Highsoft.Web.Mvc.Stocks
+
+
+@*  The Highstock client-side javascript library is dependent on jQuery so you need to include 
+    a reference to the jQuery library before referncing the highstock llibrary*@
+
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <script type="text/ecmascript">
+
+        function loadData() {
+
+            $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=large-dataset.json&callback=?', function (data) {
+
+                var chart = $("#chart").highcharts();
+                console.log(chart);
+                chart.series[0].setData(data.data);
+                window.setTimeout(function () { chart.redraw(); }, 500);
+            });
+
+        }
+
+    </script>
+    
+    @(Html.Highsoft().Highstock(
+        new Highstock
+        {
+            Chart = new Highsoft.Web.Mvc.Stocks.Chart
+            {
+                ZoomType = ChartZoomType.X,
+                Events = new ChartEvents
+                {
+                    Load = "loadData"
+                },
+
+
+            },
+            RangeSelector = new RangeSelector
+            {
+                Buttons = new List<RangeSelectorButton>() { new RangeSelectorButton() { Type = RangeSelectorButtonType.Day, Count = 3, Text = "3d"}, new RangeSelectorButton() { Type = RangeSelectorButtonType.Week, Count = 1, Text = "1w"}, new RangeSelectorButton() { Type = RangeSelectorButtonType.Month, Count = 1, Text = "1m" }, new RangeSelectorButton() { Type = RangeSelectorButtonType.Month, Count = 6, Text = "6m"}, new RangeSelectorButton() { Type = RangeSelectorButtonType.Month, Count = 12, Text = "1y" } },
+                //DataGrouping = new List<object>() { new { type = "day", count = 3, text = "3d" }, new { type = "week", count = 1, text = "1w" }, new { type = "month", count = 1, text = "1m" }, new { type = "month", count = 6, text = "6m" }, new { type = "year", count = 1, text = "1y" } }
+                Selected = 1//3
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                   Title = new YAxisTitle
+                   {
+                       Text = "Temperature (°C)"
+                   }
+                }
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Ordinal = false
+                }
+            },
+            Title = new Title
+            {
+                Text = "Hourly temperatures in Vik i Sogn, Norway, 2009-2015"
+            },
+            Series = new List<Series>
+            {
+                new LineSeries
+                {
+                   Name = "Temperature",
+                   TurboThreshold = 100000,
+                   PointStart = 1230764400000,
+                   PointInterval = 3600000,
+                   Tooltip = new LineSeriesTooltip
+                   {
+                       ValueDecimals = 1,
+                       ValueSuffix = "°C"
+                   }
+                }
+            },
+        },
+            "chart"))

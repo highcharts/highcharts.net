@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_mappoint_point_placement =
+[
+    [ "PlotOptionsMappointPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_mappoint_point_placement.html#a73e03f7207b2a4ffb417ea31afc072ee", null ]
+];

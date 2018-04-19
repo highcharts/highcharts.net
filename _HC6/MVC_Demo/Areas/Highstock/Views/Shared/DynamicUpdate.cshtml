@@ -1,0 +1,64 @@
+﻿@using Highsoft.Web.Mvc.Stocks
+
+@*  The Highstock client-side javascript library is dependent on jQuery so you need to include 
+    a reference to the jQuery library before referncing the highstock llibrary*@
+
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <script type="text/javascript">
+
+        function loadData() {
+            
+            var data = [], time = (new Date()).getTime(), i;
+
+            for (i = -999; i <= 0; i += 1) {
+                data.push([
+                    time + i * 1000,
+                    Math.round(Math.random() * 100)
+                ]);
+            }
+            this.series[0].setData(data);
+
+            // set up the updating of the chart each second
+            var series = this.series[0];
+            setInterval(function () {
+                var x = (new Date()).getTime(), // current time
+                    y = Math.round(Math.random() * 100);
+                series.addPoint([x, y], true, true);
+            }, 333);
+        }
+
+    </script>
+    
+    @(Html.Highsoft().Highstock(
+        new Highstock
+        {
+            Chart = new Highsoft.Web.Mvc.Stocks.Chart
+            {
+                Events = new ChartEvents
+                {
+                    Load = "loadData"
+                }
+            },
+            RangeSelector = new RangeSelector()
+            {
+                Buttons = new List<RangeSelectorButton>() { new RangeSelectorButton { Type = RangeSelectorButtonType.Minute, Count = 1, Text = "1m" }, new RangeSelectorButton { Type = RangeSelectorButtonType.Minute, Count = 5, Text = "5M" }, new RangeSelectorButton { Type = RangeSelectorButtonType.All, Count = 1, Text = "All" } },
+                InputEnabled = false,
+                Selected = 1
+            },
+            Title = new Title
+            {
+                Text = "Live random data"
+            },
+            Series = new List<Series>
+            {
+                new LineSeries
+                {
+                    Name = "Random Data"
+
+                }
+            }
+        },
+        "chart"
+    ))

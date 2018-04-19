@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_priceenvelopes_series_ikh_marker_states_hover_animation =
+[
+    [ "PriceenvelopesSeriesIkhMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_priceenvelopes_series_ikh_marker_states_hover_animation.html#aa0d8478b09a938190bcf9a0b3537c461", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_priceenvelopes_series_ikh_marker_states_hover_animation.html#ac29f94b5f8f674cca4dad423c0ef33fa", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_priceenvelopes_series_ikh_marker_states_hover_animation.html#a8081927f02a2119c857ce1e4f6f7a099", null ]
+];

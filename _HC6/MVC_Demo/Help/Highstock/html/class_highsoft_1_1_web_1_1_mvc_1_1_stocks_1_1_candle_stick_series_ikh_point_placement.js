@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_ikh_point_placement =
+[
+    [ "CandleStickSeriesIkhPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_ikh_point_placement.html#a5d23d2ad6aea5956095b097cc4a8abaa", null ]
+];

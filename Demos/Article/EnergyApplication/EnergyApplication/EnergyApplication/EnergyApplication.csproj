@@ -44,9 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Highcharts.Web.Mvc, Version=5.0.6452.11748, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\_HC5\MVC_Highcharts\bin\Debug\Highcharts.Web.Mvc.dll</HintPath>
+    <Reference Include="Highcharts.Web.Mvc, Version=6.0.6498.34394, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Highsoft.Highcharts.6.0.6500.22268\lib\net40\Highcharts.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>

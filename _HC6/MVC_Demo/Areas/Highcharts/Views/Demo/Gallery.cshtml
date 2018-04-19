@@ -1,0 +1,682 @@
+﻿<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="highcharts, charts, javascript charts, ajax charts, plots, line charts, bar charts, pie charts, javascript plots, ajax plots" />
+    <meta name="description" content="Highcharts - Interactive ASP.NET MVC charts for your web pages." />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="@Url.Content("~/Content/highslide.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/bootstrap.min.css")" type="text/css" />
+    @*<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,400italic" type="text/css" />*@
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/font-awesome.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/template.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/gallery.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/index.css")" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/navigation-bar.css" media="all">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="@Url.Content("~/Scripts/highslide-full.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/highslide.config.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/script.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/fix.navigation.js")" type="text/javascript"></script>
+    <script src="https://use.fontawesome.com/1053745c2c.js"></script>
+    
+
+    <script type="text/javascript">
+        var menu = 0;
+
+
+        var example = 'line-basic',
+        theme = 'default';
+
+        jQuery(document).ready(function () {
+
+            fixNavigation();
+
+            jQuery("#view-menu").click(function (e) {
+                if (menu == 0) {
+                    jQuery("#wrap").toggleClass("toggled");
+                    menu = 1;
+                }
+                else {
+                    jQuery("#wrap").removeClass("toggled");
+                    menu = 0;
+                }
+            });
+            //jQuery("#sidebar-close").click(function (e) {
+            //    jQuery("#wrap").removeClass("toggled");
+            //});
+            // key listeners for the previous and next arrows
+            jQuery(document).keydown(function (e) {
+                var anchor;
+                if (e.target.tagName != 'INPUT') {
+                    if (e.keyCode == 39) {
+                        anchor = document.getElementById('next-example');
+
+                    } else
+                        if (e.keyCode == 37) {
+                            anchor = document.getElementById('previous-example');
+                        }
+
+                    if (anchor) {
+                        location.href = anchor.href;
+                    }
+                }
+            });
+            // Bind event to style change switcher
+            jQuery('#switcher-selector').bind('change', function () {
+                var url = jQuery(this).val(); // get selected value
+                if (url) { // require a URL
+                    window.location = url; // redirect
+                }
+                return false;
+            });
+        });
+
+        function exampleToHyphens(word) {
+            var result = "";
+            for (var i = 0; i < word.length; i++) {
+                if (isUpperCase(word[i]) && i > 0) {
+                    result += "-" + word[i].toLowerCase();
+                }
+                else {
+                    result += word[i].toLowerCase();
+                }
+            }
+
+            return result;
+        }
+
+        function isUpperCase(character) {
+            return (character == character.toUpperCase());
+        }
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-2995052-3', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+<body>
+
+    <div id="menu">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <a class="navbar-brand" href="http://www.highcharts.com/" title="Highcharts">
+                        <img src="~/Content/images/logo.svg" alt="Highcharts">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <div id="menu-container">
+                        <div id="menu-second" class="hidden-xs">
+
+                            <ul class="nav navbar-nav">
+                                <li class="item-112 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-260"><a href="https://www.highcharts.com/about">About Us</a></li><li class="item-286"><a href="https://www.highcharts.com/jobs">Job Openings</a></li><li class="item-114"><a href="https://www.highcharts.com/contact-email">Contact Us</a></li><li class="item-276"><a href="https://www.highcharts.com/news/">News</a></li><li class="item-291"><a href="https://shop.highsoft.com/reseller">Resellers</a></li></ul>
+                                </li>
+                            </ul>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="menu-main">
+
+                            <ul class="nav navbar-nav">
+                                <li class="item-101"><a href="https://www.highcharts.com/">Home</a></li>
+                                <li class="item-254 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-255"><a href="https://www.highcharts.com/products/highcharts">Highcharts</a></li><li class="item-256"><a href="https://www.highcharts.com/products/highstock">Highstock</a></li><li class="item-257"><a href="https://www.highcharts.com/products/highmaps">Highmaps</a></li><li class="item-290"><a href="https://www.highcharts.com/mobile/">Mobile</a></li><li class="item-258"><a href="http://cloud.highcharts.com">Highcharts Cloud</a></li><li class="item-273"><a href="https://www.highcharts.com/products/highcharts-editor">Highcharts Editor</a></li><li class="item-279"><a href="https://www.highcharts.com/products/wrappers">Wrappers</a></li><li class="item-261"><a href="https://www.highcharts.com/products/plugin-registry">Plugins</a></li></ul>
+                                </li>
+                                <li class="item-103 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demo <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-106"><a href="https://www.highcharts.com/demo">Highcharts demos</a></li><li class="item-107"><a href="https://www.highcharts.com/stock/demo">Highstock demos</a></li><li class="item-205"><a href="https://www.highcharts.com/maps/demo">Highmaps demo</a></li></ul>
+                                </li>
+                                <li class="item-108 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-128"><a href="https://www.highcharts.com/docs">General Documentation</a></li><li class="item-124"><a href="http://api.highcharts.com/highcharts">API Reference</a></li><li class="item-127"><a href="https://www.highcharts.com/documentation/changelog">Changelog</a></li><li class="item-129"><a href="https://www.highcharts.com/documentation/roadmap">Roadmap</a></li></ul>
+                                </li>
+                                <li class="item-109 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-110"><a href="https://www.highcharts.com/support">Support</a></li><li class="item-201"><a href="https://www.highcharts.com/download">Download</a></li></ul>
+                                </li>
+                                <li class="item-281"><a href="https://www.highcharts.com/blog">Blog</a></li>
+                                <li class="item-282 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-283"><a href="https://www.highcharts.com/blog/community/showcase/">Project Showcase</a></li><li class="item-284"><a href="https://www.highcharts.com/blog/community/charts/">Chart Code Showcase</a></li><li class="item-285"><a href="https://www.highcharts.com/blog/community/charts/">Contribute</a></li></ul>
+                                </li>
+                                <li class="item-262"><a href="http://shop.highsoft.com/">Buy</a></li>
+                            </ul>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="mobile-second" class="visible-xs">
+
+                            <ul class="nav navbar-nav">
+                                <li class="item-112 deeper dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <span class="toggle-arrow"></span></a>
+                                    <ul class="dropdown-menu" role="menu"><li class="item-260"><a href="https://www.highcharts.com/about">About Us</a></li><li class="item-286"><a href="https://www.highcharts.com/jobs">Job Openings</a></li><li class="item-114"><a href="https://www.highcharts.com/contact-email">Contact Us</a></li><li class="item-276"><a href="https://www.highcharts.com/news/">News</a></li><li class="item-291"><a href="https://shop.highsoft.com/reseller">Resellers</a></li></ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu-shop" class="container-fluid">
+
+                <div id="shop-list-wrapper">
+
+                    <div id="shop-product-tab" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Highcharts.NET&nbsp;<span class="toggle-arrow"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Highcharts/Demo">Highcharts.NET</a></li>
+                            <li><a href="~/Highstock/Demo">Highstock.NET</a></li>
+                        </ul>
+                    </div>
+                    <div id="shop-product-tab" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Demos&nbsp;<span class="toggle-arrow"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Highcharts/Demo">Demos</a></li>
+                            <li><a href="~/Help/Highcharts/html/index.html">API</a></li>
+                            <li><a href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">Docs</a></li>
+                            <li><a href="https://www.nuget.org/packages/Highsoft.Highcharts/">See on NuGet</a></li>
+                            <li><a href="~/downloads/Highcharts_ASPNET_MVC.zip" onclick="ga('send', 'event', 'Downloads', 'Highcharts-Dotnet');">Download&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <ul id="shop-product-list">
+                        <li><a href="~/Highcharts/Demo">Demo</a></li>
+                        <li><a href="~/Help/Highcharts/html/index.html">API</a></li>
+                        <li><a href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">Docs</a></li>
+                        <li><a href="https://www.nuget.org/packages/Highsoft.Highcharts/">See on NuGet</a></li>
+                        <li><a href="~/downloads/Highcharts_ASPNET_MVC.zip" onclick="ga('send', 'event', 'Downloads', 'Highcharts-Dotnet');">Download&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="header" class="hidden-xs col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="container">
+
+            <div class="table-responsive">
+                <table class="table" style="margin:unset; background:#3A3A4F;">
+                    <tbody>
+                        <tr>
+                            <td width="25%" style="padding:unset; border:none"></td>
+                            <td style="padding-left:unset; padding-top:15px; padding-bottom:25px; border:none">
+                                @*<ul class="nav navbar-nav">*@
+                                <table>
+                                    <tbody>
+                                        <tr><td style="padding-left:unset; padding-bottom:15px; border:none"><span style="color:#eeeaea; font-size:x-large;">Highcharts.NET</span></td></tr>
+                                        <tr>
+                                            <td style="padding:unset; border:none">
+                                                <div class="btn-group">
+                                                    <a href="~/Highcharts/Demo" class="btn btn-primary" style="border-color:#eeeaea; color:#3A3A4F; background-color:#eeeaea; text-transform:none;"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Highcharts</a>
+                                                    <a href="~/Highstock/Demo" class="btn btn-primary" style="border-color:#eeeaea; color:#898DA0; background-color:#3A3A4F; text-transform:none;"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Highstock</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td style="padding:unset; border:none">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:right;">
+                                    <img src="~/Content/images/dotnet_logo.png" width="200" style="padding-top:30px;" />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="hs-slider">
+        <div class="container">
+        </div>
+    </div>
+    <div id="hs-clients">
+        <div class="container">
+        </div>
+    </div>
+    <div id="hs-component">
+        <div class="container">
+            <div id="wrap" class="sidebar-wrapper">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-9 sidebar">
+                    <ul class="nav nav-sidebar">
+                        <li class="active">
+                            <div class="active"><span>Line charts</span><icon class="toggle"></icon></div>
+                            <ul style="display: block;">
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/line-basic" href="@Url.Action("Gallery", "Demo", new { demo = "LineBasic", theme = ViewBag.Theme } )">Basic line						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/line-ajax" href="@Url.Action("Gallery", "Demo", new { demo = "LineAjax", theme = ViewBag.Theme } )">Ajax loaded data, clickable points						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/line-labels" href="@Url.Action("Gallery", "Demo", new { demo = "LineLabels", theme = ViewBag.Theme } )">With data labels						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/annotations" href="@Url.Action("Gallery", "Demo", new { demo = "Annotations", theme = ViewBag.Theme } )">With annotations					</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/line-time-series" href="@Url.Action("Gallery", "Demo", new { demo = "LineTimeSeries", theme = ViewBag.Theme } )">Time series, zoomable						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/spline-inverted" href="@Url.Action("Gallery", "Demo", new { demo = "SplineInverted", theme = ViewBag.Theme } )">Spline with inverted axes						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/spline-symbols" href="@Url.Action("Gallery", "Demo", new { demo = "SplineSymbols", theme = ViewBag.Theme } )">Spline with symbols						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/spline-plot-bands" href="@Url.Action("Gallery", "Demo", new { demo = "SplinePlotBands", theme = ViewBag.Theme } )">Spline with plot bands						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/spline-irregular-time" href="@Url.Action("Gallery", "Demo", new { demo = "SplineIrregularTime", theme = ViewBag.Theme } )">Time data with irregular intervals						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/line-log-axis" href="@Url.Action("Gallery", "Demo", new { demo = "LineLogAxis", theme = ViewBag.Theme } )">Logarithmic axis						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/line-boost" href="@Url.Action("Gallery", "Demo", new { demo = "LineBoost", theme = ViewBag.Theme } )">Line chart with 500k points						</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <div class=""><span>Area charts</span><icon class="toggle"></icon></div>
+                            <ul style="display: block;">
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/area-basic" href="@Url.Action("Gallery", "Demo", new { demo = "AreaBasic", theme = ViewBag.Theme } )">Basic area						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/area-negative" href="@Url.Action("Gallery", "Demo", new { demo = "AreaNegative", theme = ViewBag.Theme } )">Area with negative values						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/area-stacked" href="@Url.Action("Gallery", "Demo", new { demo = "AreaStacked", theme = ViewBag.Theme } )">Stacked area						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/area-stacked-percent" href="@Url.Action("Gallery", "Demo", new { demo = "AreaStackedPercent", theme = ViewBag.Theme } )">Percentage area						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/area-missing" href="@Url.Action("Gallery", "Demo", new { demo = "AreaMissing", theme = ViewBag.Theme } )">Area with missing points						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/area-inverted" href="@Url.Action("Gallery", "Demo", new { demo = "AreaInverted", theme = ViewBag.Theme } )">Inverted axes						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/areaspline" href="@Url.Action("Gallery", "Demo", new { demo = "Areaspline", theme = ViewBag.Theme } )">Area-spline						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/arearange" href="@Url.Action("Gallery", "Demo", new { demo = "Arearange", theme = ViewBag.Theme } )">Area range						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/arearange-line" href="@Url.Action("Gallery", "Demo", new { demo = "ArearangeLine", theme = ViewBag.Theme } )">Area range and line						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/sparkline" href="@Url.Action("Gallery", "Demo", new { demo = "Sparkline", theme = ViewBag.Theme } )">Sparkline charts						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/streamgraph" href="@Url.Action("Gallery", "Demo", new { demo = "Streamgraph", theme = ViewBag.Theme } )">Streamgraph						</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <div class=""><span>Column and bar charts</span><icon class="toggle"></icon></div>
+                            <ul style="display: none;">
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/bar-basic" href="@Url.Action("Gallery", "Demo", new { demo = "BarBasic", theme = ViewBag.Theme } )">Basic bar						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/bar-stacked" href="@Url.Action("Gallery", "Demo", new { demo = "BarStacked", theme = ViewBag.Theme } )">Stacked bar						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/bar-negative-stack" href="@Url.Action("Gallery", "Demo", new { demo = "BarNegativeStack", theme = ViewBag.Theme } )">Bar with negative stack						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-basic" href="@Url.Action("Gallery", "Demo", new { demo = "ColumnBasic", theme = ViewBag.Theme } )">Basic column						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-negative" href="@Url.Action("Gallery", "Demo", new { demo = "ColumnNegative", theme = ViewBag.Theme } )">Column with negative values						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-stacked" href="@Url.Action("Gallery", "Demo", new { demo = "ColumnStacked", theme = ViewBag.Theme } )">Stacked column						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-stacked-and-grouped" href="@Url.Action("Gallery", "Demo", new { demo = "ColumnStackedAndGrouped", theme = ViewBag.Theme } )">Stacked and grouped column						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-stacked-percent" href="@Url.Action("Gallery", "Demo", new { demo = "ColumnStackedPercent", theme = ViewBag.Theme } )">Stacked percentage column						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-rotated-labels" href="@Url.Action("Gallery", "Demo", new { demo = "ColumnRotatedLabels", theme = ViewBag.Theme } )">Column with rotated labels						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-drilldown" href="@Url.Action("Gallery", "Demo", new { demo = "ColumnDrilldown", theme = ViewBag.Theme } )">Column with drilldown						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-placement" href="@Url.Action("Gallery", "Demo", new { demo = "ColumnPlacement", theme = ViewBag.Theme } )">Fixed placement columns						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-parsed" href="@Url.Action("Gallery", "Demo", new { demo = "ColumnParsed", theme = ViewBag.Theme } )">Data defined in a HTML table						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/columnrange" href="@Url.Action("Gallery", "Demo", new { demo = "Columnrange", theme = ViewBag.Theme } )">Column range						</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <div class=""><span>Pie charts</span><icon class="toggle"></icon></div>
+                            <ul style="display: none;">
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/pie-basic" href="@Url.Action("Gallery", "Demo", new { demo = "PieBasic", theme = ViewBag.Theme } )">Pie chart						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/pie-legend" href="@Url.Action("Gallery", "Demo", new { demo = "PieLegend", theme = ViewBag.Theme } )">Pie with legend						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/pie-donut" href="@Url.Action("Gallery", "Demo", new { demo = "PieDonut", theme = ViewBag.Theme } )">Donut chart						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/pie-semi-circle" href="@Url.Action("Gallery", "Demo", new { demo = "PieSemiCircle", theme = ViewBag.Theme } )">Semi circle donut						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/pie-drilldown" href="@Url.Action("Gallery", "Demo", new { demo = "PieDrilldown", theme = ViewBag.Theme } )">Pie with drilldown						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/pie-gradient" href="@Url.Action("Gallery", "Demo", new { demo = "PieGradient", theme = ViewBag.Theme } )">Pie with gradient fill						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/pie-monochrome" href="@Url.Action("Gallery", "Demo", new { demo = "PieMonochrome", theme = ViewBag.Theme } )">Pie with monochrome fill						</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <div class=""><span>Scatter and bubble charts</span><icon class="toggle"></icon></div>
+                            <ul style="display: none;">
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/scatter" href="@Url.Action("Gallery", "Demo", new { demo = "Scatter", theme = ViewBag.Theme } )">Scatter plot						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/scatter-boost" href="@Url.Action("Gallery", "Demo", new { demo = "ScatterBoost", theme = ViewBag.Theme } )">Scatter plot with 1 million points						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/bubble" href="@Url.Action("Gallery", "Demo", new { demo = "Bubble", theme = ViewBag.Theme } )">Bubble chart						</a>
+                                </li>
+                                <li class="">
+                                        <a aria-label="http://www.highcharts.com/demo/bubble-3d" href="@Url.Action("Gallery", "Demo", new { demo = "Bubble3d", theme = ViewBag.Theme } )">3D bubbles						</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <div class=""><span>Dynamic charts</span><icon class="toggle"></icon></div>
+                            <ul style="display: none;">
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/dynamic-update" href="@Url.Action("Gallery", "Demo", new { demo = "DynamicUpdate", theme = ViewBag.Theme } )">Spline updating each second						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/dynamic-click-to-add" href="@Url.Action("Gallery", "Demo", new { demo = "DynamicClickToAdd", theme = ViewBag.Theme } )">Click to add a point						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/dynamic-master-detail" href="@Url.Action("Gallery", "Demo", new { demo = "DynamicMasterDetail", theme = ViewBag.Theme } )">Master-detail chart						</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <div class=""><span>Combinations</span><icon class="toggle"></icon></div>
+                            <ul style="display: none;">
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/combo" href="@Url.Action("Gallery", "Demo", new { demo = "Combo", theme = ViewBag.Theme } )">Column, line and pie						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/combo-dual-axes" href="@Url.Action("Gallery", "Demo", new { demo = "ComboDualAxes", theme = ViewBag.Theme } )">Dual axes, line and column						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/combo-multi-axes" href="@Url.Action("Gallery", "Demo", new { demo = "ComboMultiAxes", theme = ViewBag.Theme } )">Multiple axes						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/combo-regression" href="@Url.Action("Gallery", "Demo", new { demo = "ComboRegression", theme = ViewBag.Theme } )">Scatter with regression line						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/combo-meteogram" href="@Url.Action("Gallery", "Demo", new { demo = "ComboMeteogram", theme = ViewBag.Theme } )">Meteogram						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/combo-timeline" href="@Url.Action("Gallery", "Demo", new { demo = "ComboTimeline", theme = ViewBag.Theme } )">Advanced timeline						</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <div class=""><span>3D charts</span><icon class="toggle"></icon></div>
+                            <ul style="display: none;">
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-3-d-interactive" href="@Url.Action("Gallery", "Demo", new { demo = "Column3DInteractive", theme = ViewBag.Theme } )">3D column						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-3-d-null-values" href="@Url.Action("Gallery", "Demo", new { demo = "Column3DNullValues", theme = ViewBag.Theme } )">3D column with null and 0 values						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/column-3-d-stacking-grouping" href="@Url.Action("Gallery", "Demo", new { demo = "Column3DStackingGrouping", theme = ViewBag.Theme } )">3D column with stacking and grouping						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/pie-3-d" href="@Url.Action("Gallery", "Demo", new { demo = "Pie3D", theme = ViewBag.Theme } )">3D pie						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/pie-3-d-donut" href="@Url.Action("Gallery", "Demo", new { demo = "Pie3DDonut", theme = ViewBag.Theme } )">3D donut						</a>
+                                </li>
+                                <li class="">
+                                        <a aria-label="http://www.highcharts.com/demo/scatter-3d" href="@Url.Action("Gallery", "Demo", new { demo = "Scatter3d", theme = ViewBag.Theme } )">3D scatter chart						</a>
+                                    </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <div class=""><span>Gauges</span><icon class="toggle"></icon></div>
+                            <ul style="display: none;">
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/gauge-speedometer" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeSpeedometer", theme = ViewBag.Theme } )">Angular gauge						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/gauge-solid" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeSolid", theme = ViewBag.Theme } )">Solid gauge						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/gauge-activity" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeActivity", theme = ViewBag.Theme } )">Activity gauge						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/gauge-clock" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeClock", theme = ViewBag.Theme } )">Clock						</a>
+                                </li>
+                                <li class="">
+                                        <a aria-label="http://www.highcharts.com/demo/gauge-dual" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeDual", theme = ViewBag.Theme } )">Gauge with dual axes						</a>
+                                    </li>
+                                    <li class="">
+                                        <a aria-label="http://www.highcharts.com/demo/gauge-vu-meter" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeVuMeter", theme = ViewBag.Theme } )">VU meter						</a>
+                                    </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/bullet-graph" href="@Url.Action("Gallery", "Demo", new { demo = "BulletGraph", theme = ViewBag.Theme } )">Bullet graph						</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="">
+                            <div class=""><span>Heat and tree maps</span><icon class="toggle"></icon></div>
+                            <ul style="display: none;">
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/heatmap" href="@Url.Action("Gallery", "Demo", new { demo = "Heatmap", theme = ViewBag.Theme } )">Heat map						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/heatmap-canvas" href="@Url.Action("Gallery", "Demo", new { demo = "HeatmapCanvas", theme = ViewBag.Theme } )">Large heat map						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/honeycomb-usa" href="@Url.Action("Gallery", "Demo", new { demo = "HoneycombUsa", theme = ViewBag.Theme } )">Tile map, honeycomb					</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/treemap-coloraxis" href="@Url.Action("Gallery", "Demo", new { demo = "TreemapColoraxis", theme = ViewBag.Theme } )">Tree map with color axis						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/treemap-with-levels" href="@Url.Action("Gallery", "Demo", new { demo = "TreemapWithLevels", theme = ViewBag.Theme } )">Tree map with levels						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/treemap-large-dataset" href="@Url.Action("Gallery", "Demo", new { demo = "TreemapLargeDataset", theme = ViewBag.Theme } )">Large tree map						</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <div class=""><span>More chart types</span><icon class="toggle"></icon></div>
+                            <ul style="display: none;">
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/polar" href="@Url.Action("Gallery", "Demo", new { demo = "Polar", theme = ViewBag.Theme } )">Polar chart						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/polar-spider" href="@Url.Action("Gallery", "Demo", new { demo = "PolarSpider", theme = ViewBag.Theme } )">Spiderweb						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/polar-wind-rose" href="@Url.Action("Gallery", "Demo", new { demo = "PolarWindRose", theme = ViewBag.Theme } )">Wind rose						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/box-plot" href="@Url.Action("Gallery", "Demo", new { demo = "BoxPlot", theme = ViewBag.Theme } )">Box plot						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/error-bar" href="@Url.Action("Gallery", "Demo", new { demo = "ErrorBar", theme = ViewBag.Theme } )">Error bar						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/waterfall" href="@Url.Action("Gallery", "Demo", new { demo = "Waterfall", theme = ViewBag.Theme } )">Waterfall						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/funnel" href="@Url.Action("Gallery", "Demo", new { demo = "Funnel", theme = ViewBag.Theme } )">Funnel chart						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/pyramid" href="@Url.Action("Gallery", "Demo", new { demo = "Pyramid", theme = ViewBag.Theme } )">Pyramid chart						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/polygon" href="@Url.Action("Gallery", "Demo", new { demo = "Polygon", theme = ViewBag.Theme } )">Polygon series						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="http://www.highcharts.com/demo/renderer" href="@Url.Action("Gallery", "Demo", new { demo = "Renderer", theme = ViewBag.Theme } )">General drawing						</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-9 sidebar-fill"></div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq demo" style="margin-top:unset; padding-top:unset;">
+                    @*<a id="sidebar-close" class="btn-default visible-xs">&laquo; Hide Menu</a>*@
+                    <div id="chart-switcher" class="visible-xs" style="padding:unset;">
+                        <a class="button" id="view-menu" onclick="" style="float:left; background-color:#3A3A4F; height:50px; width:40px; vertical-align:middle; padding-left:6px; margin-left:-50px; margin-top:2px; border-radius:unset; z-index:999"><i class="material-icons" style="color:white;">list</i></a>
+                        <a id="previous-example"><i class="fa fa-angle-left"></i></a>
+                        <h2 class="demo-name"></h2>
+                        <a id="next-example" title="Next (arrow right)"
+                           href="http://www.highcharts.com/demo/line-ajax"><i class="fa fa-angle-right"></i></a>
+                    </div>
+                    @*<div id="small-switcher" class="visible-xs">
+                        <a class="button" id="view-menu" onclick="">Menu &raquo;</a>
+                        <select id="switcher-selector">
+                            <option value="http://www.highcharts.com/demo/line-basic" selected>Default theme</option>
+                            <option value="http://www.highcharts.com/demo/line-basic/dark-unica">Dark Unica</option>
+                            <option value="http://www.highcharts.com/demo/line-basic/sand-signika">Sand Signika</option>
+                            <option value="http://www.highcharts.com/demo/line-basic/grid-light">Grid Light</option>
+                        </select>
+                        <div class="clearfix"></div>
+                    </div>*@
+                    <div class="chart-container" style="padding:unset;">
+                        <a id="previous-example" class="hidden-xs"><i class="fa fa-angle-left"></i></a>
+
+                        @*
+                            <script src="http://code.highcharts.com/highcharts.js"></script>
+                            <script src="http://code.highcharts.com/modules/data.js"></script>
+                            <script src="http://code.highcharts.com/highcharts-3d.js"></script>
+                            <script src="http://code.highcharts.com/modules/heatmap.js"></script>
+                            <script src="http://code.highcharts.com/highcharts-more.js"></script>
+                            <script src="http://code.highcharts.com/modules/funnel.js"></script>
+                            <script src="http://code.highcharts.com/modules/exporting.js"></script>
+                            <script src="http://code.highcharts.com/modules/heatmap.js"></script>
+                            <script src="http://code.highcharts.com/modules/treemap.js"></script>
+                            <script src="http://code.highcharts.com/modules/drilldown.js"></script>
+                            <script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
+                        *@
+
+                        <div id="container" style="width: 100%; height: auto; margin: 0 auto">
+
+                            @Html.Action((string)ViewBag.Demo, "Shared")
+
+                        </div>
+                        <a id="next-example" class="hidden-xs" title="Next (arrow right)"
+                           href=""><i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <div id="demo-buttons">
+                        <a class="button" href="javascript:"
+                           onclick="hs.htmlExpand(this, { width: 800,
+					                headingText: 'Demo Controller Code',
+					                wrapperClassName: 'draggable-header' })">Controller Code&nbsp;<i class="fa fa-chevron-right"></i></a>
+                        <div class="highslide-maincontent" style="display:none">
+                            <pre>@ViewBag.ControllerCode</pre>
+                        </div>
+                        <a class="button" href="javascript:"
+                           onclick="hs.htmlExpand(this, { width: 800,
+					                headingText: 'Demo View Code',
+					                wrapperClassName: 'draggable-header' })">View Code&nbsp;<i class="fa fa-chevron-right"></i></a>
+                        <div class="highslide-maincontent" style="display:none">
+                            <pre>@ViewBag.ViewCode</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq-fill"></div>
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+    </div>
+    <div id="hs-below">
+        <div class="container">
+        </div>
+    </div>
+    <div id="hs-bottom">
+        <div class="container">
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div id="zt-footer-copy">
+                    © 2016 Highcharts. All rights reserved.
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="socials">
+                    <div>
+                        <a href="https://www.facebook.com/Highcharts" title="Facebook" class="social-icon"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/Highcharts" title="Twitter" class="social-icon"><i class="fa fa-twitter"></i></a>
+                        <a href="http://www.linkedin.com/company/highsoft-solutions-as" title="LinkedIn" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://github.com/highslide-software/highcharts.com" title="Github" class="social-icon"><i class="fa fa-github"></i></a>
+                        <a href="https://www.youtube.com/channel/UCzxXofPTQ0DoT7uIy3Fxw7A"><i class="fa fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

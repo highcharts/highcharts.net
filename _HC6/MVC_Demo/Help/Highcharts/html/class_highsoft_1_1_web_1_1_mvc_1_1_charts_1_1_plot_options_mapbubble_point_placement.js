@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_mapbubble_point_placement =
+[
+    [ "PlotOptionsMapbubblePointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_mapbubble_point_placement.html#a65dbdf6d6012946c6edc3d59209d0d8f", null ]
+];

@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_windbarb_point_placement =
+[
+    [ "PlotOptionsWindbarbPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_windbarb_point_placement.html#ac2de9bd5006125fd26ae5c6cc9c78806", null ]
+];

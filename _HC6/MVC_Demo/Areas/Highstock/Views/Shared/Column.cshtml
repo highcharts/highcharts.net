@@ -1,0 +1,56 @@
+﻿@using Highsoft.Web.Mvc.Stocks
+
+@*  The Highstock client-side javascript library is dependent on jQuery so you need to include 
+    a reference to the jQuery library before referncing the highstock llibrary*@
+    
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script type="text/javascript">
+
+    function formatYAxis() {
+        return (this.value > 0 ? ' + ' : '') + this.value + '%';
+    }
+
+</script>
+    
+    @(Html.Highsoft().Highstock(
+        new Highstock
+        {
+            RangeSelector = new RangeSelector
+            {
+                Selected = 1
+            },
+            Title = new Title
+            {
+                Text =  "Apple Stock Price"
+            },
+            PlotOptions = new PlotOptions()
+            {
+                Series = new PlotOptionsSeries
+                {
+                    Zones = new List<PlotOptionsSeriesZone>()
+                    {
+                        new PlotOptionsSeriesZone()
+                        {
+                            ClassName = "zone-negative",
+                        }
+                    }
+                }
+            },
+            Series = new List<Series>
+            {
+                new ColumnSeries
+                {
+                   Data = ViewBag.AppleData as List<ColumnSeriesData>,
+                   Name = "Apple Stock Price",
+                   TurboThreshold = 10000,
+                   Tooltip = new ColumnSeriesTooltip
+                   {
+                       ValueDecimals = 2
+                   }
+                }
+            },
+        },
+        "chart"
+    ))

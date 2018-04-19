@@ -4,3 +4,9 @@ C:\Users\PC\Documents\highcharts.net\UtilDateReplacer\obj\Release\UtilDateReplac
 C:\Users\PC\Documents\highcharts.net\UtilDateReplacer\obj\Release\UtilDateReplacer.pdb
 C:\Users\PC\Documents\highcharts.net\UtilDateReplacer\bin\Release\HighstockToday.bat
 C:\Users\PC\Documents\highcharts.net\UtilDateReplacer\obj\Release\UtilDateReplacer.csprojResolveAssemblyReference.cache
+c:\Users\PC\Documents\highcharts.net\_HC5\UtilDateReplacer\bin\Release\HighstockToday.bat
+c:\Users\PC\Documents\highcharts.net\_HC5\UtilDateReplacer\bin\Release\UtilDateReplacer.exe
+c:\Users\PC\Documents\highcharts.net\_HC5\UtilDateReplacer\bin\Release\UtilDateReplacer.pdb
+c:\Users\PC\Documents\highcharts.net\_HC5\UtilDateReplacer\obj\Release\UtilDateReplacer.csprojResolveAssemblyReference.cache
+c:\Users\PC\Documents\highcharts.net\_HC5\UtilDateReplacer\obj\Release\UtilDateReplacer.exe
+c:\Users\PC\Documents\highcharts.net\_HC5\UtilDateReplacer\obj\Release\UtilDateReplacer.pdb
