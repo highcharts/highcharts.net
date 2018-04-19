@@ -30,7 +30,7 @@ namespace DailyScheduler
 
             for (int i = 0; i < 3; i++)
                 if (tabVersion[i] != tabLastNuspecVersion[i])
-                    return version + ".1";
+                    return version.Replace(".0","") + ".1";
 
             var revision = Convert.ToInt64(tabLastNuspecVersion[3]);
 
