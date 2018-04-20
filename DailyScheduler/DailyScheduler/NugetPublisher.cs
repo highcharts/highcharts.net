@@ -34,7 +34,7 @@ namespace DailyScheduler
 
             var revision = Convert.ToInt64(tabLastNuspecVersion[3]);
 
-            return string.Join(".", tabLastNuspecVersion, 0, 3) + "." + revision + 1;
+            return string.Join(".", tabLastNuspecVersion, 0, 3) + "." + (revision + 1);
         }
 
         string GetLastVersionInNuspec(string filePath)
