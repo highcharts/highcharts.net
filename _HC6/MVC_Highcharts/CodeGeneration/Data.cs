@@ -222,8 +222,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enables automatic refetching of remote datasets every _n_ seconds (defined bysetting [data.dataRefreshRate](data.dataRefreshRate)).Only works when either [data.csvURL](data.csvURL),[data.rowsURL](data.rowsURL), [data.columnsURL](data.columnsURL), or[data.googleSpreadsheetKey](data.googleSpreadsheetKey).
 		/// </summary>
-		public bool EnablePolling { get; set; }
-		private bool EnablePolling_DefaultValue { get; set; }
+		public bool? EnablePolling { get; set; }
+		private bool? EnablePolling_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

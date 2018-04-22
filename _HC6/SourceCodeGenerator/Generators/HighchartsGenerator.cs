@@ -298,6 +298,10 @@ public class HighchartsGenerator
             if (child == item)
                 continue;
 
+            //remove after bug fix
+            if(child.FullName == "plotOptions.funnel.dataLabels.style")
+                child.Extends.Add("plotOptions.series.dataLabels.style");
+
             child.ParentFullName = item.FullName;
 
             if (child.Values != null && child.Values.Count > 0)

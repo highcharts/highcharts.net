@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			X = X_DefaultValue = 0;
 			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
 			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
-			Style = Style_DefaultValue = "";
+			Style = Style_DefaultValue = new PlotOptionsFunnelDataLabelsStyle();
 			SoftConnector = SoftConnector_DefaultValue = null;
 			
 		}	
@@ -79,8 +79,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Style { get; set; }
-		private string Style_DefaultValue { get; set; }
+		public PlotOptionsFunnelDataLabelsStyle Style { get; set; }
+		private PlotOptionsFunnelDataLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -101,7 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
 			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
 			
 

@@ -1606,6 +1606,7 @@
     <Compile Include="CodeGeneration\PlotOptionsFunnel.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFunnelAnimation.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFunnelDataLabels.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsFunnelDataLabelsStyle.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFunnelEvents.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFunnelLabel.cs" />
     <Compile Include="CodeGeneration\PlotOptionsFunnelLabelStyle.cs" />
