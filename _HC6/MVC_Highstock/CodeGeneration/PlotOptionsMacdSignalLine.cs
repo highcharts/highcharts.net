@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsMacdSignalLine()
 		{
-			//Zones = Zones_DefaultValue = new PlotOptionsMacdSignalLineZones();
+			Zones = Zones_DefaultValue = new PlotOptionsMacdSignalLineZone();
 			Styles = Styles_DefaultValue = new PlotOptionsMacdSignalLineStyles();
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		//public PlotOptionsMacdSignalLineZones Zones { get; set; }
-		//private PlotOptionsMacdSignalLineZones Zones_DefaultValue { get; set; }
+		public PlotOptionsMacdSignalLineZone Zones { get; set; }
+		private PlotOptionsMacdSignalLineZone Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			//if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			if (Styles.IsDirty()) h.Add("styles",Styles.ToHashtable());
 			
 

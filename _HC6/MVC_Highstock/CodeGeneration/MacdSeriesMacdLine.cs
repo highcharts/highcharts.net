@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public MacdSeriesMacdLine()
 		{
-			//Zones = Zones_DefaultValue = new MacdSeriesMacdLineZones();
+			Zones = Zones_DefaultValue = new MacdSeriesMacdLineZone();
 			Styles = Styles_DefaultValue = new MacdSeriesMacdLineStyles();
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		//public MacdSeriesMacdLineZones Zones { get; set; }
-		//private MacdSeriesMacdLineZones Zones_DefaultValue { get; set; }
+		public MacdSeriesMacdLineZone Zones { get; set; }
+		private MacdSeriesMacdLineZone Zones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			//if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
+			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			if (Styles.IsDirty()) h.Add("styles",Styles.ToHashtable());
 			
 

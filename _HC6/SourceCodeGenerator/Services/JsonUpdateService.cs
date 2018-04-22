@@ -236,6 +236,8 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.macd.dataGrouping", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
 
             ItemsToUpdate.Add("data.enablePolling", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
+            ItemsToUpdate.Add("plotOptions.macd.signalLine.zones", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.zones" } });
+            ItemsToUpdate.Add("plotOptions.macd.macdLine.zones", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.zones" } });
         }
     }
 

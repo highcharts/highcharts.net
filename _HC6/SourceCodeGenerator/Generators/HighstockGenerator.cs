@@ -518,6 +518,9 @@ public class HighstockGenerator
     private string GetClassNameFromItem(ApiItem item)
     {
         string[] parts = item.FullName.Split('.');
+        if (parts[parts.Length - 1] == "zones")
+            parts[parts.Length - 1] = "zone";
+
         StringBuilder result = new StringBuilder();
 
         if (item.ParentFullName == ROOT_CLASS)
