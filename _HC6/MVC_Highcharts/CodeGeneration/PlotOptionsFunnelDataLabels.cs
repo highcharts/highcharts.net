@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			X = X_DefaultValue = 0;
 			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
 			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
+			Style = Style_DefaultValue = "";
 			SoftConnector = SoftConnector_DefaultValue = null;
 			
 		}	
@@ -76,6 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public string Style { get; set; }
+		private string Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to render the connector as a soft arc or a line with sharpbreak.
 		/// </summary>
 		public double? SoftConnector { get; set; }
@@ -93,6 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
 			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
 			
 

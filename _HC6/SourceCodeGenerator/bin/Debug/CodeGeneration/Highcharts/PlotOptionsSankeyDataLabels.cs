@@ -68,28 +68,28 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to show for _nodes_ in the sankey diagram. By default the `nodeFormatter` returns`{point.name}`.
+		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to showfor _nodes_ in the sankey diagram. By default the`nodeFormatter` returns `{point.name}`.
 		/// </summary>
 		public string NodeFormat { get; set; }
 		private string NodeFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback to format data labels for _nodes_ in the sankey diagram. The `nodeFormat` option takes precedence over the `nodeFormatter`.
+		/// Callback to format data labels for _nodes_ in the sankey diagram.The `nodeFormat` option takes precedence over the `nodeFormatter`.
 		/// </summary>
 		public string NodeFormatter { get; set; }
 		private string NodeFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to show for _links_ in the sankey diagram. Defaults to an empty string returned from the `formatter`, in effect disabling the labels.
+		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to show for_links_ in the sankey diagram. Defaults to an empty string returnedfrom the `formatter`, in effect disabling the labels.
 		/// </summary>
 		public PlotOptionsSankeyDataLabelsFormat Format { get; set; }
 		private PlotOptionsSankeyDataLabelsFormat Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback to format data labels for _links_ in the sankey diagram. The `format` option takes precedence over the `formatter`.
+		/// Callback to format data labels for _links_ in the sankey diagram.The `format` option takes precedence over the `formatter`.
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }

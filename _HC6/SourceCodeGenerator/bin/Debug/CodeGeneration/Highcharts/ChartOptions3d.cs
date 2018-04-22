@@ -69,7 +69,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Defines the distance the viewer is standing in front of the chart,this setting is important to calculate the perspective effectin column and scatter charts. It is not used for 3D pie charts.
+		/// Defines the distance the viewer is standing in front of thechart, this setting is important to calculate the perspectiveeffect in column and scatter charts. It is not used for 3D piecharts.
 		/// </summary>
 		public double? ViewDistance { get; set; }
 		private double? ViewDistance_DefaultValue { get; set; }

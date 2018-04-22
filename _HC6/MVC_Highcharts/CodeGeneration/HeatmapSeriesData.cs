@@ -90,7 +90,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels)
+		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels).
 		/// </summary>
 		public HeatmapSeriesDataLabels DataLabels { get; set; }
 		private HeatmapSeriesDataLabels DataLabels_DefaultValue { get; set; }

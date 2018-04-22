@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array of points for the shape. This option is available for shapeswhich can use multiple points such as path. A point can be either a point object or a point's id.
+		/// An array of points for the shape. This option is available for shapeswhich can use multiple points such as path. A point can be eithera point object or a point's id.
 		/// </summary>
 		public List<AnnotationsShapesPoint> Points { get; set; }
 		private List<AnnotationsShapesPoint> Points_DefaultValue { get; set; }

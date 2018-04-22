@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to display the frame. Possible values are `true`, `false`,`"auto"` to display only the frames behind the data, and `"default"`to display faces behind the data based on the axis layout, ignoringthe point of view.
+		/// Whether to display the frame. Possible values are `true`,`false`, `"auto"` to display only the frames behind the data,and `"default"` to display faces behind the data based on theaxis layout, ignoring the point of view.
 		/// </summary>
 		public ChartOptions3dFrameFrontVisible Visible { get; set; }
 		private ChartOptions3dFrameFrontVisible Visible_DefaultValue { get; set; }

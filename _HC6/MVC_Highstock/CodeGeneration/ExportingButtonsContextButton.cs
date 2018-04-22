@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The symbol for the button. Points to a definition function inthe `Highcharts.Renderer.symbols` collection. The default `exportIcon`function is part of the exporting module.
+		/// The symbol for the button. Points to a definition function inthe `Highcharts.Renderer.symbols` collection. The default`exportIcon` function is part of the exporting module.
 		/// </summary>
 		public string Symbol { get; set; }
 		private string Symbol_DefaultValue { get; set; }
@@ -69,7 +69,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A collection of strings pointing to config options for the menuitems. The config options are defined in the`menuItemDefinitions` option.By default, there is the "Print" menu item plus one menu itemfor each of the available export types. Defaults to <pre>['printChart','separator','downloadPNG','downloadJPEG','downloadPDF','downloadSVG']</pre>
+		/// A collection of strings pointing to config options for the menuitems. The config options are defined in the`menuItemDefinitions` option.By default, there is the "Print" menu item plus one menu itemfor each of the available export types.Defaults to<pre>[   'printChart',   'separator',   'downloadPNG',   'downloadJPEG',   'downloadPDF',   'downloadSVG']</pre>
 		/// </summary>
 		public List<MenuItem> MenuItems { get; set; }
 		private List<MenuItem> MenuItems_DefaultValue { get; set; }

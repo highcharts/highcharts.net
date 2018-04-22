@@ -56,7 +56,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// When the rangeselector is floating, the plot area does not reserve space for it. This opens for positioning anywhere on the chart.
+		/// When the rangeselector is floating, the plot area does not reservespace for it. This opens for positioning anywhere on the chart.
 		/// </summary>
 		public bool? Floating { get; set; }
 		private bool? Floating_DefaultValue { get; set; }

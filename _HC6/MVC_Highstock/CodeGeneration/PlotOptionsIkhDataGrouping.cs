@@ -14,11 +14,12 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsIkhDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = "averages";
+			Approximation = Approximation_DefaultValue = "ichimoku-averages";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 2;
+			GroupAll = GroupAll_DefaultValue = false;
 			Smoothed = Smoothed_DefaultValue = false;
 			
 		}	
@@ -60,6 +61,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// By default only points within the visible range are grouped. Enabling thisoption will force data grouping to calculate all grouped points for a givendataset. That option prevents for example a column series from calculatinga grouped point partially. The effect is similar to[Series.getExtremesFromAll](#plotOptions.series.getExtremesFromAll) but doesnot affect yAxis extremes.
+		/// </summary>
+		public bool? GroupAll { get; set; }
+		private bool? GroupAll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Normally, a group is indexed by the start of that group, so for examplewhen 30 daily values are grouped into one month, that month's x valuewill be the 1st of the month. This apparently shifts the data tothe left. When the smoothed option is true, this is compensated for.The data is shifted to the middle of the group, and min and maxvalues are preserved. Internally, this is used in the Navigator series.
 		/// </summary>
 		public bool? Smoothed { get; set; }
@@ -75,6 +83,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Forced != Forced_DefaultValue) h.Add("forced",Forced);
 			if (GroupPixelWidth != GroupPixelWidth_DefaultValue) h.Add("groupPixelWidth",GroupPixelWidth);
+			if (GroupAll != GroupAll_DefaultValue) h.Add("groupAll",GroupAll);
 			if (Smoothed != Smoothed_DefaultValue) h.Add("smoothed",Smoothed);
 			
 

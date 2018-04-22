@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The radius of the point marker. In hover state, it defaultsto the normal state's radius + 2 as per the[radiusPlus](#plotOptions.series.marker.states.hover.radiusPlus)option.
+		/// The radius of the point marker. In hover state, it defaultsto the normal state's radius + 2 as per the [radiusPlus](#plotOptions.series.marker.states.hover.radiusPlus)option.
 		/// </summary>
 		public double? Radius { get; set; }
 		private double? Radius_DefaultValue { get; set; }

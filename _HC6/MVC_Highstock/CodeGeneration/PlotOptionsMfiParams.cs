@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The id of volume series which is mandatory.For example using OHLC data, volumeSeriesID='volume' means the indicator will be calculated using OHLC and volume values.
+		/// The id of volume series which is mandatory.For example using OHLC data, volumeSeriesID='volume' meansthe indicator will be calculated using OHLC and volume values.
 		/// </summary>
 		public string VolumeSeriesID { get; set; }
 		private string VolumeSeriesID_DefaultValue { get; set; }

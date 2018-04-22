@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Set the keyboard navigation mode for the chart. Can be "normal"or "serialize". In normal mode, left/right arrow keys movebetween points in a series, while up/down arrow keys move betweenseries. Up/down navigation acts intelligently to figure out whichseries makes sense to move to from any given point.In "serialize" mode, points are instead navigated as a single list. Left/right behaves as in "normal" mode. Up/down arrow keyswill behave like left/right. This is useful for unifying navigation behavior with/without screen readers enabled.
+		/// Set the keyboard navigation mode for the chart. Can be "normal"or "serialize". In normal mode, left/right arrow keys movebetween points in a series, while up/down arrow keys move betweenseries. Up/down navigation acts intelligently to figure out whichseries makes sense to move to from any given point.In "serialize" mode, points are instead navigated as a singlelist. Left/right behaves as in "normal" mode. Up/down arrow keyswill behave like left/right. This is useful for unifyingnavigation behavior with/without screen readers enabled.
 		/// </summary>
 		public string Mode { get; set; }
 		private string Mode_DefaultValue { get; set; }

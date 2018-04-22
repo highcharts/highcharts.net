@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The amount of the X-range point to be filled. Values can be 0-1 and are converted to percentages in the default data label formatter.
+		/// The amount of the X-range point to be filled. Values can be 0-1 and areconverted to percentages in the default data label formatter.
 		/// </summary>
 		public double? Amount { get; set; }
 		private double? Amount_DefaultValue { get; set; }

@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Defs = Defs_DefaultValue = null;
 			Annotations = Annotations_DefaultValue = new List<Annotations>();
 			Boost = Boost_DefaultValue = new Boost();
+			Data = Data_DefaultValue = new Data();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			Drilldown = Drilldown_DefaultValue = new Drilldown();
 			Chart = Chart_DefaultValue = new Chart();
@@ -55,7 +56,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The plotOptions is a wrapper object for config objects for each seriestype. The config objects for each series can also be overridden foreach series item as given in the series array.Configuration options for the series are given in three levels. Optionsfor all series in a chart are given in the [plotOptions.series](#plotOptions.series) object. Then options for all series of a specific type aregiven in the plotOptions of that type, for example plotOptions.line.Next, options for one single series are given in [the series array](#series).
+		/// The plotOptions is a wrapper object for config objects for each seriestype. The config objects for each series can also be overridden foreach series item as given in the series array.Configuration options for the series are given in three levels. Optionsfor all series in a chart are given in the [plotOptions.series](#plotOptions.series) object. Then options for all series of a specifictype are given in the plotOptions of that type, for example`plotOptions.line`. Next, options for one single series are given in[the series array](#series).
 		/// </summary>
 		public PlotOptions PlotOptions { get; set; }
 		private PlotOptions PlotOptions_DefaultValue { get; set; }
@@ -76,17 +77,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for configuring annotations, for example labels, arrows or shapes. Annotations can be tied to points, axis coordinates or chartpixel coordinates.
+		/// Options for configuring annotations, for example labels, arrows orshapes. Annotations can be tied to points, axis coordinates or chartpixel coordinates.
 		/// </summary>
 		public List<Annotations> Annotations { get; set; }
 		private List<Annotations> Annotations_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the Boost module. The Boost module allows certain series typesto be rendered by WebGL instead of the default SVG. This allows hundreds ofthousands of data points to be rendered in milliseconds. In addition to theWebGL rendering it saves time by skipping processing and inspection of thedata wherever possible. This introduces some limitations to what features areavailable in Boost mode. See [the docs](https://www.highcharts.com/docs/advanced-chart-features/boost-module)for details.In addition to the global `boost` option, each series has a[boostThreshold](#plotOptions.series.boostThreshold) that defines when theboost should kick in.Requires the `modules/boost.js` module.
+		/// Options for the Boost module. The Boost module allows certain series typesto be rendered by WebGL instead of the default SVG. This allows hundreds ofthousands of data points to be rendered in milliseconds. In addition to theWebGL rendering it saves time by skipping processing and inspection of thedata wherever possible. This introduces some limitations to what features areavailable in Boost mode. See [the docs](https://www.highcharts.com/docs/advanced-chart-features/boost-module) fordetails.In addition to the global `boost` option, each series has a[boostThreshold](#plotOptions.series.boostThreshold) that defines when theboost should kick in.Requires the `modules/boost.js` module.
 		/// </summary>
 		public Boost Boost { get; set; }
 		private Boost Boost_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Data module provides a simplified interface for adding data toa chart from sources like CVS, HTML tables or grid views. See alsothe [tutorial article on the Data module](http://www.highcharts.com/docs/working-with-data/data-module).It requires the `modules/data.js` file to be loaded.Please note that the default way of adding data in Highcharts, withoutthe need of a module, is through the [series.data](#series.data)option.
+		/// </summary>
+		public Data Data { get; set; }
+		private Data Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -97,7 +105,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for drill down, the concept of inspecting increasingly high resolution data through clicking on chart items like columns or pie slices.The drilldown feature requires the drilldown.js file to be loaded, found in the modules directory of the download package, or online at (code.highcharts.com/modules/drilldown.js)[code.highcharts.com/modules/drilldown.js].
+		/// Options for drill down, the concept of inspecting increasingly highresolution data through clicking on chart items like columns or pie slices.The drilldown feature requires the drilldown.js file to be loaded,found in the modules directory of the download package, or online at(code.highcharts.com/modules/drilldown.js)[code.highcharts.com/modules/drilldown.js].
 		/// </summary>
 		public Drilldown Drilldown { get; set; }
 		private Drilldown Drilldown_DefaultValue { get; set; }
@@ -111,14 +119,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the exporting module. For an overview on the matter, see [the docs](http://www.highcharts.com/docs/export-module/export-module-overview).
+		/// Options for the exporting module. For an overview on the matter, see[the docs](http://www.highcharts.com/docs/export-module/export-module-overview).
 		/// </summary>
 		public Exporting Exporting { get; set; }
 		private Exporting Exporting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A collection of options for buttons and menus appearing in the exporting module.
+		/// A collection of options for buttons and menus appearing in the exportingmodule.
 		/// </summary>
 		public Navigation Navigation { get; set; }
 		private Navigation Navigation_DefaultValue { get; set; }
@@ -139,7 +147,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for displaying a message like "No data to display". This feature requires the file no-data-to-display.js to be loaded in thepage. The actual text to display is set in the lang.noData option.
+		/// Options for displaying a message like "No data to display".This feature requires the file no-data-to-display.js to be loaded in thepage. The actual text to display is set in the lang.noData option.
 		/// </summary>
 		public NoData NoData { get; set; }
 		private NoData NoData_DefaultValue { get; set; }
@@ -174,7 +182,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Time options that can apply globally or to individual charts. Thesesettings affect how `datetime` axes are laid out, how tooltips areformatted, how series[pointIntervalUnit](#plotOptions.series.pointIntervalUnit) works and howthe Highstock range selector handles time.The common use case is that all charts in the same Highcharts objectshare the same time settings, in which case the global settings are setusing `setOptions`.```js// Apply time settings globallyHighcharts.setOptions({    time: {        timezone: 'Europe/London'    }});// Apply time settings by instancevar chart = Highcharts.chart('container', {    time: {        timezone: 'America/New_York'    },    series: [{        data: [1, 4, 3, 5]    }]});// Use the Time objectconsole.log(   'Current time in New York',    chart.time.dateFormat('%Y-%m-%d %H:%M:%S', Date.now()));```Since v6.0.5, the time options were moved from the `global` obect to the`time` object, and time options can be set on each individual chart.
+		/// Time options that can apply globally or to individual charts. Thesesettings affect how `datetime` axes are laid out, how tooltips areformatted, how series[pointIntervalUnit](#plotOptions.series.pointIntervalUnit) works and howthe Highstock range selector handles time.The common use case is that all charts in the same Highcharts objectshare the same time settings, in which case the global settings are setusing `setOptions`.```js// Apply time settings globallyHighcharts.setOptions({    time: {        timezone: 'Europe/London'    }});// Apply time settings by instancevar chart = Highcharts.chart('container', {    time: {        timezone: 'America/New_York'    },    series: [{        data: [1, 4, 3, 5]    }]});// Use the Time objectconsole.log(       'Current time in New York',       chart.time.dateFormat('%Y-%m-%d %H:%M:%S', Date.now()));```Since v6.0.5, the time options were moved from the `global` obect to the`time` object, and time options can be set on each individual chart.
 		/// </summary>
 		public Time Time { get; set; }
 		private Time Time_DefaultValue { get; set; }
@@ -244,7 +252,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The pane serves as a container for axes and backgrounds for circular gauges and polar charts.
+		/// The pane serves as a container for axes and backgrounds for circulargauges and polar charts.
 		/// </summary>
 		public Pane Pane { get; set; }
 		private Pane Pane_DefaultValue { get; set; }
@@ -260,6 +268,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Defs != Defs_DefaultValue) h.Add("defs",Defs);
 			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
 			if (Boost.IsDirty()) h.Add("boost",Boost.ToHashtable());
+			if (Data.IsDirty()) h.Add("data",Data.ToHashtable());
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
 			if (Drilldown.IsDirty()) h.Add("drilldown",Drilldown.ToHashtable());
 			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());

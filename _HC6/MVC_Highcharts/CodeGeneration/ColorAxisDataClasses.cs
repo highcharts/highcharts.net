@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The color of each data class. If not set, the color is pulled fromthe global or chart-specific [colors](#colors) array. In styled mode, this option is ignored. Instead, use colors defined inCSS.
+		/// The color of each data class. If not set, the color is pulledfrom the global or chart-specific [colors](#colors) array. Instyled mode, this option is ignored. Instead, use colors definedin CSS.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }

@@ -165,14 +165,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Defines how the labels are be repositioned according to the 3D chartorientation.- `'offset'`: Maintain a fixed horizontal/vertical distance from the tick marks, despite the chart orientation. This is the backwards compatible behavior, and causes skewing of X and Z axes.- `'chart'`: Preserve 3D position relative to the chart.  This looks nice, but hard to read if the text isn't  forward-facing.- `'flap'`: Rotated text along the axis to compensate for the chart orientation. This tries to maintain text as legible as possible on all orientations.- `'ortho'`: Rotated text along the axis direction so that the labels are orthogonal to the axis. This is very similar to `'flap'`, but prevents skewing the labels (X and Y scaling are still present).
+		/// Defines how the labels are be repositioned according to the 3D chartorientation.- `'offset'`: Maintain a fixed horizontal/vertical distance from the     tick marks, despite the chart orientation. This is the backwards     compatible behavior, and causes skewing of X and Z axes.- `'chart'`: Preserve 3D position relative to the chart.  This looks nice, but hard to read if the text isn't  forward-facing.- `'flap'`: Rotated text along the axis to compensate for the chart     orientation. This tries to maintain text as legible as possible     on all orientations.- `'ortho'`: Rotated text along the axis direction so that the labels     are orthogonal to the axis. This is very similar to `'flap'`,     but prevents skewing the labels (X and Y scaling are still     present).
 		/// </summary>
 		public ChartParallelAxesLabelsPosition3d Position3d { get; set; }
 		private ChartParallelAxesLabelsPosition3d Position3d_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// If enabled, the axis labels will skewed to follow the perspective. This will fix overlapping labels and titles, but texts become lesslegible due to the distortion.The final appearance depends heavily on `labels.position3d`.
+		/// If enabled, the axis labels will skewed to follow the perspective.This will fix overlapping labels and titles, but texts become lesslegible due to the distortion.The final appearance depends heavily on `labels.position3d`.
 		/// </summary>
 		public bool? Skew3d { get; set; }
 		private bool? Skew3d_DefaultValue { get; set; }

@@ -14,10 +14,18 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsMacdMacdLine()
 		{
+		//	Zones = Zones_DefaultValue = new PlotOptionsMacdMacdLineZones();
 			Styles = Styles_DefaultValue = new PlotOptionsMacdMacdLineStyles();
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		//public PlotOptionsMacdMacdLineZones Zones { get; set; }
+		//private PlotOptionsMacdMacdLineZones Zones_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -30,6 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			//if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			if (Styles.IsDirty()) h.Add("styles",Styles.ToHashtable());
 			
 

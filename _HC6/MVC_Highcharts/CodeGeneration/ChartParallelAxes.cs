@@ -43,6 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = null;
 			Max = Max_DefaultValue = null;
+			AlignTicks = AlignTicks_DefaultValue = true;
 			Min = Min_DefaultValue = null;
 			MinorTickInterval = MinorTickInterval_DefaultValue = null;
 			MinorTicks = MinorTicks_DefaultValue = false;
@@ -80,7 +81,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Titles for yAxes are taken from [xAxis.categories](#xAxis.categories). All options for `xAxis.labels` applies to parallel coordinates titles.For example, to style categories, use [xAxis.labels.style](#xAxis.labels.style).
+		/// Titles for yAxes are taken from[xAxis.categories](#xAxis.categories). All options for`xAxis.labels` applies to parallel coordinates titles.For example, to style categories, use[xAxis.labels.style](#xAxis.labels.style).
 		/// </summary>
 		public ChartParallelAxesTitle Title { get; set; }
 		private ChartParallelAxesTitle Title_DefaultValue { get; set; }
@@ -157,7 +158,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If tickInterval is `null` this option sets the approximate pixelinterval of the tick marks. Not applicable to categorized axis.The tick interval is also influenced by the [minTickInterval](#xAxis.minTickInterval) option, that, by default prevents ticks from beingdenser than the data points.
+		/// If tickInterval is `null` this option sets the approximate pixelinterval of the tick marks. Not applicable to categorized axis.The tick interval is also influenced by the [minTickInterval](#xAxis.minTickInterval) option, that, by default prevents ticks frombeing denser than the data points.
 		/// </summary>
 		public double? TickPixelInterval { get; set; }
 		private double? TickPixelInterval_DefaultValue { get; set; }
@@ -171,7 +172,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of axis. Can be one of `linear`, `logarithmic`, `datetime`or `category`. In a datetime axis, the numbers are given inmilliseconds, and tick marks are placed on appropriate values likefull hours or days. In a category axis, the [point names](#series.line.data.name) of the chart's series are usedfor categories, if not a [categories](#xAxis.categories) array isdefined.
+		/// The type of axis. Can be one of `linear`, `logarithmic`, `datetime`or `category`. In a datetime axis, the numbers are given inmilliseconds, and tick marks are placed on appropriate values likefull hours or days. In a category axis, the[point names](#series.line.data.name) of the chart's series are usedfor categories, if not a [categories](#xAxis.categories) array isdefined.
 		/// </summary>
 		public ChartParallelAxesType Type { get; set; }
 		private ChartParallelAxesType Type_DefaultValue { get; set; }
@@ -276,7 +277,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The minimum value of the axis. If `null` the min value is automatically calculated.If the `startOnTick` option is true (default), the `min` value mightbe rounded down.The automatically calculated minimum value is also affected by[floor](#yAxis.floor), [softMin](#yAxis.softMin),[minPadding](#yAxis.minPadding), [minRange](#yAxis.minRange)as well as [series.threshold](#plotOptions.series.threshold)and [series.softThreshold](#plotOptions.series.softThreshold).
+		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
+		/// </summary>
+		public bool? AlignTicks { get; set; }
+		private bool? AlignTicks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The minimum value of the axis. If `null` the min value isautomatically calculated.If the `startOnTick` option is true (default), the `min` value mightbe rounded down.The automatically calculated minimum value is also affected by[floor](#yAxis.floor), [softMin](#yAxis.softMin),[minPadding](#yAxis.minPadding), [minRange](#yAxis.minRange)as well as [series.threshold](#plotOptions.series.threshold)and [series.softThreshold](#plotOptions.series.softThreshold).
 		/// </summary>
 		public double? Min { get; set; }
 		private double? Min_DefaultValue { get; set; }
@@ -388,7 +396,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A callback function returning array defining where the ticks arelaid out on the axis. This overrides the default behaviour of [tickPixelInterval](#xAxis.tickPixelInterval) and [tickInterval](#xAxis.tickInterval). The automatictick positions are accessible through `this.tickPositions` and canbe modified by the callback.
+		/// A callback function returning array defining where the ticks arelaid out on the axis. This overrides the default behaviour of[tickPixelInterval](#xAxis.tickPixelInterval) and[tickInterval](#xAxis.tickInterval). The automatic tick positions areaccessible through `this.tickPositions` and can be modified by the callback.
 		/// </summary>
 		public string TickPositioner { get; set; }
 		private string TickPositioner_DefaultValue { get; set; }
@@ -483,6 +491,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
+			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);

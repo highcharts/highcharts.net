@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public RsiSeriesLabel()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			ConnectorAllowed = ConnectorAllowed_DefaultValue = true;
+			ConnectorAllowed = ConnectorAllowed_DefaultValue = false;
 			ConnectorNeighbourDistance = ConnectorNeighbourDistance_DefaultValue = 24;
 			MinFontSize = MinFontSize_DefaultValue = null;
 			MaxFontSize = MaxFontSize_DefaultValue = null;
@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Allow labels to be placed distant to the graph if necessary,and draw a connector line to the graph.
+		/// Allow labels to be placed distant to the graph if necessary,and draw a connector line to the graph. Setting this optionto true may decrease the performance significantly, since thealgorithm with systematically search for open spaces in thewhile plot area. Visually, it may also result in a morecluttered chart, though more of the series will be labeled.
 		/// </summary>
 		public bool? ConnectorAllowed { get; set; }
 		private bool? ConnectorAllowed_DefaultValue { get; set; }
@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array of boxes to avoid when laying out the labels. Each item has a `left`, `right`, `top` and `bottom` property.
+		/// An array of boxes to avoid when laying out the labels. Eachitem has a `left`, `right`, `top` and `bottom` property.
 		/// </summary>
 		public List<object> BoxesToAvoid { get; set; }
 		private List<object> BoxesToAvoid_DefaultValue { get; set; }

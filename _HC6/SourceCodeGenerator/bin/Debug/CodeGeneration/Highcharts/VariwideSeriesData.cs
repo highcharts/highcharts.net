@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The relative width for each column. The widths are distributed so they sum up to the X axis length.
+		/// The relative width for each column. The widths are distributed so they sumup to the X axis length.
 		/// </summary>
 		public double? Z { get; set; }
 		private double? Z_DefaultValue { get; set; }
@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Individual color for the point. By default the color is pulled fromthe global `colors` array.In styled mode, the `color` option doesn't take effect. Instead, use `colorIndex`.
+		/// Individual color for the point. By default the color is pulled fromthe global `colors` array.In styled mode, the `color` option doesn't take effect. Instead, use`colorIndex`.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
@@ -68,7 +68,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels)
+		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels).
 		/// </summary>
 		public VariwideSeriesDataLabels DataLabels { get; set; }
 		private VariwideSeriesDataLabels DataLabels_DefaultValue { get; set; }

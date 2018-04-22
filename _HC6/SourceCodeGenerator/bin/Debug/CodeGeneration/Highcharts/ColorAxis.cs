@@ -14,7 +14,6 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColorAxis()
 		{
-			LineWidth = LineWidth_DefaultValue = 0;
 			MinPadding = MinPadding_DefaultValue = 0;
 			MaxPadding = MaxPadding_DefaultValue = 0;
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
@@ -55,6 +54,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = ColorAxisGridLineDashStyle.Solid;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Id = Id_DefaultValue = "null";
+			AlignTicks = AlignTicks_DefaultValue = true;
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = ColorAxisMinorGridLineDashStyle.Solid;
 			MinorTickInterval = MinorTickInterval_DefaultValue = null;
 			MinorTicks = MinorTicks_DefaultValue = false;
@@ -73,13 +73,6 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer.
@@ -110,14 +103,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.
+		/// Whether to force the axis to start on a tick. Use this optionwith the `maxPadding` option to control the axis start.
 		/// </summary>
 		public bool? StartOnTick { get; set; }
 		private bool? StartOnTick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to force the axis to end on a tick. Use this option withthe [maxPadding](#colorAxis.maxPadding) option to control the axisend.
+		/// Whether to force the axis to end on a tick. Use this option withthe [maxPadding](#colorAxis.maxPadding) option to control theaxis end.
 		/// </summary>
 		public bool? EndOnTick { get; set; }
 		private bool? EndOnTick_DefaultValue { get; set; }
@@ -138,14 +131,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color to represent the minimum of the color axis. Unless [dataClasses](#colorAxis.dataClasses) or [stops](#colorAxis.stops) are set, the gradientstarts at this value.If dataClasses are set, the color is based on minColor and maxColorunless a color is set for each data class, or the [dataClassColor](#colorAxis.dataClassColor) is set.
+		/// The color to represent the minimum of the color axis. Unless[dataClasses](#colorAxis.dataClasses) or[stops](#colorAxis.stops) are set, the gradient starts at thisvalue.If dataClasses are set, the color is based on minColor andmaxColor unless a color is set for each data class, or the[dataClassColor](#colorAxis.dataClassColor) is set.
 		/// </summary>
 		public string MinColor { get; set; }
 		private string MinColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The color to represent the maximum of the color axis. Unless [dataClasses](#colorAxis.dataClasses) or [stops](#colorAxis.stops) are set, the gradientends at this value.If dataClasses are set, the color is based on minColor and maxColorunless a color is set for each data class, or the [dataClassColor](#colorAxis.dataClassColor) is set.
+		/// The color to represent the maximum of the color axis. Unless[dataClasses](#colorAxis.dataClasses) or[stops](#colorAxis.stops) are set, the gradient ends at thisvalue.If dataClasses are set, the color is based on minColor andmaxColor unless a color is set for each data class, or the[dataClassColor](#colorAxis.dataClassColor) is set.
 		/// </summary>
 		public string MaxColor { get; set; }
 		private string MaxColor_DefaultValue { get; set; }
@@ -173,63 +166,63 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Determines how to set each data class' color if no individual coloris set. The default value, `tween`, computes intermediate colorsbetween `minColor` and `maxColor`. The other possible value, `category`,pulls colors from the global or chart specific [colors](#colors)array.
+		/// Determines how to set each data class' color if no individualcolor is set. The default value, `tween`, computes intermediatecolors between `minColor` and `maxColor`. The other possiblevalue, `category`, pulls colors from the global or chart specific[colors](#colors) array.
 		/// </summary>
 		public ColorAxisDataClassColor DataClassColor { get; set; }
 		private ColorAxisDataClassColor DataClassColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of data classes or ranges for the choropleth map. If nonegiven, the color axis is scalar and values are distributed as a gradientbetween the minimum and maximum colors.
+		/// An array of data classes or ranges for the choropleth map. Ifnone given, the color axis is scalar and values are distributedas a gradient between the minimum and maximum colors.
 		/// </summary>
 		public List<ColorAxisDataClasses> DataClasses { get; set; }
 		private List<ColorAxisDataClasses> DataClasses_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The maximum value of the axis in terms of map point values. If `null`,the max value is automatically calculated. If the `endOnTick` optionis true, the max value might be rounded up.
+		/// The maximum value of the axis in terms of map point values. If`null`, the max value is automatically calculated. If the`endOnTick` option is true, the max value might be rounded up.
 		/// </summary>
 		public double? Max { get; set; }
 		private double? Max_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The minimum value of the axis in terms of map point values. If `null`,the min value is automatically calculated. If the `startOnTick`option is true, the min value might be rounded down.
+		/// The minimum value of the axis in terms of map point values. If`null`, the min value is automatically calculated. If the`startOnTick` option is true, the min value might be roundeddown.
 		/// </summary>
 		public double? Min { get; set; }
 		private double? Min_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Color of the grid lines extending from the axis across the gradient.
+		/// Color of the grid lines extending from the axis across thegradient.
 		/// </summary>
 		public string GridLineColor { get; set; }
 		private string GridLineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The interval of the tick marks in axis units. When `null`, the tickinterval is computed to approximately follow the `tickPixelInterval`.
+		/// The interval of the tick marks in axis units. When `null`, thetick interval is computed to approximately follow the`tickPixelInterval`.
 		/// </summary>
 		public double? TickInterval { get; set; }
 		private double? TickInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Color stops for the gradient of a scalar color axis. Use this incases where a linear gradient between a `minColor` and `maxColor`is not sufficient. The stops is an array of tuples, where the firstitem is a float between 0 and 1 assigning the relative position inthe gradient, and the second item is the color.
+		/// Color stops for the gradient of a scalar color axis. Use this incases where a linear gradient between a `minColor` and `maxColor`is not sufficient. The stops is an array of tuples, where thefirst item is a float between 0 and 1 assigning the relativeposition in the gradient, and the second item is the color.
 		/// </summary>
 		public List<Stop> Stops { get; set; }
 		private List<Stop> Stops_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The type of interpolation to use for the color axis. Can be `linear`or `logarithmic`.
+		/// The type of interpolation to use for the color axis. Can be`linear` or `logarithmic`.
 		/// </summary>
 		public ColorAxisType Type { get; set; }
 		private ColorAxisType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to reverse the axis so that the highest number is closestto the origin. Defaults to `false` in a horizontal legend and `true`in a vertical legend, where the smallest value starts on top.
+		/// Whether to reverse the axis so that the highest number is closestto the origin. Defaults to `false` in a horizontal legend and`true` in a vertical legend, where the smallest value starts ontop.
 		/// </summary>
 		public bool? Reversed { get; set; }
 		private bool? Reversed_DefaultValue { get; set; }
@@ -362,6 +355,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
+		/// </summary>
+		public bool? AlignTicks { get; set; }
+		private bool? AlignTicks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The dash or dot style of the minor grid lines. For possible values,see [this demonstration](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public ColorAxisMinorGridLineDashStyle MinorGridLineDashStyle { get; set; }
@@ -432,7 +432,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A callback function returning array defining where the ticks arelaid out on the axis. This overrides the default behaviour of [tickPixelInterval](#xAxis.tickPixelInterval) and [tickInterval](#xAxis.tickInterval). The automatictick positions are accessible through `this.tickPositions` and canbe modified by the callback.
+		/// A callback function returning array defining where the ticks arelaid out on the axis. This overrides the default behaviour of[tickPixelInterval](#xAxis.tickPixelInterval) and[tickInterval](#xAxis.tickInterval). The automatic tick positions areaccessible through `this.tickPositions` and can be modified by the callback.
 		/// </summary>
 		public string TickPositioner { get; set; }
 		private string TickPositioner_DefaultValue { get; set; }
@@ -470,7 +470,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
@@ -511,6 +510,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle", Highcharts.FirstCharacterToLower(GridLineDashStyle.ToString()));
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle", Highcharts.FirstCharacterToLower(MinorGridLineDashStyle.ToString()));
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);

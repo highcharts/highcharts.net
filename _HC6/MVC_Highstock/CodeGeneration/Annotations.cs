@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Visible = Visible_DefaultValue = true;
 			LabelOptions = LabelOptions_DefaultValue = new AnnotationsLabelOptions();
 			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsShapeOptions();
-			ZIndex = ZIndex_DefaultValue = null;
+			ZIndex = ZIndex_DefaultValue = 6;
 			Labels = Labels_DefaultValue = new List<AnnotationsLabels>();
 			Shapes = Shapes_DefaultValue = new List<AnnotationsShapes>();
 			

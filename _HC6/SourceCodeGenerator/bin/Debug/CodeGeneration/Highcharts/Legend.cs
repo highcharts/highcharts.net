@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new LegendKeyboardNavigation();
 			Enabled = Enabled_DefaultValue = true;
 			Align = Align_DefaultValue = LegendAlign.Center;
+			AlignColumns = AlignColumns_DefaultValue = true;
 			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
 			LabelFormatter = LabelFormatter_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#999999";
@@ -76,6 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public LegendAlign Align { get; set; }
 		private LegendAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If the [layout](legend.layout) is `horizontal` and the legend itemsspan over two lines or more, whether to align the items into verticalcolumns. Setting this to `false` makes room for more items, but willlook more messy.
+		/// </summary>
+		public bool? AlignColumns { get; set; }
+		private bool? AlignColumns_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -233,7 +241,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width for each legend item. This is useful in a horizontal layoutwith many items when you want the items to align vertically. .
+		/// The width for each legend item. By default the items are laid outsuccessively. In a [horizontal layout](legend.layout), if the itemsare laid out across two rows or more, they will be vertically aligneddepending on the [legend.alignColumns](legend.alignColumns) option.
 		/// </summary>
 		public double? ItemWidth { get; set; }
 		private double? ItemWidth_DefaultValue { get; set; }
@@ -337,6 +345,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (AlignColumns != AlignColumns_DefaultValue) h.Add("alignColumns",AlignColumns);
 			if (Layout != Layout_DefaultValue) h.Add("layout", Highcharts.FirstCharacterToLower(Layout.ToString()));
 			if (LabelFormatter != LabelFormatter_DefaultValue) { h.Add("labelFormatter",LabelFormatter); Highcharts.AddFunction("LegendLabelFormatter.labelFormatter", LabelFormatter); }  
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);

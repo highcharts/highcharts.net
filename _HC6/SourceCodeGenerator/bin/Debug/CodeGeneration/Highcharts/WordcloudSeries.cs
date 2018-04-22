@@ -50,13 +50,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new WordcloudSeriesTooltip();
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			StartFromThreshold = StartFromThreshold_DefaultValue = true;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			Colors = Colors_DefaultValue = new List<string>();
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			Clip = Clip_DefaultValue = false;
+			MinFontSize = MinFontSize_DefaultValue = 1;
+			MaxFontSize = MaxFontSize_DefaultValue = 25;
 			PlacementStrategy = PlacementStrategy_DefaultValue = "center";
 			Rotation = Rotation_DefaultValue = new WordcloudSeriesRotation();
 			Spiral = Spiral_DefaultValue = "rectangular";
@@ -66,7 +67,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// An array of data points for the series. For the `wordcloud` seriestype, points can be given in the following ways:1.  An array of arrays with 2 values. In this case, the valuescorrespond to `name,weight`.  ```js    data: [        ['Lorem', 4],        ['Ipsum', 1]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series'[turboThreshold](#series.arearange.turboThreshold), this option is notavailable. ```js    data: [{        name: "Lorem",        weight: 4    }, {        name: "Ipsum",        weight: 1    }] ```
+		/// An array of data points for the series. For the `wordcloud` seriestype, points can be given in the following ways:1.  An array of arrays with 2 values. In this case, the valuescorrespond to `name,weight`. ```js    data: [        ['Lorem', 4],        ['Ipsum', 1]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series'[turboThreshold](#series.arearange.turboThreshold), this option is notavailable. ```js    data: [{        name: "Lorem",        weight: 4    }, {        name: "Ipsum",        weight: 1    }] ```
 		/// </summary>
 		public List<WordcloudSeriesData> Data { get; set; }
 		private List<WordcloudSeriesData> Data_DefaultValue { get; set; }
@@ -143,7 +144,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic (columns, point markers, pie slices, map areas etc).
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -269,7 +270,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Same as [accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter), but for an individual series. Overridesthe chart wide configuration.
+		/// Same as [accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter), but for an individual series.Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
 		private string PointDescriptionFormatter_DefaultValue { get; set; }
@@ -318,13 +319,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public bool? StartFromThreshold { get; set; }
-		private bool? StartFromThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public string BorderColor { get; set; }
@@ -364,6 +358,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Clip { get; set; }
 		private bool? Clip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A threshold determining the minimum font size that can be applied to aword.
+		/// </summary>
+		public double? MinFontSize { get; set; }
+		private double? MinFontSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The word with the largest weight will have a font size equal to thisvalue. The font size of a word is the ratio between its weight and thelargest occuring weight, multiplied with the value of maxFontSize.
+		/// </summary>
+		public double? MaxFontSize { get; set; }
+		private double? MaxFontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -434,13 +442,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (StartFromThreshold != StartFromThreshold_DefaultValue) h.Add("startFromThreshold",StartFromThreshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
+			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
+			if (MaxFontSize != MaxFontSize_DefaultValue) h.Add("maxFontSize",MaxFontSize);
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
 			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
 			if (Spiral != Spiral_DefaultValue) h.Add("spiral",Spiral);

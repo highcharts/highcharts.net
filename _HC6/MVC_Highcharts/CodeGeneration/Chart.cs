@@ -60,6 +60,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "null";
 			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "null";
+			ScrollablePlotArea = ScrollablePlotArea_DefaultValue = new ChartScrollablePlotArea();
 			Options3d = Options3d_DefaultValue = new ChartOptions3d();
 			
 		}	
@@ -80,7 +81,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Common options for all yAxes rendered in a parallel coordinates plot.This feature requires `modules/parallel-coordinates.js`.The default options are:<pre>parallelAxes: {lineWidth: 1,       // classic mode onlygridlinesWidth: 0,  // classic mode onlytitle: {text: '',reserveSpace: false},labels: {x: 0,y: 0,align: 'center',reserveSpace: false},offset: 0}</pre>
+		/// Common options for all yAxes rendered in a parallel coordinates plot.This feature requires `modules/parallel-coordinates.js`.The default options are:<pre>parallelAxes: {   lineWidth: 1,       // classic mode only   gridlinesWidth: 0,  // classic mode only   title: {       text: '',       reserveSpace: false   },   labels: {       x: 0,       y: 0,       align: 'center',       reserveSpace: false   },   offset: 0}</pre>
 		/// </summary>
 		public ChartParallelAxes ParallelAxes { get; set; }
 		private ChartParallelAxes ParallelAxes_DefaultValue { get; set; }
@@ -178,7 +179,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.
+		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
 		/// </summary>
 		public bool? AlignTicks { get; set; }
 		private bool? AlignTicks_DefaultValue { get; set; }
@@ -388,6 +389,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for a scrollable plot area. This feature provides a minimum width forthe plot area of the chart. If the width gets smaller than this, typicallyon mobile devices, a native browser scrollbar is presented below the chart.This scrollbar provides smooth scrolling for the contents of the plot area,whereas the title, legend and axes are fixed.
+		/// </summary>
+		public ChartScrollablePlotArea ScrollablePlotArea { get; set; }
+		private ChartScrollablePlotArea ScrollablePlotArea_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options to render charts in 3 dimensions. This feature requires`highcharts-3d.js`, found in the download package or online at[code.highcharts.com/highcharts-3d.js](http://code.highcharts.com/highcharts-3d.js).
 		/// </summary>
 		public ChartOptions3d Options3d { get; set; }
@@ -444,6 +452,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
 			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
+			if (ScrollablePlotArea.IsDirty()) h.Add("scrollablePlotArea",ScrollablePlotArea.ToHashtable());
 			if (Options3d.IsDirty()) h.Add("options3d",Options3d.ToHashtable());
 			
 

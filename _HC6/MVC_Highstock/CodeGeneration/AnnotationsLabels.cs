@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to allow the annotation's labels to overlap.To make the labels less sensitive for overlapping, the can be set to 0.
+		/// Whether to allow the annotation's labels to overlap.To make the labels less sensitive for overlapping,the can be set to 0.
 		/// </summary>
 		public bool? AllowOverlap { get; set; }
 		private bool? AllowOverlap_DefaultValue { get; set; }
@@ -118,7 +118,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// When either the borderWidth or the backgroundColor is set,thisis the padding within the box.
+		/// When either the borderWidth or the backgroundColor is set,this    is the padding within the box.
 		/// </summary>
 		public string Padding { get; set; }
 		private string Padding_DefaultValue { get; set; }

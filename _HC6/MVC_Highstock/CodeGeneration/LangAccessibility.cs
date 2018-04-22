@@ -30,6 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MapZoomOut = MapZoomOut_DefaultValue = "Zoom out chart";
 			RangeSelectorButton = RangeSelectorButton_DefaultValue = "Select range {buttonText}";
 			LegendItem = LegendItem_DefaultValue = "Toggle visibility of series {itemName}";
+			SvgContainerTitle = SvgContainerTitle_DefaultValue = "{chartTitle}";
 			SeriesTypeDescriptions = SeriesTypeDescriptions_DefaultValue = new LangAccessibilitySeriesTypeDescriptions();
 			ChartTypes = ChartTypes_DefaultValue = new LangAccessibilityChartTypes();
 			Axis = Axis_DefaultValue = new LangAccessibilityAxis();
@@ -152,6 +153,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Title element text for the chart SVG element. Leave thisempty to disable adding the title element. Browsers will displaythis content when hovering over elements in the chart. Assistivetechnology may use this element to label the chart.
+		/// </summary>
+		public string SvgContainerTitle { get; set; }
+		private string SvgContainerTitle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Descriptions of lesser known series types. The relevantdescription is added to the screen reader information regionwhen these series types are used.
 		/// </summary>
 		public LangAccessibilitySeriesTypeDescriptions SeriesTypeDescriptions { get; set; }
@@ -159,7 +167,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Chart type description strings. This is added to the chart information region.If there is only a single series type used in the chart, we usethe format string for the series type, or default if missing.There is one format string for cases where there is only a singleseries in the chart, and one for multiple series of the sametype.
+		/// Chart type description strings. This is added to the chartinformation region.If there is only a single series type used in the chart, we usethe format string for the series type, or default if missing.There is one format string for cases where there is only a singleseries in the chart, and one for multiple series of the sametype.
 		/// </summary>
 		public LangAccessibilityChartTypes ChartTypes { get; set; }
 		private LangAccessibilityChartTypes ChartTypes_DefaultValue { get; set; }
@@ -206,6 +214,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MapZoomOut != MapZoomOut_DefaultValue) h.Add("mapZoomOut",MapZoomOut);
 			if (RangeSelectorButton != RangeSelectorButton_DefaultValue) h.Add("rangeSelectorButton",RangeSelectorButton);
 			if (LegendItem != LegendItem_DefaultValue) h.Add("legendItem",LegendItem);
+			if (SvgContainerTitle != SvgContainerTitle_DefaultValue) h.Add("svgContainerTitle",SvgContainerTitle);
 			if (SeriesTypeDescriptions.IsDirty()) h.Add("seriesTypeDescriptions",SeriesTypeDescriptions.ToHashtable());
 			if (ChartTypes.IsDirty()) h.Add("chartTypes",ChartTypes.ToHashtable());
 			if (Axis.IsDirty()) h.Add("axis",Axis.ToHashtable());

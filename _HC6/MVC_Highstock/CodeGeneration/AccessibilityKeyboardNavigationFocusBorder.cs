@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Style options for the focus border drawn around elements while navigating through them. Note that some browsers in addition draw their own borders for focused elements. Theseautomatic borders can not be styled by Highcharts.In styled mode, the border is given the `.highcharts-focus-border` class.
+		/// Style options for the focus border drawn around elementswhile navigating through them. Note that some browsers inaddition draw their own borders for focused elements. Theseautomatic borders can not be styled by Highcharts.In styled mode, the border is given the`.highcharts-focus-border` class.
 		/// </summary>
 		public AccessibilityKeyboardNavigationFocusBorderStyle Style { get; set; }
 		private AccessibilityKeyboardNavigationFocusBorderStyle Style_DefaultValue { get; set; }

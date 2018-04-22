@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DrillUpText = DrillUpText_DefaultValue = "Back to {series.name}";
 			DownloadCSV = DownloadCSV_DefaultValue = "Download CSV";
 			DownloadXLS = DownloadXLS_DefaultValue = "Download XLS";
+			OpenInCloud = OpenInCloud_DefaultValue = "Open in Highcharts Cloud";
 			ViewData = ViewData_DefaultValue = "View data table";
 			PrintChart = PrintChart_DefaultValue = "Print chart";
 			DownloadPNG = DownloadPNG_DefaultValue = "Download PNG image";
@@ -44,7 +45,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Configure the accessibility strings in the chart. Requires the [accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).For more dynamic control over the accessibility functionality, see[accessibility.pointDescriptionFormatter](accessibility.pointDescriptionFormatter),[accessibility.seriesDescriptionFormatter](accessibility.seriesDescriptionFormatter), and[accessibility.screenReaderSectionFormatter](accessibility.screenReaderSectionFormatter).
+		/// Configure the accessibility strings in the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).For more dynamic control over the accessibility functionality, see[accessibility.pointDescriptionFormatter](accessibility.pointDescriptionFormatter),[accessibility.seriesDescriptionFormatter](accessibility.seriesDescriptionFormatter), and[accessibility.screenReaderSectionFormatter](accessibility.screenReaderSectionFormatter).
 		/// </summary>
 		public LangAccessibility Accessibility { get; set; }
 		private LangAccessibility Accessibility_DefaultValue { get; set; }
@@ -69,6 +70,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string DownloadXLS { get; set; }
 		private string DownloadXLS_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Export-data module only. The text for the menu item.
+		/// </summary>
+		public string OpenInCloud { get; set; }
+		private string OpenInCloud_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -219,6 +227,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DrillUpText != DrillUpText_DefaultValue) h.Add("drillUpText",DrillUpText);
 			if (DownloadCSV != DownloadCSV_DefaultValue) h.Add("downloadCSV",DownloadCSV);
 			if (DownloadXLS != DownloadXLS_DefaultValue) h.Add("downloadXLS",DownloadXLS);
+			if (OpenInCloud != OpenInCloud_DefaultValue) h.Add("openInCloud",OpenInCloud);
 			if (ViewData != ViewData_DefaultValue) h.Add("viewData",ViewData);
 			if (PrintChart != PrintChart_DefaultValue) h.Add("printChart",PrintChart);
 			if (DownloadPNG != DownloadPNG_DefaultValue) h.Add("downloadPNG",DownloadPNG);

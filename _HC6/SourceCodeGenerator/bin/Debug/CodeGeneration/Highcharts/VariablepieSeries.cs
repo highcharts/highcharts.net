@@ -50,7 +50,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Clip = Clip_DefaultValue = false;
 			DataLabels = DataLabels_DefaultValue = new VariablepieSeriesDataLabels();
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
-			LegendType = LegendType_DefaultValue = "point";
 			Size = Size_DefaultValue = "";
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
@@ -71,7 +70,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// An array of data points for the series. For the `variablepie` series type,points can be given in the following ways:1.  An array of arrays with 2 values. In this case, the numerical valueswill be interpreted as `y, z` options. Example: ```js data: [     [40, 75],     [50, 50],     [60, 40] ]  ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series'[turboThreshold](#series.variablepie.turboThreshold), this option is notavailable. ```js data: [{     y: 1,     z: 4,     name: "Point2",     color: "#00FF00"  }, {     y: 7,     z: 10,     name: "Point1",     color: "#FF00FF"  }] ```
+		/// An array of data points for the series. For the `variablepie` series type,points can be given in the following ways:1.  An array of arrays with 2 values. In this case, the numerical valueswill be interpreted as `y, z` options. Example: ```js data: [     [40, 75],     [50, 50],     [60, 40] ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series'[turboThreshold](#series.variablepie.turboThreshold), this option is notavailable. ```js data: [{     y: 1,     z: 4,     name: "Point2",     color: "#00FF00"  }, {     y: 7,     z: 10,     name: "Point1",     color: "#FF00FF"  }] ```
 		/// </summary>
 		public List<VariablepieSeriesData> Data { get; set; }
 		private List<VariablepieSeriesData> Data_DefaultValue { get; set; }
@@ -127,7 +126,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic (columns, point markers, pie slices, map areas etc).
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -246,7 +245,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Same as [accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter), but for an individual series. Overridesthe chart wide configuration.
+		/// Same as [accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter), but for an individual series.Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
 		private string PointDescriptionFormatter_DefaultValue { get; set; }
@@ -323,14 +322,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public string LegendType { get; set; }
-		private string LegendType_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The diameter of the pie relative to the plot area. Can be a percentageor pixel value. Pixel values are given as integers. The defaultbehaviour (as of 3.0) is to scale to the plot area and give roomfor data labels within the plot area.[slicedOffset](#plotOptions.pie.slicedOffset) is also included in the default size calculation. As a consequence, the sizeof the pie may vary when points are updated and data labels morearound. In that case it is best to set a fixed value, for example`"75%"`.
+		/// The diameter of the pie relative to the plot area. Can be a percentageor pixel value. Pixel values are given as integers. The defaultbehaviour (as of 3.0) is to scale to the plot area and give roomfor data labels within the plot area.[slicedOffset](#plotOptions.pie.slicedOffset) is also includedin the default size calculation. As a consequence, the sizeof the pie may vary when points are updated and data labels morearound. In that case it is best to set a fixed value, for example`"75%"`.
 		/// </summary>
 		public string Size { get; set; }
 		private string Size_DefaultValue { get; set; }
@@ -414,7 +406,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The minimum possible z value for the point's radius calculation. If the point's Z value is smaller than zMin, the slice will be drawnaccording to the zMin value.
+		/// The minimum possible z value for the point's radius calculation.If the point's Z value is smaller than zMin, the slice will be drawnaccording to the zMin value.
 		/// </summary>
 		public double? ZMin { get; set; }
 		private double? ZMin_DefaultValue { get; set; }
@@ -428,7 +420,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether the pie slice's value should be represented by the area or the radius of the slice. Can be either `area` or `radius`. Thedefault, `area`, corresponds best to the human perception of the sizeof each pie slice.
+		/// Whether the pie slice's value should be represented by the areaor the radius of the slice. Can be either `area` or `radius`. Thedefault, `area`, corresponds best to the human perception of the sizeof each pie slice.
 		/// </summary>
 		public VariablepieSeriesSizeBy SizeBy { get; set; }
 		private VariablepieSeriesSizeBy SizeBy_DefaultValue { get; set; }
@@ -474,7 +466,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
-			if (LegendType != LegendType_DefaultValue) h.Add("legendType",LegendType);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);

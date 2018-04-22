@@ -69,7 +69,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border color or stroke of the gauge's dial. By default, the borderWidthis 0, so this must be set in addition to a custom border color.
+		/// The border color or stroke of the gauge's dial. By default, theborderWidth is 0, so this must be set in addition to a custom bordercolor.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }

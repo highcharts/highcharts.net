@@ -511,6 +511,7 @@
     <Compile Include="CodeGeneration\Credits.cs" />
     <Compile Include="CodeGeneration\CreditsPosition.cs" />
     <Compile Include="CodeGeneration\CreditsStyle.cs" />
+    <Compile Include="CodeGeneration\Data.cs" />
     <Compile Include="CodeGeneration\Drilldown.cs" />
     <Compile Include="CodeGeneration\DrilldownActiveAxisLabelStyle.cs" />
     <Compile Include="CodeGeneration\DrilldownActiveDataLabelStyle.cs" />
@@ -1032,7 +1033,6 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsLineStep.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsMacdCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsMacdDashStyle.cs" />
-    <Compile Include="CodeGeneration\Enums\PlotOptionsMacdDataGroupingApproximation.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsMacdDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsMacdDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsMacdDataLabelsVerticalAlign.cs" />
@@ -1634,6 +1634,7 @@
     <Compile Include="CodeGeneration\MacdSeriesLabelStyle.cs" />
     <Compile Include="CodeGeneration\MacdSeriesMacdLine.cs" />
     <Compile Include="CodeGeneration\MacdSeriesMacdLineStyles.cs" />
+    <Compile Include="CodeGeneration\MacdSeriesMacdLineZone.cs" />
     <Compile Include="CodeGeneration\MacdSeriesMarker.cs" />
     <Compile Include="CodeGeneration\MacdSeriesMarkerStates.cs" />
     <Compile Include="CodeGeneration\MacdSeriesMarkerStatesHover.cs" />
@@ -1645,6 +1646,7 @@
     <Compile Include="CodeGeneration\MacdSeriesPointEvents.cs" />
     <Compile Include="CodeGeneration\MacdSeriesSignalLine.cs" />
     <Compile Include="CodeGeneration\MacdSeriesSignalLineStyles.cs" />
+    <Compile Include="CodeGeneration\MacdSeriesSignalLineZone.cs" />
     <Compile Include="CodeGeneration\MacdSeriesStates.cs" />
     <Compile Include="CodeGeneration\MacdSeriesStatesHover.cs" />
     <Compile Include="CodeGeneration\MacdSeriesStatesHoverHalo.cs" />
@@ -2055,7 +2057,6 @@
     <Compile Include="CodeGeneration\PlotOptionsBubbleLabel.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBubbleLabelStyle.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBubbleMarker.cs" />
-    <Compile Include="CodeGeneration\PlotOptionsBubbleMarkerRadius.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBubbleMarkerStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBubbleMarkerStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsBubbleMarkerStatesNormal.cs" />
@@ -2309,6 +2310,7 @@
     <Compile Include="CodeGeneration\PlotOptionsMacdLabelStyle.cs" />
     <Compile Include="CodeGeneration\PlotOptionsMacdMacdLine.cs" />
     <Compile Include="CodeGeneration\PlotOptionsMacdMacdLineStyles.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMacdMacdLineZone.cs" />
     <Compile Include="CodeGeneration\PlotOptionsMacdMarker.cs" />
     <Compile Include="CodeGeneration\PlotOptionsMacdMarkerStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsMacdMarkerStatesHover.cs" />
@@ -2320,6 +2322,7 @@
     <Compile Include="CodeGeneration\PlotOptionsMacdPointEvents.cs" />
     <Compile Include="CodeGeneration\PlotOptionsMacdSignalLine.cs" />
     <Compile Include="CodeGeneration\PlotOptionsMacdSignalLineStyles.cs" />
+    <Compile Include="CodeGeneration\PlotOptionsMacdSignalLineZone.cs" />
     <Compile Include="CodeGeneration\PlotOptionsMacdStates.cs" />
     <Compile Include="CodeGeneration\PlotOptionsMacdStatesHover.cs" />
     <Compile Include="CodeGeneration\PlotOptionsMacdStatesHoverHalo.cs" />

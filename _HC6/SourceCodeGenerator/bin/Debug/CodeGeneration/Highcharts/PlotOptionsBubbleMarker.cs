@@ -17,10 +17,10 @@ namespace Highsoft.Web.Mvc.Charts
 			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 1;
 			FillOpacity = FillOpacity_DefaultValue = null;
-			Radius = Radius_DefaultValue = new PlotOptionsBubbleMarkerRadius();
 			States = States_DefaultValue = new PlotOptionsBubbleMarkerStates();
 			Symbol = Symbol_DefaultValue = "circle";
 			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
+			Radius = Radius_DefaultValue = 4;
 			FillColor = FillColor_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = null;
 			Height = Height_DefaultValue = null;
@@ -53,13 +53,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsBubbleMarkerRadius Radius { get; set; }
-		private PlotOptionsBubbleMarkerRadius Radius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public PlotOptionsBubbleMarkerStates States { get; set; }
 		private PlotOptionsBubbleMarkerStates States_DefaultValue { get; set; }
 		 
@@ -76,6 +69,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? EnabledThreshold { get; set; }
 		private double? EnabledThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The radius of the point marker.
+		/// </summary>
+		public double? Radius { get; set; }
+		private double? Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -113,10 +113,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
-			if (Radius.IsDirty()) h.Add("radius",Radius.ToHashtable());
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
+			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);

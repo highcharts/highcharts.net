@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A custom `Date` class for advanced date handling. For example,[JDate](https://githubcom/tahajahangir/jdate) can be hooked in tohandle Jalali dates.
+		/// A custom `Date` class for advanced date handling. For example,[JDate](https://github.com/tahajahangir/jdate) can be hooked in tohandle Jalali dates.
 		/// </summary>
 		public Object Date { get; set; }
 		private Object Date_DefaultValue { get; set; }

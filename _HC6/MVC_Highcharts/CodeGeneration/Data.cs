@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Data()
 		{
+			BeforeParse = BeforeParse_DefaultValue = "";
 			Columns = Columns_DefaultValue = new List<List<Object>>();
 			Complete = Complete_DefaultValue = "";
 			Csv = Csv_DefaultValue = "";
@@ -34,9 +35,21 @@ namespace Highsoft.Web.Mvc.Charts
 			StartRow = StartRow_DefaultValue = 0;
 			SwitchRowsAndColumns = SwitchRowsAndColumns_DefaultValue = false;
 			Table = Table_DefaultValue = "";
+			CsvURL = CsvURL_DefaultValue = "";
+			RowsURL = RowsURL_DefaultValue = "";
+			ColumnsURL = ColumnsURL_DefaultValue = "";
+			DataRefreshRate = DataRefreshRate_DefaultValue = 1;
+			EnablePolling = EnablePolling_DefaultValue = false;
 			
 		}	
 		
+
+		/// <summary>
+		/// A callback function to modify the CSV before parsing it. Return the modifiedstring.
+		/// </summary>
+		public string BeforeParse { get; set; }
+		private string BeforeParse_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// A two-dimensional array representing the input data on tabular form.This input can be used when the data is already parsed, for examplefrom a grid view component. Each cell can be a string or number.If not switchRowsAndColumns is set, the columns are interpreted asseries.
@@ -176,12 +189,48 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Table { get; set; }
 		private string Table_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A URL to a remote CSV dataset.Will be fetched when the chart is created using Ajax.
+		/// </summary>
+		public string CsvURL { get; set; }
+		private string CsvURL_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A URL to a remote JSON dataset, structured as a row array.Will be fetched when the chart is created using Ajax.
+		/// </summary>
+		public string RowsURL { get; set; }
+		private string RowsURL_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A URL to a remote JSON dataset, structured as a column array.Will be fetched when the chart is created using Ajax.
+		/// </summary>
+		public string ColumnsURL { get; set; }
+		private string ColumnsURL_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sets the refresh rate for data polling when importing remote dataset bysetting [data.csvURL](data.csvURL), [data.rowsURL](data.rowsURL),[data.columnsURL](data.columnsURL), or[data.googleSpreadsheetKey](data.googleSpreadsheetKey).Note that polling must be enabled by setting[data.enablePolling](data.enablePolling) to true.The value is the number of seconds between pollings.It cannot be set to less than 1 second.
+		/// </summary>
+		public double? DataRefreshRate { get; set; }
+		private double? DataRefreshRate_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enables automatic refetching of remote datasets every _n_ seconds (defined bysetting [data.dataRefreshRate](data.dataRefreshRate)).Only works when either [data.csvURL](data.csvURL),[data.rowsURL](data.rowsURL), [data.columnsURL](data.columnsURL), or[data.googleSpreadsheetKey](data.googleSpreadsheetKey).
+		/// </summary>
+		public bool EnablePolling { get; set; }
+		private bool EnablePolling_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); Highcharts.AddFunction("DataBeforeParse.beforeParse", BeforeParse); }  
 			if (Columns != Columns_DefaultValue) h.Add("columns",Columns);
 			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); Highcharts.AddFunction("DataComplete.complete", Complete); }  
 			if (Csv != Csv_DefaultValue) h.Add("csv",Csv);
@@ -202,6 +251,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StartRow != StartRow_DefaultValue) h.Add("startRow",StartRow);
 			if (SwitchRowsAndColumns != SwitchRowsAndColumns_DefaultValue) h.Add("switchRowsAndColumns",SwitchRowsAndColumns);
 			if (Table != Table_DefaultValue) h.Add("table",Table);
+			if (CsvURL != CsvURL_DefaultValue) h.Add("csvURL",CsvURL);
+			if (RowsURL != RowsURL_DefaultValue) h.Add("rowsURL",RowsURL);
+			if (ColumnsURL != ColumnsURL_DefaultValue) h.Add("columnsURL",ColumnsURL);
+			if (DataRefreshRate != DataRefreshRate_DefaultValue) h.Add("dataRefreshRate",DataRefreshRate);
+			if (EnablePolling != EnablePolling_DefaultValue) h.Add("enablePolling",EnablePolling);
 			
 
 			return h;

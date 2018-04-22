@@ -89,7 +89,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the navigator X axis. Default series optionsfor the navigator xAxis are:<pre>xAxis: {    tickWidth: 0,    lineWidth: 0,    gridLineWidth: 1,    tickPixelInterval: 200,    labels: {       align: 'left',        style: {            color: '#888'        },        x: 3,        y: -4    }}</pre>
+		/// Options for the navigator X axis. Default series optionsfor the navigator xAxis are:<pre>xAxis: {    tickWidth: 0,    lineWidth: 0,    gridLineWidth: 1,    tickPixelInterval: 200,    labels: {           align: 'left',        style: {            color: '#888'        },        x: 3,        y: -4    }}</pre>
 		/// </summary>
 		public string XAxis { get; set; }
 		private string XAxis_DefaultValue { get; set; }

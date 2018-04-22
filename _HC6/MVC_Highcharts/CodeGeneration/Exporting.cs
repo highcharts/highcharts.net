@@ -139,7 +139,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Function to call if the offline-exporting module fails to exporta chart on the client side, and [fallbackToExportServer](#exporting.fallbackToExportServer) is disabled. If left undefined, an exceptionis thrown instead.
+		/// Function to call if the offline-exporting module fails to exporta chart on the client side, and [fallbackToExportServer](#exporting.fallbackToExportServer) is disabled. If left undefined, anexception is thrown instead.
 		/// </summary>
 		public string Error { get; set; }
 		private string Error_DefaultValue { get; set; }

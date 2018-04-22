@@ -14,15 +14,15 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LangAccessibilitySeriesTypeDescriptions()
 		{
-			Boxplot = Boxplot_DefaultValue = "";
-			Arearange = Arearange_DefaultValue = "";
-			Areasplinerange = Areasplinerange_DefaultValue = "";
-			Bubble = Bubble_DefaultValue = "";
-			Columnrange = Columnrange_DefaultValue = "";
-			Errorbar = Errorbar_DefaultValue = "";
-			Funnel = Funnel_DefaultValue = "";
-			Pyramid = Pyramid_DefaultValue = "";
-			Waterfall = Waterfall_DefaultValue = "";
+			Boxplot = Boxplot_DefaultValue = "Box plot charts are typically used to display groups of statistical data. Each data point in the chart can have up to 5 values: minimum, lower quartile, median, upper quartile, and maximum.";
+			Arearange = Arearange_DefaultValue = "Arearange charts are line charts displaying a range between a lower and higher value for each point.";
+			Areasplinerange = Areasplinerange_DefaultValue = "These charts are line charts displaying a range between a lower and higher value for each point.";
+			Bubble = Bubble_DefaultValue = "Bubble charts are scatter charts where each data point also has a size value.";
+			Columnrange = Columnrange_DefaultValue = "Columnrange charts are column charts displaying a range between a lower and higher value for each point.";
+			Errorbar = Errorbar_DefaultValue = "Errorbar series are used to display the variability of the data.";
+			Funnel = Funnel_DefaultValue = "Funnel charts are used to display reduction of data in stages.";
+			Pyramid = Pyramid_DefaultValue = "Pyramid charts consist of a single pyramid with item heights corresponding to each point value.";
+			Waterfall = Waterfall_DefaultValue = "A waterfall chart is a column chart where each column contributes towards a total end value.";
 			
 		}	
 		

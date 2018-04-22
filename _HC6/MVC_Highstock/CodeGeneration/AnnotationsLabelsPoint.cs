@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The x position of the point. Units can be either in axis or chart pixel coordinates.
+		/// The x position of the point. Units can be either in axisor chart pixel coordinates.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }

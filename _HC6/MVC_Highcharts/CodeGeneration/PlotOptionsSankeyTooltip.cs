@@ -45,7 +45,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to show for _nodes_ in tooltipof a sankey diagram series, as opposed to links.
+		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what toshow for _nodes_ in tooltipof a sankey diagram series, as opposed to links.
 		/// </summary>
 		public string NodeFormat { get; set; }
 		private string NodeFormat_DefaultValue { get; set; }

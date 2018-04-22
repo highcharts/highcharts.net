@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// How to interpret `levelSize.value`.`percentage` gives a width relative to result of outer radius minusinner radius.`pixels` gives the ring a fixed width in pixels.`weight` takes the remaining width after percentage and pixels, anddistributes it accross all "weighted" levels. The value relative to thesum of all weights determines the width.
+		/// How to interpret `levelSize.value`.`percentage` gives a width relative to result of outer radius minusinner radius.`pixels` gives the ring a fixed width in pixels.`weight` takes the remaining width after percentage and pixels, anddistributes it accross all "weighted" levels. The value relative tothe sum of all weights determines the width.
 		/// </summary>
 		public PlotOptionsSunburstLevelsLevelSizeUnit Unit { get; set; }
 		private PlotOptionsSunburstLevelsLevelSizeUnit Unit_DefaultValue { get; set; }
