@@ -78,7 +78,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The vertical alignment of the title. Can be one of `"top"`, `"middle"`and `"bottom"`. When a value is given, the title behaves as if [floating](#title.floating) were `true`.
+		/// The vertical alignment of the title. Can be one of `"top"`, `"middle"`and `"bottom"`. When a value is given, the title behaves as if[floating](#title.floating) were `true`.
 		/// </summary>
 		public TitleVerticalAlign VerticalAlign { get; set; }
 		private TitleVerticalAlign VerticalAlign_DefaultValue { get; set; }

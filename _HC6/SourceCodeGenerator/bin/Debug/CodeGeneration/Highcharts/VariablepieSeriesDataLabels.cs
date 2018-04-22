@@ -21,8 +21,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
 			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
-			SoftConnector = SoftConnector_DefaultValue = null;
 			Style = Style_DefaultValue = new VariablepieSeriesDataLabelsStyle();
+			SoftConnector = SoftConnector_DefaultValue = null;
 			VerticalAlign = VerticalAlign_DefaultValue = VariablepieSeriesDataLabelsVerticalAlign.Bottom;
 			Y = Y_DefaultValue = -6;
 			Padding = Padding_DefaultValue = "5";
@@ -97,17 +97,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public VariablepieSeriesDataLabelsStyle Style { get; set; }
+		private VariablepieSeriesDataLabelsStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to render the connector as a soft arc or a line with sharpbreak.
 		/// </summary>
 		public double? SoftConnector { get; set; }
 		private double? SoftConnector_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
-		/// </summary>
-		public VariablepieSeriesDataLabelsStyle Style { get; set; }
-		private VariablepieSeriesDataLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -261,8 +261,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
 			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
-			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
