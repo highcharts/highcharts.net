@@ -65,7 +65,7 @@ namespace DailyScheduler
 
         static void HandleNuget(object sender, ElapsedEventArgs args)
         {
-            Thread.Sleep(18000000);
+            Thread.Sleep(3600000);
 
             Console.WriteLine("NuGet: "+DateTime.Now);
             try
