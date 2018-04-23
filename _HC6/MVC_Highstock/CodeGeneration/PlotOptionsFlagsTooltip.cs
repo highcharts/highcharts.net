@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsFlagsTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = "{point.text}<br/>";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			FooterFormat = FooterFormat_DefaultValue = "";
-			Padding = Padding_DefaultValue = "8";
-			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
 			FollowPointer = FollowPointer_DefaultValue = null;
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
+			FooterFormat = FooterFormat_DefaultValue = "";
+			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
 			HideDelay = HideDelay_DefaultValue = 500;
+			Padding = Padding_DefaultValue = "8";
+			PointFormat = PointFormat_DefaultValue = "{point.text}<br/>";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Split = Split_DefaultValue = null;
 			XDateFormat = XDateFormat_DefaultValue = "";
@@ -30,38 +30,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public string PointFormat { get; set; }
-		private string PointFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// For series on a datetime axes, the date format in the tooltip'sheader will by default be guessed based on the closest data points.This member gives the default string representations used foreach unit. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat).Defaults to:<pre>{    millisecond:"%A, %b %e, %H:%M:%S.%L",    second:"%A, %b %e, %H:%M:%S",    minute:"%A, %b %e, %H:%M",    hour:"%A, %b %e, %H:%M",    day:"%A, %b %e, %Y",    week:"Week from %A, %b %e, %Y",    month:"%B %Y",    year:"%Y"}</pre>
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A string to append to the tooltip format.
-		/// </summary>
-		public string FooterFormat { get; set; }
-		private string FooterFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding inside the tooltip, in pixels.
-		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The HTML of the tooltip header line. Variables are enclosed bycurly brackets. Available variables are `point.key`, `series.name`,`series.color` and other members from the `point` and `series`objects. The `point.key` variable contains the category name, xvalue or datetime string depending on the type of axis. For datetimeaxes, the `point.key` date format can be set using tooltip.xDateFormat.
-		/// </summary>
-		public string HeaderFormat { get; set; }
-		private string HeaderFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -79,10 +51,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A string to append to the tooltip format.
+		/// </summary>
+		public string FooterFormat { get; set; }
+		private string FooterFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The HTML of the tooltip header line. Variables are enclosed bycurly brackets. Available variables are `point.key`, `series.name`,`series.color` and other members from the `point` and `series`objects. The `point.key` variable contains the category name, xvalue or datetime string depending on the type of axis. For datetimeaxes, the `point.key` date format can be set using tooltip.xDateFormat.
+		/// </summary>
+		public string HeaderFormat { get; set; }
+		private string HeaderFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The number of milliseconds to wait until the tooltip is hidden whenmouse out from a point or chart.
 		/// </summary>
 		public double? HideDelay { get; set; }
 		private double? HideDelay_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Padding inside the tooltip, in pixels.
+		/// </summary>
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -110,14 +110,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
-			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
+			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highstock.AddFunction("PlotOptionsFlagsTooltipPointFormatter.pointFormatter", PointFormatter); }  
 			if (Split != Split_DefaultValue) h.Add("split",Split);
 			if (XDateFormat != XDateFormat_DefaultValue) h.Add("xDateFormat",XDateFormat);

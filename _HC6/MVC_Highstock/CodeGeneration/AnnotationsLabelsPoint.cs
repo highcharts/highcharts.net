@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AnnotationsLabelsPoint()
 		{
 			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
 			XAxis = XAxis_DefaultValue = "";
+			Y = Y_DefaultValue = null;
 			YAxis = YAxis_DefaultValue = "";
 			
 		}	
@@ -30,17 +30,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The y position of the point. Units can be either in axisor chart pixel coordinates.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// This number defines which xAxis the point is connected to. It refersto either the axis id or the index of the axis in the xAxis array.If the option is not configured or the axis is not found the point'sx coordinate refers to the chart pixels.
 		/// </summary>
 		public string XAxis { get; set; }
 		private string XAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The y position of the point. Units can be either in axisor chart pixel coordinates.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -55,8 +55,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			
 

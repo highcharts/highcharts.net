@@ -19,11 +19,11 @@ namespace Highsoft.Web.Mvc.Charts
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new WordcloudSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Events = Events_DefaultValue = new WordcloudSeriesDataEvents();
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
-			Events = Events_DefaultValue = new WordcloudSeriesDataEvents();
 			
 		}	
 		
@@ -64,6 +64,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public WordcloudSeriesDataEvents Events { get; set; }
+		private WordcloudSeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -89,13 +96,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public WordcloudSeriesDataEvents Events { get; set; }
-		private WordcloudSeriesDataEvents Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -107,11 +107,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

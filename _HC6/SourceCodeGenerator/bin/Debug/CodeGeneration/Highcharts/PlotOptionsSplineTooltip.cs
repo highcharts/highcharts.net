@@ -15,13 +15,13 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSplineTooltip()
 		{
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			FooterFormat = FooterFormat_DefaultValue = "";
-			Padding = Padding_DefaultValue = "8";
-			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			FollowPointer = FollowPointer_DefaultValue = null;
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
+			FooterFormat = FooterFormat_DefaultValue = "";
+			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
 			HideDelay = HideDelay_DefaultValue = 500;
+			Padding = Padding_DefaultValue = "8";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Split = Split_DefaultValue = null;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
@@ -40,34 +40,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A string to append to the tooltip format.
-		/// </summary>
-		public string FooterFormat { get; set; }
-		private string FooterFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding inside the tooltip, in pixels.
-		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The HTML of the tooltip header line. Variables are enclosed bycurly brackets. Available variables are `point.key`, `series.name`,`series.color` and other members from the `point` and `series`objects. The `point.key` variable contains the category name, xvalue or datetime string depending on the type of axis. For datetimeaxes, the `point.key` date format can be set using tooltip.xDateFormat.
-		/// </summary>
-		public string HeaderFormat { get; set; }
-		private string HeaderFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The HTML of the point's line in the tooltip. Variables are enclosedby curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form. Furthermore,point.y can be extended by the `tooltip.valuePrefix` and`tooltip.valueSuffix` variables. This can also be overridden for eachseries, which makes it a good hook for displaying units.In styled mode, the dot is colored by a class name ratherthan the point color.
-		/// </summary>
-		public string PointFormat { get; set; }
-		private string PointFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether the tooltip should follow the mouse as it moves across columns,pie slices and other point types with an extent. By default it behavesthis way for scatter, bubble and pie series by override in the `plotOptions`for those series types.For touch moves to behave the same way, [followTouchMove](#tooltip.followTouchMove) must be `true` also.
 		/// </summary>
 		public bool? FollowPointer { get; set; }
@@ -82,10 +54,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A string to append to the tooltip format.
+		/// </summary>
+		public string FooterFormat { get; set; }
+		private string FooterFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The HTML of the tooltip header line. Variables are enclosed bycurly brackets. Available variables are `point.key`, `series.name`,`series.color` and other members from the `point` and `series`objects. The `point.key` variable contains the category name, xvalue or datetime string depending on the type of axis. For datetimeaxes, the `point.key` date format can be set using tooltip.xDateFormat.
+		/// </summary>
+		public string HeaderFormat { get; set; }
+		private string HeaderFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The number of milliseconds to wait until the tooltip is hidden whenmouse out from a point or chart.
 		/// </summary>
 		public double? HideDelay { get; set; }
 		private double? HideDelay_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Padding inside the tooltip, in pixels.
+		/// </summary>
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The HTML of the point's line in the tooltip. Variables are enclosedby curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form. Furthermore,point.y can be extended by the `tooltip.valuePrefix` and`tooltip.valueSuffix` variables. This can also be overridden for eachseries, which makes it a good hook for displaying units.In styled mode, the dot is colored by a class name ratherthan the point color.
+		/// </summary>
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -135,13 +135,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
-			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
+			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("PlotOptionsSplineTooltipPointFormatter.pointFormatter", PointFormatter); }  
 			if (Split != Split_DefaultValue) h.Add("split",Split);
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);

@@ -14,36 +14,22 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SolidgaugeSeriesData()
 		{
-			InnerRadius = InnerRadius_DefaultValue = null;
-			Radius = Radius_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new SolidgaugeSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Events = Events_DefaultValue = new SolidgaugeSeriesDataEvents();
 			Id = Id_DefaultValue = "null";
+			InnerRadius = InnerRadius_DefaultValue = null;
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
+			Radius = Radius_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Y = Y_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = new SolidgaugeSeriesDataEvents();
 			
 		}	
 		
-
-		/// <summary>
-		/// The inner radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
-		/// </summary>
-		public double? InnerRadius { get; set; }
-		private double? InnerRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The outer radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
-		/// </summary>
-		public double? Radius { get; set; }
-		private double? Radius_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -81,10 +67,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public SolidgaugeSeriesDataEvents Events { get; set; }
+		private SolidgaugeSeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The inner radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// </summary>
+		public double? InnerRadius { get; set; }
+		private double? InnerRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -102,6 +102,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The outer radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// </summary>
+		public double? Radius { get; set; }
+		private double? Radius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether the data point is selected initially.
 		/// </summary>
 		public bool? Selected { get; set; }
@@ -113,32 +120,25 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public SolidgaugeSeriesDataEvents Events { get; set; }
-		private SolidgaugeSeriesDataEvents Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsColumnStatesHover()
 		{
-			Brightness = Brightness_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "";
+			Brightness = Brightness_DefaultValue = null;
 			Color = Color_DefaultValue = "undefined";
 			Enabled = Enabled_DefaultValue = true;
 			
@@ -23,17 +23,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover` rule.
-		/// </summary>
-		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A specific border color for the hovered point. Defaults toinherit the normal state border color.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover` rule.
+		/// </summary>
+		public double? Brightness { get; set; }
+		private double? Brightness_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			

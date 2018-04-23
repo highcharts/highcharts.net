@@ -14,142 +14,58 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VectorSeries()
 		{
-			Data = Data_DefaultValue = new List<VectorSeriesData>();
-			Id = Id_DefaultValue = "";
-			Index = Index_DefaultValue = null;
-			LegendIndex = LegendIndex_DefaultValue = null;
-			Name = Name_DefaultValue = "";
-			Stack = Stack_DefaultValue = "null";
-			Type = Type_DefaultValue = VectorSeriesType.Null;
-			XAxis = XAxis_DefaultValue = "";
-			YAxis = YAxis_DefaultValue = "";
-			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = new VectorSeriesLabel();
-			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = new VectorSeriesEvents();
-			Point = Point_DefaultValue = new VectorSeriesPoint();
-			DataLabels = DataLabels_DefaultValue = new VectorSeriesDataLabels();
-			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new VectorSeriesStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
-			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = VectorSeriesFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Cursor = Cursor_DefaultValue = VectorSeriesCursor.Null;
+			Data = Data_DefaultValue = new List<VectorSeriesData>();
+			DataLabels = DataLabels_DefaultValue = new VectorSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
+			Events = Events_DefaultValue = new VectorSeriesEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
+			FindNearestPointBy = FindNearestPointBy_DefaultValue = VectorSeriesFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			Id = Id_DefaultValue = "";
+			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
+			Label = Label_DefaultValue = new VectorSeriesLabel();
+			LegendIndex = LegendIndex_DefaultValue = null;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
+			Name = Name_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
+			Point = Point_DefaultValue = new VectorSeriesPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = VectorSeriesPointIntervalUnit.Null;
 			PointStart = PointStart_DefaultValue = 0;
+			RotationOrigin = RotationOrigin_DefaultValue = VectorSeriesRotationOrigin.Center;
 			Selected = Selected_DefaultValue = false;
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SoftThreshold = SoftThreshold_DefaultValue = true;
+			Stack = Stack_DefaultValue = "null";
+			States = States_DefaultValue = new VectorSeriesStates();
+			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
-			Visible = Visible_DefaultValue = true;
-			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Tooltip = Tooltip_DefaultValue = new VectorSeriesTooltip();
-			Zones = Zones_DefaultValue = new List<VectorSeriesZone>();
-			RotationOrigin = RotationOrigin_DefaultValue = VectorSeriesRotationOrigin.Center;
+			TurboThreshold = TurboThreshold_DefaultValue = 1000;
+			Type = Type_DefaultValue = VectorSeriesType.Null;
 			VectorLength = VectorLength_DefaultValue = 20;
+			Visible = Visible_DefaultValue = true;
+			XAxis = XAxis_DefaultValue = "";
+			YAxis = YAxis_DefaultValue = "";
+			ZIndex = ZIndex_DefaultValue = null;
+			ZoneAxis = ZoneAxis_DefaultValue = "y";
+			Zones = Zones_DefaultValue = new List<VectorSeriesZone>();
 			
 		}	
 		
-
-		/// <summary>
-		/// An array of data points for the series. For the `vector` series type,points can be given in the following ways:1.  An array of arrays with 4 values. In this case, the values correspondto `x,y,length,direction`. If the first value is a string, it is applied asthe name of the point, and the `x` value is inferred. ```js    data: [        [0, 0, 10, 90],        [0, 1, 5, 180],        [1, 1, 2, 270]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.area.turboThreshold),this option is not available. ```js    data: [{        x: 0,        y: 0,        name: "Point2",        length: 10,        direction: 90    }, {        x: 1,        y: 1,        name: "Point1",        direction: 270    }] ```
-		/// </summary>
-		public List<VectorSeriesData> Data { get; set; }
-		private List<VectorSeriesData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
-		/// </summary>
-		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The index of the series in the chart, affecting the internal indexin the `chart.series` array, the visible Z index as well as the orderin the legend.
-		/// </summary>
-		public double? Index { get; set; }
-		private double? Index_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The sequential index of the series in the legend.
-		/// </summary>
-		public double? LegendIndex { get; set; }
-		private double? LegendIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The name of the series as shown in the legend, tooltip etc.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option allows grouping series in a stacked chart. The stackoption can be a string or a number or anything else, as long as thegrouped series' stack options match each other.
-		/// </summary>
-		public string Stack { get; set; }
-		private string Stack_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
-		/// </summary>
-		public VectorSeriesType Type { get; set; }
-		private VectorSeriesType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
-		/// </summary>
-		public string XAxis { get; set; }
-		private string XAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
-		/// </summary>
-		public string YAxis { get; set; }
-		private string YAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Define the visual z index of the series.
-		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
-		/// </summary>
-		public VectorSeriesLabel Label { get; set; }
-		private VectorSeriesLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel width of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
@@ -159,73 +75,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
-		/// </summary>
-		public bool? ShowCheckbox { get; set; }
-		private bool? ShowCheckbox_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public VectorSeriesEvents Events { get; set; }
-		private VectorSeriesEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Properties for each single point.
-		/// </summary>
-		public VectorSeriesPoint Point { get; set; }
-		private VectorSeriesPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public VectorSeriesDataLabels DataLabels { get; set; }
-		private VectorSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
-		/// </summary>
-		public bool? SoftThreshold { get; set; }
-		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public VectorSeriesStates States { get; set; }
-		private VectorSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
-		/// </summary>
-		public double? TurboThreshold { get; set; }
-		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
-		/// </summary>
-		public VectorSeriesFindNearestPointBy FindNearestPointBy { get; set; }
-		private VectorSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -264,6 +117,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// An array of data points for the series. For the `vector` series type,points can be given in the following ways:1.  An array of arrays with 4 values. In this case, the values correspondto `x,y,length,direction`. If the first value is a string, it is applied asthe name of the point, and the `x` value is inferred. ```js    data: [        [0, 0, 10, 90],        [0, 1, 5, 180],        [1, 1, 2, 270]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.area.turboThreshold),this option is not available. ```js    data: [{        x: 0,        y: 0,        name: "Point2",        length: 10,        direction: 90    }, {        x: 1,        y: 1,        name: "Point1",        direction: 270    }] ```
+		/// </summary>
+		public List<VectorSeriesData> Data { get; set; }
+		private List<VectorSeriesData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public VectorSeriesDataLabels DataLabels { get; set; }
+		private VectorSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Requires the Accessibility module.A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
@@ -278,10 +145,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public VectorSeriesEvents Events { get; set; }
+		private VectorSeriesEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.Requires the Accessibility module.
 		/// </summary>
 		public bool? ExposeElementToA11y { get; set; }
 		private bool? ExposeElementToA11y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
+		/// </summary>
+		public VectorSeriesFindNearestPointBy FindNearestPointBy { get; set; }
+		private VectorSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -292,10 +173,45 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
+		/// </summary>
+		public string Id { get; set; }
+		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The index of the series in the chart, affecting the internal indexin the `chart.series` array, the visible Z index as well as the orderin the legend.
+		/// </summary>
+		public double? Index { get; set; }
+		private double? Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
+		/// </summary>
+		public VectorSeriesLabel Label { get; set; }
+		private VectorSeriesLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The sequential index of the series in the legend.
+		/// </summary>
+		public double? LegendIndex { get; set; }
+		private double? LegendIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Pixel width of the graph line.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -306,10 +222,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The name of the series as shown in the legend, tooltip etc.
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color for the parts of the graph or points that are below the[threshold](#plotOptions.series.threshold).
 		/// </summary>
 		public string NegativeColor { get; set; }
 		private string NegativeColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Properties for each single point.
+		/// </summary>
+		public VectorSeriesPoint Point { get; set; }
+		private VectorSeriesPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -341,10 +271,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// What part of the vector it should be rotated around. Can be one of`start`, `center` and `end`. When `start`, the vectors will start fromthe given [x, y] position, and when `end` the vectors will end in the[x, y] position.
+		/// </summary>
+		public VectorSeriesRotationOrigin RotationOrigin { get; set; }
+		private VectorSeriesRotationOrigin RotationOrigin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to select the series initially. If `showCheckbox` is true,the checkbox next to the series name in the legend will be checked for aselected series.
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
+		/// </summary>
+		public bool? ShowCheckbox { get; set; }
+		private bool? ShowCheckbox_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -362,24 +306,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
+		/// </summary>
+		public bool? SoftThreshold { get; set; }
+		private bool? SoftThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option allows grouping series in a stacked chart. The stackoption can be a string or a number or anything else, as long as thegrouped series' stack options match each other.
+		/// </summary>
+		public string Stack { get; set; }
+		private string Stack_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A wrapper object for all the series options in specific states.
+		/// </summary>
+		public VectorSeriesStates States { get; set; }
+		private VectorSeriesStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
 		/// </summary>
 		public double? Threshold { get; set; }
 		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the initial visibility of the series.
-		/// </summary>
-		public bool? Visible { get; set; }
-		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines the Axis on which the zones are applied.
-		/// </summary>
-		public string ZoneAxis { get; set; }
-		private string ZoneAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -390,17 +348,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
 		/// </summary>
-		public List<VectorSeriesZone> Zones { get; set; }
-		private List<VectorSeriesZone> Zones_DefaultValue { get; set; }
+		public double? TurboThreshold { get; set; }
+		private double? TurboThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// What part of the vector it should be rotated around. Can be one of`start`, `center` and `end`. When `start`, the vectors will start fromthe given [x, y] position, and when `end` the vectors will end in the[x, y] position.
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
-		public VectorSeriesRotationOrigin RotationOrigin { get; set; }
-		private VectorSeriesRotationOrigin RotationOrigin_DefaultValue { get; set; }
+		public VectorSeriesType Type { get; set; }
+		private VectorSeriesType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -408,61 +366,103 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? VectorLength { get; set; }
 		private double? VectorLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Set the initial visibility of the series.
+		/// </summary>
+		public bool? Visible { get; set; }
+		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
+		/// </summary>
+		public string XAxis { get; set; }
+		private string XAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
+		/// </summary>
+		public string YAxis { get; set; }
+		private string YAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Define the visual z index of the series.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines the Axis on which the zones are applied.
+		/// </summary>
+		public string ZoneAxis { get; set; }
+		private string ZoneAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// </summary>
+		public List<VectorSeriesZone> Zones { get; set; }
+		private List<VectorSeriesZone> Zones_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Data.Any()) h.Add("data",HashifyList(Data));
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
+			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("VectorSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
+			if (RotationOrigin != RotationOrigin_DefaultValue) h.Add("rotationOrigin", Highcharts.FirstCharacterToLower(RotationOrigin.ToString()));
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			if (RotationOrigin != RotationOrigin_DefaultValue) h.Add("rotationOrigin", Highcharts.FirstCharacterToLower(RotationOrigin.ToString()));
+			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
+			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			
 
 			return h;

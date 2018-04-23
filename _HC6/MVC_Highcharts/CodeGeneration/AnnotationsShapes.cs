@@ -14,33 +14,33 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AnnotationsShapes()
 		{
-			Point = Point_DefaultValue = new AnnotationsShapesPoint();
-			Points = Points_DefaultValue = new List<AnnotationsShapesPoint>();
+			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
+			Height = Height_DefaultValue = null;
 			MarkerEnd = MarkerEnd_DefaultValue = "";
 			MarkerStart = MarkerStart_DefaultValue = "";
+			Point = Point_DefaultValue = new AnnotationsShapesPoint();
+			Points = Points_DefaultValue = new List<AnnotationsShapesPoint>();
+			R = R_DefaultValue = 0;
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
-			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
-			R = R_DefaultValue = 0;
-			Width = Width_DefaultValue = null;
-			Height = Height_DefaultValue = null;
 			Type = Type_DefaultValue = "'rect'";
+			Width = Width_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// This option defines the point to which the shape will be connected.It can be either the point which exists in the series - it isreferenced by the point's id - or a new point with defined x, yproperties and optionally axes.
+		/// The color of the shape's fill.
 		/// </summary>
-		public AnnotationsShapesPoint Point { get; set; }
-		private AnnotationsShapesPoint Point_DefaultValue { get; set; }
+		public string Fill { get; set; }
+		private string Fill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of points for the shape. This option is available for shapeswhich can use multiple points such as path. A point can be eithera point object or a point's id.
+		/// The height of the shape.
 		/// </summary>
-		public List<AnnotationsShapesPoint> Points { get; set; }
-		private List<AnnotationsShapesPoint> Points_DefaultValue { get; set; }
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -58,6 +58,27 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// This option defines the point to which the shape will be connected.It can be either the point which exists in the series - it isreferenced by the point's id - or a new point with defined x, yproperties and optionally axes.
+		/// </summary>
+		public AnnotationsShapesPoint Point { get; set; }
+		private AnnotationsShapesPoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of points for the shape. This option is available for shapeswhich can use multiple points such as path. A point can be eithera point object or a point's id.
+		/// </summary>
+		public List<AnnotationsShapesPoint> Points { get; set; }
+		private List<AnnotationsShapesPoint> Points_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The radius of the shape.
+		/// </summary>
+		public double? R { get; set; }
+		private double? R_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color of the shape's stroke.
 		/// </summary>
 		public string Stroke { get; set; }
@@ -72,17 +93,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the shape's fill.
+		/// The type of the shape, e.g. circle or rectangle.
 		/// </summary>
-		public string Fill { get; set; }
-		private string Fill_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The radius of the shape.
-		/// </summary>
-		public double? R { get; set; }
-		private double? R_DefaultValue { get; set; }
+		public string Type { get; set; }
+		private string Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -90,37 +104,23 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The height of the shape.
-		/// </summary>
-		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The type of the shape, e.g. circle or rectangle.
-		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (Points != Points_DefaultValue) h.Add("points", HashifyList(Points));
+			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (MarkerStart != MarkerStart_DefaultValue) h.Add("markerStart",MarkerStart);
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(Points));
+			if (R != R_DefaultValue) h.Add("r",R);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
-			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
-			if (R != R_DefaultValue) h.Add("r",R);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Width != Width_DefaultValue) h.Add("width",Width);
 			
 
 			return h;

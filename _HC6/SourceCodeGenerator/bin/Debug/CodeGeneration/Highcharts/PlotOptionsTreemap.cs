@@ -14,117 +14,82 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemap()
 		{
-			ShowInLegend = ShowInLegend_DefaultValue = false;
-			ColorByPoint = ColorByPoint_DefaultValue = false;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsTreemapDataLabels();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsTreemapTooltip();
-			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
-			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLayoutAlgorithm.SliceAndDice;
-			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLayoutStartingDirection.Vertical;
+			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
+			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			AlternateStartingDirection = AlternateStartingDirection_DefaultValue = false;
-			LevelIsConstant = LevelIsConstant_DefaultValue = true;
-			DrillUpButton = DrillUpButton_DefaultValue = new PlotOptionsTreemapDrillUpButton();
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationLimit = AnimationLimit_DefaultValue = null;
+			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			BorderColor = BorderColor_DefaultValue = "#e6e6e6";
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Opacity = Opacity_DefaultValue = null;
-			States = States_DefaultValue = new PlotOptionsTreemapStates();
-			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
-			CropThreshold = CropThreshold_DefaultValue = 300;
-			InteractByLeaf = InteractByLeaf_DefaultValue = null;
-			SortIndex = SortIndex_DefaultValue = null;
-			Colors = Colors_DefaultValue = new List<string>();
-			Levels = Levels_DefaultValue = new List<PlotOptionsTreemapLevels>();
-			BoostThreshold = BoostThreshold_DefaultValue = 5000;
-			Label = Label_DefaultValue = new PlotOptionsTreemapLabel();
-			LineWidth = LineWidth_DefaultValue = 2;
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = new PlotOptionsTreemapEvents();
-			Point = Point_DefaultValue = new PlotOptionsTreemapPoint();
-			SoftThreshold = SoftThreshold_DefaultValue = true;
-			StickyTracking = StickyTracking_DefaultValue = true;
-			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsTreemapFindNearestPointBy.X;
-			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
+			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
+			Colors = Colors_DefaultValue = new List<string>();
+			ConnectEnds = ConnectEnds_DefaultValue = null;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
+			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsTreemapCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsTreemapDashStyle.Solid;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsTreemapDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			DrillUpButton = DrillUpButton_DefaultValue = new PlotOptionsTreemapDrillUpButton();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
+			Events = Events_DefaultValue = new PlotOptionsTreemapEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
+			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsTreemapFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			InteractByLeaf = InteractByLeaf_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
+			Label = Label_DefaultValue = new PlotOptionsTreemapLabel();
+			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLayoutAlgorithm.SliceAndDice;
+			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLayoutStartingDirection.Vertical;
+			LevelIsConstant = LevelIsConstant_DefaultValue = true;
+			Levels = Levels_DefaultValue = new List<PlotOptionsTreemapLevels>();
 			Linecap = Linecap_DefaultValue = PlotOptionsTreemapLinecap.Round;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
+			Opacity = Opacity_DefaultValue = null;
+			Point = Point_DefaultValue = new PlotOptionsTreemapPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsTreemapPointIntervalUnit.Null;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			ShowInLegend = ShowInLegend_DefaultValue = false;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SoftThreshold = SoftThreshold_DefaultValue = true;
+			SortIndex = SortIndex_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = PlotOptionsTreemapStacking.Null;
+			States = States_DefaultValue = new PlotOptionsTreemapStates();
 			Step = Step_DefaultValue = PlotOptionsTreemapStep.Null;
+			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsTreemapTooltip();
+			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsTreemapZone>();
-			ConnectEnds = ConnectEnds_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// Whether to display this series type or specific series item in thelegend.
+		/// When enabled the user can click on a point which is a parent andzoom in on its children.
 		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
+		public bool? AllowDrillToNode { get; set; }
+		private bool? AllowDrillToNode_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
 		/// </summary>
-		public bool? ColorByPoint { get; set; }
-		private bool? ColorByPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsTreemapDataLabels DataLabels { get; set; }
-		private PlotOptionsTreemapDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsTreemapTooltip Tooltip { get; set; }
-		private PlotOptionsTreemapTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to ignore hidden points when the layout algorithm runs.If `false`, hidden points will leave open spaces.
-		/// </summary>
-		public bool? IgnoreHiddenPoint { get; set; }
-		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option decides which algorithm is used for setting positionand dimensions of the points. Can be one of `sliceAndDice`, `stripes`, `squarified` or `strip`.
-		/// </summary>
-		public PlotOptionsTreemapLayoutAlgorithm LayoutAlgorithm { get; set; }
-		private PlotOptionsTreemapLayoutAlgorithm LayoutAlgorithm_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines which direction the layout algorithm will start drawing. Possible values are "vertical" and "horizontal".
-		/// </summary>
-		public PlotOptionsTreemapLayoutStartingDirection LayoutStartingDirection { get; set; }
-		private PlotOptionsTreemapLayoutStartingDirection LayoutStartingDirection_DefaultValue { get; set; }
+		public bool? AllowPointSelect { get; set; }
+		private bool? AllowPointSelect_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -135,17 +100,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Used together with the levels and allowDrillToNode options. Whenset to false the first level visible when drilling is consideredto be level one. Otherwise the level will be the same as the treestructure.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
-		public bool? LevelIsConstant { get; set; }
-		private bool? LevelIsConstant_DefaultValue { get; set; }
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the button appearing when drilling down in a treemap.
+		/// For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesn'trun if there is more than 250 points totally. To disable this cap, set`animationLimit` to `Infinity`.
 		/// </summary>
-		public PlotOptionsTreemapDrillUpButton DrillUpButton { get; set; }
-		private PlotOptionsTreemapDrillUpButton DrillUpButton_DefaultValue { get; set; }
+		public double? AnimationLimit { get; set; }
+		private double? AnimationLimit_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
+		/// </summary>
+		public double? BoostThreshold { get; set; }
+		private double? BoostThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -163,153 +135,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The opacity of a point in treemap. When a point has children, thevisibility of the children is determined by the opacity.
-		/// </summary>
-		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsTreemapStates States { get; set; }
-		private PlotOptionsTreemapStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When enabled the user can click on a point which is a parent andzoom in on its children.
-		/// </summary>
-		public bool? AllowDrillToNode { get; set; }
-		private bool? AllowDrillToNode_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option decides if the user can interact with the parent nodesor just the leaf nodes. When this option is undefined, it will betrue by default. However when allowDrillToNode is true, then it willbe false by default.
-		/// </summary>
-		public bool? InteractByLeaf { get; set; }
-		private bool? InteractByLeaf_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The sort index of the point inside the treemap level.
-		/// </summary>
-		public double? SortIndex { get; set; }
-		private double? SortIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A series specific or series type specific color set to apply insteadof the global [colors](#colors) when [colorByPoint](#plotOptions.treemap.colorByPoint) is true.
-		/// </summary>
-		public List<string> Colors { get; set; }
-		private List<string> Colors_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set options on specific levels. Takes precedence over series options,but not point options.
-		/// </summary>
-		public List<PlotOptionsTreemapLevels> Levels { get; set; }
-		private List<PlotOptionsTreemapLevels> Levels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
-		/// </summary>
-		public double? BoostThreshold { get; set; }
-		private double? BoostThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
-		/// </summary>
-		public PlotOptionsTreemapLabel Label { get; set; }
-		private PlotOptionsTreemapLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel width of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
-		/// </summary>
-		public bool? AllowPointSelect { get; set; }
-		private bool? AllowPointSelect_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
-		/// </summary>
-		public bool? ShowCheckbox { get; set; }
-		private bool? ShowCheckbox_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsTreemapEvents Events { get; set; }
-		private PlotOptionsTreemapEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Properties for each single point.
-		/// </summary>
-		public PlotOptionsTreemapPoint Point { get; set; }
-		private PlotOptionsTreemapPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
-		/// </summary>
-		public bool? SoftThreshold { get; set; }
-		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
-		/// </summary>
-		public double? TurboThreshold { get; set; }
-		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
-		/// </summary>
-		public PlotOptionsTreemapFindNearestPointBy FindNearestPointBy { get; set; }
-		private PlotOptionsTreemapFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesn'trun if there is more than 250 points totally. To disable this cap, set`animationLimit` to `Infinity`.
-		/// </summary>
-		public double? AnimationLimit { get; set; }
-		private double? AnimationLimit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A class name to apply to the series' graphical elements.
 		/// </summary>
 		public string ClassName { get; set; }
@@ -324,6 +149,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
+		/// </summary>
+		public bool? ColorByPoint { get; set; }
+		private bool? ColorByPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
 		/// </summary>
 		public double? ColorIndex { get; set; }
@@ -331,10 +163,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A series specific or series type specific color set to apply insteadof the global [colors](#colors) when [colorByPoint](#plotOptions.treemap.colorByPoint) is true.
+		/// </summary>
+		public List<string> Colors { get; set; }
+		private List<string> Colors_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
+		/// </summary>
+		public bool? ConnectEnds { get; set; }
+		private bool? ConnectEnds_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.
 		/// </summary>
 		public bool? ConnectNulls { get; set; }
 		private bool? ConnectNulls_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
+		/// </summary>
+		public double? CropThreshold { get; set; }
+		private double? CropThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -352,10 +205,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapDataLabels DataLabels { get; set; }
+		private PlotOptionsTreemapDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Requires the Accessibility module.A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the button appearing when drilling down in a treemap.
+		/// </summary>
+		public PlotOptionsTreemapDrillUpButton DrillUpButton { get; set; }
+		private PlotOptionsTreemapDrillUpButton DrillUpButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -366,10 +233,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapEvents Events { get; set; }
+		private PlotOptionsTreemapEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.Requires the Accessibility module.
 		/// </summary>
 		public bool? ExposeElementToA11y { get; set; }
 		private bool? ExposeElementToA11y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
+		/// </summary>
+		public PlotOptionsTreemapFindNearestPointBy FindNearestPointBy { get; set; }
+		private PlotOptionsTreemapFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -380,6 +261,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to ignore hidden points when the layout algorithm runs.If `false`, hidden points will leave open spaces.
+		/// </summary>
+		public bool? IgnoreHiddenPoint { get; set; }
+		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option decides if the user can interact with the parent nodesor just the leaf nodes. When this option is undefined, it will betrue by default. However when allowDrillToNode is true, then it willbe false by default.
+		/// </summary>
+		public bool? InteractByLeaf { get; set; }
+		private bool? InteractByLeaf_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
@@ -387,10 +282,52 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
+		/// </summary>
+		public PlotOptionsTreemapLabel Label { get; set; }
+		private PlotOptionsTreemapLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option decides which algorithm is used for setting positionand dimensions of the points. Can be one of `sliceAndDice`, `stripes`, `squarified` or `strip`.
+		/// </summary>
+		public PlotOptionsTreemapLayoutAlgorithm LayoutAlgorithm { get; set; }
+		private PlotOptionsTreemapLayoutAlgorithm LayoutAlgorithm_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines which direction the layout algorithm will start drawing. Possible values are "vertical" and "horizontal".
+		/// </summary>
+		public PlotOptionsTreemapLayoutStartingDirection LayoutStartingDirection { get; set; }
+		private PlotOptionsTreemapLayoutStartingDirection LayoutStartingDirection_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Used together with the levels and allowDrillToNode options. Whenset to false the first level visible when drilling is consideredto be level one. Otherwise the level will be the same as the treestructure.
+		/// </summary>
+		public bool? LevelIsConstant { get; set; }
+		private bool? LevelIsConstant_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Set options on specific levels. Takes precedence over series options,but not point options.
+		/// </summary>
+		public List<PlotOptionsTreemapLevels> Levels { get; set; }
+		private List<PlotOptionsTreemapLevels> Levels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The line cap used for line ends and line joins on the graph.
 		/// </summary>
 		public PlotOptionsTreemapLinecap Linecap { get; set; }
 		private PlotOptionsTreemapLinecap Linecap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Pixel width of the graph line.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -405,6 +342,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string NegativeColor { get; set; }
 		private string NegativeColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The opacity of a point in treemap. When a point has children, thevisibility of the children is determined by the opacity.
+		/// </summary>
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Properties for each single point.
+		/// </summary>
+		public PlotOptionsTreemapPoint Point { get; set; }
+		private PlotOptionsTreemapPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -443,10 +394,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
+		/// </summary>
+		public bool? ShowCheckbox { get; set; }
+		private bool? ShowCheckbox_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to display this series type or specific series item in thelegend.
+		/// </summary>
+		public bool? ShowInLegend { get; set; }
+		private bool? ShowInLegend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
 		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
+		/// </summary>
+		public bool? SoftThreshold { get; set; }
+		private bool? SoftThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The sort index of the point inside the treemap level.
+		/// </summary>
+		public double? SortIndex { get; set; }
+		private double? SortIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -457,6 +436,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A wrapper object for all the series options in specific states.
+		/// </summary>
+		public PlotOptionsTreemapStates States { get; set; }
+		private PlotOptionsTreemapStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to apply steps to the line. Possible values are `left`, `center`and `right`.
 		/// </summary>
 		public PlotOptionsTreemapStep Step { get; set; }
@@ -464,10 +450,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
 		/// </summary>
 		public double? Threshold { get; set; }
 		private double? Threshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTreemapTooltip Tooltip { get; set; }
+		private PlotOptionsTreemapTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
+		/// </summary>
+		public double? TurboThreshold { get; set; }
+		private double? TurboThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -489,79 +496,72 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<PlotOptionsTreemapZone> Zones { get; set; }
 		private List<PlotOptionsTreemapZone> Zones_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
-		/// </summary>
-		public bool? ConnectEnds { get; set; }
-		private bool? ConnectEnds_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
-			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
-			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
+			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
+			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (AlternateStartingDirection != AlternateStartingDirection_DefaultValue) h.Add("alternateStartingDirection",AlternateStartingDirection);
-			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
-			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
+			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (InteractByLeaf != InteractByLeaf_DefaultValue) h.Add("interactByLeaf",InteractByLeaf);
-			if (SortIndex != SortIndex_DefaultValue) h.Add("sortIndex",SortIndex);
-			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(Levels));
-			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
-			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
+			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
+			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
+			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
+			if (InteractByLeaf != InteractByLeaf_DefaultValue) h.Add("interactByLeaf",InteractByLeaf);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
+			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
+			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
+			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(Levels));
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsTreemapPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
+			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (SortIndex != SortIndex_DefaultValue) h.Add("sortIndex",SortIndex);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			
 
 			return h;

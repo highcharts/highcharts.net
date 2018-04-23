@@ -16,9 +16,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			ActiveAxisLabelStyle = ActiveAxisLabelStyle_DefaultValue = new DrilldownActiveAxisLabelStyle();
 			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new DrilldownActiveDataLabelStyle();
+			AllowPointDrilldown = AllowPointDrilldown_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			DrillUpButton = DrillUpButton_DefaultValue = new DrilldownDrillUpButton();
-			AllowPointDrilldown = AllowPointDrilldown_DefaultValue = true;
 			Series = Series_DefaultValue = new List<Series>();
 			
 		}	
@@ -39,6 +39,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When this option is false, clicking a single point will drill downall points in the same category, equivalent to clicking the X axislabel.
+		/// </summary>
+		public bool? AllowPointDrilldown { get; set; }
+		private bool? AllowPointDrilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set the animation for all drilldown animations. Animation of a drilldownoccurs when drilling between a column point and a column series,or a pie slice and a full pie series. Drilldown can still be usedbetween series and points of different types, but animation willnot occur.The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and a durationof 500 ms. If used as a configuration object, the following propertiesare supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See [the easing demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).</dd></dl>
 		/// </summary>
 		public Animation Animation { get; set; }
@@ -50,13 +57,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public DrilldownDrillUpButton DrillUpButton { get; set; }
 		private DrilldownDrillUpButton DrillUpButton_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this option is false, clicking a single point will drill downall points in the same category, equivalent to clicking the X axislabel.
-		/// </summary>
-		public bool? AllowPointDrilldown { get; set; }
-		private bool? AllowPointDrilldown_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -72,9 +72,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (ActiveAxisLabelStyle.IsDirty()) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle.ToHashtable());
 			if (ActiveDataLabelStyle.IsDirty()) h.Add("activeDataLabelStyle",ActiveDataLabelStyle.ToHashtable());
+			if (AllowPointDrilldown != AllowPointDrilldown_DefaultValue) h.Add("allowPointDrilldown",AllowPointDrilldown);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
-			if (AllowPointDrilldown != AllowPointDrilldown_DefaultValue) h.Add("allowPointDrilldown",AllowPointDrilldown);
 			if (Series != Series_DefaultValue) h.Add("series", HashifyList(Series));
 			
 

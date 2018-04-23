@@ -14,30 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreasplinerangeSeriesData()
 		{
-			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new AreasplinerangeSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Drilldown = Drilldown_DefaultValue = "";
+			Events = Events_DefaultValue = new AreasplinerangeSeriesDataEvents();
+			High = High_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
+			Low = Low_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = new AreasplinerangeSeriesDataEvents();
-			High = High_DefaultValue = null;
-			Low = Low_DefaultValue = null;
 			
 		}	
 		
-
-		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -75,6 +68,27 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// </summary>
+		public string Drilldown { get; set; }
+		private string Drilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public AreasplinerangeSeriesDataEvents Events { get; set; }
+		private AreasplinerangeSeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The high or maximum value for each data point.
+		/// </summary>
+		public double? High { get; set; }
+		private double? High_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -86,6 +100,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Labelrank { get; set; }
 		private double? Labelrank_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The low or minimum value for each data point.
+		/// </summary>
+		public double? Low { get; set; }
+		private double? Low_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -107,47 +128,26 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public AreasplinerangeSeriesDataEvents Events { get; set; }
-		private AreasplinerangeSeriesDataEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The high or maximum value for each data point.
-		/// </summary>
-		public double? High { get; set; }
-		private double? High_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The low or minimum value for each data point.
-		/// </summary>
-		public double? Low { get; set; }
-		private double? Low_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (High != High_DefaultValue) h.Add("high",High);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
+			if (Low != Low_DefaultValue) h.Add("low",Low);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (High != High_DefaultValue) h.Add("high",High);
-			if (Low != Low_DefaultValue) h.Add("low",Low);
 			
 
 			return h;

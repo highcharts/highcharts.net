@@ -14,93 +14,58 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBellcurve()
 		{
-			Intervals = Intervals_DefaultValue = 3;
-			PointsInInterval = PointsInInterval_DefaultValue = 3;
-			Marker = Marker_DefaultValue = new PlotOptionsBellcurveMarker();
-			Label = Label_DefaultValue = new PlotOptionsBellcurveLabel();
-			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = new PlotOptionsBellcurveEvents();
-			Point = Point_DefaultValue = new PlotOptionsBellcurvePoint();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsBellcurveDataLabels();
-			CropThreshold = CropThreshold_DefaultValue = 300;
-			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsBellcurveStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
-			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsBellcurveFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			ConnectEnds = ConnectEnds_DefaultValue = null;
+			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsBellcurveCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsBellcurveDashStyle.Solid;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsBellcurveDataLabels();
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
+			Events = Events_DefaultValue = new PlotOptionsBellcurveEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
+			FillColor = FillColor_DefaultValue = null;
+			FillOpacity = FillOpacity_DefaultValue = null;
+			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsBellcurveFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			Intervals = Intervals_DefaultValue = 3;
 			Keys = Keys_DefaultValue = new List<string>();
+			Label = Label_DefaultValue = new PlotOptionsBellcurveLabel();
 			Linecap = Linecap_DefaultValue = PlotOptionsBellcurveLinecap.Round;
+			LineColor = LineColor_DefaultValue = "null";
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
+			Marker = Marker_DefaultValue = new PlotOptionsBellcurveMarker();
 			NegativeColor = NegativeColor_DefaultValue = "null";
+			NegativeFillColor = NegativeFillColor_DefaultValue = "";
+			Point = Point_DefaultValue = new PlotOptionsBellcurvePoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
+			PointsInInterval = PointsInInterval_DefaultValue = 3;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SoftThreshold = SoftThreshold_DefaultValue = true;
+			States = States_DefaultValue = new PlotOptionsBellcurveStates();
+			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsBellcurveTooltip();
+			TrackByArea = TrackByArea_DefaultValue = false;
+			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsBellcurveTooltip();
 			Zones = Zones_DefaultValue = new List<PlotOptionsBellcurveZone>();
-			ConnectEnds = ConnectEnds_DefaultValue = null;
-			FillColor = FillColor_DefaultValue = null;
-			FillOpacity = FillOpacity_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "null";
-			NegativeFillColor = NegativeFillColor_DefaultValue = "";
-			TrackByArea = TrackByArea_DefaultValue = false;
 			
 		}	
 		
-
-		/// <summary>
-		/// This option allows to define the length of the bell curve. A unit of thelength of the bell curve is standard deviation.
-		/// </summary>
-		public double? Intervals { get; set; }
-		private double? Intervals_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines how many points should be plotted within 1 interval. See`plotOptions.bellcurve.intervals`.
-		/// </summary>
-		public double? PointsInInterval { get; set; }
-		private double? PointsInInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBellcurveMarker Marker { get; set; }
-		private PlotOptionsBellcurveMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
-		/// </summary>
-		public PlotOptionsBellcurveLabel Label { get; set; }
-		private PlotOptionsBellcurveLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel width of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
@@ -110,80 +75,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
-		/// </summary>
-		public bool? ShowCheckbox { get; set; }
-		private bool? ShowCheckbox_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsBellcurveEvents Events { get; set; }
-		private PlotOptionsBellcurveEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Properties for each single point.
-		/// </summary>
-		public PlotOptionsBellcurvePoint Point { get; set; }
-		private PlotOptionsBellcurvePoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PlotOptionsBellcurveDataLabels DataLabels { get; set; }
-		private PlotOptionsBellcurveDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
-		/// </summary>
-		public bool? SoftThreshold { get; set; }
-		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsBellcurveStates States { get; set; }
-		private PlotOptionsBellcurveStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
-		/// </summary>
-		public double? TurboThreshold { get; set; }
-		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
-		/// </summary>
-		public PlotOptionsBellcurveFindNearestPointBy FindNearestPointBy { get; set; }
-		private PlotOptionsBellcurveFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -215,6 +110,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
+		/// </summary>
+		public bool? ConnectEnds { get; set; }
+		private bool? ConnectEnds_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
+		/// </summary>
+		public double? CropThreshold { get; set; }
+		private double? CropThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
 		/// </summary>
 		public PlotOptionsBellcurveCursor Cursor { get; set; }
@@ -226,6 +135,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsBellcurveDashStyle DashStyle { get; set; }
 		private PlotOptionsBellcurveDashStyle DashStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public PlotOptionsBellcurveDataLabels DataLabels { get; set; }
+		private PlotOptionsBellcurveDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -243,10 +159,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsBellcurveEvents Events { get; set; }
+		private PlotOptionsBellcurveEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.Requires the Accessibility module.
 		/// </summary>
 		public bool? ExposeElementToA11y { get; set; }
 		private bool? ExposeElementToA11y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
+		/// </summary>
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fill opacity for the area. When you set an explicit `fillColor`,the `fillOpacity` is not applied. Instead, you should define theopacity in the `fillColor` with an rgba color definition. The`fillOpacity` setting, also the default setting, overrides the alphacomponent of the `color` setting.In styled mode, the fill opacity can be set with the `.highcharts-area`class name.
+		/// </summary>
+		public double? FillOpacity { get; set; }
+		private double? FillOpacity_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
+		/// </summary>
+		public PlotOptionsBellcurveFindNearestPointBy FindNearestPointBy { get; set; }
+		private PlotOptionsBellcurveFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -257,10 +201,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// This option allows to define the length of the bell curve. A unit of thelength of the bell curve is standard deviation.
+		/// </summary>
+		public double? Intervals { get; set; }
+		private double? Intervals_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
+		/// </summary>
+		public PlotOptionsBellcurveLabel Label { get; set; }
+		private PlotOptionsBellcurveLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -271,6 +229,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A separate color for the graph line. By default the line takes the`color` of the series, but the lineColor setting allows setting aseparate color for the line without altering the `fillColor`.In styled mode, the line stroke can be set with the `.highcharts-graph`class name.
+		/// </summary>
+		public string LineColor { get; set; }
+		private string LineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Pixel width of the graph line.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.
 		/// </summary>
 		public string LinkedTo { get; set; }
@@ -278,10 +250,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsBellcurveMarker Marker { get; set; }
+		private PlotOptionsBellcurveMarker Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color for the parts of the graph or points that are below the[threshold](#plotOptions.series.threshold).
 		/// </summary>
 		public string NegativeColor { get; set; }
 		private string NegativeColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A separate color for the negative part of the area.In styled mode, a negative color is set with the `.highcharts-negative`class name.
+		/// </summary>
+		public string NegativeFillColor { get; set; }
+		private string NegativeFillColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Properties for each single point.
+		/// </summary>
+		public PlotOptionsBellcurvePoint Point { get; set; }
+		private PlotOptionsBellcurvePoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -296,6 +289,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PointPlacement PointPlacement { get; set; }
 		private PointPlacement PointPlacement_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines how many points should be plotted within 1 interval. See`plotOptions.bellcurve.intervals`.
+		/// </summary>
+		public double? PointsInInterval { get; set; }
+		private double? PointsInInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -320,6 +320,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
+		/// </summary>
+		public bool? ShowCheckbox { get; set; }
+		private bool? ShowCheckbox_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
 		/// </summary>
 		public bool? ShowInLegend { get; set; }
@@ -334,10 +341,52 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
+		/// </summary>
+		public bool? SoftThreshold { get; set; }
+		private bool? SoftThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A wrapper object for all the series options in specific states.
+		/// </summary>
+		public PlotOptionsBellcurveStates States { get; set; }
+		private PlotOptionsBellcurveStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
 		/// </summary>
 		public double? Threshold { get; set; }
 		private double? Threshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
+		/// </summary>
+		public PlotOptionsBellcurveTooltip Tooltip { get; set; }
+		private PlotOptionsBellcurveTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether the whole area or just the line should respond to mouseovertooltips and other mouse or touch events.
+		/// </summary>
+		public bool? TrackByArea { get; set; }
+		private bool? TrackByArea_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
+		/// </summary>
+		public double? TurboThreshold { get; set; }
+		private double? TurboThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -355,118 +404,69 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PlotOptionsBellcurveTooltip Tooltip { get; set; }
-		private PlotOptionsBellcurveTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsBellcurveZone> Zones { get; set; }
 		private List<PlotOptionsBellcurveZone> Zones_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Polar charts only. Whether to connect the ends of a line seriesplot across the extremes.
-		/// </summary>
-		public bool? ConnectEnds { get; set; }
-		private bool? ConnectEnds_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
-		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fill opacity for the area. When you set an explicit `fillColor`,the `fillOpacity` is not applied. Instead, you should define theopacity in the `fillColor` with an rgba color definition. The`fillOpacity` setting, also the default setting, overrides the alphacomponent of the `color` setting.In styled mode, the fill opacity can be set with the `.highcharts-area`class name.
-		/// </summary>
-		public double? FillOpacity { get; set; }
-		private double? FillOpacity_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A separate color for the graph line. By default the line takes the`color` of the series, but the lineColor setting allows setting aseparate color for the line without altering the `fillColor`.In styled mode, the line stroke can be set with the `.highcharts-graph`class name.
-		/// </summary>
-		public string LineColor { get; set; }
-		private string LineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A separate color for the negative part of the area.In styled mode, a negative color is set with the `.highcharts-negative`class name.
-		/// </summary>
-		public string NegativeFillColor { get; set; }
-		private string NegativeFillColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the whole area or just the line should respond to mouseovertooltips and other mouse or touch events.
-		/// </summary>
-		public bool? TrackByArea { get; set; }
-		private bool? TrackByArea_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Intervals != Intervals_DefaultValue) h.Add("intervals",Intervals);
-			if (PointsInInterval != PointsInInterval_DefaultValue) h.Add("pointsInInterval",PointsInInterval);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
+			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
+			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
+			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
+			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (Intervals != Intervals_DefaultValue) h.Add("intervals",Intervals);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
+			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsBellcurvePointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointPlacement.IsDirty())
 				if (PointPlacement.Value.HasValue)
 					h.Add("pointPlacement", PointPlacement.Value);
 				else
 					h.Add("pointPlacement", PointPlacement.ToJSON());
+			if (PointsInInterval != PointsInInterval_DefaultValue) h.Add("pointsInInterval",PointsInInterval);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
+			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
-			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
-			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			
 
 			return h;

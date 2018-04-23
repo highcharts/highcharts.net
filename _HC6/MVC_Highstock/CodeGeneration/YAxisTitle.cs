@@ -14,40 +14,19 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public YAxisTitle()
 		{
-			Rotation = Rotation_DefaultValue = 270;
-			Text = Text_DefaultValue = "Values";
-			Margin = Margin_DefaultValue = null;
 			Align = Align_DefaultValue = YAxisTitleAlign.Middle;
-			Style = Style_DefaultValue = new YAxisTitleStyle();
+			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			ReserveSpace = ReserveSpace_DefaultValue = true;
+			Rotation = Rotation_DefaultValue = 270;
+			Style = Style_DefaultValue = new YAxisTitleStyle();
+			Text = Text_DefaultValue = "Values";
 			UseHTML = UseHTML_DefaultValue = false;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
 		}	
 		
-
-		/// <summary>
-		/// The rotation of the text in degrees. 0 is horizontal, 270 isvertical reading from bottom to top.
-		/// </summary>
-		public double? Rotation { get; set; }
-		private double? Rotation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The actual text of the axis title. Horizontal texts can containHTML, but rotated texts are painted using vector techniques andmust be clean text. The Y axis title is disabled by setting the`text` option to `null`.
-		/// </summary>
-		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel distance between the axis labels and the title. Positivevalues are outside the axis line, negative are inside.
-		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Alignment of the title relative to the axis values. Possiblevalues are "low", "middle" or "high".
@@ -57,10 +36,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting `textOverflow: 'ellipsis'`, bysetting a specific `width` or by setting `whiteSpace: 'nowrap'`.In styled mode, the stroke width is given in the`.highcharts-axis-title` class.
+		/// The pixel distance between the axis labels and the title. Positivevalues are outside the axis line, negative are inside.
 		/// </summary>
-		public YAxisTitleStyle Style { get; set; }
-		private YAxisTitleStyle Style_DefaultValue { get; set; }
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -75,6 +54,27 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? ReserveSpace { get; set; }
 		private bool? ReserveSpace_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The rotation of the text in degrees. 0 is horizontal, 270 isvertical reading from bottom to top.
+		/// </summary>
+		public double? Rotation { get; set; }
+		private double? Rotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting `textOverflow: 'ellipsis'`, bysetting a specific `width` or by setting `whiteSpace: 'nowrap'`.In styled mode, the stroke width is given in the`.highcharts-axis-title` class.
+		/// </summary>
+		public YAxisTitleStyle Style { get; set; }
+		private YAxisTitleStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The actual text of the axis title. Horizontal texts can containHTML, but rotated texts are painted using vector techniques andmust be clean text. The Y axis title is disabled by setting the`text` option to `null`.
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -102,13 +102,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
+			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TilemapSeriesStatesHoverMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new TilemapSeriesStatesHoverMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new TilemapSeriesStatesHoverMarkerStatesHover();
+			Normal = Normal_DefaultValue = new TilemapSeriesStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new TilemapSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public TilemapSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
-		private TilemapSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public TilemapSeriesStatesHoverMarkerStatesHover Hover { get; set; }
 		private TilemapSeriesStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public TilemapSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
+		private TilemapSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

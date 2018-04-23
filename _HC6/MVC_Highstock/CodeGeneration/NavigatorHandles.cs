@@ -14,51 +14,16 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigatorHandles()
 		{
-			Width = Width_DefaultValue = 7;
-			Height = Height_DefaultValue = 15;
-			Symbols = Symbols_DefaultValue = new List<string>();
-			Enabled = Enabled_DefaultValue = true;
-			LineWidth = LineWidth_DefaultValue = 7;
 			BackgroundColor = BackgroundColor_DefaultValue = "#f2f2f2";
 			BorderColor = BorderColor_DefaultValue = "#999999";
+			Enabled = Enabled_DefaultValue = true;
+			Height = Height_DefaultValue = 15;
+			LineWidth = LineWidth_DefaultValue = 7;
+			Symbols = Symbols_DefaultValue = new List<string>();
+			Width = Width_DefaultValue = 7;
 			
 		}	
 		
-
-		/// <summary>
-		/// Width for handles.
-		/// </summary>
-		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Height for handles.
-		/// </summary>
-		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Array to define shapes of handles. 0-index for left, 1-index forright.Additionally, the URL to a graphic can be given on this form:`url(graphic.png)`. Note that for the image to be applied toexported charts, its URL needs to be accessible by the exportserver.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols`. The callback is thenused by its method name, as shown in the demo.
-		/// </summary>
-		public List<string> Symbols { get; set; }
-		private List<string> Symbols_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Allows to enable/disable handles.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width for the handle border and the stripes inside.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// The fill for the handle.
@@ -72,19 +37,54 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Allows to enable/disable handles.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Height for handles.
+		/// </summary>
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width for the handle border and the stripes inside.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Array to define shapes of handles. 0-index for left, 1-index forright.Additionally, the URL to a graphic can be given on this form:`url(graphic.png)`. Note that for the image to be applied toexported charts, its URL needs to be accessible by the exportserver.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols`. The callback is thenused by its method name, as shown in the demo.
+		/// </summary>
+		public List<string> Symbols { get; set; }
+		private List<string> Symbols_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Width for handles.
+		/// </summary>
+		public double? Width { get; set; }
+		private double? Width_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Symbols != Symbols_DefaultValue) h.Add("symbols", HashifyList(Symbols));
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (Symbols != Symbols_DefaultValue) h.Add("symbols", HashifyList(Symbols));
+			if (Width != Width_DefaultValue) h.Add("width",Width);
 			
 
 			return h;

@@ -14,12 +14,19 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsBbParams()
 		{
+			Index = Index_DefaultValue = 3;
 			Period = Period_DefaultValue = 20;
 			StandardDeviation = StandardDeviation_DefaultValue = 2;
-			Index = Index_DefaultValue = 3;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Index { get; set; }
+		private double? Index_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -33,22 +40,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? StandardDeviation { get; set; }
 		private double? StandardDeviation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Index { get; set; }
-		private double? Index_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Period != Period_DefaultValue) h.Add("period",Period);
 			if (StandardDeviation != StandardDeviation_DefaultValue) h.Add("standardDeviation",StandardDeviation);
-			if (Index != Index_DefaultValue) h.Add("index",Index);
 			
 
 			return h;

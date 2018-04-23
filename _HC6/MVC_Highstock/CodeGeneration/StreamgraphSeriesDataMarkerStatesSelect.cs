@@ -14,14 +14,21 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public StreamgraphSeriesDataMarkerStatesSelect()
 		{
+			Enabled = Enabled_DefaultValue = true;
 			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#000000";
 			LineWidth = LineWidth_DefaultValue = 2;
 			Radius = Radius_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
 			
 		}	
 		
+
+		/// <summary>
+		/// Enable or disable visible feedback for selection.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The fill color of the point marker.
@@ -49,24 +56,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Radius { get; set; }
 		private double? Radius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable visible feedback for selection.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;

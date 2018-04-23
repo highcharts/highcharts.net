@@ -14,45 +14,24 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigatorYAxisLabels()
 		{
-			Enabled = Enabled_DefaultValue = false;
-			Style = Style_DefaultValue = new NavigatorYAxisLabelsStyle();
-			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = NavigatorYAxisLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
+			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
+			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			Overflow = Overflow_DefaultValue = NavigatorYAxisLabelsOverflow.Null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
+			Style = Style_DefaultValue = new NavigatorYAxisLabelsStyle();
+			UseHTML = UseHTML_DefaultValue = false;
+			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
-			UseHTML = UseHTML_DefaultValue = false;
-			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// CSS styles for the label. Use `whiteSpace: 'nowrap'` to preventwrapping of category labels. Use `textOverflow: 'none'` toprevent ellipsis (dots).In styled mode, the labels are styled with the`.highcharts-axis-labels` class.
-		/// </summary>
-		public NavigatorYAxisLabelsStyle Style { get; set; }
-		private NavigatorYAxisLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x position offset of the label relative to the tick positionon the axis.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// What part of the string the given position is anchored to.If `left`, the left side of the string is at the axis position.Can be one of `"left"`, `"center"` or `"right"`. Defaults toan intelligent guess based on which side of the chart the axisis on and the rotation of the label.
@@ -69,6 +48,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) for the axis label.
 		/// </summary>
 		public string Format { get; set; }
@@ -80,6 +66,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Horizontal axis only. When `staggerLines` is not set, `maxStaggerLines`defines how many lines the axis is allowed to add to automaticallyavoid overlapping X labels. Set to `1` to disable overlap detection.
+		/// </summary>
+		public double? MaxStaggerLines { get; set; }
+		private double? MaxStaggerLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -111,6 +104,27 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// CSS styles for the label. Use `whiteSpace: 'nowrap'` to preventwrapping of category labels. Use `textOverflow: 'none'` toprevent ellipsis (dots).In styled mode, the labels are styled with the`.highcharts-axis-labels` class.
+		/// </summary>
+		public NavigatorYAxisLabelsStyle Style { get; set; }
+		private NavigatorYAxisLabelsStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The x position offset of the label relative to the tick positionon the axis.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The y position offset of the label relative to the tick positionon the axis. The default makes it adapt to the font size onbottom axis.
 		/// </summary>
 		public double? Y { get; set; }
@@ -122,41 +136,27 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
-		/// </summary>
-		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Horizontal axis only. When `staggerLines` is not set, `maxStaggerLines`defines how many lines the axis is allowed to add to automaticallyavoid overlapping X labels. Set to `1` to disable overlap detection.
-		/// </summary>
-		public double? MaxStaggerLines { get; set; }
-		private double? MaxStaggerLines_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (X != X_DefaultValue) h.Add("x",X);
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("NavigatorYAxisLabelsFormatter.formatter", Formatter); }  
+			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			
 
 			return h;

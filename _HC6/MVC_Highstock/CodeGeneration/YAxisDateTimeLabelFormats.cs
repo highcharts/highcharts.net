@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public YAxisDateTimeLabelFormats()
 		{
-			Millisecond = Millisecond_DefaultValue = "%H:%M:%S.%L";
-			Second = Second_DefaultValue = "%H:%M:%S";
-			Minute = Minute_DefaultValue = "%H:%M";
-			Hour = Hour_DefaultValue = "%H:%M";
 			Day = Day_DefaultValue = "%e. %b";
-			Week = Week_DefaultValue = "%e. %b";
+			Hour = Hour_DefaultValue = "%H:%M";
+			Millisecond = Millisecond_DefaultValue = "%H:%M:%S.%L";
+			Minute = Minute_DefaultValue = "%H:%M";
 			Month = Month_DefaultValue = "%b '%y";
+			Second = Second_DefaultValue = "%H:%M:%S";
+			Week = Week_DefaultValue = "%e. %b";
 			Year = Year_DefaultValue = "%Y";
 			
 		}	
@@ -29,22 +29,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Millisecond { get; set; }
-		private string Millisecond_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Second { get; set; }
-		private string Second_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Minute { get; set; }
-		private string Minute_DefaultValue { get; set; }
+		public string Day { get; set; }
+		private string Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -57,15 +43,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Day { get; set; }
-		private string Day_DefaultValue { get; set; }
+		public string Millisecond { get; set; }
+		private string Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Week { get; set; }
-		private string Week_DefaultValue { get; set; }
+		public string Minute { get; set; }
+		private string Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -73,6 +59,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Month { get; set; }
 		private string Month_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Second { get; set; }
+		private string Second_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Week { get; set; }
+		private string Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -86,13 +86,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Millisecond != Millisecond_DefaultValue) h.Add("millisecond",Millisecond);
-			if (Second != Second_DefaultValue) h.Add("second",Second);
-			if (Minute != Minute_DefaultValue) h.Add("minute",Minute);
-			if (Hour != Hour_DefaultValue) h.Add("hour",Hour);
 			if (Day != Day_DefaultValue) h.Add("day",Day);
-			if (Week != Week_DefaultValue) h.Add("week",Week);
+			if (Hour != Hour_DefaultValue) h.Add("hour",Hour);
+			if (Millisecond != Millisecond_DefaultValue) h.Add("millisecond",Millisecond);
+			if (Minute != Minute_DefaultValue) h.Add("minute",Minute);
 			if (Month != Month_DefaultValue) h.Add("month",Month);
+			if (Second != Second_DefaultValue) h.Add("second",Second);
+			if (Week != Week_DefaultValue) h.Add("week",Week);
 			if (Year != Year_DefaultValue) h.Add("year",Year);
 			
 

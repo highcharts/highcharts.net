@@ -14,52 +14,24 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesData()
 		{
-			Parent = Parent_DefaultValue = "undefined";
-			Value = Value_DefaultValue = null;
-			ColorValue = ColorValue_DefaultValue = null;
-			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			ColorValue = ColorValue_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new TreemapSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Drilldown = Drilldown_DefaultValue = "";
+			Events = Events_DefaultValue = new TreemapSeriesDataEvents();
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
-			Selected = Selected_DefaultValue = false;
-			Events = Events_DefaultValue = new TreemapSeriesDataEvents();
+			Parent = Parent_DefaultValue = "undefined";
 			PointPadding = PointPadding_DefaultValue = null;
+			Selected = Selected_DefaultValue = false;
+			Value = Value_DefaultValue = null;
 			
 		}	
 		
-
-		/// <summary>
-		/// Only for treemap. Use this option to build a tree structure. Thevalue should be the id of the point which is the parent. If no pointshas a matching id, or this option is undefined, then the parent willbe set to the root.
-		/// </summary>
-		public string Parent { get; set; }
-		private string Parent_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The value of the point, resulting in a relative area of the pointin the treemap.
-		/// </summary>
-		public double? Value { get; set; }
-		private double? Value_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Serves a purpose only if a `colorAxis` object is defined in the chartoptions. This value will decide which color the point gets from thescale of the colorAxis.
-		/// </summary>
-		public double? ColorValue { get; set; }
-		private double? ColorValue_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -83,6 +55,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Serves a purpose only if a `colorAxis` object is defined in the chartoptions. This value will decide which color the point gets from thescale of the colorAxis.
+		/// </summary>
+		public double? ColorValue { get; set; }
+		private double? ColorValue_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels).
 		/// </summary>
 		public TreemapSeriesDataLabels DataLabels { get; set; }
@@ -94,6 +73,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// </summary>
+		public string Drilldown { get; set; }
+		private string Drilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public TreemapSeriesDataEvents Events { get; set; }
+		private TreemapSeriesDataEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,17 +111,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether the data point is selected initially.
+		/// Only for treemap. Use this option to build a tree structure. Thevalue should be the id of the point which is the parent. If no pointshas a matching id, or this option is undefined, then the parent willbe set to the root.
 		/// </summary>
-		public bool? Selected { get; set; }
-		private bool? Selected_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public TreemapSeriesDataEvents Events { get; set; }
-		private TreemapSeriesDataEvents Events_DefaultValue { get; set; }
+		public string Parent { get; set; }
+		private string Parent_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -136,27 +122,41 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? PointPadding { get; set; }
 		private double? PointPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether the data point is selected initially.
+		/// </summary>
+		public bool? Selected { get; set; }
+		private bool? Selected_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The value of the point, resulting in a relative area of the pointin the treemap.
+		/// </summary>
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
-			if (Value != Value_DefaultValue) h.Add("value",Value);
-			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
+			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (Value != Value_DefaultValue) h.Add("value",Value);
 			
 
 			return h;

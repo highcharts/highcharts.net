@@ -15,10 +15,10 @@ namespace Highsoft.Web.Mvc.Charts
 		public LegendNavigation()
 		{
 			ActiveColor = ActiveColor_DefaultValue = "#003399";
-			InactiveColor = InactiveColor_DefaultValue = "#cccccc";
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			ArrowSize = ArrowSize_DefaultValue = 12;
 			Enabled = Enabled_DefaultValue = true;
+			InactiveColor = InactiveColor_DefaultValue = "#cccccc";
 			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
@@ -29,13 +29,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ActiveColor { get; set; }
 		private string ActiveColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the inactive up or down arrow in the legend pagenavigation. .
-		/// </summary>
-		public string InactiveColor { get; set; }
-		private string InactiveColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -60,6 +53,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The color of the inactive up or down arrow in the legend pagenavigation. .
+		/// </summary>
+		public string InactiveColor { get; set; }
+		private string InactiveColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Text styles for the legend page navigation.
 		/// </summary>
 		public Hashtable Style { get; set; }
@@ -71,10 +71,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (ActiveColor != ActiveColor_DefaultValue) h.Add("activeColor",ActiveColor);
-			if (InactiveColor != InactiveColor_DefaultValue) h.Add("inactiveColor",InactiveColor);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (ArrowSize != ArrowSize_DefaultValue) h.Add("arrowSize",ArrowSize);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (InactiveColor != InactiveColor_DefaultValue) h.Add("inactiveColor",InactiveColor);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 

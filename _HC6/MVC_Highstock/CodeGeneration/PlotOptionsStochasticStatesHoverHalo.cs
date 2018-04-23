@@ -14,18 +14,18 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsStochasticStatesHoverHalo()
 		{
-			Size = Size_DefaultValue = 10;
-			Opacity = Opacity_DefaultValue = null;
 			Attributes = Attributes_DefaultValue = null;
+			Opacity = Opacity_DefaultValue = null;
+			Size = Size_DefaultValue = 10;
 			
 		}	
 		
 
 		/// <summary>
-		/// The pixel size of the halo. For point markers this is theradius of the halo. For pie slices it is the width of thehalo outside the slice. For bubbles it defaults to 5 and isthe width of the halo outside the bubble.
+		/// A collection of SVG attributes to override the appearance ofthe halo, for example `fill`, `stroke` and `stroke-width`.
 		/// </summary>
-		public double? Size { get; set; }
-		private double? Size_DefaultValue { get; set; }
+		public Object Attributes { get; set; }
+		private Object Attributes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -36,19 +36,19 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A collection of SVG attributes to override the appearance ofthe halo, for example `fill`, `stroke` and `stroke-width`.
+		/// The pixel size of the halo. For point markers this is theradius of the halo. For pie slices it is the width of thehalo outside the slice. For bubbles it defaults to 5 and isthe width of the halo outside the bubble.
 		/// </summary>
-		public Object Attributes { get; set; }
-		private Object Attributes_DefaultValue { get; set; }
+		public double? Size { get; set; }
+		private double? Size_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Size != Size_DefaultValue) h.Add("size",Size);
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);
+			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
+			if (Size != Size_DefaultValue) h.Add("size",Size);
 			
 
 			return h;

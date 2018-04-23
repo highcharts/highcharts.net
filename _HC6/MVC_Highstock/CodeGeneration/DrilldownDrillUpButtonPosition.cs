@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		public DrilldownDrillUpButtonPosition()
 		{
 			Align = Align_DefaultValue = "right";
+			VerticalAlign = VerticalAlign_DefaultValue = DrilldownDrillUpButtonPositionVerticalAlign.Top;
 			X = X_DefaultValue = -10;
 			Y = Y_DefaultValue = 10;
-			VerticalAlign = VerticalAlign_DefaultValue = DrilldownDrillUpButtonPositionVerticalAlign.Top;
 			
 		}	
 		
@@ -27,6 +27,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Align { get; set; }
 		private string Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Vertical alignment of the button.
+		/// </summary>
+		public DrilldownDrillUpButtonPositionVerticalAlign VerticalAlign { get; set; }
+		private DrilldownDrillUpButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -41,13 +48,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Vertical alignment of the button.
-		/// </summary>
-		public DrilldownDrillUpButtonPositionVerticalAlign VerticalAlign { get; set; }
-		private DrilldownDrillUpButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -55,9 +55,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			
 
 			return h;

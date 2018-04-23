@@ -14,23 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreasplinerangeSeriesLabel()
 		{
-			Enabled = Enabled_DefaultValue = true;
+			BoxesToAvoid = BoxesToAvoid_DefaultValue = new List<object>();
 			ConnectorAllowed = ConnectorAllowed_DefaultValue = false;
 			ConnectorNeighbourDistance = ConnectorNeighbourDistance_DefaultValue = 24;
-			MinFontSize = MinFontSize_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			MaxFontSize = MaxFontSize_DefaultValue = null;
+			MinFontSize = MinFontSize_DefaultValue = null;
 			OnArea = OnArea_DefaultValue = null;
 			Style = Style_DefaultValue = new AreasplinerangeSeriesLabelStyle();
-			BoxesToAvoid = BoxesToAvoid_DefaultValue = new List<object>();
 			
 		}	
 		
 
 		/// <summary>
-		/// Enable the series label per series.
+		/// An array of boxes to avoid when laying out the labels. Eachitem has a `left`, `right`, `top` and `bottom` property.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public List<object> BoxesToAvoid { get; set; }
+		private List<object> BoxesToAvoid_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -48,10 +48,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For area-like series, allow the font size to vary so thatsmall areas get a smaller font size. The default applies thiseffect to area-like series but not line-like series.
+		/// Enable the series label per series.
 		/// </summary>
-		public double? MinFontSize { get; set; }
-		private double? MinFontSize_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -59,6 +59,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? MaxFontSize { get; set; }
 		private double? MaxFontSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For area-like series, allow the font size to vary so thatsmall areas get a smaller font size. The default applies thiseffect to area-like series but not line-like series.
+		/// </summary>
+		public double? MinFontSize { get; set; }
+		private double? MinFontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -73,27 +80,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public AreasplinerangeSeriesLabelStyle Style { get; set; }
 		private AreasplinerangeSeriesLabelStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array of boxes to avoid when laying out the labels. Eachitem has a `left`, `right`, `top` and `bottom` property.
-		/// </summary>
-		public List<object> BoxesToAvoid { get; set; }
-		private List<object> BoxesToAvoid_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (BoxesToAvoid != BoxesToAvoid_DefaultValue) h.Add("boxesToAvoid",BoxesToAvoid);
 			if (ConnectorAllowed != ConnectorAllowed_DefaultValue) h.Add("connectorAllowed",ConnectorAllowed);
 			if (ConnectorNeighbourDistance != ConnectorNeighbourDistance_DefaultValue) h.Add("connectorNeighbourDistance",ConnectorNeighbourDistance);
-			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (MaxFontSize != MaxFontSize_DefaultValue) h.Add("maxFontSize",MaxFontSize);
+			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
 			if (OnArea != OnArea_DefaultValue) h.Add("onArea",OnArea);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (BoxesToAvoid != BoxesToAvoid_DefaultValue) h.Add("boxesToAvoid",BoxesToAvoid);
 			
 
 			return h;

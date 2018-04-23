@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsStreamgraphMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new PlotOptionsStreamgraphMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new PlotOptionsStreamgraphMarkerStatesHover();
+			Normal = Normal_DefaultValue = new PlotOptionsStreamgraphMarkerStatesNormal();
 			Select = Select_DefaultValue = new PlotOptionsStreamgraphMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public PlotOptionsStreamgraphMarkerStatesNormal Normal { get; set; }
-		private PlotOptionsStreamgraphMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public PlotOptionsStreamgraphMarkerStatesHover Hover { get; set; }
 		private PlotOptionsStreamgraphMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public PlotOptionsStreamgraphMarkerStatesNormal Normal { get; set; }
+		private PlotOptionsStreamgraphMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

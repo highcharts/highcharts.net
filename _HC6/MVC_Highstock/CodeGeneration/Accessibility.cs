@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Accessibility()
 		{
-			KeyboardNavigation = KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
-			Enabled = Enabled_DefaultValue = true;
-			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = null;
-			ScreenReaderSectionFormatter = ScreenReaderSectionFormatter_DefaultValue = "";
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
+			Enabled = Enabled_DefaultValue = true;
+			KeyboardNavigation = KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
 			OnTableAnchorClick = OnTableAnchorClick_DefaultValue = "";
 			PointDateFormat = PointDateFormat_DefaultValue = "";
 			PointDateFormatter = PointDateFormatter_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
+			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = null;
+			ScreenReaderSectionFormatter = ScreenReaderSectionFormatter_DefaultValue = "";
 			SeriesDescriptionFormatter = SeriesDescriptionFormatter_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// Options for keyboard navigation.
+		/// Whether or not to add series descriptions to charts with a singleseries.
 		/// </summary>
-		public AccessibilityKeyboardNavigation KeyboardNavigation { get; set; }
-		private AccessibilityKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
+		public bool? DescribeSingleSeries { get; set; }
+		private bool? DescribeSingleSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -43,24 +43,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// <p>When a series contains more points than this, we no longer expose information about individual points to screen readers.</p><p>Set to <code>null</code> to disable.</p>
+		/// Options for keyboard navigation.
 		/// </summary>
-		public long? PointDescriptionThreshold { get; set; }
-		private long? PointDescriptionThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A formatter function to create the HTML contents of the hidden screenreader information region. Receives one argument, `chart`, referringto the chart object. Should return a String with the HTML contentof the region.The link to view the chart as a data table will be addedautomatically after the custom HTML content.
-		/// </summary>
-		public string ScreenReaderSectionFormatter { get; set; }
-		private string ScreenReaderSectionFormatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether or not to add series descriptions to charts with a singleseries.
-		/// </summary>
-		public bool? DescribeSingleSeries { get; set; }
-		private bool? DescribeSingleSeries_DefaultValue { get; set; }
+		public AccessibilityKeyboardNavigation KeyboardNavigation { get; set; }
+		private AccessibilityKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -92,6 +78,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// <p>When a series contains more points than this, we no longer expose information about individual points to screen readers.</p><p>Set to <code>null</code> to disable.</p>
+		/// </summary>
+		public long? PointDescriptionThreshold { get; set; }
+		private long? PointDescriptionThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A formatter function to create the HTML contents of the hidden screenreader information region. Receives one argument, `chart`, referringto the chart object. Should return a String with the HTML contentof the region.The link to view the chart as a data table will be addedautomatically after the custom HTML content.
+		/// </summary>
+		public string ScreenReaderSectionFormatter { get; set; }
+		private string ScreenReaderSectionFormatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Formatter function to use instead of the default for seriesdescriptions. Receives one argument, `series`, referring to theseries to describe. Should return a String with the description ofthe series for a screen reader user.
 		/// </summary>
 		public string SeriesDescriptionFormatter { get; set; }
@@ -102,8 +102,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
+			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
+			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highstock.AddFunction("AccessibilityOnTableAnchorClick.onTableAnchorClick", OnTableAnchorClick); }  
+			if (PointDateFormat != PointDateFormat_DefaultValue) h.Add("pointDateFormat",PointDateFormat);
+			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highstock.AddFunction("AccessibilityPointDateFormatter.pointDateFormatter", PointDateFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("AccessibilityPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)
 			{
 				if (PointDescriptionThreshold != null)
@@ -112,11 +117,6 @@ namespace Highsoft.Web.Mvc.Stocks
 					h.Add("pointDescriptionThreshold", false);
 			}
 			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highstock.AddFunction("AccessibilityScreenReaderSectionFormatter.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
-			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
-			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highstock.AddFunction("AccessibilityOnTableAnchorClick.onTableAnchorClick", OnTableAnchorClick); }  
-			if (PointDateFormat != PointDateFormat_DefaultValue) h.Add("pointDateFormat",PointDateFormat);
-			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highstock.AddFunction("AccessibilityPointDateFormatter.pointDateFormatter", PointDateFormatter); }  
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("AccessibilityPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highstock.AddFunction("AccessibilitySeriesDescriptionFormatter.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
 			
 

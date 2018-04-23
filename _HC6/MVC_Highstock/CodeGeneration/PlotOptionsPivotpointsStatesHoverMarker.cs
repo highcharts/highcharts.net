@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsPivotpointsStatesHoverMarker()
 		{
-			LineWidth = LineWidth_DefaultValue = 0;
-			LineColor = LineColor_DefaultValue = "#ffffff";
+			Enabled = Enabled_DefaultValue = null;
 			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
+			FillColor = FillColor_DefaultValue = null;
+			Height = Height_DefaultValue = null;
+			LineColor = LineColor_DefaultValue = "#ffffff";
+			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 4;
 			States = States_DefaultValue = new PlotOptionsPivotpointsStatesHoverMarkerStates();
-			FillColor = FillColor_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = null;
-			Height = Height_DefaultValue = null;
 			Symbol = Symbol_DefaultValue = "null";
 			Width = Width_DefaultValue = null;
 			
@@ -29,10 +29,31 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The width of the point marker's outline.
+		/// Enable or disable the point marker. If `null`, the markers are hiddenwhen the data is dense, and shown for more widespread data points.
 		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The threshold for how dense the point markers should be before theyare hidden, given that `enabled` is not defined. The number indicatesthe horizontal distance between the two closest points in the series,as multiples of the `marker.radius`. In other words, the defaultvalue of 2 means points are hidden if overlapping horizontally.
+		/// </summary>
+		public double? EnabledThreshold { get; set; }
+		private double? EnabledThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The fill color of the point marker. When `null`, the series' orpoint's color is used.
+		/// </summary>
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Image markers only. Set the image width explicitly. When using thisoption, a `width` must also be set.
+		/// </summary>
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -43,10 +64,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The threshold for how dense the point markers should be before theyare hidden, given that `enabled` is not defined. The number indicatesthe horizontal distance between the two closest points in the series,as multiples of the `marker.radius`. In other words, the defaultvalue of 2 means points are hidden if overlapping horizontally.
+		/// The width of the point marker's outline.
 		/// </summary>
-		public double? EnabledThreshold { get; set; }
-		private double? EnabledThreshold_DefaultValue { get; set; }
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -61,27 +82,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsPivotpointsStatesHoverMarkerStates States { get; set; }
 		private PlotOptionsPivotpointsStatesHoverMarkerStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The fill color of the point marker. When `null`, the series' orpoint's color is used.
-		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the point marker. If `null`, the markers are hiddenwhen the data is dense, and shown for more widespread data points.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Image markers only. Set the image width explicitly. When using thisoption, a `width` must also be set.
-		/// </summary>
-		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -102,14 +102,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
+			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			

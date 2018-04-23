@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ZigzagSeriesStatesHoverMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new ZigzagSeriesStatesHoverMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new ZigzagSeriesStatesHoverMarkerStatesHover();
+			Normal = Normal_DefaultValue = new ZigzagSeriesStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new ZigzagSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public ZigzagSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
-		private ZigzagSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public ZigzagSeriesStatesHoverMarkerStatesHover Hover { get; set; }
 		private ZigzagSeriesStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public ZigzagSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
+		private ZigzagSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

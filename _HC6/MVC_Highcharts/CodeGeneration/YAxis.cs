@@ -14,77 +14,77 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxis()
 		{
-			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
-			EndOnTick = EndOnTick_DefaultValue = true;
-			TickPixelInterval = TickPixelInterval_DefaultValue = 72;
-			ShowLastLabel = ShowLastLabel_DefaultValue = true;
-			Labels = Labels_DefaultValue = new YAxisLabels();
-			MaxPadding = MaxPadding_DefaultValue = null;
-			MinPadding = MinPadding_DefaultValue = null;
-			StartOnTick = StartOnTick_DefaultValue = true;
-			Title = Title_DefaultValue = new YAxisTitle();
-			StackLabels = StackLabels_DefaultValue = new YAxisStackLabels();
-			GridLineWidth = GridLineWidth_DefaultValue = 1;
-			LineWidth = LineWidth_DefaultValue = 0;
-			Opposite = Opposite_DefaultValue = false;
-			LineColor = LineColor_DefaultValue = "";
-			Min = Min_DefaultValue = null;
-			Max = Max_DefaultValue = null;
-			Angle = Angle_DefaultValue = 0;
-			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
-			MaxColor = MaxColor_DefaultValue = "#003399";
-			MinColor = MinColor_DefaultValue = "#e6ebf5";
-			ReversedStacks = ReversedStacks_DefaultValue = true;
-			Stops = Stops_DefaultValue = new List<Stop>();
-			TickWidth = TickWidth_DefaultValue = 0;
-			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
-			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
-			SoftMax = SoftMax_DefaultValue = null;
-			SoftMin = SoftMin_DefaultValue = null;
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			MinorTickLength = MinorTickLength_DefaultValue = 2;
-			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
-			StartOfWeek = StartOfWeek_DefaultValue = 1;
-			TickLength = TickLength_DefaultValue = 10;
-			TickmarkPlacement = TickmarkPlacement_DefaultValue = YAxisTickmarkPlacement.Between;
-			TickPosition = TickPosition_DefaultValue = YAxisTickPosition.Outside;
-			Type = Type_DefaultValue = YAxisType.Linear;
-			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
-			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
-			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
-			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
-			TickColor = TickColor_DefaultValue = "#ccd6eb";
+			AlignTicks = AlignTicks_DefaultValue = true;
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
+			Angle = Angle_DefaultValue = 0;
 			Breaks = Breaks_DefaultValue = new YAxisBreaks();
 			Categories = Categories_DefaultValue = new List<string>();
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new YAxisCrosshair();
+			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Description = Description_DefaultValue = "undefined";
+			EndOnTick = EndOnTick_DefaultValue = true;
 			Events = Events_DefaultValue = new YAxisEvents();
 			Floor = Floor_DefaultValue = null;
+			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = YAxisGridLineDashStyle.Solid;
+			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
+			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Id = Id_DefaultValue = "null";
+			Labels = Labels_DefaultValue = new YAxisLabels();
+			LineColor = LineColor_DefaultValue = "";
+			LineWidth = LineWidth_DefaultValue = 0;
 			LinkedTo = LinkedTo_DefaultValue = null;
-			AlignTicks = AlignTicks_DefaultValue = true;
+			Max = Max_DefaultValue = null;
+			MaxColor = MaxColor_DefaultValue = "#003399";
+			MaxPadding = MaxPadding_DefaultValue = null;
 			MaxZoom = MaxZoom_DefaultValue = null;
+			Min = Min_DefaultValue = null;
+			MinColor = MinColor_DefaultValue = "#e6ebf5";
+			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = YAxisMinorGridLineDashStyle.Solid;
+			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
+			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
 			MinorTickInterval = MinorTickInterval_DefaultValue = null;
+			MinorTickLength = MinorTickLength_DefaultValue = 2;
+			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
 			MinorTicks = MinorTicks_DefaultValue = false;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
+			MinPadding = MinPadding_DefaultValue = null;
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
 			Offset = Offset_DefaultValue = 0;
+			Opposite = Opposite_DefaultValue = false;
 			Pane = Pane_DefaultValue = null;
+			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
+			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
 			Reversed = Reversed_DefaultValue = false;
+			ReversedStacks = ReversedStacks_DefaultValue = true;
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
+			ShowLastLabel = ShowLastLabel_DefaultValue = true;
+			SoftMax = SoftMax_DefaultValue = null;
+			SoftMin = SoftMin_DefaultValue = null;
+			StackLabels = StackLabels_DefaultValue = new YAxisStackLabels();
+			StartOfWeek = StartOfWeek_DefaultValue = 1;
+			StartOnTick = StartOnTick_DefaultValue = true;
+			Stops = Stops_DefaultValue = new List<Stop>();
 			TickAmount = TickAmount_DefaultValue = null;
+			TickColor = TickColor_DefaultValue = "#ccd6eb";
 			TickInterval = TickInterval_DefaultValue = null;
+			TickLength = TickLength_DefaultValue = 10;
+			TickmarkPlacement = TickmarkPlacement_DefaultValue = YAxisTickmarkPlacement.Between;
+			TickPixelInterval = TickPixelInterval_DefaultValue = 72;
+			TickPosition = TickPosition_DefaultValue = YAxisTickPosition.Outside;
 			TickPositioner = TickPositioner_DefaultValue = "";
 			TickPositions = TickPositions_DefaultValue = new List<double>();
+			TickWidth = TickWidth_DefaultValue = 0;
+			Title = Title_DefaultValue = new YAxisTitle();
+			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
+			Type = Type_DefaultValue = YAxisType.Linear;
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
 			
@@ -92,283 +92,10 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
+		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
 		/// </summary>
-		public string TooltipValueFormat { get; set; }
-		private string TooltipValueFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? EndOnTick { get; set; }
-		private bool? EndOnTick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? TickPixelInterval { get; set; }
-		private double? TickPixelInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? ShowLastLabel { get; set; }
-		private bool? ShowLastLabel_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisLabels Labels { get; set; }
-		private YAxisLabels Labels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
-		/// </summary>
-		public double? MaxPadding { get; set; }
-		private double? MaxPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
-		/// </summary>
-		public double? MinPadding { get; set; }
-		private double? MinPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.
-		/// </summary>
-		public bool? StartOnTick { get; set; }
-		private bool? StartOnTick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public YAxisTitle Title { get; set; }
-		private YAxisTitle Title_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The stack labels show the total value for each bar in a stackedcolumn or bar chart. The label will be placed on top of positivecolumns and below negative columns. In case of an inverted columnchart or a bar chart the label is placed to the right of positivebars and to the left of negative bars.
-		/// </summary>
-		public YAxisStackLabels StackLabels { get; set; }
-		private YAxisStackLabels StackLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? GridLineWidth { get; set; }
-		private double? GridLineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Opposite { get; set; }
-		private bool? Opposite_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string LineColor { get; set; }
-		private string LineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Min { get; set; }
-		private double? Min_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Max { get; set; }
-		private double? Max_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// In a polar chart, this is the angle of the Y axis in degrees, where0 is up and 90 is right. The angle determines the position of theaxis line and the labels, though the coordinate system is unaffected.
-		/// </summary>
-		public double? Angle { get; set; }
-		private double? Angle_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Polar charts only. Whether the grid lines should draw as a polygonwith straight lines between categories, or as circles. Can be either`circle` or `polygon`.
-		/// </summary>
-		public YAxisGridLineInterpolation GridLineInterpolation { get; set; }
-		private YAxisGridLineInterpolation GridLineInterpolation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Solid gauge only. Unless [stops](#yAxis.stops) are set, the colorto represent the maximum value of the Y axis.
-		/// </summary>
-		public string MaxColor { get; set; }
-		private string MaxColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Solid gauge only. Unless [stops](#yAxis.stops) are set, the colorto represent the minimum value of the Y axis.
-		/// </summary>
-		public string MinColor { get; set; }
-		private string MinColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If `true`, the first series in a stack will be drawn on top in apositive, non-reversed Y axis. If `false`, the first series is inthe base of the stack.
-		/// </summary>
-		public bool? ReversedStacks { get; set; }
-		private bool? ReversedStacks_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Solid gauge series only. Color stops for the solid gauge. Use thisin cases where a linear gradient between a `minColor` and `maxColor`is not sufficient. The stops is an array of tuples, where the firstitem is a float between 0 and 1 assigning the relative position inthe gradient, and the second item is the color.For solid gauges, the Y axis also inherits the concept of [data classes](http://api.highcharts.com/highmaps#colorAxis.dataClasses) from the Highmapscolor axis.
-		/// </summary>
-		public List<Stop> Stops { get; set; }
-		private List<Stop> Stops_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel width of the major tick marks.
-		/// </summary>
-		public double? TickWidth { get; set; }
-		private double? TickWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array of objects defining plot bands on the Y axis.
-		/// </summary>
-		public List<YAxisPlotBands> PlotBands { get; set; }
-		private List<YAxisPlotBands> PlotBands_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array of objects representing plot lines on the X axis
-		/// </summary>
-		public List<YAxisPlotLines> PlotLines { get; set; }
-		private List<YAxisPlotLines> PlotLines_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A soft maximum for the axis. If the series data maximum is lessthan this, the axis will stay at this maximum, but if the seriesdata maximum is higher, the axis will flex to show all data.
-		/// </summary>
-		public double? SoftMax { get; set; }
-		private double? SoftMax_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A soft minimum for the axis. If the series data minimum is greaterthan this, the axis will stay at this minimum, but if the seriesdata minimum is lower, the axis will flex to show all data.
-		/// </summary>
-		public double? SoftMin { get; set; }
-		private double? SoftMin_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
-		/// </summary>
-		public Hashtable DateTimeLabelFormats { get; set; }
-		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel length of the minor tick marks.
-		/// </summary>
-		public double? MinorTickLength { get; set; }
-		private double? MinorTickLength_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The position of the minor tick marks relative to the axis line. Can be one of `inside` and `outside`.
-		/// </summary>
-		public YAxisMinorTickPosition MinorTickPosition { get; set; }
-		private YAxisMinorTickPosition MinorTickPosition_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For datetime axes, this decides where to put the tick between weeks. 0 = Sunday, 1 = Monday.
-		/// </summary>
-		public double? StartOfWeek { get; set; }
-		private double? StartOfWeek_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel length of the main tick marks.
-		/// </summary>
-		public double? TickLength { get; set; }
-		private double? TickLength_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For categorized axes only. If `on` the tick mark is placed in thecenter of the category, if `between` the tick mark is placed betweencategories. The default is `between` if the `tickInterval` is 1, else `on`.
-		/// </summary>
-		public YAxisTickmarkPlacement TickmarkPlacement { get; set; }
-		private YAxisTickmarkPlacement TickmarkPlacement_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The position of the major tick marks relative to the axis line.Can be one of `inside` and `outside`.
-		/// </summary>
-		public YAxisTickPosition TickPosition { get; set; }
-		private YAxisTickPosition TickPosition_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The type of axis. Can be one of `linear`, `logarithmic`, `datetime`or `category`. In a datetime axis, the numbers are given inmilliseconds, and tick marks are placed on appropriate values likefull hours or days. In a category axis, the[point names](#series.line.data.name) of the chart's series are usedfor categories, if not a [categories](#xAxis.categories) array isdefined.
-		/// </summary>
-		public YAxisType Type { get; set; }
-		private YAxisType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Color of the minor, secondary grid lines.In styled mode, the stroke width is given in the`.highcharts-minor-grid-line` class.
-		/// </summary>
-		public string MinorGridLineColor { get; set; }
-		private string MinorGridLineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Width of the minor, secondary grid lines.In styled mode, the stroke width is given in the`.highcharts-grid-line` class.
-		/// </summary>
-		public double? MinorGridLineWidth { get; set; }
-		private double? MinorGridLineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Color for the minor tick marks.
-		/// </summary>
-		public string MinorTickColor { get; set; }
-		private string MinorTickColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Color of the grid lines extending the ticks across the plot area.In styled mode, the stroke is given in the `.highcharts-grid-line`class.
-		/// </summary>
-		public string GridLineColor { get; set; }
-		private string GridLineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Color for the main tick marks.In styled mode, the stroke is given in the `.highcharts-tick`class.
-		/// </summary>
-		public string TickColor { get; set; }
-		private string TickColor_DefaultValue { get; set; }
+		public bool? AlignTicks { get; set; }
+		private bool? AlignTicks_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -383,6 +110,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string AlternateGridColor { get; set; }
 		private string AlternateGridColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// In a polar chart, this is the angle of the Y axis in degrees, where0 is up and 90 is right. The angle determines the position of theaxis line and the labels, though the coordinate system is unaffected.
+		/// </summary>
+		public double? Angle { get; set; }
+		private double? Angle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -421,10 +155,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
+		/// </summary>
+		public Hashtable DateTimeLabelFormats { get; set; }
+		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// _Requires Accessibility module_Description of the axis to screen reader users.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? EndOnTick { get; set; }
+		private bool? EndOnTick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -442,10 +190,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Color of the grid lines extending the ticks across the plot area.In styled mode, the stroke is given in the `.highcharts-grid-line`class.
+		/// </summary>
+		public string GridLineColor { get; set; }
+		private string GridLineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The dash or dot style of the grid lines. For possible values, see[this demonstration](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public YAxisGridLineDashStyle GridLineDashStyle { get; set; }
 		private YAxisGridLineDashStyle GridLineDashStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Polar charts only. Whether the grid lines should draw as a polygonwith straight lines between categories, or as circles. Can be either`circle` or `polygon`.
+		/// </summary>
+		public YAxisGridLineInterpolation GridLineInterpolation { get; set; }
+		private YAxisGridLineInterpolation GridLineInterpolation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? GridLineWidth { get; set; }
+		private double? GridLineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -463,6 +232,27 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisLabels Labels { get; set; }
+		private YAxisLabels Labels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string LineColor { get; set; }
+		private string LineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Index of another axis that this axis is linked to. When an axis islinked to a master axis, it will take the same extremes asthe master, but as assigned by min or max or by setExtremes.It can be used to show additional info, or to ease reading thechart by duplicating the scales.
 		/// </summary>
 		public double? LinkedTo { get; set; }
@@ -470,10 +260,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
+		/// 
 		/// </summary>
-		public bool? AlignTicks { get; set; }
-		private bool? AlignTicks_DefaultValue { get; set; }
+		public double? Max { get; set; }
+		private double? Max_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Solid gauge only. Unless [stops](#yAxis.stops) are set, the colorto represent the maximum value of the Y axis.
+		/// </summary>
+		public string MaxColor { get; set; }
+		private string MaxColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
+		/// </summary>
+		public double? MaxPadding { get; set; }
+		private double? MaxPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -484,6 +288,27 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public double? Min { get; set; }
+		private double? Min_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Solid gauge only. Unless [stops](#yAxis.stops) are set, the colorto represent the minimum value of the Y axis.
+		/// </summary>
+		public string MinColor { get; set; }
+		private string MinColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Color of the minor, secondary grid lines.In styled mode, the stroke width is given in the`.highcharts-minor-grid-line` class.
+		/// </summary>
+		public string MinorGridLineColor { get; set; }
+		private string MinorGridLineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The dash or dot style of the minor grid lines. For possible values,see [this demonstration](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public YAxisMinorGridLineDashStyle MinorGridLineDashStyle { get; set; }
@@ -491,10 +316,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Width of the minor, secondary grid lines.In styled mode, the stroke width is given in the`.highcharts-grid-line` class.
+		/// </summary>
+		public double? MinorGridLineWidth { get; set; }
+		private double? MinorGridLineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Color for the minor tick marks.
+		/// </summary>
+		public string MinorTickColor { get; set; }
+		private string MinorTickColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Specific tick interval in axis units for the minor ticks.On a linear axis, if `"auto"`, the minor tick interval iscalculated as a fifth of the tickInterval. If `null`, minorticks are not shown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1,1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9ticks between 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
 		/// </summary>
 		public double? MinorTickInterval { get; set; }
 		private double? MinorTickInterval_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel length of the minor tick marks.
+		/// </summary>
+		public double? MinorTickLength { get; set; }
+		private double? MinorTickLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The position of the minor tick marks relative to the axis line. Can be one of `inside` and `outside`.
+		/// </summary>
+		public YAxisMinorTickPosition MinorTickPosition { get; set; }
+		private YAxisMinorTickPosition MinorTickPosition_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -509,6 +362,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? MinorTickWidth { get; set; }
 		private double? MinorTickWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
+		/// </summary>
+		public double? MinPadding { get; set; }
+		private double? MinPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -533,6 +393,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Opposite { get; set; }
+		private bool? Opposite_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Refers to the index in the [panes](#panes) array. Used for circulargauges and polar charts. When the option is not set then first panewill be used.
 		/// </summary>
 		public double? Pane { get; set; }
@@ -540,10 +407,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// An array of objects defining plot bands on the Y axis.
+		/// </summary>
+		public List<YAxisPlotBands> PlotBands { get; set; }
+		private List<YAxisPlotBands> PlotBands_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of objects representing plot lines on the X axis
+		/// </summary>
+		public List<YAxisPlotLines> PlotLines { get; set; }
+		private List<YAxisPlotLines> PlotLines_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to reverse the axis so that the highest number is closestto the origin. If the chart is inverted, the x axis is reversed bydefault.
 		/// </summary>
 		public bool? Reversed { get; set; }
 		private bool? Reversed_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If `true`, the first series in a stack will be drawn on top in apositive, non-reversed Y axis. If `false`, the first series is inthe base of the stack.
+		/// </summary>
+		public bool? ReversedStacks { get; set; }
+		private bool? ReversedStacks_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -561,6 +449,55 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? ShowLastLabel { get; set; }
+		private bool? ShowLastLabel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A soft maximum for the axis. If the series data maximum is lessthan this, the axis will stay at this maximum, but if the seriesdata maximum is higher, the axis will flex to show all data.
+		/// </summary>
+		public double? SoftMax { get; set; }
+		private double? SoftMax_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A soft minimum for the axis. If the series data minimum is greaterthan this, the axis will stay at this minimum, but if the seriesdata minimum is lower, the axis will flex to show all data.
+		/// </summary>
+		public double? SoftMin { get; set; }
+		private double? SoftMin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The stack labels show the total value for each bar in a stackedcolumn or bar chart. The label will be placed on top of positivecolumns and below negative columns. In case of an inverted columnchart or a bar chart the label is placed to the right of positivebars and to the left of negative bars.
+		/// </summary>
+		public YAxisStackLabels StackLabels { get; set; }
+		private YAxisStackLabels StackLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For datetime axes, this decides where to put the tick between weeks. 0 = Sunday, 1 = Monday.
+		/// </summary>
+		public double? StartOfWeek { get; set; }
+		private double? StartOfWeek_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.
+		/// </summary>
+		public bool? StartOnTick { get; set; }
+		private bool? StartOnTick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Solid gauge series only. Color stops for the solid gauge. Use thisin cases where a linear gradient between a `minColor` and `maxColor`is not sufficient. The stops is an array of tuples, where the firstitem is a float between 0 and 1 assigning the relative position inthe gradient, and the second item is the color.For solid gauges, the Y axis also inherits the concept of [data classes](http://api.highcharts.com/highmaps#colorAxis.dataClasses) from the Highmapscolor axis.
+		/// </summary>
+		public List<Stop> Stops { get; set; }
+		private List<Stop> Stops_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The amount of ticks to draw on the axis. This opens up for aligningthe ticks of multiple charts or panes within a chart. This optionoverrides the `tickPixelInterval` option.This option only has an effect on linear axes. Datetime, logarithmicor category axes are not affected.
 		/// </summary>
 		public double? TickAmount { get; set; }
@@ -568,10 +505,45 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Color for the main tick marks.In styled mode, the stroke is given in the `.highcharts-tick`class.
+		/// </summary>
+		public string TickColor { get; set; }
+		private string TickColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The interval of the tick marks in axis units. When `null`, the tickinterval is computed to approximately follow the [tickPixelInterval](#xAxis.tickPixelInterval) on linear and datetime axes. On categorized axes,a `null` tickInterval will default to 1, one category. Note thatdatetime axes are based on milliseconds, so for example an intervalof one day is expressed as `24 * 3600 * 1000`.On logarithmic axes, the tickInterval is based on powers, so a tickIntervalof 1 means one tick on each of 0.1, 1, 10, 100 etc. A tickIntervalof 2 means a tick of 0.1, 10, 1000 etc. A tickInterval of 0.2 putsa tick on 0.1, 0.2, 0.4, 0.6, 0.8, 1, 2, 4, 6, 8, 10, 20, 40 etc.If the tickInterval is too dense for labels to be drawn, Highchartsmay remove ticks.If the chart has multiple axes, the [alignTicks](#chart.alignTicks)option may interfere with the `tickInterval` setting.
 		/// </summary>
 		public double? TickInterval { get; set; }
 		private double? TickInterval_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel length of the main tick marks.
+		/// </summary>
+		public double? TickLength { get; set; }
+		private double? TickLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For categorized axes only. If `on` the tick mark is placed in thecenter of the category, if `between` the tick mark is placed betweencategories. The default is `between` if the `tickInterval` is 1, else `on`.
+		/// </summary>
+		public YAxisTickmarkPlacement TickmarkPlacement { get; set; }
+		private YAxisTickmarkPlacement TickmarkPlacement_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? TickPixelInterval { get; set; }
+		private double? TickPixelInterval_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The position of the major tick marks relative to the axis line.Can be one of `inside` and `outside`.
+		/// </summary>
+		public YAxisTickPosition TickPosition { get; set; }
+		private YAxisTickPosition TickPosition_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -586,6 +558,34 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<double> TickPositions { get; set; }
 		private List<double> TickPositions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel width of the major tick marks.
+		/// </summary>
+		public double? TickWidth { get; set; }
+		private double? TickWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisTitle Title { get; set; }
+		private YAxisTitle Title_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
+		/// </summary>
+		public string TooltipValueFormat { get; set; }
+		private string TooltipValueFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The type of axis. Can be one of `linear`, `logarithmic`, `datetime`or `category`. In a datetime axis, the numbers are given inmilliseconds, and tick marks are placed on appropriate values likefull hours or days. In a category axis, the[point names](#series.line.data.name) of the chart's series are usedfor categories, if not a [categories](#xAxis.categories) array isdefined.
+		/// </summary>
+		public YAxisType Type { get; set; }
+		private YAxisType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -606,77 +606,77 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
-			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
-			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
-			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
-			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
-			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
-			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
-			if (StackLabels.IsDirty()) h.Add("stackLabels",StackLabels.ToHashtable());
-			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (Min != Min_DefaultValue) h.Add("min",Min);
-			if (Max != Max_DefaultValue) h.Add("max",Max);
-			if (Angle != Angle_DefaultValue) h.Add("angle",Angle);
-			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation", Highcharts.FirstCharacterToLower(GridLineInterpolation.ToString()));
-			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
-			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
-			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
-			if (Stops.Any()) h.Add("stops", GetLists(Stops));
-			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
-			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
-			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
-			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
-			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
-			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
-			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
-			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
-			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
-			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
-			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
-			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highcharts.FirstCharacterToLower(TickPosition.ToString()));
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
-			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
-			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
-			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
-			if (TickColor != TickColor_DefaultValue) h.Add("tickColor",TickColor);
+			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
+			if (Angle != Angle_DefaultValue) h.Add("angle",Angle);
 			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
 			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
+			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
+			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
 			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle", Highcharts.FirstCharacterToLower(GridLineDashStyle.ToString()));
+			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation", Highcharts.FirstCharacterToLower(GridLineInterpolation.ToString()));
+			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
-			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
+			if (Max != Max_DefaultValue) h.Add("max",Max);
+			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
+			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
 			if (MaxZoom != MaxZoom_DefaultValue) h.Add("maxZoom",MaxZoom);
+			if (Min != Min_DefaultValue) h.Add("min",Min);
+			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
+			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
 			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle", Highcharts.FirstCharacterToLower(MinorGridLineDashStyle.ToString()));
+			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
+			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
+			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
+			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
+			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);
 			if (MinTickInterval != MinTickInterval_DefaultValue) h.Add("minTickInterval",MinTickInterval);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
+			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (Pane != Pane_DefaultValue) h.Add("pane",Pane);
+			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
+			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
+			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
+			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
+			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
+			if (StackLabels.IsDirty()) h.Add("stackLabels",StackLabels.ToHashtable());
+			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
+			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
+			if (Stops.Any()) h.Add("stops", GetLists(Stops));
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
+			if (TickColor != TickColor_DefaultValue) h.Add("tickColor",TickColor);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
+			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
+			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
+			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
+			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highcharts.FirstCharacterToLower(TickPosition.ToString()));
 			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("YAxisTickPositioner.tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
+			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
+			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
+			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			

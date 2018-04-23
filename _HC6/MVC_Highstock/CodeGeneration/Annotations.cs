@@ -14,42 +14,21 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Annotations()
 		{
-			Visible = Visible_DefaultValue = true;
 			LabelOptions = LabelOptions_DefaultValue = new AnnotationsLabelOptions();
-			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsShapeOptions();
-			ZIndex = ZIndex_DefaultValue = 6;
 			Labels = Labels_DefaultValue = new List<AnnotationsLabels>();
+			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsShapeOptions();
 			Shapes = Shapes_DefaultValue = new List<AnnotationsShapes>();
+			Visible = Visible_DefaultValue = true;
+			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
 		
-
-		/// <summary>
-		/// Whether the annotation is visible.
-		/// </summary>
-		public bool? Visible { get; set; }
-		private bool? Visible_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Options for annotation's labels. Each label inherits optionsfrom the labelOptions object. An option from the labelOptions can beoverwritten by config for a specific label.
 		/// </summary>
 		public AnnotationsLabelOptions LabelOptions { get; set; }
 		private AnnotationsLabelOptions LabelOptions_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for annotation's shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptions can beoverwritten by config for a specific shape.
-		/// </summary>
-		public AnnotationsShapeOptions ShapeOptions { get; set; }
-		private AnnotationsShapeOptions ShapeOptions_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The Z index of the annotation.
-		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -60,22 +39,43 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Options for annotation's shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptions can beoverwritten by config for a specific shape.
+		/// </summary>
+		public AnnotationsShapeOptions ShapeOptions { get; set; }
+		private AnnotationsShapeOptions ShapeOptions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array of shapes for the annotation. For options that apply tomultiple shapes, then can be added to the[shapeOptions](annotations.shapeOptions.html).
 		/// </summary>
 		public List<AnnotationsShapes> Shapes { get; set; }
 		private List<AnnotationsShapes> Shapes_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether the annotation is visible.
+		/// </summary>
+		public bool? Visible { get; set; }
+		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Z index of the annotation.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
-			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(Labels));
+			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
 			if (Shapes != Shapes_DefaultValue) h.Add("shapes", HashifyList(Shapes));
+			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 
 			return h;

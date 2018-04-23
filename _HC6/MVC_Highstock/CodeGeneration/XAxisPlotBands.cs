@@ -21,9 +21,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
+			Label = Label_DefaultValue = new XAxisPlotBandsLabel();
 			To = To_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = new XAxisPlotBandsLabel();
 			
 		}	
 		
@@ -78,6 +78,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Text labels for the plot bands
+		/// </summary>
+		public XAxisPlotBandsLabel Label { get; set; }
+		private XAxisPlotBandsLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The end position of the plot band in axis units.
 		/// </summary>
 		public double? To { get; set; }
@@ -89,13 +96,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Text labels for the plot bands
-		/// </summary>
-		public XAxisPlotBandsLabel Label { get; set; }
-		private XAxisPlotBandsLabel Label_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -109,9 +109,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			
 
 			return h;

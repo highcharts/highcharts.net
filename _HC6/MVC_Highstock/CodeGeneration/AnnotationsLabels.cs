@@ -14,7 +14,6 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AnnotationsLabels()
 		{
-			Point = Point_DefaultValue = new AnnotationsLabelsPoint();
 			Align = Align_DefaultValue = AnnotationsLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
@@ -23,29 +22,23 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ClassName = ClassName_DefaultValue = "";
 			Crop = Crop_DefaultValue = false;
+			Distance = Distance_DefaultValue = null;
+			Format = Format_DefaultValue = "undefined";
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = AnnotationsLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
+			Point = Point_DefaultValue = new AnnotationsLabelsPoint();
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new AnnotationsLabelsStyle();
+			Text = Text_DefaultValue = "undefined";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -16;
-			Distance = Distance_DefaultValue = null;
-			Format = Format_DefaultValue = "undefined";
-			Text = Text_DefaultValue = "undefined";
 			
 		}	
 		
-
-		/// <summary>
-		/// This option defines the point to which the label will be connected.It can be either the point which exists in the series - it isreferenced by the point's id - or a new point with defined x, yproperies and optionally axes.
-		/// </summary>
-		public AnnotationsLabelsPoint Point { get; set; }
-		private AnnotationsLabelsPoint Point_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// The alignment of the annotation's label. If right,the right side of the label should be touching the point.
@@ -104,6 +97,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The label's pixel distance from the point.
+		/// </summary>
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A [format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) string for the data label.
+		/// </summary>
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Callback JavaScript function to format the annotation's label.Note that if a `format` or `text` are defined, the format or texttake precedence and the formatter is ignored. `This` refers to apoint object.
 		/// </summary>
 		public string Formatter { get; set; }
@@ -125,6 +132,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// This option defines the point to which the label will be connected.It can be either the point which exists in the series - it isreferenced by the point's id - or a new point with defined x, yproperies and optionally axes.
+		/// </summary>
+		public AnnotationsLabelsPoint Point { get; set; }
+		private AnnotationsLabelsPoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The shadow of the box. The shadow can be an object configurationcontaining `color`, `offsetX`, `offsetY`, `opacity` and `width`.
 		/// </summary>
 		public Shadow Shadow { get; set; }
@@ -143,6 +157,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public AnnotationsLabelsStyle Style { get; set; }
 		private AnnotationsLabelsStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Alias for the format option.
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -171,34 +192,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The label's pixel distance from the point.
-		/// </summary>
-		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A [format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) string for the data label.
-		/// </summary>
-		public string Format { get; set; }
-		private string Format_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Alias for the format option.
-		/// </summary>
-		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
@@ -207,19 +206,20 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("AnnotationsLabelsFormatter.formatter", Formatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
 			
 
 			return h;

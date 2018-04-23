@@ -14,27 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Loading()
 		{
-			LabelStyle = LabelStyle_DefaultValue = new LoadingLabelStyle();
-			Style = Style_DefaultValue = new LoadingStyle();
 			HideDuration = HideDuration_DefaultValue = 100;
+			LabelStyle = LabelStyle_DefaultValue = new LoadingLabelStyle();
 			ShowDuration = ShowDuration_DefaultValue = 100;
+			Style = Style_DefaultValue = new LoadingStyle();
 			
 		}	
 		
-
-		/// <summary>
-		/// CSS styles for the loading label `span`.
-		/// </summary>
-		public LoadingLabelStyle LabelStyle { get; set; }
-		private LoadingLabelStyle LabelStyle_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// CSS styles for the loading screen that covers the plot area.
-		/// </summary>
-		public LoadingStyle Style { get; set; }
-		private LoadingStyle Style_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// The duration in milliseconds of the fade out effect.
@@ -44,20 +30,34 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// CSS styles for the loading label `span`.
+		/// </summary>
+		public LoadingLabelStyle LabelStyle { get; set; }
+		private LoadingLabelStyle LabelStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The duration in milliseconds of the fade in effect.
 		/// </summary>
 		public double? ShowDuration { get; set; }
 		private double? ShowDuration_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// CSS styles for the loading screen that covers the plot area.
+		/// </summary>
+		public LoadingStyle Style { get; set; }
+		private LoadingStyle Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (HideDuration != HideDuration_DefaultValue) h.Add("hideDuration",HideDuration);
+			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
 			if (ShowDuration != ShowDuration_DefaultValue) h.Add("showDuration",ShowDuration);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			
 
 			return h;

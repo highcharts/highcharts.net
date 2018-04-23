@@ -14,27 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsMfiParams()
 		{
-			Period = Period_DefaultValue = 14;
-			VolumeSeriesID = VolumeSeriesID_DefaultValue = "volume";
 			Decimals = Decimals_DefaultValue = 4;
 			Index = Index_DefaultValue = 0;
+			Period = Period_DefaultValue = 14;
+			VolumeSeriesID = VolumeSeriesID_DefaultValue = "volume";
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Period { get; set; }
-		private double? Period_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The id of volume series which is mandatory.For example using OHLC data, volumeSeriesID='volume' meansthe indicator will be calculated using OHLC and volume values.
-		/// </summary>
-		public string VolumeSeriesID { get; set; }
-		private string VolumeSeriesID_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Number of maximum decimals that are used in MFI calculations.
@@ -48,16 +34,30 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Period { get; set; }
+		private double? Period_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The id of volume series which is mandatory.For example using OHLC data, volumeSeriesID='volume' meansthe indicator will be calculated using OHLC and volume values.
+		/// </summary>
+		public string VolumeSeriesID { get; set; }
+		private string VolumeSeriesID_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Period != Period_DefaultValue) h.Add("period",Period);
-			if (VolumeSeriesID != VolumeSeriesID_DefaultValue) h.Add("volumeSeriesID",VolumeSeriesID);
 			if (Decimals != Decimals_DefaultValue) h.Add("decimals",Decimals);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (Period != Period_DefaultValue) h.Add("period",Period);
+			if (VolumeSeriesID != VolumeSeriesID_DefaultValue) h.Add("volumeSeriesID",VolumeSeriesID);
 			
 
 			return h;

@@ -14,13 +14,20 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PriceenvelopesSeriesDataLabelsStyle()
 		{
+			Color = Color_DefaultValue = "contrast";
 			FontSize = FontSize_DefaultValue = "11px";
 			FontWeight = FontWeight_DefaultValue = "bold";
-			Color = Color_DefaultValue = "contrast";
 			TextOutline = TextOutline_DefaultValue = "1px contrast";
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -39,13 +46,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public string TextOutline { get; set; }
 		private string TextOutline_DefaultValue { get; set; }
 		  
@@ -54,9 +54,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (TextOutline != TextOutline_DefaultValue) h.Add("textOutline",TextOutline);
 			
 

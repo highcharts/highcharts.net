@@ -15,11 +15,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		public XAxisTitle()
 		{
 			Align = Align_DefaultValue = XAxisTitleAlign.Middle;
-			Style = Style_DefaultValue = new XAxisTitleStyle();
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			ReserveSpace = ReserveSpace_DefaultValue = true;
 			Rotation = Rotation_DefaultValue = 0;
+			Style = Style_DefaultValue = new XAxisTitleStyle();
 			Text = Text_DefaultValue = "null";
 			UseHTML = UseHTML_DefaultValue = false;
 			X = X_DefaultValue = 0;
@@ -33,13 +33,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public XAxisTitleAlign Align { get; set; }
 		private XAxisTitleAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting `textOverflow: 'ellipsis'`, bysetting a specific `width` or by setting `whiteSpace: 'nowrap'`.In styled mode, the stroke width is given in the`.highcharts-axis-title` class.
-		/// </summary>
-		public XAxisTitleStyle Style { get; set; }
-		private XAxisTitleStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -68,6 +61,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting `textOverflow: 'ellipsis'`, bysetting a specific `width` or by setting `whiteSpace: 'nowrap'`.In styled mode, the stroke width is given in the`.highcharts-axis-title` class.
+		/// </summary>
+		public XAxisTitleStyle Style { get; set; }
+		private XAxisTitleStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -103,11 +103,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (X != X_DefaultValue) h.Add("x",X);

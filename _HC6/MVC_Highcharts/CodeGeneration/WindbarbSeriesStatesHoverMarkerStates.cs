@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WindbarbSeriesStatesHoverMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new WindbarbSeriesStatesHoverMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new WindbarbSeriesStatesHoverMarkerStatesHover();
+			Normal = Normal_DefaultValue = new WindbarbSeriesStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new WindbarbSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public WindbarbSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
-		private WindbarbSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public WindbarbSeriesStatesHoverMarkerStatesHover Hover { get; set; }
 		private WindbarbSeriesStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public WindbarbSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
+		private WindbarbSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

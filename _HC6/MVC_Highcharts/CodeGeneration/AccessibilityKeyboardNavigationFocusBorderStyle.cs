@@ -14,12 +14,19 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AccessibilityKeyboardNavigationFocusBorderStyle()
 		{
+			BorderRadius = BorderRadius_DefaultValue = 3;
 			Color = Color_DefaultValue = "#000000";
 			LineWidth = LineWidth_DefaultValue = 2;
-			BorderRadius = BorderRadius_DefaultValue = 3;
 			
 		}	
 		
+
+		/// <summary>
+		/// Border radius of the focus border.
+		/// </summary>
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Color of the focus border.
@@ -33,22 +40,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Border radius of the focus border.
-		/// </summary>
-		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			
 
 			return h;

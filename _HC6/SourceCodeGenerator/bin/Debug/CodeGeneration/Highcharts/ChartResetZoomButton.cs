@@ -14,19 +14,12 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartResetZoomButton()
 		{
-			Theme = Theme_DefaultValue = new ChartResetZoomButtonTheme();
 			Position = Position_DefaultValue = new Hashtable();
 			RelativeTo = RelativeTo_DefaultValue = ChartResetZoomButtonRelativeTo.Plot;
+			Theme = Theme_DefaultValue = new ChartResetZoomButtonTheme();
 			
 		}	
 		
-
-		/// <summary>
-		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, the borderradius. The theme also supports `style`, a collection of CSS propertiesfor the text. Equivalent attributes for the hover state are givenin `theme.states.hover`.
-		/// </summary>
-		public ChartResetZoomButtonTheme Theme { get; set; }
-		private ChartResetZoomButtonTheme Theme_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// The position of the button.
@@ -40,15 +33,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ChartResetZoomButtonRelativeTo RelativeTo { get; set; }
 		private ChartResetZoomButtonRelativeTo RelativeTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, the borderradius. The theme also supports `style`, a collection of CSS propertiesfor the text. Equivalent attributes for the hover state are givenin `theme.states.hover`.
+		/// </summary>
+		public ChartResetZoomButtonTheme Theme { get; set; }
+		private ChartResetZoomButtonTheme Theme_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo", Highcharts.FirstCharacterToLower(RelativeTo.ToString()));
+			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());
 			
 
 			return h;

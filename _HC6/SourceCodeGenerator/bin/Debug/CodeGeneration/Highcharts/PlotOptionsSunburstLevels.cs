@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSunburstLevels()
 		{
 			BorderColor = BorderColor_DefaultValue = "";
-			BorderWidth = BorderWidth_DefaultValue = null;
 			BorderDashStyle = BorderDashStyle_DefaultValue = "";
+			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new PlotOptionsSunburstLevelsColorVariation();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsSunburstDataLabels();
@@ -35,17 +35,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Can set a `borderWidth` on all points which lies on the same level.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Can set a `borderDashStyle` on all points which lies on the same level.
 		/// </summary>
 		public string BorderDashStyle { get; set; }
 		private string BorderDashStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Can set a `borderWidth` on all points which lies on the same level.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -95,8 +95,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BorderDashStyle != BorderDashStyle_DefaultValue) h.Add("borderDashStyle",BorderDashStyle);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorVariation.IsDirty()) h.Add("colorVariation",ColorVariation.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());

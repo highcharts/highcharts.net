@@ -14,178 +14,66 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsVbp()
 		{
-			Params = Params_DefaultValue = new PlotOptionsVbpParams();
-			ZoneLines = ZoneLines_DefaultValue = new PlotOptionsVbpZoneLines();
-			VolumeDivision = VolumeDivision_DefaultValue = new PlotOptionsVbpVolumeDivision();
-			AnimationLimit = AnimationLimit_DefaultValue = 1000;
-			EnableMouseTracking = EnableMouseTracking_DefaultValue = false;
-			PointPadding = PointPadding_DefaultValue = 0;
-			ZIndex = ZIndex_DefaultValue = -1;
-			Crisp = Crisp_DefaultValue = true;
-			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsVbpDataGrouping();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsVbpDataLabels();
-			BoostThreshold = BoostThreshold_DefaultValue = 5000;
-			GapSize = GapSize_DefaultValue = 0;
-			GapUnit = GapUnit_DefaultValue = PlotOptionsVbpGapUnit.Relative;
-			Label = Label_DefaultValue = new PlotOptionsVbpLabel();
-			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = new PlotOptionsVbpEvents();
-			Marker = Marker_DefaultValue = new PlotOptionsVbpMarker();
-			Point = Point_DefaultValue = new PlotOptionsVbpPoint();
-			CropThreshold = CropThreshold_DefaultValue = 300;
-			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new PlotOptionsVbpStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
-			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsVbpFindNearestPointBy.X;
+			AnimationLimit = AnimationLimit_DefaultValue = 1000;
+			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			CompareStart = CompareStart_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
+			Crisp = Crisp_DefaultValue = true;
+			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsVbpCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PlotOptionsVbpDashStyle.Solid;
+			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsVbpDataGrouping();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsVbpDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			EnableMouseTracking = EnableMouseTracking_DefaultValue = false;
+			Events = Events_DefaultValue = new PlotOptionsVbpEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
+			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsVbpFindNearestPointBy.X;
+			GapSize = GapSize_DefaultValue = 0;
+			GapUnit = GapUnit_DefaultValue = PlotOptionsVbpGapUnit.Relative;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			Label = Label_DefaultValue = new PlotOptionsVbpLabel();
 			Linecap = Linecap_DefaultValue = PlotOptionsVbpLinecap.Round;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
+			Marker = Marker_DefaultValue = new PlotOptionsVbpMarker();
 			NegativeColor = NegativeColor_DefaultValue = "null";
+			Params = Params_DefaultValue = new PlotOptionsVbpParams();
+			Point = Point_DefaultValue = new PlotOptionsVbpPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
+			PointPadding = PointPadding_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SoftThreshold = SoftThreshold_DefaultValue = true;
+			States = States_DefaultValue = new PlotOptionsVbpStates();
 			Step = Step_DefaultValue = PlotOptionsVbpStep.Null;
+			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
-			Visible = Visible_DefaultValue = true;
-			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsVbpTooltip();
+			TurboThreshold = TurboThreshold_DefaultValue = 1000;
+			Visible = Visible_DefaultValue = true;
+			VolumeDivision = VolumeDivision_DefaultValue = new PlotOptionsVbpVolumeDivision();
+			ZIndex = ZIndex_DefaultValue = -1;
+			ZoneAxis = ZoneAxis_DefaultValue = "y";
+			ZoneLines = ZoneLines_DefaultValue = new PlotOptionsVbpZoneLines();
 			Zones = Zones_DefaultValue = new List<PlotOptionsVbpZone>();
-			CompareStart = CompareStart_DefaultValue = false;
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsVbpParams Params { get; set; }
-		private PlotOptionsVbpParams Params_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The styles for lines which determine price zones.
-		/// </summary>
-		public PlotOptionsVbpZoneLines ZoneLines { get; set; }
-		private PlotOptionsVbpZoneLines ZoneLines_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The styles for bars when volume is divided into positive/negative.
-		/// </summary>
-		public PlotOptionsVbpVolumeDivision VolumeDivision { get; set; }
-		private PlotOptionsVbpVolumeDivision VolumeDivision_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? AnimationLimit { get; set; }
-		private double? AnimationLimit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? EnableMouseTracking { get; set; }
-		private bool? EnableMouseTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? PointPadding { get; set; }
-		private double? PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Crisp { get; set; }
-		private bool? Crisp_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsVbpDataGrouping DataGrouping { get; set; }
-		private PlotOptionsVbpDataGrouping DataGrouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsVbpDataLabels DataLabels { get; set; }
-		private PlotOptionsVbpDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
-		/// </summary>
-		public double? BoostThreshold { get; set; }
-		private double? BoostThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be grouped into alarger time span. This can make the grouped points to have a greaterdistance than the absolute value of `gapSize` property, which will resultin disappearing graph completely. To prevent this situation the mentioneddistance between grouped points is used instead of previously defined`gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available for daytimehours, while gaps will appear in nights and weekends.
-		/// </summary>
-		public double? GapSize { get; set; }
-		private double? GapSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Together with [gapSize](plotOptions.series.gapSize), this option defineswhere to draw gaps in the graph.When the `gapUnit` is `relative` (default), a gap size of 5 meansthat if the distance between two points is greater than five timesthat of the two closest points, the graph will be broken.When the `gapUnit` is `value`, the gap is based on absolute axis values,which on a datetime axis is milliseconds. This also applies to thenavigator series that inherits gap options from the base series.
-		/// </summary>
-		public PlotOptionsVbpGapUnit GapUnit { get; set; }
-		private PlotOptionsVbpGapUnit GapUnit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
-		/// </summary>
-		public PlotOptionsVbpLabel Label { get; set; }
-		private PlotOptionsVbpLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel width of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
-		/// </summary>
-		public bool? ShowCheckbox { get; set; }
-		private bool? ShowCheckbox_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -198,64 +86,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsVbpEvents Events { get; set; }
-		private PlotOptionsVbpEvents Events_DefaultValue { get; set; }
+		public double? AnimationLimit { get; set; }
+		private double? AnimationLimit_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
 		/// </summary>
-		public PlotOptionsVbpMarker Marker { get; set; }
-		private PlotOptionsVbpMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Properties for each single point.
-		/// </summary>
-		public PlotOptionsVbpPoint Point { get; set; }
-		private PlotOptionsVbpPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
-		/// </summary>
-		public bool? SoftThreshold { get; set; }
-		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PlotOptionsVbpStates States { get; set; }
-		private PlotOptionsVbpStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
-		/// </summary>
-		public double? TurboThreshold { get; set; }
-		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
-		/// </summary>
-		public PlotOptionsVbpFindNearestPointBy FindNearestPointBy { get; set; }
-		private PlotOptionsVbpFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		public double? BoostThreshold { get; set; }
+		private double? BoostThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -280,10 +119,31 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Defines if comparisson should start from the first point within the visiblerange or should start from the first point <b>before</b> the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
+		/// </summary>
+		public bool? CompareStart { get; set; }
+		private bool? CompareStart_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.
 		/// </summary>
 		public bool? ConnectNulls { get; set; }
 		private bool? ConnectNulls_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
+		/// </summary>
+		public double? CropThreshold { get; set; }
+		private double? CropThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -301,10 +161,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVbpDataGrouping DataGrouping { get; set; }
+		private PlotOptionsVbpDataGrouping DataGrouping_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVbpDataLabels DataLabels { get; set; }
+		private PlotOptionsVbpDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Requires the Accessibility module.A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? EnableMouseTracking { get; set; }
+		private bool? EnableMouseTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVbpEvents Events { get; set; }
+		private PlotOptionsVbpEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -315,10 +203,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
+		/// </summary>
+		public PlotOptionsVbpFindNearestPointBy FindNearestPointBy { get; set; }
+		private PlotOptionsVbpFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be grouped into alarger time span. This can make the grouped points to have a greaterdistance than the absolute value of `gapSize` property, which will resultin disappearing graph completely. To prevent this situation the mentioneddistance between grouped points is used instead of previously defined`gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available for daytimehours, while gaps will appear in nights and weekends.
+		/// </summary>
+		public double? GapSize { get; set; }
+		private double? GapSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Together with [gapSize](plotOptions.series.gapSize), this option defineswhere to draw gaps in the graph.When the `gapUnit` is `relative` (default), a gap size of 5 meansthat if the distance between two points is greater than five timesthat of the two closest points, the graph will be broken.When the `gapUnit` is `value`, the gap is based on absolute axis values,which on a datetime axis is milliseconds. This also applies to thenavigator series that inherits gap options from the base series.
+		/// </summary>
+		public PlotOptionsVbpGapUnit GapUnit { get; set; }
+		private PlotOptionsVbpGapUnit GapUnit_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to use the Y extremes of the total chart width or only thezoomed area when zooming in on parts of the X axis. By default, theY axis adjusts to the min and max of the visible data. Cartesianseries only.
 		/// </summary>
 		public bool? GetExtremesFromAll { get; set; }
 		private bool? GetExtremesFromAll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
+		/// </summary>
+		public PlotOptionsVbpLabel Label { get; set; }
+		private PlotOptionsVbpLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -329,10 +245,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Pixel width of the graph line.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.
 		/// </summary>
 		public string LinkedTo { get; set; }
 		private string LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
+		/// </summary>
+		public PlotOptionsVbpMarker Marker { get; set; }
+		private PlotOptionsVbpMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -343,10 +273,31 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVbpParams Params { get; set; }
+		private PlotOptionsVbpParams Params_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Properties for each single point.
+		/// </summary>
+		public PlotOptionsVbpPoint Point { get; set; }
+		private PlotOptionsVbpPoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Same as [accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter), but for an individual series.Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
 		private string PointDescriptionFormatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? PointPadding { get; set; }
+		private double? PointPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -364,6 +315,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
+		/// </summary>
+		public bool? ShowCheckbox { get; set; }
+		private bool? ShowCheckbox_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
 		/// </summary>
 		public bool? ShowInLegend { get; set; }
@@ -378,10 +336,31 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
+		/// </summary>
+		public bool? SoftThreshold { get; set; }
+		private bool? SoftThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A wrapper object for all the series options in specific states.
+		/// </summary>
+		public PlotOptionsVbpStates States { get; set; }
+		private PlotOptionsVbpStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to apply steps to the line. Possible values are `left`, `center`and `right`.
 		/// </summary>
 		public PlotOptionsVbpStep Step { get; set; }
 		private PlotOptionsVbpStep Step_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -392,10 +371,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
+		/// </summary>
+		public PlotOptionsVbpTooltip Tooltip { get; set; }
+		private PlotOptionsVbpTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
+		/// </summary>
+		public double? TurboThreshold { get; set; }
+		private double? TurboThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The styles for bars when volume is divided into positive/negative.
+		/// </summary>
+		public PlotOptionsVbpVolumeDivision VolumeDivision { get; set; }
+		private PlotOptionsVbpVolumeDivision VolumeDivision_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -406,10 +413,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
+		/// The styles for lines which determine price zones.
 		/// </summary>
-		public PlotOptionsVbpTooltip Tooltip { get; set; }
-		private PlotOptionsVbpTooltip Tooltip_DefaultValue { get; set; }
+		public PlotOptionsVbpZoneLines ZoneLines { get; set; }
+		private PlotOptionsVbpZoneLines ZoneLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -417,70 +424,63 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<PlotOptionsVbpZone> Zones { get; set; }
 		private List<PlotOptionsVbpZone> Zones_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines if comparisson should start from the first point within the visiblerange or should start from the first point <b>before</b> the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
-		/// </summary>
-		public bool? CompareStart { get; set; }
-		private bool? CompareStart_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
-			if (ZoneLines.IsDirty()) h.Add("zoneLines",ZoneLines.ToHashtable());
-			if (VolumeDivision.IsDirty()) h.Add("volumeDivision",VolumeDivision.ToHashtable());
-			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
-			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
-			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
-			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
-			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
+			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
+			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
+			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
+			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
+			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
+			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
+			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("PlotOptionsVbpPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Step != Step_DefaultValue) h.Add("step", Highstock.FirstCharacterToLower(Step.ToString()));
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
+			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (VolumeDivision.IsDirty()) h.Add("volumeDivision",VolumeDivision.ToHashtable());
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
+			if (ZoneLines.IsDirty()) h.Add("zoneLines",ZoneLines.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			
 
 			return h;

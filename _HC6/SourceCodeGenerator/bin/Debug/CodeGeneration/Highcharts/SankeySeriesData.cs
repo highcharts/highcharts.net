@@ -14,64 +14,36 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesData()
 		{
-			Color = Color_DefaultValue = "";
-			From = From_DefaultValue = "";
-			To = To_DefaultValue = "";
-			Outgoing = Outgoing_DefaultValue = false;
-			Weight = Weight_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new SankeySeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Events = Events_DefaultValue = new SankeySeriesDataEvents();
+			From = From_DefaultValue = "";
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
+			Outgoing = Outgoing_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
-			Events = Events_DefaultValue = new SankeySeriesDataEvents();
+			To = To_DefaultValue = "";
+			Weight = Weight_DefaultValue = null;
 			
 		}	
 		
-
-		/// <summary>
-		/// The color for the individual _link_. By default, the link color is the sameas the node it extends from. The `series.fillOpacity` option also applies tothe points, so when setting a specific link color, consider setting the`fillOpacity` to 1.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The node that the link runs from.
-		/// </summary>
-		public string From { get; set; }
-		private string From_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The node that the link runs to.
-		/// </summary>
-		public string To { get; set; }
-		private string To_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the link goes out of the system.
-		/// </summary>
-		public bool? Outgoing { get; set; }
-		private bool? Outgoing_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The weight of the link.
-		/// </summary>
-		public double? Weight { get; set; }
-		private double? Weight_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The color for the individual _link_. By default, the link color is the sameas the node it extends from. The `series.fillOpacity` option also applies tothe points, so when setting a specific link color, consider setting the`fillOpacity` to 1.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -96,6 +68,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public SankeySeriesDataEvents Events { get; set; }
+		private SankeySeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The node that the link runs from.
+		/// </summary>
+		public string From { get; set; }
+		private string From_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -117,6 +103,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether the link goes out of the system.
+		/// </summary>
+		public bool? Outgoing { get; set; }
+		private bool? Outgoing_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether the data point is selected initially.
 		/// </summary>
 		public bool? Selected { get; set; }
@@ -124,30 +117,37 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Individual point events
+		/// The node that the link runs to.
 		/// </summary>
-		public SankeySeriesDataEvents Events { get; set; }
-		private SankeySeriesDataEvents Events_DefaultValue { get; set; }
+		public string To { get; set; }
+		private string To_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The weight of the link.
+		/// </summary>
+		public double? Weight { get; set; }
+		private double? Weight_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (From != From_DefaultValue) h.Add("from",From);
-			if (To != To_DefaultValue) h.Add("to",To);
-			if (Outgoing != Outgoing_DefaultValue) h.Add("outgoing",Outgoing);
-			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Outgoing != Outgoing_DefaultValue) h.Add("outgoing",Outgoing);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (To != To_DefaultValue) h.Add("to",To);
+			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
 			
 
 			return h;

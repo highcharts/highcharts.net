@@ -14,63 +14,196 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WordcloudSeries()
 		{
-			Data = Data_DefaultValue = new List<WordcloudSeriesData>();
-			Id = Id_DefaultValue = "";
-			Index = Index_DefaultValue = null;
-			LegendIndex = LegendIndex_DefaultValue = null;
-			Name = Name_DefaultValue = "";
-			Stack = Stack_DefaultValue = "null";
-			Type = Type_DefaultValue = WordcloudSeriesType.Null;
-			XAxis = XAxis_DefaultValue = "";
-			YAxis = YAxis_DefaultValue = "";
-			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = new WordcloudSeriesLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = new WordcloudSeriesEvents();
-			Point = Point_DefaultValue = new WordcloudSeriesPoint();
-			CropThreshold = CropThreshold_DefaultValue = 300;
-			States = States_DefaultValue = new WordcloudSeriesStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
-			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
+			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderRadius = BorderRadius_DefaultValue = 0;
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			ClassName = ClassName_DefaultValue = "";
+			Clip = Clip_DefaultValue = false;
 			Color = Color_DefaultValue = "";
+			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
+			Colors = Colors_DefaultValue = new List<string>();
+			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = WordcloudSeriesCursor.Null;
+			Data = Data_DefaultValue = new List<WordcloudSeriesData>();
 			Description = Description_DefaultValue = "undefined";
+			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
+			Events = Events_DefaultValue = new WordcloudSeriesEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
+			Id = Id_DefaultValue = "";
+			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
+			Label = Label_DefaultValue = new WordcloudSeriesLabel();
+			LegendIndex = LegendIndex_DefaultValue = null;
 			LinkedTo = LinkedTo_DefaultValue = "";
+			MaxFontSize = MaxFontSize_DefaultValue = 25;
+			MinFontSize = MinFontSize_DefaultValue = 1;
+			Name = Name_DefaultValue = "";
+			PlacementStrategy = PlacementStrategy_DefaultValue = "center";
+			Point = Point_DefaultValue = new WordcloudSeriesPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
+			Rotation = Rotation_DefaultValue = new WordcloudSeriesRotation();
 			Selected = Selected_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = new WordcloudSeriesTooltip();
-			BorderRadius = BorderRadius_DefaultValue = 0;
-			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			ColorByPoint = ColorByPoint_DefaultValue = false;
-			Colors = Colors_DefaultValue = new List<string>();
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			EdgeWidth = EdgeWidth_DefaultValue = 1;
-			Clip = Clip_DefaultValue = false;
-			MinFontSize = MinFontSize_DefaultValue = 1;
-			MaxFontSize = MaxFontSize_DefaultValue = 25;
-			PlacementStrategy = PlacementStrategy_DefaultValue = "center";
-			Rotation = Rotation_DefaultValue = new WordcloudSeriesRotation();
 			Spiral = Spiral_DefaultValue = "rectangular";
+			Stack = Stack_DefaultValue = "null";
+			States = States_DefaultValue = new WordcloudSeriesStates();
+			StickyTracking = StickyTracking_DefaultValue = true;
 			Style = Style_DefaultValue = new WordcloudSeriesStyle();
+			Tooltip = Tooltip_DefaultValue = new WordcloudSeriesTooltip();
+			TurboThreshold = TurboThreshold_DefaultValue = 1000;
+			Type = Type_DefaultValue = WordcloudSeriesType.Null;
+			Visible = Visible_DefaultValue = true;
+			XAxis = XAxis_DefaultValue = "";
+			YAxis = YAxis_DefaultValue = "";
+			ZIndex = ZIndex_DefaultValue = null;
 			
 		}	
 		
+
+		/// <summary>
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
+		/// </summary>
+		public bool? AllowPointSelect { get; set; }
+		private bool? AllowPointSelect_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesn'trun if there is more than 250 points totally. To disable this cap, set`animationLimit` to `Infinity`.
+		/// </summary>
+		public double? AnimationLimit { get; set; }
+		private double? AnimationLimit_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each column or bar.
+		/// </summary>
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A class name to apply to the series' graphical elements.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the `options.colors` array.In styled mode, the color can be defined by the[colorIndex](#plotOptions.series.colorIndex) option. Also, the seriescolor can be set with the `.highcharts-series`, `.highcharts-color-{n}`,`.highcharts-{type}-series` or `.highcharts-series-{n}` class, orindividual classes given by the `className` option.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
+		/// </summary>
+		public bool? ColorByPoint { get; set; }
+		private bool? ColorByPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// </summary>
+		public double? ColorIndex { get; set; }
+		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A series specific or series type specific color set to apply insteadof the global [colors](#colors) when [colorByPoint](#plotOptions.column.colorByPoint) is true.
+		/// </summary>
+		public List<string> Colors { get; set; }
+		private List<string> Colors_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
+		/// </summary>
+		public double? CropThreshold { get; set; }
+		private double? CropThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
+		/// </summary>
+		public WordcloudSeriesCursor Cursor { get; set; }
+		private WordcloudSeriesCursor Cursor_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// An array of data points for the series. For the `wordcloud` seriestype, points can be given in the following ways:1.  An array of arrays with 2 values. In this case, the valuescorrespond to `name,weight`. ```js    data: [        ['Lorem', 4],        ['Ipsum', 1]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series'[turboThreshold](#series.arearange.turboThreshold), this option is notavailable. ```js    data: [{        name: "Lorem",        weight: 4    }, {        name: "Ipsum",        weight: 1    }] ```
 		/// </summary>
 		public List<WordcloudSeriesData> Data { get; set; }
 		private List<WordcloudSeriesData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Requires the Accessibility module.A description of the series to add to the screen reader informationabout the series.
+		/// </summary>
+		public string Description { get; set; }
+		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 3D columns only. The width of the colored edges.
+		/// </summary>
+		public double? EdgeWidth { get; set; }
+		private double? EdgeWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
+		/// </summary>
+		public bool? EnableMouseTracking { get; set; }
+		private bool? EnableMouseTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public WordcloudSeriesEvents Events { get; set; }
+		private WordcloudSeriesEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.Requires the Accessibility module.
+		/// </summary>
+		public bool? ExposeElementToA11y { get; set; }
+		private bool? ExposeElementToA11y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -88,52 +221,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The sequential index of the series in the legend.
+		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
-		public double? LegendIndex { get; set; }
-		private double? LegendIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The name of the series as shown in the legend, tooltip etc.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option allows grouping series in a stacked chart. The stackoption can be a string or a number or anything else, as long as thegrouped series' stack options match each other.
-		/// </summary>
-		public string Stack { get; set; }
-		private string Stack_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
-		/// </summary>
-		public WordcloudSeriesType Type { get; set; }
-		private WordcloudSeriesType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
-		/// </summary>
-		public string XAxis { get; set; }
-		private string XAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
-		/// </summary>
-		public string YAxis { get; set; }
-		private string YAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Define the visual z index of the series.
-		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
+		public List<string> Keys { get; set; }
+		private List<string> Keys_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -144,122 +235,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
+		/// The sequential index of the series in the legend.
 		/// </summary>
-		public bool? AllowPointSelect { get; set; }
-		private bool? AllowPointSelect_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public WordcloudSeriesEvents Events { get; set; }
-		private WordcloudSeriesEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Properties for each single point.
-		/// </summary>
-		public WordcloudSeriesPoint Point { get; set; }
-		private WordcloudSeriesPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public WordcloudSeriesStates States { get; set; }
-		private WordcloudSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
-		/// </summary>
-		public double? TurboThreshold { get; set; }
-		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesn'trun if there is more than 250 points totally. To disable this cap, set`animationLimit` to `Infinity`.
-		/// </summary>
-		public double? AnimationLimit { get; set; }
-		private double? AnimationLimit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A class name to apply to the series' graphical elements.
-		/// </summary>
-		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the `options.colors` array.In styled mode, the color can be defined by the[colorIndex](#plotOptions.series.colorIndex) option. Also, the seriescolor can be set with the `.highcharts-series`, `.highcharts-color-{n}`,`.highcharts-{type}-series` or `.highcharts-series-{n}` class, orindividual classes given by the `className` option.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
-		/// </summary>
-		public double? ColorIndex { get; set; }
-		private double? ColorIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
-		/// </summary>
-		public WordcloudSeriesCursor Cursor { get; set; }
-		private WordcloudSeriesCursor Cursor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Requires the Accessibility module.A description of the series to add to the screen reader informationabout the series.
-		/// </summary>
-		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
-		/// </summary>
-		public bool? EnableMouseTracking { get; set; }
-		private bool? EnableMouseTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.Requires the Accessibility module.
-		/// </summary>
-		public bool? ExposeElementToA11y { get; set; }
-		private bool? ExposeElementToA11y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
-		/// </summary>
-		public List<string> Keys { get; set; }
-		private List<string> Keys_DefaultValue { get; set; }
+		public double? LegendIndex { get; set; }
+		private double? LegendIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -270,10 +249,52 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The word with the largest weight will have a font size equal to thisvalue. The font size of a word is the ratio between its weight and thelargest occuring weight, multiplied with the value of maxFontSize.
+		/// </summary>
+		public double? MaxFontSize { get; set; }
+		private double? MaxFontSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A threshold determining the minimum font size that can be applied to aword.
+		/// </summary>
+		public double? MinFontSize { get; set; }
+		private double? MinFontSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of the series as shown in the legend, tooltip etc.
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option decides which algorithm is used for placement, and rotationof a word. The choice of algorith is therefore a crucial part of theresulting layout of the wordcloud.It is possible for users to add their own custom placement strategiesfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-placement-strategies)
+		/// </summary>
+		public string PlacementStrategy { get; set; }
+		private string PlacementStrategy_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Properties for each single point.
+		/// </summary>
+		public WordcloudSeriesPoint Point { get; set; }
+		private WordcloudSeriesPoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Same as [accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter), but for an individual series.Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
 		private string PointDescriptionFormatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Rotation options for the words in the wordcloud.
+		/// </summary>
+		public WordcloudSeriesRotation Rotation { get; set; }
+		private WordcloudSeriesRotation Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -298,10 +319,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Set the initial visibility of the series.
+		/// Spiral used for placing a word after the inital position experienced acollision with either another word or the borders.It is possible for users to add their own custom spiralling algorithmsfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
 		/// </summary>
-		public bool? Visible { get; set; }
-		private bool? Visible_DefaultValue { get; set; }
+		public string Spiral { get; set; }
+		private string Spiral_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option allows grouping series in a stacked chart. The stackoption can be a string or a number or anything else, as long as thegrouped series' stack options match each other.
+		/// </summary>
+		public string Stack { get; set; }
+		private string Stack_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A wrapper object for all the series options in specific states.
+		/// </summary>
+		public WordcloudSeriesStates States { get; set; }
+		private WordcloudSeriesStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// CSS styles for the words.
+		/// </summary>
+		public WordcloudSeriesStyle Style { get; set; }
+		private WordcloudSeriesStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -312,148 +361,99 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The corner radius of the border surrounding each column or bar.
+		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
 		/// </summary>
-		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
+		public double? TurboThreshold { get; set; }
+		private double? TurboThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
+		public WordcloudSeriesType Type { get; set; }
+		private WordcloudSeriesType Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
+		/// Set the initial visibility of the series.
 		/// </summary>
-		public bool? ColorByPoint { get; set; }
-		private bool? ColorByPoint_DefaultValue { get; set; }
+		public bool? Visible { get; set; }
+		private bool? Visible_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A series specific or series type specific color set to apply insteadof the global [colors](#colors) when [colorByPoint](#plotOptions.column.colorByPoint) is true.
+		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
 		/// </summary>
-		public List<string> Colors { get; set; }
-		private List<string> Colors_DefaultValue { get; set; }
+		public string XAxis { get; set; }
+		private string XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
+		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
 		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
+		public string YAxis { get; set; }
+		private string YAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 3D columns only. The width of the colored edges.
+		/// Define the visual z index of the series.
 		/// </summary>
-		public double? EdgeWidth { get; set; }
-		private double? EdgeWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Clip { get; set; }
-		private bool? Clip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A threshold determining the minimum font size that can be applied to aword.
-		/// </summary>
-		public double? MinFontSize { get; set; }
-		private double? MinFontSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The word with the largest weight will have a font size equal to thisvalue. The font size of a word is the ratio between its weight and thelargest occuring weight, multiplied with the value of maxFontSize.
-		/// </summary>
-		public double? MaxFontSize { get; set; }
-		private double? MaxFontSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option decides which algorithm is used for placement, and rotationof a word. The choice of algorith is therefore a crucial part of theresulting layout of the wordcloud.It is possible for users to add their own custom placement strategiesfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-placement-strategies)
-		/// </summary>
-		public string PlacementStrategy { get; set; }
-		private string PlacementStrategy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Rotation options for the words in the wordcloud.
-		/// </summary>
-		public WordcloudSeriesRotation Rotation { get; set; }
-		private WordcloudSeriesRotation Rotation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Spiral used for placing a word after the inital position experienced acollision with either another word or the borders.It is possible for users to add their own custom spiralling algorithmsfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
-		/// </summary>
-		public string Spiral { get; set; }
-		private string Spiral_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// CSS styles for the words.
-		/// </summary>
-		public WordcloudSeriesStyle Style { get; set; }
-		private WordcloudSeriesStyle Style_DefaultValue { get; set; }
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Data.Any()) h.Add("data",HashifyList(Data));
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
+			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
+			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (MaxFontSize != MaxFontSize_DefaultValue) h.Add("maxFontSize",MaxFontSize);
+			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
+			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("WordcloudSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
-			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
-			if (MaxFontSize != MaxFontSize_DefaultValue) h.Add("maxFontSize",MaxFontSize);
-			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
-			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
 			if (Spiral != Spiral_DefaultValue) h.Add("spiral",Spiral);
+			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 
 			return h;

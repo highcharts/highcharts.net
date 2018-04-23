@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		public NavigationButtonOptionsTheme()
 		{
 			Fill = Fill_DefaultValue = "#ffffff";
-			Stroke = Stroke_DefaultValue = "none";
 			Padding = Padding_DefaultValue = "5";
+			Stroke = Stroke_DefaultValue = "none";
 			
 		}	
 		
@@ -31,15 +31,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Stroke { get; set; }
-		private string Stroke_DefaultValue { get; set; }
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
+		public string Stroke { get; set; }
+		private string Stroke_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -47,8 +47,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
-			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			
 
 			return h;

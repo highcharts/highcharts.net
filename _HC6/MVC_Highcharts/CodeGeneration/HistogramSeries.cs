@@ -14,76 +14,97 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public HistogramSeries()
 		{
+			AllowPointSelect = AllowPointSelect_DefaultValue = false;
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BaseSeries = BaseSeries_DefaultValue = null;
+			BinsNumber = BinsNumber_DefaultValue = HistogramSeriesBinsNumber.SquareRoot;
+			BinWidth = BinWidth_DefaultValue = null;
+			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderRadius = BorderRadius_DefaultValue = 0;
+			BorderWidth = BorderWidth_DefaultValue = 1;
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
+			ColorByPoint = ColorByPoint_DefaultValue = false;
+			ColorIndex = ColorIndex_DefaultValue = null;
+			Colors = Colors_DefaultValue = new List<string>();
+			Crisp = Crisp_DefaultValue = true;
+			CropThreshold = CropThreshold_DefaultValue = 300;
+			Cursor = Cursor_DefaultValue = HistogramSeriesCursor.Null;
 			Data = Data_DefaultValue = new List<HistogramSeriesData>();
+			DataLabels = DataLabels_DefaultValue = new HistogramSeriesDataLabels();
+			Depth = Depth_DefaultValue = 25;
+			Description = Description_DefaultValue = "undefined";
+			EdgeColor = EdgeColor_DefaultValue = "";
+			EdgeWidth = EdgeWidth_DefaultValue = 1;
+			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
+			Events = Events_DefaultValue = new HistogramSeriesEvents();
+			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
+			FindNearestPointBy = FindNearestPointBy_DefaultValue = HistogramSeriesFindNearestPointBy.X;
+			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			Grouping = Grouping_DefaultValue = true;
+			GroupPadding = GroupPadding_DefaultValue = null;
+			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
+			Keys = Keys_DefaultValue = new List<string>();
+			Label = Label_DefaultValue = new HistogramSeriesLabel();
 			LegendIndex = LegendIndex_DefaultValue = null;
+			LinkedTo = LinkedTo_DefaultValue = "";
+			MaxPointWidth = MaxPointWidth_DefaultValue = null;
+			MinPointLength = MinPointLength_DefaultValue = 0;
 			Name = Name_DefaultValue = "";
+			NegativeColor = NegativeColor_DefaultValue = "null";
+			Point = Point_DefaultValue = new HistogramSeriesPoint();
+			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
+			PointPadding = PointPadding_DefaultValue = null;
+			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
+			PointRange = PointRange_DefaultValue = null;
+			PointStart = PointStart_DefaultValue = 0;
+			PointWidth = PointWidth_DefaultValue = null;
+			Selected = Selected_DefaultValue = false;
+			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			ShowInLegend = ShowInLegend_DefaultValue = true;
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SoftThreshold = SoftThreshold_DefaultValue = true;
 			Stack = Stack_DefaultValue = "null";
+			States = States_DefaultValue = new HistogramSeriesStates();
+			StickyTracking = StickyTracking_DefaultValue = true;
+			Threshold = Threshold_DefaultValue = 0;
+			Tooltip = Tooltip_DefaultValue = new HistogramSeriesTooltip();
+			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Type = Type_DefaultValue = HistogramSeriesType.Null;
+			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = new HistogramSeriesLabel();
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = new HistogramSeriesEvents();
-			Point = Point_DefaultValue = new HistogramSeriesPoint();
-			DataLabels = DataLabels_DefaultValue = new HistogramSeriesDataLabels();
-			CropThreshold = CropThreshold_DefaultValue = 300;
-			SoftThreshold = SoftThreshold_DefaultValue = true;
-			States = States_DefaultValue = new HistogramSeriesStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
-			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = HistogramSeriesFindNearestPointBy.X;
-			AnimationLimit = AnimationLimit_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "";
-			ColorIndex = ColorIndex_DefaultValue = null;
-			Cursor = Cursor_DefaultValue = HistogramSeriesCursor.Null;
-			Description = Description_DefaultValue = "undefined";
-			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
-			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
-			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
-			Keys = Keys_DefaultValue = new List<string>();
-			LinkedTo = LinkedTo_DefaultValue = "";
-			NegativeColor = NegativeColor_DefaultValue = "null";
-			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
-			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
-			PointStart = PointStart_DefaultValue = 0;
-			Selected = Selected_DefaultValue = false;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			Threshold = Threshold_DefaultValue = 0;
-			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Tooltip = Tooltip_DefaultValue = new HistogramSeriesTooltip();
 			Zones = Zones_DefaultValue = new List<HistogramSeriesZone>();
-			BorderRadius = BorderRadius_DefaultValue = 0;
-			Crisp = Crisp_DefaultValue = true;
-			GroupPadding = GroupPadding_DefaultValue = null;
-			PointPadding = PointPadding_DefaultValue = null;
-			MinPointLength = MinPointLength_DefaultValue = 0;
-			PointRange = PointRange_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			ColorByPoint = ColorByPoint_DefaultValue = false;
-			Colors = Colors_DefaultValue = new List<string>();
-			Grouping = Grouping_DefaultValue = true;
-			MaxPointWidth = MaxPointWidth_DefaultValue = null;
-			PointWidth = PointWidth_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			Depth = Depth_DefaultValue = 25;
-			EdgeColor = EdgeColor_DefaultValue = "";
-			EdgeWidth = EdgeWidth_DefaultValue = 1;
-			GroupZPadding = GroupZPadding_DefaultValue = 1;
-			BinsNumber = BinsNumber_DefaultValue = HistogramSeriesBinsNumber.SquareRoot;
-			BinWidth = BinWidth_DefaultValue = null;
 			
 		}	
 		
+
+		/// <summary>
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
+		/// </summary>
+		public bool? AllowPointSelect { get; set; }
+		private bool? AllowPointSelect_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesn'trun if there is more than 250 points totally. To disable this cap, set`animationLimit` to `Infinity`.
+		/// </summary>
+		public double? AnimationLimit { get; set; }
+		private double? AnimationLimit_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// An integer identifying the index to use for the base series, or a stringrepresenting the id of the series.
@@ -93,10 +114,192 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A preferable number of bins. It is a suggestion, so a histogram may havea different number of bins. By default it is set to the square rootof the base series' data length. Available options are: `square-root`,`sturges`, `rice`. You can also define a function which takes a`baseSeries` as a parameter and should return a positive integer.
+		/// </summary>
+		public HistogramSeriesBinsNumber BinsNumber { get; set; }
+		private HistogramSeriesBinsNumber BinsNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Width of each bin. By default the bin's width is calculated as`(max - min) / number of bins`. This option takes precedence over[binsNumber](#plotOptions.histogram.binsNumber).
+		/// </summary>
+		public double? BinWidth { get; set; }
+		private double? BinWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each column or bar.
+		/// </summary>
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A class name to apply to the series' graphical elements.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the `options.colors` array.In styled mode, the color can be defined by the[colorIndex](#plotOptions.series.colorIndex) option. Also, the seriescolor can be set with the `.highcharts-series`, `.highcharts-color-{n}`,`.highcharts-{type}-series` or `.highcharts-series-{n}` class, orindividual classes given by the `className` option.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
+		/// </summary>
+		public bool? ColorByPoint { get; set; }
+		private bool? ColorByPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// </summary>
+		public double? ColorIndex { get; set; }
+		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A series specific or series type specific color set to apply insteadof the global [colors](#colors) when [colorByPoint](#plotOptions.column.colorByPoint) is true.
+		/// </summary>
+		public List<string> Colors { get; set; }
+		private List<string> Colors_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When true, each column edge is rounded to its nearest pixel in orderto render sharp on screen. In some cases, when there are a lot ofdensely packed columns, this leads to visible difference in columnwidths or distance between columns. In these cases, setting `crisp`to `false` may look better, even though each column is renderedblurry.
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
+		/// </summary>
+		public double? CropThreshold { get; set; }
+		private double? CropThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
+		/// </summary>
+		public HistogramSeriesCursor Cursor { get; set; }
+		private HistogramSeriesCursor Cursor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array of data points for the series. For the `histogram` series type,points are calculated dynamically. See[histogram.baseSeries](#series.histogram.baseSeries).
 		/// </summary>
 		public List<HistogramSeriesData> Data { get; set; }
 		private List<HistogramSeriesData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public HistogramSeriesDataLabels DataLabels { get; set; }
+		private HistogramSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Depth of the columns in a 3D column chart. Requires `highcharts-3d.js`.
+		/// </summary>
+		public double? Depth { get; set; }
+		private double? Depth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Requires the Accessibility module.A description of the series to add to the screen reader informationabout the series.
+		/// </summary>
+		public string Description { get; set; }
+		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 3D columns only. The color of the edges. Similar to `borderColor`, except it defaults to the same color as the column.
+		/// </summary>
+		public string EdgeColor { get; set; }
+		private string EdgeColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 3D columns only. The width of the colored edges.
+		/// </summary>
+		public double? EdgeWidth { get; set; }
+		private double? EdgeWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
+		/// </summary>
+		public bool? EnableMouseTracking { get; set; }
+		private bool? EnableMouseTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HistogramSeriesEvents Events { get; set; }
+		private HistogramSeriesEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.Requires the Accessibility module.
+		/// </summary>
+		public bool? ExposeElementToA11y { get; set; }
+		private bool? ExposeElementToA11y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
+		/// </summary>
+		public HistogramSeriesFindNearestPointBy FindNearestPointBy { get; set; }
+		private HistogramSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to use the Y extremes of the total chart width or only thezoomed area when zooming in on parts of the X axis. By default, theY axis adjusts to the min and max of the visible data. Cartesianseries only.
+		/// </summary>
+		public bool? GetExtremesFromAll { get; set; }
+		private bool? GetExtremesFromAll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to group non-stacked columns or to let them render independentof each other. Non-grouped columns will be laid out individuallyand overlap each other.
+		/// </summary>
+		public bool? Grouping { get; set; }
+		private bool? Grouping_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Padding between each value groups, in x axis units.
+		/// </summary>
+		public double? GroupPadding { get; set; }
+		private double? GroupPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The spacing between columns on the Z Axis in a 3D chart. Requires`highcharts-3d.js`.
+		/// </summary>
+		public double? GroupZPadding { get; set; }
+		private double? GroupZPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -114,10 +317,45 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
+		/// </summary>
+		public List<string> Keys { get; set; }
+		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
+		/// </summary>
+		public HistogramSeriesLabel Label { get; set; }
+		private HistogramSeriesLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The sequential index of the series in the legend.
 		/// </summary>
 		public double? LegendIndex { get; set; }
 		private double? LegendIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.
+		/// </summary>
+		public string LinkedTo { get; set; }
+		private string LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The maximum allowed pixel width for a column, translated to the heightof a bar in a bar chart. This prevents the columns from becomingtoo wide when there is a small number of points in the chart.
+		/// </summary>
+		public double? MaxPointWidth { get; set; }
+		private double? MaxPointWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The minimal height for a column or width for a bar. By default,0 values are not shown. To visualize a 0 (or close to zero) point,set the minimal point length to a pixel value like 3\. In stackedcolumn charts, minPointLength might not be respected for tightlypacked values.
+		/// </summary>
+		public double? MinPointLength { get; set; }
+		private double? MinPointLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -128,6 +366,104 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The color for the parts of the graph or points that are below the[threshold](#plotOptions.series.threshold).
+		/// </summary>
+		public string NegativeColor { get; set; }
+		private string NegativeColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Properties for each single point.
+		/// </summary>
+		public HistogramSeriesPoint Point { get; set; }
+		private HistogramSeriesPoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Same as [accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter), but for an individual series.Overrides the chart wide configuration.
+		/// </summary>
+		public string PointDescriptionFormatter { get; set; }
+		private string PointDescriptionFormatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Padding between each column or bar, in x axis units.
+		/// </summary>
+		public double? PointPadding { get; set; }
+		private double? PointPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Possible values: `null`, `"on"`, `"between"`.In a column chart, when pointPlacement is `"on"`, the point willnot create any padding of the X axis. In a polar column chart thismeans that the first column points directly north. If the pointPlacementis `"between"`, the columns will be laid out between ticks. Thisis useful for example for visualising an amount between two pointsin time or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this iscomputed, but for line-type series it needs to be set.Defaults to `null` in cartesian charts, `"between"` in polar charts.
+		/// </summary>
+		public PointPlacement PointPlacement { get; set; }
+		private PointPlacement PointPlacement_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The X axis range that each point is valid for. This determines thewidth of the column. On a categorized axis, the range will be 1by default (one category unit). On linear and datetime axes, therange will be computed as the distance between the two closest datapoints.The default `null` means it is computed automatically, but this optioncan be used to override the automatic value.
+		/// </summary>
+		public double? PointRange { get; set; }
+		private double? PointRange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If no x values are given for the points in a series, pointStart defineson what value to start. For example, if a series contains one yearlyvalue starting from 1945, set pointStart to 1945.
+		/// </summary>
+		public double? PointStart { get; set; }
+		private double? PointStart_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A pixel value specifying a fixed width for each column or bar. When`null`, the width is calculated from the `pointPadding` and`groupPadding`.
+		/// </summary>
+		public double? PointWidth { get; set; }
+		private double? PointWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to select the series initially. If `showCheckbox` is true,the checkbox next to the series name in the legend will be checked for aselected series.
+		/// </summary>
+		public bool? Selected { get; set; }
+		private bool? Selected_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
+		/// </summary>
+		public bool? ShowCheckbox { get; set; }
+		private bool? ShowCheckbox_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
+		/// </summary>
+		public bool? ShowInLegend { get; set; }
+		private bool? ShowInLegend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
+		/// </summary>
+		public bool? SkipKeyboardNavigation { get; set; }
+		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
+		/// </summary>
+		public bool? SoftThreshold { get; set; }
+		private bool? SoftThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// This option allows grouping series in a stacked chart. The stackoption can be a string or a number or anything else, as long as thegrouped series' stack options match each other.
 		/// </summary>
 		public string Stack { get; set; }
@@ -135,10 +471,52 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A wrapper object for all the series options in specific states.
+		/// </summary>
+		public HistogramSeriesStates States { get; set; }
+		private HistogramSeriesStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
+		/// </summary>
+		public double? Threshold { get; set; }
+		private double? Threshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
+		/// </summary>
+		public HistogramSeriesTooltip Tooltip { get; set; }
+		private HistogramSeriesTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
+		/// </summary>
+		public double? TurboThreshold { get; set; }
+		private double? TurboThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
 		/// </summary>
 		public HistogramSeriesType Type { get; set; }
 		private HistogramSeriesType Type_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Set the initial visibility of the series.
+		/// </summary>
+		public bool? Visible { get; set; }
+		private bool? Visible_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -163,244 +541,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
-		/// </summary>
-		public HistogramSeriesLabel Label { get; set; }
-		private HistogramSeriesLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
-		/// </summary>
-		public bool? AllowPointSelect { get; set; }
-		private bool? AllowPointSelect_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
-		/// </summary>
-		public bool? ShowCheckbox { get; set; }
-		private bool? ShowCheckbox_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public HistogramSeriesEvents Events { get; set; }
-		private HistogramSeriesEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Properties for each single point.
-		/// </summary>
-		public HistogramSeriesPoint Point { get; set; }
-		private HistogramSeriesPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public HistogramSeriesDataLabels DataLabels { get; set; }
-		private HistogramSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the `minPadding`option. If `softThreshold` is `true`, the Y axis starts at 0.
-		/// </summary>
-		public bool? SoftThreshold { get; set; }
-		private bool? SoftThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public HistogramSeriesStates States { get; set; }
-		private HistogramSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
-		/// </summary>
-		public double? TurboThreshold { get; set; }
-		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
-		/// </summary>
-		public HistogramSeriesFindNearestPointBy FindNearestPointBy { get; set; }
-		private HistogramSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesn'trun if there is more than 250 points totally. To disable this cap, set`animationLimit` to `Infinity`.
-		/// </summary>
-		public double? AnimationLimit { get; set; }
-		private double? AnimationLimit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A class name to apply to the series' graphical elements.
-		/// </summary>
-		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the `options.colors` array.In styled mode, the color can be defined by the[colorIndex](#plotOptions.series.colorIndex) option. Also, the seriescolor can be set with the `.highcharts-series`, `.highcharts-color-{n}`,`.highcharts-{type}-series` or `.highcharts-series-{n}` class, orindividual classes given by the `className` option.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
-		/// </summary>
-		public double? ColorIndex { get; set; }
-		private double? ColorIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
-		/// </summary>
-		public HistogramSeriesCursor Cursor { get; set; }
-		private HistogramSeriesCursor Cursor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Requires the Accessibility module.A description of the series to add to the screen reader informationabout the series.
-		/// </summary>
-		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
-		/// </summary>
-		public bool? EnableMouseTracking { get; set; }
-		private bool? EnableMouseTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.Requires the Accessibility module.
-		/// </summary>
-		public bool? ExposeElementToA11y { get; set; }
-		private bool? ExposeElementToA11y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to use the Y extremes of the total chart width or only thezoomed area when zooming in on parts of the X axis. By default, theY axis adjusts to the min and max of the visible data. Cartesianseries only.
-		/// </summary>
-		public bool? GetExtremesFromAll { get; set; }
-		private bool? GetExtremesFromAll_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
-		/// </summary>
-		public List<string> Keys { get; set; }
-		private List<string> Keys_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.
-		/// </summary>
-		public string LinkedTo { get; set; }
-		private string LinkedTo_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color for the parts of the graph or points that are below the[threshold](#plotOptions.series.threshold).
-		/// </summary>
-		public string NegativeColor { get; set; }
-		private string NegativeColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Same as [accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter), but for an individual series.Overrides the chart wide configuration.
-		/// </summary>
-		public string PointDescriptionFormatter { get; set; }
-		private string PointDescriptionFormatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Possible values: `null`, `"on"`, `"between"`.In a column chart, when pointPlacement is `"on"`, the point willnot create any padding of the X axis. In a polar column chart thismeans that the first column points directly north. If the pointPlacementis `"between"`, the columns will be laid out between ticks. Thisis useful for example for visualising an amount between two pointsin time or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this iscomputed, but for line-type series it needs to be set.Defaults to `null` in cartesian charts, `"between"` in polar charts.
-		/// </summary>
-		public PointPlacement PointPlacement { get; set; }
-		private PointPlacement PointPlacement_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If no x values are given for the points in a series, pointStart defineson what value to start. For example, if a series contains one yearlyvalue starting from 1945, set pointStart to 1945.
-		/// </summary>
-		public double? PointStart { get; set; }
-		private double? PointStart_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to select the series initially. If `showCheckbox` is true,the checkbox next to the series name in the legend will be checked for aselected series.
-		/// </summary>
-		public bool? Selected { get; set; }
-		private bool? Selected_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
-		/// </summary>
-		public bool? SkipKeyboardNavigation { get; set; }
-		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the initial visibility of the series.
-		/// </summary>
-		public bool? Visible { get; set; }
-		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Defines the Axis on which the zones are applied.
 		/// </summary>
 		public string ZoneAxis { get; set; }
@@ -408,227 +548,87 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public HistogramSeriesTooltip Tooltip { get; set; }
-		private HistogramSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<HistogramSeriesZone> Zones { get; set; }
 		private List<HistogramSeriesZone> Zones_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The corner radius of the border surrounding each column or bar.
-		/// </summary>
-		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When true, each column edge is rounded to its nearest pixel in orderto render sharp on screen. In some cases, when there are a lot ofdensely packed columns, this leads to visible difference in columnwidths or distance between columns. In these cases, setting `crisp`to `false` may look better, even though each column is renderedblurry.
-		/// </summary>
-		public bool? Crisp { get; set; }
-		private bool? Crisp_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding between each value groups, in x axis units.
-		/// </summary>
-		public double? GroupPadding { get; set; }
-		private double? GroupPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding between each column or bar, in x axis units.
-		/// </summary>
-		public double? PointPadding { get; set; }
-		private double? PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The minimal height for a column or width for a bar. By default,0 values are not shown. To visualize a 0 (or close to zero) point,set the minimal point length to a pixel value like 3\. In stackedcolumn charts, minPointLength might not be respected for tightlypacked values.
-		/// </summary>
-		public double? MinPointLength { get; set; }
-		private double? MinPointLength_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The X axis range that each point is valid for. This determines thewidth of the column. On a categorized axis, the range will be 1by default (one category unit). On linear and datetime axes, therange will be computed as the distance between the two closest datapoints.The default `null` means it is computed automatically, but this optioncan be used to override the automatic value.
-		/// </summary>
-		public double? PointRange { get; set; }
-		private double? PointRange_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
-		/// </summary>
-		public bool? ColorByPoint { get; set; }
-		private bool? ColorByPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A series specific or series type specific color set to apply insteadof the global [colors](#colors) when [colorByPoint](#plotOptions.column.colorByPoint) is true.
-		/// </summary>
-		public List<string> Colors { get; set; }
-		private List<string> Colors_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to group non-stacked columns or to let them render independentof each other. Non-grouped columns will be laid out individuallyand overlap each other.
-		/// </summary>
-		public bool? Grouping { get; set; }
-		private bool? Grouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The maximum allowed pixel width for a column, translated to the heightof a bar in a bar chart. This prevents the columns from becomingtoo wide when there is a small number of points in the chart.
-		/// </summary>
-		public double? MaxPointWidth { get; set; }
-		private double? MaxPointWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A pixel value specifying a fixed width for each column or bar. When`null`, the width is calculated from the `pointPadding` and`groupPadding`.
-		/// </summary>
-		public double? PointWidth { get; set; }
-		private double? PointWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Depth of the columns in a 3D column chart. Requires `highcharts-3d.js`.
-		/// </summary>
-		public double? Depth { get; set; }
-		private double? Depth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 3D columns only. The color of the edges. Similar to `borderColor`, except it defaults to the same color as the column.
-		/// </summary>
-		public string EdgeColor { get; set; }
-		private string EdgeColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 3D columns only. The width of the colored edges.
-		/// </summary>
-		public double? EdgeWidth { get; set; }
-		private double? EdgeWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The spacing between columns on the Z Axis in a 3D chart. Requires`highcharts-3d.js`.
-		/// </summary>
-		public double? GroupZPadding { get; set; }
-		private double? GroupZPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A preferable number of bins. It is a suggestion, so a histogram may havea different number of bins. By default it is set to the square rootof the base series' data length. Available options are: `square-root`,`sturges`, `rice`. You can also define a function which takes a`baseSeries` as a parameter and should return a positive integer.
-		/// </summary>
-		public HistogramSeriesBinsNumber BinsNumber { get; set; }
-		private HistogramSeriesBinsNumber BinsNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Width of each bin. By default the bin's width is calculated as`(max - min) / number of bins`. This option takes precedence over[binsNumber](#plotOptions.histogram.binsNumber).
-		/// </summary>
-		public double? BinWidth { get; set; }
-		private double? BinWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
-			if (Data.Any()) h.Add("data",HashifyList(Data));
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
+			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
+			if (BinsNumber != BinsNumber_DefaultValue) h.Add("binsNumber", Highcharts.FirstCharacterToLower(BinsNumber.ToString()));
+			if (BinWidth != BinWidth_DefaultValue) h.Add("binWidth",BinWidth);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
+			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
+			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
+			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
+			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
+			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
+			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
+			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
+			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("HistogramSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (PointPlacement.IsDirty())
 				if (PointPlacement.Value.HasValue)
 					h.Add("pointPlacement", PointPlacement.Value);
 				else
 					h.Add("pointPlacement", PointPlacement.ToJSON());
+			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
+			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
-			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
-			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
-			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
-			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
-			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
-			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
-			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
-			if (BinsNumber != BinsNumber_DefaultValue) h.Add("binsNumber", Highcharts.FirstCharacterToLower(BinsNumber.ToString()));
-			if (BinWidth != BinWidth_DefaultValue) h.Add("binWidth",BinWidth);
 			
 
 			return h;

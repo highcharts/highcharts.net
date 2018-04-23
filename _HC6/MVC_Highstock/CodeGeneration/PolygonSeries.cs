@@ -14,195 +14,76 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PolygonSeries()
 		{
-			Data = Data_DefaultValue = new List<PolygonSeriesData>();
-			Id = Id_DefaultValue = "";
-			Index = Index_DefaultValue = null;
-			LegendIndex = LegendIndex_DefaultValue = null;
-			Name = Name_DefaultValue = "";
-			Type = Type_DefaultValue = PolygonSeriesType.Null;
-			XAxis = XAxis_DefaultValue = "";
-			YAxis = YAxis_DefaultValue = "";
-			ZIndex = ZIndex_DefaultValue = null;
-			BoostThreshold = BoostThreshold_DefaultValue = 5000;
-			GapSize = GapSize_DefaultValue = 0;
-			GapUnit = GapUnit_DefaultValue = PolygonSeriesGapUnit.Relative;
-			Label = Label_DefaultValue = new PolygonSeriesLabel();
-			DataGrouping = DataGrouping_DefaultValue = new PolygonSeriesDataGrouping();
-			ShowInNavigator = ShowInNavigator_DefaultValue = null;
-			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = new PolygonSeriesEvents();
-			Marker = Marker_DefaultValue = new PolygonSeriesMarker();
-			Point = Point_DefaultValue = new PolygonSeriesPoint();
-			DataLabels = DataLabels_DefaultValue = new PolygonSeriesDataLabels();
-			CropThreshold = CropThreshold_DefaultValue = 300;
-			PointRange = PointRange_DefaultValue = 0;
-			States = States_DefaultValue = new PolygonSeriesStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
-			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = PolygonSeriesFindNearestPointBy.X;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
+			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			Compare = Compare_DefaultValue = "undefined";
+			CompareBase = CompareBase_DefaultValue = PolygonSeriesCompareBase.Min;
+			CompareStart = CompareStart_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
+			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PolygonSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PolygonSeriesDashStyle.Solid;
+			Data = Data_DefaultValue = new List<PolygonSeriesData>();
+			DataGrouping = DataGrouping_DefaultValue = new PolygonSeriesDataGrouping();
+			DataLabels = DataLabels_DefaultValue = new PolygonSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
+			Events = Events_DefaultValue = new PolygonSeriesEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
+			FindNearestPointBy = FindNearestPointBy_DefaultValue = PolygonSeriesFindNearestPointBy.X;
+			GapSize = GapSize_DefaultValue = 0;
+			GapUnit = GapUnit_DefaultValue = PolygonSeriesGapUnit.Relative;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			Id = Id_DefaultValue = "";
+			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
+			Label = Label_DefaultValue = new PolygonSeriesLabel();
+			LegendIndex = LegendIndex_DefaultValue = null;
 			Linecap = Linecap_DefaultValue = PolygonSeriesLinecap.Round;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
+			Marker = Marker_DefaultValue = new PolygonSeriesMarker();
+			Name = Name_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "null";
+			Point = Point_DefaultValue = new PolygonSeriesPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PolygonSeriesPointIntervalUnit.Null;
+			PointRange = PointRange_DefaultValue = 0;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
+			ShowInNavigator = ShowInNavigator_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = PolygonSeriesStacking.Null;
+			States = States_DefaultValue = new PolygonSeriesStates();
 			Step = Step_DefaultValue = PolygonSeriesStep.Null;
-			Visible = Visible_DefaultValue = true;
-			ZoneAxis = ZoneAxis_DefaultValue = "y";
+			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PolygonSeriesTooltip();
-			Zones = Zones_DefaultValue = new List<PolygonSeriesZone>();
-			Compare = Compare_DefaultValue = "undefined";
-			CompareStart = CompareStart_DefaultValue = false;
-			CompareBase = CompareBase_DefaultValue = PolygonSeriesCompareBase.Min;
 			TrackByArea = TrackByArea_DefaultValue = true;
+			TurboThreshold = TurboThreshold_DefaultValue = 1000;
+			Type = Type_DefaultValue = PolygonSeriesType.Null;
+			Visible = Visible_DefaultValue = true;
+			XAxis = XAxis_DefaultValue = "";
+			YAxis = YAxis_DefaultValue = "";
+			ZIndex = ZIndex_DefaultValue = null;
+			ZoneAxis = ZoneAxis_DefaultValue = "y";
+			Zones = Zones_DefaultValue = new List<PolygonSeriesZone>();
 			
 		}	
 		
-
-		/// <summary>
-		/// An array of data points for the series. For the `polygon` seriestype, points can be given in the following ways:1.  An array of numerical values. In this case, the numerical valueswill be interpreted as `y` options. The `x` values will be automaticallycalculated, either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. If the axis hascategories, these will be used. Example: ```js data: [0, 5, 3, 5] ```2.  An array of arrays with 2 values. In this case, the values correspondto `x,y`. If the first value is a string, it is applied as the nameof the point, and the `x` value is inferred. ```js    data: [        [0, 10],        [1, 3],        [2, 1]    ] ```3.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.polygon.turboThreshold),this option is not available. ```js    data: [{        x: 1,        y: 1,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        y: 8,        name: "Point1",        color: "#FF00FF"    }] ```
-		/// </summary>
-		public List<PolygonSeriesData> Data { get; set; }
-		private List<PolygonSeriesData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
-		/// </summary>
-		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The index of the series in the chart, affecting the internal indexin the `chart.series` array, the visible Z index as well as the orderin the legend.
-		/// </summary>
-		public double? Index { get; set; }
-		private double? Index_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The sequential index of the series in the legend.
-		/// </summary>
-		public double? LegendIndex { get; set; }
-		private double? LegendIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The name of the series as shown in the legend, tooltip etc.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
-		/// </summary>
-		public PolygonSeriesType Type { get; set; }
-		private PolygonSeriesType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
-		/// </summary>
-		public string XAxis { get; set; }
-		private string XAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
-		/// </summary>
-		public string YAxis { get; set; }
-		private string YAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Define the visual z index of the series.
-		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
-		/// </summary>
-		public double? BoostThreshold { get; set; }
-		private double? BoostThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be grouped into alarger time span. This can make the grouped points to have a greaterdistance than the absolute value of `gapSize` property, which will resultin disappearing graph completely. To prevent this situation the mentioneddistance between grouped points is used instead of previously defined`gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available for daytimehours, while gaps will appear in nights and weekends.
-		/// </summary>
-		public double? GapSize { get; set; }
-		private double? GapSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Together with [gapSize](plotOptions.series.gapSize), this option defineswhere to draw gaps in the graph.When the `gapUnit` is `relative` (default), a gap size of 5 meansthat if the distance between two points is greater than five timesthat of the two closest points, the graph will be broken.When the `gapUnit` is `value`, the gap is based on absolute axis values,which on a datetime axis is milliseconds. This also applies to thenavigator series that inherits gap options from the base series.
-		/// </summary>
-		public PolygonSeriesGapUnit GapUnit { get; set; }
-		private PolygonSeriesGapUnit GapUnit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
-		/// </summary>
-		public PolygonSeriesLabel Label { get; set; }
-		private PolygonSeriesLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](#Point.dataGroup).
-		/// </summary>
-		public PolygonSeriesDataGrouping DataGrouping { get; set; }
-		private PolygonSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether or not to show the series in the navigator. Takes precedenceover [navigator.baseSeries](#navigator.baseSeries) if defined.
-		/// </summary>
-		public bool? ShowInNavigator { get; set; }
-		private bool? ShowInNavigator_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel width of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
-		/// </summary>
-		public bool? ShowCheckbox { get; set; }
-		private bool? ShowCheckbox_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -213,80 +94,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PolygonSeriesEvents Events { get; set; }
-		private PolygonSeriesEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
-		/// </summary>
-		public PolygonSeriesMarker Marker { get; set; }
-		private PolygonSeriesMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Properties for each single point.
-		/// </summary>
-		public PolygonSeriesPoint Point { get; set; }
-		private PolygonSeriesPoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
-		/// </summary>
-		public PolygonSeriesDataLabels DataLabels { get; set; }
-		private PolygonSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of each point on the x axis. For example in a column chartwith one value each day, the pointRange would be 1 day (= 24 * 3600* 1000 milliseconds). This is normally computed automatically, butthis option can be used to override the automatic value.
-		/// </summary>
-		public double? PointRange { get; set; }
-		private double? PointRange_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A wrapper object for all the series options in specific states.
-		/// </summary>
-		public PolygonSeriesStates States { get; set; }
-		private PolygonSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
-		/// </summary>
-		public double? TurboThreshold { get; set; }
-		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
-		/// </summary>
-		public PolygonSeriesFindNearestPointBy FindNearestPointBy { get; set; }
-		private PolygonSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesn'trun if there is more than 250 points totally. To disable this cap, set`animationLimit` to `Infinity`.
 		/// </summary>
 		public double? AnimationLimit { get; set; }
 		private double? AnimationLimit_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
+		/// </summary>
+		public double? BoostThreshold { get; set; }
+		private double? BoostThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -311,10 +129,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Compare the values of the series against the first non-null, non-zero value in the visible range. The y axis will show percentageor absolute change depending on whether `compare` is set to `"percent"`or `"value"`. When this is applied to multiple series, it allowscomparing the development of the series against each other.
+		/// </summary>
+		public string Compare { get; set; }
+		private string Compare_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When [compare](#plotOptions.series.compare) is `percent`, this optiondictates whether to use 0 or 100 as the base of comparison.
+		/// </summary>
+		public PolygonSeriesCompareBase CompareBase { get; set; }
+		private PolygonSeriesCompareBase CompareBase_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines if comparisson should start from the first point within the visiblerange or should start from the first point <b>before</b> the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
+		/// </summary>
+		public bool? CompareStart { get; set; }
+		private bool? CompareStart_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.
 		/// </summary>
 		public bool? ConnectNulls { get; set; }
 		private bool? ConnectNulls_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points (includingmarkers and columns), is that animation is performed on updates.On the other hand, when the series contains more points than thecrop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping away invisiblepoints is to increase performance on large series.
+		/// </summary>
+		public double? CropThreshold { get; set; }
+		private double? CropThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -332,6 +178,27 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// An array of data points for the series. For the `polygon` seriestype, points can be given in the following ways:1.  An array of numerical values. In this case, the numerical valueswill be interpreted as `y` options. The `x` values will be automaticallycalculated, either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. If the axis hascategories, these will be used. Example: ```js data: [0, 5, 3, 5] ```2.  An array of arrays with 2 values. In this case, the values correspondto `x,y`. If the first value is a string, it is applied as the nameof the point, and the `x` value is inferred. ```js    data: [        [0, 10],        [1, 3],        [2, 1]    ] ```3.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.polygon.turboThreshold),this option is not available. ```js    data: [{        x: 1,        y: 1,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        y: 8,        name: "Point1",        color: "#FF00FF"    }] ```
+		/// </summary>
+		public List<PolygonSeriesData> Data { get; set; }
+		private List<PolygonSeriesData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](#Point.dataGroup).
+		/// </summary>
+		public PolygonSeriesDataGrouping DataGrouping { get; set; }
+		private PolygonSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public PolygonSeriesDataLabels DataLabels { get; set; }
+		private PolygonSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Requires the Accessibility module.A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
@@ -346,10 +213,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public PolygonSeriesEvents Events { get; set; }
+		private PolygonSeriesEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.Requires the Accessibility module.
 		/// </summary>
 		public bool? ExposeElementToA11y { get; set; }
 		private bool? ExposeElementToA11y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
+		/// </summary>
+		public PolygonSeriesFindNearestPointBy FindNearestPointBy { get; set; }
+		private PolygonSeriesFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be grouped into alarger time span. This can make the grouped points to have a greaterdistance than the absolute value of `gapSize` property, which will resultin disappearing graph completely. To prevent this situation the mentioneddistance between grouped points is used instead of previously defined`gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available for daytimehours, while gaps will appear in nights and weekends.
+		/// </summary>
+		public double? GapSize { get; set; }
+		private double? GapSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Together with [gapSize](plotOptions.series.gapSize), this option defineswhere to draw gaps in the graph.When the `gapUnit` is `relative` (default), a gap size of 5 meansthat if the distance between two points is greater than five timesthat of the two closest points, the graph will be broken.When the `gapUnit` is `value`, the gap is based on absolute axis values,which on a datetime axis is milliseconds. This also applies to thenavigator series that inherits gap options from the base series.
+		/// </summary>
+		public PolygonSeriesGapUnit GapUnit { get; set; }
+		private PolygonSeriesGapUnit GapUnit_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -360,10 +255,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
+		/// </summary>
+		public string Id { get; set; }
+		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The index of the series in the chart, affecting the internal indexin the `chart.series` array, the visible Z index as well as the orderin the legend.
+		/// </summary>
+		public double? Index { get; set; }
+		private double? Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
+		/// </summary>
+		public PolygonSeriesLabel Label { get; set; }
+		private PolygonSeriesLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The sequential index of the series in the legend.
+		/// </summary>
+		public double? LegendIndex { get; set; }
+		private double? LegendIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -374,6 +297,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Pixel width of the graph line.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.
 		/// </summary>
 		public string LinkedTo { get; set; }
@@ -381,10 +311,31 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select`class names.
+		/// </summary>
+		public PolygonSeriesMarker Marker { get; set; }
+		private PolygonSeriesMarker Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of the series as shown in the legend, tooltip etc.
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color for the parts of the graph or points that are below the[threshold](#plotOptions.series.threshold).
 		/// </summary>
 		public string NegativeColor { get; set; }
 		private string NegativeColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Properties for each single point.
+		/// </summary>
+		public PolygonSeriesPoint Point { get; set; }
+		private PolygonSeriesPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -409,6 +360,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The width of each point on the x axis. For example in a column chartwith one value each day, the pointRange would be 1 day (= 24 * 3600* 1000 milliseconds). This is normally computed automatically, butthis option can be used to override the automatic value.
+		/// </summary>
+		public double? PointRange { get; set; }
+		private double? PointRange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If no x values are given for the points in a series, pointStart defineson what value to start. For example, if a series contains one yearlyvalue starting from 1945, set pointStart to 1945.
 		/// </summary>
 		public double? PointStart { get; set; }
@@ -423,10 +381,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
+		/// </summary>
+		public bool? ShowCheckbox { get; set; }
+		private bool? ShowCheckbox_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
 		/// </summary>
 		public bool? ShowInLegend { get; set; }
 		private bool? ShowInLegend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether or not to show the series in the navigator. Takes precedenceover [navigator.baseSeries](#navigator.baseSeries) if defined.
+		/// </summary>
+		public bool? ShowInNavigator { get; set; }
+		private bool? ShowInNavigator_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -444,6 +416,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A wrapper object for all the series options in specific states.
+		/// </summary>
+		public PolygonSeriesStates States { get; set; }
+		private PolygonSeriesStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to apply steps to the line. Possible values are `left`, `center`and `right`.
 		/// </summary>
 		public PolygonSeriesStep Step { get; set; }
@@ -451,17 +430,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set the initial visibility of the series.
+		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
 		/// </summary>
-		public bool? Visible { get; set; }
-		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines the Axis on which the zones are applied.
-		/// </summary>
-		public string ZoneAxis { get; set; }
-		private string ZoneAxis_DefaultValue { get; set; }
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -472,105 +444,133 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
-		/// </summary>
-		public List<PolygonSeriesZone> Zones { get; set; }
-		private List<PolygonSeriesZone> Zones_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Compare the values of the series against the first non-null, non-zero value in the visible range. The y axis will show percentageor absolute change depending on whether `compare` is set to `"percent"`or `"value"`. When this is applied to multiple series, it allowscomparing the development of the series against each other.
-		/// </summary>
-		public string Compare { get; set; }
-		private string Compare_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines if comparisson should start from the first point within the visiblerange or should start from the first point <b>before</b> the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
-		/// </summary>
-		public bool? CompareStart { get; set; }
-		private bool? CompareStart_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When [compare](#plotOptions.series.compare) is `percent`, this optiondictates whether to use 0 or 100 as the base of comparison.
-		/// </summary>
-		public PolygonSeriesCompareBase CompareBase { get; set; }
-		private PolygonSeriesCompareBase CompareBase_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public bool? TrackByArea { get; set; }
 		private bool? TrackByArea_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.
+		/// </summary>
+		public double? TurboThreshold { get; set; }
+		private double? TurboThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
+		/// </summary>
+		public PolygonSeriesType Type { get; set; }
+		private PolygonSeriesType Type_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Set the initial visibility of the series.
+		/// </summary>
+		public bool? Visible { get; set; }
+		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
+		/// </summary>
+		public string XAxis { get; set; }
+		private string XAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
+		/// </summary>
+		public string YAxis { get; set; }
+		private string YAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Define the visual z index of the series.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines the Axis on which the zones are applied.
+		/// </summary>
+		public string ZoneAxis { get; set; }
+		private string ZoneAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// </summary>
+		public List<PolygonSeriesZone> Zones { get; set; }
+		private List<PolygonSeriesZone> Zones_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Data.Any()) h.Add("data",HashifyList(Data));
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
-			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
-			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
-			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
+			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
+			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
+			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
+			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
+			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
+			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
+			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
+			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("PolygonSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
+			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Step != Step_DefaultValue) h.Add("step", Highstock.FirstCharacterToLower(Step.ToString()));
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
-			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
+			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
+			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
 			
 
 			return h;

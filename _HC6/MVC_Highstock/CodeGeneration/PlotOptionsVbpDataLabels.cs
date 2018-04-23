@@ -14,41 +14,41 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsVbpDataLabels()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			AllowOverlap = AllowOverlap_DefaultValue = true;
-			VerticalAlign = VerticalAlign_DefaultValue = "top";
-			Format = Format_DefaultValue = "P: {point.volumePos:.2f} | N: {point.volumeNeg:.2f}";
-			Padding = Padding_DefaultValue = "0";
-			Style = Style_DefaultValue = new PlotOptionsVbpDataLabelsStyle();
 			Align = Align_DefaultValue = PlotOptionsVbpDataLabelsAlign.Center;
-			Formatter = Formatter_DefaultValue = "";
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = -6;
+			AllowOverlap = AllowOverlap_DefaultValue = true;
+			BackgroundColor = BackgroundColor_DefaultValue = "";
+			BorderColor = BorderColor_DefaultValue = "undefined";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
-			Shape = Shape_DefaultValue = "square";
-			ZIndex = ZIndex_DefaultValue = 6;
+			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsVbpDataLabelsFilter();
-			BackgroundColor = BackgroundColor_DefaultValue = "";
-			BorderColor = BorderColor_DefaultValue = "undefined";
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Format = Format_DefaultValue = "P: {point.volumePos:.2f} | N: {point.volumeNeg:.2f}";
+			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
 			Overflow = Overflow_DefaultValue = PlotOptionsVbpDataLabelsOverflow.Justify;
+			Padding = Padding_DefaultValue = "0";
 			Rotation = Rotation_DefaultValue = 0;
+			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Shape = Shape_DefaultValue = "square";
+			Style = Style_DefaultValue = new PlotOptionsVbpDataLabelsStyle();
 			UseHTML = UseHTML_DefaultValue = false;
+			VerticalAlign = VerticalAlign_DefaultValue = "top";
+			X = X_DefaultValue = 0;
+			Y = Y_DefaultValue = -6;
+			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public PlotOptionsVbpDataLabelsAlign Align { get; set; }
+		private PlotOptionsVbpDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -59,59 +59,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// The background color or gradient for the data label.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// The border color for the data label. Defaults to `undefined`.
 		/// </summary>
-		public string Format { get; set; }
-		private string Format_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsVbpDataLabelsStyle Style { get; set; }
-		private PlotOptionsVbpDataLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
-		/// </summary>
-		public PlotOptionsVbpDataLabelsAlign Align { get; set; }
-		private PlotOptionsVbpDataLabelsAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Callback JavaScript function to format the data label. Note that if a`format` is defined, the format takes precedence and the formatter isignored. Available data are:<table><tbody><tr><td>`this.percentage`</td><td>Stacked series and pies only. The point's percentage of thetotal.</td></tr><tr><td>`this.point`</td><td>The point object. The point name, if defined, is availablethrough `this.point.name`.</td></tr><tr><td>`this.series`:</td><td>The series object. The series name is available through`this.series.name`.</td></tr><tr><td>`this.total`</td><td>Stacked series only. The total value at this point's x value.</td></tr><tr><td>`this.x`:</td><td>The x value.</td></tr><tr><td>`this.y`:</td><td>The y value.</td></tr></tbody></table>
-		/// </summary>
-		public string Formatter { get; set; }
-		private string Formatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x position offset of the label relative to the point.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y position offset of the label relative to the point.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -157,17 +115,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The name of a symbol to use for the border around the label. Symbolsare predefined functions on the Renderer object.
+		/// 
 		/// </summary>
-		public string Shape { get; set; }
-		private string Shape_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The Z index of the data labels. The default Z index puts it abovethe series. Use a Z index of 2 to display it behind the series.
-		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -178,24 +129,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The background color or gradient for the data label.
+		/// 
 		/// </summary>
-		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border color for the data label. Defaults to `undefined`.
+		/// Callback JavaScript function to format the data label. Note that if a`format` is defined, the format takes precedence and the formatter isignored. Available data are:<table><tbody><tr><td>`this.percentage`</td><td>Stacked series and pies only. The point's percentage of thetotal.</td></tr><tr><td>`this.point`</td><td>The point object. The point name, if defined, is availablethrough `this.point.name`.</td></tr><tr><td>`this.series`:</td><td>The series object. The series name is available through`this.series.name`.</td></tr><tr><td>`this.total`</td><td>Stacked series only. The total value at this point's x value.</td></tr><tr><td>`this.x`:</td><td>The x value.</td></tr><tr><td>`this.y`:</td><td>The y value.</td></tr></tbody></table>
 		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The shadow of the box. Works best with `borderWidth` or`backgroundColor`. Since 2.3 the shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -213,6 +157,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Text rotation in degrees. Note that due to a more complex structure,backgrounds, borders and padding will be lost on a rotated datalabel.
 		/// </summary>
 		public double? Rotation { get; set; }
@@ -220,42 +171,91 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The shadow of the box. Works best with `borderWidth` or`backgroundColor`. Since 2.3 the shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of a symbol to use for the border around the label. Symbolsare predefined functions on the Renderer object.
+		/// </summary>
+		public string Shape { get; set; }
+		private string Shape_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsVbpDataLabelsStyle Style { get; set; }
+		private PlotOptionsVbpDataLabelsStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to[use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string VerticalAlign { get; set; }
+		private string VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The x position offset of the label relative to the point.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The y position offset of the label relative to the point.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Z index of the data labels. The default Z index puts it abovethe series. Use a Z index of 2 to display it behind the series.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("PlotOptionsVbpDataLabelsFormatter.formatter", Formatter); }  
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("PlotOptionsVbpDataLabelsFormatter.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 
 			return h;

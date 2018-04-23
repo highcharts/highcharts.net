@@ -14,21 +14,14 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Time()
 		{
-			UseUTC = UseUTC_DefaultValue = null;
 			Date = Date_DefaultValue = null;
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "undefined";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
+			UseUTC = UseUTC_DefaultValue = null;
 			
 		}	
 		
-
-		/// <summary>
-		/// Whether to use UTC time for axis scaling, tickmark placement andtime display in `Highcharts.dateFormat`. Advantages of using UTCis that the time displays equally regardless of the user agent'stime zone settings. Local time can be used when the data is loadedin real time or when correct Daylight Saving Time transitions arerequired.
-		/// </summary>
-		public bool? UseUTC { get; set; }
-		private bool? UseUTC_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// A custom `Date` class for advanced date handling. For example,[JDate](https://github.com/tahajahangir/jdate) can be hooked in tohandle Jalali dates.
@@ -56,17 +49,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? TimezoneOffset { get; set; }
 		private double? TimezoneOffset_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to use UTC time for axis scaling, tickmark placement andtime display in `Highcharts.dateFormat`. Advantages of using UTCis that the time displays equally regardless of the user agent'stime zone settings. Local time can be used when the data is loadedin real time or when correct Daylight Saving Time transitions arerequired.
+		/// </summary>
+		public bool? UseUTC { get; set; }
+		private bool? UseUTC_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
 			if (Date != Date_DefaultValue) h.Add("date",Date);
 			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highstock.AddFunction("TimeGetTimezoneOffset.getTimezoneOffset", GetTimezoneOffset); }  
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
+			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
 			
 
 			return h;

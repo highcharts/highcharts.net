@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public EmaSeriesDataMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new EmaSeriesDataMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new EmaSeriesDataMarkerStatesHover();
+			Normal = Normal_DefaultValue = new EmaSeriesDataMarkerStatesNormal();
 			Select = Select_DefaultValue = new EmaSeriesDataMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public EmaSeriesDataMarkerStatesNormal Normal { get; set; }
-		private EmaSeriesDataMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public EmaSeriesDataMarkerStatesHover Hover { get; set; }
 		private EmaSeriesDataMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public EmaSeriesDataMarkerStatesNormal Normal { get; set; }
+		private EmaSeriesDataMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

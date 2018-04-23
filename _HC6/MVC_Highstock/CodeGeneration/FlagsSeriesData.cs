@@ -14,50 +14,22 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public FlagsSeriesData()
 		{
-			FillColor = FillColor_DefaultValue = null;
-			Text = Text_DefaultValue = "";
-			Title = Title_DefaultValue = "";
-			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Description = Description_DefaultValue = "undefined";
+			Drilldown = Drilldown_DefaultValue = "";
+			Events = Events_DefaultValue = new FlagsSeriesDataEvents();
+			FillColor = FillColor_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
+			Text = Text_DefaultValue = "";
+			Title = Title_DefaultValue = "";
 			X = X_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = new FlagsSeriesDataEvents();
 			
 		}	
 		
-
-		/// <summary>
-		/// The fill color of an individual flag. By default it inherits fromthe series color.
-		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The longer text to be shown in the flag's tooltip.
-		/// </summary>
-		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The short text to be shown on the flag.
-		/// </summary>
-		public string Title { get; set; }
-		private string Title_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -88,6 +60,27 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// </summary>
+		public string Drilldown { get; set; }
+		private string Drilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public FlagsSeriesDataEvents Events { get; set; }
+		private FlagsSeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The fill color of an individual flag. By default it inherits fromthe series color.
+		/// </summary>
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -109,36 +102,43 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The longer text to be shown in the flag's tooltip.
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The short text to be shown on the flag.
+		/// </summary>
+		public string Title { get; set; }
+		private string Title_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public FlagsSeriesDataEvents Events { get; set; }
-		private FlagsSeriesDataEvents Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Title != Title_DefaultValue) h.Add("title",Title);
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (Text != Text_DefaultValue) h.Add("text",Text);
+			if (Title != Title_DefaultValue) h.Add("title",Title);
 			if (X != X_DefaultValue) h.Add("x",X);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

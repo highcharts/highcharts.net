@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Scatter3dSeriesStatesHoverMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new Scatter3dSeriesStatesHoverMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new Scatter3dSeriesStatesHoverMarkerStatesHover();
+			Normal = Normal_DefaultValue = new Scatter3dSeriesStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new Scatter3dSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public Scatter3dSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
-		private Scatter3dSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public Scatter3dSeriesStatesHoverMarkerStatesHover Hover { get; set; }
 		private Scatter3dSeriesStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public Scatter3dSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
+		private Scatter3dSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

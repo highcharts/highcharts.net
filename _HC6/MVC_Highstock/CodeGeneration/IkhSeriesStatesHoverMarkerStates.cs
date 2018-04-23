@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public IkhSeriesStatesHoverMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new IkhSeriesStatesHoverMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new IkhSeriesStatesHoverMarkerStatesHover();
+			Normal = Normal_DefaultValue = new IkhSeriesStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new IkhSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public IkhSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
-		private IkhSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public IkhSeriesStatesHoverMarkerStatesHover Hover { get; set; }
 		private IkhSeriesStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public IkhSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
+		private IkhSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

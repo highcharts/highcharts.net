@@ -14,104 +14,41 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsGauge()
 		{
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
-			Dial = Dial_DefaultValue = new PlotOptionsGaugeDial();
-			Pivot = Pivot_DefaultValue = new PlotOptionsGaugePivot();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsGaugeTooltip();
-			ShowInLegend = ShowInLegend_DefaultValue = false;
-			Wrap = Wrap_DefaultValue = true;
-			Overshoot = Overshoot_DefaultValue = 0;
-			Label = Label_DefaultValue = new PlotOptionsGaugeLabel();
-			LineWidth = LineWidth_DefaultValue = 2;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = new PlotOptionsGaugeEvents();
-			Point = Point_DefaultValue = new PlotOptionsGaugePoint();
-			StickyTracking = StickyTracking_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Cursor = Cursor_DefaultValue = PlotOptionsGaugeCursor.Null;
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Dial = Dial_DefaultValue = new PlotOptionsGaugeDial();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
+			Events = Events_DefaultValue = new PlotOptionsGaugeEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
+			Label = Label_DefaultValue = new PlotOptionsGaugeLabel();
 			Linecap = Linecap_DefaultValue = PlotOptionsGaugeLinecap.Round;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
+			Overshoot = Overshoot_DefaultValue = 0;
+			Pivot = Pivot_DefaultValue = new PlotOptionsGaugePivot();
+			Point = Point_DefaultValue = new PlotOptionsGaugePoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsGaugePointIntervalUnit.Null;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
+			ShowInLegend = ShowInLegend_DefaultValue = false;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			StickyTracking = StickyTracking_DefaultValue = true;
+			Tooltip = Tooltip_DefaultValue = new PlotOptionsGaugeTooltip();
 			Visible = Visible_DefaultValue = true;
+			Wrap = Wrap_DefaultValue = true;
 			
 		}	
 		
-
-		/// <summary>
-		/// Data labels for the gauge. For gauges, the data labels are enabledby default and shown in a bordered box below the point.
-		/// </summary>
-		public PlotOptionsGaugeDataLabels DataLabels { get; set; }
-		private PlotOptionsGaugeDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the dial or arrow pointer of the gauge.In styled mode, the dial is styled with the`.highcharts-gauge-series .highcharts-dial` rule.
-		/// </summary>
-		public PlotOptionsGaugeDial Dial { get; set; }
-		private PlotOptionsGaugeDial Dial_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the pivot or the center point of the gauge.In styled mode, the pivot is styled with the`.highcharts-gauge-series .highcharts-pivot` rule.
-		/// </summary>
-		public PlotOptionsGaugePivot Pivot { get; set; }
-		private PlotOptionsGaugePivot Pivot_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsGaugeTooltip Tooltip { get; set; }
-		private PlotOptionsGaugeTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display this particular series or series type in thelegend. Defaults to false for gauge series.
-		/// </summary>
-		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this option is `true`, the dial will wrap around the axes. Forinstance, in a full-range gauge going from 0 to 360, a value of 400will point to 40\. When `wrap` is `false`, the dial stops at 360.
-		/// </summary>
-		public bool? Wrap { get; set; }
-		private bool? Wrap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Allow the dial to overshoot the end of the perimeter axis by thismany degrees. Say if the gauge axis goes from 0 to 60, a value of100, or 1000, will show 5 degrees beyond the end of the axis when thisoption is set to 5.
-		/// </summary>
-		public double? Overshoot { get; set; }
-		private double? Overshoot_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
-		/// </summary>
-		public PlotOptionsGaugeLabel Label { get; set; }
-		private PlotOptionsGaugeLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel width of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
@@ -121,38 +58,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
-		/// </summary>
-		public bool? ShowCheckbox { get; set; }
-		private bool? ShowCheckbox_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsGaugeEvents Events { get; set; }
-		private PlotOptionsGaugeEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Properties for each single point.
-		/// </summary>
-		public PlotOptionsGaugePoint Point { get; set; }
-		private PlotOptionsGaugePoint Point_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -184,6 +93,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Data labels for the gauge. For gauges, the data labels are enabledby default and shown in a bordered box below the point.
+		/// </summary>
+		public PlotOptionsGaugeDataLabels DataLabels { get; set; }
+		private PlotOptionsGaugeDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Requires the Accessibility module.A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
@@ -191,10 +107,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the dial or arrow pointer of the gauge.In styled mode, the dial is styled with the`.highcharts-gauge-series .highcharts-dial` rule.
+		/// </summary>
+		public PlotOptionsGaugeDial Dial { get; set; }
+		private PlotOptionsGaugeDial Dial_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
 		private bool? EnableMouseTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsGaugeEvents Events { get; set; }
+		private PlotOptionsGaugeEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -212,6 +142,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
+		/// </summary>
+		public PlotOptionsGaugeLabel Label { get; set; }
+		private PlotOptionsGaugeLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The line cap used for line ends and line joins on the graph.
 		/// </summary>
 		public PlotOptionsGaugeLinecap Linecap { get; set; }
@@ -219,10 +156,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Pixel width of the graph line.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.
 		/// </summary>
 		public string LinkedTo { get; set; }
 		private string LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Allow the dial to overshoot the end of the perimeter axis by thismany degrees. Say if the gauge axis goes from 0 to 60, a value of100, or 1000, will show 5 degrees beyond the end of the axis when thisoption is set to 5.
+		/// </summary>
+		public double? Overshoot { get; set; }
+		private double? Overshoot_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the pivot or the center point of the gauge.In styled mode, the pivot is styled with the`.highcharts-gauge-series .highcharts-pivot` rule.
+		/// </summary>
+		public PlotOptionsGaugePivot Pivot { get; set; }
+		private PlotOptionsGaugePivot Pivot_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Properties for each single point.
+		/// </summary>
+		public PlotOptionsGaugePoint Point { get; set; }
+		private PlotOptionsGaugePoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -261,6 +226,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
+		/// </summary>
+		public bool? ShowCheckbox { get; set; }
+		private bool? ShowCheckbox_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to display this particular series or series type in thelegend. Defaults to false for gauge series.
+		/// </summary>
+		public bool? ShowInLegend { get; set; }
+		private bool? ShowInLegend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
@@ -268,48 +247,69 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsGaugeTooltip Tooltip { get; set; }
+		private PlotOptionsGaugeTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When this option is `true`, the dial will wrap around the axes. Forinstance, in a full-range gauge going from 0 to 360, a value of 400will point to 40\. When `wrap` is `false`, the dial stops at 360.
+		/// </summary>
+		public bool? Wrap { get; set; }
+		private bool? Wrap_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (Dial.IsDirty()) h.Add("dial",Dial.ToHashtable());
-			if (Pivot.IsDirty()) h.Add("pivot",Pivot.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (Wrap != Wrap_DefaultValue) h.Add("wrap",Wrap);
-			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Dial.IsDirty()) h.Add("dial",Dial.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
+			if (Pivot.IsDirty()) h.Add("pivot",Pivot.ToHashtable());
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsGaugePointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
+			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (Wrap != Wrap_DefaultValue) h.Add("wrap",Wrap);
 			
 
 			return h;

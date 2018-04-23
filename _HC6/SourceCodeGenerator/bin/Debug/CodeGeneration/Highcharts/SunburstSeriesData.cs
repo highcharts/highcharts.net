@@ -14,61 +14,26 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SunburstSeriesData()
 		{
-			Value = Value_DefaultValue = null;
-			Sliced = Sliced_DefaultValue = false;
-			Name = Name_DefaultValue = "undefined";
-			Weight = Weight_DefaultValue = null;
-			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			ColorValue = ColorValue_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Drilldown = Drilldown_DefaultValue = "";
+			Events = Events_DefaultValue = new SunburstSeriesDataEvents();
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
-			Selected = Selected_DefaultValue = false;
-			Events = Events_DefaultValue = new SunburstSeriesDataEvents();
-			PointPadding = PointPadding_DefaultValue = null;
+			Name = Name_DefaultValue = "undefined";
 			Parent = Parent_DefaultValue = "undefined";
-			ColorValue = ColorValue_DefaultValue = null;
+			PointPadding = PointPadding_DefaultValue = null;
+			Selected = Selected_DefaultValue = false;
+			Sliced = Sliced_DefaultValue = false;
+			Value = Value_DefaultValue = null;
+			Weight = Weight_DefaultValue = null;
 			
 		}	
 		
-
-		/// <summary>
-		/// The value of the point, resulting in a relative area of the pointin the sunburst.
-		/// </summary>
-		public double? Value { get; set; }
-		private double? Value_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display a slice offset from the center. When a sunburst point issliced, its children are also offset.
-		/// </summary>
-		public bool? Sliced { get; set; }
-		private bool? Sliced_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The name decides the text for a word.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The weighting of a word. The weight decides the relative size of a wordcompared to the rest of the collection.
-		/// </summary>
-		public double? Weight { get; set; }
-		private double? Weight_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -92,6 +57,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Serves a purpose only if a `colorAxis` object is defined in the chartoptions. This value will decide which color the point gets from thescale of the colorAxis.
+		/// </summary>
+		public double? ColorValue { get; set; }
+		private double? ColorValue_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels).
 		/// </summary>
 		public SunburstSeriesDataLabels DataLabels { get; set; }
@@ -103,6 +75,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// </summary>
+		public string Drilldown { get; set; }
+		private string Drilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public SunburstSeriesDataEvents Events { get; set; }
+		private SunburstSeriesDataEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -120,24 +106,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether the data point is selected initially.
+		/// The name decides the text for a word.
 		/// </summary>
-		public bool? Selected { get; set; }
-		private bool? Selected_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public SunburstSeriesDataEvents Events { get; set; }
-		private SunburstSeriesDataEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Point padding for a single point.
-		/// </summary>
-		public double? PointPadding { get; set; }
-		private double? PointPadding_DefaultValue { get; set; }
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -148,33 +120,61 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Serves a purpose only if a `colorAxis` object is defined in the chartoptions. This value will decide which color the point gets from thescale of the colorAxis.
+		/// Point padding for a single point.
 		/// </summary>
-		public double? ColorValue { get; set; }
-		private double? ColorValue_DefaultValue { get; set; }
+		public double? PointPadding { get; set; }
+		private double? PointPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether the data point is selected initially.
+		/// </summary>
+		public bool? Selected { get; set; }
+		private bool? Selected_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to display a slice offset from the center. When a sunburst point issliced, its children are also offset.
+		/// </summary>
+		public bool? Sliced { get; set; }
+		private bool? Sliced_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The value of the point, resulting in a relative area of the pointin the sunburst.
+		/// </summary>
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The weighting of a word. The weight decides the relative size of a wordcompared to the rest of the collection.
+		/// </summary>
+		public double? Weight { get; set; }
+		private double? Weight_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Value != Value_DefaultValue) h.Add("value",Value);
-			if (Sliced != Sliced_DefaultValue) h.Add("sliced",Sliced);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
-			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
+			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
-			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);
+			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
+			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (Sliced != Sliced_DefaultValue) h.Add("sliced",Sliced);
+			if (Value != Value_DefaultValue) h.Add("value",Value);
+			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
 			
 
 			return h;

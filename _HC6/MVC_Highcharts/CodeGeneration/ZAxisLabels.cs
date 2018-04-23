@@ -14,50 +14,29 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ZAxisLabels()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			Style = Style_DefaultValue = new ZAxisLabelsStyle();
-			X = X_DefaultValue = 0;
 			Align = Align_DefaultValue = ZAxisLabelsAlign.Left;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
 			Distance = Distance_DefaultValue = 15;
+			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = ZAxisLabelsOverflow.Null;
 			Padding = Padding_DefaultValue = "5";
+			Position3d = Position3d_DefaultValue = ZAxisLabelsPosition3d.Offset;
 			ReserveSpace = ReserveSpace_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
+			Skew3d = Skew3d_DefaultValue = false;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
+			Style = Style_DefaultValue = new ZAxisLabelsStyle();
+			UseHTML = UseHTML_DefaultValue = false;
+			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
-			UseHTML = UseHTML_DefaultValue = false;
-			Position3d = Position3d_DefaultValue = ZAxisLabelsPosition3d.Offset;
-			Skew3d = Skew3d_DefaultValue = false;
 			
 		}	
 		
-
-		/// <summary>
-		/// Enable or disable the axis labels.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// CSS styles for the label. Use `whiteSpace: 'nowrap'` to preventwrapping of category labels. Use `textOverflow: 'none'` toprevent ellipsis (dots).In styled mode, the labels are styled with the`.highcharts-axis-labels` class.
-		/// </summary>
-		public ZAxisLabelsStyle Style { get; set; }
-		private ZAxisLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x position offset of the label relative to the tick positionon the axis.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// What part of the string the given position is anchored to.If `left`, the left side of the string is at the axis position.Can be one of `"left"`, `"center"` or `"right"`. Defaults toan intelligent guess based on which side of the chart the axisis on and the rotation of the label.
@@ -85,6 +64,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Distance { get; set; }
 		private double? Distance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the axis labels.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -116,6 +102,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Defines how the labels are be repositioned according to the 3D chartorientation.- `'offset'`: Maintain a fixed horizontal/vertical distance from the     tick marks, despite the chart orientation. This is the backwards     compatible behavior, and causes skewing of X and Z axes.- `'chart'`: Preserve 3D position relative to the chart.  This looks nice, but hard to read if the text isn't  forward-facing.- `'flap'`: Rotated text along the axis to compensate for the chart     orientation. This tries to maintain text as legible as possible     on all orientations.- `'ortho'`: Rotated text along the axis direction so that the labels     are orthogonal to the axis. This is very similar to `'flap'`,     but prevents skewing the labels (X and Y scaling are still     present).
+		/// </summary>
+		public ZAxisLabelsPosition3d Position3d { get; set; }
+		private ZAxisLabelsPosition3d Position3d_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to reserve space for the labels. By default, space isreserved for the labels in these cases:* On all horizontal axes.* On vertical axes if `label.align` is `right` on a left-sideaxis or `left` on a right-side axis.* On vertical axes if `label.align` is `center`.This can be turned off when for example the labels are renderedinside the plot area instead of outside.
 		/// </summary>
 		public bool? ReserveSpace { get; set; }
@@ -127,6 +120,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If enabled, the axis labels will skewed to follow the perspective.This will fix overlapping labels and titles, but texts become lesslegible due to the distortion.The final appearance depends heavily on `labels.position3d`.
+		/// </summary>
+		public bool? Skew3d { get; set; }
+		private bool? Skew3d_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -144,6 +144,27 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// CSS styles for the label. Use `whiteSpace: 'nowrap'` to preventwrapping of category labels. Use `textOverflow: 'none'` toprevent ellipsis (dots).In styled mode, the labels are styled with the`.highcharts-axis-labels` class.
+		/// </summary>
+		public ZAxisLabelsStyle Style { get; set; }
+		private ZAxisLabelsStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The x position offset of the label relative to the tick positionon the axis.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The y position offset of the label relative to the tick positionon the axis. The default makes it adapt to the font size onbottom axis.
 		/// </summary>
 		public double? Y { get; set; }
@@ -155,53 +176,32 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
-		/// </summary>
-		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines how the labels are be repositioned according to the 3D chartorientation.- `'offset'`: Maintain a fixed horizontal/vertical distance from the     tick marks, despite the chart orientation. This is the backwards     compatible behavior, and causes skewing of X and Z axes.- `'chart'`: Preserve 3D position relative to the chart.  This looks nice, but hard to read if the text isn't  forward-facing.- `'flap'`: Rotated text along the axis to compensate for the chart     orientation. This tries to maintain text as legible as possible     on all orientations.- `'ortho'`: Rotated text along the axis direction so that the labels     are orthogonal to the axis. This is very similar to `'flap'`,     but prevents skewing the labels (X and Y scaling are still     present).
-		/// </summary>
-		public ZAxisLabelsPosition3d Position3d { get; set; }
-		private ZAxisLabelsPosition3d Position3d_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If enabled, the axis labels will skewed to follow the perspective.This will fix overlapping labels and titles, but texts become lesslegible due to the distortion.The final appearance depends heavily on `labels.position3d`.
-		/// </summary>
-		public bool? Skew3d { get; set; }
-		private bool? Skew3d_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (X != X_DefaultValue) h.Add("x",X);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (AutoRotationLimit != AutoRotationLimit_DefaultValue) h.Add("autoRotationLimit",AutoRotationLimit);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("ZAxisLabelsFormatter.formatter", Formatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
+			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
-			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);
 			
 
 			return h;

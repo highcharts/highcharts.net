@@ -14,32 +14,32 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsVbpVolumeDivisionStyles()
 		{
-			PositiveColor = PositiveColor_DefaultValue = "rgba(144, 237, 125, 0.8)";
 			NegativeColor = NegativeColor_DefaultValue = "rgba(244, 91, 91, 0.8)";
+			PositiveColor = PositiveColor_DefaultValue = "rgba(144, 237, 125, 0.8)";
 			
 		}	
 		
-
-		/// <summary>
-		/// Color of positive volume bars.
-		/// </summary>
-		public string PositiveColor { get; set; }
-		private string PositiveColor_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Color of negative volume bars.
 		/// </summary>
 		public string NegativeColor { get; set; }
 		private string NegativeColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Color of positive volume bars.
+		/// </summary>
+		public string PositiveColor { get; set; }
+		private string PositiveColor_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (PositiveColor != PositiveColor_DefaultValue) h.Add("positiveColor",PositiveColor);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (PositiveColor != PositiveColor_DefaultValue) h.Add("positiveColor",PositiveColor);
 			
 
 			return h;

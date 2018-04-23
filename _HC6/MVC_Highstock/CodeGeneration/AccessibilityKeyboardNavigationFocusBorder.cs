@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Enabled = Enabled_DefaultValue = true;
 			HideBrowserFocusOutline = HideBrowserFocusOutline_DefaultValue = true;
-			Style = Style_DefaultValue = new AccessibilityKeyboardNavigationFocusBorderStyle();
 			Margin = Margin_DefaultValue = null;
+			Style = Style_DefaultValue = new AccessibilityKeyboardNavigationFocusBorderStyle();
 			
 		}	
 		
@@ -37,17 +37,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Style options for the focus border drawn around elementswhile navigating through them. Note that some browsers inaddition draw their own borders for focused elements. Theseautomatic borders can not be styled by Highcharts.In styled mode, the border is given the`.highcharts-focus-border` class.
-		/// </summary>
-		public AccessibilityKeyboardNavigationFocusBorderStyle Style { get; set; }
-		private AccessibilityKeyboardNavigationFocusBorderStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Focus border margin around the elements.
 		/// </summary>
 		public double? Margin { get; set; }
 		private double? Margin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Style options for the focus border drawn around elementswhile navigating through them. Note that some browsers inaddition draw their own borders for focused elements. Theseautomatic borders can not be styled by Highcharts.In styled mode, the border is given the`.highcharts-focus-border` class.
+		/// </summary>
+		public AccessibilityKeyboardNavigationFocusBorderStyle Style { get; set; }
+		private AccessibilityKeyboardNavigationFocusBorderStyle Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -56,8 +56,8 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (HideBrowserFocusOutline != HideBrowserFocusOutline_DefaultValue) h.Add("hideBrowserFocusOutline",HideBrowserFocusOutline);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			
 
 			return h;

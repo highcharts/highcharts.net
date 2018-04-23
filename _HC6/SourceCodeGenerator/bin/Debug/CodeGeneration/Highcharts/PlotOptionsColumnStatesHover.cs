@@ -14,20 +14,20 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsColumnStatesHover()
 		{
-			Brightness = Brightness_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = "";
-			Color = Color_DefaultValue = "undefined";
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			BorderColor = BorderColor_DefaultValue = "";
+			Brightness = Brightness_DefaultValue = null;
+			Color = Color_DefaultValue = "undefined";
 			Enabled = Enabled_DefaultValue = true;
 			
 		}	
 		
 
 		/// <summary>
-		/// How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover` rule.
+		/// Animation setting for hovering the graph in line-type series.
 		/// </summary>
-		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -38,17 +38,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// How much to brighten the point on interaction. Requires the maincolor to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover` rule.
+		/// </summary>
+		public double? Brightness { get; set; }
+		private double? Brightness_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A specific color for the hovered point.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Animation setting for hovering the graph in line-type series.
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -62,10 +62,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 

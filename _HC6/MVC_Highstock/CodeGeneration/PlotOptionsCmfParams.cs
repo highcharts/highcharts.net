@@ -14,12 +14,19 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsCmfParams()
 		{
+			Index = Index_DefaultValue = 0;
 			Period = Period_DefaultValue = 14;
 			VolumeSeriesID = VolumeSeriesID_DefaultValue = "volume";
-			Index = Index_DefaultValue = 0;
 			
 		}	
 		
+
+		/// <summary>
+		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
+		/// </summary>
+		public double? Index { get; set; }
+		private double? Index_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -33,22 +40,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string VolumeSeriesID { get; set; }
 		private string VolumeSeriesID_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
-		/// </summary>
-		public double? Index { get; set; }
-		private double? Index_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Period != Period_DefaultValue) h.Add("period",Period);
 			if (VolumeSeriesID != VolumeSeriesID_DefaultValue) h.Add("volumeSeriesID",VolumeSeriesID);
-			if (Index != Index_DefaultValue) h.Add("index",Index);
 			
 
 			return h;

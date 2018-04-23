@@ -14,77 +14,35 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsHeatmapDataLabels()
 		{
-			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = true;
-			VerticalAlign = VerticalAlign_DefaultValue = "middle";
-			Crop = Crop_DefaultValue = false;
-			Overflow = Overflow_DefaultValue = false;
-			Padding = Padding_DefaultValue = "0";
 			Align = Align_DefaultValue = PlotOptionsHeatmapDataLabelsAlign.Center;
-			Style = Style_DefaultValue = new PlotOptionsHeatmapDataLabelsStyle();
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = -6;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
+			BackgroundColor = BackgroundColor_DefaultValue = "";
+			BorderColor = BorderColor_DefaultValue = "undefined";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
+			Crop = Crop_DefaultValue = false;
 			Defer = Defer_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
-			Format = Format_DefaultValue = "";
-			Shape = Shape_DefaultValue = "square";
-			ZIndex = ZIndex_DefaultValue = 6;
 			Filter = Filter_DefaultValue = new PlotOptionsHeatmapDataLabelsFilter();
-			BackgroundColor = BackgroundColor_DefaultValue = "";
-			BorderColor = BorderColor_DefaultValue = "undefined";
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Format = Format_DefaultValue = "";
+			Formatter = Formatter_DefaultValue = "";
+			Inside = Inside_DefaultValue = true;
+			Overflow = Overflow_DefaultValue = false;
+			Padding = Padding_DefaultValue = "0";
 			Rotation = Rotation_DefaultValue = 0;
+			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Shape = Shape_DefaultValue = "square";
+			Style = Style_DefaultValue = new PlotOptionsHeatmapDataLabelsStyle();
 			UseHTML = UseHTML_DefaultValue = false;
+			VerticalAlign = VerticalAlign_DefaultValue = "middle";
+			X = X_DefaultValue = 0;
+			Y = Y_DefaultValue = -6;
+			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Formatter { get; set; }
-		private string Formatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Inside { get; set; }
-		private bool? Inside_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Crop { get; set; }
-		private bool? Crop_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Overflow { get; set; }
-		private bool? Overflow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
@@ -94,31 +52,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
-		/// </summary>
-		public PlotOptionsHeatmapDataLabelsStyle Style { get; set; }
-		private PlotOptionsHeatmapDataLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x position offset of the label relative to the point.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y position offset of the label relative to the point.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to allow data labels to overlap. To make the labels lesssensitive for overlapping, the [dataLabels.padding](#plotOptions.series.dataLabels.padding) can be set to 0.
 		/// </summary>
 		public bool? AllowOverlap { get; set; }
 		private bool? AllowOverlap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The background color or gradient for the data label.
+		/// </summary>
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border color for the data label. Defaults to `undefined`.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -150,6 +101,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Crop { get; set; }
+		private bool? Crop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to defer displaying the data labels until the initial seriesanimation has finished.
 		/// </summary>
 		public bool? Defer { get; set; }
@@ -164,27 +122,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
-		/// </summary>
-		public string Format { get; set; }
-		private string Format_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The name of a symbol to use for the border around the label. Symbolsare predefined functions on the Renderer object.
-		/// </summary>
-		public string Shape { get; set; }
-		private string Shape_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The Z index of the data labels. The default Z index puts it abovethe series. Use a Z index of 2 to display it behind the series.
-		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A declarative filter for which data labels to display. Thedeclarative filter is designed for use when callback functions arenot available, like when the chart options require a pure JSONstructure or for use with graphical editors. For programmaticcontrol, use the `formatter` instead, and return `false` to disablea single data label.
 		/// </summary>
 		public PlotOptionsHeatmapDataLabelsFilter Filter { get; set; }
@@ -192,24 +129,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The background color or gradient for the data label.
+		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
 		/// </summary>
-		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border color for the data label. Defaults to `undefined`.
+		/// 
 		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The shadow of the box. Works best with `borderWidth` or`backgroundColor`. Since 2.3 the shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
+		/// 
 		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
+		public bool? Inside { get; set; }
+		private bool? Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Overflow { get; set; }
+		private bool? Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -220,42 +171,91 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The shadow of the box. Works best with `borderWidth` or`backgroundColor`. Since 2.3 the shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of a symbol to use for the border around the label. Symbolsare predefined functions on the Renderer object.
+		/// </summary>
+		public string Shape { get; set; }
+		private string Shape_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
+		/// </summary>
+		public PlotOptionsHeatmapDataLabelsStyle Style { get; set; }
+		private PlotOptionsHeatmapDataLabelsStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to[use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string VerticalAlign { get; set; }
+		private string VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The x position offset of the label relative to the point.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The y position offset of the label relative to the point.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Z index of the data labels. The default Z index puts it abovethe series. Use a Z index of 2 to display it behind the series.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsHeatmapDataLabelsFormatter.formatter", Formatter); }  
-			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
-			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsHeatmapDataLabelsFormatter.formatter", Formatter); }  
+			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 
 			return h;

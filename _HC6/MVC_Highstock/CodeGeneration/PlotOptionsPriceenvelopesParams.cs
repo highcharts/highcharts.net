@@ -14,27 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsPriceenvelopesParams()
 		{
-			Period = Period_DefaultValue = 20;
-			TopBand = TopBand_DefaultValue = null;
 			BottomBand = BottomBand_DefaultValue = null;
 			Index = Index_DefaultValue = 0;
+			Period = Period_DefaultValue = 20;
+			TopBand = TopBand_DefaultValue = null;
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Period { get; set; }
-		private double? Period_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Percentage above the moving average that should be displayed.0.1 means 110%. Relative to the calculated value.
-		/// </summary>
-		public double? TopBand { get; set; }
-		private double? TopBand_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Percentage below the moving average that should be displayed.0.1 means 90%. Relative to the calculated value.
@@ -48,16 +34,30 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Period { get; set; }
+		private double? Period_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Percentage above the moving average that should be displayed.0.1 means 110%. Relative to the calculated value.
+		/// </summary>
+		public double? TopBand { get; set; }
+		private double? TopBand_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Period != Period_DefaultValue) h.Add("period",Period);
-			if (TopBand != TopBand_DefaultValue) h.Add("topBand",TopBand);
 			if (BottomBand != BottomBand_DefaultValue) h.Add("bottomBand",BottomBand);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (Period != Period_DefaultValue) h.Add("period",Period);
+			if (TopBand != TopBand_DefaultValue) h.Add("topBand",TopBand);
 			
 
 			return h;

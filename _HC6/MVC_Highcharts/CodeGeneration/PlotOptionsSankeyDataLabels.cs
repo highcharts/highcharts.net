@@ -14,43 +14,50 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSankeyDataLabels()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			BackgroundColor = BackgroundColor_DefaultValue = "none";
-			Crop = Crop_DefaultValue = false;
-			NodeFormat = NodeFormat_DefaultValue = "";
-			NodeFormatter = NodeFormatter_DefaultValue = "";
-			Format = Format_DefaultValue = new PlotOptionsSankeyDataLabelsFormat();
-			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = true;
 			Align = Align_DefaultValue = PlotOptionsSankeyDataLabelsAlign.Center;
-			Style = Style_DefaultValue = new PlotOptionsSankeyDataLabelsStyle();
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsSankeyDataLabelsVerticalAlign.Bottom;
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = -6;
-			Padding = Padding_DefaultValue = "5";
 			AllowOverlap = AllowOverlap_DefaultValue = false;
+			BackgroundColor = BackgroundColor_DefaultValue = "none";
+			BorderColor = BorderColor_DefaultValue = "undefined";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
+			Crop = Crop_DefaultValue = false;
 			Defer = Defer_DefaultValue = true;
-			Shape = Shape_DefaultValue = "square";
-			ZIndex = ZIndex_DefaultValue = 6;
+			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsSankeyDataLabelsFilter();
-			BorderColor = BorderColor_DefaultValue = "undefined";
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Format = Format_DefaultValue = new PlotOptionsSankeyDataLabelsFormat();
+			Formatter = Formatter_DefaultValue = "";
+			Inside = Inside_DefaultValue = true;
+			NodeFormat = NodeFormat_DefaultValue = "";
+			NodeFormatter = NodeFormatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = PlotOptionsSankeyDataLabelsOverflow.Justify;
+			Padding = Padding_DefaultValue = "5";
 			Rotation = Rotation_DefaultValue = 0;
+			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Shape = Shape_DefaultValue = "square";
+			Style = Style_DefaultValue = new PlotOptionsSankeyDataLabelsStyle();
 			UseHTML = UseHTML_DefaultValue = false;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsSankeyDataLabelsVerticalAlign.Bottom;
+			X = X_DefaultValue = 0;
+			Y = Y_DefaultValue = -6;
+			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public PlotOptionsSankeyDataLabelsAlign Align { get; set; }
+		private PlotOptionsSankeyDataLabelsAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to allow data labels to overlap. To make the labels lesssensitive for overlapping, the [dataLabels.padding](#plotOptions.series.dataLabels.padding) can be set to 0.
+		/// </summary>
+		public bool? AllowOverlap { get; set; }
+		private bool? AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -61,94 +68,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// The border color for the data label. Defaults to `undefined`.
 		/// </summary>
-		public bool? Crop { get; set; }
-		private bool? Crop_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to showfor _nodes_ in the sankey diagram. By default the`nodeFormatter` returns `{point.name}`.
-		/// </summary>
-		public string NodeFormat { get; set; }
-		private string NodeFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Callback to format data labels for _nodes_ in the sankey diagram.The `nodeFormat` option takes precedence over the `nodeFormatter`.
-		/// </summary>
-		public string NodeFormatter { get; set; }
-		private string NodeFormatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to show for_links_ in the sankey diagram. Defaults to an empty string returnedfrom the `formatter`, in effect disabling the labels.
-		/// </summary>
-		public PlotOptionsSankeyDataLabelsFormat Format { get; set; }
-		private PlotOptionsSankeyDataLabelsFormat Format_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Callback to format data labels for _links_ in the sankey diagram.The `format` option takes precedence over the `formatter`.
-		/// </summary>
-		public string Formatter { get; set; }
-		private string Formatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Inside { get; set; }
-		private bool? Inside_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. Forpoints with an extent, like columns, the alignments also dictateshow to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
-		/// </summary>
-		public PlotOptionsSankeyDataLabelsAlign Align { get; set; }
-		private PlotOptionsSankeyDataLabelsAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
-		/// </summary>
-		public PlotOptionsSankeyDataLabelsStyle Style { get; set; }
-		private PlotOptionsSankeyDataLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
-		/// </summary>
-		public PlotOptionsSankeyDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private PlotOptionsSankeyDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x position offset of the label relative to the point.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y position offset of the label relative to the point.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When either the `borderWidth` or the `backgroundColor` is set,this is the padding within the box.
-		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to allow data labels to overlap. To make the labels lesssensitive for overlapping, the [dataLabels.padding](#plotOptions.series.dataLabels.padding) can be set to 0.
-		/// </summary>
-		public bool? AllowOverlap { get; set; }
-		private bool? AllowOverlap_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -180,6 +103,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Crop { get; set; }
+		private bool? Crop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to defer displaying the data labels until the initial seriesanimation has finished.
 		/// </summary>
 		public bool? Defer { get; set; }
@@ -187,17 +117,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of a symbol to use for the border around the label. Symbolsare predefined functions on the Renderer object.
+		/// 
 		/// </summary>
-		public string Shape { get; set; }
-		private string Shape_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The Z index of the data labels. The default Z index puts it abovethe series. Use a Z index of 2 to display it behind the series.
-		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -208,17 +131,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border color for the data label. Defaults to `undefined`.
+		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to show for_links_ in the sankey diagram. Defaults to an empty string returnedfrom the `formatter`, in effect disabling the labels.
 		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
+		public PlotOptionsSankeyDataLabelsFormat Format { get; set; }
+		private PlotOptionsSankeyDataLabelsFormat Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The shadow of the box. Works best with `borderWidth` or`backgroundColor`. Since 2.3 the shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
+		/// Callback to format data labels for _links_ in the sankey diagram.The `format` option takes precedence over the `formatter`.
 		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Inside { get; set; }
+		private bool? Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to showfor _nodes_ in the sankey diagram. By default the`nodeFormatter` returns `{point.name}`.
+		/// </summary>
+		public string NodeFormat { get; set; }
+		private string NodeFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback to format data labels for _nodes_ in the sankey diagram.The `nodeFormat` option takes precedence over the `nodeFormatter`.
+		/// </summary>
+		public string NodeFormatter { get; set; }
+		private string NodeFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -229,6 +173,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When either the `borderWidth` or the `backgroundColor` is set,this is the padding within the box.
+		/// </summary>
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Text rotation in degrees. Note that due to a more complex structure,backgrounds, borders and padding will be lost on a rotated datalabel.
 		/// </summary>
 		public double? Rotation { get; set; }
@@ -236,44 +187,93 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The shadow of the box. Works best with `borderWidth` or`backgroundColor`. Since 2.3 the shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of a symbol to use for the border around the label. Symbolsare predefined functions on the Renderer object.
+		/// </summary>
+		public string Shape { get; set; }
+		private string Shape_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
+		/// </summary>
+		public PlotOptionsSankeyDataLabelsStyle Style { get; set; }
+		private PlotOptionsSankeyDataLabelsStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to[use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The vertical alignment of a data label. Can be one of `top`, `middle`or `bottom`. The default value depends on the data, for instancein a column chart, the label is above positive values and belownegative values.
+		/// </summary>
+		public PlotOptionsSankeyDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsSankeyDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The x position offset of the label relative to the point.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The y position offset of the label relative to the point.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Z index of the data labels. The default Z index puts it abovethe series. Use a Z index of 2 to display it behind the series.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
-			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); Highcharts.AddFunction("PlotOptionsSankeyDataLabelsNodeFormatter.nodeFormatter", NodeFormatter); }  
-			if (Format.IsDirty()) h.Add("format",Format.ToHashtable());
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsSankeyDataLabelsFormatter.formatter", Formatter); }  
-			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Format.IsDirty()) h.Add("format",Format.ToHashtable());
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsSankeyDataLabelsFormatter.formatter", Formatter); }  
+			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
+			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); Highcharts.AddFunction("PlotOptionsSankeyDataLabelsNodeFormatter.nodeFormatter", NodeFormatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 
 			return h;

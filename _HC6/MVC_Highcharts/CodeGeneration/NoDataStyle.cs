@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public NoDataStyle()
 		{
-			FontWeight = FontWeight_DefaultValue = "bold";
-			FontSize = FontSize_DefaultValue = "12px";
 			Color = Color_DefaultValue = "#666666";
+			FontSize = FontSize_DefaultValue = "12px";
+			FontWeight = FontWeight_DefaultValue = "bold";
 			
 		}	
 		
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontWeight { get; set; }
-		private string FontWeight_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -38,17 +38,17 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public string FontWeight { get; set; }
+		private string FontWeight_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
-			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
 			
 
 			return h;

@@ -15,20 +15,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		public NavigatorXAxisLabels()
 		{
 			Align = Align_DefaultValue = "left";
-			Style = Style_DefaultValue = new NavigatorXAxisLabelsStyle();
-			X = X_DefaultValue = 3;
-			Y = Y_DefaultValue = -4;
-			Enabled = Enabled_DefaultValue = true;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
+			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
+			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			Overflow = Overflow_DefaultValue = NavigatorXAxisLabelsOverflow.Null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
-			ZIndex = ZIndex_DefaultValue = 7;
+			Style = Style_DefaultValue = new NavigatorXAxisLabelsStyle();
 			UseHTML = UseHTML_DefaultValue = false;
-			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
+			X = X_DefaultValue = 3;
+			Y = Y_DefaultValue = -4;
+			ZIndex = ZIndex_DefaultValue = 7;
 			
 		}	
 		
@@ -41,24 +41,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// For horizontal axes, the allowed degrees of label rotationto prevent overlapping labels. If there is enough space,labels are not rotated. As the chart gets narrower, itwill start rotating the labels -45 degrees, then removeevery second label and try again with rotations 0 and -45 etc.Set it to `false` to disable rotation, which willcause the labels to word-wrap if possible.
 		/// </summary>
-		public NavigatorXAxisLabelsStyle Style { get; set; }
-		private NavigatorXAxisLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
+		public List<double> AutoRotation { get; set; }
+		private List<double> AutoRotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -66,13 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For horizontal axes, the allowed degrees of label rotationto prevent overlapping labels. If there is enough space,labels are not rotated. As the chart gets narrower, itwill start rotating the labels -45 degrees, then removeevery second label and try again with rotations 0 and -45 etc.Set it to `false` to disable rotation, which willcause the labels to word-wrap if possible.
-		/// </summary>
-		public List<double> AutoRotation { get; set; }
-		private List<double> AutoRotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -87,6 +66,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Horizontal axis only. When `staggerLines` is not set, `maxStaggerLines`defines how many lines the axis is allowed to add to automaticallyavoid overlapping X labels. Set to `1` to disable overlap detection.
+		/// </summary>
+		public double? MaxStaggerLines { get; set; }
+		private double? MaxStaggerLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,10 +104,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The Z index for the axis labels.
+		/// 
 		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
+		public NavigatorXAxisLabelsStyle Style { get; set; }
+		private NavigatorXAxisLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -132,10 +118,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Horizontal axis only. When `staggerLines` is not set, `maxStaggerLines`defines how many lines the axis is allowed to add to automaticallyavoid overlapping X labels. Set to `1` to disable overlap detection.
+		/// 
 		/// </summary>
-		public double? MaxStaggerLines { get; set; }
-		private double? MaxStaggerLines_DefaultValue { get; set; }
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Z index for the axis labels.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -143,20 +143,20 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align",Align);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("NavigatorXAxisLabelsFormatter.formatter", Formatter); }  
+			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 
 			return h;

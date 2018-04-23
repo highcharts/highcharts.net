@@ -14,91 +14,84 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Chart()
 		{
-			Events = Events_DefaultValue = new ChartEvents();
-			ParallelCoordinates = ParallelCoordinates_DefaultValue = false;
-			ParallelAxes = ParallelAxes_DefaultValue = new ChartParallelAxes();
-			Description = Description_DefaultValue = "undefined";
-			TypeDescription = TypeDescription_DefaultValue = "undefined";
-			BorderRadius = BorderRadius_DefaultValue = 0;
-			ColorCount = ColorCount_DefaultValue = 10;
-			DefaultSeriesType = DefaultSeriesType_DefaultValue = ChartDefaultSeriesType.Line;
-			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
-			Spacing = Spacing_DefaultValue = new List<double> {10, 10, 15, 10};
-			ResetZoomButton = ResetZoomButton_DefaultValue = new ChartResetZoomButton();
-			Width = Width_DefaultValue = null;
-			Height = Height_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = "#335cad";
-			BackgroundColor = BackgroundColor_DefaultValue = "#FFFFFF";
-			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
 			AlignTicks = AlignTicks_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			BackgroundColor = BackgroundColor_DefaultValue = "#FFFFFF";
+			BorderColor = BorderColor_DefaultValue = "#335cad";
+			BorderRadius = BorderRadius_DefaultValue = 0;
+			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
+			ColorCount = ColorCount_DefaultValue = 10;
+			DefaultSeriesType = DefaultSeriesType_DefaultValue = ChartDefaultSeriesType.Line;
+			Description = Description_DefaultValue = "undefined";
+			Events = Events_DefaultValue = new ChartEvents();
+			Height = Height_DefaultValue = null;
+			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
+			Inverted = Inverted_DefaultValue = false;
 			Margin = Margin_DefaultValue = new double[]{};
 			MarginBottom = MarginBottom_DefaultValue = null;
 			MarginLeft = MarginLeft_DefaultValue = null;
 			MarginRight = MarginRight_DefaultValue = null;
 			MarginTop = MarginTop_DefaultValue = null;
+			Options3d = Options3d_DefaultValue = new ChartOptions3d();
 			PanKey = PanKey_DefaultValue = ChartPanKey.Null;
 			Panning = Panning_DefaultValue = false;
+			ParallelAxes = ParallelAxes_DefaultValue = new ChartParallelAxes();
+			ParallelCoordinates = ParallelCoordinates_DefaultValue = false;
 			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
-			Inverted = Inverted_DefaultValue = false;
+			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "null";
+			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "null";
+			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
 			PlotBorderWidth = PlotBorderWidth_DefaultValue = 0;
 			PlotShadow = PlotShadow_DefaultValue = new Shadow() { Enabled = false };
 			Polar = Polar_DefaultValue = false;
 			Reflow = Reflow_DefaultValue = true;
 			RenderTo = RenderTo_DefaultValue = "";
+			ResetZoomButton = ResetZoomButton_DefaultValue = new ChartResetZoomButton();
+			ScrollablePlotArea = ScrollablePlotArea_DefaultValue = new ChartScrollablePlotArea();
 			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(51,92,173,0.25)";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowAxes = ShowAxes_DefaultValue = null;
+			Spacing = Spacing_DefaultValue = new List<double> {10, 10, 15, 10};
 			SpacingBottom = SpacingBottom_DefaultValue = 15;
 			SpacingLeft = SpacingLeft_DefaultValue = 10;
 			SpacingRight = SpacingRight_DefaultValue = 10;
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new Hashtable{{"fontFamily","\"Lucida Grande\"},{ \"Lucida Sans Unicode\"},{ Verdana},{ Arial},{ Helvetica},{ sans-serif"},{"fontSize","12px"}};
 			Type = Type_DefaultValue = ChartType.Line;
+			TypeDescription = TypeDescription_DefaultValue = "undefined";
+			Width = Width_DefaultValue = null;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "null";
-			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "null";
-			ScrollablePlotArea = ScrollablePlotArea_DefaultValue = new ChartScrollablePlotArea();
-			Options3d = Options3d_DefaultValue = new ChartOptions3d();
 			
 		}	
 		
 
 		/// <summary>
-		/// Event listeners for the chart.
+		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
 		/// </summary>
-		public ChartEvents Events { get; set; }
-		private ChartEvents Events_DefaultValue { get; set; }
+		public bool? AlignTicks { get; set; }
+		private bool? AlignTicks_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Flag to render charts as a parallel coordinates plot. In a parallelcoordinates plot (||-coords) by default all required yAxes are generatedand the legend is disabled. This feature requires`modules/parallel-coordinates.js`.
+		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See [the easing demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).</dd></dl>
 		/// </summary>
-		public bool? ParallelCoordinates { get; set; }
-		private bool? ParallelCoordinates_DefaultValue { get; set; }
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Common options for all yAxes rendered in a parallel coordinates plot.This feature requires `modules/parallel-coordinates.js`.The default options are:<pre>parallelAxes: {   lineWidth: 1,       // classic mode only   gridlinesWidth: 0,  // classic mode only   title: {       text: '',       reserveSpace: false   },   labels: {       x: 0,       y: 0,       align: 'center',       reserveSpace: false   },   offset: 0}</pre>
+		/// The background color or gradient for the outer chart area.
 		/// </summary>
-		public ChartParallelAxes ParallelAxes { get; set; }
-		private ChartParallelAxes ParallelAxes_DefaultValue { get; set; }
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A text description of the chart.If the Accessibility module is loaded, this is included by defaultas a long description of the chart and its contents in the hiddenscreen reader information region.
+		/// The color of the outer chart border.
 		/// </summary>
-		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A text description of the chart type.If the Accessibility module is loaded, this will be included in thedescription of the chart in the screen reader information region.Highcharts will by default attempt to guess the chart type, but formore complex charts it is recommended to specify this property forclarity.
-		/// </summary>
-		public string TypeDescription { get; set; }
-		private string TypeDescription_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -106,6 +99,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? BorderRadius { get; set; }
 		private double? BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel width of the outer chart border.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A CSS class name to apply to the charts container `div`, allowingunique CSS styling for each chart.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -123,31 +130,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If true, the axes will scale to the remaining visible series onceone series is hidden. If false, hiding and showing a series willnot affect the axes or the other series. For stacks, once one serieswithin the stack is hidden, the rest of the stack will close inaround it even if the axis is not affected.
+		/// A text description of the chart.If the Accessibility module is loaded, this is included by defaultas a long description of the chart and its contents in the hiddenscreen reader information region.
 		/// </summary>
-		public bool? IgnoreHiddenSeries { get; set; }
-		private bool? IgnoreHiddenSeries_DefaultValue { get; set; }
+		public string Description { get; set; }
+		private string Description_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The distance between the outer edge of the chart and the content,like title or legend, or axis title and labels if present. Thenumbers in the array designate top, right, bottom and left respectively.Use the options spacingTop, spacingRight, spacingBottom and spacingLeftoptions for shorthand setting of one option.
+		/// Event listeners for the chart.
 		/// </summary>
-		public List<double> Spacing { get; set; }
-		private List<double> Spacing_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The button that appears after a selection zoom, allowing the userto reset zoom.
-		/// </summary>
-		public ChartResetZoomButton ResetZoomButton { get; set; }
-		private ChartResetZoomButton ResetZoomButton_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An explicit width for the chart. By default (when `null`) the widthis calculated from the offset width of the containing element.
-		/// </summary>
-		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
+		public ChartEvents Events { get; set; }
+		private ChartEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -158,45 +151,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the outer chart border.
+		/// If true, the axes will scale to the remaining visible series onceone series is hidden. If false, hiding and showing a series willnot affect the axes or the other series. For stacks, once one serieswithin the stack is hidden, the rest of the stack will close inaround it even if the axis is not affected.
 		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
+		public bool? IgnoreHiddenSeries { get; set; }
+		private bool? IgnoreHiddenSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The background color or gradient for the outer chart area.
+		/// Whether to invert the axes so that the x axis is vertical and y axisis horizontal. When `true`, the x axis is [reversed](#xAxis.reversed)by default.
 		/// </summary>
-		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the inner chart or plot area border.
-		/// </summary>
-		public string PlotBorderColor { get; set; }
-		private string PlotBorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
-		/// </summary>
-		public bool? AlignTicks { get; set; }
-		private bool? AlignTicks_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See [the easing demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).</dd></dl>
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A CSS class name to apply to the charts container `div`, allowingunique CSS styling for each chart.
-		/// </summary>
-		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
+		public bool? Inverted { get; set; }
+		private bool? Inverted_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -235,6 +200,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options to render charts in 3 dimensions. This feature requires`highcharts-3d.js`, found in the download package or online at[code.highcharts.com/highcharts-3d.js](http://code.highcharts.com/highcharts-3d.js).
+		/// </summary>
+		public ChartOptions3d Options3d { get; set; }
+		private ChartOptions3d Options3d_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Allows setting a key to switch between zooming and panning. Can beone of `alt`, `ctrl`, `meta` (the command key on Mac and Windowskey on Windows) or `shift`. The keys are mapped directly to the keyproperties of the click event argument (`event.altKey`, `event.ctrlKey`,`event.metaKey` and `event.shiftKey`).
 		/// </summary>
 		public ChartPanKey PanKey { get; set; }
@@ -249,6 +221,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Common options for all yAxes rendered in a parallel coordinates plot.This feature requires `modules/parallel-coordinates.js`.The default options are:<pre>parallelAxes: {   lineWidth: 1,       // classic mode only   gridlinesWidth: 0,  // classic mode only   title: {       text: '',       reserveSpace: false   },   labels: {       x: 0,       y: 0,       align: 'center',       reserveSpace: false   },   offset: 0}</pre>
+		/// </summary>
+		public ChartParallelAxes ParallelAxes { get; set; }
+		private ChartParallelAxes ParallelAxes_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Flag to render charts as a parallel coordinates plot. In a parallelcoordinates plot (||-coords) by default all required yAxes are generatedand the legend is disabled. This feature requires`modules/parallel-coordinates.js`.
+		/// </summary>
+		public bool? ParallelCoordinates { get; set; }
+		private bool? ParallelCoordinates_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Equivalent to [zoomType](#chart.zoomType), but for multitouch gesturesonly. By default, the `pinchType` is the same as the `zoomType` setting.However, pinching can be enabled separately in some cases, for examplein stock charts where a mouse drag pans the chart, while pinchingis enabled. When [tooltip.followTouchMove](#tooltip.followTouchMove)is true, pinchType only applies to two-finger touches.
 		/// </summary>
 		public ChartPinchType PinchType { get; set; }
@@ -256,10 +242,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to invert the axes so that the x axis is vertical and y axisis horizontal. When `true`, the x axis is [reversed](#xAxis.reversed)by default.
+		/// The background color or gradient for the plot area.
 		/// </summary>
-		public bool? Inverted { get; set; }
-		private bool? Inverted_DefaultValue { get; set; }
+		public string PlotBackgroundColor { get; set; }
+		private string PlotBackgroundColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The URL for an image to use as the plot background. To set an imageas the background for the entire chart, set a CSS background imageto the container element. Note that for the image to be applied toexported charts, its URL needs to be accessible by the export server.
+		/// </summary>
+		public string PlotBackgroundImage { get; set; }
+		private string PlotBackgroundImage_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The color of the inner chart or plot area border.
+		/// </summary>
+		public string PlotBorderColor { get; set; }
+		private string PlotBorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -298,6 +298,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The button that appears after a selection zoom, allowing the userto reset zoom.
+		/// </summary>
+		public ChartResetZoomButton ResetZoomButton { get; set; }
+		private ChartResetZoomButton ResetZoomButton_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for a scrollable plot area. This feature provides a minimum width forthe plot area of the chart. If the width gets smaller than this, typicallyon mobile devices, a native browser scrollbar is presented below the chart.This scrollbar provides smooth scrolling for the contents of the plot area,whereas the title, legend and axes are fixed.
+		/// </summary>
+		public ChartScrollablePlotArea ScrollablePlotArea { get; set; }
+		private ChartScrollablePlotArea ScrollablePlotArea_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The background color of the marker square when selecting (zoomingin on) an area of the chart.
 		/// </summary>
 		public string SelectionMarkerFill { get; set; }
@@ -316,6 +330,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? ShowAxes { get; set; }
 		private bool? ShowAxes_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The distance between the outer edge of the chart and the content,like title or legend, or axis title and labels if present. Thenumbers in the array designate top, right, bottom and left respectively.Use the options spacingTop, spacingRight, spacingBottom and spacingLeftoptions for shorthand setting of one option.
+		/// </summary>
+		public List<double> Spacing { get; set; }
+		private List<double> Spacing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -361,99 +382,78 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A text description of the chart type.If the Accessibility module is loaded, this will be included in thedescription of the chart in the screen reader information region.Highcharts will by default attempt to guess the chart type, but formore complex charts it is recommended to specify this property forclarity.
+		/// </summary>
+		public string TypeDescription { get; set; }
+		private string TypeDescription_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An explicit width for the chart. By default (when `null`) the widthis calculated from the offset width of the containing element.
+		/// </summary>
+		public double? Width { get; set; }
+		private double? Width_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Decides in what dimensions the user can zoom by dragging the mouse.Can be one of `x`, `y` or `xy`.
 		/// </summary>
 		public ChartZoomType ZoomType { get; set; }
 		private ChartZoomType ZoomType_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel width of the outer chart border.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The background color or gradient for the plot area.
-		/// </summary>
-		public string PlotBackgroundColor { get; set; }
-		private string PlotBackgroundColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The URL for an image to use as the plot background. To set an imageas the background for the entire chart, set a CSS background imageto the container element. Note that for the image to be applied toexported charts, its URL needs to be accessible by the export server.
-		/// </summary>
-		public string PlotBackgroundImage { get; set; }
-		private string PlotBackgroundImage_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for a scrollable plot area. This feature provides a minimum width forthe plot area of the chart. If the width gets smaller than this, typicallyon mobile devices, a native browser scrollbar is presented below the chart.This scrollbar provides smooth scrolling for the contents of the plot area,whereas the title, legend and axes are fixed.
-		/// </summary>
-		public ChartScrollablePlotArea ScrollablePlotArea { get; set; }
-		private ChartScrollablePlotArea ScrollablePlotArea_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options to render charts in 3 dimensions. This feature requires`highcharts-3d.js`, found in the download package or online at[code.highcharts.com/highcharts-3d.js](http://code.highcharts.com/highcharts-3d.js).
-		/// </summary>
-		public ChartOptions3d Options3d { get; set; }
-		private ChartOptions3d Options3d_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (ParallelCoordinates != ParallelCoordinates_DefaultValue) h.Add("parallelCoordinates",ParallelCoordinates);
-			if (ParallelAxes.IsDirty()) h.Add("parallelAxes",ParallelAxes.ToHashtable());
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (ColorCount != ColorCount_DefaultValue) h.Add("colorCount",ColorCount);
-			if (DefaultSeriesType != DefaultSeriesType_DefaultValue) h.Add("defaultSeriesType", Highcharts.FirstCharacterToLower(DefaultSeriesType.ToString()));
-			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
-			if (Spacing != Spacing_DefaultValue) h.Add("spacing",Spacing);
-			if (ResetZoomButton.IsDirty()) h.Add("resetZoomButton",ResetZoomButton.ToHashtable());
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (ColorCount != ColorCount_DefaultValue) h.Add("colorCount",ColorCount);
+			if (DefaultSeriesType != DefaultSeriesType_DefaultValue) h.Add("defaultSeriesType", Highcharts.FirstCharacterToLower(DefaultSeriesType.ToString()));
+			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
+			if (Inverted != Inverted_DefaultValue) h.Add("inverted",Inverted);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MarginBottom != MarginBottom_DefaultValue) h.Add("marginBottom",MarginBottom);
 			if (MarginLeft != MarginLeft_DefaultValue) h.Add("marginLeft",MarginLeft);
 			if (MarginRight != MarginRight_DefaultValue) h.Add("marginRight",MarginRight);
 			if (MarginTop != MarginTop_DefaultValue) h.Add("marginTop",MarginTop);
+			if (Options3d.IsDirty()) h.Add("options3d",Options3d.ToHashtable());
 			if (PanKey != PanKey_DefaultValue) h.Add("panKey", Highcharts.FirstCharacterToLower(PanKey.ToString()));
 			if (Panning != Panning_DefaultValue) h.Add("panning",Panning);
+			if (ParallelAxes.IsDirty()) h.Add("parallelAxes",ParallelAxes.ToHashtable());
+			if (ParallelCoordinates != ParallelCoordinates_DefaultValue) h.Add("parallelCoordinates",ParallelCoordinates);
 			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", Highcharts.FirstCharacterToLower(PinchType.ToString()));
-			if (Inverted != Inverted_DefaultValue) h.Add("inverted",Inverted);
+			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
+			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
+			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
 			if (PlotShadow != PlotShadow_DefaultValue) h.Add("plotShadow",PlotShadow);
 			if (Polar != Polar_DefaultValue) h.Add("polar",Polar);
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
+			if (ResetZoomButton.IsDirty()) h.Add("resetZoomButton",ResetZoomButton.ToHashtable());
+			if (ScrollablePlotArea.IsDirty()) h.Add("scrollablePlotArea",ScrollablePlotArea.ToHashtable());
 			if (SelectionMarkerFill != SelectionMarkerFill_DefaultValue) h.Add("selectionMarkerFill",SelectionMarkerFill);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowAxes != ShowAxes_DefaultValue) h.Add("showAxes",ShowAxes);
+			if (Spacing != Spacing_DefaultValue) h.Add("spacing",Spacing);
 			if (SpacingBottom != SpacingBottom_DefaultValue) h.Add("spacingBottom",SpacingBottom);
 			if (SpacingLeft != SpacingLeft_DefaultValue) h.Add("spacingLeft",SpacingLeft);
 			if (SpacingRight != SpacingRight_DefaultValue) h.Add("spacingRight",SpacingRight);
 			if (SpacingTop != SpacingTop_DefaultValue) h.Add("spacingTop",SpacingTop);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
+			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", Highcharts.FirstCharacterToLower(ZoomType.ToString()));
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
-			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
-			if (ScrollablePlotArea.IsDirty()) h.Add("scrollablePlotArea",ScrollablePlotArea.ToHashtable());
-			if (Options3d.IsDirty()) h.Add("options3d",Options3d.ToHashtable());
 			
 
 			return h;

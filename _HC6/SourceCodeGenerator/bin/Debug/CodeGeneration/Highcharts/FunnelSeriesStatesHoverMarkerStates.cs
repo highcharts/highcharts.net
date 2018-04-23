@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public FunnelSeriesStatesHoverMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new FunnelSeriesStatesHoverMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new FunnelSeriesStatesHoverMarkerStatesHover();
+			Normal = Normal_DefaultValue = new FunnelSeriesStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new FunnelSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public FunnelSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
-		private FunnelSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public FunnelSeriesStatesHoverMarkerStatesHover Hover { get; set; }
 		private FunnelSeriesStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public FunnelSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
+		private FunnelSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

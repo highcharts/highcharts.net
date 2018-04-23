@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public PaneBackgroundBackgroundColorLinearGradient()
 		{
 			X1 = X1_DefaultValue = 0;
-			Y1 = Y1_DefaultValue = 0;
 			X2 = X2_DefaultValue = 0;
+			Y1 = Y1_DefaultValue = 0;
 			Y2 = Y2_DefaultValue = 1;
 			
 		}	
@@ -32,15 +32,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Y1 { get; set; }
-		private double? Y1_DefaultValue { get; set; }
+		public double? X2 { get; set; }
+		private double? X2_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? X2 { get; set; }
-		private double? X2_DefaultValue { get; set; }
+		public double? Y1 { get; set; }
+		private double? Y1_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -55,8 +55,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (X1 != X1_DefaultValue) h.Add("x1",X1);
-			if (Y1 != Y1_DefaultValue) h.Add("y1",Y1);
 			if (X2 != X2_DefaultValue) h.Add("x2",X2);
+			if (Y1 != Y1_DefaultValue) h.Add("y1",Y1);
 			if (Y2 != Y2_DefaultValue) h.Add("y2",Y2);
 			
 

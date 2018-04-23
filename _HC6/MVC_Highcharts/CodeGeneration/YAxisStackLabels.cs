@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxisStackLabels()
 		{
+			Align = Align_DefaultValue = YAxisStackLabelsAlign.Left;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Enabled = Enabled_DefaultValue = false;
-			Formatter = Formatter_DefaultValue = "";
-			Style = Style_DefaultValue = new YAxisStackLabelsStyle();
-			Align = Align_DefaultValue = YAxisStackLabelsAlign.Left;
 			Format = Format_DefaultValue = "{total}";
+			Formatter = Formatter_DefaultValue = "";
 			Rotation = Rotation_DefaultValue = 0;
+			Style = Style_DefaultValue = new YAxisStackLabelsStyle();
 			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Left;
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Top;
@@ -29,6 +29,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// Defines the horizontal alignment of the stack total label. Can beone of `"left"`, `"center"` or `"right"`. The default value is calculatedat runtime and depends on orientation and whether the stack is positiveor negative.
+		/// </summary>
+		public YAxisStackLabelsAlign Align { get; set; }
+		private YAxisStackLabelsAlign Align_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Allow the stack labels to overlap.
@@ -45,27 +52,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to format the label. The value isgiven by `this.total`.
-		/// </summary>
-		public string Formatter { get; set; }
-		private string Formatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// CSS styles for the label.In styled mode, the styles are set in the`.highcharts-stack-label` class.
-		/// </summary>
-		public YAxisStackLabelsStyle Style { get; set; }
-		private YAxisStackLabelsStyle Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines the horizontal alignment of the stack total label. Can beone of `"left"`, `"center"` or `"right"`. The default value is calculatedat runtime and depends on orientation and whether the stack is positiveor negative.
-		/// </summary>
-		public YAxisStackLabelsAlign Align { get; set; }
-		private YAxisStackLabelsAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A [format string](http://docs.highcharts.com/#formatting) for thedata label. Available variables are the same as for `formatter`.
 		/// </summary>
 		public string Format { get; set; }
@@ -73,10 +59,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Callback JavaScript function to format the label. The value isgiven by `this.total`.
+		/// </summary>
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Rotation of the labels in degrees.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// CSS styles for the label.In styled mode, the styles are set in the`.highcharts-stack-label` class.
+		/// </summary>
+		public YAxisStackLabelsStyle Style { get; set; }
+		private YAxisStackLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,13 +118,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("YAxisStackLabelsFormatter.formatter", Formatter); }  
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Format != Format_DefaultValue) h.Add("format",Format);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("YAxisStackLabelsFormatter.formatter", Formatter); }  
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", Highcharts.FirstCharacterToLower(TextAlign.ToString()));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));

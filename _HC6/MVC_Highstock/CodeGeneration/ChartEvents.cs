@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ChartEvents()
 		{
+			AddSeries = AddSeries_DefaultValue = "";
 			AfterPrint = AfterPrint_DefaultValue = "";
 			BeforePrint = BeforePrint_DefaultValue = "";
-			AddSeries = AddSeries_DefaultValue = "";
 			Click = Click_DefaultValue = "";
 			Load = Load_DefaultValue = "";
 			Redraw = Redraw_DefaultValue = "";
@@ -25,6 +25,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// Fires when a series is added to the chart after load time, usingthe `addSeries` method. One parameter, `event`, is passed to thefunction, containing common event information.Through `event.options` you can access the series options that waspassed to the `addSeries` method. Returning false prevents the seriesfrom being added.
+		/// </summary>
+		public string AddSeries { get; set; }
+		private string AddSeries_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Fires after a chart is printed through the context menu item or the`Chart.print` method. Requires the exporting module.
@@ -38,13 +45,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string BeforePrint { get; set; }
 		private string BeforePrint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires when a series is added to the chart after load time, usingthe `addSeries` method. One parameter, `event`, is passed to thefunction, containing common event information.Through `event.options` you can access the series options that waspassed to the `addSeries` method. Returning false prevents the seriesfrom being added.
-		/// </summary>
-		public string AddSeries { get; set; }
-		private string AddSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -86,9 +86,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highstock.AddFunction("ChartEventsAddSeries.addSeries", AddSeries); }  
 			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highstock.AddFunction("ChartEventsAfterPrint.afterPrint", AfterPrint); }  
 			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highstock.AddFunction("ChartEventsBeforePrint.beforePrint", BeforePrint); }  
-			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highstock.AddFunction("ChartEventsAddSeries.addSeries", AddSeries); }  
 			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("ChartEventsClick.click", Click); }  
 			if (Load != Load_DefaultValue) { h.Add("load",Load); Highstock.AddFunction("ChartEventsLoad.load", Load); }  
 			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highstock.AddFunction("ChartEventsRedraw.redraw", Redraw); }  

@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartEvents()
 		{
+			AddSeries = AddSeries_DefaultValue = "";
+			AfterPrint = AfterPrint_DefaultValue = "";
+			BeforePrint = BeforePrint_DefaultValue = "";
+			Click = Click_DefaultValue = "";
 			Drilldown = Drilldown_DefaultValue = "";
 			Drillup = Drillup_DefaultValue = "";
 			Drillupall = Drillupall_DefaultValue = "";
-			AfterPrint = AfterPrint_DefaultValue = "";
-			BeforePrint = BeforePrint_DefaultValue = "";
-			AddSeries = AddSeries_DefaultValue = "";
-			Click = Click_DefaultValue = "";
 			Load = Load_DefaultValue = "";
 			Redraw = Redraw_DefaultValue = "";
 			Render = Render_DefaultValue = "";
@@ -28,6 +28,34 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// Fires when a series is added to the chart after load time, usingthe `addSeries` method. One parameter, `event`, is passed to thefunction, containing common event information.Through `event.options` you can access the series options that waspassed to the `addSeries` method. Returning false prevents the seriesfrom being added.
+		/// </summary>
+		public string AddSeries { get; set; }
+		private string AddSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires after a chart is printed through the context menu item or the`Chart.print` method. Requires the exporting module.
+		/// </summary>
+		public string AfterPrint { get; set; }
+		private string AfterPrint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires before a chart is printed through the context menu item orthe `Chart.print` method. Requires the exporting module.
+		/// </summary>
+		public string BeforePrint { get; set; }
+		private string BeforePrint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when clicking on the plot background. One parameter, `event`,is passed to the function, containing common event information.Information on the clicked spot can be found through `event.xAxis`and `event.yAxis`, which are arrays containing the axes of each dimensionand each axis' value at the clicked spot. The primary axes are`event.xAxis[0]` and `event.yAxis[0]`. Remember the unit of adatetime axis is milliseconds since 1970-01-01 00:00:00.<pre>click: function(e) {    console.log(        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', e.xAxis[0].value),        e.yAxis[0].value    )}</pre>
+		/// </summary>
+		public string Click { get; set; }
+		private string Click_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Fires when a drilldown point is clicked, before the new series isadded. This event is also utilized for async drilldown, where theseriesOptions are not added by option, but rather loaded async. Notethat when clicking a category label to trigger multiple series drilldown,one `drilldown` event is triggered per point in the category.Event arguments:<dl><dt>`category`</dt><dd>If a category label was clicked, which index.</dd><dt>`point`</dt><dd>The originating point.</dd><dt>`originalEvent`</dt><dd>The original browser event (usually click) that triggered thedrilldown.</dd><dt>`points`</dt><dd>If a category label was clicked, this array holds all pointscorresponing to the category.</dd><dt>`seriesOptions`</dt><dd>Options for the new series</dd></dl>
@@ -48,34 +76,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Drillupall { get; set; }
 		private string Drillupall_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires after a chart is printed through the context menu item or the`Chart.print` method. Requires the exporting module.
-		/// </summary>
-		public string AfterPrint { get; set; }
-		private string AfterPrint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires before a chart is printed through the context menu item orthe `Chart.print` method. Requires the exporting module.
-		/// </summary>
-		public string BeforePrint { get; set; }
-		private string BeforePrint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires when a series is added to the chart after load time, usingthe `addSeries` method. One parameter, `event`, is passed to thefunction, containing common event information.Through `event.options` you can access the series options that waspassed to the `addSeries` method. Returning false prevents the seriesfrom being added.
-		/// </summary>
-		public string AddSeries { get; set; }
-		private string AddSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Fires when clicking on the plot background. One parameter, `event`,is passed to the function, containing common event information.Information on the clicked spot can be found through `event.xAxis`and `event.yAxis`, which are arrays containing the axes of each dimensionand each axis' value at the clicked spot. The primary axes are`event.xAxis[0]` and `event.yAxis[0]`. Remember the unit of adatetime axis is milliseconds since 1970-01-01 00:00:00.<pre>click: function(e) {    console.log(        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', e.xAxis[0].value),        e.yAxis[0].value    )}</pre>
-		/// </summary>
-		public string Click { get; set; }
-		private string Click_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -110,13 +110,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("ChartEventsAddSeries.addSeries", AddSeries); }  
+			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highcharts.AddFunction("ChartEventsAfterPrint.afterPrint", AfterPrint); }  
+			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highcharts.AddFunction("ChartEventsBeforePrint.beforePrint", BeforePrint); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("ChartEventsClick.click", Click); }  
 			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); Highcharts.AddFunction("ChartEventsDrilldown.drilldown", Drilldown); }  
 			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); Highcharts.AddFunction("ChartEventsDrillup.drillup", Drillup); }  
 			if (Drillupall != Drillupall_DefaultValue) { h.Add("drillupall",Drillupall); Highcharts.AddFunction("ChartEventsDrillupall.drillupall", Drillupall); }  
-			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highcharts.AddFunction("ChartEventsAfterPrint.afterPrint", AfterPrint); }  
-			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highcharts.AddFunction("ChartEventsBeforePrint.beforePrint", BeforePrint); }  
-			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("ChartEventsAddSeries.addSeries", AddSeries); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("ChartEventsClick.click", Click); }  
 			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("ChartEventsLoad.load", Load); }  
 			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("ChartEventsRedraw.redraw", Redraw); }  
 			if (Render != Render_DefaultValue) { h.Add("render",Render); Highcharts.AddFunction("ChartEventsRender.render", Render); }  

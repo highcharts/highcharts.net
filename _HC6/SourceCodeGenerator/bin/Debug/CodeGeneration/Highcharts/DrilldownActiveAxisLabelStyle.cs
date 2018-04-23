@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public DrilldownActiveAxisLabelStyle()
 		{
-			Cursor = Cursor_DefaultValue = "pointer";
 			Color = Color_DefaultValue = "#003399";
+			Cursor = Cursor_DefaultValue = "pointer";
 			FontWeight = FontWeight_DefaultValue = "bold";
 			TextDecoration = TextDecoration_DefaultValue = "underline";
 			
@@ -25,15 +25,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public string Cursor { get; set; }
+		private string Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
 			if (TextDecoration != TextDecoration_DefaultValue) h.Add("textDecoration",TextDecoration);
 			

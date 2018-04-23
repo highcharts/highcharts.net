@@ -14,20 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NoData()
 		{
-			Position = Position_DefaultValue = new Hashtable();
 			Attr = Attr_DefaultValue = new Hashtable();
-			UseHTML = UseHTML_DefaultValue = false;
+			Position = Position_DefaultValue = new Hashtable();
 			Style = Style_DefaultValue = new NoDataStyle();
+			UseHTML = UseHTML_DefaultValue = false;
 			
 		}	
 		
-
-		/// <summary>
-		/// The position of the no-data label, relative to the plot area.
-		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An object of additional SVG attributes for the no-data label.
@@ -37,10 +30,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to insert the label as HTML, or as pseudo-HTML rendered withSVG.
+		/// The position of the no-data label, relative to the plot area.
 		/// </summary>
-		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
+		public Hashtable Position { get; set; }
+		private Hashtable Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -48,16 +41,23 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public NoDataStyle Style { get; set; }
 		private NoDataStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to insert the label as HTML, or as pseudo-HTML rendered withSVG.
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Attr != Attr_DefaultValue) h.Add("attr",Attr);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			
 
 			return h;

@@ -14,32 +14,32 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsIkhSenkouSpanBStyles()
 		{
-			LineWidth = LineWidth_DefaultValue = 1;
 			LineColor = LineColor_DefaultValue = null;
+			LineWidth = LineWidth_DefaultValue = 1;
 			
 		}	
 		
-
-		/// <summary>
-		/// Pixel width of the line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Color of the line.
 		/// </summary>
 		public double? LineColor { get; set; }
 		private double? LineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Pixel width of the line.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			
 
 			return h;

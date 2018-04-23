@@ -15,10 +15,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		public RangeSelectorButton()
 		{
 			Count = Count_DefaultValue = 1;
+			DataGrouping = DataGrouping_DefaultValue = null;
 			Events = Events_DefaultValue = new RangeSelectorButtonEvents();
 			OffsetMax = OffsetMax_DefaultValue = 0;
 			OffsetMin = OffsetMin_DefaultValue = 0;
-			DataGrouping = DataGrouping_DefaultValue = null;
 			Text = Text_DefaultValue = "";
 			Type = Type_DefaultValue = RangeSelectorButtonType.Millisecond;
 			
@@ -30,6 +30,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Count { get; set; }
 		private double? Count_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A custom data grouping object for each button.
+		/// </summary>
+		public Object DataGrouping { get; set; }
+		private Object DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,13 +61,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A custom data grouping object for each button.
-		/// </summary>
-		public Object DataGrouping { get; set; }
-		private Object DataGrouping_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The text for the button itself.
 		/// </summary>
 		public string Text { get; set; }
@@ -79,10 +79,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Count != Count_DefaultValue) h.Add("count",Count);
+			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (OffsetMax != OffsetMax_DefaultValue) h.Add("offsetMax",OffsetMax);
 			if (OffsetMin != OffsetMin_DefaultValue) h.Add("offsetMin",OffsetMin);
-			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			

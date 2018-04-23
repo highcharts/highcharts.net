@@ -17,10 +17,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "#cccccc";
 			DashStyle = DashStyle_DefaultValue = NavigatorYAxisCrosshairDashStyle.Solid;
+			Label = Label_DefaultValue = new NavigatorYAxisCrosshairLabel();
 			Snap = Snap_DefaultValue = true;
 			Width = Width_DefaultValue = 1;
 			ZIndex = ZIndex_DefaultValue = 2;
-			Label = Label_DefaultValue = new NavigatorYAxisCrosshairLabel();
 			
 		}	
 		
@@ -47,6 +47,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A label on the axis next to the crosshair.In styled mode, the label is styled with the `.highcharts-crosshair-label` class.
+		/// </summary>
+		public NavigatorYAxisCrosshairLabel Label { get; set; }
+		private NavigatorYAxisCrosshairLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether the crosshair should snap to the point or follow the pointerindependent of points.
 		/// </summary>
 		public bool? Snap { get; set; }
@@ -65,13 +72,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A label on the axis next to the crosshair.In styled mode, the label is styled with the `.highcharts-crosshair-label` class.
-		/// </summary>
-		public NavigatorYAxisCrosshairLabel Label { get; set; }
-		private NavigatorYAxisCrosshairLabel Label_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -81,10 +81,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			
 
 			return h;

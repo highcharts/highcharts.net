@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Navigation()
 		{
 			ButtonOptions = ButtonOptions_DefaultValue = new NavigationButtonOptions();
-			MenuStyle = MenuStyle_DefaultValue = new NavigationMenuStyle();
-			MenuItemStyle = MenuItemStyle_DefaultValue = new NavigationMenuItemStyle();
 			MenuItemHoverStyle = MenuItemHoverStyle_DefaultValue = new NavigationMenuItemHoverStyle();
+			MenuItemStyle = MenuItemStyle_DefaultValue = new NavigationMenuItemStyle();
+			MenuStyle = MenuStyle_DefaultValue = new NavigationMenuStyle();
 			
 		}	
 		
@@ -30,10 +30,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS styles for the popup menu appearing by default when the exporticon is clicked. This menu is rendered in HTML.
+		/// CSS styles for the hover state of the individual items within thepopup menu appearing by default when the export icon is clicked. The menu items are rendered in HTML.
 		/// </summary>
-		public NavigationMenuStyle MenuStyle { get; set; }
-		private NavigationMenuStyle MenuStyle_DefaultValue { get; set; }
+		public NavigationMenuItemHoverStyle MenuItemHoverStyle { get; set; }
+		private NavigationMenuItemHoverStyle MenuItemHoverStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -44,10 +44,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS styles for the hover state of the individual items within thepopup menu appearing by default when the export icon is clicked. The menu items are rendered in HTML.
+		/// CSS styles for the popup menu appearing by default when the exporticon is clicked. This menu is rendered in HTML.
 		/// </summary>
-		public NavigationMenuItemHoverStyle MenuItemHoverStyle { get; set; }
-		private NavigationMenuItemHoverStyle MenuItemHoverStyle_DefaultValue { get; set; }
+		public NavigationMenuStyle MenuStyle { get; set; }
+		private NavigationMenuStyle MenuStyle_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -55,9 +55,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (ButtonOptions.IsDirty()) h.Add("buttonOptions",ButtonOptions.ToHashtable());
-			if (MenuStyle.IsDirty()) h.Add("menuStyle",MenuStyle.ToHashtable());
-			if (MenuItemStyle.IsDirty()) h.Add("menuItemStyle",MenuItemStyle.ToHashtable());
 			if (MenuItemHoverStyle.IsDirty()) h.Add("menuItemHoverStyle",MenuItemHoverStyle.ToHashtable());
+			if (MenuItemStyle.IsDirty()) h.Add("menuItemStyle",MenuItemStyle.ToHashtable());
+			if (MenuStyle.IsDirty()) h.Add("menuStyle",MenuStyle.ToHashtable());
 			
 
 			return h;

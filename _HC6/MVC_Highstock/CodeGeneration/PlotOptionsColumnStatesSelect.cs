@@ -14,32 +14,32 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsColumnStatesSelect()
 		{
-			Color = Color_DefaultValue = "#cccccc";
 			BorderColor = BorderColor_DefaultValue = "#000000";
+			Color = Color_DefaultValue = "#cccccc";
 			
 		}	
 		
-
-		/// <summary>
-		/// A specific color for the selected point.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// A specific border color for the selected point.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A specific color for the selected point.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			
 
 			return h;

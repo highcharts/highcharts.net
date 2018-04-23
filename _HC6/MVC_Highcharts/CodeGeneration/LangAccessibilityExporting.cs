@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public LangAccessibilityExporting()
 		{
 			ChartMenuLabel = ChartMenuLabel_DefaultValue = "Chart export";
-			MenuButtonLabel = MenuButtonLabel_DefaultValue = "View export menu";
 			ExportRegionLabel = ExportRegionLabel_DefaultValue = "Chart export menu";
+			MenuButtonLabel = MenuButtonLabel_DefaultValue = "View export menu";
 			
 		}	
 		
@@ -31,15 +31,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string MenuButtonLabel { get; set; }
-		private string MenuButtonLabel_DefaultValue { get; set; }
+		public string ExportRegionLabel { get; set; }
+		private string ExportRegionLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string ExportRegionLabel { get; set; }
-		private string ExportRegionLabel_DefaultValue { get; set; }
+		public string MenuButtonLabel { get; set; }
+		private string MenuButtonLabel_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -47,8 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (ChartMenuLabel != ChartMenuLabel_DefaultValue) h.Add("chartMenuLabel",ChartMenuLabel);
-			if (MenuButtonLabel != MenuButtonLabel_DefaultValue) h.Add("menuButtonLabel",MenuButtonLabel);
 			if (ExportRegionLabel != ExportRegionLabel_DefaultValue) h.Add("exportRegionLabel",ExportRegionLabel);
+			if (MenuButtonLabel != MenuButtonLabel_DefaultValue) h.Add("menuButtonLabel",MenuButtonLabel);
 			
 
 			return h;

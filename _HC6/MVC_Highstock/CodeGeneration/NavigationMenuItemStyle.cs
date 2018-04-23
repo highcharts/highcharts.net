@@ -14,21 +14,14 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigationMenuItemStyle()
 		{
-			Padding = Padding_DefaultValue = "0.5em 1em";
 			Background = Background_DefaultValue = "none";
 			Color = Color_DefaultValue = "#333333";
 			FontSize = FontSize_DefaultValue = "";
+			Padding = Padding_DefaultValue = "0.5em 1em";
 			Transition = Transition_DefaultValue = "background 250ms, color 250ms";
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
@@ -54,6 +47,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string Transition { get; set; }
 		private string Transition_DefaultValue { get; set; }
 		  
@@ -62,10 +62,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Background != Background_DefaultValue) h.Add("background",Background);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Transition != Transition_DefaultValue) h.Add("transition",Transition);
 			
 

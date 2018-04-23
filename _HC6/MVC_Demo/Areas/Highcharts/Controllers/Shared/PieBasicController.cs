@@ -14,7 +14,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
         {
             List<PieSeriesData> pieData = new List<PieSeriesData>();
 
-            pieData.Add(new PieSeriesData { Name = "FireFox", Y = 45.0 });
+            pieData.Add(new PieSeriesData { Name = "FireFox", Y = 45.0, Id = "test1", Description = "www" });
             pieData.Add(new PieSeriesData { Name = "IE", Y = 26.8 });
             pieData.Add(new PieSeriesData { Name = "Chrome", Y = 12.8, Sliced = true, Selected = true });
             pieData.Add(new PieSeriesData { Name = "Safari", Y = 8.5 });

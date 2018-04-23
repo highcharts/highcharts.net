@@ -14,12 +14,19 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AnnotationsLabelsStyle()
 		{
+			Color = Color_DefaultValue = "contrast";
 			FontSize = FontSize_DefaultValue = "11px";
 			FontWeight = FontWeight_DefaultValue = "normal";
-			Color = Color_DefaultValue = "contrast";
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -33,22 +40,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string FontWeight { get; set; }
 		private string FontWeight_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			
 
 			return h;

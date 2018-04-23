@@ -15,31 +15,31 @@ namespace Highsoft.Web.Mvc.Charts
 		public Lang()
 		{
 			Accessibility = Accessibility_DefaultValue = new LangAccessibility();
-			DrillUpText = DrillUpText_DefaultValue = "Back to {series.name}";
+			ContextButtonTitle = ContextButtonTitle_DefaultValue = "Chart context menu";
+			DecimalPoint = DecimalPoint_DefaultValue = ".";
 			DownloadCSV = DownloadCSV_DefaultValue = "Download CSV";
-			DownloadXLS = DownloadXLS_DefaultValue = "Download XLS";
-			OpenInCloud = OpenInCloud_DefaultValue = "Open in Highcharts Cloud";
-			ViewData = ViewData_DefaultValue = "View data table";
-			PrintChart = PrintChart_DefaultValue = "Print chart";
-			DownloadPNG = DownloadPNG_DefaultValue = "Download PNG image";
 			DownloadJPEG = DownloadJPEG_DefaultValue = "Download JPEG image";
 			DownloadPDF = DownloadPDF_DefaultValue = "Download PDF document";
+			DownloadPNG = DownloadPNG_DefaultValue = "Download PNG image";
 			DownloadSVG = DownloadSVG_DefaultValue = "Download SVG vector image";
-			ContextButtonTitle = ContextButtonTitle_DefaultValue = "Chart context menu";
-			NoData = NoData_DefaultValue = "No data to display";
+			DownloadXLS = DownloadXLS_DefaultValue = "Download XLS";
+			DrillUpText = DrillUpText_DefaultValue = "Back to {series.name}";
+			InvalidDate = InvalidDate_DefaultValue = "";
 			Loading = Loading_DefaultValue = "Loading...";
 			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
-			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
-         "Friday", "Saturday"};
-			DecimalPoint = DecimalPoint_DefaultValue = ".";
+			NoData = NoData_DefaultValue = "No data to display";
+			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
+			OpenInCloud = OpenInCloud_DefaultValue = "Open in Highcharts Cloud";
+			PrintChart = PrintChart_DefaultValue = "Print chart";
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
-			ThousandsSep = ThousandsSep_DefaultValue = "";
+			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
 			ShortWeekdays = ShortWeekdays_DefaultValue = new List<string>();
-			InvalidDate = InvalidDate_DefaultValue = "";
-			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
+			ThousandsSep = ThousandsSep_DefaultValue = "";
+			ViewData = ViewData_DefaultValue = "View data table";
+			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+         "Friday", "Saturday"};
 			
 		}	
 		
@@ -52,10 +52,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The text for the button that appears when drilling down, linkingback to the parent series. The parent series' name is inserted for`{series.name}`.
+		/// Exporting module menu. The tooltip title for the context menu holdingprint and export menu items.
 		/// </summary>
-		public string DrillUpText { get; set; }
-		private string DrillUpText_DefaultValue { get; set; }
+		public string ContextButtonTitle { get; set; }
+		private string ContextButtonTitle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The default decimal point used in the `Highcharts.numberFormat`method unless otherwise specified in the function arguments.
+		/// </summary>
+		public string DecimalPoint { get; set; }
+		private string DecimalPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -63,41 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string DownloadCSV { get; set; }
 		private string DownloadCSV_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Export-data module only. The text for the menu item.
-		/// </summary>
-		public string DownloadXLS { get; set; }
-		private string DownloadXLS_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Export-data module only. The text for the menu item.
-		/// </summary>
-		public string OpenInCloud { get; set; }
-		private string OpenInCloud_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Export-data module only. The text for the menu item.
-		/// </summary>
-		public string ViewData { get; set; }
-		private string ViewData_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Exporting module only. The text for the menu item to print the chart.
-		/// </summary>
-		public string PrintChart { get; set; }
-		private string PrintChart_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Exporting module only. The text for the PNG download menu item.
-		/// </summary>
-		public string DownloadPNG { get; set; }
-		private string DownloadPNG_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -115,6 +87,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Exporting module only. The text for the PNG download menu item.
+		/// </summary>
+		public string DownloadPNG { get; set; }
+		private string DownloadPNG_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Exporting module only. The text for the SVG download menu item.
 		/// </summary>
 		public string DownloadSVG { get; set; }
@@ -122,17 +101,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Exporting module menu. The tooltip title for the context menu holdingprint and export menu items.
+		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public string ContextButtonTitle { get; set; }
-		private string ContextButtonTitle_DefaultValue { get; set; }
+		public string DownloadXLS { get; set; }
+		private string DownloadXLS_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The text to display when the chart contains no data. Requires theno-data module, see [noData](#noData).
+		/// The text for the button that appears when drilling down, linkingback to the parent series. The parent series' name is inserted for`{series.name}`.
 		/// </summary>
-		public string NoData { get; set; }
-		private string NoData_DefaultValue { get; set; }
+		public string DrillUpText { get; set; }
+		private string DrillUpText_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// What to show in a date field for invalid dates. Defaults to an emptystring.
+		/// </summary>
+		public string InvalidDate { get; set; }
+		private string InvalidDate_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -150,24 +136,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array containing the months names in abbreviated form. Correspondsto the `%b` format in `Highcharts.dateFormat()`.
+		/// The text to display when the chart contains no data. Requires theno-data module, see [noData](#noData).
 		/// </summary>
-		public List<string> ShortMonths { get; set; }
-		private List<string> ShortMonths_DefaultValue { get; set; }
+		public string NoData { get; set; }
+		private string NoData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array containing the weekday names.
+		/// The magnitude of [numericSymbols](#lang.numericSymbol) replacements.Use 10000 for Japanese, Korean and various Chinese locales, whichuse symbols for 10^4, 10^8 and 10^12.
 		/// </summary>
-		public List<string> Weekdays { get; set; }
-		private List<string> Weekdays_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The default decimal point used in the `Highcharts.numberFormat`method unless otherwise specified in the function arguments.
-		/// </summary>
-		public string DecimalPoint { get; set; }
-		private string DecimalPoint_DefaultValue { get; set; }
+		public double? NumericSymbolMagnitude { get; set; }
+		private double? NumericSymbolMagnitude_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -175,6 +154,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<string> NumericSymbols { get; set; }
 		private List<string> NumericSymbols_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Export-data module only. The text for the menu item.
+		/// </summary>
+		public string OpenInCloud { get; set; }
+		private string OpenInCloud_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Exporting module only. The text for the menu item to print the chart.
+		/// </summary>
+		public string PrintChart { get; set; }
+		private string PrintChart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -192,10 +185,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The default thousands separator used in the `Highcharts.numberFormat`method unless otherwise specified in the function arguments. SinceHighcharts 4.1 it defaults to a single space character, which iscompatible with ISO and works across Anglo-American and continentalEuropean languages.The default is a single space.
+		/// An array containing the months names in abbreviated form. Correspondsto the `%b` format in `Highcharts.dateFormat()`.
 		/// </summary>
-		public string ThousandsSep { get; set; }
-		private string ThousandsSep_DefaultValue { get; set; }
+		public List<string> ShortMonths { get; set; }
+		private List<string> ShortMonths_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -206,17 +199,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// What to show in a date field for invalid dates. Defaults to an emptystring.
+		/// The default thousands separator used in the `Highcharts.numberFormat`method unless otherwise specified in the function arguments. SinceHighcharts 4.1 it defaults to a single space character, which iscompatible with ISO and works across Anglo-American and continentalEuropean languages.The default is a single space.
 		/// </summary>
-		public string InvalidDate { get; set; }
-		private string InvalidDate_DefaultValue { get; set; }
+		public string ThousandsSep { get; set; }
+		private string ThousandsSep_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The magnitude of [numericSymbols](#lang.numericSymbol) replacements.Use 10000 for Japanese, Korean and various Chinese locales, whichuse symbols for 10^4, 10^8 and 10^12.
+		/// Export-data module only. The text for the menu item.
 		/// </summary>
-		public double? NumericSymbolMagnitude { get; set; }
-		private double? NumericSymbolMagnitude_DefaultValue { get; set; }
+		public string ViewData { get; set; }
+		private string ViewData_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array containing the weekday names.
+		/// </summary>
+		public List<string> Weekdays { get; set; }
+		private List<string> Weekdays_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -224,30 +224,30 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
-			if (DrillUpText != DrillUpText_DefaultValue) h.Add("drillUpText",DrillUpText);
+			if (ContextButtonTitle != ContextButtonTitle_DefaultValue) h.Add("contextButtonTitle",ContextButtonTitle);
+			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
 			if (DownloadCSV != DownloadCSV_DefaultValue) h.Add("downloadCSV",DownloadCSV);
-			if (DownloadXLS != DownloadXLS_DefaultValue) h.Add("downloadXLS",DownloadXLS);
-			if (OpenInCloud != OpenInCloud_DefaultValue) h.Add("openInCloud",OpenInCloud);
-			if (ViewData != ViewData_DefaultValue) h.Add("viewData",ViewData);
-			if (PrintChart != PrintChart_DefaultValue) h.Add("printChart",PrintChart);
-			if (DownloadPNG != DownloadPNG_DefaultValue) h.Add("downloadPNG",DownloadPNG);
 			if (DownloadJPEG != DownloadJPEG_DefaultValue) h.Add("downloadJPEG",DownloadJPEG);
 			if (DownloadPDF != DownloadPDF_DefaultValue) h.Add("downloadPDF",DownloadPDF);
+			if (DownloadPNG != DownloadPNG_DefaultValue) h.Add("downloadPNG",DownloadPNG);
 			if (DownloadSVG != DownloadSVG_DefaultValue) h.Add("downloadSVG",DownloadSVG);
-			if (ContextButtonTitle != ContextButtonTitle_DefaultValue) h.Add("contextButtonTitle",ContextButtonTitle);
-			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
+			if (DownloadXLS != DownloadXLS_DefaultValue) h.Add("downloadXLS",DownloadXLS);
+			if (DrillUpText != DrillUpText_DefaultValue) h.Add("drillUpText",DrillUpText);
+			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (Months != Months_DefaultValue) h.Add("months",Months);
-			if (ShortMonths != ShortMonths_DefaultValue) h.Add("shortMonths",ShortMonths);
-			if (Weekdays != Weekdays_DefaultValue) h.Add("weekdays",Weekdays);
-			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
+			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
+			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
 			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);
+			if (OpenInCloud != OpenInCloud_DefaultValue) h.Add("openInCloud",OpenInCloud);
+			if (PrintChart != PrintChart_DefaultValue) h.Add("printChart",PrintChart);
 			if (ResetZoom != ResetZoom_DefaultValue) h.Add("resetZoom",ResetZoom);
 			if (ResetZoomTitle != ResetZoomTitle_DefaultValue) h.Add("resetZoomTitle",ResetZoomTitle);
-			if (ThousandsSep != ThousandsSep_DefaultValue) h.Add("thousandsSep",ThousandsSep);
+			if (ShortMonths != ShortMonths_DefaultValue) h.Add("shortMonths",ShortMonths);
 			if (ShortWeekdays != ShortWeekdays_DefaultValue) h.Add("shortWeekdays",ShortWeekdays);
-			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
-			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
+			if (ThousandsSep != ThousandsSep_DefaultValue) h.Add("thousandsSep",ThousandsSep);
+			if (ViewData != ViewData_DefaultValue) h.Add("viewData",ViewData);
+			if (Weekdays != Weekdays_DefaultValue) h.Add("weekdays",Weekdays);
 			
 
 			return h;

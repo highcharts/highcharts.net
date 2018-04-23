@@ -14,45 +14,24 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WaterfallSeriesData()
 		{
-			IsIntermediateSum = IsIntermediateSum_DefaultValue = false;
-			IsSum = IsSum_DefaultValue = false;
-			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new WaterfallSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Drilldown = Drilldown_DefaultValue = "";
+			Events = Events_DefaultValue = new WaterfallSeriesDataEvents();
 			Id = Id_DefaultValue = "null";
+			IsIntermediateSum = IsIntermediateSum_DefaultValue = false;
+			IsSum = IsSum_DefaultValue = false;
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
 			Y = Y_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = new WaterfallSeriesDataEvents();
 			
 		}	
 		
-
-		/// <summary>
-		/// When this property is true, the points acts as a summary column forthe values added or substracted since the last intermediate sum,or since the start of the series. The `y` value is ignored.
-		/// </summary>
-		public bool? IsIntermediateSum { get; set; }
-		private bool? IsIntermediateSum_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When this property is true, the point display the total sum acrossthe entire series. The `y` value is ignored.
-		/// </summary>
-		public bool? IsSum { get; set; }
-		private bool? IsSum_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -90,10 +69,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// </summary>
+		public string Drilldown { get; set; }
+		private string Drilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public WaterfallSeriesDataEvents Events { get; set; }
+		private WaterfallSeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When this property is true, the points acts as a summary column forthe values added or substracted since the last intermediate sum,or since the start of the series. The `y` value is ignored.
+		/// </summary>
+		public bool? IsIntermediateSum { get; set; }
+		private bool? IsIntermediateSum_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When this property is true, the point display the total sum acrossthe entire series. The `y` value is ignored.
+		/// </summary>
+		public bool? IsSum { get; set; }
+		private bool? IsSum_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -129,34 +136,27 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public WaterfallSeriesDataEvents Events { get; set; }
-		private WaterfallSeriesDataEvents Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (IsIntermediateSum != IsIntermediateSum_DefaultValue) h.Add("isIntermediateSum",IsIntermediateSum);
-			if (IsSum != IsSum_DefaultValue) h.Add("isSum",IsSum);
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (IsIntermediateSum != IsIntermediateSum_DefaultValue) h.Add("isIntermediateSum",IsIntermediateSum);
+			if (IsSum != IsSum_DefaultValue) h.Add("isSum",IsSum);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

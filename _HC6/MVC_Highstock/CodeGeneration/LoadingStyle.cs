@@ -14,20 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LoadingStyle()
 		{
-			Position = Position_DefaultValue = new Hashtable();
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
 			Opacity = Opacity_DefaultValue = null;
+			Position = Position_DefaultValue = new Hashtable();
 			TextAlign = TextAlign_DefaultValue = "center";
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
@@ -46,6 +39,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public Hashtable Position { get; set; }
+		private Hashtable Position_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string TextAlign { get; set; }
 		private string TextAlign_DefaultValue { get; set; }
 		  
@@ -54,9 +54,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
+			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			
 

@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigationMenuStyle()
 		{
-			Border = Border_DefaultValue = "1px solid #999999";
 			Background = Background_DefaultValue = "#ffffff";
+			Border = Border_DefaultValue = "1px solid #999999";
 			Padding = Padding_DefaultValue = "5px 0";
 			
 		}	
@@ -24,15 +24,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Border { get; set; }
-		private string Border_DefaultValue { get; set; }
+		public string Background { get; set; }
+		private string Background_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Background { get; set; }
-		private string Background_DefaultValue { get; set; }
+		public string Border { get; set; }
+		private string Border_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Border != Border_DefaultValue) h.Add("border",Border);
 			if (Background != Background_DefaultValue) h.Add("background",Background);
+			if (Border != Border_DefaultValue) h.Add("border",Border);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			
 

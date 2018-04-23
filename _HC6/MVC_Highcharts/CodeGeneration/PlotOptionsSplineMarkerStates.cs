@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSplineMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new PlotOptionsSplineMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new PlotOptionsSplineMarkerStatesHover();
+			Normal = Normal_DefaultValue = new PlotOptionsSplineMarkerStatesNormal();
 			Select = Select_DefaultValue = new PlotOptionsSplineMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public PlotOptionsSplineMarkerStatesNormal Normal { get; set; }
-		private PlotOptionsSplineMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public PlotOptionsSplineMarkerStatesHover Hover { get; set; }
 		private PlotOptionsSplineMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public PlotOptionsSplineMarkerStatesNormal Normal { get; set; }
+		private PlotOptionsSplineMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

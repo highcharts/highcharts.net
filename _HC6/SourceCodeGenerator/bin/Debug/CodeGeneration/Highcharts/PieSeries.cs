@@ -14,124 +14,61 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PieSeries()
 		{
-			Data = Data_DefaultValue = new List<PieSeriesData>();
-			Id = Id_DefaultValue = "";
-			Index = Index_DefaultValue = null;
-			LegendIndex = LegendIndex_DefaultValue = null;
-			Name = Name_DefaultValue = "";
-			Type = Type_DefaultValue = PieSeriesType.Null;
-			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = new PieSeriesLabel();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Events = Events_DefaultValue = new PieSeriesEvents();
-			Point = Point_DefaultValue = new PieSeriesPoint();
-			States = States_DefaultValue = new PieSeriesStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
+			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderWidth = BorderWidth_DefaultValue = 1;
+			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			ClassName = ClassName_DefaultValue = "";
+			Clip = Clip_DefaultValue = false;
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = PieSeriesCursor.Null;
+			Data = Data_DefaultValue = new List<PieSeriesData>();
+			DataLabels = DataLabels_DefaultValue = new PieSeriesDataLabels();
+			Depth = Depth_DefaultValue = 0;
 			Description = Description_DefaultValue = "undefined";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
+			EndAngle = EndAngle_DefaultValue = null;
+			Events = Events_DefaultValue = new PieSeriesEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
+			Id = Id_DefaultValue = "";
+			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			Index = Index_DefaultValue = null;
+			InnerSize = InnerSize_DefaultValue = "0";
 			Keys = Keys_DefaultValue = new List<string>();
+			Label = Label_DefaultValue = new PieSeriesLabel();
+			LegendIndex = LegendIndex_DefaultValue = null;
 			Linecap = Linecap_DefaultValue = PieSeriesLinecap.Round;
 			LinkedTo = LinkedTo_DefaultValue = "";
+			MinSize = MinSize_DefaultValue = 80;
+			Name = Name_DefaultValue = "";
+			Point = Point_DefaultValue = new PieSeriesPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			Visible = Visible_DefaultValue = true;
-			Tooltip = Tooltip_DefaultValue = new PieSeriesTooltip();
-			Center = Center_DefaultValue = new string[] { "50%", "50%" };
-			Clip = Clip_DefaultValue = false;
-			DataLabels = DataLabels_DefaultValue = new PieSeriesDataLabels();
-			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			Size = Size_DefaultValue = "";
+			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
-			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			Colors = Colors_DefaultValue = new List<string>();
-			EndAngle = EndAngle_DefaultValue = null;
-			InnerSize = InnerSize_DefaultValue = "0";
-			MinSize = MinSize_DefaultValue = 80;
 			StartAngle = StartAngle_DefaultValue = 0;
-			Depth = Depth_DefaultValue = 0;
+			States = States_DefaultValue = new PieSeriesStates();
+			StickyTracking = StickyTracking_DefaultValue = true;
+			Tooltip = Tooltip_DefaultValue = new PieSeriesTooltip();
+			Type = Type_DefaultValue = PieSeriesType.Null;
+			Visible = Visible_DefaultValue = true;
+			ZIndex = ZIndex_DefaultValue = null;
 			
 		}	
 		
-
-		/// <summary>
-		/// An array of data points for the series. For the `pie` series type,points can be given in the following ways:1.  An array of numerical values. In this case, the numerical valueswill be interpreted as `y` options. Example: ```js data: [0, 5, 3, 5] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.pie.turboThreshold),this option is not available. ```js    data: [{    y: 1,    name: "Point2",    color: "#00FF00"}, {    y: 7,    name: "Point1",    color: "#FF00FF"}]</pre>
-		/// </summary>
-		public List<PieSeriesData> Data { get; set; }
-		private List<PieSeriesData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
-		/// </summary>
-		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The index of the series in the chart, affecting the internal indexin the `chart.series` array, the visible Z index as well as the orderin the legend.
-		/// </summary>
-		public double? Index { get; set; }
-		private double? Index_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The sequential index of the series in the legend.
-		/// </summary>
-		public double? LegendIndex { get; set; }
-		private double? LegendIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The name of the series as shown in the legend, tooltip etc.
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
-		/// </summary>
-		public PieSeriesType Type { get; set; }
-		private PieSeriesType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Define the visual z index of the series.
-		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
-		/// </summary>
-		public PieSeriesLabel Label { get; set; }
-		private PieSeriesLabel Label_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
-		/// </summary>
-		public bool? ShowCheckbox { get; set; }
-		private bool? ShowCheckbox_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -142,31 +79,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// The color of the border surrounding each slice. When `null`, theborder takes the same color as the slice fill. This can be usedtogether with a `borderWidth` to fill drawing gaps created by antialiazingartefacts in borderless pies.In styled mode, the border stroke is given in the `.highcharts-point` class.
 		/// </summary>
-		public PieSeriesEvents Events { get; set; }
-		private PieSeriesEvents Events_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Properties for each single point.
+		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the `.highcharts-point` class.
 		/// </summary>
-		public PieSeriesPoint Point { get; set; }
-		private PieSeriesPoint Point_DefaultValue { get; set; }
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A wrapper object for all the series options in specific states.
+		/// The center of the pie chart relative to the plot area. Can be percentagesor pixel values. The default behaviour (as of 3.0) is to centerthe pie so that all slices and data labels are within the plot area.As a consequence, the pie may actually jump around in a chart withdynamic values, as the data labels move. In that case, the centershould be explicitly set, for example to `["50%", "50%"]`.
 		/// </summary>
-		public PieSeriesStates States { get; set; }
-		private PieSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
-		/// </summary>
-		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
+		public string[] Center { get; set; }
+		private string[] Center_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -174,6 +104,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -191,10 +128,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A series specific or series type specific color set to use insteadof the global [colors](#colors).
+		/// </summary>
+		public List<string> Colors { get; set; }
+		private List<string> Colors_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
 		/// </summary>
 		public PieSeriesCursor Cursor { get; set; }
 		private PieSeriesCursor Cursor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of data points for the series. For the `pie` series type,points can be given in the following ways:1.  An array of numerical values. In this case, the numerical valueswill be interpreted as `y` options. Example: ```js data: [0, 5, 3, 5] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.pie.turboThreshold),this option is not available. ```js    data: [{    y: 1,    name: "Point2",    color: "#00FF00"}, {    y: 7,    name: "Point1",    color: "#FF00FF"}]</pre>
+		/// </summary>
+		public List<PieSeriesData> Data { get; set; }
+		private List<PieSeriesData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PieSeriesDataLabels DataLabels { get; set; }
+		private PieSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The thickness of a 3D pie. Requires `highcharts-3d.js`
+		/// </summary>
+		public double? Depth { get; set; }
+		private double? Depth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -212,6 +177,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The end angle of the pie in degrees where 0 is top and 90 is right.Defaults to `startAngle` plus 360.
+		/// </summary>
+		public double? EndAngle { get; set; }
+		private double? EndAngle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PieSeriesEvents Events { get; set; }
+		private PieSeriesEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// By default, series are exposed to screen readers as regions. By enablingthis option, the series element itself will be exposed in the sameway as the data points. This is useful if the series is not usedas a grouping entity in the chart, but you still want to attach adescription to the series.Requires the Accessibility module.
 		/// </summary>
 		public bool? ExposeElementToA11y { get; set; }
@@ -219,10 +198,52 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
+		/// </summary>
+		public string Id { get; set; }
+		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Equivalent to [chart.ignoreHiddenSeries](#chart.ignoreHiddenSeries),this option tells whether the series shall be redrawn as if thehidden point were `null`.The default value changed from `false` to `true` with Highcharts3.0.
+		/// </summary>
+		public bool? IgnoreHiddenPoint { get; set; }
+		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The index of the series in the chart, affecting the internal indexin the `chart.series` array, the visible Z index as well as the orderin the legend.
+		/// </summary>
+		public double? Index { get; set; }
+		private double? Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The size of the inner diameter for the pie. A size greater than 0renders a donut chart. Can be a percentage or pixel value. Percentagesare relative to the pie size. Pixel values are given as integers.Note: in Highcharts < 4.1.2, the percentage was relative to the plotarea, not the pie size.
+		/// </summary>
+		public string InnerSize { get; set; }
+		private string InnerSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
+		/// </summary>
+		public PieSeriesLabel Label { get; set; }
+		private PieSeriesLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The sequential index of the series in the legend.
+		/// </summary>
+		public double? LegendIndex { get; set; }
+		private double? LegendIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -237,6 +258,27 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string LinkedTo { get; set; }
 		private string LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The minimum size for a pie in response to auto margins. The pie willtry to shrink to make room for data labels in side the plot area, but only to this size.
+		/// </summary>
+		public double? MinSize { get; set; }
+		private double? MinSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of the series as shown in the legend, tooltip etc.
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Properties for each single point.
+		/// </summary>
+		public PieSeriesPoint Point { get; set; }
+		private PieSeriesPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -261,59 +303,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
+		/// </summary>
+		public bool? ShowCheckbox { get; set; }
+		private bool? ShowCheckbox_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to display this particular series or series type in the legend.The default value is `true` for standalone series, `false` for linkedseries.
 		/// </summary>
 		public bool? ShowInLegend { get; set; }
 		private bool? ShowInLegend_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
-		/// </summary>
-		public bool? SkipKeyboardNavigation { get; set; }
-		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the initial visibility of the series.
-		/// </summary>
-		public bool? Visible { get; set; }
-		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
-		/// </summary>
-		public PieSeriesTooltip Tooltip { get; set; }
-		private PieSeriesTooltip Tooltip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The center of the pie chart relative to the plot area. Can be percentagesor pixel values. The default behaviour (as of 3.0) is to centerthe pie so that all slices and data labels are within the plot area.As a consequence, the pie may actually jump around in a chart withdynamic values, as the data labels move. In that case, the centershould be explicitly set, for example to `["50%", "50%"]`.
-		/// </summary>
-		public string[] Center { get; set; }
-		private string[] Center_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Clip { get; set; }
-		private bool? Clip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PieSeriesDataLabels DataLabels { get; set; }
-		private PieSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Equivalent to [chart.ignoreHiddenSeries](#chart.ignoreHiddenSeries),this option tells whether the series shall be redrawn as if thehidden point were `null`.The default value changed from `false` to `true` with Highcharts3.0.
-		/// </summary>
-		public bool? IgnoreHiddenPoint { get; set; }
-		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -324,52 +324,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
+		/// </summary>
+		public bool? SkipKeyboardNavigation { get; set; }
+		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If a point is sliced, moved out from the center, how many pixelsshould it be moved?.
 		/// </summary>
 		public double? SlicedOffset { get; set; }
 		private double? SlicedOffset_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the border surrounding each slice. When `null`, theborder takes the same color as the slice fill. This can be usedtogether with a `borderWidth` to fill drawing gaps created by antialiazingartefacts in borderless pies.In styled mode, the border stroke is given in the `.highcharts-point` class.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the `.highcharts-point` class.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A series specific or series type specific color set to use insteadof the global [colors](#colors).
-		/// </summary>
-		public List<string> Colors { get; set; }
-		private List<string> Colors_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The end angle of the pie in degrees where 0 is top and 90 is right.Defaults to `startAngle` plus 360.
-		/// </summary>
-		public double? EndAngle { get; set; }
-		private double? EndAngle_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The size of the inner diameter for the pie. A size greater than 0renders a donut chart. Can be a percentage or pixel value. Percentagesare relative to the pie size. Pixel values are given as integers.Note: in Highcharts < 4.1.2, the percentage was relative to the plotarea, not the pie size.
-		/// </summary>
-		public string InnerSize { get; set; }
-		private string InnerSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The minimum size for a pie in response to auto margins. The pie willtry to shrink to make room for data labels in side the plot area, but only to this size.
-		/// </summary>
-		public double? MinSize { get; set; }
-		private double? MinSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -380,62 +345,97 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The thickness of a 3D pie. Requires `highcharts-3d.js`
+		/// A wrapper object for all the series options in specific states.
 		/// </summary>
-		public double? Depth { get; set; }
-		private double? Depth_DefaultValue { get; set; }
+		public PieSeriesStates States { get; set; }
+		private PieSeriesStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sticky tracking of mouse events. When true, the `mouseOut` eventon a series isn't triggered until the mouse moves over another series,or out of the plot area. When false, the `mouseOut` event on aseries is triggered when the mouse leaves the area around the series'graph or markers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltip willbe hidden when moving the mouse between series. Defaults to true for lineand area type series, but to false for columns, pies etc.
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A configuration object for the tooltip rendering of each single series.Properties are inherited from [tooltip](#tooltip), but only thefollowing properties can be defined on a series level.
+		/// </summary>
+		public PieSeriesTooltip Tooltip { get; set; }
+		private PieSeriesTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
+		/// </summary>
+		public PieSeriesType Type { get; set; }
+		private PieSeriesType Type_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Set the initial visibility of the series.
+		/// </summary>
+		public bool? Visible { get; set; }
+		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Define the visual z index of the series.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Data.Any()) h.Add("data",HashifyList(Data));
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Data.Any()) h.Add("data",HashifyList(Data));
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
+			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
+			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
+			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PieSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (Center != Center_DefaultValue) h.Add("center",Center);
-			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
-			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
-			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
-			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
+			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 
 			return h;

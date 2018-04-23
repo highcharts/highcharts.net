@@ -14,11 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsPieEvents()
 		{
-			CheckboxClick = CheckboxClick_DefaultValue = "";
-			LegendItemClick = LegendItemClick_DefaultValue = "";
 			AfterAnimate = AfterAnimate_DefaultValue = "";
+			CheckboxClick = CheckboxClick_DefaultValue = "";
 			Click = Click_DefaultValue = "";
 			Hide = Hide_DefaultValue = "";
+			LegendItemClick = LegendItemClick_DefaultValue = "";
 			MouseOut = MouseOut_DefaultValue = "";
 			MouseOver = MouseOver_DefaultValue = "";
 			Show = Show_DefaultValue = "";
@@ -27,24 +27,17 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Fires when the checkbox next to the point name in the legend is clicked.One parameter, event, is passed to the function. The state of thecheckbox is found by event.checked. The checked item is found byevent.item. Return false to prevent the default action which is totoggle the select state of the series.
-		/// </summary>
-		public string CheckboxClick { get; set; }
-		private string CheckboxClick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Not applicable to pies, as the legend item is per point. See point.events.
-		/// </summary>
-		public string LegendItemClick { get; set; }
-		private string LegendItemClick_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Fires after the series has finished its initial animation, or incase animation is disabled, immediately as the series is displayed.
 		/// </summary>
 		public string AfterAnimate { get; set; }
 		private string AfterAnimate_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when the checkbox next to the point name in the legend is clicked.One parameter, event, is passed to the function. The state of thecheckbox is found by event.checked. The checked item is found byevent.item. Return false to prevent the default action which is totoggle the select state of the series.
+		/// </summary>
+		public string CheckboxClick { get; set; }
+		private string CheckboxClick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -59,6 +52,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Hide { get; set; }
 		private string Hide_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Not applicable to pies, as the legend item is per point. See point.events.
+		/// </summary>
+		public string LegendItemClick { get; set; }
+		private string LegendItemClick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -86,11 +86,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); Highcharts.AddFunction("PlotOptionsPieEventsCheckboxClick.checkboxClick", CheckboxClick); }  
-			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("PlotOptionsPieEventsLegendItemClick.legendItemClick", LegendItemClick); }  
 			if (AfterAnimate != AfterAnimate_DefaultValue) { h.Add("afterAnimate",AfterAnimate); Highcharts.AddFunction("PlotOptionsPieEventsAfterAnimate.afterAnimate", AfterAnimate); }  
+			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); Highcharts.AddFunction("PlotOptionsPieEventsCheckboxClick.checkboxClick", CheckboxClick); }  
 			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("PlotOptionsPieEventsClick.click", Click); }  
 			if (Hide != Hide_DefaultValue) { h.Add("hide",Hide); Highcharts.AddFunction("PlotOptionsPieEventsHide.hide", Hide); }  
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("PlotOptionsPieEventsLegendItemClick.legendItemClick", LegendItemClick); }  
 			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highcharts.AddFunction("PlotOptionsPieEventsMouseOut.mouseOut", MouseOut); }  
 			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highcharts.AddFunction("PlotOptionsPieEventsMouseOver.mouseOver", MouseOver); }  
 			if (Show != Show_DefaultValue) { h.Add("show",Show); Highcharts.AddFunction("PlotOptionsPieEventsShow.show", Show); }  

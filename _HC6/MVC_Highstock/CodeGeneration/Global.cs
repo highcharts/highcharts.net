@@ -14,29 +14,15 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Global()
 		{
-			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "";
-			UseUTC = UseUTC_DefaultValue = null;
 			Date = Date_DefaultValue = null;
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "";
 			TimezoneOffset = TimezoneOffset_DefaultValue = null;
+			UseUTC = UseUTC_DefaultValue = null;
+			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "";
 			
 		}	
 		
-
-		/// <summary>
-		/// Path to the pattern image required by VML browsers in order todraw radial gradients.
-		/// </summary>
-		public string VMLRadialGradientURL { get; set; }
-		private string VMLRadialGradientURL_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option is deprecated since v6.0.5. Instead, use[time.useUTC](#time.useUTC) that supports individual time settingsper chart.
-		/// </summary>
-		public bool? UseUTC { get; set; }
-		private bool? UseUTC_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// This option is deprecated since v6.0.5. Instead, use[time.Date](#time.Date) that supports individual time settingsper chart.
@@ -64,18 +50,32 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? TimezoneOffset { get; set; }
 		private double? TimezoneOffset_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option is deprecated since v6.0.5. Instead, use[time.useUTC](#time.useUTC) that supports individual time settingsper chart.
+		/// </summary>
+		public bool? UseUTC { get; set; }
+		private bool? UseUTC_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Path to the pattern image required by VML browsers in order todraw radial gradients.
+		/// </summary>
+		public string VMLRadialGradientURL { get; set; }
+		private string VMLRadialGradientURL_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (VMLRadialGradientURL != VMLRadialGradientURL_DefaultValue) h.Add("vMLRadialGradientURL",VMLRadialGradientURL);
-			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
 			if (Date != Date_DefaultValue) h.Add("date",Date);
 			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) h.Add("getTimezoneOffset",GetTimezoneOffset);
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
+			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
+			if (VMLRadialGradientURL != VMLRadialGradientURL_DefaultValue) h.Add("vMLRadialGradientURL",VMLRadialGradientURL);
 			
 
 			return h;

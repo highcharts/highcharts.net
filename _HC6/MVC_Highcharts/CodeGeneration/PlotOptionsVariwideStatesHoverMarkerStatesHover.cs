@@ -16,12 +16,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Enabled = Enabled_DefaultValue = true;
-			RadiusPlus = RadiusPlus_DefaultValue = 2;
-			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
 			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "null";
 			LineWidth = LineWidth_DefaultValue = null;
+			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
 			Radius = Radius_DefaultValue = null;
+			RadiusPlus = RadiusPlus_DefaultValue = 2;
 			
 		}	
 		
@@ -38,20 +38,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The number of pixels to increase the radius of the hoveredpoint.
-		/// </summary>
-		public double? RadiusPlus { get; set; }
-		private double? RadiusPlus_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The additional line width for a hovered point.
-		/// </summary>
-		public double? LineWidthPlus { get; set; }
-		private double? LineWidthPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -76,10 +62,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The additional line width for a hovered point.
+		/// </summary>
+		public double? LineWidthPlus { get; set; }
+		private double? LineWidthPlus_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The radius of the point marker. In hover state, it defaultsto the normal state's radius + 2 as per the [radiusPlus](#plotOptions.series.marker.states.hover.radiusPlus)option.
 		/// </summary>
 		public double? Radius { get; set; }
 		private double? Radius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The number of pixels to increase the radius of the hoveredpoint.
+		/// </summary>
+		public double? RadiusPlus { get; set; }
+		private double? RadiusPlus_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -88,12 +88,12 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (RadiusPlus != RadiusPlus_DefaultValue) h.Add("radiusPlus",RadiusPlus);
-			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (RadiusPlus != RadiusPlus_DefaultValue) h.Add("radiusPlus",RadiusPlus);
 			
 
 			return h;

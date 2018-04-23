@@ -14,17 +14,24 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsGaugeDial()
 		{
+			BackgroundColor = BackgroundColor_DefaultValue = "#000000";
 			BaseLength = BaseLength_DefaultValue = "70%";
 			BaseWidth = BaseWidth_DefaultValue = 3;
+			BorderColor = BorderColor_DefaultValue = "#cccccc";
+			BorderWidth = BorderWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = "80%";
 			RearLength = RearLength_DefaultValue = "10%";
 			TopWidth = TopWidth_DefaultValue = 1;
-			BackgroundColor = BackgroundColor_DefaultValue = "#000000";
-			BorderColor = BorderColor_DefaultValue = "#cccccc";
-			BorderWidth = BorderWidth_DefaultValue = 0;
 			
 		}	
 		
+
+		/// <summary>
+		/// The background or fill color of the gauge's dial.
+		/// </summary>
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The length of the dial's base part, relative to the total radiusor length of the dial.
@@ -38,6 +45,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? BaseWidth { get; set; }
 		private double? BaseWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border color or stroke of the gauge's dial. By default, theborderWidth is 0, so this must be set in addition to a custom bordercolor.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the gauge dial border in pixels.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -59,41 +80,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? TopWidth { get; set; }
 		private double? TopWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The background or fill color of the gauge's dial.
-		/// </summary>
-		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border color or stroke of the gauge's dial. By default, theborderWidth is 0, so this must be set in addition to a custom bordercolor.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the gauge dial border in pixels.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BaseLength != BaseLength_DefaultValue) h.Add("baseLength",BaseLength);
 			if (BaseWidth != BaseWidth_DefaultValue) h.Add("baseWidth",BaseWidth);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (RearLength != RearLength_DefaultValue) h.Add("rearLength",RearLength);
 			if (TopWidth != TopWidth_DefaultValue) h.Add("topWidth",TopWidth);
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			
 
 			return h;

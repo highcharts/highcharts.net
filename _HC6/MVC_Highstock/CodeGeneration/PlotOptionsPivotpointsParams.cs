@@ -14,19 +14,12 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsPivotpointsParams()
 		{
-			Period = Period_DefaultValue = 28;
 			Algorithm = Algorithm_DefaultValue = "standard";
 			Index = Index_DefaultValue = 0;
+			Period = Period_DefaultValue = 28;
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Period { get; set; }
-		private double? Period_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Algorithm used to calculate ressistance and support lines basedon pivot points. Implemented algorithms: `'standard'`,`'fibonacci'` and `'camarilla'`
@@ -40,15 +33,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Period { get; set; }
+		private double? Period_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Period != Period_DefaultValue) h.Add("period",Period);
 			if (Algorithm != Algorithm_DefaultValue) h.Add("algorithm",Algorithm);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (Period != Period_DefaultValue) h.Add("period",Period);
 			
 
 			return h;

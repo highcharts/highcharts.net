@@ -14,18 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsFunnelDataLabels()
 		{
+			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
+			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			Distance = Distance_DefaultValue = 30;
 			Enabled = Enabled_DefaultValue = true;
 			Formatter = Formatter_DefaultValue = "";
-			X = X_DefaultValue = 0;
-			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
-			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
-			Style = Style_DefaultValue = new PlotOptionsFunnelDataLabelsStyle();
 			SoftConnector = SoftConnector_DefaultValue = null;
+			Style = Style_DefaultValue = new PlotOptionsFunnelDataLabelsStyle();
+			X = X_DefaultValue = 0;
 			
 		}	
 		
+
+		/// <summary>
+		/// The color of the line connecting the data label to the pie slice.The default color is the same as the point's color.In styled mode, the connector stroke is given in the`.highcharts-data-label-connector` class.
+		/// </summary>
+		public string ConnectorColor { get; set; }
+		private string ConnectorColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The distance from the data label to the connector.
+		/// </summary>
+		public double? ConnectorPadding { get; set; }
+		private double? ConnectorPadding_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -56,24 +70,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to render the connector as a soft arc or a line with sharpbreak.
 		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the line connecting the data label to the pie slice.The default color is the same as the point's color.In styled mode, the connector stroke is given in the`.highcharts-data-label-connector` class.
-		/// </summary>
-		public string ConnectorColor { get; set; }
-		private string ConnectorColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The distance from the data label to the connector.
-		/// </summary>
-		public double? ConnectorPadding { get; set; }
-		private double? ConnectorPadding_DefaultValue { get; set; }
+		public double? SoftConnector { get; set; }
+		private double? SoftConnector_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -84,25 +84,25 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to render the connector as a soft arc or a line with sharpbreak.
+		/// 
 		/// </summary>
-		public double? SoftConnector { get; set; }
-		private double? SoftConnector_DefaultValue { get; set; }
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
+			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsFunnelDataLabelsFormatter.formatter", Formatter); }  
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
-			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (SoftConnector != SoftConnector_DefaultValue) h.Add("softConnector",SoftConnector);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (X != X_DefaultValue) h.Add("x",X);
 			
 
 			return h;

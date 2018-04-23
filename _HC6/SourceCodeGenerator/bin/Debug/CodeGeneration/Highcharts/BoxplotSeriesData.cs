@@ -14,69 +14,27 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BoxplotSeriesData()
 		{
-			High = High_DefaultValue = null;
-			Low = Low_DefaultValue = null;
-			Median = Median_DefaultValue = null;
-			Q1 = Q1_DefaultValue = null;
-			Q3 = Q3_DefaultValue = null;
-			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new BoxplotSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Drilldown = Drilldown_DefaultValue = "";
+			Events = Events_DefaultValue = new BoxplotSeriesDataEvents();
+			High = High_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
+			Low = Low_DefaultValue = null;
+			Median = Median_DefaultValue = null;
 			Name = Name_DefaultValue = "";
+			Q1 = Q1_DefaultValue = null;
+			Q3 = Q3_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
 			Y = Y_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = new BoxplotSeriesDataEvents();
 			
 		}	
 		
-
-		/// <summary>
-		/// The `high` value for each data point, signifying the highest valuein the sample set. The top whisker is drawn here.
-		/// </summary>
-		public double? High { get; set; }
-		private double? High_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The `low` value for each data point, signifying the lowest valuein the sample set. The bottom whisker is drawn here.
-		/// </summary>
-		public double? Low { get; set; }
-		private double? Low_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The median for each data point. This is drawn as a line through themiddle area of the box.
-		/// </summary>
-		public double? Median { get; set; }
-		private double? Median_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The lower quartile for each data point. This is the bottom of thebox.
-		/// </summary>
-		public double? Q1 { get; set; }
-		private double? Q1_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The higher quartile for each data point. This is the top of the box.
-		/// </summary>
-		public double? Q3 { get; set; }
-		private double? Q3_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -114,6 +72,27 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// </summary>
+		public string Drilldown { get; set; }
+		private string Drilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public BoxplotSeriesDataEvents Events { get; set; }
+		private BoxplotSeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The `high` value for each data point, signifying the highest valuein the sample set. The top whisker is drawn here.
+		/// </summary>
+		public double? High { get; set; }
+		private double? High_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -128,10 +107,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The `low` value for each data point, signifying the lowest valuein the sample set. The bottom whisker is drawn here.
+		/// </summary>
+		public double? Low { get; set; }
+		private double? Low_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The median for each data point. This is drawn as a line through themiddle area of the box.
+		/// </summary>
+		public double? Median { get; set; }
+		private double? Median_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The lower quartile for each data point. This is the bottom of thebox.
+		/// </summary>
+		public double? Q1 { get; set; }
+		private double? Q1_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The higher quartile for each data point. This is the top of the box.
+		/// </summary>
+		public double? Q3 { get; set; }
+		private double? Q3_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -153,37 +160,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public BoxplotSeriesDataEvents Events { get; set; }
-		private BoxplotSeriesDataEvents Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (High != High_DefaultValue) h.Add("high",High);
-			if (Low != Low_DefaultValue) h.Add("low",Low);
-			if (Median != Median_DefaultValue) h.Add("median",Median);
-			if (Q1 != Q1_DefaultValue) h.Add("q1",Q1);
-			if (Q3 != Q3_DefaultValue) h.Add("q3",Q3);
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (High != High_DefaultValue) h.Add("high",High);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
+			if (Low != Low_DefaultValue) h.Add("low",Low);
+			if (Median != Median_DefaultValue) h.Add("median",Median);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Q1 != Q1_DefaultValue) h.Add("q1",Q1);
+			if (Q3 != Q3_DefaultValue) h.Add("q3",Q3);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			
 
 			return h;

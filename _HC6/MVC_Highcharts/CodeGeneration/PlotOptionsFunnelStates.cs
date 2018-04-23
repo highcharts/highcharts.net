@@ -14,32 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsFunnelStates()
 		{
-			Select = Select_DefaultValue = new PlotOptionsFunnelStatesSelect();
 			Hover = Hover_DefaultValue = new PlotOptionsFunnelStatesHover();
+			Select = Select_DefaultValue = new PlotOptionsFunnelStatesSelect();
 			
 		}	
 		
-
-		/// <summary>
-		/// Options for a selected funnel item.
-		/// </summary>
-		public PlotOptionsFunnelStatesSelect Select { get; set; }
-		private PlotOptionsFunnelStatesSelect Select_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsFunnelStatesHover Hover { get; set; }
 		private PlotOptionsFunnelStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for a selected funnel item.
+		/// </summary>
+		public PlotOptionsFunnelStatesSelect Select { get; set; }
+		private PlotOptionsFunnelStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

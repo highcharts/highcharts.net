@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LangAccessibilitySeriesTypeDescriptions()
 		{
-			Boxplot = Boxplot_DefaultValue = "Box plot charts are typically used to display groups of statistical data. Each data point in the chart can have up to 5 values: minimum, lower quartile, median, upper quartile, and maximum.";
 			Arearange = Arearange_DefaultValue = "Arearange charts are line charts displaying a range between a lower and higher value for each point.";
 			Areasplinerange = Areasplinerange_DefaultValue = "These charts are line charts displaying a range between a lower and higher value for each point.";
+			Boxplot = Boxplot_DefaultValue = "Box plot charts are typically used to display groups of statistical data. Each data point in the chart can have up to 5 values: minimum, lower quartile, median, upper quartile, and maximum.";
 			Bubble = Bubble_DefaultValue = "Bubble charts are scatter charts where each data point also has a size value.";
 			Columnrange = Columnrange_DefaultValue = "Columnrange charts are column charts displaying a range between a lower and higher value for each point.";
 			Errorbar = Errorbar_DefaultValue = "Errorbar series are used to display the variability of the data.";
@@ -30,13 +30,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Boxplot { get; set; }
-		private string Boxplot_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public string Arearange { get; set; }
 		private string Arearange_DefaultValue { get; set; }
 		 
@@ -46,6 +39,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Areasplinerange { get; set; }
 		private string Areasplinerange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Boxplot { get; set; }
+		private string Boxplot_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -94,9 +94,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Boxplot != Boxplot_DefaultValue) h.Add("boxplot",Boxplot);
 			if (Arearange != Arearange_DefaultValue) h.Add("arearange",Arearange);
 			if (Areasplinerange != Areasplinerange_DefaultValue) h.Add("areasplinerange",Areasplinerange);
+			if (Boxplot != Boxplot_DefaultValue) h.Add("boxplot",Boxplot);
 			if (Bubble != Bubble_DefaultValue) h.Add("bubble",Bubble);
 			if (Columnrange != Columnrange_DefaultValue) h.Add("columnrange",Columnrange);
 			if (Errorbar != Errorbar_DefaultValue) h.Add("errorbar",Errorbar);

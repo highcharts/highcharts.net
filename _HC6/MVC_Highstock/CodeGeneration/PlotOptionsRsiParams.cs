@@ -14,19 +14,12 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsRsiParams()
 		{
-			Period = Period_DefaultValue = 14;
 			Decimals = Decimals_DefaultValue = 4;
 			Index = Index_DefaultValue = 0;
+			Period = Period_DefaultValue = 14;
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Period { get; set; }
-		private double? Period_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Number of maximum decimals that are used in RSI calculations.
@@ -40,15 +33,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Period { get; set; }
+		private double? Period_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Period != Period_DefaultValue) h.Add("period",Period);
 			if (Decimals != Decimals_DefaultValue) h.Add("decimals",Decimals);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (Period != Period_DefaultValue) h.Add("period",Period);
 			
 
 			return h;

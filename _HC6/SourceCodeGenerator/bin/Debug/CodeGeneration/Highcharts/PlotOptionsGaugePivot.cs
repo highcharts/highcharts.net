@@ -14,26 +14,19 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsGaugePivot()
 		{
-			Radius = Radius_DefaultValue = 5;
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			BackgroundColor = BackgroundColor_DefaultValue = "#000000";
+			BorderColor = BorderColor_DefaultValue = "#cccccc";
+			BorderWidth = BorderWidth_DefaultValue = 0;
+			Radius = Radius_DefaultValue = 5;
 			
 		}	
 		
 
 		/// <summary>
-		/// The pixel radius of the pivot.
+		/// The background color or fill of the pivot.
 		/// </summary>
-		public double? Radius { get; set; }
-		private double? Radius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The border or stroke width of the pivot.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -44,20 +37,27 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The background color or fill of the pivot.
+		/// The border or stroke width of the pivot.
 		/// </summary>
-		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel radius of the pivot.
+		/// </summary>
+		public double? Radius { get; set; }
+		private double? Radius_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			
 
 			return h;

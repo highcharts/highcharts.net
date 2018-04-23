@@ -14,20 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LangAccessibilityAxis()
 		{
-			XAxisDescriptionSingular = XAxisDescriptionSingular_DefaultValue = "The chart has 1 X axis displaying {names[0]}.";
 			XAxisDescriptionPlural = XAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} X axes displaying {#each(names, -1), }and {names[-1]}";
-			YAxisDescriptionSingular = YAxisDescriptionSingular_DefaultValue = "The chart has 1 Y axis displaying {names[0]}.";
+			XAxisDescriptionSingular = XAxisDescriptionSingular_DefaultValue = "The chart has 1 X axis displaying {names[0]}.";
 			YAxisDescriptionPlural = YAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} Y axes displaying {#each(names, -1), }and {names[-1]}";
+			YAxisDescriptionSingular = YAxisDescriptionSingular_DefaultValue = "The chart has 1 Y axis displaying {names[0]}.";
 			
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string XAxisDescriptionSingular { get; set; }
-		private string XAxisDescriptionSingular_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
@@ -39,8 +32,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string YAxisDescriptionSingular { get; set; }
-		private string YAxisDescriptionSingular_DefaultValue { get; set; }
+		public string XAxisDescriptionSingular { get; set; }
+		private string XAxisDescriptionSingular_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -48,16 +41,23 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string YAxisDescriptionPlural { get; set; }
 		private string YAxisDescriptionPlural_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string YAxisDescriptionSingular { get; set; }
+		private string YAxisDescriptionSingular_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (XAxisDescriptionSingular != XAxisDescriptionSingular_DefaultValue) h.Add("xAxisDescriptionSingular",XAxisDescriptionSingular);
 			if (XAxisDescriptionPlural != XAxisDescriptionPlural_DefaultValue) h.Add("xAxisDescriptionPlural",XAxisDescriptionPlural);
-			if (YAxisDescriptionSingular != YAxisDescriptionSingular_DefaultValue) h.Add("yAxisDescriptionSingular",YAxisDescriptionSingular);
+			if (XAxisDescriptionSingular != XAxisDescriptionSingular_DefaultValue) h.Add("xAxisDescriptionSingular",XAxisDescriptionSingular);
 			if (YAxisDescriptionPlural != YAxisDescriptionPlural_DefaultValue) h.Add("yAxisDescriptionPlural",YAxisDescriptionPlural);
+			if (YAxisDescriptionSingular != YAxisDescriptionSingular_DefaultValue) h.Add("yAxisDescriptionSingular",YAxisDescriptionSingular);
 			
 
 			return h;

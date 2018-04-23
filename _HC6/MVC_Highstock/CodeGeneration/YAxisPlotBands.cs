@@ -14,9 +14,6 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public YAxisPlotBands()
 		{
-			InnerRadius = InnerRadius_DefaultValue = "null";
-			OuterRadius = OuterRadius_DefaultValue = "100%";
-			Thickness = Thickness_DefaultValue = 10;
 			BorderColor = BorderColor_DefaultValue = "null";
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
@@ -24,33 +21,15 @@ namespace Highsoft.Web.Mvc.Stocks
 			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
+			InnerRadius = InnerRadius_DefaultValue = "null";
+			Label = Label_DefaultValue = new YAxisPlotBandsLabel();
+			OuterRadius = OuterRadius_DefaultValue = "100%";
+			Thickness = Thickness_DefaultValue = 10;
 			To = To_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = new YAxisPlotBandsLabel();
 			
 		}	
 		
-
-		/// <summary>
-		/// In a gauge chart, this option determines the inner radius of theplot band that stretches along the perimeter. It can be given asa percentage string, like `"100%"`, or as a pixel number, like `100`.By default, the inner radius is controlled by the [thickness](#yAxis.plotBands.thickness) option.
-		/// </summary>
-		public string InnerRadius { get; set; }
-		private string InnerRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// In a gauge chart, this option determines the outer radius of theplot band that stretches along the perimeter. It can be given asa percentage string, like `"100%"`, or as a pixel number, like `100`.
-		/// </summary>
-		public string OuterRadius { get; set; }
-		private string OuterRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// In a gauge chart, this option sets the width of the plot band stretchingalong the perimeter. It can be given as a percentage string, like`"10%"`, or as a pixel number, like `10`. The default value 10 isthe same as the default [tickLength](#yAxis.tickLength), thus makingthe plot band act as a background for the tick markers.
-		/// </summary>
-		public double? Thickness { get; set; }
-		private double? Thickness_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Border color for the plot band. Also requires `borderWidth` to beset.
@@ -102,6 +81,34 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// In a gauge chart, this option determines the inner radius of theplot band that stretches along the perimeter. It can be given asa percentage string, like `"100%"`, or as a pixel number, like `100`.By default, the inner radius is controlled by the [thickness](#yAxis.plotBands.thickness) option.
+		/// </summary>
+		public string InnerRadius { get; set; }
+		private string InnerRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Text labels for the plot bands
+		/// </summary>
+		public YAxisPlotBandsLabel Label { get; set; }
+		private YAxisPlotBandsLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// In a gauge chart, this option determines the outer radius of theplot band that stretches along the perimeter. It can be given asa percentage string, like `"100%"`, or as a pixel number, like `100`.
+		/// </summary>
+		public string OuterRadius { get; set; }
+		private string OuterRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// In a gauge chart, this option sets the width of the plot band stretchingalong the perimeter. It can be given as a percentage string, like`"10%"`, or as a pixel number, like `10`. The default value 10 isthe same as the default [tickLength](#yAxis.tickLength), thus makingthe plot band act as a background for the tick markers.
+		/// </summary>
+		public double? Thickness { get; set; }
+		private double? Thickness_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The end position of the plot band in axis units.
 		/// </summary>
 		public double? To { get; set; }
@@ -113,22 +120,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Text labels for the plot bands
-		/// </summary>
-		public YAxisPlotBandsLabel Label { get; set; }
-		private YAxisPlotBandsLabel Label_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
-			if (OuterRadius != OuterRadius_DefaultValue) h.Add("outerRadius",OuterRadius);
-			if (Thickness != Thickness_DefaultValue) h.Add("thickness",Thickness);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -136,9 +133,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (OuterRadius != OuterRadius_DefaultValue) h.Add("outerRadius",OuterRadius);
+			if (Thickness != Thickness_DefaultValue) h.Add("thickness",Thickness);
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			
 
 			return h;

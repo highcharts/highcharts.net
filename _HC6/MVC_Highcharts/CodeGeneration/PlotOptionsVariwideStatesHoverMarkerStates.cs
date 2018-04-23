@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVariwideStatesHoverMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new PlotOptionsVariwideStatesHoverMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new PlotOptionsVariwideStatesHoverMarkerStatesHover();
+			Normal = Normal_DefaultValue = new PlotOptionsVariwideStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new PlotOptionsVariwideStatesHoverMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public PlotOptionsVariwideStatesHoverMarkerStatesNormal Normal { get; set; }
-		private PlotOptionsVariwideStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public PlotOptionsVariwideStatesHoverMarkerStatesHover Hover { get; set; }
 		private PlotOptionsVariwideStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public PlotOptionsVariwideStatesHoverMarkerStatesNormal Normal { get; set; }
+		private PlotOptionsVariwideStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

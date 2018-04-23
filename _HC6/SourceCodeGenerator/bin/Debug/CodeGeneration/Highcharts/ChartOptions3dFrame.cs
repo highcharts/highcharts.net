@@ -14,38 +14,24 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartOptions3dFrame()
 		{
-			Side = Side_DefaultValue = new ChartOptions3dFrameSide();
-			Visible = Visible_DefaultValue = "default";
-			Size = Size_DefaultValue = 1;
+			Back = Back_DefaultValue = new ChartOptions3dFrameBack();
 			Bottom = Bottom_DefaultValue = new ChartOptions3dFrameBottom();
-			Top = Top_DefaultValue = new ChartOptions3dFrameTop();
+			Front = Front_DefaultValue = new ChartOptions3dFrameFront();
 			Left = Left_DefaultValue = new ChartOptions3dFrameLeft();
 			Right = Right_DefaultValue = new ChartOptions3dFrameRight();
-			Back = Back_DefaultValue = new ChartOptions3dFrameBack();
-			Front = Front_DefaultValue = new ChartOptions3dFrameFront();
+			Side = Side_DefaultValue = new ChartOptions3dFrameSide();
+			Size = Size_DefaultValue = 1;
+			Top = Top_DefaultValue = new ChartOptions3dFrameTop();
+			Visible = Visible_DefaultValue = "default";
 			
 		}	
 		
 
 		/// <summary>
-		/// Note: As of v5.0.12, `frame.left` or `frame.right` should be usedinstead.The side for the frame around a 3D chart.
+		/// The back side of the frame around a 3D chart.
 		/// </summary>
-		public ChartOptions3dFrameSide Side { get; set; }
-		private ChartOptions3dFrameSide Side_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the frames are visible.
-		/// </summary>
-		public string Visible { get; set; }
-		private string Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// General pixel thickness for the frame faces.
-		/// </summary>
-		public double? Size { get; set; }
-		private double? Size_DefaultValue { get; set; }
+		public ChartOptions3dFrameBack Back { get; set; }
+		private ChartOptions3dFrameBack Back_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -56,10 +42,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The top of the frame around a 3D chart.
+		/// The front of the frame around a 3D chart.
 		/// </summary>
-		public ChartOptions3dFrameTop Top { get; set; }
-		private ChartOptions3dFrameTop Top_DefaultValue { get; set; }
+		public ChartOptions3dFrameFront Front { get; set; }
+		private ChartOptions3dFrameFront Front_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -77,32 +63,46 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The back side of the frame around a 3D chart.
+		/// Note: As of v5.0.12, `frame.left` or `frame.right` should be usedinstead.The side for the frame around a 3D chart.
 		/// </summary>
-		public ChartOptions3dFrameBack Back { get; set; }
-		private ChartOptions3dFrameBack Back_DefaultValue { get; set; }
+		public ChartOptions3dFrameSide Side { get; set; }
+		private ChartOptions3dFrameSide Side_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The front of the frame around a 3D chart.
+		/// General pixel thickness for the frame faces.
 		/// </summary>
-		public ChartOptions3dFrameFront Front { get; set; }
-		private ChartOptions3dFrameFront Front_DefaultValue { get; set; }
+		public double? Size { get; set; }
+		private double? Size_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The top of the frame around a 3D chart.
+		/// </summary>
+		public ChartOptions3dFrameTop Top { get; set; }
+		private ChartOptions3dFrameTop Top_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether the frames are visible.
+		/// </summary>
+		public string Visible { get; set; }
+		private string Visible_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Side.IsDirty()) h.Add("side",Side.ToHashtable());
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (Back.IsDirty()) h.Add("back",Back.ToHashtable());
 			if (Bottom.IsDirty()) h.Add("bottom",Bottom.ToHashtable());
-			if (Top.IsDirty()) h.Add("top",Top.ToHashtable());
+			if (Front.IsDirty()) h.Add("front",Front.ToHashtable());
 			if (Left.IsDirty()) h.Add("left",Left.ToHashtable());
 			if (Right.IsDirty()) h.Add("right",Right.ToHashtable());
-			if (Back.IsDirty()) h.Add("back",Back.ToHashtable());
-			if (Front.IsDirty()) h.Add("front",Front.ToHashtable());
+			if (Side.IsDirty()) h.Add("side",Side.ToHashtable());
+			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (Top.IsDirty()) h.Add("top",Top.ToHashtable());
+			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			
 
 			return h;

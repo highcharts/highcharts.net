@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Subtitle()
 		{
-			Text = Text_DefaultValue = "";
 			Align = Align_DefaultValue = SubtitleAlign.Center;
-			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			Floating = Floating_DefaultValue = false;
 			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
+			Text = Text_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = SubtitleVerticalAlign.Top;
+			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
@@ -28,24 +28,10 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The subtitle of the chart.
-		/// </summary>
-		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The horizontal alignment of the subtitle. Can be one of "left", "center" and "right".
 		/// </summary>
 		public SubtitleAlign Align { get; set; }
 		private SubtitleAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Adjustment made to the subtitle width, normally to reserve spacefor the exporting burger menu.
-		/// </summary>
-		public double? WidthAdjust { get; set; }
-		private double? WidthAdjust_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -63,6 +49,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The subtitle of the chart.
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the text.
 		/// </summary>
 		public bool? UseHTML { get; set; }
@@ -74,6 +67,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public SubtitleVerticalAlign VerticalAlign { get; set; }
 		private SubtitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Adjustment made to the subtitle width, normally to reserve spacefor the exporting burger menu.
+		/// </summary>
+		public double? WidthAdjust { get; set; }
+		private double? WidthAdjust_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -94,13 +94,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (WidthAdjust != WidthAdjust_DefaultValue) h.Add("widthAdjust",WidthAdjust);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (WidthAdjust != WidthAdjust_DefaultValue) h.Add("widthAdjust",WidthAdjust);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

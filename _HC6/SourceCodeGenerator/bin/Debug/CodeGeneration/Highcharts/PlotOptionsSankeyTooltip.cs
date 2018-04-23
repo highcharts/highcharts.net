@@ -16,9 +16,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			FollowPointer = FollowPointer_DefaultValue = true;
 			HeaderFormat = HeaderFormat_DefaultValue = "<span class='highcharts-header'>{series.name}</span><br/>";
-			PointFormat = PointFormat_DefaultValue = "{point.fromNode.name} → {point.toNode.name}: <b>{point.weight}</b><br/>";
 			NodeFormat = NodeFormat_DefaultValue = "{point.name}: <b>{point.sum}</b><br/>";
 			NodeFormatter = NodeFormatter_DefaultValue = "";
+			PointFormat = PointFormat_DefaultValue = "{point.fromNode.name} → {point.toNode.name}: <b>{point.weight}</b><br/>";
 			
 		}	
 		
@@ -38,13 +38,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public string PointFormat { get; set; }
-		private string PointFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what toshow for _nodes_ in tooltipof a sankey diagram series, as opposed to links.
 		/// </summary>
 		public string NodeFormat { get; set; }
@@ -56,6 +49,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string NodeFormatter { get; set; }
 		private string NodeFormatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string PointFormat { get; set; }
+		private string PointFormat_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -64,9 +64,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
 			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); Highcharts.AddFunction("PlotOptionsSankeyTooltipNodeFormatter.nodeFormatter", NodeFormatter); }  
+			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			
 
 			return h;

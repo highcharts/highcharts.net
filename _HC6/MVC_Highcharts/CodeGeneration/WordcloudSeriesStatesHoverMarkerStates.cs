@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WordcloudSeriesStatesHoverMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new WordcloudSeriesStatesHoverMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new WordcloudSeriesStatesHoverMarkerStatesHover();
+			Normal = Normal_DefaultValue = new WordcloudSeriesStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new WordcloudSeriesStatesHoverMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public WordcloudSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
-		private WordcloudSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public WordcloudSeriesStatesHoverMarkerStatesHover Hover { get; set; }
 		private WordcloudSeriesStatesHoverMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public WordcloudSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
+		private WordcloudSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

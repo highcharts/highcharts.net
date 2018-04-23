@@ -14,36 +14,22 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Global()
 		{
-			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "";
 			CanvasToolsURL = CanvasToolsURL_DefaultValue = "";
-			UseUTC = UseUTC_DefaultValue = null;
 			Date = Date_DefaultValue = null;
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "";
 			TimezoneOffset = TimezoneOffset_DefaultValue = null;
+			UseUTC = UseUTC_DefaultValue = null;
+			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "";
 			
 		}	
 		
-
-		/// <summary>
-		/// Path to the pattern image required by VML browsers in order todraw radial gradients.
-		/// </summary>
-		public string VMLRadialGradientURL { get; set; }
-		private string VMLRadialGradientURL_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// _Canvg rendering for Android 2.x is removed as of Highcharts 5.0\.Use the [libURL](#exporting.libURL) option to configure exporting._The URL to the additional file to lazy load for Android 2.x devices.These devices don't support SVG, so we download a helper file thatcontains [canvg](http://code.google.com/p/canvg/), its dependencyrbcolor, and our own CanVG Renderer class. To avoid hotlinking toour site, you can install canvas-tools.js on your own server andchange this option accordingly.
 		/// </summary>
 		public string CanvasToolsURL { get; set; }
 		private string CanvasToolsURL_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option is deprecated since v6.0.5. Instead, use[time.useUTC](#time.useUTC) that supports individual time settingsper chart.
-		/// </summary>
-		public bool? UseUTC { get; set; }
-		private bool? UseUTC_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -72,19 +58,33 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? TimezoneOffset { get; set; }
 		private double? TimezoneOffset_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option is deprecated since v6.0.5. Instead, use[time.useUTC](#time.useUTC) that supports individual time settingsper chart.
+		/// </summary>
+		public bool? UseUTC { get; set; }
+		private bool? UseUTC_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Path to the pattern image required by VML browsers in order todraw radial gradients.
+		/// </summary>
+		public string VMLRadialGradientURL { get; set; }
+		private string VMLRadialGradientURL_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (VMLRadialGradientURL != VMLRadialGradientURL_DefaultValue) h.Add("vMLRadialGradientURL",VMLRadialGradientURL);
 			if (CanvasToolsURL != CanvasToolsURL_DefaultValue) h.Add("canvasToolsURL",CanvasToolsURL);
-			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
 			if (Date != Date_DefaultValue) h.Add("date",Date);
 			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) h.Add("getTimezoneOffset",GetTimezoneOffset);
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
+			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
+			if (VMLRadialGradientURL != VMLRadialGradientURL_DefaultValue) h.Add("vMLRadialGradientURL",VMLRadialGradientURL);
 			
 
 			return h;

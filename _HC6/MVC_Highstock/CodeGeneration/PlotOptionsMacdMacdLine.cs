@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsMacdMacdLine()
 		{
-			Zones = Zones_DefaultValue = new PlotOptionsMacdMacdLineZone();
 			Styles = Styles_DefaultValue = new PlotOptionsMacdMacdLineStyles();
+			Zones = Zones_DefaultValue = new PlotOptionsMacdMacdLineZone();
 			
 		}	
 		
@@ -23,23 +23,23 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsMacdMacdLineZone Zones { get; set; }
-		private PlotOptionsMacdMacdLineZone Zones_DefaultValue { get; set; }
+		public PlotOptionsMacdMacdLineStyles Styles { get; set; }
+		private PlotOptionsMacdMacdLineStyles Styles_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsMacdMacdLineStyles Styles { get; set; }
-		private PlotOptionsMacdMacdLineStyles Styles_DefaultValue { get; set; }
+		public PlotOptionsMacdMacdLineZone Zones { get; set; }
+		private PlotOptionsMacdMacdLineZone Zones_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			if (Styles.IsDirty()) h.Add("styles",Styles.ToHashtable());
+			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			
 
 			return h;

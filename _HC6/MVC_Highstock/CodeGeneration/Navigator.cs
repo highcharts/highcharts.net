@@ -14,23 +14,51 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Navigator()
 		{
+			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
+			BaseSeries = BaseSeries_DefaultValue = 0;
+			Enabled = Enabled_DefaultValue = true;
+			Handles = Handles_DefaultValue = new NavigatorHandles();
 			Height = Height_DefaultValue = 40;
 			Margin = Margin_DefaultValue = null;
-			MaskInside = MaskInside_DefaultValue = true;
-			Handles = Handles_DefaultValue = new NavigatorHandles();
 			MaskFill = MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
+			MaskInside = MaskInside_DefaultValue = true;
+			Opposite = Opposite_DefaultValue = false;
 			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
 			OutlineWidth = OutlineWidth_DefaultValue = 2;
 			Series = Series_DefaultValue = new Series();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
-			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
-			BaseSeries = BaseSeries_DefaultValue = 0;
-			Enabled = Enabled_DefaultValue = true;
-			Opposite = Opposite_DefaultValue = false;
 			
 		}	
 		
+
+		/// <summary>
+		/// Whether the navigator and scrollbar should adapt to updated datain the base X axis. When loading data async, as in the demo below,this should be `false`. Otherwise new data will trigger navigatorredraw, which will cause unwanted looping. In the demo below, thedata in the navigator is set only once. On navigating, only the mainchart content is updated.
+		/// </summary>
+		public bool? AdaptToUpdatedData { get; set; }
+		private bool? AdaptToUpdatedData_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An integer identifying the index to use for the base series, or astring representing the id of the series.**Note**: As of Highcharts 5.0, this is now a deprecated option.Prefer [series.showInNavigator](#plotOptions.series.showInNavigator).
+		/// </summary>
+		public double? BaseSeries { get; set; }
+		private double? BaseSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the navigator.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the handles for dragging the zoomed area.
+		/// </summary>
+		public NavigatorHandles Handles { get; set; }
+		private NavigatorHandles Handles_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The height of the navigator.
@@ -47,6 +75,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The color of the mask covering the areas of the navigator seriesthat are currently not visible in the main series. The defaultcolor is bluish with an opacity of 0.3 to see the series below.
+		/// </summary>
+		public string MaskFill { get; set; }
+		private string MaskFill_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether the mask should be inside the range marking the zoomedrange, or outside. In Highstock 1.x it was always `false`.
 		/// </summary>
 		public bool? MaskInside { get; set; }
@@ -54,17 +89,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the handles for dragging the zoomed area.
+		/// When the chart is inverted, whether to draw the navigator on theopposite side.
 		/// </summary>
-		public NavigatorHandles Handles { get; set; }
-		private NavigatorHandles Handles_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the mask covering the areas of the navigator seriesthat are currently not visible in the main series. The defaultcolor is bluish with an opacity of 0.3 to see the series below.
-		/// </summary>
-		public string MaskFill { get; set; }
-		private string MaskFill_DefaultValue { get; set; }
+		public bool? Opposite { get; set; }
+		private bool? Opposite_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -100,54 +128,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string YAxis { get; set; }
 		private string YAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether the navigator and scrollbar should adapt to updated datain the base X axis. When loading data async, as in the demo below,this should be `false`. Otherwise new data will trigger navigatorredraw, which will cause unwanted looping. In the demo below, thedata in the navigator is set only once. On navigating, only the mainchart content is updated.
-		/// </summary>
-		public bool? AdaptToUpdatedData { get; set; }
-		private bool? AdaptToUpdatedData_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An integer identifying the index to use for the base series, or astring representing the id of the series.**Note**: As of Highcharts 5.0, this is now a deprecated option.Prefer [series.showInNavigator](#plotOptions.series.showInNavigator).
-		/// </summary>
-		public double? BaseSeries { get; set; }
-		private double? BaseSeries_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the navigator.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the chart is inverted, whether to draw the navigator on theopposite side.
-		/// </summary>
-		public bool? Opposite { get; set; }
-		private bool? Opposite_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (AdaptToUpdatedData != AdaptToUpdatedData_DefaultValue) h.Add("adaptToUpdatedData",AdaptToUpdatedData);
+			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Handles.IsDirty()) h.Add("handles",Handles.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (MaskInside != MaskInside_DefaultValue) h.Add("maskInside",MaskInside);
-			if (Handles.IsDirty()) h.Add("handles",Handles.ToHashtable());
 			if (MaskFill != MaskFill_DefaultValue) h.Add("maskFill",MaskFill);
+			if (MaskInside != MaskInside_DefaultValue) h.Add("maskInside",MaskInside);
+			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (OutlineColor != OutlineColor_DefaultValue) h.Add("outlineColor",OutlineColor);
 			if (OutlineWidth != OutlineWidth_DefaultValue) h.Add("outlineWidth",OutlineWidth);
 			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			if (AdaptToUpdatedData != AdaptToUpdatedData_DefaultValue) h.Add("adaptToUpdatedData",AdaptToUpdatedData);
-			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			
 
 			return h;

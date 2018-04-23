@@ -14,35 +14,21 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsFlagsStatesHover()
 		{
-			LineColor = LineColor_DefaultValue = "#000000";
-			FillColor = FillColor_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
-			Brightness = Brightness_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "";
+			Brightness = Brightness_DefaultValue = null;
 			Color = Color_DefaultValue = "undefined";
+			Enabled = Enabled_DefaultValue = true;
+			FillColor = FillColor_DefaultValue = null;
+			LineColor = LineColor_DefaultValue = "#000000";
 			
 		}	
 		
 
 		/// <summary>
-		/// The color of the line/border of the flag.
+		/// A specific border color for the hovered point. Defaults toinherit the normal state border color.
 		/// </summary>
-		public string LineColor { get; set; }
-		private string LineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The fill or background color of the flag.
-		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable separate styles for the hovered series to visualize thatthe user hovers either the series itself or the legend. .
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -53,29 +39,43 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A specific border color for the hovered point. Defaults toinherit the normal state border color.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A specific color for the hovered point.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable separate styles for the hovered series to visualize thatthe user hovers either the series itself or the legend. .
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The fill or background color of the flag.
+		/// </summary>
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The color of the line/border of the flag.
+		/// </summary>
+		public string LineColor { get; set; }
+		private string LineColor_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
+			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			
 
 			return h;

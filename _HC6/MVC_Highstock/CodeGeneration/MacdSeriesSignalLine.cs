@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public MacdSeriesSignalLine()
 		{
-			Zones = Zones_DefaultValue = new MacdSeriesSignalLineZone();
 			Styles = Styles_DefaultValue = new MacdSeriesSignalLineStyles();
+			Zones = Zones_DefaultValue = new MacdSeriesSignalLineZone();
 			
 		}	
 		
@@ -23,23 +23,23 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public MacdSeriesSignalLineZone Zones { get; set; }
-		private MacdSeriesSignalLineZone Zones_DefaultValue { get; set; }
+		public MacdSeriesSignalLineStyles Styles { get; set; }
+		private MacdSeriesSignalLineStyles Styles_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public MacdSeriesSignalLineStyles Styles { get; set; }
-		private MacdSeriesSignalLineStyles Styles_DefaultValue { get; set; }
+		public MacdSeriesSignalLineZone Zones { get; set; }
+		private MacdSeriesSignalLineZone Zones_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			if (Styles.IsDirty()) h.Add("styles",Styles.ToHashtable());
+			if (Zones.IsDirty()) h.Add("zones",Zones.ToHashtable());
 			
 
 			return h;

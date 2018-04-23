@@ -14,27 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NoDataPosition()
 		{
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 0;
 			Align = Align_DefaultValue = NoDataPositionAlign.Center;
 			VerticalAlign = VerticalAlign_DefaultValue = NoDataPositionVerticalAlign.Middle;
+			X = X_DefaultValue = 0;
+			Y = Y_DefaultValue = 0;
 			
 		}	
 		
-
-		/// <summary>
-		/// Horizontal offset of the label, in pixels.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Vertical offset of the label, in pixels.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// Horizontal alignment of the label.
@@ -48,16 +34,30 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public NoDataPositionVerticalAlign VerticalAlign { get; set; }
 		private NoDataPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Horizontal offset of the label, in pixels.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Vertical offset of the label, in pixels.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;

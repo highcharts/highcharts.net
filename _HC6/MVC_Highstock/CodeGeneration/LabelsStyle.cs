@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LabelsStyle()
 		{
-			Position = Position_DefaultValue = new Hashtable();
 			Color = Color_DefaultValue = "#333333";
+			Position = Position_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -23,23 +23,23 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public Hashtable Position { get; set; }
+		private Hashtable Position_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Position != Position_DefaultValue) h.Add("position",Position);
 			
 
 			return h;

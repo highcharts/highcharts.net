@@ -14,28 +14,21 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsPsarParams()
 		{
-			InitialAccelerationFactor = InitialAccelerationFactor_DefaultValue = null;
-			MaxAccelerationFactor = MaxAccelerationFactor_DefaultValue = null;
+			Decimals = Decimals_DefaultValue = 4;
 			Increment = Increment_DefaultValue = null;
 			Index = Index_DefaultValue = 2;
-			Decimals = Decimals_DefaultValue = 4;
+			InitialAccelerationFactor = InitialAccelerationFactor_DefaultValue = null;
+			MaxAccelerationFactor = MaxAccelerationFactor_DefaultValue = null;
 			Period = Period_DefaultValue = 14;
 			
 		}	
 		
 
 		/// <summary>
-		/// The initial value for acceleration factor.Acceleration factor is starting with this valueand increases by specified increment each timethe extreme point makes a new high.AF can reach a maximum of maxAccelerationFactor,no matter how long the uptrend extends.
+		/// Number of maximum decimals that are used in PSAR calculations.
 		/// </summary>
-		public double? InitialAccelerationFactor { get; set; }
-		private double? InitialAccelerationFactor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The Maximum value for acceleration factor.AF can reach a maximum of maxAccelerationFactor,no matter how long the uptrend extends.
-		/// </summary>
-		public double? MaxAccelerationFactor { get; set; }
-		private double? MaxAccelerationFactor_DefaultValue { get; set; }
+		public double? Decimals { get; set; }
+		private double? Decimals_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -53,10 +46,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Number of maximum decimals that are used in PSAR calculations.
+		/// The initial value for acceleration factor.Acceleration factor is starting with this valueand increases by specified increment each timethe extreme point makes a new high.AF can reach a maximum of maxAccelerationFactor,no matter how long the uptrend extends.
 		/// </summary>
-		public double? Decimals { get; set; }
-		private double? Decimals_DefaultValue { get; set; }
+		public double? InitialAccelerationFactor { get; set; }
+		private double? InitialAccelerationFactor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Maximum value for acceleration factor.AF can reach a maximum of maxAccelerationFactor,no matter how long the uptrend extends.
+		/// </summary>
+		public double? MaxAccelerationFactor { get; set; }
+		private double? MaxAccelerationFactor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,11 +70,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (InitialAccelerationFactor != InitialAccelerationFactor_DefaultValue) h.Add("initialAccelerationFactor",InitialAccelerationFactor);
-			if (MaxAccelerationFactor != MaxAccelerationFactor_DefaultValue) h.Add("maxAccelerationFactor",MaxAccelerationFactor);
+			if (Decimals != Decimals_DefaultValue) h.Add("decimals",Decimals);
 			if (Increment != Increment_DefaultValue) h.Add("increment",Increment);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (Decimals != Decimals_DefaultValue) h.Add("decimals",Decimals);
+			if (InitialAccelerationFactor != InitialAccelerationFactor_DefaultValue) h.Add("initialAccelerationFactor",InitialAccelerationFactor);
+			if (MaxAccelerationFactor != MaxAccelerationFactor_DefaultValue) h.Add("maxAccelerationFactor",MaxAccelerationFactor);
 			if (Period != Period_DefaultValue) h.Add("period",Period);
 			
 

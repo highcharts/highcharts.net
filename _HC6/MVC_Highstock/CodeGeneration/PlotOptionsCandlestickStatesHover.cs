@@ -14,27 +14,20 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsCandlestickStatesHover()
 		{
-			LineWidth = LineWidth_DefaultValue = 2;
-			Enabled = Enabled_DefaultValue = true;
-			Brightness = Brightness_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "";
+			Brightness = Brightness_DefaultValue = null;
 			Color = Color_DefaultValue = "undefined";
+			Enabled = Enabled_DefaultValue = true;
+			LineWidth = LineWidth_DefaultValue = 2;
 			
 		}	
 		
 
 		/// <summary>
-		/// The pixel width of the line/border around the candlestick.
+		/// A specific border color for the hovered point. Defaults toinherit the normal state border color.
 		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable separate styles for the hovered series to visualize thatthe user hovers either the series itself or the legend. .
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -45,28 +38,35 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A specific border color for the hovered point. Defaults toinherit the normal state border color.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A specific color for the hovered point.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable separate styles for the hovered series to visualize thatthe user hovers either the series itself or the legend. .
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel width of the line/border around the candlestick.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			
 
 			return h;

@@ -18,8 +18,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;
-			GroupPixelWidth = GroupPixelWidth_DefaultValue = 2;
 			GroupAll = GroupAll_DefaultValue = false;
+			GroupPixelWidth = GroupPixelWidth_DefaultValue = 2;
 			Smoothed = Smoothed_DefaultValue = false;
 			
 		}	
@@ -54,17 +54,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The approximate pixel width of each group. If for example a serieswith 30 points is displayed over a 600 pixel wide plot area, no groupingis performed. If however the series contains so many points thatthe spacing is less than the groupPixelWidth, Highcharts will tryto group it into appropriate groups so that each is more or lesstwo pixels wide. If multiple series with different group pixel widthsare drawn on the same x axis, all series will take the greatest width.For example, line series have 2px default group width, while columnseries have 10px. If combined, both the line and the column willhave 10px by default.
-		/// </summary>
-		public double? GroupPixelWidth { get; set; }
-		private double? GroupPixelWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// By default only points within the visible range are grouped. Enabling thisoption will force data grouping to calculate all grouped points for a givendataset. That option prevents for example a column series from calculatinga grouped point partially. The effect is similar to[Series.getExtremesFromAll](#plotOptions.series.getExtremesFromAll) but doesnot affect yAxis extremes.
 		/// </summary>
 		public bool? GroupAll { get; set; }
 		private bool? GroupAll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The approximate pixel width of each group. If for example a serieswith 30 points is displayed over a 600 pixel wide plot area, no groupingis performed. If however the series contains so many points thatthe spacing is less than the groupPixelWidth, Highcharts will tryto group it into appropriate groups so that each is more or lesstwo pixels wide. If multiple series with different group pixel widthsare drawn on the same x axis, all series will take the greatest width.For example, line series have 2px default group width, while columnseries have 10px. If combined, both the line and the column willhave 10px by default.
+		/// </summary>
+		public double? GroupPixelWidth { get; set; }
+		private double? GroupPixelWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -82,8 +82,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Forced != Forced_DefaultValue) h.Add("forced",Forced);
-			if (GroupPixelWidth != GroupPixelWidth_DefaultValue) h.Add("groupPixelWidth",GroupPixelWidth);
 			if (GroupAll != GroupAll_DefaultValue) h.Add("groupAll",GroupAll);
+			if (GroupPixelWidth != GroupPixelWidth_DefaultValue) h.Add("groupPixelWidth",GroupPixelWidth);
 			if (Smoothed != Smoothed_DefaultValue) h.Add("smoothed",Smoothed);
 			
 

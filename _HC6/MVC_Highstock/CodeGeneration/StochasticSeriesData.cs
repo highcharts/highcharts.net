@@ -14,30 +14,23 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public StochasticSeriesData()
 		{
-			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new StochasticSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Drilldown = Drilldown_DefaultValue = "";
+			Events = Events_DefaultValue = new StochasticSeriesDataEvents();
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
+			Marker = Marker_DefaultValue = new StochasticSeriesDataMarker();
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
 			Y = Y_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = new StochasticSeriesDataEvents();
-			Marker = Marker_DefaultValue = new StochasticSeriesDataMarker();
 			
 		}	
 		
-
-		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -75,6 +68,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// </summary>
+		public string Drilldown { get; set; }
+		private string Drilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public StochasticSeriesDataEvents Events { get; set; }
+		private StochasticSeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -86,6 +93,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Labelrank { get; set; }
 		private double? Labelrank_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public StochasticSeriesDataMarker Marker { get; set; }
+		private StochasticSeriesDataMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -114,40 +128,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public StochasticSeriesDataEvents Events { get; set; }
-		private StochasticSeriesDataEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public StochasticSeriesDataMarker Marker { get; set; }
-		private StochasticSeriesDataMarker Marker_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			
 
 			return h;

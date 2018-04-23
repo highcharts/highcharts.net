@@ -14,46 +14,39 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BulletSeriesData()
 		{
-			Target = Target_DefaultValue = null;
-			TargetOptions = TargetOptions_DefaultValue = new BulletSeriesDataTargetOptions();
-			Drilldown = Drilldown_DefaultValue = "";
+			BorderColor = BorderColor_DefaultValue = "undefined";
+			BorderWidth = BorderWidth_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new BulletSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Drilldown = Drilldown_DefaultValue = "";
+			Events = Events_DefaultValue = new BulletSeriesDataEvents();
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
+			Target = Target_DefaultValue = null;
+			TargetOptions = TargetOptions_DefaultValue = new BulletSeriesDataTargetOptions();
 			X = X_DefaultValue = double.MinValue;
 			Y = Y_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = new BulletSeriesDataEvents();
-			BorderColor = BorderColor_DefaultValue = "undefined";
-			BorderWidth = BorderWidth_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// The target value of a point.
+		/// The color of the border surrounding the column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
 		/// </summary>
-		public double? Target { get; set; }
-		private double? Target_DefaultValue { get; set; }
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Individual target options for each point.
+		/// The width of the border surrounding the column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
 		/// </summary>
-		public BulletSeriesDataTargetOptions TargetOptions { get; set; }
-		private BulletSeriesDataTargetOptions TargetOptions_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -92,6 +85,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// </summary>
+		public string Drilldown { get; set; }
+		private string Drilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public BulletSeriesDataEvents Events { get; set; }
+		private BulletSeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -120,6 +127,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The target value of a point.
+		/// </summary>
+		public double? Target { get; set; }
+		private double? Target_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual target options for each point.
+		/// </summary>
+		public BulletSeriesDataTargetOptions TargetOptions { get; set; }
+		private BulletSeriesDataTargetOptions TargetOptions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.
 		/// </summary>
 		public double? X { get; set; }
@@ -131,50 +152,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public BulletSeriesDataEvents Events { get; set; }
-		private BulletSeriesDataEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the border surrounding the column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding the column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Target != Target_DefaultValue) h.Add("target",Target);
-			if (TargetOptions.IsDirty()) h.Add("targetOptions",TargetOptions.ToHashtable());
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (Target != Target_DefaultValue) h.Add("target",Target);
+			if (TargetOptions.IsDirty()) h.Add("targetOptions",TargetOptions.ToHashtable());
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			
 
 			return h;

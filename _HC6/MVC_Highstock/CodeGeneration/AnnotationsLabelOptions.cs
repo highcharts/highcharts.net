@@ -22,19 +22,19 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ClassName = ClassName_DefaultValue = "";
 			Crop = Crop_DefaultValue = false;
+			Distance = Distance_DefaultValue = null;
+			Format = Format_DefaultValue = "undefined";
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = AnnotationsLabelOptionsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new AnnotationsLabelOptionsStyle();
+			Text = Text_DefaultValue = "undefined";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelOptionsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -16;
-			Distance = Distance_DefaultValue = null;
-			Format = Format_DefaultValue = "undefined";
-			Text = Text_DefaultValue = "undefined";
 			
 		}	
 		
@@ -96,6 +96,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The label's pixel distance from the point.
+		/// </summary>
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A [format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) string for the data label.
+		/// </summary>
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Callback JavaScript function to format the annotation's label.Note that if a `format` or `text` are defined, the format or texttake precedence and the formatter is ignored. `This` refers to apoint object.
 		/// </summary>
 		public string Formatter { get; set; }
@@ -138,6 +152,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Alias for the format option.
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the annotation's label.
 		/// </summary>
 		public bool? UseHTML { get; set; }
@@ -163,27 +184,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The label's pixel distance from the point.
-		/// </summary>
-		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A [format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) string for the data label.
-		/// </summary>
-		public string Format { get; set; }
-		private string Format_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Alias for the format option.
-		/// </summary>
-		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -198,19 +198,19 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("AnnotationsLabelOptionsFormatter.formatter", Formatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
 			
 
 			return h;

@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LangAccessibilitySeries()
 		{
-			Summary = Summary_DefaultValue = new LangAccessibilitySeriesSummary();
 			Description = Description_DefaultValue = "{description}";
+			Summary = Summary_DefaultValue = new LangAccessibilitySeriesSummary();
 			XAxisDescription = XAxisDescription_DefaultValue = "X axis, {name}";
 			YAxisDescription = YAxisDescription_DefaultValue = "Y axis, {name}";
 			
@@ -23,17 +23,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Lang configuration for the series main summary. Each seriestype has two modes:    1. This series type is the only series type used in the       chart   2. This is a combination chart with multiple series typesIf a definition does not exist for the specific series typeand mode, the 'default' lang definitions are used.
-		/// </summary>
-		public LangAccessibilitySeriesSummary Summary { get; set; }
-		private LangAccessibilitySeriesSummary Summary_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// User supplied description text. This is added after the mainsummary if present.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Lang configuration for the series main summary. Each seriestype has two modes:    1. This series type is the only series type used in the       chart   2. This is a combination chart with multiple series typesIf a definition does not exist for the specific series typeand mode, the 'default' lang definitions are used.
+		/// </summary>
+		public LangAccessibilitySeriesSummary Summary { get; set; }
+		private LangAccessibilitySeriesSummary Summary_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Summary.IsDirty()) h.Add("summary",Summary.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Summary.IsDirty()) h.Add("summary",Summary.ToHashtable());
 			if (XAxisDescription != XAxisDescription_DefaultValue) h.Add("xAxisDescription",XAxisDescription);
 			if (YAxisDescription != YAxisDescription_DefaultValue) h.Add("yAxisDescription",YAxisDescription);
 			

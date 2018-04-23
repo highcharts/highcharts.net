@@ -14,20 +14,20 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsZigzagParams()
 		{
-			LowIndex = LowIndex_DefaultValue = 2;
-			HighIndex = HighIndex_DefaultValue = 1;
 			Deviation = Deviation_DefaultValue = 1;
+			HighIndex = HighIndex_DefaultValue = 1;
 			Index = Index_DefaultValue = 0;
+			LowIndex = LowIndex_DefaultValue = 2;
 			Period = Period_DefaultValue = 14;
 			
 		}	
 		
 
 		/// <summary>
-		/// The point index which indicator calculations will base - lowvalue.For example using OHLC data, index=2 means the indicator will becalculated using Low values.
+		/// The threshold for the value change.For example deviation=1 means the indicator will ignore all pricemovements less than 1%.
 		/// </summary>
-		public double? LowIndex { get; set; }
-		private double? LowIndex_DefaultValue { get; set; }
+		public double? Deviation { get; set; }
+		private double? Deviation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -38,17 +38,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The threshold for the value change.For example deviation=1 means the indicator will ignore all pricemovements less than 1%.
-		/// </summary>
-		public double? Deviation { get; set; }
-		private double? Deviation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The point index which indicator calculations will base - lowvalue.For example using OHLC data, index=2 means the indicator will becalculated using Low values.
+		/// </summary>
+		public double? LowIndex { get; set; }
+		private double? LowIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -62,10 +62,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (LowIndex != LowIndex_DefaultValue) h.Add("lowIndex",LowIndex);
-			if (HighIndex != HighIndex_DefaultValue) h.Add("highIndex",HighIndex);
 			if (Deviation != Deviation_DefaultValue) h.Add("deviation",Deviation);
+			if (HighIndex != HighIndex_DefaultValue) h.Add("highIndex",HighIndex);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (LowIndex != LowIndex_DefaultValue) h.Add("lowIndex",LowIndex);
 			if (Period != Period_DefaultValue) h.Add("period",Period);
 			
 

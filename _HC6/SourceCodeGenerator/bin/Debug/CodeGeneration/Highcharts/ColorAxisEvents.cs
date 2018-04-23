@@ -14,22 +14,15 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColorAxisEvents()
 		{
-			LegendItemClick = LegendItemClick_DefaultValue = "";
 			AfterBreaks = AfterBreaks_DefaultValue = "";
 			AfterSetExtremes = AfterSetExtremes_DefaultValue = "";
+			LegendItemClick = LegendItemClick_DefaultValue = "";
 			PointBreak = PointBreak_DefaultValue = "";
 			PointInBreak = PointInBreak_DefaultValue = "";
 			SetExtremes = SetExtremes_DefaultValue = "";
 			
 		}	
 		
-
-		/// <summary>
-		/// Fires when the legend item belonging to the colorAxis is clicked.One parameter, `event`, is passed to the function.
-		/// </summary>
-		public string LegendItemClick { get; set; }
-		private string LegendItemClick_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An event fired after the breaks have rendered.
@@ -43,6 +36,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string AfterSetExtremes { get; set; }
 		private string AfterSetExtremes_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when the legend item belonging to the colorAxis is clicked.One parameter, `event`, is passed to the function.
+		/// </summary>
+		public string LegendItemClick { get; set; }
+		private string LegendItemClick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,9 +70,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("ColorAxisEventsLegendItemClick.legendItemClick", LegendItemClick); }  
 			if (AfterBreaks != AfterBreaks_DefaultValue) { h.Add("afterBreaks",AfterBreaks); Highcharts.AddFunction("ColorAxisEventsAfterBreaks.afterBreaks", AfterBreaks); }  
 			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); Highcharts.AddFunction("ColorAxisEventsAfterSetExtremes.afterSetExtremes", AfterSetExtremes); }  
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("ColorAxisEventsLegendItemClick.legendItemClick", LegendItemClick); }  
 			if (PointBreak != PointBreak_DefaultValue) { h.Add("pointBreak",PointBreak); Highcharts.AddFunction("ColorAxisEventsPointBreak.pointBreak", PointBreak); }  
 			if (PointInBreak != PointInBreak_DefaultValue) { h.Add("pointInBreak",PointInBreak); Highcharts.AddFunction("ColorAxisEventsPointInBreak.pointInBreak", PointInBreak); }  
 			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); Highcharts.AddFunction("ColorAxisEventsSetExtremes.setExtremes", SetExtremes); }  

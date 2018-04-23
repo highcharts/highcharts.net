@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBellcurveMarkerStates()
 		{
-			Normal = Normal_DefaultValue = new PlotOptionsBellcurveMarkerStatesNormal();
 			Hover = Hover_DefaultValue = new PlotOptionsBellcurveMarkerStatesHover();
+			Normal = Normal_DefaultValue = new PlotOptionsBellcurveMarkerStatesNormal();
 			Select = Select_DefaultValue = new PlotOptionsBellcurveMarkerStatesSelect();
 			
 		}	
 		
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
-		/// </summary>
-		public PlotOptionsBellcurveMarkerStatesNormal Normal { get; set; }
-		private PlotOptionsBellcurveMarkerStatesNormal Normal_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
 		public PlotOptionsBellcurveMarkerStatesHover Hover { get; set; }
 		private PlotOptionsBellcurveMarkerStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// </summary>
+		public PlotOptionsBellcurveMarkerStatesNormal Normal { get; set; }
+		private PlotOptionsBellcurveMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

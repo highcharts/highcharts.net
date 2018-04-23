@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		public YAxisResize()
 		{
 			ControlledAxis = ControlledAxis_DefaultValue = new YAxisResizeControlledAxis();
-			Enabled = Enabled_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = "ns-resize";
+			Enabled = Enabled_DefaultValue = false;
 			LineColor = LineColor_DefaultValue = "#cccccc";
 			LineDashStyle = LineDashStyle_DefaultValue = "Solid";
 			LineWidth = LineWidth_DefaultValue = 4;
@@ -34,17 +34,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable or disable resize by drag for the axis.This feature requires the `drag-panes.js` module.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Cursor style for the control line.In styled mode use class `highcharts-axis-resizer` instead.This feature requires the `drag-panes.js` module.
 		/// </summary>
 		public string Cursor { get; set; }
 		private string Cursor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable resize by drag for the axis.This feature requires the `drag-panes.js` module.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -87,8 +87,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (ControlledAxis.IsDirty()) h.Add("controlledAxis",ControlledAxis.ToHashtable());
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineDashStyle != LineDashStyle_DefaultValue) h.Add("lineDashStyle",LineDashStyle);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

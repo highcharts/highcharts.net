@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsTreemapDrillUpButtonPosition()
 		{
 			Align = Align_DefaultValue = PlotOptionsTreemapDrillUpButtonPositionAlign.Right;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsTreemapDrillUpButtonPositionVerticalAlign.Top;
 			X = X_DefaultValue = -10;
 			Y = Y_DefaultValue = 10;
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsTreemapDrillUpButtonPositionVerticalAlign.Top;
 			
 		}	
 		
@@ -27,6 +27,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsTreemapDrillUpButtonPositionAlign Align { get; set; }
 		private PlotOptionsTreemapDrillUpButtonPositionAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Vertical alignment of the button.
+		/// </summary>
+		public PlotOptionsTreemapDrillUpButtonPositionVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsTreemapDrillUpButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -41,13 +48,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Vertical alignment of the button.
-		/// </summary>
-		public PlotOptionsTreemapDrillUpButtonPositionVerticalAlign VerticalAlign { get; set; }
-		private PlotOptionsTreemapDrillUpButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -55,9 +55,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			
 
 			return h;

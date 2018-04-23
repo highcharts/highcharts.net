@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Title()
 		{
-			Text = Text_DefaultValue = "Chart title";
 			Align = Align_DefaultValue = TitleAlign.Center;
-			Margin = Margin_DefaultValue = null;
-			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			Floating = Floating_DefaultValue = false;
+			Margin = Margin_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
+			Text = Text_DefaultValue = "Chart title";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Top;
+			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
@@ -29,31 +29,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The title of the chart. To disable the title, set the `text` to`null`.
-		/// </summary>
-		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The horizontal alignment of the title. Can be one of "left", "center"and "right".
 		/// </summary>
 		public TitleAlign Align { get; set; }
 		private TitleAlign Align_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The margin between the title and the plot area, or if a subtitleis present, the margin between the subtitle and the plot area.
-		/// </summary>
-		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Adjustment made to the title width, normally to reserve space forthe exporting burger menu.
-		/// </summary>
-		public double? WidthAdjust { get; set; }
-		private double? WidthAdjust_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -64,10 +43,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The margin between the title and the plot area, or if a subtitleis present, the margin between the subtitle and the plot area.
+		/// </summary>
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// CSS styles for the title. Use this for font styling, but use `align`,`x` and `y` for text alignment.In styled mode, the title style is given in the `.highcharts-title` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The title of the chart. To disable the title, set the `text` to`null`.
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -82,6 +75,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public TitleVerticalAlign VerticalAlign { get; set; }
 		private TitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Adjustment made to the title width, normally to reserve space forthe exporting burger menu.
+		/// </summary>
+		public double? WidthAdjust { get; set; }
+		private double? WidthAdjust_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -102,14 +102,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (WidthAdjust != WidthAdjust_DefaultValue) h.Add("widthAdjust",WidthAdjust);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
+			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (WidthAdjust != WidthAdjust_DefaultValue) h.Add("widthAdjust",WidthAdjust);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

@@ -14,46 +14,25 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public XrangeSeriesData()
 		{
-			X2 = X2_DefaultValue = null;
-			PartialFill = PartialFill_DefaultValue = new XrangeSeriesDataPartialFill();
-			Drilldown = Drilldown_DefaultValue = "";
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "undefined";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new XrangeSeriesDataLabels();
 			Description = Description_DefaultValue = "undefined";
+			Drilldown = Drilldown_DefaultValue = "";
+			Events = Events_DefaultValue = new XrangeSeriesDataEvents();
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
+			Marker = Marker_DefaultValue = new XrangeSeriesDataMarker();
 			Name = Name_DefaultValue = "";
+			PartialFill = PartialFill_DefaultValue = new XrangeSeriesDataPartialFill();
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
+			X2 = X2_DefaultValue = null;
 			Y = Y_DefaultValue = double.MinValue;
-			Events = Events_DefaultValue = new XrangeSeriesDataEvents();
-			Marker = Marker_DefaultValue = new XrangeSeriesDataMarker();
 			
 		}	
 		
-
-		/// <summary>
-		/// The ending X value of the range point.
-		/// </summary>
-		public double? X2 { get; set; }
-		private double? X2_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A partial fill for each point, typically used to visualize how much ofa task is performed. The partial fill object can be set either on seriesor point level.
-		/// </summary>
-		public XrangeSeriesDataPartialFill PartialFill { get; set; }
-		private XrangeSeriesDataPartialFill PartialFill_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -91,6 +70,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// </summary>
+		public string Drilldown { get; set; }
+		private string Drilldown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public XrangeSeriesDataEvents Events { get; set; }
+		private XrangeSeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -105,10 +98,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public XrangeSeriesDataMarker Marker { get; set; }
+		private XrangeSeriesDataMarker Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A partial fill for each point, typically used to visualize how much ofa task is performed. The partial fill object can be set either on seriesor point level.
+		/// </summary>
+		public XrangeSeriesDataPartialFill PartialFill { get; set; }
+		private XrangeSeriesDataPartialFill PartialFill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -126,46 +133,39 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The ending X value of the range point.
+		/// </summary>
+		public double? X2 { get; set; }
+		private double? X2_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The y value of the point.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual point events
-		/// </summary>
-		public XrangeSeriesDataEvents Events { get; set; }
-		private XrangeSeriesDataEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public XrangeSeriesDataMarker Marker { get; set; }
-		private XrangeSeriesDataMarker Marker_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (X2 != X2_DefaultValue) h.Add("x2",X2);
-			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
+			if (X2 != X2_DefaultValue) h.Add("x2",X2);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			
 
 			return h;

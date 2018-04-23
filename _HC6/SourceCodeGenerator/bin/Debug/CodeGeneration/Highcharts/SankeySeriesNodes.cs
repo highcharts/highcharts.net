@@ -14,22 +14,15 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesNodes()
 		{
-			Id = Id_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Column = Column_DefaultValue = null;
+			Id = Id_DefaultValue = "";
 			Name = Name_DefaultValue = "";
 			Offset = Offset_DefaultValue = 0;
 			
 		}	
 		
-
-		/// <summary>
-		/// The id of the auto-generated node, refering to the `from` or `to` setting ofthe link.
-		/// </summary>
-		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// The color of the auto generated node.
@@ -53,6 +46,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The id of the auto-generated node, refering to the `from` or `to` setting ofthe link.
+		/// </summary>
+		public string Id { get; set; }
+		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The name to display for the node in data labels and tooltips. Use this whenthe name is different from the `id`. Where the id must be unique for eachnode, this is not necessary for the name.
 		/// </summary>
 		public string Name { get; set; }
@@ -70,10 +70,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Column != Column_DefaultValue) h.Add("column",Column);
+			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			

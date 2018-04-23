@@ -14,25 +14,25 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSeriesDataLabelsFilter()
 		{
-			Property = Property_DefaultValue = "";
 			Operator = Operator_DefaultValue = "";
+			Property = Property_DefaultValue = "";
 			Value = Value_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// The point property to filter by. Point options are passed directly toproperties, additionally there are `y` value, `percentage` and otherslisted under [Point](https://api.highcharts.com/class-reference/Highcharts.Point)members.
-		/// </summary>
-		public string Property { get; set; }
-		private string Property_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The operator to compare by. Can be one of `>`, `<`, `>=`, `<=`, `==`,and `===`.
 		/// </summary>
 		public string Operator { get; set; }
 		private string Operator_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The point property to filter by. Point options are passed directly toproperties, additionally there are `y` value, `percentage` and otherslisted under [Point](https://api.highcharts.com/class-reference/Highcharts.Point)members.
+		/// </summary>
+		public string Property { get; set; }
+		private string Property_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Property != Property_DefaultValue) h.Add("property",Property);
 			if (Operator != Operator_DefaultValue) h.Add("operator",Operator);
+			if (Property != Property_DefaultValue) h.Add("property",Property);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			
 

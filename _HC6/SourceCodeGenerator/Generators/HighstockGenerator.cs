@@ -824,7 +824,7 @@ public class HighstockGenerator
             clones.Add(clone);
         }
 
-        return clones;
+        return clones.OrderBy(p => p.Title).ToList();
     }
 
     private void InitEnumMappings()

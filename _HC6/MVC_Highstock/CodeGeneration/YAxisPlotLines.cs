@@ -19,10 +19,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			DashStyle = DashStyle_DefaultValue = YAxisPlotLinesDashStyle.Solid;
 			Events = Events_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
+			Label = Label_DefaultValue = new YAxisPlotLinesLabel();
 			Value = Value_DefaultValue = null;
 			Width = Width_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
-			Label = Label_DefaultValue = new YAxisPlotLinesLabel();
 			
 		}	
 		
@@ -63,6 +63,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Text labels for the plot bands
+		/// </summary>
+		public YAxisPlotLinesLabel Label { get; set; }
+		private YAxisPlotLinesLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The position of the line in axis units.
 		/// </summary>
 		public double? Value { get; set; }
@@ -81,13 +88,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Text labels for the plot bands
-		/// </summary>
-		public YAxisPlotLinesLabel Label { get; set; }
-		private YAxisPlotLinesLabel Label_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -99,10 +99,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			
 
 			return h;

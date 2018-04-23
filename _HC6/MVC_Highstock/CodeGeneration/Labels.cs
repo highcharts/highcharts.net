@@ -14,32 +14,32 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Labels()
 		{
-			Style = Style_DefaultValue = new LabelsStyle();
 			Items = Items_DefaultValue = new List<LabelsItems>();
+			Style = Style_DefaultValue = new LabelsStyle();
 			
 		}	
 		
-
-		/// <summary>
-		/// Shared CSS styles for all labels.
-		/// </summary>
-		public LabelsStyle Style { get; set; }
-		private LabelsStyle Style_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// A HTML label that can be positioned anywhere in the chart area.
 		/// </summary>
 		public List<LabelsItems> Items { get; set; }
 		private List<LabelsItems> Items_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Shared CSS styles for all labels.
+		/// </summary>
+		public LabelsStyle Style { get; set; }
+		private LabelsStyle Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Items != Items_DefaultValue) h.Add("items", HashifyList(Items));
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			
 
 			return h;
