@@ -41,6 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
 			Breaks = Breaks_DefaultValue = new NavigatorXAxisBreaks();
+			Categories = Categories_DefaultValue = new List<string>();
 			Ceiling = Ceiling_DefaultValue = null;
 			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = new NavigatorXAxisEvents();
@@ -262,6 +263,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public NavigatorXAxisBreaks Breaks { get; set; }
 		private NavigatorXAxisBreaks Breaks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If categories are present for the xAxis, names are used instead ofnumbers for that axis. Since Highcharts 3.0, categories can alsobe extracted by giving each point a [name](#series.data) and settingaxis [type](#xAxis.type) to `category`. However, if you have multipleseries, best practice remains defining the `categories` array.Example:<pre>categories: ['Apples', 'Bananas', 'Oranges']</pre>
+		/// </summary>
+		public List<string> Categories { get; set; }
+		private List<string> Categories_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -505,6 +513,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
 			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
+			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());

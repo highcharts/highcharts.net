@@ -238,6 +238,9 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("data.enablePolling", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
             ItemsToUpdate.Add("plotOptions.macd.signalLine.zones", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.zones" } });
             ItemsToUpdate.Add("plotOptions.macd.macdLine.zones", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.zones" } });
+
+            ItemsToUpdateProducts.Add("xAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
+            ItemsToUpdateProducts.Add("yAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
         }
     }
 

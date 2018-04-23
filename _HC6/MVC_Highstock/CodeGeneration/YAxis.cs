@@ -55,6 +55,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
 			Breaks = Breaks_DefaultValue = new YAxisBreaks();
+			Categories = Categories_DefaultValue = new List<string>();
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new YAxisCrosshair();
@@ -376,6 +377,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// If categories are present for the xAxis, names are used instead ofnumbers for that axis. Since Highcharts 3.0, categories can alsobe extracted by giving each point a [name](#series.data) and settingaxis [type](#xAxis.type) to `category`. However, if you have multipleseries, best practice remains defining the `categories` array.Example:<pre>categories: ['Apples', 'Bananas', 'Oranges']</pre>
+		/// </summary>
+		public List<string> Categories { get; set; }
+		private List<string> Categories_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The highest allowed value for automatically computed axis extremes.
 		/// </summary>
 		public double? Ceiling { get; set; }
@@ -623,6 +631,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
 			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
+			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
