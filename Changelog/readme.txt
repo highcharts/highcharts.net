@@ -1,3 +1,19 @@
+Updates in JS libraries affects the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+
+# Version 6.1.0
+
+Fixes:
+- PlotOptionsFunnelDataLabelsStyle
+- Data.EnablePolling
+
+Add:
+- MacdSeriesMacdLineZone
+- MacdSeriesSignalLineZone
+- PlotOptionsMacdMacdLineZone
+- PlotOptionsMacdSignalLineZone
+- Categories to XAxis and YAxis for Highstock
+
+
 # Version 6.0.7
 
 New classes:
