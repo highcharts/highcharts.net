@@ -30,9 +30,9 @@ namespace DailyScheduler
 
             for (int i = 0; i < 3; i++)
                 if (tabVersion[i] != tabLastNuspecVersion[i])
-                    return string.Join(".",tabVersion, 0, 3) + ".1";
+                    return string.Join(".",tabVersion, 0, 3);
 
-            var revision = Convert.ToInt64(tabLastNuspecVersion[3]);
+            var revision = Convert.ToInt64(tabLastNuspecVersion.Length == 4 ? tabLastNuspecVersion[3] : "0");
 
             return string.Join(".", tabLastNuspecVersion, 0, 3) + "." + (revision + 1);
         }
