@@ -24,6 +24,7 @@ public class ApiItem
     public string Since { get; set; }
     public IList<ApiItem> Children { get; set; }
     public ApiItem Parent { get; set; }
+    public string Suffix { get; set; }
 
     public ApiItem()
     {
@@ -120,6 +121,7 @@ public class ApiItem
         item.Extends = new List<string>(Extends.Select(p => string.Copy(p)));
         item.Exclude = new List<string>(Exclude.Select(p => string.Copy(p)));
         item.Since = string.IsNullOrWhiteSpace(Since) ? null : string.Copy(Since);
+        item.Suffix = string.IsNullOrWhiteSpace(Suffix) ? null : string.Copy(Suffix);
 
         Children.ToList().ForEach(p => item.Children.Add(p.Clone()));
 

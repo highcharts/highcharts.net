@@ -35,8 +35,9 @@ public class HighchartsGenerator
 
     IJsonParser JsonParser { get; set; }
     IFileService FileService { get; set; }
+    IMultiplicationService MultiplicationService { get; set; }
 
-    public HighchartsGenerator(IJsonParser jsonParser, IFileService fileService)
+    public HighchartsGenerator(IJsonParser jsonParser, IFileService fileService, IMultiplicationService multiplicationService)
     {
         _apiItems = new List<ApiItem>();
         _typeMappings = new Hashtable();
@@ -50,6 +51,7 @@ public class HighchartsGenerator
 
         JsonParser = jsonParser;
         FileService = fileService;
+        MultiplicationService = multiplicationService;
 
         InitTypeMappings();
         InitPropertyTypeMappings();
@@ -66,6 +68,7 @@ public class HighchartsGenerator
         FileService.PrepareFolder(ROOT_CLASS);
         _apiItems = JsonParser.Get();
         ProcessApiItems(_apiItems);
+        MultiplyObjects(_apiItems);
 
         var root = new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS };
         GenerateClass(root, GetChildren(root));
@@ -74,20 +77,8 @@ public class HighchartsGenerator
 
     private void ProcessApiItems(IList<ApiItem> items)
     {
-        //AppendMissingApiItems();
-
-        string multitypeslist = "";
-
         foreach (ApiItem apiItem in items)
         {
-            //if (apiItem.ReturnType != null && apiItem.ReturnType.Contains("|"))
-            //    multitypeslist += System.Environment.NewLine+apiItem.FullName+" : "+apiItem.ReturnType;
-
-            //if (apiItem.FullName.ToLower().Contains("chart") && apiItem.FullName.ToLower().Contains("width"))
-            //if(apiItem.FullName.ToLower().Contains("pointplacement"))
-            if (apiItem.Values != null && apiItem.Values.Count > 1)
-                multitypeslist += System.Environment.NewLine + apiItem.FullName + " : " + apiItem.ReturnType;
-
             // All events (javascript functions) should default to empty string
             if (apiItem.ReturnType != null && (apiItem.ReturnType.ToLower() == "function" || apiItem.ReturnType.ToLower() == "string|function"))
                 apiItem.Defaults = "";
@@ -145,6 +136,20 @@ public class HighchartsGenerator
 
             if (apiItem.Children.Any())
                 ProcessApiItems(apiItem.Children);
+        }
+    }
+
+    private void MultiplyObjects(IList<ApiItem> items)
+    {
+        for(int i=0; i<items.Count; i++)
+        {
+            var clones = MultiplicationService.MultiplyObject(items[i]);
+
+            if(clones.Any())
+                items = items.Concat(clones).ToList();
+
+            if (items[i].Children.Any())
+                MultiplyObjects(items[i].Children);
         }
     }
 
@@ -526,6 +531,8 @@ public class HighchartsGenerator
         //if (string.IsNullOrWhiteSpace(result))
         //    throw new Exception("empty series mapping result");
 
+        result = result + item.Suffix;
+
         return FirstCharToUpper(result);
     }
 
@@ -773,7 +780,11 @@ public class HighchartsGenerator
             clone.Parent = item;
             clone.FullName = item.FullName + "." + child.Title;
 
-            clones.Add(clone);
+            var multipliedClones = MultiplicationService.MultiplyObject(clone);
+            if (multipliedClones.Any())
+                clones.AddRange(multipliedClones);
+            else
+                clones.Add(clone);
         }
 
         return clones.OrderBy(p => p.Title).ToList();

@@ -16,19 +16,20 @@ namespace SourceCodeGenerator
             FilterService filterService = new FilterService();
             JsonUpdateService updateService = new JsonUpdateService();
             TypeService typeService = new TypeService();
+            MultiplicationService multiplicationService = new MultiplicationService();
 
             try
             {
 
                 JsonParser jsonParserHc = new JsonParser("highcharts", fileService, filterService, updateService, typeService);
-                HighchartsGenerator hcg = new HighchartsGenerator(jsonParserHc, fileService);
+                HighchartsGenerator hcg = new HighchartsGenerator(jsonParserHc, fileService, multiplicationService);
                 hcg.GenerateCode();
                 Console.WriteLine("Highcharts.NET has been generated.");
 
-                JsonParser jsonParserHs = new JsonParser("highstock", fileService, filterService, updateService, typeService);
-                HighstockGenerator hsg = new HighstockGenerator(jsonParserHs, fileService);
-                hsg.GenerateCode();
-                Console.WriteLine("Highstock.NET has been generated.");
+                //JsonParser jsonParserHs = new JsonParser("highstock", fileService, filterService, updateService, typeService);
+                //HighstockGenerator hsg = new HighstockGenerator(jsonParserHs, fileService);
+                //hsg.GenerateCode();
+                //Console.WriteLine("Highstock.NET has been generated.");
             }
             catch(Exception ex)
             {
