@@ -38,6 +38,9 @@ namespace SourceCodeGenerator.Services
                 else
                     clone.Suffix = string.Empty;
 
+                if (clone.Children.Any())
+                    clone.Children.Clear();
+
                 clonedObjects.Add(clone);
                 counter++;
             }
@@ -53,6 +56,9 @@ namespace SourceCodeGenerator.Services
                 else
                     clone.Suffix = string.Empty;
 
+                if (clone.Children.Any())
+                    clone.Children.Clear();
+
                 clonedObjects.Add(clone);
                 counter++;
             }
@@ -67,6 +73,10 @@ namespace SourceCodeGenerator.Services
                     clone.Suffix = "Bool";
                 else
                     clone.Suffix = string.Empty;
+
+                if (clone.Children.Any())
+                    clone.Children.Clear();
+
                 clonedObjects.Add(clone);
                 counter++;
             }

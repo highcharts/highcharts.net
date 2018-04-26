@@ -635,23 +635,23 @@ public class HighchartsGenerator
         if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
         {
             if (child.FullName == "Data" && child.ParentFullName.ToLower().Contains("highcharts"))
-                return String.Format(complexPropertyFormat, child.FullName, FirstCharToLower(child.FullName));
+                return String.Format(complexPropertyFormat, child.FullName, GetJSName(propertyName, child.Suffix));
 
             if (child.FullName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
 
             if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && child.ParentFullName != "Highcharts")
-                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             if (child.Title == "colors")
-                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
-            return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+            return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
         if (_lists.Contains(propertyName))
         {
             if (propertyName == "Data" && child.ParentFullName.ToLower().Contains("highcharts"))
-                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+                return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             if (propertyName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
@@ -659,31 +659,31 @@ public class HighchartsGenerator
             if (propertyName == "Stops")
                 return "if (Stops.Any()) h.Add(\"stops\", GetLists(Stops));\n\t\t\t";
 
-            return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+            return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
         if (_propertyTypeMappings.Contains(child.Title) || _propertyTypeMappings.Contains(child.FullName))
         {
             if (child.FullName == "plotOptions.series")
-                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+                return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             if (child.Title.ToLower() == "series" && child.ParentFullName == "Highcharts")
-                return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+                return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             if (propertyName.ToLower().Contains("pointplacement"))
                 return "if (PointPlacement.IsDirty())\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToJSON());\n\t\t\t";
 
-            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
         // property that needs custom serialization (Animation, Shadow, etc)
         if (_customProperties.Contains(propertyName))
         {
 
 
-            return String.Format(customPropertyFormat, propertyName, FirstCharToLower(propertyName));
+            return String.Format(customPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
         }
         // Enum
         if (child.Values != null && child.Values.Count > 0)
-            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName), ROOT_CLASS);
+            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), ROOT_CLASS);
         // Complex object with nested objects / properties
         if (child.IsParent)
         {
@@ -691,14 +691,14 @@ public class HighchartsGenerator
                 return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
 
             if (child.ReturnType == "Array" && child.Title == "zones")
-                return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+                return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             if (child.Children.Any() || child.Extends.Any() || child.ReturnType == "Object")
-                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+                return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             // Event (javascript function)
             if (child.ReturnType != null && (child.ReturnType.ToLower() == "function" || child.ReturnType.ToLower() == "string|function"))
-                return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName), ROOT_CLASS);
+                return String.Format(functionPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + GetJSName(propertyName, child.Suffix), ROOT_CLASS);
             // Just a property
             else
             {
@@ -706,13 +706,13 @@ public class HighchartsGenerator
                     return "if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)\n\t\t\t{\n\t\t\t\tif (PointDescriptionThreshold != null)\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", PointDescriptionThreshold);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", false);\n\t\t\t}\n\t\t\t";
 
                 if (propertyName == "Shadow")
-                    return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+                    return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
-                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
             }
         }
         else
-            return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+            return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
     }
 
     private void GenerateClassesForLevel(IList<ApiItem> items, int level = 0)
@@ -1094,6 +1094,14 @@ public class HighchartsGenerator
             throw new ArgumentException("String is empty");
 
         return input.First().ToString().ToLower() + input.Substring(1);
+    }
+
+    private static string GetJSName(string name, string suffix)
+    {
+        if (string.IsNullOrEmpty(suffix))
+            return FirstCharToLower(name);
+        
+        return FirstCharToLower(name.Replace(suffix, ""));
     }
 
 
