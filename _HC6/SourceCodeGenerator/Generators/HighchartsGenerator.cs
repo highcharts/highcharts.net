@@ -143,6 +143,9 @@ public class HighchartsGenerator
     {
         for(int i=0; i<items.Count; i++)
         {
+            if (items[i].FullName.Contains("pointPlacement"))
+                continue;
+
             var clones = MultiplicationService.MultiplyObject(items[i]);
 
             if(clones.Any())
@@ -577,20 +580,22 @@ public class HighchartsGenerator
     private string GetPropertyReturnType(ApiItem child, string propertyName)
     {
         string returnType = child.ReturnType;
+        var nameAndSuffix = FirstCharToLower(GetPropertyName(child));
 
         if (propertyName.ToLower() == "data" && child.ParentFullName != null)
             return "List<" + GetClassNameFromItem(child) + ">";
 
-        if (child.ParentFullName != ROOT_CLASS && (child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis"))
+        if (child.ParentFullName != ROOT_CLASS && (nameAndSuffix.ToLower() == "xaxis" || nameAndSuffix.ToLower() == "yaxis"))
             return "string";
 
-        if (child.Title.ToLower().EndsWith("style") && child.Children.Any())
+        if (nameAndSuffix.ToLower().EndsWith("style") && child.Children.Any())
             return GetClassNameFromItem(child);
 
+        
         if (_propertyTypeMappings[child.FullName] != null)
             return _propertyTypeMappings[child.FullName].ToString();
-        if (_propertyTypeMappings[child.Title] != null)
-            return _propertyTypeMappings[child.Title].ToString();
+        if (_propertyTypeMappings[nameAndSuffix] != null)
+            return _propertyTypeMappings[nameAndSuffix].ToString();
         if (_propertyTypeMappings[propertyName] != null)
             return _propertyTypeMappings[propertyName].ToString();
 
@@ -780,8 +785,9 @@ public class HighchartsGenerator
             clone.Parent = item;
             clone.FullName = item.FullName + "." + child.Title;
 
+            //ignored for multitypes
             var multipliedClones = MultiplicationService.MultiplyObject(clone);
-            if (multipliedClones.Any())
+            if (multipliedClones.Any() && !clone.FullName.Contains("pointPlacement"))
                 clones.AddRange(multipliedClones);
             else
                 clones.Add(clone);
@@ -798,7 +804,6 @@ public class HighchartsGenerator
         _enumMappings.Add("application/pdf", "applicationpdf");
         _enumMappings.Add("image/svg+xml", "imagesvgxml");
     }
-
     private void InitTypeMappings()
     {
         _typeMappings.Add("String", "string");
@@ -825,7 +830,6 @@ public class HighchartsGenerator
         _typeMappings.Add("Array.<Object>", "List<object>");
         _typeMappings.Add("Mixed", "double?");
     }
-
     private void InitPropertyTypeMappings()
     {
         _propertyTypeMappings.Add("shadow", "Shadow");
@@ -898,7 +902,6 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("time.Date", "DateTime");
         _propertyTypeMappings.Add("defs", "Object");
     }
-
     private void InitPropertyInitMappings()
     {
         _propertyInitMappings.Add("shadow", "new Shadow() { Enabled = false }");
@@ -991,7 +994,6 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("defs", "null");
 
     }
-
     private void InitLists()
     {
         _lists.Add("pane.background");
@@ -1023,7 +1025,6 @@ public class HighchartsGenerator
         _lists.Add("series.sunburst.levels");
         _lists.Add("series.sankey.nodes");
     }
-
     private void InitSeriesMappings()
     {
         _seriesMappings.Add("series<ad>", "AdSeries");
@@ -1058,7 +1059,6 @@ public class HighchartsGenerator
 
 
     }
-
     private void InitExcludedProperties()
     {
         _excludedProperties.Add("BaseSeries");
@@ -1071,7 +1071,6 @@ public class HighchartsGenerator
         _excludedProperties.Add("series<scatter>.tooltip");
 
     }
-
     private void InitCustomProperties()
     {
         _customProperties.Add("Animation");
@@ -1087,7 +1086,6 @@ public class HighchartsGenerator
 
         return input.First().ToString().ToUpper() + input.Substring(1);
     }
-
     private static string FirstCharToLower(string input)
     {
         if (String.IsNullOrEmpty(input))
@@ -1095,7 +1093,6 @@ public class HighchartsGenerator
 
         return input.First().ToString().ToLower() + input.Substring(1);
     }
-
     private static string GetJSName(string name, string suffix)
     {
         if (string.IsNullOrEmpty(suffix))
@@ -1108,11 +1105,12 @@ public class HighchartsGenerator
     public string MapDefaultValue(ApiItem item)
     {
         string defaults = item.Defaults;
+        var nameAndSuffix = FirstCharToLower(GetPropertyName(item));
 
         if (item.Defaults == "\n")
             return "null";
 
-        if (item.Title.ToLower() == "data" && item.ParentFullName != null)
+        if (nameAndSuffix == "data" && item.ParentFullName != null)
         {
             if (item.ParentFullName.ToLower() == "highcharts")
                 return "new Data()";
@@ -1120,45 +1118,46 @@ public class HighchartsGenerator
             return "new List<" + GetClassNameFromItem(item) + ">()";
         }
 
-        if (item.Title.ToLower() == "fillcolor")
+        if (nameAndSuffix == "fillcolor")
             return "null";
 
         //if (item.Title.ToLower() == "background" && item.ParentFullName.ToLower() == "pane")
         //    return "new List<Background>()";
 
-        if (item.Title.ToLower() == "enabled" && item.ParentFullName.ToLower() == "series<treemap>.datalabels")
+        if (nameAndSuffix == "enabled" && item.ParentFullName.ToLower() == "series<treemap>.datalabels")
             return "null";
 
-        if (item.Title.ToLower() == "fillcolor")
+        if (nameAndSuffix == "fillColor")
             return "null";
 
-        if (item.Title.ToLower() == "height" && item.ParentFullName.ToLower() == "chart")
+        if (nameAndSuffix == "height" && item.ParentFullName.ToLower() == "chart")
             return "null";
 
-        if (item.Title.ToLower() == "margin" && item.ParentFullName.ToLower() != "chart")
+        if (nameAndSuffix == "margin" && item.ParentFullName.ToLower() != "chart")
             return "null";
 
-        if (item.Title.ToLower() == "margin" && item.ParentFullName.ToLower() == "chart")
+        if (nameAndSuffix == "margin" && item.ParentFullName.ToLower() == "chart")
             return "new double[]{}";
 
-        if (item.Title.ToLower() == "stops")
+        if (nameAndSuffix == "stops")
             return "new List<Stop>()";
 
         //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
         //    item.IsParent = true;
-        if ((item.Title == "xAxis" || item.Title == "yAxis") && item.ParentFullName != ROOT_CLASS)
+        if ((nameAndSuffix == "xAxis" || nameAndSuffix == "yAxis") && item.ParentFullName != ROOT_CLASS)
             return "\"\"";
 
-        if (item.Title.ToLower().EndsWith("style") && item.Children.Any())
+        if (nameAndSuffix.ToLower().EndsWith("style") && item.Children.Any())
             return "new " + GetClassNameFromItem(item) + "()";
 
+        
         if (_propertyInitMappings[item.FullName] != null)
         {
             return _propertyInitMappings[item.FullName].ToString();
         }
-        else if (_propertyInitMappings[item.Title] != null)
+        else if (_propertyInitMappings[nameAndSuffix] != null)
         {
-            return _propertyInitMappings[item.Title].ToString();
+            return _propertyInitMappings[nameAndSuffix].ToString();
         }
 
         if (item.Values != null && item.Values.Any())
@@ -1170,7 +1169,7 @@ public class HighchartsGenerator
         //{
 
 
-        if (item.Title.ToLower() == "position")
+        if (nameAndSuffix == "position")
             return defaults;
 
         if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
@@ -1180,8 +1179,8 @@ public class HighchartsGenerator
         if (item.ReturnType.ToLower() == "function" || item.ReturnType.ToLower() == "string|function")
             return "\"\"";
 
-        if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
-            defaults = "";
+        //if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
+        //    defaults = "";
 
         if (item.ReturnType == "Array" && item.Title == "zones")
             return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
@@ -1221,8 +1220,8 @@ public class HighchartsGenerator
                                     .Replace("[", "{")
                                     .Replace("]", "}");
             }
-            if ((_propertyTypeMappings[item.Title] != null &&
-                _propertyTypeMappings[item.Title].ToString() == "Hashtable") ||
+            if ((_propertyTypeMappings[nameAndSuffix] != null &&
+                _propertyTypeMappings[nameAndSuffix].ToString() == "Hashtable") ||
                 (_typeMappings[(item.ReturnType)] != null &&
                 _typeMappings[(item.ReturnType)].ToString() == "Hashtable"))
             {
@@ -1230,7 +1229,7 @@ public class HighchartsGenerator
                                                     .Replace(",", "},{")
                                                     .Replace(";", "},{")
                                                     .Replace(":", ",") + "}";
-                if (item.Title == "position")
+                if (nameAndSuffix == "position")
                     result = result.Replace("0", "\"0\"");
 
 
