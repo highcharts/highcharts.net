@@ -338,8 +338,15 @@ public class HighchartsGenerator
             hashtableComparers += formattedComparer;
         }
 
-
         string className = GetClassNameFromItem(item);
+
+        if(className.EndsWith("SeriesData"))
+        {
+            properties += CustomFieldsService.GetProperty();
+            defaultValues += CustomFieldsService.GetInit();
+            hashtableComparers += CustomFieldsService.GetCopyLogic();
+        }
+
         string extendsClass = "";
 
         if (className.EndsWith("Series") && item.Parent?.FullName == "series")
