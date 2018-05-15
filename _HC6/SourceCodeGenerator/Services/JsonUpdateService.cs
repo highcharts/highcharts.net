@@ -24,7 +24,6 @@ namespace SourceCodeGenerator.Services
         public void Update(ApiItem item)
         {
             //title
-
             if(ItemsToUpdate.ContainsKey(item.Title))
             {
                 foreach (var info in ItemsToUpdate[item.Title])
@@ -37,6 +36,8 @@ namespace SourceCodeGenerator.Services
                 foreach (var info in ItemsToUpdate[item.FullName])
                     UpdateProperty(item, info);
             }
+
+            Delete(item);
         }
 
         public void UpdateProducts(ApiItem item)
@@ -241,6 +242,18 @@ namespace SourceCodeGenerator.Services
 
             ItemsToUpdateProducts.Add("xAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
             ItemsToUpdateProducts.Add("yAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
+        }
+
+        public void Delete(ApiItem item)
+        {
+            if (item.FullName == "chart.renderTo")
+                item.Types.Remove("Object");
+
+            if (item.FullName == "plotOptions.series.dataGrouping.approximation")
+                item.Types.Remove("function");
+
+            if (item.FullName == "chart.options3d.frame.bottom.visible" || item.FullName == "plotOptions.histogram.binsNumber")
+                item.Values.Clear();
         }
     }
 

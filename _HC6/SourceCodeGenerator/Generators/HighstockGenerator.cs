@@ -35,8 +35,9 @@ public class HighstockGenerator
 
     IJsonParser JsonParser { get; set; }
     IFileService FileService { get; set; }
+    IMultiplicationService MultiplicationService { get; set; }
 
-    public HighstockGenerator(IJsonParser jsonParser, IFileService fileService)
+    public HighstockGenerator(IJsonParser jsonParser, IFileService fileService, IMultiplicationService multiplicationService)
     {
         _apiItems = new List<ApiItem>();
         _typeMappings = new Hashtable();
@@ -50,6 +51,7 @@ public class HighstockGenerator
 
         JsonParser = jsonParser;
         FileService = fileService;
+        MultiplicationService = multiplicationService;
 
         InitTypeMappings();
         InitPropertyTypeMappings();
@@ -66,6 +68,7 @@ public class HighstockGenerator
         FileService.PrepareFolder(ROOT_CLASS);
         _apiItems = JsonParser.Get();
         ProcessApiItems(_apiItems);
+        MultiplyObjects(_apiItems);
 
         var root = new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS };
         GenerateClass(root, GetChildren(root));
@@ -145,6 +148,23 @@ public class HighstockGenerator
 
             if (apiItem.Children.Any())
                 ProcessApiItems(apiItem.Children);
+        }
+    }
+
+    private void MultiplyObjects(IList<ApiItem> items)
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i].FullName.Contains("pointPlacement"))
+                continue;
+
+            var clones = MultiplicationService.MultiplyObject(items[i]);
+
+            if (clones.Any())
+                items = items.Concat(clones).ToList();
+
+            if (items[i].Children.Any())
+                MultiplyObjects(items[i].Children);
         }
     }
 
@@ -333,6 +353,14 @@ public class HighstockGenerator
 
 
         string className = GetClassNameFromItem(item);
+
+        if (className.EndsWith("SeriesData"))
+        {
+            properties += CustomFieldsService.GetProperty();
+            defaultValues += CustomFieldsService.GetInit();
+            hashtableComparers += CustomFieldsService.GetCopyLogic();
+        }
+
         string extendsClass = "";
 
         if (className.EndsWith("Series") && item.Parent?.FullName == "series")
@@ -568,6 +596,8 @@ public class HighstockGenerator
         //if (string.IsNullOrWhiteSpace(result))
         //    throw new Exception("empty series mapping result");
 
+        result = result + item.Suffix;
+
         return FirstCharToUpper(result);
     }
 
@@ -612,20 +642,21 @@ public class HighstockGenerator
     private string GetPropertyReturnType(ApiItem child, string propertyName)
     {
         string returnType = child.ReturnType;
+        var nameAndSuffix = FirstCharToLower(GetPropertyName(child));
 
         if (propertyName.ToLower() == "data" && child.ParentFullName != null)
             return "List<" + GetClassNameFromItem(child) + ">";
 
-        if (child.ParentFullName != ROOT_CLASS && (child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis"))
+        if (child.ParentFullName != ROOT_CLASS && (nameAndSuffix.ToLower() == "xaxis" || nameAndSuffix.ToLower() == "yaxis"))
             return "string";
 
-        if (child.Title.ToLower().EndsWith("style") && child.Children.Any())
+        if (nameAndSuffix.ToLower().EndsWith("style") && child.Children.Any())
             return GetClassNameFromItem(child);
 
         if (_propertyTypeMappings[child.FullName] != null)
             return _propertyTypeMappings[child.FullName].ToString();
-        if (_propertyTypeMappings[child.Title] != null)
-            return _propertyTypeMappings[child.Title].ToString();
+        if (_propertyTypeMappings[nameAndSuffix] != null)
+            return _propertyTypeMappings[nameAndSuffix].ToString();
         if (_propertyTypeMappings[propertyName] != null)
             return _propertyTypeMappings[propertyName].ToString();
 
@@ -669,23 +700,23 @@ public class HighstockGenerator
         if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
         {
             if (child.FullName == "Data" && child.ParentFullName.ToLower().Contains("highstock"))
-                return String.Format(complexPropertyFormat, child.FullName, FirstCharToLower(child.FullName));
+                return String.Format(complexPropertyFormat, child.FullName, GetJSName(propertyName, child.Suffix));
 
             if (child.FullName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
 
             if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && child.ParentFullName != "Highstock")
-                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             if (child.Title == "colors")
-                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
-            return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+            return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
         if (_lists.Contains(propertyName))
         {
             if (propertyName == "Data" && child.ParentFullName.ToLower().Contains("highstock"))
-                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+                return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             if (propertyName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
@@ -693,31 +724,31 @@ public class HighstockGenerator
             if (propertyName == "Stops")
                 return "if (Stops.Any()) h.Add(\"stops\", GetLists(Stops));\n\t\t\t";
 
-            return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+            return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
         if (_propertyTypeMappings.Contains(child.Title) || _propertyTypeMappings.Contains(child.FullName))
         {
             if (child.FullName == "plotOptions.series" || child.FullName == "navigator.series")
-                return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+                return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             if (child.Title.ToLower() == "series" && child.ParentFullName == "Highstock")
-                return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+                return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             if (propertyName.ToLower().Contains("pointplacement"))
                 return "if (PointPlacement.IsDirty())\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToJSON());\n\t\t\t";
 
-            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
         // property that needs custom serialization (Animation, Shadow, etc)
         if (_customProperties.Contains(propertyName))
         {
 
 
-            return String.Format(customPropertyFormat, propertyName, FirstCharToLower(propertyName));
+            return String.Format(customPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
         }
         // Enum
         if (child.Values != null && child.Values.Count > 0)
-            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName), ROOT_CLASS);
+            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), ROOT_CLASS);
         // Complex object with nested objects / properties
         if (child.IsParent)
         {
@@ -725,14 +756,14 @@ public class HighstockGenerator
                 return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
 
             if (child.ReturnType == "Array" && child.Title == "zones")
-                return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+                return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             if (child.Children.Any() || child.Extends.Any() || child.ReturnType == "Object")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             // Event (javascript function)
             if (child.ReturnType != null && (child.ReturnType.ToLower() == "function" || child.ReturnType.ToLower() == "string|function"))
-                return String.Format(functionPropertyFormat, propertyName, FirstCharToLower(propertyName), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName), ROOT_CLASS);
+                return String.Format(functionPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + FirstCharToLower(propertyName), ROOT_CLASS);
             // Just a property
             else
             {
@@ -740,9 +771,9 @@ public class HighstockGenerator
                     return "if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)\n\t\t\t{\n\t\t\t\tif (PointDescriptionThreshold != null)\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", PointDescriptionThreshold);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", false);\n\t\t\t}\n\t\t\t";
 
                 if (propertyName == "Shadow")
-                    return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
+                    return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
-                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+                return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
             }
         }
         else
@@ -750,7 +781,7 @@ public class HighstockGenerator
             if (child.Children.Any() || child.Extends.Any())
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
-            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", FirstCharToLower(propertyName));
+            return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
 
             
@@ -821,7 +852,12 @@ public class HighstockGenerator
             clone.Parent = item;
             clone.FullName = item.FullName + "." + child.Title;
 
-            clones.Add(clone);
+            //ignored for multitypes
+            var multipliedClones = MultiplicationService.MultiplyObject(clone);
+            if (multipliedClones.Any() && !clone.FullName.Contains("pointPlacement"))
+                clones.AddRange(multipliedClones);
+            else
+                clones.Add(clone);
         }
 
         return clones.OrderBy(p => p.Title).ToList();
@@ -835,7 +871,6 @@ public class HighstockGenerator
         _enumMappings.Add("application/pdf", "applicationpdf");
         _enumMappings.Add("image/svg+xml", "imagesvgxml");
     }
-
     private void InitTypeMappings()
     {
         _typeMappings.Add("String", "string");
@@ -862,7 +897,6 @@ public class HighstockGenerator
         _typeMappings.Add("Array.<Object>", "List<object>");
         _typeMappings.Add("Mixed", "double?");
     }
-
     private void InitPropertyTypeMappings()
     {
         _propertyTypeMappings.Add("shadow", "Shadow");
@@ -952,7 +986,6 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("plotOptions.arearange.threshold", "Object");
         _propertyTypeMappings.Add("plotOptions.stochastic.params.periods", "List<int>");
     }
-
     private void InitPropertyInitMappings()
     {
         _propertyInitMappings.Add("shadow", "new Shadow() { Enabled = false }");
@@ -1064,7 +1097,6 @@ public class HighstockGenerator
         _propertyInitMappings.Add("plotOptions.arearange.threshold", "null");
         _propertyInitMappings.Add("plotOptions.stochastic.params.periods", "new List<int>()");
     }
-
     private void InitLists()
     {
         _lists.Add("pane.background");
@@ -1105,13 +1137,11 @@ public class HighstockGenerator
         _lists.Add("navigator.yAxis.plotLines");
         _lists.Add("drilldown.series");
     }
-
     private void InitSeriesMappings()
     {
         _seriesMappings.Add("series.candlestick", "CandleStickSeries");
         _seriesMappings.Add("rangeSelector.buttons", "RangeSelectorButton");
     }
-
     private void InitExcludedProperties()
     {
         _excludedProperties.Add("BaseSeries");
@@ -1123,7 +1153,6 @@ public class HighstockGenerator
         _excludedProperties.Add("series<polygon>.tooltip");
         _excludedProperties.Add("series<scatter>.tooltip");
     }
-
     private void InitCustomProperties()
     {
         _customProperties.Add("Animation");
@@ -1131,7 +1160,6 @@ public class HighstockGenerator
         _customProperties.Add("PointPlacement");
         //_customProperties.Add("Symbol");
     }
-
     private static string FirstCharToUpper(string input)
     {
         if (String.IsNullOrEmpty(input))
@@ -1139,7 +1167,6 @@ public class HighstockGenerator
 
         return input.First().ToString().ToUpper() + input.Substring(1);
     }
-
     private static string FirstCharToLower(string input)
     {
         if (String.IsNullOrEmpty(input))
@@ -1147,16 +1174,23 @@ public class HighstockGenerator
 
         return input.First().ToString().ToLower() + input.Substring(1);
     }
+    private static string GetJSName(string name, string suffix)
+    {
+        if (string.IsNullOrEmpty(suffix))
+            return FirstCharToLower(name);
 
+        return FirstCharToLower(name.Replace(suffix, ""));
+    }
 
     public string MapDefaultValue(ApiItem item)
     {
         string defaults = item.Defaults;
+        var nameAndSuffix = FirstCharToLower(GetPropertyName(item));
 
         if (item.Defaults == "\n")
             return "null";
 
-        if (item.Title.ToLower() == "data" && item.ParentFullName != null)
+        if (nameAndSuffix == "data" && item.ParentFullName != null)
         {
             if (item.ParentFullName.ToLower() == "highstock")
                 return "new Data()";
@@ -1164,45 +1198,45 @@ public class HighstockGenerator
             return "new List<" + GetClassNameFromItem(item) + ">()";
         }
 
-        if (item.Title.ToLower() == "fillcolor")
+        if (nameAndSuffix == "fillcolor")
             return "null";
 
         //if (item.Title.ToLower() == "background" && item.ParentFullName.ToLower() == "pane")
         //    return "new List<Background>()";
 
-        if (item.Title.ToLower() == "enabled" && item.ParentFullName.ToLower() == "series<treemap>.datalabels")
+        if (nameAndSuffix == "enabled" && item.ParentFullName.ToLower() == "series<treemap>.datalabels")
             return "null";
 
-        if (item.Title.ToLower() == "fillcolor")
+        if (nameAndSuffix == "fillcolor")
             return "null";
 
-        if (item.Title.ToLower() == "height" && item.ParentFullName.ToLower() == "chart")
+        if (nameAndSuffix == "height" && item.ParentFullName.ToLower() == "chart")
             return "null";
 
-        if (item.Title.ToLower() == "margin" && item.ParentFullName.ToLower() != "chart")
+        if (nameAndSuffix == "margin" && item.ParentFullName.ToLower() != "chart")
             return "null";
 
-        if (item.Title.ToLower() == "margin" && item.ParentFullName.ToLower() == "chart")
+        if (nameAndSuffix == "margin" && item.ParentFullName.ToLower() == "chart")
             return "new double[]{}";
 
-        if (item.Title.ToLower() == "stops")
+        if (nameAndSuffix == "stops")
             return "new List<Stop>()";
 
         //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
         //    item.IsParent = true;
-        if ((item.Title == "xAxis" || item.Title == "yAxis") && item.ParentFullName != ROOT_CLASS)
+        if ((nameAndSuffix == "xAxis" || nameAndSuffix == "yAxis") && item.ParentFullName != ROOT_CLASS)
             return "\"\"";
 
-        if (item.Title.ToLower().EndsWith("style") && item.Children.Any())
+        if (nameAndSuffix.ToLower().EndsWith("style") && item.Children.Any())
             return "new " + GetClassNameFromItem(item) + "()";
 
         if (_propertyInitMappings[item.FullName] != null)
         {
             return _propertyInitMappings[item.FullName].ToString();
         }
-        else if (_propertyInitMappings[item.Title] != null)
+        else if (_propertyInitMappings[nameAndSuffix] != null)
         {
-            return _propertyInitMappings[item.Title].ToString();
+            return _propertyInitMappings[nameAndSuffix].ToString();
         }
 
         if (item.Values != null && item.Values.Any())
@@ -1214,7 +1248,7 @@ public class HighstockGenerator
         //{
 
 
-        if (item.Title.ToLower() == "position")
+        if (nameAndSuffix == "position")
             return defaults;
 
         if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
@@ -1224,8 +1258,8 @@ public class HighstockGenerator
         if (item.ReturnType.ToLower() == "function" || item.ReturnType.ToLower() == "string|function")
             return "\"\"";
 
-        if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
-            defaults = "";
+        //if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
+        //    defaults = "";
 
         if (item.ReturnType == "Array" && item.Title == "zones")
             return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
@@ -1267,8 +1301,8 @@ public class HighstockGenerator
                                     .Replace("[", "{")
                                     .Replace("]", "}");
             }
-            if ((_propertyTypeMappings[item.Title] != null &&
-                _propertyTypeMappings[item.Title].ToString() == "Hashtable") ||
+            if ((_propertyTypeMappings[nameAndSuffix] != null &&
+                _propertyTypeMappings[nameAndSuffix].ToString() == "Hashtable") ||
                 (_typeMappings[(item.ReturnType)] != null &&
                 _typeMappings[(item.ReturnType)].ToString() == "Hashtable"))
             {
@@ -1276,7 +1310,7 @@ public class HighstockGenerator
                                                     .Replace(",", "},{")
                                                     .Replace(";", "},{")
                                                     .Replace(":", ",") + "}";
-                if (item.Title == "position")
+                if (nameAndSuffix == "position")
                     result = result.Replace("0", "\"0\"");
 
 

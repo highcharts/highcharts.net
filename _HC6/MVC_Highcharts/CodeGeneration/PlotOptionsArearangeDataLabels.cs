@@ -33,6 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = "5";
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "square";
 			Style = Style_DefaultValue = new PlotOptionsArearangeDataLabelsStyle();
 			UseHTML = UseHTML_DefaultValue = false;
@@ -41,8 +42,10 @@ namespace Highsoft.Web.Mvc.Charts
 			XHigh = XHigh_DefaultValue = 0;
 			XLow = XLow_DefaultValue = 0;
 			Y = Y_DefaultValue = -6;
-			YHigh = YHigh_DefaultValue = -6;
-			YLow = YLow_DefaultValue = 16;
+			YHigh = YHigh_DefaultValue = "null";
+			YHighNumber = YHighNumber_DefaultValue = null;
+			YLow = YLow_DefaultValue = "null";
+			YLowNumber = YLowNumber_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
@@ -182,6 +185,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The shadow of the box. Works best with `borderWidth` or`backgroundColor`. Since 2.3 the shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The name of a symbol to use for the border around the label. Symbolsare predefined functions on the Renderer object.
 		/// </summary>
 		public string Shape { get; set; }
@@ -240,15 +250,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Y offset of the higher data labels relative to the point value.
 		/// </summary>
-		public double? YHigh { get; set; }
-		private double? YHigh_DefaultValue { get; set; }
+		public string YHigh { get; set; }
+		private string YHigh_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Y offset of the higher data labels relative to the point value.
+		/// </summary>
+		public double? YHighNumber { get; set; }
+		private double? YHighNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Y offset of the lower data labels relative to the point value.
 		/// </summary>
-		public double? YLow { get; set; }
-		private double? YLow_DefaultValue { get; set; }
+		public string YLow { get; set; }
+		private string YLow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Y offset of the lower data labels relative to the point value.
+		/// </summary>
+		public double? YLowNumber { get; set; }
+		private double? YLowNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -281,6 +305,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
@@ -290,7 +315,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (XLow != XLow_DefaultValue) h.Add("xLow",XLow);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (YHigh != YHigh_DefaultValue) h.Add("yHigh",YHigh);
+			if (YHighNumber != YHighNumber_DefaultValue) h.Add("yHigh",YHighNumber);
 			if (YLow != YLow_DefaultValue) h.Add("yLow",YLow);
+			if (YLowNumber != YLowNumber_DefaultValue) h.Add("yLow",YLowNumber);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 

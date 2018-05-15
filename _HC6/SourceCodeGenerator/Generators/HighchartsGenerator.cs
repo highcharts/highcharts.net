@@ -859,7 +859,7 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("menuItems", "List<MenuItem>");
         _propertyTypeMappings.Add("crosshairs", "List<Crosshair>");
         _propertyTypeMappings.Add("stops", "List<Stop>");
-        _propertyTypeMappings.Add("renderTo", "string");
+        //_propertyTypeMappings.Add("renderTo", "string");
         _propertyTypeMappings.Add("series", "List<Series>");
         _propertyTypeMappings.Add("drilldown.series", "List<Series>");
         _propertyTypeMappings.Add("xAxis", "List<XAxis>");

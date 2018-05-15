@@ -14,7 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public DrilldownAnimation()
 		{
-			Duration = Duration_DefaultValue = 500;
+			Duration = Duration_DefaultValue = "null";
+			DurationNumber = DurationNumber_DefaultValue = null;
 			
 		}	
 		
@@ -22,8 +23,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Duration for the drilldown animation.
 		/// </summary>
-		public double? Duration { get; set; }
-		private double? Duration_DefaultValue { get; set; }
+		public string Duration { get; set; }
+		private string Duration_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Duration for the drilldown animation.
+		/// </summary>
+		public double? DurationNumber { get; set; }
+		private double? DurationNumber_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
+			if (DurationNumber != DurationNumber_DefaultValue) h.Add("duration",DurationNumber);
 			
 
 			return h;

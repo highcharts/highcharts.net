@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new FlagsSeriesEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
-			FillColor = FillColor_DefaultValue = null;
+			FillColor = FillColor_DefaultValue = "#ffffff";
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = FlagsSeriesFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Grouping = Grouping_DefaultValue = true;
@@ -66,6 +66,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = FlagsSeriesShape.Flag;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
@@ -86,8 +87,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			UseHTML = UseHTML_DefaultValue = false;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
+			XAxisNumber = XAxisNumber_DefaultValue = null;
 			Y = Y_DefaultValue = -30;
 			YAxis = YAxis_DefaultValue = "";
+			YAxisNumber = YAxisNumber_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<FlagsSeriesZone>();
@@ -460,6 +463,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The shape of the marker. Can be one of "flag", "circlepin", "squarepin",or an image on the format `url(/path-to-image.jpg)`. Individualshapes can also be set for each point.
 		/// </summary>
 		public FlagsSeriesShape Shape { get; set; }
@@ -600,6 +610,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
+		/// </summary>
+		public double? XAxisNumber { get; set; }
+		private double? XAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The y position of the top left corner of the flag relative to eitherthe series (if onSeries is defined), or the x axis. Defaults to`-30`.
 		/// </summary>
 		public double? Y { get; set; }
@@ -611,6 +628,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string YAxis { get; set; }
 		private string YAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
+		/// </summary>
+		public double? YAxisNumber { get; set; }
+		private double? YAxisNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -694,6 +718,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape", Highstock.FirstCharacterToLower(Shape.ToString()));
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
@@ -714,8 +739,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (YAxisNumber != YAxisNumber_DefaultValue) h.Add("yAxis",YAxisNumber);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));

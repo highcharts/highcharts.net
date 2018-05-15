@@ -45,8 +45,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsBubbleMarker();
-			MaxSize = MaxSize_DefaultValue = null;
-			MinSize = MinSize_DefaultValue = 8;
+			MaxSize = MaxSize_DefaultValue = "null";
+			MaxSizeNumber = MaxSizeNumber_DefaultValue = null;
+			MinSize = MinSize_DefaultValue = "null";
+			MinSizeNumber = MinSizeNumber_DefaultValue = null;
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			Point = Point_DefaultValue = new PlotOptionsBubblePoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
@@ -299,15 +301,29 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Maximum bubble size. Bubbles will automatically size between the`minSize` and `maxSize` to reflect the `z` value of each bubble.Can be either pixels (when no unit is given), or a percentage ofthe smallest one of the plot width and height.
 		/// </summary>
-		public double? MaxSize { get; set; }
-		private double? MaxSize_DefaultValue { get; set; }
+		public string MaxSize { get; set; }
+		private string MaxSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Maximum bubble size. Bubbles will automatically size between the`minSize` and `maxSize` to reflect the `z` value of each bubble.Can be either pixels (when no unit is given), or a percentage ofthe smallest one of the plot width and height.
+		/// </summary>
+		public double? MaxSizeNumber { get; set; }
+		private double? MaxSizeNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Minimum bubble size. Bubbles will automatically size between the`minSize` and `maxSize` to reflect the `z` value of each bubble.Can be either pixels (when no unit is given), or a percentage ofthe smallest one of the plot width and height.
 		/// </summary>
-		public double? MinSize { get; set; }
-		private double? MinSize_DefaultValue { get; set; }
+		public string MinSize { get; set; }
+		private string MinSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Minimum bubble size. Bubbles will automatically size between the`minSize` and `maxSize` to reflect the `z` value of each bubble.Can be either pixels (when no unit is given), or a percentage ofthe smallest one of the plot width and height.
+		/// </summary>
+		public double? MinSizeNumber { get; set; }
+		private double? MinSizeNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -542,7 +558,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (MaxSize != MaxSize_DefaultValue) h.Add("maxSize",MaxSize);
+			if (MaxSizeNumber != MaxSizeNumber_DefaultValue) h.Add("maxSize",MaxSizeNumber);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
+			if (MinSizeNumber != MinSizeNumber_DefaultValue) h.Add("minSize",MinSizeNumber);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("PlotOptionsBubblePointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  

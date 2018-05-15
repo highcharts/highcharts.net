@@ -41,6 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Reversed = Reversed_DefaultValue = false;
 			Rtl = Rtl_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			SquareSymbol = SquareSymbol_DefaultValue = true;
 			Style = Style_DefaultValue = new Hashtable();
 			SymbolHeight = SymbolHeight_DefaultValue = null;
@@ -247,6 +248,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the legend. A `backgroundColor`also needs to be applied for this to take effect. The shadow can bean object configuration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When this is true, the legend symbol width will be the same asthe symbol height, which in turn defaults to the font size of thelegend items.
 		/// </summary>
 		public bool? SquareSymbol { get; set; }
@@ -361,6 +369,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (SquareSymbol != SquareSymbol_DefaultValue) h.Add("squareSymbol",SquareSymbol);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (SymbolHeight != SymbolHeight_DefaultValue) h.Add("symbolHeight",SymbolHeight);

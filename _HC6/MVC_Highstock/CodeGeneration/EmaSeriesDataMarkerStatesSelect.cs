@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public EmaSeriesDataMarkerStatesSelect()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = null;
+			FillColor = FillColor_DefaultValue = "#cccccc";
 			LineColor = LineColor_DefaultValue = "#000000";
 			LineWidth = LineWidth_DefaultValue = 2;
 			Radius = Radius_DefaultValue = null;

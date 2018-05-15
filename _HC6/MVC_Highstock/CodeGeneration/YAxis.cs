@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new YAxisCrosshair();
+			CrosshairBool = CrosshairBool_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Description = Description_DefaultValue = "undefined";
 			EndOnTick = EndOnTick_DefaultValue = true;
@@ -32,23 +33,27 @@ namespace Highsoft.Web.Mvc.Stocks
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Height = Height_DefaultValue = "null";
+			HeightNumber = HeightNumber_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
 			Labels = Labels_DefaultValue = new YAxisLabels();
 			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 0;
 			LinkedTo = LinkedTo_DefaultValue = null;
 			Max = Max_DefaultValue = null;
-			MaxLength = MaxLength_DefaultValue = "";
+			MaxLength = MaxLength_DefaultValue = "null";
+			MaxLengthNumber = MaxLengthNumber_DefaultValue = null;
 			MaxPadding = MaxPadding_DefaultValue = null;
 			MaxRange = MaxRange_DefaultValue = null;
 			MaxZoom = MaxZoom_DefaultValue = null;
 			Min = Min_DefaultValue = null;
-			MinLength = MinLength_DefaultValue = null;
+			MinLength = MinLength_DefaultValue = "null";
+			MinLengthNumber = MinLengthNumber_DefaultValue = null;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = YAxisMinorGridLineDashStyle.Solid;
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
-			MinorTickInterval = MinorTickInterval_DefaultValue = null;
+			MinorTickInterval = MinorTickInterval_DefaultValue = "null";
+			MinorTickIntervalNumber = MinorTickIntervalNumber_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
 			MinorTicks = MinorTicks_DefaultValue = false;
@@ -84,6 +89,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Title = Title_DefaultValue = new YAxisTitle();
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			Top = Top_DefaultValue = "null";
+			TopNumber = TopNumber_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			
 		}	
@@ -143,6 +149,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public YAxisCrosshair Crosshair { get; set; }
 		private YAxisCrosshair Crosshair_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Configure a crosshair that follows either the mouse pointer or thehovered point.In styled mode, the crosshairs are styled in the`.highcharts-crosshair`, `.highcharts-crosshair-thin` or`.highcharts-xaxis-category` classes.
+		/// </summary>
+		public bool? CrosshairBool { get; set; }
+		private bool? CrosshairBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -216,6 +229,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The height of the Y axis. If it's a number, it is interpreted aspixels.Since Highstock 2: If it's a percentage string, it is interpretedas percentages of the total plot height.
+		/// </summary>
+		public double? HeightNumber { get; set; }
+		private double? HeightNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the axis. This can be used after render time to geta pointer to the axis object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -265,6 +285,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Maximal size of a resizable axis. Could be set as a percentof plot area or pixel size.This feature requires the `drag-panes.js` module.
+		/// </summary>
+		public double? MaxLengthNumber { get; set; }
+		private double? MaxLengthNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
 		/// </summary>
 		public double? MaxPadding { get; set; }
@@ -295,8 +322,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Minimal size of a resizable axis. Could be set as a percentof plot area or pixel size.This feature requires the `drag-panes.js` module.
 		/// </summary>
-		public double? MinLength { get; set; }
-		private double? MinLength_DefaultValue { get; set; }
+		public string MinLength { get; set; }
+		private string MinLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Minimal size of a resizable axis. Could be set as a percentof plot area or pixel size.This feature requires the `drag-panes.js` module.
+		/// </summary>
+		public double? MinLengthNumber { get; set; }
+		private double? MinLengthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -330,8 +364,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Specific tick interval in axis units for the minor ticks.On a linear axis, if `"auto"`, the minor tick interval iscalculated as a fifth of the tickInterval. If `null`, minorticks are not shown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1,1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9ticks between 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
 		/// </summary>
-		public double? MinorTickInterval { get; set; }
-		private double? MinorTickInterval_DefaultValue { get; set; }
+		public string MinorTickInterval { get; set; }
+		private string MinorTickInterval_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Specific tick interval in axis units for the minor ticks.On a linear axis, if `"auto"`, the minor tick interval iscalculated as a fifth of the tickInterval. If `null`, minorticks are not shown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1,1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9ticks between 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
+		/// </summary>
+		public double? MinorTickIntervalNumber { get; set; }
+		private double? MinorTickIntervalNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -580,6 +621,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The top position of the Y axis. If it's a number, it is interpretedas pixel position relative to the chart.Since Highstock 2: If it's a percentage string, it is interpretedas percentages of the plot height, offset from plot area top.
+		/// </summary>
+		public double? TopNumber { get; set; }
+		private double? TopNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether axis, including axis title, line, ticks and labels, shouldbe visible.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -598,6 +646,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
+			if (CrosshairBool != CrosshairBool_DefaultValue) h.Add("crosshair",CrosshairBool);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
@@ -608,6 +657,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
@@ -615,16 +665,19 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (MaxLength != MaxLength_DefaultValue) h.Add("maxLength",MaxLength);
+			if (MaxLengthNumber != MaxLengthNumber_DefaultValue) h.Add("maxLength",MaxLengthNumber);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
 			if (MaxRange != MaxRange_DefaultValue) h.Add("maxRange",MaxRange);
 			if (MaxZoom != MaxZoom_DefaultValue) h.Add("maxZoom",MaxZoom);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (MinLength != MinLength_DefaultValue) h.Add("minLength",MinLength);
+			if (MinLengthNumber != MinLengthNumber_DefaultValue) h.Add("minLength",MinLengthNumber);
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
 			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle", Highstock.FirstCharacterToLower(MinorGridLineDashStyle.ToString()));
 			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
+			if (MinorTickIntervalNumber != MinorTickIntervalNumber_DefaultValue) h.Add("minorTickInterval",MinorTickIntervalNumber);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highstock.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
@@ -660,6 +713,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
 			if (Top != Top_DefaultValue) h.Add("top",Top);
+			if (TopNumber != TopNumber_DefaultValue) h.Add("top",TopNumber);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			
 

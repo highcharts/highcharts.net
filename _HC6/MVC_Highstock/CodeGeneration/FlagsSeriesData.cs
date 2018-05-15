@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Description = Description_DefaultValue = "undefined";
 			Drilldown = Drilldown_DefaultValue = "";
 			Events = Events_DefaultValue = new FlagsSeriesDataEvents();
-			FillColor = FillColor_DefaultValue = null;
+			FillColor = FillColor_DefaultValue = "";
 			Id = Id_DefaultValue = "null";
 			Labelrank = Labelrank_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
@@ -28,6 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Title = Title_DefaultValue = "";
 			X = X_DefaultValue = double.MinValue;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -120,7 +121,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -139,7 +142,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Title != Title_DefaultValue) h.Add("title",Title);
 			if (X != X_DefaultValue) h.Add("x",X);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Enabled = Enabled_DefaultValue = null;
 			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
-			FillColor = FillColor_DefaultValue = null;
+			FillColor = FillColor_DefaultValue = "null";
 			FillOpacity = FillOpacity_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "";

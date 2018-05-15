@@ -505,12 +505,6 @@
     <Compile Include="CodeGeneration\Enums\BulletSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\ChartDefaultSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\ChartOptions3dAxisLabelPosition.cs" />
-    <Compile Include="CodeGeneration\Enums\ChartOptions3dFrameBackVisible.cs" />
-    <Compile Include="CodeGeneration\Enums\ChartOptions3dFrameBottomVisible.cs" />
-    <Compile Include="CodeGeneration\Enums\ChartOptions3dFrameFrontVisible.cs" />
-    <Compile Include="CodeGeneration\Enums\ChartOptions3dFrameLeftVisible.cs" />
-    <Compile Include="CodeGeneration\Enums\ChartOptions3dFrameRightVisible.cs" />
-    <Compile Include="CodeGeneration\Enums\ChartOptions3dFrameTopVisible.cs" />
     <Compile Include="CodeGeneration\Enums\ChartPanKey.cs" />
     <Compile Include="CodeGeneration\Enums\ChartParallelAxesCrosshairDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\ChartParallelAxesLabelsOverflow.cs" />
@@ -585,7 +579,6 @@
     <Compile Include="CodeGeneration\Enums\HeatmapSeriesDataLabelsOverflow.cs" />
     <Compile Include="CodeGeneration\Enums\HeatmapSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\HeatmapSeriesType.cs" />
-    <Compile Include="CodeGeneration\Enums\HistogramSeriesBinsNumber.cs" />
     <Compile Include="CodeGeneration\Enums\HistogramSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\HistogramSeriesDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\HistogramSeriesDataLabelsOverflow.cs" />
@@ -728,7 +721,6 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsGaugePointIntervalUnit.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsHeatmapCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsHeatmapDataLabelsAlign.cs" />
-    <Compile Include="CodeGeneration\Enums\PlotOptionsHistogramBinsNumber.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsHistogramCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsHistogramDataLabelsAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsHistogramDataLabelsOverflow.cs" />

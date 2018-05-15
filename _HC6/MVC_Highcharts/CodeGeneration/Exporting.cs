@@ -30,7 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowTable = ShowTable_DefaultValue = false;
 			SourceHeight = SourceHeight_DefaultValue = null;
 			SourceWidth = SourceWidth_DefaultValue = null;
-			TableCaption = TableCaption_DefaultValue = null;
+			TableCaption = TableCaption_DefaultValue = "null";
+			TableCaptionBool = TableCaptionBool_DefaultValue = null;
 			Type = Type_DefaultValue = ExportingType.Imagepng;
 			Url = Url_DefaultValue = "https://export.highcharts.com/";
 			UseMultiLevelHeaders = UseMultiLevelHeaders_DefaultValue = true;
@@ -155,8 +156,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Export-data module required. Caption for the data table. Same aschart title by default. Set to `false` to disable.
 		/// </summary>
-		public bool? TableCaption { get; set; }
-		private bool? TableCaption_DefaultValue { get; set; }
+		public string TableCaption { get; set; }
+		private string TableCaption_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Export-data module required. Caption for the data table. Same aschart title by default. Set to `false` to disable.
+		/// </summary>
+		public bool? TableCaptionBool { get; set; }
+		private bool? TableCaptionBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -215,6 +223,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SourceHeight != SourceHeight_DefaultValue) h.Add("sourceHeight",SourceHeight);
 			if (SourceWidth != SourceWidth_DefaultValue) h.Add("sourceWidth",SourceWidth);
 			if (TableCaption != TableCaption_DefaultValue) h.Add("tableCaption",TableCaption);
+			if (TableCaptionBool != TableCaptionBool_DefaultValue) h.Add("tableCaption",TableCaptionBool);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Url != Url_DefaultValue) h.Add("url",Url);
 			if (UseMultiLevelHeaders != UseMultiLevelHeaders_DefaultValue) h.Add("useMultiLevelHeaders",UseMultiLevelHeaders);

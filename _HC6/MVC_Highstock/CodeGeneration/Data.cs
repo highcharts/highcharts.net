@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			StartColumn = StartColumn_DefaultValue = 0;
 			StartRow = StartRow_DefaultValue = 0;
 			SwitchRowsAndColumns = SwitchRowsAndColumns_DefaultValue = false;
-			Table = Table_DefaultValue = "";
+			Table = Table_DefaultValue = "null";
 			
 		}	
 		

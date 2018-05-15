@@ -29,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Sliced = Sliced_DefaultValue = null;
 			Y = Y_DefaultValue = double.MinValue;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -128,7 +129,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -148,7 +151,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Sliced != Sliced_DefaultValue) h.Add("sliced",Sliced);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

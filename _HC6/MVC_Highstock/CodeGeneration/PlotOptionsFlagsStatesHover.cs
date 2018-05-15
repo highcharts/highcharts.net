@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Brightness = Brightness_DefaultValue = null;
 			Color = Color_DefaultValue = "undefined";
 			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = null;
+			FillColor = FillColor_DefaultValue = "#ccd6eb";
 			LineColor = LineColor_DefaultValue = "#000000";
 			
 		}	

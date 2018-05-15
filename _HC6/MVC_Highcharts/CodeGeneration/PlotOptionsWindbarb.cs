@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			NegativeColor = NegativeColor_DefaultValue = "null";
-			OnSeries = OnSeries_DefaultValue = "";
+			OnSeries = OnSeries_DefaultValue = "null";
 			Point = Point_DefaultValue = new PlotOptionsWindbarbPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;

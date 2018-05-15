@@ -15,7 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public WordcloudSeriesStyle()
 		{
 			FontFamily = FontFamily_DefaultValue = "sans-serif";
-			FontWeight = FontWeight_DefaultValue = "900";
+			FontWeight = FontWeight_DefaultValue = "null";
+			FontWeightNumber = FontWeightNumber_DefaultValue = null;
 			
 		}	
 		
@@ -32,6 +33,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string FontWeight { get; set; }
 		private string FontWeight_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? FontWeightNumber { get; set; }
+		private double? FontWeightNumber_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -40,6 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (FontFamily != FontFamily_DefaultValue) h.Add("fontFamily",FontFamily);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (FontWeightNumber != FontWeightNumber_DefaultValue) h.Add("fontWeight",FontWeightNumber);
 			
 
 			return h;

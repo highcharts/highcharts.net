@@ -22,9 +22,12 @@ namespace Highsoft.Web.Mvc.Charts
 			From = From_DefaultValue = null;
 			Id = Id_DefaultValue = "null";
 			InnerRadius = InnerRadius_DefaultValue = "null";
+			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
 			Label = Label_DefaultValue = new YAxisPlotBandsLabel();
-			OuterRadius = OuterRadius_DefaultValue = "100%";
-			Thickness = Thickness_DefaultValue = 10;
+			OuterRadius = OuterRadius_DefaultValue = "null";
+			OuterRadiusNumber = OuterRadiusNumber_DefaultValue = null;
+			Thickness = Thickness_DefaultValue = "null";
+			ThicknessNumber = ThicknessNumber_DefaultValue = null;
 			To = To_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
 			
@@ -88,6 +91,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// In a gauge chart, this option determines the inner radius of theplot band that stretches along the perimeter. It can be given asa percentage string, like `"100%"`, or as a pixel number, like `100`.By default, the inner radius is controlled by the [thickness](#yAxis.plotBands.thickness) option.
+		/// </summary>
+		public double? InnerRadiusNumber { get; set; }
+		private double? InnerRadiusNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Text labels for the plot bands
 		/// </summary>
 		public YAxisPlotBandsLabel Label { get; set; }
@@ -102,10 +112,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// In a gauge chart, this option determines the outer radius of theplot band that stretches along the perimeter. It can be given asa percentage string, like `"100%"`, or as a pixel number, like `100`.
+		/// </summary>
+		public double? OuterRadiusNumber { get; set; }
+		private double? OuterRadiusNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// In a gauge chart, this option sets the width of the plot band stretchingalong the perimeter. It can be given as a percentage string, like`"10%"`, or as a pixel number, like `10`. The default value 10 isthe same as the default [tickLength](#yAxis.tickLength), thus makingthe plot band act as a background for the tick markers.
 		/// </summary>
-		public double? Thickness { get; set; }
-		private double? Thickness_DefaultValue { get; set; }
+		public string Thickness { get; set; }
+		private string Thickness_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// In a gauge chart, this option sets the width of the plot band stretchingalong the perimeter. It can be given as a percentage string, like`"10%"`, or as a pixel number, like `10`. The default value 10 isthe same as the default [tickLength](#yAxis.tickLength), thus makingthe plot band act as a background for the tick markers.
+		/// </summary>
+		public double? ThicknessNumber { get; set; }
+		private double? ThicknessNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -134,9 +158,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
+			if (InnerRadiusNumber != InnerRadiusNumber_DefaultValue) h.Add("innerRadius",InnerRadiusNumber);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (OuterRadius != OuterRadius_DefaultValue) h.Add("outerRadius",OuterRadius);
+			if (OuterRadiusNumber != OuterRadiusNumber_DefaultValue) h.Add("outerRadius",OuterRadiusNumber);
 			if (Thickness != Thickness_DefaultValue) h.Add("thickness",Thickness);
+			if (ThicknessNumber != ThicknessNumber_DefaultValue) h.Add("thickness",ThicknessNumber);
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			

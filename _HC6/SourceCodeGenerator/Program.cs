@@ -26,10 +26,10 @@ namespace SourceCodeGenerator
                 hcg.GenerateCode();
                 Console.WriteLine("Highcharts.NET has been generated.");
 
-                //JsonParser jsonParserHs = new JsonParser("highstock", fileService, filterService, updateService, typeService);
-                //HighstockGenerator hsg = new HighstockGenerator(jsonParserHs, fileService);
-                //hsg.GenerateCode();
-                //Console.WriteLine("Highstock.NET has been generated.");
+                JsonParser jsonParserHs = new JsonParser("highstock", fileService, filterService, updateService, typeService);
+                HighstockGenerator hsg = new HighstockGenerator(jsonParserHs, fileService, multiplicationService);
+                hsg.GenerateCode();
+                Console.WriteLine("Highstock.NET has been generated.");
             }
             catch(Exception ex)
             {

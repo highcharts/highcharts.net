@@ -264,7 +264,7 @@ namespace Highsoft.Web.Mvc.UnitTests
         [TestMethod]
         public void TestMinorTickInterval()
         {
-            _axis.MinorTickInterval = 100;
+            _axis.MinorTickIntervalNumber = 100;
             string json = _renderer.RenderHtml();
 
             Assert.IsTrue(json.Contains("\"minorTickInterval\":100"));

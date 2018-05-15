@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsFlagsEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
-			FillColor = FillColor_DefaultValue = null;
+			FillColor = FillColor_DefaultValue = "#ffffff";
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsFlagsFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Grouping = Grouping_DefaultValue = true;
@@ -61,6 +61,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = PlotOptionsFlagsShape.Flag;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
@@ -415,6 +416,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The shape of the marker. Can be one of "flag", "circlepin", "squarepin",or an image on the format `url(/path-to-image.jpg)`. Individualshapes can also be set for each point.
 		/// </summary>
 		public PlotOptionsFlagsShape Shape { get; set; }
@@ -609,6 +617,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape", Highstock.FirstCharacterToLower(Shape.ToString()));
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);

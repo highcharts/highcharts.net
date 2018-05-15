@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsXrangeData()
 		{
 			PartialFill = PartialFill_DefaultValue = new PlotOptionsXrangeDataPartialFill();
+			PartialFillNumber = PartialFillNumber_DefaultValue = null;
 			X2 = X2_DefaultValue = null;
 			
 		}	
@@ -25,6 +26,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsXrangeDataPartialFill PartialFill { get; set; }
 		private PlotOptionsXrangeDataPartialFill PartialFill_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A partial fill for each point, typically used to visualize how much ofa task is performed. The partial fill object can be set either on seriesor point level.
+		/// </summary>
+		public double? PartialFillNumber { get; set; }
+		private double? PartialFillNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -39,6 +47,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
+			if (PartialFillNumber != PartialFillNumber_DefaultValue) h.Add("partialFill",PartialFillNumber);
 			if (X2 != X2_DefaultValue) h.Add("x2",X2);
 			
 

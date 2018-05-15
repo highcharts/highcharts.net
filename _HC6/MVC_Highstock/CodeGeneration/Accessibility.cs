@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointDateFormatter = PointDateFormatter_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = null;
+			PointDescriptionThresholdBool = PointDescriptionThresholdBool_DefaultValue = null;
 			ScreenReaderSectionFormatter = ScreenReaderSectionFormatter_DefaultValue = "";
 			SeriesDescriptionFormatter = SeriesDescriptionFormatter_DefaultValue = "";
 			
@@ -85,6 +86,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When a series contains more points than this, we no longer exposeinformation about individual points to screen readers.Set to `false` to disable.
+		/// </summary>
+		public bool? PointDescriptionThresholdBool { get; set; }
+		private bool? PointDescriptionThresholdBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A formatter function to create the HTML contents of the hidden screenreader information region. Receives one argument, `chart`, referringto the chart object. Should return a String with the HTML contentof the region.The link to view the chart as a data table will be addedautomatically after the custom HTML content.
 		/// </summary>
 		public string ScreenReaderSectionFormatter { get; set; }
@@ -116,6 +124,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				else
 					h.Add("pointDescriptionThreshold", false);
 			}
+			if (PointDescriptionThresholdBool != PointDescriptionThresholdBool_DefaultValue) h.Add("pointDescriptionThreshold",PointDescriptionThresholdBool);
 			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highstock.AddFunction("AccessibilityScreenReaderSectionFormatter.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
 			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highstock.AddFunction("AccessibilitySeriesDescriptionFormatter.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
 			

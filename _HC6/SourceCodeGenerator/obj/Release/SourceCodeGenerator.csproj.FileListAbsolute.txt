@@ -43,4 +43,7 @@ C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\bin\Release\Newtonsoft.J
 C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\bin\Release\Newtonsoft.Json.xml
 C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\obj\Release\SourceCodeGenerator.exe
 C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\obj\Release\SourceCodeGenerator.pdb
+C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\bin\Release\JsonFiles\highcharts6.0.7.json
+C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\obj\Release\SourceCodeGenerator.csproj.CoreCompileInputs.cache
+C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\obj\Release\SourceCodeGenerator.csproj.CopyComplete
 C:\Repositories\highcharts.net\_HC6\SourceCodeGenerator\obj\Release\SourceCodeGenerator.csprojResolveAssemblyReference.cache

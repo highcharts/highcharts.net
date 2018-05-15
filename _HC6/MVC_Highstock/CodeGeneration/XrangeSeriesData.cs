@@ -26,11 +26,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			Marker = Marker_DefaultValue = new XrangeSeriesDataMarker();
 			Name = Name_DefaultValue = "";
 			PartialFill = PartialFill_DefaultValue = new XrangeSeriesDataPartialFill();
+			PartialFillNumber = PartialFillNumber_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
 			X2 = X2_DefaultValue = null;
 			Y = Y_DefaultValue = double.MinValue;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -119,6 +121,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A partial fill for each point, typically used to visualize how much ofa task is performed. The partial fill object can be set either on seriesor point level.
+		/// </summary>
+		public double? PartialFillNumber { get; set; }
+		private double? PartialFillNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether the data point is selected initially.
 		/// </summary>
 		public bool? Selected { get; set; }
@@ -144,7 +153,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -162,11 +173,19 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
+			if (PartialFillNumber != PartialFillNumber_DefaultValue) h.Add("partialFill",PartialFillNumber);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (X2 != X2_DefaultValue) h.Add("x2",X2);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

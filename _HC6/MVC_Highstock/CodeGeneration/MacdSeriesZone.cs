@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			DashStyle = DashStyle_DefaultValue = "";
-			FillColor = FillColor_DefaultValue = null;
+			FillColor = FillColor_DefaultValue = "";
 			Value = Value_DefaultValue = null;
 			
 		}	

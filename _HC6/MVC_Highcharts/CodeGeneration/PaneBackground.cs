@@ -18,8 +18,10 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ClassName = ClassName_DefaultValue = "";
-			InnerRadius = InnerRadius_DefaultValue = "0";
-			OuterRadius = OuterRadius_DefaultValue = "105%";
+			InnerRadius = InnerRadius_DefaultValue = "null";
+			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
+			OuterRadius = OuterRadius_DefaultValue = "null";
+			OuterRadiusNumber = OuterRadiusNumber_DefaultValue = null;
 			Shape = Shape_DefaultValue = PaneBackgroundShape.Solid;
 			
 		}	
@@ -61,10 +63,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The inner radius of the pane background. Can be either numeric(pixels) or a percentage string.
+		/// </summary>
+		public double? InnerRadiusNumber { get; set; }
+		private double? InnerRadiusNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The outer radius of the circular pane background. Can be eithernumeric (pixels) or a percentage string.
 		/// </summary>
 		public string OuterRadius { get; set; }
 		private string OuterRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The outer radius of the circular pane background. Can be eithernumeric (pixels) or a percentage string.
+		/// </summary>
+		public double? OuterRadiusNumber { get; set; }
+		private double? OuterRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -83,7 +99,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
+			if (InnerRadiusNumber != InnerRadiusNumber_DefaultValue) h.Add("innerRadius",InnerRadiusNumber);
 			if (OuterRadius != OuterRadius_DefaultValue) h.Add("outerRadius",OuterRadius);
+			if (OuterRadiusNumber != OuterRadiusNumber_DefaultValue) h.Add("outerRadius",OuterRadiusNumber);
 			if (Shape != Shape_DefaultValue) h.Add("shape", Highcharts.FirstCharacterToLower(Shape.ToString()));
 			
 

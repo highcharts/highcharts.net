@@ -14,4 +14,5 @@ C:\Repositories\highcharts.net\_HC6\UtilDateReplacer\bin\Release\UtilDateReplace
 C:\Repositories\highcharts.net\_HC6\UtilDateReplacer\bin\Release\UtilDateReplacer.pdb
 C:\Repositories\highcharts.net\_HC6\UtilDateReplacer\obj\Release\UtilDateReplacer.exe
 C:\Repositories\highcharts.net\_HC6\UtilDateReplacer\obj\Release\UtilDateReplacer.pdb
+C:\Repositories\highcharts.net\_HC6\UtilDateReplacer\obj\Release\UtilDateReplacer.csproj.CoreCompileInputs.cache
 C:\Repositories\highcharts.net\_HC6\UtilDateReplacer\obj\Release\UtilDateReplacer.csprojResolveAssemblyReference.cache

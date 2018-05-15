@@ -59,6 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointWidth = PointWidth_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
@@ -73,7 +74,8 @@ namespace Highsoft.Web.Mvc.Charts
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
 			WhiskerColor = WhiskerColor_DefaultValue = "null";
-			WhiskerLength = WhiskerLength_DefaultValue = null;
+			WhiskerLength = WhiskerLength_DefaultValue = "null";
+			WhiskerLengthNumber = WhiskerLengthNumber_DefaultValue = null;
 			WhiskerWidth = WhiskerWidth_DefaultValue = null;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsErrorbarZone>();
@@ -397,6 +399,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
 		/// </summary>
 		public bool? ShowCheckbox { get; set; }
@@ -497,8 +506,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The length of the whiskers, the horizontal lines marking low andhigh values. It can be a numerical pixel value, or a percentagevalue of the box width. Set `0` to disable whiskers.
 		/// </summary>
-		public double? WhiskerLength { get; set; }
-		private double? WhiskerLength_DefaultValue { get; set; }
+		public string WhiskerLength { get; set; }
+		private string WhiskerLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The length of the whiskers, the horizontal lines marking low andhigh values. It can be a numerical pixel value, or a percentagevalue of the box width. Set `0` to disable whiskers.
+		/// </summary>
+		public double? WhiskerLengthNumber { get; set; }
+		private double? WhiskerLengthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -575,6 +591,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
@@ -590,6 +607,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (WhiskerColor != WhiskerColor_DefaultValue) h.Add("whiskerColor",WhiskerColor);
 			if (WhiskerLength != WhiskerLength_DefaultValue) h.Add("whiskerLength",WhiskerLength);
+			if (WhiskerLengthNumber != WhiskerLengthNumber_DefaultValue) h.Add("whiskerLength",WhiskerLengthNumber);
 			if (WhiskerWidth != WhiskerWidth_DefaultValue) h.Add("whiskerWidth",WhiskerWidth);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));

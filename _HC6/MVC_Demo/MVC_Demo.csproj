@@ -293,16 +293,36 @@
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\HeatMapController.cs.txt" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\MapLineController.cs.txt" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\DistributionMapController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AnnotationsController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineBoostController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\StreamgraphController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ScatterBoostController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Scatter3DController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeActivityController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeDualController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeVUMeterController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BulletGraphController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\HoneycombUsaController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AnnotationsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineBoostController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\StreamgraphController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ScatterBoostController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Scatter3DController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeActivityController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeDualController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeVUMeterController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BulletGraphController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\HoneycombUsaController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -352,116 +372,336 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\ChartData.mdf" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaBasicController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaInvertedController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaMissingController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaNegativeController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ArearangeController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ArearangeLineController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreasplineController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaStackedController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaStackedPercentController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BarBasicController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BarNegativeStackController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BarStackedController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BoxPlotController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Bubble3dController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BubbleController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Column3DInteractiveController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Column3DNullValuesController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Column3DStackingGroupingController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnBasicController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnDrilldownController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnNegativeController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnParsedController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnPlacementController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnrangeController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnRotatedLabelsController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnStackedController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnStackedAndGroupedController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnStackedPercentController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboDualAxesController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboMeteogramController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboMultiAxesController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboRegressionController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboTimelineController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\DynamicClickToAddController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\DynamicMasterDetailController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\DynamicUpdateController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ErrorBarController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\FunnelController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeClockController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeSolidController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeSpeedometerController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\HeatmapCanvasController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\HeatmapController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineAjaxController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineBasicController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineLabelsController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineLogAxisController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineTimeSeriesController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Pie3DController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Pie3DDonutController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieBasicController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieDonutController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieDrilldownController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieGradientController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieLegendController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieMonochromeController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieSemiCircleController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolarController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolarSpiderController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolarWindRoseController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolygonController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PyramidController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\RendererController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ScatterController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SharedController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SparklineController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplineInvertedController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplineIrregularTimeController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplinePlotBandsController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplineSymbolsController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\TreemapColoraxisController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\TreemapLargeDatasetController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\TreemapWithLevelsController.cs.txt" />
-    <Content Include="Content\Areas\Highcharts\Controllers\Shared\WaterfallController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreaController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\ArearangeController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreasplineController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreasplinerangeController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\CandlestickController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\CandlestickAndVolumeController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\ColumnController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\ColumnRangeController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\CompareController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\DataGroupingController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\DynamicUpdateController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsGeneralController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsPlacementController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsShapesController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagssShapesColorsController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagssShapesColorstController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayBreaksController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayAreaController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayCandlestickController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\LazyLoadingController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\LineMarkersController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\MarkersOnly.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\MarkersOnlyController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\NavigatorDisabledController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\OHLCController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\StyledScrollbarController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\ScrollbarDisabledController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\BasicLineController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\SplineController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\SplineCotroller.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\StepLineController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotbandsController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotbandssController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotlinesController.cs.txt" />
-    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisReversedController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaBasicController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaInvertedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaMissingController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaNegativeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ArearangeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ArearangeLineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreasplineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaStackedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaStackedPercentController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BarBasicController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BarNegativeStackController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BarStackedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BoxPlotController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Bubble3dController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BubbleController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Column3DInteractiveController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Column3DNullValuesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Column3DStackingGroupingController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnBasicController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnDrilldownController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnNegativeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnParsedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnPlacementController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnrangeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnRotatedLabelsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnStackedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnStackedAndGroupedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnStackedPercentController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboDualAxesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboMeteogramController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboMultiAxesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboRegressionController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboTimelineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\DynamicClickToAddController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\DynamicMasterDetailController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\DynamicUpdateController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ErrorBarController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\FunnelController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeClockController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeSolidController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeSpeedometerController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\HeatmapCanvasController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\HeatmapController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineAjaxController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineBasicController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineLabelsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineLogAxisController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineTimeSeriesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Pie3DController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Pie3DDonutController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieBasicController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieDonutController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieDrilldownController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieGradientController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieLegendController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieMonochromeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieSemiCircleController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolarController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolarSpiderController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolarWindRoseController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolygonController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PyramidController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\RendererController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ScatterController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SharedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SparklineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplineInvertedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplineIrregularTimeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplinePlotBandsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplineSymbolsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\TreemapColoraxisController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\TreemapLargeDatasetController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\TreemapWithLevelsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\WaterfallController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreaController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ArearangeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreasplineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreasplinerangeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\CandlestickController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\CandlestickAndVolumeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ColumnController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ColumnRangeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\CompareController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\DataGroupingController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\DynamicUpdateController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsGeneralController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsPlacementController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsShapesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagssShapesColorsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagssShapesColorstController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayBreaksController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayAreaController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayCandlestickController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\LazyLoadingController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\LineMarkersController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\MarkersOnly.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\MarkersOnlyController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\NavigatorDisabledController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\OHLCController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\StyledScrollbarController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ScrollbarDisabledController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\BasicLineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\SplineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\SplineCotroller.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\StepLineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotbandsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotbandssController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotlinesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisReversedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\bootstrap\font-awesome.css" />
     <Content Include="Content\bootstrap\navigation-bar.css" />

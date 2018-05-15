@@ -38,8 +38,7 @@ namespace SourceCodeGenerator.Services
                 else
                     clone.Suffix = string.Empty;
 
-                if (clone.Children.Any())
-                    clone.Children.Clear();
+                ClearLists(clone);
 
                 clonedObjects.Add(clone);
                 counter++;
@@ -56,8 +55,7 @@ namespace SourceCodeGenerator.Services
                 else
                     clone.Suffix = string.Empty;
 
-                if (clone.Children.Any())
-                    clone.Children.Clear();
+                ClearLists(clone);
 
                 clonedObjects.Add(clone);
                 counter++;
@@ -74,8 +72,7 @@ namespace SourceCodeGenerator.Services
                 else
                     clone.Suffix = string.Empty;
 
-                if (clone.Children.Any())
-                    clone.Children.Clear();
+                ClearLists(clone);
 
                 clonedObjects.Add(clone);
                 counter++;
@@ -84,6 +81,15 @@ namespace SourceCodeGenerator.Services
             //place for arrrays
 
             return clonedObjects;
+        }
+
+        private void ClearLists(ApiItem item)
+        {
+            if (item.Children.Any())
+                item.Children.Clear();
+
+            if (item.Extends.Any())
+                item.Extends.Clear();
         }
     }
 

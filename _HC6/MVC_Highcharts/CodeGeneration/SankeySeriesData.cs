@@ -29,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			To = To_DefaultValue = "";
 			Weight = Weight_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -128,7 +129,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Weight { get; set; }
 		private double? Weight_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -148,7 +151,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

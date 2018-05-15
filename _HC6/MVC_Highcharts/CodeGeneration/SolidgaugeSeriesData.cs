@@ -21,13 +21,16 @@ namespace Highsoft.Web.Mvc.Charts
 			Description = Description_DefaultValue = "undefined";
 			Events = Events_DefaultValue = new SolidgaugeSeriesDataEvents();
 			Id = Id_DefaultValue = "null";
-			InnerRadius = InnerRadius_DefaultValue = null;
+			InnerRadius = InnerRadius_DefaultValue = "null";
+			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
-			Radius = Radius_DefaultValue = null;
+			Radius = Radius_DefaultValue = "null";
+			RadiusNumber = RadiusNumber_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Y = Y_DefaultValue = double.MinValue;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -83,8 +86,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The inner radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
 		/// </summary>
-		public double? InnerRadius { get; set; }
-		private double? InnerRadius_DefaultValue { get; set; }
+		public string InnerRadius { get; set; }
+		private string InnerRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The inner radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// </summary>
+		public double? InnerRadiusNumber { get; set; }
+		private double? InnerRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -104,8 +114,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The outer radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
 		/// </summary>
-		public double? Radius { get; set; }
-		private double? Radius_DefaultValue { get; set; }
+		public string Radius { get; set; }
+		private string Radius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The outer radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// </summary>
+		public double? RadiusNumber { get; set; }
+		private double? RadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -120,7 +137,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -134,12 +153,21 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
+			if (InnerRadiusNumber != InnerRadiusNumber_DefaultValue) h.Add("innerRadius",InnerRadiusNumber);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (RadiusNumber != RadiusNumber_DefaultValue) h.Add("radius",RadiusNumber);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

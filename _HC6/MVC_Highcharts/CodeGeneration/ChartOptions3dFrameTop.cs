@@ -16,7 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Color = Color_DefaultValue = "transparent";
 			Size = Size_DefaultValue = 1;
-			Visible = Visible_DefaultValue = ChartOptions3dFrameTopVisible.Default;
+			Visible = Visible_DefaultValue = "null";
+			VisibleBool = VisibleBool_DefaultValue = null;
 			
 		}	
 		
@@ -38,8 +39,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether to display the frame. Possible values are `true`,`false`, `"auto"` to display only the frames behind the data,and `"default"` to display faces behind the data based on theaxis layout, ignoring the point of view.
 		/// </summary>
-		public ChartOptions3dFrameTopVisible Visible { get; set; }
-		private ChartOptions3dFrameTopVisible Visible_DefaultValue { get; set; }
+		public string Visible { get; set; }
+		private string Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to display the frame. Possible values are `true`,`false`, `"auto"` to display only the frames behind the data,and `"default"` to display faces behind the data based on theaxis layout, ignoring the point of view.
+		/// </summary>
+		public bool? VisibleBool { get; set; }
+		private bool? VisibleBool_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -48,7 +56,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
-			if (Visible != Visible_DefaultValue) h.Add("visible", Highcharts.FirstCharacterToLower(Visible.ToString()));
+			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (VisibleBool != VisibleBool_DefaultValue) h.Add("visible",VisibleBool);
 			
 
 			return h;
