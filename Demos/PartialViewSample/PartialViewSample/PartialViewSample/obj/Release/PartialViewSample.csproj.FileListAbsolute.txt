@@ -1,0 +1,6 @@
+C:\Repositories\highcharts.net\Demos\PartialViewSample\PartialViewSample\PartialViewSample\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Repositories\highcharts.net\Demos\PartialViewSample\PartialViewSample\PartialViewSample\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Repositories\highcharts.net\Demos\PartialViewSample\PartialViewSample\PartialViewSample\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Repositories\highcharts.net\Demos\PartialViewSample\PartialViewSample\PartialViewSample\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Repositories\highcharts.net\Demos\PartialViewSample\PartialViewSample\PartialViewSample\bin\roslyn\System.IO.Compression.dll
+C:\Repositories\highcharts.net\Demos\PartialViewSample\PartialViewSample\PartialViewSample\bin\roslyn\VBCSCompiler.exe
