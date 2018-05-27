@@ -1,6 +1,4 @@
-﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
-
-<script src="http://code.highcharts.com/highcharts.js"></script>
+﻿<script src="http://code.highcharts.com/highcharts.js"></script>
 
 @* Additional chart types, such as "heatmap", are defined in the heatmap.js module *@
 
@@ -18,7 +16,7 @@
 
 </script>
 
-    @(Html.Highsoft().Highcharts(
+    @(Html.Highsoft().GetHighcharts(
         new Highcharts
         {
             Chart = new Chart

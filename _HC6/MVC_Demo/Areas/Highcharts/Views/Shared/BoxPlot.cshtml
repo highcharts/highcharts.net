@@ -1,7 +1,4 @@
-﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
-
-<script src="http://code.highcharts.com/highcharts.js"></script>
-
+﻿<script src="http://code.highcharts.com/highcharts.js"></script>
 
 @*The highchart-more.js file contains definitions for additional chart types not available 
 in the main highcharts.js file such as "arearange". You need to include this file if you
@@ -12,7 +9,7 @@ are using these types of charts*@
 
 @using Highsoft.Web.Mvc.Charts
 
-    @(Html.Highsoft().Highcharts(
+    @(Html.Highsoft().GetHighcharts(
         new Highcharts
         {
             Title = new Title

@@ -1,5 +1,4 @@
-﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
-<script src="http://code.highcharts.com/highcharts.js"></script>
+﻿<script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
@@ -12,7 +11,7 @@
   
     </script>
 
-    @(Html.Highsoft().Highcharts(
+    @(Html.Highsoft().GetHighcharts(
         new Highcharts
         {
             Chart = new Chart

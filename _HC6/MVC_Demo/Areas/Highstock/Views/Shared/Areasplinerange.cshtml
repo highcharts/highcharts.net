@@ -1,8 +1,5 @@
 ﻿@using Highsoft.Web.Mvc.Stocks
 
-@*  The Highstock client-side javascript library is dependent on jQuery so you need to include 
-    a reference to the jQuery library before referncing the highstock llibrary*@
-    
 <script src="http://code.highcharts.com/stock/highstock.js"></script>
 
 @*The highchart-more.js file contains definitions for additional chart types not available 
@@ -13,7 +10,7 @@ are using these types of charts*@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
    
-    @(Html.Highsoft().Highstock(
+    @(Html.Highsoft().GetHighstock(
         new Highstock
         {
             Chart = new Chart

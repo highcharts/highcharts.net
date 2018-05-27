@@ -1,6 +1,4 @@
-﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
-
-<script src="http://code.highcharts.com/highcharts.js"></script>
+﻿<script src="http://code.highcharts.com/highcharts.js"></script>
 
 @*All Highcharts 3D charts requires the highcharts-3rd.js module*@
 
@@ -45,7 +43,7 @@
 
 @using Highsoft.Web.Mvc.Charts
 
-    @(Html.Highsoft().Highcharts(
+    @(Html.Highsoft().GetHighcharts(
         new Highcharts
         {
             Chart = new Chart
