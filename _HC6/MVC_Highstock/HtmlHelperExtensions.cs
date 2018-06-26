@@ -53,6 +53,12 @@ namespace Highsoft.Web.Mvc.Stocks
             return new HtmlString(renderer.GetJsonOptions());
         }
 
+        public HtmlString SetOptions(Global global = null, Lang lang = null)
+        {
+            var renderer = new HighstockRenderer();
+            return new HtmlString(renderer.SetOptions(global, lang));
+        }
+
         private HtmlString GetHighstockFunction(Highstock chart, string containerId, string functionName)
         {
             var renderer = new HighstockRenderer(chart);
