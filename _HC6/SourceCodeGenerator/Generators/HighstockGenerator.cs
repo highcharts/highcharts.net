@@ -693,15 +693,9 @@ public class HighstockGenerator
         string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
         string customPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToJSON());\n\t\t\t";
 
-        //if (propertyName == "Data" && child.FullName != "data")
-        //    return "";
-
         // fully qualified names that are collections
         if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
         {
-            if (child.FullName == "Data" && child.ParentFullName.ToLower().Contains("highstock"))
-                return String.Format(complexPropertyFormat, child.FullName, GetJSName(propertyName, child.Suffix));
-
             if (child.FullName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
 
@@ -728,6 +722,9 @@ public class HighstockGenerator
         }
         if (_propertyTypeMappings.Contains(child.Title) || _propertyTypeMappings.Contains(child.FullName))
         {
+            if (child.FullName == "lang.accessibility.series")
+                return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
+
             if (child.FullName == "plotOptions.series" || child.FullName == "navigator.series")
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
@@ -920,6 +917,7 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("crosshairs", "List<Crosshair>");
         _propertyTypeMappings.Add("stops", "List<Stop>");
         _propertyTypeMappings.Add("renderTo", "string");
+        _propertyTypeMappings.Add("lang.accessibility.series", "LangAccessibilitySeries");
         _propertyTypeMappings.Add("series", "List<Series>");
         _propertyTypeMappings.Add("drilldown.series", "List<Series>");
         _propertyTypeMappings.Add("xAxis", "List<XAxis>");
@@ -1008,6 +1006,7 @@ public class HighstockGenerator
         _propertyInitMappings.Add("rows", "new List<List<object>>()");
         _propertyInitMappings.Add("seriesMapping", "new List<object>()");
         _propertyInitMappings.Add("keys", "new List<string>()");
+        _propertyInitMappings.Add("lang.accessibility.series", "new LangAccessibilitySeries()");
         _propertyInitMappings.Add("series", "new List<Series>()");
         _propertyInitMappings.Add("xAxis", "new List<XAxis>()");
         _propertyInitMappings.Add("yAxis", "new List<YAxis>()");
