@@ -13,6 +13,8 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
     {
         private Highcharts _chart;
 
+        public HighchartsRenderer() { }
+
         public HighchartsRenderer(Highcharts chart)
         {
             _chart = chart;
@@ -59,6 +61,28 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 }
 
             return GetCreateChartJavascriptFunction(functionName);
+        }
+
+        public string SetOptions(Global global = null, Lang lang = null)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("<script type='text/javascript'>");
+            sb.Append("Highcharts.setOptions(");
+
+            Hashtable options = new Hashtable();
+
+            if (global != null && global.IsDirty())
+                options.Add("global", global.ToHashtable());
+
+            if (lang != null && lang.IsDirty())
+                options.Add("lang", lang.ToHashtable());
+
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
+            sb.Append(serializer.Serialize(options));
+            sb.Append(");</script>");
+            return sb.ToString();
         }
 
         private string GetResponse(int licenseType, bool addContainer)

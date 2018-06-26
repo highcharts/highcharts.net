@@ -66,6 +66,12 @@ namespace Highsoft.Web.Mvc.Charts
             return new HtmlString(renderer.GetJsonOptions());
         }
 
+        public HtmlString SetOptions(Global global = null, Lang lang = null)
+        {
+            var renderer = new HighchartsRenderer();
+            return new HtmlString(renderer.SetOptions(global, lang));
+        }
+
         private HtmlString GetHighchartsFunction(Highcharts chart, string containerId, string functionName)
         {
             var renderer = new HighchartsRenderer(chart);
