@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 			RangeSelectorMaxInput = RangeSelectorMaxInput_DefaultValue = "Select end date.";
 			RangeSelectorMinInput = RangeSelectorMinInput_DefaultValue = "Select start date.";
 			ScreenReaderRegionLabel = ScreenReaderRegionLabel_DefaultValue = "Chart screen reader information.";
-			Series = Series_DefaultValue = new List<Series>();
+			Series = Series_DefaultValue = new LangAccessibilitySeries();
 			SeriesTypeDescriptions = SeriesTypeDescriptions_DefaultValue = new LangAccessibilitySeriesTypeDescriptions();
 			StructureHeading = StructureHeading_DefaultValue = "Structure.";
 			SvgContainerTitle = SvgContainerTitle_DefaultValue = "{chartTitle}";
@@ -155,8 +155,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Lang configuration for different series types. For more dynamiccontrol over the series element descriptions, see[accessibility.seriesDescriptionFormatter](accessibility.seriesDescriptionFormatter).
 		/// </summary>
-		public List<Series> Series { get; set; }
-		private List<Series> Series_DefaultValue { get; set; }
+		public LangAccessibilitySeries Series { get; set; }
+		private LangAccessibilitySeries Series_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -214,7 +214,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (RangeSelectorMaxInput != RangeSelectorMaxInput_DefaultValue) h.Add("rangeSelectorMaxInput",RangeSelectorMaxInput);
 			if (RangeSelectorMinInput != RangeSelectorMinInput_DefaultValue) h.Add("rangeSelectorMinInput",RangeSelectorMinInput);
 			if (ScreenReaderRegionLabel != ScreenReaderRegionLabel_DefaultValue) h.Add("screenReaderRegionLabel",ScreenReaderRegionLabel);
-			if (Series != Series_DefaultValue) h.Add("series",Series);
+			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
 			if (SeriesTypeDescriptions.IsDirty()) h.Add("seriesTypeDescriptions",SeriesTypeDescriptions.ToHashtable());
 			if (StructureHeading != StructureHeading_DefaultValue) h.Add("structureHeading",StructureHeading);
 			if (SvgContainerTitle != SvgContainerTitle_DefaultValue) h.Add("svgContainerTitle",SvgContainerTitle);
