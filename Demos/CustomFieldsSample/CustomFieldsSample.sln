@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomFieldsSample", "CustomFieldsSample\CustomFieldsSample.csproj", "{A793D297-D800-4CD6-A87E-1755E3115806}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A793D297-D800-4CD6-A87E-1755E3115806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A793D297-D800-4CD6-A87E-1755E3115806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A793D297-D800-4CD6-A87E-1755E3115806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A793D297-D800-4CD6-A87E-1755E3115806}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A74F5232-E926-4919-93C9-46A00AEB4252}
+	EndGlobalSection
+EndGlobal

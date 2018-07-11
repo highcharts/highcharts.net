@@ -1,0 +1,142 @@
+﻿@using Highsoft.Web.Mvc.Charts
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@Html.Highsoft().GetHighcharts(new Highcharts
+{
+    Chart = new Highsoft.Web.Mvc.Charts.Chart
+    {
+        Type = ChartType.Column,
+        Events = new ChartEvents
+        {
+            Drilldown = "function(e) {
+        if (!e.seriesOptions)
+            {
+                var chart = this,
+                  drilldowns = {
+              'Animals': {
+                    name: 'Animals',
+                data: [
+                  ['Cows', 2],
+                  ['Sheep', 3]
+                ]
+              },
+              'Animals2': {
+                name: '2 Animals',
+                color: Highcharts.getOptions().colors[1],
+                data: [
+                  ['Cows', 22],
+                  ['Sheep', 13]
+                ]
+              },
+              'Fruits': {
+                name: 'Fruits',
+                data: [
+                  ['Apples', 5],
+                  ['Oranges', 7],
+                  ['Bananas', 2]
+                ]
+              },
+              'Fruits2': {
+                name: '2 Fruits',
+                color: 'red',
+                data: [
+                  ['Apples', 15],
+                  ['Oranges', 17],
+                  ['Bananas', 22]
+                ]
+              },
+              'Cars': {
+                name: 'Cars',
+                data: [
+                  ['Toyota', 1],
+                  ['Volkswagen', 2],
+                  ['Opel', 5]
+                ]
+              },
+              'Cars2': {
+                name: '2 Cars',
+                color: '#bada55',
+                data: [
+                  ['Toyota', 11],
+                  ['Volkswagen', 21],
+                  ['Opel', 15]
+                ]
+              },
+              'AnimalsB': {
+                name: 'B Animals',
+                data: [
+                  ['Cows', 12],
+                  ['Sheep', 13]
+                ]
+              },
+              'AnimalsB2': {
+                name: 'B2 Animals',
+                color: Highcharts.getOptions().colors[1],
+                data: [
+                  ['Cows', 12],
+                  ['Sheep', 23]
+                ]
+              },
+              'FruitsB': {
+                name: 'BFruits',
+                data: [
+                  ['Apples', 15],
+                  ['Oranges', 17],
+                  ['Bananas', 12]
+                ]
+              },
+              'FruitsB2': {
+                name: 'B2Fruits',
+                color: 'red',
+                data: [
+                  ['Apples', 25],
+                  ['Oranges', 27],
+                  ['Bananas', 12]
+                ]
+              },
+              'CarsB': {
+                name: 'BCars',
+                data: [
+                  ['Toyota', 11],
+                  ['Volkswagen', 12],
+                  ['Opel', 15]
+                ]
+              },
+              'CarsB2': {
+                name: 'B2Cars',
+                color: '#bada55',
+                data: [
+                  ['Toyota', 21],
+                  ['Volkswagen', 11],
+                  ['Opel', 25]
+                ]
+              }
+            },
+            series,
+            points = [];
+
+          //single point drilldown
+          if (e.points === false) {
+            points.push(e.point)
+          } else { //or category drilldown
+            points = e.points;
+          }
+
+          Highcharts.each(points, function(point) {
+
+            series = [drilldowns[point.name], drilldowns[point.name + '2']];
+
+            chart.addSingleSeriesAsDrilldown(e.point, series[0]);
+            chart.addSingleSeriesAsDrilldown(e.point, series[1]);
+          });
+
+          chart.applyDrilldown();
+        }
+
+      }
+    }"
+        }
+    }
+},"chart")

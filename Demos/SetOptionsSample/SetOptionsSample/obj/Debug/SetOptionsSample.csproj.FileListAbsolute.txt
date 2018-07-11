@@ -1,0 +1,190 @@
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\ApplicationInsights.config
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\SetOptionsSample.dll.config
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\SetOptionsSample.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\SetOptionsSample.pdb
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\csc.exe
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\csc.exe.config
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\csc.rsp
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\csi.exe
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\csi.exe.config
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\csi.rsp
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.AppContext.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Collections.Immutable.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Console.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Diagnostics.Process.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.IO.Compression.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.IO.FileSystem.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.IO.Pipes.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Reflection.Metadata.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.AccessControl.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Claims.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Principal.Windows.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Threading.Thread.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.ValueTuple.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Xml.XmlDocument.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Xml.XPath.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\vbc.exe
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\vbc.exe.config
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\vbc.rsp
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\VBCSCompiler.exe
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\roslyn\VBCSCompiler.exe.config
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Antlr3.Runtime.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Highcharts.Web.Mvc.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.Agent.Intercept.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.DependencyCollector.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.Web.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.WindowsServer.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.ApplicationInsights.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.Web.Infrastructure.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Newtonsoft.Json.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Diagnostics.DiagnosticSource.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.Helpers.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.Mvc.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.Optimization.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.Razor.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.Deployment.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.Razor.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\WebGrease.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.Helpers.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.Mvc.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.Optimization.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.Razor.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.Deployment.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.Razor.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Newtonsoft.Json.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Antlr3.Runtime.pdb
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\System.Diagnostics.DiagnosticSource.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.DependencyCollector.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.WindowsServer.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.Web.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\obj\Debug\SetOptionsSample.csprojAssemblyReference.cache
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\obj\Debug\SetOptionsSample.csproj.CoreCompileInputs.cache
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\obj\Debug\SetOptionsSample.csproj.CopyComplete
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\obj\Debug\SetOptionsSample.dll
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\obj\Debug\SetOptionsSample.pdb
+C:\.NET Projects\SetOptionsSample\SetOptionsSample\bin\Highcharts.Web.Mvc.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\ApplicationInsights.config
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\SetOptionsSample.dll.config
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\SetOptionsSample.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\SetOptionsSample.pdb
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\csc.exe
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\csc.exe.config
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\csc.rsp
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\csi.exe
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\csi.exe.config
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\csi.rsp
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\Microsoft.Win32.Primitives.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.AppContext.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Collections.Immutable.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Console.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Diagnostics.Process.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Diagnostics.StackTrace.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.IO.Compression.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.IO.FileSystem.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.IO.FileSystem.Primitives.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.IO.Pipes.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Reflection.Metadata.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.AccessControl.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Claims.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Cryptography.Encoding.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Cryptography.Primitives.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Security.Principal.Windows.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Text.Encoding.CodePages.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Threading.Thread.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.ValueTuple.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Xml.ReaderWriter.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Xml.XmlDocument.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Xml.XPath.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\System.Xml.XPath.XDocument.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\vbc.exe
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\vbc.exe.config
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\vbc.rsp
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\VBCSCompiler.exe
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\roslyn\VBCSCompiler.exe.config
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Antlr3.Runtime.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Highcharts.Web.Mvc.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.Agent.Intercept.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.DependencyCollector.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.Web.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.WindowsServer.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.ApplicationInsights.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.Web.Infrastructure.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Newtonsoft.Json.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Diagnostics.DiagnosticSource.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.Helpers.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.Mvc.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.Optimization.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.Razor.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.Deployment.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.Razor.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\WebGrease.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Highcharts.Web.Mvc.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.Helpers.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.Mvc.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.Optimization.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.Razor.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.Deployment.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Web.WebPages.Razor.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Newtonsoft.Json.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Antlr3.Runtime.pdb
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\System.Diagnostics.DiagnosticSource.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.DependencyCollector.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.WindowsServer.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.AI.Web.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\obj\Debug\SetOptionsSample.csprojAssemblyReference.cache
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\obj\Debug\SetOptionsSample.csproj.CoreCompileInputs.cache
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\obj\Debug\SetOptionsSample.csproj.CopyComplete
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\obj\Debug\SetOptionsSample.dll
+c:\Repositories\highcharts.net\Demos\SetOptionsSample\SetOptionsSample\obj\Debug\SetOptionsSample.pdb
