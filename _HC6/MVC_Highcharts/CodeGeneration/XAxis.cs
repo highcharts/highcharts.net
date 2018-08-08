@@ -60,6 +60,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PlotBands = PlotBands_DefaultValue = new List<XAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<XAxisPlotLines>();
 			Reversed = Reversed_DefaultValue = false;
+			ReversedStacks = ReversedStacks_DefaultValue = false;
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
@@ -149,7 +150,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
+		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
@@ -408,6 +409,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// This option determines how stacks should be ordered within a group.For example reversed xAxis also reverses stacks, so first series comes lastin a group. To keep order like for non-reversed xAxis enable this option.
+		/// </summary>
+		public bool? ReversedStacks { get; set; }
+		private bool? ReversedStacks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to show the axis line and title when the axis has no data.
 		/// </summary>
 		public bool? ShowEmpty { get; set; }
@@ -604,6 +612,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
+			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);

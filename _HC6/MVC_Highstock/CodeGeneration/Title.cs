@@ -50,7 +50,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS styles for the title. Use this for font styling, but use `align`,`x` and `y` for text alignment.In styled mode, the title style is given in the `.highcharts-title` class.
+		/// CSS styles for the title. Use this for font styling, but use `align`,`x` and `y` for text alignment.In styled mode, the title style is given in the `.highcharts-title`class.
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
@@ -71,7 +71,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The vertical alignment of the title. Can be one of `"top"`, `"middle"`and `"bottom"`. When a value is given, the title behaves as if[floating](#title.floating) were `true`.
+		/// The vertical alignment of the title. Can be one of `"top"`,`"middle"` and `"bottom"`. When a value is given, the title behavesas if [floating](#title.floating) were `true`.
 		/// </summary>
 		public TitleVerticalAlign VerticalAlign { get; set; }
 		private TitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
@@ -85,14 +85,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The x position of the title relative to the alignment within chart.spacingLeft and chart.spacingRight.
+		/// The x position of the title relative to the alignment within`chart.spacingLeft` and `chart.spacingRight`.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The y position of the title relative to the alignment within [chart.spacingTop](#chart.spacingTop) and [chart.spacingBottom](#chart.spacingBottom). By default it depends on the font size.
+		/// The y position of the title relative to the alignment within[chart.spacingTop](#chart.spacingTop) and [chart.spacingBottom](#chart.spacingBottom). By default it depends on the font size.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

@@ -214,7 +214,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The x position offset of the label relative to the point.
+		/// The x position offset of the label relative to the point in pixels.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }

@@ -69,14 +69,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// General options for the chart.
 		/// </summary>
 		public Chart Chart { get; set; }
 		private Chart Chart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A color axis for choropleth maps and heat maps. Visually, the coloraxis will appear as a gradient or as separate items inside thelegend, depending on whether the axis is scalar or based on dataclasses.For supported color formats, see the[docs article about colors](http://www.highcharts.com/docs/chart-design-and-style/colors).A scalar color axis is represented by a gradient. The colors eitherrange between the [minColor](#colorAxis.minColor) and the[maxColor](#colorAxis.maxColor), or for more fine grained control thecolors can be defined in [stops](#colorAxis.stops). Often times, thecolor axis needs to be adjusted to get the right color spread for thedata. In addition to stops, consider using a logarithmic[axis type](#colorAxis.type), or setting [min](#colorAxis.min) and[max](#colorAxis.max) to avoid the colors being determined byoutliers.When [dataClasses](#colorAxis.dataClasses) are used, the ranges aresubdivided into separate classes like categories based on theirvalues. This can be used for ranges between two values, but also fora true category. However, when your data is categorized, it may be asconvenient to add each category to a separate series.See [the Axis object](#Axis) for programmatic access to the axis.
+		/// A color axis for choropleth maps and heat maps. Visually, the coloraxis will appear as a gradient or as separate items inside thelegend, depending on whether the axis is scalar or based on dataclasses.For supported color formats, see the[docs article about colors](http://www.highcharts.com/docs/chart-design-and-style/colors).A scalar color axis is represented by a gradient. The colors eitherrange between the [minColor](#colorAxis.minColor) and the[maxColor](#colorAxis.maxColor), or for more fine grained control thecolors can be defined in [stops](#colorAxis.stops). Often times, thecolor axis needs to be adjusted to get the right color spread for thedata. In addition to stops, consider using a logarithmic[axis type](#colorAxis.type), or setting [min](#colorAxis.min) and[max](#colorAxis.max) to avoid the colors being determined byoutliers.When [dataClasses](#colorAxis.dataClasses) are used, the ranges aresubdivided into separate classes like categories based on theirvalues. This can be used for ranges between two values, but also fora true category. However, when your data is categorized, it may be asconvenient to add each category to a separate series.See [the Axis object](/class-reference/Highcharts.Axis) forprogrammatic access to the axis.
 		/// </summary>
 		public ColorAxis ColorAxis { get; set; }
 		private ColorAxis ColorAxis_DefaultValue { get; set; }
@@ -111,7 +111,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for drill down, the concept of inspecting increasingly highresolution data through clicking on chart items like columns or pie slices.The drilldown feature requires the drilldown.js file to be loaded,found in the modules directory of the download package, or online at(code.highcharts.com/modules/drilldown.js)[code.highcharts.com/modules/drilldown.js].
+		/// Options for drill down, the concept of inspecting increasingly highresolution data through clicking on chart items like columns or pie slices.The drilldown feature requires the drilldown.js file to be loaded,found in the modules directory of the download package, or online at[code.highcharts.com/modules/drilldown.js](code.highcharts.com/modules/drilldown.js).
 		/// </summary>
 		public Drilldown Drilldown { get; set; }
 		private Drilldown Drilldown_DefaultValue { get; set; }
@@ -230,21 +230,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The X axis or category axis. Normally this is the horizontal axis,though if the chart is inverted this is the vertical axis. In case ofmultiple axes, the xAxis node is an array of configuration objects.See [the Axis object](#Axis) for programmatic access to the axis.
+		/// The X axis or category axis. Normally this is the horizontal axis,though if the chart is inverted this is the vertical axis. In case ofmultiple axes, the xAxis node is an array of configuration objects.See [the Axis object](/class-reference/Highcharts.Axis) forprogrammatic access to the axis.
 		/// </summary>
 		public List<XAxis> XAxis { get; set; }
 		private List<XAxis> XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The Y axis or value axis. Normally this is the vertical axis,though if the chart is inverted this is the horizontal axis.In case of multiple axes, the yAxis node is an array ofconfiguration objects.See [the Axis object](#Axis) for programmatic access to the axis.
+		/// The Y axis or value axis. Normally this is the vertical axis,though if the chart is inverted this is the horizontal axis.In case of multiple axes, the yAxis node is an array ofconfiguration objects.See [the Axis object](/class-reference/Highcharts.Axis) for programmaticaccess to the axis.
 		/// </summary>
 		public List<YAxis> YAxis { get; set; }
 		private List<YAxis> YAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The Z axis or depth axis for 3D plots.See [the Axis object](#Axis) for programmatic access to the axis.
+		/// The Z axis or depth axis for 3D plots.See [the Axis object](/class-reference/Highcharts.Axis) for programmaticaccess to the axis.
 		/// </summary>
 		public ZAxis ZAxis { get; set; }
 		private ZAxis ZAxis_DefaultValue { get; set; }

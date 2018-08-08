@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VariablepieSeriesDataLabels()
 		{
+			AllowOverlap = AllowOverlap_DefaultValue = true;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "undefined";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -47,6 +48,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? AllowOverlap { get; set; }
+		private bool? AllowOverlap_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The background color or gradient for the data label.
@@ -245,7 +253,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The y position offset of the label relative to the point.
+		/// The y position offset of the label relative to the point in pixels.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
@@ -262,6 +270,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);

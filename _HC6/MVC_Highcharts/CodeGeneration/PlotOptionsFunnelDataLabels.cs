@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsFunnelDataLabels()
 		{
+			AllowOverlap = AllowOverlap_DefaultValue = true;
 			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
 			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
@@ -26,6 +27,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? AllowOverlap { get; set; }
+		private bool? AllowOverlap_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The color of the line connecting the data label to the pie slice.The default color is the same as the point's color.In styled mode, the connector stroke is given in the`.highcharts-data-label-connector` class.
@@ -94,6 +102,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
 			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);

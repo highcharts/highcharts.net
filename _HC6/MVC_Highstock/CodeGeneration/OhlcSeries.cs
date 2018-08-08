@@ -62,6 +62,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointRange = PointRange_DefaultValue = 0;
 			PointStart = PointStart_DefaultValue = 0;
+			PointValKey = PointValKey_DefaultValue = OhlcSeriesPointValKey.Close;
 			PointWidth = PointWidth_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -121,7 +122,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A class name to apply to the series' graphical elements.
+		/// An additional class name to apply to the series' graphical elements. Thisoption does not replace default class names of the graphical element.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
@@ -198,7 +199,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](#Point.dataGroup).
+		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#.dataGroup).
 		/// </summary>
 		public OhlcSeriesDataGrouping DataGrouping { get; set; }
 		private OhlcSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
@@ -429,6 +430,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Determines which one of `open`, `high`, `low`, `close` values should berepresented as `point.y`, which is later used to set dataLabel position.
+		/// </summary>
+		public OhlcSeriesPointValKey PointValKey { get; set; }
+		private OhlcSeriesPointValKey PointValKey_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A pixel value specifying a fixed width for each column or bar. When`null`, the width is calculated from the `pointPadding` and`groupPadding`.
 		/// </summary>
 		public double? PointWidth { get; set; }
@@ -604,7 +612,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option. The zone definitions have to be in ascending order regarding tothe value.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<OhlcSeriesZone> Zones { get; set; }
 		private List<OhlcSeriesZone> Zones_DefaultValue { get; set; }
@@ -666,6 +674,7 @@ namespace Highsoft.Web.Mvc.Stocks
 					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
+			if (PointValKey != PointValKey_DefaultValue) h.Add("pointValKey", Highstock.FirstCharacterToLower(PointValKey.ToString()));
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);

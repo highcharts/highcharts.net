@@ -670,6 +670,7 @@
     <Compile Include="CodeGeneration\Enums\CandleStickSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\CandleStickSeriesFindNearestPointBy.cs" />
     <Compile Include="CodeGeneration\Enums\CandleStickSeriesPointIntervalUnit.cs" />
+    <Compile Include="CodeGeneration\Enums\CandleStickSeriesPointValKey.cs" />
     <Compile Include="CodeGeneration\Enums\CandleStickSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\CandleStickSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\CciSeriesCursor.cs" />
@@ -840,6 +841,7 @@
     <Compile Include="CodeGeneration\Enums\OhlcSeriesDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesFindNearestPointBy.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesPointIntervalUnit.cs" />
+    <Compile Include="CodeGeneration\Enums\OhlcSeriesPointValKey.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesStacking.cs" />
     <Compile Include="CodeGeneration\Enums\OhlcSeriesType.cs" />
     <Compile Include="CodeGeneration\Enums\PivotpointsSeriesCursor.cs" />
@@ -950,6 +952,7 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickFindNearestPointBy.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickPointIntervalUnit.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickPointValKey.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCandlestickStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCciCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsCciDashStyle.cs" />
@@ -1068,6 +1071,7 @@
     <Compile Include="CodeGeneration\Enums\PlotOptionsOhlcDataLabelsVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsOhlcFindNearestPointBy.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsOhlcPointIntervalUnit.cs" />
+    <Compile Include="CodeGeneration\Enums\PlotOptionsOhlcPointValKey.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsOhlcStacking.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPivotpointsCursor.cs" />
     <Compile Include="CodeGeneration\Enums\PlotOptionsPivotpointsDashStyle.cs" />
@@ -1296,6 +1300,7 @@
     <Compile Include="CodeGeneration\Enums\RangeSelectorButtonPositionAlign.cs" />
     <Compile Include="CodeGeneration\Enums\RangeSelectorButtonType.cs" />
     <Compile Include="CodeGeneration\Enums\RangeSelectorInputPositionAlign.cs" />
+    <Compile Include="CodeGeneration\Enums\RangeSelectorVerticalAlign.cs" />
     <Compile Include="CodeGeneration\Enums\RocSeriesCursor.cs" />
     <Compile Include="CodeGeneration\Enums\RocSeriesDashStyle.cs" />
     <Compile Include="CodeGeneration\Enums\RocSeriesDataGroupingApproximation.cs" />

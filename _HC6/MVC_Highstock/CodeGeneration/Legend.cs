@@ -178,7 +178,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) for each legend label. Available variablesrelates to properties on the series, or the point in case of pies.
+		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for each legend label. Available variables relates to properties onthe series, or the point in case of pies.
 		/// </summary>
 		public string LabelFormat { get; set; }
 		private string LabelFormat_DefaultValue { get; set; }
@@ -192,7 +192,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The layout of the legend items. Can be one of "horizontal" or "vertical".
+		/// The layout of the legend items. Can be one of `horizontal` or`vertical` or `proximate`. When `proximate`, the legend items will beplaced as close as possible to the graphs they're representing,except in inverted charts or when the legend position doesn't allowit.
 		/// </summary>
 		public LegendLayout Layout { get; set; }
 		private LegendLayout Layout_DefaultValue { get; set; }
@@ -206,7 +206,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Maximum pixel height for the legend. When the maximum height is extended, navigation will show.
+		/// Maximum pixel height for the legend. When the maximum height isextended, navigation will show.
 		/// </summary>
 		public double? MaxHeight { get; set; }
 		private double? MaxHeight_DefaultValue { get; set; }
@@ -311,7 +311,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The vertical alignment of the legend box. Can be one of `top`,`middle` or `bottom`. Vertical position can be further determinedby the `y` option.In the case that the legend is aligned in a corner position, the`layout` option will determine whether to place it above/belowor on the side of the plot area.
+		/// The vertical alignment of the legend box. Can be one of `top`,`middle` or `bottom`. Vertical position can be further determinedby the `y` option.In the case that the legend is aligned in a corner position, the`layout` option will determine whether to place it above/belowor on the side of the plot area.When the [layout](#legend.layout) option is `proximate`, the`verticalAlign` option doesn't apply.
 		/// </summary>
 		public LegendVerticalAlign VerticalAlign { get; set; }
 		private LegendVerticalAlign VerticalAlign_DefaultValue { get; set; }

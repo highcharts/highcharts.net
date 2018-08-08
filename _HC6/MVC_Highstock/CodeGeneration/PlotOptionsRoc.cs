@@ -41,7 +41,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsRocMarker();
-			Name = Name_DefaultValue = "Rate of Change (9)";
 			NegativeColor = NegativeColor_DefaultValue = "null";
 			Params = Params_DefaultValue = new PlotOptionsRocParams();
 			Point = Point_DefaultValue = new PlotOptionsRocPoint();
@@ -95,7 +94,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A class name to apply to the series' graphical elements.
+		/// An additional class name to apply to the series' graphical elements. Thisoption does not replace default class names of the graphical element.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
@@ -151,7 +150,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](#Point.dataGroup).
+		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#.dataGroup).
 		/// </summary>
 		public PlotOptionsRocDataGrouping DataGrouping { get; set; }
 		private PlotOptionsRocDataGrouping DataGrouping_DefaultValue { get; set; }
@@ -253,13 +252,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsRocMarker Marker { get; set; }
 		private PlotOptionsRocMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -396,7 +388,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option. The zone definitions have to be in ascending order regarding tothe value.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsRocZone> Zones { get; set; }
 		private List<PlotOptionsRocZone> Zones_DefaultValue { get; set; }
@@ -433,7 +425,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Params.IsDirty()) h.Add("params",Params.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());

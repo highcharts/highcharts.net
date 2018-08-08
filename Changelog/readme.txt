@@ -1,11 +1,17 @@
-Updates in JS libraries affects the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+
+# Version 6.1.1
+New:
+- CandleStickSeriesPointValKey, OhlcSeriesPointValKey, PlotOptionsCandlestickPointValKey, PlotOptionsOhlcPointValKey, RangeSelectorVerticalAlign
+- Outside property inside *Tooltip classes
+- ReversedStacks property inside ColorAxis, XAxis, ZAxis, NavigatorXAxis
+- LegendLayout.Proximate
+- PlotOptionsSunburstDataLabelsRotationMode.Auto
 
 # Version 6.1.0
-
 Fixes:
 - PlotOptionsFunnelDataLabelsStyle
 - Data.EnablePolling
-
 Add:
 - MacdSeriesMacdLineZone
 - MacdSeriesSignalLineZone
@@ -13,9 +19,7 @@ Add:
 - PlotOptionsMacdSignalLineZone
 - Categories to XAxis and YAxis for Highstock
 
-
 # Version 6.0.7
-
 New classes:
 - AccessibilityKeyboardNavigation
 - *StatesSelect
@@ -30,7 +34,6 @@ New classes:
 - WordcloudseriesDataLabels
 - XrangeSeriesDataPartialFill
 - FunnelSeriesDataLabelsAlign
-
 New enums:
 - FunnelSeriesDataLabelsAlign
 - PieSeriesDataLabelsAlign
@@ -45,7 +48,6 @@ New enums:
 - WordcloudSeriesDataLabelsAlign
 - WordcloudSeriesDataLabelsOverflow
 - WordcloudSeriesDataLabelsVerticalAlign
-
 Fixes:
 - YAxis.Min, YAxis.Max, YAxis.LineColor
 - XRangeSeriesData

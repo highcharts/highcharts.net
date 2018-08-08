@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// CSS styles for the loading screen that covers the plot area.
+		/// CSS styles for the loading screen that covers the plot area.In styled mode, the loading label is styled with the`.highcharts-loading` class.
 		/// </summary>
 		public LoadingStyle Style { get; set; }
 		private LoadingStyle Style_DefaultValue { get; set; }

@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, the borderradius. The theme also supports `style`, a collection of CSS propertiesfor the text. Equivalent attributes for the hover state are givenin `theme.states.hover`.
+		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, theborder radius. The theme also supports `style`, a collection ofCSS properties for the text. Equivalent attributes for the hoverstate are given in `theme.states.hover`.
 		/// </summary>
 		public ChartResetZoomButtonTheme Theme { get; set; }
 		private ChartResetZoomButtonTheme Theme_DefaultValue { get; set; }

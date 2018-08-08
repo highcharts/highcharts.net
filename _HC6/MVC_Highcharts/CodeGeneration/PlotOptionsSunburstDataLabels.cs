@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsSunburstDataLabels()
 		{
+			AllowOverlap = AllowOverlap_DefaultValue = true;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "undefined";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -34,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Overflow = Overflow_DefaultValue = PlotOptionsSunburstDataLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
 			Rotation = Rotation_DefaultValue = 0;
-			RotationMode = RotationMode_DefaultValue = PlotOptionsSunburstDataLabelsRotationMode.Perpendicular;
+			RotationMode = RotationMode_DefaultValue = PlotOptionsSunburstDataLabelsRotationMode.Auto;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "square";
@@ -48,6 +49,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? AllowOverlap { get; set; }
+		private bool? AllowOverlap_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The background color or gradient for the data label.
@@ -190,7 +198,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Decides how the data label will be rotated according to the perimeterof the sunburst. It can either be parallel or perpendicular to theperimeter.`series.rotation` takes precedence over `rotationMode`.
+		/// Decides how the data label will be rotated relative to the perimeterof the sunburst. Valid values are `auto`, `parallel` and`perpendicular`. When `auto`, the best fit will be computed for thepoint.The `series.rotation` option takes precedence over `rotationMode`.
 		/// </summary>
 		public PlotOptionsSunburstDataLabelsRotationMode RotationMode { get; set; }
 		private PlotOptionsSunburstDataLabelsRotationMode RotationMode_DefaultValue { get; set; }
@@ -253,7 +261,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The y position offset of the label relative to the point.
+		/// The y position offset of the label relative to the point in pixels.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
@@ -270,6 +278,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);

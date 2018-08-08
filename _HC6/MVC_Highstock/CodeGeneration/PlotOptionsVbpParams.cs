@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The base period for indicator calculations.
+		/// The base period for indicator calculations. This is the number ofdata points which are taken into account for the indicatorcalculations.
 		/// </summary>
 		public double? Period { get; set; }
 		private double? Period_DefaultValue { get; set; }

@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// CSS styles for the title.In styled mode, the subtitle style is given in the `.highcharts-subtitle` class.
+		/// CSS styles for the title.In styled mode, the subtitle style is given in the`.highcharts-subtitle` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
@@ -77,14 +77,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The x position of the subtitle relative to the alignment within chart.spacingLeft and chart.spacingRight.
+		/// The x position of the subtitle relative to the alignment within`chart.spacingLeft` and `chart.spacingRight`.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The y position of the subtitle relative to the alignment within chart.spacingTop and chart.spacingBottom. By default the subtitle is laidout below the title unless the title is floating.
+		/// The y position of the subtitle relative to the alignment within`chart.spacingTop` and `chart.spacingBottom`. By default the subtitleis laid out below the title unless the title is floating.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

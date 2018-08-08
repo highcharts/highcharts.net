@@ -50,6 +50,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinPadding = MinPadding_DefaultValue = 0;
 			Pane = Pane_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = null;
+			ReversedStacks = ReversedStacks_DefaultValue = false;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
@@ -328,6 +329,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// This option determines how stacks should be ordered within a group.For example reversed xAxis also reverses stacks, so first series comes lastin a group. To keep order like for non-reversed xAxis enable this option.
+		/// </summary>
+		public bool? ReversedStacks { get; set; }
+		private bool? ReversedStacks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to show the first tick label.
 		/// </summary>
 		public bool? ShowFirstLabel { get; set; }
@@ -514,6 +522,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (Pane != Pane_DefaultValue) h.Add("pane",Pane);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
+			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);

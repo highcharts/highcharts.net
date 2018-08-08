@@ -78,14 +78,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See [the easing demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).</dd></dl>
+		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math`object. See [the easing demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).</dd></dl>
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See [the easing demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).</dd></dl>
+		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math`object. See [the easing demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).</dd></dl>
 		/// </summary>
 		public bool? AnimationBool { get; set; }
 		private bool? AnimationBool_DefaultValue { get; set; }
@@ -155,14 +155,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An explicit height for the chart. If a _number_, the height isgiven in pixels. If given a _percentage string_ (for example `'56%'`),the height is given as the percentage of the actual chart width.This allows for preserving the aspect ratio across responsivesizes.By default (when `null`) the height is calculated from the offsetheight of the containing element, or 400 pixels if the containingelement's height is 0.
+		/// An explicit height for the chart. If a _number_, the height isgiven in pixels. If given a _percentage string_ (for example`'56%'`), the height is given as the percentage of the actual chartwidth. This allows for preserving the aspect ratio across responsivesizes.By default (when `null`) the height is calculated from the offsetheight of the containing element, or 400 pixels if the containingelement's height is 0.
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An explicit height for the chart. If a _number_, the height isgiven in pixels. If given a _percentage string_ (for example `'56%'`),the height is given as the percentage of the actual chart width.This allows for preserving the aspect ratio across responsivesizes.By default (when `null`) the height is calculated from the offsetheight of the containing element, or 400 pixels if the containingelement's height is 0.
+		/// An explicit height for the chart. If a _number_, the height isgiven in pixels. If given a _percentage string_ (for example`'56%'`), the height is given as the percentage of the actual chartwidth. This allows for preserving the aspect ratio across responsivesizes.By default (when `null`) the height is calculated from the offsetheight of the containing element, or 400 pixels if the containingelement's height is 0.
 		/// </summary>
 		public double? HeightNumber { get; set; }
 		private double? HeightNumber_DefaultValue { get; set; }
@@ -183,7 +183,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The margin between the outer edge of the chart and the plot area.The numbers in the array designate top, right, bottom and leftrespectively. Use the options `marginTop`, `marginRight`,`marginBottom` and `marginLeft` for shorthand setting of one option.By default there is no margin. The actual space is dynamically calculatedfrom the offset of axis labels, axis title, title, subtitle and legendin addition to the `spacingTop`, `spacingRight`, `spacingBottom`and `spacingLeft` options.
+		/// The margin between the outer edge of the chart and the plot area.The numbers in the array designate top, right, bottom and leftrespectively. Use the options `marginTop`, `marginRight`,`marginBottom` and `marginLeft` for shorthand setting of one option.By default there is no margin. The actual space is dynamicallycalculated from the offset of axis labels, axis title, title,subtitle and legend in addition to the `spacingTop`, `spacingRight`,`spacingBottom` and `spacingLeft` options.
 		/// </summary>
 		public double[] Margin { get; set; }
 		private double[] Margin_DefaultValue { get; set; }
@@ -225,14 +225,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allows setting a key to switch between zooming and panning. Can beone of `alt`, `ctrl`, `meta` (the command key on Mac and Windowskey on Windows) or `shift`. The keys are mapped directly to the keyproperties of the click event argument (`event.altKey`, `event.ctrlKey`,`event.metaKey` and `event.shiftKey`).
+		/// Allows setting a key to switch between zooming and panning. Can beone of `alt`, `ctrl`, `meta` (the command key on Mac and Windowskey on Windows) or `shift`. The keys are mapped directly to the keyproperties of the click event argument (`event.altKey`,`event.ctrlKey`, `event.metaKey` and `event.shiftKey`).
 		/// </summary>
 		public ChartPanKey PanKey { get; set; }
 		private ChartPanKey PanKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Allow panning in a chart. Best used with [panKey](#chart.panKey)to combine zooming and panning.On touch devices, when the [tooltip.followTouchMove](#tooltip.followTouchMove)option is `true` (default), panning requires two fingers. To allowpanning with one finger, set `followTouchMove` to `false`.
+		/// Allow panning in a chart. Best used with [panKey](#chart.panKey)to combine zooming and panning.On touch devices, when the [tooltip.followTouchMove](#tooltip.followTouchMove) option is `true` (default), panningrequires two fingers. To allow panning with one finger, set`followTouchMove` to `false`.
 		/// </summary>
 		public bool? Panning { get; set; }
 		private bool? Panning_DefaultValue { get; set; }
@@ -253,7 +253,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Equivalent to [zoomType](#chart.zoomType), but for multitouch gesturesonly. By default, the `pinchType` is the same as the `zoomType` setting.However, pinching can be enabled separately in some cases, for examplein stock charts where a mouse drag pans the chart, while pinchingis enabled. When [tooltip.followTouchMove](#tooltip.followTouchMove)is true, pinchType only applies to two-finger touches.
+		/// Equivalent to [zoomType](#chart.zoomType), but for multitouchgestures only. By default, the `pinchType` is the same as the`zoomType` setting. However, pinching can be enabled separately insome cases, for example in stock charts where a mouse drag pans thechart, while pinching is enabled. When [tooltip.followTouchMove](#tooltip.followTouchMove) is true, pinchType only applies totwo-finger touches.
 		/// </summary>
 		public ChartPinchType PinchType { get; set; }
 		private ChartPinchType PinchType_DefaultValue { get; set; }
@@ -316,7 +316,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The HTML element where the chart will be rendered. If it is a string,the element by that id is used. The HTML element can also be passedby direct reference, or as the first argument of the chart constructor, in which case the option is not needed.
+		/// The HTML element where the chart will be rendered. If it is a string,the element by that id is used. The HTML element can also be passedby direct reference, or as the first argument of the chartconstructor, in which case the option is not needed.
 		/// </summary>
 		public string RenderTo { get; set; }
 		private string RenderTo_DefaultValue { get; set; }
@@ -344,14 +344,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the outer chart area. Requiresthat backgroundColor be set. The shadow can be an object configurationcontaining `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the outer chart area. Requiresthat backgroundColor be set. The shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the outer chart area. Requiresthat backgroundColor be set. The shadow can be an object configurationcontaining `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the outer chart area. Requiresthat backgroundColor be set. The shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -365,21 +365,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The distance between the outer edge of the chart and the content,like title or legend, or axis title and labels if present. Thenumbers in the array designate top, right, bottom and left respectively.Use the options spacingTop, spacingRight, spacingBottom and spacingLeftoptions for shorthand setting of one option.
+		/// The distance between the outer edge of the chart and the content,like title or legend, or axis title and labels if present. Thenumbers in the array designate top, right, bottom and leftrespectively. Use the options spacingTop, spacingRight, spacingBottomand spacingLeft options for shorthand setting of one option.
 		/// </summary>
 		public List<double> Spacing { get; set; }
 		private List<double> Spacing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The space between the bottom edge of the chart and the content (plotarea, axis title and labels, title, subtitle or legend in top position).
+		/// The space between the bottom edge of the chart and the content (plotarea, axis title and labels, title, subtitle or legend in topposition).
 		/// </summary>
 		public double? SpacingBottom { get; set; }
 		private double? SpacingBottom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The space between the left edge of the chart and the content (plotarea, axis title and labels, title, subtitle or legend in top position).
+		/// The space between the left edge of the chart and the content (plotarea, axis title and labels, title, subtitle or legend in topposition).
 		/// </summary>
 		public double? SpacingLeft { get; set; }
 		private double? SpacingLeft_DefaultValue { get; set; }

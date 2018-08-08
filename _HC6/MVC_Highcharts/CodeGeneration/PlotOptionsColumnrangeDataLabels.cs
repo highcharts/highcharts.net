@@ -220,7 +220,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The x position offset of the label relative to the point.
+		/// The x position offset of the label relative to the point in pixels.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
@@ -241,7 +241,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The y position offset of the label relative to the point.
+		/// The y position offset of the label relative to the point in pixels.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

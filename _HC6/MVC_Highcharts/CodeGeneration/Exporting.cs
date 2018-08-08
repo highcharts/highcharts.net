@@ -77,14 +77,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Function to call if the offline-exporting module fails to exporta chart on the client side, and [fallbackToExportServer](#exporting.fallbackToExportServer) is disabled. If left undefined, anexception is thrown instead.
+		/// Function to call if the offline-exporting module fails to exporta chart on the client side, and [fallbackToExportServer](#exporting.fallbackToExportServer) is disabled. If left undefined, anexception is thrown instead. Receives two parameters, the exportingoptions, and the error from the module.
 		/// </summary>
 		public string Error { get; set; }
 		private string Error_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether or not to fall back to the export server if the offline-exportingmodule is unable to export the chart on the client side.
+		/// Whether or not to fall back to the export server if the offline-exportingmodule is unable to export the chart on the client side. This happens forcertain browsers, and certain features (e.g.[allowHTML](#exporting.allowHTML)), depending on the image type exportingto. For very complex charts, it is possible that export can fail inbrowsers that don't support Blob objects, due to data URL length limits.It is recommended to define the [exporting.error](#exporting.error)handler if disabling fallback, in order to notify users in case exportfails.
 		/// </summary>
 		public bool? FallbackToExportServer { get; set; }
 		private bool? FallbackToExportServer_DefaultValue { get; set; }

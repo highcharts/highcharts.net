@@ -70,7 +70,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// General options for the chart.
 		/// </summary>
 		public Chart Chart { get; set; }
 		private Chart Chart_DefaultValue { get; set; }
@@ -105,7 +105,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for drill down, the concept of inspecting increasingly highresolution data through clicking on chart items like columns or pie slices.The drilldown feature requires the drilldown.js file to be loaded,found in the modules directory of the download package, or online at(code.highcharts.com/modules/drilldown.js)[code.highcharts.com/modules/drilldown.js].
+		/// Options for drill down, the concept of inspecting increasingly highresolution data through clicking on chart items like columns or pie slices.The drilldown feature requires the drilldown.js file to be loaded,found in the modules directory of the download package, or online at[code.highcharts.com/modules/drilldown.js](code.highcharts.com/modules/drilldown.js).
 		/// </summary>
 		public Drilldown Drilldown { get; set; }
 		private Drilldown Drilldown_DefaultValue { get; set; }
@@ -203,7 +203,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The scrollbar is a means of panning over the X axis of a stock chart.In styled mode, all the presentational options for thescrollbar are replaced by the classes `.highcharts-scrollbar-thumb`,`.highcharts-scrollbar-arrow`, `.highcharts-scrollbar-button`,`.highcharts-scrollbar-rifles` and `.highcharts-scrollbar-track`.
+		/// The scrollbar is a means of panning over the X axis of a stock chart.Scrollbars can  also be applied to other types of axes.Another approach to scrollable charts is the [chart.scrollablePlotArea](https://api.highcharts.com/highcharts/chart.scrollablePlotArea) option thatis especially suitable for simpler cartesian charts on mobile.In styled mode, all the presentational options for thescrollbar are replaced by the classes `.highcharts-scrollbar-thumb`,`.highcharts-scrollbar-arrow`, `.highcharts-scrollbar-button`,`.highcharts-scrollbar-rifles` and `.highcharts-scrollbar-track`.
 		/// </summary>
 		public Scrollbar Scrollbar { get; set; }
 		private Scrollbar Scrollbar_DefaultValue { get; set; }
@@ -245,14 +245,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The X axis or category axis. Normally this is the horizontal axis,though if the chart is inverted this is the vertical axis. In case ofmultiple axes, the xAxis node is an array of configuration objects.See [the Axis object](#Axis) for programmatic access to the axis.
+		/// The X axis or category axis. Normally this is the horizontal axis,though if the chart is inverted this is the vertical axis. In case ofmultiple axes, the xAxis node is an array of configuration objects.See [the Axis object](/class-reference/Highcharts.Axis) forprogrammatic access to the axis.
 		/// </summary>
 		public List<XAxis> XAxis { get; set; }
 		private List<XAxis> XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The Y axis or value axis. Normally this is the vertical axis,though if the chart is inverted this is the horizontal axis.In case of multiple axes, the yAxis node is an array ofconfiguration objects.See [the Axis object](#Axis) for programmatic access to the axis.
+		/// The Y axis or value axis. Normally this is the vertical axis,though if the chart is inverted this is the horizontal axis.In case of multiple axes, the yAxis node is an array ofconfiguration objects.See [the Axis object](/class-reference/Highcharts.Axis) for programmaticaccess to the axis.
 		/// </summary>
 		public List<YAxis> YAxis { get; set; }
 		private List<YAxis> YAxis_DefaultValue { get; set; }

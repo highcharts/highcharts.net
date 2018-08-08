@@ -58,14 +58,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Date format to use for points on datetime axes when describing themto screen reader users.Defaults to the same format as in tooltip.For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat).
+		/// Date format to use for points on datetime axes when describing themto screen reader users.Defaults to the same format as in tooltip.For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat).
 		/// </summary>
 		public string PointDateFormat { get; set; }
 		private string PointDateFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Formatter function to determine the date/time format used withpoints on datetime axes when describing them to screen reader users.Receives one argument, `point`, referring to the point to describe.Should return a date format string compatible with[dateFormat](#Highcharts.dateFormat).
+		/// Formatter function to determine the date/time format used withpoints on datetime axes when describing them to screen reader users.Receives one argument, `point`, referring to the point to describe.Should return a date format string compatible with[dateFormat](/class-reference/Highcharts#dateFormat).
 		/// </summary>
 		public string PointDateFormatter { get; set; }
 		private string PointDateFormatter_DefaultValue { get; set; }

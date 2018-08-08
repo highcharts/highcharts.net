@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			InputStyle = InputStyle_DefaultValue = new Hashtable();
 			LabelStyle = LabelStyle_DefaultValue = new RangeSelectorLabelStyle();
 			Selected = Selected_DefaultValue = null;
-			VerticalAlign = VerticalAlign_DefaultValue = "top";
+			VerticalAlign = VerticalAlign_DefaultValue = RangeSelectorVerticalAlign.Top;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			
@@ -70,7 +70,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A collection of attributes for the buttons. The object takes SVGattributes like `fill`, `stroke`, `stroke-width`, as well as `style`,a collection of CSS properties for the text.The object can also be extended with states, so you can set presentationaloptions for `hover`, `select` or `disabled` button states.CSS styles for the text label.In styled mode, the buttons are styled by the`.highcharts-range-selector-buttons .highcharts-button` rule with itsdifferent states.
+		/// A collection of attributes for the buttons. The object takes SVGattributes like `fill`, `stroke`, `stroke-width`, as well as `style`,a collection of CSS properties for the text.The object can also be extended with states, so you can setpresentational options for `hover`, `select` or `disabled` buttonstates.CSS styles for the text label.In styled mode, the buttons are styled by the`.highcharts-range-selector-buttons .highcharts-button` rule with itsdifferent states.
 		/// </summary>
 		public RangeSelectorButtonTheme ButtonTheme { get; set; }
 		private RangeSelectorButtonTheme ButtonTheme_DefaultValue { get; set; }
@@ -168,7 +168,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS styles for the labels - the Zoom, From and To texts.In styled mode, the labels are styled by the `.highcharts-range-label` class.
+		/// CSS styles for the labels - the Zoom, From and To texts.In styled mode, the labels are styled by the`.highcharts-range-label` class.
 		/// </summary>
 		public RangeSelectorLabelStyle LabelStyle { get; set; }
 		private RangeSelectorLabelStyle LabelStyle_DefaultValue { get; set; }
@@ -182,10 +182,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The vertical alignment of the rangeselector box. Allowed properties are `top`,`middle`, `bottom`.
+		/// The vertical alignment of the rangeselector box. Allowed propertiesare `top`, `middle`, `bottom`.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public RangeSelectorVerticalAlign VerticalAlign { get; set; }
+		private RangeSelectorVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -226,7 +226,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (InputStyle != InputStyle_DefaultValue) h.Add("inputStyle",InputStyle);
 			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

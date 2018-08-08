@@ -63,6 +63,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			PlotLines = PlotLines_DefaultValue = new List<XAxisPlotLines>();
 			Range = Range_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = false;
+			ReversedStacks = ReversedStacks_DefaultValue = false;
 			Scrollbar = Scrollbar_DefaultValue = new XAxisScrollbar();
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
@@ -150,7 +151,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](#Highcharts.dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
+		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat). Defaults to:<pre>{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}</pre>
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
@@ -430,6 +431,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// This option determines how stacks should be ordered within a group.For example reversed xAxis also reverses stacks, so first series comes lastin a group. To keep order like for non-reversed xAxis enable this option.
+		/// </summary>
+		public bool? ReversedStacks { get; set; }
+		private bool? ReversedStacks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An optional scrollbar to display on the X axis in response to limitingthe minimum and maximum of the axis values.In styled mode, all the presentational options for the scrollbarare replaced by the classes `.highcharts-scrollbar-thumb`, `.highcharts-scrollbar-arrow`, `.highcharts-scrollbar-button`, `.highcharts-scrollbar-rifles` and `.highcharts-scrollbar-track`.
 		/// </summary>
 		public XAxisScrollbar Scrollbar { get; set; }
@@ -615,6 +623,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			if (Range != Range_DefaultValue) h.Add("range",Range);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
+			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);

@@ -48,21 +48,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Fires when clicking on the plot background. One parameter, `event`,is passed to the function, containing common event information.Information on the clicked spot can be found through `event.xAxis`and `event.yAxis`, which are arrays containing the axes of each dimensionand each axis' value at the clicked spot. The primary axes are`event.xAxis[0]` and `event.yAxis[0]`. Remember the unit of adatetime axis is milliseconds since 1970-01-01 00:00:00.<pre>click: function(e) {    console.log(        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', e.xAxis[0].value),        e.yAxis[0].value    )}</pre>
+		/// Fires when clicking on the plot background. One parameter, `event`,is passed to the function, containing common event information.Information on the clicked spot can be found through `event.xAxis`and `event.yAxis`, which are arrays containing the axes of eachdimension and each axis' value at the clicked spot. The primary axesare `event.xAxis[0]` and `event.yAxis[0]`. Remember the unit of adatetime axis is milliseconds since 1970-01-01 00:00:00.<pre>click: function(e) {    console.log(        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', e.xAxis[0].value),        e.yAxis[0].value    )}</pre>
 		/// </summary>
 		public string Click { get; set; }
 		private string Click_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the chart is finished loading. Since v4.2.2, it also waitsfor images to be loaded, for example from point markers. One parameter,`event`, is passed to the function, containing common event information.There is also a second parameter to the chart constructor where acallback function can be passed to be executed on chart.load.
+		/// Fires when the chart is finished loading. Since v4.2.2, it also waitsfor images to be loaded, for example from point markers. Oneparameter, `event`, is passed to the function, containing commonevent information.There is also a second parameter to the chart constructor where acallback function can be passed to be executed on chart.load.
 		/// </summary>
 		public string Load { get; set; }
 		private string Load_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the chart is redrawn, either after a call to chart.redraw()or after an axis, series or point is modified with the `redraw` optionset to true. One parameter, `event`, is passed to the function, containing common event information.
+		/// Fires when the chart is redrawn, either after a call to`chart.redraw()` or after an axis, series or point is modified withthe `redraw` option set to true. One parameter, `event`, is passed tothe function, containing common event information.
 		/// </summary>
 		public string Redraw { get; set; }
 		private string Redraw_DefaultValue { get; set; }
@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Fires when an area of the chart has been selected. Selection is enabledby setting the chart's zoomType. One parameter, `event`, is passedto the function, containing common event information. The default action for the selection event is tozoom the chart to the selected area. It can be prevented by calling`event.preventDefault()`.Information on the selected area can be found through `event.xAxis`and `event.yAxis`, which are arrays containing the axes of each dimensionand each axis' min and max values. The primary axes are `event.xAxis[0]`and `event.yAxis[0]`. Remember the unit of a datetime axis is millisecondssince 1970-01-01 00:00:00.<pre>selection: function(event) {    // log the min and max of the primary, datetime x-axis    console.log(        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', event.xAxis[0].min),        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', event.xAxis[0].max)    );    // log the min and max of the y axis    console.log(event.yAxis[0].min, event.yAxis[0].max);}</pre>
+		/// Fires when an area of the chart has been selected. Selection isenabled by setting the chart's zoomType. One parameter, `event`, ispassed to the function, containing common event information. Thedefault action for the selection event is to zoom the chart to theselected area. It can be prevented by calling`event.preventDefault()`.Information on the selected area can be found through `event.xAxis`and `event.yAxis`, which are arrays containing the axes of eachdimension and each axis' min and max values. The primary axes are`event.xAxis[0]` and `event.yAxis[0]`. Remember the unit of adatetime axis is milliseconds since 1970-01-01 00:00:00.<pre>selection: function(event) {    // log the min and max of the primary, datetime x-axis    console.log(        Highcharts.dateFormat(            '%Y-%m-%d %H:%M:%S',            event.xAxis[0].min        ),        Highcharts.dateFormat(            '%Y-%m-%d %H:%M:%S',            event.xAxis[0].max        )    );    // log the min and max of the y axis    console.log(event.yAxis[0].min, event.yAxis[0].max);}</pre>
 		/// </summary>
 		public string Selection { get; set; }
 		private string Selection_DefaultValue { get; set; }

@@ -145,7 +145,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// [Metric prefixes](http://en.wikipedia.org/wiki/Metric_prefix) usedto shorten high numbers in axis labels. Replacing any of the positionswith `null` causes the full number to be written. Setting `numericSymbols`to `null` disables shortening altogether.
+		/// [Metric prefixes](http://en.wikipedia.org/wiki/Metric_prefix) usedto shorten high numbers in axis labels. Replacing any of thepositions with `null` causes the full number to be written. Setting`numericSymbols` to `null` disables shortening altogether.
 		/// </summary>
 		public List<string> NumericSymbols { get; set; }
 		private List<string> NumericSymbols_DefaultValue { get; set; }

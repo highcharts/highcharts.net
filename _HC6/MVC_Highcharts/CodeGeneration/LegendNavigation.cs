@@ -26,21 +26,21 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The color for the active up or down arrow in the legend page navigation.
+		/// The color for the active up or down arrow in the legend pagenavigation.
 		/// </summary>
 		public string ActiveColor { get; set; }
 		private string ActiveColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// How to animate the pages when navigating up or down. A value of `true`applies the default navigation given in the chart.animation option.Additional options can be given as an object containing values foreasing and duration.
+		/// How to animate the pages when navigating up or down. A value of`true` applies the default navigation given in the`chart.animation` option. Additional options can be given as anobject containing values for easing and duration.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// How to animate the pages when navigating up or down. A value of `true`applies the default navigation given in the chart.animation option.Additional options can be given as an object containing values foreasing and duration.
+		/// How to animate the pages when navigating up or down. A value of`true` applies the default navigation given in the`chart.animation` option. Additional options can be given as anobject containing values for easing and duration.
 		/// </summary>
 		public bool? AnimationBool { get; set; }
 		private bool? AnimationBool_DefaultValue { get; set; }
@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to enable the legend navigation. In most cases, disablingthe navigation results in an unwanted overflow.See also the [adapt chart to legend](http://www.highcharts.com/plugin-registry/single/8/Adapt-Chart-To-Legend) plugin for a solution toextend the chart height to make room for the legend, optionally inexported charts only.
+		/// Whether to enable the legend navigation. In most cases, disablingthe navigation results in an unwanted overflow.See also the [adapt chart to legend](https://www.highcharts.com/plugin-registry/single/8/Adapt-Chart-To-Legend)plugin for a solution to extend the chart height to make room forthe legend, optionally in exported charts only.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }

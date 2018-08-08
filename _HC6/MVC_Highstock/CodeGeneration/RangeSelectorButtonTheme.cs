@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Height = Height_DefaultValue = 18;
 			Padding = Padding_DefaultValue = "2";
-			Undefined = Undefined_DefaultValue = 0;
 			Width = Width_DefaultValue = 28;
 			ZIndex = ZIndex_DefaultValue = 7;
 			
@@ -40,13 +39,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Undefined { get; set; }
-		private double? Undefined_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
 		 
@@ -64,7 +56,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Undefined != Undefined_DefaultValue) h.Add("undefined",Undefined);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
