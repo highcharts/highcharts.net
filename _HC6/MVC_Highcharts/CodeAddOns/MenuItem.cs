@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Charts
             Hashtable h = new Hashtable();
 
             if (!String.IsNullOrEmpty(Text)) h.Add("text", Text);
-            if (!String.IsNullOrEmpty(OnClick)) h.Add("borderColor", OnClick);
+            if (!String.IsNullOrEmpty(OnClick)) { h.Add("onclick", OnClick); Highcharts.AddFunction("MenuItemOnClick.onclick", OnClick); }
 
             return h;
         }
