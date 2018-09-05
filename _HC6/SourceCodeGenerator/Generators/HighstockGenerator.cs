@@ -1135,6 +1135,7 @@ public class HighstockGenerator
         _lists.Add("navigator.yAxis.plotBands");
         _lists.Add("navigator.yAxis.plotLines");
         _lists.Add("drilldown.series");
+        _lists.Add("exporting.buttons.contextButton.menuItems");
     }
     private void InitSeriesMappings()
     {

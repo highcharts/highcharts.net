@@ -1030,6 +1030,7 @@ public class HighchartsGenerator
         _lists.Add("series.treemap.levels");
         _lists.Add("series.sunburst.levels");
         _lists.Add("series.sankey.nodes");
+        _lists.Add("exporting.buttons.contextButton.menuItems");
     }
     private void InitSeriesMappings()
     {
