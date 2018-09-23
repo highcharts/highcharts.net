@@ -16,7 +16,7 @@ namespace SourceCodeGenerator.Services
             var counter = 0;
             var clonedObjects = new List<ApiItem>();
 
-            if (item.Types.Contains("Object"))
+            if (IsObject(item))
             {
                 var clone = item.Clone();
                 clone.Types.Clear();
@@ -78,9 +78,22 @@ namespace SourceCodeGenerator.Services
                 counter++;
             }
 
+            
             //place for arrrays
 
             return clonedObjects;
+        }
+
+        private bool IsObject(ApiItem item)
+        {
+            if (item.Types.Contains("Object"))
+                return true;
+
+            foreach (var type in item.Types)
+                if (type.Contains("Option"))
+                    return true;
+
+            return false;
         }
 
         private void ClearLists(ApiItem item)
