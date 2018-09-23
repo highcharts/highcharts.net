@@ -12,9 +12,12 @@ namespace SourceCodeGenerator.Services
         private const string NumberType = "Number";
         private const string StringType = "String";
         private const string ObjectType = "Object";
+        private const string FunctionType = "function";
 
         public void SetReturnType(ApiItem item)
         {
+            item.ReturnType = SetUpperFirstChar(item.ReturnType);
+
             if (item.Defaults != null && string.IsNullOrWhiteSpace(item.ReturnType) )
                 item.ReturnType = GetType(item);
         }
@@ -47,6 +50,20 @@ namespace SourceCodeGenerator.Services
         private bool IsString(ApiItem item)
         {
             return item.Defaults != null;
+        }
+
+        private string SetUpperFirstChar(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return text;
+
+            if (text == FunctionType)
+                return text;
+
+            if (char.IsUpper(text[0]))
+                return text;
+
+            return char.ToUpperInvariant(text[0]) + text.Substring(1);
         }
     }
 
