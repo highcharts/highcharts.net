@@ -86,7 +86,7 @@ namespace SourceCodeGenerator.Services
 
         private bool IsObject(ApiItem item)
         {
-            if (item.Types.Contains("Object"))
+            if (item.Types.Contains("Object") || item.Types.Contains("Highcharts.CSSObject") || item.Types.Contains("Highcharts.ColorString") || item.Types.Contains("Highcharts.HTMLDOMElement") || item.Types.Contains("*"))
                 return true;
 
             foreach (var type in item.Types)
