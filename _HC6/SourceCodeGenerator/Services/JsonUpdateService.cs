@@ -19,6 +19,7 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdateProducts = new Dictionary<string, IList<UpdateInfo>>();
 
             Add();
+            
         }
 
         public void Update(ApiItem item)
@@ -37,6 +38,7 @@ namespace SourceCodeGenerator.Services
                     UpdateProperty(item, info);
             }
 
+            AddDefaultNull(item);
             Delete(item);
         }
 
@@ -72,6 +74,12 @@ namespace SourceCodeGenerator.Services
                     item.Products.Add(info.Value);
                     break;
             }
+        }
+
+        private void AddDefaultNull(ApiItem item)
+        {
+            if (item.Values.Any() && string.IsNullOrEmpty(item.Defaults))
+                item.Values.Insert(0, "null");
         }
 
         private void Add()
@@ -242,6 +250,8 @@ namespace SourceCodeGenerator.Services
 
             ItemsToUpdate.Add("plotOptions.series.cursor", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "null" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "none" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "help" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "pointer" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "crosshair" } });
             ItemsToUpdate.Add("plotOptions.series.dashStyle", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "Solid" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "ShortDash" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "ShortDot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "ShortDashDot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "ShortDashDotDot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Dot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Dash" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "LongDash" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "DashDot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "LongDashDot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "LongDashDotDot" } });
+
+            ItemsToUpdate.Add("legend.layout", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "horizontal" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "vertical" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "proximate" } });
 
             ItemsToUpdateProducts.Add("xAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
             ItemsToUpdateProducts.Add("yAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
