@@ -13,6 +13,7 @@ namespace SourceCodeGenerator.Enums
         Values,
         Exclude,
         Extends,
-        Products
+        Products,
+        Default
     }
 }
