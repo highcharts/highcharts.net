@@ -13,15 +13,19 @@ namespace SourceCodeGenerator.Services
         private const string StringType = "String";
         private const string ObjectType = "Object";
         private const string FunctionType = "function";
-        private static IEnumerable<string> UniqueTypesNames = new List<string> { "Highcharts.CSSObject", "Highcharts.ColorString", "Highcharts.HTMLDOMElement" };
-        private static ISet<string> UniqueTypes = new HashSet<string>(UniqueTypesNames);
+        private static ISet<string> FunctionTypes = new HashSet<string> { "Highcharts.FormatterCallbackFunction" };
+        private static IEnumerable<string> UniqueStringTypesNames = new List<string> { "Highcharts.CSSObject", "Highcharts.ColorString", "Highcharts.HTMLDOMElement" };
+        private static ISet<string> UniqueStringTypes = new HashSet<string>(UniqueStringTypesNames);
 
         public void SetReturnType(ApiItem item)
         {
             item.ReturnType = SetUpperFirstChar(item.ReturnType);
 
-            if (UniqueTypes.Contains(item.ReturnType))
+            if (UniqueStringTypes.Contains(item.ReturnType))
                 item.ReturnType = StringType;
+
+            if (IsFunction(item))
+                item.ReturnType = FunctionType;
 
             if (item.Defaults != null && string.IsNullOrWhiteSpace(item.ReturnType))
                 item.ReturnType = GetType(item);
@@ -55,6 +59,14 @@ namespace SourceCodeGenerator.Services
         private bool IsString(ApiItem item)
         {
             return item.Defaults != null;
+        }
+
+        private bool IsFunction(ApiItem item)
+        {
+            if (FunctionTypes.Contains(item.ReturnType))
+                return true;
+
+            return false;
         }
 
         private string SetUpperFirstChar(string text)
