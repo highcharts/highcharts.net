@@ -13,12 +13,17 @@ namespace SourceCodeGenerator.Services
         private const string StringType = "String";
         private const string ObjectType = "Object";
         private const string FunctionType = "function";
+        private static IEnumerable<string> UniqueTypesNames = new List<string> { "Highcharts.CSSObject", "Highcharts.ColorString", "Highcharts.HTMLDOMElement" };
+        private static ISet<string> UniqueTypes = new HashSet<string>(UniqueTypesNames);
 
         public void SetReturnType(ApiItem item)
         {
             item.ReturnType = SetUpperFirstChar(item.ReturnType);
 
-            if (item.Defaults != null && string.IsNullOrWhiteSpace(item.ReturnType) )
+            if (UniqueTypes.Contains(item.ReturnType))
+                item.ReturnType = StringType;
+
+            if (item.Defaults != null && string.IsNullOrWhiteSpace(item.ReturnType))
                 item.ReturnType = GetType(item);
         }
         private string GetType(ApiItem item)

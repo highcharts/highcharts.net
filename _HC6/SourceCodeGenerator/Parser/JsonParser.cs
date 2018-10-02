@@ -161,6 +161,7 @@ namespace SourceCodeGenerator.Parser
             UpdateService.Update(apiItem);
 
             TypeService.SetReturnType(apiItem);
+            
             ////////////////////////end of modification area
 
             if (parent == null)

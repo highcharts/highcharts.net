@@ -27,7 +27,7 @@ namespace SourceCodeGenerator.Services
                 counter++;
             }
 
-            if (item.Types.Contains("String"))
+            if (IsString(item))
             {
                 var clone = item.Clone();
                 clone.Types.Clear();
@@ -44,7 +44,7 @@ namespace SourceCodeGenerator.Services
                 counter++;
             }
 
-            if (item.Types.Contains("Number"))
+            if (IsNumber(item))
             {
                 var clone = item.Clone();
                 clone.Types.Clear();
@@ -61,7 +61,7 @@ namespace SourceCodeGenerator.Services
                 counter++;
             }
 
-            if (item.Types.Contains("Boolean"))
+            if (IsBoolean(item))
             {
                 var clone = item.Clone();
                 clone.Types.Clear();
@@ -92,6 +92,30 @@ namespace SourceCodeGenerator.Services
             foreach (var type in item.Types)
                 if (type.Contains("Option"))
                     return true;
+
+            return false;
+        }
+
+        private bool IsString(ApiItem item)
+        {
+            if (item.Types.Contains("String") || item.Types.Contains("string"))
+                return true;
+
+            return false;
+        }
+
+        private bool IsNumber(ApiItem item)
+        {
+            if (item.Types.Contains("Number") || item.Types.Contains("number"))
+                return true;
+
+            return false;
+        }
+
+        private bool IsBoolean(ApiItem item)
+        {
+            if (item.Types.Contains("Boolean") || item.Types.Contains("boolean"))
+                return true;
 
             return false;
         }
