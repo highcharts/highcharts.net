@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			InputDateFormat = InputDateFormat_DefaultValue = "%b %e %Y,";
 			InputDateParser = InputDateParser_DefaultValue = "";
 			InputEditDateFormat = InputEditDateFormat_DefaultValue = "%Y-%m-%d";
-			InputEnabled = InputEnabled_DefaultValue = null;
+			InputEnabled = InputEnabled_DefaultValue = true;
 			InputPosition = InputPosition_DefaultValue = new Hashtable();
 			InputStyle = InputStyle_DefaultValue = new Hashtable();
 			LabelStyle = LabelStyle_DefaultValue = new RangeSelectorLabelStyle();
@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Whether to enable all buttons from the start. By default buttonsare only enabled if the corresponding time range exists on the Xaxis, but enabling all buttons allows for dynamically loading differenttime ranges.
+		/// Whether to enable all buttons from the start. By default buttons areonly enabled if the corresponding time range exists on the X axis,but enabling all buttons allows for dynamically loading differenttime ranges.
 		/// </summary>
 		public bool? AllButtonsEnabled { get; set; }
 		private bool? AllButtonsEnabled_DefaultValue { get; set; }
@@ -114,8 +114,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS for the container DIV holding the input boxes. Deprecated asof 1.2.5\. Use [inputPosition](#rangeSelector.inputPosition) instead.
 		/// </summary>
-		public Hashtable InputBoxStyle { get; set; }
-		private Hashtable InputBoxStyle_DefaultValue { get; set; }
+		public Object InputBoxStyle { get; set; }
+		private Object InputBoxStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -126,7 +126,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The date format in the input boxes when not selected for editing. Defaults to `%b %e, %Y`.
+		/// The date format in the input boxes when not selected for editing.Defaults to `%b %e, %Y`.
 		/// </summary>
 		public string InputDateFormat { get; set; }
 		private string InputDateFormat_DefaultValue { get; set; }
@@ -140,7 +140,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The date format in the input boxes when they are selected for editing.This must be a format that is recognized by JavaScript Date.parse.
+		/// The date format in the input boxes when they are selected forediting. This must be a format that is recognized by JavaScriptDate.parse.
 		/// </summary>
 		public string InputEditDateFormat { get; set; }
 		private string InputEditDateFormat_DefaultValue { get; set; }
@@ -161,7 +161,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS for the HTML inputs in the range selector.In styled mode, the inputs are styled by the `.highcharts-range-input text`rule in SVG mode, and `input.highcharts-range-selector` when active.
+		/// CSS for the HTML inputs in the range selector.In styled mode, the inputs are styled by the`.highcharts-range-input text` rule in SVG mode, and`input.highcharts-range-selector` when active.
 		/// </summary>
 		public Hashtable InputStyle { get; set; }
 		private Hashtable InputStyle_DefaultValue { get; set; }

@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A label on the axis next to the crosshair.In styled mode, the label is styled with the `.highcharts-crosshair-label` class.
+		/// A label on the axis next to the crosshair.In styled mode, the label is styled with the`.highcharts-crosshair-label` class.
 		/// </summary>
 		public XAxisCrosshairLabel Label { get; set; }
 		private XAxisCrosshairLabel Label_DefaultValue { get; set; }

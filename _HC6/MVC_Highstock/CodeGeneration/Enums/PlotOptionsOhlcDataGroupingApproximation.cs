@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsOhlcDataGroupingApproximation
     {
-        Average, 
+        Null, 
+		Average, 
 		Averages, 
 		Open, 
 		High, 

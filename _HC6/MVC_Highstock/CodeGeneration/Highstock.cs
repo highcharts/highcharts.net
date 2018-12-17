@@ -32,7 +32,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Navigation = Navigation_DefaultValue = new Navigation();
 			Navigator = Navigator_DefaultValue = new Navigator();
 			NoData = NoData_DefaultValue = new NoData();
-			Pane = Pane_DefaultValue = new Pane();
 			PlotOptions = PlotOptions_DefaultValue = new PlotOptions();
 			RangeSelector = RangeSelector_DefaultValue = new RangeSelector();
 			Responsive = Responsive_DefaultValue = new Responsive();
@@ -91,14 +90,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The Data module provides a simplified interface for adding data toa chart from sources like CVS, HTML tables or grid views. See alsothe [tutorial article on the Data module](http://www.highcharts.com/docs/working-with-data/data-module).It requires the `modules/data.js` file to be loaded.Please note that the default way of adding data in Highcharts, withoutthe need of a module, is through the [series.data](#series.data)option.
+		/// The Data module provides a simplified interface for adding data toa chart from sources like CVS, HTML tables or grid views. See alsothe [tutorial article on the Data module](https://www.highcharts.com/docs/working-with-data/data-module).It requires the `modules/data.js` file to be loaded.Please note that the default way of adding data in Highcharts, withoutthe need of a module, is through the [series.data](#series.data)option.
 		/// </summary>
 		public Data Data { get; set; }
 		private Data Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Styled mode only. Configuration object for adding SVG definitions forreusable elements. See [gradients, shadows and patterns](http://www.highcharts.com/docs/chart-design-and-style/gradients-shadows-and-patterns) for more information and code examples.
+		/// Styled mode only. Configuration object for adding SVG definitions forreusable elements. See [gradients, shadows andpatterns](https://www.highcharts.com/docs/chart-design-and-style/gradients-shadows-and-patterns)for more information and code examples.
 		/// </summary>
 		public Object Defs { get; set; }
 		private Object Defs_DefaultValue { get; set; }
@@ -112,7 +111,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the exporting module. For an overview on the matter, see[the docs](http://www.highcharts.com/docs/export-module/export-module-overview).
+		/// Options for the exporting module. For an overview on the matter, see[the docs](https://www.highcharts.com/docs/export-module/export-module-overview).
 		/// </summary>
 		public Exporting Exporting { get; set; }
 		private Exporting Exporting_DefaultValue { get; set; }
@@ -140,7 +139,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The legend is a box containing a symbol and name for each seriesitem or point item in the chart. Each series (or points in caseof pie charts) is represented by a symbol and its name in the legend.It is possible to override the symbol creator function andcreate [custom legend symbols](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/studies/legend-custom-symbol/).
+		/// The legend is a box containing a symbol and name for each seriesitem or point item in the chart. Each series (or points in caseof pie charts) is represented by a symbol and its name in the legend.It is possible to override the symbol creator function and create[custom legend symbols](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/studies/legend-custom-symbol/).
 		/// </summary>
 		public Legend Legend { get; set; }
 		private Legend Legend_DefaultValue { get; set; }
@@ -175,13 +174,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The pane serves as a container for axes and backgrounds for circulargauges and polar charts.
-		/// </summary>
-		public Pane Pane { get; set; }
-		private Pane Pane_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The plotOptions is a wrapper object for config objects for each seriestype. The config objects for each series can also be overridden foreach series item as given in the series array.Configuration options for the series are given in three levels. Optionsfor all series in a chart are given in the [plotOptions.series](#plotOptions.series) object. Then options for all series of a specifictype are given in the plotOptions of that type, for example`plotOptions.line`. Next, options for one single series are given in[the series array](#series).
 		/// </summary>
 		public PlotOptions PlotOptions { get; set; }
@@ -210,7 +202,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Series options for specific data and the data itself. In TypeScript youhave to cast the series options to specific series types, to get allpossible options for a series.
 		/// </summary>
 		public List<Series> Series { get; set; }
 		private List<Series> Series_DefaultValue { get; set; }
@@ -280,7 +272,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
 			if (Navigator.IsDirty()) h.Add("navigator",Navigator.ToHashtable());
 			if (NoData.IsDirty()) h.Add("noData",NoData.ToHashtable());
-			if (Pane.IsDirty()) h.Add("pane",Pane.ToHashtable());
 			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
 			if (RangeSelector.IsDirty()) h.Add("rangeSelector",RangeSelector.ToHashtable());
 			if (Responsive.IsDirty()) h.Add("responsive",Responsive.ToHashtable());

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsStreamgraphDataGroupingApproximation
     {
-        Average, 
+        Null, 
+		Average, 
 		Averages, 
 		Open, 
 		High, 

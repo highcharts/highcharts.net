@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Stocks
     public enum FlagsSeriesCursor
     {
         Null, 
+		Crosshair, 
 		Default, 
-		None, 
 		Help, 
-		Pointer, 
-		Crosshair
+		None, 
+		Pointer
     }
 }

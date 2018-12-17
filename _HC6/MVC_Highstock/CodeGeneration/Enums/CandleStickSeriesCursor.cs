@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Stocks
     public enum CandleStickSeriesCursor
     {
         Null, 
+		Crosshair, 
 		Default, 
-		None, 
 		Help, 
-		Pointer, 
-		Crosshair
+		None, 
+		Pointer
     }
 }

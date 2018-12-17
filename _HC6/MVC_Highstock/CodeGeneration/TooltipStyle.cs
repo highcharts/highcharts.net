@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			FontSize = FontSize_DefaultValue = "12px";
 			PointerEvents = PointerEvents_DefaultValue = "none";
 			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
-			
 		}	
 		
 
@@ -56,8 +55,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string WhiteSpace { get; set; }
 		private string WhiteSpace_DefaultValue { get; set; }
-		  
-
+		 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
@@ -67,7 +65,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (PointerEvents != PointerEvents_DefaultValue) h.Add("pointerEvents",PointerEvents);
 			if (WhiteSpace != WhiteSpace_DefaultValue) h.Add("whiteSpace",WhiteSpace);
-			
 
 			return h;
 		}

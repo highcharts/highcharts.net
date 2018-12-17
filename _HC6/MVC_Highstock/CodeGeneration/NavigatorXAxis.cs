@@ -16,14 +16,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			AlignTicks = AlignTicks_DefaultValue = true;
 			AllowDecimals = AllowDecimals_DefaultValue = true;
-			AlternateGridColor = AlternateGridColor_DefaultValue = "null";
+			AlternateGridColor = AlternateGridColor_DefaultValue = "";
 			Breaks = Breaks_DefaultValue = new NavigatorXAxisBreaks();
 			Categories = Categories_DefaultValue = new List<string>();
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "highcharts-navigator-xaxis";
 			Crosshair = Crosshair_DefaultValue = new NavigatorXAxisCrosshair();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Events = Events_DefaultValue = new NavigatorXAxisEvents();
 			Floor = Floor_DefaultValue = null;
@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = NavigatorXAxisGridLineDashStyle.Solid;
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			GridZIndex = GridZIndex_DefaultValue = 1;
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			Labels = Labels_DefaultValue = new NavigatorXAxisLabels();
 			LineColor = LineColor_DefaultValue = "#ccd6eb";
 			LineWidth = LineWidth_DefaultValue = 0;
@@ -177,7 +177,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The dash or dot style of the grid lines. For possible values, see[this demonstration](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
+		/// The dash or dot style of the grid lines. For possible values, see[this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public NavigatorXAxisGridLineDashStyle GridLineDashStyle { get; set; }
 		private NavigatorXAxisGridLineDashStyle GridLineDashStyle_DefaultValue { get; set; }
@@ -226,7 +226,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The maximum value of the axis. If `null`, the max value isautomatically calculated.If the `endOnTick` option is true, the `max` value mightbe rounded up.If a [tickAmount](#yAxis.tickAmount) is set, the axis may be extendedbeyond the set max in order to reach the given number of ticks. Thesame may happen in a chart with multiple axes, determined by [chart.alignTicks](#chart), where a `tickAmount` is applied internally.
+		/// The maximum value of the axis. If `null`, the max value isautomatically calculated.If the [endOnTick](#yAxis.endOnTick) option is true, the `max` valuemight be rounded up.If a [tickAmount](#yAxis.tickAmount) is set, the axis may be extendedbeyond the set max in order to reach the given number of ticks. Thesame may happen in a chart with multiple axes, determined by [chart.alignTicks](#chart), where a `tickAmount` is applied internally.
 		/// </summary>
 		public double? Max { get; set; }
 		private double? Max_DefaultValue { get; set; }
@@ -240,7 +240,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The minimum value of the axis. If `null` the min value isautomatically calculated.If the `startOnTick` option is true (default), the `min` value mightbe rounded down.The automatically calculated minimum value is also affected by[floor](#yAxis.floor), [softMin](#yAxis.softMin),[minPadding](#yAxis.minPadding), [minRange](#yAxis.minRange)as well as [series.threshold](#plotOptions.series.threshold)and [series.softThreshold](#plotOptions.series.softThreshold).
+		/// The minimum value of the axis. If `null` the min value isautomatically calculated.If the [startOnTick](#yAxis.startOnTick) option is true (default),the `min` value might be rounded down.The automatically calculated minimum value is also affected by[floor](#yAxis.floor), [softMin](#yAxis.softMin),[minPadding](#yAxis.minPadding), [minRange](#yAxis.minRange)as well as [series.threshold](#plotOptions.series.threshold)and [series.softThreshold](#plotOptions.series.softThreshold).
 		/// </summary>
 		public double? Min { get; set; }
 		private double? Min_DefaultValue { get; set; }
@@ -254,7 +254,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The dash or dot style of the minor grid lines. For possible values,see [this demonstration](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
+		/// The dash or dot style of the minor grid lines. For possible values,see [this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public NavigatorXAxisMinorGridLineDashStyle MinorGridLineDashStyle { get; set; }
 		private NavigatorXAxisMinorGridLineDashStyle MinorGridLineDashStyle_DefaultValue { get; set; }
@@ -275,14 +275,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Specific tick interval in axis units for the minor ticks.On a linear axis, if `"auto"`, the minor tick interval iscalculated as a fifth of the tickInterval. If `null`, minorticks are not shown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1,1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9ticks between 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
+		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `null` or `undefined`, minor ticks are notshown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
 		/// </summary>
 		public string MinorTickInterval { get; set; }
 		private string MinorTickInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Specific tick interval in axis units for the minor ticks.On a linear axis, if `"auto"`, the minor tick interval iscalculated as a fifth of the tickInterval. If `null`, minorticks are not shown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1,1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9ticks between 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
+		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `null` or `undefined`, minor ticks are notshown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
 		/// </summary>
 		public double? MinorTickIntervalNumber { get; set; }
 		private double? MinorTickIntervalNumber_DefaultValue { get; set; }
@@ -338,28 +338,28 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// In an ordinal axis, the points are equally spaced in the chart regardlessof the actual time or x distance between them. This means that missingdata for nights or weekends will not take up space in the chart.
+		/// In an ordinal axis, the points are equally spaced in the chartregardless of the actual time or x distance between them. This meansthat missing data periods (e.g. nights or weekends for a stock chart)will not take up space in the chart.Having `ordinal: false` will show any gaps created by the `gapSize`setting proportionate to their duration.In stock charts the X axis is ordinal by default, unlessthe boost module is used and at least one of the series' data lengthexceeds the [boostThreshold](#series.line.boostThreshold).
 		/// </summary>
 		public bool? Ordinal { get; set; }
 		private bool? Ordinal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Additional range on the right side of the xAxis. Works similar toxAxis.maxPadding, but value is set in milliseconds.Can be set for both, main xAxis and navigator's xAxis.
 		/// </summary>
 		public double? Overscroll { get; set; }
 		private double? Overscroll_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of colored bands stretching across the plot area markingan interval on the axis.In styled mode, the plot bands are styled by the `.highcharts-plot-band` class in addition to the `className` option.
+		/// An array of colored bands stretching across the plot area marking aninterval on the axis.In styled mode, the plot bands are styled by the `.highcharts-plot-band`class in addition to the `className` option.
 		/// </summary>
 		public List<NavigatorXAxisPlotBands> PlotBands { get; set; }
 		private List<NavigatorXAxisPlotBands> PlotBands_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of lines stretching across the plot area, marking a specificvalue on one of the axes.In styled mode, the plot lines are styled by the `.highcharts-plot-line` class in addition to the `className` option.
+		/// An array of lines stretching across the plot area, marking a specificvalue on one of the axes.In styled mode, the plot lines are styled by the`.highcharts-plot-line` class in addition to the `className` option.
 		/// </summary>
 		public List<NavigatorXAxisPlotLines> PlotLines { get; set; }
 		private List<NavigatorXAxisPlotLines> PlotLines_DefaultValue { get; set; }
@@ -373,7 +373,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// This option determines how stacks should be ordered within a group.For example reversed xAxis also reverses stacks, so first series comes lastin a group. To keep order like for non-reversed xAxis enable this option.
+		/// This option determines how stacks should be ordered within a group.For example reversed xAxis also reverses stacks, so first seriescomes last in a group. To keep order like for non-reversed xAxisenable this option.
 		/// </summary>
 		public bool? ReversedStacks { get; set; }
 		private bool? ReversedStacks_DefaultValue { get; set; }
@@ -436,7 +436,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The interval of the tick marks in axis units. When `null`, the tickinterval is computed to approximately follow the [tickPixelInterval](#xAxis.tickPixelInterval) on linear and datetime axes. On categorized axes,a `null` tickInterval will default to 1, one category. Note thatdatetime axes are based on milliseconds, so for example an intervalof one day is expressed as `24 * 3600 * 1000`.On logarithmic axes, the tickInterval is based on powers, so a tickIntervalof 1 means one tick on each of 0.1, 1, 10, 100 etc. A tickIntervalof 2 means a tick of 0.1, 10, 1000 etc. A tickInterval of 0.2 putsa tick on 0.1, 0.2, 0.4, 0.6, 0.8, 1, 2, 4, 6, 8, 10, 20, 40 etc.If the tickInterval is too dense for labels to be drawn, Highchartsmay remove ticks.If the chart has multiple axes, the [alignTicks](#chart.alignTicks)option may interfere with the `tickInterval` setting.
+		/// The interval of the tick marks in axis units. When `undefined`, thetick interval is computed to approximately follow the[tickPixelInterval](#xAxis.tickPixelInterval) on linear and datetimeaxes. On categorized axes, a `undefined` tickInterval will default to1, one category. Note that datetime axes are based on milliseconds,so for example an interval of one day is expressed as`24 * 3600 * 1000`.On logarithmic axes, the tickInterval is based on powers, so atickInterval of 1 means one tick on each of 0.1, 1, 10, 100 etc. AtickInterval of 2 means a tick of 0.1, 10, 1000 etc. A tickIntervalof 0.2 puts a tick on 0.1, 0.2, 0.4, 0.6, 0.8, 1, 2, 4, 6, 8, 10, 20,40 etc.If the tickInterval is too dense for labels to be drawn, Highchartsmay remove ticks.If the chart has multiple axes, the [alignTicks](#chart.alignTicks)option may interfere with the `tickInterval` setting.
 		/// </summary>
 		public double? TickInterval { get; set; }
 		private double? TickInterval_DefaultValue { get; set; }
@@ -464,21 +464,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A callback function returning array defining where the ticks arelaid out on the axis. This overrides the default behaviour of[tickPixelInterval](#xAxis.tickPixelInterval) and[tickInterval](#xAxis.tickInterval). The automatic tick positions areaccessible through `this.tickPositions` and can be modified by the callback.
+		/// A callback function returning array defining where the ticks arelaid out on the axis. This overrides the default behaviour of[tickPixelInterval](#xAxis.tickPixelInterval) and [tickInterval](#xAxis.tickInterval). The automatic tick positions are accessiblethrough `this.tickPositions` and can be modified by the callback.
 		/// </summary>
 		public string TickPositioner { get; set; }
 		private string TickPositioner_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array defining where the ticks are laid out on the axis. Thisoverrides the default behaviour of [tickPixelInterval](#xAxis.tickPixelInterval)and [tickInterval](#xAxis.tickInterval).
+		/// An array defining where the ticks are laid out on the axis. Thisoverrides the default behaviour of [tickPixelInterval](#xAxis.tickPixelInterval) and [tickInterval](#xAxis.tickInterval).
 		/// </summary>
 		public List<double> TickPositions { get; set; }
 		private List<double> TickPositions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The pixel width of the major tick marks.In styled mode, the stroke width is given in the `.highcharts-tick` class.
+		/// The pixel width of the major tick marks.In styled mode, the stroke width is given in the `.highcharts-tick`class.
 		/// </summary>
 		public double? TickWidth { get; set; }
 		private double? TickWidth_DefaultValue { get; set; }

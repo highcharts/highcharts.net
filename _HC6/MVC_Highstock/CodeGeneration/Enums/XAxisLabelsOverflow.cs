@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum XAxisLabelsOverflow
     {
-        Null, 
+        Allow, 
 		Justify
     }
 }

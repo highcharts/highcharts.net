@@ -17,8 +17,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = "null";
-			LineColor = LineColor_DefaultValue = "null";
+			FillColor = FillColor_DefaultValue = "";
+			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = null;
 			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
 			Radius = Radius_DefaultValue = null;
@@ -49,21 +49,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The fill color of the marker in hover state. When `null`, theseries' or point's fillColor for normal state is used.
+		/// The fill color of the marker in hover state. When`undefined`, the series' or point's fillColor for normalstate is used.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The color of the point marker's outline. When `null`, theseries' or point's lineColor for normal state is used.
+		/// The color of the point marker's outline. When `undefined`,the series' or point's lineColor for normal state is used.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the point marker's outline. When `null`, theseries' or point's lineWidth for normal state is used.
+		/// The width of the point marker's outline. When `undefined`,the series' or point's lineWidth for normal state is used.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }

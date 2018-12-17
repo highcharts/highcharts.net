@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public SplineSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = SplineSeriesDataGroupingApproximation.Average;
+			Approximation = Approximation_DefaultValue = SplineSeriesDataGroupingApproximation.Null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

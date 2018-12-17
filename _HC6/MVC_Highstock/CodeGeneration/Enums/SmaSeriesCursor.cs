@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Stocks
     public enum SmaSeriesCursor
     {
         Null, 
+		Crosshair, 
 		Default, 
-		None, 
 		Help, 
-		Pointer, 
-		Crosshair
+		None, 
+		Pointer
     }
 }

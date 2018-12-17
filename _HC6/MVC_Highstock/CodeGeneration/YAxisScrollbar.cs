@@ -146,7 +146,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The width of a vertical scrollbar or height of a horizontal scrollbar. Defaults to 20 on touch devices.
+		/// The width of a vertical scrollbar or height of a horizontalscrollbar. Defaults to 20 on touch devices.
 		/// </summary>
 		public double? Size { get; set; }
 		private double? Size_DefaultValue { get; set; }

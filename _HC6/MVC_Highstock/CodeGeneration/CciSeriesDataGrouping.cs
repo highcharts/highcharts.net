@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public CciSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = CciSeriesDataGroupingApproximation.Average;
+			Approximation = Approximation_DefaultValue = CciSeriesDataGroupingApproximation.Null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

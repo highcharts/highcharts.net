@@ -15,6 +15,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		public LegendItemStyle()
 		{
 			Color = Color_DefaultValue = "#333333";
+			Cursor = Cursor_DefaultValue = "pointer";
+			Cursor = Cursor_DefaultValue = "'pointer'";
 			FontSize = FontSize_DefaultValue = "12px";
 			FontWeight = FontWeight_DefaultValue = "bold";
 			TextOverflow = TextOverflow_DefaultValue = "ellipsis";
@@ -29,6 +31,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string Color_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Cursor { get; set; }
+		private string Cursor_DefaultValue { get; set; }
+		 
 		/// <summary>
 		/// 
 		/// </summary>
@@ -55,6 +63,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
 			if (TextOverflow != TextOverflow_DefaultValue) h.Add("textOverflow",TextOverflow);

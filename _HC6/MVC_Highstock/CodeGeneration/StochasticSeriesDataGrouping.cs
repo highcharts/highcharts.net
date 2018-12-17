@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public StochasticSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = StochasticSeriesDataGroupingApproximation.Average;
+			Approximation = Approximation_DefaultValue = StochasticSeriesDataGroupingApproximation.Null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

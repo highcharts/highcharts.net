@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PivotpointsSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PivotpointsSeriesDataGroupingApproximation.Average;
+			Approximation = Approximation_DefaultValue = PivotpointsSeriesDataGroupingApproximation.Null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

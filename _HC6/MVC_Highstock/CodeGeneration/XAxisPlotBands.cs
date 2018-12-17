@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public XAxisPlotBands()
 		{
-			BorderColor = BorderColor_DefaultValue = "null";
+			BorderColor = BorderColor_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "null";
+			Color = Color_DefaultValue = "";
 			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			Label = Label_DefaultValue = new XAxisPlotBandsLabel();
 			To = To_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
@@ -29,21 +29,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Border color for the plot band. Also requires `borderWidth` to beset.
+		/// Border color for the plot band. Also requires `borderWidth` to be set.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Border width for the plot band. Also requires `borderColor` to beset.
+		/// Border width for the plot band. Also requires `borderColor` to be set.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A custom class name, in addition to the default `highcharts-plot-band`, toapply to each individual band.
+		/// A custom class name, in addition to the default `highcharts-plot-band`,to apply to each individual band.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
@@ -92,7 +92,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The z index of the plot band within the chart, relative to otherelements. Using the same z index as another element may give unpredictableresults, as the last rendered element will be on top. Values from0 to 20 make sense.
+		/// The z index of the plot band within the chart, relative to otherelements. Using the same z index as another element may giveunpredictable results, as the last rendered element will be on top.Values from 0 to 20 make sense.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }

@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Fires when clicking on the rangeSelector button. One parameter, event,is passed to the function, containing common event information.<pre>click: function(e) {  console.log(this);}</pre>Return false to stop default button's click action.
+		/// Fires when clicking on the rangeSelector button. One parameter,event, is passed to the function, containing common eventinformation.<pre>click: function(e) {  console.log(this);}</pre>Return false to stop default button's click action.
 		/// </summary>
 		public string Click { get; set; }
 		private string Click_DefaultValue { get; set; }

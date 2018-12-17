@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Stocks
     public enum MfiSeriesCursor
     {
         Null, 
+		Crosshair, 
 		Default, 
-		None, 
 		Help, 
-		Pointer, 
-		Crosshair
+		None, 
+		Pointer
     }
 }

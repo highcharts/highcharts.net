@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum YAxisLabelsOverflow
     {
-        Null, 
+        Allow, 
 		Justify
     }
 }

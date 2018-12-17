@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsRsiDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = PlotOptionsRsiDataGroupingApproximation.Average;
+			Approximation = Approximation_DefaultValue = PlotOptionsRsiDataGroupingApproximation.Null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

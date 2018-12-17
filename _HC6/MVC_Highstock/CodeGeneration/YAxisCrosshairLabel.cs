@@ -23,13 +23,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			Formatter = Formatter_DefaultValue = "";
 			Padding = Padding_DefaultValue = "8";
 			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = new Hashtable{{ "color", "white"},{ "fontWeight", "normal"},{ "fontSize", "11px"},{ "textAlign", "center" }};
+			Style = Style_DefaultValue = new YAxisCrosshairLabelStyle();
 			
 		}	
 		
 
 		/// <summary>
-		/// Alignment of the label compared to the axis. Defaults to `left` forright-side axes, `right` for left-side axes and `center` for horizontalaxes.
+		/// Alignment of the label compared to the axis. Defaults to `left` forright-side axes, `right` for left-side axes and `center` forhorizontal axes.
 		/// </summary>
 		public string Align { get; set; }
 		private string Align_DefaultValue { get; set; }
@@ -94,8 +94,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Text styles for the crosshair label.
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public YAxisCrosshairLabelStyle Style { get; set; }
+		private YAxisCrosshairLabelStyle Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -111,7 +111,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("YAxisCrosshairLabelFormatter.formatter", Formatter); }  
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			
 
 			return h;

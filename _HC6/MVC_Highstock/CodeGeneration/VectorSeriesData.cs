@@ -15,14 +15,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		public VectorSeriesData()
 		{
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "undefined";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new VectorSeriesDataLabels();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
 			Direction = Direction_DefaultValue = null;
+			DragDrop = DragDrop_DefaultValue = new VectorSeriesDataDragDrop();
 			Drilldown = Drilldown_DefaultValue = "";
 			Events = Events_DefaultValue = new VectorSeriesDataEvents();
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
 			Length = Length_DefaultValue = null;
 			Marker = Marker_DefaultValue = new VectorSeriesDataMarker();
@@ -75,6 +76,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Direction { get; set; }
 		private double? Direction_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.Requires the `draggable-points` module.
+		/// </summary>
+		public VectorSeriesDataDragDrop DragDrop { get; set; }
+		private VectorSeriesDataDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -159,6 +167,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Direction != Direction_DefaultValue) h.Add("direction",Direction);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);

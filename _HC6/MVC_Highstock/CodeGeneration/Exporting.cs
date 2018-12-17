@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for exporting data to CSV or ExCel, or displaying the datain a HTML table or a JavaScript structure. Requires the`export-data.js` module. This module adds data export options to theexport menu and provides functions like `Chart.getCSV`,`Chart.getTable`, `Chart.getDataRows` and `Chart.viewData`.
+		/// Options for exporting data to CSV or ExCel, or displaying the datain a HTML table or a JavaScript structure. Requires the`export-data.js` module. This module adds data export options to theexport menu and provides functions like `Chart.getCSV`,`Chart.getTable`, `Chart.getDataRows` and `Chart.viewData`.The XLS converter is limited and only creates a HTML string that ispassed for download, which works but creates a warning beforeopening. The workaround for this is to use a third party XLSXconverter, as demonstrated in the sample below.
 		/// </summary>
 		public ExportingCsv Csv { get; set; }
 		private ExportingCsv Csv_DefaultValue { get; set; }

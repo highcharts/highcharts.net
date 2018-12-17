@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsScatterTooltip()
 		{
-			HeaderFormat = HeaderFormat_DefaultValue = "<span class='highcharts-color-{point.colorIndex}'>●</span> <span class='highcharts-header'> {series.name}</span><br/>";
-			PointFormat = PointFormat_DefaultValue = "x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>";
+			HeaderFormat = HeaderFormat_DefaultValue = "● {series.name}";
+			PointFormat = PointFormat_DefaultValue = "x: {point.x} y: {point.y}";
 			
 		}	
 		

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LineSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = LineSeriesDataGroupingApproximation.Average;
+			Approximation = Approximation_DefaultValue = LineSeriesDataGroupingApproximation.Null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

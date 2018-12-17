@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public XAxisPlotLinesLabel()
 		{
-			Align = Align_DefaultValue = "left";
+			Align = Align_DefaultValue = XAxisPlotLinesLabelAlign.Left;
 			Rotation = Rotation_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
 			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = XAxisPlotLinesLabelVerticalAlign.Top;
+			VerticalAlign = VerticalAlign_DefaultValue = XAxisPlotLinesLabelVerticalAlign.Null;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -28,14 +28,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Horizontal alignment of the label. Can be one of "left", "center"or "right".
+		/// Horizontal alignment of the label. Can be one of "left", "center" or"right".
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public XAxisPlotLinesLabelAlign Align { get; set; }
+		private XAxisPlotLinesLabelAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Rotation of the text label in degrees. Defaults to 0 for horizontalplot lines and 90 for vertical lines.
+		/// Rotation of the text label in degrees. Defaults to 0 for horizontal plotlines and 90 for vertical lines.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
@@ -56,14 +56,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The text alignment for the label. While `align` determines wherethe texts anchor point is placed within the plot band, `textAlign`determines how the text is aligned against its anchor point. Possiblevalues are "left", "center" and "right". Defaults to the same asthe `align` option.
+		/// The text alignment for the label. While `align` determines where thetexts anchor point is placed within the plot band, `textAlign` determineshow the text is aligned against its anchor point. Possible values are"left", "center" and "right". Defaults to the same as the `align` option.
 		/// </summary>
 		public string TextAlign { get; set; }
 		private string TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
+		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
@@ -77,14 +77,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Horizontal position relative the alignment. Default varies by orientation.
+		/// Horizontal position relative the alignment. Default varies byorientation.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Vertical position of the text baseline relative to the alignment. Default varies by orientation.
+		/// Vertical position of the text baseline relative to the alignment. Defaultvaries by orientation.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
@@ -94,7 +94,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);

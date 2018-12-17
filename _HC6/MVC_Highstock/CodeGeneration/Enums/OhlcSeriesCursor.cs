@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Stocks
     public enum OhlcSeriesCursor
     {
         Null, 
+		Crosshair, 
 		Default, 
-		None, 
 		Help, 
-		Pointer, 
-		Crosshair
+		None, 
+		Pointer
     }
 }

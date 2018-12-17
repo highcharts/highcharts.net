@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum RangeSelectorButtonType
     {
-        Millisecond, 
+        Null, 
+		Millisecond, 
 		Second, 
 		Minute, 
 		Day, 

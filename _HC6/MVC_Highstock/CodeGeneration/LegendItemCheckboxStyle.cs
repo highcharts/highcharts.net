@@ -27,7 +27,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		public string Height { get; set; }
 		private string Height_DefaultValue { get; set; }
 		 
-
 		/// <summary>
 		/// 
 		/// </summary>
@@ -49,7 +48,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			
 
 			return h;
 		}

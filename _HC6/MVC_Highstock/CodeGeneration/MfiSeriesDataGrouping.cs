@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public MfiSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = MfiSeriesDataGroupingApproximation.Average;
+			Approximation = Approximation_DefaultValue = MfiSeriesDataGroupingApproximation.Null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

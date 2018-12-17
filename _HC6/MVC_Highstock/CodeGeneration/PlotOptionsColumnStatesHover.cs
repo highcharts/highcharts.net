@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			BorderColor = BorderColor_DefaultValue = "";
 			Brightness = Brightness_DefaultValue = null;
-			Color = Color_DefaultValue = "undefined";
+			Color = Color_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = true;
 			
 		}	

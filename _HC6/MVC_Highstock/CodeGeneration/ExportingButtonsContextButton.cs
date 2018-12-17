@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ExportingButtonsContextButton()
 		{
-			_titleKey = _titleKey_DefaultValue = "contextButtonTitle";
+			_titleKey = _titleKey_DefaultValue = "";
 			Align = Align_DefaultValue = ExportingButtonsContextButtonAlign.Right;
 			ButtonSpacing = ButtonSpacing_DefaultValue = 3;
 			ClassName = ClassName_DefaultValue = "highcharts-contextbutton";
@@ -32,6 +32,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			SymbolY = SymbolY_DefaultValue = null;
 			Text = Text_DefaultValue = "null";
 			Theme = Theme_DefaultValue = new ExportingButtonsContextButtonTheme();
+			TitleKey = TitleKey_DefaultValue = "contextButtonTitle";
 			VerticalAlign = VerticalAlign_DefaultValue = ExportingButtonsContextButtonVerticalAlign.Top;
 			Width = Width_DefaultValue = 24;
 			X = X_DefaultValue = -10;
@@ -41,7 +42,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The key to a [lang](#lang) option setting that is used for thebutton's title tooltip. When the key is `contextButtonTitle`, itrefers to [lang.contextButtonTitle](#lang.contextButtonTitle)that defaults to "Chart context menu".
+		/// This option is deprecated, use[titleKey](#exporting.buttons.contextButton.titleKey) instead.
 		/// </summary>
 		public string _titleKey { get; set; }
 		private string _titleKey_DefaultValue { get; set; }
@@ -167,6 +168,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The key to a [lang](#lang) option setting that is used for thebutton's title tooltip. When the key is `contextButtonTitle`, itrefers to [lang.contextButtonTitle](#lang.contextButtonTitle)that defaults to "Chart context menu".
+		/// </summary>
+		public string TitleKey { get; set; }
+		private string TitleKey_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The vertical alignment of the buttons. Can be one of "top", "middle"or "bottom".
 		/// </summary>
 		public ExportingButtonsContextButtonVerticalAlign VerticalAlign { get; set; }
@@ -216,6 +224,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SymbolY != SymbolY_DefaultValue) h.Add("symbolY",SymbolY);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());
+			if (TitleKey != TitleKey_DefaultValue) h.Add("titleKey",TitleKey);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (X != X_DefaultValue) h.Add("x",X);

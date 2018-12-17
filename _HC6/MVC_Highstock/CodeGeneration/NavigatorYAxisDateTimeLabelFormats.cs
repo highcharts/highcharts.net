@@ -14,14 +14,14 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigatorYAxisDateTimeLabelFormats()
 		{
-			Day = Day_DefaultValue = "%e. %b";
-			Hour = Hour_DefaultValue = "%H:%M";
-			Millisecond = Millisecond_DefaultValue = "%H:%M:%S.%L";
-			Minute = Minute_DefaultValue = "%H:%M";
-			Month = Month_DefaultValue = "%b '%y";
-			Second = Second_DefaultValue = "%H:%M:%S";
-			Week = Week_DefaultValue = "%e. %b";
-			Year = Year_DefaultValue = "%Y";
+			Day = Day_DefaultValue = new NavigatorYAxisDateTimeLabelFormatsDay();
+			Hour = Hour_DefaultValue = new NavigatorYAxisDateTimeLabelFormatsHour();
+			Millisecond = Millisecond_DefaultValue = new NavigatorYAxisDateTimeLabelFormatsMillisecond();
+			Minute = Minute_DefaultValue = new NavigatorYAxisDateTimeLabelFormatsMinute();
+			Month = Month_DefaultValue = new NavigatorYAxisDateTimeLabelFormatsMonth();
+			Second = Second_DefaultValue = new NavigatorYAxisDateTimeLabelFormatsSecond();
+			Week = Week_DefaultValue = new NavigatorYAxisDateTimeLabelFormatsWeek();
+			Year = Year_DefaultValue = new NavigatorYAxisDateTimeLabelFormatsYear();
 			
 		}	
 		
@@ -29,71 +29,71 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Day { get; set; }
-		private string Day_DefaultValue { get; set; }
+		public NavigatorYAxisDateTimeLabelFormatsDay Day { get; set; }
+		private NavigatorYAxisDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Hour { get; set; }
-		private string Hour_DefaultValue { get; set; }
+		public NavigatorYAxisDateTimeLabelFormatsHour Hour { get; set; }
+		private NavigatorYAxisDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Millisecond { get; set; }
-		private string Millisecond_DefaultValue { get; set; }
+		public NavigatorYAxisDateTimeLabelFormatsMillisecond Millisecond { get; set; }
+		private NavigatorYAxisDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Minute { get; set; }
-		private string Minute_DefaultValue { get; set; }
+		public NavigatorYAxisDateTimeLabelFormatsMinute Minute { get; set; }
+		private NavigatorYAxisDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Month { get; set; }
-		private string Month_DefaultValue { get; set; }
+		public NavigatorYAxisDateTimeLabelFormatsMonth Month { get; set; }
+		private NavigatorYAxisDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Second { get; set; }
-		private string Second_DefaultValue { get; set; }
+		public NavigatorYAxisDateTimeLabelFormatsSecond Second { get; set; }
+		private NavigatorYAxisDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Week { get; set; }
-		private string Week_DefaultValue { get; set; }
+		public NavigatorYAxisDateTimeLabelFormatsWeek Week { get; set; }
+		private NavigatorYAxisDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Year { get; set; }
-		private string Year_DefaultValue { get; set; }
+		public NavigatorYAxisDateTimeLabelFormatsYear Year { get; set; }
+		private NavigatorYAxisDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Day != Day_DefaultValue) h.Add("day",Day);
-			if (Hour != Hour_DefaultValue) h.Add("hour",Hour);
-			if (Millisecond != Millisecond_DefaultValue) h.Add("millisecond",Millisecond);
-			if (Minute != Minute_DefaultValue) h.Add("minute",Minute);
-			if (Month != Month_DefaultValue) h.Add("month",Month);
-			if (Second != Second_DefaultValue) h.Add("second",Second);
-			if (Week != Week_DefaultValue) h.Add("week",Week);
-			if (Year != Year_DefaultValue) h.Add("year",Year);
+			if (Day.IsDirty()) h.Add("day",Day.ToHashtable());
+			if (Hour.IsDirty()) h.Add("hour",Hour.ToHashtable());
+			if (Millisecond.IsDirty()) h.Add("millisecond",Millisecond.ToHashtable());
+			if (Minute.IsDirty()) h.Add("minute",Minute.ToHashtable());
+			if (Month.IsDirty()) h.Add("month",Month.ToHashtable());
+			if (Second.IsDirty()) h.Add("second",Second.ToHashtable());
+			if (Week.IsDirty()) h.Add("week",Week.ToHashtable());
+			if (Year.IsDirty()) h.Add("year",Year.ToHashtable());
 			
 
 			return h;

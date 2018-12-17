@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Color = Color_DefaultValue = "#999999";
 			Cursor = Cursor_DefaultValue = "pointer";
-			FontSize = FontSize_DefaultValue = "9px";
+			FontSize = FontSize_DefaultValue = "10px";
 			
 		}	
 		

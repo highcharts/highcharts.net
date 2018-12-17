@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The color of the point marker's outline. When `null`, theseries' or point's color is used.
+		/// The color of the point marker's outline. When `undefined`,the series' or point's color is used.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }

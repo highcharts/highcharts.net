@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Enabled = Enabled_DefaultValue = null;
 			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
-			FillColor = FillColor_DefaultValue = "null";
+			FillColor = FillColor_DefaultValue = "";
 			FillOpacity = FillOpacity_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "";
@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Enable or disable the point marker. If `null`, the markers are hiddenwhen the data is dense, and shown for more widespread data points.
+		/// Enable or disable the point marker. If `undefined`, the markers arehidden when the data is dense, and shown for more widespread datapoints.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The fill color of the point marker. When `null`, the series' orpoint's color is used.
+		/// The fill color of the point marker. When `undefined`, the series' orpoint's color is used.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }

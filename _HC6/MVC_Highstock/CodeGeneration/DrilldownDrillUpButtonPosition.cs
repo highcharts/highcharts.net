@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public DrilldownDrillUpButtonPosition()
 		{
-			Align = Align_DefaultValue = "right";
+			Align = Align_DefaultValue = DrilldownDrillUpButtonPositionAlign.Right;
 			VerticalAlign = VerticalAlign_DefaultValue = DrilldownDrillUpButtonPositionVerticalAlign.Top;
 			X = X_DefaultValue = -10;
 			Y = Y_DefaultValue = 10;
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Horizontal alignment.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public DrilldownDrillUpButtonPositionAlign Align { get; set; }
+		private DrilldownDrillUpButtonPositionAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

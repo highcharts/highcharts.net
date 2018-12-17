@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Stocks
     public enum ColumnrangeSeriesCursor
     {
         Null, 
+		Crosshair, 
 		Default, 
-		None, 
 		Help, 
-		Pointer, 
-		Crosshair
+		None, 
+		Pointer
     }
 }

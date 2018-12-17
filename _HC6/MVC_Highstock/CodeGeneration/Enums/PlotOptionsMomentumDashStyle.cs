@@ -7,16 +7,16 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsMomentumDashStyle
     {
-        Solid, 
+        Dash, 
+		DashDot, 
+		Dot, 
+		LongDash, 
+		LongDashDot, 
+		LongDashDotDot, 
 		ShortDash, 
-		ShortDot, 
 		ShortDashDot, 
 		ShortDashDotDot, 
-		Dot, 
-		Dash, 
-		LongDash, 
-		DashDot, 
-		LongDashDot, 
-		LongDashDotDot
+		ShortDot, 
+		Solid
     }
 }

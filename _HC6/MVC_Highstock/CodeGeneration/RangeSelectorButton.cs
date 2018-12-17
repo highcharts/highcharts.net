@@ -19,8 +19,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Events = Events_DefaultValue = new RangeSelectorButtonEvents();
 			OffsetMax = OffsetMax_DefaultValue = 0;
 			OffsetMin = OffsetMin_DefaultValue = 0;
+			PreserveDataGrouping = PreserveDataGrouping_DefaultValue = false;
 			Text = Text_DefaultValue = "";
-			Type = Type_DefaultValue = RangeSelectorButtonType.Millisecond;
+			Type = Type_DefaultValue = RangeSelectorButtonType.Null;
 			
 		}	
 		
@@ -47,17 +48,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Additional range (in milliseconds) added to the end of the calculated time span.
+		/// Additional range (in milliseconds) added to the end of the calculatedtime span.
 		/// </summary>
 		public double? OffsetMax { get; set; }
 		private double? OffsetMax_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Additional range (in milliseconds) added to the start of the calculated time span.
+		/// Additional range (in milliseconds) added to the start of thecalculated time span.
 		/// </summary>
 		public double? OffsetMin { get; set; }
 		private double? OffsetMin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When buttons apply dataGrouping on a series, by default zoomingin/out will deselect buttons and unset dataGrouping. Enable thisoption to keep buttons selected when extremes change.
+		/// </summary>
+		public bool? PreserveDataGrouping { get; set; }
+		private bool? PreserveDataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -83,6 +91,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (OffsetMax != OffsetMax_DefaultValue) h.Add("offsetMax",OffsetMax);
 			if (OffsetMin != OffsetMin_DefaultValue) h.Add("offsetMin",OffsetMin);
+			if (PreserveDataGrouping != PreserveDataGrouping_DefaultValue) h.Add("preserveDataGrouping",PreserveDataGrouping);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			
