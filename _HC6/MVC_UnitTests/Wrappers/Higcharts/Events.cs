@@ -50,5 +50,15 @@ namespace Highsoft.Web.Mvc.UnitTests
             Assert.IsTrue(json.Contains("\"formatter\":formatXLabels"));
             Assert.IsTrue(json.Contains("\"formatter\":formatYLabels"));
         }
+
+        [TestMethod]
+        public void ColumnSeriesEventsClick()
+        {
+            _chart.Series = new List<Series> { new ColumnrangeSeries { Events = new ColumnrangeSeriesEvents { Click = "functionXYZ" } } };
+
+            string json = _renderer.RenderHtml();
+
+            Assert.IsTrue(json.Contains("\"events\":{\"click\":functionXYZ}"));
+        }
     }
 }
