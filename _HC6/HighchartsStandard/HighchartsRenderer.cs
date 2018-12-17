@@ -9,25 +9,27 @@ using System.Reflection;
 
 namespace Highsoft.Web.Mvc.Charts.Rendering
 {
-    public class HighchartsRenderer
+    internal class HighchartsRenderer
     {
         private Highcharts _chart;
+        private readonly string _SerialKey;
 
         public HighchartsRenderer() { }
 
-        public HighchartsRenderer(Highcharts chart)
+        public HighchartsRenderer(Highcharts chart, string key = null)
         {
             _chart = chart;
+            _SerialKey = key;
         }
 
         public string RenderHtml(bool addContainer = true)
         {
-            return GetResponse(LicenseVerifier.Check(), addContainer);
+            return GetResponse(LicenseVerifier.Check(_SerialKey), addContainer);
         }
 
         public string GetJavascript()
         {
-            var licenseType = LicenseVerifier.Check();
+            var licenseType = LicenseVerifier.Check(_SerialKey);
 
             string message = "";
 
@@ -46,7 +48,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
         public string GetJavascriptFunction(string functionName)
         {
-            var licenseType = LicenseVerifier.Check();
+            var licenseType = LicenseVerifier.Check(_SerialKey);
 
             string message = "";
 
@@ -171,7 +173,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
         public string GetJsonOptions()
         {
-            return GetJsonResponse(LicenseVerifier.Check());
+            return GetJsonResponse(LicenseVerifier.Check(_SerialKey));
         }
 
         private string GetStartupOptions()

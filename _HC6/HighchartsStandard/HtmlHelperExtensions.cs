@@ -11,12 +11,10 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public class HighsoftNamespace
     {
-        public string Highcharts(Highcharts chart, string containerId)
-        {            
-            var renderer = new HighchartsRenderer(chart);
-            AssignContainerId(chart, containerId);
-
-            return renderer.RenderHtml();
+        private readonly string _SerialKey;
+        public HighsoftNamespace(string key = null)
+        {
+            _SerialKey = key;
         }
 
         public string GetHighcharts(Highcharts chart, string containerId, bool addContainer = true, string functionName = null)
@@ -24,7 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
             if (functionName != null)
                 return GetHighchartsFunction(chart, containerId, functionName);
 
-            var renderer = new HighchartsRenderer(chart);
+            var renderer = new HighchartsRenderer(chart, _SerialKey);
             AssignContainerId(chart, containerId);
 
             if(addContainer)
@@ -35,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 
         public string GetHighchartsJS(Highcharts chart, string containerId)
         {
-            var renderer = new HighchartsRenderer(chart);
+            var renderer = new HighchartsRenderer(chart, _SerialKey);
             AssignContainerId(chart, containerId);
 
             return renderer.GetJavascript();
@@ -43,7 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 
         public string GetJsonOptions(Highcharts chart)
         {
-            var renderer = new HighchartsRenderer(chart);
+            var renderer = new HighchartsRenderer(chart, _SerialKey);
             return renderer.GetJsonOptions();
         }
 
@@ -55,7 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 
         private string GetHighchartsFunction(Highcharts chart, string containerId, string functionName)
         {
-            var renderer = new HighchartsRenderer(chart);
+            var renderer = new HighchartsRenderer(chart, _SerialKey);
             AssignContainerId(chart, containerId);
 
             return renderer.GetJavascriptFunction(functionName);

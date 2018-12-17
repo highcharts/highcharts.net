@@ -13,14 +13,12 @@ namespace Highsoft.Web.Mvc.Charts
     {
         private static string KEY_NAME = "Highcharts";
 
-        public static int Check()
+        public static int Check(string key)
         {
-            string line = GetSerialFromFile();
-
-            if (line == null)
+            if (key == null)
                 return -1; //trial
 
-            if (IsSerialCorrect(DecodeSerial(line)))
+            if (IsSerialCorrect(DecodeSerial(key)))
                 return 1; //unlimited
 
             return 0; //incorrect serial -> trial mode + warning message
@@ -73,19 +71,6 @@ namespace Highsoft.Web.Mvc.Charts
             }
 
             return decodedSerial;
-        }
-
-        static string GetSerialFromFile()
-        {
-            string[] values = { "X127DD890" };// ConfigurationManager.AppSettings.GetValues(KEY_NAME);
-
-            if (values == null)
-                return null;
-
-            if (values.Length == 0)
-                return null;
-
-            return values[0];
         }
     }
 }

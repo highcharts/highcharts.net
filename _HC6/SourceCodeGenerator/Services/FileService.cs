@@ -20,11 +20,25 @@ namespace SourceCodeGenerator.Services
                 return TemplatesFolderPath + "\\RootClass.tpl";
             }
         }
+        private string RootClassTemplatePathNETStandard
+        {
+            get
+            {
+                return TemplatesFolderPath + "\\RootClass_NETStandard.tpl";
+            }
+        }
         private string ClassTemplatePath
         {
             get
             {
                 return TemplatesFolderPath + "\\Class.tpl";
+            }
+        }
+        private string ClassTemplatePathNETStandard
+        {
+            get
+            {
+                return TemplatesFolderPath + "\\Class_NETStandard.tpl";
             }
         }
         private string EnumTemplatePath
@@ -72,13 +86,19 @@ namespace SourceCodeGenerator.Services
             AssemblyFolderPath = Directory.GetCurrentDirectory();
         }
 
-        public string GetRootClassTemplate()
+        public string GetRootClassTemplate(bool isNETStandard = false)
         {
-            return GetFileContent(RootClassTemplatePath);
+            if (isNETStandard)
+                return GetFileContent(RootClassTemplatePathNETStandard);
+            else
+                return GetFileContent(RootClassTemplatePath);
         }
-        public string GetClassTemplate()
+        public string GetClassTemplate(bool isNETStandard = false)
         {
-            return GetFileContent(ClassTemplatePath);
+            if (isNETStandard)
+                return GetFileContent(ClassTemplatePathNETStandard);
+            else
+                return GetFileContent(ClassTemplatePath);
         }
         public string GetPropertyTemplate()
         {
@@ -135,8 +155,8 @@ namespace SourceCodeGenerator.Services
 
     public interface IFileService
     {
-        string GetRootClassTemplate();
-        string GetClassTemplate();
+        string GetRootClassTemplate(bool isNETStandard = false);
+        string GetClassTemplate(bool isNETStandard = false);
         string GetPropertyTemplate();
         string GetEnumTemplate();
         string GetJsonContent();

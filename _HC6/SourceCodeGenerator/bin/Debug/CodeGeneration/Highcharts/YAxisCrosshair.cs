@@ -1,7 +1,7 @@
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Web.Script.Serialization;
 using System.Collections;
 using System;
 using System.Collections.Specialized;
@@ -84,11 +84,9 @@ namespace Highsoft.Web.Mvc.Charts
 		internal override string ToJSON()
 		{            
 			Hashtable h = ToHashtable();
-			JavaScriptSerializer serializer = new JavaScriptSerializer();
-            serializer.MaxJsonLength = Int32.MaxValue;
 
 			if (h.Count > 0)
-				return serializer.Serialize(ToHashtable());
+				return JsonConvert.SerializeObject(ToHashtable());
 			else 
 				return "";
 		}       

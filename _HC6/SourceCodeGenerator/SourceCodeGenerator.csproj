@@ -110,6 +110,12 @@
     <Content Include="CodeTemplates\RootClass.tpl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="CodeTemplates\RootClass_NETStandard.tpl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CodeTemplates\Class_NETStandard.tpl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="JsonFiles\highcharts6.1.4.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
