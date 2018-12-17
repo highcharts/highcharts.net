@@ -158,6 +158,7 @@ namespace SourceCodeGenerator.Parser
             if (apiItem.FullName.StartsWith("plotOptions.column.marker"))
                 return;
 
+            UpdateService.UpdateCSSObject(apiItem);
             UpdateService.Update(apiItem);
 
             TypeService.SetReturnType(apiItem);

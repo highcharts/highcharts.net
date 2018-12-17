@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SourceCodeGenerator.Services.Objects;
 using SourceCodeGenerator.Enums;
 
@@ -12,11 +9,13 @@ namespace SourceCodeGenerator.Services
     {
         private IDictionary<string, IList<UpdateInfo>> ItemsToUpdate;
         private IDictionary<string, IList<UpdateInfo>> ItemsToUpdateProducts;
+        private IDictionary<string, IList<ApiItem>> ChildrenToAdd;
 
         public JsonUpdateService()
         {
             ItemsToUpdate = new Dictionary<string, IList<UpdateInfo>>();
             ItemsToUpdateProducts = new Dictionary<string, IList<UpdateInfo>>();
+            ChildrenToAdd = new Dictionary<string, IList<ApiItem>>();
 
             Add();
             
@@ -52,6 +51,21 @@ namespace SourceCodeGenerator.Services
                 foreach (var info in ItemsToUpdateProducts[item.FullName])
                     UpdateProperty(item, info);
             }
+        }
+
+        public void UpdateCSSObject(ApiItem item)
+        {
+            if (item.ReturnType != TypeService.CSSObject)
+                return;
+
+            item.ReturnType = TypeService.ObjectType;
+            if(!item.Types.Contains(TypeService.ObjectType))
+                item.Types.Add(TypeService.ObjectType);
+
+            item.Types.Remove(TypeService.CSSObject);
+
+            if (!string.IsNullOrEmpty(item.Defaults))
+                item.Children = GetItemsFromDefaultValue(item);
         }
 
         private void UpdateProperty(ApiItem item, UpdateInfo info)
@@ -258,6 +272,8 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.series.linecap", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Default, Value = "round" } });
             ItemsToUpdate.Add("series.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "null" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "line" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "spline" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "column" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "area" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "areaspline" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "pie" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "arearange" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "areasplinerange" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "boxplot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "bubble" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "columnrange" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "errorbar" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "funnel" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "gauge" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "scatter" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "waterfall" } });
 
+            ItemsToUpdate.Add("plotOptions.series.borderWidth", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Types, Value = "Number" },  new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" },  new UpdateInfo { Name = ApiPropertyName.Default, Value = "0" } });
+
             ItemsToUpdateProducts.Add("xAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
             ItemsToUpdateProducts.Add("yAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
         }
@@ -272,6 +288,35 @@ namespace SourceCodeGenerator.Services
 
             if (item.FullName == "chart.options3d.frame.bottom.visible" || item.FullName == "plotOptions.histogram.binsNumber")
                 item.Values.Clear();
+
+            if (item.FullName == "series.stack")
+                item.Types.Remove("*");
+        }
+
+        private IList<ApiItem> GetItemsFromDefaultValue(ApiItem item)
+        {
+            var defaults = item.Defaults.Trim(new char[] { '{', '}' });
+            var children = defaults.Split(',');
+
+            var list = new List<ApiItem>();
+            foreach (var child in children)
+            {
+                var values = child.Split(':');
+
+                if (values.Length < 2)
+                    continue;
+
+                var title = GetCleanValue(values[0]);
+                var value = GetCleanValue(values[1]);
+                list.Add(new ApiItem { ReturnType = TypeService.StringType, FullName = title, Title = title, Defaults = value });
+            }
+
+            return list;
+        }
+
+        private string GetCleanValue(string item)
+        {
+            return item.Trim('"', ' ');
         }
     }
 
@@ -279,5 +324,6 @@ namespace SourceCodeGenerator.Services
     {
         void Update(ApiItem item);
         void UpdateProducts(ApiItem item);
+        void UpdateCSSObject(ApiItem item);
     }
 }

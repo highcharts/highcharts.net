@@ -8,10 +8,13 @@ namespace SourceCodeGenerator.Services
 {
     public class TypeService : ITypeService
     {
+        public static readonly string CSSObject = "Highcharts.CSSObject";
+        public static readonly string StringType = "String";
+        public static readonly string ObjectType = "Object";
+
         private const string BoolType = "Boolean";
         private const string NumberType = "Number";
-        private const string StringType = "String";
-        private const string ObjectType = "Object";
+
         private const string FunctionType = "function";
         private static ISet<string> FunctionTypes = new HashSet<string> { "Highcharts.FormatterCallbackFunction" };
         private static IEnumerable<string> UniqueStringTypesNames = new List<string> { "Highcharts.CSSObject", "Highcharts.ColorString", "Highcharts.HTMLDOMElement" };
@@ -29,6 +32,15 @@ namespace SourceCodeGenerator.Services
 
             if (item.Defaults != null && string.IsNullOrWhiteSpace(item.ReturnType))
                 item.ReturnType = GetType(item);
+
+            if (IsObject(item))
+            {
+                if (!item.Types.Contains(ObjectType))
+                    item.Types.Add(ObjectType);
+
+                item.Types.Remove("*");
+                item.ReturnType = ObjectType;
+            }
         }
         private string GetType(ApiItem item)
         {
@@ -64,6 +76,14 @@ namespace SourceCodeGenerator.Services
         private bool IsFunction(ApiItem item)
         {
             if (FunctionTypes.Contains(item.ReturnType))
+                return true;
+
+            return false;
+        }
+
+        private bool IsObject(ApiItem item)
+        {
+            if (item.ReturnType == "*")
                 return true;
 
             return false;

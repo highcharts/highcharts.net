@@ -258,7 +258,7 @@ public class HighstockGenerator
 
     private ApiItem FindApiItem(string baseClassFullName, ApiItem item)
     {
-        if (item.Parent != null)
+        if (item?.Parent != null)
         {
             if (item.Parent.FullName == baseClassFullName)
                 return item.Parent;
@@ -335,6 +335,10 @@ public class HighstockGenerator
 
             //if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
             //    child.IsParent = true;
+
+            if (child.FullName.ToLower().Contains("labels.style.") || child.FullName.ToLower().Contains("credits.style.") || child.FullName.ToLower().Contains("title.style.") || child.FullName.ToLower().Contains("labels.items.style.")
+                || child.FullName.ToLower().Contains("legend.itemHiddenStyle.") || child.FullName.ToLower().Contains("legend.itemHoverStyle."))
+                child.IsParent = true;
 
             string formattedProperty = FormatProperty(propertyTemplate, child);
             string formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
@@ -664,7 +668,7 @@ public class HighstockGenerator
             if (_typeMappings[returnType] != null)
                 return _typeMappings[returnType].ToString();
 
-        if (child.ReturnType == "Array" && child.Title == "zones")
+        if (child.ReturnType == "Array.<*>" && child.Title == "zones")
             returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones", "Zone"));
         else
             if (child.Children.Any() || child.Extends.Any())
@@ -752,7 +756,7 @@ public class HighstockGenerator
             if ((child.ParentFullName == "chart.resetZoomButton" || child.ParentFullName == "credits" || child.ParentFullName == "noData") && propertyName == "Position")
                 return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
 
-            if (child.ReturnType == "Array" && child.Title == "zones")
+            if (child.ReturnType == "Array.<*>" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             if (child.Children.Any() || child.Extends.Any() || child.ReturnType == "Object")
@@ -887,12 +891,16 @@ public class HighstockGenerator
         _typeMappings.Add("String|null", "string");
         _typeMappings.Add("String|HTMLElement", "string");
         _typeMappings.Add("Array.<Color>", "List<string>");
+        _typeMappings.Add("Array.<color>", "List<string>");
         _typeMappings.Add("Array.<String>", "List<string>");
-        _typeMappings.Add("Array.<String>;", "List<string>");
+        _typeMappings.Add("Array.<string>", "List<string>");
         _typeMappings.Add("Array.<Number>", "List<double>");
+        _typeMappings.Add("Array.<number>", "List<double>");
         _typeMappings.Add("Array.<Array.<Mixed>>", "List<List<object>>");
         _typeMappings.Add("Array.<Object>", "List<object>");
+        _typeMappings.Add("Array.<object>", "List<object>");
         _typeMappings.Add("Mixed", "double?");
+        _typeMappings.Add("Array.<Highcharts.ColorString>", "List<string>");
     }
     private void InitPropertyTypeMappings()
     {
@@ -983,6 +991,7 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("navigator.series", "Series");
         _propertyTypeMappings.Add("plotOptions.arearange.threshold", "Object");
         _propertyTypeMappings.Add("plotOptions.stochastic.params.periods", "List<int>");
+        _propertyTypeMappings.Add("labels.items.style", "Hashtable");
     }
     private void InitPropertyInitMappings()
     {
@@ -1095,6 +1104,8 @@ public class HighstockGenerator
         _propertyInitMappings.Add("navigator.series", "new Series()");
         _propertyInitMappings.Add("plotOptions.arearange.threshold", "null");
         _propertyInitMappings.Add("plotOptions.stochastic.params.periods", "new List<int>()");
+        _propertyInitMappings.Add("autoRotation", "new List<double> {-45}");
+        _propertyInitMappings.Add("categories", "new List<string>()");
     }
     private void InitLists()
     {
@@ -1261,7 +1272,7 @@ public class HighstockGenerator
         //if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
         //    defaults = "";
 
-        if (item.ReturnType == "Array" && item.Title == "zones")
+        if (item.ReturnType == "Array.<*>" && item.Title == "zones")
             return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
 
         if (item.FullName.ToLower().Contains("data.datalabels"))
@@ -1285,7 +1296,7 @@ public class HighstockGenerator
             {
                 return '"' + defaults.Replace("\"", "'") + '"';
             }
-            if (item.ReturnType.StartsWith("Array.<String>")) // thereis Array<String>; ending with ; in Highstock
+            if (item.ReturnType.StartsWith("Array.<String>") || item.ReturnType.StartsWith("Array.<string>")) // thereis Array<String>; ending with ; in Highstock
             {
                 if (item.ParentFullName == "lang")
                     return "new List<string> " + item.Defaults

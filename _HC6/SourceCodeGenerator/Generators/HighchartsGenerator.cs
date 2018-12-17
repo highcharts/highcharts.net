@@ -141,14 +141,14 @@ public class HighchartsGenerator
 
     private void MultiplyObjects(IList<ApiItem> items)
     {
-        for(int i=0; i<items.Count; i++)
+        for (int i = 0; i < items.Count; i++)
         {
             if (items[i].FullName.Contains("pointPlacement"))
                 continue;
 
             var clones = MultiplicationService.MultiplyObject(items[i]);
 
-            if(clones.Any())
+            if (clones.Any())
                 items = items.Concat(clones).ToList();
 
             if (items[i].Children.Any())
@@ -246,7 +246,7 @@ public class HighchartsGenerator
 
     private ApiItem FindApiItem(string baseClassFullName, ApiItem item)
     {
-        if (item.Parent != null)
+        if (item?.Parent != null)
         {
             if (item.Parent.FullName == baseClassFullName)
                 return item.Parent;
@@ -307,7 +307,7 @@ public class HighchartsGenerator
                 continue;
 
             //remove after bug fix
-            if(child.FullName == "plotOptions.funnel.dataLabels.style")
+            if (child.FullName == "plotOptions.funnel.dataLabels.style")
                 child.Extends.Add("plotOptions.series.dataLabels.style");
 
             child.ParentFullName = item.FullName;
@@ -321,6 +321,10 @@ public class HighchartsGenerator
                 continue;
 
             if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
+                child.IsParent = true;
+
+            if (child.FullName.ToLower().Contains("labels.style.") || child.FullName.ToLower().Contains("credits.style.") || child.FullName.ToLower().Contains("title.style.") || child.FullName.ToLower().Contains("labels.items.style.")
+                || child.FullName.ToLower().Contains("legend.itemHiddenStyle.") || child.FullName.ToLower().Contains("legend.itemHoverStyle."))
                 child.IsParent = true;
 
             string formattedProperty = FormatProperty(propertyTemplate, child);
@@ -340,7 +344,7 @@ public class HighchartsGenerator
 
         string className = GetClassNameFromItem(item);
 
-        if(className.EndsWith("SeriesData"))
+        if (className.EndsWith("SeriesData"))
         {
             properties += CustomFieldsService.GetProperty();
             defaultValues += CustomFieldsService.GetInit();
@@ -598,7 +602,7 @@ public class HighchartsGenerator
         if (nameAndSuffix.ToLower().EndsWith("style") && child.Children.Any())
             return GetClassNameFromItem(child);
 
-        
+
         if (_propertyTypeMappings[child.FullName] != null)
             return _propertyTypeMappings[child.FullName].ToString();
         if (_propertyTypeMappings[nameAndSuffix] != null)
@@ -610,11 +614,11 @@ public class HighchartsGenerator
             if (_typeMappings[returnType] != null)
                 return _typeMappings[returnType].ToString();
 
-        if (child.ReturnType == "Array" && child.Title == "zones")
+        if (child.ReturnType == "Array.<*>" && child.Title == "zones")
             returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones", "Zone"));
         else
             if (child.Children.Any() || child.Extends.Any())
-                returnType = GetClassNameFromItem(child);
+            returnType = GetClassNameFromItem(child);
 
 
         if (returnType.EndsWith("DataDataLabels"))
@@ -699,7 +703,7 @@ public class HighchartsGenerator
             if ((child.ParentFullName == "chart.resetZoomButton" || child.ParentFullName == "credits" || child.ParentFullName == "noData") && propertyName == "Position")
                 return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
 
-            if (child.ReturnType == "Array" && child.Title == "zones")
+            if (child.ReturnType == "Array.<*>" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             if (child.Children.Any() || child.Extends.Any() || child.ReturnType == "Object")
@@ -768,7 +772,7 @@ public class HighchartsGenerator
                 {
                     var baseChildren = GetChildrenFromBaseClasses(item);
 
-                    foreach(var baseElement in baseChildren.Where(p => children.Any(x => x.Title == p.Title)))
+                    foreach (var baseElement in baseChildren.Where(p => children.Any(x => x.Title == p.Title)))
                     {
                         var child = children.FirstOrDefault(p => p.Title == baseElement.Title);
 
@@ -827,12 +831,16 @@ public class HighchartsGenerator
         _typeMappings.Add("String|null", "string");
         _typeMappings.Add("String|HTMLElement", "string");
         _typeMappings.Add("Array.<Color>", "List<string>");
+        _typeMappings.Add("Array.<color>", "List<string>");
         _typeMappings.Add("Array.<String>", "List<string>");
-        _typeMappings.Add("Array.<String>;", "List<string>");
+        _typeMappings.Add("Array.<string>", "List<string>");
         _typeMappings.Add("Array.<Number>", "List<double>");
+        _typeMappings.Add("Array.<number>", "List<double>");
         _typeMappings.Add("Array.<Array.<Mixed>>", "List<List<object>>");
         _typeMappings.Add("Array.<Object>", "List<object>");
+        _typeMappings.Add("Array.<object>", "List<object>");
         _typeMappings.Add("Mixed", "double?");
+        _typeMappings.Add("Array.<Highcharts.ColorString>", "List<string>");
     }
     private void InitPropertyTypeMappings()
     {
@@ -906,6 +914,7 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("series.sankey.nodes", "List<SankeySeriesNodes>");
         _propertyTypeMappings.Add("time.Date", "DateTime");
         _propertyTypeMappings.Add("defs", "Object");
+        _propertyTypeMappings.Add("labels.items.style", "Hashtable");
     }
     private void InitPropertyInitMappings()
     {
@@ -998,7 +1007,7 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("series.sankey.nodes", "new List<SankeySeriesNodes>()");
         _propertyInitMappings.Add("time.Date", "new DateTime()");
         _propertyInitMappings.Add("defs", "null");
-
+        _propertyInitMappings.Add("autoRotation", "new List<double> {-45}");
     }
     private void InitLists()
     {
@@ -1104,7 +1113,7 @@ public class HighchartsGenerator
     {
         if (string.IsNullOrEmpty(suffix))
             return FirstCharToLower(name);
-        
+
         return FirstCharToLower(name.Replace(suffix, ""));
     }
 
@@ -1157,7 +1166,7 @@ public class HighchartsGenerator
         if (nameAndSuffix.ToLower().EndsWith("style") && item.Children.Any())
             return "new " + GetClassNameFromItem(item) + "()";
 
-        
+
         if (_propertyInitMappings[item.FullName] != null)
         {
             return _propertyInitMappings[item.FullName].ToString();
@@ -1189,7 +1198,7 @@ public class HighchartsGenerator
         //if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
         //    defaults = "";
 
-        if (item.ReturnType == "Array" && item.Title == "zones")
+        if (item.ReturnType == "Array.<*>" && item.Title == "zones")
             return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
 
         if (item.FullName.ToLower().Contains("data.datalabels"))
@@ -1211,7 +1220,7 @@ public class HighchartsGenerator
             {
                 return '"' + defaults.Replace("\"", "'") + '"';
             }
-            if (item.ReturnType.StartsWith("Array.<String>")) // thereis Array<String>; ending with ; in Highstock
+            if (item.ReturnType.StartsWith("Array.<String>") || item.ReturnType.StartsWith("Array.<string>")) // thereis Array<String>; ending with ; in Highstock
             {
                 if (item.ParentFullName == "lang")
                     return "new List<string> " + item.Defaults
@@ -1271,7 +1280,7 @@ public class HighchartsGenerator
         //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
         //    item.IsParent = false;
 
-        
+
         //else
         //    return item.Defaults;
 

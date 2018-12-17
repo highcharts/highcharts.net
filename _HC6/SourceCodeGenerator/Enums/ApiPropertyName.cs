@@ -14,6 +14,7 @@ namespace SourceCodeGenerator.Enums
         Exclude,
         Extends,
         Products,
-        Default
+        Default,
+        Children
     }
 }
