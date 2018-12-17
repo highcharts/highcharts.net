@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum HeatmapSeriesDataLabelsOverflow
     {
-        Justify, 
-		None
+        Allow, 
+		Justify
     }
 }

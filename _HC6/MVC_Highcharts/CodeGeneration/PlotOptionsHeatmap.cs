@@ -16,24 +16,26 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
+			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "null";
+			Clip = Clip_DefaultValue = true;
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colsize = Colsize_DefaultValue = 1;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsHeatmapCursor.Null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsHeatmapDataLabels();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new PlotOptionsHeatmapDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsHeatmapEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsHeatmapLabel();
 			LinkedTo = LinkedTo_DefaultValue = "";
-			NegativeColor = NegativeColor_DefaultValue = "null";
+			NegativeColor = NegativeColor_DefaultValue = "";
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
 			Point = Point_DefaultValue = new PlotOptionsHeatmapPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
@@ -69,17 +71,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Animation is disabled by default on the heatmap series.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border color of the map areas.In styled mode, the border stroke is given in the `.highcharts-point`class.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -94,6 +96,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Disable this option to allow series rendering in the whole plottingarea.**Note:** Clipping should be always enabled when[chart.zoomType](#chart.zoomType) is set
+		/// </summary>
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -125,7 +134,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
+		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public PlotOptionsHeatmapCursor Cursor { get; set; }
 		private PlotOptionsHeatmapCursor Cursor_DefaultValue { get; set; }
@@ -146,6 +155,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// </summary>
+		public PlotOptionsHeatmapDragDrop DragDrop { get; set; }
+		private PlotOptionsHeatmapDragDrop DragDrop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
@@ -153,7 +169,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
 		public PlotOptionsHeatmapEvents Events { get; set; }
 		private PlotOptionsHeatmapEvents Events_DefaultValue { get; set; }
@@ -251,7 +267,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
+		/// If set to `true`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
 		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
@@ -300,7 +316,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option. The zone definitions have to be in ascending order regarding tothe value.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option. The zone definitions have to be in ascending order regarding tothe value.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsHeatmapZone> Zones { get; set; }
 		private List<PlotOptionsHeatmapZone> Zones_DefaultValue { get; set; }
@@ -312,10 +328,11 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
@@ -323,6 +340,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);

@@ -84,7 +84,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Tha shape of the pane background. When `solid`, the backgroundis circular. When `arc`, the background extends only from the minto the max of the value axis.
+		/// The shape of the pane background. When `solid`, the backgroundis circular. When `arc`, the background extends only from the minto the max of the value axis.
 		/// </summary>
 		public PaneBackgroundShape Shape { get; set; }
 		private PaneBackgroundShape Shape_DefaultValue { get; set; }

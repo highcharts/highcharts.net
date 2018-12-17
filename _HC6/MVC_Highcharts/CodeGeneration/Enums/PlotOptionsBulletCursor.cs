@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Charts
     public enum PlotOptionsBulletCursor
     {
         Null, 
+		Crosshair, 
 		Default, 
-		None, 
 		Help, 
-		Pointer, 
-		Crosshair
+		None, 
+		Pointer
     }
 }

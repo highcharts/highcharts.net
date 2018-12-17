@@ -15,12 +15,13 @@ namespace Highsoft.Web.Mvc.Charts
 		public SolidgaugeSeriesData()
 		{
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "undefined";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new SolidgaugeSeriesDataLabels();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new SolidgaugeSeriesDataDragDrop();
 			Events = Events_DefaultValue = new SolidgaugeSeriesDataEvents();
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			InnerRadius = InnerRadius_DefaultValue = "null";
 			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
 			Labelrank = Labelrank_DefaultValue = null;
@@ -67,6 +68,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.Requires the `draggable-points` module.
+		/// </summary>
+		public SolidgaugeSeriesDataDragDrop DragDrop { get; set; }
+		private SolidgaugeSeriesDataDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -150,6 +158,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);

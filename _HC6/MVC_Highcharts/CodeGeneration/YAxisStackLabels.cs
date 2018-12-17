@@ -14,16 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxisStackLabels()
 		{
-			Align = Align_DefaultValue = YAxisStackLabelsAlign.Left;
+			Align = Align_DefaultValue = YAxisStackLabelsAlign.Null;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "{total}";
 			Formatter = Formatter_DefaultValue = "";
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = new YAxisStackLabelsStyle();
-			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Left;
+			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Null;
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Top;
+			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Defines the horizontal alignment of the stack total label. Can beone of `"left"`, `"center"` or `"right"`. The default value is calculatedat runtime and depends on orientation and whether the stack is positiveor negative.
+		/// Defines the horizontal alignment of the stack total label. Can be oneof `"left"`, `"center"` or `"right"`. The default value is calculatedat runtime and depends on orientation and whether the stack ispositive or negative.
 		/// </summary>
 		public YAxisStackLabelsAlign Align { get; set; }
 		private YAxisStackLabelsAlign Align_DefaultValue { get; set; }
@@ -80,28 +80,28 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The text alignment for the label. While `align` determines wherethe texts anchor point is placed with regards to the stack, `textAlign`determines how the text is aligned against its anchor point. Possiblevalues are `"left"`, `"center"` and `"right"`. The default valueis calculated at runtime and depends on orientation and whether thestack is positive or negative.
+		/// The text alignment for the label. While `align` determines where thetexts anchor point is placed with regards to the stack, `textAlign`determines how the text is aligned against its anchor point. Possiblevalues are `"left"`, `"center"` and `"right"`. The default value iscalculated at runtime and depends on orientation and whether thestack is positive or negative.
 		/// </summary>
 		public YAxisStackLabelsTextAlign TextAlign { get; set; }
 		private YAxisStackLabelsTextAlign TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
+		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Defines the vertical alignment of the stack total label. Can be oneof `"top"`, `"middle"` or `"bottom"`. The default value is calculatedat runtime and depends on orientation and whether the stack is positiveor negative.
+		/// Defines the vertical alignment of the stack total label. Can be oneof `"top"`, `"middle"` or `"bottom"`. The default value is calculatedat runtime and depends on orientation and whether the stack ispositive or negative.
 		/// </summary>
 		public YAxisStackLabelsVerticalAlign VerticalAlign { get; set; }
 		private YAxisStackLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The x position offset of the label relative to the left of the stackedbar. The default value is calculated at runtime and depends on orientationand whether the stack is positive or negative.
+		/// The x position offset of the label relative to the left of thestacked bar. The default value is calculated at runtime and dependson orientation and whether the stack is positive or negative.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }

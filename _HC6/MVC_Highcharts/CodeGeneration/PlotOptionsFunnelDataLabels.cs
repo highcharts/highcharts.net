@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsFunnelDataLabels()
 		{
 			AllowOverlap = AllowOverlap_DefaultValue = true;
-			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
+			ConnectorColor = ConnectorColor_DefaultValue = "";
 			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			Distance = Distance_DefaultValue = 30;

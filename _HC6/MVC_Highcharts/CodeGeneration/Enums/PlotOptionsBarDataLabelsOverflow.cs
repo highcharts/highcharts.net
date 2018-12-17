@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsBarDataLabelsOverflow
     {
-        Justify, 
-		None
+        Allow, 
+		Justify
     }
 }

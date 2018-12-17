@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum WordcloudSeriesDataLabelsOverflow
     {
-        Justify, 
-		None
+        Allow, 
+		Justify
     }
 }

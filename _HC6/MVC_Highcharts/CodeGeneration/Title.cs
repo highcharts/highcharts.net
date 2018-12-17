@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "Chart title";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Top;
+			VerticalAlign = VerticalAlign_DefaultValue = TitleVerticalAlign.Null;
 			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
@@ -57,14 +57,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The title of the chart. To disable the title, set the `text` to`null`.
+		/// The title of the chart. To disable the title, set the `text` to`undefined`.
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the text.
+		/// Whether to[use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the text.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }

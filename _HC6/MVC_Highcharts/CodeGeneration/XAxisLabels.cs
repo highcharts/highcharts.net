@@ -14,14 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public XAxisLabels()
 		{
-			Align = Align_DefaultValue = XAxisLabelsAlign.Left;
+			Align = Align_DefaultValue = XAxisLabelsAlign.Null;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
 			Distance = Distance_DefaultValue = 15;
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = XAxisLabelsOverflow.Null;
+			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
+			Overflow = Overflow_DefaultValue = XAxisLabelsOverflow.Justify;
+            OverflowBool = OverflowBool_DefaultValue = false;
 			Padding = Padding_DefaultValue = "5";
 			Position3d = Position3d_DefaultValue = XAxisLabelsPosition3d.Offset;
 			ReserveSpace = ReserveSpace_DefaultValue = null;
@@ -74,7 +76,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) for the axis label.
+		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) for the axis label.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
@@ -88,10 +90,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// How to handle overflowing labels on horizontal axis. Can beundefined, `false` or `"justify"`. By default it aligns insidethe chart area. If "justify", labels will not render outsidethe plot area. If `false`, it will not be aligned at all.If there is room to move it, it will be aligned to the edge,else it will be removed.
+		/// Horizontal axis only. When `staggerLines` is not set,`maxStaggerLines` defines how many lines the axis is allowed toadd to automatically avoid overlapping X labels. Set to `1` todisable overlap detection.
+		/// </summary>
+		public double? MaxStaggerLines { get; set; }
+		private double? MaxStaggerLines_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// How to handle overflowing labels on horizontal axis. If set to`"allow"`, it will not be aligned at all. By default it`"justify"` labels inside the chart area. If there is room tomove it, it will be aligned to the edge, else it will be removed.
 		/// </summary>
 		public XAxisLabelsOverflow Overflow { get; set; }
 		private XAxisLabelsOverflow Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// How to handle overflowing labels on horizontal axis. If set to`"allow"`, it will not be aligned at all. By default it`"justify"` labels inside the chart area. If there is room tomove it, it will be aligned to the edge, else it will be removed.
+		/// </summary>
+		public bool OverflowBool { get; set; }
+		private bool OverflowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -137,7 +153,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// To show only every _n_'th label on the axis, set the step to _n_.Setting the step to 2 shows every other label.By default, the step is calculated automatically to avoidoverlap. To prevent this, set it to 1\. This usually onlyhappens on a category axis, and is often a sign that you havechosen the wrong axis type.Read more at[Axis docs](http://www.highcharts.com/docs/chart-concepts/axes)=> What axis should I use?
+		/// To show only every _n_'th label on the axis, set the step to _n_.Setting the step to 2 shows every other label.By default, the step is calculated automatically to avoidoverlap. To prevent this, set it to 1\. This usually onlyhappens on a category axis, and is often a sign that you havechosen the wrong axis type.Read more at[Axis docs](https://www.highcharts.com/docs/chart-concepts/axes)=> What axis should I use?
 		/// </summary>
 		public double? Step { get; set; }
 		private double? Step_DefaultValue { get; set; }
@@ -151,7 +167,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
+		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
@@ -189,7 +205,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("XAxisLabelsFormatter.formatter", Formatter); }  
+			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
+			if (OverflowBool != OverflowBool_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(OverflowBool.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);

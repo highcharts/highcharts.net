@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum VectorSeriesDataLabelsOverflow
     {
-        Justify, 
-		None
+        Allow, 
+		Justify
     }
 }

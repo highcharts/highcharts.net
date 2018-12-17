@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxisPlotBands()
 		{
-			BorderColor = BorderColor_DefaultValue = "null";
+			BorderColor = BorderColor_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "null";
+			Color = Color_DefaultValue = "";
 			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			InnerRadius = InnerRadius_DefaultValue = "null";
 			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
 			Label = Label_DefaultValue = new YAxisPlotBandsLabel();
@@ -35,21 +35,21 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Border color for the plot band. Also requires `borderWidth` to beset.
+		/// Border color for the plot band. Also requires `borderWidth` to be set.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Border width for the plot band. Also requires `borderColor` to beset.
+		/// Border width for the plot band. Also requires `borderColor` to be set.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A custom class name, in addition to the default `highcharts-plot-band`, toapply to each individual band.
+		/// A custom class name, in addition to the default `highcharts-plot-band`,to apply to each individual band.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
@@ -119,14 +119,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// In a gauge chart, this option sets the width of the plot band stretchingalong the perimeter. It can be given as a percentage string, like`"10%"`, or as a pixel number, like `10`. The default value 10 isthe same as the default [tickLength](#yAxis.tickLength), thus makingthe plot band act as a background for the tick markers.
+		/// In a gauge chart, this option sets the width of the plot bandstretching along the perimeter. It can be given as a percentagestring, like `"10%"`, or as a pixel number, like `10`. The defaultvalue 10 is the same as the default [tickLength](#yAxis.tickLength),thus making the plot band act as a background for the tick markers.
 		/// </summary>
 		public string Thickness { get; set; }
 		private string Thickness_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// In a gauge chart, this option sets the width of the plot band stretchingalong the perimeter. It can be given as a percentage string, like`"10%"`, or as a pixel number, like `10`. The default value 10 isthe same as the default [tickLength](#yAxis.tickLength), thus makingthe plot band act as a background for the tick markers.
+		/// In a gauge chart, this option sets the width of the plot bandstretching along the perimeter. It can be given as a percentagestring, like `"10%"`, or as a pixel number, like `10`. The defaultvalue 10 is the same as the default [tickLength](#yAxis.tickLength),thus making the plot band act as a background for the tick markers.
 		/// </summary>
 		public double? ThicknessNumber { get; set; }
 		private double? ThicknessNumber_DefaultValue { get; set; }
@@ -140,7 +140,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The z index of the plot band within the chart, relative to otherelements. Using the same z index as another element may give unpredictableresults, as the last rendered element will be on top. Values from0 to 20 make sense.
+		/// The z index of the plot band within the chart, relative to otherelements. Using the same z index as another element may giveunpredictable results, as the last rendered element will be on top.Values from 0 to 20 make sense.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }

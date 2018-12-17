@@ -18,10 +18,11 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new SankeySeriesDataLabels();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new SankeySeriesDataDragDrop();
 			Events = Events_DefaultValue = new SankeySeriesDataEvents();
 			From = From_DefaultValue = "";
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Outgoing = Outgoing_DefaultValue = false;
@@ -66,6 +67,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.Requires the `draggable-points` module.
+		/// </summary>
+		public SankeySeriesDataDragDrop DragDrop { get; set; }
+		private SankeySeriesDataDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -142,6 +150,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);

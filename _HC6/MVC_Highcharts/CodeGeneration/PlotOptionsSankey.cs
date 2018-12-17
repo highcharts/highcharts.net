@@ -16,7 +16,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
+			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorByPoint = ColorByPoint_DefaultValue = true;
 			ColorIndex = ColorIndex_DefaultValue = null;
@@ -24,7 +26,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Cursor = Cursor_DefaultValue = PlotOptionsSankeyCursor.Null;
 			CurveFactor = CurveFactor_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsSankeyDataLabels();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new PlotOptionsSankeyDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsSankeyEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
@@ -59,10 +62,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>Can be a string reference to an easing function set on the `Math`object or a function. See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>Can be a string reference to an easing function set on the `Math`object or a function. See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,6 +80,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Disable this option to allow series rendering in the whole plottingarea.**Note:** Clipping should be always enabled when[chart.zoomType](#chart.zoomType) is set
+		/// </summary>
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -101,7 +118,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
+		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public PlotOptionsSankeyCursor Cursor { get; set; }
 		private PlotOptionsSankeyCursor Cursor_DefaultValue { get; set; }
@@ -129,6 +146,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// </summary>
+		public PlotOptionsSankeyDragDrop DragDrop { get; set; }
+		private PlotOptionsSankeyDragDrop DragDrop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
@@ -136,7 +160,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
 		public PlotOptionsSankeyEvents Events { get; set; }
 		private PlotOptionsSankeyEvents Events_DefaultValue { get; set; }
@@ -241,7 +265,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
+		/// If set to `true`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
 		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
@@ -288,7 +312,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
@@ -297,6 +323,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (CurveFactor != CurveFactor_DefaultValue) h.Add("curveFactor",CurveFactor);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);

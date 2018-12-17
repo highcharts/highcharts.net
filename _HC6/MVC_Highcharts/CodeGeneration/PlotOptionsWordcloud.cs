@@ -14,10 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsWordcloud()
 		{
+			AllowExtendPlayingField = AllowExtendPlayingField_DefaultValue = true;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
@@ -28,7 +29,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Colors = Colors_DefaultValue = new List<string>();
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsWordcloudCursor.Null;
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new PlotOptionsWordcloudDragDrop();
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsWordcloudEvents();
@@ -57,6 +59,13 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
+		/// If there is no space for a word on the playing field, then this optionwill allow the playing field to be extended to fit the word.If false then the word will be dropped from the visualization.NB! This option is currently not decided to be published in the API, andis therefore marked as private.
+		/// </summary>
+		public bool? AllowExtendPlayingField { get; set; }
+		private bool? AllowExtendPlayingField_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
@@ -78,7 +87,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
+		/// The border color of the map areas.In styled mode, the border stroke is given in the `.highcharts-point`class.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
@@ -120,7 +129,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
+		/// 
 		/// </summary>
 		public bool? ColorByPoint { get; set; }
 		private bool? ColorByPoint_DefaultValue { get; set; }
@@ -148,7 +157,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
+		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public PlotOptionsWordcloudCursor Cursor { get; set; }
 		private PlotOptionsWordcloudCursor Cursor_DefaultValue { get; set; }
@@ -159,6 +168,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// </summary>
+		public PlotOptionsWordcloudDragDrop DragDrop { get; set; }
+		private PlotOptionsWordcloudDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -176,7 +192,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
 		public PlotOptionsWordcloudEvents Events { get; set; }
 		private PlotOptionsWordcloudEvents Events_DefaultValue { get; set; }
@@ -267,14 +283,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
+		/// If set to `true`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
 		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Spiral used for placing a word after the inital position experienced acollision with either another word or the borders.It is possible for users to add their own custom spiralling algorithmsfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
+		/// Spiral used for placing a word after the initial position experienced acollision with either another word or the borders.It is possible for users to add their own custom spiralling algorithmsfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
 		/// </summary>
 		public string Spiral { get; set; }
 		private string Spiral_DefaultValue { get; set; }
@@ -326,6 +342,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (AllowExtendPlayingField != AllowExtendPlayingField_DefaultValue) h.Add("allowExtendPlayingField",AllowExtendPlayingField);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
@@ -341,6 +358,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());

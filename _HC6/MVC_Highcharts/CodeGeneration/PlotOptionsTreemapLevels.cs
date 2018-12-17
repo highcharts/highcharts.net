@@ -20,8 +20,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new PlotOptionsTreemapLevelsColorVariation();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsTreemapDataLabels();
-			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLevelsLayoutAlgorithm.SliceAndDice;
-			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLevelsLayoutStartingDirection.Vertical;
+			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLevelsLayoutAlgorithm.Null;
+			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLevelsLayoutStartingDirection.Null;
 			Level = Level_DefaultValue = null;
 			
 		}	

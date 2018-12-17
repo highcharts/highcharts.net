@@ -15,18 +15,20 @@ namespace Highsoft.Web.Mvc.Charts
 		public XrangeSeriesData()
 		{
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "undefined";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			Connect = Connect_DefaultValue = new XrangeSeriesDataConnect();
+			ConnectString = ConnectString_DefaultValue = "null";
 			DataLabels = DataLabels_DefaultValue = new XrangeSeriesDataLabels();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new XrangeSeriesDataDragDrop();
 			Drilldown = Drilldown_DefaultValue = "";
 			Events = Events_DefaultValue = new XrangeSeriesDataEvents();
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
 			Marker = Marker_DefaultValue = new XrangeSeriesDataMarker();
 			Name = Name_DefaultValue = "";
 			PartialFill = PartialFill_DefaultValue = new XrangeSeriesDataPartialFill();
-			PartialFillNumber = PartialFillNumber_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
 			X2 = X2_DefaultValue = null;
@@ -58,6 +60,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Connect to a point. Requires Highcharts Gantt to be loaded. This option canbe either a string, referring to the ID of another point, or an object, or anarray of either. If the option is an array, each element defines aconnection.
+		/// </summary>
+		public XrangeSeriesDataConnect Connect { get; set; }
+		private XrangeSeriesDataConnect Connect_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Connect to a point. Requires Highcharts Gantt to be loaded. This option canbe either a string, referring to the ID of another point, or an object, or anarray of either. If the option is an array, each element defines aconnection.
+		/// </summary>
+		public string ConnectString { get; set; }
+		private string ConnectString_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels).
 		/// </summary>
 		public XrangeSeriesDataLabels DataLabels { get; set; }
@@ -69,6 +85,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.Requires the `draggable-points` module.
+		/// </summary>
+		public XrangeSeriesDataDragDrop DragDrop { get; set; }
+		private XrangeSeriesDataDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -121,13 +144,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A partial fill for each point, typically used to visualize how much ofa task is performed. The partial fill object can be set either on seriesor point level.
-		/// </summary>
-		public double? PartialFillNumber { get; set; }
-		private double? PartialFillNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether the data point is selected initially.
 		/// </summary>
 		public bool? Selected { get; set; }
@@ -135,7 +151,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.
+		/// The starting X value of the range point.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
@@ -149,7 +165,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The y value of the point.
+		/// The Y value of the range point.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
@@ -164,8 +180,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (Connect.IsDirty()) h.Add("connect",Connect.ToHashtable());
+			if (ConnectString != ConnectString_DefaultValue) h.Add("connect",ConnectString);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
@@ -173,7 +192,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
-			if (PartialFillNumber != PartialFillNumber_DefaultValue) h.Add("partialFill",PartialFillNumber);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (X2 != X2_DefaultValue) h.Add("x2",X2);

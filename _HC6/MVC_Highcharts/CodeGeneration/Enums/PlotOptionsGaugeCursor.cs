@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Charts
     public enum PlotOptionsGaugeCursor
     {
         Null, 
+		Crosshair, 
 		Default, 
-		None, 
 		Help, 
-		Pointer, 
-		Crosshair
+		None, 
+		Pointer
     }
 }

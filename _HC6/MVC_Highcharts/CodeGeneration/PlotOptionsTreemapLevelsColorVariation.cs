@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTreemapLevelsColorVariation()
 		{
-			Key = Key_DefaultValue = PlotOptionsTreemapLevelsColorVariationKey.Brightness;
+			Key = Key_DefaultValue = PlotOptionsTreemapLevelsColorVariationKey.Null;
 			To = To_DefaultValue = null;
 			
 		}	

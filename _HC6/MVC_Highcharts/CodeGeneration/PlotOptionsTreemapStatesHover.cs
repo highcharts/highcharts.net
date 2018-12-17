@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Brightness for the hovered point. Defaults to 0 if the heatmapseries is loaded, otherwise 0.1.
+		/// Brightness for the hovered point. Defaults to 0 if the heatmapseries is loaded first, otherwise 0.1.
 		/// </summary>
 		public double? Brightness { get; set; }
 		private double? Brightness_DefaultValue { get; set; }

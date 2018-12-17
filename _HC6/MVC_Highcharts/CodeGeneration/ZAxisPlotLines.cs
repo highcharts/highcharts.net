@@ -15,10 +15,10 @@ namespace Highsoft.Web.Mvc.Charts
 		public ZAxisPlotLines()
 		{
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "null";
+			Color = Color_DefaultValue = "";
 			DashStyle = DashStyle_DefaultValue = ZAxisPlotLinesDashStyle.Solid;
 			Events = Events_DefaultValue = null;
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			Label = Label_DefaultValue = new ZAxisPlotLinesLabel();
 			Value = Value_DefaultValue = null;
 			Width = Width_DefaultValue = null;
@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// A custom class name, in addition to the default `highcharts-plot-line`, toapply to each individual line.
+		/// A custom class name, in addition to the default `highcharts-plot-line`,to apply to each individual line.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
@@ -42,14 +42,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The dashing or dot style for the plot line. For possible values see[this overview](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
+		/// The dashing or dot style for the plot line. For possible values see[this overview](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public ZAxisPlotLinesDashStyle DashStyle { get; set; }
 		private ZAxisPlotLinesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An object defining mouse events for the plot line. Supported propertiesare `click`, `mouseover`, `mouseout`, `mousemove`.
+		/// An object defining mouse events for the plot line. Supportedproperties are `click`, `mouseover`, `mouseout`, `mousemove`.
 		/// </summary>
 		public Object Events { get; set; }
 		private Object Events_DefaultValue { get; set; }

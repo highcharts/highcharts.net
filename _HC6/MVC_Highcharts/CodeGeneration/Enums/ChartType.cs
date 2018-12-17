@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ChartType
     {
-        Line, 
+        Null, 
+		Line, 
 		Spline, 
 		Column, 
 		Bar, 

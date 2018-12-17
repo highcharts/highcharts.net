@@ -18,11 +18,13 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			AlternateStartingDirection = AlternateStartingDirection_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
-			BorderColor = BorderColor_DefaultValue = "#e6e6e6";
-			BorderWidth = BorderWidth_DefaultValue = 1;
+			BorderColor = BorderColor_DefaultValue = "#cccccc";
+			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
+			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
@@ -34,7 +36,8 @@ namespace Highsoft.Web.Mvc.Charts
 			DashStyle = DashStyle_DefaultValue = TreemapSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new List<TreemapSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new TreemapSeriesDataLabels();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new TreemapSeriesDragDrop();
 			DrillUpButton = DrillUpButton_DefaultValue = new TreemapSeriesDrillUpButton();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new TreemapSeriesEvents();
@@ -56,7 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Name = Name_DefaultValue = "";
-			NegativeColor = NegativeColor_DefaultValue = "null";
+			NegativeColor = NegativeColor_DefaultValue = "";
 			Opacity = Opacity_DefaultValue = null;
 			Point = Point_DefaultValue = new TreemapSeriesPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
@@ -111,10 +114,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>Can be a string reference to an easing function set on the `Math`object or a function. See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>Can be a string reference to an easing function set on the `Math`object or a function. See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -132,14 +142,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the border surrounding each tree map item.
+		/// The border color of the map areas.In styled mode, the border stroke is given in the `.highcharts-point`class.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the border surrounding each tree map item.
+		/// The border width of each map area.In styled mode, the border stroke width is given in the`.highcharts-point` class.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
@@ -150,6 +160,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Disable this option to allow series rendering in the whole plottingarea.**Note:** Clipping should be always enabled when[chart.zoomType](#chart.zoomType) is set
+		/// </summary>
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -202,28 +219,28 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
+		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public TreemapSeriesCursor Cursor { get; set; }
 		private TreemapSeriesCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A name for the dash style to use for the graph, or for some series typesthe outline of each shape. The value for the `dashStyle` include:*   Solid*   ShortDash*   ShortDot*   ShortDashDot*   ShortDashDotDot*   Dot*   Dash*   LongDash*   DashDot*   LongDashDot*   LongDashDotDot
+		/// A name for the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the [stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/) can be set with the same classes as listed under[series.color](#plotOptions.series.color).
 		/// </summary>
 		public TreemapSeriesDashStyle DashStyle { get; set; }
 		private TreemapSeriesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the `treemap` seriestype, points can be given in the following ways:1.  An array of numerical values. In this case, the numerical valueswill be interpreted as `value` options. Example: ```js data: [0, 5, 3, 5] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.treemap.turboThreshold),this option is not available. ```js    data: [{        value: 9,        name: "Point2",        color: "#00FF00"    }, {        value: 6,        name: "Point1",        color: "#FF00FF"    }] ```
+		/// An array of data points for the series. For the `treemap` seriestype, points can be given in the following ways:1.  An array of numerical values. In this case, the numerical valueswill be interpreted as `value` options. Example: ```js data: [0, 5, 3, 5] ```2.  An array of objects with named values. The following snippet shows only afew settings, see the complete options set below. If the total number of datapoints exceeds the series' [turboThreshold](#series.treemap.turboThreshold),this option is not available. ```js    data: [{        value: 9,        name: "Point2",        color: "#00FF00"    }, {        value: 6,        name: "Point1",        color: "#FF00FF"    }] ```
 		/// </summary>
 		public List<TreemapSeriesData> Data { get; set; }
 		private List<TreemapSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each data point.Since v6.2.0, multiple data labels can be applied to each single point bydefining them as an array of configs.In styled mode, the data labels can be styled with the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public TreemapSeriesDataLabels DataLabels { get; set; }
 		private TreemapSeriesDataLabels DataLabels_DefaultValue { get; set; }
@@ -234,6 +251,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// </summary>
+		public TreemapSeriesDragDrop DragDrop { get; set; }
+		private TreemapSeriesDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -251,7 +275,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
 		public TreemapSeriesEvents Events { get; set; }
 		private TreemapSeriesEvents Events_DefaultValue { get; set; }
@@ -279,7 +303,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
+		/// An id for the series. This can be used after render time to get a pointerto the series object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
@@ -293,7 +317,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The index of the series in the chart, affecting the internal indexin the `chart.series` array, the visible Z index as well as the orderin the legend.
+		/// The index of the series in the chart, affecting the internal index in the`chart.series` array, the visible Z index as well as the order in thelegend.
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }
@@ -454,7 +478,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
+		/// If set to `true`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
 		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
@@ -475,7 +499,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to stack the values of each series on top of each other.Possible values are `null` to disable, `"normal"` to stack by value or`"percent"`. When stacking is enabled, data must be sorted in ascendingX order. A special stacking option is with the streamgraph series type,where the stacking option is set to `"stream"`.
+		/// Whether to stack the values of each series on top of each other. Possiblevalues are `undefined` to disable, `"normal"` to stack by value or`"percent"`. When stacking is enabled, data must be sorted in ascendingX order. A special stacking option is with the streamgraph series type,where the stacking option is set to `"stream"`.
 		/// </summary>
 		public TreemapSeriesStacking Stacking { get; set; }
 		private TreemapSeriesStacking Stacking_DefaultValue { get; set; }
@@ -538,28 +562,28 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
+		/// When using dual or multiple x axes, this number defines which xAxis theparticular series is connected to. It refers to either the{@link #xAxis.id|axis id}or the index of the axis in the xAxis array, with 0 being the first.
 		/// </summary>
 		public string XAxis { get; set; }
 		private string XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
+		/// When using dual or multiple x axes, this number defines which xAxis theparticular series is connected to. It refers to either the{@link #xAxis.id|axis id}or the index of the axis in the xAxis array, with 0 being the first.
 		/// </summary>
 		public double? XAxisNumber { get; set; }
 		private double? XAxisNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
+		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
 		/// </summary>
 		public string YAxis { get; set; }
 		private string YAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
+		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
 		/// </summary>
 		public double? YAxisNumber { get; set; }
 		private double? YAxisNumber_DefaultValue { get; set; }
@@ -580,7 +604,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option. The zone definitions have to be in ascending order regarding tothe value.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option. The zone definitions have to be in ascending order regarding tothe value.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<TreemapSeriesZone> Zones { get; set; }
 		private List<TreemapSeriesZone> Zones_DefaultValue { get; set; }
@@ -594,11 +618,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (AlternateStartingDirection != AlternateStartingDirection_DefaultValue) h.Add("alternateStartingDirection",AlternateStartingDirection);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
@@ -611,6 +637,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());

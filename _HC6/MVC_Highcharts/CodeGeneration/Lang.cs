@@ -29,14 +29,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 			NoData = NoData_DefaultValue = "No data to display";
 			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
-			NumericSymbols = NumericSymbols_DefaultValue = new List<string> { "k" , "M" , "G" , "T" , "P" , "E"};
+			NumericSymbols = NumericSymbols_DefaultValue = new List<string> {"k", "M", "G", "T", "P", "E"};
 			OpenInCloud = OpenInCloud_DefaultValue = "Open in Highcharts Cloud";
 			PrintChart = PrintChart_DefaultValue = "Print chart";
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
 			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
 			ShortWeekdays = ShortWeekdays_DefaultValue = new List<string>();
-			ThousandsSep = ThousandsSep_DefaultValue = "";
+			ThousandsSep = ThousandsSep_DefaultValue = "\u0020";
 			ViewData = ViewData_DefaultValue = "View data table";
 			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
          "Friday", "Saturday"};

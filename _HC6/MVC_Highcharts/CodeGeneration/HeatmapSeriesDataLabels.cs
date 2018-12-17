@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Align = Align_DefaultValue = HeatmapSeriesDataLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
-			BorderColor = BorderColor_DefaultValue = "undefined";
+			BorderColor = BorderColor_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = HeatmapSeriesDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = -6;
+			Y = Y_DefaultValue = 0;
 			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
@@ -88,14 +88,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A class name for the data label. Particularly in styled mode, thiscan be used to give each series' or point's data label uniquestyling. In addition to this option, a default color class name isadded so that we can give the labels a[contrast text shadow](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/data-label-contrast/).
+		/// A class name for the data label. Particularly in styled mode, thiscan be used to give each series' or point's data label uniquestyling. In addition to this option, a default color class name isadded so that we can give the labels a[contrast text shadow](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/data-label-contrast/).
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The text color for the data labels. Defaults to `null`. For certainseries types, like column or map, the data labels can be drawn insidethe points. In this case the data label will be drawn with maximumcontrast by default. Additionally, it will be given a `text-outline`style with the opposite color, to further increase the contrast. Thiscan be overridden by setting the `text-outline` style to `none` inthe `dataLabels.style` option.
+		/// The text color for the data labels. Defaults to `undefined`. Forcertain series types, like column or map, the data labels can bedrawn inside the points. In this case the data label will be drawnwith maximum contrast by default. Additionally, it will be given a`text-outline` style with the opposite color, to further increase thecontrast. This can be overridden by setting the `text-outline` styleto `none` in the `dataLabels.style` option.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
@@ -123,14 +123,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A declarative filter for which data labels to display. Thedeclarative filter is designed for use when callback functions arenot available, like when the chart options require a pure JSONstructure or for use with graphical editors. For programmaticcontrol, use the `formatter` instead, and return `false` to disablea single data label.
+		/// A declarative filter for which data labels to display. Thedeclarative filter is designed for use when callback functions arenot available, like when the chart options require a pure JSONstructure or for use with graphical editors. For programmaticcontrol, use the `formatter` instead, and return `undefined` todisable a single data label.
 		/// </summary>
 		public HeatmapSeriesDataLabelsFilter Filter { get; set; }
 		private HeatmapSeriesDataLabelsFilter Filter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
+		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
@@ -151,7 +151,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// How to handle data labels that flow outside the plot area. Thedefault is `justify`, which aligns them inside the plot area. Forcolumns and bars, this means it will be moved inside the bar. Todisplay data labels outside the plot area, set `crop` to `false` and`overflow` to `"none"`.
+		/// How to handle data labels that flow outside the plot area. Thedefault is `"justify"`, which aligns them inside the plot area. Forcolumns and bars, this means it will be moved inside the bar. Todisplay data labels outside the plot area, set `crop` to `false` and`overflow` to `"allow"`.
 		/// </summary>
 		public HeatmapSeriesDataLabelsOverflow Overflow { get; set; }
 		private HeatmapSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
@@ -193,14 +193,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.
+		/// Styles for the label. The default `color` setting is `"contrast"`,which is a pseudo color that Highcharts picks up and applies themaximum contrast to the underlying point item, for example thebar in a bar chart.The `textOutline` is a pseudo property thatapplies an outline of the given width with the given color, whichby default is the maximum contrast to the text. So a bright textcolor will result in a black text outline for maximum readabilityon a mixed background. In some cases, especially with grayscaletext, the text outline doesn't work well, in which cases it canbe disabled by setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the same effectcan be acheived through the `text-shadow` CSS property.For some series types, where each point has an extent, like forexample tree maps, the data label may overflow the point. There aretwo strategies for handling overflow. By default, the text will wrapto multiple lines. The other strategy is to set`style.textOverflow` to `ellipsis`, which will keep the text on oneline plus it will break inside long words.
 		/// </summary>
 		public HeatmapSeriesDataLabelsStyle Style { get; set; }
 		private HeatmapSeriesDataLabelsStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to[use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
+		/// Whether to[use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }

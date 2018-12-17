@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A color axis for choropleth maps and heat maps. Visually, the coloraxis will appear as a gradient or as separate items inside thelegend, depending on whether the axis is scalar or based on dataclasses.For supported color formats, see the[docs article about colors](http://www.highcharts.com/docs/chart-design-and-style/colors).A scalar color axis is represented by a gradient. The colors eitherrange between the [minColor](#colorAxis.minColor) and the[maxColor](#colorAxis.maxColor), or for more fine grained control thecolors can be defined in [stops](#colorAxis.stops). Often times, thecolor axis needs to be adjusted to get the right color spread for thedata. In addition to stops, consider using a logarithmic[axis type](#colorAxis.type), or setting [min](#colorAxis.min) and[max](#colorAxis.max) to avoid the colors being determined byoutliers.When [dataClasses](#colorAxis.dataClasses) are used, the ranges aresubdivided into separate classes like categories based on theirvalues. This can be used for ranges between two values, but also fora true category. However, when your data is categorized, it may be asconvenient to add each category to a separate series.See [the Axis object](/class-reference/Highcharts.Axis) forprogrammatic access to the axis.
+		/// A color axis for choropleth maps and heat maps. Visually, the coloraxis will appear as a gradient or as separate items inside thelegend, depending on whether the axis is scalar or based on dataclasses.For supported color formats, see the[docs article about colors](https://www.highcharts.com/docs/chart-design-and-style/colors).A scalar color axis is represented by a gradient. The colors eitherrange between the [minColor](#colorAxis.minColor) and the[maxColor](#colorAxis.maxColor), or for more fine grained control thecolors can be defined in [stops](#colorAxis.stops). Often times, thecolor axis needs to be adjusted to get the right color spread for thedata. In addition to stops, consider using a logarithmic[axis type](#colorAxis.type), or setting [min](#colorAxis.min) and[max](#colorAxis.max) to avoid the colors being determined byoutliers.When [dataClasses](#colorAxis.dataClasses) are used, the ranges aresubdivided into separate classes like categories based on theirvalues. This can be used for ranges between two values, but also fora true category. However, when your data is categorized, it may be asconvenient to add each category to a separate series.See [the Axis object](/class-reference/Highcharts.Axis) forprogrammatic access to the axis.
 		/// </summary>
 		public ColorAxis ColorAxis { get; set; }
 		private ColorAxis ColorAxis_DefaultValue { get; set; }
@@ -97,14 +97,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The Data module provides a simplified interface for adding data toa chart from sources like CVS, HTML tables or grid views. See alsothe [tutorial article on the Data module](http://www.highcharts.com/docs/working-with-data/data-module).It requires the `modules/data.js` file to be loaded.Please note that the default way of adding data in Highcharts, withoutthe need of a module, is through the [series.data](#series.data)option.
+		/// The Data module provides a simplified interface for adding data toa chart from sources like CVS, HTML tables or grid views. See alsothe [tutorial article on the Data module](https://www.highcharts.com/docs/working-with-data/data-module).It requires the `modules/data.js` file to be loaded.Please note that the default way of adding data in Highcharts, withoutthe need of a module, is through the [series.data](#series.data)option.
 		/// </summary>
 		public Data Data { get; set; }
 		private Data Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Styled mode only. Configuration object for adding SVG definitions forreusable elements. See [gradients, shadows and patterns](http://www.highcharts.com/docs/chart-design-and-style/gradients-shadows-and-patterns) for more information and code examples.
+		/// Styled mode only. Configuration object for adding SVG definitions forreusable elements. See [gradients, shadows andpatterns](https://www.highcharts.com/docs/chart-design-and-style/gradients-shadows-and-patterns)for more information and code examples.
 		/// </summary>
 		public Object Defs { get; set; }
 		private Object Defs_DefaultValue { get; set; }
@@ -118,7 +118,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the exporting module. For an overview on the matter, see[the docs](http://www.highcharts.com/docs/export-module/export-module-overview).
+		/// Options for the exporting module. For an overview on the matter, see[the docs](https://www.highcharts.com/docs/export-module/export-module-overview).
 		/// </summary>
 		public Exporting Exporting { get; set; }
 		private Exporting Exporting_DefaultValue { get; set; }
@@ -146,7 +146,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The legend is a box containing a symbol and name for each seriesitem or point item in the chart. Each series (or points in caseof pie charts) is represented by a symbol and its name in the legend.It is possible to override the symbol creator function andcreate [custom legend symbols](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/studies/legend-custom-symbol/).
+		/// The legend is a box containing a symbol and name for each seriesitem or point item in the chart. Each series (or points in caseof pie charts) is represented by a symbol and its name in the legend.It is possible to override the symbol creator function and create[custom legend symbols](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/studies/legend-custom-symbol/).
 		/// </summary>
 		public Legend Legend { get; set; }
 		private Legend Legend_DefaultValue { get; set; }
@@ -195,7 +195,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Series options for specific data and the data itself. In TypeScript youhave to cast the series options to specific series types, to get allpossible options for a series.
 		/// </summary>
 		public List<Series> Series { get; set; }
 		private List<Series> Series_DefaultValue { get; set; }

@@ -15,13 +15,14 @@ namespace Highsoft.Web.Mvc.Charts
 		public PyramidSeriesData()
 		{
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "undefined";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new PyramidSeriesDataLabels();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new PyramidSeriesDataDragDrop();
 			Drilldown = Drilldown_DefaultValue = "";
 			Events = Events_DefaultValue = new PyramidSeriesDataEvents();
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = "";
@@ -65,6 +66,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.Requires the `draggable-points` module.
+		/// </summary>
+		public PyramidSeriesDataDragDrop DragDrop { get; set; }
+		private PyramidSeriesDataDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -134,6 +142,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsVectorTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = "<b>[{point.x}, {point.y}]</b><br/>Length: <b>{point.length}</b><br/>Direction: <b>{point.direction}°</b><br/>";
+			PointFormat = PointFormat_DefaultValue = "[{point.x}, {point.y}] Length: {point.length} Direction: {point.direction}°";
 			
 		}	
 		

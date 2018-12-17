@@ -16,10 +16,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Align = Align_DefaultValue = SubtitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
-			Style = Style_DefaultValue = new Hashtable{{ "color", "#666666" }};
+			Style = Style_DefaultValue = new SubtitleStyle();
 			Text = Text_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = SubtitleVerticalAlign.Top;
+			VerticalAlign = VerticalAlign_DefaultValue = SubtitleVerticalAlign.Null;
 			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the title.In styled mode, the subtitle style is given in the`.highcharts-subtitle` class.
 		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
+		public SubtitleStyle Style { get; set; }
+		private SubtitleStyle Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -56,7 +56,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the text.
+		/// Whether to[use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the text.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
@@ -96,7 +96,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));

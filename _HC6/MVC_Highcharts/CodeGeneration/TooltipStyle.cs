@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FontSize = FontSize_DefaultValue = "12px";
 			PointerEvents = PointerEvents_DefaultValue = "none";
 			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
+			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
 			
 		}	
 		
@@ -56,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string WhiteSpace { get; set; }
 		private string WhiteSpace_DefaultValue { get; set; }
-		  
+		 
 
 		internal override Hashtable ToHashtable()
 		{

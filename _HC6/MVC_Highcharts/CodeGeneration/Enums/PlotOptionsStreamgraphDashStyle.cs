@@ -7,16 +7,16 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsStreamgraphDashStyle
     {
-        Solid, 
+        Dash, 
+		DashDot, 
+		Dot, 
+		LongDash, 
+		LongDashDot, 
+		LongDashDotDot, 
 		ShortDash, 
-		ShortDot, 
 		ShortDashDot, 
 		ShortDashDotDot, 
-		Dot, 
-		Dash, 
-		LongDash, 
-		DashDot, 
-		LongDashDot, 
-		LongDashDotDot
+		ShortDot, 
+		Solid
     }
 }

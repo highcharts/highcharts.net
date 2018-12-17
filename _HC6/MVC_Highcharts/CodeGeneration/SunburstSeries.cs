@@ -17,8 +17,9 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowDrillToNode = AllowDrillToNode_DefaultValue = false;
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderWidth = BorderWidth_DefaultValue = 1;
+			AnimationBool = AnimationBool_DefaultValue = null;
+			BorderColor = BorderColor_DefaultValue = "#cccccc";
+			BorderWidth = BorderWidth_DefaultValue = 0;
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
@@ -28,7 +29,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Cursor = Cursor_DefaultValue = SunburstSeriesCursor.Null;
 			Data = Data_DefaultValue = new List<SunburstSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new SunburstSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new SunburstSeriesEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
@@ -84,21 +86,28 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>Can be a string reference to an easing function set on the `Math`object or a function. See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The color of the border surrounding each slice. When `null`, theborder takes the same color as the slice fill. This can be usedtogether with a `borderWidth` to fill drawing gaps created byantialiazing artefacts in borderless pies.In styled mode, the border stroke is given in the `.highcharts-point`class.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>Can be a string reference to an easing function set on the `Math`object or a function. See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border color of the map areas.In styled mode, the border stroke is given in the `.highcharts-point`class.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the`.highcharts-point` class.
+		/// The border width of each map area.In styled mode, the border stroke width is given in the`.highcharts-point` class.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
@@ -147,7 +156,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
+		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public SunburstSeriesCursor Cursor { get; set; }
 		private SunburstSeriesCursor Cursor_DefaultValue { get; set; }
@@ -175,6 +184,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// </summary>
+		public SunburstSeriesDragDrop DragDrop { get; set; }
+		private SunburstSeriesDragDrop DragDrop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
@@ -182,7 +198,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
 		public SunburstSeriesEvents Events { get; set; }
 		private SunburstSeriesEvents Events_DefaultValue { get; set; }
@@ -196,14 +212,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
+		/// An id for the series. This can be used after render time to get a pointerto the series object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The index of the series in the chart, affecting the internal indexin the `chart.series` array, the visible Z index as well as the orderin the legend.
+		/// The index of the series in the chart, affecting the internal index in the`chart.series` array, the visible Z index as well as the order in thelegend.
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }
@@ -294,14 +310,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -336,7 +352,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
+		/// If set to `true`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
 		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
@@ -392,28 +408,28 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
+		/// When using dual or multiple x axes, this number defines which xAxis theparticular series is connected to. It refers to either the{@link #xAxis.id|axis id}or the index of the axis in the xAxis array, with 0 being the first.
 		/// </summary>
 		public string XAxis { get; set; }
 		private string XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
+		/// When using dual or multiple x axes, this number defines which xAxis theparticular series is connected to. It refers to either the{@link #xAxis.id|axis id}or the index of the axis in the xAxis array, with 0 being the first.
 		/// </summary>
 		public double? XAxisNumber { get; set; }
 		private double? XAxisNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
+		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
 		/// </summary>
 		public string YAxis { get; set; }
 		private string YAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
+		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
 		/// </summary>
 		public double? YAxisNumber { get; set; }
 		private double? YAxisNumber_DefaultValue { get; set; }
@@ -433,6 +449,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Center != Center_DefaultValue) h.Add("center",Center);
@@ -445,6 +462,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);

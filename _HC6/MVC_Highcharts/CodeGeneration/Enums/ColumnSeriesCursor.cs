@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Charts
     public enum ColumnSeriesCursor
     {
         Null, 
+		Crosshair, 
 		Default, 
-		None, 
 		Help, 
-		Pointer, 
-		Crosshair
+		None, 
+		Pointer
     }
 }

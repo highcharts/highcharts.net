@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public LegendItemStyle()
 		{
 			Color = Color_DefaultValue = "#333333";
+			Cursor = Cursor_DefaultValue = "pointer";
 			FontSize = FontSize_DefaultValue = "12px";
 			FontWeight = FontWeight_DefaultValue = "bold";
 			TextOverflow = TextOverflow_DefaultValue = "ellipsis";
@@ -28,6 +29,13 @@ namespace Highsoft.Web.Mvc.Charts
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Cursor { get; set; }
+		private string Cursor_DefaultValue { get; set; }
+			 
 
 		/// <summary>
 		/// 
@@ -55,6 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
 			if (TextOverflow != TextOverflow_DefaultValue) h.Add("textOverflow",TextOverflow);

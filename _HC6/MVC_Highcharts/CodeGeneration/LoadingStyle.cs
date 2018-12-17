@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public LoadingStyle()
 		{
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
-			Opacity = Opacity_DefaultValue = null;
+			Opacity = Opacity_DefaultValue = "0.5";
 			Position = Position_DefaultValue = new Hashtable();
 			TextAlign = TextAlign_DefaultValue = "center";
 			
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
+		public string Opacity { get; set; }
+		private string Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>

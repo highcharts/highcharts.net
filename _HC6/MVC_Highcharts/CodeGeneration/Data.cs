@@ -73,7 +73,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A comma delimited string to be parsed. Related options are [startRow](#data.startRow), [endRow](#data.endRow), [startColumn](#data.startColumn)and [endColumn](#data.endColumn) to delimit what part of the tableis used. The [lineDelimiter](#data.lineDelimiter) and [itemDelimiter](#data.itemDelimiter) options define the CSV delimiter formats.The built-in CSV parser doesn't support all flavours of CSV, so insome cases it may be necessary to use an external CSV parser. See[this example](http://jsfiddle.net/highcharts/u59176h4/) of parsingCSV through the MIT licensed [Papa Parse](http://papaparse.com/)library.
+		/// A comma delimited string to be parsed. Related options are [startRow](#data.startRow), [endRow](#data.endRow), [startColumn](#data.startColumn)and [endColumn](#data.endColumn) to delimit what part of the tableis used. The [lineDelimiter](#data.lineDelimiter) and [itemDelimiter](#data.itemDelimiter) options define the CSV delimiter formats.The built-in CSV parser doesn't support all flavours of CSV, so insome cases it may be necessary to use an external CSV parser. See[this example](https://jsfiddle.net/highcharts/u59176h4/) of parsingCSV through the MIT licensed [Papa Parse](http://papaparse.com/)library.
 		/// </summary>
 		public string Csv { get; set; }
 		private string Csv_DefaultValue { get; set; }
@@ -220,7 +220,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A HTML table or the id of such to be parsed as input data. Relatedoptions are `startRow`, `endRow`, `startColumn` and `endColumn` todelimit what part of the table is used.
+		/// An HTML table or the id of such to be parsed as input data. Relatedoptions are `startRow`, `endRow`, `startColumn` and `endColumn` todelimit what part of the table is used.
 		/// </summary>
 		public string Table { get; set; }
 		private string Table_DefaultValue { get; set; }

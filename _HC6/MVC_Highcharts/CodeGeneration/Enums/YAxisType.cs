@@ -7,9 +7,11 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum YAxisType
     {
-        Linear, 
+        Null, 
+		Linear, 
 		Logarithmic, 
 		Datetime, 
-		Category
+		Category, 
+		Treegrid
     }
 }

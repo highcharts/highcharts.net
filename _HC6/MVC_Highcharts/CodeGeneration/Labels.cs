@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// A HTML label that can be positioned anywhere in the chart area.
+		/// An HTML label that can be positioned anywhere in the chart area.
 		/// </summary>
 		public List<LabelsItems> Items { get; set; }
 		private List<LabelsItems> Items_DefaultValue { get; set; }

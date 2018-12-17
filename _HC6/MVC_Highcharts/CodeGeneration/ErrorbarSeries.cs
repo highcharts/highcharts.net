@@ -16,9 +16,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			ClassName = ClassName_DefaultValue = "";
+			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
@@ -29,7 +31,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Data = Data_DefaultValue = new List<ErrorbarSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new ErrorbarSeriesDataLabels();
 			Depth = Depth_DefaultValue = 25;
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new ErrorbarSeriesDragDrop();
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -52,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MedianWidth = MedianWidth_DefaultValue = 2;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			Name = Name_DefaultValue = "";
-			NegativeColor = NegativeColor_DefaultValue = "null";
+			NegativeColor = NegativeColor_DefaultValue = "";
 			Point = Point_DefaultValue = new ErrorbarSeriesPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
@@ -101,10 +104,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>Can be a string reference to an easing function set on the `Math`object or a function. See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods. Thefollowing properties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>Can be a string reference to an easing function set on the `Math`object or a function. See the _Custom easing function_ demo below.</dd></dl>Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -129,6 +139,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Disable this option to allow series rendering in the whole plottingarea.**Note:** Clipping should be always enabled when[chart.zoomType](#chart.zoomType) is set
+		/// </summary>
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the `options.colors` array.In styled mode, the color can be defined by the[colorIndex](#plotOptions.series.colorIndex) option. Also, the seriescolor can be set with the `.highcharts-series`, `.highcharts-color-{n}`,`.highcharts-{type}-series` or `.highcharts-series-{n}` class, orindividual classes given by the `className` option.
 		/// </summary>
 		public string Color { get; set; }
@@ -136,7 +153,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When using automatic point colors pulled from the `options.colors`collection, this option determines whether the chart should receiveone color per series or one color per point.
+		/// When using automatic point colors pulled from the global [colors](colors)or series-specific [plotOptions.column.colors](series.colors)collections, this option determines whether the chart should receiveone color per series or one color per point.In styled mode, the `colors` or `series.colors` arrays are not supported,and instead this option gives the points individual color class names onthe form `highcharts-color-{n}`.
 		/// </summary>
 		public bool? ColorByPoint { get; set; }
 		private bool? ColorByPoint_DefaultValue { get; set; }
@@ -171,21 +188,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.
+		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public ErrorbarSeriesCursor Cursor { get; set; }
 		private ErrorbarSeriesCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the `errorbar` seriestype, points can be given in the following ways:1.  An array of arrays with 3 or 2 values. In this case, the valuescorrespond to `x,low,high`. If the first value is a string, it isapplied as the name of the point, and the `x` value is inferred.The `x` value can also be omitted, in which case the inner arraysshould be of length 2\. Then the `x` value is automatically calculated,either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. ```js    data: [        [0, 10, 2],        [1, 1, 8],        [2, 4, 5]    ] ```2.  An array of objects with named values. The objects are pointconfiguration objects as seen below. If the total number of datapoints exceeds the series' [turboThreshold](#series.errorbar.turboThreshold),this option is not available. ```js    data: [{        x: 1,        low: 0,        high: 0,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        low: 5,        high: 5,        name: "Point1",        color: "#FF00FF"    }] ```
+		/// An array of data points for the series. For the `errorbar` seriestype, points can be given in the following ways:1.  An array of arrays with 3 or 2 values. In this case, the valuescorrespond to `x,low,high`. If the first value is a string, it isapplied as the name of the point, and the `x` value is inferred.The `x` value can also be omitted, in which case the inner arraysshould be of length 2\. Then the `x` value is automatically calculated,either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. ```js    data: [        [0, 10, 2],        [1, 1, 8],        [2, 4, 5]    ] ```2.  An array of objects with named values. The following snippet shows only afew settings, see the complete options set below. If the total number of datapoints exceeds the series' [turboThreshold](#series.errorbar.turboThreshold),this option is not available. ```js    data: [{        x: 1,        low: 0,        high: 0,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        low: 5,        high: 5,        name: "Point1",        color: "#FF00FF"    }] ```
 		/// </summary>
 		public List<ErrorbarSeriesData> Data { get; set; }
 		private List<ErrorbarSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.In styled mode, the data labels can be styled wtih the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
+		/// Options for the series data labels, appearing next to each data point.Since v6.2.0, multiple data labels can be applied to each single point bydefining them as an array of configs.In styled mode, the data labels can be styled with the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-datalabels)).
 		/// </summary>
 		public ErrorbarSeriesDataLabels DataLabels { get; set; }
 		private ErrorbarSeriesDataLabels DataLabels_DefaultValue { get; set; }
@@ -203,6 +220,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// </summary>
+		public ErrorbarSeriesDragDrop DragDrop { get; set; }
+		private ErrorbarSeriesDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -227,7 +251,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// General event handlers for the series items. These event hooks can alsobe attached to the series at run time using the `Highcharts.addEvent`function.
 		/// </summary>
 		public ErrorbarSeriesEvents Events { get; set; }
 		private ErrorbarSeriesEvents Events_DefaultValue { get; set; }
@@ -276,14 +300,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An id for the series. This can be used after render time to get apointer to the series object through `chart.get()`.
+		/// An id for the series. This can be used after render time to get a pointerto the series object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The index of the series in the chart, affecting the internal indexin the `chart.series` array, the visible Z index as well as the orderin the legend.
+		/// The index of the series in the chart, affecting the internal index in the`chart.series` array, the visible Z index as well as the order in thelegend.
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }
@@ -402,7 +426,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Possible values: `null`, `"on"`, `"between"`.In a column chart, when pointPlacement is `"on"`, the point willnot create any padding of the X axis. In a polar column chart thismeans that the first column points directly north. If the pointPlacementis `"between"`, the columns will be laid out between ticks. Thisis useful for example for visualising an amount between two pointsin time or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this iscomputed, but for line-type series it needs to be set.Defaults to `null` in cartesian charts, `"between"` in polar charts.
+		/// Possible values: `"on"`, `"between"`, `number`.In a column chart, when pointPlacement is `"on"`, the point willnot create any padding of the X axis. In a polar column chart thismeans that the first column points directly north. If the pointPlacementis `"between"`, the columns will be laid out between ticks. Thisis useful for example for visualising an amount between two pointsin time or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this iscomputed, but for line-type series it needs to be set.For the `xrange` series type and gantt charts, if the Y axis is acategory axis, the `pointPlacement` applies to the Y axis rather thanthe (typically datetime) X axis.Defaults to `undefined` in cartesian charts, `"between"` in polar charts.
 		/// </summary>
 		public PointPlacement PointPlacement { get; set; }
 		private PointPlacement PointPlacement_DefaultValue { get; set; }
@@ -437,14 +461,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 the shadowcan be an object configuration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -465,7 +489,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If set to `True`, the accessibility module will skip past the pointsin this series for keyboard navigation.
+		/// If set to `true`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
 		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
@@ -570,28 +594,28 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
+		/// When using dual or multiple x axes, this number defines which xAxis theparticular series is connected to. It refers to either the{@link #xAxis.id|axis id}or the index of the axis in the xAxis array, with 0 being the first.
 		/// </summary>
 		public string XAxis { get; set; }
 		private string XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When using dual or multiple x axes, this number defines which xAxisthe particular series is connected to. It refers to either the [axisid](#xAxis.id) or the index of the axis in the xAxis array, with0 being the first.
+		/// When using dual or multiple x axes, this number defines which xAxis theparticular series is connected to. It refers to either the{@link #xAxis.id|axis id}or the index of the axis in the xAxis array, with 0 being the first.
 		/// </summary>
 		public double? XAxisNumber { get; set; }
 		private double? XAxisNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
+		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
 		/// </summary>
 		public string YAxis { get; set; }
 		private string YAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When using dual or multiple y axes, this number defines which yAxisthe particular series is connected to. It refers to either the [axisid](#yAxis.id) or the index of the axis in the yAxis array, with0 being the first.
+		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
 		/// </summary>
 		public double? YAxisNumber { get; set; }
 		private double? YAxisNumber_DefaultValue { get; set; }
@@ -612,7 +636,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option. The zone definitions have to be in ascending order regarding tothe value.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
+		/// An array defining zones within a series. Zones can be applied tothe X axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option. The zone definitions have to be in ascending order regarding tothe value.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<ErrorbarSeriesZone> Zones { get; set; }
 		private List<ErrorbarSeriesZone> Zones_DefaultValue { get; set; }
@@ -624,9 +648,11 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
@@ -638,6 +664,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);

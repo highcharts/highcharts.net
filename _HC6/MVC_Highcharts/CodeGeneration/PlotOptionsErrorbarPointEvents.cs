@@ -15,6 +15,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsErrorbarPointEvents()
 		{
 			Click = Click_DefaultValue = "";
+			Drag = Drag_DefaultValue = "";
+			DragStart = DragStart_DefaultValue = "";
+			Drop = Drop_DefaultValue = "";
 			MouseOut = MouseOut_DefaultValue = "";
 			MouseOver = MouseOver_DefaultValue = "";
 			Remove = Remove_DefaultValue = "";
@@ -30,6 +33,27 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Click { get; set; }
 		private string Click_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback that fires while dragging a point. The mouse event is passed in asparameter. The original data can be accessed from `e.origin`, and the newpoint values can be accessed from `e.newPoints`. If there is only a singlepoint being updated, it can be accessed from `e.newPoint` for simplicity, andits ID can be accessed from `e.newPointId`. The `this` context is the pointbeing dragged. To stop the default drag action, return false.See [drag and drop options](plotOptions.series.dragDrop).Requires the `draggable-points` module.
+		/// </summary>
+		public string Drag { get; set; }
+		private string Drag_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback that fires when starting to drag a point. The mouse event object ispassed in as an argument. If a drag handle is used, `e.updateProp` is set tothe data property being dragged. The `this` context is the point. See[drag and drop options](plotOptions.series.dragDrop).Requires the `draggable-points` module.
+		/// </summary>
+		public string DragStart { get; set; }
+		private string DragStart_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback that fires when the point is dropped. The parameters passed are thesame as for [drag](#plotOptions.series.point.events.drag). To stop thedefault drop action, return false. See[drag and drop options](plotOptions.series.dragDrop).Requires the `draggable-points` module.
+		/// </summary>
+		public string Drop { get; set; }
+		private string Drop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -79,6 +103,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("PlotOptionsErrorbarPointEventsClick.click", Click); }  
+			if (Drag != Drag_DefaultValue) { h.Add("drag",Drag); Highcharts.AddFunction("PlotOptionsErrorbarPointEventsDrag.drag", Drag); }  
+			if (DragStart != DragStart_DefaultValue) { h.Add("dragStart",DragStart); Highcharts.AddFunction("PlotOptionsErrorbarPointEventsDragStart.dragStart", DragStart); }  
+			if (Drop != Drop_DefaultValue) { h.Add("drop",Drop); Highcharts.AddFunction("PlotOptionsErrorbarPointEventsDrop.drop", Drop); }  
 			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highcharts.AddFunction("PlotOptionsErrorbarPointEventsMouseOut.mouseOut", MouseOut); }  
 			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highcharts.AddFunction("PlotOptionsErrorbarPointEventsMouseOver.mouseOver", MouseOver); }  
 			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("PlotOptionsErrorbarPointEventsRemove.remove", Remove); }  

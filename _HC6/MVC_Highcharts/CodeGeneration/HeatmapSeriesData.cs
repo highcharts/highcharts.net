@@ -18,10 +18,11 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new HeatmapSeriesDataLabels();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new HeatmapSeriesDataDragDrop();
 			Drilldown = Drilldown_DefaultValue = "";
 			Events = Events_DefaultValue = new HeatmapSeriesDataEvents();
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			PointPadding = PointPadding_DefaultValue = null;
@@ -67,6 +68,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.Requires the `draggable-points` module.
+		/// </summary>
+		public HeatmapSeriesDataDragDrop DragDrop { get; set; }
+		private HeatmapSeriesDataDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -150,6 +158,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);

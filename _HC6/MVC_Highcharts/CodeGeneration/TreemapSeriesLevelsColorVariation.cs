@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public TreemapSeriesLevelsColorVariation()
 		{
-			Key = Key_DefaultValue = TreemapSeriesLevelsColorVariationKey.Brightness;
+			Key = Key_DefaultValue = TreemapSeriesLevelsColorVariationKey.Null;
 			To = To_DefaultValue = null;
 			
 		}	

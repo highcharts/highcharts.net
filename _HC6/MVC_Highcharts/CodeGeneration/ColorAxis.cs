@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			DataClassColor = DataClassColor_DefaultValue = ColorAxisDataClassColor.Tween;
 			DataClasses = DataClasses_DefaultValue = new List<ColorAxisDataClasses>();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
 			EndOnTick = EndOnTick_DefaultValue = true;
 			Events = Events_DefaultValue = new ColorAxisEvents();
 			Floor = Floor_DefaultValue = null;
@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = ColorAxisGridLineDashStyle.Solid;
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			GridZIndex = GridZIndex_DefaultValue = 1;
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			Labels = Labels_DefaultValue = new ColorAxisLabels();
 			LineColor = LineColor_DefaultValue = "#ccd6eb";
 			Marker = Marker_DefaultValue = new ColorAxisMarker();
@@ -154,7 +154,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The dash or dot style of the grid lines. For possible values, see[this demonstration](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
+		/// The dash or dot style of the grid lines. For possible values, see[this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public ColorAxisGridLineDashStyle GridLineDashStyle { get; set; }
 		private ColorAxisGridLineDashStyle GridLineDashStyle_DefaultValue { get; set; }
@@ -245,7 +245,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The dash or dot style of the minor grid lines. For possible values,see [this demonstration](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
+		/// The dash or dot style of the minor grid lines. For possible values,see [this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public ColorAxisMinorGridLineDashStyle MinorGridLineDashStyle { get; set; }
 		private ColorAxisMinorGridLineDashStyle MinorGridLineDashStyle_DefaultValue { get; set; }
@@ -266,14 +266,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Specific tick interval in axis units for the minor ticks.On a linear axis, if `"auto"`, the minor tick interval iscalculated as a fifth of the tickInterval. If `null`, minorticks are not shown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1,1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9ticks between 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
+		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `null` or `undefined`, minor ticks are notshown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
 		/// </summary>
 		public string MinorTickInterval { get; set; }
 		private string MinorTickInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Specific tick interval in axis units for the minor ticks.On a linear axis, if `"auto"`, the minor tick interval iscalculated as a fifth of the tickInterval. If `null`, minorticks are not shown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1,1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9ticks between 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
+		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `null` or `undefined`, minor ticks are notshown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
 		/// </summary>
 		public double? MinorTickIntervalNumber { get; set; }
 		private double? MinorTickIntervalNumber_DefaultValue { get; set; }
@@ -329,7 +329,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This option determines how stacks should be ordered within a group.For example reversed xAxis also reverses stacks, so first series comes lastin a group. To keep order like for non-reversed xAxis enable this option.
+		/// This option determines how stacks should be ordered within a group.For example reversed xAxis also reverses stacks, so first seriescomes last in a group. To keep order like for non-reversed xAxisenable this option.
 		/// </summary>
 		public bool? ReversedStacks { get; set; }
 		private bool? ReversedStacks_DefaultValue { get; set; }
@@ -441,21 +441,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A callback function returning array defining where the ticks arelaid out on the axis. This overrides the default behaviour of[tickPixelInterval](#xAxis.tickPixelInterval) and[tickInterval](#xAxis.tickInterval). The automatic tick positions areaccessible through `this.tickPositions` and can be modified by the callback.
+		/// A callback function returning array defining where the ticks arelaid out on the axis. This overrides the default behaviour of[tickPixelInterval](#xAxis.tickPixelInterval) and [tickInterval](#xAxis.tickInterval). The automatic tick positions are accessiblethrough `this.tickPositions` and can be modified by the callback.
 		/// </summary>
 		public string TickPositioner { get; set; }
 		private string TickPositioner_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array defining where the ticks are laid out on the axis. Thisoverrides the default behaviour of [tickPixelInterval](#xAxis.tickPixelInterval)and [tickInterval](#xAxis.tickInterval).
+		/// An array defining where the ticks are laid out on the axis. Thisoverrides the default behaviour of [tickPixelInterval](#xAxis.tickPixelInterval) and [tickInterval](#xAxis.tickInterval).
 		/// </summary>
 		public List<double> TickPositions { get; set; }
 		private List<double> TickPositions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The pixel width of the major tick marks.In styled mode, the stroke width is given in the `.highcharts-tick` class.
+		/// The pixel width of the major tick marks.In styled mode, the stroke width is given in the `.highcharts-tick`class.
 		/// </summary>
 		public double? TickWidth { get; set; }
 		private double? TickWidth_DefaultValue { get; set; }

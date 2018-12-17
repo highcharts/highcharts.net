@@ -17,10 +17,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Height = Height_DefaultValue = "13px";
 			Position = Position_DefaultValue = new Hashtable();
 			Width = Width_DefaultValue = "13px";
-			
 		}	
 		
-
 		/// <summary>
 		/// 
 		/// </summary>

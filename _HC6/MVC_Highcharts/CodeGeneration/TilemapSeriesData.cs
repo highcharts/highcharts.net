@@ -15,13 +15,14 @@ namespace Highsoft.Web.Mvc.Charts
 		public TilemapSeriesData()
 		{
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "undefined";
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new TilemapSeriesDataLabels();
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new TilemapSeriesDataDragDrop();
 			Drilldown = Drilldown_DefaultValue = "";
 			Events = Events_DefaultValue = new TilemapSeriesDataEvents();
-			Id = Id_DefaultValue = "null";
+			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			PointPadding = PointPadding_DefaultValue = null;
@@ -42,7 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Individual color for the point. By default the color is pulled fromthe global `colors` array.In styled mode, the `color` option doesn't take effect. Instead, use`colorIndex`.
+		/// The color of the point. In tilemaps the point color is rarely setexplicitly, as we use the color to denote the `value`. Options forthis are set in the [colorAxis](#colorAxis) configuration.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
@@ -67,6 +68,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.Requires the `draggable-points` module.
+		/// </summary>
+		public TilemapSeriesDataDragDrop DragDrop { get; set; }
+		private TilemapSeriesDataDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -126,14 +134,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.
+		/// The x coordinate of the point.Note that for some [tileShapes](#plotOptions.tilemap.tileShape) the gridcoordinates are offset.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The y value of the point.
+		/// The y coordinate of the point.Note that for some [tileShapes](#plotOptions.tilemap.tileShape) the gridcoordinates are offset.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
@@ -150,6 +158,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);

@@ -7,8 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ZAxisTitleSkew3d
     {
-        False, 
-		True, 
-		Null
+        Null, 
+		False, 
+		True
     }
 }

@@ -16,12 +16,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			AllowOverlap = AllowOverlap_DefaultValue = true;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
-			BorderColor = BorderColor_DefaultValue = "undefined";
+			BorderColor = BorderColor_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			ConnectorColor = ConnectorColor_DefaultValue = "{point.color}";
+			ConnectorColor = ConnectorColor_DefaultValue = "";
 			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			Crop = Crop_DefaultValue = true;
@@ -43,7 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = FunnelSeriesDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = -6;
+			Y = Y_DefaultValue = 0;
 			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
@@ -85,14 +85,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A class name for the data label. Particularly in styled mode, thiscan be used to give each series' or point's data label uniquestyling. In addition to this option, a default color class name isadded so that we can give the labels a[contrast text shadow](http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/data-label-contrast/).
+		/// A class name for the data label. Particularly in styled mode, thiscan be used to give each series' or point's data label uniquestyling. In addition to this option, a default color class name isadded so that we can give the labels a[contrast text shadow](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/data-label-contrast/).
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The text color for the data labels. Defaults to `null`. For certainseries types, like column or map, the data labels can be drawn insidethe points. In this case the data label will be drawn with maximumcontrast by default. Additionally, it will be given a `text-outline`style with the opposite color, to further increase the contrast. Thiscan be overridden by setting the `text-outline` style to `none` inthe `dataLabels.style` option.
+		/// The text color for the data labels. Defaults to `undefined`. Forcertain series types, like column or map, the data labels can bedrawn inside the points. In this case the data label will be drawnwith maximum contrast by default. Additionally, it will be given a`text-outline` style with the opposite color, to further increase thecontrast. This can be overridden by setting the `text-outline` styleto `none` in the `dataLabels.style` option.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
@@ -148,14 +148,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A declarative filter for which data labels to display. Thedeclarative filter is designed for use when callback functions arenot available, like when the chart options require a pure JSONstructure or for use with graphical editors. For programmaticcontrol, use the `formatter` instead, and return `false` to disablea single data label.
+		/// A declarative filter for which data labels to display. Thedeclarative filter is designed for use when callback functions arenot available, like when the chart options require a pure JSONstructure or for use with graphical editors. For programmaticcontrol, use the `formatter` instead, and return `undefined` todisable a single data label.
 		/// </summary>
 		public FunnelSeriesDataLabelsFilter Filter { get; set; }
 		private FunnelSeriesDataLabelsFilter Filter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A [format string](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
+		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
@@ -176,7 +176,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// How to handle data labels that flow outside the plot area. Thedefault is `justify`, which aligns them inside the plot area. Forcolumns and bars, this means it will be moved inside the bar. Todisplay data labels outside the plot area, set `crop` to `false` and`overflow` to `"none"`.
+		/// How to handle data labels that flow outside the plot area. Thedefault is `"justify"`, which aligns them inside the plot area. Forcolumns and bars, this means it will be moved inside the bar. Todisplay data labels outside the plot area, set `crop` to `false` and`overflow` to `"allow"`.
 		/// </summary>
 		public FunnelSeriesDataLabelsOverflow Overflow { get; set; }
 		private FunnelSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
@@ -232,7 +232,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to[use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
+		/// Whether to[use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }

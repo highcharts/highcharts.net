@@ -7,10 +7,10 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ChartParallelAxesTitlePosition3d
     {
-        Offset, 
+        Null, 
+		Offset, 
 		Chart, 
 		Flap, 
-		Ortho, 
-		Null
+		Ortho
     }
 }

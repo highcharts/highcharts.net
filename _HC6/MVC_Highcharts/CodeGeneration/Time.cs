@@ -16,9 +16,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Date = Date_DefaultValue = new DateTime();
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
-			Timezone = Timezone_DefaultValue = "undefined";
+			Timezone = Timezone_DefaultValue = "";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
-			UseUTC = UseUTC_DefaultValue = null;
+			UseUTC = UseUTC_DefaultValue = true;
 			
 		}	
 		
