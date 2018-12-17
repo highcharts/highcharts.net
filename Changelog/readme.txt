@@ -1,5 +1,23 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
 
+# Version 6.2.0
+
+Updates:
+- AccessibilityKeyboardNavigation.Mode - enum instead of string
+- *Overflow - 'Allow' instead of "None"
+- Chart.DefaultSeriesType - string instead of enum
+- ChartParallelAxesDateTimeLabelFormats, XAxisDateTimeLabelFormats
+- DrilldownDrillUpButtonPosition.Align - enum instead of string
+
+Add:
+- AnimationBool, BorderColor, BorderWidth, Clip, DragDrop to *Series
+- DragDrop, PointWidth to *SeriesData
+- Drag, DragStart, Drop to *SeriesDataEvents and *SeriesPointEvents
+- ZoomKey to Chart
+- MaxStaggerLines, OverflowBool to *AxesLabels
+- TextAlign to ChartParallelAxesTitle
+
+
 # Version 6.1.1
 New:
 - CandleStickSeriesPointValKey, OhlcSeriesPointValKey, PlotOptionsCandlestickPointValKey, PlotOptionsOhlcPointValKey, RangeSelectorVerticalAlign

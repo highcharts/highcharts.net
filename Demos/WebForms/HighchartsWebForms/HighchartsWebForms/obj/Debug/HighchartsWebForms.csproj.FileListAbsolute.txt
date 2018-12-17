@@ -93,3 +93,5 @@ C:\Users\PC\Documents\highcharts.net\Demos\WebForms\HighchartsWebForms\Highchart
 C:\Users\PC\Documents\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\obj\Debug\HighchartsWebForms.csprojResolveAssemblyReference.cache
 C:\Users\PC\Documents\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\obj\Debug\HighchartsWebForms.dll
 C:\Users\PC\Documents\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\obj\Debug\HighchartsWebForms.pdb
+C:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\obj\Debug\HighchartsWebForms.csprojAssemblyReference.cache
+C:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\obj\Debug\HighchartsWebForms.csproj.CoreCompileInputs.cache
