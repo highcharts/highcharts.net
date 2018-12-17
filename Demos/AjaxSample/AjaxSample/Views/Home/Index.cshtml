@@ -1,0 +1,8 @@
+﻿
+
+<div>Hello</div>
+<div id="container">
+    <div id="divLoading"></div>
+</div>
+
+@Ajax.ActionLink("Get chart", "GetChart", "Service", null, new AjaxOptions { HttpMethod = "GET", LoadingElementId = "divLoading", UpdateTargetId = "container", InsertionMode = InsertionMode.Replace })
