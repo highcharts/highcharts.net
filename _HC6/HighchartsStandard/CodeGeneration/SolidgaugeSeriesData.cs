@@ -1,0 +1,201 @@
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Collections;
+using System;
+using System.Collections.Specialized;
+using System.Web;
+using System.IO;
+
+namespace Highsoft.Web.Mvc.Charts
+{
+	public partial class SolidgaugeSeriesData  : BaseObject
+	{
+		public SolidgaugeSeriesData()
+		{
+			ClassName = ClassName_DefaultValue = "";
+			Color = Color_DefaultValue = "";
+			ColorIndex = ColorIndex_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new SolidgaugeSeriesDataLabels();
+			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new SolidgaugeSeriesDataDragDrop();
+			Events = Events_DefaultValue = new SolidgaugeSeriesDataEvents();
+			Id = Id_DefaultValue = "";
+			InnerRadius = InnerRadius_DefaultValue = "null";
+			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
+			Labelrank = Labelrank_DefaultValue = null;
+			Name = Name_DefaultValue = "";
+			Radius = Radius_DefaultValue = "null";
+			RadiusNumber = RadiusNumber_DefaultValue = null;
+			Selected = Selected_DefaultValue = false;
+			Y = Y_DefaultValue = double.MinValue;
+			
+			CustomFields = new Hashtable();
+		}	
+		
+
+		/// <summary>
+		/// An additional, individual class name for the data point's graphicrepresentation.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual color for the point. By default the color is pulled fromthe global `colors` array.In styled mode, the `color` option doesn't take effect. Instead, use`colorIndex`.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color by is set bythe `fill` attribute, so the change in class name won't have a visual effectby default.
+		/// </summary>
+		public double? ColorIndex { get; set; }
+		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels).
+		/// </summary>
+		public SolidgaugeSeriesDataLabels DataLabels { get; set; }
+		private SolidgaugeSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A description of the point to add to the screen reader informationabout the point. Requires the Accessibility module.
+		/// </summary>
+		public string Description { get; set; }
+		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.Requires the `draggable-points` module.
+		/// </summary>
+		public SolidgaugeSeriesDataDragDrop DragDrop { get; set; }
+		private SolidgaugeSeriesDataDragDrop DragDrop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual point events
+		/// </summary>
+		public SolidgaugeSeriesDataEvents Events { get; set; }
+		private SolidgaugeSeriesDataEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An id for the point. This can be used after render time to get apointer to the point object through `chart.get()`.
+		/// </summary>
+		public string Id { get; set; }
+		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The inner radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// </summary>
+		public string InnerRadius { get; set; }
+		private string InnerRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The inner radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// </summary>
+		public double? InnerRadiusNumber { get; set; }
+		private double? InnerRadiusNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The rank for this point's data label in case of collision. If twodata labels are about to overlap, only the one with the highest `labelrank`will be drawn.
+		/// </summary>
+		public double? Labelrank { get; set; }
+		private double? Labelrank_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
+		/// </summary>
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The outer radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// </summary>
+		public string Radius { get; set; }
+		private string Radius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The outer radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// </summary>
+		public double? RadiusNumber { get; set; }
+		private double? RadiusNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether the data point is selected initially.
+		/// </summary>
+		public bool? Selected { get; set; }
+		private bool? Selected_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The y value of the point.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
+
+		internal override Hashtable ToHashtable()
+		{
+			Hashtable h = new Hashtable();
+
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
+			if (InnerRadiusNumber != InnerRadiusNumber_DefaultValue) h.Add("innerRadius",InnerRadiusNumber);
+			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
+			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (RadiusNumber != RadiusNumber_DefaultValue) h.Add("radius",RadiusNumber);
+			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
+
+			return h;
+		}
+
+		internal override string ToJSON()
+		{            
+			Hashtable h = ToHashtable();
+
+			if (h.Count > 0)
+				return JsonConvert.SerializeObject(ToHashtable());
+			else 
+				return "";
+		}       
+
+		// checks if the state of the object is different from the default
+		// and therefore needs to be serialized
+		internal override bool IsDirty()
+		{
+			return ToHashtable().Count > 0;
+		}
+	}
+}
