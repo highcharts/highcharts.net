@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_cmf_series_ikh_states_select_marker_states_hover_animation =
-[
-    [ "CmfSeriesIkhStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_cmf_series_ikh_states_select_marker_states_hover_animation.html#a0beb3bce654e9ce3e1b42823a4653bd7", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_cmf_series_ikh_states_select_marker_states_hover_animation.html#a611009967fe4472c58d1249ad700d5be", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_cmf_series_ikh_states_select_marker_states_hover_animation.html#a3cebe35ba86a1669d5e7c5e1d5dde70e", null ]
-];

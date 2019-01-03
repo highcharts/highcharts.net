@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_states_select_marker_states_hover_animation =
-[
-    [ "PlotOptionsGaugeStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_states_select_marker_states_hover_animation.html#aa4a8022d02217e836507ff40ff293e70", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_states_select_marker_states_hover_animation.html#a16c72910247ae67aca3dba52614b23a3", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_states_select_marker_states_hover_animation.html#a76a2a8b78e1ad152af8e309521e50361", null ]
-];

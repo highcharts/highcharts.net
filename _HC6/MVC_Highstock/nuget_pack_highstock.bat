@@ -1,1 +1,0 @@
-nuget pack MVC_Highstock.csproj

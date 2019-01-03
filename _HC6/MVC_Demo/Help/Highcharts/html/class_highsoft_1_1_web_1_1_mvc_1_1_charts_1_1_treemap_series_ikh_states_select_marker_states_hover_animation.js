@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treemap_series_ikh_states_select_marker_states_hover_animation =
-[
-    [ "TreemapSeriesIkhStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treemap_series_ikh_states_select_marker_states_hover_animation.html#a445c0420ff2217208147836ca9064b42", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treemap_series_ikh_states_select_marker_states_hover_animation.html#a1e57823ee402cafc2a46c16a411c4d91", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treemap_series_ikh_states_select_marker_states_hover_animation.html#a45dd0ada12b914aa4c0efe841d919216", null ]
-];

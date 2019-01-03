@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_histogram_point_placement =
-[
-    [ "PlotOptionsHistogramPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_histogram_point_placement.html#a315b54be3fe09ebb6efb150393382311", null ]
-];

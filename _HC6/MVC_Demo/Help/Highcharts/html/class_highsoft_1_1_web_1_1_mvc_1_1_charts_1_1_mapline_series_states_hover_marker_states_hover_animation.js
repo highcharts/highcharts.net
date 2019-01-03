@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapline_series_states_hover_marker_states_hover_animation =
-[
-    [ "MaplineSeriesStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapline_series_states_hover_marker_states_hover_animation.html#a36f2e0e11083c45caa3b29642557d743", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapline_series_states_hover_marker_states_hover_animation.html#ad37a55f1438de32ccc2563c33a4665d5", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapline_series_states_hover_marker_states_hover_animation.html#ab253d124a6b43d7c8a8807c39641af96", null ]
-];

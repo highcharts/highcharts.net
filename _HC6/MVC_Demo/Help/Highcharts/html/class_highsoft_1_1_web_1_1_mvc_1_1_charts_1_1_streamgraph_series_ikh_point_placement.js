@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_streamgraph_series_ikh_point_placement =
-[
-    [ "StreamgraphSeriesIkhPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_streamgraph_series_ikh_point_placement.html#acffdcd4011eb95d401df3f3c0d71ac11", null ]
-];

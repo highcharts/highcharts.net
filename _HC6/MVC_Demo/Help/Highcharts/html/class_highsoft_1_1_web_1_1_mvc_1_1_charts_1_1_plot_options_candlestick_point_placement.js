@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_candlestick_point_placement =
-[
-    [ "PlotOptionsCandlestickPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_candlestick_point_placement.html#a63130b15944602445bf0f93060739108", null ]
-];

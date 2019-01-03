@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_heatmap_series_ikh_states_select_marker_states_hover_animation =
-[
-    [ "HeatmapSeriesIkhStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_heatmap_series_ikh_states_select_marker_states_hover_animation.html#acc767c7f355150a1a408b8af01bc9397", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_heatmap_series_ikh_states_select_marker_states_hover_animation.html#ad26a85bc41297acbff14257c174e4d6f", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_heatmap_series_ikh_states_select_marker_states_hover_animation.html#ac619f8f8d0d1cfe26befabffed435495", null ]
-];

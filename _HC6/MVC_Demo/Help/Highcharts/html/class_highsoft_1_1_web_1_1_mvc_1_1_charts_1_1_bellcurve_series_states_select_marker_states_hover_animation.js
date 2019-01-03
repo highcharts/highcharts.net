@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_states_select_marker_states_hover_animation =
-[
-    [ "BellcurveSeriesStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_states_select_marker_states_hover_animation.html#a6fd9b78161f5ae4569b0d6edb04b5bc5", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_states_select_marker_states_hover_animation.html#a6e9f066854b70b9021329b4cbb71e076", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_states_select_marker_states_hover_animation.html#a9a3779d268c40334427a59726e13317b", null ]
-];

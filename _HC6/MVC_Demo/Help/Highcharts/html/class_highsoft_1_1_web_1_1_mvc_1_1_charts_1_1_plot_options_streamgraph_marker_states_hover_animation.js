@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_marker_states_hover_animation =
-[
-    [ "PlotOptionsStreamgraphMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_marker_states_hover_animation.html#aaaeeab094f3696641665d6ea1143e1e7", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_marker_states_hover_animation.html#a5830fe6f6dbbd0438ab9229b965b9947", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_marker_states_hover_animation.html#a02873c43fa1e2b5ea6ac9201b6c735e1", null ]
-];

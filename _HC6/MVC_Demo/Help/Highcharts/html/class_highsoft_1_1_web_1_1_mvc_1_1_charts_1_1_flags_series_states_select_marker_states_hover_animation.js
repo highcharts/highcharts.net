@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_flags_series_states_select_marker_states_hover_animation =
-[
-    [ "FlagsSeriesStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_flags_series_states_select_marker_states_hover_animation.html#abf6cd4dacadc4e0ce3ab75a85118a7ee", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_flags_series_states_select_marker_states_hover_animation.html#a1fd4318763ba6651ede1c5edf68cf4bf", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_flags_series_states_select_marker_states_hover_animation.html#ab9802f2dbbfbf384aaa093f11455cd32", null ]
-];

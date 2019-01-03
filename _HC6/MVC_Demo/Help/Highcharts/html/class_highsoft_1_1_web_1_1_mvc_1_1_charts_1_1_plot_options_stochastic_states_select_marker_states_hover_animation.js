@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_stochastic_states_select_marker_states_hover_animation =
-[
-    [ "PlotOptionsStochasticStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_stochastic_states_select_marker_states_hover_animation.html#a9181375906902df3a39c7ae2249cdd55", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_stochastic_states_select_marker_states_hover_animation.html#a70fcbc5614ad6ad0315579b6f4bfe24a", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_stochastic_states_select_marker_states_hover_animation.html#aa1b3af8de1dcfaac6a26cdf72896e57e", null ]
-];

@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_candle_stick_series_states_hover_marker_states_hover_animation =
-[
-    [ "CandleStickSeriesStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_candle_stick_series_states_hover_marker_states_hover_animation.html#a5e0219e9f78ddff20ce39fa9822ac7e1", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_candle_stick_series_states_hover_marker_states_hover_animation.html#a777255b5434e4d8feb23a9b4b1c261ac", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_candle_stick_series_states_hover_marker_states_hover_animation.html#a20783a52221dc34d033d15df18c1b8ec", null ]
-];

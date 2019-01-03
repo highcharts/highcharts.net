@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_errorbar_series_states_hover_marker_states_hover_animation =
-[
-    [ "ErrorbarSeriesStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_errorbar_series_states_hover_marker_states_hover_animation.html#a5578b0b9eb9b560f7db41e9bbdc14c24", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_errorbar_series_states_hover_marker_states_hover_animation.html#a29be5bfc3d1b011448267f952046dd70", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_errorbar_series_states_hover_marker_states_hover_animation.html#a44b9608f73a56da29b8df06dd714cf8b", null ]
-];

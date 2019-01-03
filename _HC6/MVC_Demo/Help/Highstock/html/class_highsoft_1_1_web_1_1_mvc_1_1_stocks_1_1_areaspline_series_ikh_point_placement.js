@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_areaspline_series_ikh_point_placement =
-[
-    [ "AreasplineSeriesIkhPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_areaspline_series_ikh_point_placement.html#a93886a6f6b642521eac6ff5e3a6499fd", null ]
-];

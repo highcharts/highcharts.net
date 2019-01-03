@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_ikh_states_hover_marker_states_hover_animation =
-[
-    [ "GaugeSeriesIkhStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_ikh_states_hover_marker_states_hover_animation.html#a05fc4313ef5f9f147ba8e7b6893b68dd", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_ikh_states_hover_marker_states_hover_animation.html#ac578fa15ee27aaa3fedb4d3566f0d0e0", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_ikh_states_hover_marker_states_hover_animation.html#ac95688c867e7d36b751a63a2f7b85320", null ]
-];
