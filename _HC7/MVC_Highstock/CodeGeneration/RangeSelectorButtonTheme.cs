@@ -1,0 +1,85 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Web.Script.Serialization;
+using System.Collections;
+using System;
+using System.Collections.Specialized;
+using System.Web;
+using System.IO;
+
+namespace Highsoft.Web.Mvc.Stocks
+{
+	public partial class RangeSelectorButtonTheme  : BaseObject
+	{
+		public RangeSelectorButtonTheme()
+		{
+			Height = Height_DefaultValue = 18;
+			Padding = Padding_DefaultValue = "2";
+			Width = Width_DefaultValue = 28;
+			ZIndex = ZIndex_DefaultValue = 7;
+			
+		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Width { get; set; }
+		private double? Width_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
+		  
+
+		internal override Hashtable ToHashtable()
+		{
+			Hashtable h = new Hashtable();
+
+			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			
+
+			return h;
+		}
+
+		internal override string ToJSON()
+		{            
+			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
+			if (h.Count > 0)
+				return serializer.Serialize(ToHashtable());
+			else 
+				return "";
+		}       
+
+		// checks if the state of the object is different from the default
+		// and therefore needs to be serialized
+		internal override bool IsDirty()
+		{
+			return ToHashtable().Count > 0;
+		}
+	}
+}

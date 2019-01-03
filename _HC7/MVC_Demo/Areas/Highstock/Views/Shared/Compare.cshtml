@@ -1,0 +1,85 @@
+﻿@using Highsoft.Web.Mvc.Stocks
+
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script type="text/javascript">
+
+    function formatYAxis() {
+        return (this.value > 0 ? ' + ' : '') + this.value + '%';
+    }
+
+</script>
+    
+    @(Html.Highsoft().GetHighstock(
+        new Highstock
+        {
+            RangeSelector = new RangeSelector
+            {
+                Selected = 4
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Ordinal = true
+
+                }
+            },
+
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Labels = new YAxisLabels
+                    {
+                        Formatter = "formatYAxis",
+
+                    },
+                    PlotLines = new List<YAxisPlotLines>
+                    {
+                        new YAxisPlotLines
+                        {
+                            Value = 0,
+                            Width = 2,
+                            Color = "silver"
+                        }
+                    }
+                }
+            },
+            PlotOptions = new PlotOptions
+            {
+                Series = new PlotOptionsSeries
+                {
+                    Compare = "percent"
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                PointFormat = @"<span style='color:{series.color}'>{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>",
+                ValueDecimals = 2
+            },
+            Series = new List<Series>
+            {
+                new LineSeries
+                {
+                   Data = ViewBag.AppleData as List<LineSeriesData>,
+                   Name = "Apple",
+                   TurboThreshold = 10000
+                },
+                new LineSeries
+                {
+                    Data = ViewBag.MsftData as List<LineSeriesData>,
+                    Name = "Microsoft",
+                    TurboThreshold = 10000
+                },
+                new LineSeries
+                {
+                    Data = ViewBag.GoogData as List<LineSeriesData>,
+                    Name = "Google",
+                    TurboThreshold = 10000
+                }
+            },
+        },
+        "chart"
+    ))

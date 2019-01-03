@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Background != Background_DefaultValue) h.Add("background",Background);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Background.IsDirty()) h.Add("background",Background.ToHashtable());
+			if (Color.IsDirty()) h.Add("color",Color.ToHashtable());
 			
 
 			return h;

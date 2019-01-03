@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areasplinerange_point_placement =
+[
+    [ "PlotOptionsAreasplinerangePointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areasplinerange_point_placement.html#a391104ca9292f5c8036b37e04fa0d4a0", null ]
+];

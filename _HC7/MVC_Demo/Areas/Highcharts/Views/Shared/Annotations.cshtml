@@ -1,0 +1,242 @@
+﻿<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/annotations.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+@Html.Highsoft().GetHighcharts(new Highcharts()
+{
+    Chart = new Highsoft.Web.Mvc.Charts.Chart
+    {
+        ZoomType = ChartZoomType.X,
+        Panning = true,
+        PanKey = ChartPanKey.Shift
+    },
+    Title = new Title
+    {
+        Text = "2017 Tour de France Stage 8: Dole - Station des Rousses"
+    },
+    Subtitle = new Subtitle
+    {
+        Text = "An annotated chart in Highcharts"
+    },
+    Annotations = new List<Annotations>
+    {
+        new Annotations
+        {
+            LabelOptions = new AnnotationsLabelOptions
+            {
+                BackgroundColor = "rgba(255,255,255,0.5)",
+                VerticalAlign = AnnotationsLabelOptionsVerticalAlign.Top,
+                Y = 15
+            },
+            Labels = new List<AnnotationsLabels>
+            {
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 27.98,
+                        Y = 255
+                    },
+                    Text = "Arbois"
+                },
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 45.5,
+                        Y = 611
+                    },
+                    X  = -10,
+                    Text = "Montrond"
+                },
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 63,
+                        Y = 651
+                    },
+                    Y = 25,
+                    Text = "Mont-sur-Monnet"
+                },
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 84,
+                        Y = 789
+                    },
+                    Text = "Bonlieu"
+                },
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 129.5,
+                        Y = 382
+                    },
+                    Text = "Chassal"
+                },
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 159,
+                        Y = 443
+                    },
+                    Text = "Saint-Claude"
+                }
+            }
+        },
+        new Annotations
+        {
+            Labels = new List<AnnotationsLabels>
+            {
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 101.44,
+                        Y = 1026
+                    },
+                    Text = "Col de la Joux"
+                },
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 138.5,
+                        Y = 748
+                    },
+                    X = 20,
+                    Text = "Côte de Viry"
+                },
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 176.4,
+                        Y = 1202
+                    },
+                    Text = "Montée de la Combe<br>de Laisia Les Molunes"
+                }
+            }
+        },
+        new Annotations
+        {
+            LabelOptions = new AnnotationsLabelOptions
+            {
+                Shape = "connector",
+                Align = AnnotationsLabelOptionsAlign.Right,
+                Crop = true,
+                Style = new AnnotationsLabelOptionsStyle
+                {
+                    FontSize = "0.8em"
+                }
+            },
+            Labels = new List<AnnotationsLabels>
+            {
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 96.2,
+                        Y = 783
+                    },
+                    Text = "6.1 km climb<br>4.6% on avg."
+                },
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 134.5,
+                        Y = 540
+                    },
+                    Text = "7.6 km climb<br>5.2% on avg."
+                },
+                new AnnotationsLabels
+                {
+                    Point = new AnnotationsLabelsPoint
+                    {
+                        XAxis = "X",
+                        YAxis = "Y",
+                        X = 172.2,
+                        Y = 925
+                    },
+                    Text = "11.7 km climb<br>6.4% on avg."
+                }
+            }
+        }
+    },
+    XAxis = new List<XAxis>()
+    {
+        new XAxis
+        {
+            Id = "X",
+            Labels = new XAxisLabels { Format = "{value} km" },
+            MinRange = 5,
+            Title = new XAxisTitle { Text = "Distance" }
+        }
+    },
+    YAxis = new List<YAxis>()
+    {
+        new YAxis
+        {
+            Id = "Y",
+            StartOnTick = true,
+            EndOnTick = false,
+            MaxPadding = 0.35,
+            Title = new YAxisTitle { Text = null },
+            Labels = new YAxisLabels { Format = "{value} m" }
+        }
+    },
+    Tooltip = new Tooltip
+    {
+        HeaderFormat = "Distance: {point.x:.1f} km<br>",
+        PointFormat = "{point.y} m a. s. l.",
+        Shared = true
+    },
+    Legend = new Legend
+    {
+        Enabled = false
+    },
+    Series = new List<Series>()
+    {
+        new AreaSeries
+        {
+            Data = @ViewData["data"] as List<AreaSeriesData>,
+            LineColor = "#030303",
+            Color = "#90ED7D",
+            FillOpacity = 0.5,
+            Name = "Elevation",
+            Marker = new AreaSeriesMarker { Enabled = false },
+            Threshold = null,
+            TurboThreshold = 2000
+
+        }
+    }
+}, "chart")

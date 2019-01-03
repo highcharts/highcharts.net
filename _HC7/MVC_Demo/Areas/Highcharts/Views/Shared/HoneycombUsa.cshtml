@@ -1,0 +1,99 @@
+﻿<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+<script src="https://code.highcharts.com/modules/tilemap.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+@Html.Highsoft().GetHighcharts(new Highcharts
+{
+    Chart = new Highsoft.Web.Mvc.Charts.Chart
+    {
+        Inverted = true,
+        Width = 650
+    },
+    Title = new Title
+    {
+        Text = "U.S. states by population in 2016"
+    },
+    Subtitle = new Subtitle
+    {
+        Text = "Source:<a href=\"https://simple.wikipedia.org/wiki/List_of_U.S._states_by_population\">Wikipedia</a>"
+    },
+    XAxis = new List<XAxis>
+    {
+        new XAxis
+        {
+            Visible = false
+        }
+    },
+    YAxis = new List<YAxis>
+    {
+        new YAxis
+        {
+            Visible = false
+        }
+    },
+    ColorAxis = new ColorAxis
+    {
+        DataClasses = new List<ColorAxisDataClasses>
+        {
+            new ColorAxisDataClasses
+            {
+                From = 0,
+                To = 1000000,
+                Color = "#F9EDB3",
+                Name = "< 1M"
+            },
+            new ColorAxisDataClasses
+            {
+                From = 1000000,
+                To = 5000000,
+                Color = "#FFC428",
+                Name = "1M - 5M"
+            },
+            new ColorAxisDataClasses
+            {
+                From = 5000000,
+                To = 20000000,
+                Color = "#FF7987",
+                Name = "5M - 20M"
+            },
+            new ColorAxisDataClasses
+            {
+                From = 20000000,
+                Color = "#FF2371",
+                Name = "> 20M"
+            }
+        }
+    },
+    Tooltip = new Tooltip
+    {
+        HeaderFormat = "",
+        PointFormat = "The population of <b> {point.name}</b> is <b>{point.value}</b>"
+    },
+    PlotOptions = new PlotOptions
+    {
+        Series = new PlotOptionsSeries
+        {
+            DataLabels = new PlotOptionsSeriesDataLabels
+            {
+                Enabled = true,
+                Format = "{point.id}",
+                Color = "#000000",
+                Style = new PlotOptionsSeriesDataLabelsStyle
+                {
+                    TextOutline = "0px"
+                }
+            }
+        }
+    },
+    Series = new List<Series>
+    {
+        new TilemapSeries
+        {
+            Name = "",
+            Data = ViewData["Data"] as List<TilemapSeriesData>
+        }
+    }
+},"container")

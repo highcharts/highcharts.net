@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnrange_point_placement =
+[
+    [ "PlotOptionsColumnrangePointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnrange_point_placement.html#a1301e92973f814ec8f53e363e8aea517", null ]
+];

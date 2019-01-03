@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_ikh_point_placement =
+[
+    [ "ColumnrangeSeriesIkhPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_ikh_point_placement.html#a3d654309b96676c6a3fc6809bca14ebd", null ]
+];

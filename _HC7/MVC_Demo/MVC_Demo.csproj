@@ -1,0 +1,1530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{93028492-0DBD-4003-8859-F35AC7C629EF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVC_Demo</RootNamespace>
+    <AssemblyName>MVC_Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK, Version=2.3.55.2, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.2.3.55.2\lib\net45\AWSSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Demo\DemoController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AnnotationsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaNegativeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaBasicController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaStackedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BubbleController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Bubble3dController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BulletGraphController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboDualAxesController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BarBasicController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BarStackedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BarNegativeStackController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnBasicController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnNegativeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnStackedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboMultiAxesController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Column3DInteractiveController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Column3DNullValuesController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Column3DStackingGroupingController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaStackedPercentController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaMissingController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreaInvertedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\AreasplineController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ArearangeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ArearangeLineController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnStackedAndGroupedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnStackedPercentController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnRotatedLabelsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnPlacementController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnParsedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnrangeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboRegressionController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\BoxPlotController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ColumnDrilldownController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboMeteogramController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ComboTimelineController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeActivityController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeClockController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeDualController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeSolidController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeVuMeterController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\HoneycombUsaController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineBoostController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieMonochromeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieGradientController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieDrilldownController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieSemiCircleController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Docs.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Scatter3dController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ScatterBoostController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SparklineController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\StreamgraphController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapLargeDatasetController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapWithLevelsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapColoraxisController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\HeatmapCanvasController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\DynamicMasterDetailController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\DynamicClickToAddController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\DynamicUpdateController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\RendererController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PolygonController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\WaterfallController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PyramidController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\FunnelController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ErrorBarController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PolarWindRoseController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PolarSpiderController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PolarController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\HeatmapController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\GaugeSpeedometerController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Pie3DDonutController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\Pie3DController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieDonutController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieLegendController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\PieBasicController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\ScatterController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineLogAxisController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplineIrregularTimeController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplinePlotBandsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplineSymbolsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SplineInvertedController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineTimeSeriesController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineAjaxController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineBasicController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\LineLabelsController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SharedController.cs" />
+    <Compile Include="Areas\Highcharts\HighchartsAreaRegistration.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Demo\DemoController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\AreaController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\ArearangeController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\AreasplineController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\AreasplinerangeController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\CandlestickController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\CandlestickAndVolumeController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\ColumnController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\ColumnrangeController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\CompareController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\Docs.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\FlagsShapesController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\FlagsPlacementController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\NavigatorDisabledController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\ScrollbarDisabledController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\StyledScrollbarController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\YaxisReversedController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\YaxisPlotbandsController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\YaxisPlotlinesController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\DataGroupingController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\DynamicUpdateController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\FlagsGeneralController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\IntradayBreaksController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\IntradayAreaController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\IntradayCandlestickController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\LazyLoadingController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\LineMarkersController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\MarkersOnlyController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\OhlcController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\BasicLineController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\SplineController.cs" />
+    <Compile Include="Areas\Highstock\Controllers\Shared\StepLineController.cs" />
+    <Compile Include="Areas\Highstock\HighstockAreaRegistration.cs" />
+    <Content Include="App_Data\ChartData_log.ldf">
+      <DependentUpon>ChartData.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\Areas\Highmaps\Controllers\Shared\HeatMapController.cs.txt" />
+    <Content Include="Content\Areas\Highmaps\Controllers\Shared\MapLineController.cs.txt" />
+    <Content Include="Content\Areas\Highmaps\Controllers\Shared\DistributionMapController.cs.txt" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AnnotationsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineBoostController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\StreamgraphController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ScatterBoostController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Scatter3DController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeActivityController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeDualController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeVUMeterController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BulletGraphController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\HoneycombUsaController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppleData.cs">
+      <DependentUpon>ChartData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CandlestickVolume.cs">
+      <DependentUpon>ChartData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChartData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChartData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChartData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChartData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChartData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChartData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompanyData.cs" />
+    <Compile Include="Models\AnnotationsData.cs" />
+    <Compile Include="Models\DataGrouping.cs">
+      <DependentUpon>ChartData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSource\DataReceiver.cs" />
+    <Compile Include="Models\Flag.cs">
+      <DependentUpon>ChartData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FlagData.cs" />
+    <Compile Include="Models\GoogleData.cs">
+      <DependentUpon>ChartData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Intraday.cs">
+      <DependentUpon>ChartData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LineBoostData.cs" />
+    <Compile Include="Models\MicrosoftData.cs">
+      <DependentUpon>ChartData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RangeData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\ChartData.mdf" />
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaBasicController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaInvertedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaMissingController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaNegativeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ArearangeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ArearangeLineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreasplineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaStackedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaStackedPercentController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BarBasicController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BarNegativeStackController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BarStackedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BoxPlotController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Bubble3dController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\BubbleController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Column3DInteractiveController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Column3DNullValuesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Column3DStackingGroupingController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnBasicController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnDrilldownController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnNegativeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnParsedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnPlacementController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnrangeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnRotatedLabelsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnStackedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnStackedAndGroupedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ColumnStackedPercentController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboDualAxesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboMeteogramController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboMultiAxesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboRegressionController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ComboTimelineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\DynamicClickToAddController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\DynamicMasterDetailController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\DynamicUpdateController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ErrorBarController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\FunnelController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeClockController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeSolidController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\GaugeSpeedometerController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\HeatmapCanvasController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\HeatmapController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineAjaxController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineBasicController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineLabelsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineLogAxisController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\LineTimeSeriesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Pie3DController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\Pie3DDonutController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieBasicController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieDonutController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieDrilldownController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieGradientController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieLegendController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieMonochromeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PieSemiCircleController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolarController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolarSpiderController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolarWindRoseController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PolygonController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\PyramidController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\RendererController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\ScatterController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SharedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SparklineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplineInvertedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplineIrregularTimeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplinePlotBandsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\SplineSymbolsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\TreemapColoraxisController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\TreemapLargeDatasetController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\TreemapWithLevelsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highcharts\Controllers\Shared\WaterfallController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreaController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ArearangeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreasplineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\AreasplinerangeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\CandlestickController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\CandlestickAndVolumeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ColumnController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ColumnRangeController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\CompareController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\DataGroupingController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\DynamicUpdateController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsGeneralController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsPlacementController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagsShapesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagssShapesColorsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\FlagssShapesColorstController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayBreaksController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayAreaController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\IntradayCandlestickController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\LazyLoadingController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\LineMarkersController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\MarkersOnly.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\MarkersOnlyController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\NavigatorDisabledController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\OHLCController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\StyledScrollbarController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\ScrollbarDisabledController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\BasicLineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\SplineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\SplineCotroller.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\StepLineController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotbandsController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotbandssController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisPlotlinesController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Areas\Highstock\Controllers\Shared\YAxisReversedController.cs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\font-awesome.css" />
+    <Content Include="Content\bootstrap\navigation-bar.css" />
+    <Content Include="Content\bootstrap\template.css" />
+    <Content Include="Content\bootstrap\template2.css" />
+    <Content Include="Content\chart_types\3d-column-interactive-dark-unica.png" />
+    <Content Include="Content\chart_types\3d-column-interactive-default.svg" />
+    <Content Include="Content\chart_types\3d-column-interactive-grid-light.png" />
+    <Content Include="Content\chart_types\3d-column-interactive-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\3d-column-interactive-sand-signika.svg" />
+    <Content Include="Content\chart_types\3d-column-null-values-dark-unica.png" />
+    <Content Include="Content\chart_types\3d-column-null-values-default.svg" />
+    <Content Include="Content\chart_types\3d-column-null-values-grid-light.png" />
+    <Content Include="Content\chart_types\3d-column-null-values-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\3d-column-null-values-sand-signika.svg" />
+    <Content Include="Content\chart_types\3d-column-stacking-grouping-dark-unica.png" />
+    <Content Include="Content\chart_types\3d-column-stacking-grouping-default.svg" />
+    <Content Include="Content\chart_types\3d-column-stacking-grouping-grid-light.png" />
+    <Content Include="Content\chart_types\3d-column-stacking-grouping-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\3d-column-stacking-grouping-sand-signika.svg" />
+    <Content Include="Content\chart_types\3d-pie-dark-unica.png" />
+    <Content Include="Content\chart_types\3d-pie-default.svg" />
+    <Content Include="Content\chart_types\3d-pie-donut-dark-unica.png" />
+    <Content Include="Content\chart_types\3d-pie-donut-default.svg" />
+    <Content Include="Content\chart_types\3d-pie-donut-grid-light.png" />
+    <Content Include="Content\chart_types\3d-pie-donut-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\3d-pie-donut-sand-signika.svg" />
+    <Content Include="Content\chart_types\3d-pie-grid-light.png" />
+    <Content Include="Content\chart_types\3d-pie-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\3d-pie-sand-signika.svg" />
+    <Content Include="Content\chart_types\3d-scatter-draggable-dark-unica.png" />
+    <Content Include="Content\chart_types\3d-scatter-draggable-grid-light.png" />
+    <Content Include="Content\chart_types\3d-scatter-draggable-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\3d-scatter-draggable-sand-signika.svg" />
+    <Content Include="Content\chart_types\area-basic-dark-unica.png" />
+    <Content Include="Content\chart_types\area-basic-default.svg" />
+    <Content Include="Content\chart_types\area-basic-grid-light.png" />
+    <Content Include="Content\chart_types\area-basic-sand-signika.svg" />
+    <Content Include="Content\chart_types\area-inverted-dark-unica.png" />
+    <Content Include="Content\chart_types\area-inverted-default.svg" />
+    <Content Include="Content\chart_types\area-inverted-grid-light.png" />
+    <Content Include="Content\chart_types\area-inverted-sand-signika.svg" />
+    <Content Include="Content\chart_types\area-missing-dark-unica.png" />
+    <Content Include="Content\chart_types\area-missing-default.svg" />
+    <Content Include="Content\chart_types\area-missing-grid-light.png" />
+    <Content Include="Content\chart_types\area-missing-sand-signika.svg" />
+    <Content Include="Content\chart_types\area-negative-dark-unica.png" />
+    <Content Include="Content\chart_types\area-negative-default.svg" />
+    <Content Include="Content\chart_types\area-negative-grid-light.png" />
+    <Content Include="Content\chart_types\area-negative-sand-signika.svg" />
+    <Content Include="Content\chart_types\area-stacked-dark-unica.png" />
+    <Content Include="Content\chart_types\area-stacked-default.svg" />
+    <Content Include="Content\chart_types\area-stacked-grid-light.png" />
+    <Content Include="Content\chart_types\area-stacked-percent-dark-unica.png" />
+    <Content Include="Content\chart_types\area-stacked-percent-default.svg" />
+    <Content Include="Content\chart_types\area-stacked-percent-grid-light.png" />
+    <Content Include="Content\chart_types\area-stacked-percent-sand-signika.svg" />
+    <Content Include="Content\chart_types\area-stacked-sand-signika.svg" />
+    <Content Include="Content\chart_types\arearange-dark-unica.png" />
+    <Content Include="Content\chart_types\arearange-default.svg" />
+    <Content Include="Content\chart_types\arearange-grid-light.png" />
+    <Content Include="Content\chart_types\arearange-line-dark-unica.png" />
+    <Content Include="Content\chart_types\arearange-line-default.svg" />
+    <Content Include="Content\chart_types\arearange-line-grid-light.png" />
+    <Content Include="Content\chart_types\arearange-line-sand-signika.svg" />
+    <Content Include="Content\chart_types\arearange-sand-signika.svg" />
+    <Content Include="Content\chart_types\areaspline-dark-unica.png" />
+    <Content Include="Content\chart_types\areaspline-default.svg" />
+    <Content Include="Content\chart_types\areaspline-grid-light.png" />
+    <Content Include="Content\chart_types\areaspline-sand-signika.svg" />
+    <Content Include="Content\chart_types\bar-basic-dark-unica.png" />
+    <Content Include="Content\chart_types\bar-basic-default.svg" />
+    <Content Include="Content\chart_types\bar-basic-grid-light.png" />
+    <Content Include="Content\chart_types\bar-basic-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\bar-basic-sand-signika.svg" />
+    <Content Include="Content\chart_types\bar-negative-stack-dark-unica.png" />
+    <Content Include="Content\chart_types\bar-negative-stack-default.svg" />
+    <Content Include="Content\chart_types\bar-negative-stack-grid-light.png" />
+    <Content Include="Content\chart_types\bar-negative-stack-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\bar-negative-stack-sand-signika.svg" />
+    <Content Include="Content\chart_types\bar-stacked-dark-unica.png" />
+    <Content Include="Content\chart_types\bar-stacked-default.svg" />
+    <Content Include="Content\chart_types\bar-stacked-grid-light.png" />
+    <Content Include="Content\chart_types\bar-stacked-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\bar-stacked-sand-signika.svg" />
+    <Content Include="Content\chart_types\box-plot-dark-unica.png" />
+    <Content Include="Content\chart_types\box-plot-default.svg" />
+    <Content Include="Content\chart_types\box-plot-grid-light.png" />
+    <Content Include="Content\chart_types\box-plot-sand-signika.svg" />
+    <Content Include="Content\chart_types\bubble-3d-dark-unica.png" />
+    <Content Include="Content\chart_types\bubble-3d-default.svg" />
+    <Content Include="Content\chart_types\bubble-3d-grid-light.png" />
+    <Content Include="Content\chart_types\bubble-3d-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\bubble-3d-sand-signika.svg" />
+    <Content Include="Content\chart_types\bubble-dark-unica.png" />
+    <Content Include="Content\chart_types\bubble-default.svg" />
+    <Content Include="Content\chart_types\bubble-grid-light.png" />
+    <Content Include="Content\chart_types\bubble-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\bubble-sand-signika.svg" />
+    <Content Include="Content\chart_types\column-basic-dark-unica.png" />
+    <Content Include="Content\chart_types\column-basic-default.svg" />
+    <Content Include="Content\chart_types\column-basic-grid-light.png" />
+    <Content Include="Content\chart_types\column-basic-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\column-basic-sand-signika.svg" />
+    <Content Include="Content\chart_types\column-drilldown-dark-unica.png" />
+    <Content Include="Content\chart_types\column-drilldown-default.svg" />
+    <Content Include="Content\chart_types\column-drilldown-grid-light.png" />
+    <Content Include="Content\chart_types\column-drilldown-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\column-drilldown-sand-signika.svg" />
+    <Content Include="Content\chart_types\column-negative-dark-unica.png" />
+    <Content Include="Content\chart_types\column-negative-default.svg" />
+    <Content Include="Content\chart_types\column-negative-grid-light.png" />
+    <Content Include="Content\chart_types\column-negative-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\column-negative-sand-signika.svg" />
+    <Content Include="Content\chart_types\column-parsed-dark-unica.png" />
+    <Content Include="Content\chart_types\column-parsed-default.svg" />
+    <Content Include="Content\chart_types\column-parsed-grid-light.png" />
+    <Content Include="Content\chart_types\column-parsed-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\column-parsed-sand-signika.svg" />
+    <Content Include="Content\chart_types\column-placement-dark-unica.png" />
+    <Content Include="Content\chart_types\column-placement-default.svg" />
+    <Content Include="Content\chart_types\column-placement-grid-light.png" />
+    <Content Include="Content\chart_types\column-placement-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\column-placement-sand-signika.svg" />
+    <Content Include="Content\chart_types\column-rotated-labels-dark-unica.png" />
+    <Content Include="Content\chart_types\column-rotated-labels-default.svg" />
+    <Content Include="Content\chart_types\column-rotated-labels-grid-light.png" />
+    <Content Include="Content\chart_types\column-rotated-labels-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\column-rotated-labels-sand-signika.svg" />
+    <Content Include="Content\chart_types\column-stacked-and-grouped-dark-unica.png" />
+    <Content Include="Content\chart_types\column-stacked-and-grouped-default.svg" />
+    <Content Include="Content\chart_types\column-stacked-and-grouped-grid-light.png" />
+    <Content Include="Content\chart_types\column-stacked-and-grouped-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\column-stacked-and-grouped-sand-signika.svg" />
+    <Content Include="Content\chart_types\column-stacked-dark-unica.png" />
+    <Content Include="Content\chart_types\column-stacked-default.svg" />
+    <Content Include="Content\chart_types\column-stacked-grid-light.png" />
+    <Content Include="Content\chart_types\column-stacked-percent-dark-unica.png" />
+    <Content Include="Content\chart_types\column-stacked-percent-default.svg" />
+    <Content Include="Content\chart_types\column-stacked-percent-grid-light.png" />
+    <Content Include="Content\chart_types\column-stacked-percent-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\column-stacked-percent-sand-signika.svg" />
+    <Content Include="Content\chart_types\column-stacked-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\column-stacked-sand-signika.svg" />
+    <Content Include="Content\chart_types\columnrange-dark-unica.png" />
+    <Content Include="Content\chart_types\columnrange-default.svg" />
+    <Content Include="Content\chart_types\columnrange-grid-light.png" />
+    <Content Include="Content\chart_types\columnrange-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\columnrange-sand-signika.svg" />
+    <Content Include="Content\chart_types\combo-dark-unica.png" />
+    <Content Include="Content\chart_types\combo-default.svg" />
+    <Content Include="Content\chart_types\combo-dual-axes-dark-unica.png" />
+    <Content Include="Content\chart_types\combo-dual-axes-default.svg" />
+    <Content Include="Content\chart_types\combo-dual-axes-grid-light.png" />
+    <Content Include="Content\chart_types\combo-dual-axes-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\combo-dual-axes-sand-signika.svg" />
+    <Content Include="Content\chart_types\combo-grid-light.png" />
+    <Content Include="Content\chart_types\combo-meteogram-dark-unica.png" />
+    <Content Include="Content\chart_types\combo-meteogram-default.png" />
+    <Content Include="Content\chart_types\combo-meteogram-grid-light.png" />
+    <Content Include="Content\chart_types\combo-meteogram-sand-signika - Copy.png" />
+    <Content Include="Content\chart_types\combo-meteogram-sand-signika.png" />
+    <Content Include="Content\chart_types\combo-multi-axes-dark-unica.png" />
+    <Content Include="Content\chart_types\combo-multi-axes-default.svg" />
+    <Content Include="Content\chart_types\combo-multi-axes-grid-light.png" />
+    <Content Include="Content\chart_types\combo-multi-axes-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\combo-multi-axes-sand-signika.svg" />
+    <Content Include="Content\chart_types\combo-regression-dark-unica.png" />
+    <Content Include="Content\chart_types\combo-regression-default.svg" />
+    <Content Include="Content\chart_types\combo-regression-grid-light.png" />
+    <Content Include="Content\chart_types\combo-regression-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\combo-regression-sand-signika.svg" />
+    <Content Include="Content\chart_types\combo-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\combo-sand-signika.svg" />
+    <Content Include="Content\chart_types\combo-timeline-dark-unica.png" />
+    <Content Include="Content\chart_types\combo-timeline-default.svg" />
+    <Content Include="Content\chart_types\combo-timeline-grid-light.png" />
+    <Content Include="Content\chart_types\combo-timeline-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\combo-timeline-sand-signika.svg" />
+    <Content Include="Content\chart_types\dynamic-click-to-add-dark-unica.png" />
+    <Content Include="Content\chart_types\dynamic-click-to-add-default.svg" />
+    <Content Include="Content\chart_types\dynamic-click-to-add-grid-light.png" />
+    <Content Include="Content\chart_types\dynamic-click-to-add-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\dynamic-click-to-add-sand-signika.svg" />
+    <Content Include="Content\chart_types\dynamic-master-detail-dark-unica.png" />
+    <Content Include="Content\chart_types\dynamic-master-detail-default.svg" />
+    <Content Include="Content\chart_types\dynamic-master-detail-grid-light.png" />
+    <Content Include="Content\chart_types\dynamic-master-detail-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\dynamic-master-detail-sand-signika.svg" />
+    <Content Include="Content\chart_types\dynamic-update-dark-unica.png" />
+    <Content Include="Content\chart_types\dynamic-update-default.svg" />
+    <Content Include="Content\chart_types\dynamic-update-grid-light.png" />
+    <Content Include="Content\chart_types\dynamic-update-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\dynamic-update-sand-signika.svg" />
+    <Content Include="Content\chart_types\error-bar-dark-unica.png" />
+    <Content Include="Content\chart_types\error-bar-default.svg" />
+    <Content Include="Content\chart_types\error-bar-grid-light.png" />
+    <Content Include="Content\chart_types\error-bar-sand-signika.svg" />
+    <Content Include="Content\chart_types\funnel-dark-unica.png" />
+    <Content Include="Content\chart_types\funnel-default.svg" />
+    <Content Include="Content\chart_types\funnel-grid-light.png" />
+    <Content Include="Content\chart_types\funnel-sand-signika.svg" />
+    <Content Include="Content\chart_types\gauge-clock-dark-unica.png" />
+    <Content Include="Content\chart_types\gauge-clock-default.svg" />
+    <Content Include="Content\chart_types\gauge-clock-grid-light.png" />
+    <Content Include="Content\chart_types\gauge-clock-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\gauge-clock-sand-signika.svg" />
+    <Content Include="Content\chart_types\gauge-dual-dark-unica.png" />
+    <Content Include="Content\chart_types\gauge-dual-default.svg" />
+    <Content Include="Content\chart_types\gauge-dual-grid-light.png" />
+    <Content Include="Content\chart_types\gauge-dual-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\gauge-dual-sand-signika.svg" />
+    <Content Include="Content\chart_types\gauge-solid-dark-unica.png" />
+    <Content Include="Content\chart_types\gauge-solid-default.png" />
+    <Content Include="Content\chart_types\gauge-solid-grid-light.png" />
+    <Content Include="Content\chart_types\gauge-solid-sand-signika - Copy.png" />
+    <Content Include="Content\chart_types\gauge-solid-sand-signika.png" />
+    <Content Include="Content\chart_types\gauge-speedometer-dark-unica.png" />
+    <Content Include="Content\chart_types\gauge-speedometer-default.svg" />
+    <Content Include="Content\chart_types\gauge-speedometer-grid-light.png" />
+    <Content Include="Content\chart_types\gauge-speedometer-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\gauge-speedometer-sand-signika.svg" />
+    <Content Include="Content\chart_types\gauge-vu-meter-dark-unica.png" />
+    <Content Include="Content\chart_types\gauge-vu-meter-default.svg" />
+    <Content Include="Content\chart_types\gauge-vu-meter-grid-light.png" />
+    <Content Include="Content\chart_types\gauge-vu-meter-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\gauge-vu-meter-sand-signika.svg" />
+    <Content Include="Content\chart_types\heatmap-canvas-dark-unica.png" />
+    <Content Include="Content\chart_types\heatmap-canvas-default.png" />
+    <Content Include="Content\chart_types\heatmap-canvas-grid-light.png" />
+    <Content Include="Content\chart_types\heatmap-canvas-sand-signika - Copy.png" />
+    <Content Include="Content\chart_types\heatmap-canvas-sand-signika.png" />
+    <Content Include="Content\chart_types\heatmap-dark-unica.png" />
+    <Content Include="Content\chart_types\heatmap-default.svg" />
+    <Content Include="Content\chart_types\heatmap-grid-light.png" />
+    <Content Include="Content\chart_types\heatmap-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\heatmap-sand-signika.svg" />
+    <Content Include="Content\chart_types\highslide - Copy.css" />
+    <Content Include="Content\chart_types\highslide.css" />
+    <Content Include="Content\chart_types\line-ajax-dark-unica.png" />
+    <Content Include="Content\chart_types\line-ajax-default.svg" />
+    <Content Include="Content\chart_types\line-ajax-grid-light.png" />
+    <Content Include="Content\chart_types\line-ajax-sand-signika.svg" />
+    <Content Include="Content\chart_types\line-basic-dark-unica.png" />
+    <Content Include="Content\chart_types\line-basic-default.svg" />
+    <Content Include="Content\chart_types\line-basic-grid-light.png" />
+    <Content Include="Content\chart_types\line-basic-sand-signika.svg" />
+    <Content Include="Content\chart_types\line-labels-dark-unica.png" />
+    <Content Include="Content\chart_types\line-labels-default.svg" />
+    <Content Include="Content\chart_types\line-labels-grid-light.png" />
+    <Content Include="Content\chart_types\line-labels-sand-signika.svg" />
+    <Content Include="Content\chart_types\line-log-axis-dark-unica %281%29.png" />
+    <Content Include="Content\chart_types\line-log-axis-dark-unica.png" />
+    <Content Include="Content\chart_types\line-log-axis-default.svg" />
+    <Content Include="Content\chart_types\line-log-axis-grid-light.png" />
+    <Content Include="Content\chart_types\line-log-axis-sand-signika.svg" />
+    <Content Include="Content\chart_types\line-time-series-dark-unica.png" />
+    <Content Include="Content\chart_types\line-time-series-default.svg" />
+    <Content Include="Content\chart_types\line-time-series-grid-light.png" />
+    <Content Include="Content\chart_types\line-time-series-sand-signika.svg" />
+    <Content Include="Content\chart_types\logo - Copy.svg" />
+    <Content Include="Content\chart_types\pie-basic-dark-unica.png" />
+    <Content Include="Content\chart_types\pie-basic-default.svg" />
+    <Content Include="Content\chart_types\pie-basic-grid-light.png" />
+    <Content Include="Content\chart_types\pie-basic-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\pie-basic-sand-signika.svg" />
+    <Content Include="Content\chart_types\pie-donut-dark-unica.png" />
+    <Content Include="Content\chart_types\pie-donut-default.svg" />
+    <Content Include="Content\chart_types\pie-donut-grid-light.png" />
+    <Content Include="Content\chart_types\pie-donut-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\pie-donut-sand-signika.svg" />
+    <Content Include="Content\chart_types\pie-drilldown-dark-unica.png" />
+    <Content Include="Content\chart_types\pie-drilldown-default.svg" />
+    <Content Include="Content\chart_types\pie-drilldown-grid-light.png" />
+    <Content Include="Content\chart_types\pie-drilldown-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\pie-drilldown-sand-signika.svg" />
+    <Content Include="Content\chart_types\pie-gradient-dark-unica.png" />
+    <Content Include="Content\chart_types\pie-gradient-default.svg" />
+    <Content Include="Content\chart_types\pie-gradient-grid-light.png" />
+    <Content Include="Content\chart_types\pie-gradient-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\pie-gradient-sand-signika.svg" />
+    <Content Include="Content\chart_types\pie-legend-dark-unica.png" />
+    <Content Include="Content\chart_types\pie-legend-default.svg" />
+    <Content Include="Content\chart_types\pie-legend-grid-light.png" />
+    <Content Include="Content\chart_types\pie-legend-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\pie-legend-sand-signika.svg" />
+    <Content Include="Content\chart_types\pie-monochrome-dark-unica.png" />
+    <Content Include="Content\chart_types\pie-monochrome-default.svg" />
+    <Content Include="Content\chart_types\pie-monochrome-grid-light.png" />
+    <Content Include="Content\chart_types\pie-monochrome-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\pie-monochrome-sand-signika.svg" />
+    <Content Include="Content\chart_types\pie-semi-circle-dark-unica.png" />
+    <Content Include="Content\chart_types\pie-semi-circle-default.svg" />
+    <Content Include="Content\chart_types\pie-semi-circle-grid-light.png" />
+    <Content Include="Content\chart_types\pie-semi-circle-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\pie-semi-circle-sand-signika.svg" />
+    <Content Include="Content\chart_types\polar-dark-unica.png" />
+    <Content Include="Content\chart_types\polar-default.svg" />
+    <Content Include="Content\chart_types\polar-grid-light.png" />
+    <Content Include="Content\chart_types\polar-sand-signika.svg" />
+    <Content Include="Content\chart_types\polar-spider-dark-unica.png" />
+    <Content Include="Content\chart_types\polar-spider-default.svg" />
+    <Content Include="Content\chart_types\polar-spider-grid-light.png" />
+    <Content Include="Content\chart_types\polar-spider-sand-signika.svg" />
+    <Content Include="Content\chart_types\polar-wind-rose-dark-unica.png" />
+    <Content Include="Content\chart_types\polar-wind-rose-default.svg" />
+    <Content Include="Content\chart_types\polar-wind-rose-grid-light.png" />
+    <Content Include="Content\chart_types\polar-wind-rose-sand-signika.svg" />
+    <Content Include="Content\chart_types\polygon-dark-unica.png" />
+    <Content Include="Content\chart_types\polygon-default.svg" />
+    <Content Include="Content\chart_types\polygon-grid-light.png" />
+    <Content Include="Content\chart_types\polygon-sand-signika.svg" />
+    <Content Include="Content\chart_types\pyramid-dark-unica.png" />
+    <Content Include="Content\chart_types\pyramid-default.svg" />
+    <Content Include="Content\chart_types\pyramid-grid-light.png" />
+    <Content Include="Content\chart_types\pyramid-sand-signika.svg" />
+    <Content Include="Content\chart_types\renderer-dark-unica.png" />
+    <Content Include="Content\chart_types\renderer-default.svg" />
+    <Content Include="Content\chart_types\renderer-grid-light.png" />
+    <Content Include="Content\chart_types\renderer-sand-signika.svg" />
+    <Content Include="Content\chart_types\sand - Copy.png" />
+    <Content Include="Content\chart_types\scatter-dark-unica.png" />
+    <Content Include="Content\chart_types\scatter-default.svg" />
+    <Content Include="Content\chart_types\scatter-grid-light.png" />
+    <Content Include="Content\chart_types\scatter-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\scatter-sand-signika.svg" />
+    <Content Include="Content\chart_types\Site - Copy.css" />
+    <Content Include="Content\chart_types\Site.css" />
+    <Content Include="Content\chart_types\sparkline-dark-unica.png" />
+    <Content Include="Content\chart_types\sparkline-default.png" />
+    <Content Include="Content\chart_types\sparkline-grid-light.png" />
+    <Content Include="Content\chart_types\sparkline-sand-signika.png" />
+    <Content Include="Content\chart_types\spline-inverted-dark-unica.png" />
+    <Content Include="Content\chart_types\spline-inverted-default.svg" />
+    <Content Include="Content\chart_types\spline-inverted-grid-light.png" />
+    <Content Include="Content\chart_types\spline-inverted-sand-signika.svg" />
+    <Content Include="Content\chart_types\spline-irregular-time-dark-unica.png" />
+    <Content Include="Content\chart_types\spline-irregular-time-default.svg" />
+    <Content Include="Content\chart_types\spline-irregular-time-grid-light.png" />
+    <Content Include="Content\chart_types\spline-irregular-time-sand-signika.svg" />
+    <Content Include="Content\chart_types\spline-plot-bands-dark-unica.png" />
+    <Content Include="Content\chart_types\spline-plot-bands-default.svg" />
+    <Content Include="Content\chart_types\spline-plot-bands-grid-light.png" />
+    <Content Include="Content\chart_types\spline-plot-bands-sand-signika.svg" />
+    <Content Include="Content\chart_types\spline-symbols-dark-unica.png" />
+    <Content Include="Content\chart_types\spline-symbols-default.png" />
+    <Content Include="Content\chart_types\spline-symbols-grid-light.png" />
+    <Content Include="Content\chart_types\spline-symbols-sand-signika.png" />
+    <Content Include="Content\chart_types\synchronized-charts-dark-unica.png" />
+    <Content Include="Content\chart_types\synchronized-charts-grid-light.png" />
+    <Content Include="Content\chart_types\synchronized-charts-sand-signika - Copy.png" />
+    <Content Include="Content\chart_types\synchronized-charts-sand-signika.png" />
+    <Content Include="Content\chart_types\treemap-coloraxis-dark-unica.png" />
+    <Content Include="Content\chart_types\treemap-coloraxis-default.svg" />
+    <Content Include="Content\chart_types\treemap-coloraxis-grid-light.png" />
+    <Content Include="Content\chart_types\treemap-coloraxis-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\treemap-coloraxis-sand-signika.svg" />
+    <Content Include="Content\chart_types\treemap-large-dataset-dark-unica.png" />
+    <Content Include="Content\chart_types\treemap-large-dataset-default.svg" />
+    <Content Include="Content\chart_types\treemap-large-dataset-grid-light.png" />
+    <Content Include="Content\chart_types\treemap-large-dataset-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\treemap-large-dataset-sand-signika.svg" />
+    <Content Include="Content\chart_types\treemap-with-levels-dark-unica.png" />
+    <Content Include="Content\chart_types\treemap-with-levels-default.svg" />
+    <Content Include="Content\chart_types\treemap-with-levels-grid-light.png" />
+    <Content Include="Content\chart_types\treemap-with-levels-sand-signika - Copy.svg" />
+    <Content Include="Content\chart_types\treemap-with-levels-sand-signika.svg" />
+    <Content Include="Content\chart_types\waterfall-dark-unica.png" />
+    <Content Include="Content\chart_types\waterfall-default.svg" />
+    <Content Include="Content\chart_types\waterfall-grid-light.png" />
+    <Content Include="Content\chart_types\waterfall-sand-signika.svg" />
+    <Content Include="Content\closeX.png" />
+    <Content Include="Content\HC.png" />
+    <Content Include="Content\HC2.png" />
+    <Content Include="Content\HS.png" />
+    <Content Include="Content\images\adddata1.png" />
+    <Content Include="Content\images\adddata2.png" />
+    <Content Include="Content\images\add_user_control1.png" />
+    <Content Include="Content\images\add_user_control2.png" />
+    <Content Include="Content\images\areachart1.png" />
+    <Content Include="Content\images\ascx_cs.png" />
+    <Content Include="Content\images\aspx.png" />
+    <Content Include="Content\images\Controller.png" />
+    <Content Include="Content\images\dotnet_logo.png" />
+    <Content Include="Content\images\Highcharts.png" />
+    <Content Include="Content\images\Highsoft_Web_Mvc_Charts.png" />
+    <Content Include="Content\images\image00.png" />
+    <Content Include="Content\images\image01.png" />
+    <Content Include="Content\images\image02.png" />
+    <Content Include="Content\images\image03.png" />
+    <Content Include="Content\images\image04.png" />
+    <Content Include="Content\images\image05.png" />
+    <Content Include="Content\images\image06.png" />
+    <Content Include="Content\images\image07.png" />
+    <Content Include="Content\images\image08.png" />
+    <Content Include="Content\images\JSreferences.png" />
+    <Content Include="Content\images\logo.svg" />
+    <Content Include="Content\images\logo_png.png" />
+    <Content Include="Content\images\nuget2.png" />
+    <Content Include="Content\images\reference.png" />
+    <Content Include="Content\images\script1.png" />
+    <Content Include="Content\images\script2.png" />
+    <Content Include="Content\images\system_web_mvc.png" />
+    <Content Include="Content\images\System_web_mvc2.png" />
+    <Content Include="Content\images\View2.png" />
+    <Content Include="Content\loader.white.gif" />
+    <Content Include="Content\gallery.css" />
+    <Content Include="Content\highslide.css" />
+    <Content Include="Content\logo.svg" />
+    <Content Include="Content\index.css" />
+    <Content Include="Content\images\nuget1.png" />
+    <Content Include="Content\resize.gif" />
+    <Content Include="Content\roboto.css" />
+    <Content Include="Content\sand.png" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\wrapper_logo.png" />
+    <Content Include="Content\wrapper_logo2.png" />
+    <Content Include="Docs\Highcharts\images\image00.png" />
+    <Content Include="Docs\Highcharts\images\image01.png" />
+    <Content Include="Docs\Highcharts\images\image02.png" />
+    <Content Include="Docs\Highcharts\images\image03.png" />
+    <Content Include="Docs\Highcharts\images\image04.png" />
+    <Content Include="Docs\Highcharts\images\image05.png" />
+    <Content Include="Docs\Highcharts\images\image06.png" />
+    <Content Include="Docs\Highcharts\images\image07.png" />
+    <Content Include="Docs\Highcharts\images\image08.png" />
+    <Content Include="Docs\Highcharts\index.html" />
+    <Content Include="Docs\Highstock\index.html" />
+    <Content Include="Docs\Highstock\images\image00.png" />
+    <Content Include="Docs\Highstock\images\image01.png" />
+    <Content Include="Docs\Highstock\images\image02.png" />
+    <Content Include="Docs\Highstock\images\image03.png" />
+    <Content Include="Docs\Highstock\images\image04.png" />
+    <Content Include="Docs\Highstock\images\image05.png" />
+    <Content Include="Docs\Highstock\images\image06.png" />
+    <Content Include="Docs\Highstock\images\image07.png" />
+    <Content Include="Docs\Highstock\images\image08.png" />
+    <Content Include="Files\js\data.js" />
+    <Content Include="Files\js\drilldown.js" />
+    <Content Include="Files\js\exporting.js" />
+    <Content Include="Files\js\funnel.js" />
+    <Content Include="Files\js\heatmap.js" />
+    <Content Include="Files\js\highcharts-3d.js" />
+    <Content Include="Files\js\highcharts-more.js" />
+    <Content Include="Files\js\highcharts.js" />
+    <Content Include="Files\js\solid-gauge.js" />
+    <Content Include="Files\js\treemap.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\Highcharts\Views\Web.config" />
+    <Content Include="Areas\Highcharts\Views\Demo\Index.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\Gallery.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineLabels.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineLogAxis.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineAjax.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\SplineInverted.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\SplineSymbols.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\SplinePlotBands.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\SplineIrregularTime.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaNegative.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaStacked.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\BarBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\BarStacked.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\BarNegativeStack.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnNegative.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnStacked.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieBasic.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieLegend.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieDonut.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Scatter.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Bubble.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Bubble3d.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Combo.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ComboDualAxes.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ComboMultiAxes.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Column3DInteractive.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Column3DNullValues.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Column3DStackingGrouping.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Pie3D.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Pie3DDonut.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeSpeedometer.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\HeatMap.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaStackedPercent.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaMissing.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaInverted.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaSpline.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaRange.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\AreaRangeLine.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnStackedAndGrouped.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnStackedPercent.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnRotatedLabels.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnPlacement.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnParsed.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnRange.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ComboRegression.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Polar.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PolarSpider.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PolarWindRose.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\BoxPlot.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ErrorBar.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Funnel.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Pyramid.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Waterfall.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Polygon.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Renderer.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\DynamicUpdate.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\DynamicClickToAdd.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\DynamicMasterDetail.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\HeatMapCanvas.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\TreemapColoraxis.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\TreemapWithLevels.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\TreemapLargeDataset.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Sparkline.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ColumnDrilldown.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieSemiCircle.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieDrilldown.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieGradient.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\PieMonochrome.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ComboMeteogram.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ComboTimeline.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeSolid.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeClock.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\Chart.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\ViewCode.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\ControllerCode.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineTimeSeries.cshtml" />
+    <Content Include="Areas\Highstock\Views\Web.config" />
+    <Content Include="Areas\Highstock\Views\Shared\Area.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Arearange.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Areaspline.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Areasplinerange.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Candlestick.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\CandlestickAndVolume.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Column.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Columnrange.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Compare.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\DataGrouping.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\DynamicUpdate.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FlagsGeneral.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\IntradayArea.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\IntradayBreaks.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\IntradayCandlestick.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\LazyLoading.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\LineMarkers.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\MarkersOnly.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Ohlc.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\BasicLine.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Spline.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\StepLine.cshtml" />
+    <Content Include="Areas\Highstock\Views\Demo\Gallery.cshtml" />
+    <Content Include="Areas\Highstock\Views\Demo\Index.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\YaxisPlotlines.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\YaxisPlotbands.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\YaxisReversed.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\StyledScrollbar.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\ScrollbarDisabled.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\NavigatorDisabled.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FlagsPlacement.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FlagsShapes.cshtml" />
+    <Content Include="downloads\Highcharts_ASPNET_MVC.zip" />
+    <Content Include="downloads\Highstock_ASPNET_MVC.zip" />
+    <EntityDeploy Include="Models\ChartData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ChartData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ChartData.edmx.diagram">
+      <DependentUpon>ChartData.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Highstock\Views\Demo\Chart.cshtml" />
+    <Content Include="Areas\Highstock\Views\Demo\ViewCode.cshtml" />
+    <Content Include="Areas\Highstock\Views\Demo\ControllerCode.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\Index2.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Demo\Docs.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ServerSideRequirements.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ClientSideRequirements.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Installation.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\VS.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\IDE.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\FirstChart1.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\FirstChart2.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\FirstChart3.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\FirstChart4.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\FirstChart5.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\FirstChart6.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\License.cshtml" />
+    <Content Include="Content\fonts\roboto\roboto-bold-webfont.woff2" />
+    <Content Include="Content\fonts\roboto\roboto-medium-webfont.woff2" />
+    <Content Include="Content\fonts\roboto\roboto-regular-webfont.woff2" />
+    <Content Include="Content\fonts\roboto\roboto-regular-webfont.eot" />
+    <Content Include="Content\fonts\roboto\roboto-regular-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\roboto-regular-webfont.woff" />
+    <Content Include="Content\fonts\roboto\roboto-regular-webfont_ie.eot" />
+    <Content Include="Content\fonts\roboto\roboto-thin-webfont.woff2" />
+    <Content Include="Content\fonts\roboto\roboto-bold-webfont.eot" />
+    <Content Include="Content\fonts\roboto\roboto-bold-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\roboto-bold-webfont.woff" />
+    <Content Include="Content\fonts\roboto\roboto-bold-webfont_ie.eot" />
+    <Content Include="Content\fonts\roboto\roboto-medium-webfont.eot" />
+    <Content Include="Content\fonts\roboto\roboto-medium-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\roboto-medium-webfont.woff" />
+    <Content Include="Content\fonts\roboto\roboto-medium-webfont_ie.eot" />
+    <Content Include="Content\fonts\roboto\roboto-thin-webfont.eot" />
+    <Content Include="Content\fonts\roboto\roboto-thin-webfont.ttf" />
+    <Content Include="Content\fonts\roboto\roboto-thin-webfont.woff" />
+    <Content Include="Content\fonts\roboto\roboto-thin-webfont_ie.eot" />
+    <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart1.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart2.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart3.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart4.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart5.cshtml" />
+    <Content Include="Areas\Highstock\Views\Demo\Docs.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\ClientSideRequirements.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\IDE.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\License.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart1.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart2.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart3.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart4.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart5.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart1.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart2.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart3.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart4.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart5.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart6.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\ServerSideRequirements.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\VS.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\FirstChart0.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\WFFirstChart0.cshtml" />
+    <Content Include="downloads\MVC\MVCSamples.zip" />
+    <Content Include="downloads\WebForms\WebFormsSamples.zip" />
+    <Content Include="Areas\Highstock\Views\Shared\FirstChart0.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\WFFirstChart0.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Demo2.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Demo1.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Demo1.cshtml" />
+    <Content Include="Areas\Highstock\Views\Shared\Demo2.cshtml" />
+    <Content Include="App_Data\annotations.csv" />
+    <Content Include="Areas\Highcharts\Views\Shared\Annotations.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\LineBoost.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Streamgraph.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\ScatterBoost.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Scatter3D.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeActivity.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeDual.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\GaugeVuMeter.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\BulletGraph.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\HoneycombUsa.cshtml" />
+    <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
+    <None Include="Properties\PublishProfiles\dd.pubxml" />
+    <None Include="Properties\PublishProfiles\hc5.pubxml" />
+    <None Include="Properties\PublishProfiles\HC6_dev.pubxml" />
+    <None Include="Properties\PublishProfiles\Testing_HC5.pubxml" />
+    <Content Include="Models\ChartData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ChartData.edmx</DependentUpon>
+      <LastGenOutput>ChartData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ChartData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ChartData.edmx</DependentUpon>
+      <LastGenOutput>ChartData.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\fix.navigation.js" />
+    <Content Include="Scripts\highcharts-all.js" />
+    <Content Include="Scripts\highcharts.src.js" />
+    <Content Include="Scripts\highslide-full.min.js" />
+    <Content Include="Scripts\highslide.config.js" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-3.4.2.debug.js" />
+    <Content Include="Scripts\knockout-3.4.2.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\modernizr.js" />
+    <Content Include="Scripts\ref.js" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Local.Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Highcharts\Models\" />
+    <Folder Include="Areas\Highstock\Models\" />
+    <Folder Include="Files\bin\" />
+    <Folder Include="Help\fti\" />
+    <Folder Include="Help\Highcharts\" />
+    <Folder Include="Help\Highstock\" />
+    <Folder Include="Help\html\" />
+    <Folder Include="Help\icons\" />
+    <Folder Include="Help\scripts\" />
+    <Folder Include="Help\styles\" />
+    <Folder Include="Help\toc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVC_Highcharts\MVC_Highcharts.csproj">
+      <Project>{fa4c2a73-1563-47da-8f1b-64ef17d48918}</Project>
+      <Name>MVC_Highcharts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVC_Highstock\MVC_Highstock.csproj">
+      <Project>{d05d7902-fdbe-422d-9f47-c84a74a25258}</Project>
+      <Name>MVC_Highstock</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>41589</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:38063/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

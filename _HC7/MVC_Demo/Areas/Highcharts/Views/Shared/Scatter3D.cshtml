@@ -1,0 +1,135 @@
+﻿<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<script type="text/javascript">
+    Highcharts.getOptions().colors = $.map(Highcharts.getOptions().colors, function (color) {
+        return {
+            radialGradient: {
+                cx: 0.4,
+                cy: 0.3,
+                r: 0.5
+            },
+            stops: [
+                [0, color],
+                [1, Highcharts.Color(color).brighten(-0.2).get('rgb')]
+            ]
+        };
+    });
+    
+    // Add mouse events for rotation
+    $(chart.container).on('mousedown.hc touchstart.hc', function (eStart) {
+    eStart = chart.pointer.normalize(eStart);
+
+    var posX = eStart.chartX,
+        posY = eStart.chartY,
+        alpha = chart.options.chart.options3d.alpha,
+        beta = chart.options.chart.options3d.beta,
+        newAlpha,
+        newBeta,
+        sensitivity = 5; // lower is more sensitive
+
+    $(document).on({
+        'mousemove.hc touchmove.hc': function (e) {
+            // Run beta
+            e = chart.pointer.normalize(e);
+            newBeta = beta + (posX - e.chartX) / sensitivity;
+            chart.options.chart.options3d.beta = newBeta;
+
+            // Run alpha
+            newAlpha = alpha + (e.chartY - posY) / sensitivity;
+            chart.options.chart.options3d.alpha = newAlpha;
+
+            chart.redraw(false);
+        },
+        'mouseup touchend': function () {
+            $(document).off('.hc');
+        }
+    });
+});
+</script>
+
+@using Highsoft.Web.Mvc.Charts
+
+@Html.Highsoft().GetHighcharts(new Highcharts
+{
+    Chart = new Highsoft.Web.Mvc.Charts.Chart
+    {
+        Margin = new double[] { 100, 100, 100, 100 },
+        Type = ChartType.Scatter3d,
+        Options3d = new ChartOptions3d
+        {
+            Enabled = true,
+            Alpha = 10,
+            Beta = 30,
+            Depth = 250,
+            ViewDistance = 5,
+            FitToPlot = false,
+            Frame = new ChartOptions3dFrame
+            {
+                Bottom = new ChartOptions3dFrameBottom
+                {
+                    Size = 1,
+                    Color = "rgba(0,0,0,0.02)",
+                },
+                Back = new ChartOptions3dFrameBack
+                {
+                    Size = 1,
+                    Color = "rgba(0,0,0,0.04)"
+                },
+                Side = new ChartOptions3dFrameSide
+                {
+                    Size = 1,
+                    Color = "rgba(0,0,0,0.06)"
+                }
+            }
+        }
+    },
+    Title = new Title
+    {
+        Text = "Draggable box"
+    },
+    Subtitle = new Subtitle
+    {
+        Text = "Click and drag the plot area to rotate in space"
+    },
+    YAxis = new List<YAxis>
+    {
+        new YAxis
+        {
+            Min = 0,
+            Max = 10
+        }
+    },
+    XAxis = new List<XAxis>
+    {
+        new XAxis
+        {
+            Min = 0,
+            Max = 10,
+            GridLineWidth = 1
+        }
+    },
+    ZAxis = new ZAxis
+    {
+        Min = 0,
+        Max = 10,
+        ShowFirstLabel = false
+    },
+    Legend = new Legend
+    {
+        Enabled = false
+    },
+    Series = new List<Series>
+    {
+        new Scatter3dSeries
+        {
+            Name = "Reading",
+            Data = ViewData["Data"] as List<Scatter3dSeriesData>
+        }
+    }
+}, "chart")
+

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ScatterSeriesLabelStyle()
 		{
-			FontWeight = FontWeight_DefaultValue = "bold";
+			Font-weight = Font-weight_DefaultValue = "bold";
 			
 		}	
 		
@@ -22,15 +22,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FontWeight { get; set; }
-		private string FontWeight_DefaultValue { get; set; }
+		public string Font-weight { get; set; }
+		private string Font-weight_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (Font-weight.IsDirty()) h.Add("font-weight",Font-weight.ToHashtable());
 			
 
 			return h;

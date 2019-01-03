@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ColumnHeaderFormatter = ColumnHeaderFormatter_DefaultValue = "";
 			DateFormat = DateFormat_DefaultValue = "%Y-%m-%d %H:%M:%S";
-			DecimalPoint = DecimalPoint_DefaultValue = "";
-			ItemDelimiter = ItemDelimiter_DefaultValue = "";
+			DecimalPoint = DecimalPoint_DefaultValue = "null";
+			ItemDelimiter = ItemDelimiter_DefaultValue = "null";
 			LineDelimiter = LineDelimiter_DefaultValue = "";
 			
 		}	

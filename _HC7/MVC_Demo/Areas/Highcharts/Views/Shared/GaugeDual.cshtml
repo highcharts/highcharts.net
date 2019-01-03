@@ -1,0 +1,92 @@
+﻿<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script type="text/javascript">
+    function formatDataLabels() {
+        var kmh = this.y,
+            mph = Math.round(kmh * 0.621);
+        return '<span style="color:#339">' + kmh + ' km/h</span><br/>' +
+            '<span style="color:#933">' + mph + ' mph</span>';
+    }
+</script>
+
+
+@using Highsoft.Web.Mvc.Charts
+
+@Html.Highsoft().GetHighcharts(new Highcharts
+{
+    Chart = new Highsoft.Web.Mvc.Charts.Chart
+    {
+        Type = ChartType.Gauge,
+        AlignTicks = false,
+        PlotBackgroundColor = null,
+        PlotBackgroundImage = null,
+        PlotBorderWidth = 0,
+        PlotShadow = new Shadow {  Enabled = false }
+    },
+    Title = new Title
+    {
+        Text = "Speedometer with dual axes"
+    },
+    Pane = new Pane
+    {
+        StartAngle = -150,
+        EndAngle = 150,
+    },
+    YAxis = new List<YAxis>
+    {
+        new YAxis
+        {
+            Min = 0,
+            Max = 200,
+            TickPosition = YAxisTickPosition.Inside,
+            LineColor = "#339",
+            TickColor = "#339",
+            Offset = -25,
+            LineWidth = 2,
+            Labels = new YAxisLabels
+            {
+                Distance = -20
+            },
+            TickLength = 5,
+            EndOnTick = false
+        },
+        new YAxis
+        {
+            Min = 0,
+            Max = 124,
+            TickPosition = YAxisTickPosition.Outside,
+            LineColor = "#933",
+            LineWidth = 2,
+            MinorTickPosition = YAxisMinorTickPosition.Inside,
+            TickColor = "#933",
+            MinorTickColor = "#933",
+            TickLength = 5,
+            MinorTickLength = 5,
+            Labels = new YAxisLabels
+            {
+                Distance = 12
+            },
+            Offset = -20,
+            EndOnTick = false
+        }
+    },
+    Series = new List<Series>
+    {
+        new GaugeSeries
+        {
+            Name = "Speed",
+            Data = new List<GaugeSeriesData> { new GaugeSeriesData { Y = 80 } },
+            DataLabels = new GaugeSeriesDataLabels
+            {
+                Formatter = "formatDataLabels",
+                BackgroundColor = "#DDD"
+            },
+            Tooltip = new GaugeSeriesTooltip
+            {
+                ValueSuffix = " km/h"
+            }
+        }
+    }
+}, "chart")

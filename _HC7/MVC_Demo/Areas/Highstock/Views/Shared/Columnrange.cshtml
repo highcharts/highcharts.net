@@ -1,0 +1,46 @@
+﻿@using Highsoft.Web.Mvc.Stocks
+
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+
+@*The highchart-more.js file contains definitions for additional chart types not available 
+in the main highcharts.js file such as "arearange". You need to include this file if you
+are using these types of charts*@
+
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+   
+    @(Html.Highsoft().GetHighstock(
+        new Highstock
+        {
+            RangeSelector = new RangeSelector
+            {
+                Selected = 2
+            },
+            Title = new Title
+            {
+                Text =  "Apple Stock Price"
+            },
+            Series = new List<Series>
+            {
+                new ColumnrangeSeries
+                {
+                   Data = ViewBag.AppleData as List<ColumnrangeSeriesData>,
+                   Name = "Apple Stock Price",
+                   TurboThreshold = 10000,
+                   Tooltip = new ColumnrangeSeriesTooltip
+                   {
+                       ValueDecimals = 2
+                   }
+                }
+            },
+            Navigator = new Navigator()
+            {
+                Series = new LineSeries()
+                {
+                    Data = ViewBag.NavigatorData as List<LineSeriesData>
+                }
+            }
+        },
+        "chart"
+    ))

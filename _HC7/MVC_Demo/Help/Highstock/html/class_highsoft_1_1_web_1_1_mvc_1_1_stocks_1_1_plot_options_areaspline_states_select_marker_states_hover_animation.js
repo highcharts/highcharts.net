@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areaspline_states_select_marker_states_hover_animation =
+[
+    [ "PlotOptionsAreasplineStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areaspline_states_select_marker_states_hover_animation.html#abb74e174fae4c9d4aa5639558b4a646e", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areaspline_states_select_marker_states_hover_animation.html#ae3aa8060d3dbe445c8f2828f668e2c87", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areaspline_states_select_marker_states_hover_animation.html#a10dc65341f32f95575dc40d30e27e10e", null ]
+];

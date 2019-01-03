@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public XrangeSeriesPartialFill()
 		{
-			Fill = Fill_DefaultValue = "";
+			Fill = Fill_DefaultValue = new XrangeSeriesPartialFillFill();
 			
 		}	
 		
@@ -22,15 +22,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The fill color to be used for partial fills. Defaults to a darker shadeof the point color.
 		/// </summary>
-		public string Fill { get; set; }
-		private string Fill_DefaultValue { get; set; }
+		public Object Fill { get; set; }
+		private Object Fill_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
+			if (Fill.IsDirty()) h.Add("fill",Fill.ToHashtable());
 			
 
 			return h;

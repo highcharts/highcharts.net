@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_variwide_point_placement =
+[
+    [ "PlotOptionsVariwidePointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_variwide_point_placement.html#a96b5dddf15098e3ce0908fb83888508c", null ]
+];

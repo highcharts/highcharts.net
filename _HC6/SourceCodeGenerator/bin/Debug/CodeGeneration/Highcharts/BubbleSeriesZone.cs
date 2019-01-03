@@ -65,7 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
-			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
+			if (FillColor.IsDirty()) h.Add("fillColor",FillColor.ToHashtable());
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			
 
