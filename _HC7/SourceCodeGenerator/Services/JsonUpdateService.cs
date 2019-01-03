@@ -308,7 +308,18 @@ namespace SourceCodeGenerator.Services
 
                 var title = GetCleanValue(values[0]);
                 var value = GetCleanValue(values[1]);
-                list.Add(new ApiItem { ReturnType = TypeService.StringType, FullName = title, Title = title, Defaults = value });
+
+                double resultDouble;
+                if(double.TryParse(value, out resultDouble))
+                    list.Add(new ApiItem { ReturnType = TypeService.NumberType, FullName = title, Title = title, Defaults = value, IsParent = true });
+                else
+                {
+                    bool resultBool;
+                    if(bool.TryParse(value, out resultBool))
+                        list.Add(new ApiItem { ReturnType = TypeService.BoolType, FullName = title, Title = title, Defaults = value, IsParent = true });
+                    else
+                        list.Add(new ApiItem { ReturnType = TypeService.StringType, FullName = title, Title = title, Defaults = value, IsParent = true });
+                }
             }
 
             return list;

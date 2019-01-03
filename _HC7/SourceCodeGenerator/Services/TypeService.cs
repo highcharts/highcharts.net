@@ -11,11 +11,10 @@ namespace SourceCodeGenerator.Services
         public static readonly string CSSObject = "Highcharts.CSSObject";
         public static readonly string StringType = "String";
         public static readonly string ObjectType = "Object";
+        public static readonly string BoolType = "Boolean";
+        public static readonly string NumberType = "Number";
+        public static readonly string FunctionType = "function";
 
-        private const string BoolType = "Boolean";
-        private const string NumberType = "Number";
-
-        private const string FunctionType = "function";
         private static ISet<string> FunctionTypes = new HashSet<string> { "Highcharts.FormatterCallbackFunction" };
         private static IEnumerable<string> UniqueStringTypesNames = new List<string> { "Highcharts.CSSObject", "Highcharts.ColorString", "Highcharts.HTMLDOMElement" };
         private static ISet<string> UniqueStringTypes = new HashSet<string>(UniqueStringTypesNames);
