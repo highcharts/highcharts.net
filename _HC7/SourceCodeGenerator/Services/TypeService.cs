@@ -15,7 +15,7 @@ namespace SourceCodeGenerator.Services
         public static readonly string NumberType = "Number";
         public static readonly string FunctionType = "function";
 
-        private static ISet<string> FunctionTypes = new HashSet<string> { "Highcharts.FormatterCallbackFunction" };
+        private static ISet<string> FunctionTypes = new HashSet<string> { "FormatterCallbackFunction" };//Highcharts.FormatterCallbackFunction.<Highcharts.Point>
         private static IEnumerable<string> UniqueStringTypesNames = new List<string> { "Highcharts.CSSObject", "Highcharts.ColorString", "Highcharts.HTMLDOMElement" };
         private static ISet<string> UniqueStringTypes = new HashSet<string>(UniqueStringTypesNames);
 
@@ -74,6 +74,10 @@ namespace SourceCodeGenerator.Services
 
         private bool IsFunction(ApiItem item)
         {
+            foreach (var type in FunctionTypes)
+                if (item.ReturnType.Contains(type))
+                    return true;
+
             if (FunctionTypes.Contains(item.ReturnType))
                 return true;
 
