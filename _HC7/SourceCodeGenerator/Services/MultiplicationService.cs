@@ -98,7 +98,7 @@ namespace SourceCodeGenerator.Services
 
         private bool IsString(ApiItem item)
         {
-            if (item.Types.Contains("String") || item.Types.Contains("string") || item.Types.Contains("Highcharts.ColorString"))
+            if (item.Types.Contains("String") || item.Types.Contains("string") || item.Types.Contains("ColorString"))
                 return true;
 
             return false;

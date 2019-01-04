@@ -919,6 +919,7 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("time.Date", "DateTime");
         _propertyTypeMappings.Add("defs", "Object");
         _propertyTypeMappings.Add("labels.items.style", "Hashtable");
+        _propertyTypeMappings.Add("boxesToAvoid", "List<object>");
     }
     private void InitPropertyInitMappings()
     {
