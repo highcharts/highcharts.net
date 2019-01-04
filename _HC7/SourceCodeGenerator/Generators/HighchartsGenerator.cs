@@ -539,6 +539,7 @@ public class HighchartsGenerator
     private string GetPropertyName(ApiItem item)
     {
         string result = item.Title;
+
         if (_seriesMappings[result] != null)
         {
             result = (string)_seriesMappings[result];
@@ -549,9 +550,13 @@ public class HighchartsGenerator
         //if (string.IsNullOrWhiteSpace(result))
         //    throw new Exception("empty series mapping result");
 
+        result = string.Empty;
+        foreach (var part in item.Title.Split('-'))
+            result += FirstCharToUpper(part);
+
         result = result + item.Suffix;
 
-        return FirstCharToUpper(result);
+        return result;
     }
 
     private string FormatProperty(string propertyTemplate, ApiItem child)
