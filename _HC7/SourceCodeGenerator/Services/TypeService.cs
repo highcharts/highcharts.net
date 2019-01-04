@@ -15,8 +15,8 @@ namespace SourceCodeGenerator.Services
         public static readonly string NumberType = "Number";
         public static readonly string FunctionType = "function";
 
-        private static ISet<string> FunctionTypes = new HashSet<string> { "Function" };//Highcharts.FormatterCallbackFunction.<Highcharts.Point>
-        private static IEnumerable<string> UniqueStringTypesNames = new List<string> { "Highcharts.CSSObject", "Highcharts.ColorString", "Highcharts.HTMLDOMElement" };
+        private static ISet<string> FunctionTypes = new HashSet<string> { "Function", "HTMLDOMElement" };//Highcharts.FormatterCallbackFunction.<Highcharts.Point>
+        private static IEnumerable<string> UniqueStringTypesNames = new List<string> { "Highcharts.CSSObject", "Highcharts.ColorString"};//, "Highcharts.HTMLDOMElement" 
         private static ISet<string> UniqueStringTypes = new HashSet<string>(UniqueStringTypesNames);
 
         public void SetReturnType(ApiItem item)
