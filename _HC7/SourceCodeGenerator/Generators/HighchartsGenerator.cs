@@ -1019,6 +1019,7 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("defs", "null");
         _propertyInitMappings.Add("autoRotation", "new List<double> {-45}");
         _propertyInitMappings.Add("spacing", "new List<double>()");
+        _propertyInitMappings.Add("categories", "new List<string>()");
     }
     private void InitLists()
     {
