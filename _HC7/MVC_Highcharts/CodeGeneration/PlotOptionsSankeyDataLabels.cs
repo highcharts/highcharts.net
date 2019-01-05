@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Defer = Defer_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsSankeyDataLabelsFilter();
-			Format = Format_DefaultValue = new PlotOptionsSankeyDataLabelsFormat();
+            Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = true;
 			NodeFormat = NodeFormat_DefaultValue = "";
@@ -132,10 +132,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to show for_links_ in the sankey diagram. Defaults to an empty string returnedfrom the `formatter`, in effect disabling the labels.
+		/// The[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)specifying what to show for _links_ in the sankey diagram. Defaultsto an empty string returned from the `formatter`, in effect disablingthe labels.
 		/// </summary>
-		public PlotOptionsSankeyDataLabelsFormat Format { get; set; }
-		private PlotOptionsSankeyDataLabelsFormat Format_DefaultValue { get; set; }
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -153,7 +153,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what to showfor _nodes_ in the sankey diagram. By default the`nodeFormatter` returns `{point.name}`.
+		/// The[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)specifying what to show for _nodes_ in the sankey diagram. By defaultthe `nodeFormatter` returns `{point.name}`.
 		/// </summary>
 		public string NodeFormat { get; set; }
 		private string NodeFormat_DefaultValue { get; set; }
@@ -266,7 +266,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
-			if (Format.IsDirty()) h.Add("format",Format.ToHashtable());
+			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsSankeyDataLabelsFormatter.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);

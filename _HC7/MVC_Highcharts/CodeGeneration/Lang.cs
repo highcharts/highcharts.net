@@ -23,10 +23,11 @@ namespace Highsoft.Web.Mvc.Charts
 			DownloadPNG = DownloadPNG_DefaultValue = "Download PNG image";
 			DownloadSVG = DownloadSVG_DefaultValue = "Download SVG vector image";
 			DownloadXLS = DownloadXLS_DefaultValue = "Download XLS";
-			DrillUpText = DrillUpText_DefaultValue = "Back to {series.name}";
+			DrillUpText = DrillUpText_DefaultValue = "◁ Back to {series.name}";
 			InvalidDate = InvalidDate_DefaultValue = "";
 			Loading = Loading_DefaultValue = "Loading...";
 			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+			Navigation = Navigation_DefaultValue = new LangNavigation();
 			NoData = NoData_DefaultValue = "No data to display";
 			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> {"k", "M", "G", "T", "P", "E"};
@@ -45,7 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Configure the accessibility strings in the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).For more dynamic control over the accessibility functionality, see[accessibility.pointDescriptionFormatter](accessibility.pointDescriptionFormatter),[accessibility.seriesDescriptionFormatter](accessibility.seriesDescriptionFormatter), and[accessibility.screenReaderSectionFormatter](accessibility.screenReaderSectionFormatter).
+		/// Configure the accessibility strings in the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and information on itsfeatures, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).For more dynamic control over the accessibility functionality, see[accessibility.pointDescriptionFormatter](accessibility.pointDescriptionFormatter),[accessibility.seriesDescriptionFormatter](accessibility.seriesDescriptionFormatter), and[accessibility.screenReaderSectionFormatter](accessibility.screenReaderSectionFormatter).
 		/// </summary>
 		public LangAccessibility Accessibility { get; set; }
 		private LangAccessibility Accessibility_DefaultValue { get; set; }
@@ -108,7 +109,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The text for the button that appears when drilling down, linkingback to the parent series. The parent series' name is inserted for`{series.name}`.
+		/// The text for the button that appears when drilling down, linking backto the parent series. The parent series' name is inserted for`{series.name}`.
 		/// </summary>
 		public string DrillUpText { get; set; }
 		private string DrillUpText_DefaultValue { get; set; }
@@ -133,6 +134,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<string> Months { get; set; }
 		private List<string> Months_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Configure the Popup strings in the chart. Requires the`annotations.js` or `annotations-advanced.src.js` module to beloaded.
+		/// </summary>
+		public LangNavigation Navigation { get; set; }
+		private LangNavigation Navigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -199,7 +207,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The default thousands separator used in the `Highcharts.numberFormat`method unless otherwise specified in the function arguments. SinceHighcharts 4.1 it defaults to a single space character, which iscompatible with ISO and works across Anglo-American and continentalEuropean languages.The default is a single space.
+		/// The default thousands separator used in the `Highcharts.numberFormat`method unless otherwise specified in the function arguments. Defaultsto a single space character, which is recommended in[ISO 31-0](https://en.wikipedia.org/wiki/ISO_31-0#Numbers) and worksacross Anglo-American and continental European languages.
 		/// </summary>
 		public string ThousandsSep { get; set; }
 		private string ThousandsSep_DefaultValue { get; set; }
@@ -236,6 +244,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (Months != Months_DefaultValue) h.Add("months",Months);
+			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
 			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
 			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
 			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);

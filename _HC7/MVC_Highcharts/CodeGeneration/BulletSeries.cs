@@ -18,9 +18,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = "#cccccc";
+			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			BorderWidth = BorderWidth_DefaultValue = 0;
+			BorderWidth = BorderWidth_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
@@ -121,7 +121,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border color of the map areas.In styled mode, the border stroke is given in the `.highcharts-point`class.
+		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
@@ -135,7 +135,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the`.highcharts-point` class.
+		/// The width of the border surrounding each column or bar. Defaults to `1`when there is room for a border, but to `0` when the columns are so densethat a border would cover the next column.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
@@ -205,7 +205,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the `bullet` series type,points can be given in the following ways:1.  An array of arrays with 3 or 2 values. In this case, the valuescorrespond to `x,y,target`. If the first value is a string,it is applied as the name of the point, and the `x` value is inferred.The `x` value can also be omitted, in which case the inner arraysshould be of length 2\. Then the `x` value is automatically calculated,either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. ```js    data: [        [0, 40, 75],        [1, 50, 50],        [2, 60, 40]    ] ```2.  An array of objects with named values. The following snippet shows only afew settings, see the complete options set below. If the total number of datapoints exceeds the series' [turboThreshold](#series.bullet.turboThreshold),this option is not available. ```js    data: [{        x: 0,        y: 40,        target: 75,        name: "Point1",        color: "#00FF00"    }, {        x: 1,        y: 60,        target: 40,        name: "Point2",        color: "#FF00FF"    }] ```
+		/// An array of data points for the series. For the `bullet` series type,points can be given in the following ways:1. An array of arrays with 3 or 2 values. In this case, the values correspond   to `x,y,target`. If the first value is a string, it is applied as the name   of the point, and the `x` value is inferred. The `x` value can also be   omitted, in which case the inner arrays should be of length 2\. Then the   `x` value is automatically calculated, either starting at 0 and   incremented by 1, or from `pointStart` and `pointInterval` given in the   series options.   ```js   data: [       [0, 40, 75],       [1, 50, 50],       [2, 60, 40]   ]   ```2. An array of objects with named values. The following snippet shows only a   few settings, see the complete options set below. If the total number of   data points exceeds the series'   [turboThreshold](#series.bullet.turboThreshold), this option is not   available.   ```js   data: [{       x: 0,       y: 40,       target: 75,       name: "Point1",       color: "#00FF00"   }, {        x: 1,       y: 60,       target: 40,       name: "Point2",       color: "#FF00FF"   }]   ```
 		/// </summary>
 		public List<BulletSeriesData> Data { get; set; }
 		private List<BulletSeriesData> Data_DefaultValue { get; set; }
@@ -233,7 +233,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public BulletSeriesDragDrop DragDrop { get; set; }
 		private BulletSeriesDragDrop DragDrop_DefaultValue { get; set; }

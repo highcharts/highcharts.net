@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Crop = Crop_DefaultValue = false;
 			Distance = Distance_DefaultValue = null;
-			Format = Format_DefaultValue = "undefined";
+			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = AnnotationsLabelOptionsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new AnnotationsLabelOptionsStyle();
-			Text = Text_DefaultValue = "undefined";
+			Text = Text_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelOptionsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
@@ -104,7 +104,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A [format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) string for the data label.
+		/// A[format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)string for the data label.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }

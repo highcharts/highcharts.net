@@ -18,10 +18,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = "middle";
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
-			Position3d = Position3d_DefaultValue = YAxisTitlePosition3d.Null;
+			Position3d = Position3d_DefaultValue = "";
 			ReserveSpace = ReserveSpace_DefaultValue = true;
 			Rotation = Rotation_DefaultValue = 270;
-			Skew3d = Skew3d_DefaultValue = YAxisTitleSkew3d.Null;
+			Skew3d = Skew3d_DefaultValue = null;
 			Style = Style_DefaultValue = new YAxisTitleStyle();
 			Text = Text_DefaultValue = "Values";
 			TextAlign = TextAlign_DefaultValue = "";
@@ -61,10 +61,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Defines how the title is repositioned according to the 3D chartorientation.- `'offset'`: Maintain a fixed horizontal/vertical distance from the  tick marks, despite the chart orientation. This is the backwards  compatible behavior, and causes skewing of X and Z axes.- `'chart'`: Preserve 3D position relative to the chart.  This looks nice, but hard to read if the text isn't  forward-facing.- `'flap'`: Rotated text along the axis to compensate for the chart  orientation. This tries to maintain text as legible as possible on  all orientations.- `'ortho'`: Rotated text along the axis direction so that the labels  are orthogonal to the axis. This is very similar to `'flap'`, but  prevents skewing the labels (X and Y scaling are still present).- `null`: Will use the config from `labels.position3d`
+		/// Defines how the title is repositioned according to the 3D chartorientation.- `'offset'`: Maintain a fixed horizontal/vertical distance from the  tick marks, despite the chart orientation. This is the backwards  compatible behavior, and causes skewing of X and Z axes.- `'chart'`: Preserve 3D position relative to the chart.  This looks nice, but hard to read if the text isn't  forward-facing.- `'flap'`: Rotated text along the axis to compensate for the chart  orientation. This tries to maintain text as legible as possible on  all orientations.- `'ortho'`: Rotated text along the axis direction so that the labels  are orthogonal to the axis. This is very similar to `'flap'`, but  prevents skewing the labels (X and Y scaling are still present).- `undefined`: Will use the config from `labels.position3d`
 		/// </summary>
-		public YAxisTitlePosition3d Position3d { get; set; }
-		private YAxisTitlePosition3d Position3d_DefaultValue { get; set; }
+		public string Position3d { get; set; }
+		private string Position3d_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -84,8 +84,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// If enabled, the axis title will skewed to follow the perspective.This will fix overlapping labels and titles, but texts become lesslegible due to the distortion.The final appearance depends heavily on `title.position3d`.A `null` value will use the config from `labels.skew3d`.
 		/// </summary>
-		public YAxisTitleSkew3d Skew3d { get; set; }
-		private YAxisTitleSkew3d Skew3d_DefaultValue { get; set; }
+		public bool? Skew3d { get; set; }
+		private bool? Skew3d_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -110,7 +110,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render theaxis title.
+		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the axis title.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
@@ -138,10 +138,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (Position3d != Position3d_DefaultValue) h.Add("position3d", Highcharts.FirstCharacterToLower(Position3d.ToString()));
+			if (Position3d != Position3d_DefaultValue) h.Add("position3d",Position3d);
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d", Highcharts.FirstCharacterToLower(Skew3d.ToString()));
+			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);

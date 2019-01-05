@@ -86,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// The `id` of a series in the [drilldown.series](#drilldown.series) array touse for a drilldown for this point.
 		/// </summary>
 		public string Drilldown { get; set; }
 		private string Drilldown_DefaultValue { get; set; }

@@ -23,66 +23,66 @@ namespace Highsoft.Web.Mvc.Charts
 			Week = Week_DefaultValue = new ZAxisDateTimeLabelFormatsWeek();
 			Year = Year_DefaultValue = new ZAxisDateTimeLabelFormatsYear();
 			
-		}
+		}	
+		
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public ZAxisDateTimeLabelFormatsDay Day { get; set; }
+		private ZAxisDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public ZAxisDateTimeLabelFormatsDay Day { get; set; }
-        private ZAxisDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public ZAxisDateTimeLabelFormatsHour Hour { get; set; }
+		private ZAxisDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public ZAxisDateTimeLabelFormatsMillisecond Millisecond { get; set; }
+		private ZAxisDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public ZAxisDateTimeLabelFormatsHour Hour { get; set; }
-        private ZAxisDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public ZAxisDateTimeLabelFormatsMinute Minute { get; set; }
+		private ZAxisDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public ZAxisDateTimeLabelFormatsMonth Month { get; set; }
+		private ZAxisDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public ZAxisDateTimeLabelFormatsMillisecond Millisecond { get; set; }
-        private ZAxisDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public ZAxisDateTimeLabelFormatsSecond Second { get; set; }
+		private ZAxisDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public ZAxisDateTimeLabelFormatsWeek Week { get; set; }
+		private ZAxisDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public ZAxisDateTimeLabelFormatsMinute Minute { get; set; }
-        private ZAxisDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public ZAxisDateTimeLabelFormatsYear Year { get; set; }
+		private ZAxisDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
+		  
 
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ZAxisDateTimeLabelFormatsMonth Month { get; set; }
-        private ZAxisDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ZAxisDateTimeLabelFormatsSecond Second { get; set; }
-        private ZAxisDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ZAxisDateTimeLabelFormatsWeek Week { get; set; }
-        private ZAxisDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ZAxisDateTimeLabelFormatsYear Year { get; set; }
-        private ZAxisDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
-
-
-        internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 

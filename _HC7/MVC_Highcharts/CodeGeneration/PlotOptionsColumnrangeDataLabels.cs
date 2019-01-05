@@ -42,10 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			XHigh = XHigh_DefaultValue = 0;
 			XLow = XLow_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
-			YHigh = YHigh_DefaultValue = "null";
-			YHighNumber = YHighNumber_DefaultValue = null;
-			YLow = YLow_DefaultValue = "null";
-			YLowNumber = YLowNumber_DefaultValue = null;
+			YHigh = YHigh_DefaultValue = 0;
+			YLow = YLow_DefaultValue = 0;
 			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
@@ -250,29 +248,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Y offset of the higher data labels relative to the point value.
 		/// </summary>
-		public string YHigh { get; set; }
-		private string YHigh_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Y offset of the higher data labels relative to the point value.
-		/// </summary>
-		public double? YHighNumber { get; set; }
-		private double? YHighNumber_DefaultValue { get; set; }
+		public double? YHigh { get; set; }
+		private double? YHigh_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Y offset of the lower data labels relative to the point value.
 		/// </summary>
-		public string YLow { get; set; }
-		private string YLow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Y offset of the lower data labels relative to the point value.
-		/// </summary>
-		public double? YLowNumber { get; set; }
-		private double? YLowNumber_DefaultValue { get; set; }
+		public double? YLow { get; set; }
+		private double? YLow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -315,9 +299,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (XLow != XLow_DefaultValue) h.Add("xLow",XLow);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (YHigh != YHigh_DefaultValue) h.Add("yHigh",YHigh);
-			if (YHighNumber != YHighNumber_DefaultValue) h.Add("yHigh",YHighNumber);
 			if (YLow != YLow_DefaultValue) h.Add("yLow",YLow);
-			if (YLowNumber != YLowNumber_DefaultValue) h.Add("yLow",YLowNumber);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 

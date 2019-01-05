@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			AlignTicks = AlignTicks_DefaultValue = true;
 			AllowDecimals = AllowDecimals_DefaultValue = true;
-            Categories = Categories_DefaultValue = new List<string>();
+			Categories = Categories_DefaultValue = new List<string>();
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new ChartParallelAxesCrosshair();
@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxPadding = MaxPadding_DefaultValue = null;
 			Min = Min_DefaultValue = null;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
-			MinorTickInterval = MinorTickInterval_DefaultValue = "null";
+			MinorTickInterval = MinorTickInterval_DefaultValue = "";
 			MinorTickIntervalNumber = MinorTickIntervalNumber_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ChartParallelAxesMinorTickPosition.Outside;
@@ -398,7 +398,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For categorized axes only. If `on` the tick mark is placed in thecenter of the category, if `between` the tick mark is placed betweencategories. The default is `between` if the `tickInterval` is 1, else `on`.
+		/// For categorized axes only. If `on` the tick mark is placed in thecenter of the category, if `between` the tick mark is placed betweencategories. The default is `between` if the `tickInterval` is 1, else`on`.
 		/// </summary>
 		public ChartParallelAxesTickmarkPlacement TickmarkPlacement { get; set; }
 		private ChartParallelAxesTickmarkPlacement TickmarkPlacement_DefaultValue { get; set; }
@@ -440,14 +440,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Titles for yAxes are taken from[xAxis.categories](#xAxis.categories). All options for`xAxis.labels` applies to parallel coordinates titles.For example, to style categories, use[xAxis.labels.style](#xAxis.labels.style).
+		/// Titles for yAxes are taken from[xAxis.categories](#xAxis.categories). All options for `xAxis.labels`applies to parallel coordinates titles. For example, to stylecategories, use [xAxis.labels.style](#xAxis.labels.style).
 		/// </summary>
 		public ChartParallelAxesTitle Title { get; set; }
 		private ChartParallelAxesTitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
+		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. If yAxis is a category, then category name will be displayed3. If yAxis is a datetime, then value will use the same format as   yAxis labels4. If yAxis is linear/logarithmic type, then simple value will be   used
 		/// </summary>
 		public string TooltipValueFormat { get; set; }
 		private string TooltipValueFormat_DefaultValue { get; set; }

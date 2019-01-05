@@ -1,1 +1,14 @@
 accessibility.pointDescriptionThreshold.doclet.type powinien byæ boolean zamiast false
+chart.axisLabelPosition: "auto", null ? - powinno byæ: ,"values":"[null, \"auto\"]","type":{"names":["String"]}
+chart.options3d.frame.bottom.visible types: boolean, "default", "auto" a powinno byæ boolean, string
+legend.bubbleLegend.ranges.value - brakuje typu
+Navigation.bindings - brakuje zawartoœci - s¹ tylko trzy a powinno byæ kilkadziesi¹t
+
+
+
+
+
+
+do poprawy w przysz³oœci:
+- AnnotationsLabelOptions.Style - jest type Object a powienien byæ AnnotationsLabelOptionsStyle - brak children w jsonie
+- AnnotationsLabel.Style - to samo co wy¿ej 

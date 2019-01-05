@@ -22,11 +22,11 @@ namespace Highsoft.Web.Mvc.Charts
 			DragDrop = DragDrop_DefaultValue = new SolidgaugeSeriesDataDragDrop();
 			Events = Events_DefaultValue = new SolidgaugeSeriesDataEvents();
 			Id = Id_DefaultValue = "";
-			InnerRadius = InnerRadius_DefaultValue = "null";
+			InnerRadius = InnerRadius_DefaultValue = "";
 			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
-			Radius = Radius_DefaultValue = "null";
+			Radius = Radius_DefaultValue = "";
 			RadiusNumber = RadiusNumber_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Y = Y_DefaultValue = double.MinValue;
@@ -92,14 +92,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The inner radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// The inner radius of an individual point in a solid gauge. Can be given as anumber (pixels) or percentage string.
 		/// </summary>
 		public string InnerRadius { get; set; }
 		private string InnerRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The inner radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// The inner radius of an individual point in a solid gauge. Can be given as anumber (pixels) or percentage string.
 		/// </summary>
 		public double? InnerRadiusNumber { get; set; }
 		private double? InnerRadiusNumber_DefaultValue { get; set; }

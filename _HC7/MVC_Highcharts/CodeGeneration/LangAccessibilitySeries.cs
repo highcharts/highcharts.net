@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Lang configuration for the series main summary. Each seriestype has two modes:    1. This series type is the only series type used in the       chart   2. This is a combination chart with multiple series typesIf a definition does not exist for the specific series typeand mode, the 'default' lang definitions are used.
+		/// Lang configuration for the series main summary. Each seriestype has two modes:1. This series type is the only series type used in the   chart2. This is a combination chart with multiple series typesIf a definition does not exist for the specific series typeand mode, the 'default' lang definitions are used.
 		/// </summary>
 		public LangAccessibilitySeriesSummary Summary { get; set; }
 		private LangAccessibilitySeriesSummary Summary_DefaultValue { get; set; }

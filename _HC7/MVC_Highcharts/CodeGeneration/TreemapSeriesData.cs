@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
-			Parent = Parent_DefaultValue = "undefined";
+			Parent = Parent_DefaultValue = "";
 			PointPadding = PointPadding_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Value = Value_DefaultValue = null;
@@ -85,7 +85,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// The `id` of a series in the [drilldown.series](#drilldown.series) array touse for a drilldown for this point.
 		/// </summary>
 		public string Drilldown { get; set; }
 		private string Drilldown_DefaultValue { get; set; }

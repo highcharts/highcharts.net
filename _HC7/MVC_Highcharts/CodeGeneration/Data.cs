@@ -35,11 +35,11 @@ namespace Highsoft.Web.Mvc.Charts
 			ParseDate = ParseDate_DefaultValue = "";
 			Rows = Rows_DefaultValue = new List<List<object>>();
 			RowsURL = RowsURL_DefaultValue = "";
-			SeriesMapping = SeriesMapping_DefaultValue = new List<object>();
+			SeriesMapping = SeriesMapping_DefaultValue = new List<HashSet<int>>();
 			StartColumn = StartColumn_DefaultValue = 0;
 			StartRow = StartRow_DefaultValue = 0;
 			SwitchRowsAndColumns = SwitchRowsAndColumns_DefaultValue = false;
-			Table = Table_DefaultValue = "null";
+			Table = Table_DefaultValue = "";
 			
 		}	
 		
@@ -80,7 +80,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A URL to a remote CSV dataset.Will be fetched when the chart is created using Ajax.
+		/// An URL to a remote CSV dataset. Will be fetched when the chart is createdusing Ajax.
 		/// </summary>
 		public string CsvURL { get; set; }
 		private string CsvURL_DefaultValue { get; set; }
@@ -94,14 +94,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Which of the predefined date formats in Date.prototype.dateFormatsto use to parse date values. Defaults to a best guess based on whatformat gives valid and ordered dates.Valid options include:*   `YYYY/mm/dd`*   `dd/mm/YYYY`*   `mm/dd/YYYY`*   `dd/mm/YY`*   `mm/dd/YY`
+		/// Which of the predefined date formats in Date.prototype.dateFormatsto use to parse date values. Defaults to a best guess based on whatformat gives valid and ordered dates. Valid options include: `YYYY/mm/dd`,`dd/mm/YYYY`, `mm/dd/YYYY`, `dd/mm/YY`, `mm/dd/YY`.
 		/// </summary>
 		public string DateFormat { get; set; }
 		private string DateFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The decimal point used for parsing numbers in the CSV.If both this and data.delimiter is set to false, the parser willattempt to deduce the decimal point automatically.
+		/// The decimal point used for parsing numbers in the CSV.If both this and data.delimiter is set to `undefined`, the parser willattempt to deduce the decimal point automatically.
 		/// </summary>
 		public string DecimalPoint { get; set; }
 		private string DecimalPoint_DefaultValue { get; set; }
@@ -192,10 +192,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array containing object with Point property names along with whatcolumn id the property should be taken from.
+		/// An array containing dictionaries for each series. A dictionary exists ofPoint property names as the key and the CSV column index as the value.
 		/// </summary>
-		public List<object> SeriesMapping { get; set; }
-		private List<object> SeriesMapping_DefaultValue { get; set; }
+		public List<HashSet<int>> SeriesMapping { get; set; }
+		private List<HashSet<int>> SeriesMapping_DefaultValue { get; set; }
 		 
 
 		/// <summary>

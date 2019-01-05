@@ -14,10 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsFunnelDataLabels()
 		{
+			AlignTo = AlignTo_DefaultValue = "undefined";
 			AllowOverlap = AllowOverlap_DefaultValue = true;
 			ConnectorColor = ConnectorColor_DefaultValue = "";
 			ConnectorPadding = ConnectorPadding_DefaultValue = 5;
+			ConnectorShape = ConnectorShape_DefaultValue = "fixedOffset";
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
+			CrookDistance = CrookDistance_DefaultValue = "70%";
 			Distance = Distance_DefaultValue = 30;
 			Enabled = Enabled_DefaultValue = true;
 			Formatter = Formatter_DefaultValue = "";
@@ -27,6 +30,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// Alignment method for data labels. Possible values are:`'toPlotEdges'` (each label touches the nearest vertical edge ofthe plot area) or `'connectors'` (connectors have the same xposition and the widest label of each half (left & right) touchesthe nearest vertical edge of the plot area).
+		/// </summary>
+		public string AlignTo { get; set; }
+		private string AlignTo_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -43,10 +53,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The distance from the data label to the connector.
+		/// The distance from the data label to the connector. Note that datalabels also have a default `padding`, so in order for the connectorto touch the text, the `padding` must also be 0.
 		/// </summary>
 		public double? ConnectorPadding { get; set; }
 		private double? ConnectorPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Specifies the method that is used to generate the connector path.Highcharts provides 3 built-in connector shapes: `'fixedOffset'`(default), `'straight'` and `'crookedLine'`. Using `'crookedLine'`has the most sense (in most of the cases) when `'alignTo'` is set.Users can provide their own method by passing a function instead ofa String. 3 arguments are passed to the callback:<ol> <li>  Object that holds the information about the coordinates of the  label (`x` & `y` properties) and how the label is located in  relation to the pie (`alignment` property). `alignment` can by one  of the following:  `'left'` (pie on the left side of the data label),  `'right'` (pie on the right side of the data label) or  `'center'` (data label overlaps the pie). </li> <li>  Object that holds the information about the position of the  connector. Its `touchingSliceAt`  porperty tells the position of  the place where the connector touches the slice. </li> <li>  Data label options </li></ol>The function has to return an SVG path definition in array form(see the example).
+		/// </summary>
+		public string ConnectorShape { get; set; }
+		private string ConnectorShape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,6 +71,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ConnectorWidth { get; set; }
 		private double? ConnectorWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Works only if `connectorShape` is `'crookedLine'`. It defines how farfrom the vertical plot edge the coonnector path should be crooked.
+		/// </summary>
+		public string CrookDistance { get; set; }
+		private string CrookDistance_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -78,7 +102,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to render the connector as a soft arc or a line with sharpbreak.
+		/// Whether to render the connector as a soft arc or a line with sharpbreak. Works only if `connectorShape` equals to `fixedOffset`.
 		/// </summary>
 		public double? SoftConnector { get; set; }
 		private double? SoftConnector_DefaultValue { get; set; }
@@ -102,10 +126,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (AlignTo != AlignTo_DefaultValue) h.Add("alignTo",AlignTo);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
 			if (ConnectorPadding != ConnectorPadding_DefaultValue) h.Add("connectorPadding",ConnectorPadding);
+			if (ConnectorShape != ConnectorShape_DefaultValue) h.Add("connectorShape",ConnectorShape);
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
+			if (CrookDistance != CrookDistance_DefaultValue) h.Add("crookDistance",CrookDistance);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsFunnelDataLabelsFormatter.formatter", Formatter); }  

@@ -564,7 +564,7 @@ public class HighchartsGenerator
         string propertyName = GetPropertyName(child);
         string returnType = GetPropertyReturnType(child, propertyName);
 
-        if (child.Values != null && child.Values.Any())
+        if ((child.ReturnType == "string" || child.ReturnType == "String") && child.Values != null && child.Values.Any())
             returnType = GetClassNameFromItem(child);
 
         if (propertyName == "PointDescriptionThreshold")
@@ -704,7 +704,7 @@ public class HighchartsGenerator
             return String.Format(customPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
         }
         // Enum
-        if (child.Values != null && child.Values.Count > 0)
+        if ((child.ReturnType == "string" || child.ReturnType == "String") && child.Values != null && child.Values.Count > 0)
             return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), ROOT_CLASS);
         // Complex object with nested objects / properties
         if (child.IsParent)
@@ -1188,7 +1188,7 @@ public class HighchartsGenerator
             return _propertyInitMappings[nameAndSuffix].ToString();
         }
 
-        if (item.Values != null && item.Values.Any())
+        if ((item.ReturnType == "string" || item.ReturnType == "String") && item.Values != null && item.Values.Any())
         {
             return GetDefaultValueForEnum(item);
         }

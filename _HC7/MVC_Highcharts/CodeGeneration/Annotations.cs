@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Annotations()
 		{
+			Id = Id_DefaultValue = "";
 			LabelOptions = LabelOptions_DefaultValue = new AnnotationsLabelOptions();
 			Labels = Labels_DefaultValue = new List<AnnotationsLabels>();
 			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsShapeOptions();
@@ -23,6 +24,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// Sets an ID for an annotation. Can be user later when removing anannotation in [Chart#removeAnnotation(id)](/class-reference/Highcharts.Chart#removeAnnotation) method.
+		/// </summary>
+		public string Id { get; set; }
+		private string Id_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Options for annotation's labels. Each label inherits optionsfrom the labelOptions object. An option from the labelOptions can beoverwritten by config for a specific label.
@@ -70,6 +78,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
 			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(Labels));
 			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());

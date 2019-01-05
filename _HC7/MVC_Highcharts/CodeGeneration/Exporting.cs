@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowTable = ShowTable_DefaultValue = false;
 			SourceHeight = SourceHeight_DefaultValue = null;
 			SourceWidth = SourceWidth_DefaultValue = null;
-			TableCaption = TableCaption_DefaultValue = "null";
+			TableCaption = TableCaption_DefaultValue = "";
 			TableCaptionBool = TableCaptionBool_DefaultValue = null;
 			Type = Type_DefaultValue = ExportingType.Imagepng;
 			Url = Url_DefaultValue = "https://export.highcharts.com/";
@@ -98,21 +98,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An object containing additional attributes for the POST form thatsends the SVG to the export server. For example, a `target` can beset to make sure the generated image is received in another frame, or a custom `enctype` or `encoding` can be set.
+		/// An object containing additional key value data for the POST form thatsends the SVG to the export server. For example, a `target` can be set tomake sure the generated image is received in another frame, or a custom`enctype` or `encoding` can be set.
 		/// </summary>
 		public Object FormAttributes { get; set; }
 		private Object FormAttributes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Path where Highcharts will look for export module dependencies toload on demand if they don't already exist on `window`. Should currentlypoint to location of [CanVG](https://github.com/canvg/canvg) library,[RGBColor.js](https://github.com/canvg/canvg), [jsPDF](https://github.com/yWorks/jsPDF) and [svg2pdf.js](https://github.com/yWorks/svg2pdf.js), required for client side export in certain browsers.
+		/// Path where Highcharts will look for export module dependencies toload on demand if they don't already exist on `window`. Should currentlypoint to location of [CanVG](https://github.com/canvg/canvg) library,[RGBColor.js](https://github.com/canvg/canvg),[jsPDF](https://github.com/yWorks/jsPDF) and[svg2pdf.js](https://github.com/yWorks/svg2pdf.js), required for clientside export in certain browsers.
 		/// </summary>
 		public string LibURL { get; set; }
 		private string LibURL_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a `key` that is referenced in the[menuItems](#exporting.buttons.contextButton.menuItems) setting,and a `value`, which is an object with the following properties:<dl><dt>onclick</dt><dd>The click handler for the menu item</dd><dt>text</dt><dd>The text for the menu item</dd><dt>textKey</dt><dd>If internationalization is required, the key to a language string</dd></dl>
+		/// An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a `key` that is referenced in the[menuItems](#exporting.buttons.contextButton.menuItems) setting,and a `value`, which is an object with the following properties:- **onclick:** The click handler for the menu item- **text:** The text for the menu item- **textKey:** If internationalization is required, the key to a language  string
 		/// </summary>
 		public Object MenuItemDefinitions { get; set; }
 		private Object MenuItemDefinitions_DefaultValue { get; set; }
@@ -147,7 +147,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width of the original chart when exported, unless an explicit[chart.width](#chart.width) is set. The width exported raster imageis then multiplied by [scale](#exporting.scale).
+		/// The width of the original chart when exported, unless an explicit[chart.width](#chart.width) is set, or a pixel width is set on thecontainer. The width exported raster image is then multiplied by[scale](#exporting.scale).
 		/// </summary>
 		public double? SourceWidth { get; set; }
 		private double? SourceWidth_DefaultValue { get; set; }

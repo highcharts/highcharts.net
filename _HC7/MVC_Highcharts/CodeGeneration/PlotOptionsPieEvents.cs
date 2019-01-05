@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Fires after the series has finished its initial animation, or incase animation is disabled, immediately as the series is displayed.
+		/// Fires after the series has finished its initial animation, or in caseanimation is disabled, immediately as the series is displayed.
 		/// </summary>
 		public string AfterAnimate { get; set; }
 		private string AfterAnimate_DefaultValue { get; set; }
@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Not applicable to pies, as the legend item is per point. See point.events.
+		/// Fires when the legend item belonging to the series is clicked. Oneparameter, `event`, is passed to the function. The default actionis to toggle the visibility of the series. This can be preventedby returning `false` or calling `event.preventDefault()`.
 		/// </summary>
 		public string LegendItemClick { get; set; }
 		private string LegendItemClick_DefaultValue { get; set; }

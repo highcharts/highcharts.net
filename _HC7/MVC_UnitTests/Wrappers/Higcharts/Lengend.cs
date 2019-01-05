@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Highsoft.Web.Mvc.Stocks;
-using Highsoft.Web.Mvc.Stocks.Rendering;
+using Highsoft.Web.Mvc.Charts;
+using Highsoft.Web.Mvc.Charts.Rendering;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 
@@ -10,18 +10,18 @@ namespace Highsoft.Web.Mvc.UnitTests
     [TestClass]
     public class Legend
     {
-        Highsoft.Web.Mvc.Stocks.Highstock _chart;
-        HighstockRenderer _renderer;
-        Highsoft.Web.Mvc.Stocks.XAxis _axis;
+        Highsoft.Web.Mvc.Charts.Highcharts _chart;
+        HighchartsRenderer _renderer;
+        Highsoft.Web.Mvc.Charts.XAxis _axis;
 
         [TestInitialize]
         public void Init()
         {
-            _chart = new Highstock();
-            _renderer = new HighstockRenderer(_chart);
+            _chart = new Highcharts();
+            _renderer = new HighchartsRenderer(_chart);
 
-            _chart.XAxis = new List<Highsoft.Web.Mvc.Stocks.XAxis>();
-            _chart.XAxis.Add(new Highsoft.Web.Mvc.Stocks.XAxis());
+            _chart.XAxis = new List<Highsoft.Web.Mvc.Charts.XAxis>();
+            _chart.XAxis.Add(new Highsoft.Web.Mvc.Charts.XAxis());
 
             _axis = _chart.XAxis[0];
         }
@@ -31,8 +31,6 @@ namespace Highsoft.Web.Mvc.UnitTests
         {
             _axis.AllowDecimals = false;            
             string json = _renderer.RenderHtml();
-
-
 
             Assert.IsTrue(json.Contains("\"allowDecimals\":false"));
         }

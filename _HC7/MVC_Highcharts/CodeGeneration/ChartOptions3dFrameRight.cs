@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Color = Color_DefaultValue = "transparent";
 			Size = Size_DefaultValue = 1;
-			Visible = Visible_DefaultValue = "null";
+			Visible = Visible_DefaultValue = "default";
 			VisibleBool = VisibleBool_DefaultValue = null;
 			
 		}	

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsBulletTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = "<span class='highcharts-color-{point.colorIndex}'>●</span> {series.name}: <span class='highcharts-strong'>{point.y}</span>. Target: <span class='highcharts-strong'>{point.target}</span><br/>";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{series.color}'>●</span> {series.name}: <b>{point.y}</b>. Target: <b>{point.target}</b><br/>";
 			
 		}	
 		

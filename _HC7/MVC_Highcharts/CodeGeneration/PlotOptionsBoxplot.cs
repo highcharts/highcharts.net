@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
-			MedianColor = MedianColor_DefaultValue = "null";
+			MedianColor = MedianColor_DefaultValue = "";
 			MedianWidth = MedianWidth_DefaultValue = 2;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			NegativeColor = NegativeColor_DefaultValue = "";
@@ -68,7 +68,6 @@ namespace Highsoft.Web.Mvc.Charts
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
 			Stacking = Stacking_DefaultValue = PlotOptionsBoxplotStacking.Null;
-			StemColor = StemColor_DefaultValue = "null";
 			StemDashStyle = StemDashStyle_DefaultValue = PlotOptionsBoxplotStemDashStyle.Solid;
 			StemWidth = StemWidth_DefaultValue = null;
 			StickyTracking = StickyTracking_DefaultValue = true;
@@ -76,8 +75,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsBoxplotTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
-			WhiskerColor = WhiskerColor_DefaultValue = "null";
-			WhiskerLength = WhiskerLength_DefaultValue = "null";
+			WhiskerColor = WhiskerColor_DefaultValue = "";
+			WhiskerLength = WhiskerLength_DefaultValue = "50%";
 			WhiskerLengthNumber = WhiskerLengthNumber_DefaultValue = null;
 			WhiskerWidth = WhiskerWidth_DefaultValue = 2;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
@@ -115,7 +114,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.Requires `modules/boost.js`.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
@@ -318,7 +317,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the median line. If `null`, the general series colorapplies.In styled mode, the median stroke width can be set with the`.highcharts-boxplot-median` class.
+		/// The color of the median line. If `undefined`, the general series colorapplies.In styled mode, the median stroke width can be set with the`.highcharts-boxplot-median` class.
 		/// </summary>
 		public string MedianColor { get; set; }
 		private string MedianColor_DefaultValue { get; set; }
@@ -465,13 +464,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the stem, the vertical line extending from the box tothe whiskers. If `null`, the series color is used.In styled mode, the stem stroke can be set with the`.highcharts-boxplot-stem` class.
-		/// </summary>
-		public string StemColor { get; set; }
-		private string StemColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The dash style of the stem, the vertical line extending from thebox to the whiskers.
 		/// </summary>
 		public PlotOptionsBoxplotStemDashStyle StemDashStyle { get; set; }
@@ -479,7 +471,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width of the stem, the vertical line extending from the box tothe whiskers. If `null`, the width is inherited from the[lineWidth](#plotOptions.boxplot.lineWidth) option.In styled mode, the stem stroke width can be set with the`.highcharts-boxplot-stem` class.
+		/// The width of the stem, the vertical line extending from the box tothe whiskers. If `undefined`, the width is inherited from the[lineWidth](#plotOptions.boxplot.lineWidth) option.In styled mode, the stem stroke width can be set with the`.highcharts-boxplot-stem` class.
 		/// </summary>
 		public double? StemWidth { get; set; }
 		private double? StemWidth_DefaultValue { get; set; }
@@ -521,7 +513,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the whiskers, the horizontal lines marking low and highvalues. When `null`, the general series color is used.In styled mode, the whisker stroke can be set with the`.highcharts-boxplot-whisker` class .
+		/// The color of the whiskers, the horizontal lines marking low and highvalues. When `undefined`, the general series color is used.In styled mode, the whisker stroke can be set with the`.highcharts-boxplot-whisker` class .
 		/// </summary>
 		public string WhiskerColor { get; set; }
 		private string WhiskerColor_DefaultValue { get; set; }
@@ -542,7 +534,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The line width of the whiskers, the horizontal lines marking low andhigh values. When `null`, the general[lineWidth](#plotOptions.boxplot.lineWidth) applies.In styled mode, the whisker stroke width can be set with the`.highcharts-boxplot-whisker` class.
+		/// The line width of the whiskers, the horizontal lines marking low andhigh values. When `undefined`, the general[lineWidth](#plotOptions.boxplot.lineWidth) applies.In styled mode, the whisker stroke width can be set with the`.highcharts-boxplot-whisker` class.
 		/// </summary>
 		public double? WhiskerWidth { get; set; }
 		private double? WhiskerWidth_DefaultValue { get; set; }
@@ -624,7 +616,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
-			if (StemColor != StemColor_DefaultValue) h.Add("stemColor",StemColor);
 			if (StemDashStyle != StemDashStyle_DefaultValue) h.Add("stemDashStyle", Highcharts.FirstCharacterToLower(StemDashStyle.ToString()));
 			if (StemWidth != StemWidth_DefaultValue) h.Add("stemWidth",StemWidth);
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);

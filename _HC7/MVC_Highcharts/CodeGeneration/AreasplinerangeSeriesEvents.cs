@@ -27,14 +27,14 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Fires after the series has finished its initial animation, or incase animation is disabled, immediately as the series is displayed.
+		/// Fires after the series has finished its initial animation, or in caseanimation is disabled, immediately as the series is displayed.
 		/// </summary>
 		public string AfterAnimate { get; set; }
 		private string AfterAnimate_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the checkbox next to the series' name in the legend isclicked. One parameter, `event`, is passed to the function. The stateof the checkbox is found by `event.checked`. The checked item isfound by `event.item`. Return `false` to prevent the default actionwhich is to toggle the select state of the series.
+		/// Fires when the checkbox next to the series' name in the legend isclicked. One parameter, `event`, is passed to the function. The state ofthe checkbox is found by `event.checked`. The checked item is found by`event.item`. Return `false` to prevent the default action which is totoggle the select state of the series.
 		/// </summary>
 		public string CheckboxClick { get; set; }
 		private string CheckboxClick_DefaultValue { get; set; }

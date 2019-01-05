@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Cursor { get; set; }
 		private string Cursor_DefaultValue { get; set; }
-			 
+		 
 
 		/// <summary>
 		/// 

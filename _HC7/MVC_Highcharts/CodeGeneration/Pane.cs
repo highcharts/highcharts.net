@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Background = Background_DefaultValue = new List<PaneBackground>();
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			EndAngle = EndAngle_DefaultValue = null;
-			Size = Size_DefaultValue = "null";
+			Size = Size_DefaultValue = "85%";
 			SizeNumber = SizeNumber_DefaultValue = null;
 			StartAngle = StartAngle_DefaultValue = 0;
 			

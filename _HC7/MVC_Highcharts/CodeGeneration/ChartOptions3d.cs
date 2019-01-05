@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = false;
 			FitToPlot = FitToPlot_DefaultValue = true;
 			Frame = Frame_DefaultValue = new ChartOptions3dFrame();
-			ViewDistance = ViewDistance_DefaultValue = 100;
+			ViewDistance = ViewDistance_DefaultValue = 25;
 			
 		}	
 		

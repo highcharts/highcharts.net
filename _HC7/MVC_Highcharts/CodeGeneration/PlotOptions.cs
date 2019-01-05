@@ -24,13 +24,17 @@ namespace Highsoft.Web.Mvc.Charts
 			Bubble = Bubble_DefaultValue = new PlotOptionsBubble();
 			Bullet = Bullet_DefaultValue = new PlotOptionsBullet();
 			Column = Column_DefaultValue = new PlotOptionsColumn();
+			Columnpyramid = Columnpyramid_DefaultValue = new PlotOptionsColumnpyramid();
 			Columnrange = Columnrange_DefaultValue = new PlotOptionsColumnrange();
+			Cylinder = Cylinder_DefaultValue = new PlotOptionsCylinder();
 			Errorbar = Errorbar_DefaultValue = new PlotOptionsErrorbar();
 			Funnel = Funnel_DefaultValue = new PlotOptionsFunnel();
 			Gauge = Gauge_DefaultValue = new PlotOptionsGauge();
 			Heatmap = Heatmap_DefaultValue = new PlotOptionsHeatmap();
 			Histogram = Histogram_DefaultValue = new PlotOptionsHistogram();
 			Line = Line_DefaultValue = new PlotOptionsLine();
+			Networkgraph = Networkgraph_DefaultValue = new PlotOptionsNetworkgraph();
+			Packedbubble = Packedbubble_DefaultValue = new PlotOptionsPackedbubble();
 			Pareto = Pareto_DefaultValue = new PlotOptionsPareto();
 			Pie = Pie_DefaultValue = new PlotOptionsPie();
 			Polygon = Polygon_DefaultValue = new PlotOptionsPolygon();
@@ -48,6 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Variablepie = Variablepie_DefaultValue = new PlotOptionsVariablepie();
 			Variwide = Variwide_DefaultValue = new PlotOptionsVariwide();
 			Vector = Vector_DefaultValue = new PlotOptionsVector();
+			Venn = Venn_DefaultValue = new PlotOptionsVenn();
 			Waterfall = Waterfall_DefaultValue = new PlotOptionsWaterfall();
 			Windbarb = Windbarb_DefaultValue = new PlotOptionsWindbarb();
 			Wordcloud = Wordcloud_DefaultValue = new PlotOptionsWordcloud();
@@ -64,7 +69,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The area range series is a carteseian series with higher and lower valuesfor each point along an X axis, where the area between the values is shaded.Requires `highcharts-more.js`.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `arearange` series are defined in   [plotOptions.arearange](plotOptions.arearange).3. Options for one single series are given in   [the series instance array](series.arearange).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        arearange: {            // shared options for all arearange series        }    },    series: [{        // specific options for this series instance        type: 'arearange'    }]});</pre>            
+		/// The area range series is a carteseian series with higher and lower values foreach point along an X axis, where the area between the values is shaded.Requires `highcharts-more.js`.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `arearange` series are defined in   [plotOptions.arearange](plotOptions.arearange).3. Options for one single series are given in   [the series instance array](series.arearange).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        arearange: {            // shared options for all arearange series        }    },    series: [{        // specific options for this series instance        type: 'arearange'    }]});</pre>            
 		/// </summary>
 		public PlotOptionsArearange Arearange { get; set; }
 		private PlotOptionsArearange Arearange_DefaultValue { get; set; }
@@ -113,7 +118,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A bullet graph is a variation of a bar graph. The bullet graph featuresa single measure, compares it to a target, and displays it in the contextof qualitative ranges of performance that could be set using[plotBands](#yAxis.plotBands) on [yAxis](#yAxis).Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `bullet` series are defined in   [plotOptions.bullet](plotOptions.bullet).3. Options for one single series are given in   [the series instance array](series.bullet).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        bullet: {            // shared options for all bullet series        }    },    series: [{        // specific options for this series instance        type: 'bullet'    }]});</pre>            
+		/// A bullet graph is a variation of a bar graph. The bullet graph features asingle measure, compares it to a target, and displays it in the context ofqualitative ranges of performance that could be set using[plotBands](#yAxis.plotBands) on [yAxis](#yAxis).Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `bullet` series are defined in   [plotOptions.bullet](plotOptions.bullet).3. Options for one single series are given in   [the series instance array](series.bullet).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        bullet: {            // shared options for all bullet series        }    },    series: [{        // specific options for this series instance        type: 'bullet'    }]});</pre>            
 		/// </summary>
 		public PlotOptionsBullet Bullet { get; set; }
 		private PlotOptionsBullet Bullet_DefaultValue { get; set; }
@@ -127,10 +132,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Column pyramid series display one pyramid per value along an X axis.Requires `highcharts-more.js`. To display horizontal pyramids,set [chart.inverted](#chart.inverted) to `true`.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `columnpyramid` series are defined in   [plotOptions.columnpyramid](plotOptions.columnpyramid).3. Options for one single series are given in   [the series instance array](series.columnpyramid).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        columnpyramid: {            // shared options for all columnpyramid series        }    },    series: [{        // specific options for this series instance        type: 'columnpyramid'    }]});</pre>            
+		/// </summary>
+		public PlotOptionsColumnpyramid Columnpyramid { get; set; }
+		private PlotOptionsColumnpyramid Columnpyramid_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The column range is a cartesian series type with higher and lowerY values along an X axis. Requires `highcharts-more.js`. To displayhorizontal bars, set [chart.inverted](#chart.inverted) to `true`.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `columnrange` series are defined in   [plotOptions.columnrange](plotOptions.columnrange).3. Options for one single series are given in   [the series instance array](series.columnrange).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        columnrange: {            // shared options for all columnrange series        }    },    series: [{        // specific options for this series instance        type: 'columnrange'    }]});</pre>            
 		/// </summary>
 		public PlotOptionsColumnrange Columnrange { get; set; }
 		private PlotOptionsColumnrange Columnrange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A cylinder graph is a variation of a 3d column graph. The cylinder graphfeatures cylindrical points.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `cylinder` series are defined in   [plotOptions.cylinder](plotOptions.cylinder).3. Options for one single series are given in   [the series instance array](series.cylinder).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        cylinder: {            // shared options for all cylinder series        }    },    series: [{        // specific options for this series instance        type: 'cylinder'    }]});</pre>            
+		/// </summary>
+		public PlotOptionsCylinder Cylinder { get; set; }
+		private PlotOptionsCylinder Cylinder_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -176,7 +195,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A pareto diagram is a type of chart that contains both bars and a line graph,where individual values are represented in descending order by bars,and the cumulative total is represented by the line.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `pareto` series are defined in   [plotOptions.pareto](plotOptions.pareto).3. Options for one single series are given in   [the series instance array](series.pareto).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        pareto: {            // shared options for all pareto series        }    },    series: [{        // specific options for this series instance        type: 'pareto'    }]});</pre>            
+		/// A networkgraph is a type of relationship chart, where connnections(links) attracts nodes (points) and other nodes repulse each other.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `networkgraph` series are defined in   [plotOptions.networkgraph](plotOptions.networkgraph).3. Options for one single series are given in   [the series instance array](series.networkgraph).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        networkgraph: {            // shared options for all networkgraph series        }    },    series: [{        // specific options for this series instance        type: 'networkgraph'    }]});</pre>            
+		/// </summary>
+		public PlotOptionsNetworkgraph Networkgraph { get; set; }
+		private PlotOptionsNetworkgraph Networkgraph_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A packed bubble series is a two dimensional series type, where each pointrenders a value in X, Y position. Each point is drawn as a bubble wherethe bubbles don't overlap with each other and the radius of the bubblerelated to the value. Requires `highcharts-more.js`.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `packedbubble` series are defined in   [plotOptions.packedbubble](plotOptions.packedbubble).3. Options for one single series are given in   [the series instance array](series.packedbubble).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        packedbubble: {            // shared options for all packedbubble series        }    },    series: [{        // specific options for this series instance        type: 'packedbubble'    }]});</pre>            
+		/// </summary>
+		public PlotOptionsPackedbubble Packedbubble { get; set; }
+		private PlotOptionsPackedbubble Packedbubble_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A pareto diagram is a type of chart that contains both bars and a line graph,where individual values are represented in descending order by bars, and thecumulative total is represented by the line.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `pareto` series are defined in   [plotOptions.pareto](plotOptions.pareto).3. Options for one single series are given in   [the series instance array](series.pareto).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        pareto: {            // shared options for all pareto series        }    },    series: [{        // specific options for this series instance        type: 'pareto'    }]});</pre>            
 		/// </summary>
 		public PlotOptionsPareto Pareto { get; set; }
 		private PlotOptionsPareto Pareto_DefaultValue { get; set; }
@@ -197,7 +230,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A pyramid series is a special type of funnel, without neck and reversed bydefault.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `pyramid` series are defined in   [plotOptions.pyramid](plotOptions.pyramid).3. Options for one single series are given in   [the series instance array](series.pyramid).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        pyramid: {            // shared options for all pyramid series        }    },    series: [{        // specific options for this series instance        type: 'pyramid'    }]});</pre>            
+		/// A pyramid series is a special type of funnel, without neck and reversed bydefault. Requires the funnel module.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `pyramid` series are defined in   [plotOptions.pyramid](plotOptions.pyramid).3. Options for one single series are given in   [the series instance array](series.pyramid).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        pyramid: {            // shared options for all pyramid series        }    },    series: [{        // specific options for this series instance        type: 'pyramid'    }]});</pre>            
 		/// </summary>
 		public PlotOptionsPyramid Pyramid { get; set; }
 		private PlotOptionsPyramid Pyramid_DefaultValue { get; set; }
@@ -295,6 +328,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A Venn diagram displays all possible logical relations between a collectionof different sets. The sets are represented by circles, and the relationbetween the sets are displayed by the overlap or lack of overlap betweenthem. The venn diagram is a special case of Euler diagrams, which can alsobe displayed by this series type.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `venn` series are defined in   [plotOptions.venn](plotOptions.venn).3. Options for one single series are given in   [the series instance array](series.venn).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        venn: {            // shared options for all venn series        }    },    series: [{        // specific options for this series instance        type: 'venn'    }]});</pre>            
+		/// </summary>
+		public PlotOptionsVenn Venn { get; set; }
+		private PlotOptionsVenn Venn_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A waterfall chart displays sequentially introduced positive or negativevalues in cumulative columns.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `waterfall` series are defined in   [plotOptions.waterfall](plotOptions.waterfall).3. Options for one single series are given in   [the series instance array](series.waterfall).<pre>Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        waterfall: {            // shared options for all waterfall series        }    },    series: [{        // specific options for this series instance        type: 'waterfall'    }]});</pre>            
 		/// </summary>
 		public PlotOptionsWaterfall Waterfall { get; set; }
@@ -336,13 +376,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Bubble.IsDirty()) h.Add("bubble",Bubble.ToHashtable());
 			if (Bullet.IsDirty()) h.Add("bullet",Bullet.ToHashtable());
 			if (Column.IsDirty()) h.Add("column",Column.ToHashtable());
+			if (Columnpyramid.IsDirty()) h.Add("columnpyramid",Columnpyramid.ToHashtable());
 			if (Columnrange.IsDirty()) h.Add("columnrange",Columnrange.ToHashtable());
+			if (Cylinder.IsDirty()) h.Add("cylinder",Cylinder.ToHashtable());
 			if (Errorbar.IsDirty()) h.Add("errorbar",Errorbar.ToHashtable());
 			if (Funnel.IsDirty()) h.Add("funnel",Funnel.ToHashtable());
 			if (Gauge.IsDirty()) h.Add("gauge",Gauge.ToHashtable());
 			if (Heatmap.IsDirty()) h.Add("heatmap",Heatmap.ToHashtable());
 			if (Histogram.IsDirty()) h.Add("histogram",Histogram.ToHashtable());
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
+			if (Networkgraph.IsDirty()) h.Add("networkgraph",Networkgraph.ToHashtable());
+			if (Packedbubble.IsDirty()) h.Add("packedbubble",Packedbubble.ToHashtable());
 			if (Pareto.IsDirty()) h.Add("pareto",Pareto.ToHashtable());
 			if (Pie.IsDirty()) h.Add("pie",Pie.ToHashtable());
 			if (Polygon.IsDirty()) h.Add("polygon",Polygon.ToHashtable());
@@ -360,6 +404,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Variablepie.IsDirty()) h.Add("variablepie",Variablepie.ToHashtable());
 			if (Variwide.IsDirty()) h.Add("variwide",Variwide.ToHashtable());
 			if (Vector.IsDirty()) h.Add("vector",Vector.ToHashtable());
+			if (Venn.IsDirty()) h.Add("venn",Venn.ToHashtable());
 			if (Waterfall.IsDirty()) h.Add("waterfall",Waterfall.ToHashtable());
 			if (Windbarb.IsDirty()) h.Add("windbarb",Windbarb.ToHashtable());
 			if (Wordcloud.IsDirty()) h.Add("wordcloud",Wordcloud.ToHashtable());

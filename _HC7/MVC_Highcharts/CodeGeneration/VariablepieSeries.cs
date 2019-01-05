@@ -17,8 +17,8 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = "#cccccc";
-			BorderWidth = BorderWidth_DefaultValue = 0;
+			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Id = Id_DefaultValue = "";
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			Index = Index_DefaultValue = null;
-			InnerSize = InnerSize_DefaultValue = "null";
+			InnerSize = InnerSize_DefaultValue = "0";
 			InnerSizeNumber = InnerSizeNumber_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new VariablepieSeriesLabel();
@@ -46,9 +46,9 @@ namespace Highsoft.Web.Mvc.Charts
 			LegendType = LegendType_DefaultValue = "point";
 			Linecap = Linecap_DefaultValue = VariablepieSeriesLinecap.Round;
 			LinkedTo = LinkedTo_DefaultValue = "";
-			MaxPointSize = MaxPointSize_DefaultValue = "null";
+			MaxPointSize = MaxPointSize_DefaultValue = "100%";
 			MaxPointSizeNumber = MaxPointSizeNumber_DefaultValue = null;
-			MinPointSize = MinPointSize_DefaultValue = "null";
+			MinPointSize = MinPointSize_DefaultValue = "10%";
 			MinPointSizeNumber = MinPointSizeNumber_DefaultValue = null;
 			MinSize = MinSize_DefaultValue = 80;
 			Name = Name_DefaultValue = "";
@@ -59,7 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
-			Size = Size_DefaultValue = "null";
+			Size = Size_DefaultValue = "";
 			SizeNumber = SizeNumber_DefaultValue = null;
 			SizeBy = SizeBy_DefaultValue = VariablepieSeriesSizeBy.Area;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
@@ -69,6 +69,7 @@ namespace Highsoft.Web.Mvc.Charts
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new VariablepieSeriesTooltip();
 			Type = Type_DefaultValue = VariablepieSeriesType.Null;
+			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			ZIndex = ZIndex_DefaultValue = null;
 			ZMax = ZMax_DefaultValue = null;
@@ -99,14 +100,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border color of the map areas.In styled mode, the border stroke is given in the `.highcharts-point`class.
+		/// The color of the border surrounding each slice. When `null`, theborder takes the same color as the slice fill. This can be usedtogether with a `borderWidth` to fill drawing gaps created byantialiazing artefacts in borderless pies.In styled mode, the border stroke is given in the `.highcharts-point`class.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border width of each map area.In styled mode, the border stroke width is given in the`.highcharts-point` class.
+		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the`.highcharts-point` class.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
@@ -162,7 +163,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the `variablepie` series type,points can be given in the following ways:1.  An array of arrays with 2 values. In this case, the numerical valueswill be interpreted as `y, z` options. Example: ```js data: [     [40, 75],     [50, 50],     [60, 40] ] ```2.  An array of objects with named values. The following snippet shows only afew settings, see the complete options set below. If the total number of datapoints exceeds the series'[turboThreshold](#series.variablepie.turboThreshold), this option is notavailable. ```js data: [{     y: 1,     z: 4,     name: "Point2",     color: "#00FF00"  }, {     y: 7,     z: 10,     name: "Point1",     color: "#FF00FF"  }] ```
+		/// An array of data points for the series. For the `variablepie` series type,points can be given in the following ways:1. An array of arrays with 2 values. In this case, the numerical values will   be interpreted as `y, z` options. Example:   ```js   data: [       [40, 75],       [50, 50],       [60, 40]   ]   ```2. An array of objects with named values. The following snippet shows only a   few settings, see the complete options set below. If the total number of   data points exceeds the series'   [turboThreshold](#series.variablepie.turboThreshold), this option is not   available.   ```js   data: [{       y: 1,       z: 4,       name: "Point2",       color: "#00FF00"   }, {       y: 7,       z: 10,       name: "Point1",       color: "#FF00FF"   }]   ```
 		/// </summary>
 		public List<VariablepieSeriesData> Data { get; set; }
 		private List<VariablepieSeriesData> Data_DefaultValue { get; set; }
@@ -190,7 +191,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public VariablepieSeriesDragDrop DragDrop { get; set; }
 		private VariablepieSeriesDragDrop DragDrop_DefaultValue { get; set; }
@@ -407,7 +408,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether the pie slice's value should be represented by the areaor the radius of the slice. Can be either `area` or `radius`. Thedefault, `area`, corresponds best to the human perception of the sizeof each pie slice.
+		/// Whether the pie slice's value should be represented by the area orthe radius of the slice. Can be either `area` or `radius`. Thedefault, `area`, corresponds best to the human perception of the sizeof each pie slice.
 		/// </summary>
 		public VariablepieSeriesSizeBy SizeBy { get; set; }
 		private VariablepieSeriesSizeBy SizeBy_DefaultValue { get; set; }
@@ -463,6 +464,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The parameter allows setting line series type and use OHLC indicators. Datain OHLC format is required.
+		/// </summary>
+		public bool? UseOhlcData { get; set; }
+		private bool? UseOhlcData_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -484,7 +492,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The minimum possible z value for the point's radius calculation.If the point's Z value is smaller than zMin, the slice will be drawnaccording to the zMin value.
+		/// The minimum possible z value for the point's radius calculation. Ifthe point's Z value is smaller than zMin, the slice will be drawnaccording to the zMin value.
 		/// </summary>
 		public double? ZMin { get; set; }
 		private double? ZMin_DefaultValue { get; set; }
@@ -549,6 +557,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZMax != ZMax_DefaultValue) h.Add("zMax",ZMax);

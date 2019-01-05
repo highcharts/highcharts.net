@@ -27,10 +27,11 @@ namespace Highsoft.Web.Mvc.Charts
 			FooterFormat = FooterFormat_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
+			HeaderShape = HeaderShape_DefaultValue = TooltipHeaderShape.Callout;
 			HideDelay = HideDelay_DefaultValue = 500;
 			Outside = Outside_DefaultValue = false;
 			Padding = Padding_DefaultValue = "8";
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -133,10 +134,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The HTML of the tooltip header line. Variables are enclosed bycurly brackets. Available variables are `point.key`, `series.name`,`series.color` and other members from the `point` and `series`objects. The `point.key` variable contains the category name, xvalue or datetime string depending on the type of axis. For datetimeaxes, the `point.key` date format can be set using`tooltip.xDateFormat`. To access the original point use`point.point`.
+		/// The HTML of the tooltip header line. Variables are enclosed bycurly brackets. Available variables are `point.key`, `series.name`,`series.color` and other members from the `point` and `series`objects. The `point.key` variable contains the category name, xvalue or datetime string depending on the type of axis. For datetimeaxes, the `point.key` date format can be set using`tooltip.xDateFormat`.
 		/// </summary>
 		public string HeaderFormat { get; set; }
 		private string HeaderFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of a symbol to use for the border around the tooltipheader. Applies only when [tooltip.split](#tooltip.split) isenabled.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
+		/// </summary>
+		public TooltipHeaderShape HeaderShape { get; set; }
+		private TooltipHeaderShape HeaderShape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -175,7 +183,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A callback function to place the tooltip in a default position. Thecallback receives three parameters: `labelWidth`, `labelHeight` and`point`, where point contains values for `plotX` and `plotY` tellingwhere the reference point is in the plot area. Add `chart.plotLeft`and `chart.plotTop` to get the full coordinates.The return should be an object containing x and y values, for example`{ x: 100, y: 100 }`.
+		/// A callback function to place the tooltip in a default position. Thecallback receives three parameters: `labelWidth`, `labelHeight` and`point`, where point contains values for `plotX` and `plotY` tellingwhere the reference point is in the plot area. Add `chart.plotLeft`and `chart.plotTop` to get the full coordinates.Since v7, when [tooltip.split](#tooltip.split) option is enabled,positioner is called for each of the boxes separately, includingxAxis header. xAxis header is not a point, instead `point` argumentcontains info:`{ plotX: Number, plotY: Number, isHeader: Boolean }`The return should be an object containing x and y values, for example`{ x: 100, y: 100 }`.
 		/// </summary>
 		public string Positioner { get; set; }
 		private string Positioner_DefaultValue { get; set; }
@@ -189,7 +197,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of a symbol to use for the border around the tooltip. Canbe one of: `"callout"`, `"circle"` or `"square"`.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
+		/// The name of a symbol to use for the border around the tooltip. Canbe one of: `"callout"`, `"circle"` or `"square"`. When[tooltip.split](#tooltip.split) option is enabled, shape is appliedto all boxes except header, which is controlled by[tooltip.headerShape](#tooltip.headerShape).Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
 		/// </summary>
 		public TooltipShape Shape { get; set; }
 		private TooltipShape Shape_DefaultValue { get; set; }
@@ -275,6 +283,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("TooltipFormatter.formatter", Formatter); }  
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
+			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", Highcharts.FirstCharacterToLower(HeaderShape.ToString()));
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (Outside != Outside_DefaultValue) h.Add("outside",Outside);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);

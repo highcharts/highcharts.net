@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Charts
     public enum WindbarbSeriesCursor
     {
         Null, 
-		Crosshair, 
 		Default, 
-		Help, 
 		None, 
-		Pointer
+		Help, 
+		Pointer, 
+		Crosshair
     }
 }

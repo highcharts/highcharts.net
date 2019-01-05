@@ -48,7 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Options for configuring accessibility for the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
+		/// Options for configuring accessibility for the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and informationon its features, see[Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
 		/// </summary>
 		public Accessibility Accessibility { get; set; }
 		private Accessibility Accessibility_DefaultValue { get; set; }
@@ -230,7 +230,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The X axis or category axis. Normally this is the horizontal axis,though if the chart is inverted this is the vertical axis. In case ofmultiple axes, the xAxis node is an array of configuration objects.See [the Axis object](/class-reference/Highcharts.Axis) forprogrammatic access to the axis.
+		/// The X axis or category axis. Normally this is the horizontal axis,though if the chart is inverted this is the vertical axis. In case ofmultiple axes, the xAxis node is an array of configuration objects.See the [Axis class](/class-reference/Highcharts.Axis) for programmaticaccess to the axis.
 		/// </summary>
 		public List<XAxis> XAxis { get; set; }
 		private List<XAxis> XAxis_DefaultValue { get; set; }
@@ -244,7 +244,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The Z axis or depth axis for 3D plots.See [the Axis object](/class-reference/Highcharts.Axis) for programmaticaccess to the axis.
+		/// The Z axis or depth axis for 3D plots.See the [Axis class](/class-reference/Highcharts.Axis) for programmaticaccess to the axis.
 		/// </summary>
 		public ZAxis ZAxis { get; set; }
 		private ZAxis ZAxis_DefaultValue { get; set; }

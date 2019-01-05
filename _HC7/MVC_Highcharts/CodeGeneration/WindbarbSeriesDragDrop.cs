@@ -109,7 +109,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Style options for the guide box. The guide box has one state by default,the "default" state.
+		/// Style options for the guide box. The guide box has one state by default, the`default` state.
 		/// </summary>
 		public WindbarbSeriesDragDropGuideBox GuideBox { get; set; }
 		private WindbarbSeriesDragDropGuideBox GuideBox_DefaultValue { get; set; }

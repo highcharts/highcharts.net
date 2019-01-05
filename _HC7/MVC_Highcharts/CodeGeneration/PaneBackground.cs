@@ -18,11 +18,11 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ClassName = ClassName_DefaultValue = "";
-			InnerRadius = InnerRadius_DefaultValue = "null";
+			InnerRadius = InnerRadius_DefaultValue = "0";
 			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
-			OuterRadius = OuterRadius_DefaultValue = "null";
+			OuterRadius = OuterRadius_DefaultValue = "105%";
 			OuterRadiusNumber = OuterRadiusNumber_DefaultValue = null;
-			Shape = Shape_DefaultValue = PaneBackgroundShape.Solid;
+			Shape = Shape_DefaultValue = PaneBackgroundShape.Circle;
 			
 		}	
 		

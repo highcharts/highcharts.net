@@ -32,9 +32,12 @@ namespace SourceCodeGenerator.Services
                 var clone = item.Clone();
                 clone.Types.Clear();
                 clone.ReturnType = "String";
-                clone.Defaults = "null";
+
                 if (counter > 0)
+                {
                     clone.Suffix = "String";
+                    clone.Defaults = "null";
+                }
                 else
                     clone.Suffix = string.Empty;
 
@@ -49,9 +52,12 @@ namespace SourceCodeGenerator.Services
                 var clone = item.Clone();
                 clone.Types.Clear();
                 clone.ReturnType = "Number";
-                clone.Defaults = "null";
+                
                 if (counter > 0)
+                {
                     clone.Suffix = "Number";
+                    clone.Defaults = "null";
+                }
                 else
                     clone.Suffix = string.Empty;
 
@@ -66,9 +72,12 @@ namespace SourceCodeGenerator.Services
                 var clone = item.Clone();
                 clone.Types.Clear();
                 clone.ReturnType = "Boolean";
-                clone.Defaults = "null";
+                
                 if (counter > 0)
+                {
                     clone.Suffix = "Bool";
+                    clone.Defaults = "null";
+                }
                 else
                     clone.Suffix = string.Empty;
 

@@ -117,7 +117,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Style options for the guide box. The guide box has one state by default,the "default" state.
+		/// Style options for the guide box. The guide box has one state by default, the`default` state.
 		/// </summary>
 		public PlotOptionsBulletDragDropGuideBox GuideBox { get; set; }
 		private PlotOptionsBulletDragDropGuideBox GuideBox_DefaultValue { get; set; }

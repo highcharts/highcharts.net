@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Can set a `dataLabels` on all points which lies on the same level.
+		/// Can set `dataLabels` on all points which lies on the same level.
 		/// </summary>
 		public PlotOptionsSunburstDataLabels DataLabels { get; set; }
 		private PlotOptionsSunburstDataLabels DataLabels_DefaultValue { get; set; }

@@ -1,5 +1,26 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
 
+# Version 7.0.1
+
+Add:
+- Id to Annotations
+- TooltipHeaderShape to series
+- Chart.DisplayErrors
+- Lang.Navigation
+- Chart.DisplayErrors
+- Chart.StyledMode
+- ChartOptions3d.ViewDistance = 25 instead of 100
+- Land.Navigation
+- Legend.BubbleLegend
+- Navigation.Bindings
+- Navigation.BindingsClassName
+- Navigation.Events
+- PlotOptions.Columnpyramid
+- PlotOptions.Cylinder
+- PlotOptions.Networkgraph
+- PlotOptions.Packedbubble
+- PlotOptions.Venn
+
 # Version 6.2.0
 
 Updates:

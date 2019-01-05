@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			Color = Color_DefaultValue = "";
 			Height = Height_DefaultValue = 3;
-			Width = Width_DefaultValue = "null";
+			Width = Width_DefaultValue = "140%";
 			WidthNumber = WidthNumber_DefaultValue = null;
 			
 		}	
