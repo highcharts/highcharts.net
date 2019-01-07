@@ -23,7 +23,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			ColorCount = ColorCount_DefaultValue = 10;
-			Description = Description_DefaultValue = "undefined";
+			Description = Description_DefaultValue = "";
+			DisplayErrors = DisplayErrors_DefaultValue = true;
 			Events = Events_DefaultValue = new ChartEvents();
 			Height = Height_DefaultValue = null;
 			HeightNumber = HeightNumber_DefaultValue = null;
@@ -43,19 +44,20 @@ namespace Highsoft.Web.Mvc.Stocks
 			PlotShadow = PlotShadow_DefaultValue = new Shadow() { Enabled = false };
 			PlotShadowBool = PlotShadowBool_DefaultValue = null;
 			Reflow = Reflow_DefaultValue = true;
-			RenderTo = RenderTo_DefaultValue = "null";
+			RenderTo = RenderTo_DefaultValue = "";
 			ResetZoomButton = ResetZoomButton_DefaultValue = new ChartResetZoomButton();
 			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(51,92,173,0.25)";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShadowBool = ShadowBool_DefaultValue = null;
-			Spacing = Spacing_DefaultValue = new List<double> { 10, 10, 15, 10 };
+			Spacing = Spacing_DefaultValue = new List<double>();
 			SpacingBottom = SpacingBottom_DefaultValue = 15;
 			SpacingLeft = SpacingLeft_DefaultValue = 10;
 			SpacingRight = SpacingRight_DefaultValue = 10;
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new ChartStyle();
+			StyledMode = StyledMode_DefaultValue = false;
 			Type = Type_DefaultValue = ChartType.Null;
-			TypeDescription = TypeDescription_DefaultValue = "undefined";
+			TypeDescription = TypeDescription_DefaultValue = "";
 			Width = Width_DefaultValue = null;
 			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
@@ -131,6 +133,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to display errors on the chart. When `false`, the errors willbe shown only in the console.Requires `debugger.js` module.
+		/// </summary>
+		public bool? DisplayErrors { get; set; }
+		private bool? DisplayErrors_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -344,6 +353,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to apply styled mode. When in styled mode, no presentationalattributes or CSS are applied to the chart SVG. Instead, CSS rulesare required to style the chart. The default style sheet isavailable from `https://code.highcharts.com/css/highcharts.css`.
+		/// </summary>
+		public bool? StyledMode { get; set; }
+		private bool? StyledMode_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The default series type for the chart. Can be any of the chart typeslisted under [plotOptions](#plotOptions).
 		/// </summary>
 		public ChartType Type { get; set; }
@@ -392,6 +408,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (ColorCount != ColorCount_DefaultValue) h.Add("colorCount",ColorCount);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DisplayErrors != DisplayErrors_DefaultValue) h.Add("displayErrors",DisplayErrors);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
@@ -422,6 +439,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SpacingRight != SpacingRight_DefaultValue) h.Add("spacingRight",SpacingRight);
 			if (SpacingTop != SpacingTop_DefaultValue) h.Add("spacingTop",SpacingTop);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (StyledMode != StyledMode_DefaultValue) h.Add("styledMode",StyledMode);
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
 			if (Width != Width_DefaultValue) h.Add("width",Width);

@@ -40,6 +40,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			GapUnit = GapUnit_DefaultValue = PlotOptionsPivotpointsGapUnit.Relative;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Label = Label_DefaultValue = new PlotOptionsPivotpointsLabel();
+			LastPrice = LastPrice_DefaultValue = new PlotOptionsPivotpointsLastPrice();
+			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsPivotpointsLastVisiblePrice();
 			Linecap = Linecap_DefaultValue = PlotOptionsPivotpointsLinecap.Round;
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
@@ -97,7 +99,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.Requires `modules/boost.js`.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
@@ -188,7 +190,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public PlotOptionsPivotpointsDragDrop DragDrop { get; set; }
 		private PlotOptionsPivotpointsDragDrop DragDrop_DefaultValue { get; set; }
@@ -248,6 +250,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsPivotpointsLabel Label { get; set; }
 		private PlotOptionsPivotpointsLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from all points.
+		/// </summary>
+		public PlotOptionsPivotpointsLastPrice LastPrice { get; set; }
+		private PlotOptionsPivotpointsLastPrice LastPrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from visible range of points.
+		/// </summary>
+		public PlotOptionsPivotpointsLastVisiblePrice LastVisiblePrice { get; set; }
+		private PlotOptionsPivotpointsLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -448,6 +464,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
+			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);

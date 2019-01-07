@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Compare = Compare_DefaultValue = "undefined";
+			Compare = Compare_DefaultValue = "";
 			CompareBase = CompareBase_DefaultValue = PlotOptionsVectorCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsVectorCursor.Null;
@@ -36,6 +36,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsVectorLabel();
+			LastPrice = LastPrice_DefaultValue = new PlotOptionsVectorLastPrice();
+			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsVectorLastVisiblePrice();
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "";
@@ -164,7 +166,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public PlotOptionsVectorDragDrop DragDrop { get; set; }
 		private PlotOptionsVectorDragDrop DragDrop_DefaultValue { get; set; }
@@ -217,6 +219,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsVectorLabel Label { get; set; }
 		private PlotOptionsVectorLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from all points.
+		/// </summary>
+		public PlotOptionsVectorLastPrice LastPrice { get; set; }
+		private PlotOptionsVectorLastPrice LastPrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from visible range of points.
+		/// </summary>
+		public PlotOptionsVectorLastVisiblePrice LastVisiblePrice { get; set; }
+		private PlotOptionsVectorLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -420,6 +436,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
+			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);

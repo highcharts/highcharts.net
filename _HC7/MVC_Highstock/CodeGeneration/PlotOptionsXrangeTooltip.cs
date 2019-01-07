@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsXrangeTooltip()
 		{
-			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 0.85em'>{point.x} - {point.x2}</span><br/>";
+			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.x} - {point.x2}</span><br/>";
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.yCategory}</b><br/>";
 			
 		}	

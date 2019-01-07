@@ -62,7 +62,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Callback != Callback_DefaultValue) h.Add("callback",Callback);
+			if (Callback != Callback_DefaultValue) { h.Add("callback",Callback); Highstock.AddFunction("ResponsiveRulesConditionCallback.callback", Callback); }  
 			if (MaxHeight != MaxHeight_DefaultValue) h.Add("maxHeight",MaxHeight);
 			if (MaxWidth != MaxWidth_DefaultValue) h.Add("maxWidth",MaxWidth);
 			if (MinHeight != MinHeight_DefaultValue) h.Add("minHeight",MinHeight);

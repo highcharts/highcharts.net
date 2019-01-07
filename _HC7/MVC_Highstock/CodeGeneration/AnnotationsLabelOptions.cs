@@ -23,15 +23,15 @@ namespace Highsoft.Web.Mvc.Stocks
 			ClassName = ClassName_DefaultValue = "";
 			Crop = Crop_DefaultValue = false;
 			Distance = Distance_DefaultValue = null;
-			Format = Format_DefaultValue = "undefined";
+			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = AnnotationsLabelOptionsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = new AnnotationsLabelOptionsStyle();
-			Text = Text_DefaultValue = "undefined";
+			Style = Style_DefaultValue = new Hashtable();
+			Text = Text_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelOptionsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
@@ -104,7 +104,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A [format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) string for the data label.
+		/// A[format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)string for the data label.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
@@ -155,8 +155,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Styles for the annotation's label.
 		/// </summary>
-		public AnnotationsLabelOptionsStyle Style { get; set; }
-		private AnnotationsLabelOptionsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -214,7 +214,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));

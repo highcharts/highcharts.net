@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			BorderWidth = BorderWidth_DefaultValue = 1;
+			BorderWidth = BorderWidth_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
-			Compare = Compare_DefaultValue = "undefined";
+			Compare = Compare_DefaultValue = "";
 			CompareBase = CompareBase_DefaultValue = PlotOptionsColumnrangeCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Crisp = Crisp_DefaultValue = true;
@@ -51,6 +51,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsColumnrangeLabel();
+			LastPrice = LastPrice_DefaultValue = new PlotOptionsColumnrangeLastPrice();
+			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsColumnrangeLastVisiblePrice();
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
@@ -110,7 +112,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.Requires `modules/boost.js`.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
@@ -131,7 +133,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
+		/// The width of the border surrounding each column or bar. Defaults to `1`when there is room for a border, but to `0` when the columns are so densethat a border would cover the next column.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
@@ -222,7 +224,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#.dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
+		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
 		/// </summary>
 		public PlotOptionsColumnrangeDataGrouping DataGrouping { get; set; }
 		private PlotOptionsColumnrangeDataGrouping DataGrouping_DefaultValue { get; set; }
@@ -338,6 +340,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsColumnrangeLabel Label { get; set; }
 		private PlotOptionsColumnrangeLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from all points.
+		/// </summary>
+		public PlotOptionsColumnrangeLastPrice LastPrice { get; set; }
+		private PlotOptionsColumnrangeLastPrice LastPrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from visible range of points.
+		/// </summary>
+		public PlotOptionsColumnrangeLastVisiblePrice LastVisiblePrice { get; set; }
+		private PlotOptionsColumnrangeLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -563,6 +579,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
+			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);

@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
-			Compare = Compare_DefaultValue = "undefined";
+			Compare = Compare_DefaultValue = "";
 			CompareBase = CompareBase_DefaultValue = OhlcSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
@@ -50,6 +50,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new OhlcSeriesLabel();
+			LastPrice = LastPrice_DefaultValue = new OhlcSeriesLastPrice();
+			LastVisiblePrice = LastVisiblePrice_DefaultValue = new OhlcSeriesLastVisiblePrice();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
@@ -124,7 +126,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.Requires `modules/boost.js`.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
@@ -208,14 +210,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the `ohlc` series type,points can be given in the following ways:1.  An array of arrays with 5 or 4 values. In this case, the valuescorrespond to `x,open,high,low,close`. If the first value is a string,it is applied as the name of the point, and the `x` value is inferred.The `x` value can also be omitted, in which case the inner arraysshould be of length 4\. Then the `x` value is automatically calculated,either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. ```js    data: [        [0, 6, 5, 6, 7],        [1, 9, 4, 8, 2],        [2, 6, 3, 4, 10]    ] ```2.  An array of objects with named values. The following snippet shows only afew settings, see the complete options set below. If the total number of datapoints exceeds the series' [turboThreshold](#series.ohlc.turboThreshold),this option is not available. ```js    data: [{        x: 1,        open: 3,        high: 4,        low: 5,        close: 2,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        open: 4,        high: 3,        low: 6,        close: 7,        name: "Point1",        color: "#FF00FF"    }] ```
+		/// An array of data points for the series. For the `ohlc` series type,points can be given in the following ways:1. An array of arrays with 5 or 4 values. In this case, the values correspond   to `x,open,high,low,close`. If the first value is a string, it is applied   as the name of the point, and the `x` value is inferred. The `x` value can   also be omitted, in which case the inner arrays should be of length 4\.   Then the `x` value is automatically calculated, either starting at 0 and   incremented by 1, or from `pointStart` and `pointInterval` given in the   series options.   ```js   data: [       [0, 6, 5, 6, 7],       [1, 9, 4, 8, 2],       [2, 6, 3, 4, 10]   ]   ```2. An array of objects with named values. The following snippet shows only a   few settings, see the complete options set below. If the total number of   data points exceeds the series'   [turboThreshold](#series.ohlc.turboThreshold), this option is not   available.   ```js   data: [{       x: 1,       open: 3,       high: 4,       low: 5,       close: 2,       name: "Point2",       color: "#00FF00"   }, {       x: 1,       open: 4,       high: 3,       low: 6,       close: 7,       name: "Point1",       color: "#FF00FF"   }]   ```
 		/// </summary>
 		public List<OhlcSeriesData> Data { get; set; }
 		private List<OhlcSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#.dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
+		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
 		/// </summary>
 		public OhlcSeriesDataGrouping DataGrouping { get; set; }
 		private OhlcSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
@@ -243,7 +245,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public OhlcSeriesDragDrop DragDrop { get; set; }
 		private OhlcSeriesDragDrop DragDrop_DefaultValue { get; set; }
@@ -345,6 +347,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public OhlcSeriesLabel Label { get; set; }
 		private OhlcSeriesLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from all points.
+		/// </summary>
+		public OhlcSeriesLastPrice LastPrice { get; set; }
+		private OhlcSeriesLastPrice LastPrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from visible range of points.
+		/// </summary>
+		public OhlcSeriesLastVisiblePrice LastVisiblePrice { get; set; }
+		private OhlcSeriesLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -674,6 +690,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
+			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);

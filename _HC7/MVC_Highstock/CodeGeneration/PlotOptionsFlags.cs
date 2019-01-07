@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
-			Compare = Compare_DefaultValue = "undefined";
+			Compare = Compare_DefaultValue = "";
 			CompareBase = CompareBase_DefaultValue = PlotOptionsFlagsCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Crisp = Crisp_DefaultValue = true;
@@ -47,6 +47,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Height = Height_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsFlagsLabel();
+			LastPrice = LastPrice_DefaultValue = new PlotOptionsFlagsLastPrice();
+			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsFlagsLastVisiblePrice();
 			LineColor = LineColor_DefaultValue = "#000000";
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
@@ -54,7 +56,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			NegativeColor = NegativeColor_DefaultValue = "";
 			OnKey = OnKey_DefaultValue = PlotOptionsFlagsOnKey.Y;
-			OnSeries = OnSeries_DefaultValue = "undefined";
+			OnSeries = OnSeries_DefaultValue = "";
 			Point = Point_DefaultValue = new PlotOptionsFlagsPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
@@ -112,7 +114,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.Requires `modules/boost.js`.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
@@ -217,7 +219,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public PlotOptionsFlagsDragDrop DragDrop { get; set; }
 		private PlotOptionsFlagsDragDrop DragDrop_DefaultValue { get; set; }
@@ -319,6 +321,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsFlagsLabel Label { get; set; }
 		private PlotOptionsFlagsLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from all points.
+		/// </summary>
+		public PlotOptionsFlagsLastPrice LastPrice { get; set; }
+		private PlotOptionsFlagsLastPrice LastPrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from visible range of points.
+		/// </summary>
+		public PlotOptionsFlagsLastVisiblePrice LastVisiblePrice { get; set; }
+		private PlotOptionsFlagsLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -631,6 +647,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
+			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);

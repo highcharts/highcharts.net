@@ -19,6 +19,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			FontSize = FontSize_DefaultValue = "12px";
 			PointerEvents = PointerEvents_DefaultValue = "none";
 			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
+			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
+			
 		}	
 		
 

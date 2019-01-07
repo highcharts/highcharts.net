@@ -14,15 +14,59 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Annotations()
 		{
+			CrookedLine = CrookedLine_DefaultValue = new AnnotationsCrookedLine();
+			ElliottWave = ElliottWave_DefaultValue = new AnnotationsElliottWave();
+			Fibonacci = Fibonacci_DefaultValue = new AnnotationsFibonacci();
+			Id = Id_DefaultValue = "";
+			InfinityLine = InfinityLine_DefaultValue = new AnnotationsInfinityLine();
 			LabelOptions = LabelOptions_DefaultValue = new AnnotationsLabelOptions();
 			Labels = Labels_DefaultValue = new List<AnnotationsLabels>();
+			Measure = Measure_DefaultValue = new AnnotationsMeasure();
+			Pitchfork = Pitchfork_DefaultValue = new AnnotationsPitchfork();
 			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsShapeOptions();
 			Shapes = Shapes_DefaultValue = new List<AnnotationsShapes>();
+			Tunnel = Tunnel_DefaultValue = new AnnotationsTunnel();
+			VerticalLine = VerticalLine_DefaultValue = new AnnotationsVerticalLine();
 			Visible = Visible_DefaultValue = true;
 			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
 		
+
+		/// <summary>
+		/// A crooked line annotation.
+		/// </summary>
+		public AnnotationsCrookedLine CrookedLine { get; set; }
+		private AnnotationsCrookedLine CrookedLine_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An elliott wave annotation.
+		/// </summary>
+		public AnnotationsElliottWave ElliottWave { get; set; }
+		private AnnotationsElliottWave ElliottWave_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A fibonacci annotation.
+		/// </summary>
+		public AnnotationsFibonacci Fibonacci { get; set; }
+		private AnnotationsFibonacci Fibonacci_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sets an ID for an annotation. Can be user later when removing anannotation in [Chart#removeAnnotation(id)](/class-reference/Highcharts.Chart#removeAnnotation) method.
+		/// </summary>
+		public string Id { get; set; }
+		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An infinity line annotation.
+		/// </summary>
+		public AnnotationsInfinityLine InfinityLine { get; set; }
+		private AnnotationsInfinityLine InfinityLine_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Options for annotation's labels. Each label inherits optionsfrom the labelOptions object. An option from the labelOptions can beoverwritten by config for a specific label.
@@ -39,6 +83,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A measure annotation.
+		/// </summary>
+		public AnnotationsMeasure Measure { get; set; }
+		private AnnotationsMeasure Measure_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A pitchfork annotation.
+		/// </summary>
+		public AnnotationsPitchfork Pitchfork { get; set; }
+		private AnnotationsPitchfork Pitchfork_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options for annotation's shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptions can beoverwritten by config for a specific shape.
 		/// </summary>
 		public AnnotationsShapeOptions ShapeOptions { get; set; }
@@ -50,6 +108,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<AnnotationsShapes> Shapes { get; set; }
 		private List<AnnotationsShapes> Shapes_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A tunnel annotation.
+		/// </summary>
+		public AnnotationsTunnel Tunnel { get; set; }
+		private AnnotationsTunnel Tunnel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A vertical line annotation.
+		/// </summary>
+		public AnnotationsVerticalLine VerticalLine { get; set; }
+		private AnnotationsVerticalLine VerticalLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,10 +142,19 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (CrookedLine.IsDirty()) h.Add("crookedLine",CrookedLine.ToHashtable());
+			if (ElliottWave.IsDirty()) h.Add("elliottWave",ElliottWave.ToHashtable());
+			if (Fibonacci.IsDirty()) h.Add("fibonacci",Fibonacci.ToHashtable());
+			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InfinityLine.IsDirty()) h.Add("infinityLine",InfinityLine.ToHashtable());
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
 			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(Labels));
+			if (Measure.IsDirty()) h.Add("measure",Measure.ToHashtable());
+			if (Pitchfork.IsDirty()) h.Add("pitchfork",Pitchfork.ToHashtable());
 			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
 			if (Shapes != Shapes_DefaultValue) h.Add("shapes", HashifyList(Shapes));
+			if (Tunnel.IsDirty()) h.Add("tunnel",Tunnel.ToHashtable());
+			if (VerticalLine.IsDirty()) h.Add("verticalLine",VerticalLine.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			

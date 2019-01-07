@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Navigator()
 		{
 			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
-			BaseSeries = BaseSeries_DefaultValue = 0;
+			BaseSeries = BaseSeries_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Handles = Handles_DefaultValue = new NavigatorHandles();
 			Height = Height_DefaultValue = 40;
@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MaskInside = MaskInside_DefaultValue = true;
 			Opposite = Opposite_DefaultValue = false;
 			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
-			OutlineWidth = OutlineWidth_DefaultValue = 2;
+			OutlineWidth = OutlineWidth_DefaultValue = 1;
 			Series = Series_DefaultValue = new Series();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An integer identifying the index to use for the base series, or astring representing the id of the series.**Note**: As of Highcharts 5.0, this is now a deprecated option.Prefer [series.showInNavigator](#plotOptions.series.showInNavigator).
 		/// </summary>
-		public double? BaseSeries { get; set; }
-		private double? BaseSeries_DefaultValue { get; set; }
+		public string BaseSeries { get; set; }
+		private string BaseSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>

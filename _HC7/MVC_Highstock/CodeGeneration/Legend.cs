@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderColor = BorderColor_DefaultValue = "#999999";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
+			BubbleLegend = BubbleLegend_DefaultValue = new LegendBubbleLegend();
 			Enabled = Enabled_DefaultValue = true;
 			Floating = Floating_DefaultValue = false;
 			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new LegendItemCheckboxStyle();
@@ -101,6 +102,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The bubble legend is an additional element in legend which presentsthe scale of the bubble series. Individual bubble ranges can bedefined by user or calculated from series. In the case ofautomatically calculated ranges, a 1px margin of error is permitted.Requires `highcharts-more.js`.
+		/// </summary>
+		public LegendBubbleLegend BubbleLegend { get; set; }
+		private LegendBubbleLegend BubbleLegend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the legend. There is also a series-specific option,[showInLegend](#plotOptions.series.showInLegend), that can hide theseries from the legend. In some series types this is `false` bydefault, so it must set to `true` in order to show the legend for theseries.
 		/// </summary>
 		public bool? Enabled { get; set; }
@@ -178,7 +186,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) for each legend label. Availablevariables relates to properties on the series, or the point in caseof pies.
+		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for each legend label. Available variables relates to properties onthe series, or the point in case of pies.
 		/// </summary>
 		public string LabelFormat { get; set; }
 		private string LabelFormat_DefaultValue { get; set; }
@@ -304,7 +312,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the legend item texts.Prior to 4.1.7, when using HTML, [legend.navigation](#legend.navigation) was disabled.
+		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the legend item texts.Prior to 4.1.7, when using HTML, [legend.navigation](#legend.navigation) was disabled.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
@@ -348,6 +356,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (BubbleLegend.IsDirty()) h.Add("bubbleLegend",BubbleLegend.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (ItemCheckboxStyle.IsDirty()) h.Add("itemCheckboxStyle",ItemCheckboxStyle.ToHashtable());

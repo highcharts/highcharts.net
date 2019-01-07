@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Color = Color_DefaultValue = "#333333";
 			Cursor = Cursor_DefaultValue = "pointer";
-			Cursor = Cursor_DefaultValue = "'pointer'";
 			FontSize = FontSize_DefaultValue = "12px";
 			FontWeight = FontWeight_DefaultValue = "bold";
 			TextOverflow = TextOverflow_DefaultValue = "ellipsis";
@@ -37,6 +36,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public string Cursor { get; set; }
 		private string Cursor_DefaultValue { get; set; }
 		 
+
 		/// <summary>
 		/// 
 		/// </summary>

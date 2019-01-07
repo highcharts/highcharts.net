@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Attr = Attr_DefaultValue = new Hashtable();
 			Position = Position_DefaultValue = new Hashtable();
-			Style = Style_DefaultValue = new NoDataStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
 			
 		}	
@@ -39,8 +39,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the no-data label.
 		/// </summary>
-		public NoDataStyle Style { get; set; }
-		private NoDataStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -56,7 +56,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Attr != Attr_DefaultValue) h.Add("attr",Attr);
 			if (Position != Position_DefaultValue) h.Add("position",Position);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			
 

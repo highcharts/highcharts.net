@@ -37,6 +37,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Responsive = Responsive_DefaultValue = new Responsive();
 			Scrollbar = Scrollbar_DefaultValue = new Scrollbar();
 			Series = Series_DefaultValue = new List<Series>();
+			StockTools = StockTools_DefaultValue = new StockTools();
 			Subtitle = Subtitle_DefaultValue = new Subtitle();
 			Time = Time_DefaultValue = new Time();
 			Title = Title_DefaultValue = new Title();
@@ -48,7 +49,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Options for configuring accessibility for the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
+		/// Options for configuring accessibility for the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and informationon its features, see[Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
 		/// </summary>
 		public Accessibility Accessibility { get; set; }
 		private Accessibility Accessibility_DefaultValue { get; set; }
@@ -209,6 +210,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Configure the stockTools gui strings in the chart. Requires the[stockTools module]() to be loaded. For a description of the moduleand information on its features, see [Highcharts StockTools]().
+		/// </summary>
+		public StockTools StockTools { get; set; }
+		private StockTools StockTools_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The chart's subtitle. This can be used both to display a subtitle belowthe main title, and to display random text anywhere in the chart. Thesubtitle can be updated after chart initialization through the`Chart.setTitle` method.
 		/// </summary>
 		public Subtitle Subtitle { get; set; }
@@ -237,7 +245,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The X axis or category axis. Normally this is the horizontal axis,though if the chart is inverted this is the vertical axis. In case ofmultiple axes, the xAxis node is an array of configuration objects.See [the Axis object](/class-reference/Highcharts.Axis) forprogrammatic access to the axis.
+		/// The X axis or category axis. Normally this is the horizontal axis,though if the chart is inverted this is the vertical axis. In case ofmultiple axes, the xAxis node is an array of configuration objects.See the [Axis class](/class-reference/Highcharts.Axis) for programmaticaccess to the axis.
 		/// </summary>
 		public List<XAxis> XAxis { get; set; }
 		private List<XAxis> XAxis_DefaultValue { get; set; }
@@ -277,6 +285,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Responsive.IsDirty()) h.Add("responsive",Responsive.ToHashtable());
 			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());
 			if (Series != Series_DefaultValue) h.Add("series", HashifyList(Series));
+			if (StockTools.IsDirty()) h.Add("stockTools",StockTools.ToHashtable());
 			if (Subtitle.IsDirty()) h.Add("subtitle",Subtitle.ToHashtable());
 			if (Time.IsDirty()) h.Add("time",Time.ToHashtable());
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());

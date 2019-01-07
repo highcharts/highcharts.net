@@ -141,7 +141,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Style options for the guide box. The guide box has one state by default,the "default" state.
+		/// Style options for the guide box. The guide box has one state by default, the`default` state.
 		/// </summary>
 		public PlotOptionsOhlcDragDropGuideBox GuideBox { get; set; }
 		private PlotOptionsOhlcDragDropGuideBox GuideBox_DefaultValue { get; set; }

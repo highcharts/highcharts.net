@@ -29,7 +29,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = IkhSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = IkhSeriesDashStyle.Solid;
-			Data = Data_DefaultValue = new List<IkhSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new IkhSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new IkhSeriesDataLabels();
 			Description = Description_DefaultValue = "";
@@ -45,6 +44,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Index = Index_DefaultValue = null;
 			KijunLine = KijunLine_DefaultValue = new IkhSeriesKijunLine();
 			Label = Label_DefaultValue = new IkhSeriesLabel();
+			LastPrice = LastPrice_DefaultValue = new IkhSeriesLastPrice();
+			LastVisiblePrice = LastVisiblePrice_DefaultValue = new IkhSeriesLastVisiblePrice();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Linecap = Linecap_DefaultValue = IkhSeriesLinecap.Round;
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -115,7 +116,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.Requires `modules/boost.js`.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
@@ -192,14 +193,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public List<IkhSeriesData> Data { get; set; }
-		private List<IkhSeriesData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#.dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
+		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
 		/// </summary>
 		public IkhSeriesDataGrouping DataGrouping { get; set; }
 		private IkhSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
@@ -220,7 +214,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public IkhSeriesDragDrop DragDrop { get; set; }
 		private IkhSeriesDragDrop DragDrop_DefaultValue { get; set; }
@@ -304,6 +298,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The line marks the last price from all points.
+		/// </summary>
+		public IkhSeriesLastPrice LastPrice { get; set; }
+		private IkhSeriesLastPrice LastPrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from visible range of points.
+		/// </summary>
+		public IkhSeriesLastVisiblePrice LastVisiblePrice { get; set; }
+		private IkhSeriesLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The sequential index of the series in the legend.
 		/// </summary>
 		public double? LegendIndex { get; set; }
@@ -353,7 +361,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Paramters used in calculation of regression series' points.
 		/// </summary>
 		public IkhSeriesParams Params { get; set; }
 		private IkhSeriesParams Params_DefaultValue { get; set; }
@@ -381,7 +389,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The styles for fill between Senkou Span A and B
+		/// The styles for area between Senkou Span A and B.
 		/// </summary>
 		public IkhSeriesSenkouSpan SenkouSpan { get; set; }
 		private IkhSeriesSenkouSpan SenkouSpan_DefaultValue { get; set; }
@@ -581,7 +589,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
-			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -597,6 +604,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (KijunLine.IsDirty()) h.Add("kijunLine",KijunLine.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
+			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

@@ -1,0 +1,265 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Web.Script.Serialization;
+using System.Collections;
+using System;
+using System.Collections.Specialized;
+using System.Web;
+using System.IO;
+
+namespace Highsoft.Web.Mvc.Stocks
+{
+	public partial class AnnotationsCrookedLineLabels  : BaseObject
+	{
+		public AnnotationsCrookedLineLabels()
+		{
+			Align = Align_DefaultValue = AnnotationsCrookedLineLabelsAlign.Center;
+			AllowOverlap = AllowOverlap_DefaultValue = false;
+			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
+			BorderColor = BorderColor_DefaultValue = "black";
+			BorderRadius = BorderRadius_DefaultValue = 3;
+			BorderWidth = BorderWidth_DefaultValue = 1;
+			ClassName = ClassName_DefaultValue = "";
+			Crop = Crop_DefaultValue = false;
+			Distance = Distance_DefaultValue = null;
+			Format = Format_DefaultValue = "undefined";
+			Formatter = Formatter_DefaultValue = "";
+			Overflow = Overflow_DefaultValue = AnnotationsCrookedLineLabelsOverflow.Justify;
+			Padding = Padding_DefaultValue = "5";
+			Point = Point_DefaultValue = new AnnotationsCrookedLineLabelsPoint();
+			PointString = PointString_DefaultValue = "null";
+			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
+			Shape = Shape_DefaultValue = "callout";
+			Style = Style_DefaultValue = new AnnotationsCrookedLineLabelsStyle();
+			Text = Text_DefaultValue = "undefined";
+			UseHTML = UseHTML_DefaultValue = false;
+			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsCrookedLineLabelsVerticalAlign.Bottom;
+			X = X_DefaultValue = 0;
+			Y = Y_DefaultValue = -16;
+			
+		}	
+		
+
+		/// <summary>
+		/// The alignment of the annotation's label. If right,the right side of the label should be touching the point.
+		/// </summary>
+		public AnnotationsCrookedLineLabelsAlign Align { get; set; }
+		private AnnotationsCrookedLineLabelsAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to allow the annotation's labels to overlap.To make the labels less sensitive for overlapping,the can be set to 0.
+		/// </summary>
+		public bool? AllowOverlap { get; set; }
+		private bool? AllowOverlap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The background color or gradient for the annotation's label.
+		/// </summary>
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border color for the annotation's label.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border radius in pixels for the annotaiton's label.
+		/// </summary>
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border width in pixels for the annotation's label
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A class name for styling by CSS.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to hide the annotation's labelthat is outside the plot area.
+		/// </summary>
+		public bool? Crop { get; set; }
+		private bool? Crop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The label's pixel distance from the point.
+		/// </summary>
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A [format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) string for the data label.
+		/// </summary>
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback JavaScript function to formatthe annotation's label. Note that if a `format` or `text`are defined, the format or text take precedence andthe formatter is ignored. `This` refers to a * point object.
+		/// </summary>
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// How to handle the annotation's label that flowoutside the plot area. The justify option aligns the labelinside the plot area.
+		/// </summary>
+		public AnnotationsCrookedLineLabelsOverflow Overflow { get; set; }
+		private AnnotationsCrookedLineLabelsOverflow Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When either the borderWidth or the backgroundColor is set,this is the padding within the box.
+		/// </summary>
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option defines the point to which the labelwill be connected.It can be either the point which exists in the series - it isreferenced by the point's id - or a new point with defined x, yproperies and optionally axes.
+		/// </summary>
+		public AnnotationsCrookedLineLabelsPoint Point { get; set; }
+		private AnnotationsCrookedLineLabelsPoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option defines the point to which the labelwill be connected.It can be either the point which exists in the series - it isreferenced by the point's id - or a new point with defined x, yproperies and optionally axes.
+		/// </summary>
+		public string PointString { get; set; }
+		private string PointString_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The shadow of the box. The shadow can bean object configuration containing`color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The shadow of the box. The shadow can bean object configuration containing`color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of a symbol to use for the border around the label.Symbols are predefined functions on the Renderer object.
+		/// </summary>
+		public string Shape { get; set; }
+		private string Shape_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Styles for the annotation's label.
+		/// </summary>
+		public AnnotationsCrookedLineLabelsStyle Style { get; set; }
+		private AnnotationsCrookedLineLabelsStyle Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Alias for the format option.
+		/// </summary>
+		public string Text { get; set; }
+		private string Text_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the annotation's label.
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The vertical alignment of the annotation's label.
+		/// </summary>
+		public AnnotationsCrookedLineLabelsVerticalAlign VerticalAlign { get; set; }
+		private AnnotationsCrookedLineLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The x position offset of the label relative to the point.Note that if a `distance` is defined, the distance takesprecedence over `x` and `y` options.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The y position offset of the label relative to the point.Note that if a `distance` is defined, the distance takesprecedence over `x` and `y` options.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		  
+
+		internal override Hashtable ToHashtable()
+		{
+			Hashtable h = new Hashtable();
+
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
+			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("AnnotationsCrookedLineLabelsFormatter.formatter", Formatter); }  
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (PointString != PointString_DefaultValue) h.Add("point",PointString);
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
+			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Text != Text_DefaultValue) h.Add("text",Text);
+			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
+			
+
+			return h;
+		}
+
+		internal override string ToJSON()
+		{            
+			Hashtable h = ToHashtable();
+			JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
+			if (h.Count > 0)
+				return serializer.Serialize(ToHashtable());
+			else 
+				return "";
+		}       
+
+		// checks if the state of the object is different from the default
+		// and therefore needs to be serialized
+		internal override bool IsDirty()
+		{
+			return ToHashtable().Count > 0;
+		}
+	}
+}

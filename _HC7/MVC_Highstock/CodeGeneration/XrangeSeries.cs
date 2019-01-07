@@ -20,14 +20,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			BorderWidth = BorderWidth_DefaultValue = 1;
+			BorderWidth = BorderWidth_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
-			Compare = Compare_DefaultValue = "undefined";
+			Compare = Compare_DefaultValue = "";
 			CompareBase = CompareBase_DefaultValue = XrangeSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = XrangeSeriesCursor.Null;
@@ -46,6 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new XrangeSeriesLabel();
+			LastPrice = LastPrice_DefaultValue = new XrangeSeriesLastPrice();
+			LastVisiblePrice = LastVisiblePrice_DefaultValue = new XrangeSeriesLastVisiblePrice();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
@@ -124,7 +126,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The width of the border surrounding each column or bar.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
+		/// The width of the border surrounding each column or bar. Defaults to `1`when there is room for a border, but to `0` when the columns are so densethat a border would cover the next column.In styled mode, the stroke width can be set with the `.highcharts-point`rule.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
@@ -201,14 +203,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the `xrange` series type,points can be given in the following ways:1.  An array of objects with named values. The objects are pointconfiguration objects as seen below. ```js    data: [{        x: Date.UTC(2017, 0, 1),        x2: Date.UTC(2017, 0, 3),        name: "Test",        y: 0,        color: "#00FF00"    }, {        x: Date.UTC(2017, 0, 4),        x2: Date.UTC(2017, 0, 5),        name: "Deploy",        y: 1,        color: "#FF0000"    }] ```
+		/// An array of data points for the series. For the `xrange` series type,points can be given in the following ways:1. An array of objects with named values. The objects are point configuration   objects as seen below.   ```js   data: [{       x: Date.UTC(2017, 0, 1),       x2: Date.UTC(2017, 0, 3),       name: "Test",       y: 0,       color: "#00FF00"   }, {       x: Date.UTC(2017, 0, 4),       x2: Date.UTC(2017, 0, 5),       name: "Deploy",       y: 1,       color: "#FF0000"   }]   ```
 		/// </summary>
 		public List<XrangeSeriesData> Data { get; set; }
 		private List<XrangeSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#.dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
+		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
 		/// </summary>
 		public XrangeSeriesDataGrouping DataGrouping { get; set; }
 		private XrangeSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
@@ -229,7 +231,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public XrangeSeriesDragDrop DragDrop { get; set; }
 		private XrangeSeriesDragDrop DragDrop_DefaultValue { get; set; }
@@ -303,6 +305,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public XrangeSeriesLabel Label { get; set; }
 		private XrangeSeriesLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from all points.
+		/// </summary>
+		public XrangeSeriesLastPrice LastPrice { get; set; }
+		private XrangeSeriesLastPrice LastPrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from visible range of points.
+		/// </summary>
+		public XrangeSeriesLastVisiblePrice LastVisiblePrice { get; set; }
+		private XrangeSeriesLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -558,6 +574,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
+			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);

@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Compare = Compare_DefaultValue = "undefined";
+			Compare = Compare_DefaultValue = "";
 			CompareBase = CompareBase_DefaultValue = LineSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
@@ -46,6 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new LineSeriesLabel();
+			LastPrice = LastPrice_DefaultValue = new LineSeriesLastPrice();
+			LastVisiblePrice = LastVisiblePrice_DefaultValue = new LineSeriesLastVisiblePrice();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Linecap = Linecap_DefaultValue = LineSeriesLinecap.Round;
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -77,6 +79,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Tooltip = Tooltip_DefaultValue = new LineSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Type = Type_DefaultValue = LineSeriesType.Null;
+			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
 			XAxisNumber = XAxisNumber_DefaultValue = null;
@@ -118,7 +121,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.Requires `modules/boost.js`.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
@@ -202,14 +205,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the `line` series type,points can be given in the following ways:1.  An array of numerical values. In this case, the numerical valueswill be interpreted as `y` options. The `x` values will be automaticallycalculated, either starting at 0 and incremented by 1, or from `pointStart`and `pointInterval` given in the series options. If the axis hascategories, these will be used. Example: ```js data: [0, 5, 3, 5] ```2.  An array of arrays with 2 values. In this case, the values correspondto `x,y`. If the first value is a string, it is applied as the nameof the point, and the `x` value is inferred. ```js    data: [        [0, 1],        [1, 2],        [2, 8]    ] ```3.  An array of objects with named values. The following snippet shows only afew settings, see the complete options set below. If the total number of datapoints exceeds the series' [turboThreshold](#series.line.turboThreshold),this option is not available. ```js    data: [{        x: 1,        y: 9,        name: "Point2",        color: "#00FF00"    }, {        x: 1,        y: 6,        name: "Point1",        color: "#FF00FF"    }] ```
+		/// An array of data points for the series. For the `line` series type,points can be given in the following ways:1. An array of numerical values. In this case, the numerical values will be   interpreted as `y` options. The `x` values will be automatically   calculated, either starting at 0 and incremented by 1, or from   `pointStart` and `pointInterval` given in the series options. If the axis   has categories, these will be used. Example:   ```js   data: [0, 5, 3, 5]   ```2. An array of arrays with 2 values. In this case, the values correspond to   `x,y`. If the first value is a string, it is applied as the name of the   point, and the `x` value is inferred.   ```js   data: [       [0, 1],       [1, 2],       [2, 8]   ]   ```3. An array of objects with named values. The following snippet shows only a   few settings, see the complete options set below. If the total number of   data points exceeds the series'   [turboThreshold](#series.line.turboThreshold), this option is not   available.   ```js   data: [{       x: 1,       y: 9,       name: "Point2",       color: "#00FF00"   }, {       x: 1,       y: 6,       name: "Point1",       color: "#FF00FF"   }]   ```
 		/// </summary>
 		public List<LineSeriesData> Data { get; set; }
 		private List<LineSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#.dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
+		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
 		/// </summary>
 		public LineSeriesDataGrouping DataGrouping { get; set; }
 		private LineSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
@@ -230,7 +233,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public LineSeriesDragDrop DragDrop { get; set; }
 		private LineSeriesDragDrop DragDrop_DefaultValue { get; set; }
@@ -311,6 +314,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public LineSeriesLabel Label { get; set; }
 		private LineSeriesLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from all points.
+		/// </summary>
+		public LineSeriesLastPrice LastPrice { get; set; }
+		private LineSeriesLastPrice LastPrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from visible range of points.
+		/// </summary>
+		public LineSeriesLastVisiblePrice LastVisiblePrice { get; set; }
+		private LineSeriesLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -531,6 +548,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The parameter allows setting line series type and use OHLC indicators. Datain OHLC format is required.
+		/// </summary>
+		public bool? UseOhlcData { get; set; }
+		private bool? UseOhlcData_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -622,6 +646,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
+			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
@@ -657,6 +683,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);

@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ExportingButtonsContextButtonTheme()
 		{
-			Fill = Fill_DefaultValue = "#ffffff";
+			Fill = Fill_DefaultValue = "";
 			Padding = Padding_DefaultValue = "5";
-			Stroke = Stroke_DefaultValue = "none";
+			Stroke = Stroke_DefaultValue = "";
 			
 		}	
 		
@@ -29,14 +29,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Padding for the button.
 		/// </summary>
 		public string Padding { get; set; }
 		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Default stroke for the buttons.
 		/// </summary>
 		public string Stroke { get; set; }
 		private string Stroke_DefaultValue { get; set; }

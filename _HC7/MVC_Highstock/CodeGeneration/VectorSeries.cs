@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Compare = Compare_DefaultValue = "undefined";
+			Compare = Compare_DefaultValue = "";
 			CompareBase = CompareBase_DefaultValue = VectorSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = VectorSeriesCursor.Null;
@@ -39,6 +39,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new VectorSeriesLabel();
+			LastPrice = LastPrice_DefaultValue = new VectorSeriesLastPrice();
+			LastVisiblePrice = LastVisiblePrice_DefaultValue = new VectorSeriesLastVisiblePrice();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
@@ -162,7 +164,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the `vector` series type,points can be given in the following ways:1.  An array of arrays with 4 values. In this case, the values correspondto `x,y,length,direction`. If the first value is a string, it is applied asthe name of the point, and the `x` value is inferred. ```js    data: [        [0, 0, 10, 90],        [0, 1, 5, 180],        [1, 1, 2, 270]    ] ```2.  An array of objects with named values. The following snippet shows only afew settings, see the complete options set below. If the total number of datapoints exceeds the series' [turboThreshold](#series.area.turboThreshold),this option is not available. ```js    data: [{        x: 0,        y: 0,        name: "Point2",        length: 10,        direction: 90    }, {        x: 1,        y: 1,        name: "Point1",        direction: 270    }] ```
+		/// An array of data points for the series. For the `vector` series type,points can be given in the following ways:1. An array of arrays with 4 values. In this case, the values correspond to   to `x,y,length,direction`. If the first value is a string, it is applied   as the name of the point, and the `x` value is inferred.   ```js   data: [       [0, 0, 10, 90],       [0, 1, 5, 180],       [1, 1, 2, 270]   ]   ```2. An array of objects with named values. The following snippet shows only a   few settings, see the complete options set below. If the total number of   data points exceeds the series'   [turboThreshold](#series.area.turboThreshold), this option is not   available.   ```js   data: [{       x: 0,       y: 0,       name: "Point2",       length: 10,       direction: 90   }, {       x: 1,       y: 1,       name: "Point1",       direction: 270   }]   ```
 		/// </summary>
 		public List<VectorSeriesData> Data { get; set; }
 		private List<VectorSeriesData> Data_DefaultValue { get; set; }
@@ -183,7 +185,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public VectorSeriesDragDrop DragDrop { get; set; }
 		private VectorSeriesDragDrop DragDrop_DefaultValue { get; set; }
@@ -250,6 +252,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public VectorSeriesLabel Label { get; set; }
 		private VectorSeriesLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from all points.
+		/// </summary>
+		public VectorSeriesLastPrice LastPrice { get; set; }
+		private VectorSeriesLastPrice LastPrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from visible range of points.
+		/// </summary>
+		public VectorSeriesLastVisiblePrice LastVisiblePrice { get; set; }
+		private VectorSeriesLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -519,6 +535,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
+			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);

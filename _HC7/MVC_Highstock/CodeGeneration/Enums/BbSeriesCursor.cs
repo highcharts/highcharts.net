@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Stocks
     public enum BbSeriesCursor
     {
         Null, 
-		Crosshair, 
 		Default, 
-		Help, 
 		None, 
-		Pointer
+		Help, 
+		Pointer, 
+		Crosshair
     }
 }

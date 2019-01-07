@@ -516,6 +516,13 @@ public class HighstockGenerator
             apiItem.Values.Add("Vwap");
             apiItem.Values.Add("Wma");
             apiItem.Values.Add("Zigzag");
+
+            //since v7
+            apiItem.Values.Add("Networkgraph");
+            apiItem.Values.Add("Packedbubble");
+            apiItem.Values.Add("Cylinder");
+            apiItem.Values.Add("Venn");
+            apiItem.Values.Add("Columnpyramid");
         }
     }
 
@@ -600,9 +607,12 @@ public class HighstockGenerator
         //if (string.IsNullOrWhiteSpace(result))
         //    throw new Exception("empty series mapping result");
 
-        result = result + item.Suffix;
+        result = string.Empty;
+        foreach (var part in item.Title.Split('-'))
+            result += FirstCharToUpper(part);
 
-        return FirstCharToUpper(result);
+        result = result + item.Suffix;
+        return result;
     }
 
     private string FormatProperty(string propertyTemplate, ApiItem child)
@@ -992,6 +1002,7 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("plotOptions.arearange.threshold", "Object");
         _propertyTypeMappings.Add("plotOptions.stochastic.params.periods", "List<int>");
         _propertyTypeMappings.Add("labels.items.style", "Hashtable");
+        _propertyTypeMappings.Add("boxesToAvoid", "List<object>");
     }
     private void InitPropertyInitMappings()
     {
@@ -1106,6 +1117,7 @@ public class HighstockGenerator
         _propertyInitMappings.Add("plotOptions.stochastic.params.periods", "new List<int>()");
         _propertyInitMappings.Add("autoRotation", "new List<double> {-45}");
         _propertyInitMappings.Add("categories", "new List<string>()");
+        _propertyInitMappings.Add("spacing", "new List<double>()");
     }
     private void InitLists()
     {

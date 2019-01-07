@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = NavigatorYAxisMinorGridLineDashStyle.Solid;
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
-			MinorTickInterval = MinorTickInterval_DefaultValue = "null";
+			MinorTickInterval = MinorTickInterval_DefaultValue = "";
 			MinorTickIntervalNumber = MinorTickIntervalNumber_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = NavigatorYAxisMinorTickPosition.Outside;
@@ -71,7 +71,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickPositions = TickPositions_DefaultValue = new List<double>();
 			TickWidth = TickWidth_DefaultValue = 0;
 			Title = Title_DefaultValue = new NavigatorYAxisTitle();
-			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			Visible = Visible_DefaultValue = true;
 			
 		}	
@@ -477,13 +476,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
-		/// </summary>
-		public string TooltipValueFormat { get; set; }
-		private string TooltipValueFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether axis, including axis title, line, ticks and labels, shouldbe visible.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -551,7 +543,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
-			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			
 

@@ -539,6 +539,132 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                     seriesHashtable = zigzagSeries.ToHashtable();
                 }
 
+                //since v7.0
+                if (series is NetworkgraphSeries)
+                {
+                    NetworkgraphSeries networkgraphSeries = series as NetworkgraphSeries;
+                    networkgraphSeries.Type = NetworkgraphSeriesType.Networkgraph;
+                    seriesHashtable = networkgraphSeries.ToHashtable();
+                }
+
+                if (series is PackedbubbleSeries)
+                {
+                    PackedbubbleSeries packedbubbleSeries = series as PackedbubbleSeries;
+                    packedbubbleSeries.Type = PackedbubbleSeriesType.Packedbubble;
+                    seriesHashtable = packedbubbleSeries.ToHashtable();
+                }
+
+                if (series is CylinderSeries)
+                {
+                    CylinderSeries cylinderSeries = series as CylinderSeries;
+                    cylinderSeries.Type = CylinderSeriesType.Cylinder;
+                    seriesHashtable = cylinderSeries.ToHashtable();
+                }
+
+                if (series is VennSeries)
+                {
+                    VennSeries vennSeries = series as VennSeries;
+                    vennSeries.Type = VennSeriesType.Venn;
+                    seriesHashtable = vennSeries.ToHashtable();
+                }
+
+                if (series is ColumnpyramidSeries)
+                {
+                    ColumnpyramidSeries columnpyramidSeries = series as ColumnpyramidSeries;
+                    columnpyramidSeries.Type = ColumnpyramidSeriesType.Columnpyramid;
+                    seriesHashtable = columnpyramidSeries.ToHashtable();
+                }
+
+                if (series is AbandsSeries)
+                {
+
+                }
+
+                if (series is AoSeries)
+                {
+
+                }
+
+                if (series is ApoSeries)
+                {
+
+                }
+
+                if (series is AroonoscillatorSeries)
+                {
+                    
+                }
+
+                if (series is AroonSeries)
+                {
+
+                }
+
+
+                if (series is ChaikinSeries)
+                {
+
+                }
+
+                if (series is DemaSeries)
+                {
+
+                }
+
+                if (series is DpoSeries)
+                {
+
+                }
+
+                if (series is KeltnerchannelsSeries)
+                {
+
+                }
+
+                if (series is LinearregressionangleSeries)
+                {
+
+                }
+
+                if (series is NatrSeries)
+                {
+
+                }
+
+                if (series is PackedbubbleSeries)
+                {
+
+                }
+
+                if (series is PcSeries)
+                {
+
+                }
+
+                if (series is PpoSeries)
+                {
+
+                }
+
+                if (series is SupertrendSeries)
+                {
+
+                }
+
+                if (series is TemaSeries)
+                {
+
+                }
+
+                if (series is TrixSeries)
+                {
+
+                }
+
+                if (series is WilliamsrSeries)
+                {
+
+                }
                 //seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
             }

@@ -14,9 +14,9 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LangAccessibilityAxis()
 		{
-			XAxisDescriptionPlural = XAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} X axes displaying {#each(names, -1), }and {names[-1]}";
+			XAxisDescriptionPlural = XAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} X axes displaying {#names.forEach(-1), }and {names[-1]}";
 			XAxisDescriptionSingular = XAxisDescriptionSingular_DefaultValue = "The chart has 1 X axis displaying {names[0]}.";
-			YAxisDescriptionPlural = YAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} Y axes displaying {#each(names, -1), }and {names[-1]}";
+			YAxisDescriptionPlural = YAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} Y axes displaying {#names.forEach(-1), }and {names[-1]}";
 			YAxisDescriptionSingular = YAxisDescriptionSingular_DefaultValue = "The chart has 1 Y axis displaying {names[0]}.";
 			
 		}	

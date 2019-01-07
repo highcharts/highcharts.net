@@ -27,29 +27,25 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Cursor { get; set; }
 		private string Cursor_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string FontWeight { get; set; }
 		private string FontWeight_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string TextDecoration { get; set; }
 		private string TextDecoration_DefaultValue { get; set; }
-		  
-
+		 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();

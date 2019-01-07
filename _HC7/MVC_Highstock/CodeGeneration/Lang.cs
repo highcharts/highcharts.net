@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			InvalidDate = InvalidDate_DefaultValue = "";
 			Loading = Loading_DefaultValue = "Loading...";
 			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+			Navigation = Navigation_DefaultValue = new LangNavigation();
 			NoData = NoData_DefaultValue = "No data to display";
 			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> {"k", "M", "G", "T", "P", "E"};
@@ -38,6 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
 			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
 			ShortWeekdays = ShortWeekdays_DefaultValue = new List<string>();
+			StockTools = StockTools_DefaultValue = new LangStockTools();
 			ThousandsSep = ThousandsSep_DefaultValue = "\u0020";
 			ViewData = ViewData_DefaultValue = "View data table";
 			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
@@ -47,7 +49,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Configure the accessibility strings in the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js) to be loaded. For a description of the module and informationon its features, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).For more dynamic control over the accessibility functionality, see[accessibility.pointDescriptionFormatter](accessibility.pointDescriptionFormatter),[accessibility.seriesDescriptionFormatter](accessibility.seriesDescriptionFormatter), and[accessibility.screenReaderSectionFormatter](accessibility.screenReaderSectionFormatter).
+		/// Configure the accessibility strings in the chart. Requires the[accessibility module](//code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and information on itsfeatures, see [Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).For more dynamic control over the accessibility functionality, see[accessibility.pointDescriptionFormatter](accessibility.pointDescriptionFormatter),[accessibility.seriesDescriptionFormatter](accessibility.seriesDescriptionFormatter), and[accessibility.screenReaderSectionFormatter](accessibility.screenReaderSectionFormatter).
 		/// </summary>
 		public LangAccessibility Accessibility { get; set; }
 		private LangAccessibility Accessibility_DefaultValue { get; set; }
@@ -128,6 +130,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<string> Months { get; set; }
 		private List<string> Months_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Configure the Popup strings in the chart. Requires the`annotations.js` or `annotations-advanced.src.js` module to beloaded.
+		/// </summary>
+		public LangNavigation Navigation { get; set; }
+		private LangNavigation Navigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -215,7 +224,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The default thousands separator used in the `Highcharts.numberFormat`method unless otherwise specified in the function arguments. SinceHighcharts 4.1 it defaults to a single space character, which iscompatible with ISO and works across Anglo-American and continentalEuropean languages.The default is a single space.
+		/// Configure the stockTools GUI titles(hints) in the chart. Requiresthe `stock-tools.js` module to be loaded.
+		/// </summary>
+		public LangStockTools StockTools { get; set; }
+		private LangStockTools StockTools_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The default thousands separator used in the `Highcharts.numberFormat`method unless otherwise specified in the function arguments. Defaultsto a single space character, which is recommended in[ISO 31-0](https://en.wikipedia.org/wiki/ISO_31-0#Numbers) and worksacross Anglo-American and continental European languages.
 		/// </summary>
 		public string ThousandsSep { get; set; }
 		private string ThousandsSep_DefaultValue { get; set; }
@@ -251,6 +267,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (Months != Months_DefaultValue) h.Add("months",Months);
+			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
 			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
 			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
 			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);
@@ -263,6 +280,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ResetZoomTitle != ResetZoomTitle_DefaultValue) h.Add("resetZoomTitle",ResetZoomTitle);
 			if (ShortMonths != ShortMonths_DefaultValue) h.Add("shortMonths",ShortMonths);
 			if (ShortWeekdays != ShortWeekdays_DefaultValue) h.Add("shortWeekdays",ShortWeekdays);
+			if (StockTools.IsDirty()) h.Add("stockTools",StockTools.ToHashtable());
 			if (ThousandsSep != ThousandsSep_DefaultValue) h.Add("thousandsSep",ThousandsSep);
 			if (ViewData != ViewData_DefaultValue) h.Add("viewData",ViewData);
 			if (Weekdays != Weekdays_DefaultValue) h.Add("weekdays",Weekdays);

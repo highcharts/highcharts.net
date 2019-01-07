@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public IkhSeriesSenkouSpanStyles()
 		{
-			Fill = Fill_DefaultValue = null;
+			Fill = Fill_DefaultValue = "rgba(255, 0, 0, 0.5)";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Color of the area between Senkou Span A and B.
 		/// </summary>
-		public double? Fill { get; set; }
-		private double? Fill_DefaultValue { get; set; }
+		public string Fill { get; set; }
+		private string Fill_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

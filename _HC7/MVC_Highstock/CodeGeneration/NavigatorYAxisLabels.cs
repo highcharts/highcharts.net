@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Formatter = Formatter_DefaultValue = "";
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			Overflow = Overflow_DefaultValue = NavigatorYAxisLabelsOverflow.Justify;
-			OverflowBool = OverflowBool_DefaultValue = false;
+			OverflowBool = OverflowBool_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
@@ -56,7 +56,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) for the axis label.
+		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the axis label.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
@@ -86,8 +86,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// How to handle overflowing labels on horizontal axis. If set to`"allow"`, it will not be aligned at all. By default it`"justify"` labels inside the chart area. If there is room tomove it, it will be aligned to the edge, else it will be removed.
 		/// </summary>
-		public bool OverflowBool { get; set; }
-		private bool OverflowBool_DefaultValue { get; set; }
+		public bool? OverflowBool { get; set; }
+		private bool? OverflowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -119,7 +119,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
+		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
@@ -157,7 +157,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("NavigatorYAxisLabelsFormatter.formatter", Formatter); }  
 			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
-			if (OverflowBool != OverflowBool_DefaultValue) h.Add("overflow", OverflowBool);
+			if (OverflowBool != OverflowBool_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(OverflowBool.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);

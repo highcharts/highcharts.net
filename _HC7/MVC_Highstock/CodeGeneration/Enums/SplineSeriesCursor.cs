@@ -8,10 +8,10 @@ namespace Highsoft.Web.Mvc.Stocks
     public enum SplineSeriesCursor
     {
         Null, 
-		Crosshair, 
 		Default, 
-		Help, 
 		None, 
-		Pointer
+		Help, 
+		Pointer, 
+		Crosshair
     }
 }

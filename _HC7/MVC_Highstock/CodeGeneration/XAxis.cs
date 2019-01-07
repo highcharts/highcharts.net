@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = XAxisMinorGridLineDashStyle.Solid;
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
-			MinorTickInterval = MinorTickInterval_DefaultValue = "null";
+			MinorTickInterval = MinorTickInterval_DefaultValue = "";
 			MinorTickIntervalNumber = MinorTickIntervalNumber_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = XAxisMinorTickPosition.Outside;
@@ -438,7 +438,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An optional scrollbar to display on the X axis in response tolimiting the minimum and maximum of the axis values.In styled mode, all the presentational options for the scrollbarare replaced by the classes `.highcharts-scrollbar-thumb`,`.highcharts-scrollbar-arrow`, `.highcharts-scrollbar-button`,`.highcharts-scrollbar-rifles` and `.highcharts-scrollbar-track`.
+		/// An optional scrollbar to display on the X axis in response tolimiting the minimum and maximum of the axis values.In styled mode, all the presentational options for the scrollbar arereplaced by the classes `.highcharts-scrollbar-thumb`,`.highcharts-scrollbar-arrow`, `.highcharts-scrollbar-button`,`.highcharts-scrollbar-rifles` and `.highcharts-scrollbar-track`.
 		/// </summary>
 		public XAxisScrollbar Scrollbar { get; set; }
 		private XAxisScrollbar Scrollbar_DefaultValue { get; set; }

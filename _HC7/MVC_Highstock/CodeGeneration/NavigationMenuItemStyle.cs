@@ -16,9 +16,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Background = Background_DefaultValue = "none";
 			Color = Color_DefaultValue = "#333333";
-			FontSize = FontSize_DefaultValue = "";
+			FontSize = FontSize_DefaultValue = "11px/14px";
 			Padding = Padding_DefaultValue = "0.5em 1em";
-			Transition = Transition_DefaultValue = "background 250ms, color 250ms";
+			Transition = Transition_DefaultValue = "background 250ms";
 			
 		}	
 		
@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Defaults to `14px` on touch devices and `11px` on desktop.
+		/// 
 		/// </summary>
 		public string FontSize { get; set; }
 		private string FontSize_DefaultValue { get; set; }

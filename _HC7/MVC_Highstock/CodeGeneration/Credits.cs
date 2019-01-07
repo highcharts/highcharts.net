@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Credits()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			Href = Href_DefaultValue = "https://www.highcharts.com";
+			Href = Href_DefaultValue = "https://www.highcharts.com?credits";
 			Position = Position_DefaultValue = new Hashtable();
 			Style = Style_DefaultValue = new CreditsStyle();
 			Text = Text_DefaultValue = "Highcharts.com";

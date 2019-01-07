@@ -67,6 +67,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		Vbp, 
 		Vwap, 
 		Wma, 
-		Zigzag
+		Zigzag, 
+		Networkgraph, 
+		Packedbubble, 
+		Cylinder, 
+		Venn, 
+		Columnpyramid
     }
 }

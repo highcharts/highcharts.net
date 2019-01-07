@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = NavigatorXAxisMinorGridLineDashStyle.Solid;
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
-			MinorTickInterval = MinorTickInterval_DefaultValue = "null";
+			MinorTickInterval = MinorTickInterval_DefaultValue = "";
 			MinorTickIntervalNumber = MinorTickIntervalNumber_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = NavigatorXAxisMinorTickPosition.Outside;

@@ -42,6 +42,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			KijunLine = KijunLine_DefaultValue = new PlotOptionsIkhKijunLine();
 			Label = Label_DefaultValue = new PlotOptionsIkhLabel();
+			LastPrice = LastPrice_DefaultValue = new PlotOptionsIkhLastPrice();
+			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsIkhLastVisiblePrice();
 			Linecap = Linecap_DefaultValue = PlotOptionsIkhLinecap.Round;
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
@@ -103,7 +105,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.Requires `modules/boost.js`.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
@@ -201,7 +203,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public PlotOptionsIkhDragDrop DragDrop { get; set; }
 		private PlotOptionsIkhDragDrop DragDrop_DefaultValue { get; set; }
@@ -271,6 +273,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The line marks the last price from all points.
+		/// </summary>
+		public PlotOptionsIkhLastPrice LastPrice { get; set; }
+		private PlotOptionsIkhLastPrice LastPrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from visible range of points.
+		/// </summary>
+		public PlotOptionsIkhLastVisiblePrice LastVisiblePrice { get; set; }
+		private PlotOptionsIkhLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The line cap used for line ends and line joins on the graph.
 		/// </summary>
 		public PlotOptionsIkhLinecap Linecap { get; set; }
@@ -334,7 +350,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The styles for fill between Senkou Span A and B
+		/// The styles for area between Senkou Span A and B.
 		/// </summary>
 		public PlotOptionsIkhSenkouSpan SenkouSpan { get; set; }
 		private PlotOptionsIkhSenkouSpan SenkouSpan_DefaultValue { get; set; }
@@ -498,6 +514,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (KijunLine.IsDirty()) h.Add("kijunLine",KijunLine.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
+			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);

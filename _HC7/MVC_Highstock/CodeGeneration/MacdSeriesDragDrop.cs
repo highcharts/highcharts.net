@@ -109,7 +109,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Style options for the guide box. The guide box has one state by default,the "default" state.
+		/// Style options for the guide box. The guide box has one state by default, the`default` state.
 		/// </summary>
 		public MacdSeriesDragDropGuideBox GuideBox { get; set; }
 		private MacdSeriesDragDropGuideBox GuideBox_DefaultValue { get; set; }

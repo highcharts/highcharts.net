@@ -28,13 +28,13 @@ namespace SourceCodeGenerator
                 hcg.GenerateCode(false);
                 Console.WriteLine($"Highcharts.NET has been generated. {DateTime.Now - hcStartTime}");
 
-                //DateTime hsStartTime = DateTime.Now;
-                //JsonParser jsonParserHs = new JsonParser("highstock", fileService, filterService, updateService, typeService);
-                //HighstockGenerator hsg = new HighstockGenerator(jsonParserHs, fileService, multiplicationService);
-                //hsg.GenerateCode();
-                //Console.WriteLine($"Highstock.NET has been generated. {DateTime.Now - hsStartTime}");
+                DateTime hsStartTime = DateTime.Now;
+                JsonParser jsonParserHs = new JsonParser("highstock", fileService, filterService, updateService, typeService);
+                HighstockGenerator hsg = new HighstockGenerator(jsonParserHs, fileService, multiplicationService);
+                hsg.GenerateCode();
+                Console.WriteLine($"Highstock.NET has been generated. {DateTime.Now - hsStartTime}");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString() + "\n" + ex.InnerException ?? "");
             }

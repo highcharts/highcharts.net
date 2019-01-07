@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsMacdSignalLineStyles()
 		{
-			LineColor = LineColor_DefaultValue = null;
+			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 1;
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Color of the line.
 		/// </summary>
-		public double? LineColor { get; set; }
-		private double? LineColor_DefaultValue { get; set; }
+		public string LineColor { get; set; }
+		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>

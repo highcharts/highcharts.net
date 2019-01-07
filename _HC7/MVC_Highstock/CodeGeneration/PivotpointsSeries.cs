@@ -28,7 +28,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PivotpointsSeriesCursor.Null;
 			DashStyle = DashStyle_DefaultValue = PivotpointsSeriesDashStyle.Solid;
-			Data = Data_DefaultValue = new List<PivotpointsSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new PivotpointsSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new PivotpointsSeriesDataLabels();
 			Description = Description_DefaultValue = "";
@@ -43,6 +42,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Id = Id_DefaultValue = "";
 			Index = Index_DefaultValue = null;
 			Label = Label_DefaultValue = new PivotpointsSeriesLabel();
+			LastPrice = LastPrice_DefaultValue = new PivotpointsSeriesLastPrice();
+			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PivotpointsSeriesLastVisiblePrice();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Linecap = Linecap_DefaultValue = PivotpointsSeriesLinecap.Round;
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -109,7 +110,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Requires `modules/boost.js`.
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.Requires `modules/boost.js`.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
@@ -179,14 +180,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the `pivotpoints` series type,points are calculated dynamically.
-		/// </summary>
-		public List<PivotpointsSeriesData> Data { get; set; }
-		private List<PivotpointsSeriesData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#.dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
+		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
 		/// </summary>
 		public PivotpointsSeriesDataGrouping DataGrouping { get; set; }
 		private PivotpointsSeriesDataGrouping DataGrouping_DefaultValue { get; set; }
@@ -207,7 +201,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modifiedin the chart. In addition to the options mentioned under the `dragDrop`API structure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).It requires the `modules/draggable-points.js` file to be loaded.
 		/// </summary>
 		public PivotpointsSeriesDragDrop DragDrop { get; set; }
 		private PivotpointsSeriesDragDrop DragDrop_DefaultValue { get; set; }
@@ -284,6 +278,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The line marks the last price from all points.
+		/// </summary>
+		public PivotpointsSeriesLastPrice LastPrice { get; set; }
+		private PivotpointsSeriesLastPrice LastPrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The line marks the last price from visible range of points.
+		/// </summary>
+		public PivotpointsSeriesLastVisiblePrice LastVisiblePrice { get; set; }
+		private PivotpointsSeriesLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The sequential index of the series in the legend.
 		/// </summary>
 		public double? LegendIndex { get; set; }
@@ -333,7 +341,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Paramters used in calculation of regression series' points.
 		/// </summary>
 		public PivotpointsSeriesParams Params { get; set; }
 		private PivotpointsSeriesParams Params_DefaultValue { get; set; }
@@ -532,7 +540,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
-			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -547,6 +554,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
+			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
