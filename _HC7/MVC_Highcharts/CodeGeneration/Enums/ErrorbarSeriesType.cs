@@ -48,6 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 		Networkgraph, 
 		Packedbubble, 
 		Cylinder, 
-		Venn
+		Venn, 
+		Columnpyramid
     }
 }

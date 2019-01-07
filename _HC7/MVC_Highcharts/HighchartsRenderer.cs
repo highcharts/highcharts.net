@@ -586,6 +586,13 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                     seriesHashtable = vennSeries.ToHashtable();
                 }
 
+                if (series is ColumnpyramidSeries)
+                {
+                    ColumnpyramidSeries columnpyramidSeries = series as ColumnpyramidSeries;
+                    columnpyramidSeries.Type = ColumnpyramidSeriesType.Columnpyramid;
+                    seriesHashtable = columnpyramidSeries.ToHashtable();
+                }
+
                 //seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
             }

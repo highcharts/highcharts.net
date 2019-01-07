@@ -481,6 +481,7 @@ public class HighchartsGenerator
             apiItem.Values.Add("Packedbubble");
             apiItem.Values.Add("Cylinder");
             apiItem.Values.Add("Venn");
+            apiItem.Values.Add("Columnpyramid");
         }
     }
 
