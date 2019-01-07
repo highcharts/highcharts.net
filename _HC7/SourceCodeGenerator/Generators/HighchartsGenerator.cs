@@ -476,6 +476,11 @@ public class HighchartsGenerator
             apiItem.Values.Add("Windbarb");
             apiItem.Values.Add("Wordcloud");
             apiItem.Values.Add("Xrange");
+            //since v7
+            apiItem.Values.Add("Networkgraph");
+            apiItem.Values.Add("Packedbubble");
+            apiItem.Values.Add("Cylinder");
+            apiItem.Values.Add("Venn");
         }
     }
 

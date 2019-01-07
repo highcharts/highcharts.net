@@ -44,6 +44,10 @@ namespace Highsoft.Web.Mvc.Charts
 		Vector, 
 		Windbarb, 
 		Wordcloud, 
-		Xrange
+		Xrange, 
+		Networkgraph, 
+		Packedbubble, 
+		Cylinder, 
+		Venn
     }
 }

@@ -556,6 +556,36 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                     xrangeSeries.Type = XrangeSeriesType.Xrange;
                     seriesHashtable = xrangeSeries.ToHashtable();
                 }
+
+                //since v7.0
+                if (series is NetworkgraphSeries)
+                {
+                    NetworkgraphSeries networkgraphSeries = series as NetworkgraphSeries;
+                    networkgraphSeries.Type = NetworkgraphSeriesType.Networkgraph;
+                    seriesHashtable = networkgraphSeries.ToHashtable();
+                }
+
+                if (series is PackedbubbleSeries)
+                {
+                    PackedbubbleSeries packedbubbleSeries = series as PackedbubbleSeries;
+                    packedbubbleSeries.Type = PackedbubbleSeriesType.Packedbubble;
+                    seriesHashtable = packedbubbleSeries.ToHashtable();
+                }
+
+                if (series is CylinderSeries)
+                {
+                    CylinderSeries cylinderSeries = series as CylinderSeries;
+                    cylinderSeries.Type = CylinderSeriesType.Cylinder;
+                    seriesHashtable = cylinderSeries.ToHashtable();
+                }
+
+                if (series is VennSeries)
+                {
+                    VennSeries vennSeries = series as VennSeries;
+                    vennSeries.Type = VennSeriesType.Venn;
+                    seriesHashtable = vennSeries.ToHashtable();
+                }
+
                 //seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
             }
