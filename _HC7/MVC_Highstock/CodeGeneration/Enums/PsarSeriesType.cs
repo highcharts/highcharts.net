@@ -72,6 +72,23 @@ namespace Highsoft.Web.Mvc.Stocks
 		Packedbubble, 
 		Cylinder, 
 		Venn, 
-		Columnpyramid
+		Columnpyramid, 
+		Abands, 
+		Ao, 
+		Apo, 
+		Aroonoscillator, 
+		Aroon, 
+		Chaikin, 
+		Dema, 
+		Dpo, 
+		Keltnerchannels, 
+		Linearregressionangle, 
+		Natr, 
+		Pc, 
+		Ppo, 
+		Supertrend, 
+		Tema, 
+		Trix, 
+		Williamsr
     }
 }

@@ -17,11 +17,7 @@ Add:
 - Navigation.Bindings
 - Navigation.BindingsClassName
 - Navigation.Events
-- PlotOptions.Columnpyramid
-- PlotOptions.Cylinder
-- PlotOptions.Networkgraph
-- PlotOptions.Packedbubble
-- PlotOptions.Venn
+- Columnpyramid, Cylinder, Networkgraph, Packedbubble, Venn, Abands, Ao, Apo, Aroonoscillator, Aroon, Chaikin, Dema, Dpo, Keltnerchannels, Linearregressionangle, Natr, Pc, Ppo, Supertrend, Tema, Trix, Williamsr
 
 # Version 6.2.0
 

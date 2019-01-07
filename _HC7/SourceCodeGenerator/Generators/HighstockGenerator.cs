@@ -523,6 +523,25 @@ public class HighstockGenerator
             apiItem.Values.Add("Cylinder");
             apiItem.Values.Add("Venn");
             apiItem.Values.Add("Columnpyramid");
+
+            apiItem.Values.Add("Abands");
+            apiItem.Values.Add("Ao");
+            apiItem.Values.Add("Apo");
+            apiItem.Values.Add("Aroonoscillator");
+            apiItem.Values.Add("Aroon");
+            apiItem.Values.Add("Chaikin");
+            apiItem.Values.Add("Dema");
+            apiItem.Values.Add("Dpo");
+            apiItem.Values.Add("Keltnerchannels");
+            apiItem.Values.Add("Linearregressionangle");
+            apiItem.Values.Add("Natr");
+            apiItem.Values.Add("Packedbubble");
+            apiItem.Values.Add("Pc");
+            apiItem.Values.Add("Ppo");
+            apiItem.Values.Add("Supertrend");
+            apiItem.Values.Add("Tema");
+            apiItem.Values.Add("Trix");
+            apiItem.Values.Add("Williamsr");
         }
     }
 

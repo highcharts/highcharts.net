@@ -540,34 +540,6 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 }
 
                 //since v7.0
-                if (series is NetworkgraphSeries)
-                {
-                    NetworkgraphSeries networkgraphSeries = series as NetworkgraphSeries;
-                    networkgraphSeries.Type = NetworkgraphSeriesType.Networkgraph;
-                    seriesHashtable = networkgraphSeries.ToHashtable();
-                }
-
-                if (series is PackedbubbleSeries)
-                {
-                    PackedbubbleSeries packedbubbleSeries = series as PackedbubbleSeries;
-                    packedbubbleSeries.Type = PackedbubbleSeriesType.Packedbubble;
-                    seriesHashtable = packedbubbleSeries.ToHashtable();
-                }
-
-                if (series is CylinderSeries)
-                {
-                    CylinderSeries cylinderSeries = series as CylinderSeries;
-                    cylinderSeries.Type = CylinderSeriesType.Cylinder;
-                    seriesHashtable = cylinderSeries.ToHashtable();
-                }
-
-                if (series is VennSeries)
-                {
-                    VennSeries vennSeries = series as VennSeries;
-                    vennSeries.Type = VennSeriesType.Venn;
-                    seriesHashtable = vennSeries.ToHashtable();
-                }
-
                 if (series is ColumnpyramidSeries)
                 {
                     ColumnpyramidSeries columnpyramidSeries = series as ColumnpyramidSeries;
@@ -577,93 +549,128 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
                 if (series is AbandsSeries)
                 {
-
+                    AbandsSeries abandsSeries = series as AbandsSeries;
+                    abandsSeries.Type = AbandsSeriesType.Abands;
+                    seriesHashtable = abandsSeries.ToHashtable();
                 }
 
                 if (series is AoSeries)
                 {
-
+                    AoSeries aoSeries = series as AoSeries;
+                    aoSeries.Type = AoSeriesType.Ao;
+                    seriesHashtable = aoSeries.ToHashtable();
                 }
 
                 if (series is ApoSeries)
                 {
-
+                    ApoSeries apoSeries = series as ApoSeries;
+                    apoSeries.Type = ApoSeriesType.Apo;
+                    seriesHashtable = apoSeries.ToHashtable();
                 }
 
                 if (series is AroonoscillatorSeries)
                 {
-                    
+                    AroonoscillatorSeries aroonoscillatorSeries = series as AroonoscillatorSeries;
+                    aroonoscillatorSeries.Type = AroonoscillatorSeriesType.Aroonoscillator;
+                    seriesHashtable = aroonoscillatorSeries.ToHashtable();
                 }
 
                 if (series is AroonSeries)
                 {
-
+                    AroonSeries aroonSeries = series as AroonSeries;
+                    aroonSeries.Type = AroonSeriesType.Aroon;
+                    seriesHashtable = aroonSeries.ToHashtable();
                 }
-
 
                 if (series is ChaikinSeries)
                 {
-
+                    ChaikinSeries chaikinSeries = series as ChaikinSeries;
+                    chaikinSeries.Type = ChaikinSeriesType.Chaikin;
+                    seriesHashtable = chaikinSeries.ToHashtable();
                 }
 
                 if (series is DemaSeries)
                 {
-
+                    DemaSeries demaSeries = series as DemaSeries;
+                    demaSeries.Type = DemaSeriesType.Dema;
+                    seriesHashtable = demaSeries.ToHashtable();
                 }
 
                 if (series is DpoSeries)
                 {
-
+                    DpoSeries dpoSeries = series as DpoSeries;
+                    dpoSeries.Type = DpoSeriesType.Dpo;
+                    seriesHashtable = dpoSeries.ToHashtable();
                 }
 
                 if (series is KeltnerchannelsSeries)
                 {
-
+                    KeltnerchannelsSeries KeltnerchannelsSeries = series as KeltnerchannelsSeries;
+                    KeltnerchannelsSeries.Type = KeltnerchannelsSeriesType.Keltnerchannels;
+                    seriesHashtable = KeltnerchannelsSeries.ToHashtable();
                 }
 
                 if (series is LinearregressionangleSeries)
                 {
-
+                    LinearregressionangleSeries linearregressionangleSeries = series as LinearregressionangleSeries;
+                    linearregressionangleSeries.Type = LinearregressionangleSeriesType.Linearregressionangle;
+                    seriesHashtable = linearregressionangleSeries.ToHashtable();
                 }
 
                 if (series is NatrSeries)
                 {
-
+                    NatrSeries natrSeries = series as NatrSeries;
+                    natrSeries.Type = NatrSeriesType.Natr;
+                    seriesHashtable = natrSeries.ToHashtable();
                 }
 
                 if (series is PackedbubbleSeries)
                 {
-
+                    PackedbubbleSeries packedbubbleSeries = series as PackedbubbleSeries;
+                    packedbubbleSeries.Type = TypeSeries.Packedbubble;
+                    seriesHashtable = packedbubbleSeries.ToHashtable();
                 }
 
                 if (series is PcSeries)
                 {
-
+                    PcSeries abandsSeries = series as PcSeries;
+                    abandsSeries.Type = PcSeriesType.Pc;
+                    seriesHashtable = abandsSeries.ToHashtable();
                 }
 
                 if (series is PpoSeries)
                 {
-
+                    PpoSeries ppoSeries = series as PpoSeries;
+                    ppoSeries.Type = PpoSeriesType.Abands;
+                    seriesHashtable = ppoSeries.ToHashtable();
                 }
 
                 if (series is SupertrendSeries)
                 {
-
+                    SupertrendSeries supertrendSeries = series as SupertrendSeries;
+                    supertrendSeries.Type = SupertrendSeriesType.Supertrend;
+                    seriesHashtable = supertrendSeries.ToHashtable();
                 }
 
                 if (series is TemaSeries)
                 {
-
+                    TemaSeries temaSeries = series as TemaSeries;
+                    temaSeries.Type = TemaSeriesType.Tema;
+                    seriesHashtable = temaSeries.ToHashtable();
                 }
 
                 if (series is TrixSeries)
                 {
-
+                    TrixSeries trixSeries = series as TrixSeries;
+                    trixSeries.Type = TrixSeriesType.Trix;
+                    seriesHashtable = trixSeries.ToHashtable();
                 }
 
                 if (series is WilliamsrSeries)
                 {
-
+                    WilliamsrSeries williamsrSeries = series as WilliamsrSeries;
+                    williamsrSeries.Type = WilliamsrSeriesType.Williamsr;
+                    seriesHashtable = williamsrSeries.ToHashtable();
                 }
                 //seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
