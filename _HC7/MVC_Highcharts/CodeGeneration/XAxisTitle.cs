@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Offset = Offset_DefaultValue = null;
 			Position3d = Position3d_DefaultValue = "";
 			ReserveSpace = ReserveSpace_DefaultValue = true;
-			Rotation = Rotation_DefaultValue = 0;
+			Rotation = Rotation_DefaultValue = null;
 			Skew3d = Skew3d_DefaultValue = null;
 			Style = Style_DefaultValue = new XAxisTitleStyle();
 			Text = Text_DefaultValue = "null";

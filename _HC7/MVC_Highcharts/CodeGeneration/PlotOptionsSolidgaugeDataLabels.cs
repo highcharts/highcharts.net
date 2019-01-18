@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
+			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsSolidgaugeDataLabelsFilter();
 			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";

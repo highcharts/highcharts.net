@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			ReserveSpace = ReserveSpace_DefaultValue = true;
-			Rotation = Rotation_DefaultValue = 0;
+			Rotation = Rotation_DefaultValue = null;
 			Style = Style_DefaultValue = new XAxisTitleStyle();
 			Text = Text_DefaultValue = "null";
 			TextAlign = TextAlign_DefaultValue = "";
