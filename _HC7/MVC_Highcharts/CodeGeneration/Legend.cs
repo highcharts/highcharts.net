@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			BubbleLegend = BubbleLegend_DefaultValue = new LegendBubbleLegend();
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = null;
 			Floating = Floating_DefaultValue = false;
 			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new LegendItemCheckboxStyle();
 			ItemDistance = ItemDistance_DefaultValue = null;
