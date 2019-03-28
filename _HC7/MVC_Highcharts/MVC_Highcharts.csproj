@@ -62,6 +62,7 @@
     <Compile Include="CodeAddOns\Background.cs" />
     <Compile Include="CodeAddOns\BaseObject.cs" />
     <Compile Include="CodeAddOns\IObjectList.cs" />
+    <Compile Include="SerialKey.cs" />
     <Compile Include="CodeAddOns\Symbol.cs" />
     <Compile Include="CodeAddOns\Crosshair.cs" />
     <Compile Include="CodeAddOns\MenuItem.cs" />

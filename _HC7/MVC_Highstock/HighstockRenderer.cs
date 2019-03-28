@@ -28,17 +28,17 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
         {
             var licenseType = LicenseVerifier.Check();
 
-            string message = "";
+            if (licenseType == SerialKey.Missing)
+                return "<div style=\"background:yellow\">Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a></div>";
 
-            if (licenseType == 0)
-                message = "<div style=\"background:yellow\">Incorrect serial key. I'm working in trial mode now.</div>";
+            if (licenseType == SerialKey.Invalid)
+                return "<div style=\"background:yellow\">Licence key is incorrect. Please check your licence-key again or contact us at support@highcharts.com</div>";
 
-            if (licenseType == -1 || licenseType == 0) //trial
-                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
-                {
-                    message += "This is a trial version of Highstock for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
-                    return message;
-                }
+            if (licenseType == SerialKey.Trial14DaysBeforeEndValid)
+                return "<div style=\"background:yellow\">Trial-key will expire in 14 days. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
+
+            if (licenseType == SerialKey.TrialExpired)
+                return "<div style=\"background:yellow\">Trial-key has expired. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
 
             return GetCreateChartJavascript();
         }
@@ -47,17 +47,17 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
         {
             var licenseType = LicenseVerifier.Check();
 
-            string message = "";
+            if (licenseType == SerialKey.Missing)
+                return "<div style=\"background:yellow\">Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a></div>";
 
-            if (licenseType == 0)
-                message = "<div style=\"background:yellow\">Incorrect serial key. I'm working in trial mode now.</div>";
+            if (licenseType == SerialKey.Invalid)
+                return "<div style=\"background:yellow\">Licence key is incorrect. Please check your licence-key again or contact us at support@highcharts.com</div>";
 
-            if (licenseType == -1 || licenseType == 0) //trial
-                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
-                {
-                    message += "This is a trial version of Highstock for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
-                    return message;
-                }
+            if (licenseType == SerialKey.Trial14DaysBeforeEndValid)
+                return "<div style=\"background:yellow\">Trial-key will expire in 14 days. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
+
+            if (licenseType == SerialKey.TrialExpired)
+                return "<div style=\"background:yellow\">Trial-key has expired. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
 
             return GetStartupJavascriptFunction(functionName);
         }
@@ -84,33 +84,36 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             return sb.ToString();
         }
 
-        private string GetResponse(int licenseType, bool addContainer)
+        private string GetResponse(SerialKey licenseType, bool addContainer)
         {
-            string message = "";
+            if (licenseType == SerialKey.Missing)
+                return "<div style=\"background:yellow\">Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a></div>";
 
-            if (licenseType == 0)
-                message = "<div style=\"background:yellow\">Incorrect serial key. I'm working in trial mode now.</div>";
+            if (licenseType == SerialKey.Invalid)
+                return "<div style=\"background:yellow\">Licence key is incorrect. Please check your licence-key again or contact us at support@highcharts.com</div>";
 
-            if (licenseType == -1 || licenseType == 0) //trial
-                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
-                {
-                    message += "This is a trial version of Highstock for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
-                    return message;
-                }
+            if (licenseType == SerialKey.Trial14DaysBeforeEndValid)
+                return "<div style=\"background:yellow\">Trial-key will expire in 14 days. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
 
-            return message + GetStartupJavascript(addContainer);
+            if (licenseType == SerialKey.TrialExpired)
+                return "<div style=\"background:yellow\">Trial-key has expired. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
+
+            return GetStartupJavascript(addContainer);
         }
 
-        private string GetJsonResponse(int licenseType)
+        private string GetJsonResponse(SerialKey licenseType)
         {
-            string message = "";
+            if (licenseType == SerialKey.Missing)
+                return "{Message:\"Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a>\"}";
 
-            if (licenseType == -1 || licenseType == 0) //trial
-                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
-                {
-                    message += "Message:\"This is a trial version of Highstock for ASP.NET MVC which has expired. Please contact sales@highsoft.com with any questions.\"";
-                    return "{" + message + "}";
-                }
+            if (licenseType == SerialKey.Invalid)
+                return "{Message:\"Licence key is incorrect. Please check your licence-key again or contact us at support@highcharts.com\"}";
+
+            if (licenseType == SerialKey.Trial14DaysBeforeEndValid)
+                return "{Message:\"Trial-key will expire in 14 days. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a>\"}";
+
+            if (licenseType == SerialKey.TrialExpired)
+                return "{Message:\"Trial-key has expired. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a>\"}";
 
             return GetStartupOptions();
         }
