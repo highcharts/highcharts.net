@@ -417,6 +417,12 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Demo
                 case "WFFirstChart5":
                     ViewBag.Title = "Sample project";
                     break;
+                case "Core":
+                    ViewBag.Title = "Your first chart with Highcharts.NET and .NET Core";
+                    break;
+                case "StandardUpgrade":
+                    ViewBag.Title = "Steps to upgrade your project to .NET Standard library";
+                    break;
             }
 
             ViewBag.Title += " | Highcharts.NET";

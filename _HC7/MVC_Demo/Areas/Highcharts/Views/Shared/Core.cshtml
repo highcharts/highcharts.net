@@ -1,0 +1,40 @@
+﻿<div class="doc" style="text-align:left; margin:10px; padding-left:20px; padding-right:20px; padding-top:10px; padding-bottom:10px">
+    <h2 style="font-weight:500;">Your first chart with Highcharts.NET and .NET Core</h2>
+    <p class="c1"><span></span></p>
+    <p class="c4"><span>There are five main steps to create a chart with Highcharts.Net and .Net Core</span></p>
+    <p class="c4"><span><strong>1. Add a reference to Higcharts.dll</strong></span></p>
+    <p class="c4"><img alt="" src="~/Content/images/Core_reference.png"></p>
+    <p class="c1"><span></span></p>
+
+    <p class="c4"><span><strong>2. Add data</strong></span></p>
+    <p class="c4"><span>To define data, you can either pass it from the controller to the chart in the view or use fixed data in the view.</span></p>
+    <p class="c4"><span><strong>A.</strong> Passing data from the controller to the chart view</span></p>
+    <p class="c4"><span>This process would involve a database query, but for the sake of simplicity, fixed data is used.</span></p>
+    <p class="c4"><span>Go to controller file and create a List&lt;LineSeriesData&gt; with values corresponding to the points you need. If you are using other chart types, e.g. “Area” instead of “Line”, the collection becomes List&lt;AreaSeriesData&gt;. You can add any number of points to the collection and then set the ViewData for the respective item to the instance of the collection you need. This will later be used by the View and the chart itself to get the data, for example:</span></p>
+    <p class="c4"><img alt="" src="~/Content/images/Core_2_1.png"></p>
+
+    <p class="c4"><span><strong>B.</strong> Use fixed data in the view</span></p>
+    <p class="c4"><span>The method described above is the most common way to define data. Another way to define data is to define options directly in the View, as shown here:</span></p>
+    <p class="c4"><img alt="" src="~/Content/images/Core_2_2.png"></p>
+
+    <p class="c4"><span><strong>3. Include JavaScript files</strong></span></p>
+    <p class="c4"><span>Go to the view file and add online reference:</span></p>
+    <p class="c4"><img alt="" src="~/Content/images/Core_3_1.png"></p>
+    <p class="c4"><span>Some of the advanced chart types and features in Highcharts are not defined in the main “highcharts.js” file, but are available as separate modules. Add these modules as needed, for your project. Available additional modules are as follows:</span></p>
+    <p class="c4"><img alt="" src="~/Content/images/Core_3_2.png"></p>
+
+    <p class="c4"><span><strong>4. Add references to your view file</strong></span></p>
+    <p class="c4"><span>To add the references to the view file, copy and paste the following lines:</span></p>
+    <p class="c4"><img alt="" src="~/Content/images/Core_4_1.png"></p>
+
+    <p class="c4"><span><strong>5. Define chart in the view</strong></span></p>
+    <p class="c4"><span>The chart can be defined anywhere inside the View’s HTML definition, based on your page layout. To define the chart, go to CSHTML file and copy/paste the following code:</span></p>
+    <p class="c4"><img alt="" src="~/Content/images/Core_5_1.png"></p>
+    <p class="c4"><span>5.1 First create Highcharts object with  all options inside</span></p>
+    <p class="c4"><span>5.2 Define ID of DIV where chart should be rendered to</span></p>
+    <p class="c4"><span>5.3 Create HighchartsRenderer object based on Highcharts options</span></p>
+    <p class="c4"><span>5.4 Render entire chart</span></p>
+
+    <p class="c4"><span><strong>Here is the result of this sample project</strong></span></p>
+    <p class="c4"><img alt="" src="~/Content/images/Core_result.png"></p>
+</div>

@@ -60,6 +60,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Highcharts.Web.Mvc, Version=7.0.1.0, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Highsoft.Highcharts.7.0.3.10\lib\net40\Highcharts.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Highstock.Web.Mvc, Version=7.0.1.0, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Highsoft.Highstock.7.0.3.10\lib\net40\Highstock.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
@@ -1101,6 +1107,14 @@
     <Content Include="Content\images\ascx_cs.png" />
     <Content Include="Content\images\aspx.png" />
     <Content Include="Content\images\Controller.png" />
+    <Content Include="Content\images\Core_2_1.png" />
+    <Content Include="Content\images\Core_2_2.png" />
+    <Content Include="Content\images\Core_3_1.png" />
+    <Content Include="Content\images\Core_3_2.png" />
+    <Content Include="Content\images\Core_4_1.png" />
+    <Content Include="Content\images\Core_5_1.png" />
+    <Content Include="Content\images\Core_reference.png" />
+    <Content Include="Content\images\Core_result.png" />
     <Content Include="Content\images\dotnet_logo.png" />
     <Content Include="Content\images\Highcharts.png" />
     <Content Include="Content\images\Highsoft_Web_Mvc_Charts.png" />
@@ -1122,6 +1136,15 @@
     <Content Include="Content\images\script2.png" />
     <Content Include="Content\images\system_web_mvc.png" />
     <Content Include="Content\images\System_web_mvc2.png" />
+    <Content Include="Content\images\Upgrade_1.png" />
+    <Content Include="Content\images\Upgrade_2.png" />
+    <Content Include="Content\images\Upgrade_3.png" />
+    <Content Include="Content\images\Upgrade_4.png" />
+    <Content Include="Content\images\Upgrade_5.png" />
+    <Content Include="Content\images\Upgrade_6.png" />
+    <Content Include="Content\images\Upgrade_7.png" />
+    <Content Include="Content\images\Upgrade_8.png" />
+    <Content Include="Content\images\Upgrade_9.png" />
     <Content Include="Content\images\View2.png" />
     <Content Include="Content\loader.white.gif" />
     <Content Include="Content\gallery.css" />
@@ -1408,6 +1431,8 @@
     <Content Include="Areas\Highcharts\Views\Shared\GaugeVuMeter.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\BulletGraph.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\HoneycombUsa.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\Core.cshtml" />
+    <Content Include="Areas\Highcharts\Views\Shared\UpgradeToStandard.cshtml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />
@@ -1477,16 +1502,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MVC_Highcharts\MVC_Highcharts.csproj">
-      <Project>{fa4c2a73-1563-47da-8f1b-64ef17d48918}</Project>
-      <Name>MVC_Highcharts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MVC_Highstock\MVC_Highstock.csproj">
-      <Project>{d05d7902-fdbe-422d-9f47-c84a74a25258}</Project>
-      <Name>MVC_Highstock</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

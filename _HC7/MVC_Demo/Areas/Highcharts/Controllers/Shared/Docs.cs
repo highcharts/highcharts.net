@@ -98,6 +98,16 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             return View();
         }
 
+        public ActionResult Core()
+        {
+            return View();
+        }
+
+        public ActionResult UpgradeToStandard()
+        {
+            return View();
+        }
+
         public ActionResult Demo1()
         {
             List<double?> usaValues = new List<double?> {
