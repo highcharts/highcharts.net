@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ArearangeSeriesDragDropGuideBoxDefault()
 		{
-			ClassName = ClassName_DefaultValue = "";
+			ClassName = ClassName_DefaultValue = "highcharts-drag-box-default";
 			Color = Color_DefaultValue = "rgba(0, 0, 0, 0.1)";
 			Cursor = Cursor_DefaultValue = "move";
 			LineColor = LineColor_DefaultValue = "#888";

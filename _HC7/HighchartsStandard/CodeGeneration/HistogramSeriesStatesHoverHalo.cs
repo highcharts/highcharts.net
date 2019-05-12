@@ -22,21 +22,21 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// A collection of SVG attributes to override the appearance ofthe halo, for example `fill`, `stroke` and `stroke-width`.
+		/// A collection of SVG attributes to override the appearanceof the halo, for example `fill`, `stroke` and`stroke-width`.
 		/// </summary>
 		public Object Attributes { get; set; }
 		private Object Attributes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Opacity for the halo unless a specific fill is overriddenusing the `attributes` setting. Note that Highcharts is onlyable to apply opacity to colors of hex or rgb(a) formats.
+		/// Opacity for the halo unless a specific fill is overriddenusing the `attributes` setting. Note that Highcharts isonly able to apply opacity to colors of hex or rgb(a)formats.
 		/// </summary>
 		public double? Opacity { get; set; }
 		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The pixel size of the halo. For point markers this is theradius of the halo. For pie slices it is the width of thehalo outside the slice. For bubbles it defaults to 5 and isthe width of the halo outside the bubble.
+		/// The pixel size of the halo. For point markers this is theradius of the halo. For pie slices it is the width of thehalo outside the slice. For bubbles it defaults to 5 andis the width of the halo outside the bubble.
 		/// </summary>
 		public double? Size { get; set; }
 		private double? Size_DefaultValue { get; set; }

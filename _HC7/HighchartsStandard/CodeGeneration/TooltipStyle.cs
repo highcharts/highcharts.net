@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			FontSize = FontSize_DefaultValue = "12px";
 			PointerEvents = PointerEvents_DefaultValue = "none";
 			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
-			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
 			
 		}	
 		
@@ -57,20 +56,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string WhiteSpace { get; set; }
 		private string WhiteSpace_DefaultValue { get; set; }
-		 
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-            if (Color != Color_DefaultValue) h.Add("color", Color);
-            if (Cursor != Cursor_DefaultValue) h.Add("cursor", Cursor);
-            if (FontSize != FontSize_DefaultValue) h.Add("fontSize", FontSize);
-            if (PointerEvents != PointerEvents_DefaultValue) h.Add("pointerEvents", PointerEvents);
-            if (WhiteSpace != WhiteSpace_DefaultValue) h.Add("whiteSpace", WhiteSpace);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
+			if (PointerEvents != PointerEvents_DefaultValue) h.Add("pointerEvents",PointerEvents);
+			if (WhiteSpace != WhiteSpace_DefaultValue) h.Add("whiteSpace",WhiteSpace);
+			
 
-
-            return h;
+			return h;
 		}
 
 		internal override string ToJSON()

@@ -14,15 +14,15 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartParallelAxes()
 		{
+			Accessibility = Accessibility_DefaultValue = new ChartParallelAxesAccessibility();
 			AlignTicks = AlignTicks_DefaultValue = true;
 			AllowDecimals = AllowDecimals_DefaultValue = true;
-            Categories = Categories_DefaultValue = new List<string>();
-            Ceiling = Ceiling_DefaultValue = null;
+			Categories = Categories_DefaultValue = new List<string>();
+			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new ChartParallelAxesCrosshair();
 			CrosshairBool = CrosshairBool_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			Description = Description_DefaultValue = "";
 			EndOnTick = EndOnTick_DefaultValue = true;
 			Events = Events_DefaultValue = new ChartParallelAxesEvents();
 			Floor = Floor_DefaultValue = null;
@@ -31,11 +31,12 @@ namespace Highsoft.Web.Mvc.Charts
 			LineColor = LineColor_DefaultValue = "#ccd6eb";
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = null;
+			Margin = Margin_DefaultValue = null;
 			Max = Max_DefaultValue = null;
 			MaxPadding = MaxPadding_DefaultValue = null;
 			Min = Min_DefaultValue = null;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
-			MinorTickInterval = MinorTickInterval_DefaultValue = "null";
+			MinorTickInterval = MinorTickInterval_DefaultValue = "";
 			MinorTickIntervalNumber = MinorTickIntervalNumber_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ChartParallelAxesMinorTickPosition.Outside;
@@ -68,12 +69,19 @@ namespace Highsoft.Web.Mvc.Charts
 			TickWidth = TickWidth_DefaultValue = null;
 			Title = Title_DefaultValue = new ChartParallelAxesTitle();
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
-			Type = Type_DefaultValue = ChartParallelAxesType.Linear;
+			Type = Type_DefaultValue = "linear";
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
 			
 		}	
 		
+
+		/// <summary>
+		/// Accessibility options for an axis. Requires the accessibility module.
+		/// </summary>
+		public ChartParallelAxesAccessibility Accessibility { get; set; }
+		private ChartParallelAxesAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
@@ -132,13 +140,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// _Requires Accessibility module_Description of the axis to screen reader users.
-		/// </summary>
-		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public bool? EndOnTick { get; set; }
@@ -192,6 +193,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? LinkedTo { get; set; }
 		private double? LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If there are multiple axes on the same side of the chart, the pixelmargin between the axes. Defaults to 0 on vertical axes, 15 onhorizontal axes.
+		/// </summary>
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -398,7 +406,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For categorized axes only. If `on` the tick mark is placed in thecenter of the category, if `between` the tick mark is placed betweencategories. The default is `between` if the `tickInterval` is 1, else `on`.
+		/// For categorized axes only. If `on` the tick mark is placed in thecenter of the category, if `between` the tick mark is placed betweencategories. The default is `between` if the `tickInterval` is 1, else`on`.
 		/// </summary>
 		public ChartParallelAxesTickmarkPlacement TickmarkPlacement { get; set; }
 		private ChartParallelAxesTickmarkPlacement TickmarkPlacement_DefaultValue { get; set; }
@@ -433,21 +441,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The pixel width of the major tick marks.In styled mode, the stroke width is given in the `.highcharts-tick`class.
+		/// The pixel width of the major tick marks. Defaults to 0 on categoryaxes, otherwise 1.In styled mode, the stroke width is given in the `.highcharts-tick`class.
 		/// </summary>
 		public double? TickWidth { get; set; }
 		private double? TickWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Titles for yAxes are taken from[xAxis.categories](#xAxis.categories). All options for`xAxis.labels` applies to parallel coordinates titles.For example, to style categories, use[xAxis.labels.style](#xAxis.labels.style).
+		/// Titles for yAxes are taken from[xAxis.categories](#xAxis.categories). All options for `xAxis.labels`applies to parallel coordinates titles. For example, to stylecategories, use [xAxis.labels.style](#xAxis.labels.style).
 		/// </summary>
 		public ChartParallelAxesTitle Title { get; set; }
 		private ChartParallelAxesTitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
+		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. If yAxis is a category, then category name will be displayed3. If yAxis is a datetime, then value will use the same format as   yAxis labels4. If yAxis is linear/logarithmic type, then simple value will be   used
 		/// </summary>
 		public string TooltipValueFormat { get; set; }
 		private string TooltipValueFormat_DefaultValue { get; set; }
@@ -456,8 +464,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The type of axis. Can be one of `linear`, `logarithmic`, `datetime`or `category`. In a datetime axis, the numbers are given inmilliseconds, and tick marks are placed on appropriate values likefull hours or days. In a category axis, the[point names](#series.line.data.name) of the chart's series are usedfor categories, if not a [categories](#xAxis.categories) array isdefined.
 		/// </summary>
-		public ChartParallelAxesType Type { get; set; }
-		private ChartParallelAxesType Type_DefaultValue { get; set; }
+		public string Type { get; set; }
+		private string Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -478,6 +486,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
@@ -486,7 +495,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
 			if (CrosshairBool != CrosshairBool_DefaultValue) h.Add("crosshair",CrosshairBool);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
-			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
@@ -495,6 +503,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
@@ -532,7 +541,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			

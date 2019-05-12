@@ -15,6 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsColumnStates()
 		{
 			Hover = Hover_DefaultValue = new PlotOptionsColumnStatesHover();
+			Inactive = Inactive_DefaultValue = new PlotOptionsColumnStatesInactive();
+			Normal = Normal_DefaultValue = new PlotOptionsColumnStatesNormal();
 			Select = Select_DefaultValue = new PlotOptionsColumnStatesSelect();
 			
 		}	
@@ -28,7 +30,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the selected point. These settings override the normalstate options when a point is selected.
+		/// The opposite state of a hover for series.
+		/// </summary>
+		public PlotOptionsColumnStatesInactive Inactive { get; set; }
+		private PlotOptionsColumnStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
+		/// </summary>
+		public PlotOptionsColumnStatesNormal Normal { get; set; }
+		private PlotOptionsColumnStatesNormal Normal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the selected point. These settings override thenormal state options when a point is selected.
 		/// </summary>
 		public PlotOptionsColumnStatesSelect Select { get; set; }
 		private PlotOptionsColumnStatesSelect Select_DefaultValue { get; set; }
@@ -39,6 +55,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

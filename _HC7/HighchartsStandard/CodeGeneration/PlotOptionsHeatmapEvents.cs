@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Fires after the series has finished its initial animation, or incase animation is disabled, immediately as the series is displayed.
+		/// Fires after the series has finished its initial animation, or in caseanimation is disabled, immediately as the series is displayed.
 		/// </summary>
 		public string AfterAnimate { get; set; }
 		private string AfterAnimate_DefaultValue { get; set; }
@@ -41,7 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Fires when the series is clicked. One parameter, `event`, is passed tothe function, containing common event information. Additionally,`event.point` holds a pointer to the nearest point on the graph.
+		/// Fires when the series is clicked. One parameter, `event`, is passedto the function, containing common event information. Additionally,`event.point` holds a pointer to the nearest point on the graph.
 		/// </summary>
 		public string Click { get; set; }
 		private string Click_DefaultValue { get; set; }

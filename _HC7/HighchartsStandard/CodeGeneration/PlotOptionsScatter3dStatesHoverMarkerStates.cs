@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsScatter3dStatesHoverMarkerStates()
 		{
 			Hover = Hover_DefaultValue = new PlotOptionsScatter3dStatesHoverMarkerStatesHover();
+			Inactive = Inactive_DefaultValue = new PlotOptionsScatter3dStatesHoverMarkerStatesInactive();
 			Normal = Normal_DefaultValue = new PlotOptionsScatter3dStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new PlotOptionsScatter3dStatesHoverMarkerStatesSelect();
 			
@@ -29,14 +30,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// 
+		/// </summary>
+		public PlotOptionsScatter3dStatesHoverMarkerStatesInactive Inactive { get; set; }
+		private PlotOptionsScatter3dStatesHoverMarkerStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently onlyused for setting animation when returning to normal statefrom hover.
 		/// </summary>
 		public PlotOptionsScatter3dStatesHoverMarkerStatesNormal Normal { get; set; }
 		private PlotOptionsScatter3dStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
+		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
 		public PlotOptionsScatter3dStatesHoverMarkerStatesSelect Select { get; set; }
 		private PlotOptionsScatter3dStatesHoverMarkerStatesSelect Select_DefaultValue { get; set; }
@@ -47,6 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			

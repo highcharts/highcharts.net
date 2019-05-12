@@ -56,14 +56,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the point marker's outline. When `undefined`,the series' or point's lineColor for normal state is used.
+		/// The color of the point marker's outline. When`undefined`, the series' or point's lineColor for normalstate is used.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the point marker's outline. When `undefined`,the series' or point's lineWidth for normal state is used.
+		/// The width of the point marker's outline. When`undefined`, the series' or point's lineWidth for normalstate is used.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -77,14 +77,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The radius of the point marker. In hover state, it defaultsto the normal state's radius + 2 as per the [radiusPlus](#plotOptions.series.marker.states.hover.radiusPlus)option.
+		/// The radius of the point marker. In hover state, itdefaults to the normal state's radius + 2 as per the[radiusPlus](#plotOptions.series.marker.states.hover.radiusPlus)option.
 		/// </summary>
 		public double? Radius { get; set; }
 		private double? Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The number of pixels to increase the radius of the hoveredpoint.
+		/// The number of pixels to increase the radius of thehovered point.
 		/// </summary>
 		public double? RadiusPlus { get; set; }
 		private double? RadiusPlus_DefaultValue { get; set; }

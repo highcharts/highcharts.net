@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColumnSeriesData()
 		{
+			Accessibility = Accessibility_DefaultValue = new ColumnSeriesDataAccessibility();
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
@@ -35,6 +36,13 @@ namespace Highsoft.Web.Mvc.Charts
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ColumnSeriesDataAccessibility Accessibility { get; set; }
+		private ColumnSeriesDataAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The color of the border surrounding the column or bar.In styled mode, the border stroke can be set with the `.highcharts-point`rule.
@@ -93,7 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// The `id` of a series in the [drilldown.series](#drilldown.series) array touse for a drilldown for this point.
 		/// </summary>
 		public string Drilldown { get; set; }
 		private string Drilldown_DefaultValue { get; set; }
@@ -121,14 +129,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
+		/// The name of the point as shown in the legend, tooltip, dataLabelsetc.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A pixel value specifying a fixed width for the column or bar. OverridespointWidth on the series.
+		/// A pixel value specifying a fixed width for the column or bar.Overrides pointWidth on the series.
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
@@ -161,6 +169,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);

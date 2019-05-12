@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public LineSeriesStatesHoverMarkerStates()
 		{
 			Hover = Hover_DefaultValue = new LineSeriesStatesHoverMarkerStatesHover();
+			Inactive = Inactive_DefaultValue = new LineSeriesStatesHoverMarkerStatesInactive();
 			Normal = Normal_DefaultValue = new LineSeriesStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new LineSeriesStatesHoverMarkerStatesSelect();
 			
@@ -29,14 +30,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// 
+		/// </summary>
+		public LineSeriesStatesHoverMarkerStatesInactive Inactive { get; set; }
+		private LineSeriesStatesHoverMarkerStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently onlyused for setting animation when returning to normal statefrom hover.
 		/// </summary>
 		public LineSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
 		private LineSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
+		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
 		public LineSeriesStatesHoverMarkerStatesSelect Select { get; set; }
 		private LineSeriesStatesHoverMarkerStatesSelect Select_DefaultValue { get; set; }
@@ -47,6 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			

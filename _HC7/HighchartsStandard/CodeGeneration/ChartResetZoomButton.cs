@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public ChartResetZoomButton()
 		{
 			Position = Position_DefaultValue = new Hashtable();
-			RelativeTo = RelativeTo_DefaultValue = ChartResetZoomButtonRelativeTo.Plot;
-			Theme = Theme_DefaultValue = new ChartResetZoomButtonTheme();
+			RelativeTo = RelativeTo_DefaultValue = "plot";
+			Theme = Theme_DefaultValue = new {zIndex = 6};
 			
 		}	
 		
@@ -29,17 +29,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// What frame the button should be placed related to. Can be either`plot` or `chart`
+		/// What frame the button placement should be related to. Can beeither `plotBox` or `spacingBox`.
 		/// </summary>
-		public ChartResetZoomButtonRelativeTo RelativeTo { get; set; }
-		private ChartResetZoomButtonRelativeTo RelativeTo_DefaultValue { get; set; }
+		public string RelativeTo { get; set; }
+		private string RelativeTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, theborder radius. The theme also supports `style`, a collection ofCSS properties for the text. Equivalent attributes for the hoverstate are given in `theme.states.hover`.
 		/// </summary>
-		public ChartResetZoomButtonTheme Theme { get; set; }
-		private ChartResetZoomButtonTheme Theme_DefaultValue { get; set; }
+		public object Theme { get; set; }
+		private object Theme_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -47,8 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Position != Position_DefaultValue) h.Add("position",Position);
-			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo", Highcharts.FirstCharacterToLower(RelativeTo.ToString()));
-			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());
+			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
+			if (Theme != Theme_DefaultValue) h.Add("theme",Theme);
 			
 
 			return h;

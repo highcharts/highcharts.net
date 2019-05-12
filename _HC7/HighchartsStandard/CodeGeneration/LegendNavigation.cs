@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ActiveColor = ActiveColor_DefaultValue = "#003399";
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			ArrowSize = ArrowSize_DefaultValue = 12;
 			Enabled = Enabled_DefaultValue = true;
 			InactiveColor = InactiveColor_DefaultValue = "#cccccc";
@@ -39,6 +40,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// How to animate the pages when navigating up or down. A value of`true` applies the default navigation given in the`chart.animation` option. Additional options can be given as anobject containing values for easing and duration.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The pixel size of the up and down arrows in the legend pagingnavigation.
 		/// </summary>
 		public double? ArrowSize { get; set; }
@@ -57,28 +65,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string InactiveColor { get; set; }
 		private string InactiveColor_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// Text styles for the legend page navigation.
+		/// </summary>
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
+		  
 
-        /// <summary>
-        /// Text styles for the legend page navigation.
-        /// </summary>
-        public Hashtable Style { get; set; }
-        private Hashtable Style_DefaultValue { get; set; }
-
-
-        internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
 			if (ActiveColor != ActiveColor_DefaultValue) h.Add("activeColor",ActiveColor);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (ArrowSize != ArrowSize_DefaultValue) h.Add("arrowSize",ArrowSize);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (InactiveColor != InactiveColor_DefaultValue) h.Add("inactiveColor",InactiveColor);
-            if (Style != Style_DefaultValue) h.Add("style", Style);
+			if (Style != Style_DefaultValue) h.Add("style",Style);
+			
 
-
-            return h;
+			return h;
 		}
 
 		internal override string ToJSON()

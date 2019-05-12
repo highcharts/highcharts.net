@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace Highsoft.Web.Mvc.Charts.Rendering
 {
-    internal class HighchartsRenderer
+    public class HighchartsRenderer
     {
         private Highcharts _chart;
         private readonly string _SerialKey;

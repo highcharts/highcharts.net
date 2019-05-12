@@ -23,66 +23,66 @@ namespace Highsoft.Web.Mvc.Charts
 			Week = Week_DefaultValue = new YAxisDateTimeLabelFormatsWeek();
 			Year = Year_DefaultValue = new YAxisDateTimeLabelFormatsYear();
 			
-		}
+		}	
+		
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisDateTimeLabelFormatsDay Day { get; set; }
+		private YAxisDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public YAxisDateTimeLabelFormatsDay Day { get; set; }
-        private YAxisDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisDateTimeLabelFormatsHour Hour { get; set; }
+		private YAxisDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisDateTimeLabelFormatsMillisecond Millisecond { get; set; }
+		private YAxisDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public YAxisDateTimeLabelFormatsHour Hour { get; set; }
-        private YAxisDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisDateTimeLabelFormatsMinute Minute { get; set; }
+		private YAxisDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisDateTimeLabelFormatsMonth Month { get; set; }
+		private YAxisDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public YAxisDateTimeLabelFormatsMillisecond Millisecond { get; set; }
-        private YAxisDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisDateTimeLabelFormatsSecond Second { get; set; }
+		private YAxisDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisDateTimeLabelFormatsWeek Week { get; set; }
+		private YAxisDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public YAxisDateTimeLabelFormatsMinute Minute { get; set; }
-        private YAxisDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisDateTimeLabelFormatsYear Year { get; set; }
+		private YAxisDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
+		  
 
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public YAxisDateTimeLabelFormatsMonth Month { get; set; }
-        private YAxisDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public YAxisDateTimeLabelFormatsSecond Second { get; set; }
-        private YAxisDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public YAxisDateTimeLabelFormatsWeek Week { get; set; }
-        private YAxisDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public YAxisDateTimeLabelFormatsYear Year { get; set; }
-        private YAxisDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
-
-
-        internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 

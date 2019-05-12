@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The duration of the hover animation in milliseconds. Bydefault the hover state animates quickly in, and slowly backto normal.
+		/// The duration of the hover animation in milliseconds. Bydefault the hover state animates quickly in, and slowlyback to normal.
 		/// </summary>
 		public double? Duration { get; set; }
 		private double? Duration_DefaultValue { get; set; }

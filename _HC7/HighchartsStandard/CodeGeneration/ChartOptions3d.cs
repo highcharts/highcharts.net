@@ -15,13 +15,13 @@ namespace Highsoft.Web.Mvc.Charts
 		public ChartOptions3d()
 		{
 			Alpha = Alpha_DefaultValue = 0;
-			AxisLabelPosition = AxisLabelPosition_DefaultValue = ChartOptions3dAxisLabelPosition.Null;
+			AxisLabelPosition = AxisLabelPosition_DefaultValue = "";
 			Beta = Beta_DefaultValue = 0;
 			Depth = Depth_DefaultValue = 100;
 			Enabled = Enabled_DefaultValue = false;
 			FitToPlot = FitToPlot_DefaultValue = true;
 			Frame = Frame_DefaultValue = new ChartOptions3dFrame();
-			ViewDistance = ViewDistance_DefaultValue = 100;
+			ViewDistance = ViewDistance_DefaultValue = 25;
 			
 		}	
 		
@@ -36,8 +36,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Set it to `"auto"` to automatically move the labels to the bestedge.
 		/// </summary>
-		public ChartOptions3dAxisLabelPosition AxisLabelPosition { get; set; }
-		private ChartOptions3dAxisLabelPosition AxisLabelPosition_DefaultValue { get; set; }
+		public string AxisLabelPosition { get; set; }
+		private string AxisLabelPosition_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -87,7 +87,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Alpha != Alpha_DefaultValue) h.Add("alpha",Alpha);
-			if (AxisLabelPosition != AxisLabelPosition_DefaultValue) h.Add("axisLabelPosition", Highcharts.FirstCharacterToLower(AxisLabelPosition.ToString()));
+			if (AxisLabelPosition != AxisLabelPosition_DefaultValue) h.Add("axisLabelPosition",AxisLabelPosition);
 			if (Beta != Beta_DefaultValue) h.Add("beta",Beta);
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);

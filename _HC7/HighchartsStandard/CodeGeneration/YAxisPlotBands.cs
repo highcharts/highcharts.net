@@ -21,12 +21,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
 			Id = Id_DefaultValue = "";
-			InnerRadius = InnerRadius_DefaultValue = "null";
+			InnerRadius = InnerRadius_DefaultValue = "";
 			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
 			Label = Label_DefaultValue = new YAxisPlotBandsLabel();
-			OuterRadius = OuterRadius_DefaultValue = "null";
+			OuterRadius = OuterRadius_DefaultValue = "100%";
 			OuterRadiusNumber = OuterRadiusNumber_DefaultValue = null;
-			Thickness = Thickness_DefaultValue = "null";
+			Thickness = Thickness_DefaultValue = "10";
 			ThicknessNumber = ThicknessNumber_DefaultValue = null;
 			To = To_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;

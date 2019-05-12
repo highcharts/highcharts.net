@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allow labels to be placed distant to the graph if necessary,and draw a connector line to the graph. Setting this optionto true may decrease the performance significantly, since thealgorithm with systematically search for open spaces in thewhile plot area. Visually, it may also result in a morecluttered chart, though more of the series will be labeled.
+		/// Allow labels to be placed distant to the graph if necessary,and draw a connector line to the graph. Setting this optionto true may decrease the performance significantly, since thealgorithm with systematically search for open spaces in thewhole plot area. Visually, it may also result in a morecluttered chart, though more of the series will be labeled.
 		/// </summary>
 		public bool? ConnectorAllowed { get; set; }
 		private bool? ConnectorAllowed_DefaultValue { get; set; }

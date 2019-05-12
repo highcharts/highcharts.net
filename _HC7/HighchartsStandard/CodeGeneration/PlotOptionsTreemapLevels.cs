@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new PlotOptionsTreemapLevelsColorVariation();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsTreemapDataLabels();
+			DataLabels = DataLabels_DefaultValue = new object();
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLevelsLayoutAlgorithm.Null;
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLevelsLayoutStartingDirection.Null;
 			Level = Level_DefaultValue = null;
@@ -56,17 +56,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object to define how the color of a child varies from theparent's color. The variation is distributed among the children of node.For example when setting brightness, the brightness change will rangefrom the parent's original brightness on the first child, to the amountset in the `to` setting on the last node. This allows a gradient-likecolor scheme that sets children out from each other while highlightingthe grouping on treemaps and sectors on sunburst charts.
+		/// A configuration object to define how the color of a child varies fromthe parent's color. The variation is distributed among the childrenof node. For example when setting brightness, the brightness changewill range from the parent's original brightness on the first child,to the amount set in the `to` setting on the last node. This allows agradient-like color scheme that sets children out from each otherwhile highlighting the grouping on treemaps and sectors on sunburstcharts.
 		/// </summary>
 		public PlotOptionsTreemapLevelsColorVariation ColorVariation { get; set; }
 		private PlotOptionsTreemapLevelsColorVariation ColorVariation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Can set the options of dataLabels on each point which lies on thelevel. [plotOptions.treemap.dataLabels](#plotOptions.treemap.dataLabels)for possible values.
+		/// Can set the options of dataLabels on each point which lies on thelevel.[plotOptions.treemap.dataLabels](#plotOptions.treemap.dataLabels) forpossible values.
 		/// </summary>
-		public PlotOptionsTreemapDataLabels DataLabels { get; set; }
-		private PlotOptionsTreemapDataLabels DataLabels_DefaultValue { get; set; }
+		public object DataLabels { get; set; }
+		private object DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -99,7 +99,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorVariation.IsDirty()) h.Add("colorVariation",ColorVariation.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
 			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
 			if (Level != Level_DefaultValue) h.Add("level",Level);

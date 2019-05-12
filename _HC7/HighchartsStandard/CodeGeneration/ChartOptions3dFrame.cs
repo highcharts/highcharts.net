@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Note: As of v5.0.12, `frame.left` or `frame.right` should be usedinstead.The side for the frame around a 3D chart.
+		/// Note: As of v5.0.12, `frame.left` or `frame.right` should be used instead.The side for the frame around a 3D chart.
 		/// </summary>
 		public ChartOptions3dFrameSide Side { get; set; }
 		private ChartOptions3dFrameSide Side_DefaultValue { get; set; }

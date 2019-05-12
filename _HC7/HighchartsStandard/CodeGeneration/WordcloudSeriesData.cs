@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public WordcloudSeriesData()
 		{
+			Accessibility = Accessibility_DefaultValue = new WordcloudSeriesDataAccessibility();
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Charts
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public WordcloudSeriesDataAccessibility Accessibility { get; set; }
+		private WordcloudSeriesDataAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -94,7 +102,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
+		/// The name of the point as shown in the legend, tooltip, dataLabelsetc.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
@@ -113,6 +121,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);

@@ -7,29 +7,12 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ChartType
     {
-        Null, 
-		Line, 
-		Spline, 
-		Column, 
-		Bar, 
-		Area, 
-		Areaspline, 
-		Pie, 
-		Arearange, 
-		Areasplinerange, 
-		Boxplot, 
-		Bubble, 
-		Columnrange, 
-		Errorbar, 
-		Funnel, 
-		Gauge, 
+        Bar, 
 		Heatmap, 
-		Polygon, 
 		Pyramid, 
-		Scatter, 
-		Solidgauge, 
+		Polygon, 
 		Treemap, 
-		Waterfall, 
+		Solidgauge, 
 		Bellcurve, 
 		Bullet, 
 		Histogram, 
@@ -44,6 +27,11 @@ namespace Highsoft.Web.Mvc.Charts
 		Vector, 
 		Windbarb, 
 		Wordcloud, 
-		Xrange
+		Xrange, 
+		Networkgraph, 
+		Packedbubble, 
+		Cylinder, 
+		Venn, 
+		Columnpyramid
     }
 }

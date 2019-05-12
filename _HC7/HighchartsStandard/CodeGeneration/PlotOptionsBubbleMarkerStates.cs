@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsBubbleMarkerStates()
 		{
 			Hover = Hover_DefaultValue = new PlotOptionsBubbleMarkerStatesHover();
+			Inactive = Inactive_DefaultValue = new PlotOptionsBubbleMarkerStatesInactive();
 			Normal = Normal_DefaultValue = new PlotOptionsBubbleMarkerStatesNormal();
 			Select = Select_DefaultValue = new PlotOptionsBubbleMarkerStatesSelect();
 			
@@ -29,14 +30,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// 
+		/// </summary>
+		public PlotOptionsBubbleMarkerStatesInactive Inactive { get; set; }
+		private PlotOptionsBubbleMarkerStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently onlyused for setting animation when returning to normal statefrom hover.
 		/// </summary>
 		public PlotOptionsBubbleMarkerStatesNormal Normal { get; set; }
 		private PlotOptionsBubbleMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
+		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
 		public PlotOptionsBubbleMarkerStatesSelect Select { get; set; }
 		private PlotOptionsBubbleMarkerStatesSelect Select_DefaultValue { get; set; }
@@ -47,6 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			

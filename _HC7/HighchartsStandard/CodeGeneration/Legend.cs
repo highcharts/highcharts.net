@@ -14,12 +14,14 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Legend()
 		{
-			Align = Align_DefaultValue = LegendAlign.Center;
+			Accessibility = Accessibility_DefaultValue = new LegendAccessibility();
+			Align = Align_DefaultValue = "center";
 			AlignColumns = AlignColumns_DefaultValue = true;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#999999";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
+			BubbleLegend = BubbleLegend_DefaultValue = new LegendBubbleLegend();
 			Enabled = Enabled_DefaultValue = true;
 			Floating = Floating_DefaultValue = false;
 			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new LegendItemCheckboxStyle();
@@ -30,7 +32,6 @@ namespace Highsoft.Web.Mvc.Charts
 			ItemMarginTop = ItemMarginTop_DefaultValue = 0;
 			ItemStyle = ItemStyle_DefaultValue = new LegendItemStyle();
 			ItemWidth = ItemWidth_DefaultValue = null;
-			KeyboardNavigation = KeyboardNavigation_DefaultValue = new LegendKeyboardNavigation();
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
 			LabelFormatter = LabelFormatter_DefaultValue = "";
 			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
@@ -51,8 +52,9 @@ namespace Highsoft.Web.Mvc.Charts
 			SymbolWidth = SymbolWidth_DefaultValue = null;
 			Title = Title_DefaultValue = new LegendTitle();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
-			Width = Width_DefaultValue = null;
+			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
+			Width = Width_DefaultValue = "";
+			WidthNumber = WidthNumber_DefaultValue = null;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			
@@ -60,10 +62,17 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
+		/// Accessibility options for the legend. Requires the Accessibilitymodule.
+		/// </summary>
+		public LegendAccessibility Accessibility { get; set; }
+		private LegendAccessibility Accessibility_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The horizontal alignment of the legend box within the chart area.Valid values are `left`, `center` and `right`.In the case that the legend is aligned in a corner position, the`layout` option will determine whether to place it above/belowor on the side of the plot area.
 		/// </summary>
-		public LegendAlign Align { get; set; }
-		private LegendAlign Align_DefaultValue { get; set; }
+		public string Align { get; set; }
+		private string Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -99,6 +108,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The bubble legend is an additional element in legend whichpresents the scale of the bubble series. Individual bubble rangescan be defined by user or calculated from series. In the case ofautomatically calculated ranges, a 1px margin of error ispermitted.Requires `highcharts-more.js`.
+		/// </summary>
+		public LegendBubbleLegend BubbleLegend { get; set; }
+		private LegendBubbleLegend BubbleLegend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -172,30 +188,23 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Keyboard navigation for the legend. Requires the Accessibility module.
-		/// </summary>
-		public LegendKeyboardNavigation KeyboardNavigation { get; set; }
-		private LegendKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) for each legend label. Availablevariables relates to properties on the series, or the point in caseof pies.
+		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for each legend label. Available variables relates to properties onthe series, or the point in case of pies.
 		/// </summary>
 		public string LabelFormat { get; set; }
 		private string LabelFormat_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// Callback function to format each of the series' labels. The `this`keyword refers to the series object, or the point object in case ofpie charts. By default the series or point name is printed.
+		/// </summary>
+		public string LabelFormatter { get; set; }
+		private string LabelFormatter_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// Callback function to format each of the series' labels. The `this`keyword refers to the series object, or the point object in caseof pie charts. By default the series or point name is printed.
-        /// </summary>
-        public string LabelFormatter { get; set; }
-        private string LabelFormatter_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// The layout of the legend items. Can be one of `horizontal` or`vertical` or `proximate`. When `proximate`, the legend items will beplaced as close as possible to the graphs they're representing,except in inverted charts or when the legend position doesn't allowit.
-        /// </summary>
-        public LegendLayout Layout { get; set; }
+		/// <summary>
+		/// The layout of the legend items. Can be one of `horizontal` or`vertical` or `proximate`. When `proximate`, the legend items will beplaced as close as possible to the graphs they're representing,except in inverted charts or when the legend position doesn't allowit.
+		/// </summary>
+		public LegendLayout Layout { get; set; }
 		private LegendLayout Layout_DefaultValue { get; set; }
 		 
 
@@ -207,7 +216,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If the plot area sized is calculated automatically and the legendis not floating, the legend margin is the space between the legendand the axis labels or plot area.
+		/// If the plot area sized is calculated automatically and the legend isnot floating, the legend margin is the space between the legend andthe axis labels or plot area.
 		/// </summary>
 		public double? Margin { get; set; }
 		private double? Margin_DefaultValue { get; set; }
@@ -221,7 +230,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the paging or navigation appearing when the legendis overflown. Navigation works well on screen, but not in staticexported images. One way of working around that is to[increase the chart height inexport](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/legend/navigation-enabled-false/).
+		/// Options for the paging or navigation appearing when the legend isoverflown. Navigation works well on screen, but not in staticexported images. One way of working around that is to[increase the chart height inexport](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/legend/navigation-enabled-false/).
 		/// </summary>
 		public LegendNavigation Navigation { get; set; }
 		private LegendNavigation Navigation_DefaultValue { get; set; }
@@ -272,8 +281,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the legend area. In the 1.x versions the positionof the legend area was determined by CSS. In 2.x, the position isdetermined by properties like `align`, `verticalAlign`, `x` and `y`,but the styles are still parsed for backwards compatibility.
 		/// </summary>
-		public Object Style { get; set; }
-		private Object Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -312,7 +321,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the legend item texts.Prior to 4.1.7, when using HTML, [legend.navigation](#legend.navigation) was disabled.
+		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the legend item texts.Prior to 4.1.7, when using HTML, [legend.navigation](#legend.navigation) was disabled.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
@@ -321,15 +330,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The vertical alignment of the legend box. Can be one of `top`,`middle` or `bottom`. Vertical position can be further determinedby the `y` option.In the case that the legend is aligned in a corner position, the`layout` option will determine whether to place it above/belowor on the side of the plot area.When the [layout](#legend.layout) option is `proximate`, the`verticalAlign` option doesn't apply.
 		/// </summary>
-		public LegendVerticalAlign VerticalAlign { get; set; }
-		private LegendVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public string VerticalAlign { get; set; }
+		private string VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the legend box.
+		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width from legends below or above thechart, half the chart width for legends to the left and right.
 		/// </summary>
-		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
+		public string Width { get; set; }
+		private string Width_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width from legends below or above thechart, half the chart width for legends to the left and right.
+		/// </summary>
+		public double? WidthNumber { get; set; }
+		private double? WidthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -350,12 +366,14 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
+			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (AlignColumns != AlignColumns_DefaultValue) h.Add("alignColumns",AlignColumns);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (BubbleLegend.IsDirty()) h.Add("bubbleLegend",BubbleLegend.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (ItemCheckboxStyle.IsDirty()) h.Add("itemCheckboxStyle",ItemCheckboxStyle.ToHashtable());
@@ -366,7 +384,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ItemMarginTop != ItemMarginTop_DefaultValue) h.Add("itemMarginTop",ItemMarginTop);
 			if (ItemStyle.IsDirty()) h.Add("itemStyle",ItemStyle.ToHashtable());
 			if (ItemWidth != ItemWidth_DefaultValue) h.Add("itemWidth",ItemWidth);
-			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
 			if (LabelFormat != LabelFormat_DefaultValue) h.Add("labelFormat",LabelFormat);
 			if (LabelFormatter != LabelFormatter_DefaultValue) h.Add("labelFormatter",LabelFormatter);
 			if (Layout != Layout_DefaultValue) h.Add("layout", Highcharts.FirstCharacterToLower(Layout.ToString()));
@@ -380,15 +397,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (SquareSymbol != SquareSymbol_DefaultValue) h.Add("squareSymbol",SquareSymbol);
-            if (Style != Style_DefaultValue) h.Add("style", Style);
-            if (SymbolHeight != SymbolHeight_DefaultValue) h.Add("symbolHeight",SymbolHeight);
+			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (SymbolHeight != SymbolHeight_DefaultValue) h.Add("symbolHeight",SymbolHeight);
 			if (SymbolPadding != SymbolPadding_DefaultValue) h.Add("symbolPadding",SymbolPadding);
 			if (SymbolRadius != SymbolRadius_DefaultValue) h.Add("symbolRadius",SymbolRadius);
 			if (SymbolWidth != SymbolWidth_DefaultValue) h.Add("symbolWidth",SymbolWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

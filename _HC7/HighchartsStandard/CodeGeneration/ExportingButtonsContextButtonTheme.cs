@@ -29,14 +29,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Padding for the button.
 		/// </summary>
 		public string Padding { get; set; }
 		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Default stroke for the buttons.
 		/// </summary>
 		public string Stroke { get; set; }
 		private string Stroke_DefaultValue { get; set; }

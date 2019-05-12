@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the point marker's outline. When `undefined`,the series' or point's color is used.
+		/// The color of the point marker's outline. When`undefined`, the series' or point's color is used.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
@@ -52,7 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The radius of the point marker. In hover state, it defaultsto the normal state's radius + 2.
+		/// The radius of the point marker. In hover state, itdefaults to the normal state's radius + 2.
 		/// </summary>
 		public double? Radius { get; set; }
 		private double? Radius_DefaultValue { get; set; }

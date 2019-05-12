@@ -15,15 +15,31 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsVariwideStates()
 		{
 			Hover = Hover_DefaultValue = new PlotOptionsVariwideStatesHover();
+			Inactive = Inactive_DefaultValue = new PlotOptionsVariwideStatesInactive();
+			Normal = Normal_DefaultValue = new PlotOptionsVariwideStatesNormal();
 			
 		}	
 		
 
 		/// <summary>
-		/// Options for the hovered series. These settings override the normalstate options when a series is moused over or touched.
+		/// Options for the hovered series. These settings override thenormal state options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsVariwideStatesHover Hover { get; set; }
 		private PlotOptionsVariwideStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The opposite state of a hover for series.
+		/// </summary>
+		public PlotOptionsVariwideStatesInactive Inactive { get; set; }
+		private PlotOptionsVariwideStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
+		/// </summary>
+		public PlotOptionsVariwideStatesNormal Normal { get; set; }
+		private PlotOptionsVariwideStatesNormal Normal_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			
 
 			return h;

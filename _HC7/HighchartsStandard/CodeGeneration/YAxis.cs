@@ -14,23 +14,23 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxis()
 		{
+			Accessibility = Accessibility_DefaultValue = new YAxisAccessibility();
 			AlignTicks = AlignTicks_DefaultValue = true;
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "";
 			Angle = Angle_DefaultValue = 0;
 			Breaks = Breaks_DefaultValue = new YAxisBreaks();
-            Categories = Categories_DefaultValue = new List<string>();
-            Ceiling = Ceiling_DefaultValue = null;
+			Categories = Categories_DefaultValue = new List<string>();
+			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new YAxisCrosshair();
 			CrosshairBool = CrosshairBool_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			Description = Description_DefaultValue = "";
 			EndOnTick = EndOnTick_DefaultValue = true;
 			Events = Events_DefaultValue = new YAxisEvents();
 			Floor = Floor_DefaultValue = null;
 			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
-			GridLineDashStyle = GridLineDashStyle_DefaultValue = YAxisGridLineDashStyle.Solid;
+			GridLineDashStyle = GridLineDashStyle_DefaultValue = "Solid";
 			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			GridZIndex = GridZIndex_DefaultValue = 1;
@@ -39,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 0;
 			LinkedTo = LinkedTo_DefaultValue = null;
+			Margin = Margin_DefaultValue = null;
 			Max = Max_DefaultValue = null;
 			MaxColor = MaxColor_DefaultValue = "#003399";
 			MaxPadding = MaxPadding_DefaultValue = null;
@@ -46,10 +47,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Min = Min_DefaultValue = null;
 			MinColor = MinColor_DefaultValue = "#e6ebf5";
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
-			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = YAxisMinorGridLineDashStyle.Solid;
+			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = "Solid";
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
-			MinorTickInterval = MinorTickInterval_DefaultValue = "null";
+			MinorTickInterval = MinorTickInterval_DefaultValue = "";
 			MinorTickIntervalNumber = MinorTickIntervalNumber_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
@@ -86,12 +87,19 @@ namespace Highsoft.Web.Mvc.Charts
 			TickWidth = TickWidth_DefaultValue = 0;
 			Title = Title_DefaultValue = new YAxisTitle();
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
-			Type = Type_DefaultValue = YAxisType.Null;
+			Type = Type_DefaultValue = "";
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
 			
 		}	
 		
+
+		/// <summary>
+		/// Accessibility options for an axis. Requires the accessibility module.
+		/// </summary>
+		public YAxisAccessibility Accessibility { get; set; }
+		private YAxisAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
@@ -171,13 +179,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// _Requires Accessibility module_Description of the axis to screen reader users.
-		/// </summary>
-		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public bool? EndOnTick { get; set; }
@@ -208,8 +209,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The dash or dot style of the grid lines. For possible values, see[this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public YAxisGridLineDashStyle GridLineDashStyle { get; set; }
-		private YAxisGridLineDashStyle GridLineDashStyle_DefaultValue { get; set; }
+		public string GridLineDashStyle { get; set; }
+		private string GridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -269,6 +270,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// If there are multiple axes on the same side of the chart, the pixelmargin between the axes. Defaults to 0 on vertical axes, 15 onhorizontal axes.
+		/// </summary>
+		public double? Margin { get; set; }
+		private double? Margin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public double? Max { get; set; }
@@ -320,8 +328,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The dash or dot style of the minor grid lines. For possible values,see [this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public YAxisMinorGridLineDashStyle MinorGridLineDashStyle { get; set; }
-		private YAxisMinorGridLineDashStyle MinorGridLineDashStyle_DefaultValue { get; set; }
+		public string MinorGridLineDashStyle { get; set; }
+		private string MinorGridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -507,7 +515,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Solid gauge series only. Color stops for the solid gauge. Use thisin cases where a linear gradient between a `minColor` and `maxColor`is not sufficient. The stops is an array of tuples, where the firstitem is a float between 0 and 1 assigning the relative position inthe gradient, and the second item is the color.For solid gauges, the Y axis also inherits the concept of [data classes](http://api.highcharts.com/highmaps#colorAxis.dataClasses) from the Highmapscolor axis.
+		/// Solid gauge series only. Color stops for the solid gauge. Use thisin cases where a linear gradient between a `minColor` and `maxColor`is not sufficient. The stops is an array of tuples, where the firstitem is a float between 0 and 1 assigning the relative position inthe gradient, and the second item is the color.For solid gauges, the Y axis also inherits the concept of[data classes](http://api.highcharts.com/highmaps#colorAxis.dataClasses)from the Highmaps color axis.
 		/// </summary>
 		public List<Stop> Stops { get; set; }
 		private List<Stop> Stops_DefaultValue { get; set; }
@@ -542,7 +550,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For categorized axes only. If `on` the tick mark is placed in thecenter of the category, if `between` the tick mark is placed betweencategories. The default is `between` if the `tickInterval` is 1, else `on`.
+		/// For categorized axes only. If `on` the tick mark is placed in thecenter of the category, if `between` the tick mark is placed betweencategories. The default is `between` if the `tickInterval` is 1, else`on`.
 		/// </summary>
 		public YAxisTickmarkPlacement TickmarkPlacement { get; set; }
 		private YAxisTickmarkPlacement TickmarkPlacement_DefaultValue { get; set; }
@@ -591,7 +599,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. if yAxis is a category, then category name will be displayed3. if yAxis is a datetime, then value will use the same format as   yAxis labels4. if yAxis is linear/logarithmic type, then simple value will be   used
+		/// Parallel coordinates only. Format that will be used for point.yand available in [tooltip.pointFormat](#tooltip.pointFormat) as`{point.formattedValue}`. If not set, `{point.formattedValue}`will use other options, in this order:1. [yAxis.labels.format](#yAxis.labels.format) will be used if   set2. If yAxis is a category, then category name will be displayed3. If yAxis is a datetime, then value will use the same format as   yAxis labels4. If yAxis is linear/logarithmic type, then simple value will be   used
 		/// </summary>
 		public string TooltipValueFormat { get; set; }
 		private string TooltipValueFormat_DefaultValue { get; set; }
@@ -600,8 +608,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The type of axis. Can be one of `linear`, `logarithmic`, `datetime`,`category` or `treegrid`. Defaults to `treegrid` for Gantt charts,`linear` for other chart types.In a datetime axis, the numbers are given in milliseconds, and tickmarks are placed on appropriate values, like full hours or days. In acategory or treegrid axis, the [point names](#series.line.data.name)of the chart's series are used for categories, if a[categories](#xAxis.categories) array is not defined.
 		/// </summary>
-		public YAxisType Type { get; set; }
-		private YAxisType Type_DefaultValue { get; set; }
+		public string Type { get; set; }
+		private string Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -622,6 +630,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
@@ -633,12 +642,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
 			if (CrosshairBool != CrosshairBool_DefaultValue) h.Add("crosshair",CrosshairBool);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
-			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
 			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
-			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle", Highcharts.FirstCharacterToLower(GridLineDashStyle.ToString()));
+			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle",GridLineDashStyle);
 			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation", Highcharts.FirstCharacterToLower(GridLineInterpolation.ToString()));
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
@@ -647,6 +655,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
@@ -654,7 +663,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
-			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle", Highcharts.FirstCharacterToLower(MinorGridLineDashStyle.ToString()));
+			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle",MinorGridLineDashStyle);
 			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
@@ -694,7 +703,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			

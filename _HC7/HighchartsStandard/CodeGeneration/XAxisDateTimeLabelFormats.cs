@@ -23,66 +23,66 @@ namespace Highsoft.Web.Mvc.Charts
 			Week = Week_DefaultValue = new XAxisDateTimeLabelFormatsWeek();
 			Year = Year_DefaultValue = new XAxisDateTimeLabelFormatsYear();
 			
-		}
+		}	
+		
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public XAxisDateTimeLabelFormatsDay Day { get; set; }
+		private XAxisDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public XAxisDateTimeLabelFormatsDay Day { get; set; }
-        private XAxisDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public XAxisDateTimeLabelFormatsHour Hour { get; set; }
+		private XAxisDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public XAxisDateTimeLabelFormatsMillisecond Millisecond { get; set; }
+		private XAxisDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public XAxisDateTimeLabelFormatsHour Hour { get; set; }
-        private XAxisDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public XAxisDateTimeLabelFormatsMinute Minute { get; set; }
+		private XAxisDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public XAxisDateTimeLabelFormatsMonth Month { get; set; }
+		private XAxisDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public XAxisDateTimeLabelFormatsMillisecond Millisecond { get; set; }
-        private XAxisDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public XAxisDateTimeLabelFormatsSecond Second { get; set; }
+		private XAxisDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public XAxisDateTimeLabelFormatsWeek Week { get; set; }
+		private XAxisDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public XAxisDateTimeLabelFormatsMinute Minute { get; set; }
-        private XAxisDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public XAxisDateTimeLabelFormatsYear Year { get; set; }
+		private XAxisDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
+		  
 
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public XAxisDateTimeLabelFormatsMonth Month { get; set; }
-        private XAxisDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public XAxisDateTimeLabelFormatsSecond Second { get; set; }
-        private XAxisDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public XAxisDateTimeLabelFormatsWeek Week { get; set; }
-        private XAxisDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public XAxisDateTimeLabelFormatsYear Year { get; set; }
-        private XAxisDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
-
-
-        internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 

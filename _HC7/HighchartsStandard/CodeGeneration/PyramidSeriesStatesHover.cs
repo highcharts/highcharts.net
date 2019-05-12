@@ -40,14 +40,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable separate styles for the hovered series to visualize thatthe user hovers either the series itself or the legend. .
+		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts.By default the halo is filled by the current point or seriescolor with an opacity of 0.25\. The halo can be disabled bysetting the `halo` option to `false`.In styled mode, the halo is styled with the `.highcharts-halo`class, with colors inherited from `.highcharts-color-{n}`.
+		/// Options for the halo appearing around the hovered point inline-type series as well as outside the hovered slice in piecharts. By default the halo is filled by the current point orseries color with an opacity of 0.25\. The halo can bedisabled by setting the `halo` option to `null`.In styled mode, the halo is styled with the`.highcharts-halo` class, with colors inherited from`.highcharts-color-{n}`.
 		/// </summary>
 		public PyramidSeriesStatesHoverHalo Halo { get; set; }
 		private PyramidSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
@@ -68,7 +68,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// In Highcharts 1.0, the appearance of all markers belonging to thehovered series. For settings on the hover state of the individualpoint, see[marker.states.hover](#plotOptions.series.marker.states.hover).
+		/// In Highcharts 1.0, the appearance of all markers belongingto the hovered series. For settings on the hover state of theindividual point, see[marker.states.hover](#plotOptions.series.marker.states.hover).
 		/// </summary>
 		public PyramidSeriesStatesHoverMarker Marker { get; set; }
 		private PyramidSeriesStatesHoverMarker Marker_DefaultValue { get; set; }

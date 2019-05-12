@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsAreaStatesHoverMarkerStates()
 		{
 			Hover = Hover_DefaultValue = new PlotOptionsAreaStatesHoverMarkerStatesHover();
+			Inactive = Inactive_DefaultValue = new PlotOptionsAreaStatesHoverMarkerStatesInactive();
 			Normal = Normal_DefaultValue = new PlotOptionsAreaStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new PlotOptionsAreaStatesHoverMarkerStatesSelect();
 			
@@ -29,14 +30,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// 
+		/// </summary>
+		public PlotOptionsAreaStatesHoverMarkerStatesInactive Inactive { get; set; }
+		private PlotOptionsAreaStatesHoverMarkerStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently onlyused for setting animation when returning to normal statefrom hover.
 		/// </summary>
 		public PlotOptionsAreaStatesHoverMarkerStatesNormal Normal { get; set; }
 		private PlotOptionsAreaStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
+		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
 		public PlotOptionsAreaStatesHoverMarkerStatesSelect Select { get; set; }
 		private PlotOptionsAreaStatesHoverMarkerStatesSelect Select_DefaultValue { get; set; }
@@ -47,6 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			

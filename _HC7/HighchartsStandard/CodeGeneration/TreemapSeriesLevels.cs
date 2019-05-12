@@ -56,14 +56,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object to define how the color of a child varies from theparent's color. The variation is distributed among the children of node.For example when setting brightness, the brightness change will rangefrom the parent's original brightness on the first child, to the amountset in the `to` setting on the last node. This allows a gradient-likecolor scheme that sets children out from each other while highlightingthe grouping on treemaps and sectors on sunburst charts.
+		/// A configuration object to define how the color of a child varies fromthe parent's color. The variation is distributed among the childrenof node. For example when setting brightness, the brightness changewill range from the parent's original brightness on the first child,to the amount set in the `to` setting on the last node. This allows agradient-like color scheme that sets children out from each otherwhile highlighting the grouping on treemaps and sectors on sunburstcharts.
 		/// </summary>
 		public TreemapSeriesLevelsColorVariation ColorVariation { get; set; }
 		private TreemapSeriesLevelsColorVariation ColorVariation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Can set the options of dataLabels on each point which lies on thelevel. [plotOptions.treemap.dataLabels](#plotOptions.treemap.dataLabels)for possible values.
+		/// Can set the options of dataLabels on each point which lies on thelevel.[plotOptions.treemap.dataLabels](#plotOptions.treemap.dataLabels) forpossible values.
 		/// </summary>
 		public TreemapSeriesDataLabels DataLabels { get; set; }
 		private TreemapSeriesDataLabels DataLabels_DefaultValue { get; set; }

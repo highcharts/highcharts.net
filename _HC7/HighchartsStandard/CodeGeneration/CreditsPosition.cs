@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public CreditsPosition()
 		{
-			Align = Align_DefaultValue = CreditsPositionAlign.Right;
-			VerticalAlign = VerticalAlign_DefaultValue = CreditsPositionVerticalAlign.Bottom;
+			Align = Align_DefaultValue = "right";
+			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
 			X = X_DefaultValue = -10;
 			Y = Y_DefaultValue = -5;
 			
@@ -25,15 +25,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Horizontal alignment of the credits.
 		/// </summary>
-		public CreditsPositionAlign Align { get; set; }
-		private CreditsPositionAlign Align_DefaultValue { get; set; }
+		public string Align { get; set; }
+		private string Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Vertical alignment of the credits.
 		/// </summary>
-		public CreditsPositionVerticalAlign VerticalAlign { get; set; }
-		private CreditsPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public string VerticalAlign { get; set; }
+		private string VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

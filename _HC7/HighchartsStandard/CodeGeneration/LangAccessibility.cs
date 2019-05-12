@@ -14,31 +14,41 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LangAccessibility()
 		{
+			AnnounceNewData = AnnounceNewData_DefaultValue = new LangAccessibilityAnnounceNewData();
 			Axis = Axis_DefaultValue = new LangAccessibilityAxis();
-			ChartContainerLabel = ChartContainerLabel_DefaultValue = "Interactive chart. {title}. Use up and down arrows to navigate with most screen readers.";
+			ChartContainerLabel = ChartContainerLabel_DefaultValue = "{title}. Interactive chart.";
 			ChartHeading = ChartHeading_DefaultValue = "Chart graphic.";
 			ChartTypes = ChartTypes_DefaultValue = new LangAccessibilityChartTypes();
 			DefaultChartTitle = DefaultChartTitle_DefaultValue = "Chart";
+			DrillUpButton = DrillUpButton_DefaultValue = "{buttonText}";
 			Exporting = Exporting_DefaultValue = new LangAccessibilityExporting();
-			LegendItem = LegendItem_DefaultValue = "Toggle visibility of series {itemName}";
-			LongDescriptionHeading = LongDescriptionHeading_DefaultValue = "Long description.";
+			LegendItem = LegendItem_DefaultValue = "Toggle visibility of {itemName}";
+			LegendLabel = LegendLabel_DefaultValue = "Toggle series visibility";
 			MapZoomIn = MapZoomIn_DefaultValue = "Zoom chart";
 			MapZoomOut = MapZoomOut_DefaultValue = "Zoom out chart";
-			NavigationHint = NavigationHint_DefaultValue = "Use regions/landmarks to skip ahead to chart {#plural(numSeries, and navigate between data series,)}";
-			NoDescription = NoDescription_DefaultValue = "No description available.";
 			RangeSelectorButton = RangeSelectorButton_DefaultValue = "Select range {buttonText}";
 			RangeSelectorMaxInput = RangeSelectorMaxInput_DefaultValue = "Select end date.";
 			RangeSelectorMinInput = RangeSelectorMinInput_DefaultValue = "Select start date.";
+			ResetZoomButton = ResetZoomButton_DefaultValue = "Reset zoom";
 			ScreenReaderRegionLabel = ScreenReaderRegionLabel_DefaultValue = "Chart screen reader information.";
 			Series = Series_DefaultValue = new LangAccessibilitySeries();
 			SeriesTypeDescriptions = SeriesTypeDescriptions_DefaultValue = new LangAccessibilitySeriesTypeDescriptions();
-			StructureHeading = StructureHeading_DefaultValue = "Structure.";
-			SvgContainerTitle = SvgContainerTitle_DefaultValue = "{chartTitle}";
+			SvgContainerEnd = SvgContainerEnd_DefaultValue = "End of interactive chart";
+			SvgContainerLabel = SvgContainerLabel_DefaultValue = "Interactive chart";
+			SvgContainerTitle = SvgContainerTitle_DefaultValue = "";
 			TableSummary = TableSummary_DefaultValue = "Table representation of chart.";
+			ThousandsSep = ThousandsSep_DefaultValue = ",";
 			ViewAsDataTable = ViewAsDataTable_DefaultValue = "View as data table.";
 			
 		}	
 		
+
+		/// <summary>
+		/// Default announcement for new data in charts. If addPoint oraddSeries is used, and only one series/point is added, the`newPointAnnounce` and `newSeriesAnnounce` strings are used.The `...Single` versions will be used if there is only one charton the page, and the `...Multiple` versions will be used if thereare multiple charts on the page. For all other new data events,the `newDataAnnounce` string will be used.
+		/// </summary>
+		public LangAccessibilityAnnounceNewData AnnounceNewData { get; set; }
+		private LangAccessibilityAnnounceNewData AnnounceNewData_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Axis description format strings.
@@ -76,6 +86,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public string DrillUpButton { get; set; }
+		private string DrillUpButton_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Exporting menu format strings for accessibility module.
 		/// </summary>
 		public LangAccessibilityExporting Exporting { get; set; }
@@ -92,8 +109,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string LongDescriptionHeading { get; set; }
-		private string LongDescriptionHeading_DefaultValue { get; set; }
+		public string LegendLabel { get; set; }
+		private string LegendLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -108,20 +125,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string MapZoomOut { get; set; }
 		private string MapZoomOut_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string NavigationHint { get; set; }
-		private string NavigationHint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string NoDescription { get; set; }
-		private string NoDescription_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -148,12 +151,19 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public string ResetZoomButton { get; set; }
+		private string ResetZoomButton_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string ScreenReaderRegionLabel { get; set; }
 		private string ScreenReaderRegionLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Lang configuration for different series types. For more dynamiccontrol over the series element descriptions, see[accessibility.seriesDescriptionFormatter](accessibility.seriesDescriptionFormatter).
+		/// Lang configuration for different series types. For more dynamiccontrol over the series element descriptions, see[accessibility.seriesDescriptionFormatter](#accessibility.seriesDescriptionFormatter).
 		/// </summary>
 		public LangAccessibilitySeries Series { get; set; }
 		private LangAccessibilitySeries Series_DefaultValue { get; set; }
@@ -167,10 +177,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Label for the end of the chart. Announced by screen readers.
+		/// </summary>
+		public string SvgContainerEnd { get; set; }
+		private string SvgContainerEnd_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
-		public string StructureHeading { get; set; }
-		private string StructureHeading_DefaultValue { get; set; }
+		public string SvgContainerLabel { get; set; }
+		private string SvgContainerLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -188,6 +205,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Thousands separator to use when formatting numbers for screenreaders. Note that many screen readers will not handle space as athousands separator, and will consider "11 700" as two numbers.Set to `null` to use the separator defined in[lang.thousandsSep](lang.thousandsSep).
+		/// </summary>
+		public string ThousandsSep { get; set; }
+		private string ThousandsSep_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public string ViewAsDataTable { get; set; }
@@ -198,27 +222,30 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (AnnounceNewData.IsDirty()) h.Add("announceNewData",AnnounceNewData.ToHashtable());
 			if (Axis.IsDirty()) h.Add("axis",Axis.ToHashtable());
 			if (ChartContainerLabel != ChartContainerLabel_DefaultValue) h.Add("chartContainerLabel",ChartContainerLabel);
 			if (ChartHeading != ChartHeading_DefaultValue) h.Add("chartHeading",ChartHeading);
 			if (ChartTypes.IsDirty()) h.Add("chartTypes",ChartTypes.ToHashtable());
 			if (DefaultChartTitle != DefaultChartTitle_DefaultValue) h.Add("defaultChartTitle",DefaultChartTitle);
+			if (DrillUpButton != DrillUpButton_DefaultValue) h.Add("drillUpButton",DrillUpButton);
 			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
 			if (LegendItem != LegendItem_DefaultValue) h.Add("legendItem",LegendItem);
-			if (LongDescriptionHeading != LongDescriptionHeading_DefaultValue) h.Add("longDescriptionHeading",LongDescriptionHeading);
+			if (LegendLabel != LegendLabel_DefaultValue) h.Add("legendLabel",LegendLabel);
 			if (MapZoomIn != MapZoomIn_DefaultValue) h.Add("mapZoomIn",MapZoomIn);
 			if (MapZoomOut != MapZoomOut_DefaultValue) h.Add("mapZoomOut",MapZoomOut);
-			if (NavigationHint != NavigationHint_DefaultValue) h.Add("navigationHint",NavigationHint);
-			if (NoDescription != NoDescription_DefaultValue) h.Add("noDescription",NoDescription);
 			if (RangeSelectorButton != RangeSelectorButton_DefaultValue) h.Add("rangeSelectorButton",RangeSelectorButton);
 			if (RangeSelectorMaxInput != RangeSelectorMaxInput_DefaultValue) h.Add("rangeSelectorMaxInput",RangeSelectorMaxInput);
 			if (RangeSelectorMinInput != RangeSelectorMinInput_DefaultValue) h.Add("rangeSelectorMinInput",RangeSelectorMinInput);
+			if (ResetZoomButton != ResetZoomButton_DefaultValue) h.Add("resetZoomButton",ResetZoomButton);
 			if (ScreenReaderRegionLabel != ScreenReaderRegionLabel_DefaultValue) h.Add("screenReaderRegionLabel",ScreenReaderRegionLabel);
 			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
 			if (SeriesTypeDescriptions.IsDirty()) h.Add("seriesTypeDescriptions",SeriesTypeDescriptions.ToHashtable());
-			if (StructureHeading != StructureHeading_DefaultValue) h.Add("structureHeading",StructureHeading);
+			if (SvgContainerEnd != SvgContainerEnd_DefaultValue) h.Add("svgContainerEnd",SvgContainerEnd);
+			if (SvgContainerLabel != SvgContainerLabel_DefaultValue) h.Add("svgContainerLabel",SvgContainerLabel);
 			if (SvgContainerTitle != SvgContainerTitle_DefaultValue) h.Add("svgContainerTitle",SvgContainerTitle);
 			if (TableSummary != TableSummary_DefaultValue) h.Add("tableSummary",TableSummary);
+			if (ThousandsSep != ThousandsSep_DefaultValue) h.Add("thousandsSep",ThousandsSep);
 			if (ViewAsDataTable != ViewAsDataTable_DefaultValue) h.Add("viewAsDataTable",ViewAsDataTable);
 			
 

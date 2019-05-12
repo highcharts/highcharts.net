@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AnnotationsLabels()
 		{
-			Align = Align_DefaultValue = AnnotationsLabelsAlign.Center;
+			Align = Align_DefaultValue = "center";
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			BorderColor = BorderColor_DefaultValue = "black";
@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Crop = Crop_DefaultValue = false;
 			Distance = Distance_DefaultValue = null;
-			Format = Format_DefaultValue = "undefined";
+			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = AnnotationsLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
@@ -32,10 +32,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = new AnnotationsLabelsStyle();
-			Text = Text_DefaultValue = "undefined";
+			Style = Style_DefaultValue = new object();
+			Text = Text_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelsVerticalAlign.Bottom;
+			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -16;
 			
@@ -45,8 +45,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The alignment of the annotation's label. If right,the right side of the label should be touching the point.
 		/// </summary>
-		public AnnotationsLabelsAlign Align { get; set; }
-		private AnnotationsLabelsAlign Align_DefaultValue { get; set; }
+		public string Align { get; set; }
+		private string Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -106,7 +106,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A [format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) string for the data label.
+		/// A[format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)string for the data label.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
@@ -171,8 +171,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Styles for the annotation's label.
 		/// </summary>
-		public AnnotationsLabelsStyle Style { get; set; }
-		private AnnotationsLabelsStyle Style_DefaultValue { get; set; }
+		public object Style { get; set; }
+		private object Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -192,8 +192,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The vertical alignment of the annotation's label.
 		/// </summary>
-		public AnnotationsLabelsVerticalAlign VerticalAlign { get; set; }
-		private AnnotationsLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public string VerticalAlign { get; set; }
+		private string VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -214,7 +214,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
@@ -232,10 +232,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

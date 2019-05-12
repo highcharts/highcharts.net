@@ -30,10 +30,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-            if (Color != Color_DefaultValue) h.Add("color", Color);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			
 
-
-            return h;
+			return h;
 		}
 
 		internal override string ToJSON()

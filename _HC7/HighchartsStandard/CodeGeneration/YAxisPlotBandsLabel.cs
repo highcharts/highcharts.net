@@ -18,9 +18,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
-			TextAlign = TextAlign_DefaultValue = YAxisPlotBandsLabelTextAlign.Null;
+			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = YAxisPlotBandsLabelVerticalAlign.Top;
+			VerticalAlign = VerticalAlign_DefaultValue = "top";
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -58,12 +58,12 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The text alignment for the label. While `align` determines where thetexts anchor point is placed within the plot band, `textAlign` determineshow the text is aligned against its anchor point. Possible values are"left", "center" and "right". Defaults to the same as the `align` option.
 		/// </summary>
-		public YAxisPlotBandsLabelTextAlign TextAlign { get; set; }
-		private YAxisPlotBandsLabelTextAlign TextAlign_DefaultValue { get; set; }
+		public string TextAlign { get; set; }
+		private string TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
+		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Vertical alignment of the label relative to the plot band. Can be one of"top", "middle" or "bottom".
 		/// </summary>
-		public YAxisPlotBandsLabelVerticalAlign VerticalAlign { get; set; }
-		private YAxisPlotBandsLabelVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public string VerticalAlign { get; set; }
+		private string VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -98,9 +98,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", Highcharts.FirstCharacterToLower(TextAlign.ToString()));
+			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

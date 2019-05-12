@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Exporting()
 		{
+			Accessibility = Accessibility_DefaultValue = new ExportingAccessibility();
 			AllowHTML = AllowHTML_DefaultValue = false;
 			Buttons = Buttons_DefaultValue = new ExportingButtons();
 			ChartOptions = ChartOptions_DefaultValue = null;
@@ -30,9 +31,9 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowTable = ShowTable_DefaultValue = false;
 			SourceHeight = SourceHeight_DefaultValue = null;
 			SourceWidth = SourceWidth_DefaultValue = null;
-			TableCaption = TableCaption_DefaultValue = "null";
+			TableCaption = TableCaption_DefaultValue = "";
 			TableCaptionBool = TableCaptionBool_DefaultValue = null;
-			Type = Type_DefaultValue = ExportingType.Imagepng;
+			Type = Type_DefaultValue = "image/png";
 			Url = Url_DefaultValue = "https://export.highcharts.com/";
 			UseMultiLevelHeaders = UseMultiLevelHeaders_DefaultValue = true;
 			UseRowspanHeaders = UseRowspanHeaders_DefaultValue = true;
@@ -40,6 +41,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// Accessibility options for the exporting menu. Requires theAccessibility module.
+		/// </summary>
+		public ExportingAccessibility Accessibility { get; set; }
+		private ExportingAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Experimental setting to allow HTML inside the chart (added throughthe `useHTML` options), directly in the exported image. This allowsyou to preserve complicated HTML structures like tables or bi-directionaltext in exported charts.Disclaimer: The HTML is rendered in a `foreignObject` tag in thegenerated SVG. The official export server is based on PhantomJS,which supports this, but other SVG clients, like Batik, does notsupport it. This also applies to downloaded SVG that you want toopen in a desktop client.
@@ -56,7 +64,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Additional chart options to be merged into an exported chart. Forexample, a common use case is to add data labels to improve readabilityof the exported chart, or to add a printer-friendly color scheme.
+		/// Additional chart options to be merged into the chart before exporting toan image format. This does not apply to printing the chart via the exportmenu.For example, a common use case is to add data labels to improvereadability of the exported chart, or to add a printer-friendly colorscheme to exported PDFs.
 		/// </summary>
 		public Object ChartOptions { get; set; }
 		private Object ChartOptions_DefaultValue { get; set; }
@@ -98,21 +106,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An object containing additional attributes for the POST form thatsends the SVG to the export server. For example, a `target` can beset to make sure the generated image is received in another frame, or a custom `enctype` or `encoding` can be set.
+		/// An object containing additional key value data for the POST form thatsends the SVG to the export server. For example, a `target` can be set tomake sure the generated image is received in another frame, or a custom`enctype` or `encoding` can be set.
 		/// </summary>
 		public Object FormAttributes { get; set; }
 		private Object FormAttributes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Path where Highcharts will look for export module dependencies toload on demand if they don't already exist on `window`. Should currentlypoint to location of [CanVG](https://github.com/canvg/canvg) library,[RGBColor.js](https://github.com/canvg/canvg), [jsPDF](https://github.com/yWorks/jsPDF) and [svg2pdf.js](https://github.com/yWorks/svg2pdf.js), required for client side export in certain browsers.
+		/// Path where Highcharts will look for export module dependencies toload on demand if they don't already exist on `window`. Should currentlypoint to location of [CanVG](https://github.com/canvg/canvg) library,[RGBColor.js](https://github.com/canvg/canvg),[jsPDF](https://github.com/yWorks/jsPDF) and[svg2pdf.js](https://github.com/yWorks/svg2pdf.js), required for clientside export in certain browsers.
 		/// </summary>
 		public string LibURL { get; set; }
 		private string LibURL_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a `key` that is referenced in the[menuItems](#exporting.buttons.contextButton.menuItems) setting,and a `value`, which is an object with the following properties:<dl><dt>onclick</dt><dd>The click handler for the menu item</dd><dt>text</dt><dd>The text for the menu item</dd><dt>textKey</dt><dd>If internationalization is required, the key to a language string</dd></dl>
+		/// An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a `key` that is referenced in the[menuItems](#exporting.buttons.contextButton.menuItems) setting,and a `value`, which is an object with the following properties:- **onclick:** The click handler for the menu item- **text:** The text for the menu item- **textKey:** If internationalization is required, the key to a language  string
 		/// </summary>
 		public Object MenuItemDefinitions { get; set; }
 		private Object MenuItemDefinitions_DefaultValue { get; set; }
@@ -147,7 +155,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width of the original chart when exported, unless an explicit[chart.width](#chart.width) is set. The width exported raster imageis then multiplied by [scale](#exporting.scale).
+		/// The width of the original chart when exported, unless an explicit[chart.width](#chart.width) is set, or a pixel width is set on thecontainer. The width exported raster image is then multiplied by[scale](#exporting.scale).
 		/// </summary>
 		public double? SourceWidth { get; set; }
 		private double? SourceWidth_DefaultValue { get; set; }
@@ -170,8 +178,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Default MIME type for exporting if `chart.exportChart()` is calledwithout specifying a `type` option. Possible values are `image/png`, `image/jpeg`, `application/pdf` and `image/svg+xml`.
 		/// </summary>
-		public ExportingType Type { get; set; }
-		private ExportingType Type_DefaultValue { get; set; }
+		public string Type { get; set; }
+		private string Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -206,6 +214,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
 			if (Buttons.IsDirty()) h.Add("buttons",Buttons.ToHashtable());
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
@@ -224,7 +233,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SourceWidth != SourceWidth_DefaultValue) h.Add("sourceWidth",SourceWidth);
 			if (TableCaption != TableCaption_DefaultValue) h.Add("tableCaption",TableCaption);
 			if (TableCaptionBool != TableCaptionBool_DefaultValue) h.Add("tableCaption",TableCaptionBool);
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (Url != Url_DefaultValue) h.Add("url",Url);
 			if (UseMultiLevelHeaders != UseMultiLevelHeaders_DefaultValue) h.Add("useMultiLevelHeaders",UseMultiLevelHeaders);
 			if (UseRowspanHeaders != UseRowspanHeaders_DefaultValue) h.Add("useRowspanHeaders",UseRowspanHeaders);

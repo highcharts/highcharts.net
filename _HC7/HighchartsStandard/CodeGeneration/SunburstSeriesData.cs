@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SunburstSeriesData()
 		{
+			Accessibility = Accessibility_DefaultValue = new SunburstSeriesDataAccessibility();
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
@@ -25,8 +26,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new SunburstSeriesDataEvents();
 			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
-			Name = Name_DefaultValue = "undefined";
-			Parent = Parent_DefaultValue = "undefined";
+			Name = Name_DefaultValue = "";
+			Parent = Parent_DefaultValue = "";
 			PointPadding = PointPadding_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Sliced = Sliced_DefaultValue = false;
@@ -36,6 +37,13 @@ namespace Highsoft.Web.Mvc.Charts
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SunburstSeriesDataAccessibility Accessibility { get; set; }
+		private SunburstSeriesDataAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -87,7 +95,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series)array to use for a drilldown for this point.
+		/// The `id` of a series in the [drilldown.series](#drilldown.series) array touse for a drilldown for this point.
 		/// </summary>
 		public string Drilldown { get; set; }
 		private string Drilldown_DefaultValue { get; set; }
@@ -169,6 +177,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);

@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public LegendItemCheckboxStyle()
 		{
 			Height = Height_DefaultValue = "13px";
-			Height = Height_DefaultValue = "13px";
 			Position = Position_DefaultValue = new Hashtable();
 			Width = Width_DefaultValue = "13px";
 			
@@ -28,6 +27,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public string Height { get; set; }
 		private string Height_DefaultValue { get; set; }
 		 
+		 
+
 		/// <summary>
 		/// 
 		/// </summary>
@@ -47,11 +48,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Position != Position_DefaultValue) h.Add("position",Position);
-            if (Width != Width_DefaultValue) h.Add("width", Width);
+			if (Width != Width_DefaultValue) h.Add("width",Width);
+			
 
-
-            return h;
+			return h;
 		}
 
 		internal override string ToJSON()

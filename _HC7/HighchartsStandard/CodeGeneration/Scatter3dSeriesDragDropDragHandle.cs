@@ -14,11 +14,11 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Scatter3dSeriesDragDropDragHandle()
 		{
-			ClassName = ClassName_DefaultValue = "";
+			ClassName = ClassName_DefaultValue = "highcharts-drag-handle";
 			Color = Color_DefaultValue = "#fff";
 			Cursor = Cursor_DefaultValue = "";
 			LineColor = LineColor_DefaultValue = "rgba(0, 0, 0, 0.6)";
-			LineWidth = LineWidth_DefaultValue = 2;
+			LineWidth = LineWidth_DefaultValue = 1;
 			PathFormatter = PathFormatter_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = 901;
 			
@@ -40,7 +40,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The mouse cursor to use for the drag handles. By default this isintelligently switching between `ew-resize` and `ns-resize` dependingon the direction the point is being dragged.
+		/// The mouse cursor to use for the drag handles. By default this isintelligently switching between `ew-resize` and `ns-resize` depending onthe direction the point is being dragged.
 		/// </summary>
 		public string Cursor { get; set; }
 		private string Cursor_DefaultValue { get; set; }
@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Function to define the SVG path to use for the drag handles. Takesthe point as argument. Should return an SVG path in array format. TheSVG path is automatically positioned on the point.
+		/// Function to define the SVG path to use for the drag handles. Takes thepoint as argument. Should return an SVG path in array format. The SVGpath is automatically positioned on the point.
 		/// </summary>
 		public string PathFormatter { get; set; }
 		private string PathFormatter_DefaultValue { get; set; }

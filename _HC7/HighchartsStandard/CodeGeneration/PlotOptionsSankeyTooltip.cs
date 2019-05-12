@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSankeyTooltip()
 		{
 			FollowPointer = FollowPointer_DefaultValue = true;
-			HeaderFormat = HeaderFormat_DefaultValue = "<span class='highcharts-header'>{series.name}</span><br/>";
+			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{series.name}</span><br/>";
 			NodeFormat = NodeFormat_DefaultValue = "{point.name}: <b>{point.sum}</b><br/>";
 			NodeFormatter = NodeFormatter_DefaultValue = "";
 			PointFormat = PointFormat_DefaultValue = "{point.fromNode.name} → {point.toNode.name}: <b>{point.weight}</b><br/>";
@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Whether the tooltip should follow the pointer or stay fixed on theitem.
+		/// Whether the tooltip should follow the pointer or stay fixed onthe item.
 		/// </summary>
 		public bool? FollowPointer { get; set; }
 		private bool? FollowPointer_DefaultValue { get; set; }
@@ -38,14 +38,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) specifying what toshow for _nodes_ in tooltipof a sankey diagram series, as opposed to links.
+		/// The[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)specifying what to show for _nodes_ in tooltip of a diagramseries, as opposed to links.
 		/// </summary>
 		public string NodeFormat { get; set; }
 		private string NodeFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A callback for defining the format for _nodes_ in the sankey chart'stooltip, as opposed to links.
+		/// A callback for defining the format for _nodes_ in the chart'stooltip, as opposed to links.
 		/// </summary>
 		public string NodeFormatter { get; set; }
 		private string NodeFormatter_DefaultValue { get; set; }

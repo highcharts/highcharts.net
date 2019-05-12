@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public DrilldownDrillUpButton()
 		{
 			Position = Position_DefaultValue = new Hashtable();
-			RelativeTo = RelativeTo_DefaultValue = DrilldownDrillUpButtonRelativeTo.PlotBox;
+			RelativeTo = RelativeTo_DefaultValue = "plotBox";
 			Theme = Theme_DefaultValue = null;
 			
 		}	
@@ -31,12 +31,12 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// What box to align the button to. Can be either `plotBox` or`spacingBox`.
 		/// </summary>
-		public DrilldownDrillUpButtonRelativeTo RelativeTo { get; set; }
-		private DrilldownDrillUpButtonRelativeTo RelativeTo_DefaultValue { get; set; }
+		public string RelativeTo { get; set; }
+		private string RelativeTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, the borderradius. The theme also supports `style`, a collection of CSSproperties for the text. Equivalent attributes for the hover stateare given in `theme.states.hover`.
+		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, the borderradius. The theme also supports `style`, a collection of CSSproperties for the text. Equivalent attributes for the hover stateare given in `theme.states.hover`.In styled mode, drill-up button styles can be applied with the`.highcharts-drillup-button` class.
 		/// </summary>
 		public Object Theme { get; set; }
 		private Object Theme_DefaultValue { get; set; }
@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Position != Position_DefaultValue) h.Add("position",Position);
-			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo", Highcharts.FirstCharacterToLower(RelativeTo.ToString()));
+			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
 			if (Theme != Theme_DefaultValue) h.Add("theme",Theme);
 			
 

@@ -116,22 +116,7 @@
     <Content Include="CodeTemplates\Class_NETStandard.tpl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="JsonFiles\highcharts6.1.4.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="JsonFiles\highcharts6.0.7.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="JsonFiles\highcharts6.1.0.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="JsonFiles\highcharts6.1.1.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="JsonFiles\highcharts6.1.2.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="JsonFiles\highcharts6.2.0.json">
+    <None Include="JsonFiles\highcharts_7.0.3.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="JsonFiles\highcharts.json">

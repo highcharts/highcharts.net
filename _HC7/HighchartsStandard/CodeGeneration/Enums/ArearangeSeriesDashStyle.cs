@@ -7,16 +7,16 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ArearangeSeriesDashStyle
     {
-        Dash, 
-		DashDot, 
-		Dot, 
-		LongDash, 
-		LongDashDot, 
-		LongDashDotDot, 
+        Solid, 
 		ShortDash, 
+		ShortDot, 
 		ShortDashDot, 
 		ShortDashDotDot, 
-		ShortDot, 
-		Solid
+		Dot, 
+		Dash, 
+		LongDash, 
+		DashDot, 
+		LongDashDot, 
+		LongDashDotDot
     }
 }

@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = true;
 			SeriesThreshold = SeriesThreshold_DefaultValue = null;
 			UseGPUTranslations = UseGPUTranslations_DefaultValue = false;
+			UsePreallocated = UsePreallocated_DefaultValue = false;
 			
 		}	
 		
@@ -56,6 +57,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? UseGPUTranslations { get; set; }
 		private bool? UseGPUTranslations_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable pre-allocation of vertex buffers.Enabling this will make it so that the binary data arrays required forstoring the series data will be allocated prior to transforming the datato a WebGL-compatible format.This saves a copy operation on the order of O(n) and so is significantly moreperformant. However, this is currently an experimental option, and may causevisual artifacts with some datasets.As such, care should be taken when using this setting to make sure thatit doesn't cause any rendering glitches with the given use-case.
+		/// </summary>
+		public bool? UsePreallocated { get; set; }
+		private bool? UsePreallocated_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -67,6 +75,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (SeriesThreshold != SeriesThreshold_DefaultValue) h.Add("seriesThreshold",SeriesThreshold);
 			if (UseGPUTranslations != UseGPUTranslations_DefaultValue) h.Add("useGPUTranslations",UseGPUTranslations);
+			if (UsePreallocated != UsePreallocated_DefaultValue) h.Add("usePreallocated",UsePreallocated);
 			
 
 			return h;

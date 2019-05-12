@@ -15,28 +15,28 @@ namespace Highsoft.Web.Mvc.Charts
 		public AccessibilityKeyboardNavigationFocusBorderStyle()
 		{
 			BorderRadius = BorderRadius_DefaultValue = 3;
-			Color = Color_DefaultValue = "#000000";
+			Color = Color_DefaultValue = "#335cad";
 			LineWidth = LineWidth_DefaultValue = 2;
 			
 		}	
 		
 
 		/// <summary>
-		/// Border radius of the focus border.
+		/// 
 		/// </summary>
 		public double? BorderRadius { get; set; }
 		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Color of the focus border.
+		/// 
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Line width of the focus border.
+		/// 
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }

@@ -15,6 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public ColumnrangeSeriesStates()
 		{
 			Hover = Hover_DefaultValue = new ColumnrangeSeriesStatesHover();
+			Inactive = Inactive_DefaultValue = new ColumnrangeSeriesStatesInactive();
+			Normal = Normal_DefaultValue = new ColumnrangeSeriesStatesNormal();
 			Select = Select_DefaultValue = new ColumnrangeSeriesStatesSelect();
 			
 		}	
@@ -25,6 +27,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ColumnrangeSeriesStatesHover Hover { get; set; }
 		private ColumnrangeSeriesStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The opposite state of a hover for series.
+		/// </summary>
+		public ColumnrangeSeriesStatesInactive Inactive { get; set; }
+		private ColumnrangeSeriesStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
+		/// </summary>
+		public ColumnrangeSeriesStatesNormal Normal { get; set; }
+		private ColumnrangeSeriesStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -39,6 +55,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 

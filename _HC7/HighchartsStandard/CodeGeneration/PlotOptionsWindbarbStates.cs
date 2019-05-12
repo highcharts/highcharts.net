@@ -15,6 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsWindbarbStates()
 		{
 			Hover = Hover_DefaultValue = new PlotOptionsWindbarbStatesHover();
+			Inactive = Inactive_DefaultValue = new PlotOptionsWindbarbStatesInactive();
+			Normal = Normal_DefaultValue = new PlotOptionsWindbarbStatesNormal();
 			
 		}	
 		
@@ -24,6 +26,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsWindbarbStatesHover Hover { get; set; }
 		private PlotOptionsWindbarbStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The opposite state of a hover for series.
+		/// </summary>
+		public PlotOptionsWindbarbStatesInactive Inactive { get; set; }
+		private PlotOptionsWindbarbStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
+		/// </summary>
+		public PlotOptionsWindbarbStatesNormal Normal { get; set; }
+		private PlotOptionsWindbarbStatesNormal Normal_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			
 
 			return h;

@@ -14,16 +14,16 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxisStackLabels()
 		{
-			Align = Align_DefaultValue = YAxisStackLabelsAlign.Null;
+			Align = Align_DefaultValue = "";
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "{total}";
 			Formatter = Formatter_DefaultValue = "";
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = new YAxisStackLabelsStyle();
-			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Null;
+			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
+			VerticalAlign = VerticalAlign_DefaultValue = "";
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Defines the horizontal alignment of the stack total label. Can be oneof `"left"`, `"center"` or `"right"`. The default value is calculatedat runtime and depends on orientation and whether the stack ispositive or negative.
 		/// </summary>
-		public YAxisStackLabelsAlign Align { get; set; }
-		private YAxisStackLabelsAlign Align_DefaultValue { get; set; }
+		public string Align { get; set; }
+		private string Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -82,12 +82,12 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The text alignment for the label. While `align` determines where thetexts anchor point is placed with regards to the stack, `textAlign`determines how the text is aligned against its anchor point. Possiblevalues are `"left"`, `"center"` and `"right"`. The default value iscalculated at runtime and depends on orientation and whether thestack is positive or negative.
 		/// </summary>
-		public YAxisStackLabelsTextAlign TextAlign { get; set; }
-		private YAxisStackLabelsTextAlign TextAlign_DefaultValue { get; set; }
+		public string TextAlign { get; set; }
+		private string TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html) to render the labels.
+		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }
@@ -96,8 +96,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Defines the vertical alignment of the stack total label. Can be oneof `"top"`, `"middle"` or `"bottom"`. The default value is calculatedat runtime and depends on orientation and whether the stack ispositive or negative.
 		/// </summary>
-		public YAxisStackLabelsVerticalAlign VerticalAlign { get; set; }
-		private YAxisStackLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public string VerticalAlign { get; set; }
+		private string VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,16 +118,16 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("YAxisStackLabelsFormatter.formatter", Formatter); }  
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", Highcharts.FirstCharacterToLower(TextAlign.ToString()));
+			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

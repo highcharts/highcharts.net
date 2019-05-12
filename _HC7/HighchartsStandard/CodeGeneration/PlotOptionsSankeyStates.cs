@@ -15,6 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSankeyStates()
 		{
 			Hover = Hover_DefaultValue = new PlotOptionsSankeyStatesHover();
+			Inactive = Inactive_DefaultValue = new PlotOptionsSankeyStatesInactive();
+			Normal = Normal_DefaultValue = new PlotOptionsSankeyStatesNormal();
 			
 		}	
 		
@@ -24,6 +26,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsSankeyStatesHover Hover { get; set; }
 		private PlotOptionsSankeyStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The opposite state of a hover for a single point node/link.
+		/// </summary>
+		public PlotOptionsSankeyStatesInactive Inactive { get; set; }
+		private PlotOptionsSankeyStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
+		/// </summary>
+		public PlotOptionsSankeyStatesNormal Normal { get; set; }
+		private PlotOptionsSankeyStatesNormal Normal_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			
 
 			return h;

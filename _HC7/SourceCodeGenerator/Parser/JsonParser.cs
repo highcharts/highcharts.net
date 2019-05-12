@@ -162,6 +162,9 @@ namespace SourceCodeGenerator.Parser
             UpdateService.Update(apiItem);
 
             TypeService.SetReturnType(apiItem);
+
+            if (apiItem.FullName.Equals("series.funnel3d.data") || apiItem.FullName.Equals("series.pyramid3d.data"))
+                apiItem.Extends.Clear();
             
             ////////////////////////end of modification area
 

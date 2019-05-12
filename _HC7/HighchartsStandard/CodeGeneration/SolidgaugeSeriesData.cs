@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SolidgaugeSeriesData()
 		{
+			Accessibility = Accessibility_DefaultValue = new SolidgaugeSeriesDataAccessibility();
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
@@ -22,11 +23,11 @@ namespace Highsoft.Web.Mvc.Charts
 			DragDrop = DragDrop_DefaultValue = new SolidgaugeSeriesDataDragDrop();
 			Events = Events_DefaultValue = new SolidgaugeSeriesDataEvents();
 			Id = Id_DefaultValue = "";
-			InnerRadius = InnerRadius_DefaultValue = "null";
+			InnerRadius = InnerRadius_DefaultValue = "";
 			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
-			Radius = Radius_DefaultValue = "null";
+			Radius = Radius_DefaultValue = "";
 			RadiusNumber = RadiusNumber_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Y = Y_DefaultValue = double.MinValue;
@@ -34,6 +35,13 @@ namespace Highsoft.Web.Mvc.Charts
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SolidgaugeSeriesDataAccessibility Accessibility { get; set; }
+		private SolidgaugeSeriesDataAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -92,14 +100,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The inner radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// The inner radius of an individual point in a solid gauge. Can be given as anumber (pixels) or percentage string.
 		/// </summary>
 		public string InnerRadius { get; set; }
 		private string InnerRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The inner radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// The inner radius of an individual point in a solid gauge. Can be given as anumber (pixels) or percentage string.
 		/// </summary>
 		public double? InnerRadiusNumber { get; set; }
 		private double? InnerRadiusNumber_DefaultValue { get; set; }
@@ -113,7 +121,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
+		/// The name of the point as shown in the legend, tooltip, dataLabelsetc.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
@@ -153,6 +161,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);

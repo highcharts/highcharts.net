@@ -46,12 +46,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-            if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight", FontWeight);
-            if (Position != Position_DefaultValue) h.Add("position", Position);
-            if (Top != Top_DefaultValue) h.Add("top", Top);
+			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Top != Top_DefaultValue) h.Add("top",Top);
+			
 
-
-            return h;
+			return h;
 		}
 
 		internal override string ToJSON()

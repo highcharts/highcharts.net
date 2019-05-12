@@ -39,5 +39,10 @@ namespace Highsoft.Web.Mvc.Charts
 
             return result;
         }
-	}
+
+        public override string ToString()
+        {
+            return ToJSON();
+        }
+    }
 }

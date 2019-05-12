@@ -54,6 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Wrappers\Higcharts\Lengend.cs" />
+    <Compile Include="Wrappers\Higcharts\Responsive.cs" />
     <Compile Include="Wrappers\Higcharts\Title.cs" />
     <Compile Include="Wrappers\Higcharts\YAxis.cs" />
     <Compile Include="Wrappers\Higcharts\XAxis.cs" />

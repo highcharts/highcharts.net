@@ -14,12 +14,12 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SankeySeriesData()
 		{
+			Accessibility = Accessibility_DefaultValue = new SankeySeriesDataAccessibility();
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new SankeySeriesDataLabels();
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new SankeySeriesDataDragDrop();
 			Events = Events_DefaultValue = new SankeySeriesDataEvents();
 			From = From_DefaultValue = "";
 			Id = Id_DefaultValue = "";
@@ -33,6 +33,13 @@ namespace Highsoft.Web.Mvc.Charts
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public SankeySeriesDataAccessibility Accessibility { get; set; }
+		private SankeySeriesDataAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// An additional, individual class name for the data point's graphicrepresentation.
@@ -70,13 +77,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.Requires the `draggable-points` module.
-		/// </summary>
-		public SankeySeriesDataDragDrop DragDrop { get; set; }
-		private SankeySeriesDataDragDrop DragDrop_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Individual point events
 		/// </summary>
 		public SankeySeriesDataEvents Events { get; set; }
@@ -105,7 +105,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of the point as shown in the legend, tooltip, dataLabeletc.
+		/// The name of the point as shown in the legend, tooltip, dataLabelsetc.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
@@ -145,12 +145,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);

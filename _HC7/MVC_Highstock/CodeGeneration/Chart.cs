@@ -425,7 +425,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
-			if (PlotShadow != PlotShadow_DefaultValue) h.Add("plotShadow",PlotShadow);
+			if (PlotShadow != PlotShadow_DefaultValue) h.Add("plotShadow",PlotShadow.ToHashtable());
 			if (PlotShadowBool != PlotShadowBool_DefaultValue) h.Add("plotShadow",PlotShadowBool);
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);

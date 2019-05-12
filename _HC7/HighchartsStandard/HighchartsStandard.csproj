@@ -3,16 +3,19 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>6.2.0.0</AssemblyVersion>
-    <FileVersion>6.2.0.0</FileVersion>
+    <AssemblyVersion>7.1.1.0</AssemblyVersion>
+    <FileVersion>7.1.1.0</FileVersion>
     <Company>Highsoft</Company>
-    <Product>Highcharts</Product>
-    <Version>6.2.0</Version>
+    <Product>Highcharts.NET</Product>
+    <Version>7.1.1</Version>
     <Authors>Highsoft</Authors>
-    <Copyright>Copyright ©  2018</Copyright>
+    <Copyright>Copyright ©  2019</Copyright>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>highcharts.snk</AssemblyOriginatorKeyFile>
+    <PackageId>Highcharts</PackageId>
+    <AssemblyName>Highcharts</AssemblyName>
+    <RootNamespace>Highcharts</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,5 +1,8 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
 
+# Version 7.0.3.10
+Please be aware that keys format has been changed with 7.0.3.10. You may need a different key to run our product after an update to 7.0.3.10 or newer. Please contact us at support@highcharts.com
+
 # Version 7.0.1
 
 Updates:

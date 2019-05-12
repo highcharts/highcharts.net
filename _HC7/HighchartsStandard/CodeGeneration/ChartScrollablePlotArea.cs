@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ChartScrollablePlotArea()
 		{
 			MinWidth = MinWidth_DefaultValue = null;
+			Opacity = Opacity_DefaultValue = null;
 			ScrollPositionX = ScrollPositionX_DefaultValue = null;
 			
 		}	
@@ -25,6 +26,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? MinWidth { get; set; }
 		private double? MinWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The opacity of mask applied on one of the sides of the plotarea.
+		/// </summary>
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -39,6 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (MinWidth != MinWidth_DefaultValue) h.Add("minWidth",MinWidth);
+			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (ScrollPositionX != ScrollPositionX_DefaultValue) h.Add("scrollPositionX",ScrollPositionX);
 			
 

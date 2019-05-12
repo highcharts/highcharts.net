@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PolygonSeriesStatesHoverMarkerStates()
 		{
 			Hover = Hover_DefaultValue = new PolygonSeriesStatesHoverMarkerStatesHover();
+			Inactive = Inactive_DefaultValue = new PolygonSeriesStatesHoverMarkerStatesInactive();
 			Normal = Normal_DefaultValue = new PolygonSeriesStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new PolygonSeriesStatesHoverMarkerStatesSelect();
 			
@@ -29,14 +30,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// 
+		/// </summary>
+		public PolygonSeriesStatesHoverMarkerStatesInactive Inactive { get; set; }
+		private PolygonSeriesStatesHoverMarkerStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently onlyused for setting animation when returning to normal statefrom hover.
 		/// </summary>
 		public PolygonSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
 		private PolygonSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
+		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
 		public PolygonSeriesStatesHoverMarkerStatesSelect Select { get; set; }
 		private PolygonSeriesStatesHoverMarkerStatesSelect Select_DefaultValue { get; set; }
@@ -47,6 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			

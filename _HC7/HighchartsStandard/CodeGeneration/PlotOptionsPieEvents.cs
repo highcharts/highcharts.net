@@ -27,21 +27,21 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Fires after the series has finished its initial animation, or incase animation is disabled, immediately as the series is displayed.
+		/// Fires after the series has finished its initial animation, or in caseanimation is disabled, immediately as the series is displayed.
 		/// </summary>
 		public string AfterAnimate { get; set; }
 		private string AfterAnimate_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the checkbox next to the point name in the legend is clicked.One parameter, event, is passed to the function. The state of thecheckbox is found by event.checked. The checked item is found byevent.item. Return false to prevent the default action which is totoggle the select state of the series.
+		/// Fires when the checkbox next to the point name in the legend isclicked. One parameter, event, is passed to the function. The stateof the checkbox is found by event.checked. The checked item is foundby event.item. Return false to prevent the default action which is totoggle the select state of the series.
 		/// </summary>
 		public string CheckboxClick { get; set; }
 		private string CheckboxClick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Fires when the series is clicked. One parameter, `event`, is passed tothe function, containing common event information. Additionally,`event.point` holds a pointer to the nearest point on the graph.
+		/// Fires when the series is clicked. One parameter, `event`, is passedto the function, containing common event information. Additionally,`event.point` holds a pointer to the nearest point on the graph.
 		/// </summary>
 		public string Click { get; set; }
 		private string Click_DefaultValue { get; set; }
@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Not applicable to pies, as the legend item is per point. See point.events.
+		/// Fires when the legend item belonging to the series is clicked. Oneparameter, `event`, is passed to the function. The default actionis to toggle the visibility of the series. This can be preventedby returning `false` or calling `event.preventDefault()`.
 		/// </summary>
 		public string LegendItemClick { get; set; }
 		private string LegendItemClick_DefaultValue { get; set; }

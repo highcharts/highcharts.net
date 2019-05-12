@@ -23,67 +23,66 @@ namespace Highsoft.Web.Mvc.Charts
 			Week = Week_DefaultValue = new ChartParallelAxesDateTimeLabelFormatsWeek();
 			Year = Year_DefaultValue = new ChartParallelAxesDateTimeLabelFormatsYear();
 			
-		}
+		}	
+		
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public ChartParallelAxesDateTimeLabelFormatsDay Day { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public ChartParallelAxesDateTimeLabelFormatsHour Hour { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChartParallelAxesDateTimeLabelFormatsDay Day { get; set; }
-        private ChartParallelAxesDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public ChartParallelAxesDateTimeLabelFormatsMillisecond Millisecond { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public ChartParallelAxesDateTimeLabelFormatsMinute Minute { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChartParallelAxesDateTimeLabelFormatsHour Hour { get; set; }
-        private ChartParallelAxesDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public ChartParallelAxesDateTimeLabelFormatsMonth Month { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public ChartParallelAxesDateTimeLabelFormatsSecond Second { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChartParallelAxesDateTimeLabelFormatsMillisecond Millisecond { get; set; }
-        private ChartParallelAxesDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public ChartParallelAxesDateTimeLabelFormatsWeek Week { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
+		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public ChartParallelAxesDateTimeLabelFormatsYear Year { get; set; }
+		private ChartParallelAxesDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
+		  
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChartParallelAxesDateTimeLabelFormatsMinute Minute { get; set; }
-        private ChartParallelAxesDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChartParallelAxesDateTimeLabelFormatsMonth Month { get; set; }
-        private ChartParallelAxesDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChartParallelAxesDateTimeLabelFormatsSecond Second { get; set; }
-        private ChartParallelAxesDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChartParallelAxesDateTimeLabelFormatsWeek Week { get; set; }
-        private ChartParallelAxesDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChartParallelAxesDateTimeLabelFormatsYear Year { get; set; }
-        private ChartParallelAxesDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
-
-
-        internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 

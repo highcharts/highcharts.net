@@ -52,7 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The value up to where the zone extends, if undefined the zones stretchesto the last value in the series.
+		/// The value up to where the zone extends, if undefined the zonesstretches to the last value in the series.
 		/// </summary>
 		public double? Value { get; set; }
 		private double? Value_DefaultValue { get; set; }

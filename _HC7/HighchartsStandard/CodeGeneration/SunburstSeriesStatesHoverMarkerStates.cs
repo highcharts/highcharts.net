@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public SunburstSeriesStatesHoverMarkerStates()
 		{
 			Hover = Hover_DefaultValue = new SunburstSeriesStatesHoverMarkerStatesHover();
+			Inactive = Inactive_DefaultValue = new SunburstSeriesStatesHoverMarkerStatesInactive();
 			Normal = Normal_DefaultValue = new SunburstSeriesStatesHoverMarkerStatesNormal();
 			Select = Select_DefaultValue = new SunburstSeriesStatesHoverMarkerStatesSelect();
 			
@@ -29,14 +30,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The normal state of a single point marker. Currently only usedfor setting animation when returning to normal state from hover.
+		/// 
+		/// </summary>
+		public SunburstSeriesStatesHoverMarkerStatesInactive Inactive { get; set; }
+		private SunburstSeriesStatesHoverMarkerStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a single point marker. Currently onlyused for setting animation when returning to normal statefrom hover.
 		/// </summary>
 		public SunburstSeriesStatesHoverMarkerStatesNormal Normal { get; set; }
 		private SunburstSeriesStatesHoverMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the `series.allowPointSelect`option to true.
+		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
 		public SunburstSeriesStatesHoverMarkerStatesSelect Select { get; set; }
 		private SunburstSeriesStatesHoverMarkerStatesSelect Select_DefaultValue { get; set; }
@@ -47,6 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			

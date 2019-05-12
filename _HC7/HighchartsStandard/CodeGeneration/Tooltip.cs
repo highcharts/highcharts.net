@@ -27,14 +27,17 @@ namespace Highsoft.Web.Mvc.Charts
 			FooterFormat = FooterFormat_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
+			HeaderShape = HeaderShape_DefaultValue = TooltipHeaderShape.Callout;
 			HideDelay = HideDelay_DefaultValue = 500;
+			NullFormat = NullFormat_DefaultValue = "";
+			NullFormatter = NullFormatter_DefaultValue = "";
 			Outside = Outside_DefaultValue = false;
 			Padding = Padding_DefaultValue = "8";
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			Shape = Shape_DefaultValue = TooltipShape.Callout;
+			Shape = Shape_DefaultValue = "callout";
 			Shared = Shared_DefaultValue = false;
 			Snap = Snap_DefaultValue = null;
 			Split = Split_DefaultValue = null;
@@ -105,7 +108,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether the tooltip should follow the mouse as it moves acrosscolumns, pie slices and other point types with an extent. By defaultit behaves this way for scatter, bubble and pie series by overridein the `plotOptions` for those series types.For touch moves to behave the same way, [followTouchMove](#tooltip.followTouchMove) must be `true` also.
+		/// Whether the tooltip should follow the mouse as it moves acrosscolumns, pie slices and other point types with an extent.By default it behaves this way for pie, polygon, map, sankeyand wordcloud series by override in the `plotOptions`for those series types.For touch moves to behave the same way, [followTouchMove](#tooltip.followTouchMove) must be `true` also.
 		/// </summary>
 		public bool? FollowPointer { get; set; }
 		private bool? FollowPointer_DefaultValue { get; set; }
@@ -126,17 +129,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Callback function to format the text of the tooltip from scratch.Return `false` to disable tooltip for a specific point on series.A subset of HTML is supported. Unless `useHTML` is true, the HTML ofthe tooltip is parsed and converted to SVG, therefore this isn't acomplete HTML renderer. The following tags are supported: `<b>`,`<strong>`, `<i>`, `<em>`, `<br/>`, `<span>`. Spans can be styledwith a `style` attribute, but only text-related CSS that is sharedwith SVG is handled.Since version 2.1 the tooltip can be shared between multiple seriesthrough the `shared` option. The available data in the formatterdiffer a bit depending on whether the tooltip is shared or not. Ina shared tooltip, all properties except `x`, which is common forall points, are kept in an array, `this.points`.Available data are:<dl><dt>this.percentage (not shared) / this.points[i].percentage (shared)</dt><dd>Stacked series and pies only. The point's percentage of thetotal.</dd><dt>this.point (not shared) / this.points[i].point (shared)</dt><dd>The point object. The point name, if defined, is availablethrough `this.point.name`.</dd><dt>this.points</dt><dd>In a shared tooltip, this is an array containing all otherproperties for each point.</dd><dt>this.series (not shared) / this.points[i].series (shared)</dt><dd>The series object. The series name is available through`this.series.name`.</dd><dt>this.total (not shared) / this.points[i].total (shared)</dt><dd>Stacked series only. The total value at this point's x value.</dd><dt>this.x</dt><dd>The x value. This property is the same regardless of the tooltipbeing shared or not.</dd><dt>this.y (not shared) / this.points[i].y (shared)</dt><dd>The y value.</dd></dl>
+		/// Callback function to format the text of the tooltip from scratch. Incase of single or [shared](#tooltip.shared) tooltips, a string shouldbe returned. In case of [split](#tooltip.split) tooltips, it shouldreturn an array where the first item is the header, and subsequentitems are mapped to the points. Return `false` to disable tooltip fora specific point on series.A subset of HTML is supported. Unless `useHTML` is true, the HTML ofthe tooltip is parsed and converted to SVG, therefore this isn't acomplete HTML renderer. The following tags are supported: `<b>`,`<strong>`, `<i>`, `<em>`, `<br/>`, `<span>`. Spans can be styledwith a `style` attribute, but only text-related CSS that is sharedwith SVG is handled.The available data in the formatter differ a bit depending on whetherthe tooltip is shared or split, or belongs to a single point. In ashared/split tooltip, all properties except `x`, which is common forall points, are kept in an array, `this.points`.Available data are:<dl><dt>this.percentage (not shared) / this.points[i].percentage (shared)</dt><dd>Stacked series and pies only. The point's percentage of thetotal.</dd><dt>this.point (not shared) / this.points[i].point (shared)</dt><dd>The point object. The point name, if defined, is availablethrough `this.point.name`.</dd><dt>this.points</dt><dd>In a shared tooltip, this is an array containing all otherproperties for each point.</dd><dt>this.series (not shared) / this.points[i].series (shared)</dt><dd>The series object. The series name is available through`this.series.name`.</dd><dt>this.total (not shared) / this.points[i].total (shared)</dt><dd>Stacked series only. The total value at this point's x value.</dd><dt>this.x</dt><dd>The x value. This property is the same regardless of the tooltipbeing shared or not.</dd><dt>this.y (not shared) / this.points[i].y (shared)</dt><dd>The y value.</dd></dl>
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The HTML of the tooltip header line. Variables are enclosed bycurly brackets. Available variables are `point.key`, `series.name`,`series.color` and other members from the `point` and `series`objects. The `point.key` variable contains the category name, xvalue or datetime string depending on the type of axis. For datetimeaxes, the `point.key` date format can be set using`tooltip.xDateFormat`. To access the original point use`point.point`.
+		/// The HTML of the tooltip header line. Variables are enclosed bycurly brackets. Available variables are `point.key`, `series.name`,`series.color` and other members from the `point` and `series`objects. The `point.key` variable contains the category name, xvalue or datetime string depending on the type of axis. For datetimeaxes, the `point.key` date format can be set using`tooltip.xDateFormat`.
 		/// </summary>
 		public string HeaderFormat { get; set; }
 		private string HeaderFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of a symbol to use for the border around the tooltipheader. Applies only when [tooltip.split](#tooltip.split) isenabled.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
+		/// </summary>
+		public TooltipHeaderShape HeaderShape { get; set; }
+		private TooltipHeaderShape HeaderShape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -144,6 +154,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? HideDelay { get; set; }
 		private double? HideDelay_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The HTML of the null point's line in the tooltip. Works analogouslyto [pointFormat](#tooltip.pointFormat).
+		/// </summary>
+		public string NullFormat { get; set; }
+		private string NullFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback function to format the text of the tooltip forvisible null points.Works analogously to [formatter](#tooltip.formatter).
+		/// </summary>
+		public string NullFormatter { get; set; }
+		private string NullFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -175,7 +199,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A callback function to place the tooltip in a default position. Thecallback receives three parameters: `labelWidth`, `labelHeight` and`point`, where point contains values for `plotX` and `plotY` tellingwhere the reference point is in the plot area. Add `chart.plotLeft`and `chart.plotTop` to get the full coordinates.The return should be an object containing x and y values, for example`{ x: 100, y: 100 }`.
+		/// A callback function to place the tooltip in a default position. Thecallback receives three parameters: `labelWidth`, `labelHeight` and`point`, where point contains values for `plotX` and `plotY` tellingwhere the reference point is in the plot area. Add `chart.plotLeft`and `chart.plotTop` to get the full coordinates.Since v7, when [tooltip.split](#tooltip.split) option is enabled,positioner is called for each of the boxes separately, includingxAxis header. xAxis header is not a point, instead `point` argumentcontains info:`{ plotX: Number, plotY: Number, isHeader: Boolean }`The return should be an object containing x and y values, for example`{ x: 100, y: 100 }`.
 		/// </summary>
 		public string Positioner { get; set; }
 		private string Positioner_DefaultValue { get; set; }
@@ -189,10 +213,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of a symbol to use for the border around the tooltip. Canbe one of: `"callout"`, `"circle"` or `"square"`.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
+		/// The name of a symbol to use for the border around the tooltip. Canbe one of: `"callout"`, `"circle"`, or `"square"`. When[tooltip.split](#tooltip.split)option is enabled, shape is applied to all boxes except header, whichis controlled by[tooltip.headerShape](#tooltip.headerShape).Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
 		/// </summary>
-		public TooltipShape Shape { get; set; }
-		private TooltipShape Shape_DefaultValue { get; set; }
+		public string Shape { get; set; }
+		private string Shape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -217,7 +241,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// CSS styles for the tooltip. The tooltip can also be styled throughthe CSS class `.highcharts-tooltip`.
+		/// CSS styles for the tooltip. The tooltip can also be styled throughthe CSS class `.highcharts-tooltip`.Note that the default `pointerEvents` style makes the tooltip ignoremouse events, so in order to use clickable tooltips, this value mustbe set to `auto`.
 		/// </summary>
 		public TooltipStyle Style { get; set; }
 		private TooltipStyle Style_DefaultValue { get; set; }
@@ -275,14 +299,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("TooltipFormatter.formatter", Formatter); }  
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
+			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", Highcharts.FirstCharacterToLower(HeaderShape.ToString()));
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
+			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("TooltipNullFormatter.nullFormatter", NullFormatter); }  
 			if (Outside != Outside_DefaultValue) h.Add("outside",Outside);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("TooltipPointFormatter.pointFormatter", PointFormatter); }  
 			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("TooltipPositioner.positioner", Positioner); }  
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (Shape != Shape_DefaultValue) h.Add("shape", Highcharts.FirstCharacterToLower(Shape.ToString()));
+			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Split != Split_DefaultValue) h.Add("split",Split);

@@ -14,13 +14,61 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LangAccessibilityAxis()
 		{
-			XAxisDescriptionPlural = XAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} X axes displaying {#each(names, -1), }and {names[-1]}";
-			XAxisDescriptionSingular = XAxisDescriptionSingular_DefaultValue = "The chart has 1 X axis displaying {names[0]}.";
-			YAxisDescriptionPlural = YAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} Y axes displaying {#each(names, -1), }and {names[-1]}";
-			YAxisDescriptionSingular = YAxisDescriptionSingular_DefaultValue = "The chart has 1 Y axis displaying {names[0]}.";
+			RangeCategories = RangeCategories_DefaultValue = "Range: {numCategories} categories.";
+			RangeFromTo = RangeFromTo_DefaultValue = "Range: {rangeFrom} to {rangeTo}.";
+			TimeRangeDays = TimeRangeDays_DefaultValue = "Range: {range} days.";
+			TimeRangeHours = TimeRangeHours_DefaultValue = "Range: {range} hours.";
+			TimeRangeMinutes = TimeRangeMinutes_DefaultValue = "Range: {range} minutes.";
+			TimeRangeSeconds = TimeRangeSeconds_DefaultValue = "Range: {range} seconds.";
+			XAxisDescriptionPlural = XAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} X axes displaying {#each(names, -1), }and {names[-1]}.";
+			XAxisDescriptionSingular = XAxisDescriptionSingular_DefaultValue = "The chart has 1 X axis displaying {names[0]}. {ranges[0]}";
+			YAxisDescriptionPlural = YAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} Y axes displaying {#each(names, -1), }and {names[-1]}.";
+			YAxisDescriptionSingular = YAxisDescriptionSingular_DefaultValue = "The chart has 1 Y axis displaying {names[0]}. {ranges[0]}";
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string RangeCategories { get; set; }
+		private string RangeCategories_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string RangeFromTo { get; set; }
+		private string RangeFromTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string TimeRangeDays { get; set; }
+		private string TimeRangeDays_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string TimeRangeHours { get; set; }
+		private string TimeRangeHours_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string TimeRangeMinutes { get; set; }
+		private string TimeRangeMinutes_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string TimeRangeSeconds { get; set; }
+		private string TimeRangeSeconds_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -54,6 +102,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (RangeCategories != RangeCategories_DefaultValue) h.Add("rangeCategories",RangeCategories);
+			if (RangeFromTo != RangeFromTo_DefaultValue) h.Add("rangeFromTo",RangeFromTo);
+			if (TimeRangeDays != TimeRangeDays_DefaultValue) h.Add("timeRangeDays",TimeRangeDays);
+			if (TimeRangeHours != TimeRangeHours_DefaultValue) h.Add("timeRangeHours",TimeRangeHours);
+			if (TimeRangeMinutes != TimeRangeMinutes_DefaultValue) h.Add("timeRangeMinutes",TimeRangeMinutes);
+			if (TimeRangeSeconds != TimeRangeSeconds_DefaultValue) h.Add("timeRangeSeconds",TimeRangeSeconds);
 			if (XAxisDescriptionPlural != XAxisDescriptionPlural_DefaultValue) h.Add("xAxisDescriptionPlural",XAxisDescriptionPlural);
 			if (XAxisDescriptionSingular != XAxisDescriptionSingular_DefaultValue) h.Add("xAxisDescriptionSingular",XAxisDescriptionSingular);
 			if (YAxisDescriptionPlural != YAxisDescriptionPlural_DefaultValue) h.Add("yAxisDescriptionPlural",YAxisDescriptionPlural);

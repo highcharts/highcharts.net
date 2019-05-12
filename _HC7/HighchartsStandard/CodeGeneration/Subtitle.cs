@@ -14,12 +14,12 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public Subtitle()
 		{
-			Align = Align_DefaultValue = SubtitleAlign.Center;
+			Align = Align_DefaultValue = "aenter";
 			Floating = Floating_DefaultValue = false;
 			Style = Style_DefaultValue = new SubtitleStyle();
 			Text = Text_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = SubtitleVerticalAlign.Null;
+			VerticalAlign = VerticalAlign_DefaultValue = "";
 			WidthAdjust = WidthAdjust_DefaultValue = -44;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The horizontal alignment of the subtitle. Can be one of "left", "center" and "right".
 		/// </summary>
-		public SubtitleAlign Align { get; set; }
-		private SubtitleAlign Align_DefaultValue { get; set; }
+		public string Align { get; set; }
+		private string Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -63,10 +63,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The vertical alignment of the title. Can be one of "top", "middle"and "bottom". When a value is given, the title behaves as floating.
+		/// The vertical alignment of the title. Can be one of `"top"`,`"middle"` and `"bottom"`. When a value is given, the title behavesas floating.
 		/// </summary>
-		public SubtitleVerticalAlign VerticalAlign { get; set; }
-		private SubtitleVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public string VerticalAlign { get; set; }
+		private string VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -94,12 +94,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align",Align);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (WidthAdjust != WidthAdjust_DefaultValue) h.Add("widthAdjust",WidthAdjust);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

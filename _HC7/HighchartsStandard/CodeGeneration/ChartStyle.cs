@@ -38,11 +38,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-            if (FontFamily != FontFamily_DefaultValue) h.Add("fontFamily", FontFamily);
-            if (FontSize != FontSize_DefaultValue) h.Add("fontSize", FontSize);
+			if (FontFamily != FontFamily_DefaultValue) h.Add("fontFamily",FontFamily);
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
+			
 
-
-            return h;
+			return h;
 		}
 
 		internal override string ToJSON()

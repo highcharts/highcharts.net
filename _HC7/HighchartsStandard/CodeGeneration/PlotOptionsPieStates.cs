@@ -15,6 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsPieStates()
 		{
 			Hover = Hover_DefaultValue = new PlotOptionsPieStatesHover();
+			Inactive = Inactive_DefaultValue = new PlotOptionsPieStatesInactive();
+			Normal = Normal_DefaultValue = new PlotOptionsPieStatesNormal();
 			
 		}	
 		
@@ -24,6 +26,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsPieStatesHover Hover { get; set; }
 		private PlotOptionsPieStatesHover Hover_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The opposite state of a hover for series.
+		/// </summary>
+		public PlotOptionsPieStatesInactive Inactive { get; set; }
+		private PlotOptionsPieStatesInactive Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
+		/// </summary>
+		public PlotOptionsPieStatesNormal Normal { get; set; }
+		private PlotOptionsPieStatesNormal Normal_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -31,6 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			
 
 			return h;

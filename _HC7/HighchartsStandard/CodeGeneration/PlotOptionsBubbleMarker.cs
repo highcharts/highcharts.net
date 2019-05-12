@@ -30,21 +30,21 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Enable or disable the point marker. If `undefined`, the markers arehidden when the data is dense, and shown for more widespread datapoints.
+		/// Enable or disable the point marker. If `undefined`, the markersare hidden when the data is dense, and shown for more widespreaddata points.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The threshold for how dense the point markers should be before theyare hidden, given that `enabled` is not defined. The number indicatesthe horizontal distance between the two closest points in the series,as multiples of the `marker.radius`. In other words, the defaultvalue of 2 means points are hidden if overlapping horizontally.
+		/// The threshold for how dense the point markers should be beforethey are hidden, given that `enabled` is not defined. The numberindicates the horizontal distance between the two closest pointsin the series, as multiples of the `marker.radius`. In otherwords, the default value of 2 means points are hidden ifoverlapping horizontally.
 		/// </summary>
 		public double? EnabledThreshold { get; set; }
 		private double? EnabledThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The fill color of the point marker. When `undefined`, the series' orpoint's color is used.
+		/// The fill color of the point marker. When `undefined`, the series'or point's color is used.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
@@ -58,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Image markers only. Set the image width explicitly. When using thisoption, a `width` must also be set.
+		/// Image markers only. Set the image width explicitly. When usingthis option, a `width` must also be set.
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
@@ -100,7 +100,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Image markers only. Set the image width explicitly. When using thisoption, a `height` must also be set.
+		/// Image markers only. Set the image width explicitly. When usingthis option, a `height` must also be set.
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }

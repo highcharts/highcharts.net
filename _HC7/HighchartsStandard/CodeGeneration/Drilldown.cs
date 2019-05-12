@@ -26,14 +26,14 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Additional styles to apply to the X axis label for a point thathas drilldown data. By default it is underlined and blue to inviteto interaction.
+		/// Additional styles to apply to the X axis label for a point thathas drilldown data. By default it is underlined and blue to inviteto interaction.In styled mode, active label styles can be set with the`.highcharts-drilldown-axis-label` class.
 		/// </summary>
 		public DrilldownActiveAxisLabelStyle ActiveAxisLabelStyle { get; set; }
 		private DrilldownActiveAxisLabelStyle ActiveAxisLabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Additional styles to apply to the data label of a point that hasdrilldown data. By default it is underlined and blue to invite tointeraction.
+		/// Additional styles to apply to the data label of a point that hasdrilldown data. By default it is underlined and blue to invite tointeraction.In styled mode, active data label styles can be applied with the`.highcharts-drilldown-data-label` class.
 		/// </summary>
 		public DrilldownActiveDataLabelStyle ActiveDataLabelStyle { get; set; }
 		private DrilldownActiveDataLabelStyle ActiveDataLabelStyle_DefaultValue { get; set; }
@@ -47,28 +47,28 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Set the animation for all drilldown animations. Animation of a drilldownoccurs when drilling between a column point and a column series,or a pie slice and a full pie series. Drilldown can still be usedbetween series and points of different types, but animation willnot occur.The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and a durationof 500 ms. If used as a configuration object, the following propertiesare supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).</dd></dl>
+		/// Set the animation for all drilldown animations. Animation of a drilldownoccurs when drilling between a column point and a column series,or a pie slice and a full pie series. Drilldown can still be usedbetween series and points of different types, but animation willnot occur.The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and a durationof 500 ms. If used as a configuration object, the following propertiesare supported:- `duration`: The duration of the animation in milliseconds.- `easing`: A string reference to an easing function set on the `Math`  object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Set the animation for all drilldown animations. Animation of a drilldownoccurs when drilling between a column point and a column series,or a pie slice and a full pie series. Drilldown can still be usedbetween series and points of different types, but animation willnot occur.The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and a durationof 500 ms. If used as a configuration object, the following propertiesare supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math` object.See [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).</dd></dl>
+		/// Set the animation for all drilldown animations. Animation of a drilldownoccurs when drilling between a column point and a column series,or a pie slice and a full pie series. Drilldown can still be usedbetween series and points of different types, but animation willnot occur.The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and a durationof 500 ms. If used as a configuration object, the following propertiesare supported:- `duration`: The duration of the animation in milliseconds.- `easing`: A string reference to an easing function set on the `Math`  object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).
 		/// </summary>
 		public bool? AnimationBool { get; set; }
 		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the drill up button that appears when drilling downon a series. The text for the button is defined in[lang.drillUpText](#lang.drillUpText).
+		/// Options for the drill up button that appears when drilling down on aseries. The text for the button is defined in[lang.drillUpText](#lang.drillUpText).
 		/// </summary>
 		public DrilldownDrillUpButton DrillUpButton { get; set; }
 		private DrilldownDrillUpButton DrillUpButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of series configurations for the drill down. Each seriesconfiguration uses the same syntax as the [series](#series) optionset. These drilldown series are hidden by default. The drilldownseries is linked to the parent series' point by its `id`.
+		/// An array of series configurations for the drill down. Each seriesconfiguration uses the same syntax as the [series](#series) option set.These drilldown series are hidden by default. The drilldown series islinked to the parent series' point by its `id`.
 		/// </summary>
 		public List<Series> Series { get; set; }
 		private List<Series> Series_DefaultValue { get; set; }

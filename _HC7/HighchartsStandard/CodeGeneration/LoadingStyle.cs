@@ -54,13 +54,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-            if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor", BackgroundColor);
-            if (Opacity != Opacity_DefaultValue) h.Add("opacity", Opacity);
-            if (Position != Position_DefaultValue) h.Add("position", Position);
-            if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", TextAlign);
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
+			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
+			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
+			
 
-
-            return h;
+			return h;
 		}
 
 		internal override string ToJSON()

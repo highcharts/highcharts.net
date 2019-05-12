@@ -14,15 +14,15 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PaneBackground()
 		{
-			BackgroundColor = BackgroundColor_DefaultValue = new PaneBackgroundBackgroundColor();
+			BackgroundColor = BackgroundColor_DefaultValue = new object();
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ClassName = ClassName_DefaultValue = "";
-			InnerRadius = InnerRadius_DefaultValue = "null";
+			InnerRadius = InnerRadius_DefaultValue = "0";
 			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
-			OuterRadius = OuterRadius_DefaultValue = "null";
+			OuterRadius = OuterRadius_DefaultValue = "105%";
 			OuterRadiusNumber = OuterRadiusNumber_DefaultValue = null;
-			Shape = Shape_DefaultValue = PaneBackgroundShape.Solid;
+			Shape = Shape_DefaultValue = "circle";
 			
 		}	
 		
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The background color or gradient for the pane.
 		/// </summary>
-		public PaneBackgroundBackgroundColor BackgroundColor { get; set; }
-		private PaneBackgroundBackgroundColor BackgroundColor_DefaultValue { get; set; }
+		public object BackgroundColor { get; set; }
+		private object BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -86,15 +86,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The shape of the pane background. When `solid`, the backgroundis circular. When `arc`, the background extends only from the minto the max of the value axis.
 		/// </summary>
-		public PaneBackgroundShape Shape { get; set; }
-		private PaneBackgroundShape Shape_DefaultValue { get; set; }
+		public string Shape { get; set; }
+		private string Shape_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (BackgroundColor.IsDirty()) h.Add("backgroundColor",BackgroundColor.ToHashtable());
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -102,7 +102,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (InnerRadiusNumber != InnerRadiusNumber_DefaultValue) h.Add("innerRadius",InnerRadiusNumber);
 			if (OuterRadius != OuterRadius_DefaultValue) h.Add("outerRadius",OuterRadius);
 			if (OuterRadiusNumber != OuterRadiusNumber_DefaultValue) h.Add("outerRadius",OuterRadiusNumber);
-			if (Shape != Shape_DefaultValue) h.Add("shape", Highcharts.FirstCharacterToLower(Shape.ToString()));
+			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			
 
 			return h;

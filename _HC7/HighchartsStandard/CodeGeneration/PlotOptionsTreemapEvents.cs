@@ -21,13 +21,14 @@ namespace Highsoft.Web.Mvc.Charts
 			LegendItemClick = LegendItemClick_DefaultValue = "";
 			MouseOut = MouseOut_DefaultValue = "";
 			MouseOver = MouseOver_DefaultValue = "";
+			SetRootNode = SetRootNode_DefaultValue = "";
 			Show = Show_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// Fires after the series has finished its initial animation, or incase animation is disabled, immediately as the series is displayed.
+		/// Fires after the series has finished its initial animation, or in caseanimation is disabled, immediately as the series is displayed.
 		/// </summary>
 		public string AfterAnimate { get; set; }
 		private string AfterAnimate_DefaultValue { get; set; }
@@ -41,7 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Fires when the series is clicked. One parameter, `event`, is passed tothe function, containing common event information. Additionally,`event.point` holds a pointer to the nearest point on the graph.
+		/// Fires when the series is clicked. One parameter, `event`, is passedto the function, containing common event information. Additionally,`event.point` holds a pointer to the nearest point on the graph.
 		/// </summary>
 		public string Click { get; set; }
 		private string Click_DefaultValue { get; set; }
@@ -76,6 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Fires on a request for change of root node for the tree, before theupdate is made. An event object is passed to the function, containingadditional properties `newRootId`, `previousRootId`, `redraw` and`trigger`.
+		/// </summary>
+		public string SetRootNode { get; set; }
+		private string SetRootNode_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Fires when the series is shown after chart generation time, eitherby clicking the legend item or by calling `.show()`.
 		/// </summary>
 		public string Show { get; set; }
@@ -93,6 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("PlotOptionsTreemapEventsLegendItemClick.legendItemClick", LegendItemClick); }  
 			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highcharts.AddFunction("PlotOptionsTreemapEventsMouseOut.mouseOut", MouseOut); }  
 			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highcharts.AddFunction("PlotOptionsTreemapEventsMouseOver.mouseOver", MouseOver); }  
+			if (SetRootNode != SetRootNode_DefaultValue) { h.Add("setRootNode",SetRootNode); Highcharts.AddFunction("PlotOptionsTreemapEventsSetRootNode.setRootNode", SetRootNode); }  
 			if (Show != Show_DefaultValue) { h.Add("show",Show); Highcharts.AddFunction("PlotOptionsTreemapEventsShow.show", Show); }  
 			
 

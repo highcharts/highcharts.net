@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Fires when a series is added to the chart after load time, usingthe `addSeries` method. One parameter, `event`, is passed to thefunction, containing common event information.Through `event.options` you can access the series options that waspassed to the `addSeries` method. Returning false prevents the seriesfrom being added.
+		/// Fires when a series is added to the chart after load time, using the`addSeries` method. One parameter, `event`, is passed to thefunction, containing common event information. Through`event.options` you can access the series options that were passed tothe `addSeries` method. Returning false prevents the series frombeing added.
 		/// </summary>
 		public string AddSeries { get; set; }
 		private string AddSeries_DefaultValue { get; set; }
@@ -58,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Fires when a drilldown point is clicked, before the new series isadded. This event is also utilized for async drilldown, where theseriesOptions are not added by option, but rather loaded async. Notethat when clicking a category label to trigger multiple series drilldown,one `drilldown` event is triggered per point in the category.Event arguments:<dl><dt>`category`</dt><dd>If a category label was clicked, which index.</dd><dt>`point`</dt><dd>The originating point.</dd><dt>`originalEvent`</dt><dd>The original browser event (usually click) that triggered thedrilldown.</dd><dt>`points`</dt><dd>If a category label was clicked, this array holds all pointscorresponing to the category.</dd><dt>`seriesOptions`</dt><dd>Options for the new series</dd></dl>
+		/// Fires when a drilldown point is clicked, before the new series is added. Thisevent is also utilized for async drilldown, where the seriesOptions are notadded by option, but rather loaded async. Note that when clicking a categorylabel to trigger multiple series drilldown, one `drilldown` event istriggered per point in the category.Event arguments:- `category`: If a category label was clicked, which index.</dd>- `originalEvent`: The original browser event (usually click) that triggered  the drilldown.- `point`: The originating point.- `points`: If a category label was clicked, this array holds all points  corresponing to the category.</dd>- `seriesOptions`: Options for the new series.
 		/// </summary>
 		public string Drilldown { get; set; }
 		private string Drilldown_DefaultValue { get; set; }
@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// In a chart with multiple drilldown series, this event fires afterall the series have been drilled up.
+		/// In a chart with multiple drilldown series, this event fires after all theseries have been drilled up.
 		/// </summary>
 		public string Drillupall { get; set; }
 		private string Drillupall_DefaultValue { get; set; }
@@ -86,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Fires when the chart is redrawn, either after a call to`chart.redraw()` or after an axis, series or point is modified withthe `redraw` option set to true. One parameter, `event`, is passed tothe function, containing common event information.
+		/// Fires when the chart is redrawn, either after a call to`chart.redraw()` or after an axis, series or point is modified withthe `redraw` option set to `true`. One parameter, `event`, is passedto the function, containing common event information.
 		/// </summary>
 		public string Redraw { get; set; }
 		private string Redraw_DefaultValue { get; set; }
@@ -100,7 +100,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Fires when an area of the chart has been selected. Selection isenabled by setting the chart's zoomType. One parameter, `event`, ispassed to the function, containing common event information. Thedefault action for the selection event is to zoom the chart to theselected area. It can be prevented by calling`event.preventDefault()`.Information on the selected area can be found through `event.xAxis`and `event.yAxis`, which are arrays containing the axes of eachdimension and each axis' min and max values. The primary axes are`event.xAxis[0]` and `event.yAxis[0]`. Remember the unit of adatetime axis is milliseconds since 1970-01-01 00:00:00.<pre>selection: function(event) {    // log the min and max of the primary, datetime x-axis    console.log(        Highcharts.dateFormat(            '%Y-%m-%d %H:%M:%S',            event.xAxis[0].min        ),        Highcharts.dateFormat(            '%Y-%m-%d %H:%M:%S',            event.xAxis[0].max        )    );    // log the min and max of the y axis    console.log(event.yAxis[0].min, event.yAxis[0].max);}</pre>
+		/// Fires when an area of the chart has been selected. Selection isenabled by setting the chart's zoomType. One parameter, `event`, ispassed to the function, containing common event information. Thedefault action for the selection event is to zoom the chart to theselected area. It can be prevented by calling`event.preventDefault()` or return false.Information on the selected area can be found through `event.xAxis`and `event.yAxis`, which are arrays containing the axes of eachdimension and each axis' min and max values. The primary axes are`event.xAxis[0]` and `event.yAxis[0]`. Remember the unit of adatetime axis is milliseconds since 1970-01-01 00:00:00.<pre>selection: function(event) {    // log the min and max of the primary, datetime x-axis    console.log(        Highcharts.dateFormat(            '%Y-%m-%d %H:%M:%S',            event.xAxis[0].min        ),        Highcharts.dateFormat(            '%Y-%m-%d %H:%M:%S',            event.xAxis[0].max        )    );    // log the min and max of the y axis    console.log(event.yAxis[0].min, event.yAxis[0].max);}</pre>
 		/// </summary>
 		public string Selection { get; set; }
 		private string Selection_DefaultValue { get; set; }

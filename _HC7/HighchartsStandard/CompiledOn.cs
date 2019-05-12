@@ -4,6 +4,6 @@ namespace Highsoft.Web.Mvc.Charts
 {
     internal static class CompiledOn
     {
-        internal static DateTime CompilationDate = new DateTime(2018, 12, 18);
+        internal static DateTime CompilationDate = new DateTime(2019, 3, 22);
     }
 }

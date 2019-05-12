@@ -31,7 +31,7 @@ namespace AjaxSample.Controllers
             ViewData["nyData"] = nyData;
             ViewData["berlinData"] = berlinData;
             ViewData["londonData"] = londonData;
-
+            
             return PartialView("~/Views/Service/GetChart.cshtml");
         }
     }
