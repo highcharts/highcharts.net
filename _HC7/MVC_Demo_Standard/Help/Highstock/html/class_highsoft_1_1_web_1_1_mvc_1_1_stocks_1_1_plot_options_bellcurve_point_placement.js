@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_bellcurve_point_placement =
+[
+    [ "PlotOptionsBellcurvePointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_bellcurve_point_placement.html#a9d44cd21e16687426ff46994a87ae560", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sunburst_states_select_marker_states_hover_animation =
+[
+    [ "PlotOptionsSunburstStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sunburst_states_select_marker_states_hover_animation.html#a5440413e2d7b54d7b72187369004d262", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sunburst_states_select_marker_states_hover_animation.html#ae8b17cabd7fc70c78dd0b7e66e796053", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sunburst_states_select_marker_states_hover_animation.html#a9ddd000d369b9aaf233dcc3f7e2e2b5c", null ]
+];

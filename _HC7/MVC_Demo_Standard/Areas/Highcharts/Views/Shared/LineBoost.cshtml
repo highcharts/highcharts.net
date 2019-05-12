@@ -1,0 +1,23 @@
+﻿<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/boost.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+@Html.Highsoft().GetHighcharts(new Highcharts
+{
+    Chart = new Chart { ZoomType = ChartZoomType.X },
+    Boost = new Boost { UseGPUTranslations = true },
+    Title = new Title { Text = "Highcharts drawing 500000 points" },
+    Subtitle = new Subtitle { Text = "Using the Boost module" },
+    Tooltip = new Tooltip { ValueDecimals = 2 },
+    Series = new List<Series>
+    {
+        new LineSeries
+        {
+            Data = ViewData["data"] as List<LineSeriesData>,
+            LineWidth = 0.5,
+            TurboThreshold = 500000
+        }
+    }
+}, "chart")

@@ -1,0 +1,39 @@
+﻿@using Highsoft.Web.Mvc.Stocks
+
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    
+    @(Html.Highsoft().GetHighstock(
+        new Highstock
+        {           
+            RangeSelector = new RangeSelector
+            {
+                Selected = 1
+            },
+            Title = new Title
+            {
+                Text =  "Apple Stock Price"
+            },
+            Series = new List<Series>
+            {
+                new LineSeries
+                {
+                   Data = ViewBag.AppleData as List<LineSeriesData>,
+                   Name = "Apple Stock Price",
+                   LineWidth  = 0,
+                   TurboThreshold = 10000,
+                   Marker = new LineSeriesMarker
+                   {
+                       Enabled = true,
+                       Radius = 3
+                   },
+                   Tooltip = new LineSeriesTooltip
+                   {
+                       ValueDecimals = 2
+                   }
+                }
+            },
+        },
+        "chart"
+    ))

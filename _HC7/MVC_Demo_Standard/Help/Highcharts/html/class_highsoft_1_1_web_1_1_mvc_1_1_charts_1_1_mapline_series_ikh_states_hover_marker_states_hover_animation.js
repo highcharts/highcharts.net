@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapline_series_ikh_states_hover_marker_states_hover_animation =
+[
+    [ "MaplineSeriesIkhStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapline_series_ikh_states_hover_marker_states_hover_animation.html#ac74669c6d50997bcf80c0e7f30cd3e02", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapline_series_ikh_states_hover_marker_states_hover_animation.html#a7424a71d02aae68bd794cb8d01f7aa2b", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_mapline_series_ikh_states_hover_marker_states_hover_animation.html#acf5f7d2fc6e038fc95dbc998c6ff5812", null ]
+];

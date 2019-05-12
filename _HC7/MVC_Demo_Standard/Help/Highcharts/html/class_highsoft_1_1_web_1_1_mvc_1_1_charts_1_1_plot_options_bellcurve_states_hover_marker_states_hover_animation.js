@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_states_hover_marker_states_hover_animation =
+[
+    [ "PlotOptionsBellcurveStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_states_hover_marker_states_hover_animation.html#a360f2ee0b561b39faf62e1152cedbe4d", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_states_hover_marker_states_hover_animation.html#a09b5a8f4e4a5d0fdfb1fe546802105cb", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_states_hover_marker_states_hover_animation.html#a9cce177ff8c6756e3e588ad9e62a1d40", null ]
+];

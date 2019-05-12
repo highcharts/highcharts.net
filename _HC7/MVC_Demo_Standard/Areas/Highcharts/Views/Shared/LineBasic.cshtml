@@ -1,0 +1,84 @@
+﻿<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+@(Html.Highsoft().GetHighcharts(
+        new Highcharts
+        {
+            Title = new Title
+            {
+                Text = "Monthly Average Temperature",
+                X = -20
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "Source: WorldClimate.com",
+                X = -20
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
+
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Temperature (°C)"
+                    },
+                    PlotLines = new List<YAxisPlotLines>
+                    {
+                            new YAxisPlotLines
+                        {
+                            Value = 0,
+                            Width = 1,
+                            Color = "#808080"
+                        }
+                    }
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                PointFormat = "{point.y} - {point.custom1} - {point.custom2}"
+                //ValueSuffix = "°C"
+            },
+            Legend = new Legend
+            {
+                Layout = LegendLayout.Vertical,
+                Align = LegendAlign.Right,
+                VerticalAlign = LegendVerticalAlign.Middle,
+                BorderWidth = 0
+            },
+            Series = new List<Series>
+            {
+                new LineSeries
+                {
+                    Name = "Tokyo",
+                    Data = @ViewData["tokyoData"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "NY",
+                    Data = @ViewData["nyData"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "Berlin",
+                    Data = @ViewData["berlinData"] as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "London",
+                    Data = @ViewData["londonData"] as List<LineSeriesData>
+                }
+            }
+        }
+        , "chart")
+)

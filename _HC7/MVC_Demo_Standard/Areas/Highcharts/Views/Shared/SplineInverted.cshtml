@@ -1,0 +1,99 @@
+﻿<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts  
+
+ <script type="text/javascript">
+
+     function formatXLabels() {
+         return this.value + 'km';
+     }
+
+     function formatYLabels() {
+         return this.value + '°';
+     }
+
+    </script>  
+
+    @(Html.Highsoft().GetHighcharts(
+        new Highcharts
+        {
+            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            {
+                Inverted = true
+            },
+            Title = new Title
+            {
+                Text = "Atmosphere Temperature by Altitude"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "According to the Standard Atmosphere Model"
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    //Reversed = true,
+                    Title = new XAxisTitle
+                    {
+                        Text = "Altitude"
+                    },
+                    Labels = new XAxisLabels
+                    {
+                        Formatter = "formatXLabels"
+                    },
+                    MaxPadding = 0.05,
+                    ShowLastLabel = true
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    //Reversed = true,
+                Title = new YAxisTitle
+                {
+                    Text = "Temperature"
+                },
+                    Labels = new YAxisLabels
+                    {
+                        Formatter = "formatYLabels"
+                    },
+                    LineWidth = 2
+                }
+        },
+            Legend = new Legend
+            {
+                Enabled = false
+            },
+            Tooltip = new Tooltip
+            {
+                HeaderFormat = "<b>{series.name}</b><br/>",
+                PointFormat = "{point.x} km: {point.y}°C"
+            },
+
+            PlotOptions = new PlotOptions
+            {
+                Spline = new PlotOptionsSpline
+                {
+                    Marker = new PlotOptionsSplineMarker
+                    {
+                        Enabled = true
+                    }
+                }
+            },
+
+            Series = new List<Series>
+            {
+                new SplineSeries
+                {
+                    Name = "Temperature",
+                    Data = ViewData["tempData"] as List<SplineSeriesData>
+                }             
+            }
+        }
+        , "chart")
+    )
+
+   

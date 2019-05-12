@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2005
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Demo", "MVC_Demo\MVC_Demo.csproj", "{93028492-0DBD-4003-8859-F35AC7C629EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Demo_Framework", "MVC_Demo\MVC_Demo_Framework.csproj", "{93028492-0DBD-4003-8859-F35AC7C629EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_UnitTests", "MVC_UnitTests\MVC_UnitTests.csproj", "{96093B49-7299-431A-A1AE-B1BDCB46B351}"
 EndProject
@@ -24,6 +24,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegendItemClick", "D:\work\LegendItemClick\LegendItemClick\LegendItemClick\LegendItemClick.csproj", "{94BA9D3D-0BBE-40FF-A67E-365EF05FBAC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponsiveRules", "ResponsiveRules\ResponsiveRules.csproj", "{F4B0E856-705F-4398-9FF3-4C085573DC88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Demo_Standard", "MVC_Demo_Standard\MVC_Demo_Standard.csproj", "{CF9708E9-2657-45C6-8C9E-71C69734AEF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighstockStandard", "HighstockStandard\HighstockStandard.csproj", "{3C277349-2E72-4BB1-81FA-1BBE8233EBC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{F4B0E856-705F-4398-9FF3-4C085573DC88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4B0E856-705F-4398-9FF3-4C085573DC88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4B0E856-705F-4398-9FF3-4C085573DC88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF9708E9-2657-45C6-8C9E-71C69734AEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9708E9-2657-45C6-8C9E-71C69734AEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9708E9-2657-45C6-8C9E-71C69734AEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9708E9-2657-45C6-8C9E-71C69734AEF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C277349-2E72-4BB1-81FA-1BBE8233EBC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C277349-2E72-4BB1-81FA-1BBE8233EBC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C277349-2E72-4BB1-81FA-1BBE8233EBC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C277349-2E72-4BB1-81FA-1BBE8233EBC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_candlestick_point_placement =
+[
+    [ "PlotOptionsCandlestickPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_candlestick_point_placement.html#af7f442f5c741ac5f3c4cb2f3c5b08a97", null ]
+];

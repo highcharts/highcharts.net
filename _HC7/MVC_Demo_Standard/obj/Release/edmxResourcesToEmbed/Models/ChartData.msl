@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChartDataModelStoreContainer" CdmEntityContainer="ChartDataEntities">
+    <EntitySetMapping Name="AppleDatas">
+      <EntityTypeMapping TypeName="ChartDataModel.AppleData">
+        <MappingFragment StoreEntitySet="AppleData">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CandlestickVolumes">
+      <EntityTypeMapping TypeName="ChartDataModel.CandlestickVolume">
+        <MappingFragment StoreEntitySet="CandlestickVolume">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Open" ColumnName="Open" />
+          <ScalarProperty Name="High" ColumnName="High" />
+          <ScalarProperty Name="Low" ColumnName="Low" />
+          <ScalarProperty Name="Close" ColumnName="Close" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataGroupings">
+      <EntityTypeMapping TypeName="ChartDataModel.DataGrouping">
+        <MappingFragment StoreEntitySet="DataGrouping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Flags">
+      <EntityTypeMapping TypeName="ChartDataModel.Flag">
+        <MappingFragment StoreEntitySet="Flags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoogleDatas">
+      <EntityTypeMapping TypeName="ChartDataModel.GoogleData">
+        <MappingFragment StoreEntitySet="GoogleData">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Intradays">
+      <EntityTypeMapping TypeName="ChartDataModel.Intraday">
+        <MappingFragment StoreEntitySet="Intraday">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Open" ColumnName="Open" />
+          <ScalarProperty Name="High" ColumnName="High" />
+          <ScalarProperty Name="Low" ColumnName="Low" />
+          <ScalarProperty Name="Close" ColumnName="Close" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MicrosoftDatas">
+      <EntityTypeMapping TypeName="ChartDataModel.MicrosoftData">
+        <MappingFragment StoreEntitySet="MicrosoftData">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,75 @@
+﻿<script src="http://code.highcharts.com/highcharts.js"></script>
+
+@*The highchart-more.js file contains definitions for additional chart types not available 
+in the main highcharts.js file such as "arearange". You need to include this file if you
+are using these types of charts*@
+
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+    @(Html.Highsoft().GetHighcharts(
+        new Highcharts
+        {
+            Title = new Title
+            {
+                Text = "July Temperature"
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Type = XAxisType.Datetime,
+                    Crosshair = new XAxisCrosshair
+                    {
+                        Width = 1
+                    }
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = null
+                    },
+                    Crosshair = new YAxisCrosshair
+                    {
+                        Width = 1
+                    }
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                
+            },
+            Series = new List<Series>
+            {                    
+                new LineSeries
+                {
+                    Name = "Temperature",
+                    Data = @ViewData["temperatureData"] as List<LineSeriesData>,
+                    ZIndex = 1,
+                    Marker = new LineSeriesMarker
+                    {
+                        FillColor = "white",
+                        LineWidth = 2,
+                        LineColor = "#7cb5ec"
+                    }
+                },
+                new ArearangeSeries
+                {
+                    Name = "Range",
+                    LineWidth = 0,
+                    LinkedTo = ":previous",
+                    FillOpacity = 0.3,
+                    ZIndex = 0,
+                    Color = "#7cb5ec",
+                    Data = @ViewData["rangeData"] as List<ArearangeSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )

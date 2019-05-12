@@ -1,0 +1,5 @@
+C:\Repositories\highcharts.net\_HC7\HighstockStandard\bin\Debug\netstandard2.0\HighstockStandard.deps.json
+C:\Repositories\highcharts.net\_HC7\HighstockStandard\bin\Debug\netstandard2.0\HighstockStandard.dll
+C:\Repositories\highcharts.net\_HC7\HighstockStandard\obj\Debug\netstandard2.0\HighstockStandard.csproj.CoreCompileInputs.cache
+C:\Repositories\highcharts.net\_HC7\HighstockStandard\obj\Debug\netstandard2.0\HighstockStandard.AssemblyInfoInputs.cache
+C:\Repositories\highcharts.net\_HC7\HighstockStandard\obj\Debug\netstandard2.0\HighstockStandard.AssemblyInfo.cs

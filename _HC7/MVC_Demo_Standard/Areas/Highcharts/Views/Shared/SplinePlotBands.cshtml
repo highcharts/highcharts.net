@@ -1,0 +1,188 @@
+﻿<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using System.Collections
+@using Highsoft.Web.Mvc.Charts
+
+    
+    @(Html.Highsoft().GetHighcharts(
+        new Highcharts
+        {
+            Title = new Title
+            {
+                Text = "Wind speed during two days"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = "October 6th and 7th 2009 at two locations in Vik i Sogn, Norway",
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Type = XAxisType.Datetime
+
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Wind speed (m/s)"
+                    },
+                    Min = 0,
+                    MinorGridLineWidth = 0,
+                    GridLineWidth = 0,
+                    AlternateGridColor = null,
+                    PlotBands = new List<YAxisPlotBands>
+                    {
+                        new YAxisPlotBands
+                        {
+                            From = 0.3,
+                            To = 1.5,
+                            Color = "rgba(68, 170, 213, 0.1)",
+                            Label = new YAxisPlotBandsLabel
+                            {
+                                Text = "Light Air",
+                                Style = new Hashtable
+                                {
+                                    { "color", "#606060" }
+                                }
+                            }
+                        },
+                        new YAxisPlotBands
+                        {
+                            From = 1.1,
+                            To = 3.3,
+                            Color = "rgba(0, 0, 0, 0)",
+                            Label = new YAxisPlotBandsLabel
+                            {
+                                Text = "Light Breeze",
+                                Style = new Hashtable
+                                {
+                                    { "color", "#606060" }
+                                }
+                            }
+                        },                    
+                        new YAxisPlotBands
+                        {
+                            From = 3.3,
+                            To = 5.5,
+                            Color = "rgba(68, 170, 213, 0.1)",
+                            Label = new YAxisPlotBandsLabel
+                            {
+                                Text = "Gentle breeze",
+                                Style = new Hashtable
+                                {
+                                    { "color", "#606060" }
+                                }                            
+                            }
+                        },
+                        new YAxisPlotBands
+                        {
+                            From = 5.5,
+                            To = 8,
+                            Color = "rgba(0, 0, 0, 0)",
+                            Label = new YAxisPlotBandsLabel
+                            {
+                                Text = "Moderate breeze",
+                                Style = new Hashtable
+                                {
+                                    { "color", "#606060" }
+                                }                            
+                            }
+                        },
+                        new YAxisPlotBands
+                        {
+                            From = 8,
+                            To = 11,
+                            Color = "rgba(68, 170, 213, 0.1)",
+                            Label = new YAxisPlotBandsLabel
+                            {
+                                Text = "Fresh breeze",
+                                Style = new Hashtable
+                                {
+                                    { "color", "#606060" }
+                                }                            
+                            }
+                        },
+                        new YAxisPlotBands
+                        {
+                            From = 11,
+                            To = 14,
+                            Color = "rgba(0, 0, 0, 0)",
+                            Label = new YAxisPlotBandsLabel
+                            {
+                                Text = "Strong breeze",
+                                Style = new Hashtable
+                                {
+                                    { "color", "#606060" }
+                                }                            
+                            }
+                        },
+                        new YAxisPlotBands
+                        {
+                            From = 14,
+                            To = 15,
+                            Color = "rgba(68, 170, 213, 0.1)",
+                            Label = new YAxisPlotBandsLabel
+                            {
+                                Text = "High wind",
+                                Style = new Hashtable
+                                {
+                                    { "color", "#606060" }
+                                }                            
+                            }
+                        }                    
+                    }
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                ValueSuffix = "m/s"
+            },
+            Legend = new Legend
+            {
+                Layout = LegendLayout.Vertical,
+                Align = LegendAlign.Right,
+                VerticalAlign = LegendVerticalAlign.Middle,
+                BorderWidth = 0
+            },
+            PlotOptions = new PlotOptions
+            {
+                Spline = new PlotOptionsSpline
+                {
+                    LineWidth = 4,
+                    States = new PlotOptionsSplineStates
+                    {
+                        Hover = new PlotOptionsSplineStatesHover
+                        {
+                            LineWidth = 5
+                        }
+                    },
+                    Marker = new PlotOptionsSplineMarker
+                    {
+                        Enabled = false
+                    },
+                    PointInterval = 3600000,
+                    PointStart = @ViewBag.DateUTC
+                }
+            },
+            Series = new List<Series>
+            {                    
+                new SplineSeries
+                {
+                    Name = "Hestavollane",
+                    Data = @ViewData["hData"] as List<SplineSeriesData>
+                },
+                new SplineSeries
+                {
+                    Name = "Voll",
+                    Data = @ViewData["vData"] as List<SplineSeriesData>
+                }
+            }
+        }
+        , "chart")
+    )

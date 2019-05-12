@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="hc5" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\PC\\Documents\\highcharts\.net\\_HC5\\MVC_Demo\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\PC\\Documents\\highcharts\.net\\_HC5\\MVC_Demo\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="hc5/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\PC\\Documents\\highcharts\.net\\_HC5\\MVC_Demo\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="ChartDataEntities-Web.config Connection String" description="" value="metadata=res://*/Models.ChartData.csdl|res://*/Models.ChartData.ssdl|res://*/Models.ChartData.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=highcharts-net.c2fy2izdwrll.us-east-1.rds.amazonaws.com,1433;Initial Catalog=HighstockData;Persist Security Info=True;User ID=master;Password=newpass1&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\PC\\Documents\\highcharts\.net\\_HC5\\MVC_Demo\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ChartDataEntities']/@connectionString" />
+  </parameter>
+</parameters>

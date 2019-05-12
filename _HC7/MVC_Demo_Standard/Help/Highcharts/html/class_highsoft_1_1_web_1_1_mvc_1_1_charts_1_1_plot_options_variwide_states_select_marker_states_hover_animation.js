@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_variwide_states_select_marker_states_hover_animation =
+[
+    [ "PlotOptionsVariwideStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_variwide_states_select_marker_states_hover_animation.html#a7562d765f4537824992f34fc9d15c085", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_variwide_states_select_marker_states_hover_animation.html#a6cda5e4576db706f5e3093b900383bf5", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_variwide_states_select_marker_states_hover_animation.html#a207e99522cb69c3defe4d2e3e0b4ddd7", null ]
+];

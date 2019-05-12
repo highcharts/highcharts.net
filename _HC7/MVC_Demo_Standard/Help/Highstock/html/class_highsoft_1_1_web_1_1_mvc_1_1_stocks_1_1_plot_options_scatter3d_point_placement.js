@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter3d_point_placement =
+[
+    [ "PlotOptionsScatter3dPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter3d_point_placement.html#a7dcfc140e3a3b6d754064bd022dedc41", null ]
+];

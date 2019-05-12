@@ -33,6 +33,8 @@ public class HighstockGenerator
     List<string> _excludedProperties; // properties that do not need to be ported to the server-side wrapper
     List<string> _customProperties; // properties that need custom JSON mappings (Animation, Shadow, etc). Defined in the CodeAddOns folder.
 
+    bool IsNETStandard;
+
     IJsonParser JsonParser { get; set; }
     IFileService FileService { get; set; }
     IMultiplicationService MultiplicationService { get; set; }
@@ -63,8 +65,9 @@ public class HighstockGenerator
         InitLists();
     }
 
-    public void GenerateCode()
+    public void GenerateCode(bool isNETStandard)
     {
+        IsNETStandard = isNETStandard;
         FileService.PrepareFolder(ROOT_CLASS);
         _apiItems = JsonParser.Get();
         ProcessApiItems(_apiItems);
@@ -297,7 +300,7 @@ public class HighstockGenerator
         if (item.FullName.Contains("navigator.series"))
             return;
 
-        string codeTemplate = FileService.GetClassTemplate();
+        string codeTemplate = FileService.GetClassTemplate(IsNETStandard);
         string propertyTemplate = FileService.GetPropertyTemplate();
 
         string properties = "";

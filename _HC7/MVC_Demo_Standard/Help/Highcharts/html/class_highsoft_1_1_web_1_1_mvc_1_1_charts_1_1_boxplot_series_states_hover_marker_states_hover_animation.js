@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_boxplot_series_states_hover_marker_states_hover_animation =
+[
+    [ "BoxplotSeriesStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_boxplot_series_states_hover_marker_states_hover_animation.html#aca4752eb2972c7b1c4048d4a78c7a569", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_boxplot_series_states_hover_marker_states_hover_animation.html#a3cbf1dbc7156f1fb394fcf11edff465e", null ],
+    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_boxplot_series_states_hover_marker_states_hover_animation.html#a626c8ea3121b5b69e01c3941e7ded31e", null ]
+];
