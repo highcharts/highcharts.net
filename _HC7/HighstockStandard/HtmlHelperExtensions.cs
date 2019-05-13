@@ -4,28 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
-using System.Web.Mvc;
 using Highsoft.Web.Mvc.Stocks;
 using Highsoft.Web.Mvc.Stocks.Rendering;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-    public static class HtmlHelperExtensions
-    {
-        public static HighsoftNamespace Highsoft(this HtmlHelper helper) { return new HighsoftNamespace(); }
-    }
-
     public class HighsoftNamespace
     {
-        public MvcHtmlString Highstock(Highstock chart, string containerId)
-        {            
-            var renderer = new HighstockRenderer(chart);
-            AssignContainerId(chart, containerId);
 
-            return MvcHtmlString.Create(renderer.RenderHtml());
+        private readonly string _SerialKey;
+        public HighsoftNamespace(string key = null)
+        {
+            _SerialKey = key;
         }
 
-        public HtmlString GetHighstock(Highstock chart, string containerId, bool addContainer = true, string functionName = null)
+        public string GetHighstock(Highstock chart, string containerId, bool addContainer = true, string functionName = null)
         {
             if (functionName != null)
                 return GetHighstockFunction(chart, containerId, functionName);
@@ -34,37 +27,37 @@ namespace Highsoft.Web.Mvc.Stocks
             AssignContainerId(chart, containerId);
 
             if (addContainer)
-                return new HtmlString(renderer.RenderHtml());
+                return renderer.RenderHtml();
 
-            return new HtmlString(renderer.RenderHtml(addContainer));
+            return renderer.RenderHtml(addContainer);
         }
 
-        public HtmlString GetHigstockJS(Highstock chart, string containerId)
+        public string GetHigstockJS(Highstock chart, string containerId)
         {
-            var renderer = new HighstockRenderer(chart);
+            var renderer = new HighstockRenderer(chart, _SerialKey);
             AssignContainerId(chart, containerId);
 
-            return new HtmlString(renderer.GetJavascript());
+            return renderer.GetJavascript();
         }
 
-        public HtmlString GetJsonOptions(Highstock chart)
+        public string GetJsonOptions(Highstock chart)
         {
-            var renderer = new HighstockRenderer(chart);
-            return new HtmlString(renderer.GetJsonOptions());
+            var renderer = new HighstockRenderer(chart, _SerialKey);
+            return renderer.GetJsonOptions();
         }
 
-        public HtmlString SetOptions(Global global = null, Lang lang = null)
+        public string SetOptions(Global global = null, Lang lang = null)
         {
             var renderer = new HighstockRenderer();
-            return new HtmlString(renderer.SetOptions(global, lang));
+            return renderer.SetOptions(global, lang);
         }
 
-        private HtmlString GetHighstockFunction(Highstock chart, string containerId, string functionName)
+        private string GetHighstockFunction(Highstock chart, string containerId, string functionName)
         {
-            var renderer = new HighstockRenderer(chart);
+            var renderer = new HighstockRenderer(chart, _SerialKey);
             AssignContainerId(chart, containerId);
 
-            return new HtmlString(renderer.GetJavascriptFunction(functionName));
+            return renderer.GetJavascriptFunction(functionName);
         }
         
         private void AssignContainerId(Highstock chart, string containerId)

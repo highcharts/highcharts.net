@@ -212,6 +212,9 @@ public class HighstockGenerator
 
     private List<ApiItem> GetChildrenFromBaseClasses(ApiItem item)
     {
+        if (item == null)
+            return new List<ApiItem>();
+
         var addedChildren = new List<ApiItem>();
         foreach (var baseClassFullName in item.Extends)
         {

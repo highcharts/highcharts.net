@@ -1,0 +1,83 @@
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Collections;
+using System;
+using System.Collections.Specialized;
+using System.Web;
+using System.IO;
+
+namespace Highsoft.Web.Mvc.Stocks
+{
+	public partial class AnnotationsMeasureTypeOptionsCrosshairX  : BaseObject
+	{
+		public AnnotationsMeasureTypeOptionsCrosshairX()
+		{
+			DashStyle = DashStyle_DefaultValue = "Dash";
+			Enabled = Enabled_DefaultValue = true;
+			MarkerEnd = MarkerEnd_DefaultValue = "arrow";
+			ZIndex = ZIndex_DefaultValue = 6;
+			
+		}	
+		
+
+		/// <summary>
+		/// The dash or dot style of the crosshair's line. For possiblevalues, see[this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
+		/// </summary>
+		public string DashStyle { get; set; }
+		private string DashStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the horizontal crosshair.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The marker-end defines the arrowhead that will be drawnat the final vertex of the given crosshair's path.
+		/// </summary>
+		public string MarkerEnd { get; set; }
+		private string MarkerEnd_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Z index of the crosshair in annotation.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
+		  
+
+		internal override Hashtable ToHashtable()
+		{
+			Hashtable h = new Hashtable();
+
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			
+
+			return h;
+		}
+
+		internal override string ToJSON()
+		{            
+			Hashtable h = ToHashtable();
+
+			if (h.Count > 0)
+				return JsonConvert.SerializeObject(ToHashtable());
+			else 
+				return "";
+		}       
+
+		// checks if the state of the object is different from the default
+		// and therefore needs to be serialized
+		internal override bool IsDirty()
+		{
+			return ToHashtable().Count > 0;
+		}
+	}
+}

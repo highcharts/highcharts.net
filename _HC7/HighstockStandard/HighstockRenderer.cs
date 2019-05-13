@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Web.Script.Serialization;
 using Highsoft.Web.Mvc.Stocks;
 
 namespace Highsoft.Web.Mvc.Stocks.Rendering
@@ -11,12 +11,14 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
     public class HighstockRenderer
     {
         private Highstock _chart;
+        private readonly string _SerialKey;
 
         public HighstockRenderer() { }
 
-        public HighstockRenderer(Highstock chart)
+        public HighstockRenderer(Highstock chart, string key = null)
         {
             _chart = chart;
+            _SerialKey = key;
         }
 
         public string RenderHtml(bool addContainer = true)
@@ -76,10 +78,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             if (lang != null && lang.IsDirty())
                 options.Add("lang", lang.ToHashtable());
 
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-            serializer.MaxJsonLength = Int32.MaxValue;
-
-            sb.Append(serializer.Serialize(options));
+            sb.Append(JsonConvert.SerializeObject(options));
             sb.Append(");</script>");
             return sb.ToString();
         }
@@ -206,9 +205,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 drilldown["series"] = drilldownSeries;
             }
 
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-            serializer.MaxJsonLength = Int32.MaxValue;
-            string json = serializer.Serialize(options);
+            string json = JsonConvert.SerializeObject(options);
             var functions = Highstock.functions;
 
             foreach (string key in functions.Keys)

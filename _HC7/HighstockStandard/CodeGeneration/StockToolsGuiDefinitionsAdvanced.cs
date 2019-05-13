@@ -1,0 +1,87 @@
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Collections;
+using System;
+using System.Collections.Specialized;
+using System.Web;
+using System.IO;
+
+namespace Highsoft.Web.Mvc.Stocks
+{
+	public partial class StockToolsGuiDefinitionsAdvanced  : BaseObject
+	{
+		public StockToolsGuiDefinitionsAdvanced()
+		{
+			Fibonacci = Fibonacci_DefaultValue = new StockToolsGuiDefinitionsAdvancedFibonacci();
+			Items = Items_DefaultValue =  new List<string>() {
+  "fibonacci",
+  "pitchfork",
+  "parallelChannel"
+};
+			ParallelChannel = ParallelChannel_DefaultValue = new StockToolsGuiDefinitionsAdvancedParallelChannel();
+			Pitchfork = Pitchfork_DefaultValue = new StockToolsGuiDefinitionsAdvancedPitchfork();
+			
+		}	
+		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public StockToolsGuiDefinitionsAdvancedFibonacci Fibonacci { get; set; }
+		private StockToolsGuiDefinitionsAdvancedFibonacci Fibonacci_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A collection of strings pointing to config options forthe items.
+		/// </summary>
+		public List<string> Items { get; set; }
+		private List<string> Items_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public StockToolsGuiDefinitionsAdvancedParallelChannel ParallelChannel { get; set; }
+		private StockToolsGuiDefinitionsAdvancedParallelChannel ParallelChannel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public StockToolsGuiDefinitionsAdvancedPitchfork Pitchfork { get; set; }
+		private StockToolsGuiDefinitionsAdvancedPitchfork Pitchfork_DefaultValue { get; set; }
+		  
+
+		internal override Hashtable ToHashtable()
+		{
+			Hashtable h = new Hashtable();
+
+			if (Fibonacci.IsDirty()) h.Add("fibonacci",Fibonacci.ToHashtable());
+			if (Items != Items_DefaultValue) h.Add("items",Items);
+			if (ParallelChannel.IsDirty()) h.Add("parallelChannel",ParallelChannel.ToHashtable());
+			if (Pitchfork.IsDirty()) h.Add("pitchfork",Pitchfork.ToHashtable());
+			
+
+			return h;
+		}
+
+		internal override string ToJSON()
+		{            
+			Hashtable h = ToHashtable();
+
+			if (h.Count > 0)
+				return JsonConvert.SerializeObject(ToHashtable());
+			else 
+				return "";
+		}       
+
+		// checks if the state of the object is different from the default
+		// and therefore needs to be serialized
+		internal override bool IsDirty()
+		{
+			return ToHashtable().Count > 0;
+		}
+	}
+}

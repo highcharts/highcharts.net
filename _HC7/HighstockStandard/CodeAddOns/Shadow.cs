@@ -1,7 +1,7 @@
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Web.Script.Serialization;
 using System.Collections;
 using System;
 using System.Collections.Specialized;
@@ -67,10 +67,11 @@ namespace Highsoft.Web.Mvc.Stocks
         internal override string ToJSON()
         {
             Hashtable h = ToHashtable();
+
             if (h.Count > 0)
-                return new JavaScriptSerializer().Serialize(ToHashtable());
+                return JsonConvert.SerializeObject(ToHashtable());
             else
-                return Enabled.ToString().ToLower();
+                return "";
         }
 
         // checks if the state of the object is different from the default

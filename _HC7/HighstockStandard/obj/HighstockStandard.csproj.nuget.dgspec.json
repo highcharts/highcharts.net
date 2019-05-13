@@ -5,10 +5,10 @@
   },
   "projects": {
     "C:\\Repositories\\highcharts.net\\_HC7\\HighstockStandard\\HighstockStandard.csproj": {
-      "version": "1.0.0",
+      "version": "7.1.1",
       "restore": {
         "projectUniqueName": "C:\\Repositories\\highcharts.net\\_HC7\\HighstockStandard\\HighstockStandard.csproj",
-        "projectName": "HighstockStandard",
+        "projectName": "Highstock",
         "projectPath": "C:\\Repositories\\highcharts.net\\_HC7\\HighstockStandard\\HighstockStandard.csproj",
         "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
         "outputPath": "C:\\Repositories\\highcharts.net\\_HC7\\HighstockStandard\\obj\\",
@@ -53,6 +53,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.2, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.5.0, )"
             }
           },
           "imports": [
