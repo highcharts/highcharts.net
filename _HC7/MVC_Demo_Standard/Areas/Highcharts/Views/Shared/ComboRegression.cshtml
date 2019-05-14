@@ -2,33 +2,35 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@(Html.Highsoft().GetHighcharts(
+    new Highcharts
+    {
+        Title = new Title
         {
-            Title = new Title
+            Text = "Scatter plot with regression line",
+            X = -20
+        },
+
+        XAxis = new List<XAxis>
+        {
+            new XAxis
             {
-                Text = "Scatter plot with regression line",
-                X = -20
-            },
-           
-            XAxis = new List<XAxis>
-            {            
-                new XAxis
+                Title = new Title
                 {
-                    Min = -0.5,
-                    Max = 5.5                    
-                }
-            },
-            YAxis = new List<YAxis>
-            {
+                    Text = "Scatter plot with regression line",
+                    X = -20
+                },
+                YAxis = new List<YAxis>
+                {
                 new YAxis
                 {
                     Min = 0
                 }
-            },
-            Series = new List<Series>
-            {                    
+                        },
+                Series = new List<Series>
+                {
                 new LineSeries
                 {
                     Name = "Regression Line",
@@ -52,16 +54,16 @@
                 new ScatterSeries
                 {
                     Name = "Observations",
-                    Data = new List<ScatterSeriesData> {
-                        new ScatterSeriesData { Y = 1 },
-                        new ScatterSeriesData { Y = 1.5 },
-                        new ScatterSeriesData { Y = 2.8 },
-                        new ScatterSeriesData { Y = 3.5 },
-                        new ScatterSeriesData { Y = 3.9 },
-                        new ScatterSeriesData { Y = 4.2 },
-                    }
+                Data = new List<ScatterSeriesData> {
+                    new ScatterSeriesData { Y = 1 },
+                    new ScatterSeriesData { Y = 1.5 },
+                    new ScatterSeriesData { Y = 2.8 },
+                    new ScatterSeriesData { Y = 3.5 },
+                    new ScatterSeriesData { Y = 3.9 },
+                    new ScatterSeriesData { Y = 4.2 },
                 }
             }
         }
-        , "chart")
-    )
+    }
+    , "chart")
+)

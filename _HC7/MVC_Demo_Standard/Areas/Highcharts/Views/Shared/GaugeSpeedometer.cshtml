@@ -6,31 +6,39 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@(Html.Highsoft().GetHighcharts(
+    new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            PlotBorderColor = null,
+            PlotBackgroundImage = null,
+            PlotBorderWidth = 0,
+            PlotShadow = new Shadow
             {
-                PlotBorderColor = null,
-                PlotBackgroundImage = null,
-                PlotBorderWidth = 0,
-                PlotShadow = new Shadow
+                Chart = new Highsoft.Web.Mvc.Charts.Chart
                 {
-                    Enabled = false
-                }
-            },
-            Title = new Title
-            {
-                Text = "Speedometer"
-            },
-            Pane = new Pane
-            {
-                StartAngle = -150,
-                EndAngle = 150                
-            },
-            YAxis = new List<YAxis>
-            {
+                    PlotBorderColor = null,
+                    PlotBackgroundImage = null,
+                    PlotBorderWidth = 0,
+                    PlotShadow = new Shadow
+                    {
+                        Enabled = false
+                    }
+                },
+                Title = new Title
+                {
+                    Text = "Speedometer"
+                },
+                Pane = new Pane
+                {
+                    StartAngle = -150,
+                    EndAngle = 150
+                },
+                YAxis = new List<YAxis>
+                {
                 new YAxis
                 {
                     Min = 0,
@@ -40,7 +48,7 @@
                     MinorTickLength = 10,
                     MinorTickPosition = YAxisMinorTickPosition.Inside,
                     MinorTickColor = "#666",
-                    
+
                     TickPixelInterval = 30,
                     TickWidth = 2,
                     TickPosition = YAxisTickPosition.Inside,
@@ -66,33 +74,35 @@
                         {
                             From = 120,
                             To = 160,
-                            Color = "#DDDF0D"
                         },
                         new YAxisPlotBands
                         {
                             From = 160,
                             To = 200,
-                            Color = "#DF5353"
-                        }
-                        
+                        Color = "#DF5353"
                     }
+
                 }
             },
-            Series = new List<Series>
-            {                    
-                new GaugeSeries
+        Series = new List<Series>
+        {
+            new GaugeSeries
+            {
+                Name = "Spped",
+                Data = @ViewData["gaugeData"] as List<GaugeSeriesData>,
+                Tooltip = new GaugeSeriesTooltip
                 {
                     Name = "Spped",
                     Data = @ViewData["gaugeData"] as List<GaugeSeriesData>,
                     Tooltip = new GaugeSeriesTooltip
                     {
                         ValueSuffix = " km/h"
-                    }
                 }
             }
         }
-        , "chart")
-    )
+    }
+    , "chart")
+)
 
 <script type="text/javascript">
 
@@ -114,6 +124,6 @@
             }, 3000);
         }
     }, 3000);
- 
+
 
 </script>

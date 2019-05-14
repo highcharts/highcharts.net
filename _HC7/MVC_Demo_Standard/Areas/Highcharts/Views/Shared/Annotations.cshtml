@@ -3,25 +3,25 @@
 <script src="https://code.highcharts.com/modules/annotations.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering;
 
-@Html.Highsoft().GetHighcharts(new Highcharts()
+@{ var chartOptions = new Highcharts {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
+        {
+            ZoomType = ChartZoomType.X,
+            Panning = true,
+            PanKey = ChartPanKey.Shift
+        },
+        Title = new Title
+        {
+            Text = "2017 Tour de France Stage 8: Dole - Station des Rousses"
+        },
+        Subtitle = new Subtitle
+        {
+            Text = "An annotated chart in Highcharts"
+        },
+        Annotations = new List<Annotations>
 {
-    Chart = new Highsoft.Web.Mvc.Charts.Chart
-    {
-        ZoomType = ChartZoomType.X,
-        Panning = true,
-        PanKey = ChartPanKey.Shift
-    },
-    Title = new Title
-    {
-        Text = "2017 Tour de France Stage 8: Dole - Station des Rousses"
-    },
-    Subtitle = new Subtitle
-    {
-        Text = "An annotated chart in Highcharts"
-    },
-    Annotations = new List<Annotations>
-    {
         new Annotations
         {
             LabelOptions = new AnnotationsLabelOptions
@@ -31,7 +31,7 @@
                 Y = 15
             },
             Labels = new List<AnnotationsLabels>
-            {
+    {
                 new AnnotationsLabels
                 {
                     Point = new AnnotationsLabelsPoint
@@ -105,7 +105,7 @@
         new Annotations
         {
             Labels = new List<AnnotationsLabels>
-            {
+    {
                 new AnnotationsLabels
                 {
                     Point = new AnnotationsLabelsPoint
@@ -155,7 +155,7 @@
                 }
             },
             Labels = new List<AnnotationsLabels>
-            {
+    {
                 new AnnotationsLabels
                 {
                     Point = new AnnotationsLabelsPoint
@@ -192,8 +192,8 @@
             }
         }
     },
-    XAxis = new List<XAxis>()
-    {
+        XAxis = new List<XAxis>()
+{
         new XAxis
         {
             Id = "X",
@@ -202,8 +202,8 @@
             Title = new XAxisTitle { Text = "Distance" }
         }
     },
-    YAxis = new List<YAxis>()
-    {
+        YAxis = new List<YAxis>()
+{
         new YAxis
         {
             Id = "Y",
@@ -214,18 +214,18 @@
             Labels = new YAxisLabels { Format = "{value} m" }
         }
     },
-    Tooltip = new Tooltip
-    {
-        HeaderFormat = "Distance: {point.x:.1f} km<br>",
-        PointFormat = "{point.y} m a. s. l.",
-        Shared = true
-    },
-    Legend = new Legend
-    {
-        Enabled = false
-    },
-    Series = new List<Series>()
-    {
+        Tooltip = new Tooltip
+        {
+            HeaderFormat = "Distance: {point.x:.1f} km<br>",
+            PointFormat = "{point.y} m a. s. l.",
+            Shared = true
+        },
+        Legend = new Legend
+        {
+            Enabled = false
+        },
+        Series = new List<Series>()
+{
         new AreaSeries
         {
             Data = @ViewData["data"] as List<AreaSeriesData>,
@@ -239,4 +239,5 @@
 
         }
     }
-}, "chart")
+    };
+}

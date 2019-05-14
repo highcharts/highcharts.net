@@ -3,56 +3,56 @@
 
 @using Highsoft.Web.Mvc.Charts
 @using System.Collections.Specialized
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        function formatToolTip() {
-            return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-        }
+    function formatToolTip() {
+        return '<b>' + this.x + '</b><br/>' +
+            this.series.name + ': ' + this.y + '<br/>' +
+            'Total: ' + this.point.stackTotal;
+    }
 
-    </script>
+</script>
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Title = new Title
         {
-            Title = new Title
-            {
-                Text = "Total fruit consumtion, grouped by gender"
-            },
-            XAxis = new List<XAxis>
-            {
+            Text = "Total fruit consumtion, grouped by gender"
+        },
+        XAxis = new List<XAxis>
+    {
                 new XAxis
-                {                
+                {
                     Categories = new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
                 }
             },
-            YAxis = new List<YAxis>   
-            {         
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     Min = 0,
                     AllowDecimals = false,
                     Title = new YAxisTitle
                     {
-                        Text = "Number of fruits"                   
+                        Text = "Number of fruits"
                     }
                 }
             },
-            Tooltip = new Tooltip
+        Tooltip = new Tooltip
+        {
+            Formatter = "formatToolTip"
+        },
+        PlotOptions = new PlotOptions
+        {
+            Column = new PlotOptionsColumn
             {
-                Formatter = "formatToolTip"
-            },
-            PlotOptions = new PlotOptions
-            {
-                Column = new PlotOptionsColumn
-                {
-                    Stacking = PlotOptionsColumnStacking.Normal
-                }
-            },
-            Series = new List<Series>
-            {                    
+                Stacking = PlotOptionsColumnStacking.Normal
+            }
+        },
+        Series = new List<Series>
+    {
                 new ColumnSeries
                 {
                     Name = "John",
@@ -75,9 +75,13 @@
                 {
                     Name = "Janet",
                     Data = @ViewData["janetData"] as List<ColumnSeriesData>,
-                    Stack = "female"                    
+                    Stack = "female"
                 }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

@@ -2,109 +2,88 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@(Html.Highsoft().GetHighcharts(
+    new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            new Highcharts
             {
-                ZoomType = ChartZoomType.Xy
+                Chart = new Highsoft.Web.Mvc.Charts.Chart
+                {
+                    ZoomType = ChartZoomType.Xy
 
-            },
-            Title = new Title
-            {
-                Text = "Height Versus Weight of 507 Individuals by Gender"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Source: Heinz  2003"
-            },
+                },
+                Title = new Title
+                {
+                    Text = "Height Versus Weight of 507 Individuals by Gender"
+                },
+                Subtitle = new Subtitle
+                {
+                    Text = "Source: Heinz  2003"
+                },
 
-            XAxis = new List<XAxis>
-            {
+                XAxis = new List<XAxis>
+                {
                 new XAxis
                 {
                     Title = new XAxisTitle
                     {
                         Text = "Height (cm)"
-                    },
-                    StartOnTick = true,
-                    EndOnTick = true,
-                    ShowLastLabel = true
                 }
-            },
-            YAxis = new List<YAxis>
-            {
-                new YAxis
-                {
-                    Title = new YAxisTitle
-                    {
-                        Text = "Weight (kg)"
-                    }
-                }
-            },
-            Legend = new Legend
-            {
-                Layout = LegendLayout.Vertical,
-                Align = LegendAlign.Left,
-                VerticalAlign = LegendVerticalAlign.Top,
-                X = 100,
-                Y = 70,
-                Floating = true,
-                BorderWidth = 1,
-                BackgroundColor = "white"
-            },
+            }
+        },
+        Legend = new Legend
+        {
+            Layout = LegendLayout.Vertical,
+            Align = LegendAlign.Left,
+            VerticalAlign = LegendVerticalAlign.Top,
+            X = 100,
+            Y = 70,
+            Floating = true,
+            BorderWidth = 1,
+            BackgroundColor = "white"
+        },
 
-            PlotOptions = new PlotOptions
+        PlotOptions = new PlotOptions
+        {
+            Scatter = new PlotOptionsScatter
             {
-                Scatter = new PlotOptionsScatter
+                Marker = new PlotOptionsScatterMarker
                 {
-                    Marker = new PlotOptionsScatterMarker
+                    Scatter = new PlotOptionsScatter
                     {
-                        Radius = 5,
-                        States = new PlotOptionsScatterMarkerStates
+                        Marker = new PlotOptionsScatterMarker
                         {
-                            Hover = new PlotOptionsScatterMarkerStatesHover
+                            Radius = 5,
+                            States = new PlotOptionsScatterMarkerStates
                             {
-                                Enabled = true,
-                                LineColor = "rgb(100,100,100)"
-                            }
-                        }
-
-                    },
-                    States = new PlotOptionsScatterStates
-                    {
-                        Hover = new PlotOptionsScatterStatesHover
+                                Hover = new PlotOptionsScatterMarkerStatesHover
                         {
+                            Hover = new PlotOptionsScatterStatesHover
+                            {
 
-                            //Marker = new PlotOptionsScatterStatesHoverMarker
-                            //{
-                            //    Enabled = false
-                            //}
-                        }
-                    },
-                    //Tooltip = new PlotOptionsScatterTooltip
-                    //{
-                    //    HeaderFormat = "<b>{series.name}</b><br>",
-                    //    PointFormat = "{point.x} cm, {point.y} kg"
-                    //}
-                }
-            },
-            Series = new List<Series>
-            {
+                },
+                Series = new List<Series>
+                {
                 new ScatterSeries
                 {
                     Name = "Female",
                     Color = "rgba(223, 83, 83, .5)",
-                    Data = @ViewData["femaleData"] as List<ScatterSeriesData>
+                        //{
+                        //    Enabled = @ViewData["femaleData"] as List<ScatterSeriesData>
                 },
                 new ScatterSeries
+            {
+                Name = "Female",
                 {
-                    Name = "Male",
-                    Color = "rgba(119, 152, 191, .5)",
-                    Data = @ViewData["maleData"] as List<ScatterSeriesData>
-                }
+                Name = "Male",
+                Color = "rgba(119, 152, 191, .5)",
+                Data = @ViewData["maleData"] as List<ScatterSeriesData>
             }
         }
-        , "chart")
-    )
+    }
+    , "chart")
+)

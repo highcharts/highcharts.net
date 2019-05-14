@@ -2,13 +2,16 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 @(Html.Highsoft().GetHighcharts(
     new Highcharts
     {
         Title = new Title
         {
-            Text = "Monthly Average Temperature"
+            Title = new Title
+            {
+                Text = "Monthly Average Temperature"
         },
         XAxis = new List<XAxis>
         {
@@ -27,25 +30,27 @@
                     Text = "Temperature (°C)"
                 }
             }
-        }, 
+        },
         PlotOptions = new PlotOptions
         {
             Line = new PlotOptionsLine
             {
-                DataLabels = new PlotOptionsLineDataLabels
+                Line = new PlotOptionsLine
                 {
-                    Enabled = true
+                    DataLabels = new PlotOptionsLineDataLabels
+                    {
+                        Enabled = true
                 },
                 EnableMouseTracking = false
-            }   
-        },       
+            }
+        },
         Series = new List<Series>
-        {                    
+        {
             new LineSeries
             {
                 Name = "Tokyo",
                 Data = @ViewData["tokyoData"] as List<LineSeriesData>
-            },                   
+            },
             new LineSeries
             {
                 Name = "London",

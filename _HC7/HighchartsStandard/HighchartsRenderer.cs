@@ -12,55 +12,53 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
     public class HighchartsRenderer
     {
         private Highcharts _chart;
-        private readonly string _SerialKey;
 
         public HighchartsRenderer() { }
 
-        public HighchartsRenderer(Highcharts chart, string key = null)
+        public HighchartsRenderer(Highcharts chart)
         {
             _chart = chart;
-            _SerialKey = key;
         }
 
         public string RenderHtml(bool addContainer = true)
         {
-            return GetResponse(LicenseVerifier.Check(_SerialKey), addContainer);
+            return GetResponse(LicenseVerifier.Check(), addContainer);
         }
 
         public string GetJavascript()
         {
-            var licenseType = LicenseVerifier.Check(_SerialKey);
+            var licenseType = LicenseVerifier.Check();
 
-            string message = "";
+            if (licenseType == SerialKey.Missing)
+                return "<div style=\"background:yellow\">Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a></div>";
 
-            if (licenseType == 0)
-                message = "<div style=\"background:yellow\">Incorrect serial key. I'm working in trial mode now.</div>";
+            if (licenseType == SerialKey.Invalid)
+                return "<div style=\"background:yellow\">Licence key is incorrect. Please check your licence-key again or contact us at support@highcharts.com</div>";
 
-            if (licenseType == -1 || licenseType == 0) //trial
-                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
-                {
-                    message += "This is a trial version of Highcharts for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
-                    return message;
-                }
+            if (licenseType == SerialKey.Trial14DaysBeforeEndValid)
+                return "<div style=\"background:yellow\">Trial-key will expire in 14 days. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
+
+            if (licenseType == SerialKey.TrialExpired)
+                return "<div style=\"background:yellow\">Trial-key has expired. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
 
             return GetCreateChartJavascript();
         }
 
         public string GetJavascriptFunction(string functionName)
         {
-            var licenseType = LicenseVerifier.Check(_SerialKey);
+            var licenseType = LicenseVerifier.Check();
+            
+            if (licenseType == SerialKey.Missing)
+                return "<div style=\"background:yellow\">Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a></div>";
 
-            string message = "";
+            if (licenseType == SerialKey.Invalid)
+                return "<div style=\"background:yellow\">Licence key is incorrect. Please check your licence-key again or contact us at support@highcharts.com</div>";
 
-            if (licenseType == 0)
-                message = "<div style=\"background:yellow\">Incorrect serial key. I'm working in trial mode now.</div>";
+            if (licenseType == SerialKey.Trial14DaysBeforeEndValid)
+                return "<div style=\"background:yellow\">Trial-key will expire in 14 days. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
 
-            if (licenseType == -1 || licenseType == 0) //trial
-                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
-                {
-                    message += "This is a trial version of Highcharts for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
-                    return message;
-                }
+            if (licenseType == SerialKey.TrialExpired)
+                return "<div style=\"background:yellow\">Trial-key has expired. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
 
             return GetCreateChartJavascriptFunction(functionName);
         }
@@ -84,33 +82,36 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
             return sb.ToString();
         }
 
-        private string GetResponse(int licenseType, bool addContainer)
+        private string GetResponse(SerialKey licenseType, bool addContainer)
         {
-            string message = "";
+            if (licenseType == SerialKey.Missing)
+                return "<div style=\"background:yellow\">Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a></div>";
 
-            if (licenseType == 0)
-                message = "<div style=\"background:yellow\">Incorrect serial key. I'm working in trial mode now.</div>";
+            if (licenseType == SerialKey.Invalid)
+                return "<div style=\"background:yellow\">Licence key is incorrect. Please check your licence-key again or contact us at support@highcharts.com</div>";
 
-            if (licenseType == -1 || licenseType == 0) //trial
-                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
-                {
-                    message += "This is a trial version of Highcharts for ASP.NET MVC which has expired.<br> Please contact sales@highsoft.com with any questions.";
-                    return message;
-                }
+            if (licenseType == SerialKey.Trial14DaysBeforeEndValid)
+                return "<div style=\"background:yellow\">Trial-key will expire in 14 days. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
 
-            return message + GetStartupJavascript(addContainer);
+            if (licenseType == SerialKey.TrialExpired)
+                return "<div style=\"background:yellow\">Trial-key has expired. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a></div>";
+
+            return GetStartupJavascript(addContainer);
         }
 
-        private string GetJsonResponse(int licenseType)
+        private string GetJsonResponse(SerialKey licenseType)
         {
-            string message = "";
+            if (licenseType == SerialKey.Missing)
+                return "{Message:\"Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a>\"}";
 
-            if (licenseType == -1 || licenseType == 0) //trial
-                if (DateTime.Now > CompiledOn.CompilationDate.AddDays(30))
-                {
-                    message += "Message:\"This is a trial version of Highcharts for ASP.NET MVC which has expired. Please contact sales@highsoft.com with any questions.\"";
-                    return "{"+message+"}";
-                }
+            if (licenseType == SerialKey.Invalid)
+                return "{Message:\"Licence key is incorrect. Please check your licence-key again or contact us at support@highcharts.com\"}";
+
+            if (licenseType == SerialKey.Trial14DaysBeforeEndValid)
+                return "{Message:\"Trial-key will expire in 14 days. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a>\"}";
+
+            if (licenseType == SerialKey.TrialExpired)
+                return "{Message:\"Trial-key has expired. Please share your opinion about our wrapper and you will receive an unlimited serial key.<br><a href=\"https://www.highcharts.com/dotnet-license/\">Click here for 1-minute survey</a>\"}";
 
             return GetStartupOptions();
         }
@@ -173,7 +174,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
         public string GetJsonOptions()
         {
-            return GetJsonResponse(LicenseVerifier.Check(_SerialKey));
+            return GetJsonResponse(LicenseVerifier.Check());
         }
 
         private string GetStartupOptions()
@@ -204,11 +205,6 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 Hashtable drilldown = options["drilldown"] as Hashtable;
                 drilldown["series"] = drilldownSeries;
             }
-
-            //JavaScriptSerializer serializer = new JavaScriptSerializer();
-            //serializer.MaxJsonLength = Int32.MaxValue;
-            //string json = serializer.Serialize(options);
-
 
             string json = JsonConvert.SerializeObject(options);
             var functions = Highcharts.functions;
@@ -558,6 +554,43 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                     xrangeSeries.Type = XrangeSeriesType.Xrange;
                     seriesHashtable = xrangeSeries.ToHashtable();
                 }
+
+                //since v7.0
+                if (series is NetworkgraphSeries)
+                {
+                    NetworkgraphSeries networkgraphSeries = series as NetworkgraphSeries;
+                    networkgraphSeries.Type = NetworkgraphSeriesType.Networkgraph;
+                    seriesHashtable = networkgraphSeries.ToHashtable();
+                }
+
+                if (series is PackedbubbleSeries)
+                {
+                    PackedbubbleSeries packedbubbleSeries = series as PackedbubbleSeries;
+                    packedbubbleSeries.Type = PackedbubbleSeriesType.Packedbubble;
+                    seriesHashtable = packedbubbleSeries.ToHashtable();
+                }
+
+                if (series is CylinderSeries)
+                {
+                    CylinderSeries cylinderSeries = series as CylinderSeries;
+                    cylinderSeries.Type = CylinderSeriesType.Cylinder;
+                    seriesHashtable = cylinderSeries.ToHashtable();
+                }
+
+                if (series is VennSeries)
+                {
+                    VennSeries vennSeries = series as VennSeries;
+                    vennSeries.Type = VennSeriesType.Venn;
+                    seriesHashtable = vennSeries.ToHashtable();
+                }
+
+                if (series is ColumnpyramidSeries)
+                {
+                    ColumnpyramidSeries columnpyramidSeries = series as ColumnpyramidSeries;
+                    columnpyramidSeries.Type = ColumnpyramidSeriesType.Columnpyramid;
+                    seriesHashtable = columnpyramidSeries.ToHashtable();
+                }
+
                 //seriesHashtable.Add("data", dataList);
                 results.Add(seriesHashtable);
             }

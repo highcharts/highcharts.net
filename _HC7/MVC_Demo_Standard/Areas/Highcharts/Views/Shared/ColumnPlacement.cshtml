@@ -2,16 +2,16 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Title = new Title
         {
-            Title = new Title
-            {
-                Text = "Efficiency Optimization by Branch"
-            },
-            XAxis = new List<XAxis>
-            {
+            Text = "Efficiency Optimization by Branch"
+        },
+        XAxis = new List<XAxis>
+    {
                 new XAxis
                 {
                     Categories = new List<string> {
@@ -21,8 +21,8 @@
                     }
                 }
             },
-            YAxis = new List<YAxis>
-            {
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     Min = 0,
@@ -41,31 +41,31 @@
                     Id = "Profit"
                 }
             },
-            Legend = new Legend
+        Legend = new Legend
+        {
+            Shadow = new Shadow
             {
-                Shadow = new Shadow
-                {
-                    Enabled = false
-                }
-            },
-            Tooltip = new Tooltip
+                Enabled = false
+            }
+        },
+        Tooltip = new Tooltip
+        {
+            Shared = true
+        },
+        PlotOptions = new PlotOptions
+        {
+            Column = new PlotOptionsColumn
             {
-                Shared = true
-            },
-            PlotOptions = new PlotOptions
-            {
-                Column = new PlotOptionsColumn
-                {
-                    Grouping = false,
-                    //Shadow = new Shadow
-                    //{
-                    //    Enabled = false
-                    //},
-                    BorderWidth = 0
-                }
-            },
-            Series = new List<Series>
-            {
+                Grouping = false,
+                //Shadow = new Shadow
+                //{
+                //    Enabled = false
+                //},
+                BorderWidth = 0
+            }
+        },
+        Series = new List<Series>
+    {
                 new ColumnSeries
                 {
                     Name = "Employees",
@@ -117,6 +117,10 @@
                     Data = @ViewData["profitOptimizedData"] as List<ColumnSeriesData>
                  }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

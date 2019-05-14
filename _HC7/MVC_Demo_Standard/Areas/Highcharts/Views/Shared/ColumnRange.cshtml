@@ -1,13 +1,14 @@
 ﻿<script src="http://code.highcharts.com/highcharts.js"></script>
 
-@*The highchart-more.js file contains definitions for additional chart types not available 
-in the main highcharts.js file such as "arearange". You need to include this file if you
-are using these types of charts*@
+@*The highchart-more.js file contains definitions for additional chart types not available
+    in the main highcharts.js file such as "arearange". You need to include this file if you
+    are using these types of charts*@
 
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 <script type="text/javascript">
 
@@ -17,27 +18,26 @@ are using these types of charts*@
 
 </script>
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
-            {
-                Inverted = true
-            },
-            Title = new Title
-            {
-                Text = "Temperature variation by month"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Observed in Vik i Sogn, Norway, 2009"
-            },
+            Inverted = true
+        },
+        Title = new Title
+        {
+            Text = "Temperature variation by month"
+        },
+        Subtitle = new Subtitle
+        {
+            Text = "Observed in Vik i Sogn, Norway, 2009"
+        },
 
-            XAxis = new List<XAxis>
-            {
+        XAxis = new List<XAxis>
+    {
                 new XAxis
-                {                   
-                    Categories = new List<string> { 
+                {
+                    Categories = new List<string> {
                         "Jan",
                         "Feb",
                         "Mar",
@@ -53,8 +53,8 @@ are using these types of charts*@
                     }
                 }
             },
-            YAxis = new List<YAxis>
-            {            
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -63,33 +63,37 @@ are using these types of charts*@
                     }
                 }
             },
-            Tooltip = new Tooltip
+        Tooltip = new Tooltip
+        {
+            ValueSuffix = "°C"
+        },
+        PlotOptions = new PlotOptions
+        {
+            Columnrange = new PlotOptionsColumnrange
             {
-                ValueSuffix = "°C"
-            },
-            PlotOptions = new PlotOptions
-            {
-                Columnrange = new PlotOptionsColumnrange
+                DataLabels = new 
                 {
-                    DataLabels = new PlotOptionsColumnrangeDataLabels
-                    {
-                        Enabled = true,
-                        Formatter = "formatDataLabels"
-                    }
+                    enabled = true,
+                    formatter = "formatDataLabels"
                 }
-            },
-            Legend = new Legend
-            {
-                Enabled = true
-            },
-            Series = new List<Series>
-            {                    
+            }
+        },
+        Legend = new Legend
+        {
+            Enabled = true
+        },
+        Series = new List<Series>
+    {
                 new ColumnrangeSeries
                 {
                     Name = "Temperatures",
                     Data = @ViewData["temperatureData"] as List<ColumnrangeSeriesData>
                 }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

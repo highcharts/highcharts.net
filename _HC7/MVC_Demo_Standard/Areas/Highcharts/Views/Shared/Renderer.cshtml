@@ -2,8 +2,9 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
         function renderChart() {
 
@@ -237,24 +238,24 @@
 
         }
 
-  
-    </script>
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+</script>
+
+@(Html.Highsoft().GetHighcharts(
+    new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            Events = new ChartEvents
             {
-                Events = new ChartEvents
+                Chart = new Highsoft.Web.Mvc.Charts.Chart
                 {
-                    Load = "renderChart"
-                }
-            },
-            Title = new Title
-            {
-                Text = "Highcharts export server overview"                
+                    Events = new ChartEvents
+                    {
+                        Load = "renderChart"
             }
-
-        }
-        , "chart")
-    )
+        },
+        Title = new Title
+        {
+            , "chart")
+)

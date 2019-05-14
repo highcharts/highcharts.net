@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = PieSeriesCursor.Null;
 			Data = Data_DefaultValue = new List<PieSeriesData>();
-			DataLabels = DataLabels_DefaultValue = new PieSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = new object();
 			Depth = Depth_DefaultValue = 0;
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new PieSeriesDragDrop();

@@ -19,40 +19,41 @@
             ]
         };
     });
-    
+
     // Add mouse events for rotation
     $(chart.container).on('mousedown.hc touchstart.hc', function (eStart) {
-    eStart = chart.pointer.normalize(eStart);
+        eStart = chart.pointer.normalize(eStart);
 
-    var posX = eStart.chartX,
-        posY = eStart.chartY,
-        alpha = chart.options.chart.options3d.alpha,
-        beta = chart.options.chart.options3d.beta,
-        newAlpha,
-        newBeta,
-        sensitivity = 5; // lower is more sensitive
+        var posX = eStart.chartX,
+            posY = eStart.chartY,
+            alpha = chart.options.chart.options3d.alpha,
+            beta = chart.options.chart.options3d.beta,
+            newAlpha,
+            newBeta,
+            sensitivity = 5; // lower is more sensitive
 
-    $(document).on({
-        'mousemove.hc touchmove.hc': function (e) {
-            // Run beta
-            e = chart.pointer.normalize(e);
-            newBeta = beta + (posX - e.chartX) / sensitivity;
-            chart.options.chart.options3d.beta = newBeta;
+        $(document).on({
+            'mousemove.hc touchmove.hc': function (e) {
+                // Run beta
+                e = chart.pointer.normalize(e);
+                newBeta = beta + (posX - e.chartX) / sensitivity;
+                chart.options.chart.options3d.beta = newBeta;
 
-            // Run alpha
-            newAlpha = alpha + (e.chartY - posY) / sensitivity;
-            chart.options.chart.options3d.alpha = newAlpha;
+                // Run alpha
+                newAlpha = alpha + (e.chartY - posY) / sensitivity;
+                chart.options.chart.options3d.alpha = newAlpha;
 
-            chart.redraw(false);
-        },
-        'mouseup touchend': function () {
-            $(document).off('.hc');
-        }
+                chart.redraw(false);
+            },
+            'mouseup touchend': function () {
+                $(document).off('.hc');
+            }
+        });
     });
-});
 </script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 @Html.Highsoft().GetHighcharts(new Highcharts
 {

@@ -2,42 +2,33 @@
 
 @* Funnel charts requires the funnel.js add-on *@
 
-<script src="http://code.highcharts.com/modules/funnel.js"></script>       
-<script src="https://code.highcharts.com/modules/exporting.js"></script> 
+<script src="http://code.highcharts.com/modules/funnel.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@(Html.Highsoft().GetHighcharts(
+    new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            new Highcharts
             {
-                MarginRight = 100
-            },
-            Title = new Title
-            {
-                Text = "Sales funnel",
-                X = -50
-            },
-            PlotOptions = new PlotOptions
-            {
-                Series = new PlotOptionsSeries
+                Chart = new Highsoft.Web.Mvc.Charts.Chart
                 {
-                    DataLabels = new PlotOptionsSeriesDataLabels
+                    MarginRight = 100
+                },
+                Title = new Title
+                {
+                    Text = "Sales funnel",
+                    X = -50
+                },
+                PlotOptions = new PlotOptions
+                {
+                    Series = new PlotOptionsSeries
                     {
-                        Enabled = true,
-                        Format = "<b>{point.name}</b> ({point.y:,.0f})",
-                        Color = "black"
-                    }
-                }
-            },
-            Legend = new Legend
-            {
-                Enabled = false
-            },
-            Series = new List<Series>
-            {                    
-                new FunnelSeries
+                        DataLabels = new PlotOptionsSeriesDataLabels
                 {
                     Name = "Unique users",
                     Data = new List<FunnelSeriesData> {
@@ -45,10 +36,26 @@
                         new FunnelSeriesData{ Name = "Downloads", Y = 4064 },
                         new FunnelSeriesData{ Name = "Requested price list", Y = 1987 },
                         new FunnelSeriesData{ Name = "Invoice Sent", Y = 976 },
-                        new FunnelSeriesData{ Name = "Finalized", Y = 846 }                        
+                    Color = "Finalized", Y = 846 }
                     }
-                }               
+                }
             }
-        }
-        , "chart")
-    )
+        },
+        Legend = new Legend
+        {
+            Enabled = false
+        },
+        Series = new List<Series>
+        {
+            new FunnelSeries
+            {
+                Name = "Unique users",
+                Data = new List<FunnelSeriesData> {
+                    new FunnelSeriesData{ Name = "Website visits", Y = 15654 },
+                    new FunnelSeriesData{ Name = "Downloads", Y = 4064 },
+                    new FunnelSeriesData{ Name = "Requested price list", Y = 1987 },
+                    new FunnelSeriesData{ Name = "Invoice Sent", Y = 976 },
+                    new FunnelSeriesData{ Name = "Finalized", Y = 846 }
+                }
+            , "chart")
+)

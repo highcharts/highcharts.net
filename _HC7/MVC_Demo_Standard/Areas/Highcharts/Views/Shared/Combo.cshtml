@@ -3,35 +3,35 @@
 
 @using System.Collections
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 
-@(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Title = new Title
         {
-            Title = new Title
-            {
-                Text = "Combination chart"
-            },
-            XAxis = new List<XAxis>
-            {
+            Text = "Combination chart"
+        },
+        XAxis = new List<XAxis>
+    {
                 new XAxis
                 {
                     Categories = new List<string> { "Apples", "Oranges", "Pears", "Bananas", "Plums" },
                 }
             },
-            Labels = new Labels
-            {
-                Items = new List<LabelsItems> { new LabelsItems {
+        Labels = new Labels
+        {
+            Items = new List<LabelsItems> { new LabelsItems {
                     Html = "Total fruit consumption",
                     Style = new Hashtable
-                    {
+            {
                         { "left", "50px" },
                         { "top", "18px" }
                     }
                 }}
-            },
-            Series = new List<Series>
-            {
+        },
+        Series = new List<Series>
+    {
                 new ColumnSeries
                 {
                     Name = "Jane",
@@ -64,15 +64,20 @@
                     Name = "Total Consumption",
                     Size = "100",
                     ShowInLegend = false,
-                    DataLabels = new PieSeriesDataLabels
+                    DataLabels = new
                     {
-                        Enabled = false
+                        enabled = false
                     },
                     Center = new string[2]{"20%", "30%"},
                     Data = @ViewData["pieData"] as List<PieSeriesData>
                 }
             }
-        }
-        , "chart"));
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
 
 

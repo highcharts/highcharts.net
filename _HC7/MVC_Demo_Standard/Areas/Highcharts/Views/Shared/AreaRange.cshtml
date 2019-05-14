@@ -1,65 +1,65 @@
 ﻿<script src="http://code.highcharts.com/highcharts.js"></script>
 
-@*The highchart-more.js file contains definitions for additional chart types not available 
-in the main highcharts.js file such as "arearange". You need to include this file if you
-are using these types of charts*@
+@*The highchart-more.js file contains definitions for additional chart types not available
+    in the main highcharts.js file such as "arearange". You need to include this file if you
+    are using these types of charts*@
 
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using System.Collections
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering;
 
-    <script type="text/javascript">
-       
-        function loadData() {
-            $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=range.json&callback=?', function (data) {
-                var chart = Highcharts.charts[0];
-                chart.series[0].setData(data);
+<script type="text/javascript">
 
-                chart.redraw();
-            });
-        }
-  
-    </script>
+    function loadData() {
+        $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=range.json&callback=?', function (data) {
+            var chart = Highcharts.charts[0];
+            chart.series[0].setData(data);
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+            chart.redraw();
+        });
+    }
+
+</script>
+
+@{ var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            ZoomType = ChartZoomType.X,
+            Events = new ChartEvents
             {
-                ZoomType = ChartZoomType.X,
-                Events = new ChartEvents
-                {
-                    Load = "loadData"
-                },
-                RenderTo = "someDivId"
+                Load = "loadData"
+            },
+            RenderTo = "someDivId"
 
 
-            },
-            Title = new Title
-            {
-                Text = "Temperature variation by day",
-                Style = new Hashtable { { "fontSize", "20px" }, { "fontWeight", "bold" }, { "color", "#3f3f3f" }, { "textShadow", "0 0 6px contrast, 0 0 3px contrast" } }//"0 0 3px #ff0000" } }
+        },
+        Title = new Title
+        {
+            Text = "Temperature variation by day",
+            Style = new Hashtable { { "fontSize", "20px" }, { "fontWeight", "bold" }, { "color", "#3f3f3f" }, { "textShadow", "0 0 6px contrast, 0 0 3px contrast" } }//"0 0 3px #ff0000" } }
 
-            },
-            Legend = new Legend
-            {
-                Enabled = false
-            },
-            XAxis = new List<XAxis>
-            {
+        },
+        Legend = new Legend
+        {
+            Enabled = false
+        },
+        XAxis = new List<XAxis>
+    {
                 new XAxis
                 {
-                    Type = XAxisType.Datetime,
+                    Type = "datetime",
                     Crosshair = new XAxisCrosshair
                     {
                         Width = 1
                     }
                 }
             },
-            YAxis = new List<YAxis>
-            {
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -72,17 +72,21 @@ are using these types of charts*@
                     }
                 }
             },
-            Tooltip = new Tooltip
-            {
-                Shared = true
-            },
-            Series = new List<Series>
-            {
+        Tooltip = new Tooltip
+        {
+            Shared = true
+        },
+        Series = new List<Series>
+    {
                 new ArearangeSeries
                 {
                     Name = "Temperatures"
                 }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

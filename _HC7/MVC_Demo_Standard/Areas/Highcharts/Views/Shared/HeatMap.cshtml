@@ -6,6 +6,7 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 <script type="text/javascript">
 
@@ -16,53 +17,70 @@
 
 </script>
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@(Html.Highsoft().GetHighcharts(
+    new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            MarginTop = 40,
+            MarginBottom = 80
+        },
+        Title = new Title
+        {
+            Text = "Sales per employee per weekday"
+        },
+        XAxis = new List<XAxis>
+        {
+            new XAxis
             {
-                MarginTop = 40,
-                MarginBottom = 80
-            },
-            Title = new Title
-            {
-                Text = "Sales per employee per weekday"
-            },
-            XAxis = new List<XAxis>
-            {            
+                Chart = new Highsoft.Web.Mvc.Charts.Chart
+                {
+                    MarginTop = 40,
+                    MarginBottom = 80
+                },
+                Title = new Title
+                {
+                    Text = "Sales per employee per weekday"
+                },
+                XAxis = new List<XAxis>
+                {
                 new XAxis
                 {
                     Categories = new List<string> { "Alexander", "Marie", "Maximilian", "Sophia", "Lukas", "Maria", "Leon", "Anna", "Tim", "Laura" }
-                }
-            },
-            YAxis = new List<YAxis>
+            }
+        },
+        YAxis = new List<YAxis>
+        {
+            new YAxis
             {
-                new YAxis
-                {                   
-                    Categories = new List<string> { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" }                    
-                }
-            },
-            
-            Legend = new Legend
+                Categories = new List<string> { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" }
+            }
+        },
+
+        Legend = new Legend
+        {
+            Layout = LegendLayout.Vertical,
+            Align = LegendAlign.Right,
+            VerticalAlign = LegendVerticalAlign.Top,
+            Y = 25,
+            SymbolHeight = 280
+        },
+        Tooltip = new Tooltip
+        {
+            Formatter = "formatTooltip"
+        },
+        ColorAxis = new ColorAxis
+        {
+            Min = 0,
+            MinColor = "#FFFFFF",
+            MaxColor = "#7cb5ec"
+        },
+        Series = new List<Series>
+        {
+            new HeatmapSeries
             {
-                Layout = LegendLayout.Vertical,
-                Align = LegendAlign.Right,                
-                VerticalAlign = LegendVerticalAlign.Top,
-                Y = 25,
-                SymbolHeight = 280
-            },
-            Tooltip = new Tooltip
-            {
-                Formatter = "formatTooltip"
-            },
-            ColorAxis = new ColorAxis
-            {
-                Min = 0,
-                MinColor = "#FFFFFF",
-                MaxColor = "#7cb5ec"  
-            },
-            Series = new List<Series>
-            {                    
+                Name = "Sales per employee",
+                {
                 new HeatmapSeries
                 {
                     Name = "Sales per employee",
@@ -70,12 +88,12 @@
                     DataLabels = new HeatmapSeriesDataLabels
                     {
                         Enabled = true,
-                        Color = "#000000",
-                        
-                    },
-                    Data = @ViewData["heatMapData"] as List<HeatmapSeriesData>
-                }
+                    Color = "#000000",
+
+                },
+                Data = @ViewData["heatMapData"] as List<HeatmapSeriesData>
             }
         }
-        , "chart")
-    )
+    }
+    , "chart")
+)

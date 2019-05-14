@@ -2,11 +2,12 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 <script type="text/javascript">
 
     /**
- * This is an advanced demo of setting up Highcharts with the flags feature borrowed from Highstock. 
+ * This is an advanced demo of setting up Highcharts with the flags feature borrowed from Highstock.
  * It also shows custom graphics drawn in the chart area on chart load.
  */
 
@@ -360,44 +361,44 @@
                 ],
                 showInLegend: false
             }, {
-                type: 'flags',
-                name: 'Highmaps',
-                color: '#333333',
-                shape: 'squarepin',
-                y: -55,
-                data: [
-                    { x: Date.UTC(2014, 5, 13), text: 'Highmaps version 1.0 released', title: 'Maps' }
-                ],
-                showInLegend: false
-            }, {
-                type: 'flags',
-                name: 'Highcharts',
-                color: '#333333',
-                shape: 'circlepin',
-                data: [
-                    { x: Date.UTC(2009, 10, 27), text: 'Highcharts version 1.0 released', title: '1.0' },
-                    { x: Date.UTC(2010, 6, 13), text: 'Ported from canvas to SVG rendering', title: '2.0' },
-                    { x: Date.UTC(2010, 10, 23), text: 'Dynamically resize and scale to text labels', title: '2.1' },
-                    { x: Date.UTC(2011, 9, 18), text: 'Highstock version 1.0 released', title: 'Stock', shape: 'squarepin' },
-                    { x: Date.UTC(2012, 7, 24), text: 'Gauges, polar charts and range series', title: '2.3' },
-                    { x: Date.UTC(2013, 2, 22), text: 'Multitouch support, more series types', title: '3.0' },
-                    { x: Date.UTC(2014, 3, 22), text: '3D charts, heatmaps', title: '4.0' }
-                ],
-                showInLegend: false
-            }, {
-                type: 'flags',
-                name: 'Events',
-                color: '#333333',
-                fillColor: 'rgba(255,255,255,0.8)',
-                data: [
-                    { x: Date.UTC(2012, 10, 1), text: 'Highsoft won "Entrepeneur of the Year" in Sogn og Fjordane, Norway', title: 'Award' },
-                    { x: Date.UTC(2012, 11, 25), text: 'Packt Publishing published <em>Learning Highcharts by Example</em>. Since then, many other books are written about Highcharts.', title: 'First book' },
-                    { x: Date.UTC(2013, 4, 25), text: 'Highsoft nominated Norway\'s Startup of the Year', title: 'Award' },
-                    { x: Date.UTC(2014, 4, 25), text: 'Highsoft nominated Best Startup in Nordic Startup Awards', title: 'Award' }
-                ],
-                onSeries: 'revenue',
-                showInLegend: false
-            });
+                    type: 'flags',
+                    name: 'Highmaps',
+                    color: '#333333',
+                    shape: 'squarepin',
+                    y: -55,
+                    data: [
+                        { x: Date.UTC(2014, 5, 13), text: 'Highmaps version 1.0 released', title: 'Maps' }
+                    ],
+                    showInLegend: false
+                }, {
+                    type: 'flags',
+                    name: 'Highcharts',
+                    color: '#333333',
+                    shape: 'circlepin',
+                    data: [
+                        { x: Date.UTC(2009, 10, 27), text: 'Highcharts version 1.0 released', title: '1.0' },
+                        { x: Date.UTC(2010, 6, 13), text: 'Ported from canvas to SVG rendering', title: '2.0' },
+                        { x: Date.UTC(2010, 10, 23), text: 'Dynamically resize and scale to text labels', title: '2.1' },
+                        { x: Date.UTC(2011, 9, 18), text: 'Highstock version 1.0 released', title: 'Stock', shape: 'squarepin' },
+                        { x: Date.UTC(2012, 7, 24), text: 'Gauges, polar charts and range series', title: '2.3' },
+                        { x: Date.UTC(2013, 2, 22), text: 'Multitouch support, more series types', title: '3.0' },
+                        { x: Date.UTC(2014, 3, 22), text: '3D charts, heatmaps', title: '4.0' }
+                    ],
+                    showInLegend: false
+                }, {
+                    type: 'flags',
+                    name: 'Events',
+                    color: '#333333',
+                    fillColor: 'rgba(255,255,255,0.8)',
+                    data: [
+                        { x: Date.UTC(2012, 10, 1), text: 'Highsoft won "Entrepeneur of the Year" in Sogn og Fjordane, Norway', title: 'Award' },
+                        { x: Date.UTC(2012, 11, 25), text: 'Packt Publishing published <em>Learning Highcharts by Example</em>. Since then, many other books are written about Highcharts.', title: 'First book' },
+                        { x: Date.UTC(2013, 4, 25), text: 'Highsoft nominated Norway\'s Startup of the Year', title: 'Award' },
+                        { x: Date.UTC(2014, 4, 25), text: 'Highsoft nominated Best Startup in Nordic Startup Awards', title: 'Award' }
+                    ],
+                    onSeries: 'revenue',
+                    showInLegend: false
+                });
         }
 
         $('#container').highcharts(options);

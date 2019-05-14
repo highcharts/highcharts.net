@@ -11,6 +11,7 @@
 
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 <script type="text/javascript">
 
@@ -64,7 +65,13 @@
                 Height = 200,
                 Events = new ChartEvents
                 {
-                    Load = "loadData"
+                    Chart = new Highsoft.Web.Mvc.Charts.Chart
+                    {
+                        Width = 300,
+                        Height = 200,
+                        Events = new ChartEvents
+                        {
+                            Load = "loadData"
                 }
             },
             Title = new Title
@@ -126,7 +133,11 @@
                 {
                     DataLabels = new PlotOptionsSolidgaugeDataLabels
                     {
-                        Y = 5,
+                        Solidgauge = new PlotOptionsSolidgauge
+                        {
+                            DataLabels = new PlotOptionsSolidgaugeDataLabels
+                            {
+                                Y = 5,
                         BorderWidth = 0
                         ,
                         UseHTML = true
@@ -166,7 +177,13 @@ new Highcharts
         Height = 200,
         Events = new ChartEvents
         {
-            Load = "loadData"
+            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            {
+                Width = 300,
+                Height = 200,
+                Events = new ChartEvents
+                {
+                    Load = "loadData"
         }
     },
     Title = new Title

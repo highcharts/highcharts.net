@@ -1,34 +1,46 @@
 ﻿<script src="http://code.highcharts.com/highcharts.js"></script>
 
-@*The highchart-more.js file contains definitions for additional chart types not available 
-in the main highcharts.js file such as "arearange". You need to include this file if you
-are using these types of charts*@
+@*The highchart-more.js file contains definitions for additional chart types not available
+    in the main highcharts.js file such as "arearange". You need to include this file if you
+    are using these types of charts*@
 
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{var chartOptions = new Highcharts
+    {
+        Title = new Title
         {
-            Title = new Title
+            Text = "July Temperature"
+        },
+        XAxis = new List<XAxis>
+        {
+            new XAxis
             {
-                Text = "July Temperature"
-            },
-            XAxis = new List<XAxis>
-            {
+                Title = new Title
+                {
+                    Text = "July Temperature"
+                },
+                XAxis = new List<XAxis>
+                {
                 new XAxis
                 {
                     Type = XAxisType.Datetime,
                     Crosshair = new XAxisCrosshair
                     {
                         Width = 1
-                    }
                 }
             },
-            YAxis = new List<YAxis>
+        YAxis = new List<YAxis>
+        {
+            new YAxis
             {
+                Title = new YAxisTitle
+                {
+                    Text = null
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -38,28 +50,21 @@ are using these types of charts*@
                     Crosshair = new YAxisCrosshair
                     {
                         Width = 1
-                    }
                 }
-            },
-            Tooltip = new Tooltip
+            }
+        },
+        Tooltip = new Tooltip
+        {
+
+        },
+        Series = new List<Series>
+        {
+            new LineSeries
             {
-                
-            },
-            Series = new List<Series>
-            {                    
-                new LineSeries
-                {
-                    Name = "Temperature",
-                    Data = @ViewData["temperatureData"] as List<LineSeriesData>,
-                    ZIndex = 1,
-                    Marker = new LineSeriesMarker
-                    {
-                        FillColor = "white",
-                        LineWidth = 2,
-                        LineColor = "#7cb5ec"
-                    }
-                },
-                new ArearangeSeries
+                Name = "Temperature",
+                Data = @ViewData["temperatureData"] as List<LineSeriesData>,
+                ZIndex = 1,
+                Marker = new LineSeriesMarker
                 {
                     Name = "Range",
                     LineWidth = 0,
@@ -70,6 +75,7 @@ are using these types of charts*@
                     Data = @ViewData["rangeData"] as List<ArearangeSeriesData>
                 }
             }
+            }
         }
-        , "chart")
-    )
+    };
+}

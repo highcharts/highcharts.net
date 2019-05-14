@@ -13,6 +13,7 @@
 
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 @Html.Highsoft().GetHighcharts(new Highcharts
 {
@@ -23,7 +24,7 @@
         PlotBackgroundColor = null,
         PlotBackgroundImage = null,
         PlotBorderWidth = 0,
-        PlotShadow = new Shadow {  Enabled = false }
+        PlotShadow = new Shadow { Enabled = false }
     },
     Title = new Title
     {

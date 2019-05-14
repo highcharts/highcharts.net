@@ -3,83 +3,83 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Title = new Title
         {
-            Title = new Title
-            {
-                Text = "Browser market shares. January, 2015 to May, 2015"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Click the columns to view versions. Source: <a href='http://netmarketshare.com'>netmarketshare.com</a>."
-            },
-            XAxis = new List<XAxis>
-            {
+            Text = "Browser market shares. January, 2015 to May, 2015"
+        },
+        Subtitle = new Subtitle
+        {
+            Text = "Click the columns to view versions. Source: <a href='http://netmarketshare.com'>netmarketshare.com</a>."
+        },
+        XAxis = new List<XAxis>
+{
                 new XAxis
                 {
-                    Type = XAxisType.Category
+                    Type = "category"
                 }
             },
-            YAxis = new List<YAxis>
-            {
-                new YAxis 
+        YAxis = new List<YAxis>
+{
+                new YAxis
                 {
                     Title = new YAxisTitle
                     {
-                        Text = "Total percent market share"   
+                        Text = "Total percent market share"
                     }
                 }
             },
-            Legend = new Legend
-            {
-                Enabled = false
-            },
-            Tooltip = new Tooltip
-            {
-                HeaderFormat = "<span style='font-size:11px'>{series.name}</span><br>",
-                PointFormat = "<span style=\"color:{point.color}\">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>"
-            },
+        Legend = new Legend
+        {
+            Enabled = false
+        },
+        Tooltip = new Tooltip
+        {
+            HeaderFormat = "<span style='font-size:11px'>{series.name}</span><br>",
+            PointFormat = "<span style=\"color:{point.color}\">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>"
+        },
 
-            PlotOptions = new PlotOptions
+        PlotOptions = new PlotOptions
+        {
+            Series = new PlotOptionsSeries
             {
-                Series = new PlotOptionsSeries
+                DataLabels = new 
                 {
-                    DataLabels = new PlotOptionsSeriesDataLabels
-                    {
-                        Enabled = true,
-                        Format = "{point.y:.1f}%"
-                    }
+                    enabled = true,
+                    format = "{point.y:.1f}%"
                 }
-            },
-            Series = new List<Series>
-            {                
+            }
+        },
+        Series = new List<Series>
+{
                 new ColumnSeries
                 {
                     Name = "Brands",
                     ColorByPoint = true,
                     Data = new List<ColumnSeriesData>
-                    {
+    {
                         new ColumnSeriesData { Name = "Microsoft Internet Explorer", Y = 56.3, Drilldown = "Microsoft Internet Explorer" },
                         new ColumnSeriesData { Name = "Chrome", Y = 24.03, Drilldown = "Chrome" },
                         new ColumnSeriesData { Name = "Firefox", Y = 10.3, Drilldown = "Firefox" },
                         new ColumnSeriesData { Name = "Sfari", Y = 4.77, Drilldown = "Safari" },
                         new ColumnSeriesData { Name = "Opera", Y = 0.91, Drilldown = "Opera" },
-                        new ColumnSeriesData { Name = "Proprietary or Undetectable", Y = 0.2, Drilldown = null }                       
-                    }  
-                }                
+                        new ColumnSeriesData { Name = "Proprietary or Undetectable", Y = 0.2, Drilldown = null }
+                    }
+                }
             },
-            Drilldown = new Drilldown
-            {                
-                Series = new List<Series>
-                {
+        Drilldown = new Drilldown
+        {
+            Series = new List<Series>
+{
                     new ColumnSeries
                     {
                         Name = "Microsoft Internet Explorer",
                         Id = "Microsoft Internet Explorer",
                         Data = new List<ColumnSeriesData>
-                        {
+        {
                             new ColumnSeriesData { Name = "v11.0", Y = 24.13 },
                             new ColumnSeriesData { Name = "v8.0", Y = 17.2 },
                             new ColumnSeriesData { Name = "v9.0", Y = 8.11 },
@@ -94,7 +94,7 @@
                         Name = "Chrome",
                         Id = "Chrome",
                         Data = new List<ColumnSeriesData>
-                        {
+        {
                             new ColumnSeriesData { Name = "v40.0", Y = 5 },
                             new ColumnSeriesData { Name = "v41", Y = 4.32 },
                             new ColumnSeriesData { Name = "v42", Y = 3.68 },
@@ -109,7 +109,7 @@
                         Name = "Firefox",
                         Id = "Firefox",
                         Data = new List<ColumnSeriesData>
-                        {
+        {
                             new ColumnSeriesData { Name = "v35", Y = 7.32 },
                             new ColumnSeriesData { Name = "v36", Y = 5.32 },
                             new ColumnSeriesData { Name = "v37", Y = 4.68 },
@@ -124,7 +124,7 @@
                         Name = "Safari",
                         Id = "Safari",
                         Data = new List<ColumnSeriesData>
-                        {
+        {
                             new ColumnSeriesData { Name = "v8", Y = 9.32 },
                             new ColumnSeriesData { Name = "v7.1", Y = 7.12 },
                             new ColumnSeriesData { Name = "v5.1", Y = 6.92 },
@@ -139,7 +139,7 @@
                         Name = "Opera",
                         Id = "Opera",
                         Data = new List<ColumnSeriesData>
-                        {
+        {
                             new ColumnSeriesData { Name = "v12.x", Y = 5 },
                             new ColumnSeriesData { Name = "v28", Y = 4.32 },
                             new ColumnSeriesData { Name = "v27", Y = 2.15 },
@@ -147,7 +147,11 @@
                         }
                     },
                 }
-            }
         }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

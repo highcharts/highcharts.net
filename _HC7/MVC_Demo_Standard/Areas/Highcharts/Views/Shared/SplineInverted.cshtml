@@ -1,37 +1,42 @@
 ﻿<script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-@using Highsoft.Web.Mvc.Charts  
+@using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
- <script type="text/javascript">
+<script type="text/javascript">
 
-     function formatXLabels() {
-         return this.value + 'km';
-     }
+    function formatXLabels() {
+        return this.value + 'km';
+    }
 
-     function formatYLabels() {
-         return this.value + '°';
-     }
+    function formatYLabels() {
+        return this.value + '°';
+    }
 
-    </script>  
+</script>
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@(Html.Highsoft().GetHighcharts(
+    new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            new Highcharts
             {
-                Inverted = true
-            },
-            Title = new Title
-            {
-                Text = "Atmosphere Temperature by Altitude"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "According to the Standard Atmosphere Model"
-            },
-            XAxis = new List<XAxis>
-            {
+                Chart = new Highsoft.Web.Mvc.Charts.Chart
+                {
+                    Inverted = true
+                },
+                Title = new Title
+                {
+                    Text = "Atmosphere Temperature by Altitude"
+                },
+                Subtitle = new Subtitle
+                {
+                    Text = "According to the Standard Atmosphere Model"
+                },
+                XAxis = new List<XAxis>
+                {
                 new XAxis
                 {
                     //Reversed = true,
@@ -46,9 +51,9 @@
                     MaxPadding = 0.05,
                     ShowLastLabel = true
                 }
-            },
-            YAxis = new List<YAxis>
-            {
+                        },
+                YAxis = new List<YAxis>
+                {
                 new YAxis
                 {
                     //Reversed = true,
@@ -62,38 +67,58 @@
                     },
                     LineWidth = 2
                 }
-        },
-            Legend = new Legend
-            {
-                Enabled = false
-            },
-            Tooltip = new Tooltip
-            {
-                HeaderFormat = "<b>{series.name}</b><br/>",
-                PointFormat = "{point.x} km: {point.y}°C"
-            },
-
-            PlotOptions = new PlotOptions
-            {
-                Spline = new PlotOptionsSpline
+                    },
+                Legend = new Legend
                 {
-                    Marker = new PlotOptionsSplineMarker
+                    Enabled = false
+                },
+                Tooltip = new Tooltip
+                {
+                    HeaderFormat = "<b>{series.name}</b><br/>",
+                    PointFormat = "{point.x} km: {point.y}°C"
+                },
+                MaxPadding = 0.05,
+                PlotOptions = new PlotOptions
+                {
+                    Spline = new PlotOptionsSpline
                     {
-                        Enabled = true
+                        Marker = new PlotOptionsSplineMarker
+                        {
+                            Enabled = true
+                        }
                     }
-                }
-            },
+                },
+                LineWidth = 2
+            }
+    },
+        Legend = new Legend
+        {
+            Enabled = false
+        },
+        Tooltip = new Tooltip
+        {
+            HeaderFormat = "<b>{series.name}</b><br/>",
+            PointFormat = "{point.x} km: {point.y}°C"
+        },
 
-            Series = new List<Series>
+        PlotOptions = new List<Series>
+        {
+            Spline = new PlotOptionsSpline
             {
                 new SplineSeries
                 {
                     Name = "Temperature",
                     Data = ViewData["tempData"] as List<SplineSeriesData>
-                }             
+                }
             }
-        }
-        , "chart")
-    )
+        },
 
-   
+        Series = new List<Series>
+        {
+            new SplineSeries
+            {
+                Name = "Temperature",
+                Data = ViewData["tempData"] as List<SplineSeriesData>
+            , "chart")
+)
+

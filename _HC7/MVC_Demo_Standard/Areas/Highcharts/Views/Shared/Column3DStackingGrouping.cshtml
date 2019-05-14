@@ -6,34 +6,34 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            Options3d = new ChartOptions3d
             {
-                Options3d = new ChartOptions3d
-                {
-                    Enabled = true,
-                    Alpha = 15,
-                    Beta = 15,
-                    Depth = 40,
-                    ViewDistance = 25
-                }
-            },
-            Title = new Title
-            {
-                Text = "Total fruit consumption, grouped by gender"
-            },
-            XAxis = new List<XAxis>
-            {
+                Enabled = true,
+                Alpha = 15,
+                Beta = 15,
+                Depth = 40,
+                ViewDistance = 25
+            }
+        },
+        Title = new Title
+        {
+            Text = "Total fruit consumption, grouped by gender"
+        },
+        XAxis = new List<XAxis>
+    {
                 new XAxis
                 {
                     Categories =  new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
                 }
             },
-            YAxis = new List<YAxis>
-            {
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     AllowDecimals = false,
@@ -41,24 +41,24 @@
                     Title = new YAxisTitle
                     {
                         Text = "Number of Fruit"
-                    }                    
+                    }
                 }
             },
-            Tooltip = new Tooltip
+        Tooltip = new Tooltip
+        {
+            HeaderFormat = "<b>{point.key}</b><br>",
+            PointFormat = "<span style=\"color:{series.color}\">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}"
+        },
+        PlotOptions = new PlotOptions
+        {
+            Column = new PlotOptionsColumn
             {
-                HeaderFormat = "<b>{point.key}</b><br>",
-                PointFormat = "<span style=\"color:{series.color}\">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}"
-            },
-            PlotOptions = new PlotOptions
-            {
-                Column = new PlotOptionsColumn
-                {
-                    Stacking = PlotOptionsColumnStacking.Normal,
-                    Depth = 40
-                }
-            },
-            Series = new List<Series>
-            {                    
+                Stacking = PlotOptionsColumnStacking.Normal,
+                Depth = 40
+            }
+        },
+        Series = new List<Series>
+    {
                 new ColumnSeries
                 {
                     Name = "John",
@@ -82,8 +82,12 @@
                     Name = "Janet",
                     Data = @ViewData["janetData"] as List<ColumnSeriesData>,
                     Stack = "female"
-                }                         
+                }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

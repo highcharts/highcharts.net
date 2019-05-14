@@ -2,53 +2,53 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering;
 
-    <script type="text/javascript">
-       
-        function formatYAxis() {
-            return this.value;
-        }
-  
-    </script>
+<script type="text/javascript">
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+    function formatYAxis() {
+        return this.value;
+    }
+
+</script>
+
+@{ var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
-            {
-                Inverted = true
-            },
-            Title = new Title
-            {
-                Text = "Average fruit consumption during one week"
-            },            
-            Legend = new Legend
-            {
-                Layout = LegendLayout.Vertical,
-                Align = LegendAlign.Right,
-                VerticalAlign = LegendVerticalAlign.Top,
-                X = -150,
-                Y = 100,
-                Floating = true,
-                BorderWidth = 1,
-            },
+            Inverted = true
+        },
+        Title = new Title
+        {
+            Text = "Average fruit consumption during one week"
+        },
+        Legend = new Legend
+        {
+            Layout = LegendLayout.Vertical,
+            Align = "right",
+            VerticalAlign = "top",
+            X = -150,
+            Y = 100,
+            Floating = true,
+            BorderWidth = 1,
+        },
 
-            XAxis = new List<XAxis>
-            {            
+        XAxis = new List<XAxis>
+    {
                 new XAxis
                 {
-                    Categories = new List<string> {   
+                    Categories = new List<string> {
                         "Monday",
                         "Tuesday",
                         "Wednesday",
                         "Thursday",
                         "Friday",
                         "Saturday",
-                        "Sunday" }   
+                        "Sunday" }
                 }
             },
-            YAxis = new List<YAxis>
-            {            
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -62,15 +62,15 @@
                     Min = 0
                 }
             },
-            PlotOptions = new PlotOptions
+        PlotOptions = new PlotOptions
+        {
+            Area = new PlotOptionsArea
             {
-                Area = new PlotOptionsArea
-                {
-                    FillOpacity = 0.5
-                }
-            },
-            Series = new List<Series>
-            {                    
+                FillOpacity = 0.5
+            }
+        },
+        Series = new List<Series>
+    {
                 new AreaSeries
                 {
                     Name = "John",
@@ -82,6 +82,10 @@
                     Data = @ViewData["janeData"] as List<AreaSeriesData>
                 }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

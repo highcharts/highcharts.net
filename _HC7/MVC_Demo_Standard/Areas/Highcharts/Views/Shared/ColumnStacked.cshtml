@@ -3,34 +3,34 @@
 
 @using System.Collections
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        function formatToolTip() {
-            return '<b>' + this.x + '</b><br/>' +
-                   this.series.name + ': ' + this.y + '<br/>' +
-                   'Total: ' + this.point.stackTotal;
-        }
+    function formatToolTip() {
+        return '<b>' + this.x + '</b><br/>' +
+            this.series.name + ': ' + this.y + '<br/>' +
+            'Total: ' + this.point.stackTotal;
+    }
 
-    </script>
+</script>
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Title = new Title
         {
-            Title = new Title
-            {
-                Text = "Stacked bar chart"
-            },
-            XAxis = new List<XAxis>
-            {
+            Text = "Stacked bar chart"
+        },
+        XAxis = new List<XAxis>
+    {
                 new XAxis
                 {
                     Categories = new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
                 }
             },
-            YAxis = new List<YAxis>
-            {
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     Min = 0,
@@ -45,45 +45,45 @@
                     }
                 }
             },
-            Legend = new Legend
-            {
-                Align = LegendAlign.Right,
-                X = -30,
-                VerticalAlign = LegendVerticalAlign.Top,
-                Y = 25,
-                Floating = true,
-                BorderColor = "#CCC",
-                BorderWidth = 1,
-                BackgroundColor = "white"
+        Legend = new Legend
+        {
+            Align = "right",
+            X = -30,
+            VerticalAlign = "top",
+            Y = 25,
+            Floating = true,
+            BorderColor = "#CCC",
+            BorderWidth = 1,
+            BackgroundColor = "white"
 
-            },
-            Tooltip = new Tooltip
+        },
+        Tooltip = new Tooltip
+        {
+            Formatter = "formatToolTip"
+        },
+        PlotOptions = new PlotOptions
+        {
+            Column = new PlotOptionsColumn
             {
-                Formatter = "formatToolTip"
-            },
-            PlotOptions = new PlotOptions
-            {
-                Column = new PlotOptionsColumn
+                Stacking = PlotOptionsColumnStacking.Normal,
+                DataLabels = new 
                 {
-                    Stacking = PlotOptionsColumnStacking.Normal,
-                    DataLabels = new PlotOptionsColumnDataLabels
+                    enabled = true,
+                    color = "#FFFFFF",
+
+                    shadow = new Shadow()
                     {
                         Enabled = true,
-                        Color = "#FFFFFF",
-
-                        Shadow = new Shadow()
-                        {
-                            Enabled = true,
-                            Color = "black",
-                            Width = 10,
-                            OffsetX = 0,
-                            OffsetY = 0
-                        }
+                        Color = "black",
+                        Width = 10,
+                        OffsetX = 0,
+                        OffsetY = 0
                     }
                 }
-            },
-            Series = new List<Series>
-            {
+            }
+        },
+        Series = new List<Series>
+    {
                 new ColumnSeries
                 {
                     Name = "John",
@@ -100,6 +100,10 @@
                     Data = @ViewData["joeData"] as List<ColumnSeriesData>
                 }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

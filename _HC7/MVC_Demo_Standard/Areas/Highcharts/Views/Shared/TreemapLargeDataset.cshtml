@@ -6,10 +6,11 @@
 
 @*  Additional chart types, such as "treemap", are defined in the treemap.js module *@
 
- <script src="http://code.highcharts.com/modules/treemap.js"></script>
+<script src="http://code.highcharts.com/modules/treemap.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 <script type="text/javascript">
 
@@ -944,7 +945,7 @@
     }
 
     function loadData() {
-        
+
 
         var chart = Highcharts.charts[0];
         chart.series[0].setData(points);
@@ -954,28 +955,41 @@
 
 </script>
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@(Html.Highsoft().GetHighcharts(
+    new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            Events = new ChartEvents
             {
-                Events = new ChartEvents
+                Chart = new Highsoft.Web.Mvc.Charts.Chart
                 {
-                    Load = "loadData"
+                    Events = new ChartEvents
+                    {
+                        Load = "loadData"
+            },
+            Type = ChartType.Treemap
+        },
+        Title = new Title
+        {
+            Text = "Click points to drill down. Source: WHO."
+        },
+        Subtitle = new Subtitle
+        {
+            Text = "Global Mortality Rate 2012, per 100 000 population"
+        },
+        Series = new List<Series>
+        {
+            new TreemapSeries
+            {
+                LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Squarified,
+                AllowDrillToNode = true,
+                AnimationLimit = 1000,
+                DataLabels = new TreemapSeriesDataLabels
+                {
+                    Text = "Global Mortality Rate 2012, per 100 000 population"
                 },
-                Type = ChartType.Treemap
-            },
-            Title = new Title
-            {
-                Text = "Click points to drill down. Source: WHO."
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Global Mortality Rate 2012, per 100 000 population"
-            },
-            Series = new List<Series>
-            {
-                new TreemapSeries
+                Series = new List<Series>
                 {
                     LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Squarified,
                     AllowDrillToNode = true,
@@ -984,9 +998,9 @@
                     {
                         Enabled = false
                     },
-                    LevelIsConstant = false,
-                    Levels = new List<TreemapSeriesLevels>
-                    {
+                        BorderWidth = false,
+                        DataLabels = new List<TreemapSeriesLevels>
+            {
                         new TreemapSeriesLevels
                         {
                             Level = 1,
@@ -994,11 +1008,11 @@
                             DataLabels = new TreemapSeriesDataLabels
                             {
                                 Enabled = true
-                            },
                         }
                     }
                 }
             }
         }
-        , "chart")
-    )
+    }
+    , "chart")
+)

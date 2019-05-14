@@ -2,59 +2,60 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering;
 
-    <script type="text/javascript">
-       
-        function formatYAxis() {
-            return this.value;
-        }
+<script type="text/javascript">
 
-        function formatTooltip() {
-            return '<b>' + this.series.name + '</b><br/>' +
-                  this.x + ': ' + this.y;
-        }
-  
-    </script>
+    function formatYAxis() {
+        return this.value;
+    }
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
-        {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
-            {
-                SpacingBottom = 30
-            },
-            Title = new Title
-            {
-                Text = "Fruit consumption *"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "* Jane\'s banana consumption is unknown",
-                Floating = true,
-                Align = SubtitleAlign.Right,
-                VerticalAlign = SubtitleVerticalAlign.Bottom,
-                Y = 15
-            },
-            Legend = new Legend
-            {
-                Layout = LegendLayout.Vertical,
-                Align = LegendAlign.Left,
-                VerticalAlign = LegendVerticalAlign.Top,
-                X = 150,
-                Y = 100,
-                Floating = true,
-                BorderWidth = 1,
-            },
+    function formatTooltip() {
+        return '<b>' + this.series.name + '</b><br/>' +
+            this.x + ': ' + this.y;
+    }
 
-            XAxis = new List<XAxis>
-            {            
+</script>
+
+@{ var chartOptions =
+         new Highcharts
+         {
+             Chart = new Highsoft.Web.Mvc.Charts.Chart
+             {
+                 SpacingBottom = 30
+             },
+             Title = new Title
+             {
+                 Text = "Fruit consumption *"
+             },
+             Subtitle = new Subtitle
+             {
+                 Text = "* Jane\'s banana consumption is unknown",
+                 Floating = true,
+                 Align = "right",
+                 VerticalAlign = "bottom",
+                 Y = 15
+             },
+             Legend = new Legend
+             {
+                 Layout = LegendLayout.Vertical,
+                 Align = "left",
+                 VerticalAlign = "top",
+                 X = 150,
+                 Y = 100,
+                 Floating = true,
+                 BorderWidth = 1,
+             },
+
+             XAxis = new List<XAxis>
+             {
                 new XAxis
                 {
-                    Categories = new List<string> { "Apples", "Pears", "Oranges", "Bananas", "Grapes", "Plums", "Strawberries", "Raspberries" }   
+                    Categories = new List<string> { "Apples", "Pears", "Oranges", "Bananas", "Grapes", "Plums", "Strawberries", "Raspberries" }
                 }
-            },
-            YAxis = new List<YAxis>
-            {            
+                     },
+             YAxis = new List<YAxis>
+             {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -66,24 +67,24 @@
                         Formatter = "formatYAxis"
                     }
                 }
-            },
-            Tooltip = new Tooltip
-            {
-                Formatter = "formatTooltip"
-            },
-            PlotOptions = new PlotOptions
-            {
-                Area = new PlotOptionsArea
-                {
-                    FillOpacity = 0.5
-                }
-            },
-            Credits = new Credits
-            {
-                Enabled = false
-            },
-            Series = new List<Series>
-            {                    
+                     },
+             Tooltip = new Tooltip
+             {
+                 Formatter = "formatTooltip"
+             },
+             PlotOptions = new PlotOptions
+             {
+                 Area = new PlotOptionsArea
+                 {
+                     FillOpacity = 0.5
+                 }
+             },
+             Credits = new Credits
+             {
+                 Enabled = false
+             },
+             Series = new List<Series>
+             {
                 new AreaSeries
                 {
                     Name = "John",
@@ -94,7 +95,11 @@
                     Name = "Jane",
                     Data = @ViewData["janeData"] as List<AreaSeriesData>
                 }
-            }
-        }
-        , "chart")
-    )
+                     }
+         };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

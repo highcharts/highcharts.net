@@ -2,38 +2,51 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 
-@*The highchart-more.js file contains definitions for additional chart types not available 
-in the main highcharts.js file such as "arearange". You need to include this file if you
-are using these types of charts*@
+@*The highchart-more.js file contains definitions for additional chart types not available
+    in the main highcharts.js file such as "arearange". You need to include this file if you
+    are using these types of charts*@
 
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
 
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 @using System.Collections.Specialized
 @using System.Collections
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@(Html.Highsoft().GetHighcharts(
+    new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            ZoomType = ChartZoomType.Xy
+        },
+        Title = new Title
+        {
+            Text = "Temperature vs Rainfall"
+        },
+        XAxis = new List<XAxis>
+        {
+            new XAxis
             {
-                ZoomType = ChartZoomType.Xy
-            },
-            Title = new Title
-            {
-                Text = "Temperature vs Rainfall"
-            },
-            XAxis = new List<XAxis>
-            {
-                new XAxis
+                Chart = new Highsoft.Web.Mvc.Charts.Chart
                 {
-                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
+                    ZoomType = ChartZoomType.Xy
+                },
+                Title = new Title
+                {
+                    Text = "Temperature vs Rainfall"
+                },
+                    Style = new List<XAxis>
+                {
+                new XAxis
+                    {
+                        Color = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
                 }
             },
-            YAxis = new List<YAxis>
-            {
-                new YAxis
+            new YAxis = new List<YAxis>
+                {
+                    Text YAxis
                 {
                     Title = new YAxisTitle
                     {
@@ -49,7 +62,6 @@ are using these types of charts*@
                         Style = new YAxisLabelsStyle
                         {
                             Color = "#434348"
-                        }
                     }
                 },
                 new YAxis
@@ -59,28 +71,26 @@ are using these types of charts*@
                     Title = new YAxisTitle
                     {
                         Text = "Rainfall",
-                        Style = new YAxisTitleStyle()
-                        {
-                            Color = "#7cb5ec"
-                        }
-                    },
-                    Labels = new YAxisLabels
+                    Style = new YAxisTitleStyle()
                     {
                         Format = "{value} mm",
                         Style = new YAxisLabelsStyle()
                         {
                             Color = "#7cb5ec"
-                        }
                     }
                 }
             },
-            Tooltip = new Tooltip
+        Tooltip = new Tooltip
+        {
+            Shared = true
+        },
+        Series = new List<Series>
+        {
+            new ColumnSeries
             {
-                Shared = true
-            },
-            Series = new List<Series>
-            {
-                new ColumnSeries
+                Name = "Rainfall",
+                YAxis = "Rainfall",
+                Tooltip = new ColumnSeriesTooltip
                 {
                     Name = "Rainfall",
                     YAxis = "Rainfall",
@@ -91,6 +101,15 @@ are using these types of charts*@
                     Data = ViewData["rainfallData"] as  List<ColumnSeriesData>
                 },
                 new ErrorbarSeries
+            {
+                Name = "Rainfall Erorr",
+                YAxis = "Rainfall",
+                Data = ViewData["rainfallErrorData"] as List<ErrorbarSeriesData>
+            },
+            new SplineSeries
+            {
+                Name = "Temperature",
+                Tooltip = new SplineSeriesTooltip
                 {
                     Name = "Rainfall Erorr",
                     YAxis = "Rainfall",
@@ -113,8 +132,8 @@ are using these types of charts*@
                         PointFormat = "(error range: {point.low}-{point.high}°C)<br/>"
                     },
                     Data = ViewData["temperatureErrorData"] as List<ErrorbarSeriesData>
-                }
             }
         }
-        , "chart")
-    )
+    }
+    , "chart")
+)

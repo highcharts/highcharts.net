@@ -2,22 +2,22 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering;
 
-@(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{var chartOptions = new Highcharts
+    {
+        Title = new Title
         {
-            Title = new Title
-            {
-                Text = "Monthly Average Temperature",
-                X = -20
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Source: WorldClimate.com",
-                X = -20
-            },
-            XAxis = new List<XAxis>
-            {
+            Text = "Monthly Average Temperature",
+            X = -20
+        },
+        Subtitle = new Subtitle
+        {
+            Text = "Source: WorldClimate.com",
+            X = -20
+        },
+        XAxis = new List<XAxis>
+{
                 new XAxis
                 {
                     Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -25,8 +25,8 @@
 
                 }
             },
-            YAxis = new List<YAxis>
-            {
+        YAxis = new List<YAxis>
+{
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -34,7 +34,7 @@
                         Text = "Temperature (°C)"
                     },
                     PlotLines = new List<YAxisPlotLines>
-                    {
+    {
                             new YAxisPlotLines
                         {
                             Value = 0,
@@ -44,20 +44,20 @@
                     }
                 }
             },
-            Tooltip = new Tooltip
-            {
-                PointFormat = "{point.y} - {point.custom1} - {point.custom2}"
-                //ValueSuffix = "°C"
-            },
-            Legend = new Legend
-            {
-                Layout = LegendLayout.Vertical,
-                Align = LegendAlign.Right,
-                VerticalAlign = LegendVerticalAlign.Middle,
-                BorderWidth = 0
-            },
-            Series = new List<Series>
-            {
+        Tooltip = new Tooltip
+        {
+            PointFormat = "{point.y} - {point.custom1} - {point.custom2}"
+            //ValueSuffix = "°C"
+        },
+        Legend = new Legend
+        {
+            Layout = LegendLayout.Vertical,
+            Align = "right",//LegendAlign.Right,
+            VerticalAlign = "middle",//LegendVerticalAlign.Middle,
+            BorderWidth = 0
+        },
+        Series = new List<Series>
+{
                 new LineSeries
                 {
                     Name = "Tokyo",
@@ -79,6 +79,10 @@
                     Data = @ViewData["londonData"] as List<LineSeriesData>
                 }
             }
-        }
-        , "chart")
-)
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

@@ -2,33 +2,33 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        function formatYAxis() {
-            return (Math.abs(this.value) / 1000000) + '%';
-        }
+    function formatYAxis() {
+        return (Math.abs(this.value) / 1000000) + '%';
+    }
 
-        function formatToolTip() {
-            return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
-                       'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
-        }
+    function formatToolTip() {
+        return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+            'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+    }
 
-    </script>
+</script>
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Title = new Title
         {
-            Title = new Title
-            {
-                Text = "Population pyramid for Germany, midyear 2010"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Source: www.census.gov"
-            },
-            XAxis = new List<XAxis>
-            {
+            Text = "Population pyramid for Germany, midyear 2010"
+        },
+        Subtitle = new Subtitle
+        {
+            Text = "Source: www.census.gov"
+        },
+        XAxis = new List<XAxis>
+    {
                 new XAxis
                 {
                     Categories = new List<string> {
@@ -36,7 +36,7 @@
                         "20-24", "25-29", "30-34", "35-39", "40-44",
                         "45-49", "50-54", "55-59", "60-64", "65-69",
                         "70-74", "75-79", "80-84", "85-89", "90-94",
-                        "95-99", "100 + " 
+                        "95-99", "100 + "
                     },
                     Reversed = false,
                     Labels = new XAxisLabels
@@ -58,12 +58,12 @@
                         "20-24", "25-29", "30-34", "35-39", "40-44",
                         "45-49", "50-54", "55-59", "60-64", "65-69",
                         "70-74", "75-79", "80-84", "85-89", "90-94",
-                        "95-99", "100 + " 
+                        "95-99", "100 + "
                     }
                 }
             },
-            YAxis = new List<YAxis>
-            {
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -78,23 +78,23 @@
                     Max = 4000000
                 }
             },
-            Legend = new Legend
+        Legend = new Legend
+        {
+            Reversed = true
+        },
+        PlotOptions = new PlotOptions
+        {
+            Series = new PlotOptionsSeries
             {
-                Reversed = true
-            },
-            PlotOptions = new PlotOptions
-            {
-                Series = new PlotOptionsSeries
-                {
-                    Stacking = PlotOptionsSeriesStacking.Normal
-                }
-            },
-            Tooltip = new Tooltip
-            {
-                Formatter = "formatToolTip"
-            },
-            Series = new List<Series>
-            {                    
+                Stacking = PlotOptionsSeriesStacking.Normal
+            }
+        },
+        Tooltip = new Tooltip
+        {
+            Formatter = "formatToolTip"
+        },
+        Series = new List<Series>
+    {
                 new BarSeries
                 {
                     Name = "Male",
@@ -106,6 +106,10 @@
                     Data = @ViewData["femaleData"] as List<BarSeriesData>
                 }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

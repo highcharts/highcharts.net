@@ -6,12 +6,13 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 <script type="text/javascript">
 
     function formatTooltip() {
         return '<b>' + this.series.name + '</b><br/>' +
-                    this.point.y + ' ' + this.point.name.toLowerCase();
+            this.point.y + ' ' + this.point.name.toLowerCase();
     }
 
 
@@ -55,23 +56,22 @@
     </tbody>
 </table>
 
-@(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
-            {
-                Type = ChartType.Column
-            },
-            Data = new Data
-            {
-                Table = "datatable"
-            },
-            Title = new Title
-            {
-                Text = "Data extracted from a HTML table in the page"
-            },
-            YAxis = new List<YAxis>
-            {
+            Type = ChartType.Column
+        },
+        Data = new Data
+        {
+            Table = "datatable"
+        },
+        Title = new Title
+        {
+            Text = "Data extracted from a HTML table in the page"
+        },
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     AllowDecimals = false,
@@ -81,9 +81,13 @@
                     }
                 }
             }
-        }
-        , "chart")
-)
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
 
 
 

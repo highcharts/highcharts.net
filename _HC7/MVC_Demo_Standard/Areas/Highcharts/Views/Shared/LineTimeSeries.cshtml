@@ -2,79 +2,75 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@(Html.Highsoft().GetHighcharts(
+    new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            new Highcharts
             {
-                ZoomType = ChartZoomType.X
-            },
-            Title = new Title
-            {
-                Text = "USD to EUR exchange rate from 2006 through 2008"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Click and drag in the plot area to zoom in"
-            },
-            XAxis = new List<XAxis>
-            {
-                new XAxis
+                Chart = new Highsoft.Web.Mvc.Charts.Chart
                 {
-                    Type = XAxisType.Datetime,
-                    MinRange = 14 * 24 * 3600000 // fourteen days
-                }
-            },
-            YAxis = new List<YAxis>
-            {
-                new YAxis
-                {
-                    Title = new YAxisTitle
-                    {
-                        Text = "Exchange Rate"
-                    }
-                }
-            },
-            Legend = new Legend
-            {
-                Enabled = false
-            },
-            PlotOptions = new PlotOptions
-            {
-                Series = new PlotOptionsSeries
-                {
-                    TurboThreshold = 10000
+                    ZoomType = ChartZoomType.X
                 },
-                Area = new PlotOptionsArea
+                Title = new Title
                 {
-                    ///FillColor = // TODO - LinerGradients
-                    ///                   
-                    Marker = new PlotOptionsAreaMarker
-                    {
-                        Radius = 2
-                    },
-                    LineWidth = 1,
-                    States = new PlotOptionsAreaStates
-                    {
-                        Hover = new PlotOptionsAreaStatesHover
-                        {
-                            LineWidth = 1
-                        }
-                    },
-                    Threshold = null
+                    Text = "USD to EUR exchange rate from 2006 through 2008"
+                },
+                Subtitle = new Subtitle
+                {
+                    Text = "Click and drag in the plot area to zoom in"
                 }
             },
-            Series = new List<Series>
-            {       
-                new AreaSeries
-                {
-                    Name = "USD to EUR",
-                    PointInterval =  24 * 3600 * 1000,
-                    PointStart =  @ViewBag.DateUTC,
-                    Data = @ViewBag.TimeData as List<AreaSeriesData>
+        Legend = new List<YAxis>
+        {
+            Enabled YAxis
+        },
+        PlotOptions = new YAxisTitle
+        {
+            Series = "Exchange Rate"
+            {
                 }
+            },
+            Area = new PlotOptionsArea
+            {
+                ///FillColor = // TODO - LinerGradients
+                ///
+                Legend = new Legend
+                {
+                    Enabled = false
+                },
+                PlotOptions = new PlotOptions
+                {
+                    Series = new PlotOptionsSeries
+                    {
+                        TurboThreshold = 10000
+                    },
+                    Area = new PlotOptionsArea
+                    {
+                        LineWidth = 1,
+                        States = new PlotOptionsAreaStates
+                        {
+                            Hover = new PlotOptionsAreaStatesHover
+                            {
+                                LineWidth = 1
+                            }
+                        },
+                        Threshold = null
+                    }
+                },
+                Series = new List<Series>
+        {
+            new AreaSeries
+            {
+                Name = "USD to EUR",
+                PointInterval =  24 * 3600 * 1000,
+                PointStart =  @ViewBag.DateUTC,
+                Data = @ViewBag.TimeData as List<AreaSeriesData>
             }
         }
-        , "chart")
-    )
+    }
+    , "chart")
+)

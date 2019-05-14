@@ -6,45 +6,45 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            Margin = new double[1] { 75 },
+            Options3d = new ChartOptions3d
             {
-                Margin = new double [1] { 75 },
-                Options3d = new ChartOptions3d
-                {
-                    Enabled = true,
-                    Alpha = 10,
-                    Beta = 25,
-                    Depth = 70
-                }
-            },
-            Title = new Title
+                Enabled = true,
+                Alpha = 10,
+                Beta = 25,
+                Depth = 70
+            }
+        },
+        Title = new Title
+        {
+            Text = "3D chart with null values"
+        },
+        Subtitle = new Subtitle
+        {
+            Text = "Notice the difference between a 0 value and a null point"
+        },
+        PlotOptions = new PlotOptions
+        {
+            Column = new PlotOptionsColumn
             {
-                Text = "3D chart with null values"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Notice the difference between a 0 value and a null point"
-            },
-            PlotOptions = new PlotOptions
-            {
-                Column = new PlotOptionsColumn
-                {
-                    Depth = 25
-                }
-            },
-            XAxis = new List<XAxis>
-            {
+                Depth = 25
+            }
+        },
+        XAxis = new List<XAxis>
+    {
                 new XAxis
                 {
                     Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
                 }
             },
-            YAxis = new List<YAxis>
-            {
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -53,14 +53,18 @@
                     }
                 }
             },
-            Series = new List<Series>
-            {                    
+        Series = new List<Series>
+    {
                 new ColumnSeries
                 {
                     Name = "Sales",
                     Data = @ViewData["chartData"] as List<ColumnSeriesData>
-                }               
+                }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

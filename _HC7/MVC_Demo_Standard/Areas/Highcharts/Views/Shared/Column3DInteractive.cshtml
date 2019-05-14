@@ -42,57 +42,61 @@
 </script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            Margin = new double[1] { 25 },
+            Options3d = new ChartOptions3d
             {
-                Margin = new double [1] { 25 },
-                Options3d = new ChartOptions3d
-                {
-                    Enabled = true,
-                    Alpha = 15,
-                    Beta = 15,
-                    Depth = 50,
-                    ViewDistance = 25
-                },
-                Events = new ChartEvents
-                {
-                    Load = "initSliders"
-                }
+                Enabled = true,
+                Alpha = 15,
+                Beta = 15,
+                Depth = 50,
+                ViewDistance = 25
             },
-            Title = new Title
+            Events = new ChartEvents
             {
-                Text = "Chart rotation demo"
-            },
-            Subtitle = new Subtitle
+                Load = "initSliders"
+            }
+        },
+        Title = new Title
+        {
+            Text = "Chart rotation demo"
+        },
+        Subtitle = new Subtitle
+        {
+            Text = "'Test options by dragging the sliders below"
+        },
+        PlotOptions = new PlotOptions
+        {
+            Column = new PlotOptionsColumn
             {
-                Text = "'Test options by dragging the sliders below"
-            },
-            PlotOptions = new PlotOptions
-            {
-                Column = new PlotOptionsColumn
-                {
-                    Depth = 8
-                }
-            },
-            Series = new List<Series>
-            {                    
+                Depth = 8
+            }
+        },
+        Series = new List<Series>
+    {
                 new ColumnSeries
                 {
                     Data = @ViewData["chartData"] as List<ColumnSeriesData>
-                }               
+                }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
 
 <div id="sliders">
-	<table>
-		<tr><td>Alpha Angle</td><td><input id="R0" type="range" min="0" max="45" value="15"/> <span id="R0-value" class="value"></span></td></tr>
-	    <tr><td>Beta Angle</td><td><input id="R1" type="range" min="-45" max="45" value="15"/> <span id="R1-value" class="value"></span></td></tr>
+    <table>
+        <tr><td>Alpha Angle</td><td><input id="R0" type="range" min="0" max="45" value="15" /> <span id="R0-value" class="value"></span></td></tr>
+        <tr><td>Beta Angle</td><td><input id="R1" type="range" min="-45" max="45" value="15" /> <span id="R1-value" class="value"></span></td></tr>
         <tr><td>Depth Angle</td><td><input id="R2" type="range" min="20" max="100" value="50" /> <span id="R2-value" class="value"></span></td></tr>
-	</table>
-</div>	
+    </table>
+</div>
 

@@ -2,16 +2,17 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 <script type="text/javascript">
 
-        function formatXAxis() {
-            return this.value; // clean, unformatted number for year
-        }
+    function formatXAxis() {
+        return this.value; // clean, unformatted number for year
+    }
 
-        function formatYAxis() {
-            return this.value / 1000 + 'k';
-        }
+    function formatYAxis() {
+        return this.value / 1000 + 'k';
+    }
 
 
 </script>
@@ -22,7 +23,9 @@
         {
             Title = new Title
             {
-                Text = "US and USSR nuclear stockpiles"
+                Title = new Title
+                {
+                    Text = "US and USSR nuclear stockpiles"
             },
             Subtitle = new Subtitle
             {
@@ -63,22 +66,23 @@
             {
                 Area = new PlotOptionsArea
                 {
-                    PointStart = 1940,
-                    Marker = new PlotOptionsAreaMarker
+                    Area = new PlotOptionsArea
                     {
-                        Enabled = false,
-                        Symbol = "circle",
-                        Radius = 2,
-                        States = new PlotOptionsAreaMarkerStates
+                        PointStart = 1940,
+                        Marker = new PlotOptionsAreaMarker
                         {
-                            Hover = new PlotOptionsAreaMarkerStatesHover
+                            Enabled = false,
+                            Symbol = "circle",
+                            Radius = 2,
+                            States = new PlotOptionsAreaMarkerStates
                             {
-                                Enabled = true
+                                Hover = new PlotOptionsAreaMarkerStatesHover
+                                {
+                                    Enabled = true
                             }
                         }
                     }
-                }
-            },
+                },
             Series = new List<Series>
             {
                 new AreaSeries

@@ -3,36 +3,36 @@
 
 @using Highsoft.Web.Mvc.Charts
 @using System.Collections.Specialized
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
-            {
-                ZoomType = ChartZoomType.Xy
-            },
-            Title = new Title
-            {
-                Text = "Average Monthly Temperature and Rainfall in Tokyo"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Source: WorldClimate.com"
-            },
-            XAxis = new List<XAxis>
-            {            
+            ZoomType = ChartZoomType.Xy
+        },
+        Title = new Title
+        {
+            Text = "Average Monthly Temperature and Rainfall in Tokyo"
+        },
+        Subtitle = new Subtitle
+        {
+            Text = "Source: WorldClimate.com"
+        },
+        XAxis = new List<XAxis>
+    {
                 new XAxis
                 {
-                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }                    
+                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
                 }
             },
-            YAxis = new List<YAxis>
-            {
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     Labels = new YAxisLabels
                     {
-                        Format = "{value}°C",                        
+                        Format = "{value}°C",
                     },
                     Title = new YAxisTitle
                     {
@@ -49,25 +49,25 @@
                     Labels = new YAxisLabels
                     {
                         Format = "{value} mm"
-                    },                    
-                    Opposite = true                  
+                    },
+                    Opposite = true
                 }
             },
-            Tooltip = new Tooltip
-            {
-                Shared = true
-            },
-            Legend = new Legend
-            {
-                Layout = LegendLayout.Vertical,
-                Align = LegendAlign.Left,
-                X = 120,
-                Y = 100,
-                VerticalAlign = LegendVerticalAlign.Top,
-                Floating = true
-            },
-            Series = new List<Series>
-            {                    
+        Tooltip = new Tooltip
+        {
+            Shared = true
+        },
+        Legend = new Legend
+        {
+            Layout = LegendLayout.Vertical,
+            Align = "left",
+            X = 120,
+            Y = 100,
+            VerticalAlign = "top",
+            Floating = true
+        },
+        Series = new List<Series>
+    {
                 new ColumnSeries
                 {
                     Name = "Rainfall",
@@ -77,7 +77,7 @@
                         ValueSuffix = " mm"
                     },
                     Data = @ViewData["rainData"] as List<ColumnSeriesData>
-                },               
+                },
                 new SplineSeries
                 {
                     Name = "Temerature",
@@ -85,11 +85,13 @@
                     {
                         ValueSuffix = "°C"
                     },
-                    Data = @ViewData["temperatureData"] as List<SplineSeriesData>,                    
+                    Data = @ViewData["temperatureData"] as List<SplineSeriesData>,
                 }
             }
-        }
-        , "chart"));
-        
-        
-    
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

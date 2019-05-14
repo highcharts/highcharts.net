@@ -2,26 +2,26 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering;
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{var chartOptions = new Highcharts
+    {
+        Title = new Title
         {
-            Title = new Title
-            {
-                Text = "Average fruit consumption during one week"
-            },
-            Legend = new Legend
-            {
-                Layout = LegendLayout.Vertical,
-                Align = LegendAlign.Left,
-                VerticalAlign = LegendVerticalAlign.Top,
-                X = 150,
-                Y = 100,
-                Floating = true,
-                BorderWidth = 1,
-            },
-            XAxis = new List<XAxis>
-            {            
+            Text = "Average fruit consumption during one week"
+        },
+        Legend = new Legend
+        {
+            Layout = LegendLayout.Vertical,
+            Align = "left",
+            VerticalAlign = "top",
+            X = 150,
+            Y = 100,
+            Floating = true,
+            BorderWidth = 1,
+        },
+        XAxis = new List<XAxis>
+    {
                 new XAxis
                 {
                     Categories = new List<string> {
@@ -34,7 +34,7 @@
                         "Sunday"
                     },
                     PlotBands = new List<XAxisPlotBands>
-                    {
+            {
                         new XAxisPlotBands
                         {
                             From = 4.5,
@@ -44,35 +44,35 @@
                     }
                 }
             },
-            YAxis = new List<YAxis>
-            {            
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     Title = new YAxisTitle
                     {
                         Text = "Fruit units"
-                    }                   
+                    }
                 }
             },
-            Tooltip = new Tooltip
-            {
-                Shared = true,
-                ValueSuffix = " units"
-            },
+        Tooltip = new Tooltip
+        {
+            Shared = true,
+            ValueSuffix = " units"
+        },
 
-            PlotOptions = new PlotOptions
+        PlotOptions = new PlotOptions
+        {
+            Areaspline = new PlotOptionsAreaspline
             {
-                Areaspline = new PlotOptionsAreaspline
-                {
-                    FillOpacity = 0.5
-                }
-            },
-            Credits = new Credits
-            {
-                Enabled = false
-            },
-            Series = new List<Series>
-            {                    
+                FillOpacity = 0.5
+            }
+        },
+        Credits = new Credits
+        {
+            Enabled = false
+        },
+        Series = new List<Series>
+    {
                 new AreasplineSeries
                 {
                     Name = "John",
@@ -84,6 +84,10 @@
                     Data = @ViewData["janeData"] as List<AreasplineSeriesData>
                 }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

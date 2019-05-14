@@ -2,39 +2,40 @@
 <script src="https://code.highcharts.com/modules/bullet.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-@Html.Highsoft().GetHighcharts(new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
+        {
+            Inverted = true,
+            MarginLeft = 135,
+            Type = ChartType.Bullet,
+            MarginTop = 40,
+            Height = 150
+        },
+        Title = new Title
+        {
+            Text = "2017 YTD"
+        },
+        Legend = new Legend
+        {
+            Enabled = false
+        },
+        XAxis = new List<XAxis>
 {
-    Chart = new Highsoft.Web.Mvc.Charts.Chart
-    {
-        Inverted = true,
-        MarginLeft = 135,
-        Type = ChartType.Bullet,
-        MarginTop = 40,
-        Height = 150
-    },
-    Title = new Title
-    {
-        Text = "2017 YTD"
-    },
-    Legend = new Legend
-    {
-        Enabled = false
-    },
-    XAxis = new List<XAxis>
-    {
         new XAxis
         {
             Categories = new List<string> { "<span style=\"font-size:13px; font-weight:bold;\">Revenue</span><br/>U.S. $ (1,000s)" }
         }
     },
-    YAxis = new List<YAxis>
-    {
+        YAxis = new List<YAxis>
+{
         new YAxis
         {
             GridLineWidth = 0,
             PlotBands = new List<YAxisPlotBands>
-            {
+{
                 new YAxisPlotBands
                 {
                     From = 0,
@@ -60,27 +61,27 @@
             }
         }
     },
-    PlotOptions = new PlotOptions
-    {
-        Series = new PlotOptionsSeries
+        PlotOptions = new PlotOptions
         {
-            Color = "#000"
-        }
-    },
-    Credits = new Credits
-    {
-        Enabled = false
-    },
-    Exporting = new Exporting
-    {
-        Enabled = false
-    },
-    Series = new List<Series>
-    {
+            Series = new PlotOptionsSeries
+            {
+                Color = "#000"
+            }
+        },
+        Credits = new Credits
+        {
+            Enabled = false
+        },
+        Exporting = new Exporting
+        {
+            Enabled = false
+        },
+        Series = new List<Series>
+{
         new BulletSeries
         {
             Data = new List<BulletSeriesData>
-            {
+{
                 new BulletSeriesData
                 {
                     Y = 275,
@@ -89,136 +90,147 @@
             }
         }
     },
-    Tooltip = new Tooltip
-    {
-        PointFormat = "<b>{point.y}</b> (with target at {point.target})"
-    }
-}, "container1")
-
-
-@Html.Highsoft().GetHighcharts(new Highcharts
-{
-    Chart = new Highsoft.Web.Mvc.Charts.Chart
-    {
-        Inverted = true,
-        MarginLeft = 135,
-        Type = ChartType.Bullet,
-        Height = 120
-    },
-    Title = new Title
-    {
-        Text = null
-    },
-    Legend = new Legend
-    {
-        Enabled = false
-    },
-    XAxis = new List<XAxis>
-    {
-        new XAxis
+        Tooltip = new Tooltip
         {
-            Categories = new List<string> { "<span style=\"font-size:13px; font-weight:bold;\">Profit</span><br/>%" }
+            PointFormat = "<b>{point.y}</b> (with target at {point.target})"
         }
-    },
-    YAxis = new List<YAxis>
+    };
+
+    chartOptions.ID = "container1";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
+
+
+@{ var chartOptions2 = new Highcharts
     {
-        new YAxis
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            GridLineWidth = 0,
-            PlotBands = new List<YAxisPlotBands>
+            Inverted = true,
+            MarginLeft = 135,
+            Type = ChartType.Bullet,
+            Height = 120
+        },
+        Title = new Title
+        {
+            Text = null
+        },
+        Legend = new Legend
+        {
+            Enabled = false
+        },
+        XAxis = new List<XAxis>
+{
+            new XAxis
             {
-                new YAxisPlotBands
-                {
-                    From = 0,
-                    To = 20,
-                    Color = "#666"
-                },
-                new YAxisPlotBands
-                {
-                    From = 20,
-                    To = 25,
-                    Color = "#999"
-                },
-                new YAxisPlotBands
-                {
-                    From = 25,
-                    To = 100,
-                    Color = "#bbb"
-                }
-            },
-            Labels = new YAxisLabels
-            {
-                Format = "{value}%"
+                Categories = new List<string> { "<span style=\"font-size:13px; font-weight:bold;\">Profit</span><br/>%" }
             }
         },
-    },
-    PlotOptions = new PlotOptions
-    {
-        Series = new PlotOptionsSeries
-        {
-            Color = "#000"
-        }
-    },
-    Credits = new Credits
-    {
-        Enabled = false
-    },
-    Exporting = new Exporting
-    {
-        Enabled = false
-    },
-    Series = new List<Series>
-    {
-        new BulletSeries
-        {
-            Data = new List<BulletSeriesData>
+        YAxis = new List<YAxis>
+{
+            new YAxis
             {
-                new BulletSeriesData
+                GridLineWidth = 0,
+                PlotBands = new List<YAxisPlotBands>
+{
+                    new YAxisPlotBands
+                    {
+                        From = 0,
+                        To = 20,
+                        Color = "#666"
+                    },
+                    new YAxisPlotBands
+                    {
+                        From = 20,
+                        To = 25,
+                        Color = "#999"
+                    },
+                    new YAxisPlotBands
+                    {
+                        From = 25,
+                        To = 100,
+                        Color = "#bbb"
+                    }
+                },
+                Labels = new YAxisLabels
                 {
-                    Y = 22,
-                    Target = 27
+                    Format = "{value}%"
+                }
+            },
+        },
+        PlotOptions = new PlotOptions
+        {
+            Series = new PlotOptionsSeries
+            {
+                Color = "#000"
+            }
+        },
+        Credits = new Credits
+        {
+            Enabled = false
+        },
+        Exporting = new Exporting
+        {
+            Enabled = false
+        },
+        Series = new List<Series>
+{
+            new BulletSeries
+            {
+                Data = new List<BulletSeriesData>
+{
+                    new BulletSeriesData
+                    {
+                        Y = 22,
+                        Target = 27
+                    }
                 }
             }
+        },
+        Tooltip = new Tooltip
+        {
+            PointFormat = "<b>{point.y}</b> (with target at {point.target})"
         }
-    },
-    Tooltip = new Tooltip
+    };
+
+    chartOptions2.ID = "container2";
+    var renderer2 = new HighchartsRenderer(chartOptions2);
+}
+
+@Html.Raw(renderer2.RenderHtml());
+
+@{ var chartOptions3 = new Highcharts
     {
-        PointFormat = "<b>{point.y}</b> (with target at {point.target})"
-    }
-}, "container2")
-
-
-@Html.Highsoft().GetHighcharts(new Highcharts
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
+        {
+            Inverted = true,
+            MarginLeft = 135,
+            Type = ChartType.Bullet,
+            Height = 120
+        },
+        Title = new Title
+        {
+            Text = null
+        },
+        Legend = new Legend
+        {
+            Enabled = false
+        },
+        XAxis = new List<XAxis>
 {
-    Chart = new Highsoft.Web.Mvc.Charts.Chart
-    {
-        Inverted = true,
-        MarginLeft = 135,
-        Type = ChartType.Bullet,
-        Height = 120
-    },
-    Title = new Title
-    {
-        Text = null
-    },
-    Legend = new Legend
-    {
-        Enabled = false
-    },
-    XAxis = new List<XAxis>
-    {
         new XAxis
         {
             Categories = new List<string> { "<span style=\"font-size:13px; font-weight:bold;\">New Customers</span><br/>Count" }
         }
     },
-    YAxis = new List<YAxis>
-    {
+        YAxis = new List<YAxis>
+{
         new YAxis
         {
             GridLineWidth = 0,
             PlotBands = new List<YAxisPlotBands>
-            {
+    {
                 new YAxisPlotBands
                 {
                     From = 0,
@@ -244,27 +256,27 @@
             }
         }
     },
-    PlotOptions = new PlotOptions
-    {
-        Series = new PlotOptionsSeries
+        PlotOptions = new PlotOptions
         {
-            Color = "#000"
-        }
-    },
-    Credits = new Credits
-    {
-        Enabled = true
-    },
-    Exporting = new Exporting
-    {
-        Enabled = false
-    },
-    Series = new List<Series>
-    {
+            Series = new PlotOptionsSeries
+            {
+                Color = "#000"
+            }
+        },
+        Credits = new Credits
+        {
+            Enabled = true
+        },
+        Exporting = new Exporting
+        {
+            Enabled = false
+        },
+        Series = new List<Series>
+{
         new BulletSeries
         {
             Data = new List<BulletSeriesData>
-            {
+    {
                 new BulletSeriesData
                 {
                     Y = 1650,
@@ -273,8 +285,14 @@
             }
         }
     },
-    Tooltip = new Tooltip
-    {
-        PointFormat = "<b>{point.y}</b> (with target at {point.target})"
-    }
-}, "container3")
+        Tooltip = new Tooltip
+        {
+            PointFormat = "<b>{point.y}</b> (with target at {point.target})"
+        }
+    };
+
+    chartOptions3.ID = "container3";
+    var renderer3 = new HighchartsRenderer(chartOptions3);
+}
+
+@Html.Raw(renderer3.RenderHtml());

@@ -3,24 +3,24 @@
 
 @using System.Collections
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Title = new Title
         {
-            Title = new Title
-            {
-                Text = "Stacked column chart"
-            },
-            XAxis = new List<XAxis>
-            {
+            Text = "Stacked column chart"
+        },
+        XAxis = new List<XAxis>
+    {
                 new XAxis
                 {
                     Categories = new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
                 }
             },
-            YAxis = new List<YAxis>
-            {
+        YAxis = new List<YAxis>
+    {
                 new YAxis
                 {
                     Min = 0,
@@ -35,20 +35,20 @@
                     }
                 }
             },
-            Tooltip = new Tooltip
+        Tooltip = new Tooltip
+        {
+            PointFormat = "<span style=\"color:{series.color}\">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>",
+            Shared = true
+        },
+        PlotOptions = new PlotOptions
+        {
+            Column = new PlotOptionsColumn
             {
-                PointFormat = "<span style=\"color:{series.color}\">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>",
-                Shared = true
-            },
-            PlotOptions = new PlotOptions
-            {
-                Column = new PlotOptionsColumn
-                {
-                    Stacking = PlotOptionsColumnStacking.Percent
-                }
-            },
-            Series = new List<Series>
-            {
+                Stacking = PlotOptionsColumnStacking.Percent
+            }
+        },
+        Series = new List<Series>
+    {
                 new ColumnSeries
                 {
                     Name = "John",
@@ -65,6 +65,10 @@
                     Data = @ViewData["joeData"] as List<ColumnSeriesData>
                 }
             }
-        }
-        , "chart")
-    )
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

@@ -2,6 +2,7 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 <script type="text/javascript">
 
@@ -23,37 +24,40 @@
 
 </script>
 
-    
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+
+@(Html.Highsoft().GetHighcharts(
+    new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            Events = new ChartEvents
             {
-                Events = new ChartEvents
+                Chart = new Highsoft.Web.Mvc.Charts.Chart
                 {
-                    Click = "addPoint"
-                }
-            },
-            Title = new Title
-            {
-                Text = "User Applied Data"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Click the plot area to add a point. Click a point to remove it."
-            },
-            XAxis = new List<XAxis>
-            {            
+                    Events = new ChartEvents
+                    {
+                        Click = "addPoint"
+                },
+                Title = new Title
+                {
+                    Text = "User Applied Data"
+                },
+                Subtitle = new Subtitle
+                {
+                    Text = "Click the plot area to add a point. Click a point to remove it."
+                },
+                XAxis = new List<XAxis>
+                {
                 new XAxis
                 {
                     GridLineWidth = 1,
                     MinPadding = 0.2,
                     MaxPadding = 0.2,
-                    
+
                 }
-            },
-            YAxis = new List<YAxis>
-            {            
+                        },
+                YAxis = new List<YAxis>
+                {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -61,51 +65,48 @@
                         Text = "Value"
                     },
                     MinPadding = 0.2,
-                    MaxPadding = 0.2,                    
-                    PlotLines =  new List<YAxisPlotLines>
-                    {
                         new YAxisPlotLines
                         {
                             Value = 0,
                             Width = 1,
-                            Color = "#808080"
-                        }
+                        Color = "#808080"
                     }
                 }
             },
-            Legend = new Legend
+        Legend = new Legend
+        {
+            Enabled = false
+        },
+        Exporting = new Exporting
+        {
+            Enabled = false
+        },
+        PlotOptions = new PlotOptions
+        {
+            Series = new PlotOptionsSeries
             {
-                Enabled = false
-            },
-            Exporting = new Exporting
-            {
-                Enabled = false
-            },
-            PlotOptions = new PlotOptions
-            {
-                Series = new PlotOptionsSeries
+                LineWidth = 1,
+                Point = new PlotOptionsSeriesPoint
                 {
-                    LineWidth = 1,
-                    Point = new PlotOptionsSeriesPoint
+                    Series = new PlotOptionsSeries
                     {
-                        Events = new PlotOptionsSeriesPointEvents
+                        LineWidth = 1,
+                        Point = new PlotOptionsSeriesPoint
                         {
-                            Click = "pointClick"
-                        }
+                            Events = new PlotOptionsSeriesPointEvents
+                            {
+                                Click = "pointClick"
                     }
-                }
-            },
-            Series = new List<Series>
-            {                    
-                new ScatterSeries
-                {
-                    Data = new List<ScatterSeriesData> 
-                    {
-                        new ScatterSeriesData { X = 20, Y = 20 },
-                        new ScatterSeriesData { X = 80, Y = 80 }
-                    }
+                },
+        Series = new List<Series>
+        {
+            new ScatterSeries
+            {
+                Data = new ScatterSeriesData { X = 20, Y = 20 },
+                    new ScatterSeriesData { X = 80, Y = 80 }
                 }
             }
         }
-        , "chart")
-    )
+    }
+    , "chart")
+)

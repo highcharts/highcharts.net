@@ -1,40 +1,43 @@
 ﻿<script src="http://code.highcharts.com/highcharts.js"></script>
 
-@*The highchart-more.js file contains definitions for additional chart types not available 
-in the main highcharts.js file such as "bubble". You need to include this file if you
-are using these types of charts*@
+@*The highchart-more.js file contains definitions for additional chart types not available
+    in the main highcharts.js file such as "bubble". You need to include this file if you
+    are using these types of charts*@
 
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            ZoomType = ChartZoomType.Xy
+        },
+        Title = new Title
+        {
+            Text = "Highcharts Bubbles"
+        },
+        Series = new List<Series>
+{
+            new BubbleSeries
             {
-                ZoomType = ChartZoomType.Xy
-            },
-            Title = new Title
-            {
-                Text = "Highcharts Bubbles"
-            },           
-            Series = new List<Series>
-            {                    
-                new BubbleSeries
-                {                    
                     Data = @ViewData["bubble1"] as List<BubbleSeriesData>
-                },
-                new BubbleSeries
-                {                    
+            },
+            new BubbleSeries
+            {
                     Data = @ViewData["bubble2"] as List<BubbleSeriesData>
-                },
-                new BubbleSeries
-                {                    
+            },
+            new BubbleSeries
+            {
                     Data = @ViewData["bubble3"] as List<BubbleSeriesData>
-                }                
             }
         }
-        , "chart")
-    )
+    };
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
