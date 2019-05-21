@@ -22,11 +22,11 @@ namespace SourceCodeGenerator
 
             try
             {
-                //DateTime hcStartTime = DateTime.Now;
-                //JsonParser jsonParserHc = new JsonParser("highcharts", fileService, filterService, updateService, typeService);
-                //HighchartsGenerator hcg = new HighchartsGenerator(jsonParserHc, fileService, multiplicationService);
-                //hcg.GenerateCode(true);
-                //Console.WriteLine($"Highcharts.NET has been generated. {DateTime.Now - hcStartTime}");
+                DateTime hcStartTime = DateTime.Now;
+                JsonParser jsonParserHc = new JsonParser("highcharts", fileService, filterService, updateService, typeService);
+                HighchartsGenerator hcg = new HighchartsGenerator(jsonParserHc, fileService, multiplicationService);
+                hcg.GenerateCode(true);
+                Console.WriteLine($"Highcharts.NET has been generated. {DateTime.Now - hcStartTime}");
 
                 DateTime hsStartTime = DateTime.Now;
                 JsonParser jsonParserHs = new JsonParser("highstock", fileService, filterService, updateService, typeService);

@@ -285,7 +285,7 @@ public class HighchartsGenerator
 
     private void GenerateClass(ApiItem item, List<ApiItem> children)
     {
-        Console.WriteLine(item.FullName);
+        //Console.WriteLine(item.FullName);
 
         string codeTemplate = FileService.GetClassTemplate(IsNETStandard);
         string propertyTemplate = FileService.GetPropertyTemplate();

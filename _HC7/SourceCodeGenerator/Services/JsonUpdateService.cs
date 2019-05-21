@@ -101,7 +101,7 @@ namespace SourceCodeGenerator.Services
 
         private void Add()
         {
-            ItemsToUpdate.Add("fontSize",new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("fontSize", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("fontWeight", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("color", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("textOutline", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
@@ -269,13 +269,20 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.series.dashStyle", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "Solid" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "ShortDash" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "ShortDot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "ShortDashDot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "ShortDashDotDot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Dot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Dash" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "LongDash" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "DashDot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "LongDashDot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "LongDashDotDot" } });
 
             ItemsToUpdate.Add("legend.layout", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "horizontal" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "vertical" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "proximate" } });
-            ItemsToUpdate.Add("plotOptions.series.linecap", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Default, Value = "round" } });
             ItemsToUpdate.Add("series.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "null" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "line" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "spline" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "column" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "area" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "areaspline" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "pie" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "arearange" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "areasplinerange" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "boxplot" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "bubble" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "columnrange" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "errorbar" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "funnel" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "gauge" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "scatter" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "waterfall" } });
 
-            ItemsToUpdate.Add("plotOptions.series.borderWidth", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Types, Value = "Number" },  new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" },  new UpdateInfo { Name = ApiPropertyName.Default, Value = "0" } });
+            ItemsToUpdate.Add("plotOptions.series.borderWidth", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Types, Value = "Number" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "0" } });
+
+            ItemsToUpdate.Add("verticalAlign", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "top" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "middle" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "bottom" } });
+            ItemsToUpdate.Add("align", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "left" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "center" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "right" } });
+            ItemsToUpdate.Add("plotOptions.series.linecap", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "round" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "square" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "round" } });
+
+            
 
             ItemsToUpdateProducts.Add("xAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
             ItemsToUpdateProducts.Add("yAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
+
+
         }
 
         public void Delete(ApiItem item)
