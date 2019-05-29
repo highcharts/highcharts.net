@@ -5,35 +5,35 @@
 @using Highsoft.Web.Mvc.Charts.Rendering
 @using System.Collections.Specialized
 
-    @(Html.Highsoft().GetHighcharts(
-        new Highcharts
-        {
-            Chart = new Highsoft.Web.Mvc.Charts.Chart
-            {
-                ZoomType = ChartZoomType.Xy
-            },
-            Title = new Title
-            {
-                Text = "Average Monthly Temperature and Rainfall in Tokyo"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Source: WorldClimate.com"
-            },
-            XAxis = new List<XAxis>
-            {            
+@{var chartOptions =
+              new Highcharts
+              {
+                  Chart = new Highsoft.Web.Mvc.Charts.Chart
+                  {
+                      ZoomType = ChartZoomType.Xy
+                  },
+                  Title = new Title
+                  {
+                      Text = "Average Monthly Temperature and Rainfall in Tokyo"
+                  },
+                  Subtitle = new Subtitle
+                  {
+                      Text = "Source: WorldClimate.com"
+                  },
+                  XAxis = new List<XAxis>
+                  {
                 new XAxis
                 {
-                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }                    
+                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
                 }
-            },
-            YAxis = new List<YAxis>
-            {
+                          },
+                  YAxis = new List<YAxis>
+                  {
                 new YAxis
                 {
                     Labels = new YAxisLabels
                     {
-                        Format = "{value}°C",                        
+                        Format = "{value}°C",
                     },
                     Title = new YAxisTitle
                     {
@@ -51,7 +51,7 @@
                     Labels = new YAxisLabels
                     {
                         Format = "{value} mm"
-                    },         
+                    },
                 },
                 new YAxis
                 {
@@ -64,26 +64,26 @@
                     Labels = new YAxisLabels
                     {
                         Format = "{value} mb"
-                    },  
+                    },
                     Opposite = true
                 }
-            },
-            Tooltip = new Tooltip
-            {
-                Shared = true
-            },
-            Legend = new Legend
-            {
-                Layout = LegendLayout.Vertical,
-                Align = LegendAlign.Left,
-                X = 150,
-                Y = 50,
-                VerticalAlign = LegendVerticalAlign.Top,
-                Floating = true,
-                BackgroundColor = "#FFFFFF"
-            },
-            Series = new List<Series>
-            {                    
+                          },
+                  Tooltip = new Tooltip
+                  {
+                      Shared = true
+                  },
+                  Legend = new Legend
+                  {
+                      Layout = LegendLayout.Vertical,
+                      Align = "left",
+                      X = 150,
+                      Y = 50,
+                      VerticalAlign = "top",
+                      Floating = true,
+                      BackgroundColor = "#FFFFFF"
+                  },
+                  Series = new List<Series>
+                  {
                 new ColumnSeries
                 {
                     Name = "Rainfall",
@@ -93,7 +93,7 @@
                         ValueSuffix = " mm"
                     },
                     Data = @ViewData["rainData"] as List<ColumnSeriesData>
-                }, 
+                },
                 new SplineSeries
                 {
                     Name = "Sea-Level Pressure",
@@ -102,13 +102,13 @@
                     {
                         ValueSuffix = " mb"
                     },
-                    DashStyle = SplineSeriesDashStyle.ShortDot,
+                    DashStyle = "ShortDot",
                     Marker = new SplineSeriesMarker
                     {
                         Enabled = false
-                    },                    
+                    },
                     Data = @ViewData["seaLevelData"] as List<SplineSeriesData>
-                },               
+                },
                 new SplineSeries
                 {
                     Name = "Temerature",
@@ -116,11 +116,14 @@
                     {
                         ValueSuffix = "°C"
                     },
-                    Data = @ViewData["temperatureData"] as List<SplineSeriesData>,                    
+                    Data = @ViewData["temperatureData"] as List<SplineSeriesData>,
                 }
-            }
-        }
-        , "chart"));
-        
-        
-    
+                          }
+              };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+
+@Html.Raw(renderer.RenderHtml());

@@ -4,33 +4,35 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Title = new Title
-        {
-            Text = "Scatter plot with regression line",
-            X = -20
-        },
+@{ var chartOptions =
+         new Highcharts
+         {
+             Title = new Title
+             {
+                 Text = "Scatter plot with regression line",
+                 X = -20
+             },
 
-        XAxis = new List<XAxis>
-        {
+             XAxis = new List<XAxis>
+             {
             new XAxis
             {
-                Title = new Title
+                Title = new XAxisTitle
                 {
                     Text = "Scatter plot with regression line",
                     X = -20
-                },
-                YAxis = new List<YAxis>
-                {
+                }
+            }
+                     },
+             YAxis = new List<YAxis>
+                     {
                 new YAxis
                 {
                     Min = 0
                 }
-                        },
-                Series = new List<Series>
-                {
+                                     },
+             Series = new List<Series>
+                     {
                 new LineSeries
                 {
                     Name = "Regression Line",
@@ -63,7 +65,11 @@
                     new ScatterSeriesData { Y = 4.2 },
                 }
             }
-        }
-    }
-    , "chart")
-)
+                     }
+         };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

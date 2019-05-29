@@ -25,12 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="HighchartsRenderer.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="HtmlHelperExtensions.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Update="HighchartsRenderer.cs" />
+    <Compile Update="HtmlHelperExtensions.cs" />
   </ItemGroup>
 
 </Project>

@@ -8,13 +8,9 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@(Html.Highsoft().GetHighcharts(
+@{ var chartOptions =
     new Highcharts
     {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            new Highcharts
-            {
                 Chart = new Highsoft.Web.Mvc.Charts.Chart
                 {
                     MarginRight = 100
@@ -30,17 +26,13 @@
                     {
                         DataLabels = new PlotOptionsSeriesDataLabels
                 {
-                    Name = "Unique users",
-                    Data = new List<FunnelSeriesData> {
-                        new FunnelSeriesData{ Name = "Website visits", Y = 15654 },
-                        new FunnelSeriesData{ Name = "Downloads", Y = 4064 },
-                        new FunnelSeriesData{ Name = "Requested price list", Y = 1987 },
-                        new FunnelSeriesData{ Name = "Invoice Sent", Y = 976 },
-                    Color = "Finalized", Y = 846 }
+                    Enabled = true,
+                    Format = "<b>{point.name}</b> ({point.y:,.0f})",
+                    Color = "black"
                     }
                 }
-            }
-        },
+            },
+        
         Legend = new Legend
         {
             Enabled = false
@@ -50,12 +42,18 @@
             new FunnelSeries
             {
                 Name = "Unique users",
-                Data = new List<FunnelSeriesData> {
-                    new FunnelSeriesData{ Name = "Website visits", Y = 15654 },
-                    new FunnelSeriesData{ Name = "Downloads", Y = 4064 },
-                    new FunnelSeriesData{ Name = "Requested price list", Y = 1987 },
-                    new FunnelSeriesData{ Name = "Invoice Sent", Y = 976 },
-                    new FunnelSeriesData{ Name = "Finalized", Y = 846 }
-                }
-            , "chart")
-)
+                Data = new List<FunnelSeriesData>
+    {
+    new FunnelSeriesData{ Name = "Website visits", Y = 15654 },
+    new FunnelSeriesData{ Name = "Downloads", Y = 4064 },
+    new FunnelSeriesData{ Name = "Requested price list", Y = 1987 },
+    new FunnelSeriesData{ Name = "Invoice Sent", Y = 976 },
+    new FunnelSeriesData{ Name = "Finalized", Y = 846 }
+    };
+
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+    }
+
+    @Html.Raw(renderer.RenderHtml());

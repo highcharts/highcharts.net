@@ -25,29 +25,27 @@
 </script>
 
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            Events = new ChartEvents
-            {
-                Chart = new Highsoft.Web.Mvc.Charts.Chart
-                {
-                    Events = new ChartEvents
-                    {
-                        Click = "addPoint"
-                },
-                Title = new Title
-                {
-                    Text = "User Applied Data"
-                },
-                Subtitle = new Subtitle
-                {
-                    Text = "Click the plot area to add a point. Click a point to remove it."
-                },
-                XAxis = new List<XAxis>
-                {
+@{ var chartOptions =
+     new Highcharts
+     {
+
+         Chart = new Highsoft.Web.Mvc.Charts.Chart
+         {
+             Events = new ChartEvents
+             {
+                 Click = "addPoint"
+             }
+         },
+         Title = new Title
+         {
+             Text = "User Applied Data"
+         },
+         Subtitle = new Subtitle
+         {
+             Text = "Click the plot area to add a point. Click a point to remove it."
+         },
+         XAxis = new List<XAxis>
+                 {
                 new XAxis
                 {
                     GridLineWidth = 1,
@@ -55,9 +53,9 @@
                     MaxPadding = 0.2,
 
                 }
-                        },
-                YAxis = new List<YAxis>
-                {
+                                 },
+         YAxis = new List<YAxis>
+                 {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -65,48 +63,55 @@
                         Text = "Value"
                     },
                     MinPadding = 0.2,
-                        new YAxisPlotLines
+                    PlotLines = new List<YAxisPlotLines>(){
+                    new YAxisPlotLines
                         {
                             Value = 0,
                             Width = 1,
                         Color = "#808080"
                     }
                 }
-            },
-        Legend = new Legend
-        {
-            Enabled = false
-        },
-        Exporting = new Exporting
-        {
-            Enabled = false
-        },
-        PlotOptions = new PlotOptions
-        {
-            Series = new PlotOptionsSeries
-            {
-                LineWidth = 1,
-                Point = new PlotOptionsSeriesPoint
-                {
-                    Series = new PlotOptionsSeries
-                    {
-                        LineWidth = 1,
-                        Point = new PlotOptionsSeriesPoint
-                        {
-                            Events = new PlotOptionsSeriesPointEvents
-                            {
-                                Click = "pointClick"
-                    }
-                },
-        Series = new List<Series>
-        {
+            }
+                 },
+         Legend = new Legend
+         {
+             Enabled = false
+         },
+         Exporting = new Exporting
+         {
+             Enabled = false
+         },
+         PlotOptions = new PlotOptions
+         {
+
+             Series = new PlotOptionsSeries
+             {
+                 LineWidth = 1,
+                 Point = new PlotOptionsSeriesPoint
+                 {
+                     Events = new PlotOptionsSeriesPointEvents
+                     {
+                         Click = "pointClick"
+                     }
+                 }
+             }
+         },
+         Series = new List<Series>
+         {
             new ScatterSeries
             {
-                Data = new ScatterSeriesData { X = 20, Y = 20 },
+                Data = new List<ScatterSeriesData>()
+        {
+                new ScatterSeriesData { X = 20, Y = 20 },
                     new ScatterSeriesData { X = 80, Y = 80 }
                 }
             }
-        }
-    }
-    , "chart")
-)
+             }
+     };
+
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

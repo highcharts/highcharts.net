@@ -12,70 +12,52 @@
 
 @{var chartOptions = new Highcharts
     {
-        Title = new Title
-        {
-            Text = "July Temperature"
-        },
-        XAxis = new List<XAxis>
-        {
-            new XAxis
-            {
-                Title = new Title
-                {
-                    Text = "July Temperature"
-                },
-                XAxis = new List<XAxis>
-                {
-                new XAxis
-                {
-                    Type = XAxisType.Datetime,
-                    Crosshair = new XAxisCrosshair
-                    {
-                        Width = 1
-                }
-            },
-        YAxis = new List<YAxis>
-        {
-            new YAxis
-            {
-                Title = new YAxisTitle
-                {
-                    Text = null
-                new YAxis
-                {
-                    Title = new YAxisTitle
-                    {
-                        Text = null
-                    },
-                    Crosshair = new YAxisCrosshair
-                    {
-                        Width = 1
-                }
-            }
-        },
-        Tooltip = new Tooltip
-        {
-
-        },
-        Series = new List<Series>
-        {
-            new LineSeries
-            {
-                Name = "Temperature",
-                Data = @ViewData["temperatureData"] as List<LineSeriesData>,
-                ZIndex = 1,
-                Marker = new LineSeriesMarker
-                {
-                    Name = "Range",
-                    LineWidth = 0,
-                    LinkedTo = ":previous",
-                    FillOpacity = 0.3,
-                    ZIndex = 0,
-                    Color = "#7cb5ec",
-                    Data = @ViewData["rangeData"] as List<ArearangeSeriesData>
-                }
-            }
-            }
-        }
+        //Title = new Title
+        //{
+        //    Text = "July Temperature"
+        //},
+        //XAxis = new List<XAxis>
+        //{
+        //    new XAxis
+        //    {
+        //        Title = new XAxisTitle
+        //        {
+        //            Text = "July Temperature"
+        //        },
+        //        Type = "datetime",
+        //        Crosshair = new XAxisCrosshair
+        //        {
+        //            Width =  1
+        //        }
+        //    }
+        //},
+        //YAxis = new List<YAxis>
+        //{
+        //    new YAxis{
+        //        Crosshair = new YAxisCrosshair
+        //        {
+        //            Width = 1
+        //        }
+        //    }
+        //},
+        //Series = new List<Series>
+        //{
+        //    new LineSeries
+        //    {
+        //        Name = "Temperature",
+        //        Data = @ViewData["temperatureData"] as List<LineSeriesData>,
+        //        ZIndex = 1,
+        //        //Marker = new LineSeriesMarker
+        //        //{
+        //        //    Name = "Range",
+        //        //    LineWidth = 0,
+        //        //    LinkedTo = ":previous",
+        //        //    FillOpacity = 0.3,
+        //        //    ZIndex = 0,
+        //        //    Color = "#7cb5ec",
+        //        //    Data = @ViewData["rangeData"] as List<ArearangeSeriesData>
+        //        //}
+        //    }
+        //}
     };
 }
