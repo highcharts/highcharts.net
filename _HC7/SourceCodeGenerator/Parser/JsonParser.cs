@@ -158,7 +158,8 @@ namespace SourceCodeGenerator.Parser
             if (apiItem.FullName.StartsWith("plotOptions.column.marker"))
                 return;
 
-            if (apiItem.FullName.Contains("plotOptions.series.dataLabels"))
+            //temp solution- only for 7.1.1 version
+            if (apiItem.FullName.Contains("plotOptions.series.dataLabels") && !apiItem.Children.Any())
             {
                 apiItem.Children.Add(new ApiItem { FullName= "plotOptions.series.dataLabels.align", Title = "align", Values = new List<string> { "left", "center", "right"}, Types = new List<string> {"String" }, ReturnType = "String", IsParent = true });
                 apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.allowOverlap", Title = "allowOverlap", Defaults = "false", Types = new List<string> { "Boolean" }, ReturnType = "Boolean", IsParent = true });

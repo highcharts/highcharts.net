@@ -24,15 +24,19 @@ namespace SourceCodeGenerator
             {
                 DateTime hcStartTime = DateTime.Now;
                 JsonParser jsonParserHc = new JsonParser("highcharts", fileService, filterService, updateService, typeService);
-                HighchartsGenerator hcg = new HighchartsGenerator(jsonParserHc, fileService, multiplicationService);
+                JsonParser jsonPaserHC2 = new JsonParser("highcharts_old", fileService, filterService, updateService, typeService);
+
+
+
+                HighchartsGenerator hcg = new HighchartsGenerator(jsonParserHc, jsonPaserHC2, fileService, multiplicationService);
                 hcg.GenerateCode(true);
                 Console.WriteLine($"Highcharts.NET has been generated. {DateTime.Now - hcStartTime}");
 
-                DateTime hsStartTime = DateTime.Now;
-                JsonParser jsonParserHs = new JsonParser("highstock", fileService, filterService, updateService, typeService);
-                HighstockGenerator hsg = new HighstockGenerator(jsonParserHs, fileService, multiplicationService);
-                hsg.GenerateCode(true);
-                Console.WriteLine($"Highstock.NET has been generated. {DateTime.Now - hsStartTime}");
+                //DateTime hsStartTime = DateTime.Now;
+                //JsonParser jsonParserHs = new JsonParser("highstock", fileService, filterService, updateService, typeService);
+                //HighstockGenerator hsg = new HighstockGenerator(jsonParserHs, fileService, multiplicationService);
+                //hsg.GenerateCode(true);
+                //Console.WriteLine($"Highstock.NET has been generated. {DateTime.Now - hsStartTime}");
             }
             catch (Exception ex)
             {

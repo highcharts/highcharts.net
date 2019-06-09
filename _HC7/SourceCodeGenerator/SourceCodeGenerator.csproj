@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ApiItem.cs" />
     <Compile Include="Enums\ApiPropertyName.cs" />
+    <Compile Include="Enums\ChangedItem.cs" />
     <Compile Include="Generators\HighstockGenerator.cs" />
     <Compile Include="Services\CustomFieldsService.cs" />
     <Compile Include="Services\FilterService.cs" />
@@ -122,6 +123,7 @@
     <None Include="JsonFiles\highcharts.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="JsonFiles\highcharts_old.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

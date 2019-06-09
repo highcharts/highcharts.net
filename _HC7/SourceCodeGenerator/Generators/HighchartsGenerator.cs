@@ -1,4 +1,5 @@
-﻿using SourceCodeGenerator.Parser;
+﻿using SourceCodeGenerator.Enums;
+using SourceCodeGenerator.Parser;
 using SourceCodeGenerator.Services;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ public class HighchartsGenerator
     const string ROOT_NAMESPACE = "Charts"; // the name of the root class
 
     List<ApiItem> _apiItems; // json api mappings will be stored here
+    List<ApiItem> _previousVersionApiItems;
     StreamWriter _log; // general debug related txt log file
     Hashtable _typeMappings; // maps HighChart types to C# types, where possible
     Hashtable _propertyTypeMappings; // maps properties that need special type not reflected in the JSON
@@ -36,10 +38,11 @@ public class HighchartsGenerator
     bool IsNETStandard;
 
     IJsonParser JsonParser { get; set; }
+    IJsonParser PreviousVersionJsonParser { get; set; }
     IFileService FileService { get; set; }
     IMultiplicationService MultiplicationService { get; set; }
 
-    public HighchartsGenerator(IJsonParser jsonParser, IFileService fileService, IMultiplicationService multiplicationService)
+    public HighchartsGenerator(IJsonParser jsonParser, IJsonParser previousVersionJsonParser, IFileService fileService, IMultiplicationService multiplicationService)
     {
         _apiItems = new List<ApiItem>();
         _typeMappings = new Hashtable();
@@ -52,6 +55,7 @@ public class HighchartsGenerator
         _lists = new List<string>();
 
         JsonParser = jsonParser;
+        PreviousVersionJsonParser = previousVersionJsonParser;
         FileService = fileService;
         MultiplicationService = multiplicationService;
 
@@ -70,6 +74,15 @@ public class HighchartsGenerator
         IsNETStandard = isNETStandard;
         FileService.PrepareFolder(ROOT_CLASS);
         _apiItems = JsonParser.Get();
+        _previousVersionApiItems = PreviousVersionJsonParser.Get();
+
+        Console.WriteLine("new to old");
+        CompareItems(_apiItems, _previousVersionApiItems);
+        //Console.WriteLine("--------------------------------------------------------");
+        //Console.WriteLine("old to new");
+        //CompareItems(_previousVersionApiItems, _apiItems);
+
+
         ProcessApiItems(_apiItems);
         MultiplyObjects(_apiItems);
 
@@ -78,6 +91,147 @@ public class HighchartsGenerator
         GenerateClass(root, GetChildren(root));
         GenerateClassesForLevel(_apiItems);
     }
+
+    private void CompareItems(IList<ApiItem> items = null, IList<ApiItem> previousItems = null, List<string> pathToItem = null)
+    {
+        if (items == null)
+            items = _apiItems;
+
+        foreach (var item in items)
+        {
+            ApiItem prevItem = null;
+            if (pathToItem == null || !pathToItem.Any())
+                prevItem = previousItems.SingleOrDefault(p => p.FullName.Equals(item.FullName));
+            else
+            {
+                prevItem = previousItems.SingleOrDefault(p => p.FullName.Equals(pathToItem[0]));
+
+                for (int i = 1; i < pathToItem.Count; i++)
+                {
+                    prevItem = prevItem.Children.SingleOrDefault(p => p.FullName.Equals(pathToItem[i]));
+                }
+
+                prevItem = prevItem.Children.SingleOrDefault(p => p.FullName.Equals(item.FullName));
+            }
+
+            if (prevItem == null)
+            {
+                Console.WriteLine("          " +item.FullName + ": Extra Item");
+                continue;
+            }
+
+            ChangedItem changedItem = ChangedItem.None;
+            StringBuilder sb = new StringBuilder();
+
+            if (string.IsNullOrWhiteSpace(item.ReturnType))
+            {
+                sb.AppendLine("!MISSING: " + item.FullName + " missing ReturnType!");
+                changedItem = ChangedItem.ReturnType;
+            }
+
+            if (!item.ReturnType.Equals(prevItem.ReturnType))
+            {
+                sb.AppendLine("!CHANGE:  " + item.FullName + ": ReturnType - old:" + prevItem.ReturnType + ", new: " + item.ReturnType);
+                changedItem = ChangedItem.ReturnType;
+            }
+            //else
+            //    sb.AppendLine(item.FullName + ": ReturnType - OK");
+
+            if (prevItem.Values.Except(item.Values).Any() || item.Values.Except(prevItem.Values).Any())
+            {
+                sb.Append("!CHANGE:  " + item.FullName + ": Values - " + string.Join(",", item.Values) + "| WAS: " + string.Join(",", prevItem.Values));
+                changedItem = ChangedItem.Values;
+            }
+
+            if (prevItem.Extends.Except(item.Extends).Any() || item.Extends.Except(prevItem.Extends).Any())
+            {
+                sb.Append("!CHANGE:  " + item.FullName + ": Extends - " + string.Join(",", item.Extends) + "| WAS: " + string.Join(",", prevItem.Extends));
+                changedItem = ChangedItem.Extends;
+            }
+
+            if (prevItem.Exclude.Except(item.Exclude).Any() || item.Exclude.Except(prevItem.Exclude).Any())
+            {
+                sb.Append("!CHANGE:  " + item.FullName + ": Exclude - " + string.Join(",", item.Exclude) + "| WAS: " + string.Join(",", prevItem.Exclude));
+                changedItem = ChangedItem.Exclude;
+            }
+
+            if (prevItem.Types.Except(item.Types).Any() || item.Types.Except(prevItem.Types).Any())
+            {
+                sb.Append("!CHANGE:  " + item.FullName + ": Types - " + string.Join(",", item.Types) + "| WAS: " + string.Join(",", prevItem.Types));
+                changedItem = ChangedItem.Types;
+            }
+
+            if (sb.Length > 0)
+                Console.Write(sb.ToString());
+
+            if (changedItem == ChangedItem.ReturnType)
+            {
+                Console.WriteLine("Do you want to copy values from previous version (Y/N)?");
+                var answer = Console.ReadKey();
+                if(char.ToLower(answer.KeyChar).Equals('y'))
+                {
+                    item.ReturnType = string.Copy(prevItem.ReturnType);
+                    Console.WriteLine();
+                    Console.WriteLine(item.FullName + ".ReturnType=" + item.ReturnType);
+                }
+
+                if(char.ToLower(answer.KeyChar).Equals('n') || string.IsNullOrWhiteSpace(item.ReturnType))
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Choose correct type: ");
+                    Console.WriteLine("1. String");
+                    Console.WriteLine("2. Object");
+                    Console.WriteLine("3. Boolean");
+                    Console.WriteLine("4. Number");
+                    Console.WriteLine("5. function");
+                    Console.WriteLine("Choose correct type: ");
+                    
+                    var correctAnswers = new List<char> { '1', '2', '3', '4', '5' };
+                    ConsoleKeyInfo typeNumber;
+
+                    do
+                    {
+                        typeNumber = Console.ReadKey();
+                    } while (!correctAnswers.Contains(typeNumber.KeyChar));
+
+                    switch(typeNumber.KeyChar)
+                    {
+                        case '1':
+                            item.ReturnType = TypeService.StringType;
+                            break;
+                        case '2':
+                            item.ReturnType = TypeService.ObjectType;
+                            break;
+                        case '3':
+                            item.ReturnType = TypeService.BoolType;
+                            break;
+                        case '4':
+                            item.ReturnType = TypeService.NumberType;
+                            break;
+                        case '5':
+                            item.ReturnType = TypeService.FunctionType;
+                            break;
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine(item.FullName + ".ReturnType=" + item.ReturnType);
+                }
+            }
+
+            if (pathToItem == null)
+                pathToItem = new List<string>();
+
+            if (item.Children.Any())
+            {
+                pathToItem.Add(item.FullName);
+                CompareItems(item.Children, previousItems, pathToItem);
+                pathToItem.Remove(item.FullName);
+            }
+
+        }
+    }
+
+    
 
     private void ProcessApiItems(IList<ApiItem> items)
     {
