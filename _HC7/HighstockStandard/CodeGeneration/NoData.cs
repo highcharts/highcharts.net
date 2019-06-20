@@ -56,8 +56,8 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Attr != Attr_DefaultValue) h.Add("attr",Attr);
 			if (Position != Position_DefaultValue) h.Add("position",Position);
-            if (Style.Count > 0) h.Add("style", Style);
-            if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			
 
 			return h;

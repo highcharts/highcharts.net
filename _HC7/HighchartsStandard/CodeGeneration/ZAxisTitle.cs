@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ZAxisTitle()
 		{
-			Align = Align_DefaultValue = null;
+			Align = Align_DefaultValue = ZAxisTitleAlign.Middle;
 			Enabled = Enabled_DefaultValue = "middle";
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
@@ -35,8 +35,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Alignment of the title relative to the axis values. Possiblevalues are "low", "middle" or "high".
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public ZAxisTitleAlign Align { get; set; }
+		private ZAxisTitleAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -134,7 +134,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
@@ -142,7 +142,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);

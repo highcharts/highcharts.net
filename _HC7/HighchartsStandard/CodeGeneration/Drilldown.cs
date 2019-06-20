@@ -18,7 +18,6 @@ namespace Highsoft.Web.Mvc.Charts
 			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new DrilldownActiveDataLabelStyle();
 			AllowPointDrilldown = AllowPointDrilldown_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			DrillUpButton = DrillUpButton_DefaultValue = new DrilldownDrillUpButton();
 			Series = Series_DefaultValue = new List<Series>();
 			
@@ -54,13 +53,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Set the animation for all drilldown animations. Animation of a drilldownoccurs when drilling between a column point and a column series,or a pie slice and a full pie series. Drilldown can still be usedbetween series and points of different types, but animation willnot occur.The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and a durationof 500 ms. If used as a configuration object, the following propertiesare supported:- `duration`: The duration of the animation in milliseconds.- `easing`: A string reference to an easing function set on the `Math`  object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Options for the drill up button that appears when drilling down on aseries. The text for the button is defined in[lang.drillUpText](#lang.drillUpText).
 		/// </summary>
 		public DrilldownDrillUpButton DrillUpButton { get; set; }
@@ -82,7 +74,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ActiveDataLabelStyle.IsDirty()) h.Add("activeDataLabelStyle",ActiveDataLabelStyle.ToHashtable());
 			if (AllowPointDrilldown != AllowPointDrilldown_DefaultValue) h.Add("allowPointDrilldown",AllowPointDrilldown);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			

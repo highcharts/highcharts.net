@@ -70,7 +70,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickPosition = TickPosition_DefaultValue = NavigatorYAxisTickPosition.Outside;
 			TickPositioner = TickPositioner_DefaultValue = "";
 			TickPositions = TickPositions_DefaultValue = new List<double>();
-			TickWidth = TickWidth_DefaultValue = 0;
+			TickWidth = TickWidth_DefaultValue = null;
 			Title = Title_DefaultValue = new NavigatorYAxisTitle();
 			Visible = Visible_DefaultValue = true;
 			
@@ -512,8 +512,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-            if (Labels.IsDirty()) h.Add("labels", Labels.ToHashtable());
-            if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Max != Max_DefaultValue) h.Add("max",Max);

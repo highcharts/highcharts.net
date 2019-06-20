@@ -14,7 +14,11 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public StockToolsGuiDefinitionsTypeChange()
 		{
-			Items = Items_DefaultValue = new List<string>();
+			Items = Items_DefaultValue = [
+   typeOHLC ,
+   typeLine ,
+   typeCandlestick 
+];
 			TypeCandlestick = TypeCandlestick_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeCandlestick();
 			TypeLine = TypeLine_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeLine();
 			TypeOHLC = TypeOHLC_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeOHLC();
@@ -25,8 +29,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A collection of strings pointing to config options forthe items.
 		/// </summary>
-		public List<string> Items { get; set; }
-		private List<string> Items_DefaultValue { get; set; }
+		public Array Items { get; set; }
+		private Array Items_DefaultValue { get; set; }
 		 
 
 		/// <summary>

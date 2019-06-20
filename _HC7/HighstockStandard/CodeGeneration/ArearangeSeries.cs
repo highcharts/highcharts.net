@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			DashStyle = DashStyle_DefaultValue = ArearangeSeriesDashStyle.Solid;
 			Data = Data_DefaultValue = new List<ArearangeSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new ArearangeSeriesDataGrouping();
-			DataLabels = DataLabels_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new ArearangeSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new ArearangeSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LastPrice = LastPrice_DefaultValue = new ArearangeSeriesLastPrice();
 			LastVisiblePrice = LastVisiblePrice_DefaultValue = new ArearangeSeriesLastVisiblePrice();
 			LegendIndex = LegendIndex_DefaultValue = null;
-			Linecap = Linecap_DefaultValue = "round";
+			Linecap = Linecap_DefaultValue = ArearangeSeriesLinecap.Round;
 			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
@@ -241,8 +241,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public object DataLabels { get; set; }
-		private string DataLabels_DefaultValue { get; set; }
+		public ArearangeSeriesDataLabels DataLabels { get; set; }
+		private ArearangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -381,8 +381,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The line cap used for line ends and line joins on the graph.
 		/// </summary>
-		public string Linecap { get; set; }
-		private string Linecap_DefaultValue { get; set; }
+		public ArearangeSeriesLinecap Linecap { get; set; }
+		private ArearangeSeriesLinecap Linecap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -682,7 +682,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
@@ -702,7 +702,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
 			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);

@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (HideBrowserFocusOutline != HideBrowserFocusOutline_DefaultValue) h.Add("hideBrowserFocusOutline",HideBrowserFocusOutline);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 
 			return h;

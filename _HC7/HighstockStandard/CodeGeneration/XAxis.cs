@@ -601,7 +601,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-            if (Labels.IsDirty()) h.Add("labels", Labels.ToHashtable());
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);

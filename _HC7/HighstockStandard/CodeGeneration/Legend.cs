@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Legend()
 		{
 			Accessibility = Accessibility_DefaultValue = new LegendAccessibility();
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = LegendAlign.Center;
 			AlignColumns = AlignColumns_DefaultValue = true;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "#999999";
@@ -51,9 +51,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			SymbolWidth = SymbolWidth_DefaultValue = null;
 			Title = Title_DefaultValue = new LegendTitle();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
-			Width = Width_DefaultValue = "";
-			WidthNumber = WidthNumber_DefaultValue = null;
+			VerticalAlign = VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
+			Width = Width_DefaultValue = null;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			
@@ -70,8 +69,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The horizontal alignment of the legend box within the chart area.Valid values are `left`, `center` and `right`.In the case that the legend is aligned in a corner position, the`layout` option will determine whether to place it above/belowor on the side of the plot area.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public LegendAlign Align { get; set; }
+		private LegendAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -196,8 +195,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Callback function to format each of the series' labels. The `this`keyword refers to the series object, or the point object in case ofpie charts. By default the series or point name is printed.
 		/// </summary>
-		public string LabelFormatter { get; set; }
-		private string LabelFormatter_DefaultValue { get; set; }
+		public  LabelFormatter { get; set; }
+		private  LabelFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -322,22 +321,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The vertical alignment of the legend box. Can be one of `top`,`middle` or `bottom`. Vertical position can be further determinedby the `y` option.In the case that the legend is aligned in a corner position, the`layout` option will determine whether to place it above/belowor on the side of the plot area.When the [layout](#legend.layout) option is `proximate`, the`verticalAlign` option doesn't apply.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public LegendVerticalAlign VerticalAlign { get; set; }
+		private LegendVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width from legends below or above thechart, half the chart width for legends to the left and right.
 		/// </summary>
-		public string Width { get; set; }
-		private string Width_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width from legends below or above thechart, half the chart width for legends to the left and right.
-		/// </summary>
-		public double? WidthNumber { get; set; }
-		private double? WidthNumber_DefaultValue { get; set; }
+		public double? Width { get; set; }
+		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -359,7 +351,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (AlignColumns != AlignColumns_DefaultValue) h.Add("alignColumns",AlignColumns);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
@@ -395,9 +387,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SymbolWidth != SymbolWidth_DefaultValue) h.Add("symbolWidth",SymbolWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

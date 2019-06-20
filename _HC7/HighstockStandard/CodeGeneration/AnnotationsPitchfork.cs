@@ -18,7 +18,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Draggable = Draggable_DefaultValue = AnnotationsPitchforkDraggable.Xy;
 			Events = Events_DefaultValue = new AnnotationsPitchforkEvents();
 			LabelOptions = LabelOptions_DefaultValue = new AnnotationsPitchforkLabelOptions();
+			Labels = Labels_DefaultValue = new AnnotationsPitchforkLabels();
 			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsPitchforkShapeOptions();
+			Shapes = Shapes_DefaultValue = new AnnotationsPitchforkShapes();
 			TypeOptions = TypeOptions_DefaultValue = new AnnotationsPitchforkTypeOptions();
 			Visible = Visible_DefaultValue = true;
 			ZIndex = ZIndex_DefaultValue = 6;
@@ -52,12 +54,28 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public AnnotationsPitchforkLabelOptions LabelOptions { get; set; }
 		private AnnotationsPitchforkLabelOptions LabelOptions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of labels for the annotation. For options that apply tomultiple labels, they can be added to the[labelOptions](annotations.labelOptions.html).
+		/// </summary>
+		public List<object> Labels { get; set; }
+		private List<object> Labels_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Options for annotation's shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptionscan be overwritten by config for a specific shape.
 		/// </summary>
 		public AnnotationsPitchforkShapeOptions ShapeOptions { get; set; }
 		private AnnotationsPitchforkShapeOptions ShapeOptions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of shapes for the annotation. For options that apply tomultiple shapes, then can be added to the[shapeOptions](annotations.shapeOptions.html).
+		/// </summary>
+		public List<object> Shapes { get; set; }
+		private List<object> Shapes_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -88,7 +106,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable", Highstock.FirstCharacterToLower(Draggable.ToString()));
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
+			if (Shapes.IsDirty()) h.Add("shapes",Shapes.ToHashtable());
 			if (TypeOptions.IsDirty()) h.Add("typeOptions",TypeOptions.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

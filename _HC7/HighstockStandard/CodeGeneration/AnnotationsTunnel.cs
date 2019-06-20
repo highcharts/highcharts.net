@@ -18,7 +18,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Draggable = Draggable_DefaultValue = AnnotationsTunnelDraggable.Xy;
 			Events = Events_DefaultValue = new AnnotationsTunnelEvents();
 			LabelOptions = LabelOptions_DefaultValue = new AnnotationsTunnelLabelOptions();
+			Labels = Labels_DefaultValue = new AnnotationsTunnelLabels();
 			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsTunnelShapeOptions();
+			Shapes = Shapes_DefaultValue = new AnnotationsTunnelShapes();
 			TypeOptions = TypeOptions_DefaultValue = new AnnotationsTunnelTypeOptions();
 			Visible = Visible_DefaultValue = true;
 			ZIndex = ZIndex_DefaultValue = 6;
@@ -104,9 +106,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable", Highstock.FirstCharacterToLower(Draggable.ToString()));
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
-			if (Labels.Any()) h.Add("labels",HashifyList(Labels));
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
-			if (Shapes.Any()) h.Add("shapes",HashifyList(Shapes));
+			if (Shapes.IsDirty()) h.Add("shapes",Shapes.ToHashtable());
 			if (TypeOptions.IsDirty()) h.Add("typeOptions",TypeOptions.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

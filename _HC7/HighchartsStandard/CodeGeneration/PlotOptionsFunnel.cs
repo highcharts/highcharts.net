@@ -36,26 +36,22 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new PlotOptionsFunnelEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Height = Height_DefaultValue = "100%";
-			HeightNumber = HeightNumber_DefaultValue = null;
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
-			InnerSizeNumber = InnerSizeNumber_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
-			Linecap = Linecap_DefaultValue = null;
+			Label = Label_DefaultValue = new PlotOptionsFunnelLabel();
+			Linecap = Linecap_DefaultValue = PlotOptionsFunnelLinecap.Round;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinSize = MinSize_DefaultValue = 80;
 			NeckHeight = NeckHeight_DefaultValue = "25%";
-			NeckHeightNumber = NeckHeightNumber_DefaultValue = null;
 			NeckWidth = NeckWidth_DefaultValue = "30%";
-			NeckWidthNumber = NeckWidthNumber_DefaultValue = null;
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsFunnelPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Reversed = Reversed_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
@@ -67,7 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			Width = Width_DefaultValue = "90%";
-			WidthNumber = WidthNumber_DefaultValue = null;
 			
 		}	
 		
@@ -166,8 +161,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public object DataLabels { get; set; }
-		private object DataLabels_DefaultValue { get; set; }
+		public string DataLabels { get; set; }
+		private string DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -227,13 +222,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The height of the funnel or pyramid. If it is a number it definesthe pixel height, if it is a percentage string it is the percentageof the plot area height.
-		/// </summary>
-		public double? HeightNumber { get; set; }
-		private double? HeightNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Equivalent to [chart.ignoreHiddenSeries](#chart.ignoreHiddenSeries),this option tells whether the series shall be redrawn as if thehidden point were `null`.The default value changed from `false` to `true` with Highcharts3.0.
 		/// </summary>
 		public bool? IgnoreHiddenPoint { get; set; }
@@ -255,13 +243,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The size of the inner diameter for the pie. A size greater than 0renders a donut chart. Can be a percentage or pixel value.Percentages are relative to the pie size. Pixel values are given asintegers.Note: in Highcharts < 4.1.2, the percentage was relative to the plotarea, not the pie size.
-		/// </summary>
-		public double? InnerSizeNumber { get; set; }
-		private double? InnerSizeNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
@@ -269,10 +250,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.Requires the `series-label.js` module.
+		/// </summary>
+		public PlotOptionsFunnelLabel Label { get; set; }
+		private PlotOptionsFunnelLabel Label_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The line cap used for line ends and line joins on the graph.
 		/// </summary>
-		public string Linecap { get; set; }
-		private string Linecap_DefaultValue { get; set; }
+		public PlotOptionsFunnelLinecap Linecap { get; set; }
+		private PlotOptionsFunnelLinecap Linecap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -297,24 +285,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The height of the neck, the lower part of the funnel. A number definespixel width, a percentage string defines a percentage of the plotarea height.
-		/// </summary>
-		public double? NeckHeightNumber { get; set; }
-		private double? NeckHeightNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The width of the neck, the lower part of the funnel. A number definespixel width, a percentage string defines a percentage of the plotarea width.
 		/// </summary>
 		public string NeckWidth { get; set; }
 		private string NeckWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the neck, the lower part of the funnel. A number definespixel width, a percentage string defines a percentage of the plotarea width.
-		/// </summary>
-		public double? NeckWidthNumber { get; set; }
-		private double? NeckWidthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -357,13 +331,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
-		/// </summary>
-		public bool? ShadowBool { get; set; }
-		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -441,13 +408,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Width { get; set; }
 		private string Width_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the funnel compared to the width of the plot area,or the pixel width if it is a number.
-		/// </summary>
-		public double? WidthNumber { get; set; }
-		private double? WidthNumber_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -476,26 +436,22 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
-			if (InnerSizeNumber != InnerSizeNumber_DefaultValue) h.Add("innerSize",InnerSizeNumber);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
 			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
-			if (NeckHeightNumber != NeckHeightNumber_DefaultValue) h.Add("neckHeight",NeckHeightNumber);
 			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
-			if (NeckWidthNumber != NeckWidthNumber_DefaultValue) h.Add("neckWidth",NeckWidthNumber);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PlotOptionsFunnelPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
@@ -507,7 +463,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			
 
 			return h;

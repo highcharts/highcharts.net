@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AnnotationsFibonacciTypeOptions()
 		{
-			BackgroundColors = BackgroundColors_DefaultValue = new List<string>();
+			BackgroundColors = BackgroundColors_DefaultValue = "";
 			Height = Height_DefaultValue = 2;
-			Labels = Labels_DefaultValue = new List<AnnotationsFibonacciTypeOptionsLabels>();
+			Labels = Labels_DefaultValue = new AnnotationsFibonacciTypeOptionsLabels();
 			Line = Line_DefaultValue = new AnnotationsFibonacciTypeOptionsLine();
 			LineColor = LineColor_DefaultValue = "grey";
-			LineColors = LineColors_DefaultValue = new List<string>();
-			Points = Points_DefaultValue = new List<AnnotationsFibonacciTypeOptionsPoints>();
+			LineColors = LineColors_DefaultValue = "";
+			Points = Points_DefaultValue = new AnnotationsFibonacciTypeOptionsPoints();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of background colors:Default to:<pre>[  'rgba(130, 170, 255, 0.4)',  'rgba(139, 191, 216, 0.4)',  'rgba(150, 216, 192, 0.4)',  'rgba(156, 229, 161, 0.4)',  'rgba(162, 241, 130, 0.4)',  'rgba(169, 255, 101, 0.4)']              </pre>
 		/// </summary>
-		public List<string> BackgroundColors { get; set; }
-		private List<string> BackgroundColors_DefaultValue { get; set; }
+		public  BackgroundColors { get; set; }
+		private  BackgroundColors_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array with options for the labels.
 		/// </summary>
-		public List<AnnotationsFibonacciTypeOptionsLabels> Labels { get; set; }
-		private List<AnnotationsFibonacciTypeOptionsLabels> Labels_DefaultValue { get; set; }
+		public List<object> Labels { get; set; }
+		private List<object> Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -65,15 +65,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of colors for the lines.
 		/// </summary>
-		public List<string> LineColors { get; set; }
-		private List<string> LineColors_DefaultValue { get; set; }
+		public  LineColors { get; set; }
+		private  LineColors_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<AnnotationsFibonacciTypeOptionsPoints> Points { get; set; }
-		private List<AnnotationsFibonacciTypeOptionsPoints> Points_DefaultValue { get; set; }
+		public List<object> Points { get; set; }
+		private List<object> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -96,11 +96,11 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (BackgroundColors != BackgroundColors_DefaultValue) h.Add("backgroundColors",BackgroundColors);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Labels.Any()) h.Add("labels",HashifyList(Labels));
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineColors != LineColors_DefaultValue) h.Add("lineColors",LineColors);
-			if (Points.Any()) h.Add("points", HashifyList(Points));
+			if (Points.IsDirty()) h.Add("points",Points.ToHashtable());
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum AnnotationsPitchforkLabelsOverflow
     {
-        Allow, 
+        None, 
 		Justify
     }
 }

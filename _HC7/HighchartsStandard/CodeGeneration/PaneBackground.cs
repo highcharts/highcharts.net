@@ -19,9 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ClassName = ClassName_DefaultValue = "";
 			InnerRadius = InnerRadius_DefaultValue = "0";
-			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
 			OuterRadius = OuterRadius_DefaultValue = "105%";
-			OuterRadiusNumber = OuterRadiusNumber_DefaultValue = null;
 			Shape = Shape_DefaultValue = "circle";
 			
 		}	
@@ -30,8 +28,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The background color or gradient for the pane.
 		/// </summary>
-		public object BackgroundColor { get; set; }
-		private object BackgroundColor_DefaultValue { get; set; }
+		public Object BackgroundColor { get; set; }
+		private Object BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -63,24 +61,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The inner radius of the pane background. Can be either numeric(pixels) or a percentage string.
-		/// </summary>
-		public double? InnerRadiusNumber { get; set; }
-		private double? InnerRadiusNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The outer radius of the circular pane background. Can be eithernumeric (pixels) or a percentage string.
 		/// </summary>
 		public string OuterRadius { get; set; }
 		private string OuterRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The outer radius of the circular pane background. Can be eithernumeric (pixels) or a percentage string.
-		/// </summary>
-		public double? OuterRadiusNumber { get; set; }
-		private double? OuterRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -99,9 +83,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
-			if (InnerRadiusNumber != InnerRadiusNumber_DefaultValue) h.Add("innerRadius",InnerRadiusNumber);
 			if (OuterRadius != OuterRadius_DefaultValue) h.Add("outerRadius",OuterRadius);
-			if (OuterRadiusNumber != OuterRadiusNumber_DefaultValue) h.Add("outerRadius",OuterRadiusNumber);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			
 

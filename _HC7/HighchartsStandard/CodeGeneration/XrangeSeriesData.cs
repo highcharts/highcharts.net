@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Connect = Connect_DefaultValue = new XrangeSeriesDataConnect();
-			ConnectString = ConnectString_DefaultValue = "null";
 			DataLabels = DataLabels_DefaultValue = new XrangeSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new XrangeSeriesDataDragDrop();
@@ -72,13 +71,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public XrangeSeriesDataConnect Connect { get; set; }
 		private XrangeSeriesDataConnect Connect_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Connect to a point. Requires Highcharts Gantt to be loaded. This option canbe either a string, referring to the ID of another point, or an object, or anarray of either. If the option is an array, each element defines aconnection.
-		/// </summary>
-		public string ConnectString { get; set; }
-		private string ConnectString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -190,7 +182,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Connect.IsDirty()) h.Add("connect",Connect.ToHashtable());
-			if (ConnectString != ConnectString_DefaultValue) h.Add("connect",ConnectString);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());

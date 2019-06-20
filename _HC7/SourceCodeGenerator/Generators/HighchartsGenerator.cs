@@ -1,4 +1,4 @@
-﻿using SourceCodeGenerator.Enums;
+﻿
 using SourceCodeGenerator.Parser;
 using SourceCodeGenerator.Services;
 using System;
@@ -41,10 +41,12 @@ public class HighchartsGenerator
     IJsonParser PreviousVersionJsonParser { get; set; }
     IFileService FileService { get; set; }
     IMultiplicationService MultiplicationService { get; set; }
+    IComparisonService ComparisonService { get; set; }
 
-    public HighchartsGenerator(IJsonParser jsonParser, IJsonParser previousVersionJsonParser, IFileService fileService, IMultiplicationService multiplicationService)
+    public HighchartsGenerator(IJsonParser jsonParser, IJsonParser previousVersionJsonParser, IFileService fileService, IMultiplicationService multiplicationService, IComparisonService comparisonService)
     {
         _apiItems = new List<ApiItem>();
+        _previousVersionApiItems = new List<ApiItem>();
         _typeMappings = new Hashtable();
         _propertyTypeMappings = new Hashtable();
         _propertyInitMappings = new Hashtable();
@@ -58,6 +60,7 @@ public class HighchartsGenerator
         PreviousVersionJsonParser = previousVersionJsonParser;
         FileService = fileService;
         MultiplicationService = multiplicationService;
+        ComparisonService = comparisonService;
 
         InitTypeMappings();
         InitPropertyTypeMappings();
@@ -76,8 +79,10 @@ public class HighchartsGenerator
         _apiItems = JsonParser.Get();
         _previousVersionApiItems = PreviousVersionJsonParser.Get();
 
-        Console.WriteLine("new to old");
-        CompareItems(_apiItems, _previousVersionApiItems);
+        Console.WriteLine("Comparing current version to previous version");
+        ComparisonService.SetValuesFromFile(@"d:\work\hc_updated.log");
+        ComparisonService.Compare(_apiItems, _previousVersionApiItems);
+        ComparisonService.SaveChanges(@"d:\work\hc.log", @"d:\work\hc_old.log",FileService);
         //Console.WriteLine("--------------------------------------------------------");
         //Console.WriteLine("old to new");
         //CompareItems(_previousVersionApiItems, _apiItems);
@@ -92,144 +97,7 @@ public class HighchartsGenerator
         GenerateClassesForLevel(_apiItems);
     }
 
-    private void CompareItems(IList<ApiItem> items = null, IList<ApiItem> previousItems = null, List<string> pathToItem = null)
-    {
-        if (items == null)
-            items = _apiItems;
-
-        foreach (var item in items)
-        {
-            ApiItem prevItem = null;
-            if (pathToItem == null || !pathToItem.Any())
-                prevItem = previousItems.SingleOrDefault(p => p.FullName.Equals(item.FullName));
-            else
-            {
-                prevItem = previousItems.SingleOrDefault(p => p.FullName.Equals(pathToItem[0]));
-
-                for (int i = 1; i < pathToItem.Count; i++)
-                {
-                    prevItem = prevItem.Children.SingleOrDefault(p => p.FullName.Equals(pathToItem[i]));
-                }
-
-                prevItem = prevItem.Children.SingleOrDefault(p => p.FullName.Equals(item.FullName));
-            }
-
-            if (prevItem == null)
-            {
-                Console.WriteLine("          " +item.FullName + ": Extra Item");
-                continue;
-            }
-
-            ChangedItem changedItem = ChangedItem.None;
-            StringBuilder sb = new StringBuilder();
-
-            if (string.IsNullOrWhiteSpace(item.ReturnType))
-            {
-                sb.AppendLine("!MISSING: " + item.FullName + " missing ReturnType!");
-                changedItem = ChangedItem.ReturnType;
-            }
-
-            if (!item.ReturnType.Equals(prevItem.ReturnType))
-            {
-                sb.AppendLine("!CHANGE:  " + item.FullName + ": ReturnType - old:" + prevItem.ReturnType + ", new: " + item.ReturnType);
-                changedItem = ChangedItem.ReturnType;
-            }
-            //else
-            //    sb.AppendLine(item.FullName + ": ReturnType - OK");
-
-            if (prevItem.Values.Except(item.Values).Any() || item.Values.Except(prevItem.Values).Any())
-            {
-                sb.Append("!CHANGE:  " + item.FullName + ": Values - " + string.Join(",", item.Values) + "| WAS: " + string.Join(",", prevItem.Values));
-                changedItem = ChangedItem.Values;
-            }
-
-            if (prevItem.Extends.Except(item.Extends).Any() || item.Extends.Except(prevItem.Extends).Any())
-            {
-                sb.Append("!CHANGE:  " + item.FullName + ": Extends - " + string.Join(",", item.Extends) + "| WAS: " + string.Join(",", prevItem.Extends));
-                changedItem = ChangedItem.Extends;
-            }
-
-            if (prevItem.Exclude.Except(item.Exclude).Any() || item.Exclude.Except(prevItem.Exclude).Any())
-            {
-                sb.Append("!CHANGE:  " + item.FullName + ": Exclude - " + string.Join(",", item.Exclude) + "| WAS: " + string.Join(",", prevItem.Exclude));
-                changedItem = ChangedItem.Exclude;
-            }
-
-            if (prevItem.Types.Except(item.Types).Any() || item.Types.Except(prevItem.Types).Any())
-            {
-                sb.Append("!CHANGE:  " + item.FullName + ": Types - " + string.Join(",", item.Types) + "| WAS: " + string.Join(",", prevItem.Types));
-                changedItem = ChangedItem.Types;
-            }
-
-            if (sb.Length > 0)
-                Console.Write(sb.ToString());
-
-            if (changedItem == ChangedItem.ReturnType)
-            {
-                Console.WriteLine("Do you want to copy values from previous version (Y/N)?");
-                var answer = Console.ReadKey();
-                if(char.ToLower(answer.KeyChar).Equals('y'))
-                {
-                    item.ReturnType = string.Copy(prevItem.ReturnType);
-                    Console.WriteLine();
-                    Console.WriteLine(item.FullName + ".ReturnType=" + item.ReturnType);
-                }
-
-                if(char.ToLower(answer.KeyChar).Equals('n') || string.IsNullOrWhiteSpace(item.ReturnType))
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("Choose correct type: ");
-                    Console.WriteLine("1. String");
-                    Console.WriteLine("2. Object");
-                    Console.WriteLine("3. Boolean");
-                    Console.WriteLine("4. Number");
-                    Console.WriteLine("5. function");
-                    Console.WriteLine("Choose correct type: ");
-                    
-                    var correctAnswers = new List<char> { '1', '2', '3', '4', '5' };
-                    ConsoleKeyInfo typeNumber;
-
-                    do
-                    {
-                        typeNumber = Console.ReadKey();
-                    } while (!correctAnswers.Contains(typeNumber.KeyChar));
-
-                    switch(typeNumber.KeyChar)
-                    {
-                        case '1':
-                            item.ReturnType = TypeService.StringType;
-                            break;
-                        case '2':
-                            item.ReturnType = TypeService.ObjectType;
-                            break;
-                        case '3':
-                            item.ReturnType = TypeService.BoolType;
-                            break;
-                        case '4':
-                            item.ReturnType = TypeService.NumberType;
-                            break;
-                        case '5':
-                            item.ReturnType = TypeService.FunctionType;
-                            break;
-                    }
-
-                    Console.WriteLine();
-                    Console.WriteLine(item.FullName + ".ReturnType=" + item.ReturnType);
-                }
-            }
-
-            if (pathToItem == null)
-                pathToItem = new List<string>();
-
-            if (item.Children.Any())
-            {
-                pathToItem.Add(item.FullName);
-                CompareItems(item.Children, previousItems, pathToItem);
-                pathToItem.Remove(item.FullName);
-            }
-
-        }
-    }
+    
 
     
 
@@ -452,7 +320,7 @@ public class HighchartsGenerator
         if (item.FullName.ToLower().EndsWith("zones"))
             item.FullName = item.FullName.Remove(item.FullName.Length - 5) + "Zone";
 
-        foreach (ApiItem child in children)
+        foreach (ApiItem child in children.GroupBy(p => p.FullName).Select(group => group.FirstOrDefault()).OrderBy(q => q.FullName))
         {
             string propertyName = GetPropertyName(child);
 
@@ -798,6 +666,9 @@ public class HighchartsGenerator
         if (returnType.EndsWith("LevelsDataLabels"))
             returnType = returnType.Replace("LevelsData", "Data");
 
+        if (string.IsNullOrWhiteSpace(returnType))
+            returnType = "string";
+
         return returnType;
     }
 
@@ -877,7 +748,7 @@ public class HighchartsGenerator
             if (child.ReturnType == "Array.<*>" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
-            if (child.Children.Any() || child.Extends.Any() || child.ReturnType == "Object")
+            if ((child.Children.Any() || child.Extends.Any()) && child.ReturnType == "Object")
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             // Event (javascript function)
@@ -896,7 +767,9 @@ public class HighchartsGenerator
             }
         }
         else
+        {
             return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
+        }
     }
 
     private void GenerateClassesForLevel(IList<ApiItem> items, int level = 0)
@@ -1012,6 +885,8 @@ public class HighchartsGenerator
         _typeMappings.Add("Array.<object>", "List<object>");
         _typeMappings.Add("Mixed", "double?");
         _typeMappings.Add("Array.<Highcharts.ColorString>", "List<string>");
+        _typeMappings.Add("Array.<Array.<*>>", "List<List<Object>>");
+        
     }
     private void InitPropertyTypeMappings()
     {
@@ -1087,6 +962,30 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("defs", "Object");
         _propertyTypeMappings.Add("labels.items.style", "Hashtable");
         _propertyTypeMappings.Add("boxesToAvoid", "List<object>");
+        _propertyTypeMappings.Add("colors", "List<string>");
+        _propertyTypeMappings.Add("data.columns", "List<List<Object>>");
+        _propertyTypeMappings.Add("chart.options3d.axisLabelPosition", "string");
+        _propertyTypeMappings.Add("initialPositions", "double?");
+        _propertyTypeMappings.Add("position3d", "string");
+        _propertyTypeMappings.Add("data.seriesMapping", "List<List<double?>>");
+        _propertyTypeMappings.Add("tickWidth", "double?");
+        _propertyTypeMappings.Add("style", "Hashtable");
+        _propertyTypeMappings.Add("series.columnpyramid.states", "Hashtable");
+        _propertyTypeMappings.Add("series.dependencywheel.levels.states", "Hashtable");
+        _propertyTypeMappings.Add("series.organization.levels.states", "Hashtable");
+        _propertyTypeMappings.Add("series.sankey.levels.states", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.dependencywheel.levels.states", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.organization.levels.states", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.sankey.levels.states", "Hashtable");
+
+        _propertyTypeMappings.Add("legend.bubbleLegend.ranges.value", "double?");
+        _propertyTypeMappings.Add("plotOptions.sunburst.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.sunburst.levels.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("series.pyramid3d.data", "List<Hashtable>");
+        _propertyTypeMappings.Add("plotOptions.pie.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.item.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.pyramid.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.variablepie.dataLabels", "Hashtable");
     }
     private void InitPropertyInitMappings()
     {
@@ -1182,6 +1081,35 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("autoRotation", "new List<double> {-45}");
         _propertyInitMappings.Add("spacing", "new List<double>()");
         _propertyInitMappings.Add("categories", "new List<string>()");
+        _propertyInitMappings.Add("data.columns", "new List<List<Object>>()");
+        _propertyInitMappings.Add("chart.options3d.axisLabelPosition", "null");
+        _propertyInitMappings.Add("initialPositions", "null");
+        _propertyInitMappings.Add("initialPositionsRadius", "null");
+        _propertyInitMappings.Add("data.seriesMapping", "new List<List<double?>>()");
+        _propertyInitMappings.Add("tickWidth", "null");
+        _propertyInitMappings.Add("sets", "new List<string>()");
+        _propertyInitMappings.Add("style", "new Hashtable()");
+        _propertyInitMappings.Add("series.columnpyramid.states", "new Hashtable()");
+        _propertyInitMappings.Add("series.dependencywheel.levels.states", "new Hashtable()");
+        _propertyInitMappings.Add("series.organization.levels.states", "new Hashtable()");
+        _propertyInitMappings.Add("series.sankey.levels.states", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.dependencywheel.levels.states", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.organization.levels.states", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.sankey.levels.states", "new Hashtable()");
+
+        _propertyInitMappings.Add("legend.bubbleLegend.ranges.value", "null");
+        _propertyInitMappings.Add("plotOptions.sunburst.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.sunburst.levels.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("series.pyramid3d.data", "new List<Hashtable()>");
+        _propertyInitMappings.Add("plotOptions.item.rows", "null");
+        _propertyInitMappings.Add("series.item.rows", "null");
+        _propertyInitMappings.Add("initialPositionRadius", "null");
+        _propertyInitMappings.Add("accessibility.customComponents", "new object()");
+        _propertyInitMappings.Add("plotOptions.pie.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.item.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.pyramid.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.variablepie.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("pane.background.backgroundColor", "new object()");
     }
     private void InitLists()
     {
@@ -1294,7 +1222,13 @@ public class HighchartsGenerator
 
     public string MapDefaultValue(ApiItem item)
     {
-        string defaults = item.Defaults;
+        string defaults;
+
+        if (string.IsNullOrWhiteSpace(item.Defaults))
+            defaults = item.Defaults;
+        else
+            defaults = item.Defaults.Replace('\\',' ').Replace('\'',' ');
+
         var nameAndSuffix = FirstCharToLower(GetPropertyName(item));
 
         if (item.Defaults == "\n")
@@ -1475,6 +1409,6 @@ public class HighchartsGenerator
                 return "null";
         }
 
-        return defaults;
+        return defaults.Replace('\\', ' ');
     }
 }

@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Event callback when annotation is added to the chart.
 		/// </summary>
 		public string Add { get; set; }
-        private string Add_DefaultValue { get; set; }
+		private string Add_DefaultValue { get; set; }
 		 
 
 		/// <summary>

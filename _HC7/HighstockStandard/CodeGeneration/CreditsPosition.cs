@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public CreditsPosition()
 		{
-			Align = Align_DefaultValue = "right";
-			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
+			Align = Align_DefaultValue = CreditsPositionAlign.Right;
+			VerticalAlign = VerticalAlign_DefaultValue = CreditsPositionVerticalAlign.Bottom;
 			X = X_DefaultValue = -10;
 			Y = Y_DefaultValue = -5;
 			
@@ -25,15 +25,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Horizontal alignment of the credits.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public CreditsPositionAlign Align { get; set; }
+		private CreditsPositionAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Vertical alignment of the credits.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public CreditsPositionVerticalAlign VerticalAlign { get; set; }
+		private CreditsPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Outside = Outside_DefaultValue = false;
 			Padding = Padding_DefaultValue = "8";
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'> u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Split = Split_DefaultValue = null;
 			ValueDecimals = ValueDecimals_DefaultValue = null;

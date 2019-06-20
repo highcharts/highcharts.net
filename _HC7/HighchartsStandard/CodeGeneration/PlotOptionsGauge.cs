@@ -17,14 +17,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new PlotOptionsGaugeAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsGaugeBoostBlending.Undefined;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Cursor = Cursor_DefaultValue = PlotOptionsGaugeCursor.Null;
-			DataLabels = DataLabels_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
 			Description = Description_DefaultValue = "";
 			Dial = Dial_DefaultValue = new PlotOptionsGaugeDial();
 			DragDrop = DragDrop_DefaultValue = new PlotOptionsGaugeDragDrop();
@@ -34,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsGaugeLabel();
-			Linecap = Linecap_DefaultValue = null;
+			Linecap = Linecap_DefaultValue = PlotOptionsGaugeLinecap.Round;
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Opacity = Opacity_DefaultValue = 1;
@@ -77,13 +76,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -131,8 +123,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Data labels for the gauge. For gauges, the data labels are enabledby default and shown in a bordered box below the point.
 		/// </summary>
-		public object DataLabels { get; set; }
-		private object DataLabels_DefaultValue { get; set; }
+		public PlotOptionsGaugeDataLabels DataLabels { get; set; }
+		private PlotOptionsGaugeDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -201,8 +193,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The line cap used for line ends and line joins on the graph.
 		/// </summary>
-		public string Linecap { get; set; }
-		private string Linecap_DefaultValue { get; set; }
+		public PlotOptionsGaugeLinecap Linecap { get; set; }
+		private PlotOptionsGaugeLinecap Linecap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -345,7 +337,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
@@ -362,7 +353,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap",Linecap);
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);

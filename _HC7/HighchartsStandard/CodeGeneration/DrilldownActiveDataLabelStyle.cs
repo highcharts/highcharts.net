@@ -15,12 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public DrilldownActiveDataLabelStyle()
 		{
 			Color = Color_DefaultValue = "#003399";
-			Color = Color_DefaultValue = "#003399";
-			Cursor = Cursor_DefaultValue = "pointer";
 			Cursor = Cursor_DefaultValue = "pointer";
 			FontWeight = FontWeight_DefaultValue = "bold";
-			FontWeight = FontWeight_DefaultValue = "bold";
-			TextDecoration = TextDecoration_DefaultValue = "underline";
 			TextDecoration = TextDecoration_DefaultValue = "underline";
 			
 		}	
@@ -31,40 +27,36 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
-		 		 
+		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Cursor { get; set; }
 		private string Cursor_DefaultValue { get; set; }
-		 		 
+		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string FontWeight { get; set; }
 		private string FontWeight_DefaultValue { get; set; }
-				 
+		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string TextDecoration { get; set; }
 		private string TextDecoration_DefaultValue { get; set; }
-		 		  
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
-			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
-			if (TextDecoration != TextDecoration_DefaultValue) h.Add("textDecoration",TextDecoration);
 			if (TextDecoration != TextDecoration_DefaultValue) h.Add("textDecoration",TextDecoration);
 			
 

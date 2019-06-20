@@ -23,7 +23,7 @@ public class HighstockGenerator
     const string ROOT_NAMESPACE = "Stocks"; // the name of the root class
 
     List<ApiItem> _apiItems; // json api mappings will be stored here
-    StreamWriter _log; // general debug related txt log file
+    List<ApiItem> _previousVersionApiItems;
     Hashtable _typeMappings; // maps HighChart types to C# types, where possible
     Hashtable _propertyTypeMappings; // maps properties that need special type not reflected in the JSON
     Hashtable _propertyInitMappings; // maps properties that needs special initialization logic
@@ -36,12 +36,15 @@ public class HighstockGenerator
     bool IsNETStandard;
 
     IJsonParser JsonParser { get; set; }
+    IJsonParser PreviousJsonParser { get; set; }
     IFileService FileService { get; set; }
     IMultiplicationService MultiplicationService { get; set; }
+    IComparisonService ComparisonService { get; set; }
 
-    public HighstockGenerator(IJsonParser jsonParser, IFileService fileService, IMultiplicationService multiplicationService)
+    public HighstockGenerator(IJsonParser jsonParser, IJsonParser previousJsonParser, IFileService fileService, IMultiplicationService multiplicationService, IComparisonService comparisonService)
     {
         _apiItems = new List<ApiItem>();
+        _previousVersionApiItems = new List<ApiItem>();
         _typeMappings = new Hashtable();
         _propertyTypeMappings = new Hashtable();
         _propertyInitMappings = new Hashtable();
@@ -52,8 +55,10 @@ public class HighstockGenerator
         _lists = new List<string>();
 
         JsonParser = jsonParser;
+        PreviousJsonParser = previousJsonParser;
         FileService = fileService;
         MultiplicationService = multiplicationService;
+        ComparisonService = comparisonService;
 
         InitTypeMappings();
         InitPropertyTypeMappings();
@@ -70,6 +75,13 @@ public class HighstockGenerator
         IsNETStandard = isNETStandard;
         FileService.PrepareFolder(ROOT_CLASS);
         _apiItems = JsonParser.Get();
+        _previousVersionApiItems = PreviousJsonParser.Get();
+
+        Console.WriteLine("Comparing current version to previous version");
+        ComparisonService.SetValuesFromFile(@"d:\work\hs_updated.log");
+        ComparisonService.Compare(_apiItems, _previousVersionApiItems);
+        ComparisonService.SaveChanges(@"d:\work\hs.log", @"d:\work\hs_old.log", FileService);
+
         ProcessApiItems(_apiItems);
         MultiplyObjects(_apiItems);
 
@@ -1028,6 +1040,30 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("plotOptions.stochastic.params.periods", "List<int>");
         _propertyTypeMappings.Add("labels.items.style", "Hashtable");
         _propertyTypeMappings.Add("boxesToAvoid", "List<object>");
+        _propertyTypeMappings.Add("colors", "List<string>");
+        _propertyTypeMappings.Add("data.columns", "List<List<Object>>");
+        _propertyTypeMappings.Add("chart.options3d.axisLabelPosition", "string");
+        _propertyTypeMappings.Add("initialPositions", "double?");
+        _propertyTypeMappings.Add("position3d", "string");
+        _propertyTypeMappings.Add("data.seriesMapping", "List<List<double?>>");
+        _propertyTypeMappings.Add("tickWidth", "double?");
+        _propertyTypeMappings.Add("style", "Hashtable");
+        _propertyTypeMappings.Add("series.columnpyramid.states", "Hashtable");
+        _propertyTypeMappings.Add("series.dependencywheel.levels.states", "Hashtable");
+        _propertyTypeMappings.Add("series.organization.levels.states", "Hashtable");
+        _propertyTypeMappings.Add("series.sankey.levels.states", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.dependencywheel.levels.states", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.organization.levels.states", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.sankey.levels.states", "Hashtable");
+
+        _propertyTypeMappings.Add("legend.bubbleLegend.ranges.value", "double?");
+        _propertyTypeMappings.Add("plotOptions.sunburst.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.sunburst.levels.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("series.pyramid3d.data", "List<Hashtable>");
+        _propertyTypeMappings.Add("plotOptions.pie.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.item.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.pyramid.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("plotOptions.variablepie.dataLabels", "Hashtable");
     }
     private void InitPropertyInitMappings()
     {
@@ -1143,6 +1179,35 @@ public class HighstockGenerator
         _propertyInitMappings.Add("autoRotation", "new List<double> {-45}");
         _propertyInitMappings.Add("categories", "new List<string>()");
         _propertyInitMappings.Add("spacing", "new List<double>()");
+        _propertyInitMappings.Add("data.columns", "new List<List<Object>>()");
+        _propertyInitMappings.Add("chart.options3d.axisLabelPosition", "null");
+        _propertyInitMappings.Add("initialPositions", "null");
+        _propertyInitMappings.Add("initialPositionsRadius", "null");
+        _propertyInitMappings.Add("data.seriesMapping", "new List<List<double?>>()");
+        _propertyInitMappings.Add("tickWidth", "null");
+        _propertyInitMappings.Add("sets", "new List<string>()");
+        _propertyInitMappings.Add("style", "new Hashtable()");
+        _propertyInitMappings.Add("series.columnpyramid.states", "new Hashtable()");
+        _propertyInitMappings.Add("series.dependencywheel.levels.states", "new Hashtable()");
+        _propertyInitMappings.Add("series.organization.levels.states", "new Hashtable()");
+        _propertyInitMappings.Add("series.sankey.levels.states", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.dependencywheel.levels.states", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.organization.levels.states", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.sankey.levels.states", "new Hashtable()");
+
+        _propertyInitMappings.Add("legend.bubbleLegend.ranges.value", "null");
+        _propertyInitMappings.Add("plotOptions.sunburst.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.sunburst.levels.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("series.pyramid3d.data", "new List<Hashtable()>");
+        _propertyInitMappings.Add("plotOptions.item.rows", "null");
+        _propertyInitMappings.Add("series.item.rows", "null");
+        _propertyInitMappings.Add("initialPositionRadius", "null");
+        _propertyInitMappings.Add("accessibility.customComponents", "new object()");
+        _propertyInitMappings.Add("plotOptions.pie.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.item.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.pyramid.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.variablepie.dataLabels", "new Hashtable()");
+        _propertyInitMappings.Add("pane.background.backgroundColor", "new object()");
     }
     private void InitLists()
     {
@@ -1232,7 +1297,13 @@ public class HighstockGenerator
 
     public string MapDefaultValue(ApiItem item)
     {
-        string defaults = item.Defaults;
+        string defaults;
+
+        if (string.IsNullOrWhiteSpace(item.Defaults))
+            defaults = item.Defaults;
+        else
+            defaults = item.Defaults.Replace('\\', ' ').Replace('\'', ' ');
+
         var nameAndSuffix = FirstCharToLower(GetPropertyName(item));
 
         if (item.Defaults == "\n")

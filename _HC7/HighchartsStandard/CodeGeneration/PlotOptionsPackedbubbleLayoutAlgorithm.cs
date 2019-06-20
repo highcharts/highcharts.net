@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			EnableSimulation = EnableSimulation_DefaultValue = true;
 			Friction = Friction_DefaultValue = null;
 			GravitationalConstant = GravitationalConstant_DefaultValue = null;
-			InitialPositionRadius = InitialPositionRadius_DefaultValue = 20;
+			InitialPositionRadius = InitialPositionRadius_DefaultValue = null;
 			InitialPositions = InitialPositions_DefaultValue = null;
 			Integration = Integration_DefaultValue = PlotOptionsPackedbubbleLayoutAlgorithmIntegration.Euler;
 			MaxIterations = MaxIterations_DefaultValue = 1000;
@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Initial layout algorithm for positioning nodes. Can be one ofthe built-in options ("circle", "random") or a function wherepositions should be set on each node (`this.nodes`) as`node.plotX` and `node.plotY`.
 		/// </summary>
-		public string InitialPositions { get; set; }
-		private string InitialPositions_DefaultValue { get; set; }
+		public double? InitialPositions { get; set; }
+		private double? InitialPositions_DefaultValue { get; set; }
 		 
 
 		/// <summary>

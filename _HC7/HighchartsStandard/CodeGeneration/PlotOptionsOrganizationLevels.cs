@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsOrganizationDataLabels();
 			Level = Level_DefaultValue = null;
 			LinkOpacity = LinkOpacity_DefaultValue = null;
-			States = States_DefaultValue = new List<object>();
+			States = States_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Can set `states` on all points which lies on the same level.
 		/// </summary>
-		public Object States { get; set; }
-		private Object States_DefaultValue { get; set; }
+		public Hashtable States { get; set; }
+		private Hashtable States_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -90,10 +90,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-            if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels", DataLabels);
-            if (Level != Level_DefaultValue) h.Add("level",Level);
+			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (Level != Level_DefaultValue) h.Add("level",Level);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
-			if (States != States) h.Add("states",States);
+			if (States != States_DefaultValue) h.Add("states",States);
 			
 
 			return h;

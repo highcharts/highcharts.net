@@ -4,13 +4,16 @@ namespace SourceCodeGenerator.Services
 {
     public class FileService : IFileService
     {
-        private string AssemblyFolderPath { get; set; }
+        private string _assemblyFolderPath;
+        private string _jsonFileName;
+
+        
 
         private string TemplatesFolderPath
         {
             get
             {
-                return AssemblyFolderPath + "\\CodeTemplates";
+                return _assemblyFolderPath + "\\CodeTemplates";
             }
         }
         private string RootClassTemplatePath
@@ -61,7 +64,7 @@ namespace SourceCodeGenerator.Services
         {
             get
             {
-                return AssemblyFolderPath + "\\JsonFiles";
+                return _assemblyFolderPath + "\\JsonFiles";
             }
         }
 
@@ -69,7 +72,7 @@ namespace SourceCodeGenerator.Services
         {
             get
             {
-                return JsonFolderPath + "\\highcharts.json";
+                return JsonFolderPath + "\\" + _jsonFileName;// highcharts.json";
             }
         }
 
@@ -77,13 +80,19 @@ namespace SourceCodeGenerator.Services
         {
             get
             {
-                return AssemblyFolderPath + "\\CodeGeneration";
+                return _assemblyFolderPath + "\\CodeGeneration";
             }
         }
 
-        public FileService()
+        //public FileService()
+        //{
+        //    _assemblyFolderPath = Directory.GetCurrentDirectory();
+        //}
+
+        public FileService(string jsonFileName)
         {
-            AssemblyFolderPath = Directory.GetCurrentDirectory();
+            _assemblyFolderPath = Directory.GetCurrentDirectory();
+            _jsonFileName = jsonFileName;
         }
 
         public string GetRootClassTemplate(bool isNETStandard = false)
@@ -141,7 +150,7 @@ namespace SourceCodeGenerator.Services
         {
             return File.ReadAllText(filePath);
         }
-        private void SaveFile(string filePath, string content)
+        public void SaveFile(string filePath, string content)
         {
             File.WriteAllText(filePath, content);
         }
@@ -162,6 +171,7 @@ namespace SourceCodeGenerator.Services
         string GetJsonContent();
         void SaveClass(string product, string className, string content);
         void SaveEnum(string product, string enumName, string content);
+        void SaveFile(string filePath, string content);
         void PrepareFolder(string product);
 
     }

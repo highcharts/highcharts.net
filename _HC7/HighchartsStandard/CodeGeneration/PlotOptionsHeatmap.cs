@@ -27,13 +27,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Colsize = Colsize_DefaultValue = 1;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsHeatmapCursor.Null;
-			DataLabels = DataLabels_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsHeatmapDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new PlotOptionsHeatmapDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsHeatmapEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
+			Jitter = Jitter_DefaultValue = new PlotOptionsHeatmapJitter();
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsHeatmapLabel();
 			LinkedTo = LinkedTo_DefaultValue = "";
@@ -153,8 +154,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public object DataLabels { get; set; }
-		private object DataLabels_DefaultValue { get; set; }
+		public PlotOptionsHeatmapDataLabels DataLabels { get; set; }
+		private PlotOptionsHeatmapDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -197,6 +198,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
 		private bool? IncludeInDataExport_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Apply a jitter effect for the rendered markers. When plottingdiscrete values, a little random noise may help telling the pointsapart. The jitter setting applies a random displacement of up to `n`axis units in either direction. So for example on a horizontal Xaxis, setting the `jitter.x` to 0.24 will render the point in arandom position between 0.24 units to the left and 0.24 units to theright of the true axis position. On a category axis, setting it to0.5 will fill up the bin and make the data appear continuous.When rendered on top of a box plot or a column series, a jitter valueof 0.24 will correspond to the underlying series' default[groupPadding](https://api.highcharts.com/highcharts/plotOptions.column.groupPadding)and [pointPadding](https://api.highcharts.com/highcharts/plotOptions.column.pointPadding)settings.
+		/// </summary>
+		public PlotOptionsHeatmapJitter Jitter { get; set; }
+		private PlotOptionsHeatmapJitter Jitter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -370,6 +378,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
+			if (Jitter.IsDirty()) h.Add("jitter",Jitter.ToHashtable());
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);

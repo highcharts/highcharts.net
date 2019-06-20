@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxSize = MaxSize_DefaultValue = 60;
 			MinSize = MinSize_DefaultValue = 10;
 			Ranges = Ranges_DefaultValue = new LegendBubbleLegendRanges();
-			SizeBy = SizeBy_DefaultValue = null;
+			SizeBy = SizeBy_DefaultValue = "area";
 			SizeByAbsoluteValue = SizeByAbsoluteValue_DefaultValue = false;
 			ZIndex = ZIndex_DefaultValue = 1;
 			ZThreshold = ZThreshold_DefaultValue = 0;
@@ -179,7 +179,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (MaxSize != MaxSize_DefaultValue) h.Add("maxSize",MaxSize);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
-			if (Ranges.IsDirty()) h.Add("ranges",Ranges.ToHashtable());
+			if (Ranges != Ranges_DefaultValue) h.Add("ranges",Ranges);
 			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy",SizeBy);
 			if (SizeByAbsoluteValue != SizeByAbsoluteValue_DefaultValue) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

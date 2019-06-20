@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			AlignTicks = AlignTicks_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
 			BorderColor = BorderColor_DefaultValue = "#335cad";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -27,7 +26,6 @@ namespace Highsoft.Web.Mvc.Charts
 			DisplayErrors = DisplayErrors_DefaultValue = true;
 			Events = Events_DefaultValue = new ChartEvents();
 			Height = Height_DefaultValue = null;
-			HeightNumber = HeightNumber_DefaultValue = null;
 			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
 			Inverted = Inverted_DefaultValue = false;
 			Margin = Margin_DefaultValue = new double[]{};
@@ -46,7 +44,6 @@ namespace Highsoft.Web.Mvc.Charts
 			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
 			PlotBorderWidth = PlotBorderWidth_DefaultValue = 0;
 			PlotShadow = PlotShadow_DefaultValue = new Shadow() { Enabled = false };
-			PlotShadowBool = PlotShadowBool_DefaultValue = null;
 			Polar = Polar_DefaultValue = false;
 			Reflow = Reflow_DefaultValue = true;
 			RenderTo = RenderTo_DefaultValue = "";
@@ -54,7 +51,6 @@ namespace Highsoft.Web.Mvc.Charts
 			ScrollablePlotArea = ScrollablePlotArea_DefaultValue = new ChartScrollablePlotArea();
 			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(51,92,173,0.25)";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowAxes = ShowAxes_DefaultValue = null;
 			Spacing = Spacing_DefaultValue = new List<double>();
 			SpacingBottom = SpacingBottom_DefaultValue = 15;
@@ -63,7 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new ChartStyle();
 			StyledMode = StyledMode_DefaultValue = false;
-			Type = Type_DefaultValue = ChartType.Bar;
+			Type = Type_DefaultValue = ChartType.Null;
 			Width = Width_DefaultValue = null;
 			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
@@ -83,13 +79,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:<dl><dt>duration</dt><dd>The duration of the animation in milliseconds.</dd><dt>easing</dt><dd>A string reference to an easing function set on the `Math`object. See [the easingdemo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).</dd></dl>
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -160,13 +149,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An explicit height for the chart. If a _number_, the height isgiven in pixels. If given a _percentage string_ (for example`'56%'`), the height is given as the percentage of the actual chartwidth. This allows for preserving the aspect ratio across responsivesizes.By default (when `null`) the height is calculated from the offsetheight of the containing element, or 400 pixels if the containingelement's height is 0.
-		/// </summary>
-		public double? HeightNumber { get; set; }
-		private double? HeightNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -296,13 +278,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the plot area. Requires thatplotBackgroundColor be set. The shadow can be an object configurationcontaining `color`, `offsetX`, `offsetY`, `opacity` and `width`.
-		/// </summary>
-		public bool? PlotShadowBool { get; set; }
-		private bool? PlotShadowBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When true, cartesian charts like line, spline, area and column aretransformed into the polar coordinate system. This produces _polarcharts_, also known as _radar charts_. Requires`highcharts-more.js`.
 		/// </summary>
 		public bool? Polar { get; set; }
@@ -349,13 +324,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply a drop shadow to the outer chart area. Requiresthat backgroundColor be set. The shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
-		/// </summary>
-		public bool? ShadowBool { get; set; }
-		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -448,7 +416,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -459,7 +426,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DisplayErrors != DisplayErrors_DefaultValue) h.Add("displayErrors",DisplayErrors);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
 			if (Inverted != Inverted_DefaultValue) h.Add("inverted",Inverted);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
@@ -478,7 +444,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
 			if (PlotShadow != PlotShadow_DefaultValue) h.Add("plotShadow",PlotShadow);
-			if (PlotShadowBool != PlotShadowBool_DefaultValue) h.Add("plotShadow",PlotShadowBool);
 			if (Polar != Polar_DefaultValue) h.Add("polar",Polar);
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
@@ -486,14 +451,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ScrollablePlotArea.IsDirty()) h.Add("scrollablePlotArea",ScrollablePlotArea.ToHashtable());
 			if (SelectionMarkerFill != SelectionMarkerFill_DefaultValue) h.Add("selectionMarkerFill",SelectionMarkerFill);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowAxes != ShowAxes_DefaultValue) h.Add("showAxes",ShowAxes);
 			if (Spacing != Spacing_DefaultValue) h.Add("spacing",Spacing);
 			if (SpacingBottom != SpacingBottom_DefaultValue) h.Add("spacingBottom",SpacingBottom);
 			if (SpacingLeft != SpacingLeft_DefaultValue) h.Add("spacingLeft",SpacingLeft);
 			if (SpacingRight != SpacingRight_DefaultValue) h.Add("spacingRight",SpacingRight);
 			if (SpacingTop != SpacingTop_DefaultValue) h.Add("spacingTop",SpacingTop);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (StyledMode != StyledMode_DefaultValue) h.Add("styledMode",StyledMode);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);

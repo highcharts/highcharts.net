@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			InputStyle = InputStyle_DefaultValue = new Hashtable();
 			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
 			Selected = Selected_DefaultValue = null;
-			VerticalAlign = VerticalAlign_DefaultValue = "top";
+			VerticalAlign = VerticalAlign_DefaultValue = RangeSelectorVerticalAlign.Top;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			
@@ -114,8 +114,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS for the container DIV holding the input boxes. Deprecated asof 1.2.5\. Use [inputPosition](#rangeSelector.inputPosition) instead.
 		/// </summary>
-		public Hashtable InputBoxStyle { get; set; }
-		private Hashtable InputBoxStyle_DefaultValue { get; set; }
+		public Object InputBoxStyle { get; set; }
+		private Object InputBoxStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -184,8 +184,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The vertical alignment of the rangeselector box. Allowed propertiesare `top`, `middle`, `bottom`.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public RangeSelectorVerticalAlign VerticalAlign { get; set; }
+		private RangeSelectorVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -216,7 +216,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (InputBoxBorderColor != InputBoxBorderColor_DefaultValue) h.Add("inputBoxBorderColor",InputBoxBorderColor);
 			if (InputBoxHeight != InputBoxHeight_DefaultValue) h.Add("inputBoxHeight",InputBoxHeight);
-			if (InputBoxStyle.Count > 0) h.Add("inputBoxStyle",InputBoxStyle);
+			if (InputBoxStyle.IsDirty()) h.Add("inputBoxStyle",InputBoxStyle.ToHashtable());
 			if (InputBoxWidth != InputBoxWidth_DefaultValue) h.Add("inputBoxWidth",InputBoxWidth);
 			if (InputDateFormat != InputDateFormat_DefaultValue) h.Add("inputDateFormat",InputDateFormat);
 			if (InputDateParser != InputDateParser_DefaultValue) { h.Add("inputDateParser",InputDateParser); Highstock.AddFunction("RangeSelectorInputDateParser.inputDateParser", InputDateParser); }  
@@ -226,7 +226,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (InputStyle != InputStyle_DefaultValue) h.Add("inputStyle",InputStyle);
 			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

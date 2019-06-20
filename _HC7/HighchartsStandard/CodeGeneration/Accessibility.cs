@@ -28,7 +28,6 @@ namespace Highsoft.Web.Mvc.Charts
 			PointDateFormatter = PointDateFormatter_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = 500;
-			PointDescriptionThresholdBool = PointDescriptionThresholdBool_DefaultValue = null;
 			PointValueDecimals = PointValueDecimals_DefaultValue = "";
 			PointValuePrefix = PointValuePrefix_DefaultValue = "";
 			PointValueSuffix = PointValueSuffix_DefaultValue = "";
@@ -138,13 +137,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When a series contains more points than this, we no longer exposeinformation about individual points to screen readers.Set to `false` to disable.
-		/// </summary>
-		public bool? PointDescriptionThresholdBool { get; set; }
-		private bool? PointDescriptionThresholdBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Decimals to use for the values in the point descriptions. Uses[tooltip.valueDecimals](#tooltip.valueDecimals) if not defined.
 		/// </summary>
 		public string PointValueDecimals { get; set; }
@@ -210,7 +202,6 @@ namespace Highsoft.Web.Mvc.Charts
 				else
 					h.Add("pointDescriptionThreshold", false);
 			}
-			if (PointDescriptionThresholdBool != PointDescriptionThresholdBool_DefaultValue) h.Add("pointDescriptionThreshold",PointDescriptionThresholdBool);
 			if (PointValueDecimals != PointValueDecimals_DefaultValue) h.Add("pointValueDecimals",PointValueDecimals);
 			if (PointValuePrefix != PointValuePrefix_DefaultValue) h.Add("pointValuePrefix",PointValuePrefix);
 			if (PointValueSuffix != PointValueSuffix_DefaultValue) h.Add("pointValueSuffix",PointValueSuffix);

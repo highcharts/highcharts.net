@@ -78,7 +78,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Approximation != Approximation_DefaultValue) h.Add("approximation",Approximation);
+			if (Approximation != Approximation_DefaultValue) { h.Add("approximation",Approximation); Highstock.AddFunction("StreamgraphSeriesDataGroupingApproximation.approximation", Approximation); }  
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Forced != Forced_DefaultValue) h.Add("forced",Forced);

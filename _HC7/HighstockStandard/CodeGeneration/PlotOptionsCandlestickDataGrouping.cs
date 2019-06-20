@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsCandlestickDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = "ohlc";
+			Approximation = Approximation_DefaultValue = "";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			Forced = Forced_DefaultValue = false;

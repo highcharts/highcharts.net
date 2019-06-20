@@ -12,22 +12,22 @@ namespace Highsoft.Web.Mvc.Stocks
 {
 	public partial class StockToolsGuiDefinitionsLines  : BaseObject
 	{
-        public StockToolsGuiDefinitionsLines()
-        {
-            ArrowLine = ArrowLine_DefaultValue = new StockToolsGuiDefinitionsLinesArrowLine();
-            ArrowRay = ArrowRay_DefaultValue = new StockToolsGuiDefinitionsLinesArrowRay();
-            ArrowSegment = ArrowSegment_DefaultValue = new StockToolsGuiDefinitionsLinesArrowSegment();
-            HorizontalLine = HorizontalLine_DefaultValue = new StockToolsGuiDefinitionsLinesHorizontalLine();
-            Items = Items_DefaultValue = new List<string>() { 
-  "segment",
-  "arrowSegment",
-  "ray",
-  "arrowRay",
-  "line",
-  "arrowLine",
-  "horizontalLine",
-  "verticalLine"
-};
+		public StockToolsGuiDefinitionsLines()
+		{
+			ArrowLine = ArrowLine_DefaultValue = new StockToolsGuiDefinitionsLinesArrowLine();
+			ArrowRay = ArrowRay_DefaultValue = new StockToolsGuiDefinitionsLinesArrowRay();
+			ArrowSegment = ArrowSegment_DefaultValue = new StockToolsGuiDefinitionsLinesArrowSegment();
+			HorizontalLine = HorizontalLine_DefaultValue = new StockToolsGuiDefinitionsLinesHorizontalLine();
+			Items = Items_DefaultValue = [
+   segment ,
+   arrowSegment ,
+   ray ,
+   arrowRay ,
+   line ,
+   arrowLine ,
+   horizontalLine ,
+   verticalLine 
+];
 			Line = Line_DefaultValue = new StockToolsGuiDefinitionsLinesLine();
 			Ray = Ray_DefaultValue = new StockToolsGuiDefinitionsLinesRay();
 			Segment = Segment_DefaultValue = new StockToolsGuiDefinitionsLinesSegment();
@@ -61,14 +61,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsLinesHorizontalLine HorizontalLine { get; set; }
-        private StockToolsGuiDefinitionsLinesHorizontalLine HorizontalLine_DefaultValue { get; set; }
+		private StockToolsGuiDefinitionsLinesHorizontalLine HorizontalLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A collection of strings pointing to config options forthe items.
 		/// </summary>
-		public List<string> Items { get; set; }
-		private List<string> Items_DefaultValue { get; set; }
+		public Array Items { get; set; }
+		private Array Items_DefaultValue { get; set; }
 		 
 
 		/// <summary>

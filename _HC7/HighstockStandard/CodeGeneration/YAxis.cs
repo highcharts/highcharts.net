@@ -86,7 +86,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickPosition = TickPosition_DefaultValue = YAxisTickPosition.Outside;
 			TickPositioner = TickPositioner_DefaultValue = "";
 			TickPositions = TickPositions_DefaultValue = new List<double>();
-			TickWidth = TickWidth_DefaultValue = 0;
+			TickWidth = TickWidth_DefaultValue = null;
 			Title = Title_DefaultValue = new YAxisTitle();
 			Top = Top_DefaultValue = "";
 			TopNumber = TopNumber_DefaultValue = null;

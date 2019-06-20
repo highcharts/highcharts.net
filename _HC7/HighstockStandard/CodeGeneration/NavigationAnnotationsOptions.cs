@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LabelOptions = LabelOptions_DefaultValue = new NavigationAnnotationsOptionsLabelOptions();
 			Labels = Labels_DefaultValue = new NavigationAnnotationsOptionsLabels();
 			ShapeOptions = ShapeOptions_DefaultValue = new NavigationAnnotationsOptionsShapeOptions();
-			Shapes = Shapes_DefaultValue = new List<NavigationAnnotationsOptionsShapes>();
+			Shapes = Shapes_DefaultValue = new NavigationAnnotationsOptionsShapes();
 			Visible = Visible_DefaultValue = true;
 			ZIndex = ZIndex_DefaultValue = 6;
 			
@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of shapes for the annotation. For options that apply tomultiple shapes, then can be added to the[shapeOptions](annotations.shapeOptions.html).
 		/// </summary>
-		public List<NavigationAnnotationsOptionsShapes> Shapes { get; set; }
-		private List<NavigationAnnotationsOptionsShapes> Shapes_DefaultValue { get; set; }
+		public NavigationAnnotationsOptionsShapes Shapes { get; set; }
+		private NavigationAnnotationsOptionsShapes Shapes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -98,9 +98,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
-            if (Labels.IsDirty()) h.Add("labels", Labels.ToHashtable());
-            if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
-			if (Shapes.Any()) h.Add("shapes",HashifyList(Shapes));
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
+			if (Shapes.IsDirty()) h.Add("shapes",Shapes.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			

@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Connector = Connector_DefaultValue = new AnnotationsVerticalLineTypeOptionsConnector();
 			Label = Label_DefaultValue = new AnnotationsVerticalLineTypeOptionsLabel();
 			Line = Line_DefaultValue = new AnnotationsVerticalLineTypeOptionsLine();
-			Points = Points_DefaultValue = new List<AnnotationsVerticalLineTypeOptionsPoints>();
+			Points = Points_DefaultValue = new AnnotationsVerticalLineTypeOptionsPoints();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -48,8 +48,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<AnnotationsVerticalLineTypeOptionsPoints> Points { get; set; }
-		private List<AnnotationsVerticalLineTypeOptionsPoints> Points_DefaultValue { get; set; }
+		public List<object> Points { get; set; }
+		private List<object> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -73,7 +73,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Connector.IsDirty()) h.Add("connector",Connector.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
-			if (Points.Any()) h.Add("points",HashifyList(Points));
+			if (Points.IsDirty()) h.Add("points",Points.ToHashtable());
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

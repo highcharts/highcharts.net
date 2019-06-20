@@ -24,11 +24,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new SolidgaugeSeriesDataEvents();
 			Id = Id_DefaultValue = "";
 			InnerRadius = InnerRadius_DefaultValue = "";
-			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Radius = Radius_DefaultValue = "";
-			RadiusNumber = RadiusNumber_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Y = Y_DefaultValue = double.MinValue;
 			
@@ -107,13 +105,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The inner radius of an individual point in a solid gauge. Can be given as anumber (pixels) or percentage string.
-		/// </summary>
-		public double? InnerRadiusNumber { get; set; }
-		private double? InnerRadiusNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The rank for this point's data label in case of collision. If twodata labels are about to overlap, only the one with the highest `labelrank`will be drawn.
 		/// </summary>
 		public double? Labelrank { get; set; }
@@ -132,13 +123,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Radius { get; set; }
 		private string Radius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The outer radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
-		/// </summary>
-		public double? RadiusNumber { get; set; }
-		private double? RadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -171,11 +155,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
-			if (InnerRadiusNumber != InnerRadiusNumber_DefaultValue) h.Add("innerRadius",InnerRadiusNumber);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (RadiusNumber != RadiusNumber_DefaultValue) h.Add("radius",RadiusNumber);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (CustomFields.Count > 0)

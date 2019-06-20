@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			AddTableShortcut = AddTableShortcut_DefaultValue = true;
 			AnnounceNewData = AnnounceNewData_DefaultValue = new AccessibilityAnnounceNewData();
 			AxisRangeDateFormat = AxisRangeDateFormat_DefaultValue = "%Y-%m-%d %H:%M:%S";
-			CustomComponents = CustomComponents_DefaultValue = null;
+			CustomComponents = CustomComponents_DefaultValue = new object();
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
 			Description = Description_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = true;
@@ -28,7 +28,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointDateFormatter = PointDateFormatter_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = 500;
-			PointDescriptionThresholdBool = PointDescriptionThresholdBool_DefaultValue = null;
 			PointValueDecimals = PointValueDecimals_DefaultValue = "";
 			PointValuePrefix = PointValuePrefix_DefaultValue = "";
 			PointValueSuffix = PointValueSuffix_DefaultValue = "";
@@ -138,13 +137,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// When a series contains more points than this, we no longer exposeinformation about individual points to screen readers.Set to `false` to disable.
-		/// </summary>
-		public bool? PointDescriptionThresholdBool { get; set; }
-		private bool? PointDescriptionThresholdBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Decimals to use for the values in the point descriptions. Uses[tooltip.valueDecimals](#tooltip.valueDecimals) if not defined.
 		/// </summary>
 		public string PointValueDecimals { get; set; }
@@ -193,7 +185,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AddTableShortcut != AddTableShortcut_DefaultValue) h.Add("addTableShortcut",AddTableShortcut);
 			if (AnnounceNewData.IsDirty()) h.Add("announceNewData",AnnounceNewData.ToHashtable());
 			if (AxisRangeDateFormat != AxisRangeDateFormat_DefaultValue) h.Add("axisRangeDateFormat",AxisRangeDateFormat);
-			if (CustomComponents != CustomComponents_DefaultValue) h.Add("customComponents",CustomComponents);
+			if (CustomComponents.IsDirty()) h.Add("customComponents",CustomComponents.ToHashtable());
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
@@ -210,7 +202,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				else
 					h.Add("pointDescriptionThreshold", false);
 			}
-			if (PointDescriptionThresholdBool != PointDescriptionThresholdBool_DefaultValue) h.Add("pointDescriptionThreshold",PointDescriptionThresholdBool);
 			if (PointValueDecimals != PointValueDecimals_DefaultValue) h.Add("pointValueDecimals",PointValueDecimals);
 			if (PointValuePrefix != PointValuePrefix_DefaultValue) h.Add("pointValuePrefix",PointValuePrefix);
 			if (PointValueSuffix != PointValueSuffix_DefaultValue) h.Add("pointValueSuffix",PointValueSuffix);

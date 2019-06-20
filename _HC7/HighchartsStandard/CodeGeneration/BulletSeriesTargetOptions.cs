@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			Height = Height_DefaultValue = 3;
 			Width = Width_DefaultValue = "140%";
-			WidthNumber = WidthNumber_DefaultValue = null;
 			
 		}	
 		
@@ -57,13 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Width { get; set; }
 		private string Width_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the rectangle representing the target. Could be setas a pixel value or as a percentage of a column width.
-		/// </summary>
-		public double? WidthNumber { get; set; }
-		private double? WidthNumber_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -75,7 +67,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			
 
 			return h;

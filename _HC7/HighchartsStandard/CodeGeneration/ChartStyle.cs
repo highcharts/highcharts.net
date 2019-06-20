@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartStyle()
 		{
-			FontFamily = FontFamily_DefaultValue = "Lucida Grande";
+			FontFamily = FontFamily_DefaultValue = " 'Lucida Grande ";
 			FontSize = FontSize_DefaultValue = "12px";
 			
 		}	

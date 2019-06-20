@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Labels = Labels_DefaultValue = "";
 			Line = Line_DefaultValue = new AnnotationsElliottWaveTypeOptionsLine();
-			Points = Points_DefaultValue = new List<AnnotationsElliottWaveTypeOptionsPoints>();
+			Points = Points_DefaultValue = new AnnotationsElliottWaveTypeOptionsPoints();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -26,8 +26,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Labels { get; set; }
-		private string Labels_DefaultValue { get; set; }
+		public  Labels { get; set; }
+		private  Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -40,8 +40,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<AnnotationsElliottWaveTypeOptionsPoints> Points { get; set; }
-		private List<AnnotationsElliottWaveTypeOptionsPoints> Points_DefaultValue { get; set; }
+		public List<object> Points { get; set; }
+		private List<object> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -64,7 +64,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Labels != Labels_DefaultValue) h.Add("labels",Labels);
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
-			if (Points.Any()) h.Add("points",HashifyList(Points));
+			if (Points.IsDirty()) h.Add("points",Points.ToHashtable());
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

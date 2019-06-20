@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartParallelAxesDateTimeLabelFormatsMonth()
 		{
-			Main = Main_DefaultValue = "%b '%y";
+			Main = Main_DefaultValue = "%b  %y";
 			
 		}	
 		

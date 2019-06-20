@@ -20,8 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Id = Id_DefaultValue = "";
 			Level = Level_DefaultValue = null;
 			Name = Name_DefaultValue = "";
-			Offset = Offset_DefaultValue = "0";
-			OffsetNumber = OffsetNumber_DefaultValue = null;
+			Offset = Offset_DefaultValue = 0;
 			
 		}	
 		
@@ -71,15 +70,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percantage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
 		/// </summary>
-		public string Offset { get; set; }
-		private string Offset_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percantage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
-		/// </summary>
-		public double? OffsetNumber { get; set; }
-		private double? OffsetNumber_DefaultValue { get; set; }
+		public double? Offset { get; set; }
+		private double? Offset_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -93,7 +85,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Level != Level_DefaultValue) h.Add("level",Level);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (OffsetNumber != OffsetNumber_DefaultValue) h.Add("offset",OffsetNumber);
 			
 
 			return h;

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public YAxisStackLabels()
 		{
-			Align = Align_DefaultValue = "";
+			Align = Align_DefaultValue = YAxisStackLabelsAlign.Null;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "{total}";
@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new YAxisStackLabelsStyle();
 			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "";
+			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Defines the horizontal alignment of the stack total label. Can be oneof `"left"`, `"center"` or `"right"`. The default value is calculatedat runtime and depends on orientation and whether the stack ispositive or negative.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public YAxisStackLabelsAlign Align { get; set; }
+		private YAxisStackLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -96,8 +96,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Defines the vertical alignment of the stack total label. Can be oneof `"top"`, `"middle"` or `"bottom"`. The default value is calculatedat runtime and depends on orientation and whether the stack ispositive or negative.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public YAxisStackLabelsVerticalAlign VerticalAlign { get; set; }
+		private YAxisStackLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,16 +118,16 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("YAxisStackLabelsFormatter.formatter", Formatter); }  
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

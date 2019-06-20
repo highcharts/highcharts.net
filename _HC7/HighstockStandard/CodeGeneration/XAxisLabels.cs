@@ -14,13 +14,14 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public XAxisLabels()
 		{
-			Align = Align_DefaultValue = "";
+			Align = Align_DefaultValue = XAxisLabelsAlign.Null;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			Overflow = Overflow_DefaultValue = XAxisLabelsOverflow.Justify;
+			OverflowBool = OverflowBool_DefaultValue = XAxisLabelsOverflow.Null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
@@ -36,8 +37,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// What part of the string the given position is anchored to.If `left`, the left side of the string is at the axis position.Can be one of `"left"`, `"center"` or `"right"`. Defaults toan intelligent guess based on which side of the chart the axisis on and the rotation of the label.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public XAxisLabelsAlign Align { get; set; }
+		private XAxisLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -80,6 +81,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public XAxisLabelsOverflow Overflow { get; set; }
 		private XAxisLabelsOverflow Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// How to handle overflowing labels on horizontal axis. If set to`"allow"`, it will not be aligned at all. By default it`"justify"` labels inside the chart area. If there is room tomove it, it will be aligned to the edge, else it will be removed.
+		/// </summary>
+		public XAxisLabelsOverflow OverflowBool { get; set; }
+		private XAxisLabelsOverflow OverflowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -142,17 +150,18 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("XAxisLabelsFormatter.formatter", Formatter); }  
 			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
+			if (OverflowBool != OverflowBool_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(OverflowBool.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Initial layout algorithm for positioning nodes. Can be one ofthe built-in options ("circle", "random") or a function wherepositions should be set on each node (`this.nodes`) as`node.plotX` and `node.plotY`.
 		/// </summary>
-		public string InitialPositions { get; set; }
-		private string InitialPositions_DefaultValue { get; set; }
+		public double? InitialPositions { get; set; }
+		private double? InitialPositions_DefaultValue { get; set; }
 		 
 
 		/// <summary>

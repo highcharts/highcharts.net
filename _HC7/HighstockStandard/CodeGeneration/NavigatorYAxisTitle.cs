@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigatorYAxisTitle()
 		{
-			Align = Align_DefaultValue = "middle";
+			Align = Align_DefaultValue = NavigatorYAxisTitleAlign.Middle;
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			ReserveSpace = ReserveSpace_DefaultValue = true;
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Alignment of the title relative to the axis values. Possiblevalues are "low", "middle" or "high".
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public NavigatorYAxisTitleAlign Align { get; set; }
+		private NavigatorYAxisTitleAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -110,12 +110,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Position = Position_DefaultValue = new Hashtable();
 			RelativeTo = RelativeTo_DefaultValue = "plot";
-			Theme = Theme_DefaultValue = null;
+			Theme = Theme_DefaultValue = "{'zIndex':6}";
 			
 		}	
 		

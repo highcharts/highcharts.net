@@ -86,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (AnnotationsOptions.IsDirty()) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable());
+			if (AnnotationsOptions != AnnotationsOptions_DefaultValue) h.Add("annotationsOptions",AnnotationsOptions);
 			if (Bindings.IsDirty()) h.Add("bindings",Bindings.ToHashtable());
 			if (BindingsClassName != BindingsClassName_DefaultValue) h.Add("bindingsClassName",BindingsClassName);
 			if (ButtonOptions.IsDirty()) h.Add("buttonOptions",ButtonOptions.ToHashtable());

@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ZAxisDateTimeLabelFormatsMonth()
 		{
-			Main = Main_DefaultValue = "%b '%y";
+			Main = Main_DefaultValue = "%b  %y";
 			
 		}	
 		

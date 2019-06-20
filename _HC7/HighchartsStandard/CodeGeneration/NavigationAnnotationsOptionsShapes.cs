@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			R = R_DefaultValue = 0;
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
-			Type = Type_DefaultValue = "'rect'";
+			Type = Type_DefaultValue = " rect ";
 			Width = Width_DefaultValue = null;
 			
 		}	
@@ -115,7 +115,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (MarkerStart != MarkerStart_DefaultValue) h.Add("markerStart",MarkerStart);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (Points.IsDirty()) h.Add("points",Points.ToHashtable());
+			if (Points != Points_DefaultValue) h.Add("points",Points);
 			if (R != R_DefaultValue) h.Add("r",R);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);

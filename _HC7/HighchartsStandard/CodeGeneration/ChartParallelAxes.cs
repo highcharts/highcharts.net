@@ -21,7 +21,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new ChartParallelAxesCrosshair();
-			CrosshairBool = CrosshairBool_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = true;
 			Events = Events_DefaultValue = new ChartParallelAxesEvents();
@@ -37,7 +36,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Min = Min_DefaultValue = null;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
 			MinorTickInterval = MinorTickInterval_DefaultValue = "";
-			MinorTickIntervalNumber = MinorTickIntervalNumber_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ChartParallelAxesMinorTickPosition.Outside;
 			MinorTicks = MinorTicks_DefaultValue = false;
@@ -123,13 +121,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ChartParallelAxesCrosshair Crosshair { get; set; }
 		private ChartParallelAxesCrosshair Crosshair_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Configure a crosshair that follows either the mouse pointer or thehovered point.In styled mode, the crosshairs are styled in the`.highcharts-crosshair`, `.highcharts-crosshair-thin` or`.highcharts-xaxis-category` classes.
-		/// </summary>
-		public bool? CrosshairBool { get; set; }
-		private bool? CrosshairBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -235,13 +226,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string MinorTickInterval { get; set; }
 		private string MinorTickInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `null` or `undefined`, minor ticks are notshown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
-		/// </summary>
-		public double? MinorTickIntervalNumber { get; set; }
-		private double? MinorTickIntervalNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -493,7 +477,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
-			if (CrosshairBool != CrosshairBool_DefaultValue) h.Add("crosshair",CrosshairBool);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
@@ -509,7 +492,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
-			if (MinorTickIntervalNumber != MinorTickIntervalNumber_DefaultValue) h.Add("minorTickInterval",MinorTickIntervalNumber);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);

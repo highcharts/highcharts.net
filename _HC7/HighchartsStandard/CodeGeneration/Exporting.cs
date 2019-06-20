@@ -32,7 +32,6 @@ namespace Highsoft.Web.Mvc.Charts
 			SourceHeight = SourceHeight_DefaultValue = null;
 			SourceWidth = SourceWidth_DefaultValue = null;
 			TableCaption = TableCaption_DefaultValue = "";
-			TableCaptionBool = TableCaptionBool_DefaultValue = null;
 			Type = Type_DefaultValue = "image/png";
 			Url = Url_DefaultValue = "https://export.highcharts.com/";
 			UseMultiLevelHeaders = UseMultiLevelHeaders_DefaultValue = true;
@@ -169,13 +168,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Export-data module required. Caption for the data table. Same aschart title by default. Set to `false` to disable.
-		/// </summary>
-		public bool? TableCaptionBool { get; set; }
-		private bool? TableCaptionBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Default MIME type for exporting if `chart.exportChart()` is calledwithout specifying a `type` option. Possible values are `image/png`, `image/jpeg`, `application/pdf` and `image/svg+xml`.
 		/// </summary>
 		public string Type { get; set; }
@@ -216,7 +208,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
-			if (Buttons.IsDirty()) h.Add("buttons",Buttons.ToHashtable());
+			if (Buttons != Buttons_DefaultValue) h.Add("buttons",Buttons);
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
 			if (Csv.IsDirty()) h.Add("csv",Csv.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
@@ -232,7 +224,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SourceHeight != SourceHeight_DefaultValue) h.Add("sourceHeight",SourceHeight);
 			if (SourceWidth != SourceWidth_DefaultValue) h.Add("sourceWidth",SourceWidth);
 			if (TableCaption != TableCaption_DefaultValue) h.Add("tableCaption",TableCaption);
-			if (TableCaptionBool != TableCaptionBool_DefaultValue) h.Add("tableCaption",TableCaptionBool);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (Url != Url_DefaultValue) h.Add("url",Url);
 			if (UseMultiLevelHeaders != UseMultiLevelHeaders_DefaultValue) h.Add("useMultiLevelHeaders",UseMultiLevelHeaders);

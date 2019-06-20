@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public PyramidSeriesStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Halo = Halo_DefaultValue = new PyramidSeriesStatesHoverHalo();
 			LineWidth = LineWidth_DefaultValue = null;
@@ -30,13 +29,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Animation setting for hovering the graph in line-type series.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -79,9 +71,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
+			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());

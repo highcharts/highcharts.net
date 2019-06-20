@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ChartOptions3d()
 		{
 			Alpha = Alpha_DefaultValue = 0;
-			AxisLabelPosition = AxisLabelPosition_DefaultValue = "";
+			AxisLabelPosition = AxisLabelPosition_DefaultValue = null;
 			Beta = Beta_DefaultValue = 0;
 			Depth = Depth_DefaultValue = 100;
 			Enabled = Enabled_DefaultValue = false;

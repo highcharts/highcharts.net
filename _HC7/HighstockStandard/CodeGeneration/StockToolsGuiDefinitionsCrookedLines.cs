@@ -18,12 +18,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			Crooked5 = Crooked5_DefaultValue = new StockToolsGuiDefinitionsCrookedLinesCrooked5();
 			Elliott3 = Elliott3_DefaultValue = new StockToolsGuiDefinitionsCrookedLinesElliott3();
 			Elliott5 = Elliott5_DefaultValue = new StockToolsGuiDefinitionsCrookedLinesElliott5();
-			Items = Items_DefaultValue = new List<string>() {
-  "elliott3",
-  "elliott5",
-  "crooked3",
-  "crooked5"
-};
+			Items = Items_DefaultValue = [
+   elliott3 ,
+   elliott5 ,
+   crooked3 ,
+   crooked5 
+];
 			
 		}	
 		
@@ -59,8 +59,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A collection of strings pointing to config options forthe items.
 		/// </summary>
-		public List<string> Items { get; set; }
-		private List<string> Items_DefaultValue { get; set; }
+		public Array Items { get; set; }
+		private Array Items_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

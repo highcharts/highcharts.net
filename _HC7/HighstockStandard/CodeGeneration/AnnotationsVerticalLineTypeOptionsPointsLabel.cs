@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AnnotationsVerticalLineTypeOptionsPointsLabel()
 		{
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = AnnotationsVerticalLineTypeOptionsPointsLabelAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			BorderColor = BorderColor_DefaultValue = "black";
@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Style = Style_DefaultValue = new AnnotationsVerticalLineTypeOptionsPointsLabelStyle();
 			Text = Text_DefaultValue = "undefined";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
+			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsVerticalLineTypeOptionsPointsLabelVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -16;
 			
@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The alignment of the annotation's label. If right,the right side of the label should be touching the point.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public AnnotationsVerticalLineTypeOptionsPointsLabelAlign Align { get; set; }
+		private AnnotationsVerticalLineTypeOptionsPointsLabelAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -176,8 +176,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The vertical alignment of the annotation's label.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public AnnotationsVerticalLineTypeOptionsPointsLabelVerticalAlign VerticalAlign { get; set; }
+		private AnnotationsVerticalLineTypeOptionsPointsLabelVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -198,7 +198,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
@@ -214,10 +214,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

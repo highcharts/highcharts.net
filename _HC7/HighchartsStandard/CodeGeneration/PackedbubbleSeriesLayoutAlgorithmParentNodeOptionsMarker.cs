@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = 1;
 			Height = Height_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = null;
+			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 1;
 			Radius = Radius_DefaultValue = 4;
 			Symbol = Symbol_DefaultValue = "circle";
@@ -45,8 +45,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string FillColor { get; set; }
-		private string FillColor_DefaultValue { get; set; }
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -66,8 +66,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Object LineColor { get; set; }
-		private Object LineColor_DefaultValue { get; set; }
+		public string LineColor { get; set; }
+		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>

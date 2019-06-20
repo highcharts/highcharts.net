@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (HideDuration != HideDuration_DefaultValue) h.Add("hideDuration",HideDuration);
 			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
 			if (ShowDuration != ShowDuration_DefaultValue) h.Add("showDuration",ShowDuration);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 
 			return h;

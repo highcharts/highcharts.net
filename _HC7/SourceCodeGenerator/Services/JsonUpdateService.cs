@@ -269,7 +269,10 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("align", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "left" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "center" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "right" } });
             ItemsToUpdate.Add("plotOptions.series.linecap", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "round" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "square" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "round" } });
 
-            
+            ItemsToUpdate.Add("initialPositionRadius", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("lineColor", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("fillColor", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("plotOptions.item.rows", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
 
             ItemsToUpdateProducts.Add("xAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
             ItemsToUpdateProducts.Add("yAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });

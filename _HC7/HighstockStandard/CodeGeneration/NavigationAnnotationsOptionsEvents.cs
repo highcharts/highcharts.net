@@ -24,31 +24,31 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Event callback when annotation is added to the chart.
 		/// </summary>
-		public string Add { get; set; }
-		private string Add_DefaultValue { get; set; }
+		public  Add { get; set; }
+		private  Add_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Event callback when annotation is updated (e.g. drag anddroppped or resized by control points).
 		/// </summary>
-		public string AfterUpdate { get; set; }
-        private string AfterUpdate_DefaultValue { get; set; }
+		public  AfterUpdate { get; set; }
+		private  AfterUpdate_DefaultValue { get; set; }
+		 
 
-
-        /// <summary>
-        /// Event callback when annotation is removed from the chart.
-        /// </summary>
-        public string Remove { get; set; }
-		private string Remove_DefaultValue { get; set; }
+		/// <summary>
+		/// Event callback when annotation is removed from the chart.
+		/// </summary>
+		public  Remove { get; set; }
+		private  Remove_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-            if (Add != Add_DefaultValue) { h.Add("add", Add); Highstock.AddFunction("NavigationAnnotationsOptionsEventsAdd.Add", Add); }
-            if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate", AfterUpdate); Highstock.AddFunction("NavigationAnnotationsOptionsEventsAfterUpdate", AfterUpdate); }
-            if (Remove != Remove_DefaultValue) { h.Add("remove", Remove); Highstock.AddFunction("NavigationAnnotationsOptionsEventsRemove.Remove", Remove); }
+			if (Add != Add_DefaultValue) h.Add("add",Add);
+			if (AfterUpdate != AfterUpdate_DefaultValue) h.Add("afterUpdate",AfterUpdate);
+			if (Remove != Remove_DefaultValue) h.Add("remove",Remove);
 			
 
 			return h;

@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An integer identifying the index to use for the base series, or astring representing the id of the series.**Note**: As of Highcharts 5.0, this is now a deprecated option.Prefer [series.showInNavigator](#plotOptions.series.showInNavigator).
 		/// </summary>
-		public string BaseSeries { get; set; }
-		private string BaseSeries_DefaultValue { get; set; }
+		public Object BaseSeries { get; set; }
+		private Object BaseSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -135,7 +135,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (AdaptToUpdatedData != AdaptToUpdatedData_DefaultValue) h.Add("adaptToUpdatedData",AdaptToUpdatedData);
-			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
+			if (BaseSeries.IsDirty()) h.Add("baseSeries",BaseSeries.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Handles.IsDirty()) h.Add("handles",Handles.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);

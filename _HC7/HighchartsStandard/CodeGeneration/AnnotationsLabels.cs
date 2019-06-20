@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AnnotationsLabels()
 		{
-			Align = Align_DefaultValue = "center";
+			Align = Align_DefaultValue = AnnotationsLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			BorderColor = BorderColor_DefaultValue = "black";
@@ -28,14 +28,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Overflow = Overflow_DefaultValue = AnnotationsLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
 			Point = Point_DefaultValue = new AnnotationsLabelsPoint();
-			PointString = PointString_DefaultValue = "null";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = new object();
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "bottom";
+			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -16;
 			
@@ -45,8 +43,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The alignment of the annotation's label. If right,the right side of the label should be touching the point.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public AnnotationsLabelsAlign Align { get; set; }
+		private AnnotationsLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -141,24 +139,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This option defines the point to which the label will be connected.It can be either the point which exists in the series - it isreferenced by the point's id - or a new point with defined x, yproperies and optionally axes.
-		/// </summary>
-		public string PointString { get; set; }
-		private string PointString_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The shadow of the box. The shadow can be an object configurationcontaining `color`, `offsetX`, `offsetY`, `opacity` and `width`.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The shadow of the box. The shadow can be an object configurationcontaining `color`, `offsetX`, `offsetY`, `opacity` and `width`.
-		/// </summary>
-		public bool? ShadowBool { get; set; }
-		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -171,8 +155,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Styles for the annotation's label.
 		/// </summary>
-		public object Style { get; set; }
-		private object Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -192,8 +176,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The vertical alignment of the annotation's label.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public AnnotationsLabelsVerticalAlign VerticalAlign { get; set; }
+		private AnnotationsLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -214,7 +198,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
@@ -228,14 +212,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointString != PointString_DefaultValue) h.Add("point",PointString);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

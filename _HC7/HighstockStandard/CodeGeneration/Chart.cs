@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new ChartStyle();
 			StyledMode = StyledMode_DefaultValue = false;
-			Type = Type_DefaultValue = ChartType.Bar;
+			Type = Type_DefaultValue = ChartType.Null;
 			Width = Width_DefaultValue = null;
 			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
@@ -421,7 +421,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SpacingLeft != SpacingLeft_DefaultValue) h.Add("spacingLeft",SpacingLeft);
 			if (SpacingRight != SpacingRight_DefaultValue) h.Add("spacingRight",SpacingRight);
 			if (SpacingTop != SpacingTop_DefaultValue) h.Add("spacingTop",SpacingTop);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (StyledMode != StyledMode_DefaultValue) h.Add("styledMode",StyledMode);
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);

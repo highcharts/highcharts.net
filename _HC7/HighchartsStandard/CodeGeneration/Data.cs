@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public Data()
 		{
 			BeforeParse = BeforeParse_DefaultValue = "";
-			Columns = Columns_DefaultValue = new List<List<object>>();
+			Columns = Columns_DefaultValue = new List<List<Object>>();
 			ColumnsURL = ColumnsURL_DefaultValue = "";
 			Complete = Complete_DefaultValue = "";
 			Csv = Csv_DefaultValue = "";
@@ -30,12 +30,12 @@ namespace Highsoft.Web.Mvc.Charts
 			GoogleSpreadsheetKey = GoogleSpreadsheetKey_DefaultValue = "";
 			GoogleSpreadsheetWorksheet = GoogleSpreadsheetWorksheet_DefaultValue = "";
 			ItemDelimiter = ItemDelimiter_DefaultValue = "";
-			LineDelimiter = LineDelimiter_DefaultValue = "\n";
+			LineDelimiter = LineDelimiter_DefaultValue = " n";
 			Parsed = Parsed_DefaultValue = "";
 			ParseDate = ParseDate_DefaultValue = "";
 			Rows = Rows_DefaultValue = new List<List<object>>();
 			RowsURL = RowsURL_DefaultValue = "";
-			SeriesMapping = SeriesMapping_DefaultValue = new List<double>();
+			SeriesMapping = SeriesMapping_DefaultValue = new List<List<double?>>();
 			StartColumn = StartColumn_DefaultValue = 0;
 			StartRow = StartRow_DefaultValue = 0;
 			SwitchRowsAndColumns = SwitchRowsAndColumns_DefaultValue = false;
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A two-dimensional array representing the input data on tabular form.This input can be used when the data is already parsed, for examplefrom a grid view component. Each cell can be a string or number.If not switchRowsAndColumns is set, the columns are interpreted asseries.
 		/// </summary>
-		public List<List<object>> Columns { get; set; }
-		private List<List<object>> Columns_DefaultValue { get; set; }
+		public List<List<Object>> Columns { get; set; }
+		private List<List<Object>> Columns_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -180,8 +180,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The same as the columns input option, but defining rows intead ofcolumns.
 		/// </summary>
-		public List<List<object>> Rows { get; set; }
-		private List<List<object>> Rows_DefaultValue { get; set; }
+		public List<List<Object>> Rows { get; set; }
+		private List<List<Object>> Rows_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -194,8 +194,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array containing dictionaries for each series. A dictionary exists ofPoint property names as the key and the CSV column index as the value.
 		/// </summary>
-		public List<double> SeriesMapping { get; set; }
-		private List<double> SeriesMapping_DefaultValue { get; set; }
+		public List<List<double?>> SeriesMapping { get; set; }
+		private List<List<double?>> SeriesMapping_DefaultValue { get; set; }
 		 
 
 		/// <summary>

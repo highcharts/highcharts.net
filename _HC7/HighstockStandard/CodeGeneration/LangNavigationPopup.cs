@@ -68,7 +68,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			SimpleShapes = SimpleShapes_DefaultValue = "Simple shapes";
 			Stroke = Stroke_DefaultValue = "Line color";
 			StrokeWidth = StrokeWidth_DefaultValue = "Line width";
-			Style = Style_DefaultValue = "Style";
+			Style = Style_DefaultValue = new Hashtable();
 			Title = Title_DefaultValue = "Title";
 			Tunnel = Tunnel_DefaultValue = "Tunnel";
 			TypeOptions = TypeOptions_DefaultValue = "Details";
@@ -462,8 +462,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Style { get; set; }
-		private string Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

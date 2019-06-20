@@ -19,11 +19,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			MarkerEnd = MarkerEnd_DefaultValue = "";
 			MarkerStart = MarkerStart_DefaultValue = "";
 			Point = Point_DefaultValue = new NavigationAnnotationsOptionsShapesPoint();
-			Points = Points_DefaultValue = new List<NavigationAnnotationsOptionsShapesPoints>();
+			Points = Points_DefaultValue = new NavigationAnnotationsOptionsShapesPoints();
 			R = R_DefaultValue = 0;
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
-			Type = Type_DefaultValue = "'rect'";
+			Type = Type_DefaultValue = " rect ";
 			Width = Width_DefaultValue = null;
 			
 		}	
@@ -67,8 +67,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of points for the shape. This option is available for shapeswhich can use multiple points such as path. A point can be eithera point object or a point's id.
 		/// </summary>
-		public List<NavigationAnnotationsOptionsShapesPoints> Points { get; set; }
-		private List<NavigationAnnotationsOptionsShapesPoints> Points_DefaultValue { get; set; }
+		public NavigationAnnotationsOptionsShapesPoints Points { get; set; }
+		private NavigationAnnotationsOptionsShapesPoints Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -115,7 +115,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (MarkerStart != MarkerStart_DefaultValue) h.Add("markerStart",MarkerStart);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (Points.Any()) h.Add("points",HashifyList(Points));
+			if (Points.IsDirty()) h.Add("points",Points.ToHashtable());
 			if (R != R_DefaultValue) h.Add("r",R);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);

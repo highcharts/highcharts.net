@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "#cccccc";
-			DashStyle = DashStyle_DefaultValue = null;
+			DashStyle = DashStyle_DefaultValue = "Solid";
 			Snap = Snap_DefaultValue = true;
 			Width = Width_DefaultValue = 1;
 			ZIndex = ZIndex_DefaultValue = 2;

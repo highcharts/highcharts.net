@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum AnnotationsInfinityLineLabelsOverflow
     {
-        Allow, 
+        None, 
 		Justify
     }
 }

@@ -14,8 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public SunburstSeriesTraverseUpButtonPosition()
 		{
-			Align = Align_DefaultValue = "right";
-			VerticalAlign = VerticalAlign_DefaultValue = "top";
+			Align = Align_DefaultValue = SunburstSeriesTraverseUpButtonPositionAlign.Right;
+			VerticalAlign = VerticalAlign_DefaultValue = SunburstSeriesTraverseUpButtonPositionVerticalAlign.Top;
 			X = X_DefaultValue = -10;
 			Y = Y_DefaultValue = 10;
 			
@@ -25,15 +25,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Horizontal alignment of the button.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public SunburstSeriesTraverseUpButtonPositionAlign Align { get; set; }
+		private SunburstSeriesTraverseUpButtonPositionAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Vertical alignment of the button.
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public SunburstSeriesTraverseUpButtonPositionVerticalAlign VerticalAlign { get; set; }
+		private SunburstSeriesTraverseUpButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

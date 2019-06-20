@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new PlotOptionsSunburstLevelsColorVariation();
-			DataLabels = DataLabels_DefaultValue = new object();
+			DataLabels = DataLabels_DefaultValue = new Hashtable();
 			LevelSize = LevelSize_DefaultValue = new PlotOptionsSunburstLevelsLevelSize();
 			Rotation = Rotation_DefaultValue = null;
 			RotationMode = RotationMode_DefaultValue = "";
@@ -65,8 +65,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Can set `dataLabels` on all points which lies on the same level.
 		/// </summary>
-		public object DataLabels { get; set; }
-		private object DataLabels_DefaultValue { get; set; }
+		public Hashtable DataLabels { get; set; }
+		private Hashtable DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>

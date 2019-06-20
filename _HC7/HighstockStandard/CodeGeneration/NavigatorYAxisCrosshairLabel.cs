@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigatorYAxisCrosshairLabel()
 		{
-			Align = Align_DefaultValue = "";
+			Align = Align_DefaultValue = NavigatorYAxisCrosshairLabelAlign.Null;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 3;
@@ -31,8 +31,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Alignment of the label compared to the axis. Defaults to `"left"` forright-side axes, `"right"` for left-side axes and `"center"` forhorizontal axes.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public NavigatorYAxisCrosshairLabelAlign Align { get; set; }
+		private NavigatorYAxisCrosshairLabelAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -102,7 +102,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -111,7 +111,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("NavigatorYAxisCrosshairLabelFormatter.formatter", Formatter); }  
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 
 			return h;

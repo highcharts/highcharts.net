@@ -14,25 +14,46 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsTimelineDataLabels()
 		{
+			Align = Align_DefaultValue = PlotOptionsTimelineDataLabelsAlign.Left;
 			AllowOverlap = AllowOverlap_DefaultValue = true;
 			Alternate = Alternate_DefaultValue = true;
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
 			BorderColor = BorderColor_DefaultValue = "#999999";
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 1;
+			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "#333333";
 			ConnectorColor = ConnectorColor_DefaultValue = "";
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
+			Crop = Crop_DefaultValue = true;
+			Defer = Defer_DefaultValue = true;
 			Distance = Distance_DefaultValue = 100;
 			Enabled = Enabled_DefaultValue = true;
+			Filter = Filter_DefaultValue = new PlotOptionsTimelineDataLabelsFilter();
+			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
+			Inside = Inside_DefaultValue = null;
+			Overflow = Overflow_DefaultValue = PlotOptionsTimelineDataLabelsOverflow.Justify;
+			Padding = Padding_DefaultValue = 0;
+			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
+			Shape = Shape_DefaultValue = "square";
 			Style = Style_DefaultValue = new PlotOptionsTimelineDataLabelsStyle();
-			VerticalAlign = VerticalAlign_DefaultValue = "middle";
+			UseHTML = UseHTML_DefaultValue = false;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsTimelineDataLabelsVerticalAlign.Middle;
+			X = X_DefaultValue = null;
+			Y = Y_DefaultValue = null;
+			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTimelineDataLabelsAlign Align { get; set; }
+		private PlotOptionsTimelineDataLabelsAlign Align_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -79,6 +100,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
@@ -98,6 +126,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Crop { get; set; }
+		private bool? Crop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Defer { get; set; }
+		private bool? Defer_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A pixel value defining the distance between the data labeland the point. Negative numbers puts the label on topof the point.
 		/// </summary>
 		public double? Distance { get; set; }
@@ -114,8 +156,50 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public PlotOptionsTimelineDataLabelsFilter Filter { get; set; }
+		private PlotOptionsTimelineDataLabelsFilter Filter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Inside { get; set; }
+		private bool? Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTimelineDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsTimelineDataLabelsOverflow Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Padding { get; set; }
+		private double? Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Rotation { get; set; }
+		private double? Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -126,10 +210,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Shadow options for the data label.
+		/// 
 		/// </summary>
-		public bool? ShadowBool { get; set; }
-		private bool? ShadowBool_DefaultValue { get; set; }
+		public string Shape { get; set; }
+		private string Shape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -142,30 +226,72 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsTimelineDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsTimelineDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Alternate != Alternate_DefaultValue) h.Add("alternate",Alternate);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
+			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
+			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Filter != Filter_DefaultValue) h.Add("filter",Filter);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsTimelineDataLabelsFormatter.formatter", Formatter); }  
+			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 
 			return h;

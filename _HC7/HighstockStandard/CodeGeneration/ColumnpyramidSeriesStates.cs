@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Hover { get; set; }
-		private string Hover_DefaultValue { get; set; }
+		public  Hover { get; set; }
+		private  Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Select { get; set; }
-		private string Select_DefaultValue { get; set; }
+		public  Select { get; set; }
+		private  Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -16,10 +16,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Index = Index_DefaultValue = 0;
 			Period = Period_DefaultValue = 14;
-            Periods = Periods_DefaultValue = new List<double>();
-
-
-        }	
+			Periods = Periods_DefaultValue = [12, 26];
+			
+		}	
 		
 
 		/// <summary>

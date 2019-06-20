@@ -14,13 +14,13 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public XAxisPlotLinesLabel()
 		{
-			Align = Align_DefaultValue = "left";
+			Align = Align_DefaultValue = XAxisPlotLinesLabelAlign.Left;
 			Rotation = Rotation_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
 			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = "";
+			VerticalAlign = VerticalAlign_DefaultValue = XAxisPlotLinesLabelVerticalAlign.Null;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Horizontal alignment of the label. Can be one of "left", "center" or"right".
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public XAxisPlotLinesLabelAlign Align { get; set; }
+		private XAxisPlotLinesLabelAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -72,8 +72,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Vertical alignment of the label relative to the plot line. Can beone of "top", "middle" or "bottom".
 		/// </summary>
-		public string VerticalAlign { get; set; }
-		private string VerticalAlign_DefaultValue { get; set; }
+		public XAxisPlotLinesLabelVerticalAlign VerticalAlign { get; set; }
+		private XAxisPlotLinesLabelVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -94,13 +94,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

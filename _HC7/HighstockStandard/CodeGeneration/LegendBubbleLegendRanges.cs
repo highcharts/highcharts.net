@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderColor = BorderColor_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ConnectorColor = ConnectorColor_DefaultValue = "";
-			Value = Value_DefaultValue = "";
+			Value = Value_DefaultValue = null;
 			
 		}	
 		
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Range size value, similar to bubble Z data.
 		/// </summary>
-		public string Value { get; set; }
-		private string Value_DefaultValue { get; set; }
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

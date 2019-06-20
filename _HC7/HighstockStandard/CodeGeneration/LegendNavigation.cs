@@ -84,7 +84,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ArrowSize != ArrowSize_DefaultValue) h.Add("arrowSize",ArrowSize);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (InactiveColor != InactiveColor_DefaultValue) h.Add("inactiveColor",InactiveColor);
-			if (Style.Count > 0) h.Add("style",Style);
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 
 			return h;

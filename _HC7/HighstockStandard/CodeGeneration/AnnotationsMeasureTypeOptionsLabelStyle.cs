@@ -15,7 +15,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AnnotationsMeasureTypeOptionsLabelStyle()
 		{
 			Color = Color_DefaultValue = "#666666";
+			Color = Color_DefaultValue = "#666666";
 			FontSize = FontSize_DefaultValue = "11px";
+			FontSize = FontSize_DefaultValue = "11px";
+			
 		}	
 		
 
@@ -25,6 +28,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string FontSize { get; set; }
+		private string FontSize_DefaultValue { get; set; }
+		 
+
 		/// <summary>
 		/// 
 		/// </summary>
@@ -37,6 +55,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			
 

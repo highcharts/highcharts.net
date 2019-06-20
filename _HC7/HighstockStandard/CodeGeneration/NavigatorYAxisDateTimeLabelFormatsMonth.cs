@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigatorYAxisDateTimeLabelFormatsMonth()
 		{
-			Main = Main_DefaultValue = "%b '%y";
+			Main = Main_DefaultValue = "%b  %y";
 			
 		}	
 		

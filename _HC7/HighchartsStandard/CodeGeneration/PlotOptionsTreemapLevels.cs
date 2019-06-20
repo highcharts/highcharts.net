@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new PlotOptionsTreemapLevelsColorVariation();
-			DataLabels = DataLabels_DefaultValue = new object();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsTreemapDataLabels();
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLevelsLayoutAlgorithm.Null;
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLevelsLayoutStartingDirection.Null;
 			Level = Level_DefaultValue = null;
@@ -65,8 +65,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Can set the options of dataLabels on each point which lies on thelevel.[plotOptions.treemap.dataLabels](#plotOptions.treemap.dataLabels) forpossible values.
 		/// </summary>
-		public object DataLabels { get; set; }
-		private object DataLabels_DefaultValue { get; set; }
+		public PlotOptionsTreemapDataLabels DataLabels { get; set; }
+		private PlotOptionsTreemapDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -99,7 +99,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorVariation.IsDirty()) h.Add("colorVariation",ColorVariation.ToHashtable());
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
 			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
 			if (Level != Level_DefaultValue) h.Add("level",Level);

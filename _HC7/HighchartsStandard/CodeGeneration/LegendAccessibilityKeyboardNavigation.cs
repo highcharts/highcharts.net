@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public LegendAccessibilityKeyboardNavigation()
 		{
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = "";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable keyboard navigation for the legend.
 		/// </summary>
-		public bool?  Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public string Enabled { get; set; }
+		private string Enabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

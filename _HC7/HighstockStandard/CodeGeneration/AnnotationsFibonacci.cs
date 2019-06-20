@@ -18,9 +18,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Draggable = Draggable_DefaultValue = AnnotationsFibonacciDraggable.Xy;
 			Events = Events_DefaultValue = new AnnotationsFibonacciEvents();
 			LabelOptions = LabelOptions_DefaultValue = new AnnotationsFibonacciLabelOptions();
-			Labels = Labels_DefaultValue = new List<AnnotationsFibonacciLabels>();
+			Labels = Labels_DefaultValue = new AnnotationsFibonacciLabels();
 			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsFibonacciShapeOptions();
-			Shapes = Shapes_DefaultValue = new List<AnnotationsFibonacciShapes>();
+			Shapes = Shapes_DefaultValue = new AnnotationsFibonacciShapes();
 			TypeOptions = TypeOptions_DefaultValue = new AnnotationsFibonacciTypeOptions();
 			Visible = Visible_DefaultValue = true;
 			ZIndex = ZIndex_DefaultValue = 6;
@@ -59,8 +59,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of labels for the annotation. For options that apply tomultiple labels, they can be added to the[labelOptions](annotations.labelOptions.html).
 		/// </summary>
-		public List<AnnotationsFibonacciLabels> Labels { get; set; }
-		private List<AnnotationsFibonacciLabels> Labels_DefaultValue { get; set; }
+		public List<object> Labels { get; set; }
+		private List<object> Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -73,8 +73,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of shapes for the annotation. For options that apply tomultiple shapes, then can be added to the[shapeOptions](annotations.shapeOptions.html).
 		/// </summary>
-		public List<AnnotationsFibonacciShapes> Shapes { get; set; }
-		private List<AnnotationsFibonacciShapes> Shapes_DefaultValue { get; set; }
+		public List<object> Shapes { get; set; }
+		private List<object> Shapes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -106,9 +106,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable", Highstock.FirstCharacterToLower(Draggable.ToString()));
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
-			if (Labels.Any()) h.Add("labels",HashifyList(Labels));
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
-			if (Shapes.Any()) h.Add("shapes",HashifyList(Shapes));
+			if (Shapes.IsDirty()) h.Add("shapes",Shapes.ToHashtable());
 			if (TypeOptions.IsDirty()) h.Add("typeOptions",TypeOptions.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

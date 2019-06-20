@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Positioner { get; set; }
-		private string Positioner_DefaultValue { get; set; }
+		public  Positioner { get; set; }
+		private  Positioner_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -81,7 +81,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Positioner != Positioner_DefaultValue) h.Add("positioner",Positioner);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);

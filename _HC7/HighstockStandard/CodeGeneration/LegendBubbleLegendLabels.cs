@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LegendBubbleLegendLabels()
 		{
-			Align = Align_DefaultValue = "right";
+			Align = Align_DefaultValue = LegendBubbleLegendLabelsAlign.Right;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
 			Format = Format_DefaultValue = "";
@@ -29,8 +29,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The alignment of the labels compared to the bubblelegend. Can be one of `left`, `center` or `right`.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public LegendBubbleLegendLabelsAlign Align { get; set; }
+		private LegendBubbleLegendLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -86,13 +86,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("LegendBubbleLegendLabelsFormatter.formatter", Formatter); }
-            if (Style.Count > 0) h.Add("style", Style);
-            if (X != X_DefaultValue) h.Add("x",X);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("LegendBubbleLegendLabelsFormatter.formatter", Formatter); }  
+			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 

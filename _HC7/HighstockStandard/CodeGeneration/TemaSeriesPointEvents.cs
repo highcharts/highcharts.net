@@ -68,13 +68,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string MouseOver { get; set; }
 		private string MouseOver_DefaultValue { get; set; }
+		 
 
-
-        /// <summary>
-        /// Fires when the point is removed using the `.remove()` method. Oneparameter, `event`, is passed to the function. Returning `false`cancels the operation.
-        /// </summary>
-        public string Remove { get; set; }
-        private string Remove_DefaultValue { get; set; }
+		/// <summary>
+		/// Fires when the point is removed using the `.remove()` method. Oneparameter, `event`, is passed to the function. Returning `false`cancels the operation.
+		/// </summary>
+		public string Remove { get; set; }
+		private string Remove_DefaultValue { get; set; }
 		 
 
 		/// <summary>

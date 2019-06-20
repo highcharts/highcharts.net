@@ -27,7 +27,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public string Height { get; set; }
 		private string Height_DefaultValue { get; set; }
 		 
-		 
 
 		/// <summary>
 		/// 
@@ -47,7 +46,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Width != Width_DefaultValue) h.Add("width",Width);

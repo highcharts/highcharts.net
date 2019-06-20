@@ -418,7 +418,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Arearange.IsDirty()) h.Add("arearange",Arearange.ToHashtable());
 			if (Areaspline.IsDirty()) h.Add("areaspline",Areaspline.ToHashtable());
 			if (Areasplinerange.IsDirty()) h.Add("areasplinerange",Areasplinerange.ToHashtable());
-			if (Bar.IsDirty()) h.Add("bar",Bar.ToHashtable());
+			if (Bar != Bar_DefaultValue) h.Add("bar",Bar);
 			if (Bellcurve.IsDirty()) h.Add("bellcurve",Bellcurve.ToHashtable());
 			if (Boxplot.IsDirty()) h.Add("boxplot",Boxplot.ToHashtable());
 			if (Bubble.IsDirty()) h.Add("bubble",Bubble.ToHashtable());

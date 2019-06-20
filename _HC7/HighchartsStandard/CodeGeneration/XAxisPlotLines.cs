@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			DashStyle = DashStyle_DefaultValue = null;
+			DashStyle = DashStyle_DefaultValue = "Solid";
 			Events = Events_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Label = Label_DefaultValue = new XAxisPlotLinesLabel();

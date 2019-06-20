@@ -48,8 +48,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Order of tab navigation in the chart. Determines which elementsare tabbed to first. Available elements are: `series`, `zoom`,`rangeSelector`, `chartMenu`, `legend`. In addition, any customcomponents can be added here.
 		/// </summary>
-		public string Order { get; set; }
-		private string Order_DefaultValue { get; set; }
+		public  Order { get; set; }
+		private  Order_DefaultValue { get; set; }
 		 
 
 		/// <summary>

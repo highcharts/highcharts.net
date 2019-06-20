@@ -18,7 +18,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Draggable = Draggable_DefaultValue = AnnotationsInfinityLineDraggable.Xy;
 			Events = Events_DefaultValue = new AnnotationsInfinityLineEvents();
 			LabelOptions = LabelOptions_DefaultValue = new AnnotationsInfinityLineLabelOptions();
+			Labels = Labels_DefaultValue = new AnnotationsInfinityLineLabels();
 			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsInfinityLineShapeOptions();
+			Shapes = Shapes_DefaultValue = new AnnotationsInfinityLineShapes();
 			TypeOptions = TypeOptions_DefaultValue = new AnnotationsInfinityLineTypeOptions();
 			Visible = Visible_DefaultValue = true;
 			ZIndex = ZIndex_DefaultValue = 6;
@@ -52,6 +54,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public AnnotationsInfinityLineLabelOptions LabelOptions { get; set; }
 		private AnnotationsInfinityLineLabelOptions LabelOptions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array of labels for the annotation. For options that apply tomultiple labels, they can be added to the[labelOptions](annotations.labelOptions.html).
+		/// </summary>
+		public List<object> Labels { get; set; }
+		private List<object> Labels_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Options for annotation's shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptionscan be overwritten by config for a specific shape.
@@ -59,6 +69,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AnnotationsInfinityLineShapeOptions ShapeOptions { get; set; }
 		private AnnotationsInfinityLineShapeOptions ShapeOptions_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// An array of shapes for the annotation. For options that apply tomultiple shapes, then can be added to the[shapeOptions](annotations.shapeOptions.html).
+		/// </summary>
+		public List<object> Shapes { get; set; }
+		private List<object> Shapes_DefaultValue { get; set; }
+		 
+
 		/// <summary>
 		/// Additional options for an annotation with the type.
 		/// </summary>
@@ -88,7 +106,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable", Highstock.FirstCharacterToLower(Draggable.ToString()));
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
+			if (Shapes.IsDirty()) h.Add("shapes",Shapes.ToHashtable());
 			if (TypeOptions.IsDirty()) h.Add("typeOptions",TypeOptions.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

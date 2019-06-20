@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Snap = Snap_DefaultValue = 2;
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
-			Type = Type_DefaultValue = "'rect'";
+			Type = Type_DefaultValue = " rect ";
 			Width = Width_DefaultValue = null;
 			
 		}	

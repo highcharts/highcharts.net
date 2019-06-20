@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = 1;
 			Height = Height_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = null;
+			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 1;
 			Radius = Radius_DefaultValue = 4;
 			Symbol = Symbol_DefaultValue = "circle";

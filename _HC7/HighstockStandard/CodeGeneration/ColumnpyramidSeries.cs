@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Cursor = Cursor_DefaultValue = ColumnpyramidSeriesCursor.Null;
 			Data = Data_DefaultValue = new List<ColumnpyramidSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new ColumnpyramidSeriesDataGrouping();
-			DataLabels = DataLabels_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new ColumnpyramidSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new ColumnpyramidSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Stack = Stack_DefaultValue = "";
 			Stacking = Stacking_DefaultValue = ColumnpyramidSeriesStacking.Null;
-			States = States_DefaultValue = new ColumnpyramidSeriesStates();
+			States = States_DefaultValue = new Hashtable();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new ColumnpyramidSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
@@ -241,8 +241,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Options for the series data labels, appearing next to each datapoint.Since v6.2.0, multiple data labels can be applied to each singlepoint by defining them as an array of configs.In styled mode, the data labels can be styled with the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](https://www.highcharts.com/samples/highcharts/css/series-datalabels)).
 		/// </summary>
-		public Object DataLabels { get; set; }
-		private Object DataLabels_DefaultValue { get; set; }
+		public ColumnpyramidSeriesDataLabels DataLabels { get; set; }
+		private ColumnpyramidSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -528,8 +528,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public ColumnpyramidSeriesStates States { get; set; }
-		private ColumnpyramidSeriesStates States_DefaultValue { get; set; }
+		public Hashtable States { get; set; }
+		private Hashtable States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -627,7 +627,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
@@ -672,7 +672,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (States != States_DefaultValue) h.Add("states",States);
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);

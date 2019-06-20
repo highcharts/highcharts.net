@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new OrganizationSeriesDataLabels();
 			Level = Level_DefaultValue = null;
 			LinkOpacity = LinkOpacity_DefaultValue = null;
-			States = States_DefaultValue = new List<object>();
+			States = States_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Can set `states` on all points which lies on the same level.
 		/// </summary>
-		public List<object> States { get; set; }
-		private List<object> States_DefaultValue { get; set; }
+		public Hashtable States { get; set; }
+		private Hashtable States_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

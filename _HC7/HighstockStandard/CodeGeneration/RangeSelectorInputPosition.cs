@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public RangeSelectorInputPosition()
 		{
-			Align = Align_DefaultValue = "right";
+			Align = Align_DefaultValue = RangeSelectorInputPositionAlign.Right;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The alignment of the input box. Allowed properties are `left`,`center`, `right`.
 		/// </summary>
-		public string Align { get; set; }
-		private string Align_DefaultValue { get; set; }
+		public RangeSelectorInputPositionAlign Align { get; set; }
+		private RangeSelectorInputPositionAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
-			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

@@ -20,12 +20,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			MarkerStart = MarkerStart_DefaultValue = "";
 			Point = Point_DefaultValue = new AnnotationsCrookedLineShapesPoint();
 			PointString = PointString_DefaultValue = "null";
-			Points = Points_DefaultValue = new List<string>();
+			Points = Points_DefaultValue = "";
 			R = R_DefaultValue = 0;
 			Snap = Snap_DefaultValue = 2;
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
-			Type = Type_DefaultValue = "'rect'";
+			Type = Type_DefaultValue = " rect ";
 			Width = Width_DefaultValue = null;
 			
 		}	
@@ -76,8 +76,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of points for the shape. This option is availablefor shapes which can use multiple points such as path.A point can be either a point object or a point's id.
 		/// </summary>
-		public List<string> Points { get; set; }
-		private List<string> Points_DefaultValue { get; set; }
+		public Array.<(string|Highcharts.MockPoint.Options)> Points { get; set; }
+		private Array.<(string|Highcharts.MockPoint.Options)> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -132,7 +132,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MarkerStart != MarkerStart_DefaultValue) h.Add("markerStart",MarkerStart);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (PointString != PointString_DefaultValue) h.Add("point",PointString);
-			if (Points.Any()) h.Add("points",Points);
+			if (Points != Points_DefaultValue) h.Add("points",Points);
 			if (R != R_DefaultValue) h.Add("r",R);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);

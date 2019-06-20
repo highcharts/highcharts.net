@@ -98,9 +98,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (Labels != Labels_DefaultValue) h.Add("labels",Labels);
 			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
-			if (Shapes.IsDirty()) h.Add("shapes",Shapes.ToHashtable());
+			if (Shapes != Shapes_DefaultValue) h.Add("shapes",Shapes);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			

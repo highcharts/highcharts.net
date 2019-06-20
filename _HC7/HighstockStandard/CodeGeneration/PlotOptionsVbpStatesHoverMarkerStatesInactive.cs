@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsVbpStatesHoverMarkerStatesInactive()
 		{
-			Opacity = Opacity_DefaultValue = null;
+			Opacity = Opacity_DefaultValue = "";
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Opacity of inactive markers.
 		/// </summary>
-		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
+		public  Opacity { get; set; }
+		private  Opacity_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

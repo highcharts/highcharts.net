@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Time = Time_DefaultValue = new Time();
 			Title = Title_DefaultValue = new Title();
 			Tooltip = Tooltip_DefaultValue = new Tooltip();
-			XAxis = XAxis_DefaultValue = null;
-			YAxis = YAxis_DefaultValue = null;
+			XAxis = XAxis_DefaultValue = new List<XAxis>();
+			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			
 		}	
 		
@@ -247,15 +247,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The X axis or category axis. Normally this is the horizontal axis,though if the chart is inverted this is the vertical axis. In case ofmultiple axes, the xAxis node is an array of configuration objects.See the [Axis class](/class-reference/Highcharts.Axis) for programmaticaccess to the axis.
 		/// </summary>
-		public string XAxis { get; set; }
-		private string XAxis_DefaultValue { get; set; }
+		public List<XAxis> XAxis { get; set; }
+		private List<XAxis> XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The Y axis or value axis. Normally this is the vertical axis,though if the chart is inverted this is the horizontal axis.In case of multiple axes, the yAxis node is an array ofconfiguration objects.See [the Axis object](/class-reference/Highcharts.Axis) for programmaticaccess to the axis.
 		/// </summary>
-		public string YAxis { get; set; }
-		private string YAxis_DefaultValue { get; set; }
+		public List<YAxis> YAxis { get; set; }
+		private List<YAxis> YAxis_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -290,8 +290,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Time.IsDirty()) h.Add("time",Time.ToHashtable());
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", YAxis);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
 			
 
 			return h;

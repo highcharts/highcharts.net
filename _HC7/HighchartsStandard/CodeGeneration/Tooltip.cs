@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Outside = Outside_DefaultValue = false;
 			Padding = Padding_DefaultValue = "8";
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'> u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -313,7 +313,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Split != Split_DefaultValue) h.Add("split",Split);
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);

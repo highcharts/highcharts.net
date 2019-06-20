@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Enable keyboard navigation for the legend.
 		/// </summary>
-		public string Enabled { get; set; }
-		private string Enabled_DefaultValue { get; set; }
+		public  Enabled { get; set; }
+		private  Enabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

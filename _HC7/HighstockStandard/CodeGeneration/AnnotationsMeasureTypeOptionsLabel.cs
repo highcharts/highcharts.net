@@ -48,7 +48,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("AnnotationsMeasureTypeOptionsLabelFormatter.formatter", Formatter); }  
-			if (Style.IsDirty()) h.Add("style",Style.ToHashtable());
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 
 			return h;

@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Marker { get; set; }
-		private string Marker_DefaultValue { get; set; }
+		public  Marker { get; set; }
+		private  Marker_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

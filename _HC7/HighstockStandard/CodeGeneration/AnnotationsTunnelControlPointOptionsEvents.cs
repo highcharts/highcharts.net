@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Drag { get; set; }
-		private string Drag_DefaultValue { get; set; }
+		public  Drag { get; set; }
+		private  Drag_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -40,7 +40,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
 			ShortWeekdays = ShortWeekdays_DefaultValue = new List<string>();
 			StockTools = StockTools_DefaultValue = new LangStockTools();
-			ThousandsSep = ThousandsSep_DefaultValue = "\u0020";
+			ThousandsSep = ThousandsSep_DefaultValue = " u0020";
 			ViewData = ViewData_DefaultValue = "View data table";
 			ViewFullscreen = ViewFullscreen_DefaultValue = "View in full screen";
 			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",

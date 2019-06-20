@@ -18,7 +18,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			EndAngle = EndAngle_DefaultValue = null;
 			Size = Size_DefaultValue = "85%";
-			SizeNumber = SizeNumber_DefaultValue = null;
 			StartAngle = StartAngle_DefaultValue = 0;
 			
 		}	
@@ -53,13 +52,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The size of the pane, either as a number defining pixels, or apercentage defining a percentage of the plot are.
-		/// </summary>
-		public double? SizeNumber { get; set; }
-		private double? SizeNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The start angle of the polar X axis or gauge axis, given in degreeswhere 0 is north. Defaults to 0.
 		/// </summary>
 		public double? StartAngle { get; set; }
@@ -74,7 +66,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
-			if (SizeNumber != SizeNumber_DefaultValue) h.Add("size",SizeNumber);
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
 			
 
