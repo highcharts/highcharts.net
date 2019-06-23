@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "rect";
-			Style = Style_DefaultValue = new AnnotationsFibonacciLabelOptionsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "undefined";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsFibonacciLabelOptionsVerticalAlign.Middle;
@@ -155,8 +155,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public AnnotationsFibonacciLabelOptionsStyle Style { get; set; }
-		private AnnotationsFibonacciLabelOptionsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

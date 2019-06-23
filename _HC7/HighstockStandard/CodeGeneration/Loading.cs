@@ -15,9 +15,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Loading()
 		{
 			HideDuration = HideDuration_DefaultValue = 100;
-			LabelStyle = LabelStyle_DefaultValue = new LoadingLabelStyle();
+			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
 			ShowDuration = ShowDuration_DefaultValue = 100;
-			Style = Style_DefaultValue = new LoadingStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the loading label `span`.
 		/// </summary>
-		public LoadingLabelStyle LabelStyle { get; set; }
-		private LoadingLabelStyle LabelStyle_DefaultValue { get; set; }
+		public Hashtable LabelStyle { get; set; }
+		private Hashtable LabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the loading screen that covers the plot area.In styled mode, the loading label is styled with the`.highcharts-loading` class.
 		/// </summary>
-		public LoadingStyle Style { get; set; }
-		private LoadingStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

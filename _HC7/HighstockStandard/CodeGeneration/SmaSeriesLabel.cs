@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MaxFontSize = MaxFontSize_DefaultValue = null;
 			MinFontSize = MinFontSize_DefaultValue = null;
 			OnArea = OnArea_DefaultValue = null;
-			Style = Style_DefaultValue = new SmaSeriesLabelStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -78,8 +78,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Styles for the series label. The color defaults to the seriescolor, or a contrast color if `onArea`.
 		/// </summary>
-		public SmaSeriesLabelStyle Style { get; set; }
-		private SmaSeriesLabelStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

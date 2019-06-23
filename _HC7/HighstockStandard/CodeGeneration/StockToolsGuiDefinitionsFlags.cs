@@ -18,12 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			FlagDiamondpin = FlagDiamondpin_DefaultValue = new StockToolsGuiDefinitionsFlagsFlagDiamondpin();
 			FlagSimplepin = FlagSimplepin_DefaultValue = new StockToolsGuiDefinitionsFlagsFlagSimplepin();
 			FlagSquarepin = FlagSquarepin_DefaultValue = new StockToolsGuiDefinitionsFlagsFlagSquarepin();
-			Items = Items_DefaultValue = [
-   flagCirclepin ,
-   flagDiamondpin ,
-   flagSquarepin ,
-   flagSimplepin 
-];
+			Items = Items_DefaultValue = new List<string>();
 			
 		}	
 		
@@ -59,8 +54,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A collection of strings pointing to config options forthe items.
 		/// </summary>
-		public Array Items { get; set; }
-		private Array Items_DefaultValue { get; set; }
+		public List<string> Items { get; set; }
+		private List<string> Items_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BubbleLegend = BubbleLegend_DefaultValue = new LegendBubbleLegend();
 			Enabled = Enabled_DefaultValue = true;
 			Floating = Floating_DefaultValue = false;
-			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new LegendItemCheckboxStyle();
+			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new Hashtable();
 			ItemDistance = ItemDistance_DefaultValue = null;
 			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new LegendItemHiddenStyle();
 			ItemHoverStyle = ItemHoverStyle_DefaultValue = new LegendItemHoverStyle();
@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ItemStyle = ItemStyle_DefaultValue = new LegendItemStyle();
 			ItemWidth = ItemWidth_DefaultValue = null;
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
-			LabelFormatter = LabelFormatter_DefaultValue = "";
+			LabelFormatter = LabelFormatter_DefaultValue = null;
 			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
 			Margin = Margin_DefaultValue = null;
 			MaxHeight = MaxHeight_DefaultValue = null;
@@ -132,8 +132,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Default styling for the checkbox next to a legend item when`showCheckbox` is true.
 		/// </summary>
-		public LegendItemCheckboxStyle ItemCheckboxStyle { get; set; }
-		private LegendItemCheckboxStyle ItemCheckboxStyle_DefaultValue { get; set; }
+		public Hashtable ItemCheckboxStyle { get; set; }
+		private Hashtable ItemCheckboxStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -195,8 +195,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Callback function to format each of the series' labels. The `this`keyword refers to the series object, or the point object in case ofpie charts. By default the series or point name is printed.
 		/// </summary>
-		public  LabelFormatter { get; set; }
-		private  LabelFormatter_DefaultValue { get; set; }
+		public bool? LabelFormatter { get; set; }
+		private bool? LabelFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -360,7 +360,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BubbleLegend.IsDirty()) h.Add("bubbleLegend",BubbleLegend.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
-			if (ItemCheckboxStyle.IsDirty()) h.Add("itemCheckboxStyle",ItemCheckboxStyle.ToHashtable());
+			if (ItemCheckboxStyle != ItemCheckboxStyle_DefaultValue) h.Add("itemCheckboxStyle",ItemCheckboxStyle);
 			if (ItemDistance != ItemDistance_DefaultValue) h.Add("itemDistance",ItemDistance);
 			if (ItemHiddenStyle.IsDirty()) h.Add("itemHiddenStyle",ItemHiddenStyle.ToHashtable());
 			if (ItemHoverStyle.IsDirty()) h.Add("itemHoverStyle",ItemHoverStyle.ToHashtable());

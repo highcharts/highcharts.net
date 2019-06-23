@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = new AnnotationsElliottWaveLabelOptionsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "undefined";
 			Type = Type_DefaultValue = "rect";
 			UseHTML = UseHTML_DefaultValue = false;
@@ -156,8 +156,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Styles for the annotation's label.
 		/// </summary>
-		public AnnotationsElliottWaveLabelOptionsStyle Style { get; set; }
-		private AnnotationsElliottWaveLabelOptionsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

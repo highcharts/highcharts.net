@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Formatter = Formatter_DefaultValue = "";
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			Overflow = Overflow_DefaultValue = NavigatorXAxisLabelsOverflow.Justify;
-			OverflowBool = OverflowBool_DefaultValue = NavigatorXAxisLabelsOverflow.Null;
+			OverflowBool = OverflowBool_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
@@ -86,8 +86,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// How to handle overflowing labels on horizontal axis. If set to`"allow"`, it will not be aligned at all. By default it`"justify"` labels inside the chart area. If there is room tomove it, it will be aligned to the edge, else it will be removed.
 		/// </summary>
-		public NavigatorXAxisLabelsOverflow OverflowBool { get; set; }
-		private NavigatorXAxisLabelsOverflow OverflowBool_DefaultValue { get; set; }
+		public bool? OverflowBool { get; set; }
+		private bool? OverflowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>

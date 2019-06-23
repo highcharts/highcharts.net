@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			InnerBackground = InnerBackground_DefaultValue = new AnnotationsPitchforkTypeOptionsInnerBackground();
 			Line = Line_DefaultValue = new AnnotationsPitchforkTypeOptionsLine();
 			OuterBackground = OuterBackground_DefaultValue = new AnnotationsPitchforkTypeOptionsOuterBackground();
-			Points = Points_DefaultValue = new AnnotationsPitchforkTypeOptionsPoints();
+			Points = Points_DefaultValue = new List<AnnotationsPitchforkTypeOptionsPoints>();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -48,8 +48,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<object> Points { get; set; }
-		private List<object> Points_DefaultValue { get; set; }
+		public List<AnnotationsPitchforkTypeOptionsPoints> Points { get; set; }
+		private List<AnnotationsPitchforkTypeOptionsPoints> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -73,7 +73,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (InnerBackground.IsDirty()) h.Add("innerBackground",InnerBackground.ToHashtable());
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
 			if (OuterBackground.IsDirty()) h.Add("outerBackground",OuterBackground.ToHashtable());
-			if (Points.IsDirty()) h.Add("points",Points.ToHashtable());
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(Points));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

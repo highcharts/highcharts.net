@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PackedbubbleSeries()
 		{
 			Data = Data_DefaultValue = new List<PackedbubbleSeriesData>();
-			Marker = Marker_DefaultValue = "";
 			
 		}	
 		
@@ -25,13 +24,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<PackedbubbleSeriesData> Data { get; set; }
 		private List<PackedbubbleSeriesData> Data_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public  Marker { get; set; }
-		private  Marker_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -39,7 +31,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Data.Any()) h.Add("data",HashifyList(Data));
-			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			
 
 			return h;

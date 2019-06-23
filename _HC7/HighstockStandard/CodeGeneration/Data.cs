@@ -180,8 +180,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The same as the columns input option, but defining rows intead ofcolumns.
 		/// </summary>
-		public Array.<Array.<*>> Rows { get; set; }
-		private Array.<Array.<*>> Rows_DefaultValue { get; set; }
+		public List<List<object>> Rows { get; set; }
+		private List<List<object>> Rows_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "square";
-			Style = Style_DefaultValue = new PlotOptionsAoDataLabelsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsAoDataLabelsVerticalAlign.Top;
 			X = X_DefaultValue = null;
@@ -187,8 +187,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsAoDataLabelsStyle Style { get; set; }
-		private PlotOptionsAoDataLabelsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

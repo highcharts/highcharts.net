@@ -22,15 +22,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public  Drag { get; set; }
-		private  Drag_DefaultValue { get; set; }
+		public string Drag { get; set; }
+		private string Drag_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Drag != Drag_DefaultValue) h.Add("drag",Drag);
+			if (Drag != Drag_DefaultValue) { h.Add("drag",Drag); Highstock.AddFunction("AnnotationsCrookedLineControlPointOptionsEventsDrag.drag", Drag); }  
 			
 
 			return h;

@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "square";
-			Style = Style_DefaultValue = new CandleStickSeriesDataLabelsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = CandleStickSeriesDataLabelsVerticalAlign.Top;
 			X = X_DefaultValue = null;
@@ -187,8 +187,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public CandleStickSeriesDataLabelsStyle Style { get; set; }
-		private CandleStickSeriesDataLabelsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

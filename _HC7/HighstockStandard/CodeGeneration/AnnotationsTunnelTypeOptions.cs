@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Height = Height_DefaultValue = -2;
 			HeightControlPoint = HeightControlPoint_DefaultValue = new AnnotationsTunnelTypeOptionsHeightControlPoint();
 			Line = Line_DefaultValue = new AnnotationsTunnelTypeOptionsLine();
-			Points = Points_DefaultValue = new AnnotationsTunnelTypeOptionsPoints();
+			Points = Points_DefaultValue = new List<AnnotationsTunnelTypeOptionsPoints>();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -28,8 +28,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Background options.
 		/// </summary>
-		public string Background { get; set; }
-		private string Background_DefaultValue { get; set; }
+		public AnnotationsTunnelTypeOptionsBackground Background { get; set; }
+		private AnnotationsTunnelTypeOptionsBackground Background_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -56,8 +56,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<object> Points { get; set; }
-		private List<object> Points_DefaultValue { get; set; }
+		public List<AnnotationsTunnelTypeOptionsPoints> Points { get; set; }
+		private List<AnnotationsTunnelTypeOptionsPoints> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -82,7 +82,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (HeightControlPoint.IsDirty()) h.Add("heightControlPoint",HeightControlPoint.ToHashtable());
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
-			if (Points.IsDirty()) h.Add("points",Points.ToHashtable());
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(Points));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

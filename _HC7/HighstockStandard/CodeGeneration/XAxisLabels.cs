@@ -21,11 +21,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			Formatter = Formatter_DefaultValue = "";
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			Overflow = Overflow_DefaultValue = XAxisLabelsOverflow.Justify;
-			OverflowBool = OverflowBool_DefaultValue = XAxisLabelsOverflow.Null;
+			OverflowBool = OverflowBool_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = null;
 			Step = Step_DefaultValue = null;
-			Style = Style_DefaultValue = new XAxisLabelsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
@@ -86,8 +86,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// How to handle overflowing labels on horizontal axis. If set to`"allow"`, it will not be aligned at all. By default it`"justify"` labels inside the chart area. If there is room tomove it, it will be aligned to the edge, else it will be removed.
 		/// </summary>
-		public XAxisLabelsOverflow OverflowBool { get; set; }
-		private XAxisLabelsOverflow OverflowBool_DefaultValue { get; set; }
+		public bool? OverflowBool { get; set; }
+		private bool? OverflowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -114,8 +114,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the label. Use `whiteSpace: 'nowrap'` to preventwrapping of category labels. Use `textOverflow: 'none'` toprevent ellipsis (dots).In styled mode, the labels are styled with the`.highcharts-axis-labels` class.
 		/// </summary>
-		public XAxisLabelsStyle Style { get; set; }
-		private XAxisLabelsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

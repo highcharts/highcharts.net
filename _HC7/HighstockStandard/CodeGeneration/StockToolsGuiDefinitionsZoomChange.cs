@@ -14,11 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public StockToolsGuiDefinitionsZoomChange()
 		{
-			Items = Items_DefaultValue = [
-   zoomX ,
-   zoomY ,
-   zoomXY 
-];
+			Items = Items_DefaultValue = new List<string>();
 			ZoomX = ZoomX_DefaultValue = new StockToolsGuiDefinitionsZoomChangeZoomX();
 			ZoomXY = ZoomXY_DefaultValue = new StockToolsGuiDefinitionsZoomChangeZoomXY();
 			ZoomY = ZoomY_DefaultValue = new StockToolsGuiDefinitionsZoomChangeZoomY();
@@ -29,8 +25,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A collection of strings pointing to config options forthe items.
 		/// </summary>
-		public Array Items { get; set; }
-		private Array Items_DefaultValue { get; set; }
+		public List<string> Items { get; set; }
+		private List<string> Items_DefaultValue { get; set; }
 		 
 
 		/// <summary>

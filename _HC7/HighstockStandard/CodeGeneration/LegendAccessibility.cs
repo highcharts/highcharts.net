@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LegendAccessibility()
 		{
-			Enabled = Enabled_DefaultValue = "";
+			Enabled = Enabled_DefaultValue = null;
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new LegendAccessibilityKeyboardNavigation();
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Enable accessibility support for the legend.
 		/// </summary>
-		public  Enabled { get; set; }
-		private  Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>

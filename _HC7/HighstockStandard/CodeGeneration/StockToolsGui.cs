@@ -14,26 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public StockToolsGui()
 		{
-			Buttons = Buttons_DefaultValue = [
-  indicators ,
-   separator ,
-   simpleShapes ,
-   lines ,
-   crookedLines ,
-   measure ,
-   advanced ,
-   toggleAnnotations ,
-   separator ,
-   verticalLabels ,
-   flags ,
-   separator ,
-   zoomChange ,
-   fullScreen ,
-   typeChange ,
-   separator ,
-   currentPriceIndicator ,
-   saveChart 
- ];
+			Buttons = Buttons_DefaultValue = new List<string>();
 			ClassName = ClassName_DefaultValue = "highcharts-bindings-wrapper";
 			Definitions = Definitions_DefaultValue = new StockToolsGuiDefinitions();
 			Enabled = Enabled_DefaultValue = true;
@@ -46,8 +27,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A collection of strings pointing to config options for thetoolbar items. Each name refers to unique key from definitionsobject.
 		/// </summary>
-		public Array Buttons { get; set; }
-		private Array Buttons_DefaultValue { get; set; }
+		public List<string> Buttons { get; set; }
+		private List<string> Buttons_DefaultValue { get; set; }
 		 
 
 		/// <summary>

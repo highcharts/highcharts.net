@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public ExportingAccessibility()
 		{
-			Enabled = Enabled_DefaultValue = "";
+			Enabled = Enabled_DefaultValue = null;
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Enable accessibility support for the export menu.
 		/// </summary>
-		public  Enabled { get; set; }
-		private  Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

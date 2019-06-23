@@ -87,7 +87,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Stacking = Stacking_DefaultValue = FlagsSeriesStacking.Null;
 			States = States_DefaultValue = new FlagsSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
-			Style = Style_DefaultValue = new FlagsSeriesStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			TextAlign = TextAlign_DefaultValue = FlagsSeriesTextAlign.Center;
 			Threshold = Threshold_DefaultValue = 0;
 			Title = Title_DefaultValue = "A";
@@ -622,8 +622,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The text styles of the flag.In styled mode, the styles are set in the`.highcharts-flag-series .highcharts-point` rule.
 		/// </summary>
-		public FlagsSeriesStyle Style { get; set; }
-		private FlagsSeriesStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

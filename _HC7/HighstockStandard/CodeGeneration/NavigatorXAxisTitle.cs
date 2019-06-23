@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Offset = Offset_DefaultValue = null;
 			ReserveSpace = ReserveSpace_DefaultValue = true;
 			Rotation = Rotation_DefaultValue = 0;
-			Style = Style_DefaultValue = new NavigatorXAxisTitleStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "null";
 			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
@@ -67,8 +67,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting `textOverflow: 'ellipsis'`, bysetting a specific `width` or by setting `whiteSpace: 'nowrap'`.In styled mode, the stroke width is given in the`.highcharts-axis-title` class.
 		/// </summary>
-		public NavigatorXAxisTitleStyle Style { get; set; }
-		private NavigatorXAxisTitleStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

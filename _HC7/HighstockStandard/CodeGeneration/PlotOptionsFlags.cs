@@ -81,7 +81,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Stacking = Stacking_DefaultValue = PlotOptionsFlagsStacking.Null;
 			States = States_DefaultValue = new PlotOptionsFlagsStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
-			Style = Style_DefaultValue = new PlotOptionsFlagsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			TextAlign = TextAlign_DefaultValue = PlotOptionsFlagsTextAlign.Center;
 			Threshold = Threshold_DefaultValue = null;
 			Title = Title_DefaultValue = "A";
@@ -568,8 +568,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The text styles of the flag.In styled mode, the styles are set in the`.highcharts-flag-series .highcharts-point` rule.
 		/// </summary>
-		public PlotOptionsFlagsStyle Style { get; set; }
-		private PlotOptionsFlagsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

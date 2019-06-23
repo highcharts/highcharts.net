@@ -339,7 +339,7 @@ public class HighstockGenerator
                 !item.FullName.Equals("annotations.measure.controlPointOptions.events") &&
                 !item.FullName.Equals("annotations.pitchfork.controlPointOptions.events") &&
                 !item.FullName.Equals("annotations.tunnel.controlPointOptions.events") &&
-                !item.FullName.Equals("annotations.tunnel.typeOptionsHeightControlPoint.events") &&
+                !item.FullName.Equals("annotations.tunnel.typeOptions.heightControlPoint.events") &&
                 (item.FullName.EndsWith("draggable") || item.FullName.EndsWith("events") || item.FullName.EndsWith("labels") || item.FullName.EndsWith("shapes") || item.FullName.EndsWith("visible") || item.FullName.EndsWith("zIndex")))
                 return;
 
@@ -355,10 +355,9 @@ public class HighstockGenerator
         if (item.FullName.Equals("series.packedbubble"))
             children = item.Children.Where(p => !p.FullName.Contains("marker")).ToList();
 
-        if (item.FullName.Equals("annotations.measure.controlPointOptions.style") || item.FullName.Equals("series.columnpyramid.states") || item.FullName.Equals("series.packedbubble.marker") || item.FullName.Equals("series.packedbubble.marker"))
+        if (item.FullName.Equals("annotations.measure.controlPointOptions.style") || item.FullName.Equals("series.columnpyramid.states") || item.FullName.Equals("series.packedbubble.marker") || item.FullName.Equals("series.packedbubble.marker") || item.FullName.Equals("annotations.measure.typeOptions.label.style")
+            || item.FullName.Equals("drilldown.activeDataLabelStyle") || item.FullName.Equals("legend.itemCheckboxStyle"))
             return;
-
-
 
         
 
@@ -737,8 +736,8 @@ public class HighstockGenerator
         if (child.ParentFullName != ROOT_CLASS && (nameAndSuffix.ToLower() == "xaxis" || nameAndSuffix.ToLower() == "yaxis"))
             return "string";
 
-        if (nameAndSuffix.ToLower().EndsWith("style") && child.Children.Any())
-            return GetClassNameFromItem(child);
+        //if (nameAndSuffix.ToLower().EndsWith("style") && child.Children.Any())
+        //    return GetClassNameFromItem(child);
 
         if (_propertyTypeMappings[child.FullName] != null)
             return _propertyTypeMappings[child.FullName].ToString();
@@ -1112,6 +1111,10 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("stockTools.gui.definitions.typeChange.items", "List<string>");
         _propertyTypeMappings.Add("stockTools.gui.definitions.verticalLabels.items", "List<string>");
         _propertyTypeMappings.Add("stockTools.gui.definitions.zoomChange.items", "List<string>");
+
+        _propertyTypeMappings.Add("annotations.measure.typeOptions.label.style", "Hashtable");
+        _propertyTypeMappings.Add("drilldown.activeDataLabelStyle", "Hashtable");
+        _propertyTypeMappings.Add("legend.itemCheckboxStyle", "Hashtable");
     }
     private void InitPropertyInitMappings()
     {
@@ -1270,6 +1273,10 @@ public class HighstockGenerator
         _propertyInitMappings.Add("stockTools.gui.definitions.typeChange.items", "new List<string>()");
         _propertyInitMappings.Add("stockTools.gui.definitions.verticalLabels.items", "new List<string>()");
         _propertyInitMappings.Add("stockTools.gui.definitions.zoomChange.items", "new List<string>()");
+
+        _propertyInitMappings.Add("annotations.measure.typeOptions.label.style", "new Hashtable()");
+        _propertyInitMappings.Add("drilldown.activeDataLabelStyle", "new Hashtable()");
+        _propertyInitMappings.Add("legend.itemCheckboxStyle", "new Hashtable()");
     }
     private void InitLists()
     {
@@ -1311,6 +1318,14 @@ public class HighstockGenerator
         _lists.Add("navigator.yAxis.plotLines");
         _lists.Add("drilldown.series");
         _lists.Add("exporting.buttons.contextButton.menuItems");
+        _lists.Add("annotations.crookedLine.typeOptions.points");
+        _lists.Add("annotations.elliottWave.typeOptions.points");
+        _lists.Add("annotations.fibonacci.typeOptions.points");
+        _lists.Add("annotations.infinityLine.typeOptions.points");
+        _lists.Add("annotations.measure.typeOptions.points");
+        _lists.Add("annotations.pitchfork.typeOptions.points");
+        _lists.Add("annotations.tunnel.typeOptions.points");
+        _lists.Add("annotations.verticalLine.typeOptions.points");
     }
     private void InitSeriesMappings()
     {
@@ -1408,8 +1423,8 @@ public class HighstockGenerator
         if ((nameAndSuffix == "xAxis" || nameAndSuffix == "yAxis") && item.ParentFullName != ROOT_CLASS)
             return "\"\"";
 
-        if (nameAndSuffix.ToLower().EndsWith("style") && item.Children.Any())
-            return "new " + GetClassNameFromItem(item) + "()";
+        //if (nameAndSuffix.ToLower().EndsWith("style") && item.Children.Any())
+        //    return "new " + GetClassNameFromItem(item) + "()";
 
         if (_propertyInitMappings[item.FullName] != null)
         {

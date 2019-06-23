@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			CrosshairY = CrosshairY_DefaultValue = new AnnotationsMeasureTypeOptionsCrosshairY();
 			Label = Label_DefaultValue = new AnnotationsMeasureTypeOptionsLabel();
 			Line = Line_DefaultValue = new AnnotationsMeasureTypeOptionsLine();
-			Points = Points_DefaultValue = new AnnotationsMeasureTypeOptionsPoints();
+			Points = Points_DefaultValue = new List<AnnotationsMeasureTypeOptionsPoints>();
 			SelectType = SelectType_DefaultValue = "xy";
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Background { get; set; }
-		private string Background_DefaultValue { get; set; }
+		public AnnotationsMeasureTypeOptionsBackground Background { get; set; }
+		private AnnotationsMeasureTypeOptionsBackground Background_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -65,8 +65,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<object> Points { get; set; }
-		private List<object> Points_DefaultValue { get; set; }
+		public List<AnnotationsMeasureTypeOptionsPoints> Points { get; set; }
+		private List<AnnotationsMeasureTypeOptionsPoints> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -99,7 +99,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CrosshairY.IsDirty()) h.Add("crosshairY",CrosshairY.ToHashtable());
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
-			if (Points.IsDirty()) h.Add("points",Points.ToHashtable());
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(Points));
 			if (SelectType != SelectType_DefaultValue) h.Add("selectType",SelectType);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);

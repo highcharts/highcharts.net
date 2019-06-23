@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public LegendTitle()
 		{
-			Style = Style_DefaultValue = new LegendTitleStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "null";
 			
 		}	
@@ -23,8 +23,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Generic CSS styles for the legend title.
 		/// </summary>
-		public LegendTitleStyle Style { get; set; }
-		private LegendTitleStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

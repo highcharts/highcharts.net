@@ -14,13 +14,12 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AnnotationsFibonacciTypeOptions()
 		{
-			BackgroundColors = BackgroundColors_DefaultValue = "";
+			BackgroundColors = BackgroundColors_DefaultValue = new List<string>();
 			Height = Height_DefaultValue = 2;
-			Labels = Labels_DefaultValue = new AnnotationsFibonacciTypeOptionsLabels();
 			Line = Line_DefaultValue = new AnnotationsFibonacciTypeOptionsLine();
 			LineColor = LineColor_DefaultValue = "grey";
-			LineColors = LineColors_DefaultValue = "";
-			Points = Points_DefaultValue = new AnnotationsFibonacciTypeOptionsPoints();
+			LineColors = LineColors_DefaultValue = new List<string>();
+			Points = Points_DefaultValue = new List<AnnotationsFibonacciTypeOptionsPoints>();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -30,8 +29,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of background colors:Default to:<pre>[  'rgba(130, 170, 255, 0.4)',  'rgba(139, 191, 216, 0.4)',  'rgba(150, 216, 192, 0.4)',  'rgba(156, 229, 161, 0.4)',  'rgba(162, 241, 130, 0.4)',  'rgba(169, 255, 101, 0.4)']              </pre>
 		/// </summary>
-		public  BackgroundColors { get; set; }
-		private  BackgroundColors_DefaultValue { get; set; }
+		public List<string> BackgroundColors { get; set; }
+		private List<string> BackgroundColors_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -65,15 +64,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of colors for the lines.
 		/// </summary>
-		public  LineColors { get; set; }
-		private  LineColors_DefaultValue { get; set; }
+		public List<string> LineColors { get; set; }
+		private List<string> LineColors_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<object> Points { get; set; }
-		private List<object> Points_DefaultValue { get; set; }
+		public List<AnnotationsFibonacciTypeOptionsPoints> Points { get; set; }
+		private List<AnnotationsFibonacciTypeOptionsPoints> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -96,11 +95,10 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (BackgroundColors != BackgroundColors_DefaultValue) h.Add("backgroundColors",BackgroundColors);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineColors != LineColors_DefaultValue) h.Add("lineColors",LineColors);
-			if (Points.IsDirty()) h.Add("points",Points.ToHashtable());
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(Points));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

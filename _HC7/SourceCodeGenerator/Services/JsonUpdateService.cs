@@ -289,6 +289,14 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("legend.labelFormatter", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
             ItemsToUpdate.Add("annotations.fibonacci.typeOptions.lineColors", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Array.<string>" } });
 
+            ItemsToUpdate.Add("annotations.crookedLine.controlPointOptions.events.drag", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.elliottWave.controlPointOptions.events.drag", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.fibonacci.controlPointOptions.events.drag", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.infinityLine.controlPointOptions.events.drag", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.pitchfork.controlPointOptions.events.drag", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.tunnel.controlPointOptions.events.drag", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.tunnel.typeOptions.heightControlPoint.events.drag", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+
             ItemsToUpdateProducts.Add("xAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
             ItemsToUpdateProducts.Add("yAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
 

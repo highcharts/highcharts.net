@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public DemaSeriesMarkerStatesInactive()
 		{
-			Opacity = Opacity_DefaultValue = "";
+			Opacity = Opacity_DefaultValue = null;
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Opacity of inactive markers.
 		/// </summary>
-		public  Opacity { get; set; }
-		private  Opacity_DefaultValue { get; set; }
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

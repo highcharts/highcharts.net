@@ -53,7 +53,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			SpacingLeft = SpacingLeft_DefaultValue = 10;
 			SpacingRight = SpacingRight_DefaultValue = 10;
 			SpacingTop = SpacingTop_DefaultValue = 10;
-			Style = Style_DefaultValue = new ChartStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			StyledMode = StyledMode_DefaultValue = false;
 			Type = Type_DefaultValue = ChartType.Null;
 			Width = Width_DefaultValue = null;
@@ -339,8 +339,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Additional CSS styles to apply inline to the container `div`. Notethat since the default font styles are applied in the renderer, itis ignorant of the individual chart options and must be set globally.
 		/// </summary>
-		public ChartStyle Style { get; set; }
-		private ChartStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

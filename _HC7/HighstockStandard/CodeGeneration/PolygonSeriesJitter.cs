@@ -10,45 +10,36 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class AnnotationsMeasureControlPointOptionsStyle  : BaseObject
+	public partial class PolygonSeriesJitter  : BaseObject
 	{
-		public AnnotationsMeasureControlPointOptionsStyle()
+		public PolygonSeriesJitter()
 		{
-			Fill = Fill_DefaultValue = "white";
-			Stroke = Stroke_DefaultValue = "black";
-			StrokeWidth = StrokeWidth_DefaultValue = 2;
+			X = X_DefaultValue = 0;
+			Y = Y_DefaultValue = 0;
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// The maximal X offset for the random jitter effect.
 		/// </summary>
-		public string Fill { get; set; }
-		private string Fill_DefaultValue { get; set; }
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// The maximal Y offset for the random jitter effect.
 		/// </summary>
-		public string Stroke { get; set; }
-		private string Stroke_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? StrokeWidth { get; set; }
-		private double? StrokeWidth_DefaultValue { get; set; }
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
-			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
-			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;

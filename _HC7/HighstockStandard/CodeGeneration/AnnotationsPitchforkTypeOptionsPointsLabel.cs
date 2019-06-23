@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = new AnnotationsPitchforkTypeOptionsPointsLabelStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "undefined";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsPitchforkTypeOptionsPointsLabelVerticalAlign.Bottom;
@@ -155,8 +155,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Styles for the annotation's label.
 		/// </summary>
-		public AnnotationsPitchforkTypeOptionsPointsLabelStyle Style { get; set; }
-		private AnnotationsPitchforkTypeOptionsPointsLabelStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

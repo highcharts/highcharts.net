@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Formatter = Formatter_DefaultValue = "";
 			Padding = Padding_DefaultValue = "8";
 			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = new NavigatorXAxisCrosshairLabelStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -94,8 +94,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Text styles for the crosshair label.
 		/// </summary>
-		public NavigatorXAxisCrosshairLabelStyle Style { get; set; }
-		private NavigatorXAxisCrosshairLabelStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

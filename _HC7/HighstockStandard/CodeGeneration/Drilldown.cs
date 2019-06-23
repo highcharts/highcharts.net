@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Drilldown()
 		{
 			ActiveAxisLabelStyle = ActiveAxisLabelStyle_DefaultValue = new DrilldownActiveAxisLabelStyle();
-			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new DrilldownActiveDataLabelStyle();
+			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new Hashtable();
 			AllowPointDrilldown = AllowPointDrilldown_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
@@ -35,8 +35,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Additional styles to apply to the data label of a point that hasdrilldown data. By default it is underlined and blue to invite tointeraction.In styled mode, active data label styles can be applied with the`.highcharts-drilldown-data-label` class.
 		/// </summary>
-		public DrilldownActiveDataLabelStyle ActiveDataLabelStyle { get; set; }
-		private DrilldownActiveDataLabelStyle ActiveDataLabelStyle_DefaultValue { get; set; }
+		public Hashtable ActiveDataLabelStyle { get; set; }
+		private Hashtable ActiveDataLabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -79,7 +79,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (ActiveAxisLabelStyle.IsDirty()) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle.ToHashtable());
-			if (ActiveDataLabelStyle.IsDirty()) h.Add("activeDataLabelStyle",ActiveDataLabelStyle.ToHashtable());
+			if (ActiveDataLabelStyle != ActiveDataLabelStyle_DefaultValue) h.Add("activeDataLabelStyle",ActiveDataLabelStyle);
 			if (AllowPointDrilldown != AllowPointDrilldown_DefaultValue) h.Add("allowPointDrilldown",AllowPointDrilldown);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);

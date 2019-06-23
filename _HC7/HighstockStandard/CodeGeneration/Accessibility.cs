@@ -185,7 +185,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AddTableShortcut != AddTableShortcut_DefaultValue) h.Add("addTableShortcut",AddTableShortcut);
 			if (AnnounceNewData.IsDirty()) h.Add("announceNewData",AnnounceNewData.ToHashtable());
 			if (AxisRangeDateFormat != AxisRangeDateFormat_DefaultValue) h.Add("axisRangeDateFormat",AxisRangeDateFormat);
-			if (CustomComponents.IsDirty()) h.Add("customComponents",CustomComponents.ToHashtable());
+			if (CustomComponents != CustomComponents_DefaultValue) h.Add("customComponents",CustomComponents);
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);

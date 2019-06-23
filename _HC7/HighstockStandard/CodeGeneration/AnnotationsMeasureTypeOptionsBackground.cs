@@ -31,8 +31,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The color of border.
 		/// </summary>
-		public  Stroke { get; set; }
-		private  Stroke_DefaultValue { get; set; }
+		public string Stroke { get; set; }
+		private string Stroke_DefaultValue { get; set; }
 		 
 
 		/// <summary>

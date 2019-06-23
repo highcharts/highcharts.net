@@ -15,11 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public StockToolsGuiDefinitionsAdvanced()
 		{
 			Fibonacci = Fibonacci_DefaultValue = new StockToolsGuiDefinitionsAdvancedFibonacci();
-			Items = Items_DefaultValue = [
-   fibonacci ,
-   pitchfork ,
-   parallelChannel 
-];
+			Items = Items_DefaultValue = new List<string>();
 			ParallelChannel = ParallelChannel_DefaultValue = new StockToolsGuiDefinitionsAdvancedParallelChannel();
 			Pitchfork = Pitchfork_DefaultValue = new StockToolsGuiDefinitionsAdvancedPitchfork();
 			
@@ -36,8 +32,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A collection of strings pointing to config options forthe items.
 		/// </summary>
-		public Array Items { get; set; }
-		private Array Items_DefaultValue { get; set; }
+		public List<string> Items { get; set; }
+		private List<string> Items_DefaultValue { get; set; }
 		 
 
 		/// <summary>

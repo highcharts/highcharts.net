@@ -216,7 +216,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (InputBoxBorderColor != InputBoxBorderColor_DefaultValue) h.Add("inputBoxBorderColor",InputBoxBorderColor);
 			if (InputBoxHeight != InputBoxHeight_DefaultValue) h.Add("inputBoxHeight",InputBoxHeight);
-			if (InputBoxStyle.IsDirty()) h.Add("inputBoxStyle",InputBoxStyle.ToHashtable());
+			if (InputBoxStyle != InputBoxStyle_DefaultValue) h.Add("inputBoxStyle",InputBoxStyle);
 			if (InputBoxWidth != InputBoxWidth_DefaultValue) h.Add("inputBoxWidth",InputBoxWidth);
 			if (InputDateFormat != InputDateFormat_DefaultValue) h.Add("inputDateFormat",InputDateFormat);
 			if (InputDateParser != InputDateParser_DefaultValue) { h.Add("inputDateParser",InputDateParser); Highstock.AddFunction("RangeSelectorInputDateParser.inputDateParser", InputDateParser); }  

@@ -135,7 +135,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (AdaptToUpdatedData != AdaptToUpdatedData_DefaultValue) h.Add("adaptToUpdatedData",AdaptToUpdatedData);
-			if (BaseSeries.IsDirty()) h.Add("baseSeries",BaseSeries.ToHashtable());
+			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Handles.IsDirty()) h.Add("handles",Handles.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);

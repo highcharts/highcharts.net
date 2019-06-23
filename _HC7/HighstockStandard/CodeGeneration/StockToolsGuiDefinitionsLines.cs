@@ -18,16 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ArrowRay = ArrowRay_DefaultValue = new StockToolsGuiDefinitionsLinesArrowRay();
 			ArrowSegment = ArrowSegment_DefaultValue = new StockToolsGuiDefinitionsLinesArrowSegment();
 			HorizontalLine = HorizontalLine_DefaultValue = new StockToolsGuiDefinitionsLinesHorizontalLine();
-			Items = Items_DefaultValue = [
-   segment ,
-   arrowSegment ,
-   ray ,
-   arrowRay ,
-   line ,
-   arrowLine ,
-   horizontalLine ,
-   verticalLine 
-];
+			Items = Items_DefaultValue = new List<string>();
 			Line = Line_DefaultValue = new StockToolsGuiDefinitionsLinesLine();
 			Ray = Ray_DefaultValue = new StockToolsGuiDefinitionsLinesRay();
 			Segment = Segment_DefaultValue = new StockToolsGuiDefinitionsLinesSegment();
@@ -67,8 +58,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A collection of strings pointing to config options forthe items.
 		/// </summary>
-		public Array Items { get; set; }
-		private Array Items_DefaultValue { get; set; }
+		public List<string> Items { get; set; }
+		private List<string> Items_DefaultValue { get; set; }
 		 
 
 		/// <summary>

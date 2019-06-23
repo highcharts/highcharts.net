@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Shared = Shared_DefaultValue = false;
 			Snap = Snap_DefaultValue = null;
 			Split = Split_DefaultValue = null;
-			Style = Style_DefaultValue = new TooltipStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = "";
@@ -251,8 +251,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the tooltip. The tooltip can also be styled throughthe CSS class `.highcharts-tooltip`.Note that the default `pointerEvents` style makes the tooltip ignoremouse events, so in order to use clickable tooltips, this value mustbe set to `auto`.
 		/// </summary>
-		public TooltipStyle Style { get; set; }
-		private TooltipStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

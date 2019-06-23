@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Enabled = Enabled_DefaultValue = true;
 			Formatter = Formatter_DefaultValue = "";
-			Style = Style_DefaultValue = new AnnotationsMeasureTypeOptionsLabelStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the measure label.
 		/// </summary>
-		public AnnotationsMeasureTypeOptionsLabelStyle Style { get; set; }
-		private AnnotationsMeasureTypeOptionsLabelStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

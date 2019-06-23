@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Events = Events_DefaultValue = new AnnotationsElliottWaveControlPointOptionsEvents();
 			Height = Height_DefaultValue = 10;
 			Positioner = Positioner_DefaultValue = "";
-			Style = Style_DefaultValue = new AnnotationsElliottWaveControlPointOptionsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			Symbol = Symbol_DefaultValue = "circle";
 			Visible = Visible_DefaultValue = false;
 			Width = Width_DefaultValue = 10;
@@ -42,15 +42,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public  Positioner { get; set; }
-		private  Positioner_DefaultValue { get; set; }
+		public string Positioner { get; set; }
+		private string Positioner_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public AnnotationsElliottWaveControlPointOptionsStyle Style { get; set; }
-		private AnnotationsElliottWaveControlPointOptionsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -80,7 +80,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Positioner != Positioner_DefaultValue) h.Add("positioner",Positioner);
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highstock.AddFunction("AnnotationsElliottWaveControlPointOptionsPositioner.positioner", Positioner); }  
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);

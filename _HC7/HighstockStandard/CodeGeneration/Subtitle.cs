@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Align = Align_DefaultValue = SubtitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
-			Style = Style_DefaultValue = new SubtitleStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = SubtitleVerticalAlign.Null;
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the title.In styled mode, the subtitle style is given in the`.highcharts-subtitle` class.
 		/// </summary>
-		public SubtitleStyle Style { get; set; }
-		private SubtitleStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
