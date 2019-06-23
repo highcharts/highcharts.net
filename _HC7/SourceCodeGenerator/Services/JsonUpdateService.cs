@@ -273,6 +273,21 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("lineColor", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("fillColor", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("plotOptions.item.rows", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("plotOptions.series.marker.states.inactive.opacity", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("accessibility.keyboardNavigation.order", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Array.<string>" } });
+            ItemsToUpdate.Add("annotations.crookedLine.controlPointOptions.positioner", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.tunnel.typeOptions.heightControlPoint.positioner", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.events.add", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.events.afterUpdate", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.events.remove", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.fibonacci.typeOptions.backgroundColors", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Array.<string>" } });
+            ItemsToUpdate.Add("annotations.measure.controlPointOptions.events.drag", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
+            ItemsToUpdate.Add("annotations.measure.typeOptions.background.stroke", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("exporting.accessibility.enabled", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
+            ItemsToUpdate.Add("legend.accessibility.enabled", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
+            ItemsToUpdate.Add("legend.accessibility.keyboardNavigation.enabled", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
+            ItemsToUpdate.Add("legend.labelFormatter", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
+            ItemsToUpdate.Add("annotations.fibonacci.typeOptions.lineColors", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Array.<string>" } });
 
             ItemsToUpdateProducts.Add("xAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
             ItemsToUpdateProducts.Add("yAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });

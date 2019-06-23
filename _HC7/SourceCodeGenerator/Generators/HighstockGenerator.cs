@@ -322,11 +322,47 @@ public class HighstockGenerator
         string defaultValues = "";
         string hashtableComparers = "";
 
+        
 
         if (item.FullName.ToLower().EndsWith("zones"))
             item.FullName = item.FullName.Remove(item.FullName.Length - 5) + "Zone";
 
-        foreach (ApiItem child in children)
+        if(item.FullName.Equals("annotations.crookedLine") || item.FullName.Equals("annotations.elliottWave") || item.FullName.Equals("annotations.fibonacci") || item.FullName.Equals("annotations.infinityLine") || item.FullName.Equals("annotations.pitchfork") || item.FullName.Equals("annotations.lineShapes") || item.FullName.Equals("annotations.tunnel") || item.FullName.Equals("annotations.measure") || item.FullName.Equals("annotations.verticalLine"))
+            children = item.Children.Where(p => p.FullName.Contains("controlPointOptions") || p.FullName.Contains("labelOptions") || p.FullName.Contains("shapeOptions") || p.FullName.Contains("typeOptions")).ToList();
+
+        if (item.FullName.Contains("annotations.crookedLine") || item.FullName.Contains("annotations.elliottWave") || item.FullName.Contains("annotations.fibonacci") || item.FullName.Contains("annotations.infinityLine") || item.FullName.Contains("annotations.pitchfork") || item.FullName.Contains("annotations.lineShapes") || item.FullName.Contains("annotations.tunnel") || item.FullName.Contains("annotations.measure") || item.FullName.Contains("annotations.verticalLine"))
+            if (!item.FullName.Equals("annotations.tunnel.typeOptions.heightControlPoint") &&
+                !item.FullName.Equals("annotations.crookedLine.controlPointOptions.events") &&
+                !item.FullName.Equals("annotations.elliottWave.controlPointOptions.events") &&
+                !item.FullName.Equals("annotations.fibonacci.controlPointOptions.events") &&
+                !item.FullName.Equals("annotations.infinityLine.controlPointOptions.events") &&
+                !item.FullName.Equals("annotations.measure.controlPointOptions.events") &&
+                !item.FullName.Equals("annotations.pitchfork.controlPointOptions.events") &&
+                !item.FullName.Equals("annotations.tunnel.controlPointOptions.events") &&
+                !item.FullName.Equals("annotations.tunnel.typeOptionsHeightControlPoint.events") &&
+                (item.FullName.EndsWith("draggable") || item.FullName.EndsWith("events") || item.FullName.EndsWith("labels") || item.FullName.EndsWith("shapes") || item.FullName.EndsWith("visible") || item.FullName.EndsWith("zIndex")))
+                return;
+
+        if (item.FullName.Equals("annotations.crookedLine.typeOptions") || item.FullName.Equals("annotations.elliottWave.typeOptions"))
+            children = item.Children.Where(p => !p.FullName.Contains("labels")).ToList();
+
+        if (item.FullName.Equals("annotations.measure.controlPointOptions"))
+            children = item.Children.Where(p => p.FullName.Contains("events")).ToList();
+
+        if (item.FullName.Equals("annotations.verticalLine.typeOptions.label"))
+            children = item.Children.Where(p => !p.FullName.Contains("point")).ToList();
+
+        if (item.FullName.Equals("series.packedbubble"))
+            children = item.Children.Where(p => !p.FullName.Contains("marker")).ToList();
+
+        if (item.FullName.Equals("annotations.measure.controlPointOptions.style") || item.FullName.Equals("series.columnpyramid.states") || item.FullName.Equals("series.packedbubble.marker") || item.FullName.Equals("series.packedbubble.marker"))
+            return;
+
+
+
+        
+
+            foreach (ApiItem child in children)
         {
             string propertyName = GetPropertyName(child);
 
@@ -1064,6 +1100,18 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("plotOptions.item.dataLabels", "Hashtable");
         _propertyTypeMappings.Add("plotOptions.pyramid.dataLabels", "Hashtable");
         _propertyTypeMappings.Add("plotOptions.variablepie.dataLabels", "Hashtable");
+        _propertyTypeMappings.Add("data.rows", "List<List<object>>");
+        _propertyTypeMappings.Add("stockTools.gui.buttons", "List<string>");
+
+        _propertyTypeMappings.Add("stockTools.gui.definitions.advanced.items", "List<string>");
+        _propertyTypeMappings.Add("stockTools.gui.definitions.crookedLines.items", "List<string>");
+        _propertyTypeMappings.Add("stockTools.gui.definitions.flags.items", "List<string>");
+        _propertyTypeMappings.Add("stockTools.gui.definitions.lines.items", "List<string>");
+        _propertyTypeMappings.Add("stockTools.gui.definitions.measure.items", "List<string>");
+        _propertyTypeMappings.Add("stockTools.gui.definitions.simpleShapes.items", "List<string>");
+        _propertyTypeMappings.Add("stockTools.gui.definitions.typeChange.items", "List<string>");
+        _propertyTypeMappings.Add("stockTools.gui.definitions.verticalLabels.items", "List<string>");
+        _propertyTypeMappings.Add("stockTools.gui.definitions.zoomChange.items", "List<string>");
     }
     private void InitPropertyInitMappings()
     {
@@ -1194,6 +1242,9 @@ public class HighstockGenerator
         _propertyInitMappings.Add("plotOptions.dependencywheel.levels.states", "new Hashtable()");
         _propertyInitMappings.Add("plotOptions.organization.levels.states", "new Hashtable()");
         _propertyInitMappings.Add("plotOptions.sankey.levels.states", "new Hashtable()");
+        _propertyInitMappings.Add("plotOptions.apo.params.periods", "new List<double>()");
+        _propertyInitMappings.Add("plotOptions.chaikin.params.periods", "new List<double>()");
+        _propertyInitMappings.Add("plotOptions.ppo.params.periods", "new List<double>()");
 
         _propertyInitMappings.Add("legend.bubbleLegend.ranges.value", "null");
         _propertyInitMappings.Add("plotOptions.sunburst.dataLabels", "new Hashtable()");
@@ -1208,6 +1259,17 @@ public class HighstockGenerator
         _propertyInitMappings.Add("plotOptions.pyramid.dataLabels", "new Hashtable()");
         _propertyInitMappings.Add("plotOptions.variablepie.dataLabels", "new Hashtable()");
         _propertyInitMappings.Add("pane.background.backgroundColor", "new object()");
+        _propertyInitMappings.Add("stockTools.gui.buttons", "new List<string>()");
+
+        _propertyInitMappings.Add("stockTools.gui.definitions.advanced.items", "new List<string>()");
+        _propertyInitMappings.Add("stockTools.gui.definitions.crookedLines.items", "new List<string>()");
+        _propertyInitMappings.Add("stockTools.gui.definitions.flags.items", "new List<string>()");
+        _propertyInitMappings.Add("stockTools.gui.definitions.lines.items", "new List<string>()");
+        _propertyInitMappings.Add("stockTools.gui.definitions.measure.items", "new List<string>()");
+        _propertyInitMappings.Add("stockTools.gui.definitions.simpleShapes.items", "new List<string>()");
+        _propertyInitMappings.Add("stockTools.gui.definitions.typeChange.items", "new List<string>()");
+        _propertyInitMappings.Add("stockTools.gui.definitions.verticalLabels.items", "new List<string>()");
+        _propertyInitMappings.Add("stockTools.gui.definitions.zoomChange.items", "new List<string>()");
     }
     private void InitLists()
     {

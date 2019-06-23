@@ -28,10 +28,10 @@ namespace SourceCodeGenerator
                 JsonParser jsonParserHc = new JsonParser("highcharts", fileService, filterService, updateService, typeService);
                 JsonParser jsonPaserHC2 = new JsonParser("highcharts", previousFileService, filterService, updateService, typeService);
                                
-                HighchartsGenerator hcg = new HighchartsGenerator(jsonParserHc, jsonPaserHC2, fileService, multiplicationService, comparisonService);
-                hcg.GenerateCode(true);
-                Console.WriteLine($"Highcharts.NET has been generated. {DateTime.Now - hcStartTime}");
-                Console.WriteLine("-------------------------------------------------------------------");
+                //HighchartsGenerator hcg = new HighchartsGenerator(jsonParserHc, jsonPaserHC2, fileService, multiplicationService, comparisonService);
+                //hcg.GenerateCode(true);
+                //Console.WriteLine($"Highcharts.NET has been generated. {DateTime.Now - hcStartTime}");
+                //Console.WriteLine("-------------------------------------------------------------------");
 
 
 
