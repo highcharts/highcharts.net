@@ -56,14 +56,14 @@
                 new ColumnSeries
                 {
                     Name = "Population",
-                    DataLabels = new
+                    DataLabels = new ColumnSeriesDataLabels
                     {
-                        enabled = true,
-                        rotation = -90,
-                        color = "#FFFFFF",
-                        align = "right",
-                        format = "{point.y:.1f}",
-                        y = 10,
+                        Enabled = true,
+                        Rotation = -90,
+                        Color = "#FFFFFF",
+                        Align = ColumnSeriesDataLabelsAlign.Right,
+                        Format = "{point.y:.1f}",
+                        Y = 10,
 
                         Shadow = new Shadow()
                         {

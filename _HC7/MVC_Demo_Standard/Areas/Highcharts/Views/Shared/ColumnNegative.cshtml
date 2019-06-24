@@ -8,25 +8,21 @@
     {
         Title = new Title
         {
-            new Highcharts
-            {
-                Title = new Title
-                {
-                    Text = "Column chart with negative values"
-                },
-                XAxis = new List<XAxis>
-                {
+            Text = "Column chart with negative values"
+        },
+        XAxis = new List<XAxis>
+        {
                 new XAxis
                 {
                     Categories = new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
                 }
                         },
-                Credits = new Credits
-                {
-                    Enabled = false
-                },
-                Series = new List<Series>
-                {
+        Credits = new Credits
+        {
+            Enabled = false
+        },
+        Series = new List<Series>
+        {
                 new ColumnSeries
                 {
                     Name = "John",
@@ -47,6 +43,6 @@
 
     chartOptions.ID = "chart";
     var renderer = new HighchartsRenderer(chartOptions);
-    }
+}
 
-    @Html.Raw(renderer.RenderHtml());
+@Html.Raw(renderer.RenderHtml());

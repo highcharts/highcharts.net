@@ -47,9 +47,9 @@
             },
         Legend = new Legend
         {
-            Align = "right",
+            Align = LegendAlign.Right,
             X = -30,
-            VerticalAlign = "top",
+            VerticalAlign = LegendVerticalAlign.Top,
             Y = 25,
             Floating = true,
             BorderColor = "#CCC",
@@ -66,12 +66,12 @@
             Column = new PlotOptionsColumn
             {
                 Stacking = PlotOptionsColumnStacking.Normal,
-                DataLabels = new 
+                DataLabels = new PlotOptionsColumnDataLabels 
                 {
-                    enabled = true,
-                    color = "#FFFFFF",
+                    Enabled = true,
+                    Color = "#FFFFFF",
 
-                    shadow = new Shadow()
+                    Shadow = new Shadow()
                     {
                         Enabled = true,
                         Color = "black",
