@@ -3,9 +3,11 @@
 <script src="https://code.highcharts.com/modules/annotations.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
-@using Highsoft.Web.Mvc.Charts.Rendering;
+@using Highsoft.Web.Mvc.Charts.Rendering
+@using System.Collections
 
-@{ var chartOptions = new Highcharts {
+@{ var chartOptions = new Highcharts
+    {
         Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
             ZoomType = ChartZoomType.X,
@@ -31,7 +33,7 @@
                 Y = 15
             },
             Labels = new List<AnnotationsLabels>
-    {
+{
                 new AnnotationsLabels
                 {
                     Point = new AnnotationsLabelsPoint
@@ -105,7 +107,7 @@
         new Annotations
         {
             Labels = new List<AnnotationsLabels>
-    {
+{
                 new AnnotationsLabels
                 {
                     Point = new AnnotationsLabelsPoint
@@ -149,13 +151,10 @@
                 Shape = "connector",
                 Align = AnnotationsLabelOptionsAlign.Right,
                 Crop = true,
-                Style = new AnnotationsLabelOptionsStyle
-                {
-                    FontSize = "0.8em"
-                }
+                Style = new Hashtable(){ { "fontSize", "0.8em" } }
             },
             Labels = new List<AnnotationsLabels>
-    {
+{
                 new AnnotationsLabels
                 {
                     Point = new AnnotationsLabelsPoint
@@ -240,4 +239,9 @@
         }
     }
     };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
 }
+
+@Html.Raw(renderer.RenderHtml());
