@@ -15,7 +15,7 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@Html.Highsoft().GetHighcharts(new Highcharts
+@{ var chartOptions = new Highcharts
 {
     Chart = new Highsoft.Web.Mvc.Charts.Chart
     {
@@ -45,7 +45,7 @@
             {
                 OuterRadius = "112%",
                 InnerRadius = "88%",
-                BackgroundColor = new PaneBackgroundBackgroundColor
+                BackgroundColor = new 
                 {
                     Stops = new List<Stop>
                     {
@@ -62,7 +62,7 @@
             {
                 OuterRadius = "87%",
                 InnerRadius = "63%",
-                BackgroundColor = new PaneBackgroundBackgroundColor
+                BackgroundColor = new 
                 {
                     Stops = new List<Stop>
                     {
@@ -79,7 +79,7 @@
             {
                 OuterRadius = "62%",
                 InnerRadius = "38%",
-                BackgroundColor = new PaneBackgroundBackgroundColor
+                BackgroundColor = new 
                 {
                     Stops = new List<Stop>
                     {
@@ -100,9 +100,8 @@
         {
             Min = 0,
             Max = 100,
-            LineWidth = 0
-            //,
-            //TickPosition = YAxisTickPosition.Outside
+            LineWidth = 0,
+            TickPosition = YAxisTickPosition.Outside
         }
     },
     PlotOptions = new PlotOptions
@@ -157,4 +156,10 @@
             }
         }
     }
-}, "chart")
+};
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

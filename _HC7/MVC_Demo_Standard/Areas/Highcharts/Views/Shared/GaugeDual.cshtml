@@ -15,7 +15,7 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@Html.Highsoft().GetHighcharts(new Highcharts
+@{ var chartOptions = new Highcharts
 {
     Chart = new Highsoft.Web.Mvc.Charts.Chart
     {
@@ -90,4 +90,10 @@
             }
         }
     }
-}, "chart")
+};
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

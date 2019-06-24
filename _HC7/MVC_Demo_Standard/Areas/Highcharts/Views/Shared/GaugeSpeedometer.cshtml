@@ -8,16 +8,8 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
+@{ var chartOptions = new Highcharts
     {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            PlotBorderColor = null,
-            PlotBackgroundImage = null,
-            PlotBorderWidth = 0,
-            PlotShadow = new Shadow
-            {
                 Chart = new Highsoft.Web.Mvc.Charts.Chart
                 {
                     PlotBorderColor = null,
@@ -43,7 +35,7 @@
                 {
                     Min = 0,
                     Max = 200,
-                    MinorTickIntervalNumber = 5,
+                    //MinorTickIntervalNumber = 5,
                     MinorTickWidth = 1,
                     MinorTickLength = 10,
                     MinorTickPosition = YAxisMinorTickPosition.Inside,
@@ -80,6 +72,7 @@
                             From = 160,
                             To = 200,
                         Color = "#DF5353"
+						}
                     }
 
                 }
@@ -92,17 +85,17 @@
                 Data = @ViewData["gaugeData"] as List<GaugeSeriesData>,
                 Tooltip = new GaugeSeriesTooltip
                 {
-                    Name = "Spped",
-                    Data = @ViewData["gaugeData"] as List<GaugeSeriesData>,
-                    Tooltip = new GaugeSeriesTooltip
-                    {
                         ValueSuffix = " km/h"
                 }
             }
         }
-    }
-    , "chart")
-)
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
 
 <script type="text/javascript">
 

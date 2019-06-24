@@ -56,8 +56,7 @@
 <table>
     <tr>
         <td>
-            @(Html.Highsoft().GetHighcharts(
-        new Highcharts
+            @{ var chartOptions = new Highcharts
         {
             Chart = new Highsoft.Web.Mvc.Charts.Chart
             {
@@ -162,14 +161,17 @@
                 }
             }
         }
-        }
-        , "chartspeed")
-            )
+        };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
 
         </td>
         <td>
-            @(Html.Highsoft().Highcharts(
-new Highcharts
+            @{ var chartOptions = new Highcharts
 {
     Chart = new Highsoft.Web.Mvc.Charts.Chart
     {
@@ -278,9 +280,13 @@ new Highcharts
                     }
                 }
             }
+};
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
 }
-        , "chartrpm")
-            )
+
+@Html.Raw(renderer.RenderHtml());
         </td>
     </tr>
 

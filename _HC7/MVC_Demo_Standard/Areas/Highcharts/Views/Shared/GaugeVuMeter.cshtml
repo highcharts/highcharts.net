@@ -5,32 +5,32 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@Html.Highsoft().GetHighcharts(new Highcharts
-{
-    Chart = new Highsoft.Web.Mvc.Charts.Chart
-    {
-        Type = ChartType.Gauge,
-        PlotBorderWidth = 1,
-        PlotBackgroundColor = "#FFF4C6",
-        PlotBackgroundImage = null,
-        Height = 200
-    },
-    Title = new Title
-    {
-        Text = "VU meter"
-    },
-    Pane = new Pane
-    {
-        StartAngle = -45,
-        EndAngle = 45,
-        Center = new string[] { "25%", "145%" },
-        Size = "300"
-    },
-    Tooltip = new Tooltip
-    {
-        Enabled = false
-    },
-    YAxis = new List<YAxis>
+@{ var chartOptions = new Highcharts
+        {
+            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            {
+                Type = ChartType.Gauge,
+                PlotBorderWidth = 1,
+                PlotBackgroundColor = "#FFF4C6",
+                PlotBackgroundImage = null,
+                Height = 200
+            },
+            Title = new Title
+            {
+                Text = "VU meter"
+            },
+            Pane = new Pane
+            {
+                StartAngle = -45,
+                EndAngle = 45,
+                Center = new string[] { "25%", "145%" },
+                Size = "300"
+            },
+            Tooltip = new Tooltip
+            {
+                Enabled = false
+            },
+            YAxis = new List<YAxis>
     {
         new YAxis
         {
@@ -61,21 +61,21 @@
             }
         }
     },
-    PlotOptions = new PlotOptions
-    {
-        Gauge = new PlotOptionsGauge
-        {
-            DataLabels = new PlotOptionsGaugeDataLabels
+            PlotOptions = new PlotOptions
             {
-                Enabled = false
+                Gauge = new PlotOptionsGauge
+                {
+                    DataLabels = new PlotOptionsGaugeDataLabels
+                    {
+                        Enabled = false
+                    },
+                    Dial = new PlotOptionsGaugeDial
+                    {
+                        Radius = "100%"
+                    }
+                }
             },
-            Dial = new PlotOptionsGaugeDial
-            {
-                Radius = "100%"
-            }
-        }
-    },
-    Series = new List<Series>
+            Series = new List<Series>
     {
         new GaugeSeries
         {
@@ -87,4 +87,10 @@
             YAxis = "Y1"
         }
     }
-}, "chart")
+        };
+
+        chartOptions.ID = "chart";
+        var renderer = new HighchartsRenderer(chartOptions);
+    }
+
+    @Html.Raw(renderer.RenderHtml());
