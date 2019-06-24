@@ -34,7 +34,7 @@
                     Title = new YAxisTitle
                     {
                         Text = "Population (millions)",
-                        Align = "high"
+                        Align = YAxisTitleAlign.Middle
                     }
                 }
             },
@@ -46,17 +46,17 @@
         {
             Bar = new PlotOptionsBar
             {
-                DataLabels = new
+                DataLabels = new PlotOptionsBarDataLabels
                 {
-                    enabled = true
+                    Enabled = true
                 }
             }
         },
         Legend = new Legend
         {
             Layout = LegendLayout.Vertical,
-            Align = "right",
-            VerticalAlign = "top",
+            Align = LegendAlign.Right,
+            VerticalAlign = LegendVerticalAlign.Top,
             X = -40,
             Y = 100,
             Floating = true,
