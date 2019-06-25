@@ -16,27 +16,23 @@
 
 </script>
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            new Highcharts
-            {
-                Chart = new Highsoft.Web.Mvc.Charts.Chart
-                {
-                    Inverted = true
-                },
-                Title = new Title
-                {
-                    Text = "Atmosphere Temperature by Altitude"
-                },
-                Subtitle = new Subtitle
-                {
-                    Text = "According to the Standard Atmosphere Model"
-                },
-                XAxis = new List<XAxis>
-                {
+@{ var chartOptions =
+      new Highcharts
+      {
+          Chart = new Highsoft.Web.Mvc.Charts.Chart
+          {
+              Inverted = true
+          },
+          Title = new Title
+          {
+              Text = "Atmosphere Temperature by Altitude"
+          },
+          Subtitle = new Subtitle
+          {
+              Text = "According to the Standard Atmosphere Model"
+          },
+          XAxis = new List<XAxis>
+              {
                 new XAxis
                 {
                     //Reversed = true,
@@ -51,9 +47,9 @@
                     MaxPadding = 0.05,
                     ShowLastLabel = true
                 }
-                        },
-                YAxis = new List<YAxis>
-                {
+                              },
+          YAxis = new List<YAxis>
+              {
                 new YAxis
                 {
                     //Reversed = true,
@@ -67,58 +63,41 @@
                     },
                     LineWidth = 2
                 }
-                    },
-                Legend = new Legend
-                {
-                    Enabled = false
-                },
-                Tooltip = new Tooltip
-                {
-                    HeaderFormat = "<b>{series.name}</b><br/>",
-                    PointFormat = "{point.x} km: {point.y}°C"
-                },
-                MaxPadding = 0.05,
-                PlotOptions = new PlotOptions
-                {
-                    Spline = new PlotOptionsSpline
-                    {
-                        Marker = new PlotOptionsSplineMarker
-                        {
-                            Enabled = true
-                        }
-                    }
-                },
-                LineWidth = 2
-            }
-    },
-        Legend = new Legend
-        {
-            Enabled = false
-        },
-        Tooltip = new Tooltip
-        {
-            HeaderFormat = "<b>{series.name}</b><br/>",
-            PointFormat = "{point.x} km: {point.y}°C"
-        },
+                          },
+          Legend = new Legend
+          {
+              Enabled = false
+          },
+          Tooltip = new Tooltip
+          {
+              HeaderFormat = "<b>{series.name}</b><br/>",
+              PointFormat = "{point.x} km: {point.y}°C"
+          },
 
-        PlotOptions = new List<Series>
-        {
-            Spline = new PlotOptionsSpline
-            {
+          PlotOptions = new PlotOptions
+          {
+              Spline = new PlotOptionsSpline
+              {
+                  Marker = new PlotOptionsSplineMarker
+                  {
+                      Enabled = true
+                  }
+              }
+          },
+
+          Series = new List<Series>
+              {
                 new SplineSeries
                 {
                     Name = "Temperature",
                     Data = ViewData["tempData"] as List<SplineSeriesData>
                 }
-            }
-        },
+                              }
+      };
 
-        Series = new List<Series>
-        {
-            new SplineSeries
-            {
-                Name = "Temperature",
-                Data = ViewData["tempData"] as List<SplineSeriesData>
-            , "chart")
-)
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
 

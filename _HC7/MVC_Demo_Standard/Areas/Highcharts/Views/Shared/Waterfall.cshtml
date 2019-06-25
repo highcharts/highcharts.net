@@ -20,64 +20,71 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Title = new Title
-        {
-            Text = "Highcharts Waterfall"
-        },
-        XAxis = new List<XAxis>
-        {
-            new XAxis
-            {
-                Title = new Title
+@{ var chartOptions =
+      new Highcharts
+      {
+          Title = new Title
+          {
+              Text = "Highcharts Waterfall"
+          },
+          XAxis = new List<XAxis>
+              {
+                new XAxis
                 {
-                    Text = "Highcharts Waterfall"
+                    Type = "category"
                 }
-            }
-        },
-        Legend = new Legend
-        {
-            Enabled = false
-        },
-        Tooltip = new Tooltip
-        {
-            PointFormat = "<b>${point.y:,.2f}</b> USD"
-        },
-
-        Series = new List<Series>
-        {                {
-            new WaterfallSeries
-            {
-                UpColor = "#90ed7d",
-                Color = "#f7a35c",
-                Data = new List<WaterfallSeriesData> {
-                    new WaterfallSeriesData { Name = "Start", Y = 120000 },
-                    new WaterfallSeriesData { Name = "Product Revenue", Y = 569000 },
-                    new WaterfallSeriesData { Name = "Service Revenue", Y = 231000 },
-                    new WaterfallSeriesData { Name = "Positive Balance", Color = "#434348",  IsIntermediateSum = true },
-                    new WaterfallSeriesData { Name = "Fixed Costs", Y = -342000 },
-                    new WaterfallSeriesData { Name = "Variable Costs", Y =  -233000 },
-                    new WaterfallSeriesData { Name = "Balance", Color = "#434348", IsSum = true }
-                }
-            },
-        },
-        PlotOptions = new PlotOptions
-        {
-            Waterfall = new PlotOptionsWaterfall
-            {
-                DataLabels = new PlotOptionsWaterfallDataLabels
+                              },
+          YAxis = new List<YAxis>
+              {
+                new YAxis
                 {
-                    Waterfall = new PlotOptionsWaterfall
+                    Title = new YAxisTitle
                     {
-                        DataLabels = new PlotOptionsWaterfallDataLabels
-                        {
-                            Enabled = true,
-                    Formatter = "formatLabels"
+                        Text = "USD"
+                    }
                 }
-            }
-        }
-    }
-    , "chart")
-)
+                              },
+          Legend = new Legend
+          {
+              Enabled = false
+          },
+          Tooltip = new Tooltip
+          {
+              PointFormat = "<b>${point.y:,.2f}</b> USD"
+          },
+
+          Series = new List<Series>
+              {
+                new WaterfallSeries
+                {
+                    UpColor = "#90ed7d",
+                    Color = "#f7a35c",
+                    Data = new List<WaterfallSeriesData> {
+                        new WaterfallSeriesData { Name = "Start", Y = 120000 },
+                        new WaterfallSeriesData { Name = "Product Revenue", Y = 569000 },
+                        new WaterfallSeriesData { Name = "Service Revenue", Y = 231000 },
+                        new WaterfallSeriesData { Name = "Positive Balance", Color = "#434348",  IsIntermediateSum = true },
+                        new WaterfallSeriesData { Name = "Fixed Costs", Y = -342000 },
+                        new WaterfallSeriesData { Name = "Variable Costs", Y =  -233000 },
+                        new WaterfallSeriesData { Name = "Balance", Color = "#434348", IsSum = true }
+                    }
+                },
+                              },
+          PlotOptions = new PlotOptions
+          {
+              Waterfall = new PlotOptionsWaterfall
+              {
+                  DataLabels = new PlotOptionsWaterfallDataLabels
+                  {
+                      Enabled = true,
+                      Formatter = "formatLabels"
+                  }
+              }
+          }
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

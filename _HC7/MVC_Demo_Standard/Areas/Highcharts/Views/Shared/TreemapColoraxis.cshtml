@@ -12,42 +12,36 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        ColorAxis = new ColorAxis
-        {
-            MinColor = "#FFFFFF",
-            MaxColor = "#7cb5ec"
-        },
-        Series = new List<Series>
-        {
-            new TreemapSeries
-            {
-                LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Squarified,
-                Data = new List<TreemapSeriesData>
-                {
-                    MinColor = "#FFFFFF",
-                    MaxColor = "#7cb5ec"
-                },
-                Series = new List<Series>
-                {
+@{ var chartOptions =
+      new Highcharts
+      {
+          ColorAxis = new ColorAxis
+          {
+              MinColor = "#FFFFFF",
+              MaxColor = "#7cb5ec"
+          },
+          Series = new List<Series>
+              {
                 new TreemapSeries
                 {
                     LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Squarified,
                     Data = new List<TreemapSeriesData>
-            {
+    {
                         new TreemapSeriesData { Name = "A", Value = 6, ColorValue = 1 },
-                    new TreemapSeriesData { Name = "B", Value = 6, ColorValue = 2 },
-                    new TreemapSeriesData { Name = "C", Value = 4, ColorValue = 3 },
-                    new TreemapSeriesData { Name = "D", Value = 3, ColorValue = 4 },
-                    new TreemapSeriesData { Name = "Е", Value = 2, ColorValue = 5 },
-                    new TreemapSeriesData { Name = "F", Value = 2, ColorValue = 6 },
-                    new TreemapSeriesData { Name = "G", Value = 1, ColorValue = 7 },
-                }
+                        new TreemapSeriesData { Name = "B", Value = 6, ColorValue = 2 },
+                        new TreemapSeriesData { Name = "C", Value = 4, ColorValue = 3 },
+                        new TreemapSeriesData { Name = "D", Value = 3, ColorValue = 4 },
+                        new TreemapSeriesData { Name = "Е", Value = 2, ColorValue = 5 },
+                        new TreemapSeriesData { Name = "F", Value = 2, ColorValue = 6 },
+                        new TreemapSeriesData { Name = "G", Value = 1, ColorValue = 7 },
+                    }
 
-            }
-        }
-    }
-    , "chart")
-)
+                }
+                              }
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

@@ -9,27 +9,21 @@
 @using Highsoft.Web.Mvc.Charts.Rendering
 @using System.Collections
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Title = new Title
-        {
-            Text = "Fruit Consumption"
-        },
-        Series = new List<Series>
-        {
-            new TreemapSeries
-            {
-                Title = new Title
+@{ var chartOptions =
+      new Highcharts
+      {
+          Title = new Title
+          {
+              Text = "Fruit Consumption"
+          },
+          Series = new List<Series>
+              {
+                new TreemapSeries
                 {
-                    Text = "Fruit Consumption"
-                },
-                Series = new List<Series>
-                    {
-                        Level = TreemapSeriesLayoutAlgorithm.Stripes,
-                        LayoutAlgorithm = true,
-                        DataLabels = new List<TreemapSeriesLevels>
-            {
+                    LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Stripes,
+                    AlternateStartingDirection = true,
+                    Levels = new List<TreemapSeriesLevels>
+    {
                         new TreemapSeriesLevels
                         {
                             Level = 1,
@@ -42,31 +36,35 @@
                                 Style = new TreemapSeriesDataLabelsStyle()
                                 {
                                     FontSize = "15px",
-                                FontWeight = "bold"
+                                    FontWeight = "bold"
+                                }
                             }
                         }
+                    },
+
+                    Data = new List<TreemapSeriesData>
+    {
+                        new TreemapSeriesData { Id = "A", Name = "Apples", Color = "#EC2500" },
+                        new TreemapSeriesData { Id = "B", Name = "Bananas", Color = "#ECE100" },
+                        new TreemapSeriesData { Id = "O", Name = "Oranges", Color = "#EC9800" },
+                        new TreemapSeriesData { Parent = "A", Name = "Anne", Value = 5 },
+                        new TreemapSeriesData { Parent = "A", Name = "Rick", Value = 3},
+                        new TreemapSeriesData { Parent = "A", Name = "Peter", Value = 4},
+                        new TreemapSeriesData { Parent = "B", Name = "Anne", Value = 4},
+                        new TreemapSeriesData { Parent = "B", Name = "Rick", Value = 10},
+                        new TreemapSeriesData { Parent = "B", Name = "Peter", Value = 1},
+                        new TreemapSeriesData { Parent = "O", Name = "Anne", Value = 1},
+                        new TreemapSeriesData { Parent = "O", Name = "Rick", Value = 3},
+                        new TreemapSeriesData { Parent = "O", Name = "Peter", Value = 3},
+                        new TreemapSeriesData { Parent = "Kiwi", Name = "Susanne", Value = 2, Color = "#9EDE00"}
                     }
-                },
 
-                Data = new List<TreemapSeriesData>
-                {
-                    new TreemapSeriesData { Id = "A", Name = "Apples", Color = "#EC2500" },
-                    new TreemapSeriesData { Id = "B", Name = "Bananas", Color = "#ECE100" },
-                    new TreemapSeriesData { Id = "O", Name = "Oranges", Color = "#EC9800" },
-                    new TreemapSeriesData { Parent = "A", Name = "Anne", Value = 5 },
-                    new TreemapSeriesData { Parent = "A", Name = "Rick", Value = 3},
-                    new TreemapSeriesData { Parent = "A", Name = "Peter", Value = 4},
-                    new TreemapSeriesData { Parent = "B", Name = "Anne", Value = 4},
-                    new TreemapSeriesData { Parent = "B", Name = "Rick", Value = 10},
-                    new TreemapSeriesData { Parent = "B", Name = "Peter", Value = 1},
-                    new TreemapSeriesData { Parent = "O", Name = "Anne", Value = 1},
-                    new TreemapSeriesData { Parent = "O", Name = "Rick", Value = 3},
-                    new TreemapSeriesData { Parent = "O", Name = "Peter", Value = 3},
-                    new TreemapSeriesData { Parent = "Kiwi", Name = "Susanne", Value = 2, Color = "#9EDE00"}
                 }
+                              }
+      };
 
-            }
-        }
-    }
-    , "chart")
-)
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

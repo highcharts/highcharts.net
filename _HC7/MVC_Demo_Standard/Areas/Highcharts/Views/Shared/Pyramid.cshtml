@@ -9,27 +9,37 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            new Highcharts
-            {
-                Chart = new Highsoft.Web.Mvc.Charts.Chart
-                {
-                    MarginRight = 100
-                },
-                Title = new Title
-                {
-                    Text = "Sales funnel",
-                    X = -50
-                },
-                PlotOptions = new PlotOptions
-                {
-                    Series = new PlotOptionsSeries
-                    {
-                        DataLabels = new PlotOptionsSeriesDataLabels
+@{ var chartOptions =
+      new Highcharts
+      {
+          Chart = new Highsoft.Web.Mvc.Charts.Chart
+          {
+              MarginRight = 100
+          },
+          Title = new Title
+          {
+              Text = "Sales funnel",
+              X = -50
+          },
+          PlotOptions = new PlotOptions
+          {
+              Series = new PlotOptionsSeries
+              {
+                  DataLabels = new PlotOptionsSeriesDataLabels
+                  {
+                      Enabled = true,
+                      Format = "<b>{point.name}</b> ({point.y:,.0f})",
+                      Color = "black"
+                  }
+              }
+          },
+          Legend = new Legend
+          {
+              Enabled = false
+          },
+          Series = new List<Series>
+              {
+                new PyramidSeries
                 {
                     Name = "Unique users",
                     Data = new List<PyramidSeriesData> {
@@ -37,26 +47,14 @@
                         new PyramidSeriesData{ Name = "Downloads", Y = 4064 },
                         new PyramidSeriesData{ Name = "Requested price list", Y = 1987 },
                         new PyramidSeriesData{ Name = "Invoice Sent", Y = 976 },
-                    Color = "Finalized", Y = 846 }
+                        new PyramidSeriesData{ Name = "Finalized", Y = 846 }
                     }
                 }
-            }
-        },
-        Legend = new Legend
-        {
-            Enabled = false
-        },
-        Series = new List<Series>
-        {
-            new PyramidSeries
-            {
-                Name = "Unique users",
-                Data = new List<PyramidSeriesData> {
-                    new PyramidSeriesData{ Name = "Website visits", Y = 15654 },
-                    new PyramidSeriesData{ Name = "Downloads", Y = 4064 },
-                    new PyramidSeriesData{ Name = "Requested price list", Y = 1987 },
-                    new PyramidSeriesData{ Name = "Invoice Sent", Y = 976 },
-                    new PyramidSeriesData{ Name = "Finalized", Y = 846 }
-                }
-            , "chart")
-)
+                              }
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

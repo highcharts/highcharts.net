@@ -955,41 +955,28 @@
 
 </script>
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            Events = new ChartEvents
-            {
-                Chart = new Highsoft.Web.Mvc.Charts.Chart
-                {
-                    Events = new ChartEvents
-                    {
-                        Load = "loadData"
-            },
-            Type = ChartType.Treemap
-        },
-        Title = new Title
-        {
-            Text = "Click points to drill down. Source: WHO."
-        },
-        Subtitle = new Subtitle
-        {
-            Text = "Global Mortality Rate 2012, per 100 000 population"
-        },
-        Series = new List<Series>
-        {
-            new TreemapSeries
-            {
-                LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Squarified,
-                AllowDrillToNode = true,
-                AnimationLimit = 1000,
-                DataLabels = new TreemapSeriesDataLabels
-                {
-                    Text = "Global Mortality Rate 2012, per 100 000 population"
-                },
-                Series = new List<Series>
+@{ var chartOptions =
+      new Highcharts
+      {
+          Chart = new Highsoft.Web.Mvc.Charts.Chart
+          {
+              Events = new ChartEvents
+              {
+                  Load = "loadData"
+              },
+              Type = ChartType.Treemap
+          },
+          Title = new Title
+          {
+              Text = "Click points to drill down. Source: WHO."
+          },
+          Subtitle = new Subtitle
+          {
+              Text = "Global Mortality Rate 2012, per 100 000 population"
+          },
+          Series = new List<Series>
+              {
+                new TreemapSeries
                 {
                     LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Squarified,
                     AllowDrillToNode = true,
@@ -998,9 +985,9 @@
                     {
                         Enabled = false
                     },
-                        BorderWidth = false,
-                        DataLabels = new List<TreemapSeriesLevels>
-            {
+                    LevelIsConstant = false,
+                    Levels = new List<TreemapSeriesLevels>
+    {
                         new TreemapSeriesLevels
                         {
                             Level = 1,
@@ -1008,11 +995,15 @@
                             DataLabels = new TreemapSeriesDataLabels
                             {
                                 Enabled = true
+                            },
                         }
                     }
                 }
-            }
-        }
-    }
-    , "chart")
-)
+                              }
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
