@@ -3,47 +3,40 @@
 
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
+@using System.Collections;
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            PlotBackgroundColor = null,
-            PlotBorderWidth = null,
-            PlotShadow = new Shadow
-            {
-                Chart = new Highsoft.Web.Mvc.Charts.Chart
-                {
-                    PlotBackgroundColor = null,
-                    PlotBorderWidth = null,
-                    PlotShadow = new Shadow
-                    {
-                        Enabled = false
-                },
-                Title = new Title
-                {
-                    Text = "Browser market shares at a specific website, 2014"
-                },
-                Tooltip = new Tooltip
-                {
-                    PointFormat = "{series.name}: <b>{point.percentage:.1f}%</b>"
-                },
-                PlotOptions = new PlotOptions
-                {
-                    Pie = new PlotOptionsPie
-                    {
-                        AllowPointSelect = true,
-                        Cursor = PlotOptionsPieCursor.Pointer,
-                        DataLabels = new PlotOptionsPieDataLabels
-                        {
-                            Enabled = false
-                        },
-                        ShowInLegend = true
-                    }
-                },
-                XAxis = new List<XAxis>
-                {
+@{ var chartOptions =
+      new Highcharts
+      {
+          Chart = new Highsoft.Web.Mvc.Charts.Chart
+          {
+              PlotBackgroundColor = null,
+              PlotBorderWidth = null,
+              PlotShadow = new Shadow
+              {
+                  Enabled = false
+              }
+          },
+          Title = new Title
+          {
+              Text = "Browser market shares at a specific website, 2014"
+          },
+          Tooltip = new Tooltip
+          {
+              PointFormat = "{series.name}: <b>{point.percentage:.1f}%</b>"
+          },
+          PlotOptions = new PlotOptions
+          {
+              Pie = new PlotOptionsPie
+              {
+                  AllowPointSelect = true,
+                  Cursor = PlotOptionsPieCursor.Pointer,
+                  DataLabels = new Hashtable { { "enabled", false } },
+                  ShowInLegend = true
+              }
+          },
+          XAxis = new List<XAxis>
+              {
                 new XAxis
                 {
                     Title = new XAxisTitle
@@ -51,28 +44,33 @@
                         Text = null
                     },
                     Categories = new List<string> { "Africa", "America", "Asia", "Europe", "Oceania" }
-            }
-        },
-        YAxis = new List<YAxis>
-        {
-            new YAxis
-            {
-                {
+                }
+                              },
+          YAxis = new List<YAxis>
+              {
                 new YAxis
                 {
                     Min = 0,
                     Title = new YAxisTitle
                     {
                         Text = "Population (millions)",
-                    Align = YAxisTitleAlign.High
+                        Align = YAxisTitleAlign.Center
+                    }
                 }
-            }
-        },
-        Series = new List<Series>
-        {
-            new PieSeries
-            {
-                Name = "Browser Share",
-                Data = @ViewData["pieData"] as List<PieSeriesData>
-            , "chart")
-)
+                              },
+          Series = new List<Series>
+              {
+                new PieSeries
+                {
+                    Name = "Browser Share",
+                    Data = @ViewData["pieData"] as List<PieSeriesData>
+                },
+
+                              }
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

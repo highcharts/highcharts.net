@@ -5,81 +5,117 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Title = new Title
-        {
-            new Highcharts
-            {
-                Title = new Title
-                {
-                    Text = "Browser market shares. January, 2015 to May, 2015"
-        },
-                Subtitle = new Subtitle
-                {
-                    Text = "Click the columns to view versions. Source: <a href='http://netmarketshare.com'>netmarketshare.com</a>."
-                },
-                    Format = new List<XAxis>
-                {
+@{ var chartOptions =
+          new Highcharts
+          {
+              Title = new Title
+              {
+                  Text = "Browser market shares. January, 2015 to May, 2015"
+              },
+              Subtitle = new Subtitle
+              {
+                  Text = "Click the columns to view versions. Source: <a href='http://netmarketshare.com'>netmarketshare.com</a>."
+              },
+              XAxis = new List<XAxis>
+              {
                 new XAxis
                 {
-                    Type = XAxisType.Category
+                    Type = "category",
                 }
-            },
-        Series = new List<Series>
-        {                YAxis = new List<YAxis>
-                {
-                    new PieSeriesData { Name = "Microsoft Internet Explorer", Y = 56.3, Drilldown = "Microsoft Internet Explorer" },
-                    new PieSeriesData { Name = "Chrome", Y = 24.03, Drilldown = "Chrome" },
-                    new PieSeriesData { Name = "Firefox", Y = 10.3, Drilldown = "Firefox" },
-                    new PieSeriesData { Name = "Sfari", Y = 4.77, Drilldown = "Safari" },
-                    new PieSeriesData { Name = "Opera", Y = 0.91, Drilldown = "Opera" },
-                    new PieSeriesData { Name = "Proprietary or Undetectable", Y = 0.2, Drilldown = null }
-                }
-            }
-        },
-        Drilldown = new Drilldown
-        {
-            Series = new List<Series>
-            {
+                              },
+              YAxis = new List<YAxis>
+              {
                 new YAxis
                 {
                     Title = new YAxisTitle
                     {
                         Text = "Total percent market share"
                     }
-                },
-                Tooltip = new Tooltip
-                {
-                    HeaderFormat = "<span style='font-size:11px'>{series.name}</span><br>",
-                    PointFormat = "<span style=\"color:{point.color}\">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>"
-                },
+                }
+                              },
+              Legend = new Legend
+              {
+                  Enabled = false
+              },
+              Tooltip = new Tooltip
+              {
+                  HeaderFormat = "<span style='font-size:11px'>{series.name}</span><br>",
+                  PointFormat = "<span style=\"color:{point.color}\">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>"
+              },
 
-                PlotOptions = new PlotOptions
-                {
-                    Series = new PlotOptionsSeries
-                    {
-                        DataLabels = new PlotOptionsSeriesDataLabels
-                        {
-                            Enabled = true,
-                        new = "{point.name}: {point.y:.1f}%"
-                        }
-                    }
-                },
+              PlotOptions = new PlotOptions
+              {
+                  Series = new PlotOptionsSeries
+                  {
+                      DataLabels = new PlotOptionsSeriesDataLabels
+                      {
+                          Enabled = true,
+                          Format = "{point.name}: {point.y:.1f}%"
+                      }
+                  }
+              },
+              Series = new List<Series>
+              {
                 new PieSeries
                 {
                     Name = "Brands",
                     Data = new List<PieSeriesData>
+    {
+                        new PieSeriesData { Name = "Microsoft Internet Explorer", Y = 56.3, Drilldown = "Microsoft Internet Explorer" },
+                        new PieSeriesData { Name = "Chrome", Y = 24.03, Drilldown = "Chrome" },
+                        new PieSeriesData { Name = "Firefox", Y = 10.3, Drilldown = "Firefox" },
+                        new PieSeriesData { Name = "Sfari", Y = 4.77, Drilldown = "Safari" },
+                        new PieSeriesData { Name = "Opera", Y = 0.91, Drilldown = "Opera" },
+                        new PieSeriesData { Name = "Proprietary or Undetectable", Y = 0.2, Drilldown = null }
+                    }
+                }
+                              },
+              Drilldown = new Drilldown
+              {
+                  Series = new List<Series>
+                  {
+                    new PieSeries
+                    {
+                        Name = "Microsoft Internet Explorer",
+                        Id = "Microsoft Internet Explorer",
+                        Data = new List<PieSeriesData>
+        {
+                            new PieSeriesData { Name = "v11.0", Y = 24.13 },
+                            new PieSeriesData { Name = "v8.0", Y = 17.2 },
+                            new PieSeriesData { Name = "v9.0", Y = 8.11 },
+                            new PieSeriesData { Name = "v11.0", Y = 24.13 },
+                            new PieSeriesData { Name = "v10.0", Y = 5.33 },
+                            new PieSeriesData { Name = "v6", Y = 1.06 },
+                            new PieSeriesData { Name = "v7", Y = 0.5 }
+                        }
+                    },
+                    new PieSeries
+                    {
+                        Name = "Chrome",
+                        Id = "Chrome",
+                        Data = new List<PieSeriesData>
+        {
+                            new PieSeriesData { Name = "v40.0", Y = 5 },
+                            new PieSeriesData { Name = "v41", Y = 4.32 },
+                            new PieSeriesData { Name = "v42", Y = 3.68 },
+                            new PieSeriesData { Name = "v39", Y = 2.96 },
+                            new PieSeriesData { Name = "v36", Y = 2.54 },
+                            new PieSeriesData { Name = "v43", Y = 1.45 },
+                            new PieSeriesData { Name = "v31", Y = 1.24 }
+                        }
+                    },
+                    new PieSeries
                     {
                         Name = "Firefox",
                         Id = "Firefox",
                         Data = new List<PieSeriesData>
-                {
-                    Name = "v37", Y = 4.68 },
-                    Id 3.96 },
+        {
+                            new PieSeriesData { Name = "v35", Y = 7.32 },
+                            new PieSeriesData { Name = "v36", Y = 5.32 },
+                            new PieSeriesData { Name = "v37", Y = 4.68 },
+                            new PieSeriesData { Name = "v34", Y = 3.96 },
                             new PieSeriesData { Name = "v38", Y = 2.54 },
-                    Data = 1.45 },
+                            new PieSeriesData { Name = "v31", Y = 1.45 },
                             new PieSeriesData { Name = "v32", Y = 1.24 }
                         }
                     },
@@ -88,11 +124,13 @@
                         Name = "Safari",
                         Id = "Safari",
                         Data = new List<PieSeriesData>
-                {
-                    Name = "v5.1", Y = 6.92 },
-                    Id 6.71 },
+        {
+                            new PieSeriesData { Name = "v8", Y = 9.32 },
+                            new PieSeriesData { Name = "v7.1", Y = 7.12 },
+                            new PieSeriesData { Name = "v5.1", Y = 6.92 },
+                            new PieSeriesData { Name = "v5.0", Y = 6.71 },
                             new PieSeriesData { Name = "v6.1", Y = 5.44 },
-                    Data = 4.32 },
+                            new PieSeriesData { Name = "v7.0", Y = 4.32 },
                             new PieSeriesData { Name = "v6.2", Y = 3.24 }
                         }
                     },
@@ -101,16 +139,19 @@
                         Name = "Opera",
                         Id = "Opera",
                         Data = new List<PieSeriesData>
-                {
+        {
                             new PieSeriesData { Name = "v12.x", Y = 5 },
-                        new PieSeriesData { Name = "v28", Y = 4.32 },
-                        new PieSeriesData { Name = "v27", Y = 2.15 },
-                        new PieSeriesData { Name = "v29", Y = 0.16 }
+                            new PieSeriesData { Name = "v28", Y = 4.32 },
+                            new PieSeriesData { Name = "v27", Y = 2.15 },
+                            new PieSeriesData { Name = "v29", Y = 0.16 }
+                        }
                     },
-                            }
-                }
-            }
-        }
-    }
-    , "chart")
-)
+                                  }
+              }
+          };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

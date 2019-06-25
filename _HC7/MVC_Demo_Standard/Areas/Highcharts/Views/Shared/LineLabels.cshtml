@@ -4,25 +4,23 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Title = new Title
-        {
-            Title = new Title
-            {
-                Text = "Monthly Average Temperature"
-        },
-        XAxis = new List<XAxis>
-        {
+@{ var chartOptions =
+      new Highcharts
+      {
+          Title = new Title
+          {
+              Text = "Monthly Average Temperature"
+          },
+          XAxis = new List<XAxis>
+          {
             new XAxis
             {
                 Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
                             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
             }
-        },
-        YAxis = new List<YAxis>
-        {
+                          },
+          YAxis = new List<YAxis>
+          {
             new YAxis
             {
                 Title = new YAxisTitle
@@ -30,22 +28,20 @@
                     Text = "Temperature (°C)"
                 }
             }
-        },
-        PlotOptions = new PlotOptions
-        {
-            Line = new PlotOptionsLine
-            {
-                Line = new PlotOptionsLine
-                {
-                    DataLabels = new PlotOptionsLineDataLabels
-                    {
-                        Enabled = true
-                },
-                EnableMouseTracking = false
-            }
-        },
-        Series = new List<Series>
-        {
+                          },
+          PlotOptions = new PlotOptions
+          {
+              Line = new PlotOptionsLine
+              {
+                  DataLabels = new PlotOptionsLineDataLabels
+                  {
+                      Enabled = true
+                  },
+                  EnableMouseTracking = false
+              }
+          },
+          Series = new List<Series>
+          {
             new LineSeries
             {
                 Name = "Tokyo",
@@ -56,7 +52,11 @@
                 Name = "London",
                 Data = @ViewData["londonData"] as List<LineSeriesData>
             }
-        }
-    }
-    , "chart")
-)
+                          }
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

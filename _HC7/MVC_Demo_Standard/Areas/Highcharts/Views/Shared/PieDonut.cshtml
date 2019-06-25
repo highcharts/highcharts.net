@@ -119,67 +119,78 @@
 
 </script>
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            Events = new ChartEvents
-            {
-                Chart = new Highsoft.Web.Mvc.Charts.Chart
-                {
-                    Events = new ChartEvents
-                    {
-                        Load = "loadData"
-                    }
-                },
-                Title = new Title
-                {
-                    Text = "Browser market share, January, 2015 to May, 2015"
-                },
-                Subtitle = new Subtitle
-                {
-                    Text = "Source: <a href='http://netmarketshare.com/'>netmarketshare.com</a>"
-                },
-                YAxis = new List<YAxis>
-                {
+@{ var chartOptions =
+      new Highcharts
+      {
+          Chart = new Highsoft.Web.Mvc.Charts.Chart
+          {
+              Events = new ChartEvents
+              {
+                  Load = "loadData"
+              }
+          },
+          Title = new Title
+          {
+              Text = "Browser market share, January, 2015 to May, 2015"
+          },
+          Subtitle = new Subtitle
+          {
+              Text = "Source: <a href='http://netmarketshare.com/'>netmarketshare.com</a>"
+          },
+          YAxis = new List<YAxis>
+              {
                 new YAxis
                 {
                     Title = new YAxisTitle
                     {
                         Text = "Total Percent Market Share"
+                    }
                 }
-            },
-        PlotOptions = new PlotOptions
-        {
-            Pie = new PlotOptionsPie
-            {
-                Shadow = new Shadow
+                              },
+          PlotOptions = new PlotOptions
+          {
+              Pie = new PlotOptionsPie
+              {
+                  Shadow = new Shadow
+                  {
+                      Enabled = true,
+                      Color = "#000000",
+                      Width = 10,
+                      OffsetX = 0,
+                      OffsetY = 0
+                  },
+                  Center = new string[] { "50%", "50%" }
+              }
+          },
+          Tooltip = new Tooltip
+          {
+              ValueSuffix = "%"
+          },
+          Series = new List<Series>
+              {
+                new PieSeries
                 {
                     Name = "Browsers",
                     Size = "60%",
                     DataLabels = new PieSeriesDataLabels
                     {
                         Formatter = "formatBrowserSeriesDataLabels",
-                    OffsetX = "white",
-                    OffsetY = -30
+                        Color = "white",
+                        //Distance = -30
                     },
                 },
                 new PieSeries
-            {
-                Name = "Browsers",
-                Size = "60%",
-                DataLabels = new PieSeriesDataLabels
                 {
                     Name = "Versions",
-                Size = "80%",
-                InnerSize = "60%"
+                    Size = "80%",
+                    InnerSize = "60%"
                 }
 
-                        }
-            }
+                              }
+      };
 
-        }
-    }
-    , "chart")
-)
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

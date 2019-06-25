@@ -4,73 +4,80 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            new Highcharts
-            {
-                Chart = new Highsoft.Web.Mvc.Charts.Chart
+@{ var chartOptions =
+          new Highcharts
+          {
+              Chart = new Highsoft.Web.Mvc.Charts.Chart
+              {
+                  ZoomType = ChartZoomType.X
+              },
+              Title = new Title
+              {
+                  Text = "USD to EUR exchange rate from 2006 through 2008"
+              },
+              Subtitle = new Subtitle
+              {
+                  Text = "Click and drag in the plot area to zoom in"
+              },
+              XAxis = new List<XAxis>
+              {
+                new XAxis
                 {
-                    ZoomType = ChartZoomType.X
-                },
-                Title = new Title
-                {
-                    Text = "USD to EUR exchange rate from 2006 through 2008"
-                },
-                Subtitle = new Subtitle
-                {
-                    Text = "Click and drag in the plot area to zoom in"
+                    Type = "datetime",
+                    MinRange = 14 * 24 * 3600000 // fourteen days
                 }
-            },
-        Legend = new List<YAxis>
-        {
-            Enabled YAxis
-        },
-        PlotOptions = new YAxisTitle
-        {
-            Series = "Exchange Rate"
-            {
-                }
-            },
-            Area = new PlotOptionsArea
-            {
-                ///FillColor = // TODO - LinerGradients
-                ///
-                Legend = new Legend
+                              },
+              YAxis = new List<YAxis>
+              {
+                new YAxis
                 {
-                    Enabled = false
-                },
-                PlotOptions = new PlotOptions
-                {
-                    Series = new PlotOptionsSeries
+                    Title = new YAxisTitle
                     {
-                        TurboThreshold = 10000
-                    },
-                    Area = new PlotOptionsArea
-                    {
-                        LineWidth = 1,
-                        States = new PlotOptionsAreaStates
-                        {
-                            Hover = new PlotOptionsAreaStatesHover
-                            {
-                                LineWidth = 1
-                            }
-                        },
-                        Threshold = null
+                        Text = "Exchange Rate"
                     }
-                },
-                Series = new List<Series>
-        {
-            new AreaSeries
-            {
-                Name = "USD to EUR",
-                PointInterval =  24 * 3600 * 1000,
-                PointStart =  @ViewBag.DateUTC,
-                Data = @ViewBag.TimeData as List<AreaSeriesData>
-            }
-        }
-    }
-    , "chart")
-)
+                }
+                              },
+              Legend = new Legend
+              {
+                  Enabled = false
+              },
+              PlotOptions = new PlotOptions
+              {
+                  Series = new PlotOptionsSeries
+                  {
+                      TurboThreshold = 10000
+                  },
+                  Area = new PlotOptionsArea
+                  {
+                      Marker = new PlotOptionsAreaMarker
+                      {
+                          Radius = 2
+                      },
+                      LineWidth = 1,
+                      States = new PlotOptionsAreaStates
+                      {
+                          Hover = new PlotOptionsAreaStatesHover
+                          {
+                              LineWidth = 1
+                          }
+                      },
+                      Threshold = null
+                  }
+              },
+              Series = new List<Series>
+              {
+                new AreaSeries
+                {
+                    Name = "USD to EUR",
+                    PointInterval =  24 * 3600 * 1000,
+                    PointStart =  @ViewBag.DateUTC,
+                    Data = @ViewBag.TimeData as List<AreaSeriesData>
+                }
+                              }
+          };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
