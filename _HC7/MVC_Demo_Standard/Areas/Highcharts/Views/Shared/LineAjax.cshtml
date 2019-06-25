@@ -58,39 +58,30 @@
 
 </script>
 
-@*@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            Events = new ChartEvents
-            {
-                Chart = new Highsoft.Web.Mvc.Charts.Chart
-                {
-                    Events = new ChartEvents
-                    {
-                        Load = "loadAjaxData"
-                    },
-                    Type = ChartType.Line
-                },
-                Title = new Title
-                {
-                    Text = "Daily visits at www.highcharts.com"
-                },
-        YAxis = new List<YAxis>
-        {
-            new YAxis
-            {
-
-                Subtitle = new Subtitle
-                {
-                    Text = "Source: Google Analytics"
-                },
-                XAxis = new List<XAxis>
-                {
+@{ var chartOptions =
+      new Highcharts
+      {
+          Chart = new Highsoft.Web.Mvc.Charts.Chart
+          {
+              Events = new ChartEvents
+              {
+                  Load = "loadAjaxData"
+              },
+              Type = ChartType.Line
+          },
+          Title = new Title
+          {
+              Text = "Daily visits at www.highcharts.com"
+          },
+          Subtitle = new Subtitle
+          {
+              Text = "Source: Google Analytics"
+          },
+          XAxis = new List<XAxis>
+                 {
                    new XAxis
                    {
-                       Type = XAxisType.Datetime,
+                       Type = "datetime",
                        TickInterval = 7 * 24 * 3600 * 1000, // one week
                        TickWidth = 0,
                        GridLineWidth = 1,
@@ -105,9 +96,9 @@
                            Width = 1
                        }
                    }
-                        },
-                YAxis = new List<YAxis>
-                {
+                                 },
+          YAxis = new List<YAxis>
+                 {
                    new YAxis
                    {
 
@@ -119,61 +110,72 @@
                            Format = "{value:.,0f}"
                        },
                        ShowFirstLabel = false
-            },
-            new YAxis
-            {
-                LinkedTo = 0,
-                GridLineWidth = 0,
-                Opposite = true,
+                   },
+                   new YAxis
+                   {
+                       LinkedTo = 0,
+                       GridLineWidth = 0,
+                       Opposite = true,
 
-                Labels = new YAxisLabels
-                {
-                    Align = LegendAlign.Left,
-                    VerticalAlign = LegendVerticalAlign.Top,
-                    Y = 20,
-                    Floating = true,
-                    BorderWidth = 0
-                },
-                Tooltip = new Tooltip
-        {
-            Shared = true
-        },
-        PlotOptions = new PlotOptions
-        {
-            Series = new PlotOptionsSeries
-            {
-                Cursor = PlotOptionsSeriesCursor.Pointer,
-                Events = new PlotOptionsSeriesEvents
-                {
-                    Shared = true
-                },
-                PlotOptions = new PlotOptions
-                {
-                    Series = new PlotOptionsSeries
-                }
-            }
-        },
-        Series = new PlotOptionsSeriesEvents
-        {
-            new = "handleClick"
-                        },
-                Name = new PlotOptionsSeriesMarker
-                        {
-                LineWidth = 1
-                        }
-                    }
-                },
-                Series = new List<Series>
-                {
-                    Radius = 4
-                }
-            },
-            new LineSeries
-            {
-                Name = "New Visitors"
-            }
-        }
-    }
-    , "chart")
-)*@
+                       Labels = new YAxisLabels
+                       {
+                           Align = YAxisLabelsAlign.Right,
+                           X = 3,
+                           Y = 16,
+                           Format = "{value:.,0f}"
+                       },
+                       ShowFirstLabel = false
+                   }
+                                 },
+          Legend = new Legend
+          {
+              Align = LegendAlign.Left,
+              VerticalAlign = LegendVerticalAlign.Top,
+              Y = 20,
+              Floating = true,
+              BorderWidth = 0
+          },
+          Tooltip = new Tooltip
+          {
+              Shared = true
+          },
+          PlotOptions = new PlotOptions
+          {
+              Series = new PlotOptionsSeries
+              {
+                  Cursor = PlotOptionsSeriesCursor.Pointer,
+                  Events = new PlotOptionsSeriesEvents
+                  {
+                      Click = "handleClick"
+                  },
+                  Marker = new PlotOptionsSeriesMarker
+                  {
+                      LineWidth = 1
+                  }
+              }
+          },
+          Series = new List<Series>
+                 {
+                   new LineSeries
+                   {
+                       Color = "black",
+                       Name = "All Visit",
+                       LineWidth = 4,
+                       Marker = new LineSeriesMarker
+                       {
+                           Radius = 4
+                       }
+                   },
+                   new LineSeries
+                   {
+                       Name = "New Visitors"
+                   }
+                                 }
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml())
 

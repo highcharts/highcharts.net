@@ -6,39 +6,39 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
-@Html.Highsoft().GetHighcharts(new Highcharts
+@{ var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
+        {
+            Inverted = true,
+            Width = 650
+        },
+        Title = new Title
+        {
+            Text = "U.S. states by population in 2016"
+        },
+        Subtitle = new Subtitle
+        {
+            Text = "Source:<a href=\"https://simple.wikipedia.org/wiki/List_of_U.S._states_by_population\">Wikipedia</a>"
+        },
+        XAxis = new List<XAxis>
 {
-    Chart = new Highsoft.Web.Mvc.Charts.Chart
-    {
-        Inverted = true,
-        Width = 650
-    },
-    Title = new Title
-    {
-        Text = "U.S. states by population in 2016"
-    },
-    Subtitle = new Subtitle
-    {
-        Text = "Source:<a href=\"https://simple.wikipedia.org/wiki/List_of_U.S._states_by_population\">Wikipedia</a>"
-    },
-    XAxis = new List<XAxis>
-    {
         new XAxis
         {
             Visible = false
         }
     },
-    YAxis = new List<YAxis>
-    {
+        YAxis = new List<YAxis>
+{
         new YAxis
         {
             Visible = false
         }
     },
-    ColorAxis = new ColorAxis
-    {
-        DataClasses = new List<ColorAxisDataClasses>
+        ColorAxis = new ColorAxis
         {
+            DataClasses = new List<ColorAxisDataClasses>
+{
             new ColorAxisDataClasses
             {
                 From = 0,
@@ -67,34 +67,40 @@
                 Name = "> 20M"
             }
         }
-    },
-    Tooltip = new Tooltip
-    {
-        HeaderFormat = "",
-        PointFormat = "The population of <b> {point.name}</b> is <b>{point.value}</b>"
-    },
-    PlotOptions = new PlotOptions
-    {
-        Series = new PlotOptionsSeries
+        },
+        Tooltip = new Tooltip
         {
-            DataLabels = new PlotOptionsSeriesDataLabels
+            HeaderFormat = "",
+            PointFormat = "The population of <b> {point.name}</b> is <b>{point.value}</b>"
+        },
+        PlotOptions = new PlotOptions
+        {
+            Series = new PlotOptionsSeries
             {
-                Enabled = true,
-                Format = "{point.id}",
-                Color = "#000000",
-                Style = new PlotOptionsSeriesDataLabelsStyle
+                DataLabels = new PlotOptionsSeriesDataLabels
                 {
-                    TextOutline = "0px"
+                    Enabled = true,
+                    Format = "{point.id}",
+                    Color = "#000000",
+                    Style = new PlotOptionsSeriesDataLabelsStyle
+                    {
+                        TextOutline = "0px"
+                    }
                 }
             }
-        }
-    },
-    Series = new List<Series>
-    {
+        },
+        Series = new List<Series>
+{
         new TilemapSeries
         {
             Name = "",
             Data = ViewData["Data"] as List<TilemapSeriesData>
         }
     }
-}, "container")
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
