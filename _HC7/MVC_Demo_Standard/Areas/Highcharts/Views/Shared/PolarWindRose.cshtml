@@ -232,46 +232,51 @@
 </script>
 
 
-@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            new Highcharts
-            {
-                Chart = new Highsoft.Web.Mvc.Charts.Chart
-                {
-                    Polar = true,
-                    Type = ChartType.Column
-            },
-        },
-        YAxis = new Title
-        {
-            new Subtitle
-            {
-                Min = "Source: or.water.usgs.gov"
-                },
-                Pane = new Pane
-                {
-                    Size = "85%"
-                },
-                Legend = new Legend
-                {
-                    Align = LegendAlign.Right,
-                    VerticalAlign = LegendVerticalAlign.Top,
-                    Y = 100,
-                    Layout = LegendLayout.Vertical
-                },
-                XAxis = new List<XAxis>
-                {
+@{ var chartOptions =
+      new Highcharts
+      {
+          Chart = new Highsoft.Web.Mvc.Charts.Chart
+          {
+              Polar = true,
+              Type = ChartType.Column
+          },
+          Data = new Data
+          {
+              Table = "freq",
+              StartRow = 1,
+              EndRow = 17,
+              EndColumn = 7
+          },
+          Title = new Title
+          {
+              Text = "Wind Rose for South Shore Met Station, Oregon",
+
+          },
+          Subtitle = new Subtitle
+          {
+              Text = "Source: or.water.usgs.gov"
+          },
+          Pane = new Pane
+          {
+              Size = "85%"
+          },
+          Legend = new Legend
+          {
+              Align = LegendAlign.Right,
+              VerticalAlign = LegendVerticalAlign.Top,
+              Y = 100,
+              Layout = LegendLayout.Vertical
+          },
+          XAxis = new List<XAxis>
+              {
                 new XAxis
                 {
                     TickmarkPlacement = XAxisTickmarkPlacement.On,
-                    Type = XAxisType.Category
+                    Type = "category"
                 }
-                        },
-                YAxis = new List<YAxis>
-                {
+                              },
+          YAxis = new List<YAxis>
+              {
                 new YAxis
                 {
                     Min = 0,
@@ -282,26 +287,32 @@
                         Text = "Frequency (%)"
                     },
                     Labels = new YAxisLabels
-                {
-                    ValueSuffix = "%"
-                },
-                PlotOptions = new PlotOptions
-        {
-            Series = new PlotOptionsSeries
-            {
-                Stacking = PlotOptionsSeriesStacking.Normal,
-                PointPlacement = new PointPlacement
-                {
-                    Series = new PlotOptionsSeries
                     {
-                        Stacking = PlotOptionsSeriesStacking.Normal,
-                        PointPlacement = new PointPlacement
-                        {
-                            PointPlacementEnum = PointPlacementEnum.On
+                        Formatter = "formatYAxisLabels"
+                    },
+                    ReversedStacks = false
                 }
-            }
-        }
-    }
-    , "chart")
-)
+                              },
+          Tooltip = new Tooltip
+          {
+              ValueSuffix = "%"
+          },
+          PlotOptions = new PlotOptions
+          {
+              Series = new PlotOptionsSeries
+              {
+                  Stacking = PlotOptionsSeriesStacking.Normal,
+                  PointPlacement = new PointPlacement
+                  {
+                      PointPlacementEnum = PointPlacementEnum.On
+                  }
+              }
+          }
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
 
