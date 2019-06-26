@@ -1,26 +1,27 @@
 ﻿@using Highsoft.Web.Mvc.Stocks
+@using Highsoft.Web.Mvc.Stocks.Rendering
 
-    <script src="http://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    
-    @(Html.Highsoft().GetHighstock(
-        new Highstock
-        {           
-            RangeSelector = new RangeSelector
-            {
-                Selected = 0
-            },
-            Title = new Title
-            {
-                Text = "USD to EUR exchange rate"
-            },
-            Tooltip = new Tooltip
-            {
-                ValueDecimals = 4,
-                Shared = true
-            },
-            YAxis = new List<YAxis>
-            {
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@{ var chartOptions =
+      new Highstock
+      {
+          RangeSelector = new RangeSelector
+          {
+              Selected = 0
+          },
+          Title = new Title
+          {
+              Text = "USD to EUR exchange rate"
+          },
+          Tooltip = new Tooltip
+          {
+              ValueDecimals = 4,
+              Shared = true
+          },
+          YAxis = new List<YAxis>
+              {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -28,9 +29,9 @@
                         Text = "Exchange rate"
                     }
                 }
-            },
-            Series = new List<Series>
-            {
+                              },
+          Series = new List<Series>
+              {
                 new LineSeries
                 {
                     Data = ViewBag.CurrencyData as List<LineSeriesData>,
@@ -42,35 +43,39 @@
                     }
                 },
                 new FlagsSeries
-                {                    
+                {
                     Data = ViewBag.AData as List<FlagsSeriesData>,
-                    Name = "Flags on Series",                 
+                    Name = "Flags on Series",
                     OnSeries = "currency",
-                    Shape = FlagsSeriesShape.Squarepin                    
+                    Shape = "squarepin"
                 },
                 new FlagsSeries
-                {                    
+                {
                     Data = ViewBag.BData as List<FlagsSeriesData>,
-                    Name = "Flags on Series 2",                 
+                    Name = "Flags on Series 2",
                     OnSeries = "currency",
                     Color = "#7cb5ec",
-                    Shape = FlagsSeriesShape.Circlepin                    
+                    Shape = "circlepin"
                 },
                 new FlagsSeries
-                {                    
-                    Data = ViewBag.CData as List<FlagsSeriesData>,
-                    Name = "Flags on Series 3", 
-                    Shape = FlagsSeriesShape.Flag                    
-                }
-            },
-            PlotOptions = new PlotOptions
-            {
-                Series = new PlotOptionsSeries
                 {
-                    TurboThreshold = 5000
+                    Data = ViewBag.CData as List<FlagsSeriesData>,
+                    Name = "Flags on Series 3",
+                    Shape = "flag"
                 }
-            }
+                              },
+          PlotOptions = new PlotOptions
+          {
+              Series = new PlotOptionsSeries
+              {
+                  TurboThreshold = 5000
+              }
+          }
 
-        },
-        "chart"
-    ))
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighstockRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

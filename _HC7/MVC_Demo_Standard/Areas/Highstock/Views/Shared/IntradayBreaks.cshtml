@@ -1,21 +1,22 @@
 ﻿@using Highsoft.Web.Mvc.Stocks
+@using Highsoft.Web.Mvc.Stocks.Rendering
 
-    <script src="http://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    
-    @(Html.Highsoft().GetHighstock(
-        new Highstock
-        {
-            Title = new Title
-            {
-                Text = "AAPL stock price by minute"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Using explicit breaks for nights and weekends"
-            },
-            XAxis = new List<XAxis>
-            {
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@{ var chartOptions =
+      new Highstock
+      {
+          Title = new Title
+          {
+              Text = "AAPL stock price by minute"
+          },
+          Subtitle = new Subtitle
+          {
+              Text = "Using explicit breaks for nights and weekends"
+          },
+          XAxis = new List<XAxis>
+              {
                 new XAxis()
                 {
                     Breaks = new XAxisBreaks()
@@ -23,27 +24,19 @@
                         From = (long)(new DateTime(2011, 9, 6,16,0,0) - new DateTime(1970, 1, 1)).TotalMilliseconds,
                         To = (long)(new DateTime(2011, 9, 7, 8,0,0) - new DateTime(1970, 1, 1)).TotalMilliseconds,
 
-                        Repeat = 24 * 3600 *1000
-                        //BreakSize = 3600 *1000
+                        Repeat = 24 * 3600 *1000,
+                        BreakSize = 3600 *1000
             },
-                    //Ordinal = true
         }
-    },
-            //        YAxis = new List<YAxis>
-            //        {
-            //            new YAxis()
-            //{
-            //    Min = 360
-            //            }
-            //        },
-            RangeSelector = new RangeSelector()
-            {
-                Buttons = new List<RangeSelectorButton>() { new RangeSelectorButton { Type = RangeSelectorButtonType.Minute, Count = 60, Text = "1h" }, new RangeSelectorButton { Type = RangeSelectorButtonType.Day, Count = 1, Text = "1d" }, new RangeSelectorButton { Type = RangeSelectorButtonType.All, Count = 1, Text = "All" } },
-                InputEnabled = false,
-                Selected = 1
-            },
-            Series = new List<Series>
-            {
+                      },
+             RangeSelector = new RangeSelector()
+          {
+              Buttons = new List<RangeSelectorButton>() { new RangeSelectorButton { Type = "minute", Count = 60, Text = "1h" }, new RangeSelectorButton { Type = "day", Count = 1, Text = "1d" }, new RangeSelectorButton { Type = "all", Count = 1, Text = "All" } },
+              InputEnabled = false,
+              Selected = 1
+          },
+          Series = new List<Series>
+              {
                 new AreaSeries
                 {
                     Data = ViewBag.IntradayData as List<AreaSeriesData>,
@@ -56,7 +49,11 @@
                     TurboThreshold = 10000,
                     FillColor = @ViewBag.fillColor
                 }
-            }
-        },
-        "chart"
-    ))
+                              }
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighstockRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

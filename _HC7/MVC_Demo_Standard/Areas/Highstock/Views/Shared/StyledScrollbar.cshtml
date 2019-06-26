@@ -1,4 +1,5 @@
 ﻿@using Highsoft.Web.Mvc.Stocks
+@using Highsoft.Web.Mvc.Stocks.Rendering
 
 <script src="http://code.highcharts.com/stock/highstock.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -10,44 +11,48 @@
     }
 
 </script>
-    
-    @(Html.Highsoft().GetHighstock(
-        new Highstock
-        {           
-            RangeSelector = new RangeSelector
-            {
-                Selected = 1
-            },
-            Title = new Title
-            {
-                Text =  "Apple Stock Price"
-            },
-            Scrollbar = new Scrollbar
-            {
-                BarBackgroundColor= "gray",                
-                BarBorderRadius= 7,
-                BarBorderWidth= 0,
-                ButtonBackgroundColor= "gray",
-                ButtonBorderWidth= 0,
-                ButtonBorderRadius= 7,
-                TrackBackgroundColor= "none",
-                TrackBorderWidth= 1,
-                TrackBorderRadius= 8,
-                TrackBorderColor= "#CCC",
-            },
-            Series = new List<Series>
-            {
+
+@{ var chartOptions =
+      new Highstock
+      {
+          RangeSelector = new RangeSelector
+          {
+              Selected = 1
+          },
+          Title = new Title
+          {
+              Text = "Apple Stock Price"
+          },
+          Scrollbar = new Scrollbar
+          {
+              BarBackgroundColor = "gray",
+              BarBorderRadius = 7,
+              BarBorderWidth = 0,
+              ButtonBackgroundColor = "gray",
+              ButtonBorderWidth = 0,
+              ButtonBorderRadius = 7,
+              TrackBackgroundColor = "none",
+              TrackBorderWidth = 1,
+              TrackBorderRadius = 8,
+              TrackBorderColor = "#CCC",
+          },
+          Series = new List<Series>
+              {
                 new LineSeries
                 {
                    Data = ViewBag.AppleData as List<LineSeriesData>,
                    Name = "Apple Stock Price",
-                   TurboThreshold = 10000,    
+                   TurboThreshold = 10000,
                    Tooltip = new LineSeriesTooltip
                    {
                        ValueDecimals = 2
                    }
                 }
-            },
-        },
-        "chart"
-    ))
+                              },
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighstockRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

@@ -1,21 +1,22 @@
 ﻿@using Highsoft.Web.Mvc.Stocks
+@using Highsoft.Web.Mvc.Stocks.Rendering
 
-    <script src="http://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    
-    @(Html.Highsoft().GetHighstock(
-        new Highstock
-        {
-            RangeSelector = new RangeSelector
-            {
-                Selected = 4
-            },
-            Title = new Title
-            {
-                Text = "USD to EUR exchange rate"
-            },
-            YAxis = new List<YAxis>
-            {
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@{ var chartOptions =
+      new Highstock
+      {
+          RangeSelector = new RangeSelector
+          {
+              Selected = 4
+          },
+          Title = new Title
+          {
+              Text = "USD to EUR exchange rate"
+          },
+          YAxis = new List<YAxis>
+              {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -23,7 +24,7 @@
                         Text = "Exchange rate"
                     },
                     PlotBands = new List<YAxisPlotBands>
-                    {
+    {
                         new YAxisPlotBands
                         {
                             From = ViewBag.Min,
@@ -37,9 +38,9 @@
                     }
                 },
 
-            },
-            Series = new List<Series>
-            {
+                              },
+          Series = new List<Series>
+              {
                 new LineSeries
                 {
                     Data = ViewBag.CurrencyData as List<LineSeriesData>,
@@ -51,7 +52,11 @@
                     },
                     TurboThreshold = 5000
                 }
-            }
-        },
-        "chart"
-    ))
+                              }
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighstockRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

@@ -4,44 +4,39 @@
 <script src="http://code.highcharts.com/stock/highstock.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-@(Html.Highsoft().GetHighstock(
-    new Highstock
-    {
-        Title = new Title
-        {
-            new Highstock
-            {
-                Title = new Title
-            }
-        },
-        YAxis = "AAPL stock price by minute"
-            },
-        RangeSelector = new Subtitle
-        {
-            Buttons = "Using ordinal X axis"
-                },
-                XAxis = new List<XAxis>
-                {
+@{ var chartOptions =
+      new Highstock
+      {
+          Title = new Title
+          {
+              Text = "AAPL stock price by minute"
+          },
+          Subtitle = new Subtitle
+          {
+              Text = "Using ordinal X axis"
+          },
+          XAxis = new List<XAxis>
+              {
                 new XAxis()
                 {
-            InputEnabled = true
-            Selected = 1
-        },
-        Series = new List<YAxis>
-        {
-            new YAxis()
-            {
-                Data = 360
+                    Ordinal = true
                 }
-                GapSize = 5,
-                RangeSelector = new RangeSelector()
+                              },
+          YAxis = new List<YAxis>
+              {
+                new YAxis()
                 {
-                    Buttons = new List<RangeSelectorButton>() { new RangeSelectorButton { Type = RangeSelectorButtonType.Minute, Count = 60, Text = "1h" }, new RangeSelectorButton { Type = RangeSelectorButtonType.Day, Count = 1, Text = "1d" }, new RangeSelectorButton { Type = RangeSelectorButtonType.All, Count = 1, Text = "All" } },
-                    InputEnabled = false,
-                    Selected = 1
-                },
-                Series = new List<Series>
-                {
+                    Min = 360
+                }
+                              },
+          RangeSelector = new RangeSelector()
+          {
+              Buttons = new List<RangeSelectorButton>() { new RangeSelectorButton { Type = "minute", Count = 60, Text = "1h" }, new RangeSelectorButton { Type = "day", Count = 1, Text = "1d" }, new RangeSelectorButton { Type = "all", Count = 1, Text = "All" } },
+              InputEnabled = false,
+              Selected = 1
+          },
+          Series = new List<Series>
+              {
                 new AreaSeries
                 {
                     Data = ViewBag.IntradayData as List<AreaSeriesData>,
@@ -52,10 +47,14 @@
                         ValueDecimals = 2
                     },
                     TurboThreshold = 10000,
-                FillColor = @ViewBag.fillColor
-            }
-        }
+                    FillColor = @ViewBag.fillColor
+                }
+                              }
 
-    },
-    "chart"
-))
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighstockRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
