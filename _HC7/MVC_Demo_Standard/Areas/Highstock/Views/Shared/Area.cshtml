@@ -1,4 +1,5 @@
 ﻿@using Highsoft.Web.Mvc.Stocks
+@using Highsoft.Web.Mvc.Stocks.Rendering
 
 <script src="http://code.highcharts.com/stock/highstock.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -11,19 +12,19 @@
 
 </script>
 
-@(Html.Highsoft().GetHighstock(
-        new Highstock
-        {
-            RangeSelector = new RangeSelector
-            {
-                Selected = 1
-            },
-            Title = new Title
-            {
-                Text = "Apple Stock Price"
-            },
-            Series = new List<Series>
-            {
+@{ var chartOptions =
+           new Highstock
+           {
+               RangeSelector = new RangeSelector
+               {
+                   Selected = 1
+               },
+               Title = new Title
+               {
+                   Text = "Apple Stock Price"
+               },
+               Series = new List<Series>
+               {
                 new AreaSeries
                 {
                    Data = ViewBag.AppleData as List<AreaSeriesData>,
@@ -33,10 +34,13 @@
                    {
                        ValueDecimals = 2
                    },
-                   FillColor = @ViewBag.fillColor                   
+                   FillColor = @ViewBag.fillColor
                 }
-            }
-        },
-        "chart"
-    )
-)
+                                       }
+           };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighstockRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

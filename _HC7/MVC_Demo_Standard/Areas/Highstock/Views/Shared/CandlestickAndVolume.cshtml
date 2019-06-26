@@ -1,4 +1,5 @@
 ﻿@using Highsoft.Web.Mvc.Stocks
+@using Highsoft.Web.Mvc.Stocks.Rendering
 
 <script src="http://code.highcharts.com/stock/highstock.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -10,18 +11,18 @@
 
             // split the data set into ohlc and volume
             var ohlc = [],
-            volume = [],
-            dataLength = data.length,
-            // set the allowed units for data grouping
-            groupingUnits = [[
-                'week',                         // unit name
-                [1]                             // allowed multiples
-            ], [
-                'month',
-                [1, 2, 3, 4, 6]
-            ]],
+                volume = [],
+                dataLength = data.length,
+                // set the allowed units for data grouping
+                groupingUnits = [[
+                    'week',                         // unit name
+                    [1]                             // allowed multiples
+                ], [
+                    'month',
+                    [1, 2, 3, 4, 6]
+                ]],
 
-            i = 0;
+                i = 0;
 
             for (i; i < dataLength; i += 1) {
                 ohlc.push([
@@ -47,31 +48,31 @@
 
             //window.setTimeout(function () { chart.redraw(); }, 1000);
         })
-     }
+    }
 
 </script>
-    
-    @(Html.Highsoft().GetHighstock(
-        new Highstock
-        {
-            Chart = new Highsoft.Web.Mvc.Stocks.Chart
-            {
-                //Events = new ChartEvents
-                //{
-                //     Load = "loadData"
-                //}
 
-            },
-            RangeSelector = new RangeSelector
-            {
-                Selected = 1
-            },
-            Title = new Title
-            {
-                Text = "AAPL Stock Price"
-            },
-            YAxis = new List<YAxis>
-            {
+@{ var chartOptions =
+          new Highstock
+          {
+              Chart = new Highsoft.Web.Mvc.Stocks.Chart
+              {
+         //Events = new ChartEvents
+         //{
+         //     Load = "loadData"
+         //}
+
+     },
+              RangeSelector = new RangeSelector
+              {
+                  Selected = 1
+              },
+              Title = new Title
+              {
+                  Text = "AAPL Stock Price"
+              },
+              YAxis = new List<YAxis>
+              {
                 new YAxis
                 {
                     Labels = new YAxisLabels
@@ -104,14 +105,14 @@
                     Id = "VolumeAxis"
 
                 }
-            },
-            Series = new List<Series>
-            {
+                              },
+              Series = new List<Series>
+              {
                 new CandleStickSeries
                 {
                     Data = ViewBag.AppleData as List<CandleStickSeriesData>,
                     Name = "AAPL",
-                    TurboThreshold = 10000                    
+                    TurboThreshold = 10000
                 },
                 new ColumnSeries
                 {
@@ -122,7 +123,11 @@
                     TurboThreshold = 10000,
                     ShowInNavigator = true
                 }
-            }
-        },
-        "chart"
-    ))
+                              }
+          };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighstockRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());

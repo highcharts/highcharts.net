@@ -1,4 +1,5 @@
 ﻿@using Highsoft.Web.Mvc.Stocks
+@using Highsoft.Web.Mvc.Stocks.Rendering
 
 <script src="http://code.highcharts.com/stock/highstock.js"></script>
 
@@ -10,23 +11,23 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 
-@(Html.Highsoft().GetHighstock(
-        new Highstock
-        {
-            Chart = new Highsoft.Web.Mvc.Stocks.Chart()
-            {
-                Type = ChartType.Arearange
-            },
-            RangeSelector = new RangeSelector
-            {
-                Selected = 2
-            },
-            Title = new Title
-            {
-                Text = "Apple Stock Price"
-            },
-            Series = new List<Series>
-            {
+@{ var chartOptions =
+           new Highstock
+           {
+               Chart = new Highsoft.Web.Mvc.Stocks.Chart()
+               {
+                   Type = ChartType.Arearange
+               },
+               RangeSelector = new RangeSelector
+               {
+                   Selected = 2
+               },
+               Title = new Title
+               {
+                   Text = "Apple Stock Price"
+               },
+               Series = new List<Series>
+               {
                 new ArearangeSeries
                 {
                    Data = ViewBag.AppleData as List<ArearangeSeriesData>,
@@ -37,14 +38,18 @@
                        ValueDecimals = 2
                    }
                 }
-            },
-            Navigator = new Navigator()
-            {
-                Series = new LineSeries()
-                {
-                    Data = ViewBag.NavigatorData as List<LineSeriesData>
-                }
-            }
-        },
-        "chart"
-    ))
+                                       },
+               Navigator = new Navigator()
+               {
+                   Series = new LineSeries()
+                   {
+                       Data = ViewBag.NavigatorData as List<LineSeriesData>
+                   }
+               }
+           };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighstockRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
