@@ -48,73 +48,76 @@
 </script>
 
 
-@*@(Html.Highsoft().GetHighcharts(
-    new Highcharts
-    {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart
-        {
-            Type = ChartType.Spline,
-            Animation = new Animation
-            {
-                Chart = new Highsoft.Web.Mvc.Charts.Chart
-                {
-                    Type = ChartType.Spline,
-                    Animation = new Animation
-                    {
-                        Enabled = true
-                    },
-                    MarginRight = 10,
-                    Events = new ChartEvents
-                    {
-                        Load = "initChart"
-                },
-                Title = new Title
-                {
-                    Text = "Live Random Data"
-                },
-                XAxis = new List<XAxis>
-                {
+@{ var chartOptions =
+      new Highcharts
+      {
+          Chart = new Highsoft.Web.Mvc.Charts.Chart
+          {
+              Type = ChartType.Spline,
+              Animation = new Animation
+              {
+                  Enabled = true
+              },
+              MarginRight = 10,
+              Events = new ChartEvents
+              {
+                  Load = "initChart"
+              }
+          },
+          Title = new Title
+          {
+              Text = "Live Random Data"
+          },
+          XAxis = new List<XAxis>
+              {
                 new XAxis
                 {
-                    Type = XAxisType.Datetime,
+                    Type = "datetime",
                     TickPixelInterval = 150
                 }
-                        },
-                YAxis = new List<YAxis>
+                              },
+          YAxis = new List<YAxis>
+              {
+                new YAxis
                 {
                     Title = new YAxisTitle
                     {
                         Text = "Value"
                     },
                     PlotLines =  new List<YAxisPlotLines>
-            {
+    {
                         new YAxisPlotLines
                         {
                             Value = 0,
-                        Width = 1,
-                        Color = "#808080"
+                            Width = 1,
+                            Color = "#808080"
+                        }
                     }
                 }
-            },
-        Tooltip = new Tooltip
-        {
-            Formatter = "formatTooltip"
-        },
-        Legend = new Legend
-        {
-            Enabled = false
-        },
-        Exporting = new Exporting
-        {
-            Enabled = false
-        },
-        Series = new List<Series>
-        {
-            new SplineSeries
-            {
-                Name = "Random Data"
-            }
-        }
-    }
-    , "chart")
-)*@
+                              },
+          Tooltip = new Tooltip
+          {
+              Formatter = "formatTooltip"
+          },
+          Legend = new Legend
+          {
+              Enabled = false
+          },
+          Exporting = new Exporting
+          {
+              Enabled = false
+          },
+          Series = new List<Series>
+              {
+                new SplineSeries
+                {
+                    Name = "Random Data"
+                }
+                              }
+      };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml());
