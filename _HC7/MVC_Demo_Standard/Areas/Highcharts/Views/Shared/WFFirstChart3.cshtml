@@ -90,22 +90,21 @@ public partial class HighchartsControl : System.Web.UI.UserControl
         &hellip;
     }
 }</pre></li>
-        <li>Render object to html with using <code>HighsoftNamespace</code>.<br />
-        <p class="c1">The chart&lsquo;s HTML code needs to be received, that is why you need to add a <strong>HighsoftNamespace</strong>. To do so, scroll down to the end of the method, then add <strong>HighsoftNamespace</strong>.</p>
-        <pre>HighsoftNamespace Highsoft = new HighsoftNamespace();
-//string result = Highsoft.Highcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6326 or older
-string result = Highsoft.GetHighcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6327 or newer</pre></li>
+        <li>Render object to html with using <code>HighchartsRenderer</code>.<br />
+        <p class="c1">The chart&lsquo;s HTML code needs to be received, that is why you need to add a <strong>HighchartsRenderer</strong>. To do so, scroll down to the end of the method, then add <strong>HighchartsRenderer</strong>.</p>
+        <pre>var renderer = new HighchartsRenderer(highcharts);</pre></li>
         <li>Send it to the view.<br />
-        <pre>Response.Write(result);</pre></li>
+        <pre>Response.Write(renderer.RenderHtml());</pre></li>
         
     </ol>
     <p><span>Sample code below:</span></p>
-        <pre style="padding-bottom:unset">
+    <pre style="padding-bottom:unset">
 using System;
 using System.Collections.Generic;
 using Highsoft.Web.Mvc.Charts;
+using Highsoft.Web.Mvc.Charts.Rendering;
 
-namespace WebApplication11.Control
+namespace HighchartsWebForms.Control
 {
     public partial class HighchartsControl : System.Web.UI.UserControl
     {
@@ -125,7 +124,7 @@ namespace WebApplication11.Control
             berlinValues.ForEach(p => berlinData.Add(new LineSeriesData { Y = p }));
             londonValues.ForEach(p => londonData.Add(new LineSeriesData { Y = p }));
 
-            Highcharts higcharts = new Highcharts
+            Highcharts highcharts = new Highcharts
             {
                 Title = new Title
                 {
@@ -138,32 +137,32 @@ namespace WebApplication11.Control
                     X = -20
                 },
                 XAxis = new List<XAxis>
+            {
+                new XAxis
                 {
-                    new XAxis
-                    {
-                        Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
-                    }
-                },
+                }
+            },
                 YAxis = new List<YAxis>
+            {
+                new YAxis
                 {
-                    new YAxis
+                    Title = new YAxisTitle
                     {
-                        Title = new YAxisTitle
-                        {
-                            Text = "Temperature (°C)"
-                        },
-                        PlotLines = new List<YAxisPlotLines>
-                        {
+                        Text = "Temperature (°C)"
+                    },
+                    PlotLines = new List<YAxisPlotLines>
+                    {
                             new YAxisPlotLines
-                            {
-                                Value = 0,
-                                Width = 1,
-                                Color = "#808080"
-                            }
+                        {
+                            Value = 0,
+                            Width = 1,
+                            Color = "#808080"
                         }
                     }
-                },
+                }
+            },
                 Tooltip = new Tooltip
                 {
                     ValueSuffix = "°C"
@@ -176,36 +175,34 @@ namespace WebApplication11.Control
                     BorderWidth = 0
                 },
                 Series = new List<Series>
+            {
+                new LineSeries
                 {
-                    new LineSeries
-                    {
-                        Name = "Tokyo",
-                        Data = tokyoData as List<LineSeriesData>
-                    },
-                    new LineSeries
-                    {
-                        Name = "NY",
-                        Data = nyData as List<LineSeriesData>
-                    },
-                    new LineSeries
-                    {
-                        Name = "Berlin",
-                        Data = berlinData as List<LineSeriesData>
-                    },
-                    new LineSeries
-                    {
-                        Name = "London",
-                        Data = londonData as List<LineSeriesData>
-                    }
+                    Name = "Tokyo",
+                    Data = tokyoData as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "NY",
+                    Data = nyData as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "Berlin",
+                    Data = berlinData as List<LineSeriesData>
+                },
+                new LineSeries
+                {
+                    Name = "London",
+                    Data = londonData as List<LineSeriesData>
                 }
+            }
             };
+            
+            highcharts.ID = "chart1";
+            var renderer = new HighchartsRenderer(highcharts);
 
-            HighsoftNamespace Highsoft = new HighsoftNamespace();
-
-            //string result = Highsoft.Highcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6326 or older
-            string result = Highsoft.GetHighcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6327 or newer
-
-            Response.Write(result);
+            Response.Write(renderer.RenderHtml());
         }
     }
 }
