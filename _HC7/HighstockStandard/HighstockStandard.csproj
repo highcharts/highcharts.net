@@ -5,6 +5,8 @@
     <AssemblyName>Highstock</AssemblyName>
     <Version>7.1.1</Version>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>highcharts.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
