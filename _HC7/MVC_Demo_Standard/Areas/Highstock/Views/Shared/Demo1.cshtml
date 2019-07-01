@@ -2,35 +2,36 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
 
 <script type="text/javascript">
 
-        function formatXAxis() {
-            return this.value; // clean, unformatted number for year
-        }
+    function formatXAxis() {
+        return this.value; // clean, unformatted number for year
+    }
 
-        function formatYAxis() {
-            return this.value / 1000 + 'k';
-        }
+    function formatYAxis() {
+        return this.value / 1000 + 'k';
+    }
 
 
 </script>
 
 
-@(Html.Highsoft().GetHighcharts(
-        new Highcharts
-        {
-            Title = new Title
-            {
-                Text = "US and USSR nuclear stockpiles"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "Source: <a href='http://thebulletin.metapress.com/content/c4120650912x74k7/fulltext.pdf'>thebulletin.metapress.com</a>"
-            },
+@{ var chartOptions =
+             new Highcharts
+             {
+                 Title = new Title
+                 {
+                     Text = "US and USSR nuclear stockpiles"
+                 },
+                 Subtitle = new Subtitle
+                 {
+                     Text = "Source: <a href='http://thebulletin.metapress.com/content/c4120650912x74k7/fulltext.pdf'>thebulletin.metapress.com</a>"
+                 },
 
-            XAxis = new List<XAxis>
-            {
+                 XAxis = new List<XAxis>
+                 {
                 new XAxis
                 {
                     AllowDecimals = false,
@@ -40,9 +41,9 @@
                     }
 
                 }
-            },
-            YAxis = new List<YAxis>
-            {
+                         },
+                 YAxis = new List<YAxis>
+                 {
                 new YAxis
                 {
                     Title = new YAxisTitle
@@ -54,33 +55,34 @@
                         Formatter = "formatYAxis"
                     }
                 }
-            },
-            Tooltip = new Tooltip
-            {
-                PointFormat = "{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}"
-            },
-            PlotOptions = new PlotOptions
-            {
-                Area = new PlotOptionsArea
-                {
-                    PointStart = 1940,
-                    Marker = new PlotOptionsAreaMarker
-                    {
-                        Enabled = false,
-                        Symbol = "circle",
-                        Radius = 2,
-                        States = new PlotOptionsAreaMarkerStates
-                        {
-                            Hover = new PlotOptionsAreaMarkerStatesHover
-                            {
-                                Enabled = true
-                            }
-                        }
-                    }
-                }
-            },
-            Series = new List<Series>
-            {
+                         },
+                 Tooltip = new Tooltip
+                 {
+                     PointFormat = "{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}"
+                 },
+                 PlotOptions = new PlotOptions
+                 {
+
+                     Area = new PlotOptionsArea
+                     {
+                         PointStart = 1940,
+                         Marker = new PlotOptionsAreaMarker
+                         {
+                             Enabled = false,
+                             Symbol = "circle",
+                             Radius = 2,
+                             States = new PlotOptionsAreaMarkerStates
+                             {
+                                 Hover = new PlotOptionsAreaMarkerStatesHover
+                                 {
+                                     Enabled = true
+                                 }
+                             }
+                         }
+                     }
+                 },
+                 Series = new List<Series>
+                 {
                 new AreaSeries
                 {
                     Name = "USA",
@@ -91,7 +93,11 @@
                     Name = "USSR/Russia",
                     Data = @ViewData["russiaData"] as List<AreaSeriesData>
                 }
-            }
-        }
-        , "chart1")
-)
+                         }
+             };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
+}
+
+@Html.Raw(renderer.RenderHtml())
