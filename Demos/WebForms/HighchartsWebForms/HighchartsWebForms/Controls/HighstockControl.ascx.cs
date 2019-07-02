@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Web;
 using Highsoft.Web.Mvc.Stocks;
+using Highsoft.Web.Mvc.Stocks.Rendering;
 
 namespace HighchartsWebForms.Controls
 {
@@ -1887,11 +1888,15 @@ namespace HighchartsWebForms.Controls
 
             };
 
-            HighsoftNamespace highsoft = new HighsoftNamespace();
-            HtmlString chart = highsoft.GetHighstock(highstock, "chart2");
+            //HighsoftNamespace highsoft = new HighsoftNamespace();
+            //HtmlString chart = highsoft.GetHighstock(highstock, "chart2");
+            highstock.ID = "chart2";
+            var renderer = new HighstockRenderer(highstock);
+
+
 
             //Response.Write(chart.ToHtmlString());
-            ViewState["HighstockChart"] = chart.ToHtmlString();
+            ViewState["HighstockChart"] = renderer.RenderHtml();
         }
     }
 }

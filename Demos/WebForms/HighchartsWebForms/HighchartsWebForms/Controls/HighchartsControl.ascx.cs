@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Highsoft.Web.Mvc.Charts;
+using Highsoft.Web.Mvc.Charts.Rendering;
 
 namespace HighchartsWebForms.Control
 {
@@ -22,7 +23,7 @@ namespace HighchartsWebForms.Control
             berlinValues.ForEach(p => berlinData.Add(new LineSeriesData { Y = p }));
             londonValues.ForEach(p => londonData.Add(new LineSeriesData { Y = p }));
 
-            Highcharts higcharts = new Highcharts
+            Highcharts highcharts = new Highcharts
             {
                 Title = new Title
                 {
@@ -96,12 +97,11 @@ namespace HighchartsWebForms.Control
                 }
             }
             };
+            
+            highcharts.ID = "chart1";
+            var renderer = new HighchartsRenderer(highcharts);
 
-            HighsoftNamespace Highsoft = new HighsoftNamespace();
-            //string result = Highsoft.Highcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6326 or older
-            string result = Highsoft.GetHighcharts(higcharts, "chart1").ToHtmlString(); //For version 5.0.6327 or newer
-
-            Response.Write(result);
+            Response.Write(renderer.RenderHtml());
         }
     }
 }
