@@ -10,14 +10,19 @@ namespace Highsoft.Web.Mvc.Charts
     {
         private static string KEY_NAME = "Highcharts";
 
-        public static SerialKey Check()
+        public static SerialKey Check(string serialKey = null)
         {
-            string line = GetSerialFromFile();
+            string line = string.Empty;
+            if (string.IsNullOrEmpty(serialKey))
+                line = GetSerialFromFile();
+            else
+                line = serialKey;
 
             if (string.IsNullOrWhiteSpace(line))
                 return SerialKey.Missing;
 
             var serial = DecodeSerial(line);
+
             if (!IsSerialCorrect(serial))
                 return SerialKey.Invalid;
 

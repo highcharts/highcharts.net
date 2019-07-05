@@ -23,12 +23,12 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
         public string RenderHtml(bool addContainer = true)
         {
-            return GetResponse(LicenseVerifier.Check(), addContainer);
+            return GetResponse(LicenseVerifier.Check(_SerialKey), addContainer);
         }
 
         public string GetJavascript()
         {
-            var licenseType = LicenseVerifier.Check();
+            var licenseType = LicenseVerifier.Check(_SerialKey);
 
             if (licenseType == SerialKey.Missing)
                 return "<div style=\"background:yellow\">Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a></div>";
@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
         public string GetJavascriptFunction(string functionName)
         {
-            var licenseType = LicenseVerifier.Check();
+            var licenseType = LicenseVerifier.Check(_SerialKey);
 
             if (licenseType == SerialKey.Missing)
                 return "<div style=\"background:yellow\">Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a></div>";
@@ -134,7 +134,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
         public string GetJsonOptions()
         {
-            return GetJsonResponse(LicenseVerifier.Check());
+            return GetJsonResponse(LicenseVerifier.Check(_SerialKey));
         }
 
         private string GetStartupJavascriptFunction(string functionName)
