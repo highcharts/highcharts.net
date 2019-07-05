@@ -1,5 +1,8 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
 
+#Version 7.1.1.2
+Add solution to pass serial key as argument in constructor of HigchartsRenderer or HighstockRenderer.
+
 #Version 7.1.1.1
 Move to .NET Standard. Please note that upgrading the wrapper to version 7.1.1.1 may require some changes in your application. Please see http://dotnet.highcharts.com/Highcharts/Demo/Docs?section=UpgradeToStandard for more details.
 
