@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public XAxisPlotLines()
 		{
+			AcrossPanes = AcrossPanes_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			DashStyle = DashStyle_DefaultValue = "Solid";
@@ -26,6 +27,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// Flag to decide if plotLine should be rendered across all panes.
+		/// </summary>
+		public bool? AcrossPanes { get; set; }
+		private bool? AcrossPanes_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// A custom class name, in addition to the default `highcharts-plot-line`,to apply to each individual line.
@@ -94,6 +102,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (AcrossPanes != AcrossPanes_DefaultValue) h.Add("acrossPanes",AcrossPanes);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);

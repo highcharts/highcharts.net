@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Point = Point_DefaultValue = new AnnotationsShapesPoint();
 			Points = Points_DefaultValue = new List<AnnotationsShapesPoint>();
 			R = R_DefaultValue = 0;
+			Snap = Snap_DefaultValue = 2;
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
 			Type = Type_DefaultValue = " rect ";
@@ -44,28 +45,28 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Id of the marker which will be drawn at the final vertex of the path.Custom markers can be defined in defs property.
+		/// Id of the marker which will be drawn at the final vertex of thepath. Custom markers can be defined in defs property.
 		/// </summary>
 		public string MarkerEnd { get; set; }
 		private string MarkerEnd_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Id of the marker which will be drawn at the first vertex of the path.Custom markers can be defined in defs property.
+		/// Id of the marker which will be drawn at the first vertex of thepath. Custom markers can be defined in defs property.
 		/// </summary>
 		public string MarkerStart { get; set; }
 		private string MarkerStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// This option defines the point to which the shape will be connected.It can be either the point which exists in the series - it isreferenced by the point's id - or a new point with defined x, yproperties and optionally axes.
+		/// This option defines the point to which the shape will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new point withdefined x, y properties and optionally axes.
 		/// </summary>
 		public AnnotationsShapesPoint Point { get; set; }
 		private AnnotationsShapesPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of points for the shape. This option is available for shapeswhich can use multiple points such as path. A point can be eithera point object or a point's id.
+		/// An array of points for the shape. This option is available forshapes which can use multiple points such as path. A point can beeither a point object or a point's id.
 		/// </summary>
 		public List<AnnotationsShapesPoint> Points { get; set; }
 		private List<AnnotationsShapesPoint> Points_DefaultValue { get; set; }
@@ -76,6 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? R { get; set; }
 		private double? R_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines additional snapping area around an annotationmaking this annotation to focus. Defined in pixels.
+		/// </summary>
+		public double? Snap { get; set; }
+		private double? Snap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -117,6 +125,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
 			if (Points != Points_DefaultValue) h.Add("points", HashifyList(Points));
 			if (R != R_DefaultValue) h.Add("r",R);
+			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
 			if (Type != Type_DefaultValue) h.Add("type",Type);

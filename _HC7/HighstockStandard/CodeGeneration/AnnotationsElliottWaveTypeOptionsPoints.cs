@@ -14,10 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AnnotationsElliottWaveTypeOptionsPoints()
 		{
-			ControlPoint = ControlPoint_DefaultValue = null;
 			Label = Label_DefaultValue = new AnnotationsElliottWaveTypeOptionsPointsLabel();
-			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
 			
 		}	
 		
@@ -25,39 +22,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? ControlPoint { get; set; }
-		private double? ControlPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public AnnotationsElliottWaveTypeOptionsPointsLabel Label { get; set; }
 		private AnnotationsElliottWaveTypeOptionsPointsLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The x position of the point.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y position of the point.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (ControlPoint != ControlPoint_DefaultValue) h.Add("controlPoint",ControlPoint);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 
 			return h;

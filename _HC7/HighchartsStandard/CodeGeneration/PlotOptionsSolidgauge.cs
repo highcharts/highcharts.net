@@ -31,6 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new PlotOptionsSolidgaugeEvents();
 			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
+			InnerRadius = InnerRadius_DefaultValue = "60";
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsSolidgaugeLabel();
 			Linecap = Linecap_DefaultValue = PlotOptionsSolidgaugeLinecap.Round;
@@ -43,6 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsSolidgaugePointIntervalUnit.Null;
 			PointStart = PointStart_DefaultValue = 0;
+			Radius = Radius_DefaultValue = "100";
 			Rounded = Rounded_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -128,7 +130,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.Since v6.2.0, multiple data labels can be applied to each singlepoint by defining them as an array of configs.In styled mode, the data labels can be styled with the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](https://www.highcharts.com/samples/highcharts/css/series-datalabels)).
+		/// 
 		/// </summary>
 		public PlotOptionsSolidgaugeDataLabels DataLabels { get; set; }
 		private PlotOptionsSolidgaugeDataLabels DataLabels_DefaultValue { get; set; }
@@ -174,6 +176,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
 		private bool? IncludeInDataExport_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The inner radius for points in a solid gauge. Can be given as a number(pixels) or percentage string.
+		/// </summary>
+		public string InnerRadius { get; set; }
+		private string InnerRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -258,6 +267,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? PointStart { get; set; }
 		private double? PointStart_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The outer radius for points in a solid gauge. Can be given as a number(pixels) or percentage string.
+		/// </summary>
+		public string Radius { get; set; }
+		private string Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -351,6 +367,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
+			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
@@ -363,6 +380,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
+			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (Rounded != Rounded_DefaultValue) h.Add("rounded",Rounded);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

@@ -1,5 +1,14 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
 
+#Version 7.1.2.2
+Fix PlotOptionsGaugeDataLabels
+
+#Version 7.1.1.2
+Add solution to pass serial key as argument in constructor of HigchartsRenderer or HighstockRenderer.
+
+#Version 7.1.1.1
+Move to .NET Standard. Please note that upgrading the wrapper to version 7.1.1.1 may require some changes in your application. Please see http://dotnet.highcharts.com/Highcharts/Demo/Docs?section=UpgradeToStandard for more details.
+
 # Version 7.0.3.10
 Please be aware that keys format has been changed with 7.0.3.10. You may need a different key to run our product after an update to 7.0.3.10 or newer. Please contact us at support@highcharts.com
 

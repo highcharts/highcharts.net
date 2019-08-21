@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BaseSeries = BaseSeries_DefaultValue = "undefined";
+			BaseSeries = BaseSeries_DefaultValue = "";
 			BinsNumber = BinsNumber_DefaultValue = "square-root";
 			BinWidth = BinWidth_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = HistogramSeriesBoostBlending.Undefined;
@@ -34,7 +34,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = HistogramSeriesCursor.Null;
-			Data = Data_DefaultValue = new List<HistogramSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new HistogramSeriesDataLabels();
 			Depth = Depth_DefaultValue = 25;
 			Description = Description_DefaultValue = "";
@@ -127,7 +126,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A preferable number of bins. It is a suggestion, so a histogram may havea different number of bins. By default it is set to the square rootof the base series' data length. Available options are: `square-root`,`sturges`, `rice`. You can also define a function which takes a`baseSeries` as a parameter and should return a positive integer.
+		/// A preferable number of bins. It is a suggestion, so a histogram mayhave a different number of bins. By default it is set to the squareroot of the base series' data length. Available options are:`square-root`, `sturges`, `rice`. You can also define a functionwhich takes a `baseSeries` as a parameter and should return apositive integer.
 		/// </summary>
 		public string BinsNumber { get; set; }
 		private string BinsNumber_DefaultValue { get; set; }
@@ -229,13 +228,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public HistogramSeriesCursor Cursor { get; set; }
 		private HistogramSeriesCursor Cursor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array of data points for the series. For the `histogram` series type,points are calculated dynamically. See[histogram.baseSeries](#series.histogram.baseSeries).
-		/// </summary>
-		public List<HistogramSeriesData> Data { get; set; }
-		private List<HistogramSeriesData> Data_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -626,7 +618,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
-			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);

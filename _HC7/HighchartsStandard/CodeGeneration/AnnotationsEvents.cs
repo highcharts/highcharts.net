@@ -46,9 +46,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Add != Add_DefaultValue) h.Add("add",Add);
-			if (AfterUpdate != AfterUpdate_DefaultValue) h.Add("afterUpdate",AfterUpdate);
-			if (Remove != Remove_DefaultValue) h.Add("remove",Remove);
+			if (Add != Add_DefaultValue) { h.Add("add",Add); Highcharts.AddFunction("AnnotationsEventsAdd.add", Add); }  
+			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); Highcharts.AddFunction("AnnotationsEventsAfterUpdate.afterUpdate", AfterUpdate); }  
+			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("AnnotationsEventsRemove.remove", Remove); }  
 			
 
 			return h;

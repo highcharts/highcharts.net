@@ -273,7 +273,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This option allows to define the length of the bell curve. A unit of thelength of the bell curve is standard deviation.
+		/// This option allows to define the length of the bell curve. A unit ofthe length of the bell curve is standard deviation.
 		/// </summary>
 		public double? Intervals { get; set; }
 		private double? Intervals_DefaultValue { get; set; }

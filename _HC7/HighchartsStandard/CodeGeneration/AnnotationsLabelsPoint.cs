@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This number defines which xAxis the point is connected to. It refersto either the axis id or the index of the axis in the xAxis array.If the option is not configured or the axis is not found the point'sx coordinate refers to the chart pixels.
+		/// This number defines which xAxis the point is connected to. Itrefers to either the axis id or the index of the axis in thexAxis array. If the option is not configured or the axis is notfound the point's x coordinate refers to the chart pixels.
 		/// </summary>
 		public string XAxis { get; set; }
 		private string XAxis_DefaultValue { get; set; }
@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This number defines which yAxis the point is connected to. It refersto either the axis id or the index of the axis in the yAxis array.If the option is not configured or the axis is not found the point'sy coordinate refers to the chart pixels.
+		/// This number defines which yAxis the point is connected to. Itrefers to either the axis id or the index of the axis in theyAxis array. If the option is not configured or the axis is notfound the point's y coordinate refers to the chart pixels.
 		/// </summary>
 		public string YAxis { get; set; }
 		private string YAxis_DefaultValue { get; set; }

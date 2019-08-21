@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum AnnotationsTunnelLabelOptionsOverflow
     {
-        None, 
+        Allow, 
 		Justify
     }
 }

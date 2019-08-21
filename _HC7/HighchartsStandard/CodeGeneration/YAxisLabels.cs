@@ -40,7 +40,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// What part of the string the given position is anchored to. Canbe one of `"left"`, `"center"` or `"right"`. The exact positionalso depends on the `labels.x` setting.Angular gauges and solid gauges defaults to `"center"`.
+		/// What part of the string the given position is anchored to. Canbe one of `"left"`, `"center"` or `"right"`. The exact positionalso depends on the `labels.x` setting.Angular gauges and solid gauges defaults to `"center"`.Solid gauges with two labels have additional option `"auto"`for automatic horizontal and vertical alignment.
 		/// </summary>
 		public YAxisLabelsAlign Align { get; set; }
 		private YAxisLabelsAlign Align_DefaultValue { get; set; }
@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Angular gauges and solid gauges only. The label's pixel distancefrom the perimeter of the plot area.
+		/// Angular gauges and solid gauges only.The label's pixel distance from the perimeter of the plot area.Since v7.1.2: If it's a percentage string, it is interpreted thesame as [series.radius](#plotOptions.gauge.radius), so label can bealigned under the gauge's shape.
 		/// </summary>
 		public double? Distance { get; set; }
 		private double? Distance_DefaultValue { get; set; }

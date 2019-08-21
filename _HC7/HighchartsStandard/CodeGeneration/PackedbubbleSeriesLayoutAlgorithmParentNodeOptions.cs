@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			InitialPositionRadius = InitialPositionRadius_DefaultValue = null;
 			InitialPositions = InitialPositions_DefaultValue = null;
 			Integration = Integration_DefaultValue = PackedbubbleSeriesLayoutAlgorithmParentNodeOptionsIntegration.Euler;
+			LinkLength = LinkLength_DefaultValue = null;
 			Marker = Marker_DefaultValue = new PackedbubbleSeriesLayoutAlgorithmParentNodeOptionsMarker();
 			MaxIterations = MaxIterations_DefaultValue = 400;
 			MaxSpeed = MaxSpeed_DefaultValue = 50;
@@ -61,6 +62,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PackedbubbleSeriesLayoutAlgorithmParentNodeOptionsIntegration Integration { get; set; }
 		private PackedbubbleSeriesLayoutAlgorithmParentNodeOptionsIntegration Integration_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Ideal length (px) of the link between two nodes. When notdefined, length is calculated as:`Math.pow(availableWidth * availableHeight / nodesLength, 0.4);`Note: Because of the algorithm specification, length of each linkmight be not exactly as specified.
+		/// </summary>
+		public double? LinkLength { get; set; }
+		private double? LinkLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -107,6 +115,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (InitialPositionRadius != InitialPositionRadius_DefaultValue) h.Add("initialPositionRadius",InitialPositionRadius);
 			if (InitialPositions != InitialPositions_DefaultValue) h.Add("initialPositions",InitialPositions);
 			if (Integration != Integration_DefaultValue) h.Add("integration", Highcharts.FirstCharacterToLower(Integration.ToString()));
+			if (LinkLength != LinkLength_DefaultValue) h.Add("linkLength",LinkLength);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (MaxIterations != MaxIterations_DefaultValue) h.Add("maxIterations",MaxIterations);
 			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);

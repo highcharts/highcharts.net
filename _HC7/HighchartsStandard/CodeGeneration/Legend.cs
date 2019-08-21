@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ItemStyle = ItemStyle_DefaultValue = new LegendItemStyle();
 			ItemWidth = ItemWidth_DefaultValue = null;
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
-			LabelFormatter = LabelFormatter_DefaultValue = "";
+			LabelFormatter = LabelFormatter_DefaultValue = null;
 			Layout = Layout_DefaultValue = LegendLayout.Horizontal;
 			LineHeight = LineHeight_DefaultValue = 16;
 			Margin = Margin_DefaultValue = null;
@@ -195,8 +195,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Callback function to format each of the series' labels. The `this`keyword refers to the series object, or the point object in case ofpie charts. By default the series or point name is printed.
 		/// </summary>
-		public string LabelFormatter { get; set; }
-		private string LabelFormatter_DefaultValue { get; set; }
+		public bool? LabelFormatter { get; set; }
+		private bool? LabelFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -369,7 +369,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ItemStyle.IsDirty()) h.Add("itemStyle",ItemStyle.ToHashtable());
 			if (ItemWidth != ItemWidth_DefaultValue) h.Add("itemWidth",ItemWidth);
 			if (LabelFormat != LabelFormat_DefaultValue) h.Add("labelFormat",LabelFormat);
-			if (LabelFormatter != LabelFormatter_DefaultValue) { h.Add("labelFormatter",LabelFormatter); Highcharts.AddFunction("LegendLabelFormatter.labelFormatter", LabelFormatter); }  
+			if (LabelFormatter != LabelFormatter_DefaultValue) h.Add("labelFormatter",LabelFormatter);
 			if (Layout != Layout_DefaultValue) h.Add("layout", Highcharts.FirstCharacterToLower(Layout.ToString()));
 			if (LineHeight != LineHeight_DefaultValue) h.Add("lineHeight",LineHeight);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);

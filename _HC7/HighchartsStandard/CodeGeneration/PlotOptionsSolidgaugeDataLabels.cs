@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsSolidgaugeDataLabelsVerticalAlign.Top;
 			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
+			Y = Y_DefaultValue = 0;
 			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	

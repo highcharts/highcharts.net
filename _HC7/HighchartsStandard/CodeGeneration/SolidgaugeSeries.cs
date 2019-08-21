@@ -34,6 +34,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Id = Id_DefaultValue = "";
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
+			InnerRadius = InnerRadius_DefaultValue = "60";
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new SolidgaugeSeriesLabel();
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -48,6 +49,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = SolidgaugeSeriesPointIntervalUnit.Null;
 			PointStart = PointStart_DefaultValue = 0;
+			Radius = Radius_DefaultValue = "100";
 			Rounded = Rounded_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -206,6 +208,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The inner radius for points in a solid gauge. Can be given as a number(pixels) or percentage string.
+		/// </summary>
+		public string InnerRadius { get; set; }
+		private string InnerRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
@@ -301,6 +310,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? PointStart { get; set; }
 		private double? PointStart_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The outer radius for points in a solid gauge. Can be given as a number(pixels) or percentage string.
+		/// </summary>
+		public string Radius { get; set; }
+		private string Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -418,6 +434,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
@@ -432,6 +449,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
+			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (Rounded != Rounded_DefaultValue) h.Add("rounded",Rounded);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

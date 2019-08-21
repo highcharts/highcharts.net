@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreasplineSeriesStatesHoverMarkerStatesInactive()
 		{
-			Opacity = Opacity_DefaultValue = "";
+			Opacity = Opacity_DefaultValue = null;
 			
 		}	
 		
@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Opacity of inactive markers.
 		/// </summary>
-		public string Opacity { get; set; }
-		private string Opacity_DefaultValue { get; set; }
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum AnnotationsCrookedLineLabelOptionsOverflow
     {
-        None, 
+        Allow, 
 		Justify
     }
 }

@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public NavigatorXAxisPlotBands()
 		{
+			AcrossPanes = AcrossPanes_DefaultValue = true;
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
@@ -27,6 +28,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// Flag to decide if plotBand should be rendered across all panes.
+		/// </summary>
+		public bool? AcrossPanes { get; set; }
+		private bool? AcrossPanes_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Border color for the plot band. Also requires `borderWidth` to be set.
@@ -102,6 +110,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (AcrossPanes != AcrossPanes_DefaultValue) h.Add("acrossPanes",AcrossPanes);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);

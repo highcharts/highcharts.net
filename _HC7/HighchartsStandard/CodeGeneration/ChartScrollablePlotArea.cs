@@ -14,12 +14,21 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ChartScrollablePlotArea()
 		{
+			MinHeight = MinHeight_DefaultValue = null;
 			MinWidth = MinWidth_DefaultValue = null;
 			Opacity = Opacity_DefaultValue = null;
 			ScrollPositionX = ScrollPositionX_DefaultValue = null;
+			ScrollPositionY = ScrollPositionY_DefaultValue = null;
 			
 		}	
 		
+
+		/// <summary>
+		/// The minimum height for the plot area. If it gets smaller than this, the plotarea will become scrollable.
+		/// </summary>
+		public double? MinHeight { get; set; }
+		private double? MinHeight_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The minimum width for the plot area. If it gets smaller than this, the plotarea will become scrollable.
@@ -40,15 +49,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ScrollPositionX { get; set; }
 		private double? ScrollPositionX_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The initial scrolling position of the scrollable plot area. Ranges from 0 to1, where 0 aligns the plot area to the top and 1 aligns it to the bottom.
+		/// </summary>
+		public double? ScrollPositionY { get; set; }
+		private double? ScrollPositionY_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (MinHeight != MinHeight_DefaultValue) h.Add("minHeight",MinHeight);
 			if (MinWidth != MinWidth_DefaultValue) h.Add("minWidth",MinWidth);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (ScrollPositionX != ScrollPositionX_DefaultValue) h.Add("scrollPositionX",ScrollPositionX);
+			if (ScrollPositionY != ScrollPositionY_DefaultValue) h.Add("scrollPositionY",ScrollPositionY);
 			
 
 			return h;

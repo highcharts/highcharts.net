@@ -29,14 +29,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
-			NodeFormatter = NodeFormatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = PlotOptionsOrganizationDataLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = 0;
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			Shape = Shape_DefaultValue = "square";
 			Style = Style_DefaultValue = new PlotOptionsOrganizationDataLabelsStyle();
-			UseHTML = UseHTML_DefaultValue = true;
+			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsOrganizationDataLabelsVerticalAlign.Top;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
@@ -151,13 +150,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A callback for defining the format for _nodes_ in theorganization chart. The `nodeFormat` option takes precedence over`nodeFormatter`.In an organization chart, the `nodeFormatter` is a quite complexfunction of the available options, striving for a good defaultlayout of cards with or without images. In organization chart,the data labels come with `useHTML` set to true, meaning theywill be rendered as true HTML above the SVG.
-		/// </summary>
-		public string NodeFormatter { get; set; }
-		private string NodeFormatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsOrganizationDataLabelsOverflow Overflow { get; set; }
@@ -253,7 +245,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsOrganizationDataLabelsFormatter.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (NodeFormatter != NodeFormatter_DefaultValue) h.Add("nodeFormatter",NodeFormatter);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);

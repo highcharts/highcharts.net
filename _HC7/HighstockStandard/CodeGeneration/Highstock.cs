@@ -22,7 +22,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Credits = Credits_DefaultValue = new Credits();
 			Data = Data_DefaultValue = new Data();
 			Defs = Defs_DefaultValue = null;
-			Drilldown = Drilldown_DefaultValue = new Drilldown();
 			Exporting = Exporting_DefaultValue = new Exporting();
 			Global = Global_DefaultValue = new Global();
 			Labels = Labels_DefaultValue = new Labels();
@@ -56,7 +55,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for configuring annotations, for example labels, arrows orshapes. Annotations can be tied to points, axis coordinates or chartpixel coordinates.
+		/// A basic type of an annotation. It allows to add custom labelsor shapes. The items  can be tied to points, axis coordinatesor chart pixel coordinates.
 		/// </summary>
 		public List<Annotations> Annotations { get; set; }
 		private List<Annotations> Annotations_DefaultValue { get; set; }
@@ -91,7 +90,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The Data module provides a simplified interface for adding data toa chart from sources like CVS, HTML tables or grid views. See alsothe [tutorial article on the Data module](https://www.highcharts.com/docs/working-with-data/data-module).It requires the `modules/data.js` file to be loaded.Please note that the default way of adding data in Highcharts, withoutthe need of a module, is through the [series.data](#series.data)option.
+		/// The Data module provides a simplified interface for adding data toa chart from sources like CVS, HTML tables or grid views. See alsothe [tutorial article on the Data module](https://www.highcharts.com/docs/working-with-data/data-module).It requires the `modules/data.js` file to be loaded.Please note that the default way of adding data in Highcharts, withoutthe need of a module, is through the [series._type_.data](#series.line.data)option.
 		/// </summary>
 		public Data Data { get; set; }
 		private Data Data_DefaultValue { get; set; }
@@ -102,13 +101,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Object Defs { get; set; }
 		private Object Defs_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for drill down, the concept of inspecting increasingly highresolution data through clicking on chart items like columns or pie slices.The drilldown feature requires the drilldown.js file to be loaded,found in the modules directory of the download package, or online at[code.highcharts.com/modules/drilldown.js](code.highcharts.com/modules/drilldown.js).
-		/// </summary>
-		public Drilldown Drilldown { get; set; }
-		private Drilldown Drilldown_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -126,7 +118,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// HTML labels that can be positioned anywhere in the chart area.
+		/// HTML labels that can be positioned anywhere in the chart area.This option is deprecated since v7.1.2. Instead, use[annotations](#annotations) that support labels.
 		/// </summary>
 		public Labels Labels { get; set; }
 		private Labels Labels_DefaultValue { get; set; }
@@ -270,7 +262,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Credits.IsDirty()) h.Add("credits",Credits.ToHashtable());
 			if (Data.IsDirty()) h.Add("data",Data.ToHashtable());
 			if (Defs != Defs_DefaultValue) h.Add("defs",Defs);
-			if (Drilldown.IsDirty()) h.Add("drilldown",Drilldown.ToHashtable());
 			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
 			if (Global.IsDirty()) h.Add("global",Global.ToHashtable());
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());

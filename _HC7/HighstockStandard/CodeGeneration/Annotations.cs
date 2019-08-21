@@ -14,8 +14,9 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public Annotations()
 		{
+			ControlPointOptions = ControlPointOptions_DefaultValue = new AnnotationsControlPointOptions();
 			CrookedLine = CrookedLine_DefaultValue = new AnnotationsCrookedLine();
-			Draggable = Draggable_DefaultValue = "xy";
+			Draggable = Draggable_DefaultValue = AnnotationsDraggable.Xy;
 			ElliottWave = ElliottWave_DefaultValue = new AnnotationsElliottWave();
 			Events = Events_DefaultValue = new AnnotationsEvents();
 			Fibonacci = Fibonacci_DefaultValue = new AnnotationsFibonacci();
@@ -36,6 +37,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
+		/// Options for annotation's control points. Each control pointinherits options from controlPointOptions object.Options from the controlPointOptions can be overwrittenby options in a specific control point.
+		/// </summary>
+		public AnnotationsControlPointOptions ControlPointOptions { get; set; }
+		private AnnotationsControlPointOptions ControlPointOptions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A crooked line annotation.
 		/// </summary>
 		public AnnotationsCrookedLine CrookedLine { get; set; }
@@ -45,8 +53,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Allow an annotation to be draggable by a user. Possiblevalues are `"x"`, `"xy"`, `"y"` and `""` (disabled).
 		/// </summary>
-		public string Draggable { get; set; }
-		private string Draggable_DefaultValue { get; set; }
+		public AnnotationsDraggable Draggable { get; set; }
+		private AnnotationsDraggable Draggable_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -57,7 +65,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Events available in annotations.
 		/// </summary>
 		public AnnotationsEvents Events { get; set; }
 		private AnnotationsEvents Events_DefaultValue { get; set; }
@@ -85,7 +93,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for annotation's labels. Each label inherits optionsfrom the labelOptions object. An option from the labelOptions can beoverwritten by config for a specific label.
+		/// Options for annotation's labels. Each label inherits optionsfrom the labelOptions object. An option from the labelOptionscan be overwritten by config for a specific label.
 		/// </summary>
 		public AnnotationsLabelOptions LabelOptions { get; set; }
 		private AnnotationsLabelOptions LabelOptions_DefaultValue { get; set; }
@@ -113,7 +121,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for annotation's shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptions can beoverwritten by config for a specific shape.
+		/// Options for annotation's shapes. Each shape inherits options fromthe shapeOptions object. An option from the shapeOptions can beoverwritten by config for a specific shape.
 		/// </summary>
 		public AnnotationsShapeOptions ShapeOptions { get; set; }
 		private AnnotationsShapeOptions ShapeOptions_DefaultValue { get; set; }
@@ -158,8 +166,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (ControlPointOptions.IsDirty()) h.Add("controlPointOptions",ControlPointOptions.ToHashtable());
 			if (CrookedLine.IsDirty()) h.Add("crookedLine",CrookedLine.ToHashtable());
-			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
+			if (Draggable != Draggable_DefaultValue) h.Add("draggable", Highstock.FirstCharacterToLower(Draggable.ToString()));
 			if (ElliottWave.IsDirty()) h.Add("elliottWave",ElliottWave.ToHashtable());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Fibonacci.IsDirty()) h.Add("fibonacci",Fibonacci.ToHashtable());

@@ -23,21 +23,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Options for annotation's control points. Each control pointinherits options from controlPointOptions object.Options from the controlPointOptions can be overwrittenby options in a specific control point.
+		/// 
 		/// </summary>
 		public AnnotationsCrookedLineControlPointOptions ControlPointOptions { get; set; }
 		private AnnotationsCrookedLineControlPointOptions ControlPointOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for annotation's labels. Each label inherits optionsfrom the labelOptions object. An option from the labelOptionscan be overwritten by config for a specific label.
+		/// 
 		/// </summary>
 		public AnnotationsCrookedLineLabelOptions LabelOptions { get; set; }
 		private AnnotationsCrookedLineLabelOptions LabelOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for annotation's shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptionscan be overwritten by config for a specific shape.
+		/// 
 		/// </summary>
 		public AnnotationsCrookedLineShapeOptions ShapeOptions { get; set; }
 		private AnnotationsCrookedLineShapeOptions ShapeOptions_DefaultValue { get; set; }

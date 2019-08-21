@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Additonal line width for the vector errors when they are hovered.
+		/// Additonal line width for the vector errors when they arehovered.
 		/// </summary>
 		public double? LineWidthPlus { get; set; }
 		private double? LineWidthPlus_DefaultValue { get; set; }

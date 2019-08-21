@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Highsoft.Highcharts</id>
+<version>7.1.1</version>
+    <title>Official Highcharts</title>
+    <authors>Highsoft</authors>
+    <owners>Highsoft</owners>
+    <licenseUrl>https://shop.highsoft.com/media/highsoft/Standard-License-Agreement-7.0.pdf</licenseUrl>
+    <projectUrl>http://dotnet.highcharts.com/</projectUrl>
+    <iconUrl>http://dotnet.highcharts.com/Content/images/logo_png.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Highcharts .NET allows developers to make charts using Highcharts API with the Microsoft .NET Framework (ASP.NET MVC 4+).&#xA;&#xD;Official Highsoft's library.&#xA;&#xD;Examples, API and documentation are available on project home page.</description>
+    <summary>Official Highsoft's library.&#xA;&#xD;Examples, API and documentation are available on project home page.</summary>
+    <releaseNotes>Please be aware that keys format has been changed with 7.0.3.10. You may need a different key to run our product after an update to 7.0.3.10 or newer. Please contact us at support@highcharts.com</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>chart charts charting graph graphs plot plots diagram diagrams highcharts highstock visualisation visualization data-visualisation data-visualization diagram line-chart 3d-chart finance web-forms mvc</tags>
+  </metadata>
+  <files>
+	<file src="readme.txt" target="" />
+  </files>
+</package>

@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Fires when the legend item belonging to the pie point (slice) isclicked. The `this` keyword refers to the point itself. One parameter,`event`, is passed to the function, containing common event information. Thedefault action is to toggle the visibility of the point. This can beprevented by calling `event.preventDefault()`.
+		/// Fires when the legend item belonging to the pie point (slice) isclicked. The `this` keyword refers to the point itself. Oneparameter, `event`, is passed to the function, containing commonevent information. The default action is to toggle the visibility ofthe point. This can be prevented by calling `event.preventDefault()`.
 		/// </summary>
 		public string LegendItemClick { get; set; }
 		private string LegendItemClick_DefaultValue { get; set; }

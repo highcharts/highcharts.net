@@ -327,7 +327,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// What part of the vector it should be rotated around. Can be one of`start`, `center` and `end`. When `start`, the vectors will start fromthe given [x, y] position, and when `end` the vectors will end in the[x, y] position.
+		/// What part of the vector it should be rotated around. Can be one of`start`, `center` and `end`. When `start`, the vectors will startfrom the given [x, y] position, and when `end` the vectors will endin the [x, y] position.
 		/// </summary>
 		public VectorSeriesRotationOrigin RotationOrigin { get; set; }
 		private VectorSeriesRotationOrigin RotationOrigin_DefaultValue { get; set; }

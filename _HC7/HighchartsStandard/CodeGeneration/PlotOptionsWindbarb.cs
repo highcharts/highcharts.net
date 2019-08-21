@@ -358,7 +358,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The id of another series in the chart that the wind barbs are projectedon. When `null`, the wind symbols are drawn on the X axis, but offset upor down by the `yOffset` setting.
+		/// The id of another series in the chart that the wind barbs areprojected on. When `null`, the wind symbols are drawn on the X axis,but offset up or down by the `yOffset` setting.
 		/// </summary>
 		public string OnSeries { get; set; }
 		private string OnSeries_DefaultValue { get; set; }
@@ -519,14 +519,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Horizontal offset from the cartesian position, in pixels. When the chartis inverted, this option allows translation like[yOffset](#plotOptions.windbarb.yOffset) in non inverted charts.
+		/// Horizontal offset from the cartesian position, in pixels. When thechart is inverted, this option allows translation like[yOffset](#plotOptions.windbarb.yOffset) in non inverted charts.
 		/// </summary>
 		public double? XOffset { get; set; }
 		private double? XOffset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Vertical offset from the cartesian position, in pixels. The default valuemakes sure the symbols don't overlap the X axis when `onSeries` is`null`, and that they don't overlap the linked series when `onSeries` isgiven.
+		/// Vertical offset from the cartesian position, in pixels. The defaultvalue makes sure the symbols don't overlap the X axis when `onSeries`is `null`, and that they don't overlap the linked series when`onSeries` is given.
 		/// </summary>
 		public double? YOffset { get; set; }
 		private double? YOffset_DefaultValue { get; set; }

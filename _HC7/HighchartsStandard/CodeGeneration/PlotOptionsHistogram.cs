@@ -109,7 +109,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A preferable number of bins. It is a suggestion, so a histogram may havea different number of bins. By default it is set to the square rootof the base series' data length. Available options are: `square-root`,`sturges`, `rice`. You can also define a function which takes a`baseSeries` as a parameter and should return a positive integer.
+		/// A preferable number of bins. It is a suggestion, so a histogram mayhave a different number of bins. By default it is set to the squareroot of the base series' data length. Available options are:`square-root`, `sturges`, `rice`. You can also define a functionwhich takes a `baseSeries` as a parameter and should return apositive integer.
 		/// </summary>
 		public string BinsNumber { get; set; }
 		private string BinsNumber_DefaultValue { get; set; }

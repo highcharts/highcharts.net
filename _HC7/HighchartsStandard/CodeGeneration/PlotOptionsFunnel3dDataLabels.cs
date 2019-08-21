@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public PlotOptionsFunnel3dDataLabels()
 		{
-			Align = Align_DefaultValue = PlotOptionsFunnel3dDataLabelsAlign.Right;
+			Align = Align_DefaultValue = PlotOptionsFunnel3dDataLabelsAlign.Left;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "";
@@ -22,14 +22,14 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			Crop = Crop_DefaultValue = false;
+			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Filter = Filter_DefaultValue = new PlotOptionsFunnel3dDataLabelsFilter();
 			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = false;
-			Overflow = Overflow_DefaultValue = "allow";
+			Inside = Inside_DefaultValue = null;
+			Overflow = Overflow_DefaultValue = PlotOptionsFunnel3dDataLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = 0;
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -152,8 +152,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public PlotOptionsFunnel3dDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsFunnel3dDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -245,7 +245,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsFunnel3dDataLabelsFormatter.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);

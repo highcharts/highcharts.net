@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			Height = Height_DefaultValue = null;
 			R = R_DefaultValue = 0;
+			Snap = Snap_DefaultValue = 2;
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
 			Type = Type_DefaultValue = " rect ";
@@ -44,6 +45,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? R { get; set; }
 		private double? R_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines additional snapping area around an annotationmaking this annotation to focus. Defined in pixels.
+		/// </summary>
+		public double? Snap { get; set; }
+		private double? Snap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -81,6 +89,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (R != R_DefaultValue) h.Add("r",R);
+			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
 			if (Type != Type_DefaultValue) h.Add("type",Type);

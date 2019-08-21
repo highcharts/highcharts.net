@@ -306,7 +306,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for a scrollable plot area. This feature provides a minimum width forthe plot area of the chart. If the width gets smaller than this, typicallyon mobile devices, a native browser scrollbar is presented below the chart.This scrollbar provides smooth scrolling for the contents of the plot area,whereas the title, legend and axes are fixed.
+		/// Options for a scrollable plot area. This feature provides a minimum size forthe plot area of the chart. If the size gets smaller than this, typicallyon mobile devices, a native browser scrollbar is presented. This scrollbarprovides smooth scrolling for the contents of the plot area, whereas thetitle, legend and unaffected axes are fixed.Since v7.1.2, a scrollable plot area can be defined for either horizontal orvertical scrolling, depending on whether the `minWidth` or `minHeight`option is set.
 		/// </summary>
 		public ChartScrollablePlotArea ScrollablePlotArea { get; set; }
 		private ChartScrollablePlotArea ScrollablePlotArea_DefaultValue { get; set; }

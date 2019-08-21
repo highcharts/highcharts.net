@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = true;
 			FocusBorder = FocusBorder_DefaultValue = new AccessibilityKeyboardNavigationFocusBorder();
 			Mode = Mode_DefaultValue = AccessibilityKeyboardNavigationMode.Normal;
-			Order = Order_DefaultValue = "";
+			Order = Order_DefaultValue = new List<string>();
 			SkipNullPoints = SkipNullPoints_DefaultValue = true;
 			WrapAround = WrapAround_DefaultValue = true;
 			
@@ -48,8 +48,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Order of tab navigation in the chart. Determines which elementsare tabbed to first. Available elements are: `series`, `zoom`,`rangeSelector`, `chartMenu`, `legend`. In addition, any customcomponents can be added here.
 		/// </summary>
-		public string Order { get; set; }
-		private string Order_DefaultValue { get; set; }
+		public List<string> Order { get; set; }
+		private List<string> Order_DefaultValue { get; set; }
 		 
 
 		/// <summary>

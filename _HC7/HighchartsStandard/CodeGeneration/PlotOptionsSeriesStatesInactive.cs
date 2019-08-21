@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// The animation for entering the inactive state.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Opacity of series elements (dataLabels, line, area).
+		/// Opacity of series elements (dataLabels, line, area). Set to 1to disable inactive state.
 		/// </summary>
 		public double? Opacity { get; set; }
 		private double? Opacity_DefaultValue { get; set; }

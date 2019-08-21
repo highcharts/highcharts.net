@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ClassName = ClassName_DefaultValue = "";
 			Crop = Crop_DefaultValue = false;
 			Distance = Distance_DefaultValue = null;
-			Format = Format_DefaultValue = "undefined";
+			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = AnnotationsInfinityLineLabelOptionsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new Hashtable();
-			Text = Text_DefaultValue = "undefined";
+			Text = Text_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsInfinityLineLabelOptionsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
@@ -104,42 +104,42 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A [format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting) string for the data label.
+		/// A[format](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)string for the data label.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to formatthe annotation's label. Note that if a `format` or `text`are defined, the format or text take precedence andthe formatter is ignored. `This` refers to a * point object.
+		/// Callback JavaScript function to format the annotation'slabel. Note that if a `format` or `text` are defined, theformat or text take precedence and the formatter is ignored.`This` refers to a point object.
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// How to handle the annotation's label that flowoutside the plot area. The justify option aligns the labelinside the plot area.
+		/// How to handle the annotation's label that flow outside theplot area. The justify option aligns the label inside theplot area.
 		/// </summary>
 		public AnnotationsInfinityLineLabelOptionsOverflow Overflow { get; set; }
 		private AnnotationsInfinityLineLabelOptionsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When either the borderWidth or the backgroundColor is set,this is the padding within the box.
+		/// When either the borderWidth or the backgroundColor is set,this    is the padding within the box.
 		/// </summary>
 		public string Padding { get; set; }
 		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The shadow of the box. The shadow can bean object configuration containing`color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// The shadow of the box. The shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The shadow of the box. The shadow can bean object configuration containing`color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// The shadow of the box. The shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -167,7 +167,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to [use HTML](http://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the annotation's label.
+		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the annotation's label.
 		/// </summary>
 		public bool? UseHTML { get; set; }
 		private bool? UseHTML_DefaultValue { get; set; }

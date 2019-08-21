@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for configuring annotations, for example labels, arrows orshapes. Annotations can be tied to points, axis coordinates or chartpixel coordinates.
+		/// A basic type of an annotation. It allows to add custom labelsor shapes. The items  can be tied to points, axis coordinatesor chart pixel coordinates.
 		/// </summary>
 		public List<Annotations> Annotations { get; set; }
 		private List<Annotations> Annotations_DefaultValue { get; set; }
@@ -97,7 +97,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The Data module provides a simplified interface for adding data toa chart from sources like CVS, HTML tables or grid views. See alsothe [tutorial article on the Data module](https://www.highcharts.com/docs/working-with-data/data-module).It requires the `modules/data.js` file to be loaded.Please note that the default way of adding data in Highcharts, withoutthe need of a module, is through the [series.data](#series.data)option.
+		/// The Data module provides a simplified interface for adding data toa chart from sources like CVS, HTML tables or grid views. See alsothe [tutorial article on the Data module](https://www.highcharts.com/docs/working-with-data/data-module).It requires the `modules/data.js` file to be loaded.Please note that the default way of adding data in Highcharts, withoutthe need of a module, is through the [series._type_.data](#series.line.data)option.
 		/// </summary>
 		public Data Data { get; set; }
 		private Data Data_DefaultValue { get; set; }
@@ -132,7 +132,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// HTML labels that can be positioned anywhere in the chart area.
+		/// HTML labels that can be positioned anywhere in the chart area.This option is deprecated since v7.1.2. Instead, use[annotations](#annotations) that support labels.
 		/// </summary>
 		public Labels Labels { get; set; }
 		private Labels Labels_DefaultValue { get; set; }

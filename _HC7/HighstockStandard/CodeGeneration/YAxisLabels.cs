@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// What part of the string the given position is anchored to. Canbe one of `"left"`, `"center"` or `"right"`. The exact positionalso depends on the `labels.x` setting.Angular gauges and solid gauges defaults to `"center"`.
+		/// What part of the string the given position is anchored to. Canbe one of `"left"`, `"center"` or `"right"`. The exact positionalso depends on the `labels.x` setting.Angular gauges and solid gauges defaults to `"center"`.Solid gauges with two labels have additional option `"auto"`for automatic horizontal and vertical alignment.
 		/// </summary>
 		public YAxisLabelsAlign Align { get; set; }
 		private YAxisLabelsAlign Align_DefaultValue { get; set; }

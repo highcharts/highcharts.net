@@ -15,20 +15,28 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsChaikinStatesInactive()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			Opacity = Opacity_DefaultValue = null;
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// The animation for entering the inactive state.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Opacity of series elements (dataLabels, line, area).
+		/// The animation for entering the inactive state.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Opacity of series elements (dataLabels, line, area). Set to 1to disable inactive state.
 		/// </summary>
 		public double? Opacity { get; set; }
 		private double? Opacity_DefaultValue { get; set; }
@@ -39,6 +47,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			
 

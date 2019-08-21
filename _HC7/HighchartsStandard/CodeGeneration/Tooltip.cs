@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			HideDelay = HideDelay_DefaultValue = 500;
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatter = NullFormatter_DefaultValue = "";
-			Outside = Outside_DefaultValue = false;
+			Outside = Outside_DefaultValue = null;
 			Padding = Padding_DefaultValue = "8";
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'> u25CF</span> {series.name}: <b>{point.y}</b><br/>";
 			PointFormatter = PointFormatter_DefaultValue = "";
@@ -171,7 +171,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to allow the tooltip to render outside the chart's SVGelement box. By default (`false`), the tooltip is rendered within thechart's SVG element, which results in the tooltip being alignedinside the chart area. For small charts, this may result in clippingor overlapping. When `true`, a separate SVG element is created andoverlaid on the page, allowing the tooltip to be aligned inside thepage itself.
+		/// Whether to allow the tooltip to render outside the chart's SVGelement box. By default (`false`), the tooltip is rendered within thechart's SVG element, which results in the tooltip being alignedinside the chart area. For small charts, this may result in clippingor overlapping. When `true`, a separate SVG element is created andoverlaid on the page, allowing the tooltip to be aligned inside thepage itself.Defaults to `true` if `chart.scrollablePlotArea` is activated,otherwise `false`.
 		/// </summary>
 		public bool? Outside { get; set; }
 		private bool? Outside_DefaultValue { get; set; }

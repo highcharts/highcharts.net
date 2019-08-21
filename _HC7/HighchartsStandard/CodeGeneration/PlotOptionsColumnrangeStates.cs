@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// Options for the hovered series. These settings override thenormal state options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsColumnrangeStatesHover Hover { get; set; }
 		private PlotOptionsColumnrangeStatesHover Hover_DefaultValue { get; set; }

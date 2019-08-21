@@ -14,7 +14,8 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public NavigationAnnotationsOptions()
 		{
-			Draggable = Draggable_DefaultValue = "xy";
+			ControlPointOptions = ControlPointOptions_DefaultValue = new NavigationAnnotationsOptionsControlPointOptions();
+			Draggable = Draggable_DefaultValue = NavigationAnnotationsOptionsDraggable.Xy;
 			Events = Events_DefaultValue = new NavigationAnnotationsOptionsEvents();
 			Id = Id_DefaultValue = "";
 			LabelOptions = LabelOptions_DefaultValue = new NavigationAnnotationsOptionsLabelOptions();
@@ -28,14 +29,21 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Allow an annotation to be draggable by a user. Possiblevalues are `"x"`, `"xy"`, `"y"` and `""` (disabled).
+		/// Options for annotation's control points. Each control pointinherits options from controlPointOptions object.Options from the controlPointOptions can be overwrittenby options in a specific control point.
 		/// </summary>
-		public string Draggable { get; set; }
-		private string Draggable_DefaultValue { get; set; }
+		public NavigationAnnotationsOptionsControlPointOptions ControlPointOptions { get; set; }
+		private NavigationAnnotationsOptionsControlPointOptions ControlPointOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Allow an annotation to be draggable by a user. Possiblevalues are `"x"`, `"xy"`, `"y"` and `""` (disabled).
+		/// </summary>
+		public NavigationAnnotationsOptionsDraggable Draggable { get; set; }
+		private NavigationAnnotationsOptionsDraggable Draggable_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Events available in annotations.
 		/// </summary>
 		public NavigationAnnotationsOptionsEvents Events { get; set; }
 		private NavigationAnnotationsOptionsEvents Events_DefaultValue { get; set; }
@@ -49,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for annotation's labels. Each label inherits optionsfrom the labelOptions object. An option from the labelOptions can beoverwritten by config for a specific label.
+		/// Options for annotation's labels. Each label inherits optionsfrom the labelOptions object. An option from the labelOptionscan be overwritten by config for a specific label.
 		/// </summary>
 		public NavigationAnnotationsOptionsLabelOptions LabelOptions { get; set; }
 		private NavigationAnnotationsOptionsLabelOptions LabelOptions_DefaultValue { get; set; }
@@ -63,7 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for annotation's shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptions can beoverwritten by config for a specific shape.
+		/// Options for annotation's shapes. Each shape inherits options fromthe shapeOptions object. An option from the shapeOptions can beoverwritten by config for a specific shape.
 		/// </summary>
 		public NavigationAnnotationsOptionsShapeOptions ShapeOptions { get; set; }
 		private NavigationAnnotationsOptionsShapeOptions ShapeOptions_DefaultValue { get; set; }
@@ -94,7 +102,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
+			if (ControlPointOptions != ControlPointOptions_DefaultValue) h.Add("controlPointOptions",ControlPointOptions);
+			if (Draggable != Draggable_DefaultValue) h.Add("draggable", Highcharts.FirstCharacterToLower(Draggable.ToString()));
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());

@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AnnotationsInfinityLineTypeOptionsPoints()
 		{
 			ControlPoint = ControlPoint_DefaultValue = null;
-			Label = Label_DefaultValue = new AnnotationsInfinityLineTypeOptionsPointsLabel();
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
@@ -27,13 +26,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? ControlPoint { get; set; }
 		private double? ControlPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public AnnotationsInfinityLineTypeOptionsPointsLabel Label { get; set; }
-		private AnnotationsInfinityLineTypeOptionsPointsLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -55,7 +47,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (ControlPoint != ControlPoint_DefaultValue) h.Add("controlPoint",ControlPoint);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

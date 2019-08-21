@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			InitialPositionRadius = InitialPositionRadius_DefaultValue = null;
 			InitialPositions = InitialPositions_DefaultValue = null;
 			Integration = Integration_DefaultValue = PlotOptionsNetworkgraphLayoutAlgorithmIntegration.Euler;
+			LinkLength = LinkLength_DefaultValue = null;
 			MaxIterations = MaxIterations_DefaultValue = 1000;
 			MaxSpeed = MaxSpeed_DefaultValue = 10;
 			RepulsiveForce = RepulsiveForce_DefaultValue = "";
@@ -88,6 +89,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Ideal length (px) of the link between two nodes. When notdefined, length is calculated as:`Math.pow(availableWidth * availableHeight / nodesLength, 0.4);`Note: Because of the algorithm specification, length of each linkmight be not exactly as specified.
+		/// </summary>
+		public double? LinkLength { get; set; }
+		private double? LinkLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Max number of iterations before algorithm will stop. In general,algorithm should find positions sooner, but when rendering hugenumber of nodes, it is recommended to increase this value asfinding perfect graph positions can require more time.
 		/// </summary>
 		public double? MaxIterations { get; set; }
@@ -134,6 +142,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (InitialPositionRadius != InitialPositionRadius_DefaultValue) h.Add("initialPositionRadius",InitialPositionRadius);
 			if (InitialPositions != InitialPositions_DefaultValue) h.Add("initialPositions",InitialPositions);
 			if (Integration != Integration_DefaultValue) h.Add("integration", Highcharts.FirstCharacterToLower(Integration.ToString()));
+			if (LinkLength != LinkLength_DefaultValue) h.Add("linkLength",LinkLength);
 			if (MaxIterations != MaxIterations_DefaultValue) h.Add("maxIterations",MaxIterations);
 			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
 			if (RepulsiveForce != RepulsiveForce_DefaultValue) { h.Add("repulsiveForce",RepulsiveForce); Highcharts.AddFunction("PlotOptionsNetworkgraphLayoutAlgorithmRepulsiveForce.repulsiveForce", RepulsiveForce); }  

@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum AnnotationsElliottWaveTypeOptionsPointsLabelOverflow
     {
-        None, 
+        Allow, 
 		Justify
     }
 }

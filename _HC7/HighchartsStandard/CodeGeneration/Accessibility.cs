@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointDateFormat = PointDateFormat_DefaultValue = "";
 			PointDateFormatter = PointDateFormatter_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
-			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = 500;
+			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = 200;
 			PointValueDecimals = PointValueDecimals_DefaultValue = "";
 			PointValuePrefix = PointValuePrefix_DefaultValue = "";
 			PointValueSuffix = PointValueSuffix_DefaultValue = "";

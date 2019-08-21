@@ -90,7 +90,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to hide the annotation's label that is outside the plotarea.
+		/// Whether to hide the annotation's labelthat is outside the plot area.
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
@@ -111,14 +111,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to format the annotation's label.Note that if a `format` or `text` are defined, the format or texttake precedence and the formatter is ignored. `This` refers to apoint object.
+		/// Callback JavaScript function to format the annotation'slabel. Note that if a `format` or `text` are defined, theformat or text take precedence and the formatter is ignored.`This` refers to a point object.
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// How to handle the annotation's label that flow outside the plotarea. The justify option aligns the label inside the plot area.
+		/// How to handle the annotation's label that flow outside theplot area. The justify option aligns the label inside theplot area.
 		/// </summary>
 		public NavigationAnnotationsOptionsLabelsOverflow Overflow { get; set; }
 		private NavigationAnnotationsOptionsLabelsOverflow Overflow_DefaultValue { get; set; }
@@ -132,14 +132,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This option defines the point to which the label will be connected.It can be either the point which exists in the series - it isreferenced by the point's id - or a new point with defined x, yproperies and optionally axes.
+		/// This option defines the point to which the label will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new point withdefined x, y properties and optionally axes.
 		/// </summary>
 		public NavigationAnnotationsOptionsLabelsPoint Point { get; set; }
 		private NavigationAnnotationsOptionsLabelsPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The shadow of the box. The shadow can be an object configurationcontaining `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// The shadow of the box. The shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
