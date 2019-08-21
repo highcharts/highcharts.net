@@ -121,10 +121,13 @@
     <None Include="JsonFiles\highcharts_7.0.3.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JsonFiles\highcharts.json">
+    <None Include="JsonFiles\highcharts_7.1.1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="JsonFiles\highcharts_old.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JsonFiles\highcharts.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

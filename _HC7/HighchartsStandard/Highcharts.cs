@@ -9,7 +9,7 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal static void AddFunction(string eventName, string functionName)
         {
-            //if (functions[eventName] == null)
+            
             functions[eventName] = functionName;
         }
 

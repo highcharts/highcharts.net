@@ -82,7 +82,7 @@ public class HighchartsGenerator
         Console.WriteLine("Comparing current version to previous version");
         ComparisonService.SetValuesFromFile(@"d:\work\hc_updated.log");
         ComparisonService.Compare(_apiItems, _previousVersionApiItems);
-        ComparisonService.SaveChanges(@"d:\work\hc.log", @"d:\work\hc_old.log",FileService);
+        ComparisonService.SaveChanges(@"d:\work\hc.log", @"d:\work\hc_old.log", @"d:\work\hc_new_changes.log", FileService);
         //Console.WriteLine("--------------------------------------------------------");
         //Console.WriteLine("old to new");
         //CompareItems(_previousVersionApiItems, _apiItems);
@@ -753,7 +753,7 @@ public class HighchartsGenerator
 
             // Event (javascript function)
             if (child.ReturnType != null && (child.ReturnType.ToLower() == "function" || child.ReturnType.ToLower() == "string|function"))
-                return String.Format(functionPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix), propertyName + "_DefaultValue", GetClassNameFromItem(child) + "." + GetJSName(propertyName, child.Suffix), ROOT_CLASS);
+                return String.Format(functionPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix), propertyName + "_DefaultValue", Guid.NewGuid() + "." + GetJSName(propertyName, child.Suffix), ROOT_CLASS);
             // Just a property
             else
             {

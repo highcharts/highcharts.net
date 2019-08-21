@@ -11,30 +11,36 @@ namespace SourceCodeGenerator.Services
     {
         Dictionary<string, string> _chanages = new Dictionary<string, string>();
         Dictionary<string, string> _previousValues = new Dictionary<string, string>();
-        Dictionary<string, string> _valuesFromFile = new Dictionary<string, string>();
+        Dictionary<string, string> _valuesFromUpdateFile = new Dictionary<string, string>();
+        Dictionary<string, string> _changesNotInUpdateFile = new Dictionary<string, string>();
+
         bool _makeManualUpdate = false;
         bool _makeAutoUpdate = true;
 
         public void SetValuesFromFile(string filePath)
         {
-            _valuesFromFile.Clear();
+            _valuesFromUpdateFile.Clear();
             foreach (var item in File.ReadAllLines(filePath))
             {
                 var parts = item.Split(':');
-                _valuesFromFile.Add(parts[0], parts[1]);
+                _valuesFromUpdateFile.Add(parts[0], parts[1]);
             }
         }
 
-        public void SaveChanges(string filePath, string filePathPreviousValues, IFileService fileService)
+        public void SaveChanges(string filePath, string filePathPreviousValues, string filePathToNewChanges, IFileService fileService)
         {
             StringBuilder content = new StringBuilder();
             StringBuilder contentPreviousValues = new StringBuilder();
+            StringBuilder contentNewChanges = new StringBuilder();
 
             foreach (var item in _chanages)
                 content.AppendLine($"{item.Key}:{item.Value}");
 
             foreach (var item in _previousValues)
                 contentPreviousValues.AppendLine($"{item.Key}:{item.Value}");
+
+            foreach (var item in _changesNotInUpdateFile)
+                contentNewChanges.AppendLine($"{item.Key}:{item.Value}");
 
             fileService.SaveFile(filePath, content.ToString());
             content.Clear();
@@ -43,6 +49,10 @@ namespace SourceCodeGenerator.Services
             fileService.SaveFile(filePathPreviousValues, contentPreviousValues.ToString());
             contentPreviousValues.Clear();
             _previousValues.Clear();
+
+            fileService.SaveFile(filePathToNewChanges, contentNewChanges.ToString());
+            contentNewChanges.Clear();
+            _changesNotInUpdateFile.Clear();
         }
 
         public void Compare(IList<ApiItem> items = null, IList<ApiItem> previousItems = null, List<string> pathToItem = null)
@@ -118,7 +128,11 @@ namespace SourceCodeGenerator.Services
                 if (changedItem == ChangedItem.ReturnType)
                 {
                     if (_makeAutoUpdate)
-                        item.ReturnType = string.Copy(_valuesFromFile[item.FullName + "." + changedItem]);
+                        if (_valuesFromUpdateFile.ContainsKey(item.FullName + "." + changedItem))
+                            item.ReturnType = string.Copy(_valuesFromUpdateFile[item.FullName + "." + changedItem]);
+                        else
+                            _changesNotInUpdateFile.Add(item.FullName + "." + changedItem, prevItem.ReturnType);
+
 
                     if (_makeManualUpdate)
                         UpdateReturnType(item, prevItem);
@@ -132,8 +146,12 @@ namespace SourceCodeGenerator.Services
                     if (_makeAutoUpdate)
                     {
                         item.Values.Clear();
-                        foreach (var value in string.Copy(_valuesFromFile[item.FullName + "." + changedItem]).Split(','))
-                            item.Values.Add(value);
+
+                        if (_valuesFromUpdateFile.ContainsKey(item.FullName + "." + changedItem))
+                            foreach (var value in string.Copy(_valuesFromUpdateFile[item.FullName + "." + changedItem]).Split(','))
+                                item.Values.Add(value);
+                        else
+                            _changesNotInUpdateFile.Add(item.FullName + "." + changedItem, string.Join(",",prevItem.Values));
                     }
 
                     if (_makeManualUpdate)
@@ -148,8 +166,12 @@ namespace SourceCodeGenerator.Services
                     if (_makeAutoUpdate)
                     {
                         item.Types.Clear();
-                        foreach (var value in string.Copy(_valuesFromFile[item.FullName + "." + changedItem]).Split(','))
-                            item.Types.Add(value);
+
+                        if (_valuesFromUpdateFile.ContainsKey(item.FullName + "." + changedItem))
+                            foreach (var value in string.Copy(_valuesFromUpdateFile[item.FullName + "." + changedItem]).Split(','))
+                                item.Types.Add(value);
+                        else
+                            _changesNotInUpdateFile.Add(item.FullName + "." + changedItem, string.Join(",", prevItem.Types));
                     }
 
                     if (_makeManualUpdate)
@@ -164,8 +186,12 @@ namespace SourceCodeGenerator.Services
                     if (_makeAutoUpdate)
                     {
                         item.Exclude.Clear();
-                        foreach (var value in string.Copy(_valuesFromFile[item.FullName + "." + changedItem]).Split(','))
-                            item.Exclude.Add(value);
+
+                        if (_valuesFromUpdateFile.ContainsKey(item.FullName + "." + changedItem))
+                            foreach (var value in string.Copy(_valuesFromUpdateFile[item.FullName + "." + changedItem]).Split(','))
+                                item.Exclude.Add(value);
+                        else
+                            _changesNotInUpdateFile.Add(item.FullName + "." + changedItem, string.Join(",", prevItem.Exclude));
                     }
 
                     if (_makeManualUpdate)
@@ -180,8 +206,12 @@ namespace SourceCodeGenerator.Services
                     if (_makeAutoUpdate)
                     {
                         item.Extends.Clear();
-                        foreach (var value in string.Copy(_valuesFromFile[item.FullName + "." + changedItem]).Split(','))
-                            item.Extends.Add(value);
+
+                        if (_valuesFromUpdateFile.ContainsKey(item.FullName + "." + changedItem))
+                            foreach (var value in string.Copy(_valuesFromUpdateFile[item.FullName + "." + changedItem]).Split(','))
+                                item.Extends.Add(value);
+                        else
+                            _changesNotInUpdateFile.Add(item.FullName + "." + changedItem, string.Join(",", prevItem.Extends));
                     }
 
                     if (_makeManualUpdate)
@@ -356,6 +386,6 @@ namespace SourceCodeGenerator.Services
     {
         void SetValuesFromFile(string filePath);
         void Compare(IList<ApiItem> item = null, IList<ApiItem> prevItem = null, List<string> pathToItem = null);
-        void SaveChanges(string filePath, string filePathPreviousValues, IFileService fileService);
+        void SaveChanges(string filePath, string filePathPreviousValues, string filePathToNewChanges, IFileService fileService);
     }
 }
