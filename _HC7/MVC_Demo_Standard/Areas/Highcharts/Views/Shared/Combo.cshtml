@@ -64,9 +64,9 @@
                     Name = "Total Consumption",
                     Size = "100",
                     ShowInLegend = false,
-                    DataLabels = new
+                    DataLabels = new PieSeriesDataLabels
                     {
-                        enabled = false
+                        Enabled = false
                     },
                     Center = new string[2]{"20%", "30%"},
                     Data = @ViewData["pieData"] as List<PieSeriesData>

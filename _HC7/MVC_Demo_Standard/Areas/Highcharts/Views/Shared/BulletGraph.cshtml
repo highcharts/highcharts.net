@@ -12,7 +12,7 @@
             MarginLeft = 135,
             Type = ChartType.Bullet,
             MarginTop = 40,
-            Height = 150
+            Height = 120
         },
         Title = new Title
         {
@@ -57,7 +57,7 @@
             },
             Title = new YAxisTitle
             {
-                Enabled = ""
+                Enabled = false
             }
         }
     },
@@ -100,7 +100,7 @@
     var renderer = new HighchartsRenderer(chartOptions);
 }
 
-@Html.Raw(renderer.RenderHtml());
+@Html.Raw(renderer.RenderHtml())
 
 
 @{ var chartOptions2 = new Highcharts
