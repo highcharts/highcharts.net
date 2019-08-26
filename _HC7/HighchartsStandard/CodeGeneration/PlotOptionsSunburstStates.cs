@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hover = Hover_DefaultValue = new PlotOptionsSunburstStatesHover();
 			Inactive = Inactive_DefaultValue = new PlotOptionsSunburstStatesInactive();
 			Normal = Normal_DefaultValue = new PlotOptionsSunburstStatesNormal();
+			Select = Select_DefaultValue = new PlotOptionsSunburstStatesSelect();
 			
 		}	
 		
@@ -40,6 +41,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsSunburstStatesNormal Normal { get; set; }
 		private PlotOptionsSunburstStatesNormal Normal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Specific options for point in selected states, after beingselected by[allowPointSelect](#plotOptions.series.allowPointSelect)or programmatically.
+		/// </summary>
+		public PlotOptionsSunburstStatesSelect Select { get; set; }
+		private PlotOptionsSunburstStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -49,6 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

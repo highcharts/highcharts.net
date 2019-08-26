@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hover = Hover_DefaultValue = new PlotOptionsPackedbubbleStatesHover();
 			Inactive = Inactive_DefaultValue = new PlotOptionsPackedbubbleStatesInactive();
 			Normal = Normal_DefaultValue = new PlotOptionsPackedbubbleStatesNormal();
+			Select = Select_DefaultValue = new PlotOptionsPackedbubbleStatesSelect();
 			
 		}	
 		
@@ -40,6 +41,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsPackedbubbleStatesNormal Normal { get; set; }
 		private PlotOptionsPackedbubbleStatesNormal Normal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Specific options for point in selected states, after beingselected by[allowPointSelect](#plotOptions.series.allowPointSelect)or programmatically.
+		/// </summary>
+		public PlotOptionsPackedbubbleStatesSelect Select { get; set; }
+		private PlotOptionsPackedbubbleStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -49,6 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

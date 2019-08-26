@@ -35,7 +35,6 @@ namespace Highsoft.Web.Mvc.Charts
 			DragDrop = DragDrop_DefaultValue = new XrangeSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new XrangeSeriesEvents();
-			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Grouping = Grouping_DefaultValue = true;
 			GroupPadding = GroupPadding_DefaultValue = null;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
@@ -60,7 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			Stack = Stack_DefaultValue = "";
+			Stack = Stack_DefaultValue = null;
 			States = States_DefaultValue = new XrangeSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new XrangeSeriesTooltip();
@@ -221,13 +220,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public XrangeSeriesEvents Events { get; set; }
 		private XrangeSeriesEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// By default, series are exposed to screen readers as regions. Byenabling this option, the series element itself will be exposed inthe same way as the data points. This is useful if the series is notused as a grouping entity in the chart, but you still want to attacha description to the series.Requires the Accessibility module.
-		/// </summary>
-		public bool? ExposeElementToA11y { get; set; }
-		private bool? ExposeElementToA11y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -507,7 +499,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
@@ -524,7 +515,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (PartialFill.IsDirty()) h.Add("partialFill",PartialFill.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("XrangeSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("baab0db2-09e7-4293-a21a-2d43f758920e.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);

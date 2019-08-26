@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColumnpyramidSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new Hashtable();
+			Hover = Hover_DefaultValue = new object();
 			Inactive = Inactive_DefaultValue = new ColumnpyramidSeriesStatesInactive();
 			Normal = Normal_DefaultValue = new ColumnpyramidSeriesStatesNormal();
-			Select = Select_DefaultValue = new Hashtable();
+			Select = Select_DefaultValue = new object();
 			
 		}	
 		
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Hover { get; set; }
-		private Hashtable Hover_DefaultValue { get; set; }
+		public Object Hover { get; set; }
+		private Object Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Select { get; set; }
-		private Hashtable Select_DefaultValue { get; set; }
+		public Object Select { get; set; }
+		private Object Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

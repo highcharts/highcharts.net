@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Column = Column_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = "";
 			Id = Id_DefaultValue = "";
 			Level = Level_DefaultValue = null;
 			Name = Name_DefaultValue = "";
@@ -43,6 +44,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Column { get; set; }
 		private double? Column_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual data label for each node. The options are the same asthe ones for [series.dependencywheel.dataLabels](#series.dependencywheel.dataLabels).
+		/// </summary>
+		public string DataLabels { get; set; }
+		private string DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -73,6 +81,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Column != Column_DefaultValue) h.Add("column",Column);
+			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Level != Level_DefaultValue) h.Add("level",Level);
 			if (Name != Name_DefaultValue) h.Add("name",Name);

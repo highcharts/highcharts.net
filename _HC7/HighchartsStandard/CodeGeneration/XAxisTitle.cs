@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public XAxisTitle()
 		{
 			Align = Align_DefaultValue = XAxisTitleAlign.Middle;
-			Enabled = Enabled_DefaultValue = "middle";
+			Enabled = Enabled_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			Position3d = Position3d_DefaultValue = "";
@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Deprecated. Set the `text` to `null` to disable the title.
 		/// </summary>
-		public string Enabled { get; set; }
-		private string Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>

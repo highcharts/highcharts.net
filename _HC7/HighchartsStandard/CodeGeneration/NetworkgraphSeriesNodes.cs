@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			DataLabels = DataLabels_DefaultValue = new object();
 			Id = Id_DefaultValue = "";
 			Mass = Mass_DefaultValue = null;
 			Name = Name_DefaultValue = "";
@@ -35,6 +36,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual data label for each node. The options are the same asthe ones for [series.networkgraph.dataLabels](#series.networkgraph.dataLabels).
+		/// </summary>
+		public Object DataLabels { get; set; }
+		private Object DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -64,6 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Mass != Mass_DefaultValue) h.Add("mass",Mass);
 			if (Name != Name_DefaultValue) h.Add("name",Name);

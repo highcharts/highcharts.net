@@ -75,7 +75,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			
 
 			return h;

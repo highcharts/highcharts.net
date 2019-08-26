@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hover = Hover_DefaultValue = new Funnel3dSeriesStatesHover();
 			Inactive = Inactive_DefaultValue = new Funnel3dSeriesStatesInactive();
 			Normal = Normal_DefaultValue = new Funnel3dSeriesStatesNormal();
+			Select = Select_DefaultValue = new Funnel3dSeriesStatesSelect();
 			
 		}	
 		
@@ -40,6 +41,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Funnel3dSeriesStatesNormal Normal { get; set; }
 		private Funnel3dSeriesStatesNormal Normal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Specific options for point in selected states, after beingselected by[allowPointSelect](#plotOptions.series.allowPointSelect)or programmatically.
+		/// </summary>
+		public Funnel3dSeriesStatesSelect Select { get; set; }
+		private Funnel3dSeriesStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -49,6 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

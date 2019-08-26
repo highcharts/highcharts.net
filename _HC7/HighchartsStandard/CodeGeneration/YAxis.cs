@@ -88,6 +88,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Type = Type_DefaultValue = "";
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
+			ZoomEnabled = ZoomEnabled_DefaultValue = true;
 			
 		}	
 		
@@ -282,7 +283,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
+		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.Also the `softThreshold` option takes precedence over `maxPadding`,so if the data is tangent to the threshold, `maxPadding` may notapply unless `softThreshold` is set to false.
 		/// </summary>
 		public double? MaxPadding { get; set; }
 		private double? MaxPadding_DefaultValue { get; set; }
@@ -373,7 +374,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
+		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.Also the `softThreshold` option takes precedence over `minPadding`,so if the data is tangent to the threshold, `minPadding` may notapply unless `softThreshold` is set to false.
 		/// </summary>
 		public double? MinPadding { get; set; }
 		private double? MinPadding_DefaultValue { get; set; }
@@ -608,6 +609,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to zoom axis. If `chart.zoomType` is set, the option allowsto disable zooming on an individual axis.
+		/// </summary>
+		public bool? ZoomEnabled { get; set; }
+		private bool? ZoomEnabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -680,7 +688,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
 			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highcharts.FirstCharacterToLower(TickPosition.ToString()));
-			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("YAxisTickPositioner.tickPositioner", TickPositioner); }  
+			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("2ca8a8a4-1e19-48e9-a8c6-39bda7e07b38.tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
@@ -688,6 +696,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
 			
 
 			return h;

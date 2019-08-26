@@ -28,14 +28,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = PyramidSeriesCursor.Null;
 			Data = Data_DefaultValue = new List<PyramidSeriesData>();
-			DataLabels = DataLabels_DefaultValue = new PyramidSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue =  new PyramidSeriesDataLabels();
 			Depth = Depth_DefaultValue = 0;
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new PyramidSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			EndAngle = EndAngle_DefaultValue = null;
 			Events = Events_DefaultValue = new PyramidSeriesEvents();
-			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Height = Height_DefaultValue = "100%";
 			Id = Id_DefaultValue = "";
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
@@ -59,6 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
+			Size = Size_DefaultValue = "";
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			StartAngle = StartAngle_DefaultValue = 0;
@@ -175,8 +175,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Object DataLabels { get; set; }
-		private Object DataLabels_DefaultValue { get; set; }
+		public PyramidSeriesDataLabels DataLabels { get; set; }
+		private PyramidSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -219,13 +219,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PyramidSeriesEvents Events { get; set; }
 		private PyramidSeriesEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// By default, series are exposed to screen readers as regions. Byenabling this option, the series element itself will be exposed inthe same way as the data points. This is useful if the series is notused as a grouping entity in the chart, but you still want to attacha description to the series.Requires the Accessibility module.
-		/// </summary>
-		public bool? ExposeElementToA11y { get; set; }
-		private bool? ExposeElementToA11y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -390,6 +383,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The diameter of the pie relative to the plot area. Can be apercentage or pixel value. Pixel values are given as integers. Thedefault behaviour (as of 3.0) is to scale to the plot area and giveroom for data labels within the plot area.[slicedOffset](#plotOptions.pie.slicedOffset) is also included in thedefault size calculation. As a consequence, the size of the pie mayvary when points are updated and data labels more around. In thatcase it is best to set a fixed value, for example `"75%"`.
+		/// </summary>
+		public string Size { get; set; }
+		private string Size_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If set to `true`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
@@ -484,14 +484,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(Data));
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
@@ -509,12 +508,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("PyramidSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("48307058-c573-491e-88b2-da4d85906951.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
+			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);

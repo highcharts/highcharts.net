@@ -36,7 +36,6 @@ namespace Highsoft.Web.Mvc.Charts
 			DragDrop = DragDrop_DefaultValue = new VariwideSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new VariwideSeriesEvents();
-			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = VariwideSeriesFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Grouping = Grouping_DefaultValue = true;
@@ -68,8 +67,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			Stack = Stack_DefaultValue = "";
-			Stacking = Stacking_DefaultValue = VariwideSeriesStacking.Null;
+			Stack = Stack_DefaultValue = null;
+			Stacking = Stacking_DefaultValue = "";
 			States = States_DefaultValue = new VariwideSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
@@ -238,13 +237,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public VariwideSeriesEvents Events { get; set; }
 		private VariwideSeriesEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// By default, series are exposed to screen readers as regions. Byenabling this option, the series element itself will be exposed inthe same way as the data points. This is useful if the series is notused as a grouping entity in the chart, but you still want to attacha description to the series.Requires the Accessibility module.
-		/// </summary>
-		public bool? ExposeElementToA11y { get; set; }
-		private bool? ExposeElementToA11y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -474,8 +466,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`. When stacking is enabled, data must be sortedin ascending X order. A special stacking option is with thestreamgraph series type, where the stacking option is set to`"stream"`. The second one is `"overlap"`, which only applies towaterfall series.
 		/// </summary>
-		public VariwideSeriesStacking Stacking { get; set; }
-		private VariwideSeriesStacking Stacking_DefaultValue { get; set; }
+		public string Stacking { get; set; }
+		private string Stacking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -588,7 +580,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
@@ -606,7 +597,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("VariwideSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("8ddf92f0-0b2d-450d-8f9b-7b145b55a2cc.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
@@ -625,7 +616,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
+			if (Stacking != Stacking_DefaultValue) h.Add("stacking",Stacking);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);

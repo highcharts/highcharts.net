@@ -37,7 +37,6 @@ namespace Highsoft.Web.Mvc.Charts
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new WordcloudSeriesEvents();
-			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
@@ -57,7 +56,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Spiral = Spiral_DefaultValue = "rectangular";
-			Stack = Stack_DefaultValue = "";
+			Stack = Stack_DefaultValue = null;
 			States = States_DefaultValue = new WordcloudSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Style = Style_DefaultValue = new WordcloudSeriesStyle();
@@ -231,13 +230,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public WordcloudSeriesEvents Events { get; set; }
 		private WordcloudSeriesEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// By default, series are exposed to screen readers as regions. Byenabling this option, the series element itself will be exposed inthe same way as the data points. This is useful if the series is notused as a grouping entity in the chart, but you still want to attacha description to the series.Requires the Accessibility module.
-		/// </summary>
-		public bool? ExposeElementToA11y { get; set; }
-		private bool? ExposeElementToA11y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -477,7 +469,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
@@ -491,7 +482,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("WordcloudSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("4dbba80c-795b-42b0-94fc-210d2b4f6636.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);

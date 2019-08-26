@@ -644,10 +644,10 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "7.1.1",
+    "version": "7.1.2.1",
     "restore": {
       "projectUniqueName": "C:\\Repositories\\highcharts.net\\_HC7\\HighstockStandard\\HighstockStandard.csproj",
-      "projectName": "Highstock",
+      "projectName": "Highsoft.Highstock",
       "projectPath": "C:\\Repositories\\highcharts.net\\_HC7\\HighstockStandard\\HighstockStandard.csproj",
       "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
       "outputPath": "C:\\Repositories\\highcharts.net\\_HC7\\HighstockStandard\\obj\\",

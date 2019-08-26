@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Hover = Hover_DefaultValue = new XrangeSeriesStatesHover();
 			Inactive = Inactive_DefaultValue = new XrangeSeriesStatesInactive();
 			Normal = Normal_DefaultValue = new XrangeSeriesStatesNormal();
+			Select = Select_DefaultValue = new XrangeSeriesStatesSelect();
 			
 		}	
 		
@@ -40,6 +41,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public XrangeSeriesStatesNormal Normal { get; set; }
 		private XrangeSeriesStatesNormal Normal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Specific options for point in selected states, after beingselected by[allowPointSelect](#plotOptions.series.allowPointSelect)or programmatically.
+		/// </summary>
+		public XrangeSeriesStatesSelect Select { get; set; }
+		private XrangeSeriesStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -49,6 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

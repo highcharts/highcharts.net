@@ -81,6 +81,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Type = Type_DefaultValue = "linear";
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
+			ZoomEnabled = ZoomEnabled_DefaultValue = true;
 			
 		}	
 		
@@ -552,6 +553,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to zoom axis. If `chart.zoomType` is set, the option allowsto disable zooming on an individual axis.
+		/// </summary>
+		public bool? ZoomEnabled { get; set; }
+		private bool? ZoomEnabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -618,13 +626,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
 			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highcharts.FirstCharacterToLower(TickPosition.ToString()));
-			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("XAxisTickPositioner.tickPositioner", TickPositioner); }  
+			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("cbbceff1-70dd-4295-9706-dc1c51c4a4fe.tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
 			
 
 			return h;

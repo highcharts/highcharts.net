@@ -54,10 +54,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (DeselectButton != DeselectButton_DefaultValue) { h.Add("deselectButton",DeselectButton); Highcharts.AddFunction("NavigationEventsDeselectButton.deselectButton", DeselectButton); }  
-			if (HidePopup != HidePopup_DefaultValue) { h.Add("hidePopup",HidePopup); Highcharts.AddFunction("NavigationEventsHidePopup.hidePopup", HidePopup); }  
-			if (SelectButton != SelectButton_DefaultValue) { h.Add("selectButton",SelectButton); Highcharts.AddFunction("NavigationEventsSelectButton.selectButton", SelectButton); }  
-			if (ShowPopup != ShowPopup_DefaultValue) { h.Add("showPopup",ShowPopup); Highcharts.AddFunction("NavigationEventsShowPopup.showPopup", ShowPopup); }  
+			if (DeselectButton != DeselectButton_DefaultValue) { h.Add("deselectButton",DeselectButton); Highcharts.AddFunction("49342e55-833f-47d0-9e73-7423a24e7747.deselectButton", DeselectButton); }  
+			if (HidePopup != HidePopup_DefaultValue) { h.Add("hidePopup",HidePopup); Highcharts.AddFunction("608d809c-bb0f-48a7-beb4-ad7b92eac601.hidePopup", HidePopup); }  
+			if (SelectButton != SelectButton_DefaultValue) { h.Add("selectButton",SelectButton); Highcharts.AddFunction("a3c2421c-e6aa-4d24-91e8-bfc2a723e476.selectButton", SelectButton); }  
+			if (ShowPopup != ShowPopup_DefaultValue) { h.Add("showPopup",ShowPopup); Highcharts.AddFunction("83b64266-1464-4048-89cd-d8f256e98201.showPopup", ShowPopup); }  
 			
 
 			return h;

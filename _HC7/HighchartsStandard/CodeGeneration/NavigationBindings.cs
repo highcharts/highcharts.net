@@ -170,7 +170,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Indicators bindings. Includes `init` event to show a popup.
+		/// Indicators bindings. Includes `init` event to show a popup.Note: In order to show base series from the chart in the popup'sdropdown each series requires[series.id](https://api.highcharts.com/highstock/series.line.id) to bedefined.
 		/// </summary>
 		public string Indicators { get; set; }
 		private string Indicators_DefaultValue { get; set; }

@@ -18,7 +18,6 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = new DependencywheelSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new DependencywheelSeriesDataDragDrop();
 			Events = Events_DefaultValue = new DependencywheelSeriesDataEvents();
@@ -60,13 +59,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels).
-		/// </summary>
-		public DependencywheelSeriesDataLabels DataLabels { get; set; }
-		private DependencywheelSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -149,7 +141,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());

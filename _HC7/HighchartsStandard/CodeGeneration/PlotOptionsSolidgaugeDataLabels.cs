@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsSolidgaugeDataLabelsVerticalAlign.Top;
 			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = 0;
+			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 6;
 			
 		}	
@@ -243,7 +243,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter != Filter_DefaultValue) h.Add("filter",Filter);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("PlotOptionsSolidgaugeDataLabelsFormatter.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("d82ffe67-9f7a-44d0-aa3e-5479d6d68a6c.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);

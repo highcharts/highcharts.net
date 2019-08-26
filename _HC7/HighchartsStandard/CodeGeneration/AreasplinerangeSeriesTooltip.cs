@@ -14,6 +14,7 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public AreasplinerangeSeriesTooltip()
 		{
+			ClassName = ClassName_DefaultValue = "";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			FollowPointer = FollowPointer_DefaultValue = null;
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
@@ -35,6 +36,13 @@ namespace Highsoft.Web.Mvc.Charts
 			
 		}	
 		
+
+		/// <summary>
+		/// A CSS class name to apply to the tooltip's container div,allowing unique CSS styling for each chart.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// For series on a datetime axes, the date format in the tooltip'sheader will by default be guessed based on the closest data points.This member gives the default string representations used foreach unit. For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat).
@@ -166,6 +174,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
@@ -174,11 +183,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", Highcharts.FirstCharacterToLower(HeaderShape.ToString()));
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("AreasplinerangeSeriesTooltipNullFormatter.nullFormatter", NullFormatter); }  
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("4e10ba09-6ae0-4f0b-b00f-e5f80667bde2.nullFormatter", NullFormatter); }  
 			if (Outside != Outside_DefaultValue) h.Add("outside",Outside);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("AreasplinerangeSeriesTooltipPointFormatter.pointFormatter", PointFormatter); }  
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("f67303ba-c5f8-442a-9f66-a2de72921ad1.pointFormatter", PointFormatter); }  
 			if (Split != Split_DefaultValue) h.Add("split",Split);
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);

@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 1;
+			ClassName = ClassName_DefaultValue = "";
 			Crosshairs = Crosshairs_DefaultValue = new List<Crosshair>();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
@@ -84,6 +85,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A CSS class name to apply to the tooltip's container div,allowing unique CSS styling for each chart.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -291,23 +299,24 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crosshairs != Crosshairs_DefaultValue) h.Add("crosshairs",Crosshairs);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("TooltipFormatter.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("7ca1a356-ebb0-4656-b726-7d1dbe89dc0c.formatter", Formatter); }  
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", Highcharts.FirstCharacterToLower(HeaderShape.ToString()));
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("TooltipNullFormatter.nullFormatter", NullFormatter); }  
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("2850f566-4fa3-4d59-926c-ff41bfb28a9c.nullFormatter", NullFormatter); }  
 			if (Outside != Outside_DefaultValue) h.Add("outside",Outside);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("TooltipPointFormatter.pointFormatter", PointFormatter); }  
-			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("TooltipPositioner.positioner", Positioner); }  
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("121ab436-b602-4115-93dd-044c9a826645.pointFormatter", PointFormatter); }  
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("76263e6b-070f-4b92-a762-b762d6b47337.positioner", Positioner); }  
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);

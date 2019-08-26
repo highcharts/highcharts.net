@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "";
+			Color = Color_DefaultValue = "#e6ebf5";
 			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
 			Id = Id_DefaultValue = "";

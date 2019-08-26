@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsVennStatesHover()
 		{
 			BorderColor = BorderColor_DefaultValue = "#333333";
-			Halo = Halo_DefaultValue = false;
 			Opacity = Opacity_DefaultValue = 1;
 			
 		}	
@@ -31,13 +30,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public bool? Halo { get; set; }
-		private bool? Halo_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public double? Opacity { get; set; }
 		private double? Opacity_DefaultValue { get; set; }
 		  
@@ -47,7 +39,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			
 

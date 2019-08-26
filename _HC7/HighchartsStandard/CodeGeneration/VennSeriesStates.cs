@@ -14,18 +14,19 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VennSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new VennSeriesStatesHover();
+			Hover = Hover_DefaultValue = "";
 			Inactive = Inactive_DefaultValue = new VennSeriesStatesInactive();
 			Normal = Normal_DefaultValue = new VennSeriesStatesNormal();
+			Select = Select_DefaultValue = "";
 			
 		}	
 		
 
 		/// <summary>
-		/// Options for the hovered series. These settings override thenormal state options when a series is moused over or touched.
+		/// 
 		/// </summary>
-		public VennSeriesStatesHover Hover { get; set; }
-		private VennSeriesStatesHover Hover_DefaultValue { get; set; }
+		public string Hover { get; set; }
+		private string Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -40,15 +41,23 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public VennSeriesStatesNormal Normal { get; set; }
 		private VennSeriesStatesNormal Normal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Select { get; set; }
+		private string Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
 			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
+			if (Select != Select_DefaultValue) h.Add("select",Select);
 			
 
 			return h;

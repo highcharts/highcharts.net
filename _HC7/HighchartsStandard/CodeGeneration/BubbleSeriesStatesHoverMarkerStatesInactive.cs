@@ -14,10 +14,18 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public BubbleSeriesStatesHoverMarkerStatesInactive()
 		{
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Opacity = Opacity_DefaultValue = null;
 			
 		}	
 		
+
+		/// <summary>
+		/// Animation when not hovering over the marker.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Opacity of inactive markers.
@@ -30,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			
 

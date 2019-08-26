@@ -32,7 +32,6 @@ namespace Highsoft.Web.Mvc.Charts
 			DragDrop = DragDrop_DefaultValue = new SankeySeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new SankeySeriesEvents();
-			ExposeElementToA11y = ExposeElementToA11y_DefaultValue = null;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Id = Id_DefaultValue = "";
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
@@ -43,6 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Levels = Levels_DefaultValue = new SankeySeriesLevels();
 			LinkedTo = LinkedTo_DefaultValue = "";
 			LinkOpacity = LinkOpacity_DefaultValue = null;
+			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			Name = Name_DefaultValue = "";
 			NodePadding = NodePadding_DefaultValue = 10;
@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			Stack = Stack_DefaultValue = "";
+			Stack = Stack_DefaultValue = null;
 			States = States_DefaultValue = new SankeySeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new SankeySeriesTooltip();
@@ -196,13 +196,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// By default, series are exposed to screen readers as regions. Byenabling this option, the series element itself will be exposed inthe same way as the data points. This is useful if the series is notused as a grouping entity in the chart, but you still want to attacha description to the series.Requires the Accessibility module.
-		/// </summary>
-		public bool? ExposeElementToA11y { get; set; }
-		private bool? ExposeElementToA11y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to use the Y extremes of the total chart width or only thezoomed area when zooming in on parts of the X axis. By default, theY axis adjusts to the min and max of the visible data. Cartesianseries only.
 		/// </summary>
 		public bool? GetExtremesFromAll { get; set; }
@@ -252,7 +245,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Set options on specific levels. Takes precedence over series options,but not point options.
+		/// Set options on specific levels. Takes precedence over series options,but not node and link options.
 		/// </summary>
 		public SankeySeriesLevels Levels { get; set; }
 		private SankeySeriesLevels Levels_DefaultValue { get; set; }
@@ -270,6 +263,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? LinkOpacity { get; set; }
 		private double? LinkOpacity_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The minimal width for a line of a sankey. By default,0 values are not shown.
+		/// </summary>
+		public double? MinLinkWidth { get; set; }
+		private double? MinLinkWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -448,7 +448,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (ExposeElementToA11y != ExposeElementToA11y_DefaultValue) h.Add("exposeElementToA11y",ExposeElementToA11y);
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
@@ -459,6 +458,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Levels != Levels_DefaultValue) h.Add("levels",Levels);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
+			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
@@ -466,7 +466,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("SankeySeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("70410505-0f4b-4826-8e5e-26d68a076130.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);

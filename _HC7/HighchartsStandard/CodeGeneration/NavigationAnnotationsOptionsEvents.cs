@@ -46,9 +46,9 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Add != Add_DefaultValue) { h.Add("add",Add); Highcharts.AddFunction("NavigationAnnotationsOptionsEventsAdd.add", Add); }  
-			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); Highcharts.AddFunction("NavigationAnnotationsOptionsEventsAfterUpdate.afterUpdate", AfterUpdate); }  
-			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("NavigationAnnotationsOptionsEventsRemove.remove", Remove); }  
+			if (Add != Add_DefaultValue) { h.Add("add",Add); Highcharts.AddFunction("b4c01788-9389-4b6a-b8ad-80592144037b.add", Add); }  
+			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); Highcharts.AddFunction("8de2c5b3-8281-4bee-848d-237c756334ab.afterUpdate", AfterUpdate); }  
+			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("dbae5e02-f436-4312-81a5-99bc00e2011e.remove", Remove); }  
 			
 
 			return h;

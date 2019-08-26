@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
 			Description = Description_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = true;
+			HighContrastTheme = HighContrastTheme_DefaultValue = new object();
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
 			LandmarkVerbosity = LandmarkVerbosity_DefaultValue = AccessibilityLandmarkVerbosity.All;
 			OnTableAnchorClick = OnTableAnchorClick_DefaultValue = "";
@@ -28,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointDateFormatter = PointDateFormatter_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = 200;
+			PointNavigationThreshold = PointNavigationThreshold_DefaultValue = null;
 			PointValueDecimals = PointValueDecimals_DefaultValue = "";
 			PointValuePrefix = PointValuePrefix_DefaultValue = "";
 			PointValueSuffix = PointValueSuffix_DefaultValue = "";
@@ -88,6 +90,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Theme to apply to the chart when Windows High Contrast Mode isdetected.
+		/// </summary>
+		public Object HighContrastTheme { get; set; }
+		private Object HighContrastTheme_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options for keyboard navigation.
 		/// </summary>
 		public AccessibilityKeyboardNavigation KeyboardNavigation { get; set; }
@@ -134,6 +143,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public long? PointDescriptionThreshold { get; set; }
 		private long? PointDescriptionThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When a series contains more points than this, we no longer allowkeyboard navigation for it.Set to `false` to disable.
+		/// </summary>
+		public double? PointNavigationThreshold { get; set; }
+		private double? PointNavigationThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -189,12 +205,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (HighContrastTheme != HighContrastTheme_DefaultValue) h.Add("highContrastTheme",HighContrastTheme);
 			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
 			if (LandmarkVerbosity != LandmarkVerbosity_DefaultValue) h.Add("landmarkVerbosity", Highcharts.FirstCharacterToLower(LandmarkVerbosity.ToString()));
-			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highcharts.AddFunction("AccessibilityOnTableAnchorClick.onTableAnchorClick", OnTableAnchorClick); }  
+			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highcharts.AddFunction("1a0a14fa-cd8b-4f84-b5d4-9717b0c49656.onTableAnchorClick", OnTableAnchorClick); }  
 			if (PointDateFormat != PointDateFormat_DefaultValue) h.Add("pointDateFormat",PointDateFormat);
-			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highcharts.AddFunction("AccessibilityPointDateFormatter.pointDateFormatter", PointDateFormatter); }  
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("AccessibilityPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highcharts.AddFunction("0b6718d1-8f37-470b-be9c-8fc1130e6563.pointDateFormatter", PointDateFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("252c6b78-9162-4cbf-9b87-ef76455fb083.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)
 			{
 				if (PointDescriptionThreshold != null)
@@ -202,11 +219,12 @@ namespace Highsoft.Web.Mvc.Charts
 				else
 					h.Add("pointDescriptionThreshold", false);
 			}
+			if (PointNavigationThreshold != PointNavigationThreshold_DefaultValue) h.Add("pointNavigationThreshold",PointNavigationThreshold);
 			if (PointValueDecimals != PointValueDecimals_DefaultValue) h.Add("pointValueDecimals",PointValueDecimals);
 			if (PointValuePrefix != PointValuePrefix_DefaultValue) h.Add("pointValuePrefix",PointValuePrefix);
 			if (PointValueSuffix != PointValueSuffix_DefaultValue) h.Add("pointValueSuffix",PointValueSuffix);
-			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highcharts.AddFunction("AccessibilityScreenReaderSectionFormatter.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
-			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highcharts.AddFunction("AccessibilitySeriesDescriptionFormatter.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
+			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highcharts.AddFunction("c78a1ffc-eae3-4f16-a38e-6bab2633f8a8.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
+			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highcharts.AddFunction("daa3bd4b-f25c-4e6b-918e-d4ee600839d5.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
 			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
 			
 

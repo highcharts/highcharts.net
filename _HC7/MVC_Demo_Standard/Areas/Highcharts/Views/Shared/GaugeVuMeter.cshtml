@@ -67,7 +67,12 @@
                 {
                     DataLabels = new PlotOptionsGaugeDataLabels
                     {
-                        Enabled = false
+                        Enabled = true,
+                        BorderWidth = 5,
+                        //Format = ""
+                        VerticalAlign = PlotOptionsGaugeDataLabelsVerticalAlign.Bottom,
+                        ClassName = "css_class"
+
                     },
                     Dial = new PlotOptionsGaugeDial
                     {

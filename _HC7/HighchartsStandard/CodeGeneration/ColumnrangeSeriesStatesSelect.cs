@@ -14,14 +14,32 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public ColumnrangeSeriesStatesSelect()
 		{
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			Enabled = Enabled_DefaultValue = true;
 			
 		}	
+		
+
+		/// <summary>
+		/// Animation setting for hovering the graph in line-type series.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
 		 
+
+		/// <summary>
+		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 
 			return h;

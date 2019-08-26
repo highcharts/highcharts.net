@@ -200,7 +200,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("NavigationAnnotationsOptionsLabelOptionsFormatter.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("f7c0d12c-f000-47ed-b4a5-a8e3b8cc071d.formatter", Formatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);

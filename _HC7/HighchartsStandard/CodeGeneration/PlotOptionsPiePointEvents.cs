@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("PlotOptionsPiePointEventsLegendItemClick.legendItemClick", LegendItemClick); }  
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("7aede916-e192-4084-8cdd-a7ed651dbe22.legendItemClick", LegendItemClick); }  
 			
 
 			return h;

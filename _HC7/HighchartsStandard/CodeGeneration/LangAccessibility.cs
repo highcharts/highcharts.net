@@ -16,9 +16,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			AnnounceNewData = AnnounceNewData_DefaultValue = new LangAccessibilityAnnounceNewData();
 			Axis = Axis_DefaultValue = new LangAccessibilityAxis();
-			ChartContainerLabel = ChartContainerLabel_DefaultValue = "{title}. Interactive chart.";
+			ChartContainerLabel = ChartContainerLabel_DefaultValue = "{title}. Highcharts interactive chart.";
 			ChartHeading = ChartHeading_DefaultValue = "Chart graphic.";
 			ChartTypes = ChartTypes_DefaultValue = new LangAccessibilityChartTypes();
+			Credits = Credits_DefaultValue = "Chart credits: {creditsStr}";
 			DefaultChartTitle = DefaultChartTitle_DefaultValue = "Chart";
 			DrillUpButton = DrillUpButton_DefaultValue = "{buttonText}";
 			Exporting = Exporting_DefaultValue = new LangAccessibilityExporting();
@@ -76,6 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public LangAccessibilityChartTypes ChartTypes { get; set; }
 		private LangAccessibilityChartTypes ChartTypes_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Credits { get; set; }
+		private string Credits_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -227,6 +235,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ChartContainerLabel != ChartContainerLabel_DefaultValue) h.Add("chartContainerLabel",ChartContainerLabel);
 			if (ChartHeading != ChartHeading_DefaultValue) h.Add("chartHeading",ChartHeading);
 			if (ChartTypes.IsDirty()) h.Add("chartTypes",ChartTypes.ToHashtable());
+			if (Credits != Credits_DefaultValue) h.Add("credits",Credits);
 			if (DefaultChartTitle != DefaultChartTitle_DefaultValue) h.Add("defaultChartTitle",DefaultChartTitle);
 			if (DrillUpButton != DrillUpButton_DefaultValue) h.Add("drillUpButton",DrillUpButton);
 			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());

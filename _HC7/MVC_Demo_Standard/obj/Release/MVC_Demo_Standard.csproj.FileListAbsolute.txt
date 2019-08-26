@@ -222,7 +222,6 @@ C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\AWSSDK.dll
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\EntityFramework.dll
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\EntityFramework.SqlServer.dll
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\Highcharts.dll
-C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\Highstock.Web.Mvc.dll
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\Microsoft.CSharp.dll
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\Microsoft.Web.Infrastructure.dll
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\Newtonsoft.Json.dll
@@ -279,3 +278,9 @@ C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\obj\Release\MVC_Demo_Stand
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\obj\Release\MVC_Demo_Standard.csproj.CopyComplete
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\obj\Release\MVC_Demo.dll
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\obj\Release\MVC_Demo.pdb
+C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\Highstock.dll
+C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\System.Configuration.ConfigurationManager.dll
+C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\System.Security.AccessControl.dll
+C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\System.Security.Permissions.dll
+C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\System.Security.Principal.Windows.dll
+C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\Highstock.pdb

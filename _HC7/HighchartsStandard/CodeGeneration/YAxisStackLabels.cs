@@ -16,9 +16,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Align = Align_DefaultValue = YAxisStackLabelsAlign.Null;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
+			Crop = Crop_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "{total}";
 			Formatter = Formatter_DefaultValue = "";
+			Overflow = Overflow_DefaultValue = YAxisLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = new YAxisStackLabelsStyle();
 			TextAlign = TextAlign_DefaultValue = "";
@@ -45,6 +47,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to hide stack labels that are outside the plot area.By default, the stack label is movedinside the plot area according to the[overflow](/highcharts/#yAxis/stackLabels/overflow)option.
+		/// </summary>
+		public bool? Crop { get; set; }
+		private bool? Crop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the stack total labels.
 		/// </summary>
 		public bool? Enabled { get; set; }
@@ -63,6 +72,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// How to handle stack total labels that flow outside the plot area.The default is set to `"justify"`,which aligns them inside the plot area.For columns and bars, this means it will be moved inside the bar.To display stack labels outside the plot area,set `crop` to `false` and `overflow` to `"allow"`.
+		/// </summary>
+		public YAxisLabelsOverflow Overflow { get; set; }
+		private YAxisLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -120,9 +136,11 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
+			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("YAxisStackLabelsFormatter.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("7497b781-82fb-45a9-b8e6-6083bd8881a3.formatter", Formatter); }  
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);

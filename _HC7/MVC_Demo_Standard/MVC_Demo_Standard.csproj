@@ -1435,6 +1435,7 @@
     <Content Include="Areas\Highcharts\Views\Shared\HoneycombUsa.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\Core.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\UpgradeToStandard.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\Daniel_HighmapsDemo.pubxml" />
     <None Include="Properties\PublishProfiles\dd.pubxml" />
     <None Include="Properties\PublishProfiles\hc5.pubxml" />
