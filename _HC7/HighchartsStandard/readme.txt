@@ -1,5 +1,8 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
 
+#Version 7.1.3.1
+Fix multiple the same type events bug
+
 #Version 7.1.2.2
 Fix PlotOptionsGaugeDataLabels
 
