@@ -4,9 +4,17 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering;
 
+<div id="chart1" style="height:400px; width:400px"></div>
+
 @{ 
     var chartOptions = new Highcharts
     {
+        Chart = new Chart
+        {
+            HeightString = "100%",
+            WidthString = "100%"
+        },
+
         Title = new Title
         {
             Text = "Monthly Average Temperature",
@@ -79,11 +87,11 @@
         }
     };
 
-    chartOptions.ID = "chart";
-    var renderer = new HighchartsRenderer(chartOptions);
+    chartOptions.ID = "chart1";
+    var renderer = new HighchartsRenderer(chartOptions, "MDcwMjAxOTEwMjYxMDAwMDAwMDE=");
 }
 
-@Html.Raw(renderer.RenderHtml());
+@Html.Raw(renderer.RenderHtml(false))
 
 
 

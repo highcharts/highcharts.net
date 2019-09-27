@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorValue = ColorValue_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = new object();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new SunburstSeriesDataDragDrop();
 			Drilldown = Drilldown_DefaultValue = "";

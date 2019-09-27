@@ -173,7 +173,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Funnel charts are a type of chart often used to visualize stages in a salesproject, where the top are the initial stages with the most clients.It requires that the modules/funnel.js file is loaded.In TypeScript the [type](series.funnel.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `funnel` series are defined in   [plotOptions.funnel](plotOptions.funnel).3. Options for one single series are given in   [the series instance array](series.funnel).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        funnel: {            // shared options for all funnel series        }    },    series: [{        // specific options for this series instance        type: 'funnel'    }]});```            
+		/// Funnel charts are a type of chart often used to visualize stages in asales project, where the top are the initial stages with the mostclients. It requires that the modules/funnel.js file is loaded.In TypeScript the [type](series.funnel.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `funnel` series are defined in   [plotOptions.funnel](plotOptions.funnel).3. Options for one single series are given in   [the series instance array](series.funnel).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        funnel: {            // shared options for all funnel series        }    },    series: [{        // specific options for this series instance        type: 'funnel'    }]});```            
 		/// </summary>
 		public PlotOptionsFunnel Funnel { get; set; }
 		private PlotOptionsFunnel Funnel_DefaultValue { get; set; }
@@ -264,7 +264,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A pyramid series is a special type of funnel, without neck and reversed bydefault. Requires the funnel module.In TypeScript the [type](series.pyramid.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `pyramid` series are defined in   [plotOptions.pyramid](plotOptions.pyramid).3. Options for one single series are given in   [the series instance array](series.pyramid).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        pyramid: {            // shared options for all pyramid series        }    },    series: [{        // specific options for this series instance        type: 'pyramid'    }]});```            
+		/// A pyramid series is a special type of funnel, without neck and reversedby default. Requires the funnel module.In TypeScript the [type](series.pyramid.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `pyramid` series are defined in   [plotOptions.pyramid](plotOptions.pyramid).3. Options for one single series are given in   [the series instance array](series.pyramid).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        pyramid: {            // shared options for all pyramid series        }    },    series: [{        // specific options for this series instance        type: 'pyramid'    }]});```            
 		/// </summary>
 		public PlotOptionsPyramid Pyramid { get; set; }
 		private PlotOptionsPyramid Pyramid_DefaultValue { get; set; }
@@ -426,7 +426,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Column.IsDirty()) h.Add("column",Column.ToHashtable());
 			if (Columnpyramid.IsDirty()) h.Add("columnpyramid",Columnpyramid.ToHashtable());
 			if (Columnrange.IsDirty()) h.Add("columnrange",Columnrange.ToHashtable());
-			if (Cylinder.IsDirty()) h.Add("cylinder",Cylinder.ToHashtable());
+			if (Cylinder != Cylinder_DefaultValue) h.Add("cylinder",Cylinder);
 			if (Dependencywheel.IsDirty()) h.Add("dependencywheel",Dependencywheel.ToHashtable());
 			if (Errorbar.IsDirty()) h.Add("errorbar",Errorbar.ToHashtable());
 			if (Funnel.IsDirty()) h.Add("funnel",Funnel.ToHashtable());

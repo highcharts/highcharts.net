@@ -35,12 +35,12 @@ namespace SourceCodeGenerator
 
 
 
-                DateTime hsStartTime = DateTime.Now;
-                JsonParser jsonParserHS = new JsonParser("highstock", fileService, filterService, updateService, typeService);
-                JsonParser jsonParserHS2 = new JsonParser("highstock", previousFileService, filterService, updateService, typeService);
-                HighstockGenerator hsg = new HighstockGenerator(jsonParserHS, jsonParserHS2, fileService, multiplicationService, comparisonService);
-                hsg.GenerateCode(true);
-                Console.WriteLine($"Highstock.NET has been generated. {DateTime.Now - hsStartTime}");
+                //DateTime hsStartTime = DateTime.Now;
+                //JsonParser jsonParserHS = new JsonParser("highstock", fileService, filterService, updateService, typeService);
+                //JsonParser jsonParserHS2 = new JsonParser("highstock", previousFileService, filterService, updateService, typeService);
+                //HighstockGenerator hsg = new HighstockGenerator(jsonParserHS, jsonParserHS2, fileService, multiplicationService, comparisonService);
+                //hsg.GenerateCode(true);
+                //Console.WriteLine($"Highstock.NET has been generated. {DateTime.Now - hsStartTime}");
             }
             catch (Exception ex)
             {

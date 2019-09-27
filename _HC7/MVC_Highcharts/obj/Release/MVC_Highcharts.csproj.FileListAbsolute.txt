@@ -17,7 +17,6 @@ C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Release\MVC_Highcharts.cs
 C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Release\Highcharts.Web.Mvc.dll
 C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Release\Highcharts.Web.Mvc.pdb
 C:\Repositories\highcharts.net\_HC6\MVC_Highcharts\obj\Release\MVC_Highcharts.csprojAssemblyReference.cache
-C:\Repositories\highcharts.net\_HC7\MVC_Highcharts\obj\Release\MVC_Highcharts.csproj.CoreCompileInputs.cache
 C:\Repositories\highcharts.net\_HC7\MVC_Highcharts\bin\Release\Highcharts.Web.Mvc.dll
 C:\Repositories\highcharts.net\_HC7\MVC_Highcharts\bin\Release\Highcharts.Web.Mvc.pdb
 C:\Repositories\highcharts.net\_HC7\MVC_Highcharts\bin\Release\System.Web.Mvc.dll

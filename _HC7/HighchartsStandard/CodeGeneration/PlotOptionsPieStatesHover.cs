@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
+			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			
 
 			return h;

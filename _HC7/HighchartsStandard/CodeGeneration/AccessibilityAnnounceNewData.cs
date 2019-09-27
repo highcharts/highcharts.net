@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (AnnouncementFormatter != AnnouncementFormatter_DefaultValue) { h.Add("announcementFormatter",AnnouncementFormatter); Highcharts.AddFunction("4cf53549-9a80-4600-a2e4-8fd6371f51b5.announcementFormatter", AnnouncementFormatter); }  
+			if (AnnouncementFormatter != AnnouncementFormatter_DefaultValue) { h.Add("announcementFormatter",AnnouncementFormatter); Highcharts.AddFunction("93dc50ca-e26e-4180-90c6-9b2ccd03e671.announcementFormatter", AnnouncementFormatter); }  
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (InterruptUser != InterruptUser_DefaultValue) h.Add("interruptUser",InterruptUser);
 			if (MinAnnounceInterval != MinAnnounceInterval_DefaultValue) h.Add("minAnnounceInterval",MinAnnounceInterval);

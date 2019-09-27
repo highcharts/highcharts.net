@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new Accessibility();
 			Annotations = Annotations_DefaultValue = new List<Annotations>();
 			Boost = Boost_DefaultValue = new Boost();
+			Caption = Caption_DefaultValue = new Caption();
 			Chart = Chart_DefaultValue = new Chart();
 			ColorAxis = ColorAxis_DefaultValue = new ColorAxis();
 			Colors = Colors_DefaultValue = new List<string>();
@@ -69,6 +70,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The chart's caption, which will render below the chart and will be partof exported charts. The caption can be updated after chart initializationthrough the `Chart.update` or `Chart.caption.update` methods.
+		/// </summary>
+		public Caption Caption { get; set; }
+		private Caption Caption_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// General options for the chart.
 		/// </summary>
 		public Chart Chart { get; set; }
@@ -76,7 +84,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A color axis for choropleth maps and heat maps. Visually, the coloraxis will appear as a gradient or as separate items inside thelegend, depending on whether the axis is scalar or based on dataclasses.For supported color formats, see the[docs article about colors](https://www.highcharts.com/docs/chart-design-and-style/colors).A scalar color axis is represented by a gradient. The colors eitherrange between the [minColor](#colorAxis.minColor) and the[maxColor](#colorAxis.maxColor), or for more fine grained control thecolors can be defined in [stops](#colorAxis.stops). Often times, thecolor axis needs to be adjusted to get the right color spread for thedata. In addition to stops, consider using a logarithmic[axis type](#colorAxis.type), or setting [min](#colorAxis.min) and[max](#colorAxis.max) to avoid the colors being determined byoutliers.When [dataClasses](#colorAxis.dataClasses) are used, the ranges aresubdivided into separate classes like categories based on theirvalues. This can be used for ranges between two values, but also fora true category. However, when your data is categorized, it may be asconvenient to add each category to a separate series.See [the Axis object](/class-reference/Highcharts.Axis) forprogrammatic access to the axis.
+		/// A color axis for series. Visually, the coloraxis will appear as a gradient or as separate items inside thelegend, depending on whether the axis is scalar or based on dataclasses.For supported color formats, see the[docs article about colors](https://www.highcharts.com/docs/chart-design-and-style/colors).A scalar color axis is represented by a gradient. The colors eitherrange between the [minColor](#colorAxis.minColor) and the[maxColor](#colorAxis.maxColor), or for more fine grained control thecolors can be defined in [stops](#colorAxis.stops). Often times, thecolor axis needs to be adjusted to get the right color spread for thedata. In addition to stops, consider using a logarithmic[axis type](#colorAxis.type), or setting [min](#colorAxis.min) and[max](#colorAxis.max) to avoid the colors being determined byoutliers.When [dataClasses](#colorAxis.dataClasses) are used, the ranges aresubdivided into separate classes like categories based on theirvalues. This can be used for ranges between two values, but also fora true category. However, when your data is categorized, it may be asconvenient to add each category to a separate series.Color axis does not work with: `sankey`, `sunburst`, `dependencywheel`,`networkgraph`, `wordcloud`, `venn`, `gauge` and `solidgauge` seriestypes.Since v7.2.0 `colorAxis` can also be an array of options objects.See [the Axis object](/class-reference/Highcharts.Axis) forprogrammatic access to the axis.
 		/// </summary>
 		public ColorAxis ColorAxis { get; set; }
 		private ColorAxis ColorAxis_DefaultValue { get; set; }
@@ -257,6 +265,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
 			if (Boost.IsDirty()) h.Add("boost",Boost.ToHashtable());
+			if (Caption.IsDirty()) h.Add("caption",Caption.ToHashtable());
 			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
 			if (ColorAxis.IsDirty()) h.Add("colorAxis",ColorAxis.ToHashtable());
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);

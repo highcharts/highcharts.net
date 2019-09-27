@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Column = Column_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = "";
+			DataLabels = DataLabels_DefaultValue = new object();
 			Id = Id_DefaultValue = "";
 			Level = Level_DefaultValue = null;
 			Name = Name_DefaultValue = "";
@@ -49,8 +49,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Individual data label for each node. The options are the same asthe ones for [series.dependencywheel.dataLabels](#series.dependencywheel.dataLabels).
 		/// </summary>
-		public string DataLabels { get; set; }
-		private string DataLabels_DefaultValue { get; set; }
+		public Object DataLabels { get; set; }
+		private Object DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>

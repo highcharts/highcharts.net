@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// A callback function to gain complete control on when the responsiverule applies. Return `true` if it applies. This opens for checkingagainst other metrics than the chart size, or example the documentsize or other elements.
+		/// A callback function to gain complete control on when the responsiverule applies. Return `true` if it applies. This opens for checkingagainst other metrics than the chart size, for example the documentsize or other elements.
 		/// </summary>
 		public string Callback { get; set; }
 		private string Callback_DefaultValue { get; set; }
@@ -62,7 +62,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Callback != Callback_DefaultValue) { h.Add("callback",Callback); Highcharts.AddFunction("86e08b8c-8e70-4a55-b11f-5981e155a57e.callback", Callback); }  
+			if (Callback != Callback_DefaultValue) { h.Add("callback",Callback); Highcharts.AddFunction("fd8a8748-1571-4f32-aaa8-da0e3b1a83f7.callback", Callback); }  
 			if (MaxHeight != MaxHeight_DefaultValue) h.Add("maxHeight",MaxHeight);
 			if (MaxWidth != MaxWidth_DefaultValue) h.Add("maxWidth",MaxWidth);
 			if (MinHeight != MinHeight_DefaultValue) h.Add("minHeight",MinHeight);

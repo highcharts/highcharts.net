@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Path where Highcharts will look for icons. Change this to useicons from a different server.
+		/// Path where Highcharts will look for icons. Change this to use iconsfrom a different server.
 		/// </summary>
 		public string IconsURL { get; set; }
 		private string IconsURL_DefaultValue { get; set; }

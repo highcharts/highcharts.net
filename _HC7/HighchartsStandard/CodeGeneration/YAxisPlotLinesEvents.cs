@@ -54,10 +54,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("db410067-8293-44fd-93ba-16b1d96c0216.click", Click); }  
-			if (Mousemove != Mousemove_DefaultValue) { h.Add("mousemove",Mousemove); Highcharts.AddFunction("9f94b24f-0b68-477f-9d77-b875de485c59.mousemove", Mousemove); }  
-			if (Mouseout != Mouseout_DefaultValue) { h.Add("mouseout",Mouseout); Highcharts.AddFunction("cafb45b8-247e-40f4-8f63-1e3ddd690fed.mouseout", Mouseout); }  
-			if (Mouseover != Mouseover_DefaultValue) { h.Add("mouseover",Mouseover); Highcharts.AddFunction("d8542d5e-d2bf-4ace-83d0-3dc98f9c8ed0.mouseover", Mouseover); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("899a0b69-0a4c-4895-9934-6c5202e431c4.click", Click); }  
+			if (Mousemove != Mousemove_DefaultValue) { h.Add("mousemove",Mousemove); Highcharts.AddFunction("ec2e93d2-d7de-44bc-86b1-0d6f8b124b13.mousemove", Mousemove); }  
+			if (Mouseout != Mouseout_DefaultValue) { h.Add("mouseout",Mouseout); Highcharts.AddFunction("c00b6e3e-8708-4eae-9251-58e5798b466d.mouseout", Mouseout); }  
+			if (Mouseover != Mouseover_DefaultValue) { h.Add("mouseover",Mouseover); Highcharts.AddFunction("9ef5f4cb-c3d6-4915-90b6-99af8ccafd96.mouseover", Mouseover); }  
 			
 
 			return h;

@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The dash style for the crosshair. See[series.dashStyle](#plotOptions.series.dashStyle)for possible values.
+		/// The dash style for the crosshair. See[plotOptions.series.dashStyle](#plotOptions.series.dashStyle)for possible values.
 		/// </summary>
 		public string DashStyle { get; set; }
 		private string DashStyle_DefaultValue { get; set; }

@@ -26,9 +26,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Defer = Defer_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Filter = Filter_DefaultValue = new ArearangeSeriesDataLabelsStyleFilter();
-			FontSize = FontSize_DefaultValue = "";
-			FontWeight = FontWeight_DefaultValue = "";
-			Format = Format_DefaultValue = "";
+            FontSize = FontSize_DefaultValue = "";
+            FontWeight = FontWeight_DefaultValue = "";
+            Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
 			Overflow = Overflow_DefaultValue = ArearangeSeriesDataLabelsStyleOverflow.Justify;
@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Shape = Shape_DefaultValue = "square";
 			Style = Style_DefaultValue = new ArearangeSeriesDataLabelsStyleStyle();
 			TextOutline = TextOutline_DefaultValue = "";
-			UseHTML = UseHTML_DefaultValue = false;
+            UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = ArearangeSeriesDataLabelsStyleVerticalAlign.Top;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
@@ -269,7 +269,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("63eaee8f-56af-4339-88c1-45d05b57e2fd.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("a22ab63e-db08-4814-a647-b09763142897.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);

@@ -72,10 +72,10 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
+			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
-			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			
 
 			return h;

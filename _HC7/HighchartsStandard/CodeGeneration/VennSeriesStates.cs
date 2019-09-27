@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Charts
 	{
 		public VennSeriesStates()
 		{
-			Hover = Hover_DefaultValue = "";
+			Hover = Hover_DefaultValue = new object();
 			Inactive = Inactive_DefaultValue = new VennSeriesStatesInactive();
 			Normal = Normal_DefaultValue = new VennSeriesStatesNormal();
-			Select = Select_DefaultValue = "";
+			Select = Select_DefaultValue = new object();
 			
 		}	
 		
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Hover { get; set; }
-		private string Hover_DefaultValue { get; set; }
+		public Object Hover { get; set; }
+		private Object Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Select { get; set; }
-		private string Select_DefaultValue { get; set; }
+		public Object Select { get; set; }
+		private Object Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

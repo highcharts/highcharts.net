@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Layout = Layout_DefaultValue = "normal";
 			Level = Level_DefaultValue = null;
 			Name = Name_DefaultValue = "";
-			Offset = Offset_DefaultValue = 0;
+			Offset = Offset_DefaultValue = "0";
 			Title = Title_DefaultValue = "";
 			
 		}	
@@ -103,8 +103,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percantage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
 		/// </summary>
-		public double? Offset { get; set; }
-		private double? Offset_DefaultValue { get; set; }
+		public string Offset { get; set; }
+		private string Offset_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A text description of the chart.If the Accessibility module is loaded, this is included by defaultas a long description of the chart in the hidden screen readerinformation region.Note: It is considered a best practice to make the description of thechart visible to all users, so consider if this can be placed in textaround the chart instead.
+		/// A text description of the chart.**Note: Prefer using [caption](#caption.text) instead.**If the Accessibility module is loaded, this option is included bydefault as a long description of the chart in the hidden screenreader information region.Note: Since Highcharts now supports captions, it is preferred todefine the description there, as the caption benefits all users. Thecaption will be available to screen reader users. If this option isdefined instead, the caption is hidden from screen reader users.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
@@ -208,10 +208,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (HighContrastTheme != HighContrastTheme_DefaultValue) h.Add("highContrastTheme",HighContrastTheme);
 			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
 			if (LandmarkVerbosity != LandmarkVerbosity_DefaultValue) h.Add("landmarkVerbosity", Highcharts.FirstCharacterToLower(LandmarkVerbosity.ToString()));
-			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highcharts.AddFunction("1a0a14fa-cd8b-4f84-b5d4-9717b0c49656.onTableAnchorClick", OnTableAnchorClick); }  
+			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highcharts.AddFunction("f8967228-2edb-485a-bcd9-65107291829d.onTableAnchorClick", OnTableAnchorClick); }  
 			if (PointDateFormat != PointDateFormat_DefaultValue) h.Add("pointDateFormat",PointDateFormat);
-			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highcharts.AddFunction("0b6718d1-8f37-470b-be9c-8fc1130e6563.pointDateFormatter", PointDateFormatter); }  
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("252c6b78-9162-4cbf-9b87-ef76455fb083.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDateFormatter != PointDateFormatter_DefaultValue) { h.Add("pointDateFormatter",PointDateFormatter); Highcharts.AddFunction("b84a3458-606b-4b72-aa52-89afa016d7d2.pointDateFormatter", PointDateFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("f64e44e5-bfbe-45ea-b4e0-e18f4d17e808.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)
 			{
 				if (PointDescriptionThreshold != null)
@@ -223,8 +223,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointValueDecimals != PointValueDecimals_DefaultValue) h.Add("pointValueDecimals",PointValueDecimals);
 			if (PointValuePrefix != PointValuePrefix_DefaultValue) h.Add("pointValuePrefix",PointValuePrefix);
 			if (PointValueSuffix != PointValueSuffix_DefaultValue) h.Add("pointValueSuffix",PointValueSuffix);
-			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highcharts.AddFunction("c78a1ffc-eae3-4f16-a38e-6bab2633f8a8.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
-			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highcharts.AddFunction("daa3bd4b-f25c-4e6b-918e-d4ee600839d5.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
+			if (ScreenReaderSectionFormatter != ScreenReaderSectionFormatter_DefaultValue) { h.Add("screenReaderSectionFormatter",ScreenReaderSectionFormatter); Highcharts.AddFunction("8503ecea-d40b-44f3-841d-a59cc16e000c.screenReaderSectionFormatter", ScreenReaderSectionFormatter); }  
+			if (SeriesDescriptionFormatter != SeriesDescriptionFormatter_DefaultValue) { h.Add("seriesDescriptionFormatter",SeriesDescriptionFormatter); Highcharts.AddFunction("bcf7570e-046d-42c4-aff1-51c758deeaf6.seriesDescriptionFormatter", SeriesDescriptionFormatter); }  
 			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
 			
 

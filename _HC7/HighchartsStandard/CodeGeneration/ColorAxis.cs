@@ -15,7 +15,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public ColorAxis()
 		{
 			Accessibility = Accessibility_DefaultValue = new ColorAxisAccessibility();
-			AlignTicks = AlignTicks_DefaultValue = true;
 			AllowDecimals = AllowDecimals_DefaultValue = true;
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
@@ -30,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Id = Id_DefaultValue = "";
 			Labels = Labels_DefaultValue = new ColorAxisLabels();
+			Layout = Layout_DefaultValue = "";
 			LineColor = LineColor_DefaultValue = "#ccd6eb";
 			Margin = Margin_DefaultValue = null;
 			Marker = Marker_DefaultValue = new ColorAxisMarker();
@@ -48,9 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinorTicks = MinorTicks_DefaultValue = false;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			MinPadding = MinPadding_DefaultValue = 0;
-			Pane = Pane_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = null;
-			ReversedStacks = ReversedStacks_DefaultValue = false;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
@@ -72,7 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Type = Type_DefaultValue = "linear";
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
-			ZoomEnabled = ZoomEnabled_DefaultValue = true;
 			
 		}	
 		
@@ -82,13 +79,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ColorAxisAccessibility Accessibility { get; set; }
 		private ColorAxisAccessibility Accessibility_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
-		/// </summary>
-		public bool? AlignTicks { get; set; }
-		private bool? AlignTicks_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -187,6 +177,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ColorAxisLabels Labels { get; set; }
 		private ColorAxisLabels Labels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The layout of the color axis. Can be `'horizontal'` or `'vertical'`.If none given, the color axis has the same layout as the legend.
+		/// </summary>
+		public string Layout { get; set; }
+		private string Layout_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -316,24 +313,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Refers to the index in the [panes](#panes) array. Used for circulargauges and polar charts. When the option is not set then first panewill be used.
-		/// </summary>
-		public double? Pane { get; set; }
-		private double? Pane_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to reverse the axis so that the highest number is closestto the origin. Defaults to `false` in a horizontal legend and`true` in a vertical legend, where the smallest value starts ontop.
 		/// </summary>
 		public bool? Reversed { get; set; }
 		private bool? Reversed_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option determines how stacks should be ordered within a group.For example reversed xAxis also reverses stacks, so first seriescomes last in a group. To keep order like for non-reversed xAxisenable this option.
-		/// </summary>
-		public bool? ReversedStacks { get; set; }
-		private bool? ReversedStacks_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -481,13 +464,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to zoom axis. If `chart.zoomType` is set, the option allowsto disable zooming on an individual axis.
-		/// </summary>
-		public bool? ZoomEnabled { get; set; }
-		private bool? ZoomEnabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -495,7 +471,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Hashtable h = new Hashtable();
 
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
-			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -510,6 +485,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (Layout != Layout_DefaultValue) h.Add("layout",Layout);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
@@ -528,9 +504,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
-			if (Pane != Pane_DefaultValue) h.Add("pane",Pane);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
-			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
@@ -546,13 +520,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
 			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highcharts.FirstCharacterToLower(TickPosition.ToString()));
-			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("338ae4f9-aa3d-4460-bf9d-fe069215b6f6.tickPositioner", TickPositioner); }  
+			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("637b80d4-b05a-46cb-bca8-4927795d6851.tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
 			
 
 			return h;

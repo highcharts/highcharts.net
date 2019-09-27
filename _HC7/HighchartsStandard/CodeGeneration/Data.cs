@@ -180,8 +180,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The same as the columns input option, but defining rows intead ofcolumns.
 		/// </summary>
-		public List<List<Object>> Rows { get; set; }
-		private List<List<Object>> Rows_DefaultValue { get; set; }
+		public List<List<object>> Rows { get; set; }
+		private List<List<object>> Rows_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -230,10 +230,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Hashtable h = new Hashtable();
 
-			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); Highcharts.AddFunction("DataBeforeParse.beforeParse", BeforeParse); }  
+			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); Highcharts.AddFunction("49803526-9a43-4b1c-ade5-271f9c99e5d0.beforeParse", BeforeParse); }  
 			if (Columns != Columns_DefaultValue) h.Add("columns",Columns);
 			if (ColumnsURL != ColumnsURL_DefaultValue) h.Add("columnsURL",ColumnsURL);
-			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); Highcharts.AddFunction("DataComplete.complete", Complete); }  
+			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); Highcharts.AddFunction("a3451033-4d73-479f-a66e-1e82837a1ed6.complete", Complete); }  
 			if (Csv != Csv_DefaultValue) h.Add("csv",Csv);
 			if (CsvURL != CsvURL_DefaultValue) h.Add("csvURL",CsvURL);
 			if (DataRefreshRate != DataRefreshRate_DefaultValue) h.Add("dataRefreshRate",DataRefreshRate);
@@ -247,8 +247,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GoogleSpreadsheetWorksheet != GoogleSpreadsheetWorksheet_DefaultValue) h.Add("googleSpreadsheetWorksheet",GoogleSpreadsheetWorksheet);
 			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);
 			if (LineDelimiter != LineDelimiter_DefaultValue) h.Add("lineDelimiter",LineDelimiter);
-			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); Highcharts.AddFunction("DataParsed.parsed", Parsed); }  
-			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); Highcharts.AddFunction("DataParseDate.parseDate", ParseDate); }  
+			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); Highcharts.AddFunction("655ea327-472f-4fdf-8fd3-825a7ef26e97.parsed", Parsed); }  
+			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); Highcharts.AddFunction("cacfa1e5-4b6d-4758-b16a-613a83f6ede3.parseDate", ParseDate); }  
 			if (Rows != Rows_DefaultValue) h.Add("rows",Rows);
 			if (RowsURL != RowsURL_DefaultValue) h.Add("rowsURL",RowsURL);
 			if (SeriesMapping != SeriesMapping_DefaultValue) h.Add("seriesMapping",SeriesMapping);

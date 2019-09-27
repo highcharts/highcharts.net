@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = new PieSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = "";
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new PieSeriesDataDragDrop();
 			Drilldown = Drilldown_DefaultValue = "";
@@ -66,8 +66,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Object DataLabels { get; set; }
-		private Object DataLabels_DefaultValue { get; set; }
+		public object DataLabels { get; set; }
+		private object DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>

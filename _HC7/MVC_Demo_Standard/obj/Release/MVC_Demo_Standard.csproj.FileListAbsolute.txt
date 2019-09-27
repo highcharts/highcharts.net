@@ -274,7 +274,6 @@ C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\System.Web.WebPages.Ra
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\bin\Microsoft.Web.Infrastructure.xml
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\obj\Release\MVC_Demo_Standard.csproj.App.config
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\obj\Release\MVC_Demo_Standard.csprojAssemblyReference.cache
-C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\obj\Release\MVC_Demo_Standard.csproj.CoreCompileInputs.cache
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\obj\Release\MVC_Demo_Standard.csproj.CopyComplete
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\obj\Release\MVC_Demo.dll
 C:\Repositories\highcharts.net\_HC7\MVC_Demo_Standard\obj\Release\MVC_Demo.pdb

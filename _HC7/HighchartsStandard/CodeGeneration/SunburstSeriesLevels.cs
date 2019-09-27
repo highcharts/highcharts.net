@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new SunburstSeriesLevelsColorVariation();
-			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
+			DataLabels = DataLabels_DefaultValue = new object();
 			LevelSize = LevelSize_DefaultValue = new SunburstSeriesLevelsLevelSize();
 			Rotation = Rotation_DefaultValue = null;
 			RotationMode = RotationMode_DefaultValue = "";
@@ -65,8 +65,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Can set `dataLabels` on all points which lies on the same level.
 		/// </summary>
-		public SunburstSeriesDataLabels DataLabels { get; set; }
-		private SunburstSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		public object DataLabels { get; set; }
+		private object DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -99,7 +99,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorVariation.IsDirty()) h.Add("colorVariation",ColorVariation.ToHashtable());
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (LevelSize.IsDirty()) h.Add("levelSize",LevelSize.ToHashtable());
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode",RotationMode);

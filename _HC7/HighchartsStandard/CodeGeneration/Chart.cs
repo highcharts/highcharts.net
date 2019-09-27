@@ -26,7 +26,8 @@ namespace Highsoft.Web.Mvc.Charts
 			DisplayErrors = DisplayErrors_DefaultValue = true;
 			Events = Events_DefaultValue = new ChartEvents();
 			Height = Height_DefaultValue = null;
-			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
+            HeightString = HeightString_DefaultValue = "";
+            IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
 			Inverted = Inverted_DefaultValue = false;
 			Margin = Margin_DefaultValue = new double[]{};
 			MarginBottom = MarginBottom_DefaultValue = null;
@@ -59,8 +60,9 @@ namespace Highsoft.Web.Mvc.Charts
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new ChartStyle();
 			StyledMode = StyledMode_DefaultValue = false;
-			Type = Type_DefaultValue = ChartType.Null;
+			Type = Type_DefaultValue = ChartType.Bar;
 			Width = Width_DefaultValue = null;
+            WidthString = WidthString_DefaultValue = "";
 			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
 			
@@ -149,12 +151,16 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
-		 
 
-		/// <summary>
-		/// If true, the axes will scale to the remaining visible series onceone series is hidden. If false, hiding and showing a series willnot affect the axes or the other series. For stacks, once one serieswithin the stack is hidden, the rest of the stack will close inaround it even if the axis is not affected.
-		/// </summary>
-		public bool? IgnoreHiddenSeries { get; set; }
+
+        public string HeightString { get; set; }
+        private string HeightString_DefaultValue { get; set; }
+
+
+        /// <summary>
+        /// If true, the axes will scale to the remaining visible series onceone series is hidden. If false, hiding and showing a series willnot affect the axes or the other series. For stacks, once one serieswithin the stack is hidden, the rest of the stack will close inaround it even if the axis is not affected.
+        /// </summary>
+        public bool? IgnoreHiddenSeries { get; set; }
 		private bool? IgnoreHiddenSeries_DefaultValue { get; set; }
 		 
 
@@ -394,12 +400,16 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
-		 
 
-		/// <summary>
-		/// Set a key to hold when dragging to zoom the chart. Requires thedraggable-points module. This is useful to avoid zooming while moving points.Should be set different than [chart.panKey](#chart.panKey).
-		/// </summary>
-		public ChartZoomKey ZoomKey { get; set; }
+
+        public string WidthString { get; set; }
+        private string WidthString_DefaultValue { get; set; }
+
+
+        /// <summary>
+        /// Set a key to hold when dragging to zoom the chart. Requires thedraggable-points module. This is useful to avoid zooming while moving points.Should be set different than [chart.panKey](#chart.panKey).
+        /// </summary>
+        public ChartZoomKey ZoomKey { get; set; }
 		private ChartZoomKey ZoomKey_DefaultValue { get; set; }
 		 
 
@@ -426,7 +436,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DisplayErrors != DisplayErrors_DefaultValue) h.Add("displayErrors",DisplayErrors);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
+            if (HeightString != HeightString_DefaultValue) h.Add("height", HeightString);
+            if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
 			if (Inverted != Inverted_DefaultValue) h.Add("inverted",Inverted);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MarginBottom != MarginBottom_DefaultValue) h.Add("marginBottom",MarginBottom);
@@ -461,7 +472,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StyledMode != StyledMode_DefaultValue) h.Add("styledMode",StyledMode);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (ZoomKey != ZoomKey_DefaultValue) h.Add("zoomKey", Highcharts.FirstCharacterToLower(ZoomKey.ToString()));
+            if (WidthString != WidthString_DefaultValue) h.Add("width", WidthString);
+            if (ZoomKey != ZoomKey_DefaultValue) h.Add("zoomKey", Highcharts.FirstCharacterToLower(ZoomKey.ToString()));
 			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", Highcharts.FirstCharacterToLower(ZoomType.ToString()));
 			
 

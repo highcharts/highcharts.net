@@ -9,6 +9,8 @@ namespace Highsoft.Web.Mvc.Charts
     {
         Null, 
 		Normal, 
-		Percent
+		Overlap, 
+		Percent, 
+		Stream
     }
 }
