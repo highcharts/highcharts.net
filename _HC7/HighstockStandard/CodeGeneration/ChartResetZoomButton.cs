@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Position = Position_DefaultValue = new Hashtable();
 			RelativeTo = RelativeTo_DefaultValue = "plot";
-			Theme = Theme_DefaultValue = "{'zIndex':6}";
+			Theme = Theme_DefaultValue = new ChartResetZoomButtonTheme();
 			
 		}	
 		
@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, theborder radius. The theme also supports `style`, a collection ofCSS properties for the text. Equivalent attributes for the hoverstate are given in `theme.states.hover`.
 		/// </summary>
-		public string Theme { get; set; }
-		private string Theme_DefaultValue { get; set; }
+		public ChartResetZoomButtonTheme Theme { get; set; }
+		private ChartResetZoomButtonTheme Theme_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -48,7 +48,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
-			if (Theme != Theme_DefaultValue) h.Add("theme",Theme);
+			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());
 			
 
 			return h;

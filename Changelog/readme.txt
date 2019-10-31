@@ -1,5 +1,8 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
 
+#Version 7.2.0.2
+Add serial key management for .NET Core
+
 #Version 7.1.3.1
 Fix multiple the same type events bug
 

@@ -21,13 +21,17 @@ namespace Highsoft.Web.Mvc.Stocks
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
 			Description = Description_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = true;
+			HighContrastTheme = HighContrastTheme_DefaultValue = null;
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
 			LandmarkVerbosity = LandmarkVerbosity_DefaultValue = AccessibilityLandmarkVerbosity.All;
 			OnTableAnchorClick = OnTableAnchorClick_DefaultValue = "";
 			PointDateFormat = PointDateFormat_DefaultValue = "";
 			PointDateFormatter = PointDateFormatter_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
-			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = 500;
+			PointDescriptionThreshold = PointDescriptionThreshold_DefaultValue = 200;
+			PointDescriptionThresholdBool = PointDescriptionThresholdBool_DefaultValue = null;
+			PointNavigationThreshold = PointNavigationThreshold_DefaultValue = null;
+			PointNavigationThresholdBool = PointNavigationThresholdBool_DefaultValue = null;
 			PointValueDecimals = PointValueDecimals_DefaultValue = "";
 			PointValuePrefix = PointValuePrefix_DefaultValue = "";
 			PointValueSuffix = PointValueSuffix_DefaultValue = "";
@@ -74,7 +78,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A text description of the chart.If the Accessibility module is loaded, this is included by defaultas a long description of the chart in the hidden screen readerinformation region.Note: It is considered a best practice to make the description of thechart visible to all users, so consider if this can be placed in textaround the chart instead.
+		/// A text description of the chart.**Note: Prefer using [caption](#caption.text) instead.**If the Accessibility module is loaded, this option is included bydefault as a long description of the chart in the hidden screenreader information region.Note: Since Highcharts now supports captions, it is preferred todefine the description there, as the caption benefits all users. Thecaption will be available to screen reader users. If this option isdefined instead, the caption is hidden from screen reader users.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
@@ -85,6 +89,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Theme to apply to the chart when Windows High Contrast Mode isdetected.
+		/// </summary>
+		public Object HighContrastTheme { get; set; }
+		private Object HighContrastTheme_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -134,6 +145,27 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public long? PointDescriptionThreshold { get; set; }
 		private long? PointDescriptionThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When a series contains more points than this, we no longer exposeinformation about individual points to screen readers.Set to `false` to disable.
+		/// </summary>
+		public bool? PointDescriptionThresholdBool { get; set; }
+		private bool? PointDescriptionThresholdBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When a series contains more points than this, we no longer allowkeyboard navigation for it.Set to `false` to disable.
+		/// </summary>
+		public double? PointNavigationThreshold { get; set; }
+		private double? PointNavigationThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When a series contains more points than this, we no longer allowkeyboard navigation for it.Set to `false` to disable.
+		/// </summary>
+		public bool? PointNavigationThresholdBool { get; set; }
+		private bool? PointNavigationThresholdBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -189,6 +221,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (HighContrastTheme != HighContrastTheme_DefaultValue) h.Add("highContrastTheme",HighContrastTheme);
 			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
 			if (LandmarkVerbosity != LandmarkVerbosity_DefaultValue) h.Add("landmarkVerbosity", Highstock.FirstCharacterToLower(LandmarkVerbosity.ToString()));
 			if (OnTableAnchorClick != OnTableAnchorClick_DefaultValue) { h.Add("onTableAnchorClick",OnTableAnchorClick); Highstock.AddFunction("AccessibilityOnTableAnchorClick.onTableAnchorClick", OnTableAnchorClick); }  
@@ -202,6 +235,9 @@ namespace Highsoft.Web.Mvc.Stocks
 				else
 					h.Add("pointDescriptionThreshold", false);
 			}
+			if (PointDescriptionThresholdBool != PointDescriptionThresholdBool_DefaultValue) h.Add("pointDescriptionThreshold",PointDescriptionThresholdBool);
+			if (PointNavigationThreshold != PointNavigationThreshold_DefaultValue) h.Add("pointNavigationThreshold",PointNavigationThreshold);
+			if (PointNavigationThresholdBool != PointNavigationThresholdBool_DefaultValue) h.Add("pointNavigationThreshold",PointNavigationThresholdBool);
 			if (PointValueDecimals != PointValueDecimals_DefaultValue) h.Add("pointValueDecimals",PointValueDecimals);
 			if (PointValuePrefix != PointValuePrefix_DefaultValue) h.Add("pointValuePrefix",PointValuePrefix);
 			if (PointValueSuffix != PointValueSuffix_DefaultValue) h.Add("pointValueSuffix",PointValueSuffix);

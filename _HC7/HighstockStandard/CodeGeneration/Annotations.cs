@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Events = Events_DefaultValue = new AnnotationsEvents();
 			Fibonacci = Fibonacci_DefaultValue = new AnnotationsFibonacci();
 			Id = Id_DefaultValue = "";
+			IdNumber = IdNumber_DefaultValue = null;
 			InfinityLine = InfinityLine_DefaultValue = new AnnotationsInfinityLine();
 			LabelOptions = LabelOptions_DefaultValue = new AnnotationsLabelOptions();
 			Labels = Labels_DefaultValue = new List<AnnotationsLabels>();
@@ -83,6 +84,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sets an ID for an annotation. Can be user later when removing anannotation in [Chart#removeAnnotation(id)](/class-reference/Highcharts.Chart#removeAnnotation) method.
+		/// </summary>
+		public double? IdNumber { get; set; }
+		private double? IdNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -170,9 +178,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CrookedLine.IsDirty()) h.Add("crookedLine",CrookedLine.ToHashtable());
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable", Highstock.FirstCharacterToLower(Draggable.ToString()));
 			if (ElliottWave.IsDirty()) h.Add("elliottWave",ElliottWave.ToHashtable());
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Fibonacci.IsDirty()) h.Add("fibonacci",Fibonacci.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
 			if (InfinityLine.IsDirty()) h.Add("infinityLine",InfinityLine.ToHashtable());
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
 			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(Labels));

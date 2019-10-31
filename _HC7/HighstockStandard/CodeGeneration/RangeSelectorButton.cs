@@ -88,7 +88,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Count != Count_DefaultValue) h.Add("count",Count);
 			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (OffsetMax != OffsetMax_DefaultValue) h.Add("offsetMax",OffsetMax);
 			if (OffsetMin != OffsetMin_DefaultValue) h.Add("offsetMin",OffsetMin);
 			if (PreserveDataGrouping != PreserveDataGrouping_DefaultValue) h.Add("preserveDataGrouping",PreserveDataGrouping);

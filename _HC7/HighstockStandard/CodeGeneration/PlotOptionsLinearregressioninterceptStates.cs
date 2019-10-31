@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hover = Hover_DefaultValue = new PlotOptionsLinearregressioninterceptStatesHover();
 			Inactive = Inactive_DefaultValue = new PlotOptionsLinearregressioninterceptStatesInactive();
 			Normal = Normal_DefaultValue = new PlotOptionsLinearregressioninterceptStatesNormal();
+			Select = Select_DefaultValue = new PlotOptionsLinearregressioninterceptStatesSelect();
 			
 		}	
 		
@@ -40,6 +41,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsLinearregressioninterceptStatesNormal Normal { get; set; }
 		private PlotOptionsLinearregressioninterceptStatesNormal Normal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Specific options for point in selected states, after beingselected by[allowPointSelect](#plotOptions.series.allowPointSelect)or programmatically.
+		/// </summary>
+		public PlotOptionsLinearregressioninterceptStatesSelect Select { get; set; }
+		private PlotOptionsLinearregressioninterceptStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -49,6 +57,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

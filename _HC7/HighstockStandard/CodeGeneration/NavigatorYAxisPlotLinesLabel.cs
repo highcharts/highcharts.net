@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public NavigatorYAxisPlotLinesLabel()
 		{
 			Align = Align_DefaultValue = NavigatorYAxisPlotLinesLabelAlign.Left;
+			Formatter = Formatter_DefaultValue = "";
 			Rotation = Rotation_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
@@ -32,6 +33,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public NavigatorYAxisPlotLinesLabelAlign Align { get; set; }
 		private NavigatorYAxisPlotLinesLabelAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback JavaScript function to format the label. Useful properties likethe value of plot line or the range of plot band (`from` & `to`properties) can be found in `this.options` object.
+		/// </summary>
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -95,6 +103,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("NavigatorYAxisPlotLinesLabelFormatter.formatter", Formatter); }  
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);

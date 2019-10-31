@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hover = Hover_DefaultValue = new PlotOptionsDpoStatesHover();
 			Inactive = Inactive_DefaultValue = new PlotOptionsDpoStatesInactive();
 			Normal = Normal_DefaultValue = new PlotOptionsDpoStatesNormal();
+			Select = Select_DefaultValue = new PlotOptionsDpoStatesSelect();
 			
 		}	
 		
@@ -40,6 +41,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsDpoStatesNormal Normal { get; set; }
 		private PlotOptionsDpoStatesNormal Normal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Specific options for point in selected states, after beingselected by[allowPointSelect](#plotOptions.series.allowPointSelect)or programmatically.
+		/// </summary>
+		public PlotOptionsDpoStatesSelect Select { get; set; }
+		private PlotOptionsDpoStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -49,6 +57,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			
 
 			return h;

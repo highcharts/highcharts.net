@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			AfterPrint = AfterPrint_DefaultValue = "";
 			BeforePrint = BeforePrint_DefaultValue = "";
 			Click = Click_DefaultValue = "";
+			ExportData = ExportData_DefaultValue = "";
 			Load = Load_DefaultValue = "";
 			Redraw = Redraw_DefaultValue = "";
 			Render = Render_DefaultValue = "";
@@ -52,6 +53,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Click { get; set; }
 		private string Click_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback that fires while exporting data. This allows the modification ofdata rows before processed into the final format.Requires the `export-data` module.
+		/// </summary>
+		public string ExportData { get; set; }
+		private string ExportData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -90,6 +98,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highstock.AddFunction("ChartEventsAfterPrint.afterPrint", AfterPrint); }  
 			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highstock.AddFunction("ChartEventsBeforePrint.beforePrint", BeforePrint); }  
 			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("ChartEventsClick.click", Click); }  
+			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); Highstock.AddFunction("ChartEventsExportData.exportData", ExportData); }  
 			if (Load != Load_DefaultValue) { h.Add("load",Load); Highstock.AddFunction("ChartEventsLoad.load", Load); }  
 			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highstock.AddFunction("ChartEventsRedraw.redraw", Redraw); }  
 			if (Render != Render_DefaultValue) { h.Add("render",Render); Highstock.AddFunction("ChartEventsRender.render", Render); }  

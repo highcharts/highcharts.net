@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AnnotationsElliottWaveTypeOptions()
 		{
 			Line = Line_DefaultValue = new AnnotationsElliottWaveTypeOptionsLine();
-			Points = Points_DefaultValue = new List<AnnotationsCrookedLineTypeOptionsPoints>();
+			Points = Points_DefaultValue = new List<AnnotationsElliottWaveTypeOptionsPoints>();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<AnnotationsCrookedLineTypeOptionsPoints> Points { get; set; }
-		private List<AnnotationsCrookedLineTypeOptionsPoints> Points_DefaultValue { get; set; }
+		public List<AnnotationsElliottWaveTypeOptionsPoints> Points { get; set; }
+		private List<AnnotationsElliottWaveTypeOptionsPoints> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>

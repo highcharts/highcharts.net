@@ -9,6 +9,8 @@ namespace Highsoft.Web.Mvc.Stocks
     {
         Null, 
 		Normal, 
-		Percent
+		Overlap, 
+		Percent, 
+		Stream
     }
 }

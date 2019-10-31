@@ -101,7 +101,16 @@ namespace HighchartsWebForms.Control
             highcharts.ID = "chart1";
             var renderer = new HighchartsRenderer(highcharts);
 
+            //var result = renderer.SetOptions(null, new Lang
+            //{
+            //    Months = new List<string> { "styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień" },
+            //    ShortMonths = new List<string> { "sty", "lut", "mar", "kwi", "maj", "cze", "lip", "sie", "wrz", "paź", "lis", "gru" }
+            //}) + renderer.RenderHtml();
+
+            //Response.Write(result);
+
             Response.Write(renderer.RenderHtml());
+            
         }
     }
 }

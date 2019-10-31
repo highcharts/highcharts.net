@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The vertical alignment of the title. Can be one of `"top"`,`"middle"` and `"bottom"`. When a value is given, the title behavesas floating.
+		/// The vertical alignment of the title. Can be one of `"top"`,`"middle"` and `"bottom"`. When middle, the subtitle behaves asfloating.
 		/// </summary>
 		public SubtitleVerticalAlign VerticalAlign { get; set; }
 		private SubtitleVerticalAlign VerticalAlign_DefaultValue { get; set; }

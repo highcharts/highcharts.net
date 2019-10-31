@@ -14,10 +14,26 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PriceenvelopesSeriesMarkerStatesInactive()
 		{
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			Opacity = Opacity_DefaultValue = null;
 			
 		}	
 		
+
+		/// <summary>
+		/// Animation when not hovering over the marker.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Animation when not hovering over the marker.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Opacity of inactive markers.
@@ -30,6 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Hashtable h = new Hashtable();
 
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			
 

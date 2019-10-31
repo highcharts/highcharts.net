@@ -15,7 +15,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Navigator()
 		{
 			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
-			BaseSeries = BaseSeries_DefaultValue = null;
+			BaseSeries = BaseSeries_DefaultValue = "0";
+			BaseSeriesNumber = BaseSeriesNumber_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Handles = Handles_DefaultValue = new NavigatorHandles();
 			Height = Height_DefaultValue = 40;
@@ -42,8 +43,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An integer identifying the index to use for the base series, or astring representing the id of the series.**Note**: As of Highcharts 5.0, this is now a deprecated option.Prefer [series.showInNavigator](#plotOptions.series.showInNavigator).
 		/// </summary>
-		public Object BaseSeries { get; set; }
-		private Object BaseSeries_DefaultValue { get; set; }
+		public string BaseSeries { get; set; }
+		private string BaseSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An integer identifying the index to use for the base series, or astring representing the id of the series.**Note**: As of Highcharts 5.0, this is now a deprecated option.Prefer [series.showInNavigator](#plotOptions.series.showInNavigator).
+		/// </summary>
+		public double? BaseSeriesNumber { get; set; }
+		private double? BaseSeriesNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -136,6 +144,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (AdaptToUpdatedData != AdaptToUpdatedData_DefaultValue) h.Add("adaptToUpdatedData",AdaptToUpdatedData);
 			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
+			if (BaseSeriesNumber != BaseSeriesNumber_DefaultValue) h.Add("baseSeries",BaseSeriesNumber);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Handles.IsDirty()) h.Add("handles",Handles.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);

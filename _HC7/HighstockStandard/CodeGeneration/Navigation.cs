@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BindingsClassName = BindingsClassName_DefaultValue = "highcharts-bindings-container";
 			ButtonOptions = ButtonOptions_DefaultValue = new NavigationButtonOptions();
 			Events = Events_DefaultValue = new NavigationEvents();
+			IconsURL = IconsURL_DefaultValue = "";
 			MenuItemHoverStyle = MenuItemHoverStyle_DefaultValue = new NavigationMenuItemHoverStyle();
 			MenuItemStyle = MenuItemStyle_DefaultValue = new NavigationMenuItemStyle();
 			MenuStyle = MenuStyle_DefaultValue = new NavigationMenuStyle();
@@ -62,6 +63,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Path where Highcharts will look for icons. Change this to use iconsfrom a different server.
+		/// </summary>
+		public string IconsURL { get; set; }
+		private string IconsURL_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// CSS styles for the hover state of the individual items within thepopup menu appearing by default when the export icon is clicked. Themenu items are rendered in HTML.
 		/// </summary>
 		public NavigationMenuItemHoverStyle MenuItemHoverStyle { get; set; }
@@ -90,7 +98,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Bindings.IsDirty()) h.Add("bindings",Bindings.ToHashtable());
 			if (BindingsClassName != BindingsClassName_DefaultValue) h.Add("bindingsClassName",BindingsClassName);
 			if (ButtonOptions.IsDirty()) h.Add("buttonOptions",ButtonOptions.ToHashtable());
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
+			if (IconsURL != IconsURL_DefaultValue) h.Add("iconsURL",IconsURL);
 			if (MenuItemHoverStyle.IsDirty()) h.Add("menuItemHoverStyle",MenuItemHoverStyle.ToHashtable());
 			if (MenuItemStyle.IsDirty()) h.Add("menuItemStyle",MenuItemStyle.ToHashtable());
 			if (MenuStyle.IsDirty()) h.Add("menuStyle",MenuStyle.ToHashtable());

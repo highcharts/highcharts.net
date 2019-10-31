@@ -16,13 +16,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			AcrossPanes = AcrossPanes_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "";
+			Color = Color_DefaultValue = "#999999";
 			DashStyle = DashStyle_DefaultValue = "Solid";
 			Events = Events_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Label = Label_DefaultValue = new NavigatorXAxisPlotLinesLabel();
 			Value = Value_DefaultValue = null;
-			Width = Width_DefaultValue = null;
+			Width = Width_DefaultValue = 2;
 			ZIndex = ZIndex_DefaultValue = null;
 			
 		}	

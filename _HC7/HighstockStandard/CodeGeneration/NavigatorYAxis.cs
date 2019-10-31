@@ -73,6 +73,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickWidth = TickWidth_DefaultValue = null;
 			Title = Title_DefaultValue = new NavigatorYAxisTitle();
 			Visible = Visible_DefaultValue = true;
+			ZoomEnabled = ZoomEnabled_DefaultValue = null;
 			
 		}	
 		
@@ -488,6 +489,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to zoom axis. If `chart.zoomType` is set, the option allowsto disable zooming on an individual axis.
+		/// </summary>
+		public bool? ZoomEnabled { get; set; }
+		private bool? ZoomEnabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -505,7 +513,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
 			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
 			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle",GridLineDashStyle);
@@ -553,6 +561,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
 			
 
 			return h;

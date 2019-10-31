@@ -14,7 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AnnotationsMeasureControlPointOptions()
 		{
-			Events = Events_DefaultValue = new AnnotationsMeasureControlPointOptionsEvents();
+			Events = Events_DefaultValue = null;
 			
 		}	
 		
@@ -22,15 +22,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public AnnotationsMeasureControlPointOptionsEvents Events { get; set; }
-		private AnnotationsMeasureControlPointOptionsEvents Events_DefaultValue { get; set; }
+		public Object Events { get; set; }
+		private Object Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			
 
 			return h;

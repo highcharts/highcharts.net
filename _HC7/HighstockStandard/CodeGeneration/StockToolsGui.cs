@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ClassName = ClassName_DefaultValue = "highcharts-bindings-wrapper";
 			Definitions = Definitions_DefaultValue = new StockToolsGuiDefinitions();
 			Enabled = Enabled_DefaultValue = true;
-			IconsURL = IconsURL_DefaultValue = "https://code.highcharts.com/@product.version@/gfx/stock-icons/";
+			IconsURL = IconsURL_DefaultValue = "";
 			ToolbarClassName = ToolbarClassName_DefaultValue = " stocktools-toolbar ";
 			
 		}	
@@ -53,7 +53,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Path where Highcharts will look for icons. Change this to useicons from a different server.
+		/// Path where Highcharts will look for icons. Change this to useicons from a different server.Since 7.1.3 use [iconsURL](#navigation.iconsURL) for popup andstock tools.
 		/// </summary>
 		public string IconsURL { get; set; }
 		private string IconsURL_DefaultValue { get; set; }

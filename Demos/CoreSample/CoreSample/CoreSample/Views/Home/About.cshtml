@@ -4,8 +4,6 @@
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering;
 
-<div id="chart1" style="height:400px; width:400px"></div>
-
 @{ 
     var chartOptions = new Highcharts
     {
@@ -91,7 +89,7 @@
     var renderer = new HighchartsRenderer(chartOptions, "MDcwMjAxOTEwMjYxMDAwMDAwMDE=");
 }
 
-@Html.Raw(renderer.RenderHtml(false))
+@Html.Raw(renderer.RenderHtml(true))
 
 
 

@@ -41,14 +41,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			LinkedTo = LinkedTo_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
 			Max = Max_DefaultValue = null;
-			MaxLength = MaxLength_DefaultValue = "";
-			MaxLengthNumber = MaxLengthNumber_DefaultValue = null;
+			MaxLength = MaxLength_DefaultValue = null;
 			MaxPadding = MaxPadding_DefaultValue = null;
 			MaxRange = MaxRange_DefaultValue = null;
 			MaxZoom = MaxZoom_DefaultValue = null;
 			Min = Min_DefaultValue = null;
-			MinLength = MinLength_DefaultValue = "";
-			MinLengthNumber = MinLengthNumber_DefaultValue = null;
+			MinLength = MinLength_DefaultValue = null;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = "Solid";
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
@@ -91,6 +89,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Top = Top_DefaultValue = "";
 			TopNumber = TopNumber_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
+			ZoomEnabled = ZoomEnabled_DefaultValue = null;
 			
 		}	
 		
@@ -287,19 +286,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Maximal size of a resizable axis. Could be set as a percentof plot area or pixel size.This feature requires the `drag-panes.js` module.
 		/// </summary>
-		public string MaxLength { get; set; }
-		private string MaxLength_DefaultValue { get; set; }
+		public double? MaxLength { get; set; }
+		private double? MaxLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Maximal size of a resizable axis. Could be set as a percentof plot area or pixel size.This feature requires the `drag-panes.js` module.
-		/// </summary>
-		public double? MaxLengthNumber { get; set; }
-		private double? MaxLengthNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
+		/// Padding of the max value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the highest data value to appear on the edgeof the plot area. When the axis' `max` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.Also the `softThreshold` option takes precedence over `maxPadding`,so if the data is tangent to the threshold, `maxPadding` may notapply unless `softThreshold` is set to false.
 		/// </summary>
 		public double? MaxPadding { get; set; }
 		private double? MaxPadding_DefaultValue { get; set; }
@@ -329,15 +321,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Minimal size of a resizable axis. Could be set as a percentof plot area or pixel size.This feature requires the `drag-panes.js` module.
 		/// </summary>
-		public string MinLength { get; set; }
-		private string MinLength_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Minimal size of a resizable axis. Could be set as a percentof plot area or pixel size.This feature requires the `drag-panes.js` module.
-		/// </summary>
-		public double? MinLengthNumber { get; set; }
-		private double? MinLengthNumber_DefaultValue { get; set; }
+		public double? MinLength { get; set; }
+		private double? MinLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -411,7 +396,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.
+		/// Padding of the min value relative to the length of the axis. Apadding of 0.05 will make a 100px axis 5px longer. This is usefulwhen you don't want the lowest data value to appear on the edgeof the plot area. When the axis' `min` option is set or a max extremeis set using `axis.setExtremes()`, the maxPadding will be ignored.Also the `softThreshold` option takes precedence over `minPadding`,so if the data is tangent to the threshold, `minPadding` may notapply unless `softThreshold` is set to false.
 		/// </summary>
 		public double? MinPadding { get; set; }
 		private double? MinPadding_DefaultValue { get; set; }
@@ -632,6 +617,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to zoom axis. If `chart.zoomType` is set, the option allowsto disable zooming on an individual axis.
+		/// </summary>
+		public bool? ZoomEnabled { get; set; }
+		private bool? ZoomEnabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -650,7 +642,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CrosshairBool != CrosshairBool_DefaultValue) h.Add("crosshair",CrosshairBool);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
 			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
 			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle",GridLineDashStyle);
@@ -666,13 +658,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (MaxLength != MaxLength_DefaultValue) h.Add("maxLength",MaxLength);
-			if (MaxLengthNumber != MaxLengthNumber_DefaultValue) h.Add("maxLength",MaxLengthNumber);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
 			if (MaxRange != MaxRange_DefaultValue) h.Add("maxRange",MaxRange);
 			if (MaxZoom != MaxZoom_DefaultValue) h.Add("maxZoom",MaxZoom);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (MinLength != MinLength_DefaultValue) h.Add("minLength",MinLength);
-			if (MinLengthNumber != MinLengthNumber_DefaultValue) h.Add("minLength",MinLengthNumber);
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
 			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle",MinorGridLineDashStyle);
 			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
@@ -715,6 +705,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Top != Top_DefaultValue) h.Add("top",Top);
 			if (TopNumber != TopNumber_DefaultValue) h.Add("top",TopNumber);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
 			
 
 			return h;

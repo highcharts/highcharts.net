@@ -24,23 +24,23 @@ namespace SourceCodeGenerator
 
             try
             {
-                DateTime hcStartTime = DateTime.Now;
-                JsonParser jsonParserHc = new JsonParser("highcharts", fileService, filterService, updateService, typeService);
-                JsonParser jsonPaserHC2 = new JsonParser("highcharts", previousFileService, filterService, updateService, typeService);
+                //DateTime hcStartTime = DateTime.Now;
+                //JsonParser jsonParserHc = new JsonParser("highcharts", fileService, filterService, updateService, typeService);
+                //JsonParser jsonPaserHC2 = new JsonParser("highcharts", previousFileService, filterService, updateService, typeService);
 
-                HighchartsGenerator hcg = new HighchartsGenerator(jsonParserHc, jsonPaserHC2, fileService, multiplicationService, comparisonService);
-                hcg.GenerateCode(true);
-                Console.WriteLine($"Highcharts.NET has been generated. {DateTime.Now - hcStartTime}");
-                Console.WriteLine("-------------------------------------------------------------------");
+                //HighchartsGenerator hcg = new HighchartsGenerator(jsonParserHc, jsonPaserHC2, fileService, multiplicationService, comparisonService);
+                //hcg.GenerateCode(true);
+                //Console.WriteLine($"Highcharts .NET has been generated. {DateTime.Now - hcStartTime}");
+                //Console.WriteLine("-------------------------------------------------------------------");
 
 
 
-                //DateTime hsStartTime = DateTime.Now;
-                //JsonParser jsonParserHS = new JsonParser("highstock", fileService, filterService, updateService, typeService);
-                //JsonParser jsonParserHS2 = new JsonParser("highstock", previousFileService, filterService, updateService, typeService);
-                //HighstockGenerator hsg = new HighstockGenerator(jsonParserHS, jsonParserHS2, fileService, multiplicationService, comparisonService);
-                //hsg.GenerateCode(true);
-                //Console.WriteLine($"Highstock.NET has been generated. {DateTime.Now - hsStartTime}");
+                DateTime hsStartTime = DateTime.Now;
+                JsonParser jsonParserHS = new JsonParser("highstock", fileService, filterService, updateService, typeService);
+                JsonParser jsonParserHS2 = new JsonParser("highstock", previousFileService, filterService, updateService, typeService);
+                HighstockGenerator hsg = new HighstockGenerator(jsonParserHS, jsonParserHS2, fileService, multiplicationService, comparisonService);
+                hsg.GenerateCode(true);
+                Console.WriteLine($"Highstock .NET has been generated. {DateTime.Now - hsStartTime}");
             }
             catch (Exception ex)
             {

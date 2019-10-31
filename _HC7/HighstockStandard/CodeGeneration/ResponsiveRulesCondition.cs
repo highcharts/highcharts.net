@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// A callback function to gain complete control on when the responsiverule applies. Return `true` if it applies. This opens for checkingagainst other metrics than the chart size, or example the documentsize or other elements.
+		/// A callback function to gain complete control on when the responsiverule applies. Return `true` if it applies. This opens for checkingagainst other metrics than the chart size, for example the documentsize or other elements.
 		/// </summary>
 		public string Callback { get; set; }
 		private string Callback_DefaultValue { get; set; }

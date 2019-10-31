@@ -178,7 +178,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Direction != Direction_DefaultValue) h.Add("direction",Direction);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());

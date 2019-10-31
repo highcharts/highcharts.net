@@ -142,6 +142,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Controls\HighchartsControl.ascx" />
     <Content Include="Controls\HighstockControl.ascx" />
+    <Content Include="Controls\SetOptionsControl.ascx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -250,6 +251,13 @@
     </Compile>
     <Compile Include="Controls\HighstockControl.ascx.designer.cs">
       <DependentUpon>HighstockControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SetOptionsControl.ascx.cs">
+      <DependentUpon>SetOptionsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SetOptionsControl.ascx.designer.cs">
+      <DependentUpon>SetOptionsControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

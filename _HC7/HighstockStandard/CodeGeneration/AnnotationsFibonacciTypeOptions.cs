@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			BackgroundColors = BackgroundColors_DefaultValue = new List<string>();
 			Height = Height_DefaultValue = 2;
+			Labels = Labels_DefaultValue = new List<object>();
 			Line = Line_DefaultValue = new AnnotationsFibonacciTypeOptionsLine();
 			LineColor = LineColor_DefaultValue = "grey";
 			LineColors = LineColors_DefaultValue = new List<string>();
@@ -27,7 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// An array of background colors:Default to:<pre>[  'rgba(130, 170, 255, 0.4)',  'rgba(139, 191, 216, 0.4)',  'rgba(150, 216, 192, 0.4)',  'rgba(156, 229, 161, 0.4)',  'rgba(162, 241, 130, 0.4)',  'rgba(169, 255, 101, 0.4)']              </pre>
+		/// An array of background colors:Default to:```['rgba(130, 170, 255, 0.4)','rgba(139, 191, 216, 0.4)','rgba(150, 216, 192, 0.4)','rgba(156, 229, 161, 0.4)','rgba(162, 241, 130, 0.4)','rgba(169, 255, 101, 0.4)']```
 		/// </summary>
 		public List<string> BackgroundColors { get; set; }
 		private List<string> BackgroundColors_DefaultValue { get; set; }
@@ -95,6 +96,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (BackgroundColors != BackgroundColors_DefaultValue) h.Add("backgroundColors",BackgroundColors);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (Labels != Labels_DefaultValue) h.Add("labels",Labels);
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineColors != LineColors_DefaultValue) h.Add("lineColors",LineColors);

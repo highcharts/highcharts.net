@@ -14,13 +14,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public AnnotationsInfinityLineControlPointOptions()
 		{
-			Events = Events_DefaultValue = new AnnotationsInfinityLineControlPointOptionsEvents();
-			Height = Height_DefaultValue = 10;
-			Positioner = Positioner_DefaultValue = "";
-			Style = Style_DefaultValue = new Hashtable();
-			Symbol = Symbol_DefaultValue = "circle";
-			Visible = Visible_DefaultValue = false;
-			Width = Width_DefaultValue = 10;
+			Events = Events_DefaultValue = null;
 			
 		}	
 		
@@ -28,63 +22,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public AnnotationsInfinityLineControlPointOptionsEvents Events { get; set; }
-		private AnnotationsInfinityLineControlPointOptionsEvents Events_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Positioner { get; set; }
-		private string Positioner_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Symbol { get; set; }
-		private string Symbol_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Visible { get; set; }
-		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
+		public Object Events { get; set; }
+		private Object Events_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
 		{
 			Hashtable h = new Hashtable();
 
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highstock.AddFunction("AnnotationsInfinityLineControlPointOptionsPositioner.positioner", Positioner); }  
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			
 
 			return h;

@@ -52,7 +52,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Title = Title_DefaultValue = new LegendTitle();
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
-			Width = Width_DefaultValue = null;
+			Width = Width_DefaultValue = "";
+			WidthNumber = WidthNumber_DefaultValue = null;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			
@@ -328,8 +329,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width from legends below or above thechart, half the chart width for legends to the left and right.
 		/// </summary>
-		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
+		public string Width { get; set; }
+		private string Width_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width from legends below or above thechart, half the chart width for legends to the left and right.
+		/// </summary>
+		public double? WidthNumber { get; set; }
+		private double? WidthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -389,6 +397,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

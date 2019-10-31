@@ -15,6 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsStreamgraphTooltip()
 		{
 			ChangeDecimals = ChangeDecimals_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			FollowPointer = FollowPointer_DefaultValue = null;
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
@@ -42,6 +43,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? ChangeDecimals { get; set; }
 		private double? ChangeDecimals_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A CSS class name to apply to the tooltip's container div,allowing unique CSS styling for each chart.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -175,6 +183,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Hashtable h = new Hashtable();
 
 			if (ChangeDecimals != ChangeDecimals_DefaultValue) h.Add("changeDecimals",ChangeDecimals);
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);

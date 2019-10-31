@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MarkerEnd = MarkerEnd_DefaultValue = "";
 			MarkerStart = MarkerStart_DefaultValue = "";
 			Point = Point_DefaultValue = new AnnotationsShapesPoint();
+			PointString = PointString_DefaultValue = "null";
 			Points = Points_DefaultValue = new List<AnnotationsShapesPoint>();
 			R = R_DefaultValue = 0;
 			Snap = Snap_DefaultValue = 2;
@@ -63,6 +64,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public AnnotationsShapesPoint Point { get; set; }
 		private AnnotationsShapesPoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option defines the point to which the shape will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new point withdefined x, y properties and optionally axes.
+		/// </summary>
+		public string PointString { get; set; }
+		private string PointString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -123,6 +131,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (MarkerStart != MarkerStart_DefaultValue) h.Add("markerStart",MarkerStart);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (PointString != PointString_DefaultValue) h.Add("point",PointString);
 			if (Points != Points_DefaultValue) h.Add("points", HashifyList(Points));
 			if (R != R_DefaultValue) h.Add("r",R);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);

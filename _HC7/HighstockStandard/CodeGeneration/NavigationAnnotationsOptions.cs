@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Draggable = Draggable_DefaultValue = NavigationAnnotationsOptionsDraggable.Xy;
 			Events = Events_DefaultValue = new NavigationAnnotationsOptionsEvents();
 			Id = Id_DefaultValue = "";
+			IdNumber = IdNumber_DefaultValue = null;
 			LabelOptions = LabelOptions_DefaultValue = new NavigationAnnotationsOptionsLabelOptions();
 			Labels = Labels_DefaultValue = new NavigationAnnotationsOptionsLabels();
 			ShapeOptions = ShapeOptions_DefaultValue = new NavigationAnnotationsOptionsShapeOptions();
@@ -54,6 +55,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sets an ID for an annotation. Can be user later when removing anannotation in [Chart#removeAnnotation(id)](/class-reference/Highcharts.Chart#removeAnnotation) method.
+		/// </summary>
+		public double? IdNumber { get; set; }
+		private double? IdNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -104,8 +112,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (ControlPointOptions.IsDirty()) h.Add("controlPointOptions",ControlPointOptions.ToHashtable());
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable", Highstock.FirstCharacterToLower(Draggable.ToString()));
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
 			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());

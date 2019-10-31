@@ -93,7 +93,6 @@ C:\Users\PC\Documents\highcharts.net\Demos\WebForms\HighchartsWebForms\Highchart
 C:\Users\PC\Documents\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\obj\Debug\HighchartsWebForms.csprojResolveAssemblyReference.cache
 C:\Users\PC\Documents\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\obj\Debug\HighchartsWebForms.dll
 C:\Users\PC\Documents\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\obj\Debug\HighchartsWebForms.pdb
-C:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\obj\Debug\HighchartsWebForms.csprojAssemblyReference.cache
 C:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\obj\Debug\HighchartsWebForms.csproj.CoreCompileInputs.cache
 C:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\HighchartsWebForms.dll.config
 C:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\HighchartsWebForms.dll
@@ -154,9 +153,7 @@ C:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebFo
 C:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\System.Web.WebPages.xml
 C:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\System.Web.WebPages.Deployment.xml
 c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\Highcharts.dll
-c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\Highstock.dll
 c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\Highcharts.pdb
-c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\Highstock.pdb
 c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\Microsoft.Win32.Primitives.dll
 c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\netstandard.dll
 c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\System.AppContext.dll
@@ -257,3 +254,4 @@ c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebFo
 c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\System.Security.AccessControl.dll
 c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\System.Security.Permissions.dll
 c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\bin\System.Security.Principal.Windows.dll
+c:\Repositories\highcharts.net\Demos\WebForms\HighchartsWebForms\HighchartsWebForms\obj\Debug\HighchartsWebForms.csprojAssemblyReference.cache

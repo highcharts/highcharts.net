@@ -6,7 +6,18 @@
 
 @{var chartOptions = new Highcharts
     {
-        Title = new Title
+        Navigation = new Navigation
+        {
+            ButtonOptions = new NavigationButtonOptions
+            {
+                Theme = new NavigationButtonOptionsTheme
+                {
+                    Fill = "orange",
+                    Stroke = "red",
+                }
+            }
+        },
+          Title = new Title
         {
             Text = "Monthly Average Temperature",
             X = -20

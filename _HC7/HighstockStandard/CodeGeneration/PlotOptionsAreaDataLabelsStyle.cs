@@ -14,10 +14,10 @@ namespace Highsoft.Web.Mvc.Stocks
 	{
 		public PlotOptionsAreaDataLabelsStyle()
 		{
-			Color = Color_DefaultValue = "";
-			FontSize = FontSize_DefaultValue = "";
-			FontWeight = FontWeight_DefaultValue = "";
-			TextOutline = TextOutline_DefaultValue = "";
+			Color = Color_DefaultValue = "contrast";
+			FontSize = FontSize_DefaultValue = "11px";
+			FontWeight = FontWeight_DefaultValue = "bold";
+			TextOutline = TextOutline_DefaultValue = "1px contrast";
 			
 		}	
 		

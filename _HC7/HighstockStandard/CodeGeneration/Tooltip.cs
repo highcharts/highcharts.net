@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ChangeDecimals = ChangeDecimals_DefaultValue = null;
+			ClassName = ClassName_DefaultValue = "";
 			Crosshairs = Crosshairs_DefaultValue = new List<Crosshair>();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
@@ -38,6 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "callout";
 			Shared = Shared_DefaultValue = false;
 			Snap = Snap_DefaultValue = null;
@@ -92,6 +94,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? ChangeDecimals { get; set; }
 		private double? ChangeDecimals_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A CSS class name to apply to the tooltip's container div,allowing unique CSS styling for each chart.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -221,6 +230,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the tooltip.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The name of a symbol to use for the border around the tooltip. Canbe one of: `"callout"`, `"circle"`, or `"square"`. When[tooltip.split](#tooltip.split)option is enabled, shape is applied to all boxes except header, whichis controlled by[tooltip.headerShape](#tooltip.headerShape).Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
 		/// </summary>
 		public string Shape { get; set; }
@@ -300,6 +316,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ChangeDecimals != ChangeDecimals_DefaultValue) h.Add("changeDecimals",ChangeDecimals);
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crosshairs != Crosshairs_DefaultValue) h.Add("crosshairs",Crosshairs);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
@@ -318,6 +335,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highstock.AddFunction("TooltipPointFormatter.pointFormatter", PointFormatter); }  
 			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highstock.AddFunction("TooltipPositioner.positioner", Positioner); }  
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);

@@ -67,6 +67,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Streamgraph = Streamgraph_DefaultValue = new PlotOptionsStreamgraph();
 			Supertrend = Supertrend_DefaultValue = new PlotOptionsSupertrend();
 			Tema = Tema_DefaultValue = new PlotOptionsTema();
+			Trendline = Trendline_DefaultValue = new PlotOptionsTrendline();
 			Trix = Trix_DefaultValue = new PlotOptionsTrix();
 			Vbp = Vbp_DefaultValue = new PlotOptionsVbp();
 			Vector = Vector_DefaultValue = new PlotOptionsVector();
@@ -221,7 +222,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Normalized average true range indicator (NATR). This series requires`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js` and `stock/indicators/ema.js`.In TypeScript the [type](series.dema.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `dema` series are defined in   [plotOptions.dema](plotOptions.dema).3. Options for one single series are given in   [the series instance array](series.dema).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        dema: {            // shared options for all dema series        }    },    series: [{        // specific options for this series instance        type: 'dema'    }]});```            
+		/// Double exponential moving average (DEMA) indicator. This series requires`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js` and `stock/indicators/ema.js`.In TypeScript the [type](series.dema.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `dema` series are defined in   [plotOptions.dema](plotOptions.dema).3. Options for one single series are given in   [the series instance array](series.dema).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        dema: {            // shared options for all dema series        }    },    series: [{        // specific options for this series instance        type: 'dema'    }]});```            
 		/// </summary>
 		public PlotOptionsDema Dema { get; set; }
 		private PlotOptionsDema Dema_DefaultValue { get; set; }
@@ -445,14 +446,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Normalized average true range indicator (NATR). This series requires`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js` and `stock/indicators/ema.js`.Requires `https://code.highcharts.com/stock/indicators/ema.js`.In TypeScript the [type](series.tema.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `tema` series are defined in   [plotOptions.tema](plotOptions.tema).3. Options for one single series are given in   [the series instance array](series.tema).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        tema: {            // shared options for all tema series        }    },    series: [{        // specific options for this series instance        type: 'tema'    }]});```            
+		/// Triple exponential moving average (TEMA) indicator. This series requires`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js` and `stock/indicators/ema.js`.Requires `https://code.highcharts.com/stock/indicators/ema.js`.In TypeScript the [type](series.tema.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `tema` series are defined in   [plotOptions.tema](plotOptions.tema).3. Options for one single series are given in   [the series instance array](series.tema).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        tema: {            // shared options for all tema series        }    },    series: [{        // specific options for this series instance        type: 'tema'    }]});```            
 		/// </summary>
 		public PlotOptionsTema Tema { get; set; }
 		private PlotOptionsTema Tema_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Normalized average true range indicator (NATR). This series requires`linkedTo` option to be set.Requires https://code.highcharts.com/stock/indicators/ema.jsand https://code.highcharts.com/stock/indicators/tema.js.In TypeScript the [type](series.trix.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `trix` series are defined in   [plotOptions.trix](plotOptions.trix).3. Options for one single series are given in   [the series instance array](series.trix).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        trix: {            // shared options for all trix series        }    },    series: [{        // specific options for this series instance        type: 'trix'    }]});```            
+		/// Trendline (linear regression) fits a straight line to the selected datausing a method called the Sum Of Least Squares. This series requires the`linkedTo` option to be set.In TypeScript the [type](series.trendline.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `trendline` series are defined in   [plotOptions.trendline](plotOptions.trendline).3. Options for one single series are given in   [the series instance array](series.trendline).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        trendline: {            // shared options for all trendline series        }    },    series: [{        // specific options for this series instance        type: 'trendline'    }]});```            
+		/// </summary>
+		public PlotOptionsTrendline Trendline { get; set; }
+		private PlotOptionsTrendline Trendline_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Triple exponential average (TRIX) oscillator. This series requires`linkedTo` option to be set.Requires https://code.highcharts.com/stock/indicators/ema.jsand https://code.highcharts.com/stock/indicators/tema.js.In TypeScript the [type](series.trix.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `trix` series are defined in   [plotOptions.trix](plotOptions.trix).3. Options for one single series are given in   [the series instance array](series.trix).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        trix: {            // shared options for all trix series        }    },    series: [{        // specific options for this series instance        type: 'trix'    }]});```            
 		/// </summary>
 		public PlotOptionsTrix Trix { get; set; }
 		private PlotOptionsTrix Trix_DefaultValue { get; set; }
@@ -571,6 +579,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Streamgraph.IsDirty()) h.Add("streamgraph",Streamgraph.ToHashtable());
 			if (Supertrend.IsDirty()) h.Add("supertrend",Supertrend.ToHashtable());
 			if (Tema.IsDirty()) h.Add("tema",Tema.ToHashtable());
+			if (Trendline.IsDirty()) h.Add("trendline",Trendline.ToHashtable());
 			if (Trix.IsDirty()) h.Add("trix",Trix.ToHashtable());
 			if (Vbp.IsDirty()) h.Add("vbp",Vbp.ToHashtable());
 			if (Vector.IsDirty()) h.Add("vector",Vector.ToHashtable());

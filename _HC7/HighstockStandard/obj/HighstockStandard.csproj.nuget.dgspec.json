@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Repositories\\highcharts.net\\_HC7\\HighstockStandard\\HighstockStandard.csproj": {
-      "version": "7.1.2.1",
+      "version": "7.2.0.2",
       "restore": {
         "projectUniqueName": "C:\\Repositories\\highcharts.net\\_HC7\\HighstockStandard\\HighstockStandard.csproj",
         "projectName": "Highsoft.Highstock",
@@ -44,6 +44,18 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

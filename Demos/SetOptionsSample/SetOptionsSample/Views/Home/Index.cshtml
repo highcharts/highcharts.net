@@ -4,83 +4,86 @@
 @using System.Collections
 @using Highsoft.Web.Mvc.Charts
 
-@Html.Highsoft().SetOptions(null,
-    new Lang {
-        Months = new List<string>{ "styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień" },
-        ShortMonths = new List<string> { "sty", "lut", "mar", "kwi", "maj", "cze", "lip", "sie", "wrz", "paź", "lis", "gru" }
-    })
+@{HighsoftNamespace hsm = new HighsoftNamespace(); }
 
-@Html.Highsoft().GetHighcharts(new Highcharts
-{
-    Title = new Title
-    {
-        Text = "Snow depth at Vikjafjellet, Norway"
-    },
-    Subtitle = new Subtitle
-    {
-        Text = "Irregular time data in Highcharts JS",
-    },
-    XAxis = new List<XAxis>
-            {
-                new XAxis
-                {
-                    Type = XAxisType.Datetime,
-                    DateTimeLabelFormats = new Hashtable
-                    {
-                        //{"day","%e. %b" }
-                        { "month" , "%e. %B" },
-                        { "year" , "%b" }
-                    },
-                    Title = new XAxisTitle
-                    {
-                        Text = "Date"
-                    }
-                }
-            },
-    YAxis = new List<YAxis>
-            {
-                new YAxis
-                {
-                    Title = new YAxisTitle
-                    {
-                        Text = "Snow depth (m)"
-                    },
-                    Min = 0
-                }
-            },
-    Tooltip = new Tooltip
-    {
-        HeaderFormat = "<b>{series.name}</b><br>",
-        PointFormat = "{point.x:%e. %b}: {point.y:.2f} m"
-    },
-    PlotOptions = new PlotOptions
-    {
-        Spline = new PlotOptionsSpline
+@Html.Raw(hsm.SetOptions(null,
+        new Lang
         {
-            Marker = new PlotOptionsSplineMarker
+            Months = new List<string> { "styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień" },
+            ShortMonths = new List<string> { "sty", "lut", "mar", "kwi", "maj", "cze", "lip", "sie", "wrz", "paź", "lis", "gru" }
+        }))
+
+@Html.Raw(hsm.GetHighcharts(new Highcharts
+{
+Title = new Title
+{
+    Text = "Snow depth at Vikjafjellet, Norway"
+},
+Subtitle = new Subtitle
+{
+    Text = "Irregular time data in Highcharts JS",
+},
+XAxis = new List<XAxis>
+        {
+            new XAxis
             {
-                Enabled = true
+                Type = "datetime",
+                DateTimeLabelFormats = new Hashtable
+                {
+                    //{"day","%e. %b" }
+                    { "month" , "%e. %B" },
+                    { "year" , "%b" }
+                },
+                Title = new XAxisTitle
+                {
+                    Text = "Date"
+                }
+            }
+        },
+YAxis = new List<YAxis>
+        {
+            new YAxis
+            {
+                Title = new YAxisTitle
+                {
+                    Text = "Snow depth (m)"
+                },
+                Min = 0
+            }
+        },
+Tooltip = new Tooltip
+{
+    HeaderFormat = "<b>{series.name}</b><br>",
+    PointFormat = "{point.x:%e. %b}: {point.y:.2f} m"
+},
+PlotOptions = new PlotOptions
+{
+    Spline = new PlotOptionsSpline
+    {
+        Marker = new PlotOptionsSplineMarker
+        {
+            Enabled = true
+        }
+    }
+},
+Series = new List<Series>
+        {
+            new SplineSeries
+            {
+                Name = "Winter 2012-2013",
+                Data = @ViewData["winter1"] as List<SplineSeriesData>
+            },
+            new SplineSeries
+            {
+                Name = "Winter 2013-2014",
+                Data = @ViewData["winter2"] as List<SplineSeriesData>
+            },
+            new SplineSeries
+            {
+                Name = "Winter 2014-2015",
+                Data = @ViewData["winter3"] as List<SplineSeriesData>
             }
         }
-    },
-    Series = new List<Series>
-            {
-                new SplineSeries
-                {
-                    Name = "Winter 2012-2013",
-                    Data = @ViewData["winter1"] as List<SplineSeriesData>
-                },
-                new SplineSeries
-                {
-                    Name = "Winter 2013-2014",
-                    Data = @ViewData["winter2"] as List<SplineSeriesData>
-                },
-                new SplineSeries
-                {
-                    Name = "Winter 2014-2015",
-                    Data = @ViewData["winter3"] as List<SplineSeriesData>
-                }
-            }
 }
-        , "chart")
+    , "chart"))
 

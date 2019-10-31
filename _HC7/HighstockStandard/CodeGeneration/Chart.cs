@@ -26,8 +26,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			DisplayErrors = DisplayErrors_DefaultValue = true;
 			Events = Events_DefaultValue = new ChartEvents();
 			Height = Height_DefaultValue = null;
-			HeightNumber = HeightNumber_DefaultValue = null;
-			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
+            HeightString = HeightString_DefaultValue = "";
+            IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
 			Inverted = Inverted_DefaultValue = false;
 			Margin = Margin_DefaultValue = new double[]{};
 			MarginBottom = MarginBottom_DefaultValue = null;
@@ -55,9 +55,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new Hashtable();
 			StyledMode = StyledMode_DefaultValue = false;
-			Type = Type_DefaultValue = ChartType.Null;
+			Type = Type_DefaultValue = ChartType.Bar;
 			Width = Width_DefaultValue = null;
-			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;
+            WidthString = WidthString_DefaultValue = "";
+            ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
 			
 		}	
@@ -150,8 +151,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An explicit height for the chart. If a _number_, the height isgiven in pixels. If given a _percentage string_ (for example`'56%'`), the height is given as the percentage of the actual chartwidth. This allows for preserving the aspect ratio across responsivesizes.By default (when `null`) the height is calculated from the offsetheight of the containing element, or 400 pixels if the containingelement's height is 0.
 		/// </summary>
-		public double? HeightNumber { get; set; }
-		private double? HeightNumber_DefaultValue { get; set; }
+		public string HeightString { get; set; }
+		private string HeightString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -365,6 +366,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// An explicit width for the chart. By default (when `null`) the widthis calculated from the offset width of the containing element.
+		/// </summary>
+		public string WidthString { get; set; }
+		private string WidthString_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set a key to hold when dragging to zoom the chart. Requires thedraggable-points module. This is useful to avoid zooming while moving points.Should be set different than [chart.panKey](#chart.panKey).
 		/// </summary>
 		public ChartZoomKey ZoomKey { get; set; }
@@ -392,9 +400,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (ColorCount != ColorCount_DefaultValue) h.Add("colorCount",ColorCount);
 			if (DisplayErrors != DisplayErrors_DefaultValue) h.Add("displayErrors",DisplayErrors);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
+			if (HeightString != HeightString_DefaultValue) h.Add("height", HeightString);
 			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
 			if (Inverted != Inverted_DefaultValue) h.Add("inverted",Inverted);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
@@ -425,6 +433,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (StyledMode != StyledMode_DefaultValue) h.Add("styledMode",StyledMode);
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (WidthString != WidthString_DefaultValue) h.Add("width", WidthString);
 			if (ZoomKey != ZoomKey_DefaultValue) h.Add("zoomKey", Highstock.FirstCharacterToLower(ZoomKey.ToString()));
 			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", Highstock.FirstCharacterToLower(ZoomType.ToString()));
 			

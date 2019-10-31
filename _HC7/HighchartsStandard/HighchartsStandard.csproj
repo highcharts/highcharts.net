@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>7.2.0.1</AssemblyVersion>
-    <FileVersion>7.2.0.1</FileVersion>
+    <AssemblyVersion>7.2.0.2</AssemblyVersion>
+    <FileVersion>7.2.0.2</FileVersion>
     <Company>Highsoft</Company>
     <Product>Highcharts .NET</Product>
-    <Version>7.2</Version>
+    <Version>7.2.0.2</Version>
     <Authors>Highsoft</Authors>
     <Copyright>Copyright ©  2019</Copyright>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
@@ -31,6 +31,9 @@ Please note that upgrading the wrapper to version 7.1.1.1 may require some chang
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
   </ItemGroup>
