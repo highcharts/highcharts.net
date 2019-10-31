@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Reflection;
 using System.IO;
 using System.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
@@ -13,11 +14,17 @@ namespace Highsoft.Web.Mvc.Stocks
     {
         private static string KEY_NAME = "Highcharts";
 
-        public static SerialKey Check(string serialKey = null)
+        public static SerialKey Check(bool isNETCore = false, string serialKey = null)
         {
             string line = string.Empty;
+
             if (string.IsNullOrEmpty(serialKey))
-                line = GetSerialFromFile();
+            {
+                if (isNETCore)
+                    line = GetSerialFromNETCore();
+                else
+                    line = GetSerialFromFile();
+            }
             else
                 line = serialKey;
 
@@ -163,6 +170,15 @@ namespace Highsoft.Web.Mvc.Stocks
                 return null;
 
             return values[0];
+        }
+
+        static string GetSerialFromNETCore()
+        {
+            IConfiguration config = new ConfigurationBuilder().AddJsonFile("appsettings.json", true, true).Build();
+
+            var serial = config["Highcharts"];
+
+            return string.IsNullOrEmpty(serial) ? null : serial;
         }
     }
 }

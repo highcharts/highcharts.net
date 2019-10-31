@@ -13,23 +13,25 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
     {
         private Highcharts _chart;
         private readonly string _SerialKey;
+        private bool _IsNetCore;
 
         public HighchartsRenderer() { }
 
-        public HighchartsRenderer(Highcharts chart, string key = null)
+        public HighchartsRenderer(Highcharts chart, string key = null, bool isNETCore = false)
         {
             _chart = chart;
             _SerialKey = key;
+            _IsNetCore = isNETCore;
         }
 
         public string RenderHtml(bool addContainer = true)
         {
-            return GetResponse(LicenseVerifier.Check(_SerialKey), addContainer);
+            return GetResponse(LicenseVerifier.Check(_IsNetCore,_SerialKey), addContainer);
         }
 
         public string GetJavascript()
         {
-            var licenseType = LicenseVerifier.Check(_SerialKey);
+            var licenseType = LicenseVerifier.Check(_IsNetCore, _SerialKey);
 
             if (licenseType == SerialKey.Missing)
                 return "<div style=\"background:yellow\">Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a></div>";
@@ -48,7 +50,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
         public string GetJavascriptFunction(string functionName)
         {
-            var licenseType = LicenseVerifier.Check(_SerialKey);
+            var licenseType = LicenseVerifier.Check(_IsNetCore, _SerialKey);
             
             if (licenseType == SerialKey.Missing)
                 return "<div style=\"background:yellow\">Licence key is missing. Please click a link below, share your email address and we will send you a trial-key.<br><a href=\"https://www.highcharts.com/dotnet-registration/\">Click here to get a trial-key</a></div>";
@@ -176,7 +178,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
         public string GetJsonOptions()
         {
-            return GetJsonResponse(LicenseVerifier.Check(_SerialKey));
+            return GetJsonResponse(LicenseVerifier.Check(_IsNetCore, _SerialKey));
         }
 
         private string GetStartupOptions()
