@@ -41,7 +41,7 @@ namespace SourceCodeGenerator.Services
         {
             get
             {
-                return TemplatesFolderPath + "\\Class_NETStandard.tpl";
+                return TemplatesFolderPath + "\\Class_NETStandard_new1.tpl";
             }
         }
         private string EnumTemplatePath
