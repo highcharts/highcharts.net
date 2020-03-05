@@ -1,0 +1,120 @@
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Collections;
+using System;
+using System.Collections.Specialized;
+using System.Web;
+using System.IO;
+
+namespace Highsoft.Web.Mvc.Charts
+{
+	public partial class TilemapSeriesEvents  : BaseObject
+	{
+		Hashtable h = new Hashtable();
+
+		public TilemapSeriesEvents()
+		{
+			AfterAnimate = AfterAnimate_DefaultValue = "";
+			CheckboxClick = CheckboxClick_DefaultValue = "";
+			Click = Click_DefaultValue = "";
+			Hide = Hide_DefaultValue = "";
+			LegendItemClick = LegendItemClick_DefaultValue = "";
+			MouseOut = MouseOut_DefaultValue = "";
+			MouseOver = MouseOver_DefaultValue = "";
+			Show = Show_DefaultValue = "";
+			
+		}	
+		
+
+		/// <summary>
+		/// Fires after the series has finished its initial animation, or in caseanimation is disabled, immediately as the series is displayed.
+		/// </summary>
+		public string AfterAnimate { get; set; }
+		private string AfterAnimate_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when the checkbox next to the series' name in the legend isclicked. One parameter, `event`, is passed to the function. The stateof the checkbox is found by `event.checked`. The checked item isfound by `event.item`. Return `false` to prevent the default actionwhich is to toggle the select state of the series.
+		/// </summary>
+		public string CheckboxClick { get; set; }
+		private string CheckboxClick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when the series is clicked. One parameter, `event`, is passedto the function, containing common event information. Additionally,`event.point` holds a pointer to the nearest point on the graph.
+		/// </summary>
+		public string Click { get; set; }
+		private string Click_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when the series is hidden after chart generation time, eitherby clicking the legend item or by calling `.hide()`.
+		/// </summary>
+		public string Hide { get; set; }
+		private string Hide_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when the legend item belonging to the series is clicked. Oneparameter, `event`, is passed to the function. The default actionis to toggle the visibility of the series. This can be preventedby returning `false` or calling `event.preventDefault()`.
+		/// </summary>
+		public string LegendItemClick { get; set; }
+		private string LegendItemClick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when the mouse leaves the graph. One parameter, `event`, ispassed to the function, containing common event information. If the[stickyTracking](#plotOptions.series) option is true, `mouseOut`doesn't happen before the mouse enters another graph or leaves theplot area.
+		/// </summary>
+		public string MouseOut { get; set; }
+		private string MouseOut_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when the mouse enters the graph. One parameter, `event`, ispassed to the function, containing common event information.
+		/// </summary>
+		public string MouseOver { get; set; }
+		private string MouseOver_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when the series is shown after chart generation time, eitherby clicking the legend item or by calling `.show()`.
+		/// </summary>
+		public string Show { get; set; }
+		private string Show_DefaultValue { get; set; }
+		  
+
+		internal override Hashtable ToHashtable()
+		{
+			if (h.Count > 0)
+				return h;
+
+			if (AfterAnimate != AfterAnimate_DefaultValue) { h.Add("afterAnimate",AfterAnimate); Highcharts.AddFunction("67afba0b-3b9c-42f6-ac04-e04b6394834c.afterAnimate", AfterAnimate); }  
+			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); Highcharts.AddFunction("7d8d1220-e5ac-4b96-b790-79588e6ee105.checkboxClick", CheckboxClick); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("928daac9-5ce1-4bb2-87d1-8598271e21cc.click", Click); }  
+			if (Hide != Hide_DefaultValue) { h.Add("hide",Hide); Highcharts.AddFunction("6da8c488-308a-4add-ba07-6434a0ad9ea6.hide", Hide); }  
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("56003a44-c2df-4c0f-a533-51dca96aa97e.legendItemClick", LegendItemClick); }  
+			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highcharts.AddFunction("4838395d-8de2-42b2-9dc9-f144f1620f87.mouseOut", MouseOut); }  
+			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highcharts.AddFunction("dc410e9c-6ad6-4ca6-aecc-da02ff2d9aa0.mouseOver", MouseOver); }  
+			if (Show != Show_DefaultValue) { h.Add("show",Show); Highcharts.AddFunction("0b95bd2e-8067-482e-bedc-8b69bf504325.show", Show); }  
+			
+
+			return h;
+		}
+
+		internal override string ToJSON()
+		{            
+			if (h.Count > 0)
+				return JsonConvert.SerializeObject(h);
+			else 
+				return "";
+		}       
+
+		// checks if the state of the object is different from the default
+		// and therefore needs to be serialized
+		internal override bool IsDirty()
+		{
+			return ToHashtable().Count > 0;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+D:\work\BetterPerformanceSolution\HighchartsStandard\bin\Release\netstandard2.0\Highcharts.deps.json
+D:\work\BetterPerformanceSolution\HighchartsStandard\bin\Release\netstandard2.0\Highcharts.dll
+D:\work\BetterPerformanceSolution\HighchartsStandard\bin\Release\netstandard2.0\Highcharts.pdb
+D:\work\BetterPerformanceSolution\HighchartsStandard\obj\Release\netstandard2.0\HighchartsStandard2.AssemblyInfoInputs.cache
+D:\work\BetterPerformanceSolution\HighchartsStandard\obj\Release\netstandard2.0\HighchartsStandard2.AssemblyInfo.cs
+D:\work\BetterPerformanceSolution\HighchartsStandard\obj\Release\netstandard2.0\Highcharts.dll
+D:\work\BetterPerformanceSolution\HighchartsStandard\obj\Release\netstandard2.0\Highcharts.pdb
+D:\work\BetterPerformanceSolution\HighchartsStandard\obj\Release\netstandard2.0\HighchartsStandard2.csprojAssemblyReference.cache

@@ -1,0 +1,57 @@
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Collections;
+using System;
+using System.Collections.Specialized;
+using System.Web;
+using System.IO;
+
+namespace Highsoft.Web.Mvc.Charts
+{
+	public partial class PlotOptionsPiePointEvents  : BaseObject
+	{
+		Hashtable h = new Hashtable();
+
+		public PlotOptionsPiePointEvents()
+		{
+			LegendItemClick = LegendItemClick_DefaultValue = "";
+			
+		}	
+		
+
+		/// <summary>
+		/// Fires when the legend item belonging to the pie point (slice) isclicked. The `this` keyword refers to the point itself. Oneparameter, `event`, is passed to the function, containing commonevent information. The default action is to toggle the visibility ofthe point. This can be prevented by calling `event.preventDefault()`.
+		/// </summary>
+		public string LegendItemClick { get; set; }
+		private string LegendItemClick_DefaultValue { get; set; }
+		  
+
+		internal override Hashtable ToHashtable()
+		{
+			if (h.Count > 0)
+				return h;
+
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("df9e4094-e928-4a8c-a0a6-b2aada897fc8.legendItemClick", LegendItemClick); }  
+			
+
+			return h;
+		}
+
+		internal override string ToJSON()
+		{            
+			if (h.Count > 0)
+				return JsonConvert.SerializeObject(h);
+			else 
+				return "";
+		}       
+
+		// checks if the state of the object is different from the default
+		// and therefore needs to be serialized
+		internal override bool IsDirty()
+		{
+			return ToHashtable().Count > 0;
+		}
+	}
+}
