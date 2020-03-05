@@ -1,5 +1,11 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
 
+#Version 8.0.0.2
+Fix events
+
+#Version 8.0.0.1
+Fix YAxisLabels
+
 #Version 7.2.1.1
 Performance improvements
 
