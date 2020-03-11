@@ -11,21 +11,17 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
     public class HighstockRenderer
     {
         private Highstock _chart;
-        private readonly string _SerialKey;
-        private bool _IsNetCore;
 
         public HighstockRenderer() { }
 
-        public HighstockRenderer(Highstock chart, string key = null, bool isNETCore = false)
+        public HighstockRenderer(Highstock chart)
         {
-            _chart = chart;
-            _SerialKey = key;
-            _IsNetCore = isNETCore;
+            _chart = chart;            
         }
 
         public string RenderHtml(bool addContainer = true)
         {
-            return GetResponse(LicenseVerifier.Check(_IsNetCore, _SerialKey), addContainer);
+            return GetResponse(addContainer);
         }
 
         public string GetJavascript()
@@ -57,12 +53,12 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             return sb.ToString();
         }
 
-        private string GetResponse(SerialKey licenseType, bool addContainer)
+        private string GetResponse(bool addContainer)
         {
             return GetStartupJavascript(addContainer);
         }
 
-        private string GetJsonResponse(SerialKey licenseType)
+        private string GetJsonResponse()
         {
             return GetStartupOptions();
         }
@@ -84,7 +80,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
         public string GetJsonOptions()
         {
-            return GetJsonResponse(LicenseVerifier.Check(_IsNetCore, _SerialKey));
+            return GetJsonResponse();
         }
 
         private string GetStartupJavascriptFunction(string functionName)

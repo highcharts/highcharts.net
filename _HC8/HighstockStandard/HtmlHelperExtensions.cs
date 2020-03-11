@@ -12,12 +12,6 @@ namespace Highsoft.Web.Mvc.Stocks
     public class HighsoftNamespace
     {
 
-        private readonly string _SerialKey;
-        public HighsoftNamespace(string key = null)
-        {
-            _SerialKey = key;
-        }
-
         public string GetHighstock(Highstock chart, string containerId, bool addContainer = true, string functionName = null)
         {
             if (functionName != null)
@@ -34,7 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
         public string GetHigstockJS(Highstock chart, string containerId)
         {
-            var renderer = new HighstockRenderer(chart, _SerialKey);
+            var renderer = new HighstockRenderer(chart);
             AssignContainerId(chart, containerId);
 
             return renderer.GetJavascript();
@@ -42,7 +36,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
         public string GetJsonOptions(Highstock chart)
         {
-            var renderer = new HighstockRenderer(chart, _SerialKey);
+            var renderer = new HighstockRenderer(chart);
             return renderer.GetJsonOptions();
         }
 
@@ -54,7 +48,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
         private string GetHighstockFunction(Highstock chart, string containerId, string functionName)
         {
-            var renderer = new HighstockRenderer(chart, _SerialKey);
+            var renderer = new HighstockRenderer(chart);
             AssignContainerId(chart, containerId);
 
             return renderer.GetJavascriptFunction(functionName);

@@ -12,16 +12,12 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
     public class HighchartsRenderer
     {
         private Highcharts _chart;
-        private readonly string _SerialKey;
-        private bool _IsNetCore;
 
         public HighchartsRenderer() { }
 
-        public HighchartsRenderer(Highcharts chart, string key = null, bool isNETCore = false)
+        public HighchartsRenderer(Highcharts chart)
         {
             _chart = chart;
-            _SerialKey = key;
-            _IsNetCore = isNETCore;
         }
 
         public string RenderHtml(bool addContainer = true)
@@ -63,7 +59,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
             return GetStartupJavascript(addContainer);
         }
 
-        private string GetJsonResponse(SerialKey licenseType)
+        private string GetJsonResponse()
         {
             return GetStartupOptions();
         }
@@ -126,7 +122,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
         public string GetJsonOptions()
         {
-            return GetJsonResponse(LicenseVerifier.Check(_IsNetCore, _SerialKey));
+            return GetJsonResponse();
         }
 
         private string GetStartupOptions()

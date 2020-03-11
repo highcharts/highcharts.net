@@ -1231,7 +1231,6 @@
     <Content Include="Files\js\solid-gauge.js" />
     <Content Include="Files\js\treemap.js" />
     <Content Include="Global.asax" />
-    <Content Include="Areas\Highcharts\Views\Web.config" />
     <Content Include="Areas\Highcharts\Views\Demo\Index.cshtml" />
     <Content Include="Areas\Highcharts\Views\Demo\Gallery.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\LineBasic.cshtml" />
@@ -1507,13 +1506,13 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HighchartsStandard\HighchartsStandard.csproj">
-      <Project>{fa48870e-277d-4640-b710-aae1b29cd4c5}</Project>
-      <Name>HighchartsStandard</Name>
+    <ProjectReference Include="..\..\_HC8\HighchartsStandard\HighchartsStandard2.csproj">
+      <Project>{5263a8fd-5372-4433-b171-a00b0b8c42a1}</Project>
+      <Name>HighchartsStandard2</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HighstockStandard\HighstockStandard.csproj">
-      <Project>{3c277349-2e72-4bb1-81fa-1bbe8233ebc3}</Project>
-      <Name>HighstockStandard</Name>
+    <ProjectReference Include="..\..\_HC8\HighstockStandard\HighstockStandard2.csproj">
+      <Project>{df9a356f-c423-492e-aa8f-f85e509ab2b4}</Project>
+      <Name>HighstockStandard2</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
