@@ -65,16 +65,6 @@
     <Compile Include="Wrappers\Higcharts\Strings.cs" />
     <Compile Include="Website\Highcharts\BasicLine.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MVC_Highcharts\MVC_Highcharts.csproj">
-      <Project>{fa4c2a73-1563-47da-8f1b-64ef17d48918}</Project>
-      <Name>MVC_Highcharts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MVC_Highstock\MVC_Highstock.csproj">
-      <Project>{d05d7902-fdbe-422d-9f47-c84a74a25258}</Project>
-      <Name>MVC_Highstock</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

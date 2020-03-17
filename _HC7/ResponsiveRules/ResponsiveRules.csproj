@@ -49,11 +49,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MVC_Highcharts\MVC_Highcharts.csproj">
-      <Project>{fa4c2a73-1563-47da-8f1b-64ef17d48918}</Project>
-      <Name>MVC_Highcharts</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
