@@ -1,9 +1,0 @@
-d:\work\BetterPerformanceSolution\HighstockStandard\bin\Debug\netstandard2.0\Highstock.deps.json
-d:\work\BetterPerformanceSolution\HighstockStandard\bin\Debug\netstandard2.0\Highstock.dll
-d:\work\BetterPerformanceSolution\HighstockStandard\bin\Debug\netstandard2.0\Highstock.pdb
-d:\work\BetterPerformanceSolution\HighstockStandard\obj\Debug\netstandard2.0\HighstockStandard2.csprojAssemblyReference.cache
-d:\work\BetterPerformanceSolution\HighstockStandard\obj\Debug\netstandard2.0\HighstockStandard2.AssemblyInfoInputs.cache
-d:\work\BetterPerformanceSolution\HighstockStandard\obj\Debug\netstandard2.0\HighstockStandard2.AssemblyInfo.cs
-d:\work\BetterPerformanceSolution\HighstockStandard\obj\Debug\netstandard2.0\Highstock.dll
-d:\work\BetterPerformanceSolution\HighstockStandard\obj\Debug\netstandard2.0\Highstock.pdb
-D:\work\BetterPerformanceSolution\HighstockStandard\bin\Debug\netstandard2.0\license.txt
