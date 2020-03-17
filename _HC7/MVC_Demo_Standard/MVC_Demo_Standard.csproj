@@ -1368,7 +1368,6 @@
     <Content Include="Areas\Highcharts\Views\Shared\FirstChart4.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\FirstChart5.cshtml" />
     <Content Include="Areas\Highcharts\Views\Shared\FirstChart6.cshtml" />
-    <Content Include="Areas\Highcharts\Views\Shared\License.cshtml" />
     <Content Include="Content\fonts\roboto\roboto-bold-webfont.woff2" />
     <Content Include="Content\fonts\roboto\roboto-medium-webfont.woff2" />
     <Content Include="Content\fonts\roboto\roboto-regular-webfont.woff2" />
@@ -1397,7 +1396,6 @@
     <Content Include="Areas\Highstock\Views\Demo\Docs.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\ClientSideRequirements.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\IDE.cshtml" />
-    <Content Include="Areas\Highstock\Views\Shared\License.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\WFFirstChart1.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\WFFirstChart2.cshtml" />
     <Content Include="Areas\Highstock\Views\Shared\WFFirstChart3.cshtml" />
