@@ -6,7 +6,6 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="@Url.Content("~/Content/highslide.css")" type="text/css" />
     <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/bootstrap.min.css")" type="text/css" />
-    @*<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,400italic" type="text/css" />*@
     <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet" type="text/css">
 
@@ -46,9 +45,7 @@
                     menu = 0;
                 }
             });
-            //jQuery("#sidebar-close").click(function (e) {
-            //    jQuery("#wrap").removeClass("toggled");
-            //});
+
             // key listeners for the previous and next arrows
             jQuery(document).keydown(function (e) {
                 var anchor;
@@ -201,10 +198,10 @@
                 <div id="shop-list-wrapper">
 
                     <div id="shop-product-tab" class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Highstock.NET&nbsp;<span class="toggle-arrow"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Highstock .NET&nbsp;<span class="toggle-arrow"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="~/Highcharts/Demo">Highcharts.NET</a></li>
-                            <li><a href="~/Highstock/Demo">Highstock.NET</a></li>
+                            <li><a href="~/Highcharts/Demo">Highcharts .NET</a></li>
+                            <li><a href="~/Highstock/Demo">Highstock .NET</a></li>
                         </ul>
                     </div>
                     <div id="shop-product-tab" class="dropdown">
@@ -228,77 +225,6 @@
             </div>
         </nav>
     </div>
-
-    @*<div id="menu">
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                        </a>
-                        <a class="navbar-brand" href="/" title="Highcharts">
-                            <img src="@Url.Content("~/Content/logo.svg")" alt="Highcharts" />
-                        </a>
-                    </div>
-                    <div class="collapse navbar-collapse">
-                        <div id="menu-container">
-                            <div id="menu-second" class="hidden-xs">
-
-                               <ul class="nav navbar-nav pull-right">
-                                    <li class="item-112"><a href="http://www.highcharts.com">Highcharts.com</a></li>
-                                    <li class="item-113 deeper dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Products <span class="toggle-arrow"></span></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li class="item-121"><a href="http://www.highcharts.com/highcharts">Highcharts</a></li>
-                                            <li class="item-122"><a href="http://www.highcharts.com/highstock">Highstock</a></li>
-                                            <li class="item-210"><a href="http://www.highcharts.com/highmaps">Highmaps</a></li>
-                                            <li class="item-213"><a href="http://cloud.highcharts.com/">Highcharts Cloud</a></li>
-                                            <li class="item-123"><a href="http://highslide.com/">Highslide JS</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="item-218"><a href="http://www.highcharts.com/about">About Us</a></li>
-                                    <li class="item-114"><a href="http://www.highcharts.com/contact-email">Contact</a></li>
-                                </ul>
-
-                                <div class="clearfix"></div>
-                            </div>
-                            <div id="menu-main">
-                                 <ul class="nav navbar-nav pull-right">
-                                    <li class="item-101"><a href="~/highcharts/demo" style="font-size:medium">Demo</a></li>
-                                     <li class="item-101"><a href="~/Help/Highcharts/html/index.html" style="font-size:medium">API</a></li>
-                                    <li class="item-101"><a href="~/Docs/Highcharts/index.html" target="_blank" style="font-size:medium">Docs</a></li>
-                                    <li class="item-109 deeper dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-size:medium">Download <span class="toggle-arrow"></span></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li class="item-109"><a href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">30-day trial</a></li>
-                                        </ul>
-                                    </li>
-                                     <li class="item-101"><a href="~/Highstock/Demo" target="_blank" style="font-size:medium">Highstock for &nbsp;.NET</a></li>
-                                </ul>
-
-                                <div class="clearfix"></div>
-                            </div>
-                            <div id="mobile-second" class="visible-xs">
-
-                                <ul class="nav navbar-nav pull-right">
-                                    <li class="item-112"><a href="/about">About Us</a></li>
-                                    <li class="item-113 deeper dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Products <span class="toggle-arrow"></span></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li class="item-121"><a href="/products/highcharts">Highcharts</a></li>
-                                            <li class="item-122"><a href="/products/highstock">Highstock</a></li>
-                                            <li class="item-210"><a href="/products/highmaps">Highmaps</a></li>
-                                            <li class="item-213"><a href="http://cloud.highcharts.com/">Highcharts Cloud</a></li>
-                                            <li class="item-123"><a href="http://highslide.com/">Highslide JS</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="item-218"><a href="/blog">Blog</a></li>
-                                    <li class="item-114"><a href="/contact-email">Contact</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>*@
     <div id="header" class="hidden-xs col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="container">
 
@@ -308,10 +234,9 @@
                         <tr>
                             <td width="25%" style="padding:unset; border:none"></td>
                             <td style="padding-left:unset; padding-top:15px; padding-bottom:25px; border:none">
-                                @*<ul class="nav navbar-nav">*@
                                 <table>
                                     <tbody>
-                                        <tr><td style="padding-left:unset; padding-bottom:15px; border:none"><span style="color:#eeeaea; font-size:x-large;">Highstock.NET</span></td></tr>
+                                        <tr><td style="padding-left:unset; padding-bottom:15px; border:none"><span style="color:#eeeaea; font-size:x-large;">Highstock .NET</span></td></tr>
                                         <tr>
                                             <td style="padding:unset; border:none">
                                                 <div class="btn-group">
@@ -320,55 +245,15 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        @*</ul>*@
-                                        @*<div style="position:relative; left:15px; top:6.5px; ">
-                                                <img src="~/Content/wrapper_logo2.png" />
-                                            </div>*@
                                     </tbody>
                                 </table>
                             </td>
                             <td style="padding:unset; border:none">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:right;">
                                     <img src="~/Content/images/dotnet_logo.png" width="200" style="padding-top:30px;" />
-
-
-                                    @*<h1>Highcharts Demos</h1>*@
-
-
-                                    @*<div class="btn-group theme">
-                                        <a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">Default</a>
-                                            <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="?theme=dark-unica">Dark Unica</a>
-                                            <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="?theme=sand-signika">Sand Signika</a>
-                                            <a class="btn btn-theme @ViewBag.GridLightDisabled" href="?theme=grid-light">Grid Light</a>*@
-
-                                    @*<a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">DEMO</a>*@
-                                    @*<a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="~/Help/Highcharts/html/index.html">API</a>*@
-                                    @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Docs/Highcharts/index.html">DOCS</a>*@
-                                    @*<a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements">DOCS</a>*@
-                                    @*<a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>*@
-                                    @*<div class="container">*@
-                                    @*<button type="button" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:2px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap;" href="ggg.jpg"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></button>*@
-                                    @*</div>*@
-                                    @*</div>*@
                                 </div>
                             </td>
                         </tr>
-                        @*<tr>
-                                <td width="25%" style="padding:unset; border:none"></td>
-                                <td style="padding:unset; border:none; margin:unset">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:unset;">
-
-                                        <div class="btn-group theme">
-                                            <a class="btn btn-theme disabled" href="~/Higstock/Demo" style="margin-right:2px; background:#f6f6f6">DEMO</a>
-                                            <a class="btn btn-theme enabled" href="~/Help/Highstock/html/index.html" style="margin-right:2px;">API</a>
-                                            <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="~/Docs/Highcharts/index.html">DOCS</a>
-                                            <a class="btn btn-theme enabled" href="~/Highcharts/Demo/Docs?section=ServerSideRequirements" style="margin-right:2px;">DOCS</a>
-                                            <a class="btn btn-theme @ViewBag.GridLightDisabled" href="~/downloads/Highcharts_ASPNET_MVC_4_1_7_0.zip">DOWNLOAD</a>
-                                            <a href="~/downloads/Highstock_ASPNET_MVC_4_1_7_0.zip" class="btn btn-primary" style="border:thick #AFFAC5; background-color: #a3edba; color:#404055; letter-spacing:normal; padding-left:8px; padding-right:8px; border-radius:3px; padding-top:4px; padding-bottom:2px; font-weight:700; font-size:12px; white-space:nowrap; margin-left:2px; margin-top:5px;"><span>DOWNLOAD</span>&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>*@
                     </tbody>
                 </table>
             </div>
@@ -385,29 +270,7 @@
     </div>
     <div id="hs-component">
         <div class="container">
-            @*<div class="visible-xs row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:#f6f6f6;">
-                    <div class="btn-group" style="padding-top:5px; padding-bottom:5px; padding-left:5px;">
-                        <a href="~/Highcharts/Demo" class="btn btn-primary" style="border-color:#eeeaea; color:#3A3A4F; background-color:#eeeaea; text-transform:none;"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Highcharts</a>
-                        <a href="~/Highstock/Demo" class="btn btn-primary" style="border-color:#eeeaea; color:#898DA0; background-color:#3A3A4F; text-transform:none;"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Highstock</a>
-                    </div>
-                </div>
-            </div>*@
             <div id="wrap" class="sidebar-wrapper">
-                @*<div id="comp-menu" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden-xs">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-9"></div>
-                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 cont">
-                            <h2 class="demo-name"></h2>
-                            <div class="btn-group theme">
-                                <a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">Default</a>
-                                <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="?theme=dark-unica">Dark Unica</a>
-                                <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="?theme=sand-signika">Sand Signika</a>
-                                <a class="btn btn-theme @ViewBag.GridLightDisabled" href="?theme=grid-light">Grid Light</a>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>*@
-
                 <nav class="col-lg-3 col-md-3 col-sm-3 col-xs-9 sidebar">
                     <ul class="nav nav-sidebar">
                         <li class="active">
@@ -527,7 +390,6 @@
 
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-9 sidebar-fill"></div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq demo" style="margin-top:unset; padding-top:unset;">
-                    @*<a id="sidebar-close" class="btn-default visible-xs">&laquo; Hide Menu</a>*@
                     <div id="chart-switcher" class="visible-xs" style="padding:unset;">
                         <a class="button" id="view-menu" onclick="" style="float:left; background-color:#3A3A4F; height:50px; width:40px; vertical-align:middle; padding-left:6px; margin-left:-50px; margin-top:2px; border-radius:unset; z-index:999"><i class="material-icons" style="color:white;">list</i></a>
                         <a id="previous-example"><i class="fa fa-angle-left"></i></a>
@@ -535,33 +397,8 @@
                         <a id="next-example" title="Next (arrow right)"
                            href="http://www.highcharts.com/demo/line-ajax"><i class="fa fa-angle-right"></i></a>
                     </div>
-                    @*<div id="small-switcher" class="visible-xs">
-                        <a class="button" id="view-menu" onclick="">Menu &raquo;</a>
-                        <select id="switcher-selector">
-                            <option value="http://www.highcharts.com/demo/line-basic" selected>Default theme</option>
-                            <option value="http://www.highcharts.com/demo/line-basic/dark-unica">Dark Unica</option>
-                            <option value="http://www.highcharts.com/demo/line-basic/sand-signika">Sand Signika</option>
-                            <option value="http://www.highcharts.com/demo/line-basic/grid-light">Grid Light</option>
-                        </select>
-                        <div class="clearfix"></div>
-                    </div>*@
                     <div class="chart-container" style="padding:unset;">
                         <a id="previous-example" class="hidden-xs"><i class="fa fa-angle-left"></i></a>
-
-                        @*
-                            <script src="http://code.highcharts.com/highcharts.js"></script>
-                            <script src="http://code.highcharts.com/modules/data.js"></script>
-                            <script src="http://code.highcharts.com/highcharts-3d.js"></script>
-                            <script src="http://code.highcharts.com/modules/heatmap.js"></script>
-                            <script src="http://code.highcharts.com/highcharts-more.js"></script>
-                            <script src="http://code.highcharts.com/modules/funnel.js"></script>
-                            <script src="http://code.highcharts.com/modules/exporting.js"></script>
-                            <script src="http://code.highcharts.com/modules/heatmap.js"></script>
-                            <script src="http://code.highcharts.com/modules/treemap.js"></script>
-                            <script src="http://code.highcharts.com/modules/drilldown.js"></script>
-                            <script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
-                        *@
-
                         <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
 
                             @Html.Action((string)ViewBag.Demo, "Shared")

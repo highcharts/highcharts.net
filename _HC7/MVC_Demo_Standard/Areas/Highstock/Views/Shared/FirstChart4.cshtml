@@ -123,8 +123,25 @@
         <span style="font-weight:500;">B. Use a fixed data in the view</span><br />
         <span>The method described above is the most common way to define data. However, you can also define data directly in the View, as shown here:</span>
     </p>
-    <p class="c4"><img alt="" src="~/Content/images/View2.png" style="width: 804.00px; height: 460.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></p>
-    
+    @*<p class="c4"><img alt="" src="~/Content/images/View2.png" style="width: 804.00px; height: 460.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></p>*@
+<pre>...<br />@@{var chartOptions = new Highcharts<br />{<br />...
+    Series = new List&lt;Series&gt;
+    {
+                new ColumnSeries
+                {
+                    Name = "Brands",
+                    ColorByPoint = true,
+                    Data = new List<ColumnSeriesData>
+                    {
+                        new ColumnSeriesData { Name = "Microsoft Internet Explorer", Y = 56.3, Drilldown = "Microsoft Internet Explorer" },
+                        new ColumnSeriesData { Name = "Chrome", Y = 24.03, Drilldown = "Chrome" },
+                        new ColumnSeriesData { Name = "Firefox", Y = 10.3, Drilldown = "Firefox" },
+                        new ColumnSeriesData { Name = "Sfari", Y = 4.77, Drilldown = "Safari" },
+                        new ColumnSeriesData { Name = "Opera", Y = 0.91, Drilldown = "Opera" },
+                        new ColumnSeriesData { Name = "Proprietary or Undetectable", Y = 0.2, Drilldown = null }
+                    }
+                }
+    },</br>...<br />}<br /></pre>
     <p class="c1"><span></span></p>
     <p class="c4"><span>In this case, we are creating a column chart with six columns, representing browser market share each column with its own name and value.<br />And this is the chart that is produced by this View:</span></p>
     <div>
