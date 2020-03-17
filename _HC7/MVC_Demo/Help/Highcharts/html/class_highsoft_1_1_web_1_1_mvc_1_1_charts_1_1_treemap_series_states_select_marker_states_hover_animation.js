@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treemap_series_states_select_marker_states_hover_animation =
-[
-    [ "TreemapSeriesStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treemap_series_states_select_marker_states_hover_animation.html#ae44580acea074a4e272d392fc1e747b0", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treemap_series_states_select_marker_states_hover_animation.html#a3c7f9743d8b8b6f6368a7d9a6cfdea05", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treemap_series_states_select_marker_states_hover_animation.html#ac287b3c41953b9fa424e2a13fa3bbdbc", null ]
-];

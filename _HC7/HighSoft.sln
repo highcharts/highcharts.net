@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Demo_Framework", "MVC_Demo\MVC_Demo_Framework.csproj", "{93028492-0DBD-4003-8859-F35AC7C629EF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_UnitTests", "MVC_UnitTests\MVC_UnitTests.csproj", "{96093B49-7299-431A-A1AE-B1BDCB46B351}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilDateReplacer", "UtilDateReplacer\UtilDateReplacer.csproj", "{D82FCCA0-182D-42A3-91B2-EA76FB97FC36}"
@@ -39,10 +37,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{93028492-0DBD-4003-8859-F35AC7C629EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93028492-0DBD-4003-8859-F35AC7C629EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93028492-0DBD-4003-8859-F35AC7C629EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93028492-0DBD-4003-8859-F35AC7C629EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{96093B49-7299-431A-A1AE-B1BDCB46B351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{96093B49-7299-431A-A1AE-B1BDCB46B351}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96093B49-7299-431A-A1AE-B1BDCB46B351}.Release|Any CPU.ActiveCfg = Release|Any CPU

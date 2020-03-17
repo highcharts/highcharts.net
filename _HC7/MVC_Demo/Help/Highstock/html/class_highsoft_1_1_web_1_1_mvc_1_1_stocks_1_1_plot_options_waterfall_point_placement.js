@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_waterfall_point_placement =
-[
-    [ "PlotOptionsWaterfallPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_waterfall_point_placement.html#aa439ae2af126bfc7d8cb7c6b7075a94f", null ]
-];

@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_states_select_marker_states_hover_animation =
-[
-    [ "PlotOptionsSolidgaugeStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_states_select_marker_states_hover_animation.html#a779fc064e2166e2564cfe5a840ddb1a1", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_states_select_marker_states_hover_animation.html#a3adb6f935653dea51efe572c5d4d1656", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_states_select_marker_states_hover_animation.html#a81bd2783fbd4a1f2dc29b18817bb412c", null ]
-];

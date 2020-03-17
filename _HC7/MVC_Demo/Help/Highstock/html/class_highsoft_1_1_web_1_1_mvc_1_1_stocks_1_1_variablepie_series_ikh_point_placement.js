@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_variablepie_series_ikh_point_placement =
-[
-    [ "VariablepieSeriesIkhPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_variablepie_series_ikh_point_placement.html#a834edf076ab4f457ecd2060cbf046d61", null ]
-];

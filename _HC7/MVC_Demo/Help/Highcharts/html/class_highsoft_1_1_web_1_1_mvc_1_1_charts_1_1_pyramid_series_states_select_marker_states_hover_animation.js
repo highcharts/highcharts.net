@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pyramid_series_states_select_marker_states_hover_animation =
-[
-    [ "PyramidSeriesStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pyramid_series_states_select_marker_states_hover_animation.html#afba0bde769063fee5b86f6d45a074dc6", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pyramid_series_states_select_marker_states_hover_animation.html#afc28c0a2729feec4c4bc05119a82d7ac", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_pyramid_series_states_select_marker_states_hover_animation.html#a9de9e7c6ec8015da3b5eb49d5946c0e2", null ]
-];

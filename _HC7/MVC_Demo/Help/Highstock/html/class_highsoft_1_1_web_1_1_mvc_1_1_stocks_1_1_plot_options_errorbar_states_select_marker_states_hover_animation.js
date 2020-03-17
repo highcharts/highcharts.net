@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_errorbar_states_select_marker_states_hover_animation =
-[
-    [ "PlotOptionsErrorbarStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_errorbar_states_select_marker_states_hover_animation.html#afc6567cca7a14e2f5629a7d637a033da", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_errorbar_states_select_marker_states_hover_animation.html#a27c4ad6f1b99f0b6ffc9f3efdac0c2b6", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_errorbar_states_select_marker_states_hover_animation.html#ab2a6392dd1c2478eceac1b4e41ca8650", null ]
-];

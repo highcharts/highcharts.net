@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_candle_stick_series_ikh_point_placement =
-[
-    [ "CandleStickSeriesIkhPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_candle_stick_series_ikh_point_placement.html#aee334176eace6f36706152f6615f4bfb", null ]
-];

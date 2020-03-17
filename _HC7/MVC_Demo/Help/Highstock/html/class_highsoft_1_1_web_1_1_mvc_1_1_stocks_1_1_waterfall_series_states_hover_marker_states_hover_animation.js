@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_waterfall_series_states_hover_marker_states_hover_animation =
-[
-    [ "WaterfallSeriesStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_waterfall_series_states_hover_marker_states_hover_animation.html#a17c05de0ad2dc8baa0bf102912d000ba", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_waterfall_series_states_hover_marker_states_hover_animation.html#ad7a4d11d8a066b2c986cdf5c1ebd0d9b", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_waterfall_series_states_hover_marker_states_hover_animation.html#a345144b5abfdfc77dca9daf648281697", null ]
-];

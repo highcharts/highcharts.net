@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_ohlc_states_select_marker_states_hover_animation =
-[
-    [ "PlotOptionsOhlcStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_ohlc_states_select_marker_states_hover_animation.html#a20a13e001d893ff63a4dfb5999e7bd4e", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_ohlc_states_select_marker_states_hover_animation.html#a000fd144aadc119c69988fd5eafe8879", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_ohlc_states_select_marker_states_hover_animation.html#a912a512112acd4a55284d8c452e8c304", null ]
-];

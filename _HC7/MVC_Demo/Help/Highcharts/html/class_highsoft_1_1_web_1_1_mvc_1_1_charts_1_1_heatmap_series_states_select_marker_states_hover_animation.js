@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_states_select_marker_states_hover_animation =
-[
-    [ "HeatmapSeriesStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_states_select_marker_states_hover_animation.html#a8994450f832f8c209817f0dc956202db", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_states_select_marker_states_hover_animation.html#acb53c0ab89f9fc1a9fd890876cfa0f35", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_states_select_marker_states_hover_animation.html#a0705fa4d38bb0adc7aa608088fc59e45", null ]
-];

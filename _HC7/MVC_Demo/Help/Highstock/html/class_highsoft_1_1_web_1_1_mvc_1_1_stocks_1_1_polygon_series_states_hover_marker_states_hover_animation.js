@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_states_hover_marker_states_hover_animation =
-[
-    [ "PolygonSeriesStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_states_hover_marker_states_hover_animation.html#ac3afd42ff35f59d97b5bd2dc7cfecbd5", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_states_hover_marker_states_hover_animation.html#a348d6602eea7ac604848cbf1bc613d69", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_states_hover_marker_states_hover_animation.html#a673a8abe9b2ecc850c0371a1b359417a", null ]
-];

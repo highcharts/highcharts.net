@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_ikh_states_hover_marker_states_hover_animation =
-[
-    [ "PlotOptionsIkhStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_ikh_states_hover_marker_states_hover_animation.html#a3a0ea29bb38797b2401456ebe21ccae6", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_ikh_states_hover_marker_states_hover_animation.html#afa0facccaa028871faad2aa8084b81bf", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_ikh_states_hover_marker_states_hover_animation.html#a06fab5d7cf630a16976e0048688d6eca", null ]
-];
