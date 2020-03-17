@@ -1,7 +1,7 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
 
 #Version 8.0.0.3
-Serial key is no required.
+Serial key is not required.
 
 #Version 8.0.0.2
 Fix events
