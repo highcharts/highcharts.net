@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Highstock", "MVC_Highst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Highcharts", "MVC_Highcharts\MVC_Highcharts.csproj", "{FA4C2A73-1563-47DA-8F1B-64EF17D48918}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Highmaps", "MVC_Highmaps\MVC_Highmaps.csproj", "{687B771F-4A14-493B-B78C-7D6AA617AF9D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceCodeGenerator", "SourceCodeGenerator\SourceCodeGenerator.csproj", "{9CE7B1B8-5411-4301-AE57-937F3FB8E7EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetOptionsSample", "..\..\..\.NET Projects\SetOptionsSample\SetOptionsSample\SetOptionsSample.csproj", "{E09DEA83-134D-4CFA-A68F-31F28944B3F4}"
@@ -53,10 +51,6 @@ Global
 		{FA4C2A73-1563-47DA-8F1B-64EF17D48918}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA4C2A73-1563-47DA-8F1B-64EF17D48918}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA4C2A73-1563-47DA-8F1B-64EF17D48918}.Release|Any CPU.Build.0 = Release|Any CPU
-		{687B771F-4A14-493B-B78C-7D6AA617AF9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{687B771F-4A14-493B-B78C-7D6AA617AF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{687B771F-4A14-493B-B78C-7D6AA617AF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{687B771F-4A14-493B-B78C-7D6AA617AF9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9CE7B1B8-5411-4301-AE57-937F3FB8E7EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9CE7B1B8-5411-4301-AE57-937F3FB8E7EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CE7B1B8-5411-4301-AE57-937F3FB8E7EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
