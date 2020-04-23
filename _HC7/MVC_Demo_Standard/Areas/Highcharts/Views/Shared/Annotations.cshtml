@@ -11,21 +11,21 @@
         Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
             ZoomType = ChartZoomType.X,
-            Panning = new ChartPanning
-            { 
-                Enabled = true
-            },
+            //Panning = new ChartPanning
+            //{ 
+            //    Enabled = true
+            //},
             PanKey = ChartPanKey.Shift
         },
-            Title = new Title
-            {
-                Text = "2017 Tour de France Stage 8: Dole - Station des Rousses"
-            },
-            Subtitle = new Subtitle
-            {
-                Text = "An annotated chart in Highcharts"
-            },
-            Annotations = new List<Annotations>
+        Title = new Title
+        {
+            Text = "2017 Tour de France Stage 8: Dole - Station des Rousses"
+        },
+        Subtitle = new Subtitle
+        {
+            Text = "An annotated chart in Highcharts"
+        },
+        Annotations = new List<Annotations>
 {
         new Annotations
         {
@@ -194,7 +194,7 @@
             }
         }
     },
-            XAxis = new List<XAxis>()
+        XAxis = new List<XAxis>()
 {
         new XAxis
         {
@@ -204,7 +204,7 @@
             Title = new XAxisTitle { Text = "Distance" }
         }
     },
-            YAxis = new List<YAxis>()
+        YAxis = new List<YAxis>()
 {
         new YAxis
         {
@@ -216,17 +216,17 @@
             Labels = new YAxisLabels { Format = "{value} m" }
         }
     },
-            Tooltip = new Tooltip
-            {
-                HeaderFormat = "Distance: {point.x:.1f} km<br>",
-                PointFormat = "{point.y} m a. s. l.",
-                Shared = true
-            },
-            Legend = new Legend
-            {
-                Enabled = false
-            },
-            Series = new List<Series>()
+        Tooltip = new Tooltip
+        {
+            HeaderFormat = "Distance: {point.x:.1f} km<br>",
+            PointFormat = "{point.y} m a. s. l.",
+            Shared = true
+        },
+        Legend = new Legend
+        {
+            Enabled = false
+        },
+        Series = new List<Series>()
 {
         new AreaSeries
         {
@@ -241,7 +241,7 @@
 
         }
     }
-        };
+    };
 
     chartOptions.ID = "chart";
     var renderer = new HighchartsRenderer(chartOptions);

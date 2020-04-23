@@ -7,7 +7,7 @@
 <script type="text/javascript">
 
     function loadAjaxData() {
-        $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=analytics.csv&callback=?', function (csv) {
+        $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=analytics.csv&callback=?', function (csv) {
             var visitorData = new Array();
             var uniquesData = new Array();
             var index = csv.indexOf("Sessions") + 9;

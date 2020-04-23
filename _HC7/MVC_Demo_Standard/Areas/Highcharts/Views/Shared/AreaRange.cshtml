@@ -14,7 +14,7 @@
 <script type="text/javascript">
 
     function loadData() {
-        $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=range.json&callback=?', function (data) {
+        $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=range.json&callback=?', function (data) {
             var chart = Highcharts.charts[0];
             chart.series[0].setData(data);
 
