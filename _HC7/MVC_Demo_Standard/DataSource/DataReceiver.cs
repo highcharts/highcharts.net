@@ -64,7 +64,7 @@ namespace MVC_Demo.Models
             return json.Select(p => new RangeData { X = Convert.ToDouble(p[0], CultureInfo.InvariantCulture), Low = Convert.ToDouble(p[1], CultureInfo.InvariantCulture), High = Convert.ToDouble(p[2], CultureInfo.InvariantCulture) });
         }
 
-        private static IEnumerable<CandlestickVolume> GetStockData(string filepath)
+        private static IEnumerable<StockData> GetStockData(string filepath)
         {
             JArray json;
 
@@ -74,16 +74,16 @@ namespace MVC_Demo.Models
             }
             catch (Exception)
             {
-                return new List<CandlestickVolume>();
+                return new List<StockData>();
             }
 
-            return json.Select(p => new CandlestickVolume { 
+            return json.Select(p => new StockData { 
                 Date = Convert.ToDouble(p[0], CultureInfo.InvariantCulture), 
                 Open = Convert.ToDouble(p[1], CultureInfo.InvariantCulture), 
                 High = Convert.ToDouble(p[2], CultureInfo.InvariantCulture),
                 Low = Convert.ToDouble(p[3], CultureInfo.InvariantCulture),
                 Close = Convert.ToDouble(p[4], CultureInfo.InvariantCulture),
-                Volume = p[5].Count() == 6 ? Convert.ToDouble(p[5], CultureInfo.InvariantCulture) : 0
+                Volume = p.Count() == 6 ? Convert.ToDouble(p[5], CultureInfo.InvariantCulture) : 0
             });
         }
 
@@ -111,7 +111,7 @@ namespace MVC_Demo.Models
             return GetRangeData(RangeFile);
         }
 
-        public static IEnumerable<CandlestickVolume> GetCandlestickData()
+        public static IEnumerable<StockData> GetCandlestickData()
         {
             return GetStockData(CandlestickFile);
         }
@@ -121,7 +121,10 @@ namespace MVC_Demo.Models
             return GetData(UsdEurFile);
         }
 
-        public static IEnumerable<>
+        public static IEnumerable<StockData> GetIntradayData()
+        {
+            return GetStockData(IntradayFile);
+        }
 
         #endregion
 

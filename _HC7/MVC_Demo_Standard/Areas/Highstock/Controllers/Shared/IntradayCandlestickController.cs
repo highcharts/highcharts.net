@@ -16,7 +16,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             List<CandleStickSeriesData> intradayData = new List<CandleStickSeriesData>();
             List<LineSeriesData> navigatorData = new List<LineSeriesData>();
 
-            foreach (Intraday data in GetList_Intradays())
+            foreach (var data in DataReceiver.GetIntradayData())
             {
                 intradayData.Add(new CandleStickSeriesData
                 {

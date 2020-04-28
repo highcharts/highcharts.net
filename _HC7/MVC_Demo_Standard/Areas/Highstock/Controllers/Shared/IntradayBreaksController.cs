@@ -15,7 +15,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             List<AreaSeriesData> intradayData = new List<AreaSeriesData>();
 
-                foreach (Intraday data in GetList_Intradays())
+                foreach (var data in DataReceiver.GetIntradayData())
                 {
                         intradayData.Add(new AreaSeriesData
                             {                                

@@ -30,7 +30,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 
                 lastDate = flags.Last().Date;
 
-            ViewBag.CurrencyData = currencyData.OrderBy(o => o.X);
+            ViewBag.CurrencyData = currencyData.OrderBy(o => o.X).ToList();
 
 
             List<FlagsSeriesData> aData = new List<FlagsSeriesData>();
