@@ -16,7 +16,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             List<ArearangeSeriesData> appleData = new List<ArearangeSeriesData>();
             List<LineSeriesData> navigatorData = new List<LineSeriesData>();
 
-            foreach (RangeData data in DataReceiver.GetJSONRange())//("Apple"))
+            foreach (RangeData data in DataReceiver.GetRangeData())
             {
                 appleData.Add(new ArearangeSeriesData
                 {

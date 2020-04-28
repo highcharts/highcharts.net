@@ -17,8 +17,8 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             double? lastDate;
             int days = 86400000; // milliseconds in a day
 
-            List<FlagData> flags = DataReceiver.GetJSONFlags();
-            foreach (FlagData flag in flags)
+            var flags = DataReceiver.GetUsdEurData();
+            foreach (var flag in flags)
             {
                     currencyData.Add(new LineSeriesData
                     {
@@ -28,9 +28,9 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     );
                 }
 
-                lastDate = flags.ToList().Last().Date;
+                lastDate = flags.Last().Date;
 
-            ViewBag.CurrencyData = currencyData.OrderBy(o => o.X).ToList();
+            ViewBag.CurrencyData = currencyData.OrderBy(o => o.X);
 
 
             List<FlagsSeriesData> aData = new List<FlagsSeriesData>();

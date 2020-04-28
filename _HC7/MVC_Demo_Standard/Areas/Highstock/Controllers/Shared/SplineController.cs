@@ -17,7 +17,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {   
             List<SplineSeriesData> appleData = new List<SplineSeriesData>();
 
-                foreach (CompanyData data in SplineGetList())
+                foreach (PointData data in SplineGetList())
                 {
                     appleData.Add(new SplineSeriesData
                     {
@@ -31,7 +31,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             return View(ViewBag);
         }
 
-        private List<CompanyData> SplineGetList()
+        private List<PointData> SplineGetList()
         {
             string url = "https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=";
             string json;
@@ -44,7 +44,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             json = json.Substring(json.IndexOf('[') + 1);
             json = json.Substring(json.IndexOf('[') + 1);
 
-            List<CompanyData> AppleDatas = new List<CompanyData>();
+            List<PointData> AppleDatas = new List<PointData>();
 
 
             while (true)
@@ -56,7 +56,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                 string[] values = entity.Split(',');
 
                 AppleDatas.Add(
-                    new CompanyData
+                    new PointData
                     {
                         Date = Convert.ToDouble(values[0], CultureInfo.InvariantCulture),
                         Value = Convert.ToDouble(values[1], CultureInfo.InvariantCulture)

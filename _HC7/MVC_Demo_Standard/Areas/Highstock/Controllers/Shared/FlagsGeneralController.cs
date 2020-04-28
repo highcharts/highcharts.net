@@ -16,7 +16,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {
             List<LineSeriesData> currencyData = new List<LineSeriesData>();
 
-            foreach (Flag flag in GetList_FlagsGeneral())
+            foreach (PointData flag in DataReceiver.GetUsdEurData())
             {
                 currencyData.Add(new LineSeriesData
                 {
@@ -65,52 +65,6 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             ViewBag.FlagsData = flagsData;
 
             return View(ViewBag);
-        }
-
-        private List<Flag> GetList_FlagsGeneral()
-        {
-            string json;
-
-            using (WebClient wc = new WebClient())
-            {
-                json = wc.DownloadString("https://cdn.rawgit.com/highcharts/highcharts/v6.0.5/samples/data/usdeur.json");
-            }
-
-            json = json.Substring(json.IndexOf('[') + 1);
-            json = json.Substring(json.IndexOf('[') + 1);
-
-
-            List<Flag> flags = new List<Flag>();
-            
-            while (true)
-            {
-                if (json.IndexOf('[') == -1)
-                    break;
-
-                string entity = json.Substring(0, json.IndexOf(']'));
-                string[] values = entity.Split(',');
-
-                string date = values[0];
-                string value = values[1];
-
-                try
-                {
-                    flags.Add(
-                            new Flag
-                            {
-                                Date = Convert.ToDouble(date, CultureInfo.InvariantCulture),
-                                Value = Convert.ToDouble(value, CultureInfo.InvariantCulture)
-                            }
-                        );
-                }
-                catch (Exception)
-                {
-                }
-
-                json = json.Substring(json.IndexOf('[') + 1);
-            }
-
-            return flags;
         }
         
         public double DateToUTC(DateTime theDate)

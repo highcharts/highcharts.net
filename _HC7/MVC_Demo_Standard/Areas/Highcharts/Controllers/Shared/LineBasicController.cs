@@ -26,12 +26,6 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
             berlinValues.ForEach(p => berlinData.Add(new LineSeriesData { Y = p }));
             londonValues.ForEach(p => londonData.Add(new LineSeriesData { Y = p }));
 
-            tokyoData[0].CustomFields.Add("custom1", 77);
-            tokyoData[0].CustomFields.Add("custom2", "jajo");
-
-            tokyoData[1].CustomFields.Add("custom1", 99);
-            tokyoData[1].CustomFields.Add("custom2", true);
-
             ViewData["tokyoData"] = tokyoData;
             ViewData["nyData"] = nyData;
             ViewData["berlinData"] = berlinData;

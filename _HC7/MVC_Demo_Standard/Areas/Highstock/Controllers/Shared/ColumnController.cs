@@ -15,7 +15,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
         {   
             List<ColumnSeriesData> appleData = new List<ColumnSeriesData>();
 
-            foreach (CompanyData data in DataReceiver.GetJSON("Apple"))
+            foreach (PointData data in DataReceiver.GetAppleData())
                 {
                     appleData.Add(new ColumnSeriesData
                     {

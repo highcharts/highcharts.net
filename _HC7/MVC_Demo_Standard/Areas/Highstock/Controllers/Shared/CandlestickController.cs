@@ -19,7 +19,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             List<CandleStickSeriesData> appleData = new List<CandleStickSeriesData>();
             List<LineSeriesData> navigatorData = new List<LineSeriesData>();
 
-            foreach (CandlestickVolume data in DataReceiver.GetJSONCandlestickVolumes())
+            foreach (CandlestickVolume data in DataReceiver.GetCandlestickData())
             {
                 appleData.Add(new CandleStickSeriesData
                 {

@@ -17,8 +17,8 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             double? minRate = 0;
             double? maxRate = 1;
 
-            List<FlagData> flags = DataReceiver.GetJSONFlags();
-            foreach (FlagData flag in flags)
+            var flags = DataReceiver.GetUsdEurData();
+            foreach (var flag in flags)
             {
                 currencyData.Add(new LineSeriesData
                 {

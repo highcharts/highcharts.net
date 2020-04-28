@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MVC_Demo.Models
 {
-    public class CompanyData
+    public class PointData
     {
         public int Id { get; set; }
         public Nullable<double> Date { get; set; }

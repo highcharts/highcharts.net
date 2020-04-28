@@ -17,7 +17,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             List<LineSeriesData> msftData = new List<LineSeriesData>();
             List<LineSeriesData> googData = new List<LineSeriesData>();
 
-            foreach (CompanyData data in DataReceiver.GetJSON("Apple"))
+            foreach (PointData data in DataReceiver.GetAppleData())
             {
                 appleData.Add(new LineSeriesData
                 {
@@ -26,7 +26,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                 });
             }
 
-            foreach (CompanyData data in DataReceiver.GetJSON("Microsoft"))
+            foreach (PointData data in DataReceiver.GetMicrosoftData())
             {
                 msftData.Add(new LineSeriesData
                 {
@@ -35,7 +35,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                 });
             }
 
-            foreach (CompanyData data in DataReceiver.GetJSON("Google"))
+            foreach (PointData data in DataReceiver.GetGoogleData())
             {
                 googData.Add(new LineSeriesData
                 {
@@ -51,7 +51,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             return View(ViewBag);
         }
 
-        private List<CompanyData> GetList(string company)
+        private List<PointData> GetList(string company)
         {
             string url="";
             
@@ -78,7 +78,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             json = json.Substring(json.IndexOf('[') + 1);
             json = json.Substring(json.IndexOf('[') + 1);
 
-            List<CompanyData> AppleDatas = new List<CompanyData>();
+            List<PointData> AppleDatas = new List<PointData>();
 
 
                 while (true)
@@ -90,7 +90,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
                     string[] values = entity.Split(',');
 
                     AppleDatas.Add(
-                        new CompanyData
+                        new PointData
                         {
                             Date = Convert.ToDouble(values[0]),
                             Value = Convert.ToDouble(values[1])

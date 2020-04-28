@@ -17,8 +17,8 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             double? lastDate;
             int days = 86400000; // milliseconds in a day
 
-            List<FlagData> flags = DataReceiver.GetJSONFlags();
-            foreach (FlagData flag in flags)
+            var flags = DataReceiver.GetUsdEurData();
+            foreach (PointData flag in flags)
             {
                 currencyData.Add(new LineSeriesData
                 {
