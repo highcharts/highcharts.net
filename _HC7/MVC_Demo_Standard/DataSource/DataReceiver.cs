@@ -231,45 +231,45 @@ namespace MVC_Demo.Models
         //}
 
 
-        public static List<CandlestickVolume> GetJSONCandlestickVolumes()
-        {
-            string json;
+        //public static List<CandlestickVolume> GetJSONCandlestickVolumes()
+        //{
+        //    string json;
 
-            using (WebClient wc = new WebClient())
-            {
-                json = wc.DownloadString("https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-ohlcv.json");
-            }
+        //    using (WebClient wc = new WebClient())
+        //    {
+        //        json = wc.DownloadString("https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-ohlcv.json");
+        //    }
 
-            json = json.Substring(json.IndexOf('[') + 1);
-            json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
 
-            List<CandlestickVolume> CandlestickVolumes = new List<CandlestickVolume>();
+        //    List<CandlestickVolume> CandlestickVolumes = new List<CandlestickVolume>();
 
-            while (true)
-            {
-                if (json.IndexOf('[') == -1)
-                    break;
+        //    while (true)
+        //    {
+        //        if (json.IndexOf('[') == -1)
+        //            break;
 
-                string entity = json.Substring(0, json.IndexOf(']'));
-                string[] values = entity.Split(',');
+        //        string entity = json.Substring(0, json.IndexOf(']'));
+        //        string[] values = entity.Split(',');
 
-                CandlestickVolumes.Add(
-                    new CandlestickVolume
-                    {
-                        Date = values[0].Trim() == "null" ? (double?)null : Convert.ToDouble(values[0].Trim(), CultureInfo.InvariantCulture),
-                        Open = values[1].Trim() == "null" ? (double?)null : Convert.ToDouble(values[1].Trim(), CultureInfo.InvariantCulture),
-                        High = values[2].Trim() == "null" ? (double?)null : Convert.ToDouble(values[2].Trim(), CultureInfo.InvariantCulture),
-                        Low = values[3].Trim() == "null" ? (double?)null : Convert.ToDouble(values[3].Trim(), CultureInfo.InvariantCulture),
-                        Close = values[4].Trim() == "null" ? (double?)null : Convert.ToDouble(values[4].Trim(), CultureInfo.InvariantCulture),
-                        Volume = values[5].Trim() == "null" ? (double?)null : Convert.ToDouble(values[5].Trim(), CultureInfo.InvariantCulture),
-                    }
-                );
+        //        CandlestickVolumes.Add(
+        //            new CandlestickVolume
+        //            {
+        //                Date = values[0].Trim() == "null" ? (double?)null : Convert.ToDouble(values[0].Trim(), CultureInfo.InvariantCulture),
+        //                Open = values[1].Trim() == "null" ? (double?)null : Convert.ToDouble(values[1].Trim(), CultureInfo.InvariantCulture),
+        //                High = values[2].Trim() == "null" ? (double?)null : Convert.ToDouble(values[2].Trim(), CultureInfo.InvariantCulture),
+        //                Low = values[3].Trim() == "null" ? (double?)null : Convert.ToDouble(values[3].Trim(), CultureInfo.InvariantCulture),
+        //                Close = values[4].Trim() == "null" ? (double?)null : Convert.ToDouble(values[4].Trim(), CultureInfo.InvariantCulture),
+        //                Volume = values[5].Trim() == "null" ? (double?)null : Convert.ToDouble(values[5].Trim(), CultureInfo.InvariantCulture),
+        //            }
+        //        );
 
-                json = json.Substring(json.IndexOf('[') + 1);
-            }
+        //        json = json.Substring(json.IndexOf('[') + 1);
+        //    }
 
-            return CandlestickVolumes;
-        }
+        //    return CandlestickVolumes;
+        //}
 
 
         //public static List<FlagData> GetJSONFlags()
@@ -342,7 +342,7 @@ namespace MVC_Demo.Models
 
         public static List<LineSeriesData> GetDataForLineBoost(int number)
         {
-            List<LineSeriesData> list = new List<LineSeriesData>();
+            List<LineSeriesData> list = new List<LineSeriesData>(number);
             double a, b, c, spike;
             a = b = c = spike = 0;
             Random random = new Random();
@@ -371,7 +371,7 @@ namespace MVC_Demo.Models
 
         public static List<ScatterSeriesData> GetDataForScatterBoost(int number)
         {
-            List<ScatterSeriesData> list = new List<ScatterSeriesData>();
+            List<ScatterSeriesData> list = new List<ScatterSeriesData>(number);
             Random random = new Random();
 
             for(int i=0;i<number;i++)

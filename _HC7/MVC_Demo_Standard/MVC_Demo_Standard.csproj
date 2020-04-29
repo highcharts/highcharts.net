@@ -38,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -54,12 +55,6 @@
     </Reference>
     <Reference Include="AWSSDK, Version=2.3.55.2, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
       <HintPath>..\packages\AWSSDK.2.3.55.2\lib\net45\AWSSDK.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
@@ -132,9 +127,6 @@
     <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
@@ -311,9 +303,6 @@
     <Compile Include="Areas\Highstock\Controllers\Shared\SplineController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\StepLineController.cs" />
     <Compile Include="Areas\Highstock\HighstockAreaRegistration.cs" />
-    <Content Include="App_Data\ChartData_log.ldf">
-      <DependentUpon>ChartData.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\HeatMapController.cs.txt" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\MapLineController.cs.txt" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\DistributionMapController.cs.txt" />
@@ -350,53 +339,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AppleData.cs">
-      <DependentUpon>ChartData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CandlestickVolume.cs">
-      <DependentUpon>ChartData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ChartData.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChartData.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ChartData.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChartData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ChartData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChartData.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\PointData.cs" />
     <Compile Include="Models\AnnotationsData.cs" />
-    <Compile Include="Models\DataGrouping.cs">
-      <DependentUpon>ChartData.tt</DependentUpon>
-    </Compile>
     <Compile Include="DataSource\DataReceiver.cs" />
-    <Compile Include="Models\Flag.cs">
-      <DependentUpon>ChartData.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\FlagData.cs" />
-    <Compile Include="Models\GoogleData.cs">
-      <DependentUpon>ChartData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Intraday.cs">
-      <DependentUpon>ChartData.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\LineBoostData.cs" />
-    <Compile Include="Models\MicrosoftData.cs">
-      <DependentUpon>ChartData.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\RangeData.cs" />
     <Compile Include="Models\StockData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ChartData.mdf" />
     <Content Include="Content\Areas\Highcharts\Controllers\Shared\AreaBasicController.cs.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1330,13 +1282,6 @@
     <Content Include="Areas\Highstock\Views\Shared\FlagsShapes.cshtml" />
     <Content Include="downloads\Highcharts_ASPNET_MVC.zip" />
     <Content Include="downloads\Highstock_ASPNET_MVC.zip" />
-    <EntityDeploy Include="Models\ChartData.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ChartData.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ChartData.edmx.diagram">
-      <DependentUpon>ChartData.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Highstock\Views\Demo\Chart.cshtml" />
     <Content Include="Areas\Highstock\Views\Demo\ViewCode.cshtml" />
     <Content Include="Areas\Highstock\Views\Demo\ControllerCode.cshtml" />
@@ -1427,16 +1372,6 @@
     <None Include="Properties\PublishProfiles\hc5.pubxml" />
     <None Include="Properties\PublishProfiles\HC6_dev.pubxml" />
     <None Include="Properties\PublishProfiles\Testing_HC5.pubxml" />
-    <Content Include="Models\ChartData.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ChartData.edmx</DependentUpon>
-      <LastGenOutput>ChartData.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\ChartData.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ChartData.edmx</DependentUpon>
-      <LastGenOutput>ChartData.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\fix.navigation.js" />
     <Content Include="Scripts\highcharts-all.js" />

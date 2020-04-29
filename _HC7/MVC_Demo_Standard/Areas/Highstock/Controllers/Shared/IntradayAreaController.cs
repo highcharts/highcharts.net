@@ -39,44 +39,44 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
             return View(ViewBag);
         }
 
-        private List<Intraday> GetList_Intradays()
-        {
-            string json;
+        //private List<Intraday> GetList_Intradays()
+        //{
+        //    string json;
 
-            using (WebClient wc = new WebClient())
-            {
-                json = wc.DownloadString("https://www.highcharts.com/samples/data/jsonp.php?filename=new-intraday.json&callback=?");
-            }
+        //    using (WebClient wc = new WebClient())
+        //    {
+        //        json = wc.DownloadString("https://www.highcharts.com/samples/data/jsonp.php?filename=new-intraday.json&callback=?");
+        //    }
 
-            json = json.Substring(json.IndexOf('[') + 1);
-            json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
+        //    json = json.Substring(json.IndexOf('[') + 1);
 
-            List<Intraday> Intradays = new List<Intraday>();
-                while (true)
-                {
-                    if (json.IndexOf('[') == -1)
-                        break;
+        //    List<Intraday> Intradays = new List<Intraday>();
+        //        while (true)
+        //        {
+        //            if (json.IndexOf('[') == -1)
+        //                break;
 
-                    string entity = json.Substring(0, json.IndexOf(']'));
-                    string[] values = entity.Split(',');
+        //            string entity = json.Substring(0, json.IndexOf(']'));
+        //            string[] values = entity.Split(',');
 
-                    Intradays.Add(
-                        new Intraday
-                        {
-                            Date = Convert.ToDouble(values[0], CultureInfo.InvariantCulture),
-                            Open = Convert.ToDouble(values[1], CultureInfo.InvariantCulture),
-                            High = Convert.ToDouble(values[2], CultureInfo.InvariantCulture),
-                            Low = Convert.ToDouble(values[3], CultureInfo.InvariantCulture),
-                            Close = Convert.ToDouble(values[4], CultureInfo.InvariantCulture)
-                        }
-                    );
+        //            Intradays.Add(
+        //                new Intraday
+        //                {
+        //                    Date = Convert.ToDouble(values[0], CultureInfo.InvariantCulture),
+        //                    Open = Convert.ToDouble(values[1], CultureInfo.InvariantCulture),
+        //                    High = Convert.ToDouble(values[2], CultureInfo.InvariantCulture),
+        //                    Low = Convert.ToDouble(values[3], CultureInfo.InvariantCulture),
+        //                    Close = Convert.ToDouble(values[4], CultureInfo.InvariantCulture)
+        //                }
+        //            );
 
-                    json = json.Substring(json.IndexOf('[') + 1);
-                }
+        //            json = json.Substring(json.IndexOf('[') + 1);
+        //        }
 
 
-            return Intradays;
-        }
+        //    return Intradays;
+        //}
 
         //private void IntradayArea_JsonDataToDatabase()
         //{
