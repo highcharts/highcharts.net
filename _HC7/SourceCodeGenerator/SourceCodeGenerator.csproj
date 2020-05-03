@@ -122,6 +122,7 @@
     <Content Include="CodeTemplates\Class_NETStandard_new1.tpl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="JsonFiles\highcharts.json" />
     <None Include="JsonFiles\highcharts_7.0.3.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -143,10 +144,10 @@
     <None Include="JsonFiles\highcharts7.2.1_official.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JsonFiles\highcharts_old.json">
+    <None Include="JsonFiles\highcharts_7.2.1_modified.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JsonFiles\highcharts.json">
+    <None Include="JsonFiles\highcharts_old.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
