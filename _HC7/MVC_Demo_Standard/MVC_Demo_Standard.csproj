@@ -56,6 +56,12 @@
     <Reference Include="AWSSDK, Version=2.3.55.2, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
       <HintPath>..\packages\AWSSDK.2.3.55.2\lib\net45\AWSSDK.dll</HintPath>
     </Reference>
+    <Reference Include="Highcharts, Version=8.0.0.3, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Highsoft.Highcharts.8.0.0.3\lib\netstandard2.0\Highcharts.dll</HintPath>
+    </Reference>
+    <Reference Include="Highstock, Version=8.0.0.3, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Highsoft.Highstock.8.0.0.3\lib\netstandard2.0\Highstock.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
@@ -1426,16 +1432,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\_HC8\HighchartsStandard\HighchartsStandard2.csproj">
-      <Project>{5263a8fd-5372-4433-b171-a00b0b8c42a1}</Project>
-      <Name>HighchartsStandard2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\_HC8\HighstockStandard\HighstockStandard2.csproj">
-      <Project>{df9a356f-c423-492e-aa8f-f85e509ab2b4}</Project>
-      <Name>HighstockStandard2</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

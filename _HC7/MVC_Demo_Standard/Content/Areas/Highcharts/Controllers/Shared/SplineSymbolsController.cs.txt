@@ -23,7 +23,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
                 data.Y = value;
                 if (value == 26.5)
                 {
-                    data.Marker.Symbol = "url(http://www.highcharts.com/demo/gfx/sun.png)";
+                    data.Marker.Symbol = "url(https://www.highcharts.com/demo/gfx/sun.png)";
                 }
 
                 tokyoData.Add(data);
@@ -35,7 +35,7 @@ namespace MVC_Demo.Areas.Highcharts.Controllers.Shared
                 data.Y = value;
                 if (value == 3.9)
                 {
-                    data.Marker.Symbol = "url(http://www.highcharts.com/demo/gfx/snow.png)";
+                    data.Marker.Symbol = "url(https://www.highcharts.com/demo/gfx/snow.png)";
                 }
 
                 londonData.Add(data);
